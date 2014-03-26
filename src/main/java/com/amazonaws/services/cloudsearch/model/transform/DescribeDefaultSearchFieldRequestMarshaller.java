@@ -28,6 +28,7 @@ import com.amazonaws.util.StringUtils;
 /**
  * Describe Default Search Field Request Marshaller
  */
+ @Deprecated
 public class DescribeDefaultSearchFieldRequestMarshaller implements Marshaller<Request<DescribeDefaultSearchFieldRequest>, DescribeDefaultSearchFieldRequest> {
 
     public Request<DescribeDefaultSearchFieldRequest> marshall(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest) {

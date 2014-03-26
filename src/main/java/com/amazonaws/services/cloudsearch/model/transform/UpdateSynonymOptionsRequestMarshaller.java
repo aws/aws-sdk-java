@@ -28,6 +28,7 @@ import com.amazonaws.util.StringUtils;
 /**
  * Update Synonym Options Request Marshaller
  */
+ @Deprecated
 public class UpdateSynonymOptionsRequestMarshaller implements Marshaller<Request<UpdateSynonymOptionsRequest>, UpdateSynonymOptionsRequest> {
 
     public Request<UpdateSynonymOptionsRequest> marshall(UpdateSynonymOptionsRequest updateSynonymOptionsRequest) {

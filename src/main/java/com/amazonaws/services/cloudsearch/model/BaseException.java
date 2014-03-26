@@ -20,7 +20,9 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * An error occurred while processing the request.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.BaseException} instead.
+ */
+ @Deprecated
 public class BaseException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
@@ -29,7 +31,7 @@ public class BaseException extends AmazonServiceException {
     /**
      * Constructs a new BaseException with the specified error
      * message.
-     * 
+     *
      * @param message Describes the error encountered.
      */
     public BaseException(String message) {
@@ -39,16 +41,16 @@ public class BaseException extends AmazonServiceException {
     /**
      * Returns the value of the Code property for this object.
      *
-     * @return The value of the Code property for this object.         
+     * @return The value of the Code property for this object.
      */
     public String getCode() {
         return code;
     }
-        
+
     /**
      * Sets the value of the Code property for this object.
      *
-     * @param code The new value for this object's Code property. 
+     * @param code The new value for this object's Code property.
      */
     public void setCode(String code) {
         this.code = code;

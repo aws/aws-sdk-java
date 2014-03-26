@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Source Data Map StAX Unmarshaller
  */
+ @Deprecated
 public class SourceDataMapStaxUnmarshaller implements Unmarshaller<SourceDataMap, StaxUnmarshallerContext> {
     private static class CasesMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {
         @Override

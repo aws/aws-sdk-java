@@ -336,7 +336,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * @see GetObjectRequest#withRange(long, long)
      */
     public long[] getRange() {
-        return range;
+        return range == null ? null : range.clone();
     }
 
     /**

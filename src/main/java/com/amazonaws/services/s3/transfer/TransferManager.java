@@ -37,6 +37,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerCallbackExecutor;
@@ -94,20 +95,24 @@ import com.amazonaws.util.VersionInfoUtils;
  * <code>TransferManager</code> is responsible for managing resources such as
  * connections and threads; share a single instance of
  * <code>TransferManager</code> whenever possible. <code>TransferManager</code>,
- * like all the client classes in the AWS SDK for Java, is thread safe.
+ * like all the client classes in the AWS SDK for Java, is thread safe. Call
+ * <code> TransferManager.shutdownNow()</code> to release the resources once the
+ * transfer is complete.
  * <p>
  * Using <code>TransferManager</code> to upload options to Amazon S3 is easy:
  *
  * <pre>
- * AWSCredentials myCredentials = new BasicAWSCredentials(...);
- * TransferManager tx = new TransferManager(myCredentials);
+ * DefaultAWSCredentialsProviderChain credentialProviderChain = new DefaultAWSCredentialsProviderChain();
+ * TransferManager tx = new TransferManager(
+ * 		credentialProviderChain.getCredentials());
  * Upload myUpload = tx.upload(myBucket, myFile.getName(), myFile);
  *
  * // You can poll your transfer's status to check its progress
  * if (myUpload.isDone() == false) {
- *     System.out.println("Transfer: " + myUpload.getDescription());
- *     System.out.println("  - State: " + myUpload.getState());
- *     System.out.println("  - Progress: " + myUpload.getProgress().getBytesTransferred());
+ * 	System.out.println("Transfer: " + myUpload.getDescription());
+ * 	System.out.println("  - State: " + myUpload.getState());
+ * 	System.out.println("  - Progress: "
+ * 			+ myUpload.getProgress().getBytesTransferred());
  * }
  *
  * // Transfers also allow you to set a <code>ProgressListener</code> to receive
@@ -115,9 +120,12 @@ import com.amazonaws.util.VersionInfoUtils;
  * myUpload.addProgressListener(myProgressListener);
  *
  * // Or you can block the current thread and wait for your transfer to
- * // to complete.  If the transfer fails, this method will throw an
+ * // to complete. If the transfer fails, this method will throw an
  * // AmazonClientException or AmazonServiceException detailing the reason.
  * myUpload.waitForCompletion();
+ *
+ * // After the upload is complete, call shutdownNow to release the resources.
+ * tx.shutdownNow();
  * </pre>
  * <p>
  * Note: Transfers are stored in memory. If the JVM is restarted, previous
@@ -139,6 +147,19 @@ public class TransferManager {
 
     private static final Log log = LogFactory.getLog(TransferManager.class);
 
+    /**
+     * Constructs a new <code>TransferManager</code> and Amazon S3 client using
+     * the credentials from <code>DefaultAWSCredentialsProviderChain</code>
+     * <p>
+     * <code>TransferManager</code> and client objects may pool connections and
+     * threads. Reuse <code>TransferManager</code> and client objects and share
+     * them throughout applications.
+     * <p>
+     * TransferManager and all AWS client objects are thread safe.
+     */
+    public TransferManager(){
+        this(new AmazonS3Client(new DefaultAWSCredentialsProviderChain()));
+    }
 
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using
@@ -1319,5 +1340,12 @@ public class TransferManager {
         if (parameterValue == null) throw new IllegalArgumentException(errorMessage);
     }
 
-
+    /**
+     * Releasing all resources created by <code>TransferManager</code> before it
+     * is being garbage collected.
+     */
+    @Override
+    protected void finalize() throws Throwable {
+        shutdownNow(false);
+    }
 }

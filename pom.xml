@@ -6,7 +6,7 @@
     <artifactId>aws-java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>AWS SDK for Java</name>
-    <version>1.7.4</version>
+    <version>1.7.5</version>
     <description>The Amazon Web Services SDK for Java provides Java APIs for building software on AWS' cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
     <url>https://aws.amazon.com/sdkforjava</url>
 
@@ -165,6 +165,17 @@
             <source>1.5</source>
             <target>1.5</target>
             <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.9.1</version>
+          <configuration>
+            <excludePackageNames>*.internal:*.transform</excludePackageNames>
+            <minmemory>128m</minmemory>
+            <maxmemory>1024m</maxmemory>
           </configuration>
         </plugin>
       </plugins>

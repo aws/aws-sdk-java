@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Domain Status StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DomainStatusStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class DomainStatusStaxUnmarshaller implements Unmarshaller<DomainStatus, StaxUnmarshallerContext> {
 
     public DomainStatus unmarshall(StaxUnmarshallerContext context) throws Exception {

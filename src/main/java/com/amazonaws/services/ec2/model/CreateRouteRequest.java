@@ -27,7 +27,7 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  * </p>
  * <p>
  * You must specify one of the following targets: Internet gateway, NAT
- * instance, or network interface.
+ * instance, VPC peering connection, or network interface.
  * </p>
  * <p>
  * When determining how to route traffic, we use the route with the most
@@ -90,6 +90,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      * The ID of a network interface.
      */
     private String networkInterfaceId;
+
+    /**
+     * The ID of a VPC peering connection.
+     */
+    private String vpcPeeringConnectionId;
 
     /**
      * The ID of the route table for the route.
@@ -275,6 +280,39 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * The ID of a VPC peering connection.
+     *
+     * @return The ID of a VPC peering connection.
+     */
+    public String getVpcPeeringConnectionId() {
+        return vpcPeeringConnectionId;
+    }
+    
+    /**
+     * The ID of a VPC peering connection.
+     *
+     * @param vpcPeeringConnectionId The ID of a VPC peering connection.
+     */
+    public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
+    }
+    
+    /**
+     * The ID of a VPC peering connection.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcPeeringConnectionId The ID of a VPC peering connection.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateRouteRequest withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -302,7 +340,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
         if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() );
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getVpcPeeringConnectionId() != null) sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() );
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +356,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode()); 
         return hashCode;
     }
     
@@ -338,6 +378,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null) return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
+        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null) return false;
+        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false) return false; 
         return true;
     }
     

@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Default Search Field Status StAX Unmarshaller
  */
+ @Deprecated
 public class DefaultSearchFieldStatusStaxUnmarshaller implements Unmarshaller<DefaultSearchFieldStatus, StaxUnmarshallerContext> {
 
     public DefaultSearchFieldStatus unmarshall(StaxUnmarshallerContext context) throws Exception {

@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * The result of an <code>IndexDocuments</code> action.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.IndexDocumentsResult} instead.
  */
+@Deprecated
 public class IndexDocumentsResult implements Serializable {
 
     /**

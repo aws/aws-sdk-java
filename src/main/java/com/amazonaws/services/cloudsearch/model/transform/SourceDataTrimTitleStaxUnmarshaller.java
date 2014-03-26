@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Source Data Trim Title StAX Unmarshaller
  */
+ @Deprecated
 public class SourceDataTrimTitleStaxUnmarshaller implements Unmarshaller<SourceDataTrimTitle, StaxUnmarshallerContext> {
 
     public SourceDataTrimTitle unmarshall(StaxUnmarshallerContext context) throws Exception {

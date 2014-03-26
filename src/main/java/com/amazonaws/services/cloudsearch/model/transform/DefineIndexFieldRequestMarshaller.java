@@ -27,7 +27,9 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Define Index Field Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DefineIndexFieldRequestMarshaller} instead.
  */
+ @Deprecated
 public class DefineIndexFieldRequestMarshaller implements Marshaller<Request<DefineIndexFieldRequest>, DefineIndexFieldRequest> {
 
     public Request<DefineIndexFieldRequest> marshall(DefineIndexFieldRequest defineIndexFieldRequest) {

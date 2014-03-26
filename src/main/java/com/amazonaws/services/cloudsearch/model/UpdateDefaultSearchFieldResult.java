@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the status of an updated default
- * search field.
+ * A response message that contains the status of an updated default search field.
  * </p>
  */
+@Deprecated
 public class UpdateDefaultSearchFieldResult implements Serializable {
 
     /**

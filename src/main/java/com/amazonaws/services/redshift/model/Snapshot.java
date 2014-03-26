@@ -44,8 +44,9 @@ public class Snapshot implements Serializable {
      * operation used. <ul> <li><a>CreateClusterSnapshot</a> and
      * <a>CopyClusterSnapshot</a> returns status as "creating". </li>
      * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-     * returns status as "deleted".</li> </ul>
+     * "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
+     * </ul>
      */
     private String status;
 
@@ -281,15 +282,17 @@ public class Snapshot implements Serializable {
      * operation used. <ul> <li><a>CreateClusterSnapshot</a> and
      * <a>CopyClusterSnapshot</a> returns status as "creating". </li>
      * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-     * returns status as "deleted".</li> </ul>
+     * "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
+     * </ul>
      *
      * @return The snapshot status. The value of the status depends on the API
      *         operation used. <ul> <li><a>CreateClusterSnapshot</a> and
      *         <a>CopyClusterSnapshot</a> returns status as "creating". </li>
      *         <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     *         "available", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-     *         returns status as "deleted".</li> </ul>
+     *         "available", "final snapshot", or "failed".</li>
+     *         <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
+     *         </ul>
      */
     public String getStatus() {
         return status;
@@ -300,15 +303,17 @@ public class Snapshot implements Serializable {
      * operation used. <ul> <li><a>CreateClusterSnapshot</a> and
      * <a>CopyClusterSnapshot</a> returns status as "creating". </li>
      * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-     * returns status as "deleted".</li> </ul>
+     * "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
+     * </ul>
      *
      * @param status The snapshot status. The value of the status depends on the API
      *         operation used. <ul> <li><a>CreateClusterSnapshot</a> and
      *         <a>CopyClusterSnapshot</a> returns status as "creating". </li>
      *         <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     *         "available", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-     *         returns status as "deleted".</li> </ul>
+     *         "available", "final snapshot", or "failed".</li>
+     *         <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
+     *         </ul>
      */
     public void setStatus(String status) {
         this.status = status;
@@ -319,8 +324,9 @@ public class Snapshot implements Serializable {
      * operation used. <ul> <li><a>CreateClusterSnapshot</a> and
      * <a>CopyClusterSnapshot</a> returns status as "creating". </li>
      * <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     * "available", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-     * returns status as "deleted".</li> </ul>
+     * "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -328,8 +334,9 @@ public class Snapshot implements Serializable {
      *         operation used. <ul> <li><a>CreateClusterSnapshot</a> and
      *         <a>CopyClusterSnapshot</a> returns status as "creating". </li>
      *         <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-     *         "available", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-     *         returns status as "deleted".</li> </ul>
+     *         "available", "final snapshot", or "failed".</li>
+     *         <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

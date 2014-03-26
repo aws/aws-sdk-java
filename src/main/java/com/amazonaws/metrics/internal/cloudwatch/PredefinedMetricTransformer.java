@@ -26,6 +26,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.ThreadSafe;
 
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.metrics.MetricType;
@@ -101,7 +102,11 @@ public class PredefinedMetricTransformer {
             }
         }
         if (log.isDebugEnabled()) {
-            log.debug("No request metric transformer can be found for metric type " + metricType.name());
+            AmazonWebServiceRequest origReq = request == null ? null : request
+                    .getOriginalRequest();
+            String reqClassName = origReq == null ? null : origReq.getClass().getName();
+            log.debug("No request metric transformer can be found for metric type "
+                    + metricType.name() + " for " + reqClassName);
         }
         return Collections.emptyList();
     }

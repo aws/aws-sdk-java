@@ -27,7 +27,9 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Index Field Request Marshaller
+  * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DeleteIndexFieldRequestMarshaller} instead.
  */
+ @Deprecated
 public class DeleteIndexFieldRequestMarshaller implements Marshaller<Request<DeleteIndexFieldRequest>, DeleteIndexFieldRequest> {
 
     public Request<DeleteIndexFieldRequest> marshall(DeleteIndexFieldRequest deleteIndexFieldRequest) {

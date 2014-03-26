@@ -1082,8 +1082,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         // Range
-        if (getObjectRequest.getRange() != null) {
-            long[] range = getObjectRequest.getRange();
+        long[] range = getObjectRequest.getRange();
+        if (range != null) {
             request.addHeader(Headers.RANGE, "bytes=" + Long.toString(range[0]) + "-" + Long.toString(range[1]));
         }
 

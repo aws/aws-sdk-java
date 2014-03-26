@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * Options that define a text field in the search index.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.TextOptions} instead.
  */
+@Deprecated
 public class TextOptions implements Serializable {
 
     /**

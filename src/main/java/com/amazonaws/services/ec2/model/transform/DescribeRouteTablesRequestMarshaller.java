@@ -38,7 +38,7 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeRouteTablesRequest> request = new DefaultRequest<DescribeRouteTablesRequest>(describeRouteTablesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRouteTables");
-        request.addParameter("Version", "2013-10-15");
+        request.addParameter("Version", "2014-02-01");
 
         java.util.List<String> routeTableIdsList = describeRouteTablesRequest.getRouteTableIds();
         int routeTableIdsListIndex = 1;

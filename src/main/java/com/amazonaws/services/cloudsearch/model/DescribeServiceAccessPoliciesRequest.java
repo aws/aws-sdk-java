@@ -21,12 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest) DescribeServiceAccessPolicies operation}.
  * <p>
- * Gets information about the resource-based policies that control access
- * to the domain's document and search services.
+ * Gets information about the resource-based policies that control access to the domain's document and search services.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest)
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.DescribeServiceAccessPoliciesRequest} instead.
  */
+@Deprecated
 public class DescribeServiceAccessPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**

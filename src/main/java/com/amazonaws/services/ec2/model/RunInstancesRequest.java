@@ -70,8 +70,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * The minimum number of instances to launch. If you specify a minimum
      * that is more instances than Amazon EC2 can launch in the target
      * Availability Zone, Amazon EC2 launches no instances. <p>Constraints:
-     * Between 1 and the maximum number allowed for your account (the default
-     * for each account is 20, but this limit can be increased).
+     * Between 1 and the maximum number you're allowed for the specified
+     * instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      */
     private Integer minCount;
 
@@ -80,8 +84,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * instances than Amazon EC2 can launch in the target Availability Zone,
      * Amazon EC2 launches the largest possible number of instances above
      * <code>MinCount</code>. <p>Constraints: Between 1 and the maximum
-     * number allowed for your account (the default limit for each account is
-     * 20, but this limit can be increased).
+     * number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase,
+     * see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      */
     private Integer maxCount;
 
@@ -242,15 +250,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param minCount The minimum number of instances to launch. If you
      * specify a minimum that is more instances than Amazon EC2 can launch in
      * the target Availability Zone, Amazon EC2 launches no instances.
-     * <p>Constraints: Between 1 and the maximum number allowed for your
-     * account (the default for each account is 20, but this limit can be
-     * increased).
+     * <p>Constraints: Between 1 and the maximum number you're allowed for
+     * the specified instance type. For more information about the default
+     * limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      * @param maxCount The maximum number of instances to launch. If you
      * specify more instances than Amazon EC2 can launch in the target
      * Availability Zone, Amazon EC2 launches the largest possible number of
      * instances above <code>MinCount</code>. <p>Constraints: Between 1 and
-     * the maximum number allowed for your account (the default limit for
-     * each account is 20, but this limit can be increased).
+     * the maximum number you're allowed for the specified instance type. For
+     * more information about the default limits, and how to request an
+     * increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      */
     public RunInstancesRequest(String imageId, Integer minCount, Integer maxCount) {
         setImageId(imageId);
@@ -295,14 +310,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * The minimum number of instances to launch. If you specify a minimum
      * that is more instances than Amazon EC2 can launch in the target
      * Availability Zone, Amazon EC2 launches no instances. <p>Constraints:
-     * Between 1 and the maximum number allowed for your account (the default
-     * for each account is 20, but this limit can be increased).
+     * Between 1 and the maximum number you're allowed for the specified
+     * instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      *
      * @return The minimum number of instances to launch. If you specify a minimum
      *         that is more instances than Amazon EC2 can launch in the target
      *         Availability Zone, Amazon EC2 launches no instances. <p>Constraints:
-     *         Between 1 and the maximum number allowed for your account (the default
-     *         for each account is 20, but this limit can be increased).
+     *         Between 1 and the maximum number you're allowed for the specified
+     *         instance type. For more information about the default limits, and how
+     *         to request an increase, see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     *         FAQ.
      */
     public Integer getMinCount() {
         return minCount;
@@ -312,14 +335,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * The minimum number of instances to launch. If you specify a minimum
      * that is more instances than Amazon EC2 can launch in the target
      * Availability Zone, Amazon EC2 launches no instances. <p>Constraints:
-     * Between 1 and the maximum number allowed for your account (the default
-     * for each account is 20, but this limit can be increased).
+     * Between 1 and the maximum number you're allowed for the specified
+     * instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      *
      * @param minCount The minimum number of instances to launch. If you specify a minimum
      *         that is more instances than Amazon EC2 can launch in the target
      *         Availability Zone, Amazon EC2 launches no instances. <p>Constraints:
-     *         Between 1 and the maximum number allowed for your account (the default
-     *         for each account is 20, but this limit can be increased).
+     *         Between 1 and the maximum number you're allowed for the specified
+     *         instance type. For more information about the default limits, and how
+     *         to request an increase, see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     *         FAQ.
      */
     public void setMinCount(Integer minCount) {
         this.minCount = minCount;
@@ -329,16 +360,24 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * The minimum number of instances to launch. If you specify a minimum
      * that is more instances than Amazon EC2 can launch in the target
      * Availability Zone, Amazon EC2 launches no instances. <p>Constraints:
-     * Between 1 and the maximum number allowed for your account (the default
-     * for each account is 20, but this limit can be increased).
+     * Between 1 and the maximum number you're allowed for the specified
+     * instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minCount The minimum number of instances to launch. If you specify a minimum
      *         that is more instances than Amazon EC2 can launch in the target
      *         Availability Zone, Amazon EC2 launches no instances. <p>Constraints:
-     *         Between 1 and the maximum number allowed for your account (the default
-     *         for each account is 20, but this limit can be increased).
+     *         Between 1 and the maximum number you're allowed for the specified
+     *         instance type. For more information about the default limits, and how
+     *         to request an increase, see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     *         FAQ.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -353,15 +392,23 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * instances than Amazon EC2 can launch in the target Availability Zone,
      * Amazon EC2 launches the largest possible number of instances above
      * <code>MinCount</code>. <p>Constraints: Between 1 and the maximum
-     * number allowed for your account (the default limit for each account is
-     * 20, but this limit can be increased).
+     * number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase,
+     * see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      *
      * @return The maximum number of instances to launch. If you specify more
      *         instances than Amazon EC2 can launch in the target Availability Zone,
      *         Amazon EC2 launches the largest possible number of instances above
      *         <code>MinCount</code>. <p>Constraints: Between 1 and the maximum
-     *         number allowed for your account (the default limit for each account is
-     *         20, but this limit can be increased).
+     *         number you're allowed for the specified instance type. For more
+     *         information about the default limits, and how to request an increase,
+     *         see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     *         FAQ.
      */
     public Integer getMaxCount() {
         return maxCount;
@@ -372,15 +419,23 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * instances than Amazon EC2 can launch in the target Availability Zone,
      * Amazon EC2 launches the largest possible number of instances above
      * <code>MinCount</code>. <p>Constraints: Between 1 and the maximum
-     * number allowed for your account (the default limit for each account is
-     * 20, but this limit can be increased).
+     * number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase,
+     * see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      *
      * @param maxCount The maximum number of instances to launch. If you specify more
      *         instances than Amazon EC2 can launch in the target Availability Zone,
      *         Amazon EC2 launches the largest possible number of instances above
      *         <code>MinCount</code>. <p>Constraints: Between 1 and the maximum
-     *         number allowed for your account (the default limit for each account is
-     *         20, but this limit can be increased).
+     *         number you're allowed for the specified instance type. For more
+     *         information about the default limits, and how to request an increase,
+     *         see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     *         FAQ.
      */
     public void setMaxCount(Integer maxCount) {
         this.maxCount = maxCount;
@@ -391,8 +446,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * instances than Amazon EC2 can launch in the target Availability Zone,
      * Amazon EC2 launches the largest possible number of instances above
      * <code>MinCount</code>. <p>Constraints: Between 1 and the maximum
-     * number allowed for your account (the default limit for each account is
-     * 20, but this limit can be increased).
+     * number you're allowed for the specified instance type. For more
+     * information about the default limits, and how to request an increase,
+     * see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     * FAQ.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -400,8 +459,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         instances than Amazon EC2 can launch in the target Availability Zone,
      *         Amazon EC2 launches the largest possible number of instances above
      *         <code>MinCount</code>. <p>Constraints: Between 1 and the maximum
-     *         number allowed for your account (the default limit for each account is
-     *         20, but this limit can be increased).
+     *         number you're allowed for the specified instance type. For more
+     *         information about the default limits, and how to request an increase,
+     *         see <a
+     *         href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
+     *         FAQ.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

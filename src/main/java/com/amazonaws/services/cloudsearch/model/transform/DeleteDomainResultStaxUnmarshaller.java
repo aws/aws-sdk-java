@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Delete Domain Result StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DeleteDomainResultStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class DeleteDomainResultStaxUnmarshaller implements Unmarshaller<DeleteDomainResult, StaxUnmarshallerContext> {
 
     public DeleteDomainResult unmarshall(StaxUnmarshallerContext context) throws Exception {

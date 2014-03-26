@@ -31,9 +31,8 @@ public class HsmClientCertificate implements Serializable {
     private String hsmClientCertificateIdentifier;
 
     /**
-     * The public key that the Amazon Redshift cluster will use to retrieve
-     * the client certificate from the HSM. You must register the public key
-     * in the HSM.
+     * The public key that the Amazon Redshift cluster will use to connect to
+     * the HSM. You must register the public key in the HSM.
      */
     private String hsmClientCertificatePublicKey;
 
@@ -71,41 +70,35 @@ public class HsmClientCertificate implements Serializable {
     }
 
     /**
-     * The public key that the Amazon Redshift cluster will use to retrieve
-     * the client certificate from the HSM. You must register the public key
-     * in the HSM.
+     * The public key that the Amazon Redshift cluster will use to connect to
+     * the HSM. You must register the public key in the HSM.
      *
-     * @return The public key that the Amazon Redshift cluster will use to retrieve
-     *         the client certificate from the HSM. You must register the public key
-     *         in the HSM.
+     * @return The public key that the Amazon Redshift cluster will use to connect to
+     *         the HSM. You must register the public key in the HSM.
      */
     public String getHsmClientCertificatePublicKey() {
         return hsmClientCertificatePublicKey;
     }
     
     /**
-     * The public key that the Amazon Redshift cluster will use to retrieve
-     * the client certificate from the HSM. You must register the public key
-     * in the HSM.
+     * The public key that the Amazon Redshift cluster will use to connect to
+     * the HSM. You must register the public key in the HSM.
      *
-     * @param hsmClientCertificatePublicKey The public key that the Amazon Redshift cluster will use to retrieve
-     *         the client certificate from the HSM. You must register the public key
-     *         in the HSM.
+     * @param hsmClientCertificatePublicKey The public key that the Amazon Redshift cluster will use to connect to
+     *         the HSM. You must register the public key in the HSM.
      */
     public void setHsmClientCertificatePublicKey(String hsmClientCertificatePublicKey) {
         this.hsmClientCertificatePublicKey = hsmClientCertificatePublicKey;
     }
     
     /**
-     * The public key that the Amazon Redshift cluster will use to retrieve
-     * the client certificate from the HSM. You must register the public key
-     * in the HSM.
+     * The public key that the Amazon Redshift cluster will use to connect to
+     * the HSM. You must register the public key in the HSM.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hsmClientCertificatePublicKey The public key that the Amazon Redshift cluster will use to retrieve
-     *         the client certificate from the HSM. You must register the public key
-     *         in the HSM.
+     * @param hsmClientCertificatePublicKey The public key that the Amazon Redshift cluster will use to connect to
+     *         the HSM. You must register the public key in the HSM.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

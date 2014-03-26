@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * The value of an <code>IndexField</code> and its current status.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.IndexFieldStatus} instead.
  */
+@Deprecated
 public class IndexFieldStatus implements Serializable {
 
     /**

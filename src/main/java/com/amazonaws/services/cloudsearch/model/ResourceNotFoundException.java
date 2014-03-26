@@ -18,17 +18,18 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because it attempted to reference a resource
- * that does not exist.
+ * The request was rejected because it attempted to reference a resource that does not exist.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.ResourceNotFoundException} instead.
+ */
+ @Deprecated
 public class ResourceNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
      * Constructs a new ResourceNotFoundException with the specified error
      * message.
-     * 
+     *
      * @param message Describes the error encountered.
      */
     public ResourceNotFoundException(String message) {

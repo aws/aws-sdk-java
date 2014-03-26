@@ -80,7 +80,7 @@ public class VpnConnection implements Serializable {
     private VpnConnectionOptions options;
 
     /**
-     * The static routes assoicated with the VPN connection.
+     * The static routes associated with the VPN connection.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpnStaticRoute> routes;
 
@@ -580,9 +580,9 @@ public class VpnConnection implements Serializable {
     }
 
     /**
-     * The static routes assoicated with the VPN connection.
+     * The static routes associated with the VPN connection.
      *
-     * @return The static routes assoicated with the VPN connection.
+     * @return The static routes associated with the VPN connection.
      */
     public java.util.List<VpnStaticRoute> getRoutes() {
         if (routes == null) {
@@ -593,9 +593,9 @@ public class VpnConnection implements Serializable {
     }
     
     /**
-     * The static routes assoicated with the VPN connection.
+     * The static routes associated with the VPN connection.
      *
-     * @param routes The static routes assoicated with the VPN connection.
+     * @param routes The static routes associated with the VPN connection.
      */
     public void setRoutes(java.util.Collection<VpnStaticRoute> routes) {
         if (routes == null) {
@@ -608,11 +608,11 @@ public class VpnConnection implements Serializable {
     }
     
     /**
-     * The static routes assoicated with the VPN connection.
+     * The static routes associated with the VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routes The static routes assoicated with the VPN connection.
+     * @param routes The static routes associated with the VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -626,11 +626,11 @@ public class VpnConnection implements Serializable {
     }
     
     /**
-     * The static routes assoicated with the VPN connection.
+     * The static routes associated with the VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routes The static routes assoicated with the VPN connection.
+     * @param routes The static routes associated with the VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

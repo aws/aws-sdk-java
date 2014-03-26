@@ -18,12 +18,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Defines a field in the index, including its name, type, and the source
- * of its data. The <code>IndexFieldType</code> indicates which of the
- * options will be present. It is invalid to specify options for a type
- * other than the <code>IndexFieldType</code> .
+ * Defines a field in the index, including its name, type, and the source of its data. The <code>IndexFieldType</code> indicates which of the options
+ * will be present. It is invalid to specify options for a type other than the <code>IndexFieldType</code> .
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.IndexField} instead.
  */
+@Deprecated
 public class IndexField implements Serializable {
 
     /**

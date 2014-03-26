@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Option Status StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.OptionStatusStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class OptionStatusStaxUnmarshaller implements Unmarshaller<OptionStatus, StaxUnmarshallerContext> {
 
     public OptionStatus unmarshall(StaxUnmarshallerContext context) throws Exception {

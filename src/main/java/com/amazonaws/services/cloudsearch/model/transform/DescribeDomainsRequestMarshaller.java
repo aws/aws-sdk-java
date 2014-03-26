@@ -27,7 +27,9 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Domains Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DescribeDomainsRequestMarshaller} instead.
  */
+ @Deprecated
 public class DescribeDomainsRequestMarshaller implements Marshaller<Request<DescribeDomainsRequest>, DescribeDomainsRequest> {
 
     public Request<DescribeDomainsRequest> marshall(DescribeDomainsRequest describeDomainsRequest) {

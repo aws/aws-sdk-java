@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Index Field StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.IndexFieldStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class IndexFieldStaxUnmarshaller implements Unmarshaller<IndexField, StaxUnmarshallerContext> {
 
     public IndexField unmarshall(StaxUnmarshallerContext context) throws Exception {

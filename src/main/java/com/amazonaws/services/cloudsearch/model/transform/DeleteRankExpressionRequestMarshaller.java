@@ -28,6 +28,7 @@ import com.amazonaws.util.StringUtils;
 /**
  * Delete Rank Expression Request Marshaller
  */
+ @Deprecated
 public class DeleteRankExpressionRequestMarshaller implements Marshaller<Request<DeleteRankExpressionRequest>, DeleteRankExpressionRequest> {
 
     public Request<DeleteRankExpressionRequest> marshall(DeleteRankExpressionRequest deleteRankExpressionRequest) {

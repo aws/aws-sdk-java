@@ -21,7 +21,10 @@ import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.cloudsearch.model.LimitExceededException;
-
+/**
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.LimitExceededExceptionUnmarshaller} instead.
+ */
+@Deprecated
 public class LimitExceededExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public LimitExceededExceptionUnmarshaller() {

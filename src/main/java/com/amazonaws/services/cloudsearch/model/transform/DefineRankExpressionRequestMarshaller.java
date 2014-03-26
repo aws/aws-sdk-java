@@ -28,6 +28,7 @@ import com.amazonaws.util.StringUtils;
 /**
  * Define Rank Expression Request Marshaller
  */
+ @Deprecated
 public class DefineRankExpressionRequestMarshaller implements Marshaller<Request<DefineRankExpressionRequest>, DefineRankExpressionRequest> {
 
     public Request<DefineRankExpressionRequest> marshall(DefineRankExpressionRequest defineRankExpressionRequest) {

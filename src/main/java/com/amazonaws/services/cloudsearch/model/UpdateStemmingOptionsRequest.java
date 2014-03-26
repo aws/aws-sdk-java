@@ -21,13 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStemmingOptions(UpdateStemmingOptionsRequest) UpdateStemmingOptions operation}.
  * <p>
- * Configures a stemming dictionary for the search domain. The stemming
- * dictionary is used during indexing and when processing search
- * requests. The maximum size of the stemming dictionary is 500 KB.
+ * Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search requests. The
+ * maximum size of the stemming dictionary is 500 KB.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStemmingOptions(UpdateStemmingOptionsRequest)
  */
+@Deprecated
 public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**

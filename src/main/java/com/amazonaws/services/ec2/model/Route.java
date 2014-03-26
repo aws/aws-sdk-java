@@ -49,6 +49,11 @@ public class Route implements Serializable {
     private String networkInterfaceId;
 
     /**
+     * The ID of the VPC peering connection.
+     */
+    private String vpcPeeringConnectionId;
+
+    /**
      * The state of the route. The <code>blackhole</code> state indicates
      * that the route's target isn't available (for example, the specified
      * gateway isn't attached to the VPC, or the specified NAT instance has
@@ -59,6 +64,18 @@ public class Route implements Serializable {
      */
     private String state;
 
+    /**
+     * Describes how the route was created. <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was
+     * automatically created when the route table was created.</li>
+     * <li><code>CreateRoute</code> indicates that the route was manually
+     * added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     * was propagated by route propagation.</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
+     */
     private String origin;
 
     /**
@@ -227,6 +244,39 @@ public class Route implements Serializable {
     }
 
     /**
+     * The ID of the VPC peering connection.
+     *
+     * @return The ID of the VPC peering connection.
+     */
+    public String getVpcPeeringConnectionId() {
+        return vpcPeeringConnectionId;
+    }
+    
+    /**
+     * The ID of the VPC peering connection.
+     *
+     * @param vpcPeeringConnectionId The ID of the VPC peering connection.
+     */
+    public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
+    }
+    
+    /**
+     * The ID of the VPC peering connection.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcPeeringConnectionId The ID of the VPC peering connection.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Route withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
+        return this;
+    }
+
+    /**
      * The state of the route. The <code>blackhole</code> state indicates
      * that the route's target isn't available (for example, the specified
      * gateway isn't attached to the VPC, or the specified NAT instance has
@@ -339,12 +389,24 @@ public class Route implements Serializable {
     }
 
     /**
-     * Returns the value of the Origin property for this object.
+     * Describes how the route was created. <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was
+     * automatically created when the route table was created.</li>
+     * <li><code>CreateRoute</code> indicates that the route was manually
+     * added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     * was propagated by route propagation.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
      *
-     * @return The value of the Origin property for this object.
+     * @return Describes how the route was created. <ul>
+     *         <li><code>CreateRouteTable</code> indicates that route was
+     *         automatically created when the route table was created.</li>
+     *         <li><code>CreateRoute</code> indicates that the route was manually
+     *         added to the route table.</li>
+     *         <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     *         was propagated by route propagation.</li> </ul>
      *
      * @see RouteOrigin
      */
@@ -353,12 +415,24 @@ public class Route implements Serializable {
     }
     
     /**
-     * Sets the value of the Origin property for this object.
+     * Describes how the route was created. <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was
+     * automatically created when the route table was created.</li>
+     * <li><code>CreateRoute</code> indicates that the route was manually
+     * added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     * was propagated by route propagation.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
      *
-     * @param origin The new value for the Origin property for this object.
+     * @param origin Describes how the route was created. <ul>
+     *         <li><code>CreateRouteTable</code> indicates that route was
+     *         automatically created when the route table was created.</li>
+     *         <li><code>CreateRoute</code> indicates that the route was manually
+     *         added to the route table.</li>
+     *         <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     *         was propagated by route propagation.</li> </ul>
      *
      * @see RouteOrigin
      */
@@ -367,14 +441,26 @@ public class Route implements Serializable {
     }
     
     /**
-     * Sets the value of the Origin property for this object.
+     * Describes how the route was created. <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was
+     * automatically created when the route table was created.</li>
+     * <li><code>CreateRoute</code> indicates that the route was manually
+     * added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     * was propagated by route propagation.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
      *
-     * @param origin The new value for the Origin property for this object.
+     * @param origin Describes how the route was created. <ul>
+     *         <li><code>CreateRouteTable</code> indicates that route was
+     *         automatically created when the route table was created.</li>
+     *         <li><code>CreateRoute</code> indicates that the route was manually
+     *         added to the route table.</li>
+     *         <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     *         was propagated by route propagation.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -387,12 +473,24 @@ public class Route implements Serializable {
     }
 
     /**
-     * Sets the value of the Origin property for this object.
+     * Describes how the route was created. <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was
+     * automatically created when the route table was created.</li>
+     * <li><code>CreateRoute</code> indicates that the route was manually
+     * added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     * was propagated by route propagation.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
      *
-     * @param origin The new value for the Origin property for this object.
+     * @param origin Describes how the route was created. <ul>
+     *         <li><code>CreateRouteTable</code> indicates that route was
+     *         automatically created when the route table was created.</li>
+     *         <li><code>CreateRoute</code> indicates that the route was manually
+     *         added to the route table.</li>
+     *         <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     *         was propagated by route propagation.</li> </ul>
      *
      * @see RouteOrigin
      */
@@ -401,14 +499,26 @@ public class Route implements Serializable {
     }
     
     /**
-     * Sets the value of the Origin property for this object.
+     * Describes how the route was created. <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was
+     * automatically created when the route table was created.</li>
+     * <li><code>CreateRoute</code> indicates that the route was manually
+     * added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     * was propagated by route propagation.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation
      *
-     * @param origin The new value for the Origin property for this object.
+     * @param origin Describes how the route was created. <ul>
+     *         <li><code>CreateRouteTable</code> indicates that route was
+     *         automatically created when the route table was created.</li>
+     *         <li><code>CreateRoute</code> indicates that the route was manually
+     *         added to the route table.</li>
+     *         <li><code>EnableVgwRoutePropagation</code> indicates that the route
+     *         was propagated by route propagation.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -437,6 +547,7 @@ public class Route implements Serializable {
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");
         if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getVpcPeeringConnectionId() != null) sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
         if (getState() != null) sb.append("State: " + getState() + ",");
         if (getOrigin() != null) sb.append("Origin: " + getOrigin() );
         sb.append("}");
@@ -453,6 +564,7 @@ public class Route implements Serializable {
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode()); 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode()); 
         return hashCode;
@@ -476,6 +588,8 @@ public class Route implements Serializable {
         if (other.getInstanceOwnerId() != null && other.getInstanceOwnerId().equals(this.getInstanceOwnerId()) == false) return false; 
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null) return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
+        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null) return false;
+        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false) return false; 
         if (other.getState() == null ^ this.getState() == null) return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
         if (other.getOrigin() == null ^ this.getOrigin() == null) return false;

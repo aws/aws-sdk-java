@@ -21,7 +21,10 @@ import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.cloudsearch.model.ResourceNotFoundException;
-
+/**
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.ResourceNotFoundExceptionUnmarshaller} instead.
+ */
+@Deprecated
 public class ResourceNotFoundExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public ResourceNotFoundExceptionUnmarshaller() {

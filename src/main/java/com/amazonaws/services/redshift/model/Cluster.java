@@ -190,6 +190,11 @@ public class Cluster implements Serializable {
     private ElasticIpStatus elasticIpStatus;
 
     /**
+     * The specific revision number of the database in the cluster.
+     */
+    private String clusterRevisionNumber;
+
+    /**
      * The unique identifier of the cluster.
      *
      * @return The unique identifier of the cluster.
@@ -1459,6 +1464,39 @@ public class Cluster implements Serializable {
     }
 
     /**
+     * The specific revision number of the database in the cluster.
+     *
+     * @return The specific revision number of the database in the cluster.
+     */
+    public String getClusterRevisionNumber() {
+        return clusterRevisionNumber;
+    }
+    
+    /**
+     * The specific revision number of the database in the cluster.
+     *
+     * @param clusterRevisionNumber The specific revision number of the database in the cluster.
+     */
+    public void setClusterRevisionNumber(String clusterRevisionNumber) {
+        this.clusterRevisionNumber = clusterRevisionNumber;
+    }
+    
+    /**
+     * The specific revision number of the database in the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clusterRevisionNumber The specific revision number of the database in the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Cluster withClusterRevisionNumber(String clusterRevisionNumber) {
+        this.clusterRevisionNumber = clusterRevisionNumber;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1497,7 +1535,8 @@ public class Cluster implements Serializable {
         if (getClusterSnapshotCopyStatus() != null) sb.append("ClusterSnapshotCopyStatus: " + getClusterSnapshotCopyStatus() + ",");
         if (getClusterPublicKey() != null) sb.append("ClusterPublicKey: " + getClusterPublicKey() + ",");
         if (getClusterNodes() != null) sb.append("ClusterNodes: " + getClusterNodes() + ",");
-        if (getElasticIpStatus() != null) sb.append("ElasticIpStatus: " + getElasticIpStatus() );
+        if (getElasticIpStatus() != null) sb.append("ElasticIpStatus: " + getElasticIpStatus() + ",");
+        if (getClusterRevisionNumber() != null) sb.append("ClusterRevisionNumber: " + getClusterRevisionNumber() );
         sb.append("}");
         return sb.toString();
     }
@@ -1535,6 +1574,7 @@ public class Cluster implements Serializable {
         hashCode = prime * hashCode + ((getClusterPublicKey() == null) ? 0 : getClusterPublicKey().hashCode()); 
         hashCode = prime * hashCode + ((getClusterNodes() == null) ? 0 : getClusterNodes().hashCode()); 
         hashCode = prime * hashCode + ((getElasticIpStatus() == null) ? 0 : getElasticIpStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getClusterRevisionNumber() == null) ? 0 : getClusterRevisionNumber().hashCode()); 
         return hashCode;
     }
     
@@ -1602,6 +1642,8 @@ public class Cluster implements Serializable {
         if (other.getClusterNodes() != null && other.getClusterNodes().equals(this.getClusterNodes()) == false) return false; 
         if (other.getElasticIpStatus() == null ^ this.getElasticIpStatus() == null) return false;
         if (other.getElasticIpStatus() != null && other.getElasticIpStatus().equals(this.getElasticIpStatus()) == false) return false; 
+        if (other.getClusterRevisionNumber() == null ^ this.getClusterRevisionNumber() == null) return false;
+        if (other.getClusterRevisionNumber() != null && other.getClusterRevisionNumber().equals(this.getClusterRevisionNumber()) == false) return false; 
         return true;
     }
     

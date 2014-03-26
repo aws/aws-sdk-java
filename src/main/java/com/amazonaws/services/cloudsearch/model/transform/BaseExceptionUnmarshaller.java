@@ -21,7 +21,10 @@ import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.cloudsearch.model.BaseException;
-
+/**
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.BaseExceptionUnmarshaller} instead.
+ */
+@Deprecated
 public class BaseExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public BaseExceptionUnmarshaller() {

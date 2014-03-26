@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the stopword options for a search
- * domain.
+ * A response message that contains the stopword options for a search domain.
  * </p>
  */
+@Deprecated
 public class DescribeStopwordOptionsResult implements Serializable {
 
     /**

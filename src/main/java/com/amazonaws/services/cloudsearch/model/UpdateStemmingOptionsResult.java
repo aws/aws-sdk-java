@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the status of updated stemming
- * options.
+ * A response message that contains the status of updated stemming options.
  * </p>
  */
+@Deprecated
 public class UpdateStemmingOptionsResult implements Serializable {
 
     /**

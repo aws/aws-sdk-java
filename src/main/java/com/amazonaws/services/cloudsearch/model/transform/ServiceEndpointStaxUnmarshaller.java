@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Service Endpoint StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.ServiceEndpointStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class ServiceEndpointStaxUnmarshaller implements Unmarshaller<ServiceEndpoint, StaxUnmarshallerContext> {
 
     public ServiceEndpoint unmarshall(StaxUnmarshallerContext context) throws Exception {

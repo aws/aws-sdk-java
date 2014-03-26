@@ -34,13 +34,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * sent for all events you want that match those criteria. For example,
  * you can specify source type = cluster, source ID = my-cluster-1 and
  * mycluster2, event categories = Availability, Backup, and severity =
- * ERROR. The subsription will only send notifications for those ERROR
- * events in the Availability and Backup categores for the specified
+ * ERROR. The subscription will only send notifications for those ERROR
+ * events in the Availability and Backup categories for the specified
  * clusters.
  * </p>
  * <p>
  * If you specify both the source type and source IDs, such as source
- * type = cluster and source identifier = my-cluster-1, notifiactions
+ * type = cluster and source identifier = my-cluster-1, notifications
  * will be sent for all the cluster events for my-cluster-1. If you
  * specify a source type but do not specify a source identifier, you will
  * receive notice of the events for the objects of that type in your AWS

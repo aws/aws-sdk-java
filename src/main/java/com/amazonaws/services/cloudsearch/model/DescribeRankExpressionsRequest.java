@@ -21,13 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeRankExpressions(DescribeRankExpressionsRequest) DescribeRankExpressions operation}.
  * <p>
- * Gets the rank expressions configured for the search domain. Can be
- * limited to specific rank expressions by name. Shows all rank
- * expressions by default.
+ * Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank expressions by
+ * default.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeRankExpressions(DescribeRankExpressionsRequest)
  */
+@Deprecated
 public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**

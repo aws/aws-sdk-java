@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * Options that define a literal field in the search index.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.LiteralOptions} instead.
  */
+@Deprecated
 public class LiteralOptions implements Serializable {
 
     /**

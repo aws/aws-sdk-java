@@ -21,6 +21,7 @@ import java.io.Serializable;
  * The value of a <code>RankExpression</code> and its current status.
  * </p>
  */
+@Deprecated
 public class RankExpressionStatus implements Serializable {
 
     /**

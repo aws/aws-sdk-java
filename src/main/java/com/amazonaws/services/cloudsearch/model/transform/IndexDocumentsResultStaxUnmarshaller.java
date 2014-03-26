@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Index Documents Result StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.IndexDocumentsResultStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class IndexDocumentsResultStaxUnmarshaller implements Unmarshaller<IndexDocumentsResult, StaxUnmarshallerContext> {
 
     public IndexDocumentsResult unmarshall(StaxUnmarshallerContext context) throws Exception {

@@ -38,7 +38,7 @@ public class CancelExportTaskRequestMarshaller implements Marshaller<Request<Can
 
         Request<CancelExportTaskRequest> request = new DefaultRequest<CancelExportTaskRequest>(cancelExportTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelExportTask");
-        request.addParameter("Version", "2013-10-15");
+        request.addParameter("Version", "2014-02-01");
 
         if (cancelExportTaskRequest.getExportTaskId() != null) {
             request.addParameter("ExportTaskId", StringUtils.fromString(cancelExportTaskRequest.getExportTaskId()));

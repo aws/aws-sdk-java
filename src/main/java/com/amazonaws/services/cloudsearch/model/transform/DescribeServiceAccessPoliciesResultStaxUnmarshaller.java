@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Describe Service Access Policies Result StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DescribeServiceAccessPoliciesResultStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class DescribeServiceAccessPoliciesResultStaxUnmarshaller implements Unmarshaller<DescribeServiceAccessPoliciesResult, StaxUnmarshallerContext> {
 
     public DescribeServiceAccessPoliciesResult unmarshall(StaxUnmarshallerContext context) throws Exception {

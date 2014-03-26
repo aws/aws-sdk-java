@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * The current status of the search domain.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.DomainStatus} instead.
  */
+@Deprecated
 public class DomainStatus implements Serializable {
 
     /**

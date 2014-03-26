@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeSynonymOptions(DescribeSynonymOptionsRequest)
  */
+@Deprecated
 public class DescribeSynonymOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**

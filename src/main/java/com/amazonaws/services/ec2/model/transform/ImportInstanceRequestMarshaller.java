@@ -38,7 +38,7 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
 
         Request<ImportInstanceRequest> request = new DefaultRequest<ImportInstanceRequest>(importInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ImportInstance");
-        request.addParameter("Version", "2013-10-15");
+        request.addParameter("Version", "2014-02-01");
 
         if (importInstanceRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importInstanceRequest.getDescription()));

@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -25,7 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#deleteIndexField(DeleteIndexFieldRequest)
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.DeleteIndexFieldRequest} instead.
  */
+@Deprecated
 public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
@@ -74,7 +76,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
     public String getDomainName() {
         return domainName;
     }
-    
+
     /**
      * A string that represents the name of a domain. Domain names must be
      * unique across the domains owned by an account within an AWS region.
@@ -95,7 +97,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
-    
+
     /**
      * A string that represents the name of a domain. Domain names must be
      * unique across the domains owned by an account within an AWS region.
@@ -115,7 +117,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteIndexFieldRequest withDomainName(String domainName) {
@@ -143,7 +145,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
     public String getIndexFieldName() {
         return indexFieldName;
     }
-    
+
     /**
      * A string that represents the name of an index field. Field names must
      * begin with a letter and can contain the following characters: a-z
@@ -164,7 +166,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
     public void setIndexFieldName(String indexFieldName) {
         this.indexFieldName = indexFieldName;
     }
-    
+
     /**
      * A string that represents the name of an index field. Field names must
      * begin with a letter and can contain the following characters: a-z
@@ -184,7 +186,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      *         are not allowed. The names "body", "docid", and "text_relevance" are
      *         reserved and cannot be specified as field or rank expression names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteIndexFieldRequest withIndexFieldName(String indexFieldName) {
@@ -209,17 +211,17 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
-        hashCode = prime * hashCode + ((getIndexFieldName() == null) ? 0 : getIndexFieldName().hashCode()); 
+
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getIndexFieldName() == null) ? 0 : getIndexFieldName().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -227,13 +229,12 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
 
         if (obj instanceof DeleteIndexFieldRequest == false) return false;
         DeleteIndexFieldRequest other = (DeleteIndexFieldRequest)obj;
-        
+
         if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
-        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false;
         if (other.getIndexFieldName() == null ^ this.getIndexFieldName() == null) return false;
-        if (other.getIndexFieldName() != null && other.getIndexFieldName().equals(this.getIndexFieldName()) == false) return false; 
+        if (other.getIndexFieldName() != null && other.getIndexFieldName().equals(this.getIndexFieldName()) == false) return false;
         return true;
     }
-    
+
 }
-    

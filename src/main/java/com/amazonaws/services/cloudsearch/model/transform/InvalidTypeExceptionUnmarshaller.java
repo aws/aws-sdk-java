@@ -21,7 +21,10 @@ import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.cloudsearch.model.InvalidTypeException;
-
+/**
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.InvalidTypeExceptionUnmarshaller} instead.
+ */
+@Deprecated
 public class InvalidTypeExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public InvalidTypeExceptionUnmarshaller() {

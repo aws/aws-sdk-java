@@ -27,7 +27,9 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Service Access Policies Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DescribeServiceAccessPoliciesRequestMarshaller} instead.
  */
+ @Deprecated
 public class DescribeServiceAccessPoliciesRequestMarshaller implements Marshaller<Request<DescribeServiceAccessPoliciesRequest>, DescribeServiceAccessPoliciesRequest> {
 
     public Request<DescribeServiceAccessPoliciesRequest> marshall(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest) {

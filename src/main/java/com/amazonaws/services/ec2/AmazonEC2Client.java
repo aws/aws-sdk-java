@@ -1483,6 +1483,47 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Rejects a VPC peering connection request. The VPC peering connection
+     * must be in the <code>pending-acceptance</code> state. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     *
+     * @param rejectVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the RejectVpcPeeringConnection service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the RejectVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RejectVpcPeeringConnectionResult rejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest) {
+        ExecutionContext executionContext = createExecutionContext(rejectVpcPeeringConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RejectVpcPeeringConnectionRequest> request = null;
+        Response<RejectVpcPeeringConnectionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RejectVpcPeeringConnectionRequestMarshaller().marshall(rejectVpcPeeringConnectionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new RejectVpcPeeringConnectionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Detaches a virtual private gateway from a VPC. You do this if you're
      * planning to turn off the VPC and not use it anymore. You can confirm a
      * virtual private gateway has been completely detached from a VPC by
@@ -2553,6 +2594,48 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Accept a VPC peering connection request. To accept a request, the VPC
+     * peering connection must be in the <code>pending-acceptance</code>
+     * state, and you must be the owner of the peer VPC. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     *
+     * @param acceptVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the AcceptVpcPeeringConnection service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the AcceptVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AcceptVpcPeeringConnectionResult acceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest) {
+        ExecutionContext executionContext = createExecutionContext(acceptVpcPeeringConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AcceptVpcPeeringConnectionRequest> request = null;
+        Response<AcceptVpcPeeringConnectionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AcceptVpcPeeringConnectionRequestMarshaller().marshall(acceptVpcPeeringConnectionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new AcceptVpcPeeringConnectionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your export tasks.
      * </p>
      *
@@ -2622,6 +2705,57 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             invoke(request, null, executionContext);
         } finally {
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Requests a VPC peering connection between two VPCs: a requester VPC
+     * that you own and a peer VPC with which to create the connection. The
+     * peer VPC can belong to another AWS account. The requester VPC and peer
+     * VPC cannot have overlapping CIDR blocks.
+     * </p>
+     * <p>
+     * The owner of the peer VPC must accept the the peering request to
+     * activate the peering connection. The VPC peering connection request
+     * expires after 7 days, after which it cannot be accepted or rejected.
+     * </p>
+     * <p>
+     * A <code>CreateVpcPeeringConnection</code> request between VPCs with
+     * overlapping CIDR blocks results in the VPC peering connection having a
+     * status of <code>failed</code> .
+     * </p>
+     *
+     * @param createVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the CreateVpcPeeringConnection service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the CreateVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateVpcPeeringConnectionResult createVpcPeeringConnection(CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createVpcPeeringConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateVpcPeeringConnectionRequest> request = null;
+        Response<CreateVpcPeeringConnectionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateVpcPeeringConnectionRequestMarshaller().marshall(createVpcPeeringConnectionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new CreateVpcPeeringConnectionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -3090,6 +3224,48 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             invoke(request, null, executionContext);
         } finally {
             endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Deletes a VPC peering connection. Either the owner of the requester
+     * VPC or the owner of the peer VPC can delete the VPC peering connection
+     * if it's in the <code>active</code> state. The owner of the requester
+     * VPC can delete a VPC peering connection in the
+     * <code>pending-acceptance</code> state.
+     * </p>
+     *
+     * @param deleteVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the DeleteVpcPeeringConnection service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DeleteVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteVpcPeeringConnectionResult deleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteVpcPeeringConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteVpcPeeringConnectionRequest> request = null;
+        Response<DeleteVpcPeeringConnectionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteVpcPeeringConnectionRequestMarshaller().marshall(deleteVpcPeeringConnectionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new DeleteVpcPeeringConnectionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -3588,8 +3764,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes an attribute of the specified instance. You can specify only
-     * one attribute at a time.
+     * Describes the specified attribute of the specified instance. You can
+     * specify only one attribute at a time.
      * </p>
      *
      * @param describeInstanceAttributeRequest Container for the necessary
@@ -3619,6 +3795,44 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             response = invoke(request, new DescribeInstanceAttributeResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your VPC peering connections.
+     * </p>
+     *
+     * @param describeVpcPeeringConnectionsRequest Container for the
+     *           necessary parameters to execute the DescribeVpcPeeringConnections
+     *           service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeVpcPeeringConnections service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcPeeringConnectionsResult describeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeVpcPeeringConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeVpcPeeringConnectionsRequest> request = null;
+        Response<DescribeVpcPeeringConnectionsResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeVpcPeeringConnectionsRequestMarshaller().marshall(describeVpcPeeringConnectionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new DescribeVpcPeeringConnectionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -4426,7 +4640,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * You must specify one of the following targets: Internet gateway, NAT
-     * instance, or network interface.
+     * instance, VPC peering connection, or network interface.
      * </p>
      * <p>
      * When determining how to route traffic, we use the route with the most
@@ -4808,8 +5022,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. You must
-     * provide only one of the following: Internet gateway, NAT instance, or
-     * network interface.
+     * provide only one of the following: Internet gateway, NAT instance, VPC
+     * peering connection, or network interface.
      * </p>
      * <p>
      * For more information about route tables, see
@@ -5273,8 +5487,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes an attribute of the specified snapshot. You can specify only
-     * one attribute at a time.
+     * Describes the specified attribute of the specified snapshot. You can
+     * specify only one attribute at a time.
      * </p>
      * <p>
      * For more information about Amazon EBS snapshots, see
@@ -5409,8 +5623,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes an attributes of an AMI. You can specify only one attribute
-     * at a time.
+     * Describes the specified attribute of the specified AMI. You can
+     * specify only one attribute at a time.
      * </p>
      *
      * @param describeImageAttributeRequest Container for the necessary
@@ -7136,6 +7350,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Rejects a VPC peering connection request. The VPC peering connection
+     * must be in the <code>pending-acceptance</code> state. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     * 
+     * @return The response from the RejectVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RejectVpcPeeringConnectionResult rejectVpcPeeringConnection() throws AmazonServiceException, AmazonClientException {
+        return rejectVpcPeeringConnection(new RejectVpcPeeringConnectionRequest());
+    }
+    
+    /**
+     * <p>
      * Describes the datafeed for Spot Instances. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -7297,6 +7535,31 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Accept a VPC peering connection request. To accept a request, the VPC
+     * peering connection must be in the <code>pending-acceptance</code>
+     * state, and you must be the owner of the peer VPC. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     * 
+     * @return The response from the AcceptVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AcceptVpcPeeringConnectionResult acceptVpcPeeringConnection() throws AmazonServiceException, AmazonClientException {
+        return acceptVpcPeeringConnection(new AcceptVpcPeeringConnectionRequest());
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your export tasks.
      * </p>
      * 
@@ -7314,6 +7577,40 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeExportTasksResult describeExportTasks() throws AmazonServiceException, AmazonClientException {
         return describeExportTasks(new DescribeExportTasksRequest());
+    }
+    
+    /**
+     * <p>
+     * Requests a VPC peering connection between two VPCs: a requester VPC
+     * that you own and a peer VPC with which to create the connection. The
+     * peer VPC can belong to another AWS account. The requester VPC and peer
+     * VPC cannot have overlapping CIDR blocks.
+     * </p>
+     * <p>
+     * The owner of the peer VPC must accept the the peering request to
+     * activate the peering connection. The VPC peering connection request
+     * expires after 7 days, after which it cannot be accepted or rejected.
+     * </p>
+     * <p>
+     * A <code>CreateVpcPeeringConnection</code> request between VPCs with
+     * overlapping CIDR blocks results in the VPC peering connection having a
+     * status of <code>failed</code> .
+     * </p>
+     * 
+     * @return The response from the CreateVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateVpcPeeringConnectionResult createVpcPeeringConnection() throws AmazonServiceException, AmazonClientException {
+        return createVpcPeeringConnection(new CreateVpcPeeringConnectionRequest());
     }
     
     /**
@@ -7531,6 +7828,31 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Deletes a VPC peering connection. Either the owner of the requester
+     * VPC or the owner of the peer VPC can delete the VPC peering connection
+     * if it's in the <code>active</code> state. The owner of the requester
+     * VPC can delete a VPC peering connection in the
+     * <code>pending-acceptance</code> state.
+     * </p>
+     * 
+     * @return The response from the DeleteVpcPeeringConnection service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteVpcPeeringConnectionResult deleteVpcPeeringConnection() throws AmazonServiceException, AmazonClientException {
+        return deleteVpcPeeringConnection(new DeleteVpcPeeringConnectionRequest());
+    }
+    
+    /**
+     * <p>
      * Creates an Internet gateway for use with a VPC. After creating the
      * Internet gateway, you attach it to a VPC using AttachInternetGateway.
      * </p>
@@ -7578,6 +7900,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeConversionTasksResult describeConversionTasks() throws AmazonServiceException, AmazonClientException {
         return describeConversionTasks(new DescribeConversionTasksRequest());
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your VPC peering connections.
+     * </p>
+     * 
+     * @return The response from the DescribeVpcPeeringConnections service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcPeeringConnectionsResult describeVpcPeeringConnections() throws AmazonServiceException, AmazonClientException {
+        return describeVpcPeeringConnections(new DescribeVpcPeeringConnectionsRequest());
     }
     
     /**

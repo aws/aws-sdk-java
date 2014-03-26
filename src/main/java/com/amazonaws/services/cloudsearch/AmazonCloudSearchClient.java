@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -40,20 +40,22 @@ import com.amazonaws.services.cloudsearch.model.transform.*;
  * completes.
  * <p>
  * Amazon CloudSearch Configuration Service <p>
- * You use the configuration service to create, configure, and manage
- * search domains. Configuration service requests are submitted using
- * the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests
- * submitted via HTTP GET or POST with a query parameter named Action.
+ * You use the configuration service to create, configure, and manage search domains. Configuration service requests are submitted using the AWS Query
+ * protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP GET or POST with a query parameter named Action.
  * </p>
  * <p>
- * The endpoint for configuration service requests is region-specific:
- * cloudsearch. <i>region</i> .amazonaws.com. For example,
- * cloudsearch.us-east-1.amazonaws.com. For a current list of supported
- * regions and endpoints, see
- * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"> Regions and Endpoints </a>
- * .
+ * The endpoint for configuration service requests is region-specific: cloudsearch. <i>region</i> .amazonaws.com. For example,
+ * cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"> Regions and Endpoints </a> .
  * </p>
+ * @deprecated This code uses the older version of Amazon Cloud Search API (2011-02-01) and
+ *             hence deprecated. The code in the package
+ *             {@link com.amazonaws.services.cloudsearchv2} uses the latest
+ *             version of Amazon Cloud Search API.Use
+ *             {@link com.amazonaws.services.cloudsearchv2.AmazonCloudSearch}
+ *             instead.
  */
+ @Deprecated
 public class AmazonCloudSearchClient extends AmazonWebServiceClient implements AmazonCloudSearch {
 
     /** Provider for AWS credentials. */
@@ -210,9 +212,11 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BaseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DisabledOperationExceptionUnmarshaller());
+
         exceptionUnmarshallers.add(new InvalidTypeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
-        
+
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("cloudsearch.us-east-1.amazonaws.com/");
@@ -234,10 +238,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param updateDefaultSearchFieldRequest Container for the necessary
      *           parameters to execute the UpdateDefaultSearchField service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the UpdateDefaultSearchField service method,
      *         as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -267,7 +271,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Removes a <code>RankExpression</code> from the search domain.
@@ -276,10 +280,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param deleteRankExpressionRequest Container for the necessary
      *           parameters to execute the DeleteRankExpression service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DeleteRankExpression service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -309,7 +313,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets the rank expressions configured for the search domain. Can be
@@ -320,10 +324,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param describeRankExpressionsRequest Container for the necessary
      *           parameters to execute the DescribeRankExpressions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeRankExpressions service method,
      *         as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -352,7 +356,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Creates a new search domain.
@@ -360,10 +364,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param createDomainRequest Container for the necessary parameters to
      *           execute the CreateDomain service method on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the CreateDomain service method, as returned
      *         by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws LimitExceededException
      * @throws InternalException
@@ -392,7 +396,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Configures the policies that control access to the domain's document
@@ -403,10 +407,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param updateServiceAccessPoliciesRequest Container for the necessary
      *           parameters to execute the UpdateServiceAccessPolicies service method
      *           on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the UpdateServiceAccessPolicies service
      *         method, as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -437,7 +441,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Configures an <code>IndexField</code> for the search domain. Used to
@@ -448,10 +452,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param defineIndexFieldRequest Container for the necessary parameters
      *           to execute the DefineIndexField service method on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DefineIndexField service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -482,7 +486,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Configures a <code>RankExpression</code> for the search domain. Used
@@ -494,10 +498,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param defineRankExpressionRequest Container for the necessary
      *           parameters to execute the DefineRankExpression service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DefineRankExpression service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -528,7 +532,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets the synonym dictionary configured for the search domain.
@@ -537,10 +541,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param describeSynonymOptionsRequest Container for the necessary
      *           parameters to execute the DescribeSynonymOptions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeSynonymOptions service method,
      *         as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -569,7 +573,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets the stopwords configured for the search domain.
@@ -578,10 +582,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param describeStopwordOptionsRequest Container for the necessary
      *           parameters to execute the DescribeStopwordOptions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeStopwordOptions service method,
      *         as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -610,7 +614,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Permanently deletes a search domain and all of its data.
@@ -618,10 +622,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param deleteDomainRequest Container for the necessary parameters to
      *           execute the DeleteDomain service method on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DeleteDomain service method, as returned
      *         by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws InternalException
      *
@@ -649,7 +653,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets information about the resource-based policies that control access
@@ -659,10 +663,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param describeServiceAccessPoliciesRequest Container for the
      *           necessary parameters to execute the DescribeServiceAccessPolicies
      *           service method on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeServiceAccessPolicies service
      *         method, as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -694,16 +698,66 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
+     * Configures the availability options for a domain. Enabling the
+     * Multi-AZ option expands an Amazon CloudSearch domain to an additional
+     * Availability Zone in the same Region to increase fault tolerance in
+     * the event of a service disruption. Changes to the Multi-AZ option can
+     * take about half an hour to become active. For more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"> Configuring Availability Options </a>
+     * in the <i>Amazon CloudSearch Developer Guide</i> .
+     * </p>
+     *
+     * @param updateAvailabilityOptionsRequest Container for the necessary
+     *           parameters to execute the UpdateAvailabilityOptions service method on
+     *           AmazonCloudSearch.
+     * 
+     * @return The response from the UpdateAvailabilityOptions service
+     *         method, as returned by AmazonCloudSearch.
+     * 
+     * @throws BaseException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws InternalException
+     * @throws DisabledOperationException
+     * @throws InvalidTypeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudSearch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateAvailabilityOptionsResult updateAvailabilityOptions(UpdateAvailabilityOptionsRequest updateAvailabilityOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAvailabilityOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateAvailabilityOptionsRequest> request = null;
+        Response<UpdateAvailabilityOptionsResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateAvailabilityOptionsRequestMarshaller().marshall(updateAvailabilityOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new UpdateAvailabilityOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Gets the default search field configured for the search domain.
      * </p>
      *
      * @param describeDefaultSearchFieldRequest Container for the necessary
      *           parameters to execute the DescribeDefaultSearchField service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeDefaultSearchField service
      *         method, as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -732,7 +786,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Configures stopwords for the search domain. Stopwords are used during
@@ -743,10 +797,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param updateStopwordOptionsRequest Container for the necessary
      *           parameters to execute the UpdateStopwordOptions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the UpdateStopwordOptions service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -777,7 +831,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Configures a synonym dictionary for the search domain. The synonym
@@ -789,10 +843,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param updateSynonymOptionsRequest Container for the necessary
      *           parameters to execute the UpdateSynonymOptions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the UpdateSynonymOptions service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -823,7 +877,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Configures a stemming dictionary for the search domain. The stemming
@@ -834,10 +888,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param updateStemmingOptionsRequest Container for the necessary
      *           parameters to execute the UpdateStemmingOptions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the UpdateStemmingOptions service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws LimitExceededException
@@ -868,7 +922,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets the stemming dictionary configured for the search domain.
@@ -877,10 +931,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param describeStemmingOptionsRequest Container for the necessary
      *           parameters to execute the DescribeStemmingOptions service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeStemmingOptions service method,
      *         as returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -909,7 +963,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets information about the search domains owned by this account. Can
@@ -918,10 +972,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param describeDomainsRequest Container for the necessary parameters
      *           to execute the DescribeDomains service method on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeDomains service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws InternalException
      *
@@ -949,7 +1003,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Tells the search domain to start indexing its documents using the
@@ -961,10 +1015,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param indexDocumentsRequest Container for the necessary parameters to
      *           execute the IndexDocuments service method on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the IndexDocuments service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -996,6 +1050,55 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
+     * Gets the availability options configured for a domain. By default,
+     * shows the configuration with any pending changes. Set the
+     * <code>Deployed</code> option to <code>true</code> to show the active
+     * configuration and exclude pending changes. For more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"> Configuring Availability Options </a>
+     * in the <i>Amazon CloudSearch Developer Guide</i> .
+     * </p>
+     *
+     * @param describeAvailabilityOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeAvailabilityOptions service method
+     *           on AmazonCloudSearch.
+     * 
+     * @return The response from the DescribeAvailabilityOptions service
+     *         method, as returned by AmazonCloudSearch.
+     * 
+     * @throws BaseException
+     * @throws ResourceNotFoundException
+     * @throws LimitExceededException
+     * @throws InternalException
+     * @throws DisabledOperationException
+     * @throws InvalidTypeException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudSearch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAvailabilityOptionsResult describeAvailabilityOptions(DescribeAvailabilityOptionsRequest describeAvailabilityOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAvailabilityOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeAvailabilityOptionsRequest> request = null;
+        Response<DescribeAvailabilityOptionsResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeAvailabilityOptionsRequestMarshaller().marshall(describeAvailabilityOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new DescribeAvailabilityOptionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Gets information about the index fields configured for the search
      * domain. Can be limited to specific fields by name. Shows all fields by
      * default.
@@ -1004,10 +1107,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @param describeIndexFieldsRequest Container for the necessary
      *           parameters to execute the DescribeIndexFields service method on
      *           AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DescribeIndexFields service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -1036,7 +1139,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Removes an <code>IndexField</code> from the search domain.
@@ -1044,10 +1147,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *
      * @param deleteIndexFieldRequest Container for the necessary parameters
      *           to execute the DeleteIndexField service method on AmazonCloudSearch.
-     * 
+     *
      * @return The response from the DeleteIndexField service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws ResourceNotFoundException
      * @throws InternalException
@@ -1077,16 +1180,16 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             endClientExecution(awsRequestMetrics, request, response);
         }
     }
-    
+
     /**
      * <p>
      * Gets information about the search domains owned by this account. Can
      * be limited to specific domains. Shows all domains by default.
      * </p>
-     * 
+     *
      * @return The response from the DescribeDomains service method, as
      *         returned by AmazonCloudSearch.
-     * 
+     *
      * @throws BaseException
      * @throws InternalException
      *
@@ -1139,10 +1242,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         }
 
         executionContext.setCredentials(credentials);
-        
+
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
-        

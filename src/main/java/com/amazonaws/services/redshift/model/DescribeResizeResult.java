@@ -24,19 +24,20 @@ import java.io.Serializable;
 public class DescribeResizeResult implements Serializable {
 
     /**
-     * The node type that the cluster will have after the resize is complete.
+     * The node type that the cluster will have after the resize operation is
+     * complete.
      */
     private String targetNodeType;
 
     /**
-     * The number of nodes that the cluster will have after the resize is
-     * complete.
+     * The number of nodes that the cluster will have after the resize
+     * operation is complete.
      */
     private Integer targetNumberOfNodes;
 
     /**
-     * The cluster type after the resize is complete. <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code>
+     * The cluster type after the resize operation is complete. <p>Valid
+     * Values: <code>multi-node</code> | <code>single-node</code>
      */
     private String targetClusterType;
 
@@ -66,29 +67,74 @@ public class DescribeResizeResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> importTablesNotStarted;
 
     /**
-     * The node type that the cluster will have after the resize is complete.
+     * The average rate of the resize operation over the last few minutes,
+     * measured in megabytes per second. After the resize operation
+     * completes, this value shows the average rate of the entire resize
+     * operation.
+     */
+    private Double avgResizeRateInMegaBytesPerSecond;
+
+    /**
+     * The estimated total amount of data, in megabytes, on the cluster
+     * before the resize operation began.
+     */
+    private Long totalResizeDataInMegaBytes;
+
+    /**
+     * While the resize operation is in progress, this value shows the
+     * current amount of data, in megabytes, that has been processed so far.
+     * When the resize operation is complete, this value shows the total
+     * amount of data, in megabytes, on the cluster, which may be more or
+     * less than TotalResizeDataInMegaBytes (the estimated total amount of
+     * data before resize).
+     */
+    private Long progressInMegaBytes;
+
+    /**
+     * The amount of seconds that have elapsed since the resize operation
+     * began. After the resize operation completes, this value shows the
+     * total actual time, in seconds, for the resize operation.
+     */
+    private Long elapsedTimeInSeconds;
+
+    /**
+     * The estimated time remaining, in seconds, until the resize operation
+     * is complete. This value is calculated based on the average resize rate
+     * and the estimated amount of data remaining to be processed. Once the
+     * resize operation is complete, this value will be 0.
+     */
+    private Long estimatedTimeToCompletionInSeconds;
+
+    /**
+     * The node type that the cluster will have after the resize operation is
+     * complete.
      *
-     * @return The node type that the cluster will have after the resize is complete.
+     * @return The node type that the cluster will have after the resize operation is
+     *         complete.
      */
     public String getTargetNodeType() {
         return targetNodeType;
     }
     
     /**
-     * The node type that the cluster will have after the resize is complete.
+     * The node type that the cluster will have after the resize operation is
+     * complete.
      *
-     * @param targetNodeType The node type that the cluster will have after the resize is complete.
+     * @param targetNodeType The node type that the cluster will have after the resize operation is
+     *         complete.
      */
     public void setTargetNodeType(String targetNodeType) {
         this.targetNodeType = targetNodeType;
     }
     
     /**
-     * The node type that the cluster will have after the resize is complete.
+     * The node type that the cluster will have after the resize operation is
+     * complete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetNodeType The node type that the cluster will have after the resize is complete.
+     * @param targetNodeType The node type that the cluster will have after the resize operation is
+     *         complete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -99,35 +145,35 @@ public class DescribeResizeResult implements Serializable {
     }
 
     /**
-     * The number of nodes that the cluster will have after the resize is
-     * complete.
+     * The number of nodes that the cluster will have after the resize
+     * operation is complete.
      *
-     * @return The number of nodes that the cluster will have after the resize is
-     *         complete.
+     * @return The number of nodes that the cluster will have after the resize
+     *         operation is complete.
      */
     public Integer getTargetNumberOfNodes() {
         return targetNumberOfNodes;
     }
     
     /**
-     * The number of nodes that the cluster will have after the resize is
-     * complete.
+     * The number of nodes that the cluster will have after the resize
+     * operation is complete.
      *
-     * @param targetNumberOfNodes The number of nodes that the cluster will have after the resize is
-     *         complete.
+     * @param targetNumberOfNodes The number of nodes that the cluster will have after the resize
+     *         operation is complete.
      */
     public void setTargetNumberOfNodes(Integer targetNumberOfNodes) {
         this.targetNumberOfNodes = targetNumberOfNodes;
     }
     
     /**
-     * The number of nodes that the cluster will have after the resize is
-     * complete.
+     * The number of nodes that the cluster will have after the resize
+     * operation is complete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetNumberOfNodes The number of nodes that the cluster will have after the resize is
-     *         complete.
+     * @param targetNumberOfNodes The number of nodes that the cluster will have after the resize
+     *         operation is complete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -138,35 +184,35 @@ public class DescribeResizeResult implements Serializable {
     }
 
     /**
-     * The cluster type after the resize is complete. <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code>
+     * The cluster type after the resize operation is complete. <p>Valid
+     * Values: <code>multi-node</code> | <code>single-node</code>
      *
-     * @return The cluster type after the resize is complete. <p>Valid Values:
-     *         <code>multi-node</code> | <code>single-node</code>
+     * @return The cluster type after the resize operation is complete. <p>Valid
+     *         Values: <code>multi-node</code> | <code>single-node</code>
      */
     public String getTargetClusterType() {
         return targetClusterType;
     }
     
     /**
-     * The cluster type after the resize is complete. <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code>
+     * The cluster type after the resize operation is complete. <p>Valid
+     * Values: <code>multi-node</code> | <code>single-node</code>
      *
-     * @param targetClusterType The cluster type after the resize is complete. <p>Valid Values:
-     *         <code>multi-node</code> | <code>single-node</code>
+     * @param targetClusterType The cluster type after the resize operation is complete. <p>Valid
+     *         Values: <code>multi-node</code> | <code>single-node</code>
      */
     public void setTargetClusterType(String targetClusterType) {
         this.targetClusterType = targetClusterType;
     }
     
     /**
-     * The cluster type after the resize is complete. <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code>
+     * The cluster type after the resize operation is complete. <p>Valid
+     * Values: <code>multi-node</code> | <code>single-node</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param targetClusterType The cluster type after the resize is complete. <p>Valid Values:
-     *         <code>multi-node</code> | <code>single-node</code>
+     * @param targetClusterType The cluster type after the resize operation is complete. <p>Valid
+     *         Values: <code>multi-node</code> | <code>single-node</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -450,6 +496,255 @@ public class DescribeResizeResult implements Serializable {
     }
 
     /**
+     * The average rate of the resize operation over the last few minutes,
+     * measured in megabytes per second. After the resize operation
+     * completes, this value shows the average rate of the entire resize
+     * operation.
+     *
+     * @return The average rate of the resize operation over the last few minutes,
+     *         measured in megabytes per second. After the resize operation
+     *         completes, this value shows the average rate of the entire resize
+     *         operation.
+     */
+    public Double getAvgResizeRateInMegaBytesPerSecond() {
+        return avgResizeRateInMegaBytesPerSecond;
+    }
+    
+    /**
+     * The average rate of the resize operation over the last few minutes,
+     * measured in megabytes per second. After the resize operation
+     * completes, this value shows the average rate of the entire resize
+     * operation.
+     *
+     * @param avgResizeRateInMegaBytesPerSecond The average rate of the resize operation over the last few minutes,
+     *         measured in megabytes per second. After the resize operation
+     *         completes, this value shows the average rate of the entire resize
+     *         operation.
+     */
+    public void setAvgResizeRateInMegaBytesPerSecond(Double avgResizeRateInMegaBytesPerSecond) {
+        this.avgResizeRateInMegaBytesPerSecond = avgResizeRateInMegaBytesPerSecond;
+    }
+    
+    /**
+     * The average rate of the resize operation over the last few minutes,
+     * measured in megabytes per second. After the resize operation
+     * completes, this value shows the average rate of the entire resize
+     * operation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param avgResizeRateInMegaBytesPerSecond The average rate of the resize operation over the last few minutes,
+     *         measured in megabytes per second. After the resize operation
+     *         completes, this value shows the average rate of the entire resize
+     *         operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeResizeResult withAvgResizeRateInMegaBytesPerSecond(Double avgResizeRateInMegaBytesPerSecond) {
+        this.avgResizeRateInMegaBytesPerSecond = avgResizeRateInMegaBytesPerSecond;
+        return this;
+    }
+
+    /**
+     * The estimated total amount of data, in megabytes, on the cluster
+     * before the resize operation began.
+     *
+     * @return The estimated total amount of data, in megabytes, on the cluster
+     *         before the resize operation began.
+     */
+    public Long getTotalResizeDataInMegaBytes() {
+        return totalResizeDataInMegaBytes;
+    }
+    
+    /**
+     * The estimated total amount of data, in megabytes, on the cluster
+     * before the resize operation began.
+     *
+     * @param totalResizeDataInMegaBytes The estimated total amount of data, in megabytes, on the cluster
+     *         before the resize operation began.
+     */
+    public void setTotalResizeDataInMegaBytes(Long totalResizeDataInMegaBytes) {
+        this.totalResizeDataInMegaBytes = totalResizeDataInMegaBytes;
+    }
+    
+    /**
+     * The estimated total amount of data, in megabytes, on the cluster
+     * before the resize operation began.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param totalResizeDataInMegaBytes The estimated total amount of data, in megabytes, on the cluster
+     *         before the resize operation began.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeResizeResult withTotalResizeDataInMegaBytes(Long totalResizeDataInMegaBytes) {
+        this.totalResizeDataInMegaBytes = totalResizeDataInMegaBytes;
+        return this;
+    }
+
+    /**
+     * While the resize operation is in progress, this value shows the
+     * current amount of data, in megabytes, that has been processed so far.
+     * When the resize operation is complete, this value shows the total
+     * amount of data, in megabytes, on the cluster, which may be more or
+     * less than TotalResizeDataInMegaBytes (the estimated total amount of
+     * data before resize).
+     *
+     * @return While the resize operation is in progress, this value shows the
+     *         current amount of data, in megabytes, that has been processed so far.
+     *         When the resize operation is complete, this value shows the total
+     *         amount of data, in megabytes, on the cluster, which may be more or
+     *         less than TotalResizeDataInMegaBytes (the estimated total amount of
+     *         data before resize).
+     */
+    public Long getProgressInMegaBytes() {
+        return progressInMegaBytes;
+    }
+    
+    /**
+     * While the resize operation is in progress, this value shows the
+     * current amount of data, in megabytes, that has been processed so far.
+     * When the resize operation is complete, this value shows the total
+     * amount of data, in megabytes, on the cluster, which may be more or
+     * less than TotalResizeDataInMegaBytes (the estimated total amount of
+     * data before resize).
+     *
+     * @param progressInMegaBytes While the resize operation is in progress, this value shows the
+     *         current amount of data, in megabytes, that has been processed so far.
+     *         When the resize operation is complete, this value shows the total
+     *         amount of data, in megabytes, on the cluster, which may be more or
+     *         less than TotalResizeDataInMegaBytes (the estimated total amount of
+     *         data before resize).
+     */
+    public void setProgressInMegaBytes(Long progressInMegaBytes) {
+        this.progressInMegaBytes = progressInMegaBytes;
+    }
+    
+    /**
+     * While the resize operation is in progress, this value shows the
+     * current amount of data, in megabytes, that has been processed so far.
+     * When the resize operation is complete, this value shows the total
+     * amount of data, in megabytes, on the cluster, which may be more or
+     * less than TotalResizeDataInMegaBytes (the estimated total amount of
+     * data before resize).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param progressInMegaBytes While the resize operation is in progress, this value shows the
+     *         current amount of data, in megabytes, that has been processed so far.
+     *         When the resize operation is complete, this value shows the total
+     *         amount of data, in megabytes, on the cluster, which may be more or
+     *         less than TotalResizeDataInMegaBytes (the estimated total amount of
+     *         data before resize).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeResizeResult withProgressInMegaBytes(Long progressInMegaBytes) {
+        this.progressInMegaBytes = progressInMegaBytes;
+        return this;
+    }
+
+    /**
+     * The amount of seconds that have elapsed since the resize operation
+     * began. After the resize operation completes, this value shows the
+     * total actual time, in seconds, for the resize operation.
+     *
+     * @return The amount of seconds that have elapsed since the resize operation
+     *         began. After the resize operation completes, this value shows the
+     *         total actual time, in seconds, for the resize operation.
+     */
+    public Long getElapsedTimeInSeconds() {
+        return elapsedTimeInSeconds;
+    }
+    
+    /**
+     * The amount of seconds that have elapsed since the resize operation
+     * began. After the resize operation completes, this value shows the
+     * total actual time, in seconds, for the resize operation.
+     *
+     * @param elapsedTimeInSeconds The amount of seconds that have elapsed since the resize operation
+     *         began. After the resize operation completes, this value shows the
+     *         total actual time, in seconds, for the resize operation.
+     */
+    public void setElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
+        this.elapsedTimeInSeconds = elapsedTimeInSeconds;
+    }
+    
+    /**
+     * The amount of seconds that have elapsed since the resize operation
+     * began. After the resize operation completes, this value shows the
+     * total actual time, in seconds, for the resize operation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param elapsedTimeInSeconds The amount of seconds that have elapsed since the resize operation
+     *         began. After the resize operation completes, this value shows the
+     *         total actual time, in seconds, for the resize operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeResizeResult withElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
+        this.elapsedTimeInSeconds = elapsedTimeInSeconds;
+        return this;
+    }
+
+    /**
+     * The estimated time remaining, in seconds, until the resize operation
+     * is complete. This value is calculated based on the average resize rate
+     * and the estimated amount of data remaining to be processed. Once the
+     * resize operation is complete, this value will be 0.
+     *
+     * @return The estimated time remaining, in seconds, until the resize operation
+     *         is complete. This value is calculated based on the average resize rate
+     *         and the estimated amount of data remaining to be processed. Once the
+     *         resize operation is complete, this value will be 0.
+     */
+    public Long getEstimatedTimeToCompletionInSeconds() {
+        return estimatedTimeToCompletionInSeconds;
+    }
+    
+    /**
+     * The estimated time remaining, in seconds, until the resize operation
+     * is complete. This value is calculated based on the average resize rate
+     * and the estimated amount of data remaining to be processed. Once the
+     * resize operation is complete, this value will be 0.
+     *
+     * @param estimatedTimeToCompletionInSeconds The estimated time remaining, in seconds, until the resize operation
+     *         is complete. This value is calculated based on the average resize rate
+     *         and the estimated amount of data remaining to be processed. Once the
+     *         resize operation is complete, this value will be 0.
+     */
+    public void setEstimatedTimeToCompletionInSeconds(Long estimatedTimeToCompletionInSeconds) {
+        this.estimatedTimeToCompletionInSeconds = estimatedTimeToCompletionInSeconds;
+    }
+    
+    /**
+     * The estimated time remaining, in seconds, until the resize operation
+     * is complete. This value is calculated based on the average resize rate
+     * and the estimated amount of data remaining to be processed. Once the
+     * resize operation is complete, this value will be 0.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param estimatedTimeToCompletionInSeconds The estimated time remaining, in seconds, until the resize operation
+     *         is complete. This value is calculated based on the average resize rate
+     *         and the estimated amount of data remaining to be processed. Once the
+     *         resize operation is complete, this value will be 0.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeResizeResult withEstimatedTimeToCompletionInSeconds(Long estimatedTimeToCompletionInSeconds) {
+        this.estimatedTimeToCompletionInSeconds = estimatedTimeToCompletionInSeconds;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -467,7 +762,12 @@ public class DescribeResizeResult implements Serializable {
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getImportTablesCompleted() != null) sb.append("ImportTablesCompleted: " + getImportTablesCompleted() + ",");
         if (getImportTablesInProgress() != null) sb.append("ImportTablesInProgress: " + getImportTablesInProgress() + ",");
-        if (getImportTablesNotStarted() != null) sb.append("ImportTablesNotStarted: " + getImportTablesNotStarted() );
+        if (getImportTablesNotStarted() != null) sb.append("ImportTablesNotStarted: " + getImportTablesNotStarted() + ",");
+        if (getAvgResizeRateInMegaBytesPerSecond() != null) sb.append("AvgResizeRateInMegaBytesPerSecond: " + getAvgResizeRateInMegaBytesPerSecond() + ",");
+        if (getTotalResizeDataInMegaBytes() != null) sb.append("TotalResizeDataInMegaBytes: " + getTotalResizeDataInMegaBytes() + ",");
+        if (getProgressInMegaBytes() != null) sb.append("ProgressInMegaBytes: " + getProgressInMegaBytes() + ",");
+        if (getElapsedTimeInSeconds() != null) sb.append("ElapsedTimeInSeconds: " + getElapsedTimeInSeconds() + ",");
+        if (getEstimatedTimeToCompletionInSeconds() != null) sb.append("EstimatedTimeToCompletionInSeconds: " + getEstimatedTimeToCompletionInSeconds() );
         sb.append("}");
         return sb.toString();
     }
@@ -484,6 +784,11 @@ public class DescribeResizeResult implements Serializable {
         hashCode = prime * hashCode + ((getImportTablesCompleted() == null) ? 0 : getImportTablesCompleted().hashCode()); 
         hashCode = prime * hashCode + ((getImportTablesInProgress() == null) ? 0 : getImportTablesInProgress().hashCode()); 
         hashCode = prime * hashCode + ((getImportTablesNotStarted() == null) ? 0 : getImportTablesNotStarted().hashCode()); 
+        hashCode = prime * hashCode + ((getAvgResizeRateInMegaBytesPerSecond() == null) ? 0 : getAvgResizeRateInMegaBytesPerSecond().hashCode()); 
+        hashCode = prime * hashCode + ((getTotalResizeDataInMegaBytes() == null) ? 0 : getTotalResizeDataInMegaBytes().hashCode()); 
+        hashCode = prime * hashCode + ((getProgressInMegaBytes() == null) ? 0 : getProgressInMegaBytes().hashCode()); 
+        hashCode = prime * hashCode + ((getElapsedTimeInSeconds() == null) ? 0 : getElapsedTimeInSeconds().hashCode()); 
+        hashCode = prime * hashCode + ((getEstimatedTimeToCompletionInSeconds() == null) ? 0 : getEstimatedTimeToCompletionInSeconds().hashCode()); 
         return hashCode;
     }
     
@@ -509,6 +814,16 @@ public class DescribeResizeResult implements Serializable {
         if (other.getImportTablesInProgress() != null && other.getImportTablesInProgress().equals(this.getImportTablesInProgress()) == false) return false; 
         if (other.getImportTablesNotStarted() == null ^ this.getImportTablesNotStarted() == null) return false;
         if (other.getImportTablesNotStarted() != null && other.getImportTablesNotStarted().equals(this.getImportTablesNotStarted()) == false) return false; 
+        if (other.getAvgResizeRateInMegaBytesPerSecond() == null ^ this.getAvgResizeRateInMegaBytesPerSecond() == null) return false;
+        if (other.getAvgResizeRateInMegaBytesPerSecond() != null && other.getAvgResizeRateInMegaBytesPerSecond().equals(this.getAvgResizeRateInMegaBytesPerSecond()) == false) return false; 
+        if (other.getTotalResizeDataInMegaBytes() == null ^ this.getTotalResizeDataInMegaBytes() == null) return false;
+        if (other.getTotalResizeDataInMegaBytes() != null && other.getTotalResizeDataInMegaBytes().equals(this.getTotalResizeDataInMegaBytes()) == false) return false; 
+        if (other.getProgressInMegaBytes() == null ^ this.getProgressInMegaBytes() == null) return false;
+        if (other.getProgressInMegaBytes() != null && other.getProgressInMegaBytes().equals(this.getProgressInMegaBytes()) == false) return false; 
+        if (other.getElapsedTimeInSeconds() == null ^ this.getElapsedTimeInSeconds() == null) return false;
+        if (other.getElapsedTimeInSeconds() != null && other.getElapsedTimeInSeconds().equals(this.getElapsedTimeInSeconds()) == false) return false; 
+        if (other.getEstimatedTimeToCompletionInSeconds() == null ^ this.getEstimatedTimeToCompletionInSeconds() == null) return false;
+        if (other.getEstimatedTimeToCompletionInSeconds() != null && other.getEstimatedTimeToCompletionInSeconds().equals(this.getEstimatedTimeToCompletionInSeconds()) == false) return false; 
         return true;
     }
     
