@@ -27,7 +27,9 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Domain Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.CreateDomainRequestMarshaller} instead.
  */
+ @Deprecated
 public class CreateDomainRequestMarshaller implements Marshaller<Request<CreateDomainRequest>, CreateDomainRequest> {
 
     public Request<CreateDomainRequest> marshall(CreateDomainRequest createDomainRequest) {

@@ -18,17 +18,18 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because it specified an invalid type
- * definition.
+ * The request was rejected because it specified an invalid type definition.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.InvalidTypeException} instead.
+ */
+ @Deprecated
 public class InvalidTypeException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
      * Constructs a new InvalidTypeException with the specified error
      * message.
-     * 
+     *
      * @param message Describes the error encountered.
      */
     public InvalidTypeException(String message) {

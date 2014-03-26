@@ -2,15 +2,29 @@
      Don't forget to fill in your AWS access credentials in AwsCredentials.properties
      before trying to run it.  -->
 <project name="Amazon Kinesis Application Sample" default="run" basedir=".">
-    <path id="aws.java.sdk.classpath">
+    <!-- The Amazon Kinesis Client Library jar file is downloaded to the tmp directory. -->
+    <property name="tmpDir" value="${basedir}/tmp"/>
+
+    <path id="sample.classpath">
         <fileset dir="${basedir}/../../third-party" includes="**/*.jar"/>
         <fileset dir="${basedir}/../../lib" includes="**/*.jar"/>
-        <fileset dir="${basedir}/../../../KinesisClientLibrary/lib" includes="**/*.jar"/>
+        <fileset dir="${tmpDir}" includes="**/*.jar"/>
         <pathelement location="."/>
     </path>
 
     <target name="run">
-        <javac srcdir="." destdir="." classpathref="aws.java.sdk.classpath"/>
-        <java classname="SampleKinesisApplication" classpathref="aws.java.sdk.classpath" fork="true"/>
+        <mkdir dir="${tmpDir}"/>
+        <!-- Conditionally download KCL jar from Maven based on timestamp of local copy. -->
+        <get src="http://repo1.maven.org/maven2/com/amazonaws/amazon-kinesis-client/1.0.0/amazon-kinesis-client-1.0.0.jar" dest="${tmpDir}" usetimestamp="true" verbose="true"/>
+        <javac srcdir="." destdir="${basedir}" classpathref="sample.classpath"/>
+        <java classname="SampleKinesisApplication" classpathref="sample.classpath" fork="true"/>
     </target>
+
+    <target name="clean">
+        <delete failonerror="false" includeemptydirs="true">
+            <fileset dir="${tmpDir}"/>
+            <fileset dir="${basedir}" includes="**/*.class"/>
+        </delete>
+    </target>
+
 </project>

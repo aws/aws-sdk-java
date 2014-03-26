@@ -347,10 +347,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * successfully, the stack creation starts. You can check the status of
      * the stack via the DescribeStacks API.
      * </p>
-     * <p>
-     * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
-     * per region.
-     * </p>
      *
      * @param createStackRequest Container for the necessary parameters to
      *           execute the CreateStack operation on AmazonCloudFormation.
@@ -375,10 +371,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * Creates a stack as specified in the template. After the call completes
      * successfully, the stack creation starts. You can check the status of
      * the stack via the DescribeStacks API.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
-     * per region.
      * </p>
      *
      * @param createStackRequest Container for the necessary parameters to
@@ -718,15 +710,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * stack via the DescribeStacks action.
      * </p>
      * <p>
-     * </p>
-     * <p>
-     * <b>Note: </b> You cannot update
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html"> AWS::S3::Bucket </a>
-     * resources, for example, to add or modify tags.
-     * </p>
-     * <p>
-     * </p>
-     * <p>
      * To get a copy of the template for an existing stack, you can use the
      * GetTemplate action.
      * </p>
@@ -765,15 +748,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * Updates a stack as specified in the template. After the call completes
      * successfully, the stack update starts. You can check the status of the
      * stack via the DescribeStacks action.
-     * </p>
-     * <p>
-     * </p>
-     * <p>
-     * <b>Note: </b> You cannot update
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html"> AWS::S3::Bucket </a>
-     * resources, for example, to add or modify tags.
-     * </p>
-     * <p>
      * </p>
      * <p>
      * To get a copy of the template for an existing stack, you can use the

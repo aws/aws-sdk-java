@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Text Options StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.TextOptionsStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class TextOptionsStaxUnmarshaller implements Unmarshaller<TextOptions, StaxUnmarshallerContext> {
 
     public TextOptions unmarshall(StaxUnmarshallerContext context) throws Exception {

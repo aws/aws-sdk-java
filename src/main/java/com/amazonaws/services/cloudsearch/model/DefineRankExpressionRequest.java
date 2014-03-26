@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -21,14 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineRankExpression(DefineRankExpressionRequest) DefineRankExpression operation}.
  * <p>
- * Configures a <code>RankExpression</code> for the search domain. Used
- * to create new rank expressions and modify existing ones. If the
- * expression exists, the new configuration replaces the old one. You can
- * configure a maximum of 50 rank expressions.
+ * Configures a <code>RankExpression</code> for the search domain. Used to create new rank expressions and modify existing ones. If the expression
+ * exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineRankExpression(DefineRankExpressionRequest)
  */
+@Deprecated
 public class DefineRankExpressionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
@@ -70,7 +69,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
     public String getDomainName() {
         return domainName;
     }
-    
+
     /**
      * A string that represents the name of a domain. Domain names must be
      * unique across the domains owned by an account within an AWS region.
@@ -91,7 +90,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
-    
+
     /**
      * A string that represents the name of a domain. Domain names must be
      * unique across the domains owned by an account within an AWS region.
@@ -111,7 +110,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineRankExpressionRequest withDomainName(String domainName) {
@@ -129,7 +128,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
     public NamedRankExpression getRankExpression() {
         return rankExpression;
     }
-    
+
     /**
      * A named expression that can be evaluated at search time and used for
      * ranking or thresholding in a search query.
@@ -140,7 +139,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
     public void setRankExpression(NamedRankExpression rankExpression) {
         this.rankExpression = rankExpression;
     }
-    
+
     /**
      * A named expression that can be evaluated at search time and used for
      * ranking or thresholding in a search query.
@@ -150,7 +149,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
      * @param rankExpression A named expression that can be evaluated at search time and used for
      *         ranking or thresholding in a search query.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineRankExpressionRequest withRankExpression(NamedRankExpression rankExpression) {
@@ -175,17 +174,17 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
-        hashCode = prime * hashCode + ((getRankExpression() == null) ? 0 : getRankExpression().hashCode()); 
+
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getRankExpression() == null) ? 0 : getRankExpression().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -193,13 +192,12 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
 
         if (obj instanceof DefineRankExpressionRequest == false) return false;
         DefineRankExpressionRequest other = (DefineRankExpressionRequest)obj;
-        
+
         if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
-        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false;
         if (other.getRankExpression() == null ^ this.getRankExpression() == null) return false;
-        if (other.getRankExpression() != null && other.getRankExpression().equals(this.getRankExpression()) == false) return false; 
+        if (other.getRankExpression() != null && other.getRankExpression().equals(this.getRankExpression()) == false) return false;
         return true;
     }
-    
+
 }
-    

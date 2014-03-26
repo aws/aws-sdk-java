@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Access Policies Status StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.AccessPoliciesStatusStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class AccessPoliciesStatusStaxUnmarshaller implements Unmarshaller<AccessPoliciesStatus, StaxUnmarshallerContext> {
 
     public AccessPoliciesStatus unmarshall(StaxUnmarshallerContext context) throws Exception {

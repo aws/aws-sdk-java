@@ -16,7 +16,9 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * Index Field Type
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.IndexFieldType} instead.
  */
+ @Deprecated
 public enum IndexFieldType {
     
     Uint("uint"),

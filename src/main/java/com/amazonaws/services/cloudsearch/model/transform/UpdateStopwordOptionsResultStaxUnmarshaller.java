@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Update Stopword Options Result StAX Unmarshaller
  */
+ @Deprecated
 public class UpdateStopwordOptionsResultStaxUnmarshaller implements Unmarshaller<UpdateStopwordOptionsResult, StaxUnmarshallerContext> {
 
     public UpdateStopwordOptionsResult unmarshall(StaxUnmarshallerContext context) throws Exception {

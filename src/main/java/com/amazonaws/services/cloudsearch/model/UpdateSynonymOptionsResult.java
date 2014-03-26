@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the status of updated synonym
- * options.
+ * A response message that contains the status of updated synonym options.
  * </p>
  */
+@Deprecated
 public class UpdateSynonymOptionsResult implements Serializable {
 
     /**

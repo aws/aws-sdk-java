@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Source Attribute StAX Unmarshaller
  */
+ @Deprecated
 public class SourceAttributeStaxUnmarshaller implements Unmarshaller<SourceAttribute, StaxUnmarshallerContext> {
 
     public SourceAttribute unmarshall(StaxUnmarshallerContext context) throws Exception {

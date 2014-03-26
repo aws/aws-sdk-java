@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Create Domain Result StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.CreateDomainResultStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class CreateDomainResultStaxUnmarshaller implements Unmarshaller<CreateDomainResult, StaxUnmarshallerContext> {
 
     public CreateDomainResult unmarshall(StaxUnmarshallerContext context) throws Exception {

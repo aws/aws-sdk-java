@@ -3431,13 +3431,13 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * sent for all events you want that match those criteria. For example,
      * you can specify source type = cluster, source ID = my-cluster-1 and
      * mycluster2, event categories = Availability, Backup, and severity =
-     * ERROR. The subsription will only send notifications for those ERROR
-     * events in the Availability and Backup categores for the specified
+     * ERROR. The subscription will only send notifications for those ERROR
+     * events in the Availability and Backup categories for the specified
      * clusters.
      * </p>
      * <p>
      * If you specify both the source type and source IDs, such as source
-     * type = cluster and source identifier = my-cluster-1, notifiactions
+     * type = cluster and source identifier = my-cluster-1, notifications
      * will be sent for all the cluster events for my-cluster-1. If you
      * specify a source type but do not specify a source identifier, you will
      * receive notice of the events for the objects of that type in your AWS
@@ -3487,13 +3487,13 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * sent for all events you want that match those criteria. For example,
      * you can specify source type = cluster, source ID = my-cluster-1 and
      * mycluster2, event categories = Availability, Backup, and severity =
-     * ERROR. The subsription will only send notifications for those ERROR
-     * events in the Availability and Backup categores for the specified
+     * ERROR. The subscription will only send notifications for those ERROR
+     * events in the Availability and Backup categories for the specified
      * clusters.
      * </p>
      * <p>
      * If you specify both the source type and source IDs, such as source
-     * type = cluster and source identifier = my-cluster-1, notifiactions
+     * type = cluster and source identifier = my-cluster-1, notifications
      * will be sent for all the cluster events for my-cluster-1. If you
      * specify a source type but do not specify a source identifier, you will
      * receive notice of the events for the objects of that type in your AWS
@@ -4127,12 +4127,13 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * keys used to encrypt the cluster databases.
      * </p>
      * <p>
-     * The command returns a public key, which you must store in the HSM.
-     * After creating the HSM certificate, you must create an Amazon Redshift
-     * HSM configuration that provides a cluster the information needed to
-     * store and retrieve database encryption keys in the HSM. For more
-     * information, go to aLinkToHSMTopic in the Amazon Redshift Management
-     * Guide.
+     * The command returns a public key, which you must store in the HSM. In
+     * addition to creating the HSM certificate, you must create an Amazon
+     * Redshift HSM configuration that provides a cluster the information
+     * needed to store and use encryption keys in the HSM. For more
+     * information, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
+     * in the Amazon Redshift Management Guide.
      * </p>
      *
      * @param createHsmClientCertificateRequest Container for the necessary
@@ -4168,12 +4169,13 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * keys used to encrypt the cluster databases.
      * </p>
      * <p>
-     * The command returns a public key, which you must store in the HSM.
-     * After creating the HSM certificate, you must create an Amazon Redshift
-     * HSM configuration that provides a cluster the information needed to
-     * store and retrieve database encryption keys in the HSM. For more
-     * information, go to aLinkToHSMTopic in the Amazon Redshift Management
-     * Guide.
+     * The command returns a public key, which you must store in the HSM. In
+     * addition to creating the HSM certificate, you must create an Amazon
+     * Redshift HSM configuration that provides a cluster the information
+     * needed to store and use encryption keys in the HSM. For more
+     * information, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
+     * in the Amazon Redshift Management Guide.
      * </p>
      *
      * @param createHsmClientCertificateRequest Container for the necessary
@@ -4491,15 +4493,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     /**
      * <p>
      * Creates an HSM configuration that contains the information required by
-     * an Amazon Redshift cluster to store and retrieve database encryption
-     * keys in a Hardware Storeage Module (HSM). After creating the HSM
+     * an Amazon Redshift cluster to store and use database encryption keys
+     * in a Hardware Security Module (HSM). After creating the HSM
      * configuration, you can specify it as a parameter when creating a
      * cluster. The cluster will then store its encryption keys in the HSM.
      * </p>
      * <p>
-     * Before creating an HSM configuration, you must have first created an
-     * HSM client certificate. For more information, go to aLinkToHSMTopic in
-     * the Amazon Redshift Management Guide.
+     * In addition to creating an HSM configuration, you must also create an
+     * HSM client certificate. For more information, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
+     * in the Amazon Redshift Management Guide.
      * </p>
      *
      * @param createHsmConfigurationRequest Container for the necessary
@@ -4530,15 +4533,16 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
     /**
      * <p>
      * Creates an HSM configuration that contains the information required by
-     * an Amazon Redshift cluster to store and retrieve database encryption
-     * keys in a Hardware Storeage Module (HSM). After creating the HSM
+     * an Amazon Redshift cluster to store and use database encryption keys
+     * in a Hardware Security Module (HSM). After creating the HSM
      * configuration, you can specify it as a parameter when creating a
      * cluster. The cluster will then store its encryption keys in the HSM.
      * </p>
      * <p>
-     * Before creating an HSM configuration, you must have first created an
-     * HSM client certificate. For more information, go to aLinkToHSMTopic in
-     * the Amazon Redshift Management Guide.
+     * In addition to creating an HSM configuration, you must also create an
+     * HSM client certificate. For more information, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"> Hardware Security Modules </a>
+     * in the Amazon Redshift Management Guide.
      * </p>
      *
      * @param createHsmConfigurationRequest Container for the necessary

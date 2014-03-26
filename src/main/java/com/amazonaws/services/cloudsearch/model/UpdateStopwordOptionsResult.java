@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the status of updated stopword
- * options.
+ * A response message that contains the status of updated stopword options.
  * </p>
  */
+@Deprecated
 public class UpdateStopwordOptionsResult implements Serializable {
 
     /**

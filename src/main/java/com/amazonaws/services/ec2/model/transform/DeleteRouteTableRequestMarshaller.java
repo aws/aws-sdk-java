@@ -38,7 +38,7 @@ public class DeleteRouteTableRequestMarshaller implements Marshaller<Request<Del
 
         Request<DeleteRouteTableRequest> request = new DefaultRequest<DeleteRouteTableRequest>(deleteRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRouteTable");
-        request.addParameter("Version", "2013-10-15");
+        request.addParameter("Version", "2014-02-01");
 
         if (deleteRouteTableRequest.getRouteTableId() != null) {
             request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteTableRequest.getRouteTableId()));

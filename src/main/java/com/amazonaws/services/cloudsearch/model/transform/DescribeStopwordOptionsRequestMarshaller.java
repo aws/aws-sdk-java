@@ -28,6 +28,7 @@ import com.amazonaws.util.StringUtils;
 /**
  * Describe Stopword Options Request Marshaller
  */
+ @Deprecated
 public class DescribeStopwordOptionsRequestMarshaller implements Marshaller<Request<DescribeStopwordOptionsRequest>, DescribeStopwordOptionsRequest> {
 
     public Request<DescribeStopwordOptionsRequest> marshall(DescribeStopwordOptionsRequest describeStopwordOptionsRequest) {

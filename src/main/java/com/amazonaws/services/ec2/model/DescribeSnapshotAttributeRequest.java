@@ -23,8 +23,8 @@ import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeReque
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest) DescribeSnapshotAttribute operation}.
  * <p>
- * Describes an attribute of the specified snapshot. You can specify only
- * one attribute at a time.
+ * Describes the specified attribute of the specified snapshot. You can
+ * specify only one attribute at a time.
  * </p>
  * <p>
  * For more information about Amazon EBS snapshots, see

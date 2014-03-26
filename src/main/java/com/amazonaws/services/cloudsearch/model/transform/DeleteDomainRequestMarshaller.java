@@ -27,7 +27,9 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Domain Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DeleteDomainRequestMarshaller} instead.
  */
+ @Deprecated
 public class DeleteDomainRequestMarshaller implements Marshaller<Request<DeleteDomainRequest>, DeleteDomainRequest> {
 
     public Request<DeleteDomainRequest> marshall(DeleteDomainRequest deleteDomainRequest) {

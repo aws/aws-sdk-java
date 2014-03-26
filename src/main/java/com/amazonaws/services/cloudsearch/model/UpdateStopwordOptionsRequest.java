@@ -21,13 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStopwordOptions(UpdateStopwordOptionsRequest) UpdateStopwordOptions operation}.
  * <p>
- * Configures stopwords for the search domain. Stopwords are used during
- * indexing and when processing search requests. The maximum size of the
- * stopwords dictionary is 10 KB.
+ * Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size of the stopwords
+ * dictionary is 10 KB.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStopwordOptions(UpdateStopwordOptionsRequest)
  */
+@Deprecated
 public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**

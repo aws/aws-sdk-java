@@ -2825,6 +2825,86 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Rejects a VPC peering connection request. The VPC peering connection
+     * must be in the <code>pending-acceptance</code> state. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     *
+     * @param rejectVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the RejectVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RejectVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RejectVpcPeeringConnectionResult> rejectVpcPeeringConnectionAsync(final RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RejectVpcPeeringConnectionResult>() {
+            public RejectVpcPeeringConnectionResult call() throws Exception {
+                return rejectVpcPeeringConnection(rejectVpcPeeringConnectionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Rejects a VPC peering connection request. The VPC peering connection
+     * must be in the <code>pending-acceptance</code> state. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     *
+     * @param rejectVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the RejectVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RejectVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RejectVpcPeeringConnectionResult> rejectVpcPeeringConnectionAsync(
+            final RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest,
+            final AsyncHandler<RejectVpcPeeringConnectionRequest, RejectVpcPeeringConnectionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RejectVpcPeeringConnectionResult>() {
+            public RejectVpcPeeringConnectionResult call() throws Exception {
+              RejectVpcPeeringConnectionResult result;
+                try {
+                result = rejectVpcPeeringConnection(rejectVpcPeeringConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(rejectVpcPeeringConnectionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Detaches a virtual private gateway from a VPC. You do this if you're
      * planning to turn off the VPC and not use it anymore. You can confirm a
      * virtual private gateway has been completely detached from a VPC by
@@ -5017,6 +5097,88 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Accept a VPC peering connection request. To accept a request, the VPC
+     * peering connection must be in the <code>pending-acceptance</code>
+     * state, and you must be the owner of the peer VPC. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     *
+     * @param acceptVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the AcceptVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AcceptVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AcceptVpcPeeringConnectionResult> acceptVpcPeeringConnectionAsync(final AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AcceptVpcPeeringConnectionResult>() {
+            public AcceptVpcPeeringConnectionResult call() throws Exception {
+                return acceptVpcPeeringConnection(acceptVpcPeeringConnectionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Accept a VPC peering connection request. To accept a request, the VPC
+     * peering connection must be in the <code>pending-acceptance</code>
+     * state, and you must be the owner of the peer VPC. Use the
+     * <code>DescribeVpcPeeringConnections</code> request to view your
+     * outstanding VPC peering connection requests.
+     * </p>
+     *
+     * @param acceptVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the AcceptVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AcceptVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AcceptVpcPeeringConnectionResult> acceptVpcPeeringConnectionAsync(
+            final AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest,
+            final AsyncHandler<AcceptVpcPeeringConnectionRequest, AcceptVpcPeeringConnectionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AcceptVpcPeeringConnectionResult>() {
+            public AcceptVpcPeeringConnectionResult call() throws Exception {
+              AcceptVpcPeeringConnectionResult result;
+                try {
+                result = acceptVpcPeeringConnection(acceptVpcPeeringConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(acceptVpcPeeringConnectionRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Describes one or more of your export tasks.
      * </p>
      *
@@ -5161,6 +5323,106 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
               }
               asyncHandler.onSuccess(detachInternetGatewayRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Requests a VPC peering connection between two VPCs: a requester VPC
+     * that you own and a peer VPC with which to create the connection. The
+     * peer VPC can belong to another AWS account. The requester VPC and peer
+     * VPC cannot have overlapping CIDR blocks.
+     * </p>
+     * <p>
+     * The owner of the peer VPC must accept the the peering request to
+     * activate the peering connection. The VPC peering connection request
+     * expires after 7 days, after which it cannot be accepted or rejected.
+     * </p>
+     * <p>
+     * A <code>CreateVpcPeeringConnection</code> request between VPCs with
+     * overlapping CIDR blocks results in the VPC peering connection having a
+     * status of <code>failed</code> .
+     * </p>
+     *
+     * @param createVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the CreateVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateVpcPeeringConnectionResult> createVpcPeeringConnectionAsync(final CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateVpcPeeringConnectionResult>() {
+            public CreateVpcPeeringConnectionResult call() throws Exception {
+                return createVpcPeeringConnection(createVpcPeeringConnectionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Requests a VPC peering connection between two VPCs: a requester VPC
+     * that you own and a peer VPC with which to create the connection. The
+     * peer VPC can belong to another AWS account. The requester VPC and peer
+     * VPC cannot have overlapping CIDR blocks.
+     * </p>
+     * <p>
+     * The owner of the peer VPC must accept the the peering request to
+     * activate the peering connection. The VPC peering connection request
+     * expires after 7 days, after which it cannot be accepted or rejected.
+     * </p>
+     * <p>
+     * A <code>CreateVpcPeeringConnection</code> request between VPCs with
+     * overlapping CIDR blocks results in the VPC peering connection having a
+     * status of <code>failed</code> .
+     * </p>
+     *
+     * @param createVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the CreateVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateVpcPeeringConnectionResult> createVpcPeeringConnectionAsync(
+            final CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest,
+            final AsyncHandler<CreateVpcPeeringConnectionRequest, CreateVpcPeeringConnectionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateVpcPeeringConnectionResult>() {
+            public CreateVpcPeeringConnectionResult call() throws Exception {
+              CreateVpcPeeringConnectionResult result;
+                try {
+                result = createVpcPeeringConnection(createVpcPeeringConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createVpcPeeringConnectionRequest, result);
+                 return result;
         }
     });
     }
@@ -6083,6 +6345,88 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
               }
               asyncHandler.onSuccess(revokeSecurityGroupIngressRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Deletes a VPC peering connection. Either the owner of the requester
+     * VPC or the owner of the peer VPC can delete the VPC peering connection
+     * if it's in the <code>active</code> state. The owner of the requester
+     * VPC can delete a VPC peering connection in the
+     * <code>pending-acceptance</code> state.
+     * </p>
+     *
+     * @param deleteVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the DeleteVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteVpcPeeringConnectionResult> deleteVpcPeeringConnectionAsync(final DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteVpcPeeringConnectionResult>() {
+            public DeleteVpcPeeringConnectionResult call() throws Exception {
+                return deleteVpcPeeringConnection(deleteVpcPeeringConnectionRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes a VPC peering connection. Either the owner of the requester
+     * VPC or the owner of the peer VPC can delete the VPC peering connection
+     * if it's in the <code>active</code> state. The owner of the requester
+     * VPC can delete a VPC peering connection in the
+     * <code>pending-acceptance</code> state.
+     * </p>
+     *
+     * @param deleteVpcPeeringConnectionRequest Container for the necessary
+     *           parameters to execute the DeleteVpcPeeringConnection operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteVpcPeeringConnection service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteVpcPeeringConnectionResult> deleteVpcPeeringConnectionAsync(
+            final DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest,
+            final AsyncHandler<DeleteVpcPeeringConnectionRequest, DeleteVpcPeeringConnectionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteVpcPeeringConnectionResult>() {
+            public DeleteVpcPeeringConnectionResult call() throws Exception {
+              DeleteVpcPeeringConnectionResult result;
+                try {
+                result = deleteVpcPeeringConnection(deleteVpcPeeringConnectionRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteVpcPeeringConnectionRequest, result);
+                 return result;
         }
     });
     }
@@ -7089,8 +7433,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes an attribute of the specified instance. You can specify only
-     * one attribute at a time.
+     * Describes the specified attribute of the specified instance. You can
+     * specify only one attribute at a time.
      * </p>
      *
      * @param describeInstanceAttributeRequest Container for the necessary
@@ -7120,8 +7464,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Describes an attribute of the specified instance. You can specify only
-     * one attribute at a time.
+     * Describes the specified attribute of the specified instance. You can
+     * specify only one attribute at a time.
      * </p>
      *
      * @param describeInstanceAttributeRequest Container for the necessary
@@ -7158,6 +7502,82 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(describeInstanceAttributeRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Describes one or more of your VPC peering connections.
+     * </p>
+     *
+     * @param describeVpcPeeringConnectionsRequest Container for the
+     *           necessary parameters to execute the DescribeVpcPeeringConnections
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcPeeringConnections service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcPeeringConnectionsResult> describeVpcPeeringConnectionsAsync(final DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeVpcPeeringConnectionsResult>() {
+            public DescribeVpcPeeringConnectionsResult call() throws Exception {
+                return describeVpcPeeringConnections(describeVpcPeeringConnectionsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your VPC peering connections.
+     * </p>
+     *
+     * @param describeVpcPeeringConnectionsRequest Container for the
+     *           necessary parameters to execute the DescribeVpcPeeringConnections
+     *           operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcPeeringConnections service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcPeeringConnectionsResult> describeVpcPeeringConnectionsAsync(
+            final DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest,
+            final AsyncHandler<DescribeVpcPeeringConnectionsRequest, DescribeVpcPeeringConnectionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeVpcPeeringConnectionsResult>() {
+            public DescribeVpcPeeringConnectionsResult call() throws Exception {
+              DescribeVpcPeeringConnectionsResult result;
+                try {
+                result = describeVpcPeeringConnections(describeVpcPeeringConnectionsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeVpcPeeringConnectionsRequest, result);
                  return result;
         }
     });
@@ -8775,7 +9195,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * You must specify one of the following targets: Internet gateway, NAT
-     * instance, or network interface.
+     * instance, VPC peering connection, or network interface.
      * </p>
      * <p>
      * When determining how to route traffic, we use the route with the most
@@ -8838,7 +9258,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * </p>
      * <p>
      * You must specify one of the following targets: Internet gateway, NAT
-     * instance, or network interface.
+     * instance, VPC peering connection, or network interface.
      * </p>
      * <p>
      * When determining how to route traffic, we use the route with the most
@@ -9558,8 +9978,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. You must
-     * provide only one of the following: Internet gateway, NAT instance, or
-     * network interface.
+     * provide only one of the following: Internet gateway, NAT instance, VPC
+     * peering connection, or network interface.
      * </p>
      * <p>
      * For more information about route tables, see
@@ -9595,8 +10015,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. You must
-     * provide only one of the following: Internet gateway, NAT instance, or
-     * network interface.
+     * provide only one of the following: Internet gateway, NAT instance, VPC
+     * peering connection, or network interface.
      * </p>
      * <p>
      * For more information about route tables, see
@@ -10511,8 +10931,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes an attribute of the specified snapshot. You can specify only
-     * one attribute at a time.
+     * Describes the specified attribute of the specified snapshot. You can
+     * specify only one attribute at a time.
      * </p>
      * <p>
      * For more information about Amazon EBS snapshots, see
@@ -10547,8 +10967,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Describes an attribute of the specified snapshot. You can specify only
-     * one attribute at a time.
+     * Describes the specified attribute of the specified snapshot. You can
+     * specify only one attribute at a time.
      * </p>
      * <p>
      * For more information about Amazon EBS snapshots, see
@@ -10777,8 +11197,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Describes an attributes of an AMI. You can specify only one attribute
-     * at a time.
+     * Describes the specified attribute of the specified AMI. You can
+     * specify only one attribute at a time.
      * </p>
      *
      * @param describeImageAttributeRequest Container for the necessary
@@ -10808,8 +11228,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Describes an attributes of an AMI. You can specify only one attribute
-     * at a time.
+     * Describes the specified attribute of the specified AMI. You can
+     * specify only one attribute at a time.
      * </p>
      *
      * @param describeImageAttributeRequest Container for the necessary

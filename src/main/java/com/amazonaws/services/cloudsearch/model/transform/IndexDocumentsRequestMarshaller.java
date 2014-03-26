@@ -27,7 +27,9 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Index Documents Request Marshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.IndexDocumentsRequestMarshaller} instead.
  */
+ @Deprecated
 public class IndexDocumentsRequestMarshaller implements Marshaller<Request<IndexDocumentsRequest>, IndexDocumentsRequest> {
 
     public Request<IndexDocumentsRequest> marshall(IndexDocumentsRequest indexDocumentsRequest) {

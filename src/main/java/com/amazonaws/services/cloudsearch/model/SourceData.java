@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The source attribute name and an optional default value to use if a
- * document doesn't have an attribute of that name.
+ * The source attribute name and an optional default value to use if a document doesn't have an attribute of that name.
  * </p>
  */
+@Deprecated
 public class SourceData implements Serializable {
 
     /**

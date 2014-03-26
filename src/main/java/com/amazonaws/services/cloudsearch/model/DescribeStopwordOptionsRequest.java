@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeStopwordOptions(DescribeStopwordOptionsRequest)
  */
+@Deprecated
 public class DescribeStopwordOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**

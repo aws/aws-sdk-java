@@ -38,7 +38,7 @@ public class ReplaceNetworkAclEntryRequestMarshaller implements Marshaller<Reque
 
         Request<ReplaceNetworkAclEntryRequest> request = new DefaultRequest<ReplaceNetworkAclEntryRequest>(replaceNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceNetworkAclEntry");
-        request.addParameter("Version", "2013-10-15");
+        request.addParameter("Version", "2014-02-01");
 
         if (replaceNetworkAclEntryRequest.getNetworkAclId() != null) {
             request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclEntryRequest.getNetworkAclId()));

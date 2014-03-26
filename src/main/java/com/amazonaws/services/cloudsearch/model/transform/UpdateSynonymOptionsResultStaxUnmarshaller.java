@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Update Synonym Options Result StAX Unmarshaller
  */
+ @Deprecated
 public class UpdateSynonymOptionsResultStaxUnmarshaller implements Unmarshaller<UpdateSynonymOptionsResult, StaxUnmarshallerContext> {
 
     public UpdateSynonymOptionsResult unmarshall(StaxUnmarshallerContext context) throws Exception {

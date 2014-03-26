@@ -20,7 +20,10 @@ import java.io.Serializable;
  * <p>
  * A response message that contains the access policies for a domain.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.DescribeServiceAccessPoliciesResult} instead.
  */
+
+@Deprecated
 public class DescribeServiceAccessPoliciesResult implements Serializable {
 
     /**

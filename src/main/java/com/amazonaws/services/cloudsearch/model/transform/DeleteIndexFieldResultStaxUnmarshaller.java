@@ -28,7 +28,9 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
  * Delete Index Field Result StAX Unmarshaller
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.DeleteIndexFieldResultStaxUnmarshaller} instead.
  */
+ @Deprecated
 public class DeleteIndexFieldResultStaxUnmarshaller implements Unmarshaller<DeleteIndexFieldResult, StaxUnmarshallerContext> {
 
     public DeleteIndexFieldResult unmarshall(StaxUnmarshallerContext context) throws Exception {

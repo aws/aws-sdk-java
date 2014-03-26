@@ -21,6 +21,7 @@ import java.io.Serializable;
  * Options that define a <code>uint</code> field in the search index.
  * </p>
  */
+@Deprecated
 public class UIntOptions implements Serializable {
 
     /**

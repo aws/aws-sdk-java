@@ -46,19 +46,23 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
     private String parameterGroupName;
 
     /**
-     * The maximum number of parameter group records to include in the
-     * response. If more records exist than the specified
-     * <code>MaxRecords</code> value, the response includes a marker that you
-     * can use in a subsequent <a>DescribeClusterParameterGroups</a> request
-     * to retrieve the next set of records. <p>Default: <code>100</code>
-     * <p>Constraints: Value must be at least 20 and no more than 100.
+     * The maximum number of response records to return in each call. If the
+     * number of remaining response records exceeds the specified
+     * <code>MaxRecords</code> value, a value is returned in a
+     * <code>marker</code> field of the response. You can retrieve the next
+     * set of records by retrying the command with the returned marker value.
+     * <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      */
     private Integer maxRecords;
 
     /**
-     * An optional marker returned by a previous
-     * <a>DescribeClusterParameterGroups</a> request to indicate the first
-     * parameter group that the current request will return.
+     * An optional parameter that specifies the starting point to return a
+     * set of response records. When the results of a
+     * <a>DescribeClusterParameterGroups</a> request exceed the value
+     * specified in <code>MaxRecords</code>, AWS returns a value in the
+     * <code>Marker</code> field of the response. You can retrieve the next
+     * set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request.
      */
     private String marker;
 
@@ -108,59 +112,59 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
     }
 
     /**
-     * The maximum number of parameter group records to include in the
-     * response. If more records exist than the specified
-     * <code>MaxRecords</code> value, the response includes a marker that you
-     * can use in a subsequent <a>DescribeClusterParameterGroups</a> request
-     * to retrieve the next set of records. <p>Default: <code>100</code>
-     * <p>Constraints: Value must be at least 20 and no more than 100.
+     * The maximum number of response records to return in each call. If the
+     * number of remaining response records exceeds the specified
+     * <code>MaxRecords</code> value, a value is returned in a
+     * <code>marker</code> field of the response. You can retrieve the next
+     * set of records by retrying the command with the returned marker value.
+     * <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return The maximum number of parameter group records to include in the
-     *         response. If more records exist than the specified
-     *         <code>MaxRecords</code> value, the response includes a marker that you
-     *         can use in a subsequent <a>DescribeClusterParameterGroups</a> request
-     *         to retrieve the next set of records. <p>Default: <code>100</code>
-     *         <p>Constraints: Value must be at least 20 and no more than 100.
+     * @return The maximum number of response records to return in each call. If the
+     *         number of remaining response records exceeds the specified
+     *         <code>MaxRecords</code> value, a value is returned in a
+     *         <code>marker</code> field of the response. You can retrieve the next
+     *         set of records by retrying the command with the returned marker value.
+     *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * The maximum number of parameter group records to include in the
-     * response. If more records exist than the specified
-     * <code>MaxRecords</code> value, the response includes a marker that you
-     * can use in a subsequent <a>DescribeClusterParameterGroups</a> request
-     * to retrieve the next set of records. <p>Default: <code>100</code>
-     * <p>Constraints: Value must be at least 20 and no more than 100.
+     * The maximum number of response records to return in each call. If the
+     * number of remaining response records exceeds the specified
+     * <code>MaxRecords</code> value, a value is returned in a
+     * <code>marker</code> field of the response. You can retrieve the next
+     * set of records by retrying the command with the returned marker value.
+     * <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @param maxRecords The maximum number of parameter group records to include in the
-     *         response. If more records exist than the specified
-     *         <code>MaxRecords</code> value, the response includes a marker that you
-     *         can use in a subsequent <a>DescribeClusterParameterGroups</a> request
-     *         to retrieve the next set of records. <p>Default: <code>100</code>
-     *         <p>Constraints: Value must be at least 20 and no more than 100.
+     * @param maxRecords The maximum number of response records to return in each call. If the
+     *         number of remaining response records exceeds the specified
+     *         <code>MaxRecords</code> value, a value is returned in a
+     *         <code>marker</code> field of the response. You can retrieve the next
+     *         set of records by retrying the command with the returned marker value.
+     *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * The maximum number of parameter group records to include in the
-     * response. If more records exist than the specified
-     * <code>MaxRecords</code> value, the response includes a marker that you
-     * can use in a subsequent <a>DescribeClusterParameterGroups</a> request
-     * to retrieve the next set of records. <p>Default: <code>100</code>
-     * <p>Constraints: Value must be at least 20 and no more than 100.
+     * The maximum number of response records to return in each call. If the
+     * number of remaining response records exceeds the specified
+     * <code>MaxRecords</code> value, a value is returned in a
+     * <code>marker</code> field of the response. You can retrieve the next
+     * set of records by retrying the command with the returned marker value.
+     * <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The maximum number of parameter group records to include in the
-     *         response. If more records exist than the specified
-     *         <code>MaxRecords</code> value, the response includes a marker that you
-     *         can use in a subsequent <a>DescribeClusterParameterGroups</a> request
-     *         to retrieve the next set of records. <p>Default: <code>100</code>
-     *         <p>Constraints: Value must be at least 20 and no more than 100.
+     * @param maxRecords The maximum number of response records to return in each call. If the
+     *         number of remaining response records exceeds the specified
+     *         <code>MaxRecords</code> value, a value is returned in a
+     *         <code>marker</code> field of the response. You can retrieve the next
+     *         set of records by retrying the command with the returned marker value.
+     *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -171,41 +175,65 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
     }
 
     /**
-     * An optional marker returned by a previous
-     * <a>DescribeClusterParameterGroups</a> request to indicate the first
-     * parameter group that the current request will return.
+     * An optional parameter that specifies the starting point to return a
+     * set of response records. When the results of a
+     * <a>DescribeClusterParameterGroups</a> request exceed the value
+     * specified in <code>MaxRecords</code>, AWS returns a value in the
+     * <code>Marker</code> field of the response. You can retrieve the next
+     * set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request.
      *
-     * @return An optional marker returned by a previous
-     *         <a>DescribeClusterParameterGroups</a> request to indicate the first
-     *         parameter group that the current request will return.
+     * @return An optional parameter that specifies the starting point to return a
+     *         set of response records. When the results of a
+     *         <a>DescribeClusterParameterGroups</a> request exceed the value
+     *         specified in <code>MaxRecords</code>, AWS returns a value in the
+     *         <code>Marker</code> field of the response. You can retrieve the next
+     *         set of response records by providing the returned marker value in the
+     *         <code>Marker</code> parameter and retrying the request.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional marker returned by a previous
-     * <a>DescribeClusterParameterGroups</a> request to indicate the first
-     * parameter group that the current request will return.
+     * An optional parameter that specifies the starting point to return a
+     * set of response records. When the results of a
+     * <a>DescribeClusterParameterGroups</a> request exceed the value
+     * specified in <code>MaxRecords</code>, AWS returns a value in the
+     * <code>Marker</code> field of the response. You can retrieve the next
+     * set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request.
      *
-     * @param marker An optional marker returned by a previous
-     *         <a>DescribeClusterParameterGroups</a> request to indicate the first
-     *         parameter group that the current request will return.
+     * @param marker An optional parameter that specifies the starting point to return a
+     *         set of response records. When the results of a
+     *         <a>DescribeClusterParameterGroups</a> request exceed the value
+     *         specified in <code>MaxRecords</code>, AWS returns a value in the
+     *         <code>Marker</code> field of the response. You can retrieve the next
+     *         set of response records by providing the returned marker value in the
+     *         <code>Marker</code> parameter and retrying the request.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional marker returned by a previous
-     * <a>DescribeClusterParameterGroups</a> request to indicate the first
-     * parameter group that the current request will return.
+     * An optional parameter that specifies the starting point to return a
+     * set of response records. When the results of a
+     * <a>DescribeClusterParameterGroups</a> request exceed the value
+     * specified in <code>MaxRecords</code>, AWS returns a value in the
+     * <code>Marker</code> field of the response. You can retrieve the next
+     * set of response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker returned by a previous
-     *         <a>DescribeClusterParameterGroups</a> request to indicate the first
-     *         parameter group that the current request will return.
+     * @param marker An optional parameter that specifies the starting point to return a
+     *         set of response records. When the results of a
+     *         <a>DescribeClusterParameterGroups</a> request exceed the value
+     *         specified in <code>MaxRecords</code>, AWS returns a value in the
+     *         <code>Marker</code> field of the response. You can retrieve the next
+     *         set of response records by providing the returned marker value in the
+     *         <code>Marker</code> parameter and retrying the request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

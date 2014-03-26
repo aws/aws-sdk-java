@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -18,10 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A <code>PolicyDocument</code> that specifies access policies for the
- * search domain's services, and the current status of those policies.
+ * A <code>PolicyDocument</code> that specifies access policies for the search domain's services, and the current status of those policies.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.AccessPoliciesStatus} instead.
  */
+@Deprecated
 public class AccessPoliciesStatus implements Serializable {
 
     /**
@@ -73,7 +74,7 @@ public class AccessPoliciesStatus implements Serializable {
     public String getOptions() {
         return options;
     }
-    
+
     /**
      * An IAM access policy as described in <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
@@ -102,7 +103,7 @@ public class AccessPoliciesStatus implements Serializable {
     public void setOptions(String options) {
         this.options = options;
     }
-    
+
     /**
      * An IAM access policy as described in <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
@@ -130,7 +131,7 @@ public class AccessPoliciesStatus implements Serializable {
      *         "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": {
      *         "IpAddress": { "aws:SourceIp": ["203.0.113.1/32"] } }} ] }</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessPoliciesStatus withOptions(String options) {
@@ -148,7 +149,7 @@ public class AccessPoliciesStatus implements Serializable {
     public OptionStatus getStatus() {
         return status;
     }
-    
+
     /**
      * The status of an option, including when it was last updated and
      * whether it is actively in use for searches.
@@ -159,7 +160,7 @@ public class AccessPoliciesStatus implements Serializable {
     public void setStatus(OptionStatus status) {
         this.status = status;
     }
-    
+
     /**
      * The status of an option, including when it was last updated and
      * whether it is actively in use for searches.
@@ -169,7 +170,7 @@ public class AccessPoliciesStatus implements Serializable {
      * @param status The status of an option, including when it was last updated and
      *         whether it is actively in use for searches.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessPoliciesStatus withStatus(OptionStatus status) {
@@ -194,17 +195,17 @@ public class AccessPoliciesStatus implements Serializable {
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -212,13 +213,12 @@ public class AccessPoliciesStatus implements Serializable {
 
         if (obj instanceof AccessPoliciesStatus == false) return false;
         AccessPoliciesStatus other = (AccessPoliciesStatus)obj;
-        
+
         if (other.getOptions() == null ^ this.getOptions() == null) return false;
-        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false) return false; 
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false) return false;
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false;
         return true;
     }
-    
+
 }
-    

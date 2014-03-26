@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the status of an updated
- * <code>RankExpression</code> .
+ * A response message that contains the status of an updated <code>RankExpression</code> .
  * </p>
  */
+@Deprecated
 public class DefineRankExpressionResult implements Serializable {
 
     /**
@@ -37,7 +37,7 @@ public class DefineRankExpressionResult implements Serializable {
     public RankExpressionStatus getRankExpression() {
         return rankExpression;
     }
-    
+
     /**
      * The value of a <code>RankExpression</code> and its current status.
      *
@@ -46,7 +46,7 @@ public class DefineRankExpressionResult implements Serializable {
     public void setRankExpression(RankExpressionStatus rankExpression) {
         this.rankExpression = rankExpression;
     }
-    
+
     /**
      * The value of a <code>RankExpression</code> and its current status.
      * <p>
@@ -54,7 +54,7 @@ public class DefineRankExpressionResult implements Serializable {
      *
      * @param rankExpression The value of a <code>RankExpression</code> and its current status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineRankExpressionResult withRankExpression(RankExpressionStatus rankExpression) {
@@ -78,16 +78,16 @@ public class DefineRankExpressionResult implements Serializable {
         sb.append("}");
         return sb.toString();
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getRankExpression() == null) ? 0 : getRankExpression().hashCode()); 
+
+        hashCode = prime * hashCode + ((getRankExpression() == null) ? 0 : getRankExpression().hashCode());
         return hashCode;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -95,11 +95,10 @@ public class DefineRankExpressionResult implements Serializable {
 
         if (obj instanceof DefineRankExpressionResult == false) return false;
         DefineRankExpressionResult other = (DefineRankExpressionResult)obj;
-        
+
         if (other.getRankExpression() == null ^ this.getRankExpression() == null) return false;
-        if (other.getRankExpression() != null && other.getRankExpression().equals(this.getRankExpression()) == false) return false; 
+        if (other.getRankExpression() != null && other.getRankExpression().equals(this.getRankExpression()) == false) return false;
         return true;
     }
-    
+
 }
-    

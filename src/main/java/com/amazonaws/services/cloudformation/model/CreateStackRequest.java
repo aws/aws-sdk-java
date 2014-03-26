@@ -25,10 +25,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * successfully, the stack creation starts. You can check the status of
  * the stack via the DescribeStacks API.
  * </p>
- * <p>
- * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
- * per region.
- * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#createStack(CreateStackRequest)
  */
@@ -44,11 +40,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -61,8 +57,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -140,13 +136,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     private String onFailure;
 
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
@@ -156,9 +151,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1350<br/>
@@ -226,21 +220,21 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
      * @return Structure containing the template body with a minimum length of 1 byte
-     *         and a maximum length of 51,200 bytes. (For more information, go to <a
+     *         and a maximum length of 51,200 bytes. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
-     *         must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
-     *         both are passed, only <code>TemplateBody</code> is used.
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     *         must specify either the <code>TemplateBody</code> or the
+     *         <code>TemplateURL</code> parameter, but not both.
      */
     public String getTemplateBody() {
         return templateBody;
@@ -248,21 +242,21 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
      * @param templateBody Structure containing the template body with a minimum length of 1 byte
-     *         and a maximum length of 51,200 bytes. (For more information, go to <a
+     *         and a maximum length of 51,200 bytes. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
-     *         must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
-     *         both are passed, only <code>TemplateBody</code> is used.
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     *         must specify either the <code>TemplateBody</code> or the
+     *         <code>TemplateURL</code> parameter, but not both.
      */
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
@@ -270,11 +264,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * Structure containing the template body with a minimum length of 1 byte
-     * and a maximum length of 51,200 bytes. (For more information, go to <a
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
-     * must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -282,11 +276,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - <br/>
      *
      * @param templateBody Structure containing the template body with a minimum length of 1 byte
-     *         and a maximum length of 51,200 bytes. (For more information, go to <a
+     *         and a maximum length of 51,200 bytes. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
-     *         must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
-     *         both are passed, only <code>TemplateBody</code> is used.
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
+     *         must specify either the <code>TemplateBody</code> or the
+     *         <code>TemplateURL</code> parameter, but not both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -302,8 +296,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -313,8 +307,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         region as the stack. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
-     *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
-     *         both are passed, only <code>TemplateBody</code> is used.
+     *         must specify either the <code>TemplateBody</code> or the
+     *         <code>TemplateURL</code> parameter, but not both.
      */
     public String getTemplateURL() {
         return templateURL;
@@ -326,8 +320,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -337,8 +331,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         region as the stack. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
-     *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
-     *         both are passed, only <code>TemplateBody</code> is used.
+     *         must specify either the <code>TemplateBody</code> or the
+     *         <code>TemplateURL</code> parameter, but not both.
      */
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
@@ -350,8 +344,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * region as the stack. For more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
-     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
-     * both are passed, only <code>TemplateBody</code> is used.
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -363,8 +357,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         region as the stack. For more information, go to the <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
-     *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
-     *         both are passed, only <code>TemplateBody</code> is used.
+     *         must specify either the <code>TemplateBody</code> or the
+     *         <code>TemplateURL</code> parameter, but not both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1068,74 +1062,68 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
-     * @return Structure containing the stack policy body. (For more information, go
+     * @return Structure containing the stack policy body. For more information, go
      *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     *         Guide.) <p>If you pass <code>StackPolicyBody</code> and
-     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     *         used.
+     *         Guide. You can specify either the <code>StackPolicyBody</code> or the
+     *         <code>StackPolicyURL</code> parameter, but not both.
      */
     public String getStackPolicyBody() {
         return stackPolicyBody;
     }
     
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
-     * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
+     * @param stackPolicyBody Structure containing the stack policy body. For more information, go
      *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     *         Guide.) <p>If you pass <code>StackPolicyBody</code> and
-     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     *         used.
+     *         Guide. You can specify either the <code>StackPolicyBody</code> or the
+     *         <code>StackPolicyURL</code> parameter, but not both.
      */
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
     
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
-     * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
+     * @param stackPolicyBody Structure containing the stack policy body. For more information, go
      *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     *         Guide.) <p>If you pass <code>StackPolicyBody</code> and
-     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     *         used.
+     *         Guide. You can specify either the <code>StackPolicyBody</code> or the
+     *         <code>StackPolicyURL</code> parameter, but not both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1148,18 +1136,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1350<br/>
      *
      * @return Location of a file containing the stack policy. The URL must point to
      *         a policy (max size: 16KB) located in an S3 bucket in the same region
-     *         as the stack. If you pass <code>StackPolicyBody</code> and
-     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     *         used.
+     *         as the stack. You can specify either the <code>StackPolicyBody</code>
+     *         or the <code>StackPolicyURL</code> parameter, but not both.
      */
     public String getStackPolicyURL() {
         return stackPolicyURL;
@@ -1168,18 +1154,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1350<br/>
      *
      * @param stackPolicyURL Location of a file containing the stack policy. The URL must point to
      *         a policy (max size: 16KB) located in an S3 bucket in the same region
-     *         as the stack. If you pass <code>StackPolicyBody</code> and
-     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     *         used.
+     *         as the stack. You can specify either the <code>StackPolicyBody</code>
+     *         or the <code>StackPolicyURL</code> parameter, but not both.
      */
     public void setStackPolicyURL(String stackPolicyURL) {
         this.stackPolicyURL = stackPolicyURL;
@@ -1188,9 +1172,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. If you pass <code>StackPolicyBody</code> and
-     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     * used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1199,9 +1182,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param stackPolicyURL Location of a file containing the stack policy. The URL must point to
      *         a policy (max size: 16KB) located in an S3 bucket in the same region
-     *         as the stack. If you pass <code>StackPolicyBody</code> and
-     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
-     *         used.
+     *         as the stack. You can specify either the <code>StackPolicyBody</code>
+     *         or the <code>StackPolicyURL</code> parameter, but not both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

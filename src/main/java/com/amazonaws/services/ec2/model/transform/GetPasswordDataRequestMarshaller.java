@@ -38,7 +38,7 @@ public class GetPasswordDataRequestMarshaller implements Marshaller<Request<GetP
 
         Request<GetPasswordDataRequest> request = new DefaultRequest<GetPasswordDataRequest>(getPasswordDataRequest, "AmazonEC2");
         request.addParameter("Action", "GetPasswordData");
-        request.addParameter("Version", "2013-10-15");
+        request.addParameter("Version", "2014-02-01");
 
         if (getPasswordDataRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(getPasswordDataRequest.getInstanceId()));

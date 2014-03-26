@@ -146,7 +146,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      * subnet for the instance. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     * combination of a tag assigned to the resource. </li> <li>
+     * combination of a tag assigned to the resource, where
+     * <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -412,7 +413,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      * subnet for the instance. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     * combination of a tag assigned to the resource. </li> <li>
+     * combination of a tag assigned to the resource, where
+     * <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -593,7 +595,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      *         subnet for the instance. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *         combination of a tag assigned to the resource. </li> <li>
+     *         combination of a tag assigned to the resource, where
+     *         <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter
@@ -783,7 +786,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      * subnet for the instance. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     * combination of a tag assigned to the resource. </li> <li>
+     * combination of a tag assigned to the resource, where
+     * <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -964,7 +968,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      *         subnet for the instance. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *         combination of a tag assigned to the resource. </li> <li>
+     *         combination of a tag assigned to the resource, where
+     *         <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter
@@ -1156,7 +1161,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      * subnet for the instance. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     * combination of a tag assigned to the resource. </li> <li>
+     * combination of a tag assigned to the resource, where
+     * <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -1339,7 +1345,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      *         subnet for the instance. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *         combination of a tag assigned to the resource. </li> <li>
+     *         combination of a tag assigned to the resource, where
+     *         <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter
@@ -1532,7 +1539,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      * subnet for the instance. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     * combination of a tag assigned to the resource. </li> <li>
+     * combination of a tag assigned to the resource, where
+     * <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -1715,7 +1723,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         state change. </li> <li> <p><code>subnet-id</code> - The ID of the
      *         subnet for the instance. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
-     *         combination of a tag assigned to the resource. </li> <li>
+     *         combination of a tag assigned to the resource, where
+     *         <code>tag</code>:<i>key</i> is the tag's key. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter

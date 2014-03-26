@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * U Int Options StAX Unmarshaller
  */
+ @Deprecated
 public class UIntOptionsStaxUnmarshaller implements Unmarshaller<UIntOptions, StaxUnmarshallerContext> {
 
     public UIntOptions unmarshall(StaxUnmarshallerContext context) throws Exception {

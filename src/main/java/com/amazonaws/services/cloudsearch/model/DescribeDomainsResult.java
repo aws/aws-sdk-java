@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * A response message that contains the status of one or more domains.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.DescribeDomainsResult} instead.
  */
+@Deprecated
 public class DescribeDomainsResult implements Serializable {
 
     /**

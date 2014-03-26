@@ -21,7 +21,10 @@ import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.cloudsearch.model.InternalException;
-
+/**
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.transform.InternalExceptionUnmarshaller} instead.
+ */
+@Deprecated
 public class InternalExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
     public InternalExceptionUnmarshaller() {

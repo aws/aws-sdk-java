@@ -34,13 +34,12 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     private String stackName;
 
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
@@ -50,9 +49,8 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1350<br/>
@@ -93,74 +91,68 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
-     * @return Structure containing the stack policy body. (For more information, go
+     * @return Structure containing the stack policy body. For more information, go
      *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     *         Guide.) <p>You must pass <code>StackPolicyBody</code> or
-     *         <code>StackPolicyURL</code>. If both are passed, only
-     *         <code>StackPolicyBody</code> is used.
+     *         Guide. You can specify either the <code>StackPolicyBody</code> or the
+     *         <code>StackPolicyURL</code> parameter, but not both.
      */
     public String getStackPolicyBody() {
         return stackPolicyBody;
     }
     
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
-     * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
+     * @param stackPolicyBody Structure containing the stack policy body. For more information, go
      *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     *         Guide.) <p>You must pass <code>StackPolicyBody</code> or
-     *         <code>StackPolicyURL</code>. If both are passed, only
-     *         <code>StackPolicyBody</code> is used.
+     *         Guide. You can specify either the <code>StackPolicyBody</code> or the
+     *         <code>StackPolicyURL</code> parameter, but not both.
      */
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
     
     /**
-     * Structure containing the stack policy body. (For more information, go
+     * Structure containing the stack policy body. For more information, go
      * to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     * Guide.) <p>You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * Guide. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
      *
-     * @param stackPolicyBody Structure containing the stack policy body. (For more information, go
+     * @param stackPolicyBody Structure containing the stack policy body. For more information, go
      *         to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
-     *         Guide.) <p>You must pass <code>StackPolicyBody</code> or
-     *         <code>StackPolicyURL</code>. If both are passed, only
-     *         <code>StackPolicyBody</code> is used.
+     *         Guide. You can specify either the <code>StackPolicyBody</code> or the
+     *         <code>StackPolicyURL</code> parameter, but not both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -173,18 +165,16 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1350<br/>
      *
      * @return Location of a file containing the stack policy. The URL must point to
      *         a policy (max size: 16KB) located in an S3 bucket in the same region
-     *         as the stack. You must pass <code>StackPolicyBody</code> or
-     *         <code>StackPolicyURL</code>. If both are passed, only
-     *         <code>StackPolicyBody</code> is used.
+     *         as the stack. You can specify either the <code>StackPolicyBody</code>
+     *         or the <code>StackPolicyURL</code> parameter, but not both.
      */
     public String getStackPolicyURL() {
         return stackPolicyURL;
@@ -193,18 +183,16 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1350<br/>
      *
      * @param stackPolicyURL Location of a file containing the stack policy. The URL must point to
      *         a policy (max size: 16KB) located in an S3 bucket in the same region
-     *         as the stack. You must pass <code>StackPolicyBody</code> or
-     *         <code>StackPolicyURL</code>. If both are passed, only
-     *         <code>StackPolicyBody</code> is used.
+     *         as the stack. You can specify either the <code>StackPolicyBody</code>
+     *         or the <code>StackPolicyURL</code> parameter, but not both.
      */
     public void setStackPolicyURL(String stackPolicyURL) {
         this.stackPolicyURL = stackPolicyURL;
@@ -213,9 +201,8 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
     /**
      * Location of a file containing the stack policy. The URL must point to
      * a policy (max size: 16KB) located in an S3 bucket in the same region
-     * as the stack. You must pass <code>StackPolicyBody</code> or
-     * <code>StackPolicyURL</code>. If both are passed, only
-     * <code>StackPolicyBody</code> is used.
+     * as the stack. You can specify either the <code>StackPolicyBody</code>
+     * or the <code>StackPolicyURL</code> parameter, but not both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -224,9 +211,8 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
      *
      * @param stackPolicyURL Location of a file containing the stack policy. The URL must point to
      *         a policy (max size: 16KB) located in an S3 bucket in the same region
-     *         as the stack. You must pass <code>StackPolicyBody</code> or
-     *         <code>StackPolicyURL</code>. If both are passed, only
-     *         <code>StackPolicyBody</code> is used.
+     *         as the stack. You can specify either the <code>StackPolicyBody</code>
+     *         or the <code>StackPolicyURL</code> parameter, but not both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

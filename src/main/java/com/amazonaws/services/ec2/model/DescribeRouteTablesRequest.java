@@ -64,6 +64,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * indicates that the route's target isn't available (for example, the
      * specified gateway isn't attached to the VPC, the specified NAT
      * instance has been terminated, and so on). </li> <li>
+     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     * peering connection specified in a route in the table. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -180,6 +182,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * indicates that the route's target isn't available (for example, the
      * specified gateway isn't attached to the VPC, the specified NAT
      * instance has been terminated, and so on). </li> <li>
+     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     * peering connection specified in a route in the table. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -217,6 +221,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         indicates that the route's target isn't available (for example, the
      *         specified gateway isn't attached to the VPC, the specified NAT
      *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     *         peering connection specified in a route in the table. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -263,6 +269,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * indicates that the route's target isn't available (for example, the
      * specified gateway isn't attached to the VPC, the specified NAT
      * instance has been terminated, and so on). </li> <li>
+     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     * peering connection specified in a route in the table. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -300,6 +308,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         indicates that the route's target isn't available (for example, the
      *         specified gateway isn't attached to the VPC, the specified NAT
      *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     *         peering connection specified in a route in the table. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -348,6 +358,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * indicates that the route's target isn't available (for example, the
      * specified gateway isn't attached to the VPC, the specified NAT
      * instance has been terminated, and so on). </li> <li>
+     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     * peering connection specified in a route in the table. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -387,6 +399,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         indicates that the route's target isn't available (for example, the
      *         specified gateway isn't attached to the VPC, the specified NAT
      *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     *         peering connection specified in a route in the table. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -436,6 +450,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * indicates that the route's target isn't available (for example, the
      * specified gateway isn't attached to the VPC, the specified NAT
      * instance has been terminated, and so on). </li> <li>
+     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     * peering connection specified in a route in the table. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -475,6 +491,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         indicates that the route's target isn't available (for example, the
      *         specified gateway isn't attached to the VPC, the specified NAT
      *         instance has been terminated, and so on). </li> <li>
+     *         <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC
+     *         peering connection specified in a route in the table. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.

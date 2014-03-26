@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Rank Expression Status StAX Unmarshaller
  */
+ @Deprecated
 public class RankExpressionStatusStaxUnmarshaller implements Unmarshaller<RankExpressionStatus, StaxUnmarshallerContext> {
 
     public RankExpressionStatus unmarshall(StaxUnmarshallerContext context) throws Exception {

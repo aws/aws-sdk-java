@@ -80,8 +80,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
-     * <code>dw.hs1.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
+     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
+     * <code>dw2.8xlarge</code>.
      */
     private String nodeType;
 
@@ -148,8 +149,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
      * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
-     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-     * <p>Constraints: Minimum 30-minute window.
+     * UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>
+     * <li><b>Asia Pacific (Singapore) Region</b> 14:00-22:00 UTC</li>
+     * <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li>
+     * <li><b>Asia Pacific (Tokyo) Region</b> 17:00-03:00 UTC</li> </ul>
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Minimum 30-minute window.
      */
     private String preferredMaintenanceWindow;
 
@@ -500,15 +505,17 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
-     * <code>dw.hs1.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
+     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
+     * <code>dw2.8xlarge</code>.
      *
      * @return The node type to be provisioned for the cluster. For information about
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      *         Working with Clusters</a> in the <i>Amazon Redshift Management
-     *         Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
-     *         <code>dw.hs1.8xlarge</code>.
+     *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
+     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
+     *         <code>dw2.8xlarge</code>.
      */
     public String getNodeType() {
         return nodeType;
@@ -519,15 +526,17 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
-     * <code>dw.hs1.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
+     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
+     * <code>dw2.8xlarge</code>.
      *
      * @param nodeType The node type to be provisioned for the cluster. For information about
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      *         Working with Clusters</a> in the <i>Amazon Redshift Management
-     *         Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
-     *         <code>dw.hs1.8xlarge</code>.
+     *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
+     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
+     *         <code>dw2.8xlarge</code>.
      */
     public void setNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -538,8 +547,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * node types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Management
-     * Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
-     * <code>dw.hs1.8xlarge</code>.
+     * Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
+     * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
+     * <code>dw2.8xlarge</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -547,8 +557,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         node types, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      *         Working with Clusters</a> in the <i>Amazon Redshift Management
-     *         Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
-     *         <code>dw.hs1.8xlarge</code>.
+     *         Guide</i>. <p> Valid Values: <code>dw1.xlarge</code> |
+     *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
+     *         <code>dw2.8xlarge</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -985,8 +996,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
      * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
-     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-     * <p>Constraints: Minimum 30-minute window.
+     * UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>
+     * <li><b>Asia Pacific (Singapore) Region</b> 14:00-22:00 UTC</li>
+     * <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li>
+     * <li><b>Asia Pacific (Tokyo) Region</b> 17:00-03:00 UTC</li> </ul>
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Minimum 30-minute window.
      *
      * @return The weekly time range (in UTC) during which automated cluster
      *         maintenance can occur. <p> Format:
@@ -996,8 +1011,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         for each region from which the default maintenance windows are
      *         assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
      *         03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
-     *         UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-     *         <p>Constraints: Minimum 30-minute window.
+     *         UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>
+     *         <li><b>Asia Pacific (Singapore) Region</b> 14:00-22:00 UTC</li>
+     *         <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li>
+     *         <li><b>Asia Pacific (Tokyo) Region</b> 17:00-03:00 UTC</li> </ul>
+     *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     *         Minimum 30-minute window.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -1012,8 +1031,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
      * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
-     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-     * <p>Constraints: Minimum 30-minute window.
+     * UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>
+     * <li><b>Asia Pacific (Singapore) Region</b> 14:00-22:00 UTC</li>
+     * <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li>
+     * <li><b>Asia Pacific (Tokyo) Region</b> 17:00-03:00 UTC</li> </ul>
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Minimum 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
      *         maintenance can occur. <p> Format:
@@ -1023,8 +1046,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         for each region from which the default maintenance windows are
      *         assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
      *         03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
-     *         UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-     *         <p>Constraints: Minimum 30-minute window.
+     *         UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>
+     *         <li><b>Asia Pacific (Singapore) Region</b> 14:00-22:00 UTC</li>
+     *         <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li>
+     *         <li><b>Asia Pacific (Tokyo) Region</b> 17:00-03:00 UTC</li> </ul>
+     *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     *         Minimum 30-minute window.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1039,8 +1066,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
      * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
-     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-     * <p>Constraints: Minimum 30-minute window.
+     * UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>
+     * <li><b>Asia Pacific (Singapore) Region</b> 14:00-22:00 UTC</li>
+     * <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li>
+     * <li><b>Asia Pacific (Tokyo) Region</b> 17:00-03:00 UTC</li> </ul>
+     * <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     * Minimum 30-minute window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1052,8 +1083,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         for each region from which the default maintenance windows are
      *         assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
      *         03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
-     *         UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-     *         <p>Constraints: Minimum 30-minute window.
+     *         UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>
+     *         <li><b>Asia Pacific (Singapore) Region</b> 14:00-22:00 UTC</li>
+     *         <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li>
+     *         <li><b>Asia Pacific (Tokyo) Region</b> 17:00-03:00 UTC</li> </ul>
+     *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
+     *         Minimum 30-minute window.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

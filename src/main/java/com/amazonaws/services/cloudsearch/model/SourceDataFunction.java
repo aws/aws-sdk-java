@@ -17,6 +17,7 @@ package com.amazonaws.services.cloudsearch.model;
 /**
  * Source Data Function
  */
+ @Deprecated
 public enum SourceDataFunction {
     
     Copy("Copy"),

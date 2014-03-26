@@ -157,6 +157,10 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     cluster.setElasticIpStatus(ElasticIpStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ClusterRevisionNumber", targetDepth)) {
+                    cluster.setClusterRevisionNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cluster;

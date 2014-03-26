@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class PendingModifiedValues implements Serializable {
 
     /**
-     * The pending or in-progress change of the master password for the
+     * The pending or in-progress change of the master user password for the
      * cluster.
      */
     private String masterUserPassword;
@@ -58,10 +58,10 @@ public class PendingModifiedValues implements Serializable {
     private Integer automatedSnapshotRetentionPeriod;
 
     /**
-     * The pending or in-progress change of the master password for the
+     * The pending or in-progress change of the master user password for the
      * cluster.
      *
-     * @return The pending or in-progress change of the master password for the
+     * @return The pending or in-progress change of the master user password for the
      *         cluster.
      */
     public String getMasterUserPassword() {
@@ -69,10 +69,10 @@ public class PendingModifiedValues implements Serializable {
     }
     
     /**
-     * The pending or in-progress change of the master password for the
+     * The pending or in-progress change of the master user password for the
      * cluster.
      *
-     * @param masterUserPassword The pending or in-progress change of the master password for the
+     * @param masterUserPassword The pending or in-progress change of the master user password for the
      *         cluster.
      */
     public void setMasterUserPassword(String masterUserPassword) {
@@ -80,12 +80,12 @@ public class PendingModifiedValues implements Serializable {
     }
     
     /**
-     * The pending or in-progress change of the master password for the
+     * The pending or in-progress change of the master user password for the
      * cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUserPassword The pending or in-progress change of the master password for the
+     * @param masterUserPassword The pending or in-progress change of the master user password for the
      *         cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 

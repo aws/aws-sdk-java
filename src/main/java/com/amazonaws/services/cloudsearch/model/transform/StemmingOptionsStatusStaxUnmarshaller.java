@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Stemming Options Status StAX Unmarshaller
  */
+ @Deprecated
 public class StemmingOptionsStatusStaxUnmarshaller implements Unmarshaller<StemmingOptionsStatus, StaxUnmarshallerContext> {
 
     public StemmingOptionsStatus unmarshall(StaxUnmarshallerContext context) throws Exception {

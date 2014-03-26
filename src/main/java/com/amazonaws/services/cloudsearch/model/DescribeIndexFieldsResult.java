@@ -20,7 +20,9 @@ import java.io.Serializable;
  * <p>
  * A response message that contains the index fields for a search domain.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.DescribeIndexFieldsResult} instead.
  */
+@Deprecated
 public class DescribeIndexFieldsResult implements Serializable {
 
     /**

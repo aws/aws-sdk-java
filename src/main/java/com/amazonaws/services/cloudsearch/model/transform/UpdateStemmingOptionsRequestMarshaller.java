@@ -28,6 +28,7 @@ import com.amazonaws.util.StringUtils;
 /**
  * Update Stemming Options Request Marshaller
  */
+ @Deprecated
 public class UpdateStemmingOptionsRequestMarshaller implements Marshaller<Request<UpdateStemmingOptionsRequest>, UpdateStemmingOptionsRequest> {
 
     public Request<UpdateStemmingOptionsRequest> marshall(UpdateStemmingOptionsRequest updateStemmingOptionsRequest) {

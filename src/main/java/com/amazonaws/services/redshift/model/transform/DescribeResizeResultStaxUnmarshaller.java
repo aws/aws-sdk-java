@@ -71,6 +71,26 @@ public class DescribeResizeResultStaxUnmarshaller implements Unmarshaller<Descri
                     describeResizeResult.getImportTablesNotStarted().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AvgResizeRateInMegaBytesPerSecond", targetDepth)) {
+                    describeResizeResult.setAvgResizeRateInMegaBytesPerSecond(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("TotalResizeDataInMegaBytes", targetDepth)) {
+                    describeResizeResult.setTotalResizeDataInMegaBytes(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ProgressInMegaBytes", targetDepth)) {
+                    describeResizeResult.setProgressInMegaBytes(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ElapsedTimeInSeconds", targetDepth)) {
+                    describeResizeResult.setElapsedTimeInSeconds(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EstimatedTimeToCompletionInSeconds", targetDepth)) {
+                    describeResizeResult.setEstimatedTimeToCompletionInSeconds(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeResizeResult;

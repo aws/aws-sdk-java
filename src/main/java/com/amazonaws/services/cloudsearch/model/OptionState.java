@@ -16,7 +16,9 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * Option State
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.OptionState} instead.
  */
+ @Deprecated
 public enum OptionState {
     
     RequiresIndexDocuments("RequiresIndexDocuments"),

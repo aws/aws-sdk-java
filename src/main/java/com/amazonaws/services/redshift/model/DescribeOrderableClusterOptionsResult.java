@@ -30,7 +30,12 @@ public class DescribeOrderableClusterOptionsResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption> orderableClusterOptions;
 
     /**
-     * A marker that can be used to retrieve paginated results.
+     * A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response,
+     * you can retrieve the next set of records by providing this returned
+     * marker value in the <code>Marker</code> parameter and retrying the
+     * command. If the <code>Marker</code> field is empty, all response
+     * records have been retrieved for the request.
      */
     private String marker;
 
@@ -111,29 +116,59 @@ public class DescribeOrderableClusterOptionsResult implements Serializable {
     }
 
     /**
-     * A marker that can be used to retrieve paginated results.
+     * A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response,
+     * you can retrieve the next set of records by providing this returned
+     * marker value in the <code>Marker</code> parameter and retrying the
+     * command. If the <code>Marker</code> field is empty, all response
+     * records have been retrieved for the request.
      *
-     * @return A marker that can be used to retrieve paginated results.
+     * @return A value that indicates the starting point for the next set of response
+     *         records in a subsequent request. If a value is returned in a response,
+     *         you can retrieve the next set of records by providing this returned
+     *         marker value in the <code>Marker</code> parameter and retrying the
+     *         command. If the <code>Marker</code> field is empty, all response
+     *         records have been retrieved for the request.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * A marker that can be used to retrieve paginated results.
+     * A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response,
+     * you can retrieve the next set of records by providing this returned
+     * marker value in the <code>Marker</code> parameter and retrying the
+     * command. If the <code>Marker</code> field is empty, all response
+     * records have been retrieved for the request.
      *
-     * @param marker A marker that can be used to retrieve paginated results.
+     * @param marker A value that indicates the starting point for the next set of response
+     *         records in a subsequent request. If a value is returned in a response,
+     *         you can retrieve the next set of records by providing this returned
+     *         marker value in the <code>Marker</code> parameter and retrying the
+     *         command. If the <code>Marker</code> field is empty, all response
+     *         records have been retrieved for the request.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * A marker that can be used to retrieve paginated results.
+     * A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response,
+     * you can retrieve the next set of records by providing this returned
+     * marker value in the <code>Marker</code> parameter and retrying the
+     * command. If the <code>Marker</code> field is empty, all response
+     * records have been retrieved for the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker A marker that can be used to retrieve paginated results.
+     * @param marker A value that indicates the starting point for the next set of response
+     *         records in a subsequent request. If a value is returned in a response,
+     *         you can retrieve the next set of records by providing this returned
+     *         marker value in the <code>Marker</code> parameter and retrying the
+     *         command. If the <code>Marker</code> field is empty, all response
+     *         records have been retrieved for the request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeStemmingOptions(DescribeStemmingOptionsRequest)
  */
+@Deprecated
 public class DescribeStemmingOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**

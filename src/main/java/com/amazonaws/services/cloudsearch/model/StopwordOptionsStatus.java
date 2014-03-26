@@ -18,10 +18,10 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The stopword options configured for this search domain and the current
- * status of those options.
+ * The stopword options configured for this search domain and the current status of those options.
  * </p>
  */
+@Deprecated
 public class StopwordOptionsStatus implements Serializable {
 
     /**

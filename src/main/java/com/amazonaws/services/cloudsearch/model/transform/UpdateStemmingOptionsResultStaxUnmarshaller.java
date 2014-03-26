@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Update Stemming Options Result StAX Unmarshaller
  */
+ @Deprecated
 public class UpdateStemmingOptionsResultStaxUnmarshaller implements Unmarshaller<UpdateStemmingOptionsResult, StaxUnmarshallerContext> {
 
     public UpdateStemmingOptionsResult unmarshall(StaxUnmarshallerContext context) throws Exception {

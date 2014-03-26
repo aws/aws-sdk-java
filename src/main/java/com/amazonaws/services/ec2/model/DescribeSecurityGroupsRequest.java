@@ -56,8 +56,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p><code>ip-permission.cidr</code> - A CIDR range that has been
      * granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      * - The start of port range for the TCP and UDP protocols, or an ICMP
-     * type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     * name of a security group that has been granted permission. </li> <li>
+     * type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     * ID of a security group that has been granted permission. </li> <li>
+     * <p><code>ip-permission.group-name</code> - The name of a security
+     * group that has been granted permission. </li> <li>
      * <p><code>ip-permission.protocol</code> - The IP protocol for the
      * permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -233,8 +235,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p><code>ip-permission.cidr</code> - A CIDR range that has been
      * granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      * - The start of port range for the TCP and UDP protocols, or an ICMP
-     * type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     * name of a security group that has been granted permission. </li> <li>
+     * type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     * ID of a security group that has been granted permission. </li> <li>
+     * <p><code>ip-permission.group-name</code> - The name of a security
+     * group that has been granted permission. </li> <li>
      * <p><code>ip-permission.protocol</code> - The IP protocol for the
      * permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -255,8 +259,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <p><code>ip-permission.cidr</code> - A CIDR range that has been
      *         granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      *         - The start of port range for the TCP and UDP protocols, or an ICMP
-     *         type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     *         name of a security group that has been granted permission. </li> <li>
+     *         type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     *         ID of a security group that has been granted permission. </li> <li>
+     *         <p><code>ip-permission.group-name</code> - The name of a security
+     *         group that has been granted permission. </li> <li>
      *         <p><code>ip-permission.protocol</code> - The IP protocol for the
      *         permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      *         a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -286,8 +292,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p><code>ip-permission.cidr</code> - A CIDR range that has been
      * granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      * - The start of port range for the TCP and UDP protocols, or an ICMP
-     * type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     * name of a security group that has been granted permission. </li> <li>
+     * type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     * ID of a security group that has been granted permission. </li> <li>
+     * <p><code>ip-permission.group-name</code> - The name of a security
+     * group that has been granted permission. </li> <li>
      * <p><code>ip-permission.protocol</code> - The IP protocol for the
      * permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -308,8 +316,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <p><code>ip-permission.cidr</code> - A CIDR range that has been
      *         granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      *         - The start of port range for the TCP and UDP protocols, or an ICMP
-     *         type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     *         name of a security group that has been granted permission. </li> <li>
+     *         type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     *         ID of a security group that has been granted permission. </li> <li>
+     *         <p><code>ip-permission.group-name</code> - The name of a security
+     *         group that has been granted permission. </li> <li>
      *         <p><code>ip-permission.protocol</code> - The IP protocol for the
      *         permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      *         a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -341,8 +351,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p><code>ip-permission.cidr</code> - A CIDR range that has been
      * granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      * - The start of port range for the TCP and UDP protocols, or an ICMP
-     * type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     * name of a security group that has been granted permission. </li> <li>
+     * type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     * ID of a security group that has been granted permission. </li> <li>
+     * <p><code>ip-permission.group-name</code> - The name of a security
+     * group that has been granted permission. </li> <li>
      * <p><code>ip-permission.protocol</code> - The IP protocol for the
      * permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -365,8 +377,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <p><code>ip-permission.cidr</code> - A CIDR range that has been
      *         granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      *         - The start of port range for the TCP and UDP protocols, or an ICMP
-     *         type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     *         name of a security group that has been granted permission. </li> <li>
+     *         type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     *         ID of a security group that has been granted permission. </li> <li>
+     *         <p><code>ip-permission.group-name</code> - The name of a security
+     *         group that has been granted permission. </li> <li>
      *         <p><code>ip-permission.protocol</code> - The IP protocol for the
      *         permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      *         a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -399,8 +413,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p><code>ip-permission.cidr</code> - A CIDR range that has been
      * granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      * - The start of port range for the TCP and UDP protocols, or an ICMP
-     * type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     * name of a security group that has been granted permission. </li> <li>
+     * type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     * ID of a security group that has been granted permission. </li> <li>
+     * <p><code>ip-permission.group-name</code> - The name of a security
+     * group that has been granted permission. </li> <li>
      * <p><code>ip-permission.protocol</code> - The IP protocol for the
      * permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      * a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -
@@ -423,8 +439,10 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <p><code>ip-permission.cidr</code> - A CIDR range that has been
      *         granted permission. </li> <li> <p><code>ip-permission.from-port</code>
      *         - The start of port range for the TCP and UDP protocols, or an ICMP
-     *         type number. </li> <li> <p><code>ip-permission.group-name</code> - The
-     *         name of a security group that has been granted permission. </li> <li>
+     *         type number. </li> <li> <p><code>ip-permission.group-id</code> - The
+     *         ID of a security group that has been granted permission. </li> <li>
+     *         <p><code>ip-permission.group-name</code> - The name of a security
+     *         group that has been granted permission. </li> <li>
      *         <p><code>ip-permission.protocol</code> - The IP protocol for the
      *         permission (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or
      *         a protocol number). </li> <li> <p><code>ip-permission.to-port</code> -

@@ -38,7 +38,7 @@ public class DeleteVpnConnectionRequestMarshaller implements Marshaller<Request<
 
         Request<DeleteVpnConnectionRequest> request = new DefaultRequest<DeleteVpnConnectionRequest>(deleteVpnConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpnConnection");
-        request.addParameter("Version", "2013-10-15");
+        request.addParameter("Version", "2014-02-01");
 
         if (deleteVpnConnectionRequest.getVpnConnectionId() != null) {
             request.addParameter("VpnConnectionId", StringUtils.fromString(deleteVpnConnectionRequest.getVpnConnectionId()));

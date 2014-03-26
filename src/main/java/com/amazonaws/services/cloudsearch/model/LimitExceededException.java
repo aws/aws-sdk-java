@@ -18,17 +18,18 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because a resource limit has already been
- * met.
+ * The request was rejected because a resource limit has already been met.
  * </p>
- */        
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.LimitExceededException} instead.
+ */
+ @Deprecated
 public class LimitExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
      * Constructs a new LimitExceededException with the specified error
      * message.
-     * 
+     *
      * @param message Describes the error encountered.
      */
     public LimitExceededException(String message) {

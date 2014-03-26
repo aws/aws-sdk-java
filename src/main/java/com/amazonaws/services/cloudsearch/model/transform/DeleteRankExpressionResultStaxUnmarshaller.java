@@ -29,6 +29,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Delete Rank Expression Result StAX Unmarshaller
  */
+ @Deprecated
 public class DeleteRankExpressionResultStaxUnmarshaller implements Unmarshaller<DeleteRankExpressionResult, StaxUnmarshallerContext> {
 
     public DeleteRankExpressionResult unmarshall(StaxUnmarshallerContext context) throws Exception {

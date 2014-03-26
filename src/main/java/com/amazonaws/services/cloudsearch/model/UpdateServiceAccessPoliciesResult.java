@@ -18,10 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A response message that contains the status of updated access
- * policies.
+ * A response message that contains the status of updated access policies.
  * </p>
+ * @deprecated Use {@link com.amazonaws.services.cloudsearchv2.model.UpdateServiceAccessPoliciesResult} instead.
  */
+@Deprecated
 public class UpdateServiceAccessPoliciesResult implements Serializable {
 
     /**
