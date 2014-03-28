@@ -219,7 +219,7 @@ public class AmazonServiceException extends AmazonClientException {
 
     /** {@inheritDoc} */
     @Override
-    public String getMessage() {
+    public String toString() {
         return "Status Code: " + getStatusCode() + ", "
             + "AWS Service: " + getServiceName() + ", "
             + "AWS Request ID: " + getRequestId() + ", "
