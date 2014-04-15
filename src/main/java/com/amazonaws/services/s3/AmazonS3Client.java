@@ -2565,7 +2565,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         // Be careful that we don't send the object's total size as the content
         // length for the InitiateMultipartUpload request.
-        request.getHeaders().remove(Headers.CONTENT_LENGTH);
+        request.addHeader(Headers.CONTENT_LENGTH, "0");
         // Set the request content to be empty (but not null) to force the runtime to pass
         // any query params in the query string and not the request body, to keep S3 happy.
         request.setContent(new ByteArrayInputStream(new byte[0]));
