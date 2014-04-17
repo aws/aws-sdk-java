@@ -48,7 +48,7 @@ public class GetGroupResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      */
     private String marker;
 
@@ -226,7 +226,7 @@ public class GetGroupResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
      * @return If IsTruncated is <code>true</code>, then this element is present and
      *         contains the value to use for the <code>Marker</code> parameter in a
@@ -243,7 +243,7 @@ public class GetGroupResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param marker If IsTruncated is <code>true</code>, then this element is present and
      *         contains the value to use for the <code>Marker</code> parameter in a
@@ -262,7 +262,7 @@ public class GetGroupResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param marker If IsTruncated is <code>true</code>, then this element is present and
      *         contains the value to use for the <code>Marker</code> parameter in a

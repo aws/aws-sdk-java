@@ -43,8 +43,13 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         if (response.getHeaders().get(Headers.REDIRECT_LOCATION) != null) {
             object.setRedirectLocation(response.getHeaders().get(Headers.REDIRECT_LOCATION));
         }
-		ObjectMetadata metadata = object.getObjectMetadata();
-		populateObjectMetadata(response, metadata);
+        // If the requester is charged when downloading a object from an
+        // Requester Pays bucket, then this header is set.
+        if (response.getHeaders().get(Headers.REQUESTER_CHARGED_HEADER) != null) {
+            object.setRequesterCharged(true);
+        }
+        ObjectMetadata metadata = object.getObjectMetadata();
+        populateObjectMetadata(response, metadata);
 
 		object.setObjectContent(new S3ObjectInputStream(response.getContent(),
 				response.getHttpRequest()));

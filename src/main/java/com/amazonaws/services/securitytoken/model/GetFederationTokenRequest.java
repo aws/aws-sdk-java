@@ -89,7 +89,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      */
     private String policy;
 
@@ -201,7 +201,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @return An AWS IAM policy in JSON format. <p>By default, federated users have
      *         no permissions; they do not inherit any from the IAM user. When you
@@ -226,7 +226,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param policy An AWS IAM policy in JSON format. <p>By default, federated users have
      *         no permissions; they do not inherit any from the IAM user. When you
@@ -253,7 +253,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param policy An AWS IAM policy in JSON format. <p>By default, federated users have
      *         no permissions; they do not inherit any from the IAM user. When you

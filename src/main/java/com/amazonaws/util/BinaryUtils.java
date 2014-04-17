@@ -100,8 +100,8 @@ public class BinaryUtils {
      * @return bytes decoded from a Base64 string.
      */
     public static byte[] fromBase64(String b64Data) {
-
-        return Base64.decodeBase64(b64Data.getBytes(UTF8));
+        return b64Data == null ? null : Base64.decodeBase64(b64Data
+                .getBytes(UTF8));
     }
 
     /**

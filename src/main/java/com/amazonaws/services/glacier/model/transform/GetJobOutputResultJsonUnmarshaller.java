@@ -25,7 +25,8 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-import com.amazonaws.util.ContentLengthValidationInputStream;
+import com.amazonaws.util.LengthCheckInputStream;
+import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 
 /**
  * Get Job Output Result JSON Unmarshaller
@@ -48,7 +49,8 @@ public class GetJobOutputResultJsonUnmarshaller implements Unmarshaller<GetJobOu
                 getJobOutputResult.setArchiveDescription(context.getHeader("x-amz-archive-description"));
         }
         
-        getJobOutputResult.setStatus(context.getHttpResponse().getStatusCode());getJobOutputResult.setBody(new ContentLengthValidationInputStream(context.getHttpResponse().getContent(),Long.parseLong(context.getHeader("Content-Length"))));
+        getJobOutputResult.setStatus(context.getHttpResponse().getStatusCode());
+        getJobOutputResult.setBody(new LengthCheckInputStream(context.getHttpResponse().getContent(), Long.parseLong(context.getHeader("Content-Length")), INCLUDE_SKIPPED_BYTES));
             
         return getJobOutputResult;
     }

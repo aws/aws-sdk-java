@@ -133,8 +133,25 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
                 }
                 jsonWriter.endObject();
             }
+            ChefConfiguration chefConfiguration = createStackRequest.getChefConfiguration();
+            if (chefConfiguration != null) {
+
+                jsonWriter.key("ChefConfiguration");
+                jsonWriter.object();
+
+                if (chefConfiguration.isManageBerkshelf() != null) {
+                    jsonWriter.key("ManageBerkshelf").value(chefConfiguration.isManageBerkshelf());
+                }
+                if (chefConfiguration.getBerkshelfVersion() != null) {
+                    jsonWriter.key("BerkshelfVersion").value(chefConfiguration.getBerkshelfVersion());
+                }
+                jsonWriter.endObject();
+            }
             if (createStackRequest.isUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(createStackRequest.isUseCustomCookbooks());
+            }
+            if (createStackRequest.isUseOpsworksSecurityGroups() != null) {
+                jsonWriter.key("UseOpsworksSecurityGroups").value(createStackRequest.isUseOpsworksSecurityGroups());
             }
             Source customCookbooksSource = createStackRequest.getCustomCookbooksSource();
             if (customCookbooksSource != null) {

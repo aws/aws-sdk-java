@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#startStack(StartStackRequest) StartStack operation}.
  * <p>
- * Starts stack's instances.
+ * Starts a stack's instances.
  * </p>
  * <p>
  * <b>Required Permissions</b> : To use this action, an IAM user must

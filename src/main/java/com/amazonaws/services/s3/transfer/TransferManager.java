@@ -773,12 +773,12 @@ public class TransferManager {
     private static final class MultipleFileTransferStateChangeListener implements TransferStateChangeListener {
 
         private final AllDownloadsQueuedLock allTransfersQueuedLock;
-        private final MultipleFileTransfer multipleFileTransfer;
+        private final MultipleFileTransfer<?> multipleFileTransfer;
 
         public MultipleFileTransferStateChangeListener(AllDownloadsQueuedLock allTransfersQueuedLock,
-                MultipleFileTransfer multipleFileDownload) {
+                MultipleFileTransfer<?> multipleFileTransfer) {
             this.allTransfersQueuedLock = allTransfersQueuedLock;
-            this.multipleFileTransfer = multipleFileDownload;
+            this.multipleFileTransfer = multipleFileTransfer;
         }
 
         @Override

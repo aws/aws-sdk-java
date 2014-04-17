@@ -56,7 +56,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      */
     private java.util.Map<String,String> attributes;
 
@@ -121,11 +121,16 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      */
     private Boolean installUpdatesOnBoot;
+
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     */
+    private Boolean useEbsOptimizedInstances;
 
     /**
      * The layer ID.
@@ -246,10 +251,10 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @return One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -261,10 +266,10 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
@@ -272,12 +277,12 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -289,7 +294,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -825,9 +830,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -835,9 +840,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public Boolean isInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
@@ -850,9 +855,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @param installUpdatesOnBoot Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -860,9 +865,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
@@ -875,9 +880,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -887,9 +892,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -906,9 +911,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -916,12 +921,54 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
+    }
+
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     *
+     * @return Whether to use Amazon EBS-optimized instances.
+     */
+    public Boolean isUseEbsOptimizedInstances() {
+        return useEbsOptimizedInstances;
+    }
+    
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     *
+     * @param useEbsOptimizedInstances Whether to use Amazon EBS-optimized instances.
+     */
+    public void setUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
+        this.useEbsOptimizedInstances = useEbsOptimizedInstances;
+    }
+    
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param useEbsOptimizedInstances Whether to use Amazon EBS-optimized instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateLayerRequest withUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
+        this.useEbsOptimizedInstances = useEbsOptimizedInstances;
+        return this;
+    }
+
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     *
+     * @return Whether to use Amazon EBS-optimized instances.
+     */
+    public Boolean getUseEbsOptimizedInstances() {
+        return useEbsOptimizedInstances;
     }
 
     /**
@@ -948,7 +995,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");
         if (isAutoAssignPublicIps() != null) sb.append("AutoAssignPublicIps: " + isAutoAssignPublicIps() + ",");
         if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");
-        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
+        if (isUseEbsOptimizedInstances() != null) sb.append("UseEbsOptimizedInstances: " + isUseEbsOptimizedInstances() );
         sb.append("}");
         return sb.toString();
     }
@@ -971,6 +1019,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((isAutoAssignPublicIps() == null) ? 0 : isAutoAssignPublicIps().hashCode()); 
         hashCode = prime * hashCode + ((getCustomRecipes() == null) ? 0 : getCustomRecipes().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
+        hashCode = prime * hashCode + ((isUseEbsOptimizedInstances() == null) ? 0 : isUseEbsOptimizedInstances().hashCode()); 
         return hashCode;
     }
     
@@ -1008,6 +1057,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (other.getCustomRecipes() != null && other.getCustomRecipes().equals(this.getCustomRecipes()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
+        if (other.isUseEbsOptimizedInstances() == null ^ this.isUseEbsOptimizedInstances() == null) return false;
+        if (other.isUseEbsOptimizedInstances() != null && other.isUseEbsOptimizedInstances().equals(this.isUseEbsOptimizedInstances()) == false) return false; 
         return true;
     }
     

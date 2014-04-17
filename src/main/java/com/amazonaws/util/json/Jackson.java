@@ -16,9 +16,14 @@ package com.amazonaws.util.json;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Writer;
 
+import com.amazonaws.AmazonClientException;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
@@ -31,7 +36,7 @@ public enum Jackson {
     };
     private static final ObjectWriter writer = objectMapper.writer();
     private static final ObjectWriter prettyWriter = objectMapper.writerWithDefaultPrettyPrinter();
-    
+
     public static String toJsonPrettyString(Object value) {
         try {
             return prettyWriter.writeValueAsString(value);
@@ -52,10 +57,18 @@ public enum Jackson {
         try {
             return objectMapper.readValue(json, clazz);
         } catch (Exception e) {
-            throw new IllegalArgumentException(e);
+            throw new AmazonClientException("Unable to parse Json String.", e);
         }
     }
-    
+
+    public static JsonNode jsonNodeOf(String json) {
+        return fromJsonString(json, JsonNode.class);
+    }
+
+    public static JsonGenerator jsonGeneratorOf(Writer writer) throws IOException {
+        return new JsonFactory().createGenerator(writer);
+    }
+
     public static <T> T loadFrom(File file, Class<T> clazz) throws IOException {
         try {
             return objectMapper.readValue(file, clazz);
@@ -65,7 +78,7 @@ public enum Jackson {
             throw new IllegalStateException(e);
         }
     }
-    
+
     public static ObjectMapper getObjectMapper() {
         return objectMapper;
     }

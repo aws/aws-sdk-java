@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#setPermission(SetPermissionRequest) SetPermission operation}.
  * <p>
- * Specifies a stack's permissions. For more information, see
+ * Specifies a user's permissions. For more information, see
  * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html"> Security and Permissions </a>
  * .
  * </p>

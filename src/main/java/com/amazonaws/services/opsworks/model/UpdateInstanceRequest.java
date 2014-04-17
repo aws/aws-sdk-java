@@ -125,9 +125,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      */
     private Boolean installUpdatesOnBoot;
 
@@ -794,9 +794,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -804,9 +804,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public Boolean isInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
@@ -819,9 +819,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @param installUpdatesOnBoot Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -829,9 +829,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
@@ -844,9 +844,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -856,9 +856,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -875,9 +875,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -885,9 +885,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;

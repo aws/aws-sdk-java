@@ -3760,4 +3760,100 @@ public interface AmazonS3 {
     public void restoreObject(String bucketName, String key, int expirationInDays)
             throws AmazonServiceException;
 
+    /**
+     * Allows Amazon S3 bucket owner to enable the Requester Pays for the given
+     * bucket name. If enabled, the requester of an Amazon S3 object in the
+     * bucket is charged for the downloading the data from the bucket.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled in getObject will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * <p>
+     * For more information on Requester pays, @see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+     *
+     * @param bucketName
+     *            The name of the bucket being enabled for Requester Pays.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @see AmazonS3#disableRequesterPays(String)
+     * @see AmazonS3#isRequesterPaysEnabled(String)
+     */
+    public void enableRequesterPays(String bucketName)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Allows Amazon S3 bucket owner to disable the Requester Pays for the
+     * given bucket name.
+     *
+     * Note:
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled in getObject will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * <p>
+     * For more information on Requester pays, @see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+     *
+     * @param bucketName
+     *            The name of bucket being disabled for Requester Pays.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @see AmazonS3#enableRequesterPays(String)
+     * @see AmazonS3#isRequesterPaysEnabled(String)
+     */
+    public void disableRequesterPays(String bucketName)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Retrieves the Requester Pays configuration associated with an Amazon S3
+     * bucket.
+     *
+     * Note:
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled will result in a 403 error
+     * and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * <p>
+     * For more information on Requester pays, @see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+     *
+     * @param bucketName
+     *            The name of the bucket being checked for Requester Pays.
+     * @return true if the bucket is enabled for Requester Pays else false.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @see AmazonS3#enableRequesterPays(String)
+     * @see AmazonS3#disableRequesterPays(String)
+     */
+    public boolean isRequesterPaysEnabled(String bucketName)
+            throws AmazonServiceException, AmazonClientException;
 }

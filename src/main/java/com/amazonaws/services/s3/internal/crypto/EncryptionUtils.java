@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
+import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -53,6 +55,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
+import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
 
@@ -316,9 +319,11 @@ public class EncryptionUtils {
         metadata.setContentMD5(null);
         
         // Record the original, unencrypted content-length so it can be accessed later
-        long originalContentLength = getUnencryptedContentLength(request, metadata);
-        if (originalContentLength >= 0) metadata.addUserMetadata(
-                Headers.UNENCRYPTED_CONTENT_LENGTH, Long.toString(originalContentLength));
+        final long plaintextLength = getUnencryptedContentLength(request, metadata);
+        if (plaintextLength >= 0) {
+            metadata.addUserMetadata(Headers.UNENCRYPTED_CONTENT_LENGTH,
+                Long.toString(plaintextLength));
+        }
 
         // Put the calculated length of the encrypted contents in the metadata
         long cryptoContentLength = calculateCryptoContentLength(instruction.getSymmetricCipher(), request, metadata);
@@ -329,7 +334,7 @@ public class EncryptionUtils {
         request.setMetadata(metadata);
 
         // Create encrypted input stream
-        request.setInputStream(getEncryptedInputStream(request, instruction.getCipherFactory()));
+        request.setInputStream(getEncryptedInputStream(request, instruction.getCipherFactory(), plaintextLength));
 
         // Treat all encryption requests as input stream upload requests, not as file upload requests.
         request.setFile(null);
@@ -613,13 +618,28 @@ public class EncryptionUtils {
         }
     }
 
-    private static InputStream getEncryptedInputStream(PutObjectRequest request, CipherFactory cipherFactory) {
+    /**
+     * @param plaintextLength
+     *            the expected total number of bytes of the plaintext; or -1 if
+     *            not available.
+     */
+    private static InputStream getEncryptedInputStream(
+            PutObjectRequest request, CipherFactory cipherFactory,
+            long plaintextLength) {
         try {
-            InputStream originalInputStream = request.getInputStream();
+            InputStream is = request.getInputStream();
             if (request.getFile() != null) {
-                originalInputStream = new RepeatableFileInputStream(request.getFile());
+                // Historically file takes precedence over the original input
+                // stream
+                is = new RepeatableFileInputStream(request.getFile());
             }
-            return new RepeatableCipherInputStream(originalInputStream, cipherFactory);
+            if (plaintextLength > -1) {
+                // This ensures the plain-text read from the underlying data
+                // stream has the same length as the expected total
+                is = new LengthCheckInputStream(is, plaintextLength,
+                        EXCLUDE_SKIPPED_BYTES);
+            }
+            return new RepeatableCipherInputStream(is, cipherFactory);
         } catch (Exception e) {
             throw new AmazonClientException("Unable to create cipher input stream: " + e.getMessage(), e);
         }

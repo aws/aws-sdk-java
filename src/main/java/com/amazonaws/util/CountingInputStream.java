@@ -14,14 +14,15 @@
  */
 package com.amazonaws.util;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * Simple input stream wrapper utility to count the bytes read from a stream.
  */
-public class CountingInputStream extends FilterInputStream {
+public class CountingInputStream extends SdkFilterInputStream {
     private long byteCount = 0;
 
     public CountingInputStream(InputStream in) {

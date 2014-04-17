@@ -14,7 +14,10 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -26,25 +29,25 @@ import com.amazonaws.services.s3.transfer.Upload;
 /**
  * Multiple file upload when uploading an entire directory.
  */
-public class MultipleFileUploadImpl extends MultipleFileTransfer implements MultipleFileUpload {
+public class MultipleFileUploadImpl extends MultipleFileTransfer<Upload> implements MultipleFileUpload {
 
     private final String keyPrefix;
     private final String bucketName;
-    
+
     public MultipleFileUploadImpl(String description, TransferProgress transferProgress,
             ProgressListenerChain progressListenerChain, String keyPrefix, String bucketName, Collection<? extends Upload> subTransfers) {
         super(description, transferProgress, progressListenerChain, subTransfers);
         this.keyPrefix = keyPrefix;
         this.bucketName = bucketName;
     }
-    
+
     /**
      * @deprecated Replaced by {@link #MultipleFileUploadImpl(String, TransferProgress, ProgressListenerChain, String, String, Collection)}
      */
     @Deprecated
     public MultipleFileUploadImpl(String description, TransferProgress transferProgress,
             com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, String keyPrefix, String bucketName, Collection<? extends Upload> subTransfers) {
-        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(), 
+        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(),
                 keyPrefix, bucketName, subTransfers);
     }
 
@@ -54,14 +57,14 @@ public class MultipleFileUploadImpl extends MultipleFileTransfer implements Mult
     public String getKeyPrefix() {
         return keyPrefix;
     }
-    
+
     /**
      * Returns the name of the bucket to which files are uploaded.
      */
     public String getBucketName() {
         return bucketName;
     }
-    
+
     /**
      * Waits for this transfer to complete. This is a blocking call; the current
      * thread is suspended until this transfer completes.
@@ -82,6 +85,14 @@ public class MultipleFileUploadImpl extends MultipleFileTransfer implements Mult
         if (subTransfers.isEmpty())
             return;
         super.waitForCompletion();
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.transfer.MultipleFileUpload#getSubTransfers()
+     */
+    @Override
+    public Collection<? extends Upload> getSubTransfers() {
+        return Collections.unmodifiableCollection(subTransfers);
     }
 
 }

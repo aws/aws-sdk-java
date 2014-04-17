@@ -136,8 +136,25 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
                 }
                 jsonWriter.endObject();
             }
+            ChefConfiguration chefConfiguration = cloneStackRequest.getChefConfiguration();
+            if (chefConfiguration != null) {
+
+                jsonWriter.key("ChefConfiguration");
+                jsonWriter.object();
+
+                if (chefConfiguration.isManageBerkshelf() != null) {
+                    jsonWriter.key("ManageBerkshelf").value(chefConfiguration.isManageBerkshelf());
+                }
+                if (chefConfiguration.getBerkshelfVersion() != null) {
+                    jsonWriter.key("BerkshelfVersion").value(chefConfiguration.getBerkshelfVersion());
+                }
+                jsonWriter.endObject();
+            }
             if (cloneStackRequest.isUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(cloneStackRequest.isUseCustomCookbooks());
+            }
+            if (cloneStackRequest.isUseOpsworksSecurityGroups() != null) {
+                jsonWriter.key("UseOpsworksSecurityGroups").value(cloneStackRequest.isUseOpsworksSecurityGroups());
             }
             Source customCookbooksSource = cloneStackRequest.getCustomCookbooksSource();
             if (customCookbooksSource != null) {

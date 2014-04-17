@@ -81,6 +81,8 @@ import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.PartSummary;
 import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.RedirectRule;
+import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
+import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
 import com.amazonaws.services.s3.model.S3Object;
@@ -123,13 +125,15 @@ public class XmlResponsesSaxParser {
      * @param inputStream
      *            an input stream containing the XML document to parse
      *
+     * @throws IOException
+     *             on error reading from the input stream (ie connection reset)
      * @throws AmazonClientException
-     *             any parsing, IO or other exceptions are wrapped in an
-     *             S3ServiceException.
+     *             on error with malformed XML, etc
      */
     protected void parseXmlInputStream(DefaultHandler handler, InputStream inputStream)
-            throws AmazonClientException {
+            throws IOException {
         try {
+
             if (log.isDebugEnabled()) {
                 log.debug("Parsing XML response document with handler: " + handler.getClass());
             }
@@ -139,6 +143,10 @@ public class XmlResponsesSaxParser {
             xr.setContentHandler(handler);
             xr.setErrorHandler(handler);
             xr.parse(new InputSource(breader));
+
+        } catch (IOException e) {
+            throw e;
+
         } catch (Throwable t) {
             try {
                 inputStream.close();
@@ -153,7 +161,8 @@ public class XmlResponsesSaxParser {
     }
 
     protected InputStream sanitizeXmlDocument(DefaultHandler handler, InputStream inputStream)
-            throws AmazonClientException {
+            throws IOException {
+
         if (!sanitizeXmlDocument) {
             // No sanitizing will be performed, return the original input stream unchanged.
             return inputStream;
@@ -165,6 +174,7 @@ public class XmlResponsesSaxParser {
             InputStream sanitizedInputStream = null;
 
             try {
+
                 /*
                  * Read object listing XML document from input stream provided into a
                  * string buffer, so we can replace troublesome characters before
@@ -191,6 +201,10 @@ public class XmlResponsesSaxParser {
 
                 sanitizedInputStream = new ByteArrayInputStream(
                     listingDoc.getBytes(UTF8));
+
+            } catch (IOException e) {
+                throw e;
+
             } catch (Throwable t) {
                 try {
                     inputStream.close();
@@ -274,7 +288,7 @@ public class XmlResponsesSaxParser {
      * @throws AmazonClientException
      */
     public ListBucketHandler parseListBucketObjectsResponse(InputStream inputStream)
-            throws AmazonClientException {
+            throws IOException {
         ListBucketHandler handler = new ListBucketHandler();
         parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
         return handler;
@@ -290,7 +304,7 @@ public class XmlResponsesSaxParser {
      * @throws AmazonClientException
      */
     public ListVersionsHandler parseListVersionsResponse(InputStream inputStream)
-            throws AmazonClientException {
+            throws IOException {
         ListVersionsHandler handler = new ListVersionsHandler();
         parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
         return handler;
@@ -306,7 +320,7 @@ public class XmlResponsesSaxParser {
      * @throws AmazonClientException
      */
     public ListAllMyBucketsHandler parseListMyBucketsResponse(InputStream inputStream)
-            throws AmazonClientException {
+            throws IOException {
         ListAllMyBucketsHandler handler = new ListAllMyBucketsHandler();
         parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
         return handler;
@@ -324,8 +338,7 @@ public class XmlResponsesSaxParser {
      * @throws AmazonClientException
      */
     public AccessControlListHandler parseAccessControlListResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         AccessControlListHandler handler = new AccessControlListHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
@@ -343,108 +356,98 @@ public class XmlResponsesSaxParser {
      * @throws AmazonClientException
      */
     public BucketLoggingConfigurationHandler parseLoggingStatusResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         BucketLoggingConfigurationHandler handler = new BucketLoggingConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public BucketLifecycleConfigurationHandler parseBucketLifecycleConfigurationResponse(InputStream inputStream)
-    {
+            throws IOException {
         BucketLifecycleConfigurationHandler handler = new BucketLifecycleConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public BucketCrossOriginConfigurationHandler parseBucketCrossOriginConfigurationResponse(InputStream inputStream)
-    {
+            throws IOException {
         BucketCrossOriginConfigurationHandler handler = new BucketCrossOriginConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public String parseBucketLocationResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         BucketLocationHandler handler = new BucketLocationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler.getLocation();
     }
 
     public BucketVersioningConfigurationHandler parseVersioningConfigurationResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         BucketVersioningConfigurationHandler handler = new BucketVersioningConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public BucketWebsiteConfigurationHandler parseWebsiteConfigurationResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         BucketWebsiteConfigurationHandler handler = new BucketWebsiteConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public BucketNotificationConfigurationHandler parseNotificationConfigurationResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         BucketNotificationConfigurationHandler handler = new BucketNotificationConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public BucketTaggingConfigurationHandler parseTaggingConfigurationResponse(InputStream inputStream)
-            throws AmazonClientException
-        {
-            BucketTaggingConfigurationHandler handler = new BucketTaggingConfigurationHandler();
-            parseXmlInputStream(handler, inputStream);
-            return handler;
-        }
+            throws IOException {
+        BucketTaggingConfigurationHandler handler = new BucketTaggingConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
 
-    public DeleteObjectsHandler parseDeletedObjectsResult(InputStream inputStream) {
+    public DeleteObjectsHandler parseDeletedObjectsResult(InputStream inputStream)
+            throws IOException {
         DeleteObjectsHandler handler = new DeleteObjectsHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public CopyObjectResultHandler parseCopyObjectResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         CopyObjectResultHandler handler = new CopyObjectResultHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public CompleteMultipartUploadHandler parseCompleteMultipartUploadResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         CompleteMultipartUploadHandler handler = new CompleteMultipartUploadHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public InitiateMultipartUploadHandler parseInitiateMultipartUploadResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         InitiateMultipartUploadHandler handler = new InitiateMultipartUploadHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public ListMultipartUploadsHandler parseListMultipartUploadsResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         ListMultipartUploadsHandler handler = new ListMultipartUploadsHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
 
     public ListPartsHandler parseListPartsResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+            throws IOException {
         ListPartsHandler handler = new ListPartsHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
@@ -459,12 +462,11 @@ public class XmlResponsesSaxParser {
      *
      * @throws AmazonClientException
      */
-    public boolean parseRequestPaymentConfigurationResponse(InputStream inputStream)
-        throws AmazonClientException
-    {
+    public RequestPaymentConfigurationHandler parseRequestPaymentConfigurationResponse(InputStream inputStream)
+            throws IOException {
         RequestPaymentConfigurationHandler handler = new RequestPaymentConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
-        return handler.isRequesterPays();
+        return handler;
     }
 
     // ////////////
@@ -1137,11 +1139,9 @@ public class XmlResponsesSaxParser {
     }
 
     /**
-     * Handler for RequestPaymentConfiguration response XML documents for a
-     * bucket. The document is parsed into a boolean value: true if the bucket's
-     * is configured as Requester Pays, false if it is configured as Owner pays.
-     * This boolean value is available via the {@link #isRequesterPays()}
-     * method.
+     * Handler for parsing RequestPaymentConfiguration XML response associated
+     * with an Amazon S3 bucket. The XML response is parsed into a
+     * <code>RequestPaymentConfiguration</code> object.
      */
     public class RequestPaymentConfigurationHandler extends DefaultHandler {
         private String payer = null;
@@ -1149,29 +1149,25 @@ public class XmlResponsesSaxParser {
         private StringBuilder currText = null;
 
         public RequestPaymentConfigurationHandler() {
-            super();
             this.currText = new StringBuilder();
         }
 
-        /**
-         * @return true if the bucket's is configured as Requester Pays, false
-         *         if it is configured as Owner pays.
-         */
-        public boolean isRequesterPays() {
-            return "Requester".equals(payer);
+        public RequestPaymentConfiguration getConfiguration(){
+            return new RequestPaymentConfiguration(Payer.valueOf(payer));
         }
 
         @Override
-        public void startDocument() {
-        }
+        public void startDocument() { }
 
         @Override
-        public void endDocument() {
-        }
+        public void endDocument() { }
 
         @Override
         public void startElement(String uri, String name, String qName, Attributes attrs) {
-            if (name.equals("RequestPaymentConfiguration")) {
+            if (!(name.equals("RequestPaymentConfiguration") || name.equals("Payer"))) {
+                throw new AmazonClientException(
+                        "Unable to unmarshall response XML. Expected: RequestPaymentConfiguration XML. Received: "
+                                + name + " XML.");
             }
         }
 

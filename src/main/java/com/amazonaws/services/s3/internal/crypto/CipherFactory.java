@@ -29,10 +29,10 @@ import javax.crypto.SecretKey;
  * instance of CipherFactory.
  */
 public class CipherFactory {
-    private SecretKey symmetricKey;
-    private int cipherMode;
+    private final SecretKey symmetricKey;
+    private final int cipherMode;
     private byte[] initVectorBytes;
-    private Provider cryptoProvider;
+    private final Provider cryptoProvider;
 
     /**
      * Creates a new CipherFactory that will produce ciphers using the specified
@@ -76,10 +76,6 @@ public class CipherFactory {
 
     public Provider getCryptoProvider() {
         return cryptoProvider;
-    }
-
-    public SecretKey getSymmetricKey() {
-        return symmetricKey;
     }
 
     public int getCipherMode() {

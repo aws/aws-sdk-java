@@ -98,4 +98,7 @@ public class Constants {
     public static final int BUCKET_ACCESS_FORBIDDEN_STATUS_CODE = 403;
 
     public static final int BUCKET_REDIRECT_STATUS_CODE = 301;
+
+    // Constant indicating the requester pays for data transfer cost for a bucket.
+    public static final String REQUESTER_PAYS = "requester";
 }

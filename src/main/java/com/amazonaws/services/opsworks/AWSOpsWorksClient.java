@@ -101,10 +101,9 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * <p>
  * When you call CreateStack, CloneStack, or UpdateStack we recommend you
  * use the <code>ConfigurationManager</code> parameter to specify the
- * Chef version, 0.9 or 11.4. The default value is currently 0.9.
- * However, we expect to change the default value to 11.4 in October
- * 2013. For more information, see
- * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"> Using AWS OpsWorks with Chef 11 </a>
+ * Chef version, 0.9, 11.4, or 11.10. The default value is currently
+ * 11.4. For more information, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"> Chef Versions </a>
  * .
  * </p>
  */
@@ -378,7 +377,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Specifies a stack's permissions. For more information, see
+     * Specifies a user's permissions. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html"> Security and Permissions </a>
      * .
      * </p>
@@ -427,7 +426,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Requests a description of a set of instances.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -784,7 +783,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Describes the results of specified commands.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -939,7 +938,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Describe an instance's RAID arrays.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -1060,7 +1059,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * .
      * </p>
      * <p>
-     * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
+     * <b>NOTE:</b> To use load-based auto scaling, you must create a set of
      * load-based auto scaling instances. Load-based auto scaling operates
      * only on the instances from that set, so you must ensure that you have
      * created enough instances to handle the maximum anticipated load.
@@ -1111,7 +1110,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Describes an instance's Amazon EBS volumes.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -1414,7 +1413,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * .
      * </p>
      * <p>
-     * <b>NOTE:</b>You should use CreateLayer for noncustom layer types such
+     * <b>NOTE:</b> You should use CreateLayer for noncustom layer types such
      * as PHP App Server only if the stack does not have an existing layer of
      * that type. A stack can have at most one instance of each noncustom
      * layer; if you attempt to create a second instance, CreateLayer fails.
@@ -1570,7 +1569,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Starts stack's instances.
+     * Starts a stack's instances.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -1971,9 +1970,12 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Attaches an Elastic Load Balancing load balancer to a specified layer.
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"> Elastic Load Balancing </a>
+     * .
      * </p>
      * <p>
-     * <b>NOTE:</b>You must create the Elastic Load Balancing instance
+     * <b>NOTE:</b> You must create the Elastic Load Balancing instance
      * separately, by using the Elastic Load Balancing console, API, or CLI.
      * For more information, see Elastic Load Balancing Developer Guide.
      * </p>
@@ -2121,7 +2123,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Requests a description of one or more layers in a specified stack.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2180,7 +2182,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Describes load-based auto scaling configurations for specified layers.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2240,7 +2242,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Describes a stack's Elastic Load Balancing instances.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2551,7 +2553,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * instances.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2758,7 +2760,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Requests a description of a specified set of deployments.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2881,7 +2883,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * .
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2997,7 +2999,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * Requests a description of a specified set of apps.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * <b>NOTE:</b> You must specify at least one of the parameters.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must

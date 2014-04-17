@@ -55,7 +55,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      */
     private String path;
 
@@ -74,7 +74,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      */
     private String certificateBody;
 
@@ -83,7 +83,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      */
     private String privateKey;
 
@@ -93,7 +93,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2097152<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      */
     private String certificateChain;
 
@@ -131,7 +131,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @return The path for the server certificate. For more information about paths,
      *         see <a
@@ -154,7 +154,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
@@ -179,7 +179,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
@@ -252,7 +252,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @return The contents of the public key certificate in PEM-encoded format.
      */
@@ -265,7 +265,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param certificateBody The contents of the public key certificate in PEM-encoded format.
      */
@@ -280,7 +280,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param certificateBody The contents of the public key certificate in PEM-encoded format.
      *
@@ -297,7 +297,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      *
      * @return The contents of the private key in PEM-encoded format.
      */
@@ -310,7 +310,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param privateKey The contents of the private key in PEM-encoded format.
      */
@@ -325,7 +325,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param privateKey The contents of the private key in PEM-encoded format.
      *
@@ -343,7 +343,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2097152<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      *
      * @return The contents of the certificate chain. This is typically a
      *         concatenation of the PEM-encoded public key certificates of the chain.
@@ -358,7 +358,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2097152<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param certificateChain The contents of the certificate chain. This is typically a
      *         concatenation of the PEM-encoded public key certificates of the chain.
@@ -375,7 +375,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2097152<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param certificateChain The contents of the certificate chain. This is typically a
      *         concatenation of the PEM-encoded public key certificates of the chain.

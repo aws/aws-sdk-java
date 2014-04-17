@@ -61,6 +61,14 @@ public class VolumeConfigurationJsonUnmarshaller implements Unmarshaller<VolumeC
                     context.nextToken();
                     volumeConfiguration.setSize(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VolumeType", targetDepth)) {
+                    context.nextToken();
+                    volumeConfiguration.setVolumeType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Iops", targetDepth)) {
+                    context.nextToken();
+                    volumeConfiguration.setIops(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

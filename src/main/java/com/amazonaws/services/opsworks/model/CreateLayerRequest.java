@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * .
  * </p>
  * <p>
- * <b>NOTE:</b>You should use CreateLayer for noncustom layer types such
+ * <b>NOTE:</b> You should use CreateLayer for noncustom layer types such
  * as PHP App Server only if the stack does not have an existing layer of
  * that type. A stack can have at most one instance of each noncustom
  * layer; if you attempt to create a second instance, CreateLayer fails.
@@ -52,14 +52,15 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     private String stackId;
 
     /**
-     * The layer type. A stack cannot have more than one layer of the same
-     * type. This parameter must be set to one of the following: <ul> <li>lb:
-     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     * custom layer</li> </ul>
+     * The layer type. A stack cannot have more than one built-in layer of
+     * the same type. It can have any number of custom layers. This parameter
+     * must be set to one of the following: <ul> <li>custom: A custom
+     * layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     * Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     * An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     * <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     * App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     * <li>web: A Static Web Server layer</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
@@ -82,7 +83,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      */
     private java.util.Map<String,String> attributes;
 
@@ -106,7 +107,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> packages;
 
     /**
-     * A <code>VolumeConfigurations</code> object that describes the layer
+     * A <code>VolumeConfigurations</code> object that describes the layer's
      * Amazon EBS volumes.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration> volumeConfigurations;
@@ -147,11 +148,16 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      */
     private Boolean installUpdatesOnBoot;
+
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     */
+    private Boolean useEbsOptimizedInstances;
 
     /**
      * The layer stack ID.
@@ -187,26 +193,28 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The layer type. A stack cannot have more than one layer of the same
-     * type. This parameter must be set to one of the following: <ul> <li>lb:
-     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     * custom layer</li> </ul>
+     * The layer type. A stack cannot have more than one built-in layer of
+     * the same type. It can have any number of custom layers. This parameter
+     * must be set to one of the following: <ul> <li>custom: A custom
+     * layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     * Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     * An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     * <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     * App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     * <li>web: A Static Web Server layer</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @return The layer type. A stack cannot have more than one layer of the same
-     *         type. This parameter must be set to one of the following: <ul> <li>lb:
-     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     *         custom layer</li> </ul>
+     * @return The layer type. A stack cannot have more than one built-in layer of
+     *         the same type. It can have any number of custom layers. This parameter
+     *         must be set to one of the following: <ul> <li>custom: A custom
+     *         layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     *         Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     *         An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     *         <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     *         App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     *         <li>web: A Static Web Server layer</li> </ul>
      *
      * @see LayerType
      */
@@ -215,26 +223,28 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The layer type. A stack cannot have more than one layer of the same
-     * type. This parameter must be set to one of the following: <ul> <li>lb:
-     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     * custom layer</li> </ul>
+     * The layer type. A stack cannot have more than one built-in layer of
+     * the same type. It can have any number of custom layers. This parameter
+     * must be set to one of the following: <ul> <li>custom: A custom
+     * layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     * Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     * An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     * <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     * App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     * <li>web: A Static Web Server layer</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type. A stack cannot have more than one layer of the same
-     *         type. This parameter must be set to one of the following: <ul> <li>lb:
-     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     *         custom layer</li> </ul>
+     * @param type The layer type. A stack cannot have more than one built-in layer of
+     *         the same type. It can have any number of custom layers. This parameter
+     *         must be set to one of the following: <ul> <li>custom: A custom
+     *         layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     *         Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     *         An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     *         <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     *         App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     *         <li>web: A Static Web Server layer</li> </ul>
      *
      * @see LayerType
      */
@@ -243,28 +253,30 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The layer type. A stack cannot have more than one layer of the same
-     * type. This parameter must be set to one of the following: <ul> <li>lb:
-     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     * custom layer</li> </ul>
+     * The layer type. A stack cannot have more than one built-in layer of
+     * the same type. It can have any number of custom layers. This parameter
+     * must be set to one of the following: <ul> <li>custom: A custom
+     * layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     * Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     * An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     * <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     * App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     * <li>web: A Static Web Server layer</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type. A stack cannot have more than one layer of the same
-     *         type. This parameter must be set to one of the following: <ul> <li>lb:
-     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     *         custom layer</li> </ul>
+     * @param type The layer type. A stack cannot have more than one built-in layer of
+     *         the same type. It can have any number of custom layers. This parameter
+     *         must be set to one of the following: <ul> <li>custom: A custom
+     *         layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     *         Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     *         An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     *         <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     *         App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     *         <li>web: A Static Web Server layer</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -277,26 +289,28 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The layer type. A stack cannot have more than one layer of the same
-     * type. This parameter must be set to one of the following: <ul> <li>lb:
-     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     * custom layer</li> </ul>
+     * The layer type. A stack cannot have more than one built-in layer of
+     * the same type. It can have any number of custom layers. This parameter
+     * must be set to one of the following: <ul> <li>custom: A custom
+     * layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     * Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     * An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     * <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     * App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     * <li>web: A Static Web Server layer</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type. A stack cannot have more than one layer of the same
-     *         type. This parameter must be set to one of the following: <ul> <li>lb:
-     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     *         custom layer</li> </ul>
+     * @param type The layer type. A stack cannot have more than one built-in layer of
+     *         the same type. It can have any number of custom layers. This parameter
+     *         must be set to one of the following: <ul> <li>custom: A custom
+     *         layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     *         Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     *         An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     *         <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     *         App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     *         <li>web: A Static Web Server layer</li> </ul>
      *
      * @see LayerType
      */
@@ -305,28 +319,30 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * The layer type. A stack cannot have more than one layer of the same
-     * type. This parameter must be set to one of the following: <ul> <li>lb:
-     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     * custom layer</li> </ul>
+     * The layer type. A stack cannot have more than one built-in layer of
+     * the same type. It can have any number of custom layers. This parameter
+     * must be set to one of the following: <ul> <li>custom: A custom
+     * layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     * Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     * An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     * <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     * App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     * <li>web: A Static Web Server layer</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
-     * @param type The layer type. A stack cannot have more than one layer of the same
-     *         type. This parameter must be set to one of the following: <ul> <li>lb:
-     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
-     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
-     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
-     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
-     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
-     *         custom layer</li> </ul>
+     * @param type The layer type. A stack cannot have more than one built-in layer of
+     *         the same type. It can have any number of custom layers. This parameter
+     *         must be set to one of the following: <ul> <li>custom: A custom
+     *         layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App
+     *         Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+     *         An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+     *         <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js
+     *         App Server layer</li> <li>php-app: A PHP App Server layer</li>
+     *         <li>web: A Static Web Server layer</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -430,10 +446,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @return One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -445,10 +461,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
@@ -456,12 +472,12 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -473,7 +489,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -698,10 +714,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * A <code>VolumeConfigurations</code> object that describes the layer
+     * A <code>VolumeConfigurations</code> object that describes the layer's
      * Amazon EBS volumes.
      *
-     * @return A <code>VolumeConfigurations</code> object that describes the layer
+     * @return A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      */
     public java.util.List<VolumeConfiguration> getVolumeConfigurations() {
@@ -713,10 +729,10 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * A <code>VolumeConfigurations</code> object that describes the layer
+     * A <code>VolumeConfigurations</code> object that describes the layer's
      * Amazon EBS volumes.
      *
-     * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer
+     * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      */
     public void setVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
@@ -730,12 +746,12 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * A <code>VolumeConfigurations</code> object that describes the layer
+     * A <code>VolumeConfigurations</code> object that describes the layer's
      * Amazon EBS volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer
+     * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -750,12 +766,12 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     }
     
     /**
-     * A <code>VolumeConfigurations</code> object that describes the layer
+     * A <code>VolumeConfigurations</code> object that describes the layer's
      * Amazon EBS volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer
+     * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1009,9 +1025,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -1019,9 +1035,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public Boolean isInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
@@ -1034,9 +1050,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @param installUpdatesOnBoot Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -1044,9 +1060,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
@@ -1059,9 +1075,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1071,9 +1087,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1090,9 +1106,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -1100,12 +1116,54 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         your instances have the latest security updates. </note>
      */
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
+    }
+
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     *
+     * @return Whether to use Amazon EBS-optimized instances.
+     */
+    public Boolean isUseEbsOptimizedInstances() {
+        return useEbsOptimizedInstances;
+    }
+    
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     *
+     * @param useEbsOptimizedInstances Whether to use Amazon EBS-optimized instances.
+     */
+    public void setUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
+        this.useEbsOptimizedInstances = useEbsOptimizedInstances;
+    }
+    
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param useEbsOptimizedInstances Whether to use Amazon EBS-optimized instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateLayerRequest withUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
+        this.useEbsOptimizedInstances = useEbsOptimizedInstances;
+        return this;
+    }
+
+    /**
+     * Whether to use Amazon EBS-optimized instances.
+     *
+     * @return Whether to use Amazon EBS-optimized instances.
+     */
+    public Boolean getUseEbsOptimizedInstances() {
+        return useEbsOptimizedInstances;
     }
 
     /**
@@ -1133,7 +1191,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");
         if (isAutoAssignPublicIps() != null) sb.append("AutoAssignPublicIps: " + isAutoAssignPublicIps() + ",");
         if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");
-        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
+        if (isUseEbsOptimizedInstances() != null) sb.append("UseEbsOptimizedInstances: " + isUseEbsOptimizedInstances() );
         sb.append("}");
         return sb.toString();
     }
@@ -1157,6 +1216,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((isAutoAssignPublicIps() == null) ? 0 : isAutoAssignPublicIps().hashCode()); 
         hashCode = prime * hashCode + ((getCustomRecipes() == null) ? 0 : getCustomRecipes().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
+        hashCode = prime * hashCode + ((isUseEbsOptimizedInstances() == null) ? 0 : isUseEbsOptimizedInstances().hashCode()); 
         return hashCode;
     }
     
@@ -1196,6 +1256,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         if (other.getCustomRecipes() != null && other.getCustomRecipes().equals(this.getCustomRecipes()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
+        if (other.isUseEbsOptimizedInstances() == null ^ this.isUseEbsOptimizedInstances() == null) return false;
+        if (other.isUseEbsOptimizedInstances() != null && other.isUseEbsOptimizedInstances().equals(this.isUseEbsOptimizedInstances()) == false) return false; 
         return true;
     }
     

@@ -27,6 +27,7 @@ public interface Headers {
     public static final String CONTENT_DISPOSITION = "Content-Disposition";
     public static final String CONTENT_ENCODING = "Content-Encoding";
     public static final String CONTENT_LENGTH = "Content-Length";
+    public static final String CONTENT_RANGE = "Content-Range";
     public static final String CONTENT_MD5 = "Content-MD5";
     public static final String CONTENT_TYPE = "Content-Type";
     public static final String DATE = "Date";
@@ -110,8 +111,19 @@ public interface Headers {
     /** ETag non-matching constraint header for the get object request */
     public static final String GET_OBJECT_IF_NONE_MATCH = "If-None-Match";
 
-    /** Encrypted symmetric key header that is used in the envelope encryption mechanism */
+    /**
+     * Encrypted symmetric key header that is used in the (v1) envelope
+     * encryption mechanism.
+     */
     public static final String CRYPTO_KEY = "x-amz-key";
+
+    /**
+     * Encrypted symmetric key header that is used in the v2 envelope encryption
+     * mechanism. The v1 S3 encryption client would not recognize this v2 key,
+     * and therefore will be prevented from mistakenly decrypting ciphertext in
+     * v2 format.
+     */
+    public static final String CRYPTO_KEY_V2 = "x-amz-key-v2";
 
     /** Initialization vector (IV) header that is used in the symmetric and envelope encryption mechanisms */
     public static final String CRYPTO_IV = "x-amz-iv";
@@ -146,4 +158,16 @@ public interface Headers {
      * Tag length applicable to authenticated encrypt/decryption.
      */
     public static final String CRYPTO_TAG_LENGTH = "x-amz-tag-len";
+
+    /**
+     * Headers in request indicating that the requester must be charged for data
+     * transfer.
+     */
+    public static final String REQUESTER_PAYS_HEADER = "x-amz-request-payer";
+
+    /**
+     * Header in the response indicating that the requester has been charged for
+     * the request.
+     */
+    public static final String REQUESTER_CHARGED_HEADER = "x-amz-request-charged";
 }

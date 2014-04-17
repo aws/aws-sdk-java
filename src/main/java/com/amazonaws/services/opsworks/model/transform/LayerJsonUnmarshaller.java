@@ -117,6 +117,10 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     context.nextToken();
                     layer.setInstallUpdatesOnBoot(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UseEbsOptimizedInstances", targetDepth)) {
+                    context.nextToken();
+                    layer.setUseEbsOptimizedInstances(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -15,15 +15,16 @@
 package com.amazonaws.util;
 
 import java.io.BufferedInputStream;
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * FilterInputStream implementation that wraps an InputStream containing an XML
  * document, and removes the XML namespace attribute from the XML document.
  */
-class NamespaceRemovingInputStream extends FilterInputStream {
+class NamespaceRemovingInputStream extends SdkFilterInputStream {
 
     /** look ahead buffer */
     private byte[] lookAheadData = new byte[200];

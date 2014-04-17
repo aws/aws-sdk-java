@@ -73,7 +73,14 @@ public class RequestMetricCollectorSupport extends RequestMetricCollector
             PredefinedMetricTransformer transformer = getTransformer();
             for (MetricDatum datum : transformer.toMetricData(type, request, response)) {
                 try {
-                    addMetricsToQueue(datum);
+                    if (!addMetricsToQueue(datum)) {
+                        if (log.isDebugEnabled()) {
+                            log.debug("Failed to add to the metrics queue (due to no space available) for "
+                                    + type.name()
+                                    + ":"
+                                    + request.getServiceName());
+                        }
+                    }
                 } catch(RuntimeException ex) {
                     log.warn("Failed to add to the metrics queue for "
                         + type.name() + ":" + request.getServiceName(),
@@ -82,8 +89,14 @@ public class RequestMetricCollectorSupport extends RequestMetricCollector
             }
         }
     }
-    /** Adds the given metric to the queue, returning true if successful or false otherwise. */
-    protected boolean addMetricsToQueue(MetricDatum metric) { return queue.add(metric); }
+
+    /**
+     * Adds the given metric to the queue, returning true if successful or false
+     * if no space available.
+     */
+    protected boolean addMetricsToQueue(MetricDatum metric) {
+        return queue.offer(metric); 
+    }
     /** Returns the predefined metrics transformer. */
     protected PredefinedMetricTransformer getTransformer() { return transformer; }
 }

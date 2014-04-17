@@ -48,7 +48,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      */
     private java.util.Map<String,String> attributes;
 
@@ -58,10 +58,10 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * this parameter to the Amazon Resource Name (ARN) for an existing IAM
      * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note>You must set this parameter to a valid service
-     * role ARN or the action will fail; there is no default value. You can
-     * specify the stack's current service role ARN, if you prefer, but you
-     * must do so explicitly.</note>
+     * Identifiers</a>. <note> <p>You must set this parameter to a valid
+     * service role ARN or the action will fail; there is no default value.
+     * You can specify the stack's current service role ARN, if you prefer,
+     * but you must do so explicitly. </note>
      */
     private String serviceRoleArn;
 
@@ -122,7 +122,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -130,12 +130,20 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     private String customJson;
 
     /**
-     * The configuration manager. When you update a stack you can optionally
-     * use the configuration manager to specify the Chef version, 0.9 or
-     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
-     * Chef version.
+     * The configuration manager. When you clone a stack we recommend that
+     * you use the configuration manager to specify the Chef version, 0.9,
+     * 11.4, or 11.10. The default value is currently 11.4.
      */
     private StackConfigurationManager configurationManager;
+
+    /**
+     * A <code>ChefConfiguration</code> object that specifies whether to
+     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     */
+    private ChefConfiguration chefConfiguration;
 
     /**
      * Whether the stack uses custom cookbooks.
@@ -160,8 +168,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
+     * instances in the stack, but you can override it when you create an
+     * instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -169,6 +177,28 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Allowed Values: </b>ebs, instance-store
      */
     private String defaultRootDeviceType;
+
+    /**
+     * Whether to associate the AWS OpsWorks built-in security groups with
+     * the stack's layers. <p>AWS OpsWorks provides a standard set of
+     * built-in security groups, one for each layer, which are associated
+     * with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     * you to instead provide your own custom security groups.
+     * <code>UseOpsworksSecurityGroups</code> has the following settings:
+     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     * built-in security group with each layer (default setting). You can
+     * associate additional security groups with a layer after you create it
+     * but you cannot delete the built-in security group. </li> <li>False -
+     * AWS OpsWorks does not associate built-in security groups with layers.
+     * You must create appropriate EC2 security groups and associate a
+     * security group with each layer that you create. However, you can still
+     * manually associate a built-in security group with a layer on creation;
+     * custom security groups are required only for those layers that need
+     * custom settings. </li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     */
+    private Boolean useOpsworksSecurityGroups;
 
     /**
      * The stack ID.
@@ -238,10 +268,10 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @return One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -253,10 +283,10 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
@@ -264,12 +294,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -281,7 +311,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -316,20 +346,20 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * this parameter to the Amazon Resource Name (ARN) for an existing IAM
      * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note>You must set this parameter to a valid service
-     * role ARN or the action will fail; there is no default value. You can
-     * specify the stack's current service role ARN, if you prefer, but you
-     * must do so explicitly.</note>
+     * Identifiers</a>. <note> <p>You must set this parameter to a valid
+     * service role ARN or the action will fail; there is no default value.
+     * You can specify the stack's current service role ARN, if you prefer,
+     * but you must do so explicitly. </note>
      *
      * @return The stack AWS Identity and Access Management (IAM) role, which allows
      *         AWS OpsWorks to work with AWS resources on your behalf. You must set
      *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
      *         role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note>You must set this parameter to a valid service
-     *         role ARN or the action will fail; there is no default value. You can
-     *         specify the stack's current service role ARN, if you prefer, but you
-     *         must do so explicitly.</note>
+     *         Identifiers</a>. <note> <p>You must set this parameter to a valid
+     *         service role ARN or the action will fail; there is no default value.
+     *         You can specify the stack's current service role ARN, if you prefer,
+     *         but you must do so explicitly. </note>
      */
     public String getServiceRoleArn() {
         return serviceRoleArn;
@@ -341,20 +371,20 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * this parameter to the Amazon Resource Name (ARN) for an existing IAM
      * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note>You must set this parameter to a valid service
-     * role ARN or the action will fail; there is no default value. You can
-     * specify the stack's current service role ARN, if you prefer, but you
-     * must do so explicitly.</note>
+     * Identifiers</a>. <note> <p>You must set this parameter to a valid
+     * service role ARN or the action will fail; there is no default value.
+     * You can specify the stack's current service role ARN, if you prefer,
+     * but you must do so explicitly. </note>
      *
      * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role, which allows
      *         AWS OpsWorks to work with AWS resources on your behalf. You must set
      *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
      *         role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note>You must set this parameter to a valid service
-     *         role ARN or the action will fail; there is no default value. You can
-     *         specify the stack's current service role ARN, if you prefer, but you
-     *         must do so explicitly.</note>
+     *         Identifiers</a>. <note> <p>You must set this parameter to a valid
+     *         service role ARN or the action will fail; there is no default value.
+     *         You can specify the stack's current service role ARN, if you prefer,
+     *         but you must do so explicitly. </note>
      */
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
@@ -366,10 +396,10 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * this parameter to the Amazon Resource Name (ARN) for an existing IAM
      * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>. <note>You must set this parameter to a valid service
-     * role ARN or the action will fail; there is no default value. You can
-     * specify the stack's current service role ARN, if you prefer, but you
-     * must do so explicitly.</note>
+     * Identifiers</a>. <note> <p>You must set this parameter to a valid
+     * service role ARN or the action will fail; there is no default value.
+     * You can specify the stack's current service role ARN, if you prefer,
+     * but you must do so explicitly. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -378,10 +408,10 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
      *         role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>. <note>You must set this parameter to a valid service
-     *         role ARN or the action will fail; there is no default value. You can
-     *         specify the stack's current service role ARN, if you prefer, but you
-     *         must do so explicitly.</note>
+     *         Identifiers</a>. <note> <p>You must set this parameter to a valid
+     *         service role ARN or the action will fail; there is no default value.
+     *         You can specify the stack's current service role ARN, if you prefer,
+     *         but you must do so explicitly. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -728,7 +758,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -736,7 +766,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @return A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
-     *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
+     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -749,7 +779,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -757,7 +787,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
-     *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
+     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -770,7 +800,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
-     * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
+     * characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -780,7 +810,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
-     *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
+     *         characters such as '"'.: <p><code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -794,53 +824,104 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The configuration manager. When you update a stack you can optionally
-     * use the configuration manager to specify the Chef version, 0.9 or
-     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
-     * Chef version.
+     * The configuration manager. When you clone a stack we recommend that
+     * you use the configuration manager to specify the Chef version, 0.9,
+     * 11.4, or 11.10. The default value is currently 11.4.
      *
-     * @return The configuration manager. When you update a stack you can optionally
-     *         use the configuration manager to specify the Chef version, 0.9 or
-     *         11.4. If you omit this parameter, AWS OpsWorks does not change the
-     *         Chef version.
+     * @return The configuration manager. When you clone a stack we recommend that
+     *         you use the configuration manager to specify the Chef version, 0.9,
+     *         11.4, or 11.10. The default value is currently 11.4.
      */
     public StackConfigurationManager getConfigurationManager() {
         return configurationManager;
     }
     
     /**
-     * The configuration manager. When you update a stack you can optionally
-     * use the configuration manager to specify the Chef version, 0.9 or
-     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
-     * Chef version.
+     * The configuration manager. When you clone a stack we recommend that
+     * you use the configuration manager to specify the Chef version, 0.9,
+     * 11.4, or 11.10. The default value is currently 11.4.
      *
-     * @param configurationManager The configuration manager. When you update a stack you can optionally
-     *         use the configuration manager to specify the Chef version, 0.9 or
-     *         11.4. If you omit this parameter, AWS OpsWorks does not change the
-     *         Chef version.
+     * @param configurationManager The configuration manager. When you clone a stack we recommend that
+     *         you use the configuration manager to specify the Chef version, 0.9,
+     *         11.4, or 11.10. The default value is currently 11.4.
      */
     public void setConfigurationManager(StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
     }
     
     /**
-     * The configuration manager. When you update a stack you can optionally
-     * use the configuration manager to specify the Chef version, 0.9 or
-     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
-     * Chef version.
+     * The configuration manager. When you clone a stack we recommend that
+     * you use the configuration manager to specify the Chef version, 0.9,
+     * 11.4, or 11.10. The default value is currently 11.4.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param configurationManager The configuration manager. When you update a stack you can optionally
-     *         use the configuration manager to specify the Chef version, 0.9 or
-     *         11.4. If you omit this parameter, AWS OpsWorks does not change the
-     *         Chef version.
+     * @param configurationManager The configuration manager. When you clone a stack we recommend that
+     *         you use the configuration manager to specify the Chef version, 0.9,
+     *         11.4, or 11.10. The default value is currently 11.4.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateStackRequest withConfigurationManager(StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
+        return this;
+    }
+
+    /**
+     * A <code>ChefConfiguration</code> object that specifies whether to
+     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     *
+     * @return A <code>ChefConfiguration</code> object that specifies whether to
+     *         enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     *         a New Stack</a>.
+     */
+    public ChefConfiguration getChefConfiguration() {
+        return chefConfiguration;
+    }
+    
+    /**
+     * A <code>ChefConfiguration</code> object that specifies whether to
+     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     *
+     * @param chefConfiguration A <code>ChefConfiguration</code> object that specifies whether to
+     *         enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     *         a New Stack</a>.
+     */
+    public void setChefConfiguration(ChefConfiguration chefConfiguration) {
+        this.chefConfiguration = chefConfiguration;
+    }
+    
+    /**
+     * A <code>ChefConfiguration</code> object that specifies whether to
+     * enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param chefConfiguration A <code>ChefConfiguration</code> object that specifies whether to
+     *         enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     *         a New Stack</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withChefConfiguration(ChefConfiguration chefConfiguration) {
+        this.chefConfiguration = chefConfiguration;
         return this;
     }
 
@@ -990,8 +1071,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
+     * instances in the stack, but you can override it when you create an
+     * instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -999,8 +1080,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Allowed Values: </b>ebs, instance-store
      *
      * @return The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
+     *         instances in the stack, but you can override it when you create an
+     *         instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1012,8 +1093,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
+     * instances in the stack, but you can override it when you create an
+     * instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -1021,8 +1102,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
+     *         instances in the stack, but you can override it when you create an
+     *         instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1034,8 +1115,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
+     * instances in the stack, but you can override it when you create an
+     * instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -1045,8 +1126,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
+     *         instances in the stack, but you can override it when you create an
+     *         instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1062,8 +1143,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
+     * instances in the stack, but you can override it when you create an
+     * instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -1071,8 +1152,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
+     *         instances in the stack, but you can override it when you create an
+     *         instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1084,8 +1165,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * The default root device type. This value is used by default for all
-     * instances in the cloned stack, but you can override it when you create
-     * an instance. For more information, see <a
+     * instances in the stack, but you can override it when you create an
+     * instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.
      * <p>
@@ -1095,8 +1176,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param defaultRootDeviceType The default root device type. This value is used by default for all
-     *         instances in the cloned stack, but you can override it when you create
-     *         an instance. For more information, see <a
+     *         instances in the stack, but you can override it when you create an
+     *         instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
@@ -1108,6 +1189,184 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     public UpdateStackRequest withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
+    }
+
+    /**
+     * Whether to associate the AWS OpsWorks built-in security groups with
+     * the stack's layers. <p>AWS OpsWorks provides a standard set of
+     * built-in security groups, one for each layer, which are associated
+     * with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     * you to instead provide your own custom security groups.
+     * <code>UseOpsworksSecurityGroups</code> has the following settings:
+     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     * built-in security group with each layer (default setting). You can
+     * associate additional security groups with a layer after you create it
+     * but you cannot delete the built-in security group. </li> <li>False -
+     * AWS OpsWorks does not associate built-in security groups with layers.
+     * You must create appropriate EC2 security groups and associate a
+     * security group with each layer that you create. However, you can still
+     * manually associate a built-in security group with a layer on creation;
+     * custom security groups are required only for those layers that need
+     * custom settings. </li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     *
+     * @return Whether to associate the AWS OpsWorks built-in security groups with
+     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
+     *         built-in security groups, one for each layer, which are associated
+     *         with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     *         you to instead provide your own custom security groups.
+     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
+     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     *         built-in security group with each layer (default setting). You can
+     *         associate additional security groups with a layer after you create it
+     *         but you cannot delete the built-in security group. </li> <li>False -
+     *         AWS OpsWorks does not associate built-in security groups with layers.
+     *         You must create appropriate EC2 security groups and associate a
+     *         security group with each layer that you create. However, you can still
+     *         manually associate a built-in security group with a layer on creation;
+     *         custom security groups are required only for those layers that need
+     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     *         a New Stack</a>.
+     */
+    public Boolean isUseOpsworksSecurityGroups() {
+        return useOpsworksSecurityGroups;
+    }
+    
+    /**
+     * Whether to associate the AWS OpsWorks built-in security groups with
+     * the stack's layers. <p>AWS OpsWorks provides a standard set of
+     * built-in security groups, one for each layer, which are associated
+     * with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     * you to instead provide your own custom security groups.
+     * <code>UseOpsworksSecurityGroups</code> has the following settings:
+     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     * built-in security group with each layer (default setting). You can
+     * associate additional security groups with a layer after you create it
+     * but you cannot delete the built-in security group. </li> <li>False -
+     * AWS OpsWorks does not associate built-in security groups with layers.
+     * You must create appropriate EC2 security groups and associate a
+     * security group with each layer that you create. However, you can still
+     * manually associate a built-in security group with a layer on creation;
+     * custom security groups are required only for those layers that need
+     * custom settings. </li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     *
+     * @param useOpsworksSecurityGroups Whether to associate the AWS OpsWorks built-in security groups with
+     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
+     *         built-in security groups, one for each layer, which are associated
+     *         with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     *         you to instead provide your own custom security groups.
+     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
+     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     *         built-in security group with each layer (default setting). You can
+     *         associate additional security groups with a layer after you create it
+     *         but you cannot delete the built-in security group. </li> <li>False -
+     *         AWS OpsWorks does not associate built-in security groups with layers.
+     *         You must create appropriate EC2 security groups and associate a
+     *         security group with each layer that you create. However, you can still
+     *         manually associate a built-in security group with a layer on creation;
+     *         custom security groups are required only for those layers that need
+     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     *         a New Stack</a>.
+     */
+    public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
+        this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
+    }
+    
+    /**
+     * Whether to associate the AWS OpsWorks built-in security groups with
+     * the stack's layers. <p>AWS OpsWorks provides a standard set of
+     * built-in security groups, one for each layer, which are associated
+     * with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     * you to instead provide your own custom security groups.
+     * <code>UseOpsworksSecurityGroups</code> has the following settings:
+     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     * built-in security group with each layer (default setting). You can
+     * associate additional security groups with a layer after you create it
+     * but you cannot delete the built-in security group. </li> <li>False -
+     * AWS OpsWorks does not associate built-in security groups with layers.
+     * You must create appropriate EC2 security groups and associate a
+     * security group with each layer that you create. However, you can still
+     * manually associate a built-in security group with a layer on creation;
+     * custom security groups are required only for those layers that need
+     * custom settings. </li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param useOpsworksSecurityGroups Whether to associate the AWS OpsWorks built-in security groups with
+     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
+     *         built-in security groups, one for each layer, which are associated
+     *         with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     *         you to instead provide your own custom security groups.
+     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
+     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     *         built-in security group with each layer (default setting). You can
+     *         associate additional security groups with a layer after you create it
+     *         but you cannot delete the built-in security group. </li> <li>False -
+     *         AWS OpsWorks does not associate built-in security groups with layers.
+     *         You must create appropriate EC2 security groups and associate a
+     *         security group with each layer that you create. However, you can still
+     *         manually associate a built-in security group with a layer on creation;
+     *         custom security groups are required only for those layers that need
+     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     *         a New Stack</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
+        this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
+        return this;
+    }
+
+    /**
+     * Whether to associate the AWS OpsWorks built-in security groups with
+     * the stack's layers. <p>AWS OpsWorks provides a standard set of
+     * built-in security groups, one for each layer, which are associated
+     * with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     * you to instead provide your own custom security groups.
+     * <code>UseOpsworksSecurityGroups</code> has the following settings:
+     * <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     * built-in security group with each layer (default setting). You can
+     * associate additional security groups with a layer after you create it
+     * but you cannot delete the built-in security group. </li> <li>False -
+     * AWS OpsWorks does not associate built-in security groups with layers.
+     * You must create appropriate EC2 security groups and associate a
+     * security group with each layer that you create. However, you can still
+     * manually associate a built-in security group with a layer on creation;
+     * custom security groups are required only for those layers that need
+     * custom settings. </li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     * a New Stack</a>.
+     *
+     * @return Whether to associate the AWS OpsWorks built-in security groups with
+     *         the stack's layers. <p>AWS OpsWorks provides a standard set of
+     *         built-in security groups, one for each layer, which are associated
+     *         with layers by default. <code>UseOpsworksSecurityGroups</code> allows
+     *         you to instead provide your own custom security groups.
+     *         <code>UseOpsworksSecurityGroups</code> has the following settings:
+     *         <ul> <li>True - AWS OpsWorks automatically associates the appropriate
+     *         built-in security group with each layer (default setting). You can
+     *         associate additional security groups with a layer after you create it
+     *         but you cannot delete the built-in security group. </li> <li>False -
+     *         AWS OpsWorks does not associate built-in security groups with layers.
+     *         You must create appropriate EC2 security groups and associate a
+     *         security group with each layer that you create. However, you can still
+     *         manually associate a built-in security group with a layer on creation;
+     *         custom security groups are required only for those layers that need
+     *         custom settings. </li> </ul> <p>For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+     *         a New Stack</a>.
+     */
+    public Boolean getUseOpsworksSecurityGroups() {
+        return useOpsworksSecurityGroups;
     }
 
     /**
@@ -1133,10 +1392,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (getDefaultSubnetId() != null) sb.append("DefaultSubnetId: " + getDefaultSubnetId() + ",");
         if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
         if (getConfigurationManager() != null) sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
+        if (getChefConfiguration() != null) sb.append("ChefConfiguration: " + getChefConfiguration() + ",");
         if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
         if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
         if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
-        if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() );
+        if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() + ",");
+        if (isUseOpsworksSecurityGroups() != null) sb.append("UseOpsworksSecurityGroups: " + isUseOpsworksSecurityGroups() );
         sb.append("}");
         return sb.toString();
     }
@@ -1157,10 +1418,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getDefaultSubnetId() == null) ? 0 : getDefaultSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
         hashCode = prime * hashCode + ((getConfigurationManager() == null) ? 0 : getConfigurationManager().hashCode()); 
+        hashCode = prime * hashCode + ((getChefConfiguration() == null) ? 0 : getChefConfiguration().hashCode()); 
         hashCode = prime * hashCode + ((isUseCustomCookbooks() == null) ? 0 : isUseCustomCookbooks().hashCode()); 
         hashCode = prime * hashCode + ((getCustomCookbooksSource() == null) ? 0 : getCustomCookbooksSource().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultSshKeyName() == null) ? 0 : getDefaultSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultRootDeviceType() == null) ? 0 : getDefaultRootDeviceType().hashCode()); 
+        hashCode = prime * hashCode + ((isUseOpsworksSecurityGroups() == null) ? 0 : isUseOpsworksSecurityGroups().hashCode()); 
         return hashCode;
     }
     
@@ -1194,6 +1457,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
         if (other.getConfigurationManager() == null ^ this.getConfigurationManager() == null) return false;
         if (other.getConfigurationManager() != null && other.getConfigurationManager().equals(this.getConfigurationManager()) == false) return false; 
+        if (other.getChefConfiguration() == null ^ this.getChefConfiguration() == null) return false;
+        if (other.getChefConfiguration() != null && other.getChefConfiguration().equals(this.getChefConfiguration()) == false) return false; 
         if (other.isUseCustomCookbooks() == null ^ this.isUseCustomCookbooks() == null) return false;
         if (other.isUseCustomCookbooks() != null && other.isUseCustomCookbooks().equals(this.isUseCustomCookbooks()) == false) return false; 
         if (other.getCustomCookbooksSource() == null ^ this.getCustomCookbooksSource() == null) return false;
@@ -1202,6 +1467,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (other.getDefaultSshKeyName() != null && other.getDefaultSshKeyName().equals(this.getDefaultSshKeyName()) == false) return false; 
         if (other.getDefaultRootDeviceType() == null ^ this.getDefaultRootDeviceType() == null) return false;
         if (other.getDefaultRootDeviceType() != null && other.getDefaultRootDeviceType().equals(this.getDefaultRootDeviceType()) == false) return false; 
+        if (other.isUseOpsworksSecurityGroups() == null ^ this.isUseOpsworksSecurityGroups() == null) return false;
+        if (other.isUseOpsworksSecurityGroups() != null && other.isUseOpsworksSecurityGroups().equals(this.isUseOpsworksSecurityGroups()) == false) return false; 
         return true;
     }
     

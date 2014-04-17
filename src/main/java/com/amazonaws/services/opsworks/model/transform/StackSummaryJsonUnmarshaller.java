@@ -53,6 +53,10 @@ public class StackSummaryJsonUnmarshaller implements Unmarshaller<StackSummary, 
                     context.nextToken();
                     stackSummary.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    stackSummary.setArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LayersCount", targetDepth)) {
                     context.nextToken();
                     stackSummary.setLayersCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));

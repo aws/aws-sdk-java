@@ -23,7 +23,6 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -48,6 +47,7 @@ import org.apache.http.params.HttpProtocolParams;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.internal.SdkFilterInputStream;
 
 public class HttpUtils {
 
@@ -279,7 +279,7 @@ public class HttpUtils {
      * when the stream is closed.
      */
     private static class HttpClientWrappingInputStream
-            extends FilterInputStream {
+            extends SdkFilterInputStream {
 
         private final HttpClient client;
 

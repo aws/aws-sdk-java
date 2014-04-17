@@ -24,8 +24,9 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.internal.EC2MetadataClient;
 import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.json.JSONException;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.util.json.Jackson;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  * Credentials provider implementation that loads credentials from the Amazon
@@ -46,6 +47,15 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      * this class will attempt to load new credentials.
      */
     private static final int EXPIRATION_THRESHOLD = 1000 * 60 * 15;
+
+    /** The name of the Json Object that contains the access key.*/
+    private static final String ACCESS_KEY_ID = "AccessKeyId";
+
+    /** The name of the Json Object that contains the secret access key.*/
+    private static final String SECRET_ACCESS_KEY = "SecretAccessKey";
+
+    /** The name of the Json Object that contains the token.*/
+    private static final String TOKEN = "Token";
 
 
     /** The current instance profile credentials */
@@ -117,38 +127,49 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
     private synchronized void loadCredentials() {
         if (!needsToLoadCredentials()) return;
 
+        JsonNode accessKey;
+        JsonNode secretKey;
+        JsonNode node;
+        JsonNode token;
         try {
             lastInstanceProfileCheck = new Date();
             String credentialsResponse = new EC2MetadataClient()
                     .getDefaultCredentials();
-            JSONObject jsonObject = new JSONObject(credentialsResponse);
 
-            if (jsonObject.has("Token")) {
-                credentials = new BasicSessionCredentials(
-                        jsonObject.getString("AccessKeyId"),
-                        jsonObject.getString("SecretAccessKey"),
-                        jsonObject.getString("Token"));
-            } else {
-                credentials = new BasicAWSCredentials(
-                        jsonObject.getString("AccessKeyId"),
-                        jsonObject.getString("SecretAccessKey"));
+            node = Jackson.jsonNodeOf(credentialsResponse);
+            accessKey = node.get(ACCESS_KEY_ID);
+            secretKey = node.get(SECRET_ACCESS_KEY);
+            token = node.get(TOKEN);
+
+            if (null == accessKey || null == secretKey) {
+                throw new AmazonClientException("Unable to load credentials.");
             }
 
-            if (jsonObject.has("Expiration")) {
+            if (null != token) {
+                credentials = new BasicSessionCredentials(accessKey.asText(),
+                        secretKey.asText(), token.asText());
+            } else {
+                credentials = new BasicAWSCredentials(accessKey.asText(),
+                        secretKey.asText());
+            }
+
+            JsonNode expirationJsonNode = node.get("Expiration");
+            if (null != expirationJsonNode) {
                 /*
                  * TODO: The expiration string comes in a different format
                  * than what we deal with in other parts of the SDK, so we
                  * have to convert it to the ISO8601 syntax we expect.
                  */
-                String expiration = jsonObject.getString("Expiration");
+                String expiration = expirationJsonNode.asText();
                 expiration = expiration.replaceAll("\\+0000$", "Z");
 
-                credentialsExpiration = new DateUtils().parseIso8601Date(expiration);
+                credentialsExpiration = new DateUtils()
+                        .parseIso8601Date(expiration);
             }
+        } catch (JsonMappingException e) {
+            handleError("Unable to parse credentials from Amazon EC2 metadata service", e);
         } catch (IOException e) {
             handleError("Unable to load credentials from Amazon EC2 metadata service", e);
-        } catch (JSONException e) {
-            handleError("Unable to parse credentials from Amazon EC2 metadata service", e);
         } catch (ParseException e) {
             handleError("Unable to parse credentials expiration date from Amazon EC2 metadata service", e);
         }
