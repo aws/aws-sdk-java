@@ -28,7 +28,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String instanceGroupId;
 
@@ -37,7 +37,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String name;
 
@@ -63,7 +63,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String bidPrice;
 
@@ -72,7 +72,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String instanceType;
 
@@ -100,7 +100,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String lastStateChangeReason;
 
@@ -181,7 +181,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Unique identifier for the instance group.
      */
@@ -194,7 +194,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param instanceGroupId Unique identifier for the instance group.
      */
@@ -209,7 +209,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param instanceGroupId Unique identifier for the instance group.
      *
@@ -226,7 +226,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Friendly name for the instance group.
      */
@@ -239,7 +239,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param name Friendly name for the instance group.
      */
@@ -254,7 +254,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param name Friendly name for the instance group.
      *
@@ -436,7 +436,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Bid price for EC2 Instances when launching nodes as Spot Instances,
      *         expressed in USD.
@@ -451,7 +451,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param bidPrice Bid price for EC2 Instances when launching nodes as Spot Instances,
      *         expressed in USD.
@@ -468,7 +468,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param bidPrice Bid price for EC2 Instances when launching nodes as Spot Instances,
      *         expressed in USD.
@@ -486,7 +486,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Amazon EC2 Instance type.
      */
@@ -499,7 +499,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param instanceType Amazon EC2 Instance type.
      */
@@ -514,7 +514,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param instanceType Amazon EC2 Instance type.
      *
@@ -689,7 +689,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Details regarding the state of the instance group.
      */
@@ -702,7 +702,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param lastStateChangeReason Details regarding the state of the instance group.
      */
@@ -717,7 +717,7 @@ public class InstanceGroupDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param lastStateChangeReason Details regarding the state of the instance group.
      *

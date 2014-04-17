@@ -34,6 +34,11 @@ public class StackSummary implements Serializable {
     private String name;
 
     /**
+     * The stack's ARN.
+     */
+    private String arn;
+
+    /**
      * The number of layers.
      */
     private Integer layersCount;
@@ -112,6 +117,39 @@ public class StackSummary implements Serializable {
      */
     public StackSummary withName(String name) {
         this.name = name;
+        return this;
+    }
+
+    /**
+     * The stack's ARN.
+     *
+     * @return The stack's ARN.
+     */
+    public String getArn() {
+        return arn;
+    }
+    
+    /**
+     * The stack's ARN.
+     *
+     * @param arn The stack's ARN.
+     */
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+    
+    /**
+     * The stack's ARN.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param arn The stack's ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public StackSummary withArn(String arn) {
+        this.arn = arn;
         return this;
     }
 
@@ -234,6 +272,7 @@ public class StackSummary implements Serializable {
         sb.append("{");
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getLayersCount() != null) sb.append("LayersCount: " + getLayersCount() + ",");
         if (getAppsCount() != null) sb.append("AppsCount: " + getAppsCount() + ",");
         if (getInstancesCount() != null) sb.append("InstancesCount: " + getInstancesCount() );
@@ -248,6 +287,7 @@ public class StackSummary implements Serializable {
         
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
         hashCode = prime * hashCode + ((getLayersCount() == null) ? 0 : getLayersCount().hashCode()); 
         hashCode = prime * hashCode + ((getAppsCount() == null) ? 0 : getAppsCount().hashCode()); 
         hashCode = prime * hashCode + ((getInstancesCount() == null) ? 0 : getInstancesCount().hashCode()); 
@@ -266,6 +306,8 @@ public class StackSummary implements Serializable {
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getArn() == null ^ this.getArn() == null) return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false) return false; 
         if (other.getLayersCount() == null ^ this.getLayersCount() == null) return false;
         if (other.getLayersCount() != null && other.getLayersCount().equals(this.getLayersCount()) == false) return false; 
         if (other.getAppsCount() == null ^ this.getAppsCount() == null) return false;

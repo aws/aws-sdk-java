@@ -42,7 +42,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String taskrunnerId;
 
@@ -57,7 +57,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String workerGroup;
 
@@ -66,7 +66,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String hostname;
 
@@ -80,7 +80,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The identifier of the task runner. This value should be unique across
      *         your AWS account. In the case of AWS Data Pipeline Task Runner
@@ -103,7 +103,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param taskrunnerId The identifier of the task runner. This value should be unique across
      *         your AWS account. In the case of AWS Data Pipeline Task Runner
@@ -128,7 +128,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param taskrunnerId The identifier of the task runner. This value should be unique across
      *         your AWS account. In the case of AWS Data Pipeline Task Runner
@@ -156,7 +156,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
@@ -181,7 +181,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param workerGroup Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
@@ -208,7 +208,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param workerGroup Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
@@ -231,7 +231,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The public DNS name of the calling task runner.
      */
@@ -244,7 +244,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param hostname The public DNS name of the calling task runner.
      */
@@ -259,7 +259,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param hostname The public DNS name of the calling task runner.
      *

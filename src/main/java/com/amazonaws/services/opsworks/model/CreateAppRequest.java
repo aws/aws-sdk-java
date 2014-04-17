@@ -92,7 +92,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      */
     private java.util.Map<String,String> attributes;
 
@@ -526,10 +526,10 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @return One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -541,10 +541,10 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
@@ -552,12 +552,12 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
-     *         attributes bag.
+     *         attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -569,7 +569,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * One or more user-defined key/value pairs to be added to the stack
-     * attributes bag.
+     * attributes.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * .
  * </p>
  * <p>
- * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
+ * <b>NOTE:</b> To use load-based auto scaling, you must create a set of
  * load-based auto scaling instances. Load-based auto scaling operates
  * only on the instances from that set, so you must ensure that you have
  * created enough instances to handle the maximum anticipated load.

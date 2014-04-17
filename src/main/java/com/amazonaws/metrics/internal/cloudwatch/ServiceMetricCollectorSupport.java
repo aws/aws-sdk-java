@@ -103,7 +103,7 @@ public class ServiceMetricCollectorSupport extends ServiceMetricCollector
                 .withDimensions(throughputDimension)
                 .withUnit(StandardUnit.BytesSecond)
                 .withValue(bytesPerSec);
-            addMetricsToQueue(throughputDatum);
+            safeAddMetricsToQueue(throughputDatum);
         }
         if (metrics.contains(byteCountType)) {
             // Byte count metric
@@ -115,7 +115,7 @@ public class ServiceMetricCollectorSupport extends ServiceMetricCollector
                 .withDimensions(byteCountDimension)
                 .withUnit(StandardUnit.Bytes)
                 .withValue(byteCount);
-            addMetricsToQueue(byteCountDatum);
+            safeAddMetricsToQueue(byteCountDatum);
         }
     }
 
@@ -132,10 +132,28 @@ public class ServiceMetricCollectorSupport extends ServiceMetricCollector
                 .withDimensions(dim)
                 .withUnit(StandardUnit.Milliseconds)
                 .withValue(provider.getDurationMilli());
-            addMetricsToQueue(datum);
+            safeAddMetricsToQueue(datum);
         }
     }
 
-    /** Adds the given metric to the queue, returning true if successful or false otherwise. */
-    protected boolean addMetricsToQueue(MetricDatum metric) { return queue.add(metric); }
+    private void safeAddMetricsToQueue(MetricDatum metric) {
+        try {
+            if (!addMetricsToQueue(metric)) {
+                if (log.isDebugEnabled()) {
+                    log.debug("Failed to add to the metrics queue (due to no space available) for "
+                            + metric.getMetricName());
+                }
+            }
+        } catch (RuntimeException ex) {
+            log.warn("Failed to add to the metrics queue for metric: " + metric,
+                    ex);
+        }
+    }
+    /**
+     * Adds the given metric to the queue, returning true if successful or false
+     * if no space available.
+     */
+    protected boolean addMetricsToQueue(MetricDatum metric) {
+        return queue.offer(metric); 
+    }
 }

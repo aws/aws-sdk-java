@@ -126,9 +126,10 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String subnetId;
 
     /**
-     * The instance architecture. Instance types do not necessarily support
-     * both architectures. For a list of the architectures that are supported
-     * by the different instance types, see <a
+     * The instance architecture. The default option is <code>x86_64</code>.
+     * Instance types do not necessarily support both architectures. For a
+     * list of the architectures that are supported by the different instance
+     * types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.
      * <p>
@@ -154,11 +155,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     * recommend using the default value of <code>true</code> to ensure that
+     * your instances have the latest security updates. </note>
      */
     private Boolean installUpdatesOnBoot;
+
+    /**
+     * Whether to create an Amazon EBS-optimized instance.
+     */
+    private Boolean ebsOptimized;
 
     /**
      * The stack ID.
@@ -815,18 +821,20 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The instance architecture. Instance types do not necessarily support
-     * both architectures. For a list of the architectures that are supported
-     * by the different instance types, see <a
+     * The instance architecture. The default option is <code>x86_64</code>.
+     * Instance types do not necessarily support both architectures. For a
+     * list of the architectures that are supported by the different instance
+     * types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>x86_64, i386
      *
-     * @return The instance architecture. Instance types do not necessarily support
-     *         both architectures. For a list of the architectures that are supported
-     *         by the different instance types, see <a
+     * @return The instance architecture. The default option is <code>x86_64</code>.
+     *         Instance types do not necessarily support both architectures. For a
+     *         list of the architectures that are supported by the different instance
+     *         types, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
@@ -837,18 +845,20 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance architecture. Instance types do not necessarily support
-     * both architectures. For a list of the architectures that are supported
-     * by the different instance types, see <a
+     * The instance architecture. The default option is <code>x86_64</code>.
+     * Instance types do not necessarily support both architectures. For a
+     * list of the architectures that are supported by the different instance
+     * types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>x86_64, i386
      *
-     * @param architecture The instance architecture. Instance types do not necessarily support
-     *         both architectures. For a list of the architectures that are supported
-     *         by the different instance types, see <a
+     * @param architecture The instance architecture. The default option is <code>x86_64</code>.
+     *         Instance types do not necessarily support both architectures. For a
+     *         list of the architectures that are supported by the different instance
+     *         types, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
@@ -859,9 +869,10 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance architecture. Instance types do not necessarily support
-     * both architectures. For a list of the architectures that are supported
-     * by the different instance types, see <a
+     * The instance architecture. The default option is <code>x86_64</code>.
+     * Instance types do not necessarily support both architectures. For a
+     * list of the architectures that are supported by the different instance
+     * types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.
      * <p>
@@ -870,9 +881,10 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>x86_64, i386
      *
-     * @param architecture The instance architecture. Instance types do not necessarily support
-     *         both architectures. For a list of the architectures that are supported
-     *         by the different instance types, see <a
+     * @param architecture The instance architecture. The default option is <code>x86_64</code>.
+     *         Instance types do not necessarily support both architectures. For a
+     *         list of the architectures that are supported by the different instance
+     *         types, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
@@ -887,18 +899,20 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * The instance architecture. Instance types do not necessarily support
-     * both architectures. For a list of the architectures that are supported
-     * by the different instance types, see <a
+     * The instance architecture. The default option is <code>x86_64</code>.
+     * Instance types do not necessarily support both architectures. For a
+     * list of the architectures that are supported by the different instance
+     * types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>x86_64, i386
      *
-     * @param architecture The instance architecture. Instance types do not necessarily support
-     *         both architectures. For a list of the architectures that are supported
-     *         by the different instance types, see <a
+     * @param architecture The instance architecture. The default option is <code>x86_64</code>.
+     *         Instance types do not necessarily support both architectures. For a
+     *         list of the architectures that are supported by the different instance
+     *         types, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
@@ -909,9 +923,10 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The instance architecture. Instance types do not necessarily support
-     * both architectures. For a list of the architectures that are supported
-     * by the different instance types, see <a
+     * The instance architecture. The default option is <code>x86_64</code>.
+     * Instance types do not necessarily support both architectures. For a
+     * list of the architectures that are supported by the different instance
+     * types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.
      * <p>
@@ -920,9 +935,10 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>x86_64, i386
      *
-     * @param architecture The instance architecture. Instance types do not necessarily support
-     *         both architectures. For a list of the architectures that are supported
-     *         by the different instance types, see <a
+     * @param architecture The instance architecture. The default option is <code>x86_64</code>.
+     *         Instance types do not necessarily support both architectures. For a
+     *         list of the architectures that are supported by the different instance
+     *         types, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
@@ -1045,9 +1061,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     * recommend using the default value of <code>true</code> to ensure that
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -1055,9 +1071,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     *         recommend using the default value of <code>true</code> to ensure that
+     *         your instances have the latest security updates. </note>
      */
     public Boolean isInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
@@ -1070,9 +1086,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     * recommend using the default value of <code>true</code> to ensure that
+     * your instances have the latest security updates. </note>
      *
      * @param installUpdatesOnBoot Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -1080,9 +1096,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     *         recommend using the default value of <code>true</code> to ensure that
+     *         your instances have the latest security updates. </note>
      */
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
@@ -1095,9 +1111,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     * recommend using the default value of <code>true</code> to ensure that
+     * your instances have the latest security updates. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1107,9 +1123,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     *         recommend using the default value of <code>true</code> to ensure that
+     *         your instances have the latest security updates. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1126,9 +1142,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      * must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      * stack command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that
-     * your instances have the latest security updates.</note>
+     * <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     * recommend using the default value of <code>true</code> to ensure that
+     * your instances have the latest security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. To control
@@ -1136,12 +1152,54 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         must then update your instances manually by using
      *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
      *         stack command or manually running <code>yum</code> (Amazon Linux) or
-     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
-     *         recommend using the default value of <code>true</code>, to ensure that
-     *         your instances have the latest security updates.</note>
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note> <p>We strongly
+     *         recommend using the default value of <code>true</code> to ensure that
+     *         your instances have the latest security updates. </note>
      */
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
+    }
+
+    /**
+     * Whether to create an Amazon EBS-optimized instance.
+     *
+     * @return Whether to create an Amazon EBS-optimized instance.
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Whether to create an Amazon EBS-optimized instance.
+     *
+     * @param ebsOptimized Whether to create an Amazon EBS-optimized instance.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Whether to create an Amazon EBS-optimized instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized Whether to create an Amazon EBS-optimized instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateInstanceRequest withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+
+    /**
+     * Whether to create an Amazon EBS-optimized instance.
+     *
+     * @return Whether to create an Amazon EBS-optimized instance.
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
     }
 
     /**
@@ -1168,7 +1226,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
-        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();
     }
@@ -1191,6 +1250,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -1228,6 +1288,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

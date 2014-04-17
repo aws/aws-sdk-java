@@ -157,6 +157,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setInstallUpdatesOnBoot(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EbsOptimized", targetDepth)) {
+                    context.nextToken();
+                    instance.setEbsOptimized(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -81,6 +81,11 @@ public class AmazonServiceException extends AmazonClientException {
      */
     private ErrorType errorType = ErrorType.Unknown;
 
+    /**
+     * The error message as returned by the service.
+     */
+    private String errorMessage;
+
     /** The HTTP status code that was returned with this error */
     private int statusCode;
 
@@ -92,24 +97,26 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * Constructs a new AmazonServiceException with the specified message.
      *
-     * @param message
+     * @param errorMessage
      *            An error message describing what went wrong.
      */
-    public AmazonServiceException(String message) {
-        super(message);
+    public AmazonServiceException(String errorMessage) {
+        super(null);
+        this.errorMessage = errorMessage;
     }
 
     /**
      * Constructs a new AmazonServiceException with the specified message and
      * exception indicating the root cause.
      *
-     * @param message
+     * @param errorMessage
      *            An error message describing what went wrong.
      * @param cause
      *            The root exception that caused this exception to be thrown.
      */
-    public AmazonServiceException(String message, Exception cause) {
-        super(message, cause);
+    public AmazonServiceException(String errorMessage, Exception cause) {
+        super(null, cause);
+        this.errorMessage = errorMessage;
     }
 
     /**
@@ -196,6 +203,13 @@ public class AmazonServiceException extends AmazonClientException {
     }
 
     /**
+     * @return the human-readable error message provided by the service
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    /**
      * Sets the HTTP status code that was returned with this service exception.
      *
      * @param statusCode
@@ -217,14 +231,12 @@ public class AmazonServiceException extends AmazonClientException {
         return statusCode;
     }
 
-    /** {@inheritDoc} */
     @Override
     public String getMessage() {
-        return "Status Code: " + getStatusCode() + ", "
-            + "AWS Service: " + getServiceName() + ", "
-            + "AWS Request ID: " + getRequestId() + ", "
-            + "AWS Error Code: " + getErrorCode() + ", "
-            + "AWS Error Message: " + super.getMessage();
+        return getErrorMessage()
+            + " (Service: " + getServiceName()
+            + "; Status Code: " + getStatusCode()
+            + "; Error Code: " + getErrorCode()
+            + "; Request ID: " + getRequestId() + ")";
     }
-
 }

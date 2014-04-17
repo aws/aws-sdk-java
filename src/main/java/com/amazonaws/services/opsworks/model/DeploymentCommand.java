@@ -24,24 +24,32 @@ import java.io.Serializable;
 public class DeploymentCommand implements Serializable {
 
     /**
-     * Specifies the deployment operation. You can specify only one command.
-     * <p>For stacks, the available commands are: <ul>
-     * <li><code>execute_recipes</code>: Execute the recipes that are
-     * specified by the <code>Args</code> parameter.</li>
-     * <li><code>install_dependencies</code>: Installs the stack's
+     * Specifies the operation. You can specify only one command. <p>For
+     * stacks, the following commands are available: <ul>
+     * <li><code>execute_recipes</code>: Execute one or more recipes. To
+     * specify the recipes, set an <code>Args</code> parameter named
+     * <code>recipes</code> to the list of recipes to be executed. For
+     * example, to execute <code>phpapp::appsetup</code>, set
+     * <code>Args</code> to
+     * <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     * <li><code>install_dependencies</code>: Install the stack's
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     * <li><code>deploy</code>: Deploy the app.</li>
-     * <li><code>rollback</code> Roll the app back to the previous version.
-     * When you update an app, AWS OpsWorks stores the previous version, up
-     * to a maximum of five versions. You can use this command to roll an app
-     * back as many as four versions.</li> <li><code>start</code>: Start the
-     * app's web or application server.</li> <li><code>stop</code>: Stop the
-     * app's web or application server.</li> <li><code>restart</code>:
-     * Restart the app's web or application server.</li>
-     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the following commands are
+     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     * have an optional <code>Args</code> parameter named
+     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     * migrate the database. The default setting is
+     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     * back to the previous version. When you update an app, AWS OpsWorks
+     * stores the previous version, up to a maximum of five versions. You can
+     * use this command to roll an app back as many as four versions.</li>
+     * <li><code>start</code>: Start the app's web or application
+     * server.</li> <li><code>stop</code>: Stop the app's web or application
+     * server.</li> <li><code>restart</code>: Restart the app's web or
+     * application server.</li> <li><code>undeploy</code>: Undeploy the
+     * app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -49,53 +57,69 @@ public class DeploymentCommand implements Serializable {
     private String name;
 
     /**
-     * An array of command arguments. This parameter is currently used only
-     * to specify the list of recipes to be executed by the
-     * <code>ExecuteRecipes</code> command.
+     * The arguments of those commands that take arguments. It should be set
+     * to a JSON object with the following format:
+     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
      */
     private java.util.Map<String,java.util.List<String>> args;
 
     /**
-     * Specifies the deployment operation. You can specify only one command.
-     * <p>For stacks, the available commands are: <ul>
-     * <li><code>execute_recipes</code>: Execute the recipes that are
-     * specified by the <code>Args</code> parameter.</li>
-     * <li><code>install_dependencies</code>: Installs the stack's
+     * Specifies the operation. You can specify only one command. <p>For
+     * stacks, the following commands are available: <ul>
+     * <li><code>execute_recipes</code>: Execute one or more recipes. To
+     * specify the recipes, set an <code>Args</code> parameter named
+     * <code>recipes</code> to the list of recipes to be executed. For
+     * example, to execute <code>phpapp::appsetup</code>, set
+     * <code>Args</code> to
+     * <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     * <li><code>install_dependencies</code>: Install the stack's
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     * <li><code>deploy</code>: Deploy the app.</li>
-     * <li><code>rollback</code> Roll the app back to the previous version.
-     * When you update an app, AWS OpsWorks stores the previous version, up
-     * to a maximum of five versions. You can use this command to roll an app
-     * back as many as four versions.</li> <li><code>start</code>: Start the
-     * app's web or application server.</li> <li><code>stop</code>: Stop the
-     * app's web or application server.</li> <li><code>restart</code>:
-     * Restart the app's web or application server.</li>
-     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the following commands are
+     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     * have an optional <code>Args</code> parameter named
+     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     * migrate the database. The default setting is
+     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     * back to the previous version. When you update an app, AWS OpsWorks
+     * stores the previous version, up to a maximum of five versions. You can
+     * use this command to roll an app back as many as four versions.</li>
+     * <li><code>start</code>: Start the app's web or application
+     * server.</li> <li><code>stop</code>: Stop the app's web or application
+     * server.</li> <li><code>restart</code>: Restart the app's web or
+     * application server.</li> <li><code>undeploy</code>: Undeploy the
+     * app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
      *
-     * @return Specifies the deployment operation. You can specify only one command.
-     *         <p>For stacks, the available commands are: <ul>
-     *         <li><code>execute_recipes</code>: Execute the recipes that are
-     *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code>install_dependencies</code>: Installs the stack's
+     * @return Specifies the operation. You can specify only one command. <p>For
+     *         stacks, the following commands are available: <ul>
+     *         <li><code>execute_recipes</code>: Execute one or more recipes. To
+     *         specify the recipes, set an <code>Args</code> parameter named
+     *         <code>recipes</code> to the list of recipes to be executed. For
+     *         example, to execute <code>phpapp::appsetup</code>, set
+     *         <code>Args</code> to
+     *         <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     *         <li><code>install_dependencies</code>: Install the stack's
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     *         <li><code>deploy</code>: Deploy the app.</li>
-     *         <li><code>rollback</code> Roll the app back to the previous version.
-     *         When you update an app, AWS OpsWorks stores the previous version, up
-     *         to a maximum of five versions. You can use this command to roll an app
-     *         back as many as four versions.</li> <li><code>start</code>: Start the
-     *         app's web or application server.</li> <li><code>stop</code>: Stop the
-     *         app's web or application server.</li> <li><code>restart</code>:
-     *         Restart the app's web or application server.</li>
-     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the following commands are
+     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     *         have an optional <code>Args</code> parameter named
+     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     *         migrate the database. The default setting is
+     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     *         back to the previous version. When you update an app, AWS OpsWorks
+     *         stores the previous version, up to a maximum of five versions. You can
+     *         use this command to roll an app back as many as four versions.</li>
+     *         <li><code>start</code>: Start the app's web or application
+     *         server.</li> <li><code>stop</code>: Stop the app's web or application
+     *         server.</li> <li><code>restart</code>: Restart the app's web or
+     *         application server.</li> <li><code>undeploy</code>: Undeploy the
+     *         app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -104,46 +128,62 @@ public class DeploymentCommand implements Serializable {
     }
     
     /**
-     * Specifies the deployment operation. You can specify only one command.
-     * <p>For stacks, the available commands are: <ul>
-     * <li><code>execute_recipes</code>: Execute the recipes that are
-     * specified by the <code>Args</code> parameter.</li>
-     * <li><code>install_dependencies</code>: Installs the stack's
+     * Specifies the operation. You can specify only one command. <p>For
+     * stacks, the following commands are available: <ul>
+     * <li><code>execute_recipes</code>: Execute one or more recipes. To
+     * specify the recipes, set an <code>Args</code> parameter named
+     * <code>recipes</code> to the list of recipes to be executed. For
+     * example, to execute <code>phpapp::appsetup</code>, set
+     * <code>Args</code> to
+     * <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     * <li><code>install_dependencies</code>: Install the stack's
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     * <li><code>deploy</code>: Deploy the app.</li>
-     * <li><code>rollback</code> Roll the app back to the previous version.
-     * When you update an app, AWS OpsWorks stores the previous version, up
-     * to a maximum of five versions. You can use this command to roll an app
-     * back as many as four versions.</li> <li><code>start</code>: Start the
-     * app's web or application server.</li> <li><code>stop</code>: Stop the
-     * app's web or application server.</li> <li><code>restart</code>:
-     * Restart the app's web or application server.</li>
-     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the following commands are
+     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     * have an optional <code>Args</code> parameter named
+     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     * migrate the database. The default setting is
+     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     * back to the previous version. When you update an app, AWS OpsWorks
+     * stores the previous version, up to a maximum of five versions. You can
+     * use this command to roll an app back as many as four versions.</li>
+     * <li><code>start</code>: Start the app's web or application
+     * server.</li> <li><code>stop</code>: Stop the app's web or application
+     * server.</li> <li><code>restart</code>: Restart the app's web or
+     * application server.</li> <li><code>undeploy</code>: Undeploy the
+     * app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
      *
-     * @param name Specifies the deployment operation. You can specify only one command.
-     *         <p>For stacks, the available commands are: <ul>
-     *         <li><code>execute_recipes</code>: Execute the recipes that are
-     *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code>install_dependencies</code>: Installs the stack's
+     * @param name Specifies the operation. You can specify only one command. <p>For
+     *         stacks, the following commands are available: <ul>
+     *         <li><code>execute_recipes</code>: Execute one or more recipes. To
+     *         specify the recipes, set an <code>Args</code> parameter named
+     *         <code>recipes</code> to the list of recipes to be executed. For
+     *         example, to execute <code>phpapp::appsetup</code>, set
+     *         <code>Args</code> to
+     *         <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     *         <li><code>install_dependencies</code>: Install the stack's
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     *         <li><code>deploy</code>: Deploy the app.</li>
-     *         <li><code>rollback</code> Roll the app back to the previous version.
-     *         When you update an app, AWS OpsWorks stores the previous version, up
-     *         to a maximum of five versions. You can use this command to roll an app
-     *         back as many as four versions.</li> <li><code>start</code>: Start the
-     *         app's web or application server.</li> <li><code>stop</code>: Stop the
-     *         app's web or application server.</li> <li><code>restart</code>:
-     *         Restart the app's web or application server.</li>
-     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the following commands are
+     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     *         have an optional <code>Args</code> parameter named
+     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     *         migrate the database. The default setting is
+     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     *         back to the previous version. When you update an app, AWS OpsWorks
+     *         stores the previous version, up to a maximum of five versions. You can
+     *         use this command to roll an app back as many as four versions.</li>
+     *         <li><code>start</code>: Start the app's web or application
+     *         server.</li> <li><code>stop</code>: Stop the app's web or application
+     *         server.</li> <li><code>restart</code>: Restart the app's web or
+     *         application server.</li> <li><code>undeploy</code>: Undeploy the
+     *         app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -152,48 +192,64 @@ public class DeploymentCommand implements Serializable {
     }
     
     /**
-     * Specifies the deployment operation. You can specify only one command.
-     * <p>For stacks, the available commands are: <ul>
-     * <li><code>execute_recipes</code>: Execute the recipes that are
-     * specified by the <code>Args</code> parameter.</li>
-     * <li><code>install_dependencies</code>: Installs the stack's
+     * Specifies the operation. You can specify only one command. <p>For
+     * stacks, the following commands are available: <ul>
+     * <li><code>execute_recipes</code>: Execute one or more recipes. To
+     * specify the recipes, set an <code>Args</code> parameter named
+     * <code>recipes</code> to the list of recipes to be executed. For
+     * example, to execute <code>phpapp::appsetup</code>, set
+     * <code>Args</code> to
+     * <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     * <li><code>install_dependencies</code>: Install the stack's
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     * <li><code>deploy</code>: Deploy the app.</li>
-     * <li><code>rollback</code> Roll the app back to the previous version.
-     * When you update an app, AWS OpsWorks stores the previous version, up
-     * to a maximum of five versions. You can use this command to roll an app
-     * back as many as four versions.</li> <li><code>start</code>: Start the
-     * app's web or application server.</li> <li><code>stop</code>: Stop the
-     * app's web or application server.</li> <li><code>restart</code>:
-     * Restart the app's web or application server.</li>
-     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the following commands are
+     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     * have an optional <code>Args</code> parameter named
+     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     * migrate the database. The default setting is
+     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     * back to the previous version. When you update an app, AWS OpsWorks
+     * stores the previous version, up to a maximum of five versions. You can
+     * use this command to roll an app back as many as four versions.</li>
+     * <li><code>start</code>: Start the app's web or application
+     * server.</li> <li><code>stop</code>: Stop the app's web or application
+     * server.</li> <li><code>restart</code>: Restart the app's web or
+     * application server.</li> <li><code>undeploy</code>: Undeploy the
+     * app.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
      *
-     * @param name Specifies the deployment operation. You can specify only one command.
-     *         <p>For stacks, the available commands are: <ul>
-     *         <li><code>execute_recipes</code>: Execute the recipes that are
-     *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code>install_dependencies</code>: Installs the stack's
+     * @param name Specifies the operation. You can specify only one command. <p>For
+     *         stacks, the following commands are available: <ul>
+     *         <li><code>execute_recipes</code>: Execute one or more recipes. To
+     *         specify the recipes, set an <code>Args</code> parameter named
+     *         <code>recipes</code> to the list of recipes to be executed. For
+     *         example, to execute <code>phpapp::appsetup</code>, set
+     *         <code>Args</code> to
+     *         <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     *         <li><code>install_dependencies</code>: Install the stack's
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     *         <li><code>deploy</code>: Deploy the app.</li>
-     *         <li><code>rollback</code> Roll the app back to the previous version.
-     *         When you update an app, AWS OpsWorks stores the previous version, up
-     *         to a maximum of five versions. You can use this command to roll an app
-     *         back as many as four versions.</li> <li><code>start</code>: Start the
-     *         app's web or application server.</li> <li><code>stop</code>: Stop the
-     *         app's web or application server.</li> <li><code>restart</code>:
-     *         Restart the app's web or application server.</li>
-     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the following commands are
+     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     *         have an optional <code>Args</code> parameter named
+     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     *         migrate the database. The default setting is
+     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     *         back to the previous version. When you update an app, AWS OpsWorks
+     *         stores the previous version, up to a maximum of five versions. You can
+     *         use this command to roll an app back as many as four versions.</li>
+     *         <li><code>start</code>: Start the app's web or application
+     *         server.</li> <li><code>stop</code>: Stop the app's web or application
+     *         server.</li> <li><code>restart</code>: Restart the app's web or
+     *         application server.</li> <li><code>undeploy</code>: Undeploy the
+     *         app.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -206,46 +262,62 @@ public class DeploymentCommand implements Serializable {
     }
 
     /**
-     * Specifies the deployment operation. You can specify only one command.
-     * <p>For stacks, the available commands are: <ul>
-     * <li><code>execute_recipes</code>: Execute the recipes that are
-     * specified by the <code>Args</code> parameter.</li>
-     * <li><code>install_dependencies</code>: Installs the stack's
+     * Specifies the operation. You can specify only one command. <p>For
+     * stacks, the following commands are available: <ul>
+     * <li><code>execute_recipes</code>: Execute one or more recipes. To
+     * specify the recipes, set an <code>Args</code> parameter named
+     * <code>recipes</code> to the list of recipes to be executed. For
+     * example, to execute <code>phpapp::appsetup</code>, set
+     * <code>Args</code> to
+     * <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     * <li><code>install_dependencies</code>: Install the stack's
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     * <li><code>deploy</code>: Deploy the app.</li>
-     * <li><code>rollback</code> Roll the app back to the previous version.
-     * When you update an app, AWS OpsWorks stores the previous version, up
-     * to a maximum of five versions. You can use this command to roll an app
-     * back as many as four versions.</li> <li><code>start</code>: Start the
-     * app's web or application server.</li> <li><code>stop</code>: Stop the
-     * app's web or application server.</li> <li><code>restart</code>:
-     * Restart the app's web or application server.</li>
-     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the following commands are
+     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     * have an optional <code>Args</code> parameter named
+     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     * migrate the database. The default setting is
+     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     * back to the previous version. When you update an app, AWS OpsWorks
+     * stores the previous version, up to a maximum of five versions. You can
+     * use this command to roll an app back as many as four versions.</li>
+     * <li><code>start</code>: Start the app's web or application
+     * server.</li> <li><code>stop</code>: Stop the app's web or application
+     * server.</li> <li><code>restart</code>: Restart the app's web or
+     * application server.</li> <li><code>undeploy</code>: Undeploy the
+     * app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
      *
-     * @param name Specifies the deployment operation. You can specify only one command.
-     *         <p>For stacks, the available commands are: <ul>
-     *         <li><code>execute_recipes</code>: Execute the recipes that are
-     *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code>install_dependencies</code>: Installs the stack's
+     * @param name Specifies the operation. You can specify only one command. <p>For
+     *         stacks, the following commands are available: <ul>
+     *         <li><code>execute_recipes</code>: Execute one or more recipes. To
+     *         specify the recipes, set an <code>Args</code> parameter named
+     *         <code>recipes</code> to the list of recipes to be executed. For
+     *         example, to execute <code>phpapp::appsetup</code>, set
+     *         <code>Args</code> to
+     *         <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     *         <li><code>install_dependencies</code>: Install the stack's
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     *         <li><code>deploy</code>: Deploy the app.</li>
-     *         <li><code>rollback</code> Roll the app back to the previous version.
-     *         When you update an app, AWS OpsWorks stores the previous version, up
-     *         to a maximum of five versions. You can use this command to roll an app
-     *         back as many as four versions.</li> <li><code>start</code>: Start the
-     *         app's web or application server.</li> <li><code>stop</code>: Stop the
-     *         app's web or application server.</li> <li><code>restart</code>:
-     *         Restart the app's web or application server.</li>
-     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the following commands are
+     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     *         have an optional <code>Args</code> parameter named
+     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     *         migrate the database. The default setting is
+     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     *         back to the previous version. When you update an app, AWS OpsWorks
+     *         stores the previous version, up to a maximum of five versions. You can
+     *         use this command to roll an app back as many as four versions.</li>
+     *         <li><code>start</code>: Start the app's web or application
+     *         server.</li> <li><code>stop</code>: Stop the app's web or application
+     *         server.</li> <li><code>restart</code>: Restart the app's web or
+     *         application server.</li> <li><code>undeploy</code>: Undeploy the
+     *         app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -254,48 +326,64 @@ public class DeploymentCommand implements Serializable {
     }
     
     /**
-     * Specifies the deployment operation. You can specify only one command.
-     * <p>For stacks, the available commands are: <ul>
-     * <li><code>execute_recipes</code>: Execute the recipes that are
-     * specified by the <code>Args</code> parameter.</li>
-     * <li><code>install_dependencies</code>: Installs the stack's
+     * Specifies the operation. You can specify only one command. <p>For
+     * stacks, the following commands are available: <ul>
+     * <li><code>execute_recipes</code>: Execute one or more recipes. To
+     * specify the recipes, set an <code>Args</code> parameter named
+     * <code>recipes</code> to the list of recipes to be executed. For
+     * example, to execute <code>phpapp::appsetup</code>, set
+     * <code>Args</code> to
+     * <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     * <li><code>install_dependencies</code>: Install the stack's
      * dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      * the stack's custom cookbooks.</li>
      * <li><code>update_dependencies</code>: Update the stack's
-     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     * <li><code>deploy</code>: Deploy the app.</li>
-     * <li><code>rollback</code> Roll the app back to the previous version.
-     * When you update an app, AWS OpsWorks stores the previous version, up
-     * to a maximum of five versions. You can use this command to roll an app
-     * back as many as four versions.</li> <li><code>start</code>: Start the
-     * app's web or application server.</li> <li><code>stop</code>: Stop the
-     * app's web or application server.</li> <li><code>restart</code>:
-     * Restart the app's web or application server.</li>
-     * <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the following commands are
+     * available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     * have an optional <code>Args</code> parameter named
+     * <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     * migrate the database. The default setting is
+     * {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     * back to the previous version. When you update an app, AWS OpsWorks
+     * stores the previous version, up to a maximum of five versions. You can
+     * use this command to roll an app back as many as four versions.</li>
+     * <li><code>start</code>: Start the app's web or application
+     * server.</li> <li><code>stop</code>: Stop the app's web or application
+     * server.</li> <li><code>restart</code>: Restart the app's web or
+     * application server.</li> <li><code>undeploy</code>: Undeploy the
+     * app.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
      *
-     * @param name Specifies the deployment operation. You can specify only one command.
-     *         <p>For stacks, the available commands are: <ul>
-     *         <li><code>execute_recipes</code>: Execute the recipes that are
-     *         specified by the <code>Args</code> parameter.</li>
-     *         <li><code>install_dependencies</code>: Installs the stack's
+     * @param name Specifies the operation. You can specify only one command. <p>For
+     *         stacks, the following commands are available: <ul>
+     *         <li><code>execute_recipes</code>: Execute one or more recipes. To
+     *         specify the recipes, set an <code>Args</code> parameter named
+     *         <code>recipes</code> to the list of recipes to be executed. For
+     *         example, to execute <code>phpapp::appsetup</code>, set
+     *         <code>Args</code> to
+     *         <code>{"recipes":["phpapp::appsetup"]}</code>.</li>
+     *         <li><code>install_dependencies</code>: Install the stack's
      *         dependencies.</li> <li><code>update_custom_cookbooks</code>: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code>update_dependencies</code>: Update the stack's
-     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
-     *         <li><code>deploy</code>: Deploy the app.</li>
-     *         <li><code>rollback</code> Roll the app back to the previous version.
-     *         When you update an app, AWS OpsWorks stores the previous version, up
-     *         to a maximum of five versions. You can use this command to roll an app
-     *         back as many as four versions.</li> <li><code>start</code>: Start the
-     *         app's web or application server.</li> <li><code>stop</code>: Stop the
-     *         app's web or application server.</li> <li><code>restart</code>:
-     *         Restart the app's web or application server.</li>
-     *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the following commands are
+     *         available: <ul> <li><code>deploy</code>: Deploy an app. Rails apps
+     *         have an optional <code>Args</code> parameter named
+     *         <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
+     *         migrate the database. The default setting is
+     *         {"migrate":["false"]}.</li> <li><code>rollback</code> Roll the app
+     *         back to the previous version. When you update an app, AWS OpsWorks
+     *         stores the previous version, up to a maximum of five versions. You can
+     *         use this command to roll an app back as many as four versions.</li>
+     *         <li><code>start</code>: Start the app's web or application
+     *         server.</li> <li><code>stop</code>: Stop the app's web or application
+     *         server.</li> <li><code>restart</code>: Restart the app's web or
+     *         application server.</li> <li><code>undeploy</code>: Undeploy the
+     *         app.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -308,13 +396,13 @@ public class DeploymentCommand implements Serializable {
     }
 
     /**
-     * An array of command arguments. This parameter is currently used only
-     * to specify the list of recipes to be executed by the
-     * <code>ExecuteRecipes</code> command.
+     * The arguments of those commands that take arguments. It should be set
+     * to a JSON object with the following format:
+     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
      *
-     * @return An array of command arguments. This parameter is currently used only
-     *         to specify the list of recipes to be executed by the
-     *         <code>ExecuteRecipes</code> command.
+     * @return The arguments of those commands that take arguments. It should be set
+     *         to a JSON object with the following format:
+     *         <p><code>{"arg_name":["value1", "value2", ...]}</code>
      */
     public java.util.Map<String,java.util.List<String>> getArgs() {
         
@@ -325,28 +413,28 @@ public class DeploymentCommand implements Serializable {
     }
     
     /**
-     * An array of command arguments. This parameter is currently used only
-     * to specify the list of recipes to be executed by the
-     * <code>ExecuteRecipes</code> command.
+     * The arguments of those commands that take arguments. It should be set
+     * to a JSON object with the following format:
+     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
      *
-     * @param args An array of command arguments. This parameter is currently used only
-     *         to specify the list of recipes to be executed by the
-     *         <code>ExecuteRecipes</code> command.
+     * @param args The arguments of those commands that take arguments. It should be set
+     *         to a JSON object with the following format:
+     *         <p><code>{"arg_name":["value1", "value2", ...]}</code>
      */
     public void setArgs(java.util.Map<String,java.util.List<String>> args) {
         this.args = args;
     }
     
     /**
-     * An array of command arguments. This parameter is currently used only
-     * to specify the list of recipes to be executed by the
-     * <code>ExecuteRecipes</code> command.
+     * The arguments of those commands that take arguments. It should be set
+     * to a JSON object with the following format:
+     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param args An array of command arguments. This parameter is currently used only
-     *         to specify the list of recipes to be executed by the
-     *         <code>ExecuteRecipes</code> command.
+     * @param args The arguments of those commands that take arguments. It should be set
+     *         to a JSON object with the following format:
+     *         <p><code>{"arg_name":["value1", "value2", ...]}</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -357,9 +445,9 @@ public class DeploymentCommand implements Serializable {
     }
 
     /**
-     * An array of command arguments. This parameter is currently used only
-     * to specify the list of recipes to be executed by the
-     * <code>ExecuteRecipes</code> command.
+     * The arguments of those commands that take arguments. It should be set
+     * to a JSON object with the following format:
+     * <p><code>{"arg_name":["value1", "value2", ...]}</code>
      * <p>
      * The method adds a new key-value pair into Args parameter, and returns
      * a reference to this object so that method calls can be chained

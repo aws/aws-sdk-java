@@ -22,9 +22,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#attachElasticLoadBalancer(AttachElasticLoadBalancerRequest) AttachElasticLoadBalancer operation}.
  * <p>
  * Attaches an Elastic Load Balancing load balancer to a specified layer.
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"> Elastic Load Balancing </a>
+ * .
  * </p>
  * <p>
- * <b>NOTE:</b>You must create the Elastic Load Balancing instance
+ * <b>NOTE:</b> You must create the Elastic Load Balancing instance
  * separately, by using the Elastic Load Balancing console, API, or CLI.
  * For more information, see Elastic Load Balancing Developer Guide.
  * </p>

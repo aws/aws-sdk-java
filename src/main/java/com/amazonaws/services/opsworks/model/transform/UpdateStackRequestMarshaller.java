@@ -130,6 +130,20 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
                 }
                 jsonWriter.endObject();
             }
+            ChefConfiguration chefConfiguration = updateStackRequest.getChefConfiguration();
+            if (chefConfiguration != null) {
+
+                jsonWriter.key("ChefConfiguration");
+                jsonWriter.object();
+
+                if (chefConfiguration.isManageBerkshelf() != null) {
+                    jsonWriter.key("ManageBerkshelf").value(chefConfiguration.isManageBerkshelf());
+                }
+                if (chefConfiguration.getBerkshelfVersion() != null) {
+                    jsonWriter.key("BerkshelfVersion").value(chefConfiguration.getBerkshelfVersion());
+                }
+                jsonWriter.endObject();
+            }
             if (updateStackRequest.isUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(updateStackRequest.isUseCustomCookbooks());
             }
@@ -164,6 +178,9 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             }
             if (updateStackRequest.getDefaultRootDeviceType() != null) {
                 jsonWriter.key("DefaultRootDeviceType").value(updateStackRequest.getDefaultRootDeviceType());
+            }
+            if (updateStackRequest.isUseOpsworksSecurityGroups() != null) {
+                jsonWriter.key("UseOpsworksSecurityGroups").value(updateStackRequest.isUseOpsworksSecurityGroups());
             }
 
           jsonWriter.endObject();

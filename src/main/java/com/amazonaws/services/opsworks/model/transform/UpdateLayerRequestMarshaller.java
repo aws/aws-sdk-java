@@ -151,6 +151,12 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
                         if (volumeConfigurationsListValue.getSize() != null) {
                             jsonWriter.key("Size").value(volumeConfigurationsListValue.getSize());
                         }
+                        if (volumeConfigurationsListValue.getVolumeType() != null) {
+                            jsonWriter.key("VolumeType").value(volumeConfigurationsListValue.getVolumeType());
+                        }
+                        if (volumeConfigurationsListValue.getIops() != null) {
+                            jsonWriter.key("Iops").value(volumeConfigurationsListValue.getIops());
+                        }
                         jsonWriter.endObject();
                     }
                 }
@@ -244,6 +250,9 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
             }
             if (updateLayerRequest.isInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(updateLayerRequest.isInstallUpdatesOnBoot());
+            }
+            if (updateLayerRequest.isUseEbsOptimizedInstances() != null) {
+                jsonWriter.key("UseEbsOptimizedInstances").value(updateLayerRequest.isUseEbsOptimizedInstances());
             }
 
           jsonWriter.endObject();

@@ -600,7 +600,7 @@ public class JSONObject {
     /**
      * Tries to return the string associated with a key; or null if not found.
      */
-    public String tryGetString(String key) throws JSONException {
+    public String tryGetString(String key) {
         Object o = opt(key);
         return o == null ? null : o.toString();
     }

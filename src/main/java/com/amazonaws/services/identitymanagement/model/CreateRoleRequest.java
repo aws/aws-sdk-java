@@ -47,7 +47,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      */
     private String path;
 
@@ -65,7 +65,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      */
     private String assumeRolePolicyDocument;
 
@@ -78,7 +78,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @return The path to the role. For more information about paths, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
@@ -99,7 +99,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path to the role. For more information about paths, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
@@ -122,7 +122,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path to the role. For more information about paths, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
@@ -188,7 +188,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @return The policy that grants an entity permission to assume the role.
      */
@@ -201,7 +201,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role.
      */
@@ -216,7 +216,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 131072<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role.
      *

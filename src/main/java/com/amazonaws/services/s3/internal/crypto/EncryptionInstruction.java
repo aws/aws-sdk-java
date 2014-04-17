@@ -27,7 +27,6 @@ public class EncryptionInstruction {
 
     private final Map<String, String> materialsDescription;
     private final byte[] encryptedSymmetricKey;
-    private final SecretKey symmetricKey;
     private final Cipher symmetricCipher;
     private final CipherFactory symmetricCipherFactory;
 
@@ -46,7 +45,6 @@ public class EncryptionInstruction {
     public EncryptionInstruction(Map<String, String> materialsDescription, byte[] encryptedSymmetricKey, SecretKey symmetricKey, Cipher symmetricCipher) {
         this.materialsDescription = materialsDescription;
         this.encryptedSymmetricKey = encryptedSymmetricKey;
-        this.symmetricKey = symmetricKey;
         this.symmetricCipher = symmetricCipher;
         this.symmetricCipherFactory = null;
     }
@@ -54,7 +52,6 @@ public class EncryptionInstruction {
     public EncryptionInstruction(Map<String, String> materialsDescription, byte[] encryptedSymmetricKey, SecretKey symmetricKey, CipherFactory symmetricCipherFactory) {
         this.materialsDescription = materialsDescription;
         this.encryptedSymmetricKey = encryptedSymmetricKey;
-        this.symmetricKey = symmetricKey;
         this.symmetricCipherFactory = symmetricCipherFactory;
         this.symmetricCipher = symmetricCipherFactory.createCipher();
     }
@@ -80,15 +77,6 @@ public class EncryptionInstruction {
      */
     public byte[] getEncryptedSymmetricKey() {
         return this.encryptedSymmetricKey;
-    }
-
-    /**
-     * Returns the envelope symmetric key.
-     *
-     * @return the envelope symmetric key.
-     */
-    public SecretKey getSymmetricKey() {
-        return this.symmetricKey;
     }
 
     /**

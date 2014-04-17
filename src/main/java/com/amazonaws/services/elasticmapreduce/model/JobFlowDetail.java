@@ -28,7 +28,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String jobFlowId;
 
@@ -37,7 +37,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String name;
 
@@ -46,7 +46,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String logUri;
 
@@ -60,7 +60,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String amiVersion;
 
@@ -108,7 +108,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String jobFlowRole;
 
@@ -141,7 +141,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The job flow identifier.
      */
@@ -154,7 +154,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId The job flow identifier.
      */
@@ -169,7 +169,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId The job flow identifier.
      *
@@ -186,7 +186,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The name of the job flow.
      */
@@ -199,7 +199,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
      */
@@ -214,7 +214,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
      *
@@ -231,7 +231,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The location in Amazon S3 where log files for the job are stored.
      */
@@ -244,7 +244,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param logUri The location in Amazon S3 where log files for the job are stored.
      */
@@ -259,7 +259,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param logUri The location in Amazon S3 where log files for the job are stored.
      *
@@ -281,7 +281,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
@@ -304,7 +304,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param amiVersion The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
@@ -329,7 +329,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param amiVersion The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
@@ -728,7 +728,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The IAM role that was specified when the job flow was launched. The
      *         EC2 instances of the job flow assume this role.
@@ -743,7 +743,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowRole The IAM role that was specified when the job flow was launched. The
      *         EC2 instances of the job flow assume this role.
@@ -760,7 +760,7 @@ public class JobFlowDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowRole The IAM role that was specified when the job flow was launched. The
      *         EC2 instances of the job flow assume this role.

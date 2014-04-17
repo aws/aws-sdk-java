@@ -32,6 +32,7 @@ import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
+import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.BucketCrossOriginConfigurationHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
@@ -248,4 +249,14 @@ public class Unmarshallers {
         }
     }
 
+    /**
+     * Unmarshaller for the RequestPaymentConfiguration XML response.
+     */
+    public static final class RequestPaymentConfigurationUnmarshaller implements
+            Unmarshaller<RequestPaymentConfiguration, InputStream> {
+        public RequestPaymentConfiguration unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser()
+                    .parseRequestPaymentConfigurationResponse(in).getConfiguration();
+        }
+    }
 }

@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
@@ -83,10 +84,6 @@ public class DynamoDBTableSchemaParser {
             createTableRequest.setGlobalSecondaryIndexes(indexesInfo.getGlobalSecondaryIndexes());
         }
         if ( indexesInfo.getLocalSecondaryIndexes().isEmpty() == false ) {
-            // Add the primary hash key element into each LSI
-            for (LocalSecondaryIndex lsi : indexesInfo.getLocalSecondaryIndexes()) {
-                lsi.withKeySchema(new KeySchemaElement(pHashAttrDefinition.getAttributeName(), KeyType.HASH));
-            }
             createTableRequest.setLocalSecondaryIndexes(indexesInfo.getLocalSecondaryIndexes());
         }
 
@@ -111,6 +108,8 @@ public class DynamoDBTableSchemaParser {
         synchronized(tableIndexesInfoCache) {
             if ( !tableIndexesInfoCache.containsKey(clazz) ) {
                 TableIndexesInfo tableIndexInfo = new TableIndexesInfo();
+                String pHashName = reflector.getPrimaryHashKeyName(clazz);
+
                 for (Method getter : reflector.getRelevantGetters(clazz)) {
                     // Only consider 0-arg getters
                     if (getter.getParameterTypes().length != 0) {
@@ -191,10 +190,10 @@ public class DynamoDBTableSchemaParser {
                             }
                         }
                         if (singleLsiName) {
-                            tableIndexInfo.addLsiRangeKey(lsiName, attributeName);
+                            tableIndexInfo.addLsiRangeKey(lsiName, pHashName, attributeName);
                         } else if (multipleLsiNames) {
                             for (String lsi : lsiNames) {
-                                tableIndexInfo.addLsiRangeKey(lsi, attributeName);
+                                tableIndexInfo.addLsiRangeKey(lsi, pHashName, attributeName);
                             }
                         }
                         tableIndexInfo.addIndexKeyGetter(getter);
@@ -352,27 +351,42 @@ public class DynamoDBTableSchemaParser {
             }
 
             if (gsiHashKeyName != null) {
-                gsi.withKeySchema(new KeySchemaElement(gsiHashKeyName, KeyType.HASH));
+                // Make sure that the HASH key element is always inserted at the beginning of the list
+                if (gsi.getKeySchema() == null || gsi.getKeySchema().isEmpty()) {
+                    gsi.withKeySchema(new KeySchemaElement(gsiHashKeyName, KeyType.HASH));
+                } else {
+                    LinkedList<KeySchemaElement> orderedKeys = new LinkedList<KeySchemaElement>(gsi.getKeySchema());
+                    orderedKeys.addFirst(new KeySchemaElement(gsiHashKeyName, KeyType.HASH));
+                    gsi.setKeySchema(orderedKeys);
+                }
+
+                // Register the mapping from the hash key name to the GSI name
                 mapGsiHashKeyToIndexName(gsiHashKeyName, gsiName);
             }
             if (gsiRangeKeyName != null) {
                 gsi.withKeySchema(new KeySchemaElement(gsiRangeKeyName, KeyType.RANGE));
+
+                // Register the mapping from the range key name to the GSI name
                 mapGsiRangeKeyToIndexName(gsiRangeKeyName, gsiName);
             }
         }
 
-        private void addLsiRangeKey(String lsiName, String lsiRangeKeyName) {
+        private void addLsiRangeKey(String lsiName, String pHashKeyName, String lsiRangeKeyName) {
+            if (pHashKeyName == null) {
+                throw new IllegalArgumentException("The name of the primary hash key must be specified.");
+            }
+
             if (lsiNameToLsiDefinition.containsKey(lsiName)) {
                 LocalSecondaryIndex existingLsi = lsiNameToLsiDefinition.get(lsiName);
                 if ( !lsiName.equals(existingLsi.getIndexName()) 
                         || existingLsi.getKeySchema() == null
-                        || existingLsi.getKeySchema().size() != 1
-                        || !KeyType.RANGE.toString().equals(existingLsi.getKeySchema().get(0).getKeyType()) ) {
+                        || existingLsi.getKeySchema().size() != 2  // the hash key element should be already added
+                        || !KeyType.RANGE.toString().equals(existingLsi.getKeySchema().get(1).getKeyType()) ) {
                     throw new IllegalStateException("Found invalid state of an existing LocalSecondaryIndex object " +
                             "associated with the LSI [" + lsiName + "].");
                 }
 
-                String existingLsiRangeKeyName = existingLsi.getKeySchema().get(0).getAttributeName();
+                String existingLsiRangeKeyName = existingLsi.getKeySchema().get(1).getAttributeName();
                 if ( !existingLsiRangeKeyName.equals(lsiRangeKeyName) ) {
                     throw new DynamoDBMappingException("Multiple range keys [" + existingLsiRangeKeyName + ", " + lsiRangeKeyName + 
                             "] are found for the LSI [" + lsiName + "]. " +
@@ -383,7 +397,9 @@ public class DynamoDBTableSchemaParser {
                         lsiName,
                         new LocalSecondaryIndex()
                                 .withIndexName(lsiName)
-                                .withKeySchema(new KeySchemaElement(lsiRangeKeyName, KeyType.RANGE))
+                                .withKeySchema(
+                                        new KeySchemaElement(pHashKeyName, KeyType.HASH),
+                                        new KeySchemaElement(lsiRangeKeyName, KeyType.RANGE))
                                 .withProjection(new Projection().withProjectionType(ProjectionType.KEYS_ONLY)));
                 mapLsiRangeKeyToIndexName(lsiRangeKeyName, lsiName);
             }

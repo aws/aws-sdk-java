@@ -28,7 +28,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String masterInstanceType;
 
@@ -37,7 +37,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String masterPublicDnsName;
 
@@ -46,7 +46,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String masterInstanceId;
 
@@ -55,7 +55,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String slaveInstanceType;
 
@@ -88,7 +88,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String ec2KeyName;
 
@@ -99,7 +99,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String ec2SubnetId;
 
@@ -126,7 +126,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String hadoopVersion;
 
@@ -159,7 +159,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The Amazon EC2 master node instance type.
      */
@@ -172,7 +172,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param masterInstanceType The Amazon EC2 master node instance type.
      */
@@ -187,7 +187,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param masterInstanceType The Amazon EC2 master node instance type.
      *
@@ -204,7 +204,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The DNS name of the master node.
      */
@@ -217,7 +217,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param masterPublicDnsName The DNS name of the master node.
      */
@@ -232,7 +232,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param masterPublicDnsName The DNS name of the master node.
      *
@@ -249,7 +249,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The Amazon EC2 instance identifier of the master node.
      */
@@ -262,7 +262,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param masterInstanceId The Amazon EC2 instance identifier of the master node.
      */
@@ -277,7 +277,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param masterInstanceId The Amazon EC2 instance identifier of the master node.
      *
@@ -294,7 +294,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The Amazon EC2 slave node instance type.
      */
@@ -307,7 +307,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param slaveInstanceType The Amazon EC2 slave node instance type.
      */
@@ -322,7 +322,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param slaveInstanceType The Amazon EC2 slave node instance type.
      *
@@ -522,7 +522,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The name of an Amazon EC2 key pair that can be used to ssh to the
      *         master node of job flow.
@@ -537,7 +537,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param ec2KeyName The name of an Amazon EC2 key pair that can be used to ssh to the
      *         master node of job flow.
@@ -554,7 +554,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param ec2KeyName The name of an Amazon EC2 key pair that can be used to ssh to the
      *         master node of job flow.
@@ -574,7 +574,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return For job flows launched within Amazon Virtual Private Cloud, this value
      *         specifies the identifier of the subnet where the job flow was
@@ -591,7 +591,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param ec2SubnetId For job flows launched within Amazon Virtual Private Cloud, this value
      *         specifies the identifier of the subnet where the job flow was
@@ -610,7 +610,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param ec2SubnetId For job flows launched within Amazon Virtual Private Cloud, this value
      *         specifies the identifier of the subnet where the job flow was
@@ -770,7 +770,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The Hadoop version for the job flow.
      */
@@ -783,7 +783,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param hadoopVersion The Hadoop version for the job flow.
      */
@@ -798,7 +798,7 @@ public class JobFlowInstancesDetail implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param hadoopVersion The Hadoop version for the job flow.
      *

@@ -127,6 +127,9 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             if (createInstanceRequest.isInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(createInstanceRequest.isInstallUpdatesOnBoot());
             }
+            if (createInstanceRequest.isEbsOptimized() != null) {
+                jsonWriter.key("EbsOptimized").value(createInstanceRequest.isEbsOptimized());
+            }
 
           jsonWriter.endObject();
 

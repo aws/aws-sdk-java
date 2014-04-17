@@ -39,7 +39,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String autoScalingGroupName;
 
@@ -51,7 +51,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String launchConfigurationName;
 
@@ -71,7 +71,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String instanceId;
 
@@ -134,7 +134,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String healthCheckType;
 
@@ -159,7 +159,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String placementGroup;
 
@@ -175,7 +175,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String vPCZoneIdentifier;
 
@@ -207,7 +207,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The name of the Auto Scaling group.
      */
@@ -220,7 +220,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      */
@@ -235,7 +235,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
@@ -255,7 +255,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The name of an existing launch configuration to use to launch new
      *         instances. Use this attribute if you want to create an Auto Scaling
@@ -274,7 +274,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The name of an existing launch configuration to use to launch new
      *         instances. Use this attribute if you want to create an Auto Scaling
@@ -295,7 +295,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The name of an existing launch configuration to use to launch new
      *         instances. Use this attribute if you want to create an Auto Scaling
@@ -326,7 +326,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The ID of the Amazon EC2 instance you want to use to create the Auto
      *         Scaling group. Use this attribute if you want to create an Auto
@@ -361,7 +361,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param instanceId The ID of the Amazon EC2 instance you want to use to create the Auto
      *         Scaling group. Use this attribute if you want to create an Auto
@@ -398,7 +398,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param instanceId The ID of the Amazon EC2 instance you want to use to create the Auto
      *         Scaling group. Use this attribute if you want to create an Auto
@@ -814,7 +814,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The service you want the health checks from, Amazon EC2 or Elastic
      *         Load Balancer. Valid values are <code>EC2</code> or <code>ELB</code>.
@@ -839,7 +839,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param healthCheckType The service you want the health checks from, Amazon EC2 or Elastic
      *         Load Balancer. Valid values are <code>EC2</code> or <code>ELB</code>.
@@ -866,7 +866,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param healthCheckType The service you want the health checks from, Amazon EC2 or Elastic
      *         Load Balancer. Valid values are <code>EC2</code> or <code>ELB</code>.
@@ -968,7 +968,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Physical location of an existing cluster placement group into which
      *         you want to launch your instances. For information about cluster
@@ -989,7 +989,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param placementGroup Physical location of an existing cluster placement group into which
      *         you want to launch your instances. For information about cluster
@@ -1012,7 +1012,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param placementGroup Physical location of an existing cluster placement group into which
      *         you want to launch your instances. For information about cluster
@@ -1040,7 +1040,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return A comma-separated list of subnet identifiers of Amazon Virtual Private
      *         Clouds (Amazon VPCs). <p>If you specify subnets and Availability Zones
@@ -1067,7 +1067,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param vPCZoneIdentifier A comma-separated list of subnet identifiers of Amazon Virtual Private
      *         Clouds (Amazon VPCs). <p>If you specify subnets and Availability Zones
@@ -1096,7 +1096,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param vPCZoneIdentifier A comma-separated list of subnet identifiers of Amazon Virtual Private
      *         Clouds (Amazon VPCs). <p>If you specify subnets and Availability Zones

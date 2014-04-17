@@ -19,8 +19,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.codec.binary.Base64;
-
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ObjectRestoreResult;
@@ -213,6 +211,14 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     }
 
     /**
+     * For internal use only. Returns the raw value of the metadata/headers
+     * for the specified key.
+     */
+    public Object getRawMetadataValue(String key) {
+        return metadata.get(key);
+    }
+
+    /**
      * Gets the value of the Last-Modified header, indicating the date
      * and time at which Amazon S3 last recorded a modification to the
      * associated object.
@@ -268,6 +274,22 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
 
         if (contentLength == null) return 0;
         return contentLength.longValue();
+    }
+
+    /**
+     * Returns the physical length of the entire object stored in S3.
+     * This is useful during, for example, a range get operation.
+     */
+    public long getInstanceLength() {
+        // See Content-Range in
+        // http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+        String contentRange = (String)metadata.get(Headers.CONTENT_RANGE);
+        if (contentRange != null) {
+            int pos = contentRange.lastIndexOf("/");
+            if (pos >= 0)
+                return Long.parseLong(contentRange.substring(pos+1));
+        }
+        return getContentLength();
     }
 
     /**

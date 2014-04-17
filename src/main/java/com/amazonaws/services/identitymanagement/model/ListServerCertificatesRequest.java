@@ -42,7 +42,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      */
     private String pathPrefix;
 
@@ -54,7 +54,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      */
     private String marker;
 
@@ -86,7 +86,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
      * @return The path prefix for filtering the results. For example:
      *         <code>/company/servercerts</code> would get all server certificates
@@ -107,7 +107,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
      * @param pathPrefix The path prefix for filtering the results. For example:
      *         <code>/company/servercerts</code> would get all server certificates
@@ -130,7 +130,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
      * @param pathPrefix The path prefix for filtering the results. For example:
      *         <code>/company/servercerts</code> would get all server certificates
@@ -154,7 +154,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
      * @return Use this only when paginating results, and only in a subsequent
      *         request after you've received a response where the results are
@@ -173,7 +173,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param marker Use this only when paginating results, and only in a subsequent
      *         request after you've received a response where the results are
@@ -194,7 +194,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
-     * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;u00FF]*<br/>
      *
      * @param marker Use this only when paginating results, and only in a subsequent
      *         request after you've received a response where the results are

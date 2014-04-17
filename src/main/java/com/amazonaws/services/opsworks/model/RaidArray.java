@@ -77,6 +77,16 @@ public class RaidArray implements Serializable {
     private String createdAt;
 
     /**
+     * The volume type, standard or PIOPS.
+     */
+    private String volumeType;
+
+    /**
+     * For PIOPS volumes, the IOPS per disk.
+     */
+    private Integer iops;
+
+    /**
      * The array ID.
      *
      * @return The array ID.
@@ -425,6 +435,72 @@ public class RaidArray implements Serializable {
     }
 
     /**
+     * The volume type, standard or PIOPS.
+     *
+     * @return The volume type, standard or PIOPS.
+     */
+    public String getVolumeType() {
+        return volumeType;
+    }
+    
+    /**
+     * The volume type, standard or PIOPS.
+     *
+     * @param volumeType The volume type, standard or PIOPS.
+     */
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+    
+    /**
+     * The volume type, standard or PIOPS.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param volumeType The volume type, standard or PIOPS.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RaidArray withVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+        return this;
+    }
+
+    /**
+     * For PIOPS volumes, the IOPS per disk.
+     *
+     * @return For PIOPS volumes, the IOPS per disk.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * For PIOPS volumes, the IOPS per disk.
+     *
+     * @param iops For PIOPS volumes, the IOPS per disk.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * For PIOPS volumes, the IOPS per disk.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops For PIOPS volumes, the IOPS per disk.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RaidArray withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -445,7 +521,9 @@ public class RaidArray implements Serializable {
         if (getDevice() != null) sb.append("Device: " + getDevice() + ",");
         if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
+        if (getIops() != null) sb.append("Iops: " + getIops() );
         sb.append("}");
         return sb.toString();
     }
@@ -465,6 +543,8 @@ public class RaidArray implements Serializable {
         hashCode = prime * hashCode + ((getMountPoint() == null) ? 0 : getMountPoint().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         return hashCode;
     }
     
@@ -496,6 +576,10 @@ public class RaidArray implements Serializable {
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null) return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false) return false; 
+        if (other.getVolumeType() == null ^ this.getVolumeType() == null) return false;
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         return true;
     }
     

@@ -50,7 +50,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Se
     private Boolean deleteElasticIp;
 
     /**
-     * Whether to delete the instance Amazon EBS volumes.
+     * Whether to delete the instance's Amazon EBS volumes.
      */
     private Boolean deleteVolumes;
 
@@ -130,29 +130,29 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Whether to delete the instance Amazon EBS volumes.
+     * Whether to delete the instance's Amazon EBS volumes.
      *
-     * @return Whether to delete the instance Amazon EBS volumes.
+     * @return Whether to delete the instance's Amazon EBS volumes.
      */
     public Boolean isDeleteVolumes() {
         return deleteVolumes;
     }
     
     /**
-     * Whether to delete the instance Amazon EBS volumes.
+     * Whether to delete the instance's Amazon EBS volumes.
      *
-     * @param deleteVolumes Whether to delete the instance Amazon EBS volumes.
+     * @param deleteVolumes Whether to delete the instance's Amazon EBS volumes.
      */
     public void setDeleteVolumes(Boolean deleteVolumes) {
         this.deleteVolumes = deleteVolumes;
     }
     
     /**
-     * Whether to delete the instance Amazon EBS volumes.
+     * Whether to delete the instance's Amazon EBS volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteVolumes Whether to delete the instance Amazon EBS volumes.
+     * @param deleteVolumes Whether to delete the instance's Amazon EBS volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -163,9 +163,9 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Whether to delete the instance Amazon EBS volumes.
+     * Whether to delete the instance's Amazon EBS volumes.
      *
-     * @return Whether to delete the instance Amazon EBS volumes.
+     * @return Whether to delete the instance's Amazon EBS volumes.
      */
     public Boolean getDeleteVolumes() {
         return deleteVolumes;

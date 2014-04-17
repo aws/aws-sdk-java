@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describes load-based auto scaling configurations for specified layers.
  * </p>
  * <p>
- * <b>NOTE:</b>You must specify at least one of the parameters.
+ * <b>NOTE:</b> You must specify at least one of the parameters.
  * </p>
  * <p>
  * <b>Required Permissions</b> : To use this action, an IAM user must

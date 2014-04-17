@@ -17,59 +17,39 @@ package com.amazonaws.services.s3.internal.crypto;
 import javax.crypto.SecretKey;
 
 /**
- * State information for an in-progress, encrypted multipart upload,
- * including the envelope encryption key used to encrypt each individual
- * part in a multipart upload, and the next initialization vector (IV) for
- * the next part to encrypt.
+ * State information for an in-progress, encrypted multipart upload, including
+ * the envelope encryption key used to encrypt each individual part in a
+ * multipart upload, and the next initialization vector (IV) for the next part
+ * to encrypt.
  */
-public class EncryptedUploadContext {
-	private final String bucketName;
-	private final String key;
-	private final SecretKey envelopeEncryptionKey;
-	
-	private byte[] firstIV;
-	private byte[] nextIV;
-	private boolean hasFinalPartBeenSeen;
+public class EncryptedUploadContext extends MultipartUploadContext {
+    private final SecretKey envelopeEncryptionKey;
+    private byte[] firstIV;
+    private byte[] nextIV;
 
-	public EncryptedUploadContext(String bucketName, String key, SecretKey envelopeEncryptionKey) {
-		this.bucketName = bucketName;
-		this.key = key;
-		this.envelopeEncryptionKey = envelopeEncryptionKey;
-	}
+    public EncryptedUploadContext(String bucketName, String key,
+            SecretKey envelopeEncryptionKey) {
+        super(bucketName, key);
+        this.envelopeEncryptionKey = envelopeEncryptionKey;
+    }
 
-	public String getBucketName() {
-		return bucketName;
-	}
+    public SecretKey getEnvelopeEncryptionKey() {
+        return envelopeEncryptionKey;
+    }
 
-	public String getKey() {
-		return key;
-	}
+    public void setNextInitializationVector(byte[] nextIV) {
+        this.nextIV = nextIV;
+    }
 
-	public SecretKey getEnvelopeEncryptionKey() {
-		return envelopeEncryptionKey;
-	}
+    public byte[] getNextInitializationVector() {
+        return nextIV;
+    }
 
-	public void setNextInitializationVector(byte[] nextIV) {
-		this.nextIV = nextIV;
-	}
+    public void setFirstInitializationVector(byte[] firstIV) {
+        this.firstIV = firstIV;
+    }
 
-	public byte[] getNextInitializationVector() {
-		return nextIV;
-	}
-	
-	public boolean hasFinalPartBeenSeen() {
-		return hasFinalPartBeenSeen;
-	}
-	
-	public void setHasFinalPartBeenSeen(boolean hasFinalPartBeenSeen) {
-		this.hasFinalPartBeenSeen = hasFinalPartBeenSeen;
-	}
-
-	public void setFirstInitializationVector(byte[] firstIV) {
-		this.firstIV = firstIV;
-	}
-
-	public byte[] getFirstInitializationVector() {
-		return firstIV;
-	}
+    public byte[] getFirstInitializationVector() {
+        return firstIV;
+    }
 }

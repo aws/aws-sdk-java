@@ -85,6 +85,14 @@ public class RaidArrayJsonUnmarshaller implements Unmarshaller<RaidArray, JsonUn
                     context.nextToken();
                     raidArray.setCreatedAt(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VolumeType", targetDepth)) {
+                    context.nextToken();
+                    raidArray.setVolumeType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Iops", targetDepth)) {
+                    context.nextToken();
+                    raidArray.setIops(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

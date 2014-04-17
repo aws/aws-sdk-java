@@ -98,6 +98,11 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      */
     private ProgressListener generalProgressListener;
 
+    /**
+     * If enabled, the requester is charged for downloading the data from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterPays;
 
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
@@ -109,6 +114,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *            stored.
      *
      * @see GetObjectRequest#GetObjectRequest(String, String, String)
+     * @see GetObjectRequest#GetObjectRequest(String, String, boolean)
      */
     public GetObjectRequest(String bucketName, String key) {
         this(bucketName, key, null);
@@ -127,11 +133,36 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *            object to download.
      *
      * @see GetObjectRequest#GetObjectRequest(String, String)
+     * @see GetObjectRequest#GetObjectRequest(String, String, boolean)
      */
     public GetObjectRequest(String bucketName, String key, String versionId) {
         setBucketName(bucketName);
         setKey(key);
         setVersionId(versionId);
+        setRequesterPays(false);
+    }
+
+    /**
+     * Constructs a new {@link GetObjectRequest} with all the required
+     * parameters.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the desired object.
+     * @param key
+     *            The key in the specified bucket under which the object is
+     *            stored.
+     * @param isRequesterPays
+     *            If enabled, the requester is charged for downloading the data
+     *            from Requester Pays Buckets.
+     *
+     * @see GetObjectRequest#GetObjectRequest(String, String)
+     * @see GetObjectRequest#GetObjectRequest(String, String, String)
+     */
+    public GetObjectRequest(String bucketName, String key,
+            boolean isRequesterPays) {
+        this.bucketName = bucketName;
+        this.key = key;
+        this.isRequesterPays = isRequesterPays;
     }
 
     /**
@@ -684,7 +715,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *
      * @param progressListener
      *            The legacy progress listener that is used exclusively for Amazon S3 client.
-     *            
+     *
      * @deprecated use {@link #setGeneralProgressListener(ProgressListener)}
      *             instead.
      */
@@ -699,7 +730,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *
      * @return the optional progress listener for receiving updates about object
      *          download status.
-     *         
+     *
      * @deprecated use {@link #getGeneralProgressListener()} instead.
      */
     @Deprecated
@@ -720,7 +751,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *            The legacy progress listener that is used exclusively for Amazon S3 client.
      *
      * @return This updated GetObjectRequest object.
-     * 
+     *
      * @deprecated use {@link #withGeneralProgressListener(ProgressListener)}
      *             instead.
      */
@@ -765,5 +796,45 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
     public GetObjectRequest withGeneralProgressListener(ProgressListener progressListener) {
         setGeneralProgressListener(progressListener);
         return this;
+    }
+
+    /**
+     * Returns true if the user has enabled Requester Pays option when
+     * downloading an object from Requester Pays Bucket; else false.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled will result in a 403 error
+     * and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         downloading an object from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Used for downloading an Amazon S3 Object from a Requester Pays Bucket. If
+     * set the requester is charged for downloading the data from the bucket.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled will result in a 403 error
+     * and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
     }
 }

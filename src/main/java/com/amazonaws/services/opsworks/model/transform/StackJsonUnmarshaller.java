@@ -53,6 +53,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    stack.setArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Region", targetDepth)) {
                     context.nextToken();
                     stack.setRegion(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -97,9 +101,17 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setConfigurationManager(StackConfigurationManagerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ChefConfiguration", targetDepth)) {
+                    context.nextToken();
+                    stack.setChefConfiguration(ChefConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("UseCustomCookbooks", targetDepth)) {
                     context.nextToken();
                     stack.setUseCustomCookbooks(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("UseOpsworksSecurityGroups", targetDepth)) {
+                    context.nextToken();
+                    stack.setUseOpsworksSecurityGroups(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomCookbooksSource", targetDepth)) {
                     context.nextToken();

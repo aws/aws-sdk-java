@@ -32,8 +32,6 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see ObjectMetadata
  */
 public class S3Object implements Closeable {
-    private static final long serialVersionUID = -2883501141593631181L;
-
     /** The key under which this object is stored */
     private String key = null;
 
@@ -48,6 +46,12 @@ public class S3Object implements Closeable {
     
     /** The redirect location for this object */
     private String redirectLocation;
+
+    /**
+     * Indicates if the requester is charged for downloading the data from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Gets the metadata stored by Amazon S3 for this object. The
@@ -197,10 +201,42 @@ public class S3Object implements Closeable {
      *
      * @throws IOException if an I/O error occurs
      */
-	@Override
-	public void close() throws IOException {
-		if(getObjectContent() != null){			
-			getObjectContent().close();			
-		}
-	}
+    @Override
+    public void close() throws IOException {
+        if(getObjectContent() != null){
+            getObjectContent().close();
+        }
+    }
+
+    /**
+     * Returns true if the user is charged for downloading the object from an
+     * Requester Pays Bucket; else false.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled will result in a 403 error
+     * and the bucket owner will be charged for the request.
+     *
+     * @return true if the user has been charged for the download operation from
+     *         Requester Pays Bucket.
+     */
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    /**
+     * Used for downloading an Amazon S3 Object from a Requester Pays Bucket. If
+     * set the requester is charged for downloading the data from the bucket.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled will result in a 403 error
+     * and the bucket owner will be charged for the request.
+     *
+     * @param isRequesterCharged
+     *            Indicates requester is charged for this operation.
+     */
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
+    }
 }

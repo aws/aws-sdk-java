@@ -204,11 +204,16 @@ public class Instance implements Serializable {
      * manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     * the instances. <note>We strongly recommend using the default value of
-     * <code>true</code>, to ensure that your instances have the latest
-     * security updates.</note>
+     * the instances. <note> <p>We strongly recommend using the default value
+     * of <code>true</code>, to ensure that your instances have the latest
+     * security updates. </note>
      */
     private Boolean installUpdatesOnBoot;
+
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     */
+    private Boolean ebsOptimized;
 
     /**
      * The instance ID.
@@ -1537,9 +1542,9 @@ public class Instance implements Serializable {
      * manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     * the instances. <note>We strongly recommend using the default value of
-     * <code>true</code>, to ensure that your instances have the latest
-     * security updates.</note>
+     * the instances. <note> <p>We strongly recommend using the default value
+     * of <code>true</code>, to ensure that your instances have the latest
+     * security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. If this value
@@ -1547,9 +1552,9 @@ public class Instance implements Serializable {
      *         manually by using <a>CreateDeployment</a> to run the
      *         <code>update_dependencies</code> stack command or manually running
      *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     *         the instances. <note>We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.</note>
+     *         the instances. <note> <p>We strongly recommend using the default value
+     *         of <code>true</code>, to ensure that your instances have the latest
+     *         security updates. </note>
      */
     public Boolean isInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
@@ -1562,9 +1567,9 @@ public class Instance implements Serializable {
      * manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     * the instances. <note>We strongly recommend using the default value of
-     * <code>true</code>, to ensure that your instances have the latest
-     * security updates.</note>
+     * the instances. <note> <p>We strongly recommend using the default value
+     * of <code>true</code>, to ensure that your instances have the latest
+     * security updates. </note>
      *
      * @param installUpdatesOnBoot Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. If this value
@@ -1572,9 +1577,9 @@ public class Instance implements Serializable {
      *         manually by using <a>CreateDeployment</a> to run the
      *         <code>update_dependencies</code> stack command or manually running
      *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     *         the instances. <note>We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.</note>
+     *         the instances. <note> <p>We strongly recommend using the default value
+     *         of <code>true</code>, to ensure that your instances have the latest
+     *         security updates. </note>
      */
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
@@ -1587,9 +1592,9 @@ public class Instance implements Serializable {
      * manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     * the instances. <note>We strongly recommend using the default value of
-     * <code>true</code>, to ensure that your instances have the latest
-     * security updates.</note>
+     * the instances. <note> <p>We strongly recommend using the default value
+     * of <code>true</code>, to ensure that your instances have the latest
+     * security updates. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1599,9 +1604,9 @@ public class Instance implements Serializable {
      *         manually by using <a>CreateDeployment</a> to run the
      *         <code>update_dependencies</code> stack command or manually running
      *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     *         the instances. <note>We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.</note>
+     *         the instances. <note> <p>We strongly recommend using the default value
+     *         of <code>true</code>, to ensure that your instances have the latest
+     *         security updates. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1618,9 +1623,9 @@ public class Instance implements Serializable {
      * manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     * the instances. <note>We strongly recommend using the default value of
-     * <code>true</code>, to ensure that your instances have the latest
-     * security updates.</note>
+     * the instances. <note> <p>We strongly recommend using the default value
+     * of <code>true</code>, to ensure that your instances have the latest
+     * security updates. </note>
      *
      * @return Whether to install operating system and package updates when the
      *         instance boots. The default value is <code>true</code>. If this value
@@ -1628,12 +1633,54 @@ public class Instance implements Serializable {
      *         manually by using <a>CreateDeployment</a> to run the
      *         <code>update_dependencies</code> stack command or manually running
      *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
-     *         the instances. <note>We strongly recommend using the default value of
-     *         <code>true</code>, to ensure that your instances have the latest
-     *         security updates.</note>
+     *         the instances. <note> <p>We strongly recommend using the default value
+     *         of <code>true</code>, to ensure that your instances have the latest
+     *         security updates. </note>
      */
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
+    }
+
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return Whether this is an Amazon EBS-optimized instance.
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @param ebsOptimized Whether this is an Amazon EBS-optimized instance.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Instance withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return Whether this is an Amazon EBS-optimized instance.
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
     }
 
     /**
@@ -1675,7 +1722,8 @@ public class Instance implements Serializable {
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
         if (getRootDeviceVolumeId() != null) sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() + ",");
-        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();
     }
@@ -1713,6 +1761,7 @@ public class Instance implements Serializable {
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceVolumeId() == null) ? 0 : getRootDeviceVolumeId().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -1780,6 +1829,8 @@ public class Instance implements Serializable {
         if (other.getRootDeviceVolumeId() != null && other.getRootDeviceVolumeId().equals(this.getRootDeviceVolumeId()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

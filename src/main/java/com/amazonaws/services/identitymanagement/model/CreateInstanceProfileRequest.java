@@ -56,7 +56,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      */
     private String path;
 
@@ -115,7 +115,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @return The path to the instance profile. For more information about paths,
      *         see <a
@@ -138,7 +138,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path to the instance profile. For more information about paths,
      *         see <a
@@ -163,7 +163,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path to the instance profile. For more information about paths,
      *         see <a

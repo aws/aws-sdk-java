@@ -78,7 +78,7 @@ public class App implements Serializable {
     private SslConfiguration sslConfiguration;
 
     /**
-     * The contents of the stack attributes bag.
+     * The stack attributes.
      */
     private java.util.Map<String,String> attributes;
 
@@ -519,9 +519,9 @@ public class App implements Serializable {
     }
 
     /**
-     * The contents of the stack attributes bag.
+     * The stack attributes.
      *
-     * @return The contents of the stack attributes bag.
+     * @return The stack attributes.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -532,20 +532,20 @@ public class App implements Serializable {
     }
     
     /**
-     * The contents of the stack attributes bag.
+     * The stack attributes.
      *
-     * @param attributes The contents of the stack attributes bag.
+     * @param attributes The stack attributes.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * The contents of the stack attributes bag.
+     * The stack attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes The contents of the stack attributes bag.
+     * @param attributes The stack attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -556,7 +556,7 @@ public class App implements Serializable {
     }
 
     /**
-     * The contents of the stack attributes bag.
+     * The stack attributes.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained

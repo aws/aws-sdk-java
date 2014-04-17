@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.amazonaws.internal.SdkFilterInputStream;
-import com.amazonaws.services.s3.internal.crypto.CipherFactory;
 
 /**
  * Common base class used to wrap an InputStream with a cipher input stream to
@@ -42,7 +41,7 @@ import com.amazonaws.services.s3.internal.crypto.CipherFactory;
  * call {@code mark} after calling {@code read} or {@code skip}, it will throw
  * an {@code UnsupportedOperationException}.
  */
-public abstract class AbstractRepeatableCipherInputStream<T extends CipherFactory>
+public abstract class AbstractRepeatableCipherInputStream<T>
         extends SdkFilterInputStream {
     private final T cipherFactory;
     private final InputStream unencryptedDataStream;

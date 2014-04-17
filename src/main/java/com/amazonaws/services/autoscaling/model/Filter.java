@@ -29,7 +29,7 @@ public class Filter implements Serializable {
      * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String name;
 
@@ -44,7 +44,7 @@ public class Filter implements Serializable {
      * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return The name of the filter. Valid Name values are:
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
@@ -60,7 +60,7 @@ public class Filter implements Serializable {
      * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the filter. Valid Name values are:
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
@@ -78,7 +78,7 @@ public class Filter implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the filter. Valid Name values are:
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,

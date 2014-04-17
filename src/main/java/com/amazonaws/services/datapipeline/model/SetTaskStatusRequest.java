@@ -39,7 +39,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String taskId;
 
@@ -61,7 +61,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String errorId;
 
@@ -81,7 +81,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      */
     private String errorStackTrace;
 
@@ -92,7 +92,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return Identifies the task assigned to the task runner. This value is set in
      *         the <a>TaskObject</a> that is returned by the <a>PollForTask</a>
@@ -109,7 +109,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param taskId Identifies the task assigned to the task runner. This value is set in
      *         the <a>TaskObject</a> that is returned by the <a>PollForTask</a>
@@ -128,7 +128,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param taskId Identifies the task assigned to the task runner. This value is set in
      *         the <a>TaskObject</a> that is returned by the <a>PollForTask</a>
@@ -252,7 +252,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return If an error occurred during the task, this value specifies an id value
      *         that represents the error. This value is set on the physical attempt
@@ -271,7 +271,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param errorId If an error occurred during the task, this value specifies an id value
      *         that represents the error. This value is set on the physical attempt
@@ -292,7 +292,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param errorId If an error occurred during the task, this value specifies an id value
      *         that represents the error. This value is set on the physical attempt
@@ -366,7 +366,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @return If an error occurred during the task, this value specifies the stack
      *         trace associated with the error. This value is set on the physical
@@ -385,7 +385,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param errorStackTrace If an error occurred during the task, this value specifies the stack
      *         trace associated with the error. This value is set on the physical
@@ -406,7 +406,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
      *
      * @param errorStackTrace If an error occurred during the task, this value specifies the stack
      *         trace associated with the error. This value is set on the physical

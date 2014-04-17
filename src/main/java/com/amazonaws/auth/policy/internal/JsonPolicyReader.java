@@ -14,10 +14,13 @@
  */
 package com.amazonaws.auth.policy.internal;
 
-import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
@@ -27,17 +30,25 @@ import com.amazonaws.auth.policy.Principal.WebIdentityProviders;
 import com.amazonaws.auth.policy.Resource;
 import com.amazonaws.auth.policy.Statement;
 import com.amazonaws.auth.policy.Statement.Effect;
-import com.amazonaws.util.json.JSONArray;
-import com.amazonaws.util.json.JSONException;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.util.json.Jackson;
+import com.fasterxml.jackson.databind.JsonNode;
 
 /**
- * Generate an AWS policy object from a JSON string.
+ * Generate an AWS policy object by parsing the given JSON string.
  */
 public class JsonPolicyReader {
 
+    private static final String PRINCIPAL_SCHEMA_USER = "AWS";
+
+    private static final String PRINCIPAL_SCHEMA_SERVICE = "Service";
+
+    private static final String PRINICIPAL_SCHEMA_FEDERATED = "Federated";
     /**
      * Converts the specified JSON string to an AWS policy object.
+     *
+     * For more information see, @see
+     * http://docs.aws.amazon.com/AWSSdkDocsJava/latest
+     * /DeveloperGuide/java-dg-access-control.html
      *
      * @param jsonString
      *            the specified JSON string representation of this AWS access
@@ -49,192 +60,262 @@ public class JsonPolicyReader {
      *             If the specified JSON string is null or invalid and cannot be
      *             converted to an AWS policy object.
      */
-    public Policy createPolicyFromJsonString(String jsonString)  {
+    public Policy createPolicyFromJsonString(String jsonString) {
 
         if (jsonString == null) {
             throw new IllegalArgumentException("JSON string cannot be null");
         }
 
+        JsonNode policyNode;
+        JsonNode idNode;
+        JsonNode statementNodes;
         Policy policy = new Policy();
         List<Statement> statements = new LinkedList<Statement>();
-        try {
-            JSONObject jPolicy = new JSONObject(jsonString);
 
-            if (Arrays.asList(JSONObject.getNames(jPolicy)).contains(JsonDocumentFields.POLICY_ID)) {
-                policy.setId(jPolicy.getString(JsonDocumentFields.POLICY_ID));
+        try {
+            policyNode = Jackson.jsonNodeOf(jsonString);
+
+            idNode = policyNode.get(JsonDocumentFields.POLICY_ID);
+            if (isNotNull(idNode)) {
+                policy.setId(idNode.asText());
             }
 
-            JSONArray jStatements = jPolicy.getJSONArray(JsonDocumentFields.STATEMENT);
-
-            for (int index = 0 ; index < jStatements.length() ; index++) {
-                Statement statement = convertStatement(jStatements.getJSONObject(index));
-                if (statement != null) {
-                statements.add(statement);
+            statementNodes = policyNode.get(JsonDocumentFields.STATEMENT);
+            if (isNotNull(statementNodes)) {
+                for (JsonNode node : statementNodes) {
+                    statements.add(statementOf(node));
                 }
             }
+
         } catch (Exception e) {
-            String message = "Unable to generate policy object fron JSON string " + e.getMessage();
+            String message = "Unable to generate policy object fron JSON string "
+                    + e.getMessage();
             throw new IllegalArgumentException(message, e);
         }
         policy.setStatements(statements);
         return policy;
     }
 
-    private  Statement convertStatement(JSONObject jStatement) throws JSONException {
-        if (!Arrays.asList(JSONObject.getNames(jStatement)).contains(JsonDocumentFields.STATEMENT_EFFECT)) {
+    /**
+     * Creates a <code>Statement<code> instance from the statement node.
+     *
+     * A statement consists of an Effect, id (optional), principal, action, resource,
+     * and conditions.
+     * <p>
+     * principal is the AWS account that is making a request to access or modify one of your AWS resources.
+     * <p>
+     * action is the way in which your AWS resource is being accessed or modified, such as sending a message to an Amazon SQS queue, or storing an object in an Amazon S3 bucket.
+     * <p>
+     * resource is the AWS entity that the principal wants to access, such as an Amazon SQS queue, or an object stored in Amazon S3.
+     * <p>
+     * conditions are the optional constraints that specify when to allow or deny access for the principal to access your resource. Many expressive conditions are available, some specific to each service. For example, you can use date conditions to allow access to your resources only after or before a specific time.
+     *
+     * @param jStatement
+     *            JsonNode representing the statement.
+     * @return a reference to the statement instance created.
+     */
+    private Statement statementOf(JsonNode jStatement) {
+
+        JsonNode effect = jStatement.get(JsonDocumentFields.STATEMENT_EFFECT);
+        if (!isNotNull(effect))
             return null;
+
+        Statement statement = new Statement(Effect.valueOf(effect.asText()));
+
+        JsonNode id = jStatement.get(JsonDocumentFields.STATEMENT_ID);
+        if (isNotNull(id)) {
+            statement.setId(id.asText());
         }
 
-        Statement statement;
-        String jEffect = jStatement.getString(JsonDocumentFields.STATEMENT_EFFECT);
-        if (JsonDocumentFields.EFFECT_VALUE_ALLOW.equals(jEffect)) {
-            statement = new Statement(Effect.Allow);
-        } else {
-            statement = new Statement(Effect.Deny);
-        }
+        JsonNode actionNodes = jStatement.get(JsonDocumentFields.ACTION);
+        if (isNotNull(actionNodes))
+            statement.setActions(actionsOf(actionNodes));
 
-        if (Arrays.asList(JSONObject.getNames(jStatement)).contains(JsonDocumentFields.STATEMENT_ID)) {
-            statement.setId(jStatement.getString(JsonDocumentFields.STATEMENT_ID));
-        }
+        JsonNode resourceNodes = jStatement.get(JsonDocumentFields.RESOURCE);
+        if (isNotNull(resourceNodes))
+            statement.setResources(resourcesOf(resourceNodes));
 
-        convertActions(statement, jStatement);
-        convertResources(statement, jStatement);
-        convertCondition(statement, jStatement);
-        convertPrincipals(statement, jStatement);
+        JsonNode conditionNodes = jStatement.get(JsonDocumentFields.CONDITION);
+        if (isNotNull(conditionNodes))
+            statement.setConditions(conditionsOf(conditionNodes));
+
+        JsonNode principalNodes = jStatement.get(JsonDocumentFields.PRINCIPAL);
+        if (isNotNull(principalNodes))
+            statement.setPrincipals(principalOf(principalNodes));
+
         return statement;
     }
 
-    private  void convertPrincipals(Statement statement, JSONObject jStatement) throws JSONException {
-        if (!Arrays.asList(JSONObject.getNames(jStatement)).contains(JsonDocumentFields.PRINCIPAL)) {
-            return;
-        }
-
-        if (jStatement.optString(JsonDocumentFields.PRINCIPAL).equals("*")) {
-            statement.setPrincipals(Principal.All);
-            return;
-        }
-
-        if (statement.getPrincipals() == null) {
-            statement.setPrincipals(new LinkedList<Principal>());
-        }
-
-        JSONObject jPrincipals = jStatement.getJSONObject(JsonDocumentFields.PRINCIPAL);
-        String[] fields = JSONObject.getNames(jPrincipals);
-        for (String field : fields) {
-            String serviceId = jPrincipals.optString(field);
-            if (serviceId != null && serviceId.length() > 0) {
-                if (field.equalsIgnoreCase("AWS")) {
-                    statement.getPrincipals().add(new Principal(serviceId));
-                } else if (field.equalsIgnoreCase("Service")) {
-                    statement.getPrincipals().add(
-                            new Principal(Services.fromString(serviceId)));
-                } else if (field.equalsIgnoreCase("Federated")) {
-                    if (WebIdentityProviders.fromString(serviceId) != null) {
-                        statement.getPrincipals().add(
-                                new Principal(WebIdentityProviders.fromString(serviceId)));
-                    } else {
-                        statement.getPrincipals().add(
-                                new Principal("Federated", serviceId));
-                    }
-                }
-            } else {
-                JSONArray jPrincipal = jPrincipals.getJSONArray(field);
-                convertPrincipalRecord(field, statement, jPrincipal);
-            }
-        }
-    }
-
-    private void convertPrincipalRecord(String schema, Statement statement, JSONArray jPrincipal) throws JSONException {
-        Principal principal = null;
-        for (int index = 0 ; index < jPrincipal.length() ; index++) {
-            if (schema.equals("AWS")) {
-                if (jPrincipal.getString(index).equals("*")) {
-                    principal = Principal.AllUsers;
-                }
-                principal = new Principal(jPrincipal.getString(index));
-            } else if (schema.equals("Service")) {
-                principal = new Principal(Services.fromString(jPrincipal.getString(index)));
-            }
-            statement.getPrincipals().add(principal);
-        }
-    }
-
-    private void convertCondition(Statement statement, JSONObject jStatement) throws JSONException {
-        if (!Arrays.asList(JSONObject.getNames(jStatement)).contains(JsonDocumentFields.CONDITION)) {
-            return;
-        }
-        JSONObject jConditions = jStatement.getJSONObject(JsonDocumentFields.CONDITION);
-        List<Condition> conditions = new LinkedList<Condition>();
-        String[] types = JSONObject.getNames(jConditions);
-        for (String type : types) {
-             JSONObject jCondition = jConditions.getJSONObject(type);
-             convertConditionRecord(conditions, type, jCondition);
-        }
-        statement.setConditions(conditions);
-    }
-
-    private void convertConditionRecord(List<Condition> conditions, String type, JSONObject jCondition) throws JSONException {
-        List<String> values = new LinkedList<String>();
-        String[] keys = JSONObject.getNames(jCondition);
-        for (String key : keys) {
-            String value = jCondition.optString(key);
-            if (value != null && value.length() > 0) {
-                values.add(value);
-            } else {
-                JSONArray jValues = jCondition.getJSONArray(key);
-                for (int index = 0; index < jValues.length(); index++) {
-                    values.add(jValues.getString(index));
-                }
-            }
-            conditions.add(new Condition().withType(type).withConditionKey(key).withValues(values));
-        }
-    }
-
-    private void convertActions(Statement statement, JSONObject jStatement) throws JSONException {
-        if (!Arrays.asList(JSONObject.getNames(jStatement)).contains(JsonDocumentFields.ACTION)) {
-            return;
-        }
-
-        String actionName = null;
+    /**
+     * Generates a list of actions from the Action Json Node.
+     *
+     * @param actionNodes
+     *            the action Json node to be parsed.
+     * @return the list of actions.
+     */
+    private List<Action> actionsOf(JsonNode actionNodes) {
         List<Action> actions = new LinkedList<Action>();
 
-        actionName = jStatement.optString(JsonDocumentFields.ACTION);
-        if (actionName != null && actionName.length() > 0) {
-            actions.add(new NamedAction(actionName));
-            statement.setActions(actions);
-            return;
+        if (actionNodes.isArray()) {
+            for (JsonNode action : actionNodes) {
+                actions.add(new NamedAction(action.asText()));
+            }
+        } else {
+            actions.add(new NamedAction(actionNodes.asText()));
         }
-
-        JSONArray jActions = jStatement.getJSONArray(JsonDocumentFields.ACTION);
-        for (int index = 0 ; index < jActions.length() ; index++) {
-            actionName = jActions.getString(index);
-            actions.add(new NamedAction(actionName));
-        }
-        statement.setActions(actions);
-    }
-
-    private void convertResources(Statement statement, JSONObject jStatement) throws JSONException {
-        if (!Arrays.asList(JSONObject.getNames(jStatement)).contains(JsonDocumentFields.RESOURCE)) {
-            return;
-        }
-
-        List<Resource> resources = new LinkedList<Resource>();
-        String resourceId = jStatement.optString(JsonDocumentFields.RESOURCE);
-        if (resourceId != null && resourceId.length() > 0) {
-            resources.add(new Resource(resourceId));
-            statement.setResources(resources);
-            return;
-        }
-
-        JSONArray jResources = jStatement.getJSONArray(JsonDocumentFields.RESOURCE);
-        for (int index = 0 ; index < jResources.length() ; index++) {
-            resources.add(new Resource(jResources.getString(index)));
-        }
-        statement.setResources(resources);
+        return actions;
     }
 
     /**
-     *  An auxiliary class to help instantiate the action object.
+     * Generates a list of resources from the Resource Json Node.
+     *
+     * @param resourceNodes
+     *            the resource Json node to be parsed.
+     * @return the list of resources.
+     */
+    private List<Resource> resourcesOf(JsonNode resourceNodes) {
+        List<Resource> resources = new LinkedList<Resource>();
+
+        if (resourceNodes.isArray()) {
+            for (JsonNode resource : resourceNodes) {
+                resources.add(new Resource(resource.asText()));
+            }
+        } else {
+            resources.add(new Resource(resourceNodes.asText()));
+        }
+
+        return resources;
+    }
+
+    /**
+     * Generates a list of principals from the Principal Json Node
+     *
+     * @param principalNodes
+     *            the principal Json to be parsed
+     * @return a list of principals
+     */
+    private List<Principal> principalOf(JsonNode principalNodes) {
+        List<Principal> principals = new LinkedList<Principal>();
+
+        if (principalNodes.asText().equals("*")) {
+            principals.add(Principal.All);
+            return principals;
+        }
+
+        Iterator<Map.Entry<String, JsonNode>> mapOfPrincipals = principalNodes
+                .fields();
+        String schema;
+        JsonNode principalNode;
+        Entry<String, JsonNode> principal;
+        Iterator<JsonNode> elements;
+        while (mapOfPrincipals.hasNext()) {
+            principal = mapOfPrincipals.next();
+            schema = principal.getKey();
+            principalNode = principal.getValue();
+
+            if (principalNode.isArray()) {
+                elements = principalNode.elements();
+                while (elements.hasNext()) {
+                    principals.add(createPrincipal(schema, elements.next()));
+                }
+            } else {
+                principals.add(createPrincipal(schema, principalNode));
+            }
+        }
+
+        return principals;
+    }
+
+    /**
+     * Creates a new principal instance for the given schema and the Json node.
+     *
+     * @param schema
+     *            the schema for the principal instance being created.
+     * @param principalNode
+     *            the node indicating the AWS account that is making the
+     *            request.
+     * @return a principal instance.
+     */
+    private Principal createPrincipal(String schema, JsonNode principalNode) {
+        if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_USER)) {
+            return new Principal(principalNode.asText());
+        } else if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_SERVICE)) {
+            return new Principal(Services.fromString(principalNode.asText()));
+        } else if (schema.equalsIgnoreCase(PRINICIPAL_SCHEMA_FEDERATED)) {
+            if (WebIdentityProviders.fromString(principalNode.asText()) != null) {
+                return new Principal(
+                        WebIdentityProviders.fromString(principalNode.asText()));
+            } else {
+                return new Principal(PRINICIPAL_SCHEMA_FEDERATED, principalNode.asText());
+            }
+        }
+        throw new AmazonClientException("Schema " + schema + " is not a valid value for the principal.");
+    }
+
+    /**
+     * Generates a list of condition from the Json node.
+     *
+     * @param conditionNodes
+     *            the condition Json node to be parsed.
+     * @return the list of conditions.
+     */
+    private List<Condition> conditionsOf(JsonNode conditionNodes) {
+
+        List<Condition> conditionList = new LinkedList<Condition>();
+        Iterator<Map.Entry<String, JsonNode>> mapOfConditions = conditionNodes
+                .fields();
+
+        Entry<String, JsonNode> condition;
+        while (mapOfConditions.hasNext()) {
+            condition = mapOfConditions.next();
+            convertConditionRecord(conditionList, condition.getKey(),
+                    condition.getValue());
+        }
+
+        return conditionList;
+    }
+
+    /**
+     * Generates a condition instance for each condition type under the
+     * Condition Json node.
+     *
+     * @param conditions
+     *            the complete list of conditions
+     * @param conditionType
+     *            the condition type for the condition being created.
+     * @param conditionNode
+     *            each condition node to be parsed.
+     */
+    private void convertConditionRecord(List<Condition> conditions,
+            String conditionType, JsonNode conditionNode) {
+
+        Iterator<Map.Entry<String, JsonNode>> mapOfFields = conditionNode
+                .fields();
+        List<String> values;
+        Entry<String, JsonNode> field;
+        JsonNode fieldValue;
+        Iterator<JsonNode> elements;
+
+        while (mapOfFields.hasNext()) {
+            values = new LinkedList<String>();
+            field = mapOfFields.next();
+            fieldValue = field.getValue();
+
+            if (fieldValue.isArray()) {
+                elements = fieldValue.elements();
+                while (elements.hasNext()) {
+                    values.add(elements.next().asText());
+                }
+            } else {
+                values.add(fieldValue.asText());
+            }
+            conditions.add(new Condition().withType(conditionType)
+                    .withConditionKey(field.getKey()).withValues(values));
+        }
+    }
+
+    /**
+     * An auxiliary class to help instantiate the action object.
      */
     private static class NamedAction implements Action {
 
@@ -245,9 +326,20 @@ public class JsonPolicyReader {
         }
 
         public String getActionName() {
-             return actionName;
+            return actionName;
         }
 
+    }
+
+    /**
+     * Checks if the given object is not null.
+     *
+     * @param object
+     *            the object compared to null.
+     * @return true if the object is not null else false
+     */
+    private boolean isNotNull(Object object) {
+        return null != object;
     }
 
 }

@@ -16,25 +16,55 @@ package com.amazonaws.auth.policy.internal;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
 import com.amazonaws.auth.policy.Principal;
 import com.amazonaws.auth.policy.Resource;
 import com.amazonaws.auth.policy.Statement;
-import com.amazonaws.util.json.JSONException;
-import com.amazonaws.util.json.JSONWriter;
+import com.amazonaws.util.json.Jackson;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonGenerator;
 
 /**
  * Serializes an AWS policy object to a JSON string, suitable for sending to an
  * AWS service.
  */
 public class JsonPolicyWriter {
+
+    /** The JSON Generator to generator a JSON string.*/
+    private JsonGenerator generator = null;
+
+    /** The output writer to which the JSON String is written.*/
+    private Writer writer;
+
+    /** Logger used to log exceptions that occurs while writing the Json policy.*/
+    private static final Log log = LogFactory.getLog("com.amazonaws.auth.policy");
+
+    /**
+     * Constructs a new instance of JSONPolicyWriter.
+     */
+    public JsonPolicyWriter() {
+        writer = new StringWriter();
+        try {
+            generator = Jackson.jsonGeneratorOf(writer);
+        } catch (IOException ioe) {
+            throw new AmazonClientException(
+                    "Unable to instantiate JsonGenerator.", ioe);
+        }
+
+    }
 
     /**
      * Converts the specified AWS policy object to a JSON string, suitable for
@@ -50,244 +80,335 @@ public class JsonPolicyWriter {
      *             serialized to a JSON string.
      */
     public String writePolicyToString(Policy policy) {
-        if (policy == null) {
-            throw new IllegalArgumentException("Policy cannot be null");
-        }
 
-        StringWriter writer = new StringWriter();
+        if(!isNotNull(policy))
+            throw new IllegalArgumentException("Policy cannot be null");
+
         try {
-            JSONWriter generator = new JSONWriter(writer);
-            writePolicy(policy, generator);
-            return writer.toString();
+            return jsonStringOf(policy);
         } catch (Exception e) {
-            String message = "Unable to serialize policy to JSON string: " + e.getMessage();
+            String message = "Unable to serialize policy to JSON string: "
+                    + e.getMessage();
             throw new IllegalArgumentException(message, e);
         } finally {
-            try {writer.close();} catch (Exception e) {}
+            try { writer.close(); } catch (Exception e) { }
         }
-    }
-
-    private void writePolicy(Policy policy, JSONWriter generator)
-            throws JSONException, IOException {
-        generator.object();
-        generator.key("Version").value(policy.getVersion());
-
-        if (policy.getId() != null) {
-            generator.key("Id").value(policy.getId());
-        }
-
-        generator.key("Statement").array();
-        for (Statement statement : policy.getStatements()) {
-            generator.object();
-            if (statement.getId() != null) {
-                generator.key("Sid").value(statement.getId());
-            }
-            generator.key("Effect").value(statement.getEffect().toString());
-
-            writePrincipals(statement, generator);
-            writeActions(statement, generator);
-            writeResources(statement, generator);
-            writeConditions(statement, generator);
-
-            generator.endObject();
-        }
-        generator.endArray();
-
-        generator.endObject();
-    }
-
-    private void writeConditions(Statement statement, JSONWriter generator)
-            throws IOException, JSONException {
-        List<Condition> conditions = statement.getConditions();
-        if (conditions == null || conditions.isEmpty()) return;
-
-        /*
-         * We could have multiple conditions that are the same condition type
-         * but use different condition keys. In JSON and XML, those conditions
-         * must be siblings, otherwise data can be lost when they get parsed.
-         */
-        Map<String, List<Condition>> conditionsByType =
-            sortConditionsByType(conditions);
-
-        generator.key("Condition").object();
-        for (Map.Entry<String, List<Condition>> entry
-                 : conditionsByType.entrySet()) {
-
-            String conditionType = entry.getKey();
-            generator.key(conditionType).object();
-
-            writeConditions(entry.getValue(), generator);
-
-            generator.endObject();
-
-        }
-        generator.endObject();
-    }
-
-    private void writeConditions(final List<Condition> conditions,
-                                 final JSONWriter generator)
-            throws IOException, JSONException {
-
-        /*
-         * We could also have multiple conditions that use the same type and
-         * same key, in which case, we need to push them together as one entry
-         * when we send the JSON representation.
-         */
-        Map<String, List<String>> conditionValuesByKey =
-            sortConditionsByKey(conditions);
-
-        for (Map.Entry<String, List<String>> entry
-                 : conditionValuesByKey.entrySet()) {
-
-            String conditionKey = entry.getKey();
-            generator.key(conditionKey).array();
-
-            for (String value : entry.getValue()) {
-                generator.value(value);
-            }
-
-            generator.endArray();
-        }
-    }
-
-    private Map<String, List<String>> sortConditionsByKey(List<Condition> conditions) {
-        Map<String, List<String>> conditionValuesByConditionKey = new HashMap<String, List<String>>();
-
-        for (Condition condition : conditions) {
-            String key = condition.getConditionKey();
-            List<String> values = condition.getValues();
-
-            if (conditionValuesByConditionKey.containsKey(key) == false) {
-                conditionValuesByConditionKey.put(key, new ArrayList<String>());
-            }
-            conditionValuesByConditionKey.get(key).addAll(values);
-        }
-
-        return conditionValuesByConditionKey;
-    }
-
-    private Map<String, List<Condition>> sortConditionsByType(List<Condition> conditions) {
-        Map<String, List<Condition>> conditionsByType = new HashMap<String, List<Condition>>();
-        for (Condition condition : conditions) {
-            String conditionType = condition.getType();
-            if (conditionsByType.get(conditionType) == null) {
-                conditionsByType.put(conditionType, new ArrayList<Condition>());
-            }
-            conditionsByType.get(conditionType).add(condition);
-        }
-
-        return conditionsByType;
-    }
-
-    private void writeResources(Statement statement, JSONWriter generator)
-            throws IOException, JSONException {
-        List<Resource> resources = statement.getResources();
-        if (resources == null || resources.isEmpty()) return;
-
-        generator.key("Resource").array();
-        for (Resource resource : resources) {
-            generator.value(resource.getId());
-        }
-        generator.endArray();
-    }
-
-    private void writeActions(Statement statement, JSONWriter generator)
-            throws IOException, JSONException {
-        List<Action> actions = statement.getActions();
-        if (actions == null || actions.isEmpty()) return;
-
-        generator.key("Action").array();
-        for (Action action : actions) {
-            generator.value(action.getActionName());
-        }
-        generator.endArray();
     }
 
     /**
-     * Uses the specified generator to write the JSON data for the principals in
-     * the specified policy statement.
+     * Converts the given <code>Policy</code> into a JSON String.
+     *
+     * @param policy
+     *            the policy to be converted.
+     * @return a JSON String of the specified policy object.
      */
-    private void writePrincipals(Statement statement, JSONWriter generator)
-            throws IOException, JSONException {
+    private String jsonStringOf(Policy policy) throws JsonGenerationException,
+            IOException {
+        generator.writeStartObject();
 
-        boolean allAccessPrincipal = false;
-        boolean allUserAccessPrincipal = false;
-        boolean allServiceAccessPrincipal = false;
-        boolean allFederatedAccessPrincipal = false;
-        List<Principal> principals = statement.getPrincipals();
-        if (principals == null || principals.isEmpty()) return;
+        writeJsonKeyValue(JsonDocumentFields.VERSION, policy.getVersion());
 
+        if (isNotNull(policy.getId()))
+            writeJsonKeyValue(JsonDocumentFields.POLICY_ID, policy.getId());
 
+        writeJsonArrayStart(JsonDocumentFields.STATEMENT);
 
-        Map<String, List<String>> principalContentsByScheme =
-            new HashMap<String, List<String>>();
+        for (Statement statement : policy.getStatements()) {
+            generator.writeStartObject();
 
-        for (Principal p : principals) {
-            if (p.equals(Principal.All)) {
-                allAccessPrincipal = true;
+            if (isNotNull(statement.getId())) {
+                writeJsonKeyValue(JsonDocumentFields.STATEMENT_ID, statement.getId());
             }
+            writeJsonKeyValue(JsonDocumentFields.STATEMENT_EFFECT, statement
+                    .getEffect().toString());
 
-            if (p.equals(Principal.AllUsers)) {
-                allUserAccessPrincipal = true;
-            }
+            List<Principal> principals = statement.getPrincipals();
+            if (isNotNull(principals) && !principals.isEmpty())
+                writePrincipals(principals);
 
-            if (p.equals(Principal.AllServices)) {
-                allServiceAccessPrincipal = true;
-            }
+            List<Action> actions = statement.getActions();
+            if (isNotNull(actions) && !actions.isEmpty())
+                writeActions(actions);
 
-            if (p.equals(Principal.AllWebProviders)) {
-                allFederatedAccessPrincipal = true;
-            }
+            List<Resource> resources = statement.getResources();
+            if (isNotNull(resources) && !resources.isEmpty())
+                writeResources(resources);
 
-            List<String> principalValues =
-                principalContentsByScheme.get(p.getProvider());
+            List<Condition> conditions = statement.getConditions();
+            if (isNotNull(conditions) && !conditions.isEmpty())
+                writeConditions(conditions);
 
-            if (principalValues == null) {
-                principalValues = new ArrayList<String>();
-                principalContentsByScheme.put(p.getProvider(),
-                                              principalValues);
-            }
-
-            principalValues.add(p.getId());
+            generator.writeEndObject();
         }
 
-        if (allAccessPrincipal == true) {
-            generator.key("Principal");
-            generator.value("*");
-            return;
+        writeJsonArrayEnd();
+
+        generator.writeEndObject();
+
+        generator.flush();
+
+        return writer.toString();
+
+    }
+
+    /**
+     * Writes the list of conditions to the JSONGenerator.
+     *
+     * @param conditions
+     *            the conditions to be written.
+     */
+    private void writeConditions(List<Condition> conditions)
+            throws JsonGenerationException, IOException {
+        Map<String, ConditionsByKey> conditionsByType = groupConditionsByTypeAndKey(conditions);
+
+        writeJsonObjectStart(JsonDocumentFields.CONDITION);
+
+        ConditionsByKey conditionsByKey;
+        for (Map.Entry<String, ConditionsByKey> entry : conditionsByType
+                .entrySet()) {
+            conditionsByKey = conditionsByType.get(entry.getKey());
+
+            writeJsonObjectStart(entry.getKey());
+            for (String key : conditionsByKey.keySet()) {
+                writeJsonArray(key, conditionsByKey.getConditionsByKey(key));
+            }
+            writeJsonObjectEnd();
+        }
+        writeJsonObjectEnd();
+    }
+
+    /**
+     * Writes the list of <code>Resource</code>s to the JSONGenerator.
+     *
+     * @param resources
+     *            the list of resources to be written.
+     */
+    private void writeResources(List<Resource> resources)
+            throws JsonGenerationException, IOException {
+
+        List<String> resourceStrings = new ArrayList<String>();
+
+        for (Resource resource : resources) {
+            resourceStrings.add(resource.getId());
+        }
+        writeJsonArray(JsonDocumentFields.RESOURCE, resourceStrings);
+    }
+
+    /**
+     * Writes the list of <code>Action</code>s to the JSONGenerator.
+     *
+     * @param actions
+     *            the list of the actions to be written.
+     */
+    private void writeActions(List<Action> actions)
+            throws JsonGenerationException, IOException {
+        List<String> actionStrings = new ArrayList<String>();
+
+        for (Action action : actions) {
+            actionStrings.add(action.getActionName());
+        }
+        writeJsonArray(JsonDocumentFields.ACTION, actionStrings);
+    }
+
+    /**
+     * Writes the list of <code>Principal</code>s to the JSONGenerator.
+     *
+     * @param principals
+     *            the list of principals to be written.
+     */
+    private void writePrincipals(List<Principal> principals)
+            throws JsonGenerationException, IOException {
+        if (principals.size() == 1 && principals.get(0).equals(Principal.All)) {
+            writeJsonKeyValue(JsonDocumentFields.PRINCIPAL, Principal.All.getId());
+        } else {
+            writeJsonObjectStart(JsonDocumentFields.PRINCIPAL);
+
+            Map<String, List<String>> principalsByScheme = groupPrincipalByScheme(principals);
+
+            List<String> principalValues;
+            for (Map.Entry<String, List<String>> entry : principalsByScheme.entrySet()) {
+                principalValues = principalsByScheme.get(entry.getKey());
+
+                if (principalValues.size() == 1) {
+                    writeJsonKeyValue(entry.getKey(), principalValues.get(0));
+                } else {
+                    writeJsonArray(entry.getKey(), principalValues);
+                }
+
+            }
+            writeJsonObjectEnd();
+        }
+    }
+
+    /**
+     * Groups the list of <code>Principal</code>s by the Scheme.
+     *
+     * @param principals
+     *            the list of <code>Principal</code>s
+     * @return a map grouped by scheme of the principal.
+     */
+    private Map<String, List<String>> groupPrincipalByScheme(
+            List<Principal> principals) {
+        Map<String, List<String>> principalsByScheme = new HashMap<String, List<String>>();
+
+        String provider;
+        List<String> principalValues;
+        for (Principal principal : principals) {
+            provider = principal.getProvider();
+            if (!principalsByScheme.containsKey(provider)) {
+                principalsByScheme.put(provider, new ArrayList<String>());
+            }
+            principalValues = principalsByScheme.get(provider);
+            principalValues.add(principal.getId());
         }
 
-        generator.key("Principal").object();
-        if (allUserAccessPrincipal == true) {
-            principalContentsByScheme.remove("AWS");
-            generator.key("AWS").value("*");
+        return principalsByScheme;
+    }
+
+    /**
+     * Inner class to hold condition values for each key under a condition type.
+     */
+    static class ConditionsByKey {
+        private Map<String,List<String>> conditionsByKey;
+
+        public ConditionsByKey(){
+            conditionsByKey = new HashMap<String,List<String>>();
         }
 
-        if (allServiceAccessPrincipal == true) {
-            principalContentsByScheme.remove("Service");
-            generator.key("Service");
-            generator.value("*");
+        public Map<String,List<String>> getConditionsByKey() {
+            return conditionsByKey;
         }
 
-        if (allFederatedAccessPrincipal == true) {
-            principalContentsByScheme.remove("Federated");
-            generator.key("Federated");
-            generator.value("*");
+        public void setConditionsByKey(Map<String,List<String>> conditionsByKey) {
+            this.conditionsByKey = conditionsByKey;
         }
 
-        for (Map.Entry<String, List<String>> entry
-                 : principalContentsByScheme.entrySet()) {
+        public boolean containsKey(String key){
+            return conditionsByKey.containsKey(key);
+        }
 
-            String scheme = entry.getKey();
-            generator.key(scheme).array();
+        public List<String> getConditionsByKey(String key){
+            return conditionsByKey.get(key);
+        }
 
-            for (String principalId : entry.getValue()) {
-                generator.value(principalId);
+        public Set<String> keySet(){
+            return conditionsByKey.keySet();
+        }
+
+        public void addValuesToKey(String key, List<String> values) {
+
+            List<String> conditionValues = getConditionsByKey(key);
+            if (conditionValues == null)
+                conditionsByKey.put(key, new ArrayList<String>(values));
+            else
+                conditionValues.addAll(values);
+        }
+    }
+
+    /**
+     * Groups the list of <code>Condition</code>s by the condition type and
+     * condition key.
+     *
+     * @param conditions
+     *            the list of conditions to be grouped
+     * @return a map of conditions grouped by type and then key.
+     */
+    private Map<String, ConditionsByKey> groupConditionsByTypeAndKey(
+            List<Condition> conditions) {
+        Map<String, ConditionsByKey> conditionsByType = new HashMap<String, ConditionsByKey>();
+
+        String type;
+        String key;
+        ConditionsByKey conditionsByKey;
+        for (Condition condition : conditions) {
+            type = condition.getType();
+            key = condition.getConditionKey();
+
+            if (!(conditionsByType.containsKey(type))) {
+                conditionsByType.put(type, new ConditionsByKey());
             }
 
-            generator.endArray();
+            conditionsByKey = conditionsByType.get(type);
+            conditionsByKey.addValuesToKey(key, condition.getValues());
         }
+        return conditionsByType;
+    }
 
-        generator.endObject();
+    /**
+     * Writes an array along with its values to the JSONGenerator.
+     *
+     * @param arrayName
+     *            name of the JSON array.
+     * @param values
+     *            values of the JSON array.
+     */
+    private void writeJsonArray(String arrayName, List<String> values)
+            throws JsonGenerationException, IOException {
+        writeJsonArrayStart(arrayName);
+        for (String value : values)
+            generator.writeString(value);
+        writeJsonArrayEnd();
+    }
+
+    /**
+     * Writes the Start of Object String to the JSONGenerator along with Object
+     * Name.
+     *
+     * @param fieldName
+     *            name of the JSON Object.
+     */
+    private void writeJsonObjectStart(String fieldName)
+            throws JsonGenerationException, IOException {
+        generator.writeObjectFieldStart(fieldName);
+    }
+
+    /**
+     * Writes the End of Object String to the JSONGenerator.
+     */
+    private void writeJsonObjectEnd() throws JsonGenerationException, IOException {
+        generator.writeEndObject();
+    }
+
+    /**
+     * Writes the Start of Array String to the JSONGenerator along with Array
+     * Name.
+     *
+     * @param fieldName
+     *            name of the JSON array
+     */
+    private void writeJsonArrayStart(String fieldName)
+            throws JsonGenerationException, IOException {
+        generator.writeArrayFieldStart(fieldName);
+    }
+
+    /**
+     * Writes the End of Array String to the JSONGenerator.
+     */
+    private void writeJsonArrayEnd() throws JsonGenerationException, IOException {
+        generator.writeEndArray();
+    }
+
+    /**
+     * Writes the given field and the value to the JsonGenerator
+     *
+     * @param fieldName
+     *            the JSON field name
+     * @param value
+     *            value for the field
+     */
+    private void writeJsonKeyValue(String fieldName, String value)
+            throws JsonGenerationException, IOException {
+        generator.writeStringField(fieldName, value);
+    }
+
+    /**
+     * Checks if the given object is not null.
+     *
+     * @param object
+     *            the object compared to null.
+     * @return true if the object is not null else false
+     */
+    private boolean isNotNull(Object object) {
+        return null != object;
     }
 }

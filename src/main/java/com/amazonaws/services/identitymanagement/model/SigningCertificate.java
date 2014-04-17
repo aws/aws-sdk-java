@@ -51,7 +51,7 @@ public class SigningCertificate implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      */
     private String certificateBody;
 
@@ -211,7 +211,7 @@ public class SigningCertificate implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @return The contents of the signing certificate.
      */
@@ -224,7 +224,7 @@ public class SigningCertificate implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param certificateBody The contents of the signing certificate.
      */
@@ -239,7 +239,7 @@ public class SigningCertificate implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16384<br/>
-     * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
      * @param certificateBody The contents of the signing certificate.
      *

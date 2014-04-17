@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer;
 
+import java.util.Collection;
+
 
 /**
  * Multiple file download of an entire virtual directory.
@@ -21,13 +23,19 @@ package com.amazonaws.services.s3.transfer;
 public interface  MultipleFileUpload extends Transfer {
 
     /**
-     * Returns the key prefix of the virtual directory being downloaded.
+     * Returns the key prefix of the virtual directory being uploaded.
      */
     public String getKeyPrefix();
-    
+
     /**
-     * Returns the name of the bucket from which files are downloaded.
+     * Returns the name of the bucket to which files are uploaded.
      */
     public String getBucketName();
-    
+
+    /**
+     * Returns a collection of sub transfers associated with the multi file upload.
+     * @return
+     */
+    public Collection<? extends Upload> getSubTransfers();
+
 }

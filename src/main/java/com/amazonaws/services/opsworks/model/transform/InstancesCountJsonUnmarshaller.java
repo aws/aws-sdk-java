@@ -53,6 +53,10 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
                     context.nextToken();
                     instancesCount.setConnectionLost(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Online", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setOnline(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Pending", targetDepth)) {
                     context.nextToken();
                     instancesCount.setPending(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
@@ -84,6 +88,10 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
                 if (context.testExpression("Stopped", targetDepth)) {
                     context.nextToken();
                     instancesCount.setStopped(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Stopping", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setStopping(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Terminated", targetDepth)) {
                     context.nextToken();
