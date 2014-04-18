@@ -22,11 +22,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
@@ -140,7 +140,7 @@ public class TransferManager {
     /** Configuration for how TransferManager processes requests. */
     private TransferManagerConfiguration configuration;
     /** The thread pool in which transfers are uploaded or downloaded. */
-    private ThreadPoolExecutor threadPool;
+    private ExecutorService threadPool;
 
     /** Thread used for periodicially checking transfers and updating thier state. */
     private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1, daemonThreadFactory);
@@ -235,7 +235,7 @@ public class TransferManager {
      * @param threadPool
      *            The thread pool in which to execute requests.
      */
-    public TransferManager(AmazonS3 s3, ThreadPoolExecutor threadPool) {
+    public TransferManager(AmazonS3 s3, ExecutorService threadPool) {
         this.s3 = s3;
         this.threadPool = threadPool;
         this.configuration = new TransferManagerConfiguration();
