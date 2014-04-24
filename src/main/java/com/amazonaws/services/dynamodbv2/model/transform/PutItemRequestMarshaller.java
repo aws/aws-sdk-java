@@ -214,6 +214,75 @@ public class PutItemRequestMarshaller implements Marshaller<Request<PutItemReque
                         if (expectedListValue.getValue().isExists() != null) {
                             jsonWriter.key("Exists").value(expectedListValue.getValue().isExists());
                         }
+                        if (expectedListValue.getValue().getComparisonOperator() != null) {
+                            jsonWriter.key("ComparisonOperator").value(expectedListValue.getValue().getComparisonOperator());
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue> attributeValueListList = (com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue>)(expectedListValue.getValue().getAttributeValueList());
+                        if (attributeValueListList != null && !(attributeValueListList.isAutoConstruct() && attributeValueListList.isEmpty())) {
+
+                            jsonWriter.key("AttributeValueList");
+                            jsonWriter.array();
+
+                            for (AttributeValue attributeValueListListValue : attributeValueListList) {
+                                if (attributeValueListListValue != null) {
+                                    jsonWriter.object();
+                                    if (attributeValueListListValue.getS() != null) {
+                                        jsonWriter.key("S").value(attributeValueListListValue.getS());
+                                    }
+                                    if (attributeValueListListValue.getN() != null) {
+                                        jsonWriter.key("N").value(attributeValueListListValue.getN());
+                                    }
+                                    if (attributeValueListListValue.getB() != null) {
+                                        jsonWriter.key("B").value(attributeValueListListValue.getB());
+                                    }
+
+                                    com.amazonaws.internal.ListWithAutoConstructFlag<String> sSList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(attributeValueListListValue.getSS());
+                                    if (sSList != null && !(sSList.isAutoConstruct() && sSList.isEmpty())) {
+
+                                        jsonWriter.key("SS");
+                                        jsonWriter.array();
+
+                                        for (String sSListValue : sSList) {
+                                            if (sSListValue != null) {
+                                                jsonWriter.value(sSListValue);
+                                            }
+                                        }
+                                        jsonWriter.endArray();
+                                    }
+
+                                    com.amazonaws.internal.ListWithAutoConstructFlag<String> nSList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(attributeValueListListValue.getNS());
+                                    if (nSList != null && !(nSList.isAutoConstruct() && nSList.isEmpty())) {
+
+                                        jsonWriter.key("NS");
+                                        jsonWriter.array();
+
+                                        for (String nSListValue : nSList) {
+                                            if (nSListValue != null) {
+                                                jsonWriter.value(nSListValue);
+                                            }
+                                        }
+                                        jsonWriter.endArray();
+                                    }
+
+                                    com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer> bSList = (com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer>)(attributeValueListListValue.getBS());
+                                    if (bSList != null && !(bSList.isAutoConstruct() && bSList.isEmpty())) {
+
+                                        jsonWriter.key("BS");
+                                        jsonWriter.array();
+
+                                        for (java.nio.ByteBuffer bSListValue : bSList) {
+                                            if (bSListValue != null) {
+                                                jsonWriter.value(bSListValue);
+                                            }
+                                        }
+                                        jsonWriter.endArray();
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
                         jsonWriter.endObject();
                     }
                 }
@@ -227,6 +296,9 @@ public class PutItemRequestMarshaller implements Marshaller<Request<PutItemReque
             }
             if (putItemRequest.getReturnItemCollectionMetrics() != null) {
                 jsonWriter.key("ReturnItemCollectionMetrics").value(putItemRequest.getReturnItemCollectionMetrics());
+            }
+            if (putItemRequest.getConditionalOperator() != null) {
+                jsonWriter.key("ConditionalOperator").value(putItemRequest.getConditionalOperator());
             }
 
           jsonWriter.endObject();

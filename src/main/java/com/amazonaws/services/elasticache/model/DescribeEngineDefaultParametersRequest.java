@@ -32,7 +32,8 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code>
+     * <code>memcached1.4</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code>
      */
     private String cacheParameterGroupFamily;
 
@@ -65,7 +66,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      * 
      * @param cacheParameterGroupFamily The name of the cache parameter group
      * family. Valid values are: <code>memcached1.4</code> |
-     * <code>redis2.6</code>
+     * <code>redis2.6</code> | <code>redis2.8</code>
      */
     public DescribeEngineDefaultParametersRequest(String cacheParameterGroupFamily) {
         setCacheParameterGroupFamily(cacheParameterGroupFamily);
@@ -73,10 +74,12 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code>
+     * <code>memcached1.4</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code>
      *
      * @return The name of the cache parameter group family. Valid values are:
-     *         <code>memcached1.4</code> | <code>redis2.6</code>
+     *         <code>memcached1.4</code> | <code>redis2.6</code> |
+     *         <code>redis2.8</code>
      */
     public String getCacheParameterGroupFamily() {
         return cacheParameterGroupFamily;
@@ -84,10 +87,12 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code>
+     * <code>memcached1.4</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code>
      *
      * @param cacheParameterGroupFamily The name of the cache parameter group family. Valid values are:
-     *         <code>memcached1.4</code> | <code>redis2.6</code>
+     *         <code>memcached1.4</code> | <code>redis2.6</code> |
+     *         <code>redis2.8</code>
      */
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -95,12 +100,14 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code>
+     * <code>memcached1.4</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupFamily The name of the cache parameter group family. Valid values are:
-     *         <code>memcached1.4</code> | <code>redis2.6</code>
+     *         <code>memcached1.4</code> | <code>redis2.6</code> |
+     *         <code>redis2.8</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

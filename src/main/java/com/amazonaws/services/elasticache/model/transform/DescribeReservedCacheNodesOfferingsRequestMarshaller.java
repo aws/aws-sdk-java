@@ -38,7 +38,7 @@ public class DescribeReservedCacheNodesOfferingsRequestMarshaller implements Mar
 
         Request<DescribeReservedCacheNodesOfferingsRequest> request = new DefaultRequest<DescribeReservedCacheNodesOfferingsRequest>(describeReservedCacheNodesOfferingsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeReservedCacheNodesOfferings");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2014-03-24");
 
         if (describeReservedCacheNodesOfferingsRequest.getReservedCacheNodesOfferingId() != null) {
             request.addParameter("ReservedCacheNodesOfferingId", StringUtils.fromString(describeReservedCacheNodesOfferingsRequest.getReservedCacheNodesOfferingId()));

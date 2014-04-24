@@ -133,6 +133,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     private Boolean autoMinorVersionUpgrade;
 
     /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     */
+    private Integer snapshotRetentionLimit;
+
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster.
+     */
+    private String snapshotWindow;
+
+    /**
      * Default constructor for a new ModifyCacheClusterRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -960,6 +974,96 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     *
+     * @return The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted.
+     */
+    public Integer getSnapshotRetentionLimit() {
+        return snapshotRetentionLimit;
+    }
+    
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     *
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted.
+     */
+    public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        this.snapshotRetentionLimit = snapshotRetentionLimit;
+    }
+    
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ModifyCacheClusterRequest withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        this.snapshotRetentionLimit = snapshotRetentionLimit;
+        return this;
+    }
+
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster.
+     *
+     * @return The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster.
+     */
+    public String getSnapshotWindow() {
+        return snapshotWindow;
+    }
+    
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster.
+     *
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster.
+     */
+    public void setSnapshotWindow(String snapshotWindow) {
+        this.snapshotWindow = snapshotWindow;
+    }
+    
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ModifyCacheClusterRequest withSnapshotWindow(String snapshotWindow) {
+        this.snapshotWindow = snapshotWindow;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -982,7 +1086,9 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (getNotificationTopicStatus() != null) sb.append("NotificationTopicStatus: " + getNotificationTopicStatus() + ",");
         if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ",");
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() );
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
+        if (getSnapshotRetentionLimit() != null) sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
+        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() );
         sb.append("}");
         return sb.toString();
     }
@@ -1004,6 +1110,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((isApplyImmediately() == null) ? 0 : isApplyImmediately().hashCode()); 
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode()); 
         return hashCode;
     }
     
@@ -1039,6 +1147,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
         if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        if (other.getSnapshotRetentionLimit() == null ^ this.getSnapshotRetentionLimit() == null) return false;
+        if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false) return false; 
+        if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null) return false;
+        if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false) return false; 
         return true;
     }
     

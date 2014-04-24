@@ -43,11 +43,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * or if you have used <i>Limit</i> .
  * </p>
  * <p>
- * You can query a table, a local secondary index (LSI), or a global
- * secondary index (GSI). For a query on a table or on an LSI, you can
+ * You can query a table, a local secondary index, or a global secondary
+ * index. For a query on a table or on a local secondary index, you can
  * set <i>ConsistentRead</i> to true and obtain a strongly consistent
- * result. GSIs support eventually consistent reads only, so do not
- * specify <i>ConsistentRead</i> when querying a GSI.
+ * result. Global secondary indexes support eventually consistent reads
+ * only, so do not specify <i>ConsistentRead</i> when querying a global
+ * secondary index.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#query(QueryRequest)
@@ -120,19 +121,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>You cannot use both <i>AttributesToGet</i> and
-     * <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     * value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     * usage is equivalent to specifying <i>AttributesToGet</i> without any
-     * value for <i>Select</i>.) <p>If you are querying a local secondary
-     * index and request only attributes that are projected into that index,
-     * the operation will read only the index and not the table. If any of
-     * the requested attributes are not projected into the local secondary
-     * index, DynamoDB will fetch each of these attributes from the parent
-     * table. This extra fetching incurs additional throughput cost and
-     * latency. <p>If you are querying a global secondary index, you can only
-     * request attributes that are projected into the index. Global secondary
-     * index queries cannot fetch attributes from the parent table.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application. <p>You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     * request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
+     * <i>Select</i>.) <p>If you are querying a local secondary index and
+     * request only attributes that are projected into that index, the
+     * operation will read only the index and not the table. If any of the
+     * requested attributes are not projected into the local secondary index,
+     * DynamoDB will fetch each of these attributes from the parent table.
+     * This extra fetching incurs additional throughput cost and latency.
+     * <p>If you are querying a global secondary index, you can only request
+     * attributes that are projected into the index. Global secondary index
+     * queries cannot fetch attributes from the parent table.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -149,7 +154,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -170,59 +175,60 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on an index, you can only have
-     * conditions on the index key attributes. You must specify the index
-     * hash attribute name and value as an EQ condition. You can optionally
-     * specify a second condition, referring to the index key range
-     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     * words, all of the conditions must be met in order for an item to
-     * appear in the results results. <p>Each <i>KeyConditions</i> element
+     * can only have conditions on the table primary key attributes. You
+     * <i>must</i> specify the hash key attribute name and value as an
+     * <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     * condition, referring to the range key attribute. <p>For a query on an
+     * index, you can only have conditions on the index key attributes. You
+     * <i>must</i> specify the index hash attribute name and value as an EQ
+     * condition. You can <i>optionally</i> specify a second condition,
+     * referring to the index key range attribute. <p>If you specify more
+     * than one condition in the <i>KeyConditions</i> map, then by default
+     * all of the conditions must evaluate to true. In other words, the
+     * conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> comparison, in which case the list
-     * contains two values. <note> <p>For type Number, value comparisons are
-     * numeric. <p>String value comparisons for greater than, equals, or less
-     * than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Query:
-     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     * information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
+     * than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     * comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     * BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     * these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
@@ -250,19 +256,73 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type than the one specified in the request, the value does not match.
      * For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide.
      */
     private java.util.Map<String,Condition> keyConditions;
+
+    /**
+     * Evaluates the query results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>QueryFilter</i> map,
+     * then by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
+     */
+    private java.util.Map<String,Condition> queryFilter;
+
+    /**
+     * A logical operator to apply to the conditions in the
+     * <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     * of the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     * conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     */
+    private String conditionalOperator;
 
     /**
      * Specifies ascending (true) or descending (false) traversal of the
      * index. DynamoDB returns results reflecting the requested order
      * determined by the range key. If the data type is Number, the results
      * are returned in numeric order. For String, the results are returned in
-     * order of ASCII character code values. For Binary, Amazon DynamoDB
-     * treats each byte of the binary data as unsigned when it compares
-     * binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     * results are returned in ascending order.
+     * order of ASCII character code values. For Binary, DynamoDB treats each
+     * byte of the binary data as unsigned when it compares binary values.
+     * <p>If <i>ScanIndexForward</i> is not specified, the results are
+     * returned in ascending order.
      */
     private Boolean scanIndexForward;
 
@@ -835,19 +895,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>You cannot use both <i>AttributesToGet</i> and
-     * <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     * value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     * usage is equivalent to specifying <i>AttributesToGet</i> without any
-     * value for <i>Select</i>.) <p>If you are querying a local secondary
-     * index and request only attributes that are projected into that index,
-     * the operation will read only the index and not the table. If any of
-     * the requested attributes are not projected into the local secondary
-     * index, DynamoDB will fetch each of these attributes from the parent
-     * table. This extra fetching incurs additional throughput cost and
-     * latency. <p>If you are querying a global secondary index, you can only
-     * request attributes that are projected into the index. Global secondary
-     * index queries cannot fetch attributes from the parent table.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application. <p>You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     * request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
+     * <i>Select</i>.) <p>If you are querying a local secondary index and
+     * request only attributes that are projected into that index, the
+     * operation will read only the index and not the table. If any of the
+     * requested attributes are not projected into the local secondary index,
+     * DynamoDB will fetch each of these attributes from the parent table.
+     * This extra fetching incurs additional throughput cost and latency.
+     * <p>If you are querying a global secondary index, you can only request
+     * attributes that are projected into the index. Global secondary index
+     * queries cannot fetch attributes from the parent table.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -855,19 +919,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @return The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>You cannot use both <i>AttributesToGet</i> and
-     *         <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     *         value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     *         usage is equivalent to specifying <i>AttributesToGet</i> without any
-     *         value for <i>Select</i>.) <p>If you are querying a local secondary
-     *         index and request only attributes that are projected into that index,
-     *         the operation will read only the index and not the table. If any of
-     *         the requested attributes are not projected into the local secondary
-     *         index, DynamoDB will fetch each of these attributes from the parent
-     *         table. This extra fetching incurs additional throughput cost and
-     *         latency. <p>If you are querying a global secondary index, you can only
-     *         request attributes that are projected into the index. Global secondary
-     *         index queries cannot fetch attributes from the parent table.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application. <p>You cannot use both
+     *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     *         request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
+     *         <i>Select</i>.) <p>If you are querying a local secondary index and
+     *         request only attributes that are projected into that index, the
+     *         operation will read only the index and not the table. If any of the
+     *         requested attributes are not projected into the local secondary index,
+     *         DynamoDB will fetch each of these attributes from the parent table.
+     *         This extra fetching incurs additional throughput cost and latency.
+     *         <p>If you are querying a global secondary index, you can only request
+     *         attributes that are projected into the index. Global secondary index
+     *         queries cannot fetch attributes from the parent table.
      */
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
@@ -877,19 +945,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>You cannot use both <i>AttributesToGet</i> and
-     * <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     * value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     * usage is equivalent to specifying <i>AttributesToGet</i> without any
-     * value for <i>Select</i>.) <p>If you are querying a local secondary
-     * index and request only attributes that are projected into that index,
-     * the operation will read only the index and not the table. If any of
-     * the requested attributes are not projected into the local secondary
-     * index, DynamoDB will fetch each of these attributes from the parent
-     * table. This extra fetching incurs additional throughput cost and
-     * latency. <p>If you are querying a global secondary index, you can only
-     * request attributes that are projected into the index. Global secondary
-     * index queries cannot fetch attributes from the parent table.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application. <p>You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     * request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
+     * <i>Select</i>.) <p>If you are querying a local secondary index and
+     * request only attributes that are projected into that index, the
+     * operation will read only the index and not the table. If any of the
+     * requested attributes are not projected into the local secondary index,
+     * DynamoDB will fetch each of these attributes from the parent table.
+     * This extra fetching incurs additional throughput cost and latency.
+     * <p>If you are querying a global secondary index, you can only request
+     * attributes that are projected into the index. Global secondary index
+     * queries cannot fetch attributes from the parent table.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -897,19 +969,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>You cannot use both <i>AttributesToGet</i> and
-     *         <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     *         value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     *         usage is equivalent to specifying <i>AttributesToGet</i> without any
-     *         value for <i>Select</i>.) <p>If you are querying a local secondary
-     *         index and request only attributes that are projected into that index,
-     *         the operation will read only the index and not the table. If any of
-     *         the requested attributes are not projected into the local secondary
-     *         index, DynamoDB will fetch each of these attributes from the parent
-     *         table. This extra fetching incurs additional throughput cost and
-     *         latency. <p>If you are querying a global secondary index, you can only
-     *         request attributes that are projected into the index. Global secondary
-     *         index queries cannot fetch attributes from the parent table.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application. <p>You cannot use both
+     *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     *         request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
+     *         <i>Select</i>.) <p>If you are querying a local secondary index and
+     *         request only attributes that are projected into that index, the
+     *         operation will read only the index and not the table. If any of the
+     *         requested attributes are not projected into the local secondary index,
+     *         DynamoDB will fetch each of these attributes from the parent table.
+     *         This extra fetching incurs additional throughput cost and latency.
+     *         <p>If you are querying a global secondary index, you can only request
+     *         attributes that are projected into the index. Global secondary index
+     *         queries cannot fetch attributes from the parent table.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -925,19 +1001,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>You cannot use both <i>AttributesToGet</i> and
-     * <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     * value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     * usage is equivalent to specifying <i>AttributesToGet</i> without any
-     * value for <i>Select</i>.) <p>If you are querying a local secondary
-     * index and request only attributes that are projected into that index,
-     * the operation will read only the index and not the table. If any of
-     * the requested attributes are not projected into the local secondary
-     * index, DynamoDB will fetch each of these attributes from the parent
-     * table. This extra fetching incurs additional throughput cost and
-     * latency. <p>If you are querying a global secondary index, you can only
-     * request attributes that are projected into the index. Global secondary
-     * index queries cannot fetch attributes from the parent table.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application. <p>You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     * request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
+     * <i>Select</i>.) <p>If you are querying a local secondary index and
+     * request only attributes that are projected into that index, the
+     * operation will read only the index and not the table. If any of the
+     * requested attributes are not projected into the local secondary index,
+     * DynamoDB will fetch each of these attributes from the parent table.
+     * This extra fetching incurs additional throughput cost and latency.
+     * <p>If you are querying a global secondary index, you can only request
+     * attributes that are projected into the index. Global secondary index
+     * queries cannot fetch attributes from the parent table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -947,19 +1027,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>You cannot use both <i>AttributesToGet</i> and
-     *         <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     *         value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     *         usage is equivalent to specifying <i>AttributesToGet</i> without any
-     *         value for <i>Select</i>.) <p>If you are querying a local secondary
-     *         index and request only attributes that are projected into that index,
-     *         the operation will read only the index and not the table. If any of
-     *         the requested attributes are not projected into the local secondary
-     *         index, DynamoDB will fetch each of these attributes from the parent
-     *         table. This extra fetching incurs additional throughput cost and
-     *         latency. <p>If you are querying a global secondary index, you can only
-     *         request attributes that are projected into the index. Global secondary
-     *         index queries cannot fetch attributes from the parent table.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application. <p>You cannot use both
+     *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     *         request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
+     *         <i>Select</i>.) <p>If you are querying a local secondary index and
+     *         request only attributes that are projected into that index, the
+     *         operation will read only the index and not the table. If any of the
+     *         requested attributes are not projected into the local secondary index,
+     *         DynamoDB will fetch each of these attributes from the parent table.
+     *         This extra fetching incurs additional throughput cost and latency.
+     *         <p>If you are querying a global secondary index, you can only request
+     *         attributes that are projected into the index. Global secondary index
+     *         queries cannot fetch attributes from the parent table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -976,19 +1060,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>You cannot use both <i>AttributesToGet</i> and
-     * <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     * value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     * usage is equivalent to specifying <i>AttributesToGet</i> without any
-     * value for <i>Select</i>.) <p>If you are querying a local secondary
-     * index and request only attributes that are projected into that index,
-     * the operation will read only the index and not the table. If any of
-     * the requested attributes are not projected into the local secondary
-     * index, DynamoDB will fetch each of these attributes from the parent
-     * table. This extra fetching incurs additional throughput cost and
-     * latency. <p>If you are querying a global secondary index, you can only
-     * request attributes that are projected into the index. Global secondary
-     * index queries cannot fetch attributes from the parent table.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application. <p>You cannot use both
+     * <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     * request, <i>unless</i> the value for <i>Select</i> is
+     * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     * specifying <i>AttributesToGet</i> without any value for
+     * <i>Select</i>.) <p>If you are querying a local secondary index and
+     * request only attributes that are projected into that index, the
+     * operation will read only the index and not the table. If any of the
+     * requested attributes are not projected into the local secondary index,
+     * DynamoDB will fetch each of these attributes from the parent table.
+     * This extra fetching incurs additional throughput cost and latency.
+     * <p>If you are querying a global secondary index, you can only request
+     * attributes that are projected into the index. Global secondary index
+     * queries cannot fetch attributes from the parent table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -998,19 +1086,23 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>You cannot use both <i>AttributesToGet</i> and
-     *         <i>Select</i> together in a <i>Query</i> request, <i>unless</i> the
-     *         value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-     *         usage is equivalent to specifying <i>AttributesToGet</i> without any
-     *         value for <i>Select</i>.) <p>If you are querying a local secondary
-     *         index and request only attributes that are projected into that index,
-     *         the operation will read only the index and not the table. If any of
-     *         the requested attributes are not projected into the local secondary
-     *         index, DynamoDB will fetch each of these attributes from the parent
-     *         table. This extra fetching incurs additional throughput cost and
-     *         latency. <p>If you are querying a global secondary index, you can only
-     *         request attributes that are projected into the index. Global secondary
-     *         index queries cannot fetch attributes from the parent table.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application. <p>You cannot use both
+     *         <i>AttributesToGet</i> and <i>Select</i> together in a <i>Query</i>
+     *         request, <i>unless</i> the value for <i>Select</i> is
+     *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
+     *         specifying <i>AttributesToGet</i> without any value for
+     *         <i>Select</i>.) <p>If you are querying a local secondary index and
+     *         request only attributes that are projected into that index, the
+     *         operation will read only the index and not the table. If any of the
+     *         requested attributes are not projected into the local secondary index,
+     *         DynamoDB will fetch each of these attributes from the parent table.
+     *         This extra fetching incurs additional throughput cost and latency.
+     *         <p>If you are querying a global secondary index, you can only request
+     *         attributes that are projected into the index. Global secondary index
+     *         queries cannot fetch attributes from the parent table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1037,7 +1129,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -1053,7 +1145,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         DynamoDB reaches this limit, it stops the operation and returns the
      *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      *         apply in a subsequent operation to continue the operation. For more
-     *         information see <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -1071,7 +1163,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -1087,7 +1179,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         DynamoDB reaches this limit, it stops the operation and returns the
      *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      *         apply in a subsequent operation to continue the operation. For more
-     *         information see <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -1105,7 +1197,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -1123,7 +1215,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         DynamoDB reaches this limit, it stops the operation and returns the
      *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      *         apply in a subsequent operation to continue the operation. For more
-     *         information see <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      *
@@ -1219,59 +1311,60 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on an index, you can only have
-     * conditions on the index key attributes. You must specify the index
-     * hash attribute name and value as an EQ condition. You can optionally
-     * specify a second condition, referring to the index key range
-     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     * words, all of the conditions must be met in order for an item to
-     * appear in the results results. <p>Each <i>KeyConditions</i> element
+     * can only have conditions on the table primary key attributes. You
+     * <i>must</i> specify the hash key attribute name and value as an
+     * <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     * condition, referring to the range key attribute. <p>For a query on an
+     * index, you can only have conditions on the index key attributes. You
+     * <i>must</i> specify the index hash attribute name and value as an EQ
+     * condition. You can <i>optionally</i> specify a second condition,
+     * referring to the index key range attribute. <p>If you specify more
+     * than one condition in the <i>KeyConditions</i> map, then by default
+     * all of the conditions must evaluate to true. In other words, the
+     * conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> comparison, in which case the list
-     * contains two values. <note> <p>For type Number, value comparisons are
-     * numeric. <p>String value comparisons for greater than, equals, or less
-     * than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Query:
-     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     * information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
+     * than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     * comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     * BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     * these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
@@ -1299,62 +1392,67 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type than the one specified in the request, the value does not match.
      * For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide.
      *
      * @return The selection criteria for the query. <p>For a query on a table, you
-     *         can only have conditions on the table primary key attributes. You must
-     *         specify the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <p>For a query on an index, you can only have
-     *         conditions on the index key attributes. You must specify the index
-     *         hash attribute name and value as an EQ condition. You can optionally
-     *         specify a second condition, referring to the index key range
-     *         attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     *         words, all of the conditions must be met in order for an item to
-     *         appear in the results results. <p>Each <i>KeyConditions</i> element
+     *         can only have conditions on the table primary key attributes. You
+     *         <i>must</i> specify the hash key attribute name and value as an
+     *         <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     *         condition, referring to the range key attribute. <p>For a query on an
+     *         index, you can only have conditions on the index key attributes. You
+     *         <i>must</i> specify the index hash attribute name and value as an EQ
+     *         condition. You can <i>optionally</i> specify a second condition,
+     *         referring to the index key range attribute. <p>If you specify more
+     *         than one condition in the <i>KeyConditions</i> map, then by default
+     *         all of the conditions must evaluate to true. In other words, the
+     *         conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> comparison, in which case the list
-     *         contains two values. <note> <p>For type Number, value comparisons are
-     *         numeric. <p>String value comparisons for greater than, equals, or less
-     *         than are based on ASCII character code values. For example,
-     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     *         greater than <code>B</code>. For a list of code values, see <a
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
+     *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
-     *         than, less than, etc. <p>Valid comparison operators for Query:
-     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     *         information on specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     *         following are descriptions of each comparison operator. <ul> <li>
-     *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     *         a set). If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     *         can contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>GE</code> : Greater than or equal.
+     *         than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     *         comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     *         BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     *         these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     *         or equal. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      *         If an item contains an <i>AttributeValue</i> of a different type than
      *         the one specified in the request, the value does not match. For
@@ -1382,7 +1480,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         type than the one specified in the request, the value does not match.
      *         For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     *         usage examples of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     *         Expressions</a> in the Amazon DynamoDB Developer Guide.
      */
     public java.util.Map<String,Condition> getKeyConditions() {
         
@@ -1391,59 +1493,60 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on an index, you can only have
-     * conditions on the index key attributes. You must specify the index
-     * hash attribute name and value as an EQ condition. You can optionally
-     * specify a second condition, referring to the index key range
-     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     * words, all of the conditions must be met in order for an item to
-     * appear in the results results. <p>Each <i>KeyConditions</i> element
+     * can only have conditions on the table primary key attributes. You
+     * <i>must</i> specify the hash key attribute name and value as an
+     * <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     * condition, referring to the range key attribute. <p>For a query on an
+     * index, you can only have conditions on the index key attributes. You
+     * <i>must</i> specify the index hash attribute name and value as an EQ
+     * condition. You can <i>optionally</i> specify a second condition,
+     * referring to the index key range attribute. <p>If you specify more
+     * than one condition in the <i>KeyConditions</i> map, then by default
+     * all of the conditions must evaluate to true. In other words, the
+     * conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> comparison, in which case the list
-     * contains two values. <note> <p>For type Number, value comparisons are
-     * numeric. <p>String value comparisons for greater than, equals, or less
-     * than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Query:
-     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     * information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
+     * than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     * comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     * BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     * these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
@@ -1471,62 +1574,67 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type than the one specified in the request, the value does not match.
      * For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide.
      *
      * @param keyConditions The selection criteria for the query. <p>For a query on a table, you
-     *         can only have conditions on the table primary key attributes. You must
-     *         specify the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <p>For a query on an index, you can only have
-     *         conditions on the index key attributes. You must specify the index
-     *         hash attribute name and value as an EQ condition. You can optionally
-     *         specify a second condition, referring to the index key range
-     *         attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     *         words, all of the conditions must be met in order for an item to
-     *         appear in the results results. <p>Each <i>KeyConditions</i> element
+     *         can only have conditions on the table primary key attributes. You
+     *         <i>must</i> specify the hash key attribute name and value as an
+     *         <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     *         condition, referring to the range key attribute. <p>For a query on an
+     *         index, you can only have conditions on the index key attributes. You
+     *         <i>must</i> specify the index hash attribute name and value as an EQ
+     *         condition. You can <i>optionally</i> specify a second condition,
+     *         referring to the index key range attribute. <p>If you specify more
+     *         than one condition in the <i>KeyConditions</i> map, then by default
+     *         all of the conditions must evaluate to true. In other words, the
+     *         conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> comparison, in which case the list
-     *         contains two values. <note> <p>For type Number, value comparisons are
-     *         numeric. <p>String value comparisons for greater than, equals, or less
-     *         than are based on ASCII character code values. For example,
-     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     *         greater than <code>B</code>. For a list of code values, see <a
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
+     *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
-     *         than, less than, etc. <p>Valid comparison operators for Query:
-     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     *         information on specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     *         following are descriptions of each comparison operator. <ul> <li>
-     *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     *         a set). If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     *         can contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>GE</code> : Greater than or equal.
+     *         than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     *         comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     *         BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     *         these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     *         or equal. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      *         If an item contains an <i>AttributeValue</i> of a different type than
      *         the one specified in the request, the value does not match. For
@@ -1554,7 +1662,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         type than the one specified in the request, the value does not match.
      *         For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     *         usage examples of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     *         Expressions</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setKeyConditions(java.util.Map<String,Condition> keyConditions) {
         this.keyConditions = keyConditions;
@@ -1562,59 +1674,60 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on an index, you can only have
-     * conditions on the index key attributes. You must specify the index
-     * hash attribute name and value as an EQ condition. You can optionally
-     * specify a second condition, referring to the index key range
-     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     * words, all of the conditions must be met in order for an item to
-     * appear in the results results. <p>Each <i>KeyConditions</i> element
+     * can only have conditions on the table primary key attributes. You
+     * <i>must</i> specify the hash key attribute name and value as an
+     * <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     * condition, referring to the range key attribute. <p>For a query on an
+     * index, you can only have conditions on the index key attributes. You
+     * <i>must</i> specify the index hash attribute name and value as an EQ
+     * condition. You can <i>optionally</i> specify a second condition,
+     * referring to the index key range attribute. <p>If you specify more
+     * than one condition in the <i>KeyConditions</i> map, then by default
+     * all of the conditions must evaluate to true. In other words, the
+     * conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> comparison, in which case the list
-     * contains two values. <note> <p>For type Number, value comparisons are
-     * numeric. <p>String value comparisons for greater than, equals, or less
-     * than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Query:
-     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     * information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
+     * than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     * comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     * BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     * these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
@@ -1642,64 +1755,69 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type than the one specified in the request, the value does not match.
      * For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyConditions The selection criteria for the query. <p>For a query on a table, you
-     *         can only have conditions on the table primary key attributes. You must
-     *         specify the hash key attribute name and value as an <code>EQ</code>
-     *         condition. You can optionally specify a second condition, referring to
-     *         the range key attribute. <p>For a query on an index, you can only have
-     *         conditions on the index key attributes. You must specify the index
-     *         hash attribute name and value as an EQ condition. You can optionally
-     *         specify a second condition, referring to the index key range
-     *         attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     *         words, all of the conditions must be met in order for an item to
-     *         appear in the results results. <p>Each <i>KeyConditions</i> element
+     *         can only have conditions on the table primary key attributes. You
+     *         <i>must</i> specify the hash key attribute name and value as an
+     *         <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     *         condition, referring to the range key attribute. <p>For a query on an
+     *         index, you can only have conditions on the index key attributes. You
+     *         <i>must</i> specify the index hash attribute name and value as an EQ
+     *         condition. You can <i>optionally</i> specify a second condition,
+     *         referring to the index key range attribute. <p>If you specify more
+     *         than one condition in the <i>KeyConditions</i> map, then by default
+     *         all of the conditions must evaluate to true. In other words, the
+     *         conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> comparison, in which case the list
-     *         contains two values. <note> <p>For type Number, value comparisons are
-     *         numeric. <p>String value comparisons for greater than, equals, or less
-     *         than are based on ASCII character code values. For example,
-     *         <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     *         greater than <code>B</code>. For a list of code values, see <a
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
+     *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
-     *         than, less than, etc. <p>Valid comparison operators for Query:
-     *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     *         information on specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     *         following are descriptions of each comparison operator. <ul> <li>
-     *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     *         a set). If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     *         can contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>GE</code> : Greater than or equal.
+     *         than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     *         comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     *         BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     *         these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     *         or equal. <p><i>AttributeValueList</i> can contain only one
      *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      *         If an item contains an <i>AttributeValue</i> of a different type than
      *         the one specified in the request, the value does not match. For
@@ -1727,7 +1845,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         type than the one specified in the request, the value does not match.
      *         For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     *         usage examples of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     *         Expressions</a> in the Amazon DynamoDB Developer Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1739,59 +1861,60 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. You must
-     * specify the hash key attribute name and value as an <code>EQ</code>
-     * condition. You can optionally specify a second condition, referring to
-     * the range key attribute. <p>For a query on an index, you can only have
-     * conditions on the index key attributes. You must specify the index
-     * hash attribute name and value as an EQ condition. You can optionally
-     * specify a second condition, referring to the index key range
-     * attribute. <p>Multiple conditions are evaluated using "AND"; in other
-     * words, all of the conditions must be met in order for an item to
-     * appear in the results results. <p>Each <i>KeyConditions</i> element
+     * can only have conditions on the table primary key attributes. You
+     * <i>must</i> specify the hash key attribute name and value as an
+     * <code>EQ</code> condition. You can <i>optionally</i> specify a second
+     * condition, referring to the range key attribute. <p>For a query on an
+     * index, you can only have conditions on the index key attributes. You
+     * <i>must</i> specify the index hash attribute name and value as an EQ
+     * condition. You can <i>optionally</i> specify a second condition,
+     * referring to the index key range attribute. <p>If you specify more
+     * than one condition in the <i>KeyConditions</i> map, then by default
+     * all of the conditions must evaluate to true. In other words, the
+     * conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> comparison, in which case the list
-     * contains two values. <note> <p>For type Number, value comparisons are
-     * numeric. <p>String value comparisons for greater than, equals, or less
-     * than are based on ASCII character code values. For example,
-     * <code>a</code> is greater than <code>A</code>, and <code>aa</code> is
-     * greater than <code>B</code>. For a list of code values, see <a
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Query:
-     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
-     * information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
+     * than, less than, etc. <p>For <i>KeyConditions</i>, only the following
+     * comparison operators are supported: <p> <code>EQ | LE | LT | GE | GT |
+     * BEGINS_WITH | BETWEEN</code> <p>The following are descriptions of
+     * these comparison operators. <ul> <li><p><code>EQ</code> : Equal.
      * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/></li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
      * If an item contains an <i>AttributeValue</i> of a different type than
      * the one specified in the request, the value does not match. For
@@ -1819,7 +1942,11 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * type than the one specified in the request, the value does not match.
      * For example, <code>{"S":"6"}</code> does not compare to
      * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul></li> </ul>
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * The method adds a new key-value pair into KeyConditions parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -1849,23 +1976,449 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
+     * Evaluates the query results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>QueryFilter</i> map,
+     * then by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
+     *
+     * @return Evaluates the query results and returns only the desired values. <p>If
+     *         you specify more than one condition in the <i>QueryFilter</i> map,
+     *         then by default all of the conditions must evaluate to true. In other
+     *         words, the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     *         consists of an attribute name to compare, along with the following:
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
+     *         values, see <a
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
+     *         unsigned when it compares binary values, for example when evaluating
+     *         query expressions. <p>For information on specifying data types in
+     *         JSON, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     *         attributes. For example, equals, greater than, less than, etc. <p>The
+     *         following comparison operators are available: <p><code>EQ | NE | LE |
+     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     *         operators, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     *         </li> </ul>
+     */
+    public java.util.Map<String,Condition> getQueryFilter() {
+        
+        return queryFilter;
+    }
+    
+    /**
+     * Evaluates the query results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>QueryFilter</i> map,
+     * then by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
+     *
+     * @param queryFilter Evaluates the query results and returns only the desired values. <p>If
+     *         you specify more than one condition in the <i>QueryFilter</i> map,
+     *         then by default all of the conditions must evaluate to true. In other
+     *         words, the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     *         consists of an attribute name to compare, along with the following:
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
+     *         values, see <a
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
+     *         unsigned when it compares binary values, for example when evaluating
+     *         query expressions. <p>For information on specifying data types in
+     *         JSON, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     *         attributes. For example, equals, greater than, less than, etc. <p>The
+     *         following comparison operators are available: <p><code>EQ | NE | LE |
+     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     *         operators, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     *         </li> </ul>
+     */
+    public void setQueryFilter(java.util.Map<String,Condition> queryFilter) {
+        this.queryFilter = queryFilter;
+    }
+    
+    /**
+     * Evaluates the query results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>QueryFilter</i> map,
+     * then by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param queryFilter Evaluates the query results and returns only the desired values. <p>If
+     *         you specify more than one condition in the <i>QueryFilter</i> map,
+     *         then by default all of the conditions must evaluate to true. In other
+     *         words, the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     *         consists of an attribute name to compare, along with the following:
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
+     *         values, see <a
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
+     *         unsigned when it compares binary values, for example when evaluating
+     *         query expressions. <p>For information on specifying data types in
+     *         JSON, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     *         attributes. For example, equals, greater than, less than, etc. <p>The
+     *         following comparison operators are available: <p><code>EQ | NE | LE |
+     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     *         operators, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     *         </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public QueryRequest withQueryFilter(java.util.Map<String,Condition> queryFilter) {
+        setQueryFilter(queryFilter);
+        return this;
+    }
+
+    /**
+     * Evaluates the query results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>QueryFilter</i> map,
+     * then by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>QueryFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
+     * <p>
+     * The method adds a new key-value pair into QueryFilter parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into QueryFilter.
+     * @param value The corresponding value of the entry to be added into QueryFilter.
+     */
+    public QueryRequest addQueryFilterEntry(String key, Condition value) {
+        if (null == this.queryFilter) {
+            this.queryFilter = new java.util.HashMap<String,Condition>();
+        }
+        if (this.queryFilter.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.queryFilter.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into QueryFilter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public QueryRequest clearQueryFilterEntries() {
+        this.queryFilter = null;
+        return this;
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the
+     * <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     * of the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     * conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @return A logical operator to apply to the conditions in the
+     *         <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     *         of the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     *         conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public String getConditionalOperator() {
+        return conditionalOperator;
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the
+     * <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     * of the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     * conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the
+     *         <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     *         of the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     *         conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public void setConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the
+     * <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     * of the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     * conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the
+     *         <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     *         of the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     *         conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ConditionalOperator
+     */
+    public QueryRequest withConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+        return this;
+    }
+
+    /**
+     * A logical operator to apply to the conditions in the
+     * <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     * of the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     * conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the
+     *         <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     *         of the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     *         conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public void setConditionalOperator(ConditionalOperator conditionalOperator) {
+        this.conditionalOperator = conditionalOperator.toString();
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the
+     * <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     * of the conditions evaluate to true, then the entire map evaluates to
+     * true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     * conditions evaluate to true, then the entire map evaluates to
+     * true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <code>AND</code> is the default. <p>The operation will succeed only if
+     * the entire map evaluates to true.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the
+     *         <i>QueryFilter</i> map: <ul> <li><p><code>AND</code> - If <i>all</i>
+     *         of the conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> <li><p><code>OR</code> - If <i>at least one</i> of the
+     *         conditions evaluate to true, then the entire map evaluates to
+     *         true.</li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     *         <code>AND</code> is the default. <p>The operation will succeed only if
+     *         the entire map evaluates to true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ConditionalOperator
+     */
+    public QueryRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
+        this.conditionalOperator = conditionalOperator.toString();
+        return this;
+    }
+
+    /**
      * Specifies ascending (true) or descending (false) traversal of the
      * index. DynamoDB returns results reflecting the requested order
      * determined by the range key. If the data type is Number, the results
      * are returned in numeric order. For String, the results are returned in
-     * order of ASCII character code values. For Binary, Amazon DynamoDB
-     * treats each byte of the binary data as unsigned when it compares
-     * binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     * results are returned in ascending order.
+     * order of ASCII character code values. For Binary, DynamoDB treats each
+     * byte of the binary data as unsigned when it compares binary values.
+     * <p>If <i>ScanIndexForward</i> is not specified, the results are
+     * returned in ascending order.
      *
      * @return Specifies ascending (true) or descending (false) traversal of the
      *         index. DynamoDB returns results reflecting the requested order
      *         determined by the range key. If the data type is Number, the results
      *         are returned in numeric order. For String, the results are returned in
-     *         order of ASCII character code values. For Binary, Amazon DynamoDB
-     *         treats each byte of the binary data as unsigned when it compares
-     *         binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     *         results are returned in ascending order.
+     *         order of ASCII character code values. For Binary, DynamoDB treats each
+     *         byte of the binary data as unsigned when it compares binary values.
+     *         <p>If <i>ScanIndexForward</i> is not specified, the results are
+     *         returned in ascending order.
      */
     public Boolean isScanIndexForward() {
         return scanIndexForward;
@@ -1876,19 +2429,19 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * index. DynamoDB returns results reflecting the requested order
      * determined by the range key. If the data type is Number, the results
      * are returned in numeric order. For String, the results are returned in
-     * order of ASCII character code values. For Binary, Amazon DynamoDB
-     * treats each byte of the binary data as unsigned when it compares
-     * binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     * results are returned in ascending order.
+     * order of ASCII character code values. For Binary, DynamoDB treats each
+     * byte of the binary data as unsigned when it compares binary values.
+     * <p>If <i>ScanIndexForward</i> is not specified, the results are
+     * returned in ascending order.
      *
      * @param scanIndexForward Specifies ascending (true) or descending (false) traversal of the
      *         index. DynamoDB returns results reflecting the requested order
      *         determined by the range key. If the data type is Number, the results
      *         are returned in numeric order. For String, the results are returned in
-     *         order of ASCII character code values. For Binary, Amazon DynamoDB
-     *         treats each byte of the binary data as unsigned when it compares
-     *         binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     *         results are returned in ascending order.
+     *         order of ASCII character code values. For Binary, DynamoDB treats each
+     *         byte of the binary data as unsigned when it compares binary values.
+     *         <p>If <i>ScanIndexForward</i> is not specified, the results are
+     *         returned in ascending order.
      */
     public void setScanIndexForward(Boolean scanIndexForward) {
         this.scanIndexForward = scanIndexForward;
@@ -1899,10 +2452,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * index. DynamoDB returns results reflecting the requested order
      * determined by the range key. If the data type is Number, the results
      * are returned in numeric order. For String, the results are returned in
-     * order of ASCII character code values. For Binary, Amazon DynamoDB
-     * treats each byte of the binary data as unsigned when it compares
-     * binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     * results are returned in ascending order.
+     * order of ASCII character code values. For Binary, DynamoDB treats each
+     * byte of the binary data as unsigned when it compares binary values.
+     * <p>If <i>ScanIndexForward</i> is not specified, the results are
+     * returned in ascending order.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1910,10 +2463,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         index. DynamoDB returns results reflecting the requested order
      *         determined by the range key. If the data type is Number, the results
      *         are returned in numeric order. For String, the results are returned in
-     *         order of ASCII character code values. For Binary, Amazon DynamoDB
-     *         treats each byte of the binary data as unsigned when it compares
-     *         binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     *         results are returned in ascending order.
+     *         order of ASCII character code values. For Binary, DynamoDB treats each
+     *         byte of the binary data as unsigned when it compares binary values.
+     *         <p>If <i>ScanIndexForward</i> is not specified, the results are
+     *         returned in ascending order.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1928,19 +2481,19 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * index. DynamoDB returns results reflecting the requested order
      * determined by the range key. If the data type is Number, the results
      * are returned in numeric order. For String, the results are returned in
-     * order of ASCII character code values. For Binary, Amazon DynamoDB
-     * treats each byte of the binary data as unsigned when it compares
-     * binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     * results are returned in ascending order.
+     * order of ASCII character code values. For Binary, DynamoDB treats each
+     * byte of the binary data as unsigned when it compares binary values.
+     * <p>If <i>ScanIndexForward</i> is not specified, the results are
+     * returned in ascending order.
      *
      * @return Specifies ascending (true) or descending (false) traversal of the
      *         index. DynamoDB returns results reflecting the requested order
      *         determined by the range key. If the data type is Number, the results
      *         are returned in numeric order. For String, the results are returned in
-     *         order of ASCII character code values. For Binary, Amazon DynamoDB
-     *         treats each byte of the binary data as unsigned when it compares
-     *         binary values. <p>If <i>ScanIndexForward</i> is not specified, the
-     *         results are returned in ascending order.
+     *         order of ASCII character code values. For Binary, DynamoDB treats each
+     *         byte of the binary data as unsigned when it compares binary values.
+     *         <p>If <i>ScanIndexForward</i> is not specified, the results are
+     *         returned in ascending order.
      */
     public Boolean getScanIndexForward() {
         return scanIndexForward;
@@ -2216,6 +2769,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
         if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ",");
         if (getKeyConditions() != null) sb.append("KeyConditions: " + getKeyConditions() + ",");
+        if (getQueryFilter() != null) sb.append("QueryFilter: " + getQueryFilter() + ",");
+        if (getConditionalOperator() != null) sb.append("ConditionalOperator: " + getConditionalOperator() + ",");
         if (isScanIndexForward() != null) sb.append("ScanIndexForward: " + isScanIndexForward() + ",");
         if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");
         if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() );
@@ -2235,6 +2790,8 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
         hashCode = prime * hashCode + ((isConsistentRead() == null) ? 0 : isConsistentRead().hashCode()); 
         hashCode = prime * hashCode + ((getKeyConditions() == null) ? 0 : getKeyConditions().hashCode()); 
+        hashCode = prime * hashCode + ((getQueryFilter() == null) ? 0 : getQueryFilter().hashCode()); 
+        hashCode = prime * hashCode + ((getConditionalOperator() == null) ? 0 : getConditionalOperator().hashCode()); 
         hashCode = prime * hashCode + ((isScanIndexForward() == null) ? 0 : isScanIndexForward().hashCode()); 
         hashCode = prime * hashCode + ((getExclusiveStartKey() == null) ? 0 : getExclusiveStartKey().hashCode()); 
         hashCode = prime * hashCode + ((getReturnConsumedCapacity() == null) ? 0 : getReturnConsumedCapacity().hashCode()); 
@@ -2263,6 +2820,10 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         if (other.isConsistentRead() != null && other.isConsistentRead().equals(this.isConsistentRead()) == false) return false; 
         if (other.getKeyConditions() == null ^ this.getKeyConditions() == null) return false;
         if (other.getKeyConditions() != null && other.getKeyConditions().equals(this.getKeyConditions()) == false) return false; 
+        if (other.getQueryFilter() == null ^ this.getQueryFilter() == null) return false;
+        if (other.getQueryFilter() != null && other.getQueryFilter().equals(this.getQueryFilter()) == false) return false; 
+        if (other.getConditionalOperator() == null ^ this.getConditionalOperator() == null) return false;
+        if (other.getConditionalOperator() != null && other.getConditionalOperator().equals(this.getConditionalOperator()) == false) return false; 
         if (other.isScanIndexForward() == null ^ this.isScanIndexForward() == null) return false;
         if (other.isScanIndexForward() != null && other.isScanIndexForward().equals(this.isScanIndexForward()) == false) return false; 
         if (other.getExclusiveStartKey() == null ^ this.getExclusiveStartKey() == null) return false;

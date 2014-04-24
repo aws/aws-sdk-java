@@ -27,13 +27,31 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * to provide a callback handler.
  * Amazon DynamoDB <b>Overview</b> <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
- * descriptions and samples of the DynamoDB API. For information about
- * application development using this API, see the Amazon DynamoDB
- * Developer Guide.
+ * descriptions and samples of the low-level DynamoDB API. For
+ * information about DynamoDB application development, go to the
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"> Amazon DynamoDB Developer Guide </a>
+ * .
  * </p>
  * <p>
- * The following are short descriptions of each API action, organized by
- * function.
+ * Instead of making the requests to the low-level DynamoDB API directly
+ * from your application, we recommend that you use the AWS Software
+ * Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs
+ * make it unnecessary to call the low-level DynamoDB API directly from
+ * your application. The libraries take care of request authentication,
+ * serialization, and connection management. For more information, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html"> Using the AWS SDKs with DynamoDB </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
+ * If you decide to code against the low-level DynamoDB API directly, you
+ * will need to write the necessary code to authenticate your requests.
+ * For more information on signing your requests, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html"> Using the DynamoDB API </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
+ * The following are short descriptions of each low-level API action,
+ * organized by function.
  * </p>
  * <p>
  * <b>Managing Tables</b>
@@ -74,6 +92,11 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * 
  * </ul>
  * 
+ * </p>
+ * <p>
+ * For conceptual information about managing tables, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  * <p>
  * <b>Reading Data</b>
@@ -119,6 +142,11 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * 
  * </p>
  * <p>
+ * For conceptual information about reading data, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
  * <b>Modifying Data</b>
  * </p>
  * <p>
@@ -157,6 +185,11 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * 
  * </ul>
  * 
+ * </p>
+ * <p>
+ * For conceptual information about modifying data, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  */
 public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
@@ -461,6 +494,12 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * those unprocessed items until all items have been processed.
      * </p>
      * <p>
+     * Note that if <i>none</i> of the items can be processed due to
+     * insufficient provisioned throughput on all of the tables in the
+     * request, then <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> .
+     * </p>
+     * <p>
      * To write one item, you can use the <i>PutItem</i> operation; to delete
      * one item, you can use the <i>DeleteItem</i> operation.
      * </p>
@@ -477,15 +516,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
-     * must include the necessary logic to manage the threads.
-     * </p>
-     * <p>
-     * With languages that don't support threading, such as PHP,
-     * <i>BatchWriteItem</i> will write or delete the specified items one at
-     * a time. In both situations, <i>BatchWriteItem</i> provides an
-     * alternative where the API performs the specified put and delete
-     * operations in parallel, giving you the power of the thread pool
-     * approach without having to introduce complexity into your application.
+     * must include the necessary logic to manage the threads. With languages
+     * that don't support threading, such as PHP, you must update or delete
+     * the specified items one at a time. In both situations,
+     * <i>BatchWriteItem</i> provides an alternative where the API performs
+     * the specified put and delete operations in parallel, giving you the
+     * power of the thread pool approach without having to introduce
+     * complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and delete
@@ -568,6 +605,12 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * those unprocessed items until all items have been processed.
      * </p>
      * <p>
+     * Note that if <i>none</i> of the items can be processed due to
+     * insufficient provisioned throughput on all of the tables in the
+     * request, then <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> .
+     * </p>
+     * <p>
      * To write one item, you can use the <i>PutItem</i> operation; to delete
      * one item, you can use the <i>DeleteItem</i> operation.
      * </p>
@@ -584,15 +627,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
-     * must include the necessary logic to manage the threads.
-     * </p>
-     * <p>
-     * With languages that don't support threading, such as PHP,
-     * <i>BatchWriteItem</i> will write or delete the specified items one at
-     * a time. In both situations, <i>BatchWriteItem</i> provides an
-     * alternative where the API performs the specified put and delete
-     * operations in parallel, giving you the power of the thread pool
-     * approach without having to introduce complexity into your application.
+     * must include the necessary logic to manage the threads. With languages
+     * that don't support threading, such as PHP, you must update or delete
+     * the specified items one at a time. In both situations,
+     * <i>BatchWriteItem</i> provides an alternative where the API performs
+     * the specified put and delete operations in parallel, giving you the
+     * power of the thread pool approach without having to introduce
+     * complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and delete
@@ -978,11 +1019,12 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * or if you have used <i>Limit</i> .
      * </p>
      * <p>
-     * You can query a table, a local secondary index (LSI), or a global
-     * secondary index (GSI). For a query on a table or on an LSI, you can
+     * You can query a table, a local secondary index, or a global secondary
+     * index. For a query on a table or on a local secondary index, you can
      * set <i>ConsistentRead</i> to true and obtain a strongly consistent
-     * result. GSIs support eventually consistent reads only, so do not
-     * specify <i>ConsistentRead</i> when querying a GSI.
+     * result. Global secondary indexes support eventually consistent reads
+     * only, so do not specify <i>ConsistentRead</i> when querying a global
+     * secondary index.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -1027,11 +1069,12 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * or if you have used <i>Limit</i> .
      * </p>
      * <p>
-     * You can query a table, a local secondary index (LSI), or a global
-     * secondary index (GSI). For a query on a table or on an LSI, you can
+     * You can query a table, a local secondary index, or a global secondary
+     * index. For a query on a table or on a local secondary index, you can
      * set <i>ConsistentRead</i> to true and obtain a strongly consistent
-     * result. GSIs support eventually consistent reads only, so do not
-     * specify <i>ConsistentRead</i> when querying a GSI.
+     * result. Global secondary indexes support eventually consistent reads
+     * only, so do not specify <i>ConsistentRead</i> when querying a global
+     * secondary index.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -1085,8 +1128,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * <b>NOTE:</b> To prevent a new item from replacing an existing item,
-     * use a conditional put operation with Exists set to false for the
-     * primary key attribute, or attributes.
+     * use a conditional put operation with ComparisonOperator set to NULL
+     * for the primary key attribute, or attributes.
      * </p>
      * <p>
      * For more information about using this API, see
@@ -1140,8 +1183,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * <b>NOTE:</b> To prevent a new item from replacing an existing item,
-     * use a conditional put operation with Exists set to false for the
-     * primary key attribute, or attributes.
+     * use a conditional put operation with ComparisonOperator set to NULL
+     * for the primary key attribute, or attributes.
      * </p>
      * <p>
      * For more information about using this API, see
@@ -1319,10 +1362,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * assemble the pages of results into one dataset.
      * </p>
      * <p>
-     * If no items can be processed because of insufficient provisioned
-     * throughput on each of the tables involved in the request,
-     * <i>BatchGetItem</i> throws
-     * <i>ProvisionedThroughputExceededException</i> .
+     * If <i>none</i> of the items can be processed due to insufficient
+     * provisioned throughput on all of the tables in the request, then
+     * <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> . If <i>at least one</i>
+     * of the items is successfully processed, then <i>BatchGetItem</i>
+     * completes successfully, while returning the keys of the unread items
+     * in <i>UnprocessedKeys</i> .
      * </p>
      * <p>
      * By default, <i>BatchGetItem</i> performs eventually consistent reads
@@ -1344,7 +1390,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * If a requested item does not exist, it is not returned in the result.
      * Requests for nonexistent items consume the minimum read capacity units
      * according to the type of read. For more information, see
-     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
      * in the Amazon DynamoDB Developer Guide.
      * </p>
      *
@@ -1389,10 +1435,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * assemble the pages of results into one dataset.
      * </p>
      * <p>
-     * If no items can be processed because of insufficient provisioned
-     * throughput on each of the tables involved in the request,
-     * <i>BatchGetItem</i> throws
-     * <i>ProvisionedThroughputExceededException</i> .
+     * If <i>none</i> of the items can be processed due to insufficient
+     * provisioned throughput on all of the tables in the request, then
+     * <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> . If <i>at least one</i>
+     * of the items is successfully processed, then <i>BatchGetItem</i>
+     * completes successfully, while returning the keys of the unread items
+     * in <i>UnprocessedKeys</i> .
      * </p>
      * <p>
      * By default, <i>BatchGetItem</i> performs eventually consistent reads
@@ -1414,7 +1463,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * If a requested item does not exist, it is not returned in the result.
      * Requests for nonexistent items consume the minimum read capacity units
      * according to the type of read. For more information, see
-     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
      * in the Amazon DynamoDB Developer Guide.
      * </p>
      *

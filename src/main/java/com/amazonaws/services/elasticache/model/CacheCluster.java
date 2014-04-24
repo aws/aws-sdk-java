@@ -77,7 +77,7 @@ public class CacheCluster implements Serializable {
     private String preferredAvailabilityZone;
 
     /**
-     * The date and time the cache cluster was created.
+     * The date and time when the cache cluster was created.
      */
     private java.util.Date cacheClusterCreateTime;
 
@@ -139,6 +139,21 @@ public class CacheCluster implements Serializable {
      * replication group.
      */
     private String replicationGroupId;
+
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     */
+    private Integer snapshotRetentionLimit;
+
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code>
+     */
+    private String snapshotWindow;
 
     /**
      * The user-supplied identifier of the cache cluster. This is a unique
@@ -486,29 +501,29 @@ public class CacheCluster implements Serializable {
     }
 
     /**
-     * The date and time the cache cluster was created.
+     * The date and time when the cache cluster was created.
      *
-     * @return The date and time the cache cluster was created.
+     * @return The date and time when the cache cluster was created.
      */
     public java.util.Date getCacheClusterCreateTime() {
         return cacheClusterCreateTime;
     }
     
     /**
-     * The date and time the cache cluster was created.
+     * The date and time when the cache cluster was created.
      *
-     * @param cacheClusterCreateTime The date and time the cache cluster was created.
+     * @param cacheClusterCreateTime The date and time when the cache cluster was created.
      */
     public void setCacheClusterCreateTime(java.util.Date cacheClusterCreateTime) {
         this.cacheClusterCreateTime = cacheClusterCreateTime;
     }
     
     /**
-     * The date and time the cache cluster was created.
+     * The date and time when the cache cluster was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterCreateTime The date and time the cache cluster was created.
+     * @param cacheClusterCreateTime The date and time when the cache cluster was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1023,6 +1038,102 @@ public class CacheCluster implements Serializable {
     }
 
     /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     *
+     * @return The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted.
+     */
+    public Integer getSnapshotRetentionLimit() {
+        return snapshotRetentionLimit;
+    }
+    
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     *
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted.
+     */
+    public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        this.snapshotRetentionLimit = snapshotRetentionLimit;
+    }
+    
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CacheCluster withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        this.snapshotRetentionLimit = snapshotRetentionLimit;
+        return this;
+    }
+
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code>
+     *
+     * @return The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         <code>05:00-09:00</code>
+     */
+    public String getSnapshotWindow() {
+        return snapshotWindow;
+    }
+    
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code>
+     *
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         <code>05:00-09:00</code>
+     */
+    public void setSnapshotWindow(String snapshotWindow) {
+        this.snapshotWindow = snapshotWindow;
+    }
+    
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         <code>05:00-09:00</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CacheCluster withSnapshotWindow(String snapshotWindow) {
+        this.snapshotWindow = snapshotWindow;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1053,7 +1164,9 @@ public class CacheCluster implements Serializable {
         if (getCacheNodes() != null) sb.append("CacheNodes: " + getCacheNodes() + ",");
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
         if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
-        if (getReplicationGroupId() != null) sb.append("ReplicationGroupId: " + getReplicationGroupId() );
+        if (getReplicationGroupId() != null) sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+        if (getSnapshotRetentionLimit() != null) sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
+        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() );
         sb.append("}");
         return sb.toString();
     }
@@ -1083,6 +1196,8 @@ public class CacheCluster implements Serializable {
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode()); 
         return hashCode;
     }
     
@@ -1134,6 +1249,10 @@ public class CacheCluster implements Serializable {
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
         if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null) return false;
         if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false) return false; 
+        if (other.getSnapshotRetentionLimit() == null ^ this.getSnapshotRetentionLimit() == null) return false;
+        if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false) return false; 
+        if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null) return false;
+        if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false) return false; 
         return true;
     }
     

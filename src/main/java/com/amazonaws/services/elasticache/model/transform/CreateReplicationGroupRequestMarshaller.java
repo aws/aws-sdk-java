@@ -38,7 +38,7 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         Request<CreateReplicationGroupRequest> request = new DefaultRequest<CreateReplicationGroupRequest>(createReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateReplicationGroup");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2014-03-24");
 
         if (createReplicationGroupRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(createReplicationGroupRequest.getReplicationGroupId()));

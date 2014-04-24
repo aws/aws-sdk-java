@@ -62,41 +62,166 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * A map of attribute/condition pairs. This is the conditional block for
-     * the <i>DeleteItem</i> operation. All the conditions must be met for
-     * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not DynamoDB should check to see if the
-     * attribute value already exists; or if the attribute value exists and
-     * has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for DynamoDB to check,
-     * along with the following: <ul> <li> <p><i>Value</i> - A value for
-     * DynamoDB to compare with an attribute. When performing the comparison,
-     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     * Causes DynamoDB to evaluate the value before attempting a conditional
-     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     * DynamoDB will check to see if that attribute value already exists in
-     * the table. If it is found, then the operation succeeds. If it is not
-     * found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, DynamoDB assumes that the attribute value does
-     * <i>not</i> exist in the table. If in fact the value does not exist,
-     * then the assumption is valid and the operation succeeds. If the value
-     * is found, despite the assumption that it does not exist, the operation
-     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     * because it is implied. <p>DynamoDB returns a
-     * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     * <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     * value to exist, but don't specify what that value is.) </li> <li>
-     * <p><i>Exists</i> is <code>false</code> but you also specify a
-     * <i>Value</i>. (You cannot expect an attribute to have a value, while
-     * also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     * specify more than one condition for <i>Exists</i>, then all of the
-     * conditions must evaluate to true. (In other words, the conditions are
-     * ANDed together.) Otherwise, the conditional operation will fail.
+     * the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     * consists of an attribute name, a comparison operator, and one or more
+     * values. DynamoDB compares the attribute with the value(s) you
+     * supplied, using the comparison operator. For each <i>Expected</i>
+     * element, the result of the evaluation is either true or false. <p>If
+     * you specify more than one element in the <i>Expected</i> map, then by
+     * default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>If the <i>Expected</i> map
+     * evaluates to true, then the conditional operation succeeds; otherwise,
+     * it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     * for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     * <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     * One or more values to evaluate against the supplied attribute. The
+     * number of values in the list depends on the <i>ComparisonOperator</i>
+     * being used. <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     * When performing the comparison, DynamoDB uses strongly consistent
+     * reads. <p>The following comparison operators are available:
+     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     * : Equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If the target attribute of the comparison is a
+     * String, then the operation checks for a substring match. If the target
+     * attribute of the comparison is Binary, then the operation looks for a
+     * subsequence of the target that matches the input. If the target
+     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     * operation checks for a member of the set (not as a substring). </li>
+     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     * subsequence, or absence of a value in a set.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If the target attribute of the comparison is a String, then the
+     * operation checks for the absence of a substring match. If the target
+     * attribute of the comparison is Binary, then the operation checks for
+     * the absence of a subsequence of the target that matches the input. If
+     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     * then the operation checks for the absence of a member of the set (not
+     * as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     * prefix. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String or Binary (not a Number or a
+     * set). The target attribute of the comparison must be a String or
+     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     * checks for exact matches. <p><i>AttributeValueList</i> can contain
+     * more than one <i>AttributeValue</i> of type String, Number, or Binary
+     * (not a set). The target attribute of the comparison must be of the
+     * same type and exact value to match. A String never matches a String
+     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     * first value, and less than or equal to the second value.
+     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     * elements of the same type, either String, Number, or Binary (not a
+     * set). A target attribute matches if the target value is greater than,
+     * or equal to, the first element and less than, or equal to, the second
+     * element. If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not compare to
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     * backward compatibility with previous DynamoDB releases, the following
+     * parameters can be used instead of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value vefore attempting the
+     * conditional operation: <ul> <li><p>If <i>Exists</i> is
+     * <code>true</code>, DynamoDB will check to see if that attribute???
+     * value already exists in the table. If it is found, then the condition
+     * evaluates to true; otherwise the condition evaluate to false.</li>
+     * <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     * the attribute value does??? <i>not</i> exist in the table. If in fact
+     * the value does not exist, then the??? assumption is valid and the
+     * condition evaluates to true. If the value is found, despite the
+     * assumption that it does not exist, the condition evaluates to
+     * false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     * accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     * deprecated. We recommend that you use <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     * much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     * parameters are incompatible with <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>. If you attempt to use both sets of
+     * parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     * </note>
      */
     private java.util.Map<String,ExpectedAttributeValue> expected;
+
+    /**
+     * A logical operator to apply to the conditions in the <i>Expected</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     */
+    private String conditionalOperator;
 
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
@@ -356,74 +481,294 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * A map of attribute/condition pairs. This is the conditional block for
-     * the <i>DeleteItem</i> operation. All the conditions must be met for
-     * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not DynamoDB should check to see if the
-     * attribute value already exists; or if the attribute value exists and
-     * has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for DynamoDB to check,
-     * along with the following: <ul> <li> <p><i>Value</i> - A value for
-     * DynamoDB to compare with an attribute. When performing the comparison,
-     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     * Causes DynamoDB to evaluate the value before attempting a conditional
-     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     * DynamoDB will check to see if that attribute value already exists in
-     * the table. If it is found, then the operation succeeds. If it is not
-     * found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, DynamoDB assumes that the attribute value does
-     * <i>not</i> exist in the table. If in fact the value does not exist,
-     * then the assumption is valid and the operation succeeds. If the value
-     * is found, despite the assumption that it does not exist, the operation
-     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     * because it is implied. <p>DynamoDB returns a
-     * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     * <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     * value to exist, but don't specify what that value is.) </li> <li>
-     * <p><i>Exists</i> is <code>false</code> but you also specify a
-     * <i>Value</i>. (You cannot expect an attribute to have a value, while
-     * also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     * specify more than one condition for <i>Exists</i>, then all of the
-     * conditions must evaluate to true. (In other words, the conditions are
-     * ANDed together.) Otherwise, the conditional operation will fail.
+     * the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     * consists of an attribute name, a comparison operator, and one or more
+     * values. DynamoDB compares the attribute with the value(s) you
+     * supplied, using the comparison operator. For each <i>Expected</i>
+     * element, the result of the evaluation is either true or false. <p>If
+     * you specify more than one element in the <i>Expected</i> map, then by
+     * default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>If the <i>Expected</i> map
+     * evaluates to true, then the conditional operation succeeds; otherwise,
+     * it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     * for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     * <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     * One or more values to evaluate against the supplied attribute. The
+     * number of values in the list depends on the <i>ComparisonOperator</i>
+     * being used. <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     * When performing the comparison, DynamoDB uses strongly consistent
+     * reads. <p>The following comparison operators are available:
+     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     * : Equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If the target attribute of the comparison is a
+     * String, then the operation checks for a substring match. If the target
+     * attribute of the comparison is Binary, then the operation looks for a
+     * subsequence of the target that matches the input. If the target
+     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     * operation checks for a member of the set (not as a substring). </li>
+     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     * subsequence, or absence of a value in a set.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If the target attribute of the comparison is a String, then the
+     * operation checks for the absence of a substring match. If the target
+     * attribute of the comparison is Binary, then the operation checks for
+     * the absence of a subsequence of the target that matches the input. If
+     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     * then the operation checks for the absence of a member of the set (not
+     * as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     * prefix. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String or Binary (not a Number or a
+     * set). The target attribute of the comparison must be a String or
+     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     * checks for exact matches. <p><i>AttributeValueList</i> can contain
+     * more than one <i>AttributeValue</i> of type String, Number, or Binary
+     * (not a set). The target attribute of the comparison must be of the
+     * same type and exact value to match. A String never matches a String
+     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     * first value, and less than or equal to the second value.
+     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     * elements of the same type, either String, Number, or Binary (not a
+     * set). A target attribute matches if the target value is greater than,
+     * or equal to, the first element and less than, or equal to, the second
+     * element. If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not compare to
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     * backward compatibility with previous DynamoDB releases, the following
+     * parameters can be used instead of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value vefore attempting the
+     * conditional operation: <ul> <li><p>If <i>Exists</i> is
+     * <code>true</code>, DynamoDB will check to see if that attribute???
+     * value already exists in the table. If it is found, then the condition
+     * evaluates to true; otherwise the condition evaluate to false.</li>
+     * <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     * the attribute value does??? <i>not</i> exist in the table. If in fact
+     * the value does not exist, then the??? assumption is valid and the
+     * condition evaluates to true. If the value is found, despite the
+     * assumption that it does not exist, the condition evaluates to
+     * false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     * accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     * deprecated. We recommend that you use <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     * much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     * parameters are incompatible with <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>. If you attempt to use both sets of
+     * parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     * </note>
      *
      * @return A map of attribute/condition pairs. This is the conditional block for
-     *         the <i>DeleteItem</i> operation. All the conditions must be met for
-     *         the operation to succeed. <p><i>Expected</i> allows you to provide an
-     *         attribute name, and whether or not DynamoDB should check to see if the
-     *         attribute value already exists; or if the attribute value exists and
-     *         has a particular value before changing it. <p>Each item in
-     *         <i>Expected</i> represents an attribute name for DynamoDB to check,
-     *         along with the following: <ul> <li> <p><i>Value</i> - A value for
-     *         DynamoDB to compare with an attribute. When performing the comparison,
-     *         strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     *         Causes DynamoDB to evaluate the value before attempting a conditional
-     *         operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     *         DynamoDB will check to see if that attribute value already exists in
-     *         the table. If it is found, then the operation succeeds. If it is not
-     *         found, the operation fails with a
-     *         <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     *         is <code>false</code>, DynamoDB assumes that the attribute value does
-     *         <i>not</i> exist in the table. If in fact the value does not exist,
-     *         then the assumption is valid and the operation succeeds. If the value
-     *         is found, despite the assumption that it does not exist, the operation
-     *         fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     *         <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     *         supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     *         exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     *         because it is implied. <p>DynamoDB returns a
-     *         <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     *         <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     *         value to exist, but don't specify what that value is.) </li> <li>
-     *         <p><i>Exists</i> is <code>false</code> but you also specify a
-     *         <i>Value</i>. (You cannot expect an attribute to have a value, while
-     *         also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     *         specify more than one condition for <i>Exists</i>, then all of the
-     *         conditions must evaluate to true. (In other words, the conditions are
-     *         ANDed together.) Otherwise, the conditional operation will fail.
+     *         the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     *         consists of an attribute name, a comparison operator, and one or more
+     *         values. DynamoDB compares the attribute with the value(s) you
+     *         supplied, using the comparison operator. For each <i>Expected</i>
+     *         element, the result of the evaluation is either true or false. <p>If
+     *         you specify more than one element in the <i>Expected</i> map, then by
+     *         default all of the conditions must evaluate to true. In other words,
+     *         the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>If the <i>Expected</i> map
+     *         evaluates to true, then the conditional operation succeeds; otherwise,
+     *         it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     *         for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     *         <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     *         One or more values to evaluate against the supplied attribute. The
+     *         number of values in the list depends on the <i>ComparisonOperator</i>
+     *         being used. <p>For type Number, value comparisons are numeric.
+     *         <p>String value comparisons for greater than, equals, or less than are
+     *         based on ASCII character code values. For example, <code>a</code> is
+     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         <code>B</code>. For a list of code values, see <a
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
+     *         unsigned when it compares binary values, for example when evaluating
+     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     *         comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     *         When performing the comparison, DynamoDB uses strongly consistent
+     *         reads. <p>The following comparison operators are available:
+     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     *         descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     *         : Equal. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     *         Number Set, or Binary Set. If an item contains an
+     *         <i>AttributeValue</i> of a different type than the one specified in
+     *         the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     *         Number Set, or Binary Set. If an item contains an
+     *         <i>AttributeValue</i> of a different type than the one specified in
+     *         the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     *         or equal. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     *         attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     *         not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     *         subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     *         contain only one <i>AttributeValue</i> of type String, Number, or
+     *         Binary (not a set). If the target attribute of the comparison is a
+     *         String, then the operation checks for a substring match. If the target
+     *         attribute of the comparison is Binary, then the operation looks for a
+     *         subsequence of the target that matches the input. If the target
+     *         attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     *         operation checks for a member of the set (not as a substring). </li>
+     *         <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     *         subsequence, or absence of a value in a set.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If the target attribute of the comparison is a String, then the
+     *         operation checks for the absence of a substring match. If the target
+     *         attribute of the comparison is Binary, then the operation checks for
+     *         the absence of a subsequence of the target that matches the input. If
+     *         the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     *         then the operation checks for the absence of a member of the set (not
+     *         as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     *         prefix. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String or Binary (not a Number or a
+     *         set). The target attribute of the comparison must be a String or
+     *         Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     *         checks for exact matches. <p><i>AttributeValueList</i> can contain
+     *         more than one <i>AttributeValue</i> of type String, Number, or Binary
+     *         (not a set). The target attribute of the comparison must be of the
+     *         same type and exact value to match. A String never matches a String
+     *         set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     *         first value, and less than or equal to the second value.
+     *         <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     *         elements of the same type, either String, Number, or Binary (not a
+     *         set). A target attribute matches if the target value is greater than,
+     *         or equal to, the first element and less than, or equal to, the second
+     *         element. If an item contains an <i>AttributeValue</i> of a different
+     *         type than the one specified in the request, the value does not match.
+     *         For example, <code>{"S":"6"}</code> does not compare to
+     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     *         usage examples of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     *         Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     *         backward compatibility with previous DynamoDB releases, the following
+     *         parameters can be used instead of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     *         DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     *         Causes DynamoDB to evaluate the value vefore attempting the
+     *         conditional operation: <ul> <li><p>If <i>Exists</i> is
+     *         <code>true</code>, DynamoDB will check to see if that attribute???
+     *         value already exists in the table. If it is found, then the condition
+     *         evaluates to true; otherwise the condition evaluate to false.</li>
+     *         <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     *         the attribute value does??? <i>not</i> exist in the table. If in fact
+     *         the value does not exist, then the??? assumption is valid and the
+     *         condition evaluates to true. If the value is found, despite the
+     *         assumption that it does not exist, the condition evaluates to
+     *         false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     *         accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     *         deprecated. We recommend that you use <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     *         much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     *         parameters are incompatible with <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>. If you attempt to use both sets of
+     *         parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     *         </note>
      */
     public java.util.Map<String,ExpectedAttributeValue> getExpected() {
         
@@ -432,74 +777,294 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * A map of attribute/condition pairs. This is the conditional block for
-     * the <i>DeleteItem</i> operation. All the conditions must be met for
-     * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not DynamoDB should check to see if the
-     * attribute value already exists; or if the attribute value exists and
-     * has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for DynamoDB to check,
-     * along with the following: <ul> <li> <p><i>Value</i> - A value for
-     * DynamoDB to compare with an attribute. When performing the comparison,
-     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     * Causes DynamoDB to evaluate the value before attempting a conditional
-     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     * DynamoDB will check to see if that attribute value already exists in
-     * the table. If it is found, then the operation succeeds. If it is not
-     * found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, DynamoDB assumes that the attribute value does
-     * <i>not</i> exist in the table. If in fact the value does not exist,
-     * then the assumption is valid and the operation succeeds. If the value
-     * is found, despite the assumption that it does not exist, the operation
-     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     * because it is implied. <p>DynamoDB returns a
-     * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     * <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     * value to exist, but don't specify what that value is.) </li> <li>
-     * <p><i>Exists</i> is <code>false</code> but you also specify a
-     * <i>Value</i>. (You cannot expect an attribute to have a value, while
-     * also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     * specify more than one condition for <i>Exists</i>, then all of the
-     * conditions must evaluate to true. (In other words, the conditions are
-     * ANDed together.) Otherwise, the conditional operation will fail.
+     * the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     * consists of an attribute name, a comparison operator, and one or more
+     * values. DynamoDB compares the attribute with the value(s) you
+     * supplied, using the comparison operator. For each <i>Expected</i>
+     * element, the result of the evaluation is either true or false. <p>If
+     * you specify more than one element in the <i>Expected</i> map, then by
+     * default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>If the <i>Expected</i> map
+     * evaluates to true, then the conditional operation succeeds; otherwise,
+     * it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     * for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     * <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     * One or more values to evaluate against the supplied attribute. The
+     * number of values in the list depends on the <i>ComparisonOperator</i>
+     * being used. <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     * When performing the comparison, DynamoDB uses strongly consistent
+     * reads. <p>The following comparison operators are available:
+     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     * : Equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If the target attribute of the comparison is a
+     * String, then the operation checks for a substring match. If the target
+     * attribute of the comparison is Binary, then the operation looks for a
+     * subsequence of the target that matches the input. If the target
+     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     * operation checks for a member of the set (not as a substring). </li>
+     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     * subsequence, or absence of a value in a set.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If the target attribute of the comparison is a String, then the
+     * operation checks for the absence of a substring match. If the target
+     * attribute of the comparison is Binary, then the operation checks for
+     * the absence of a subsequence of the target that matches the input. If
+     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     * then the operation checks for the absence of a member of the set (not
+     * as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     * prefix. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String or Binary (not a Number or a
+     * set). The target attribute of the comparison must be a String or
+     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     * checks for exact matches. <p><i>AttributeValueList</i> can contain
+     * more than one <i>AttributeValue</i> of type String, Number, or Binary
+     * (not a set). The target attribute of the comparison must be of the
+     * same type and exact value to match. A String never matches a String
+     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     * first value, and less than or equal to the second value.
+     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     * elements of the same type, either String, Number, or Binary (not a
+     * set). A target attribute matches if the target value is greater than,
+     * or equal to, the first element and less than, or equal to, the second
+     * element. If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not compare to
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     * backward compatibility with previous DynamoDB releases, the following
+     * parameters can be used instead of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value vefore attempting the
+     * conditional operation: <ul> <li><p>If <i>Exists</i> is
+     * <code>true</code>, DynamoDB will check to see if that attribute???
+     * value already exists in the table. If it is found, then the condition
+     * evaluates to true; otherwise the condition evaluate to false.</li>
+     * <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     * the attribute value does??? <i>not</i> exist in the table. If in fact
+     * the value does not exist, then the??? assumption is valid and the
+     * condition evaluates to true. If the value is found, despite the
+     * assumption that it does not exist, the condition evaluates to
+     * false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     * accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     * deprecated. We recommend that you use <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     * much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     * parameters are incompatible with <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>. If you attempt to use both sets of
+     * parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     * </note>
      *
      * @param expected A map of attribute/condition pairs. This is the conditional block for
-     *         the <i>DeleteItem</i> operation. All the conditions must be met for
-     *         the operation to succeed. <p><i>Expected</i> allows you to provide an
-     *         attribute name, and whether or not DynamoDB should check to see if the
-     *         attribute value already exists; or if the attribute value exists and
-     *         has a particular value before changing it. <p>Each item in
-     *         <i>Expected</i> represents an attribute name for DynamoDB to check,
-     *         along with the following: <ul> <li> <p><i>Value</i> - A value for
-     *         DynamoDB to compare with an attribute. When performing the comparison,
-     *         strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     *         Causes DynamoDB to evaluate the value before attempting a conditional
-     *         operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     *         DynamoDB will check to see if that attribute value already exists in
-     *         the table. If it is found, then the operation succeeds. If it is not
-     *         found, the operation fails with a
-     *         <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     *         is <code>false</code>, DynamoDB assumes that the attribute value does
-     *         <i>not</i> exist in the table. If in fact the value does not exist,
-     *         then the assumption is valid and the operation succeeds. If the value
-     *         is found, despite the assumption that it does not exist, the operation
-     *         fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     *         <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     *         supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     *         exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     *         because it is implied. <p>DynamoDB returns a
-     *         <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     *         <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     *         value to exist, but don't specify what that value is.) </li> <li>
-     *         <p><i>Exists</i> is <code>false</code> but you also specify a
-     *         <i>Value</i>. (You cannot expect an attribute to have a value, while
-     *         also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     *         specify more than one condition for <i>Exists</i>, then all of the
-     *         conditions must evaluate to true. (In other words, the conditions are
-     *         ANDed together.) Otherwise, the conditional operation will fail.
+     *         the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     *         consists of an attribute name, a comparison operator, and one or more
+     *         values. DynamoDB compares the attribute with the value(s) you
+     *         supplied, using the comparison operator. For each <i>Expected</i>
+     *         element, the result of the evaluation is either true or false. <p>If
+     *         you specify more than one element in the <i>Expected</i> map, then by
+     *         default all of the conditions must evaluate to true. In other words,
+     *         the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>If the <i>Expected</i> map
+     *         evaluates to true, then the conditional operation succeeds; otherwise,
+     *         it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     *         for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     *         <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     *         One or more values to evaluate against the supplied attribute. The
+     *         number of values in the list depends on the <i>ComparisonOperator</i>
+     *         being used. <p>For type Number, value comparisons are numeric.
+     *         <p>String value comparisons for greater than, equals, or less than are
+     *         based on ASCII character code values. For example, <code>a</code> is
+     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         <code>B</code>. For a list of code values, see <a
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
+     *         unsigned when it compares binary values, for example when evaluating
+     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     *         comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     *         When performing the comparison, DynamoDB uses strongly consistent
+     *         reads. <p>The following comparison operators are available:
+     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     *         descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     *         : Equal. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     *         Number Set, or Binary Set. If an item contains an
+     *         <i>AttributeValue</i> of a different type than the one specified in
+     *         the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     *         Number Set, or Binary Set. If an item contains an
+     *         <i>AttributeValue</i> of a different type than the one specified in
+     *         the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     *         or equal. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     *         attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     *         not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     *         subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     *         contain only one <i>AttributeValue</i> of type String, Number, or
+     *         Binary (not a set). If the target attribute of the comparison is a
+     *         String, then the operation checks for a substring match. If the target
+     *         attribute of the comparison is Binary, then the operation looks for a
+     *         subsequence of the target that matches the input. If the target
+     *         attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     *         operation checks for a member of the set (not as a substring). </li>
+     *         <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     *         subsequence, or absence of a value in a set.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If the target attribute of the comparison is a String, then the
+     *         operation checks for the absence of a substring match. If the target
+     *         attribute of the comparison is Binary, then the operation checks for
+     *         the absence of a subsequence of the target that matches the input. If
+     *         the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     *         then the operation checks for the absence of a member of the set (not
+     *         as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     *         prefix. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String or Binary (not a Number or a
+     *         set). The target attribute of the comparison must be a String or
+     *         Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     *         checks for exact matches. <p><i>AttributeValueList</i> can contain
+     *         more than one <i>AttributeValue</i> of type String, Number, or Binary
+     *         (not a set). The target attribute of the comparison must be of the
+     *         same type and exact value to match. A String never matches a String
+     *         set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     *         first value, and less than or equal to the second value.
+     *         <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     *         elements of the same type, either String, Number, or Binary (not a
+     *         set). A target attribute matches if the target value is greater than,
+     *         or equal to, the first element and less than, or equal to, the second
+     *         element. If an item contains an <i>AttributeValue</i> of a different
+     *         type than the one specified in the request, the value does not match.
+     *         For example, <code>{"S":"6"}</code> does not compare to
+     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     *         usage examples of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     *         Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     *         backward compatibility with previous DynamoDB releases, the following
+     *         parameters can be used instead of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     *         DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     *         Causes DynamoDB to evaluate the value vefore attempting the
+     *         conditional operation: <ul> <li><p>If <i>Exists</i> is
+     *         <code>true</code>, DynamoDB will check to see if that attribute???
+     *         value already exists in the table. If it is found, then the condition
+     *         evaluates to true; otherwise the condition evaluate to false.</li>
+     *         <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     *         the attribute value does??? <i>not</i> exist in the table. If in fact
+     *         the value does not exist, then the??? assumption is valid and the
+     *         condition evaluates to true. If the value is found, despite the
+     *         assumption that it does not exist, the condition evaluates to
+     *         false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     *         accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     *         deprecated. We recommend that you use <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     *         much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     *         parameters are incompatible with <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>. If you attempt to use both sets of
+     *         parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     *         </note>
      */
     public void setExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
         this.expected = expected;
@@ -507,76 +1072,296 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * A map of attribute/condition pairs. This is the conditional block for
-     * the <i>DeleteItem</i> operation. All the conditions must be met for
-     * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not DynamoDB should check to see if the
-     * attribute value already exists; or if the attribute value exists and
-     * has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for DynamoDB to check,
-     * along with the following: <ul> <li> <p><i>Value</i> - A value for
-     * DynamoDB to compare with an attribute. When performing the comparison,
-     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     * Causes DynamoDB to evaluate the value before attempting a conditional
-     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     * DynamoDB will check to see if that attribute value already exists in
-     * the table. If it is found, then the operation succeeds. If it is not
-     * found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, DynamoDB assumes that the attribute value does
-     * <i>not</i> exist in the table. If in fact the value does not exist,
-     * then the assumption is valid and the operation succeeds. If the value
-     * is found, despite the assumption that it does not exist, the operation
-     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     * because it is implied. <p>DynamoDB returns a
-     * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     * <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     * value to exist, but don't specify what that value is.) </li> <li>
-     * <p><i>Exists</i> is <code>false</code> but you also specify a
-     * <i>Value</i>. (You cannot expect an attribute to have a value, while
-     * also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     * specify more than one condition for <i>Exists</i>, then all of the
-     * conditions must evaluate to true. (In other words, the conditions are
-     * ANDed together.) Otherwise, the conditional operation will fail.
+     * the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     * consists of an attribute name, a comparison operator, and one or more
+     * values. DynamoDB compares the attribute with the value(s) you
+     * supplied, using the comparison operator. For each <i>Expected</i>
+     * element, the result of the evaluation is either true or false. <p>If
+     * you specify more than one element in the <i>Expected</i> map, then by
+     * default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>If the <i>Expected</i> map
+     * evaluates to true, then the conditional operation succeeds; otherwise,
+     * it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     * for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     * <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     * One or more values to evaluate against the supplied attribute. The
+     * number of values in the list depends on the <i>ComparisonOperator</i>
+     * being used. <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     * When performing the comparison, DynamoDB uses strongly consistent
+     * reads. <p>The following comparison operators are available:
+     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     * : Equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If the target attribute of the comparison is a
+     * String, then the operation checks for a substring match. If the target
+     * attribute of the comparison is Binary, then the operation looks for a
+     * subsequence of the target that matches the input. If the target
+     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     * operation checks for a member of the set (not as a substring). </li>
+     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     * subsequence, or absence of a value in a set.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If the target attribute of the comparison is a String, then the
+     * operation checks for the absence of a substring match. If the target
+     * attribute of the comparison is Binary, then the operation checks for
+     * the absence of a subsequence of the target that matches the input. If
+     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     * then the operation checks for the absence of a member of the set (not
+     * as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     * prefix. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String or Binary (not a Number or a
+     * set). The target attribute of the comparison must be a String or
+     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     * checks for exact matches. <p><i>AttributeValueList</i> can contain
+     * more than one <i>AttributeValue</i> of type String, Number, or Binary
+     * (not a set). The target attribute of the comparison must be of the
+     * same type and exact value to match. A String never matches a String
+     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     * first value, and less than or equal to the second value.
+     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     * elements of the same type, either String, Number, or Binary (not a
+     * set). A target attribute matches if the target value is greater than,
+     * or equal to, the first element and less than, or equal to, the second
+     * element. If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not compare to
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     * backward compatibility with previous DynamoDB releases, the following
+     * parameters can be used instead of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value vefore attempting the
+     * conditional operation: <ul> <li><p>If <i>Exists</i> is
+     * <code>true</code>, DynamoDB will check to see if that attribute???
+     * value already exists in the table. If it is found, then the condition
+     * evaluates to true; otherwise the condition evaluate to false.</li>
+     * <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     * the attribute value does??? <i>not</i> exist in the table. If in fact
+     * the value does not exist, then the??? assumption is valid and the
+     * condition evaluates to true. If the value is found, despite the
+     * assumption that it does not exist, the condition evaluates to
+     * false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     * accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     * deprecated. We recommend that you use <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     * much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     * parameters are incompatible with <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>. If you attempt to use both sets of
+     * parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expected A map of attribute/condition pairs. This is the conditional block for
-     *         the <i>DeleteItem</i> operation. All the conditions must be met for
-     *         the operation to succeed. <p><i>Expected</i> allows you to provide an
-     *         attribute name, and whether or not DynamoDB should check to see if the
-     *         attribute value already exists; or if the attribute value exists and
-     *         has a particular value before changing it. <p>Each item in
-     *         <i>Expected</i> represents an attribute name for DynamoDB to check,
-     *         along with the following: <ul> <li> <p><i>Value</i> - A value for
-     *         DynamoDB to compare with an attribute. When performing the comparison,
-     *         strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     *         Causes DynamoDB to evaluate the value before attempting a conditional
-     *         operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     *         DynamoDB will check to see if that attribute value already exists in
-     *         the table. If it is found, then the operation succeeds. If it is not
-     *         found, the operation fails with a
-     *         <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     *         is <code>false</code>, DynamoDB assumes that the attribute value does
-     *         <i>not</i> exist in the table. If in fact the value does not exist,
-     *         then the assumption is valid and the operation succeeds. If the value
-     *         is found, despite the assumption that it does not exist, the operation
-     *         fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     *         <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     *         supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     *         exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     *         because it is implied. <p>DynamoDB returns a
-     *         <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     *         <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     *         value to exist, but don't specify what that value is.) </li> <li>
-     *         <p><i>Exists</i> is <code>false</code> but you also specify a
-     *         <i>Value</i>. (You cannot expect an attribute to have a value, while
-     *         also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     *         specify more than one condition for <i>Exists</i>, then all of the
-     *         conditions must evaluate to true. (In other words, the conditions are
-     *         ANDed together.) Otherwise, the conditional operation will fail.
+     *         the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     *         consists of an attribute name, a comparison operator, and one or more
+     *         values. DynamoDB compares the attribute with the value(s) you
+     *         supplied, using the comparison operator. For each <i>Expected</i>
+     *         element, the result of the evaluation is either true or false. <p>If
+     *         you specify more than one element in the <i>Expected</i> map, then by
+     *         default all of the conditions must evaluate to true. In other words,
+     *         the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>If the <i>Expected</i> map
+     *         evaluates to true, then the conditional operation succeeds; otherwise,
+     *         it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     *         for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     *         <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     *         One or more values to evaluate against the supplied attribute. The
+     *         number of values in the list depends on the <i>ComparisonOperator</i>
+     *         being used. <p>For type Number, value comparisons are numeric.
+     *         <p>String value comparisons for greater than, equals, or less than are
+     *         based on ASCII character code values. For example, <code>a</code> is
+     *         greater than <code>A</code>, and <code>aa</code> is greater than
+     *         <code>B</code>. For a list of code values, see <a
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         <p>For Binary, DynamoDB treats each byte of the binary data as
+     *         unsigned when it compares binary values, for example when evaluating
+     *         query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     *         comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     *         When performing the comparison, DynamoDB uses strongly consistent
+     *         reads. <p>The following comparison operators are available:
+     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     *         descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     *         : Equal. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     *         Number Set, or Binary Set. If an item contains an
+     *         <i>AttributeValue</i> of a different type than the one specified in
+     *         the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     *         Number Set, or Binary Set. If an item contains an
+     *         <i>AttributeValue</i> of a different type than the one specified in
+     *         the request, the value does not match. For example,
+     *         <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     *         <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     *         "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     *         or equal. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If an item contains an <i>AttributeValue</i> of a different type than
+     *         the one specified in the request, the value does not match. For
+     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     *         attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     *         not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     *         subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     *         contain only one <i>AttributeValue</i> of type String, Number, or
+     *         Binary (not a set). If the target attribute of the comparison is a
+     *         String, then the operation checks for a substring match. If the target
+     *         attribute of the comparison is Binary, then the operation looks for a
+     *         subsequence of the target that matches the input. If the target
+     *         attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     *         operation checks for a member of the set (not as a substring). </li>
+     *         <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     *         subsequence, or absence of a value in a set.
+     *         <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     *         If the target attribute of the comparison is a String, then the
+     *         operation checks for the absence of a substring match. If the target
+     *         attribute of the comparison is Binary, then the operation checks for
+     *         the absence of a subsequence of the target that matches the input. If
+     *         the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     *         then the operation checks for the absence of a member of the set (not
+     *         as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     *         prefix. <p><i>AttributeValueList</i> can contain only one
+     *         <i>AttributeValue</i> of type String or Binary (not a Number or a
+     *         set). The target attribute of the comparison must be a String or
+     *         Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     *         checks for exact matches. <p><i>AttributeValueList</i> can contain
+     *         more than one <i>AttributeValue</i> of type String, Number, or Binary
+     *         (not a set). The target attribute of the comparison must be of the
+     *         same type and exact value to match. A String never matches a String
+     *         set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     *         first value, and less than or equal to the second value.
+     *         <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     *         elements of the same type, either String, Number, or Binary (not a
+     *         set). A target attribute matches if the target value is greater than,
+     *         or equal to, the first element and less than, or equal to, the second
+     *         element. If an item contains an <i>AttributeValue</i> of a different
+     *         type than the one specified in the request, the value does not match.
+     *         For example, <code>{"S":"6"}</code> does not compare to
+     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     *         usage examples of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     *         Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     *         backward compatibility with previous DynamoDB releases, the following
+     *         parameters can be used instead of <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     *         DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     *         Causes DynamoDB to evaluate the value vefore attempting the
+     *         conditional operation: <ul> <li><p>If <i>Exists</i> is
+     *         <code>true</code>, DynamoDB will check to see if that attribute???
+     *         value already exists in the table. If it is found, then the condition
+     *         evaluates to true; otherwise the condition evaluate to false.</li>
+     *         <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     *         the attribute value does??? <i>not</i> exist in the table. If in fact
+     *         the value does not exist, then the??? assumption is valid and the
+     *         condition evaluates to true. If the value is found, despite the
+     *         assumption that it does not exist, the condition evaluates to
+     *         false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     *         accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     *         deprecated. We recommend that you use <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     *         much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     *         parameters are incompatible with <i>AttributeValueList</i> and
+     *         <i>ComparisonOperator</i>. If you attempt to use both sets of
+     *         parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -588,39 +1373,149 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * A map of attribute/condition pairs. This is the conditional block for
-     * the <i>DeleteItem</i> operation. All the conditions must be met for
-     * the operation to succeed. <p><i>Expected</i> allows you to provide an
-     * attribute name, and whether or not DynamoDB should check to see if the
-     * attribute value already exists; or if the attribute value exists and
-     * has a particular value before changing it. <p>Each item in
-     * <i>Expected</i> represents an attribute name for DynamoDB to check,
-     * along with the following: <ul> <li> <p><i>Value</i> - A value for
-     * DynamoDB to compare with an attribute. When performing the comparison,
-     * strongly consistent reads are used. </li> <li> <p><i>Exists</i> -
-     * Causes DynamoDB to evaluate the value before attempting a conditional
-     * operation: <ul> <li> <p>If <i>Exists</i> is <code>true</code>,
-     * DynamoDB will check to see if that attribute value already exists in
-     * the table. If it is found, then the operation succeeds. If it is not
-     * found, the operation fails with a
-     * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
-     * is <code>false</code>, DynamoDB assumes that the attribute value does
-     * <i>not</i> exist in the table. If in fact the value does not exist,
-     * then the assumption is valid and the operation succeeds. If the value
-     * is found, despite the assumption that it does not exist, the operation
-     * fails with a <i>ConditionalCheckFailedException</i>. </li> </ul>
-     * <p>The default setting for <i>Exists</i> is <code>true</code>. If you
-     * supply a <i>Value</i> all by itself, DynamoDB assumes the attribute
-     * exists: You don't have to set <i>Exists</i> to <code>true</code>,
-     * because it is implied. <p>DynamoDB returns a
-     * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
-     * <code>true</code> but there is no <i>Value</i> to check. (You expect a
-     * value to exist, but don't specify what that value is.) </li> <li>
-     * <p><i>Exists</i> is <code>false</code> but you also specify a
-     * <i>Value</i>. (You cannot expect an attribute to have a value, while
-     * also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
-     * specify more than one condition for <i>Exists</i>, then all of the
-     * conditions must evaluate to true. (In other words, the conditions are
-     * ANDed together.) Otherwise, the conditional operation will fail.
+     * the <i>DeleteItem</i> operation. <p>Each element of <i>Expected</i>
+     * consists of an attribute name, a comparison operator, and one or more
+     * values. DynamoDB compares the attribute with the value(s) you
+     * supplied, using the comparison operator. For each <i>Expected</i>
+     * element, the result of the evaluation is either true or false. <p>If
+     * you specify more than one element in the <i>Expected</i> map, then by
+     * default all of the conditions must evaluate to true. In other words,
+     * the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>If the <i>Expected</i> map
+     * evaluates to true, then the conditional operation succeeds; otherwise,
+     * it fails. <p>Each item in <i>Expected</i> represents an attribute name
+     * for DynamoDB to check, along with an <i>AttributeValueList</i> and a
+     * <i>ComparisonOperator</i>: <ul> <li> <p><i>AttributeValueList</i> -
+     * One or more values to evaluate against the supplied attribute. The
+     * number of values in the list depends on the <i>ComparisonOperator</i>
+     * being used. <p>For type Number, value comparisons are numeric.
+     * <p>String value comparisons for greater than, equals, or less than are
+     * based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. </li> <li> <p><i>ComparisonOperator</i> - A
+     * comparator for evaluating attributes in the <i>AttributeValueList</i>.
+     * When performing the comparison, DynamoDB uses strongly consistent
+     * reads. <p>The following comparison operators are available:
+     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>The following are
+     * descriptions of each comparison operator. <ul> <li> <p><code>EQ</code>
+     * : Equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>NE</code> : Not equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, Binary, String Set,
+     * Number Set, or Binary Set. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
+     * <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p/> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GE</code> : Greater than
+     * or equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
+     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If the target attribute of the comparison is a
+     * String, then the operation checks for a substring match. If the target
+     * attribute of the comparison is Binary, then the operation looks for a
+     * subsequence of the target that matches the input. If the target
+     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     * operation checks for a member of the set (not as a substring). </li>
+     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     * subsequence, or absence of a value in a set.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If the target attribute of the comparison is a String, then the
+     * operation checks for the absence of a substring match. If the target
+     * attribute of the comparison is Binary, then the operation checks for
+     * the absence of a subsequence of the target that matches the input. If
+     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     * then the operation checks for the absence of a member of the set (not
+     * as a substring).</li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     * prefix. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String or Binary (not a Number or a
+     * set). The target attribute of the comparison must be a String or
+     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
+     * checks for exact matches. <p><i>AttributeValueList</i> can contain
+     * more than one <i>AttributeValue</i> of type String, Number, or Binary
+     * (not a set). The target attribute of the comparison must be of the
+     * same type and exact value to match. A String never matches a String
+     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     * first value, and less than or equal to the second value.
+     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     * elements of the same type, either String, Number, or Binary (not a
+     * set). A target attribute matches if the target value is greater than,
+     * or equal to, the first element and less than, or equal to, the second
+     * element. If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not compare to
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul> <p>For
+     * usage examples of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
+     * Expressions</a> in the Amazon DynamoDB Developer Guide. <note> <p>For
+     * backward compatibility with previous DynamoDB releases, the following
+     * parameters can be used instead of <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>: <ul> <li><p><i>Value</i> - A value for
+     * DynamoDB to compare with an attribute.</li> <li><p><i>Exists</i> -
+     * Causes DynamoDB to evaluate the value vefore attempting the
+     * conditional operation: <ul> <li><p>If <i>Exists</i> is
+     * <code>true</code>, DynamoDB will check to see if that attribute???
+     * value already exists in the table. If it is found, then the condition
+     * evaluates to true; otherwise the condition evaluate to false.</li>
+     * <li><p>If <i>Exists</i> is <code>false</code>, DynamoDB assumes that
+     * the attribute value does??? <i>not</i> exist in the table. If in fact
+     * the value does not exist, then the??? assumption is valid and the
+     * condition evaluates to true. If the value is found, despite the
+     * assumption that it does not exist, the condition evaluates to
+     * false.???</li> </ul> </li> </ul> <p>Even though DynamoDB continues to
+     * accept the <i>Value</i> and <i>Exists</i> parameters, they are now
+     * deprecated. We recommend that you use <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i> instead, since they allow you to constuct a
+     * much wider range of conditions. <p>The <i>Value</i> and <i>Exists</i>
+     * parameters are incompatible with <i>AttributeValueList</i> and
+     * <i>ComparisonOperator</i>. If you attempt to use both sets of
+     * parameters at once, DynamoDB will throw a <i>ValidationException</i>.
+     * </note>
      * <p>
      * The method adds a new key-value pair into Expected parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -649,6 +1544,158 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
         return this;
     }
     
+    /**
+     * A logical operator to apply to the conditions in the <i>Expected</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @return A logical operator to apply to the conditions in the <i>Expected</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public String getConditionalOperator() {
+        return conditionalOperator;
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the <i>Expected</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>Expected</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public void setConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the <i>Expected</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>Expected</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ConditionalOperator
+     */
+    public DeleteItemRequest withConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+        return this;
+    }
+
+    /**
+     * A logical operator to apply to the conditions in the <i>Expected</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>Expected</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public void setConditionalOperator(ConditionalOperator conditionalOperator) {
+        this.conditionalOperator = conditionalOperator.toString();
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the <i>Expected</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>Expected</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ConditionalOperator
+     */
+    public DeleteItemRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
+        this.conditionalOperator = conditionalOperator.toString();
+        return this;
+    }
+
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were deleted. For <i>DeleteItem</i>, the valid
@@ -1040,6 +2087,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
         if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
         if (getKey() != null) sb.append("Key: " + getKey() + ",");
         if (getExpected() != null) sb.append("Expected: " + getExpected() + ",");
+        if (getConditionalOperator() != null) sb.append("ConditionalOperator: " + getConditionalOperator() + ",");
         if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ",");
         if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
         if (getReturnItemCollectionMetrics() != null) sb.append("ReturnItemCollectionMetrics: " + getReturnItemCollectionMetrics() );
@@ -1055,6 +2103,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode()); 
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode()); 
         hashCode = prime * hashCode + ((getExpected() == null) ? 0 : getExpected().hashCode()); 
+        hashCode = prime * hashCode + ((getConditionalOperator() == null) ? 0 : getConditionalOperator().hashCode()); 
         hashCode = prime * hashCode + ((getReturnValues() == null) ? 0 : getReturnValues().hashCode()); 
         hashCode = prime * hashCode + ((getReturnConsumedCapacity() == null) ? 0 : getReturnConsumedCapacity().hashCode()); 
         hashCode = prime * hashCode + ((getReturnItemCollectionMetrics() == null) ? 0 : getReturnItemCollectionMetrics().hashCode()); 
@@ -1075,6 +2124,8 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
         if (other.getKey() != null && other.getKey().equals(this.getKey()) == false) return false; 
         if (other.getExpected() == null ^ this.getExpected() == null) return false;
         if (other.getExpected() != null && other.getExpected().equals(this.getExpected()) == false) return false; 
+        if (other.getConditionalOperator() == null ^ this.getConditionalOperator() == null) return false;
+        if (other.getConditionalOperator() != null && other.getConditionalOperator().equals(this.getConditionalOperator()) == false) return false; 
         if (other.getReturnValues() == null ^ this.getReturnValues() == null) return false;
         if (other.getReturnValues() != null && other.getReturnValues().equals(this.getReturnValues()) == false) return false; 
         if (other.getReturnConsumedCapacity() == null ^ this.getReturnConsumedCapacity() == null) return false;

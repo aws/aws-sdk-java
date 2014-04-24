@@ -20,6 +20,7 @@ import java.util.Map;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
+import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 
 /**
  * Options for filtering results from a scan operation. For example, callers can
@@ -53,6 +54,20 @@ public class DynamoDBScanExpression {
     private Integer segment;
 
     /**
+     * The logical operator on the filter conditions of this scan.
+     */
+    private String conditionalOperator;
+
+    /**
+     * Returns the scan filter as a map of attribute names to conditions.
+     * 
+     * @return The scan filter as a map of attribute names to conditions.
+     */
+    public Map<String, Condition> getScanFilter() {
+        return scanFilter;
+    }
+
+    /**
      * Sets the scan filter to the map of attribute names to conditions given.
      * 
      * @param scanFilter
@@ -64,12 +79,16 @@ public class DynamoDBScanExpression {
     }
 
     /**
-     * Returns the scan filter as a map of attribute names to conditions.
+     * Sets the scan filter to the map of attribute names to conditions given
+     * and returns a pointer to this object for method-chaining.
      * 
-     * @return The scan filter as a map of attribute names to conditions.
+     * @param scanFilter
+     *            The map of attribute names to conditions to use when filtering
+     *            scan results.
      */
-    public Map<String, Condition> getScanFilter() {
-        return scanFilter;
+    public DynamoDBScanExpression withScanFilter(Map<String, Condition> scanFilter) {
+        setScanFilter(scanFilter);
+        return this;
     }
 
     /**
@@ -90,6 +109,27 @@ public class DynamoDBScanExpression {
         scanFilter.put(attributeName, condition);
     }
 
+    /**
+     * Adds a new filter condition to the current scan filter and returns a
+     * pointer to this object for method-chaining.
+     * 
+     * @param attributeName
+     *            The name of the attribute on which the specified condition
+     *            operates.
+     * @param condition
+     *            The condition which describes how the specified attribute is
+     *            compared and if a row of data is included in the results
+     *            returned by the scan operation.
+     */
+    public DynamoDBScanExpression withFilterConditionEntry(String attributeName, Condition condition) {
+        if ( scanFilter == null )
+            scanFilter = new HashMap<String, Condition>();
+
+        scanFilter.put(attributeName, condition);
+        return this;
+    }
+
+    
     /**
      * Returns the exclusive start key for this scan.
      */
@@ -202,5 +242,43 @@ public class DynamoDBScanExpression {
     public DynamoDBScanExpression withSegment(Integer segment) {
         setSegment(segment);
         return this;
+    }
+
+    /**
+     * Returns the logical operator on the filter conditions of this scan.
+     */
+    public String getConditionalOperator() {
+        return conditionalOperator;
+    }
+
+    /**
+     * Sets the logical operator on the filter conditions of this scan.
+     */
+    public void setConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+    }
+
+    /**
+     * Sets the logical operator on the filter conditions of this scan and
+     * returns a pointer to this object for method-chaining.
+     */
+    public DynamoDBScanExpression withConditionalOperator(String conditionalOperator) {
+        setConditionalOperator(conditionalOperator);
+        return this;
+    }
+
+    /**
+     * Sets the logical operator on the filter conditions of this scan.
+     */
+    public void setConditionalOperator(ConditionalOperator conditionalOperator) {
+        setConditionalOperator(conditionalOperator.toString());
+    }
+
+    /**
+     * Sets the logical operator on the filter conditions of this scan and
+     * returns a pointer to this object for method-chaining.
+     */
+    public DynamoDBScanExpression withConditionalOperator(ConditionalOperator conditionalOperator) {
+        return withConditionalOperator(conditionalOperator.toString());
     }
 }

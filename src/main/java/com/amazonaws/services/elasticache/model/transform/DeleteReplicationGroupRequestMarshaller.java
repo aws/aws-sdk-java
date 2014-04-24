@@ -38,10 +38,16 @@ public class DeleteReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         Request<DeleteReplicationGroupRequest> request = new DefaultRequest<DeleteReplicationGroupRequest>(deleteReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteReplicationGroup");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2014-03-24");
 
         if (deleteReplicationGroupRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(deleteReplicationGroupRequest.getReplicationGroupId()));
+        }
+        if (deleteReplicationGroupRequest.isRetainPrimaryCluster() != null) {
+            request.addParameter("RetainPrimaryCluster", StringUtils.fromBoolean(deleteReplicationGroupRequest.isRetainPrimaryCluster()));
+        }
+        if (deleteReplicationGroupRequest.getFinalSnapshotIdentifier() != null) {
+            request.addParameter("FinalSnapshotIdentifier", StringUtils.fromString(deleteReplicationGroupRequest.getFinalSnapshotIdentifier()));
         }
 
         return request;

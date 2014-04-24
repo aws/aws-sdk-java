@@ -56,7 +56,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -278,7 +281,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -286,7 +292,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @return The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      */
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
@@ -296,7 +305,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -304,7 +316,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -320,7 +335,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -330,7 +348,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -347,7 +368,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -357,7 +381,10 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

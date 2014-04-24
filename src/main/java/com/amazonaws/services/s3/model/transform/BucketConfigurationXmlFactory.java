@@ -34,6 +34,7 @@ import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RedirectRule;
+import com.amazonaws.services.s3.model.RoutingRuleCondition;
 import com.amazonaws.services.s3.model.TagSet;
 
 /**
@@ -344,37 +345,43 @@ public class BucketConfigurationXmlFactory {
 
     private void writeRule(XmlWriter xml, RoutingRule rule) {
         xml.start("RoutingRule");
-        if (rule.getCondition() != null) {
+        RoutingRuleCondition condition = rule.getCondition();
+        if (condition != null) {
             xml.start("Condition");
             xml.start("KeyPrefixEquals");
-            if (rule.getCondition().getKeyPrefixEquals() != null) {
-                xml.value(rule.getCondition().getKeyPrefixEquals());
+            if (condition.getKeyPrefixEquals() != null) {
+                xml.value(condition.getKeyPrefixEquals());
             }
             xml.end(); // </KeyPrefixEquals">
 
-            if (rule.getCondition().getHttpErrorCodeReturnedEquals() != null) {
-                xml.start("HttpErrorCodeReturnedEquals ").value(rule.getCondition().getHttpErrorCodeReturnedEquals()).end();
+            if (condition.getHttpErrorCodeReturnedEquals() != null) {
+                xml.start("HttpErrorCodeReturnedEquals ").value(condition.getHttpErrorCodeReturnedEquals()).end();
             }
 
             xml.end(); // </Condition>
         }
 
         xml.start("Redirect");
-        if (rule.getRedirect() != null) {
-            if (rule.getRedirect().getprotocol() != null) {
-                xml.start("Protocol").value(rule.getRedirect().getprotocol()).end();
+        RedirectRule redirect = rule.getRedirect();
+        if (redirect != null) {
+            if (redirect.getprotocol() != null) {
+                xml.start("Protocol").value(redirect.getprotocol()).end();
             }
 
-            if (rule.getRedirect().getHostName() != null) {
-                xml.start("HostName").value(rule.getRedirect().getHostName()).end();
+            if (redirect.getHostName() != null) {
+                xml.start("HostName").value(redirect.getHostName()).end();
             }
 
-            if (rule.getRedirect().getReplaceKeyPrefixWith() != null) {
-                xml.start("ReplaceKeyPrefixWith").value(rule.getRedirect().getReplaceKeyPrefixWith()).end();
+            if (redirect.getReplaceKeyPrefixWith() != null) {
+                xml.start("ReplaceKeyPrefixWith").value(redirect.getReplaceKeyPrefixWith()).end();
             }
 
-            if (rule.getRedirect().getReplaceKeyWith() != null) {
-                xml.start("ReplaceKeyWith").value(rule.getRedirect().getReplaceKeyWith()).end();
+            if (redirect.getReplaceKeyWith() != null) {
+                xml.start("ReplaceKeyWith").value(redirect.getReplaceKeyWith()).end();
+            }
+
+            if (redirect.getHttpRedirectCode() != null) {
+                xml.start("HttpRedirectCode").value(redirect.getHttpRedirectCode()).end();
             }
         }
         xml.end(); // </Redirect>

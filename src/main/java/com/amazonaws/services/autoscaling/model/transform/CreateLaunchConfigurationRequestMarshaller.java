@@ -131,6 +131,9 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest.isAssociatePublicIpAddress() != null) {
             request.addParameter("AssociatePublicIpAddress", StringUtils.fromBoolean(createLaunchConfigurationRequest.isAssociatePublicIpAddress()));
         }
+        if (createLaunchConfigurationRequest.getPlacementTenancy() != null) {
+            request.addParameter("PlacementTenancy", StringUtils.fromString(createLaunchConfigurationRequest.getPlacementTenancy()));
+        }
 
         return request;
     }

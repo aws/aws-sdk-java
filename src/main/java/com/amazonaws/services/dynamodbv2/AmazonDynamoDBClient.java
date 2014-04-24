@@ -42,13 +42,31 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * <p>
  * Amazon DynamoDB <b>Overview</b> <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
- * descriptions and samples of the DynamoDB API. For information about
- * application development using this API, see the Amazon DynamoDB
- * Developer Guide.
+ * descriptions and samples of the low-level DynamoDB API. For
+ * information about DynamoDB application development, go to the
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"> Amazon DynamoDB Developer Guide </a>
+ * .
  * </p>
  * <p>
- * The following are short descriptions of each API action, organized by
- * function.
+ * Instead of making the requests to the low-level DynamoDB API directly
+ * from your application, we recommend that you use the AWS Software
+ * Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs
+ * make it unnecessary to call the low-level DynamoDB API directly from
+ * your application. The libraries take care of request authentication,
+ * serialization, and connection management. For more information, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html"> Using the AWS SDKs with DynamoDB </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
+ * If you decide to code against the low-level DynamoDB API directly, you
+ * will need to write the necessary code to authenticate your requests.
+ * For more information on signing your requests, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html"> Using the DynamoDB API </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
+ * The following are short descriptions of each low-level API action,
+ * organized by function.
  * </p>
  * <p>
  * <b>Managing Tables</b>
@@ -89,6 +107,11 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * 
  * </ul>
  * 
+ * </p>
+ * <p>
+ * For conceptual information about managing tables, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  * <p>
  * <b>Reading Data</b>
@@ -134,6 +157,11 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * 
  * </p>
  * <p>
+ * For conceptual information about reading data, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
  * <b>Modifying Data</b>
  * </p>
  * <p>
@@ -172,6 +200,11 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * 
  * </ul>
  * 
+ * </p>
+ * <p>
+ * For conceptual information about modifying data, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  */
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements AmazonDynamoDB {
@@ -601,6 +634,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * those unprocessed items until all items have been processed.
      * </p>
      * <p>
+     * Note that if <i>none</i> of the items can be processed due to
+     * insufficient provisioned throughput on all of the tables in the
+     * request, then <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> .
+     * </p>
+     * <p>
      * To write one item, you can use the <i>PutItem</i> operation; to delete
      * one item, you can use the <i>DeleteItem</i> operation.
      * </p>
@@ -617,15 +656,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
-     * must include the necessary logic to manage the threads.
-     * </p>
-     * <p>
-     * With languages that don't support threading, such as PHP,
-     * <i>BatchWriteItem</i> will write or delete the specified items one at
-     * a time. In both situations, <i>BatchWriteItem</i> provides an
-     * alternative where the API performs the specified put and delete
-     * operations in parallel, giving you the power of the thread pool
-     * approach without having to introduce complexity into your application.
+     * must include the necessary logic to manage the threads. With languages
+     * that don't support threading, such as PHP, you must update or delete
+     * the specified items one at a time. In both situations,
+     * <i>BatchWriteItem</i> provides an alternative where the API performs
+     * the specified put and delete operations in parallel, giving you the
+     * power of the thread pool approach without having to introduce
+     * complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and delete
@@ -979,11 +1016,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * or if you have used <i>Limit</i> .
      * </p>
      * <p>
-     * You can query a table, a local secondary index (LSI), or a global
-     * secondary index (GSI). For a query on a table or on an LSI, you can
+     * You can query a table, a local secondary index, or a global secondary
+     * index. For a query on a table or on a local secondary index, you can
      * set <i>ConsistentRead</i> to true and obtain a strongly consistent
-     * result. GSIs support eventually consistent reads only, so do not
-     * specify <i>ConsistentRead</i> when querying a GSI.
+     * result. Global secondary indexes support eventually consistent reads
+     * only, so do not specify <i>ConsistentRead</i> when querying a global
+     * secondary index.
      * </p>
      *
      * @param queryRequest Container for the necessary parameters to execute
@@ -1058,8 +1096,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * <b>NOTE:</b> To prevent a new item from replacing an existing item,
-     * use a conditional put operation with Exists set to false for the
-     * primary key attribute, or attributes.
+     * use a conditional put operation with ComparisonOperator set to NULL
+     * for the primary key attribute, or attributes.
      * </p>
      * <p>
      * For more information about using this API, see
@@ -1245,10 +1283,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * assemble the pages of results into one dataset.
      * </p>
      * <p>
-     * If no items can be processed because of insufficient provisioned
-     * throughput on each of the tables involved in the request,
-     * <i>BatchGetItem</i> throws
-     * <i>ProvisionedThroughputExceededException</i> .
+     * If <i>none</i> of the items can be processed due to insufficient
+     * provisioned throughput on all of the tables in the request, then
+     * <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> . If <i>at least one</i>
+     * of the items is successfully processed, then <i>BatchGetItem</i>
+     * completes successfully, while returning the keys of the unread items
+     * in <i>UnprocessedKeys</i> .
      * </p>
      * <p>
      * By default, <i>BatchGetItem</i> performs eventually consistent reads
@@ -1270,7 +1311,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * If a requested item does not exist, it is not returned in the result.
      * Requests for nonexistent items consume the minimum read capacity units
      * according to the type of read. For more information, see
-     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
      * in the Amazon DynamoDB Developer Guide.
      * </p>
      *
@@ -1371,7 +1412,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param attributesToGet The names of one or more attributes to
      * retrieve. If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result.
+     * they will not appear in the result. <p>Note that
+     * <i>AttributesToGet</i> has no effect on provisioned throughput
+     * consumption. DynamoDB determines capacity units consumed based on item
+     * size, not on the amount of data that is returned to an application.
      * 
      * @return The response from the Scan service method, as returned by
      *         AmazonDynamoDBv2.
@@ -1423,114 +1467,36 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * 
      * @param tableName The name of the table containing the requested items.
      * @param scanFilter Evaluates the scan results and returns only the
-     * desired values. Multiple conditions are treated as "AND" operations:
-     * all conditions must be met to be included in the results. <p>Each
-     * <i>ScanConditions</i> element consists of an attribute name to
-     * compare, along with the following: <ul>
-     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
-     * values, see <a
+     * desired values. <p>If you specify more than one condition in the
+     * <i>ScanFilter</i> map, then by default all of the conditions must
+     * evaluate to true. In other words, the conditions are ANDed together.
+     * (You can use the <i>ConditionalOperator</i> parameter to OR the
+     * conditions instead. If you do this, then at least one of the
+     * conditions must evaluate to true, rather than all of them.) <p>Each
+     * <i>ScanFilter</i> element consists of an attribute name to compare,
+     * along with the following: <ul> <li> <p><i>AttributeValueList</i> - One
+     * or more values to evaluate against the supplied attribute. The number
+     * of values in the list depends on the <i>ComparisonOperator</i> being
+     * used. <p>For type Number, value comparisons are numeric. <p>String
+     * value comparisons for greater than, equals, or less than are based on
+     * ASCII character code values. For example, <code>a</code> is greater
+     * than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Scan:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     * specifying data types in JSON, see <a
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If the target attribute of the comparison is a
-     * String, then the operation checks for a substring match. If the target
-     * attribute of the comparison is Binary, then the operation looks for a
-     * subsequence of the target that matches the input. If the target
-     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     * operation checks for a member of the set (not as a substring). </li>
-     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     * subsequence, or absence of a value in a set.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If the target attribute of the comparison is a String, then the
-     * operation checks for the absence of a substring match. If the target
-     * attribute of the comparison is Binary, then the operation checks for
-     * the absence of a subsequence of the target that matches the input. If
-     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     * then the operation checks for the absence of a member of the set (not
-     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     * prefix. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     * checks for exact matches. <p><i>AttributeValueList</i> can contain
-     * more than one <i>AttributeValue</i> of type String, Number, or Binary
-     * (not a set). The target attribute of the comparison must be of the
-     * same type and exact value to match. A String never matches a String
-     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     * first value, and less than or equal to the second value.
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     * elements of the same type, either String, Number, or Binary (not a
-     * set). A target attribute matches if the target value is greater than,
-     * or equal to, the first element and less than, or equal to, the second
-     * element. If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not compare to
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
      * 
      * @return The response from the Scan service method, as returned by
      *         AmazonDynamoDBv2.
@@ -1584,116 +1550,41 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param attributesToGet The names of one or more attributes to
      * retrieve. If no attribute names are specified, then all attributes
      * will be returned. If any of the requested attributes are not found,
-     * they will not appear in the result.
+     * they will not appear in the result. <p>Note that
+     * <i>AttributesToGet</i> has no effect on provisioned throughput
+     * consumption. DynamoDB determines capacity units consumed based on item
+     * size, not on the amount of data that is returned to an application.
      * @param scanFilter Evaluates the scan results and returns only the
-     * desired values. Multiple conditions are treated as "AND" operations:
-     * all conditions must be met to be included in the results. <p>Each
-     * <i>ScanConditions</i> element consists of an attribute name to
-     * compare, along with the following: <ul>
-     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
-     * values, see <a
+     * desired values. <p>If you specify more than one condition in the
+     * <i>ScanFilter</i> map, then by default all of the conditions must
+     * evaluate to true. In other words, the conditions are ANDed together.
+     * (You can use the <i>ConditionalOperator</i> parameter to OR the
+     * conditions instead. If you do this, then at least one of the
+     * conditions must evaluate to true, rather than all of them.) <p>Each
+     * <i>ScanFilter</i> element consists of an attribute name to compare,
+     * along with the following: <ul> <li> <p><i>AttributeValueList</i> - One
+     * or more values to evaluate against the supplied attribute. The number
+     * of values in the list depends on the <i>ComparisonOperator</i> being
+     * used. <p>For type Number, value comparisons are numeric. <p>String
+     * value comparisons for greater than, equals, or less than are based on
+     * ASCII character code values. For example, <code>a</code> is greater
+     * than <code>A</code>, and <code>aa</code> is greater than
+     * <code>B</code>. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Scan:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     * specifying data types in JSON, see <a
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If the target attribute of the comparison is a
-     * String, then the operation checks for a substring match. If the target
-     * attribute of the comparison is Binary, then the operation looks for a
-     * subsequence of the target that matches the input. If the target
-     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     * operation checks for a member of the set (not as a substring). </li>
-     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     * subsequence, or absence of a value in a set.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If the target attribute of the comparison is a String, then the
-     * operation checks for the absence of a substring match. If the target
-     * attribute of the comparison is Binary, then the operation checks for
-     * the absence of a subsequence of the target that matches the input. If
-     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     * then the operation checks for the absence of a member of the set (not
-     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     * prefix. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     * checks for exact matches. <p><i>AttributeValueList</i> can contain
-     * more than one <i>AttributeValue</i> of type String, Number, or Binary
-     * (not a set). The target attribute of the comparison must be of the
-     * same type and exact value to match. A String never matches a String
-     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     * first value, and less than or equal to the second value.
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     * elements of the same type, either String, Number, or Binary (not a
-     * set). A target attribute matches if the target value is greater than,
-     * or equal to, the first element and less than, or equal to, the second
-     * element. If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not compare to
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
      * 
      * @return The response from the Scan service method, as returned by
      *         AmazonDynamoDBv2.
@@ -1852,6 +1743,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * those unprocessed items until all items have been processed.
      * </p>
      * <p>
+     * Note that if <i>none</i> of the items can be processed due to
+     * insufficient provisioned throughput on all of the tables in the
+     * request, then <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> .
+     * </p>
+     * <p>
      * To write one item, you can use the <i>PutItem</i> operation; to delete
      * one item, you can use the <i>DeleteItem</i> operation.
      * </p>
@@ -1868,15 +1765,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * If you use a programming language that supports concurrency, such as
      * Java, you can use threads to write items in parallel. Your application
-     * must include the necessary logic to manage the threads.
-     * </p>
-     * <p>
-     * With languages that don't support threading, such as PHP,
-     * <i>BatchWriteItem</i> will write or delete the specified items one at
-     * a time. In both situations, <i>BatchWriteItem</i> provides an
-     * alternative where the API performs the specified put and delete
-     * operations in parallel, giving you the power of the thread pool
-     * approach without having to introduce complexity into your application.
+     * must include the necessary logic to manage the threads. With languages
+     * that don't support threading, such as PHP, you must update or delete
+     * the specified items one at a time. In both situations,
+     * <i>BatchWriteItem</i> provides an alternative where the API performs
+     * the specified put and delete operations in parallel, giving you the
+     * power of the thread pool approach without having to introduce
+     * complexity into your application.
      * </p>
      * <p>
      * Parallel processing reduces latency, but each specified put and delete
@@ -1935,7 +1830,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * empty values will be rejected with a <i>ValidationException</i>. <p>If
      * you specify any attributes that are part of an index key, then the
      * data types for those attributes must match those of the schema in the
-     * table's attribute definition.</li> </ul> </li> </ul>
+     * table's attribute definition. </li> </ul> </li> </ul>
      * 
      * @return The response from the BatchWriteItem service method, as
      *         returned by AmazonDynamoDBv2.
@@ -2230,7 +2125,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * @param provisionedThroughput Represents the provisioned throughput
      * settings for a specified table or index. The settings can be modified
@@ -2292,8 +2187,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * <b>NOTE:</b> To prevent a new item from replacing an existing item,
-     * use a conditional put operation with Exists set to false for the
-     * primary key attribute, or attributes.
+     * use a conditional put operation with ComparisonOperator set to NULL
+     * for the primary key attribute, or attributes.
      * </p>
      * <p>
      * For more information about using this API, see
@@ -2366,8 +2261,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * <b>NOTE:</b> To prevent a new item from replacing an existing item,
-     * use a conditional put operation with Exists set to false for the
-     * primary key attribute, or attributes.
+     * use a conditional put operation with ComparisonOperator set to NULL
+     * for the primary key attribute, or attributes.
      * </p>
      * <p>
      * For more information about using this API, see
@@ -2786,10 +2681,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * assemble the pages of results into one dataset.
      * </p>
      * <p>
-     * If no items can be processed because of insufficient provisioned
-     * throughput on each of the tables involved in the request,
-     * <i>BatchGetItem</i> throws
-     * <i>ProvisionedThroughputExceededException</i> .
+     * If <i>none</i> of the items can be processed due to insufficient
+     * provisioned throughput on all of the tables in the request, then
+     * <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> . If <i>at least one</i>
+     * of the items is successfully processed, then <i>BatchGetItem</i>
+     * completes successfully, while returning the keys of the unread items
+     * in <i>UnprocessedKeys</i> .
      * </p>
      * <p>
      * By default, <i>BatchGetItem</i> performs eventually consistent reads
@@ -2811,7 +2709,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * If a requested item does not exist, it is not returned in the result.
      * Requests for nonexistent items consume the minimum read capacity units
      * according to the type of read. For more information, see
-     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
      * in the Amazon DynamoDB Developer Guide.
      * </p>
      * 
@@ -2823,9 +2721,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </li> <li> <p><i>AttributesToGet</i> - One or more attributes to be
      * retrieved from the table. By default, all attributes are returned. If
      * a specified attribute is not found, it does not appear in the result.
-     * </li> <li> <p><i>ConsistentRead</i> - If <code>true</code>, a strongly
-     * consistent read is used; if <code>false</code> (the default), an
-     * eventually consistent read is used. </li> </ul>
+     * <p>Note that <i>AttributesToGet</i> has no effect on provisioned
+     * throughput consumption. DynamoDB determines capacity units consumed
+     * based on item size, not on the amount of data that is returned to an
+     * application. </li> <li> <p><i>ConsistentRead</i> - If
+     * <code>true</code>, a strongly consistent read is used; if
+     * <code>false</code> (the default), an eventually consistent read is
+     * used. </li> </ul>
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, the
      * response includes <i>ConsumedCapacity</i> data for tables and indexes.
      * If set to <code>INDEXES</code>, the response includes
@@ -2878,10 +2780,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * assemble the pages of results into one dataset.
      * </p>
      * <p>
-     * If no items can be processed because of insufficient provisioned
-     * throughput on each of the tables involved in the request,
-     * <i>BatchGetItem</i> throws
-     * <i>ProvisionedThroughputExceededException</i> .
+     * If <i>none</i> of the items can be processed due to insufficient
+     * provisioned throughput on all of the tables in the request, then
+     * <i>BatchGetItem</i> will throw a
+     * <i>ProvisionedThroughputExceededException</i> . If <i>at least one</i>
+     * of the items is successfully processed, then <i>BatchGetItem</i>
+     * completes successfully, while returning the keys of the unread items
+     * in <i>UnprocessedKeys</i> .
      * </p>
      * <p>
      * By default, <i>BatchGetItem</i> performs eventually consistent reads
@@ -2903,7 +2808,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * If a requested item does not exist, it is not returned in the result.
      * Requests for nonexistent items consume the minimum read capacity units
      * according to the type of read. For more information, see
-     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
+     * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations"> Capacity Units Calculations </a>
      * in the Amazon DynamoDB Developer Guide.
      * </p>
      * 
@@ -2915,9 +2820,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </li> <li> <p><i>AttributesToGet</i> - One or more attributes to be
      * retrieved from the table. By default, all attributes are returned. If
      * a specified attribute is not found, it does not appear in the result.
-     * </li> <li> <p><i>ConsistentRead</i> - If <code>true</code>, a strongly
-     * consistent read is used; if <code>false</code> (the default), an
-     * eventually consistent read is used. </li> </ul>
+     * <p>Note that <i>AttributesToGet</i> has no effect on provisioned
+     * throughput consumption. DynamoDB determines capacity units consumed
+     * based on item size, not on the amount of data that is returned to an
+     * application. </li> <li> <p><i>ConsistentRead</i> - If
+     * <code>true</code>, a strongly consistent read is used; if
+     * <code>false</code> (the default), an eventually consistent read is
+     * used. </li> </ul>
      * 
      * @return The response from the BatchGetItem service method, as returned
      *         by AmazonDynamoDBv2.

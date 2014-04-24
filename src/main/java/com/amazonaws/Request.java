@@ -36,10 +36,10 @@ import com.amazonaws.util.AWSRequestMetrics;
 public interface Request<T> {
 
     /**
-     * Adds the specified header to this request.
+     * Sets the specified header for this request.
      *
      * @param name
-     *            The name of the header to add.
+     *            The name of the header to set.
      * @param value
      *            The header's value.
      */

@@ -38,7 +38,7 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
     /**
      * The name of the cache parameter group family the cache parameter group
      * can be used with. <p>Valid values are: <code>memcached1.4</code> |
-     * <code>redis2.6</code>
+     * <code>redis2.6</code> | <code>redis2.8</code>
      */
     private String cacheParameterGroupFamily;
 
@@ -62,7 +62,8 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
      * parameter group.
      * @param cacheParameterGroupFamily The name of the cache parameter group
      * family the cache parameter group can be used with. <p>Valid values
-     * are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * are: <code>memcached1.4</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code>
      * @param description A user-specified description for the cache
      * parameter group.
      */
@@ -108,11 +109,11 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
     /**
      * The name of the cache parameter group family the cache parameter group
      * can be used with. <p>Valid values are: <code>memcached1.4</code> |
-     * <code>redis2.6</code>
+     * <code>redis2.6</code> | <code>redis2.8</code>
      *
      * @return The name of the cache parameter group family the cache parameter group
      *         can be used with. <p>Valid values are: <code>memcached1.4</code> |
-     *         <code>redis2.6</code>
+     *         <code>redis2.6</code> | <code>redis2.8</code>
      */
     public String getCacheParameterGroupFamily() {
         return cacheParameterGroupFamily;
@@ -121,11 +122,11 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
     /**
      * The name of the cache parameter group family the cache parameter group
      * can be used with. <p>Valid values are: <code>memcached1.4</code> |
-     * <code>redis2.6</code>
+     * <code>redis2.6</code> | <code>redis2.8</code>
      *
      * @param cacheParameterGroupFamily The name of the cache parameter group family the cache parameter group
      *         can be used with. <p>Valid values are: <code>memcached1.4</code> |
-     *         <code>redis2.6</code>
+     *         <code>redis2.6</code> | <code>redis2.8</code>
      */
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -134,13 +135,13 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
     /**
      * The name of the cache parameter group family the cache parameter group
      * can be used with. <p>Valid values are: <code>memcached1.4</code> |
-     * <code>redis2.6</code>
+     * <code>redis2.6</code> | <code>redis2.8</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupFamily The name of the cache parameter group family the cache parameter group
      *         can be used with. <p>Valid values are: <code>memcached1.4</code> |
-     *         <code>redis2.6</code>
+     *         <code>redis2.6</code> | <code>redis2.8</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

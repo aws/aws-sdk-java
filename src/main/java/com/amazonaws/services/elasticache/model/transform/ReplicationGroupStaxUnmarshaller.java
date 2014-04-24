@@ -69,6 +69,10 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     replicationGroup.getNodeGroups().add(NodeGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SnapshottingClusterId", targetDepth)) {
+                    replicationGroup.setSnapshottingClusterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replicationGroup;

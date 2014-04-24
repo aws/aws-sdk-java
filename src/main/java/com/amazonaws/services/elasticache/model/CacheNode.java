@@ -38,7 +38,7 @@ public class CacheNode implements Serializable {
     private String cacheNodeStatus;
 
     /**
-     * The date and time the cache node was created.
+     * The date and time when the cache node was created.
      */
     private java.util.Date cacheNodeCreateTime;
 
@@ -144,29 +144,29 @@ public class CacheNode implements Serializable {
     }
 
     /**
-     * The date and time the cache node was created.
+     * The date and time when the cache node was created.
      *
-     * @return The date and time the cache node was created.
+     * @return The date and time when the cache node was created.
      */
     public java.util.Date getCacheNodeCreateTime() {
         return cacheNodeCreateTime;
     }
     
     /**
-     * The date and time the cache node was created.
+     * The date and time when the cache node was created.
      *
-     * @param cacheNodeCreateTime The date and time the cache node was created.
+     * @param cacheNodeCreateTime The date and time when the cache node was created.
      */
     public void setCacheNodeCreateTime(java.util.Date cacheNodeCreateTime) {
         this.cacheNodeCreateTime = cacheNodeCreateTime;
     }
     
     /**
-     * The date and time the cache node was created.
+     * The date and time when the cache node was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeCreateTime The date and time the cache node was created.
+     * @param cacheNodeCreateTime The date and time when the cache node was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

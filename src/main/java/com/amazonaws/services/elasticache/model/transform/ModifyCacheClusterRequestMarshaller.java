@@ -38,7 +38,7 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
 
         Request<ModifyCacheClusterRequest> request = new DefaultRequest<ModifyCacheClusterRequest>(modifyCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheCluster");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2014-03-24");
 
         if (modifyCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(modifyCacheClusterRequest.getCacheClusterId()));
@@ -99,6 +99,12 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
         }
         if (modifyCacheClusterRequest.isAutoMinorVersionUpgrade() != null) {
             request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(modifyCacheClusterRequest.isAutoMinorVersionUpgrade()));
+        }
+        if (modifyCacheClusterRequest.getSnapshotRetentionLimit() != null) {
+            request.addParameter("SnapshotRetentionLimit", StringUtils.fromInteger(modifyCacheClusterRequest.getSnapshotRetentionLimit()));
+        }
+        if (modifyCacheClusterRequest.getSnapshotWindow() != null) {
+            request.addParameter("SnapshotWindow", StringUtils.fromString(modifyCacheClusterRequest.getSnapshotWindow()));
         }
 
         return request;
