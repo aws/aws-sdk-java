@@ -240,7 +240,7 @@ public class JsonPolicyReader {
         if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_USER)) {
             return new Principal(principalNode.asText());
         } else if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_SERVICE)) {
-            return new Principal(Services.fromString(principalNode.asText()));
+            return new Principal(schema,principalNode.asText());
         } else if (schema.equalsIgnoreCase(PRINICIPAL_SCHEMA_FEDERATED)) {
             if (WebIdentityProviders.fromString(principalNode.asText()) != null) {
                 return new Principal(

@@ -1533,12 +1533,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         populateRequestWithCopyObjectParameters(request, copyObjectRequest);
         /*
-         * We can't send the Content-Length header if the user specified it,
-         * otherwise it messes up the HTTP connection when the remote server
-         * thinks there's more data to pull.
+         * We can't send a non-zero length Content-Length header if the user
+         * specified it, otherwise it messes up the HTTP connection when the
+         * remote server thinks there's more data to pull.
          */
-        request.getHeaders().remove(Headers.CONTENT_LENGTH);
-
+        setZeroContentLength(request);
         CopyObjectResultHandler copyObjectResultHandler = null;
         try {
             @SuppressWarnings("unchecked")
@@ -1664,12 +1663,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addParameter("partNumber", Integer.toString(copyPartRequest.getPartNumber()));
 
         /*
-         * We can't send the Content-Length header if the user specified it,
-         * otherwise it messes up the HTTP connection when the remote server
-         * thinks there's more data to pull.
+         * We can't send a non-zero length Content-Length header if the user
+         * specified it, otherwise it messes up the HTTP connection when the
+         * remote server thinks there's more data to pull.
          */
-        request.getHeaders().remove(Headers.CONTENT_LENGTH);
-
+        setZeroContentLength(request);
         CopyObjectResultHandler copyObjectResultHandler = null;
         try {
             @SuppressWarnings("unchecked")
@@ -2606,7 +2604,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         // Be careful that we don't send the object's total size as the content
         // length for the InitiateMultipartUpload request.
-        request.getHeaders().remove(Headers.CONTENT_LENGTH);
+        setZeroContentLength(request);
         // Set the request content to be empty (but not null) to force the runtime to pass
         // any query params in the query string and not the request body, to keep S3 happy.
         request.setContent(new ByteArrayInputStream(new byte[0]));
@@ -3555,12 +3553,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * Content-Type header before the request is sent if one isn't set,
              * so we have to set something here otherwise the request will fail.
              */
-            if (request.getHeaders().get("Content-Type") == null) {
-                request.addHeader("Content-Type",
-                        "application/x-www-form-urlencoded; charset=utf-8");
+            if (!request.getHeaders().containsKey(Headers.CONTENT_TYPE)) {
+                request.addHeader(Headers.CONTENT_TYPE,
+                    "application/x-www-form-urlencoded; charset=utf-8");
             }
-            AWSCredentials credentials = awsCredentialsProvider
-                    .getCredentials();
+            AWSCredentials credentials = awsCredentialsProvider.getCredentials();
             if (originalRequest.getRequestCredentials() != null) {
                 credentials = originalRequest.getRequestCredentials();
             }
@@ -3675,4 +3672,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     }
 
+    private void setZeroContentLength(Request<?> req) {
+        // https://github.com/aws/aws-sdk-java/pull/215
+        // http://aws.amazon.com/articles/1109#14
+        req.addHeader(Headers.CONTENT_LENGTH, String.valueOf(0));
+   }
 }

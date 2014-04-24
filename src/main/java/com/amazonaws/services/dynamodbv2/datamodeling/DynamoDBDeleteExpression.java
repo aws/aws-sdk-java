@@ -15,8 +15,10 @@
 
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 
 /**
@@ -29,6 +31,18 @@ public class DynamoDBDeleteExpression {
     /** Optional expected attributes */
     private Map<String, ExpectedAttributeValue> expectedAttributes;
 
+    /** The logical operator on the expected attribute conditions */
+    private String conditionalOperator;
+
+    /**
+     * Gets the map of attribute names to expected attribute values to check on delete.
+     * 
+     * @return The map of attribute names to expected attribute value conditions to check on delete
+     */
+    public Map<String, ExpectedAttributeValue> getExpected() {
+        return expectedAttributes;
+    }
+
     /**
      * Sets the expected condition to the map of attribute names to expected attribute values given.
      * 
@@ -40,12 +54,76 @@ public class DynamoDBDeleteExpression {
     }
 
     /**
-     * Gets the map of attribute names to expected attribute values to check on delete.
+     * Sets the expected condition to the map of attribute names to expected
+     * attribute values given and returns a pointer to this object for
+     * method-chaining.
      * 
-     * @return The map of attribute names to expected attribute value conditions to check on delete
+     * @param expectedAttributes
+     *            The map of attribute names to expected attribute value
+     *            conditions to check on delete
      */
-    public Map<String, ExpectedAttributeValue> getExpected() {
-        return expectedAttributes;
+    public DynamoDBDeleteExpression withExpected(Map<String, ExpectedAttributeValue> expectedAttributes) {
+        setExpected(expectedAttributes);
+        return this;
     }
 
+    /**
+     * Adds one entry to the expected conditions and returns a pointer to this
+     * object for method-chaining.
+     * 
+     * @param attributeName
+     *            The name of the attribute.
+     * @param expected
+     *            The expected attribute value.
+     */
+    public DynamoDBDeleteExpression withExpectedEntry(String attributeName, ExpectedAttributeValue expected) {
+        if (expectedAttributes == null) {
+            expectedAttributes = new HashMap<String,ExpectedAttributeValue>();
+        }
+        expectedAttributes.put(attributeName, expected);
+        return this;
+    }
+
+    /**
+     * Returns the logical operator on the expected attribute conditions of this
+     * delete operation.
+     */
+    public String getConditionalOperator() {
+        return conditionalOperator;
+    }
+
+    /**
+     * Sets the logical operator on the expected attribute conditions of this
+     * delete operation.
+     */
+    public void setConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+    }
+
+    /**
+     * Sets the logical operator on the expected attribute conditions of this
+     * delete operation and returns a pointer to this object for
+     * method-chaining.
+     */
+    public DynamoDBDeleteExpression withConditionalOperator(String conditionalOperator) {
+        setConditionalOperator(conditionalOperator);
+        return this;
+    }
+
+    /**
+     * Sets the logical operator on the expected attribute conditions of this
+     * delete operation.
+     */
+    public void setConditionalOperator(ConditionalOperator conditionalOperator) {
+        setConditionalOperator(conditionalOperator.toString());
+    }
+
+    /**
+     * Sets the logical operator on the expected attribute conditions of this
+     * delete operation and returns a pointer to this object for
+     * method-chaining.
+     */
+    public DynamoDBDeleteExpression withConditionalOperator(ConditionalOperator conditionalOperator) {
+        return withConditionalOperator(conditionalOperator.toString());
+    }
 }

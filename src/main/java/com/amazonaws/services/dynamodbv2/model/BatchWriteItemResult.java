@@ -47,7 +47,7 @@ public class BatchWriteItemResult implements Serializable {
      * be rejected with a <i>ValidationException</i>. <p>If you specify any
      * attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's
-     * attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     * attribute definition. </li> </ul> </li> </ul> <p>If there are no
      * unprocessed items remaining, the response contains an empty
      * <i>UnprocessedItems</i> map.
      * <p>
@@ -106,7 +106,7 @@ public class BatchWriteItemResult implements Serializable {
      * be rejected with a <i>ValidationException</i>. <p>If you specify any
      * attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's
-     * attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     * attribute definition. </li> </ul> </li> </ul> <p>If there are no
      * unprocessed items remaining, the response contains an empty
      * <i>UnprocessedItems</i> map.
      * <p>
@@ -136,7 +136,7 @@ public class BatchWriteItemResult implements Serializable {
      *         be rejected with a <i>ValidationException</i>. <p>If you specify any
      *         attributes that are part of an index key, then the data types for
      *         those attributes must match those of the schema in the table's
-     *         attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     *         attribute definition. </li> </ul> </li> </ul> <p>If there are no
      *         unprocessed items remaining, the response contains an empty
      *         <i>UnprocessedItems</i> map.
      */
@@ -169,7 +169,7 @@ public class BatchWriteItemResult implements Serializable {
      * be rejected with a <i>ValidationException</i>. <p>If you specify any
      * attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's
-     * attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     * attribute definition. </li> </ul> </li> </ul> <p>If there are no
      * unprocessed items remaining, the response contains an empty
      * <i>UnprocessedItems</i> map.
      * <p>
@@ -199,7 +199,7 @@ public class BatchWriteItemResult implements Serializable {
      *         be rejected with a <i>ValidationException</i>. <p>If you specify any
      *         attributes that are part of an index key, then the data types for
      *         those attributes must match those of the schema in the table's
-     *         attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     *         attribute definition. </li> </ul> </li> </ul> <p>If there are no
      *         unprocessed items remaining, the response contains an empty
      *         <i>UnprocessedItems</i> map.
      */
@@ -231,7 +231,7 @@ public class BatchWriteItemResult implements Serializable {
      * be rejected with a <i>ValidationException</i>. <p>If you specify any
      * attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's
-     * attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     * attribute definition. </li> </ul> </li> </ul> <p>If there are no
      * unprocessed items remaining, the response contains an empty
      * <i>UnprocessedItems</i> map.
      * <p>
@@ -263,7 +263,7 @@ public class BatchWriteItemResult implements Serializable {
      *         be rejected with a <i>ValidationException</i>. <p>If you specify any
      *         attributes that are part of an index key, then the data types for
      *         those attributes must match those of the schema in the table's
-     *         attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     *         attribute definition. </li> </ul> </li> </ul> <p>If there are no
      *         unprocessed items remaining, the response contains an empty
      *         <i>UnprocessedItems</i> map.
      *
@@ -299,7 +299,7 @@ public class BatchWriteItemResult implements Serializable {
      * be rejected with a <i>ValidationException</i>. <p>If you specify any
      * attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's
-     * attribute definition.</li> </ul> </li> </ul> <p>If there are no
+     * attribute definition. </li> </ul> </li> </ul> <p>If there are no
      * unprocessed items remaining, the response contains an empty
      * <i>UnprocessedItems</i> map.
      * <p>

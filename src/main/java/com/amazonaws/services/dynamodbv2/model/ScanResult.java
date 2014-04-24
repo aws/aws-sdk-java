@@ -31,17 +31,24 @@ public class ScanResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<java.util.Map<String,AttributeValue>> items;
 
     /**
-     * The number of items in the response.
+     * The number of items in the response. <p>If you used a
+     * <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
+     * items returned <i>after</i> the filter was applied, and
+     * <i>ScannedCount</i> is the number of matching items <i>before</i> the
+     * filter was applied. <p>If you did not use a filter in the request,
+     * then <i>Count</i> is the same as <i>ScannedCount</i>.
      */
     private Integer count;
 
     /**
-     * The number of items in the complete scan, before any filters are
+     * The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is
      * applied. A high <i>ScannedCount</i> value with few, or no,
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide. <p>If you
+     * did not use a filter in the request, then <i>ScannedCount</i> is the
+     * same as <i>Count</i>.
      */
     private Integer scannedCount;
 
@@ -150,29 +157,59 @@ public class ScanResult implements Serializable {
     }
 
     /**
-     * The number of items in the response.
+     * The number of items in the response. <p>If you used a
+     * <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
+     * items returned <i>after</i> the filter was applied, and
+     * <i>ScannedCount</i> is the number of matching items <i>before</i> the
+     * filter was applied. <p>If you did not use a filter in the request,
+     * then <i>Count</i> is the same as <i>ScannedCount</i>.
      *
-     * @return The number of items in the response.
+     * @return The number of items in the response. <p>If you used a
+     *         <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
+     *         items returned <i>after</i> the filter was applied, and
+     *         <i>ScannedCount</i> is the number of matching items <i>before</i> the
+     *         filter was applied. <p>If you did not use a filter in the request,
+     *         then <i>Count</i> is the same as <i>ScannedCount</i>.
      */
     public Integer getCount() {
         return count;
     }
     
     /**
-     * The number of items in the response.
+     * The number of items in the response. <p>If you used a
+     * <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
+     * items returned <i>after</i> the filter was applied, and
+     * <i>ScannedCount</i> is the number of matching items <i>before</i> the
+     * filter was applied. <p>If you did not use a filter in the request,
+     * then <i>Count</i> is the same as <i>ScannedCount</i>.
      *
-     * @param count The number of items in the response.
+     * @param count The number of items in the response. <p>If you used a
+     *         <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
+     *         items returned <i>after</i> the filter was applied, and
+     *         <i>ScannedCount</i> is the number of matching items <i>before</i> the
+     *         filter was applied. <p>If you did not use a filter in the request,
+     *         then <i>Count</i> is the same as <i>ScannedCount</i>.
      */
     public void setCount(Integer count) {
         this.count = count;
     }
     
     /**
-     * The number of items in the response.
+     * The number of items in the response. <p>If you used a
+     * <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
+     * items returned <i>after</i> the filter was applied, and
+     * <i>ScannedCount</i> is the number of matching items <i>before</i> the
+     * filter was applied. <p>If you did not use a filter in the request,
+     * then <i>Count</i> is the same as <i>ScannedCount</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param count The number of items in the response.
+     * @param count The number of items in the response. <p>If you used a
+     *         <i>ScanFilter</i> in the request, then <i>Count</i> is the number of
+     *         items returned <i>after</i> the filter was applied, and
+     *         <i>ScannedCount</i> is the number of matching items <i>before</i> the
+     *         filter was applied. <p>If you did not use a filter in the request,
+     *         then <i>Count</i> is the same as <i>ScannedCount</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -183,59 +220,71 @@ public class ScanResult implements Serializable {
     }
 
     /**
-     * The number of items in the complete scan, before any filters are
+     * The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is
      * applied. A high <i>ScannedCount</i> value with few, or no,
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide. <p>If you
+     * did not use a filter in the request, then <i>ScannedCount</i> is the
+     * same as <i>Count</i>.
      *
-     * @return The number of items in the complete scan, before any filters are
+     * @return The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is
      *         applied. A high <i>ScannedCount</i> value with few, or no,
      *         <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     *         and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     *         and ScannedCount</a> in the Amazon DynamoDB Developer Guide. <p>If you
+     *         did not use a filter in the request, then <i>ScannedCount</i> is the
+     *         same as <i>Count</i>.
      */
     public Integer getScannedCount() {
         return scannedCount;
     }
     
     /**
-     * The number of items in the complete scan, before any filters are
+     * The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is
      * applied. A high <i>ScannedCount</i> value with few, or no,
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide. <p>If you
+     * did not use a filter in the request, then <i>ScannedCount</i> is the
+     * same as <i>Count</i>.
      *
-     * @param scannedCount The number of items in the complete scan, before any filters are
+     * @param scannedCount The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is
      *         applied. A high <i>ScannedCount</i> value with few, or no,
      *         <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     *         and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     *         and ScannedCount</a> in the Amazon DynamoDB Developer Guide. <p>If you
+     *         did not use a filter in the request, then <i>ScannedCount</i> is the
+     *         same as <i>Count</i>.
      */
     public void setScannedCount(Integer scannedCount) {
         this.scannedCount = scannedCount;
     }
     
     /**
-     * The number of items in the complete scan, before any filters are
+     * The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is
      * applied. A high <i>ScannedCount</i> value with few, or no,
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     * and ScannedCount</a> in the Amazon DynamoDB Developer Guide. <p>If you
+     * did not use a filter in the request, then <i>ScannedCount</i> is the
+     * same as <i>Count</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scannedCount The number of items in the complete scan, before any filters are
+     * @param scannedCount The number of items evaluated, <i>before</i> any <i>ScanFilter</i> is
      *         applied. A high <i>ScannedCount</i> value with few, or no,
      *         <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     *         and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     *         and ScannedCount</a> in the Amazon DynamoDB Developer Guide. <p>If you
+     *         did not use a filter in the request, then <i>ScannedCount</i> is the
+     *         same as <i>Count</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

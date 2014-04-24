@@ -43,6 +43,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * those unprocessed items until all items have been processed.
  * </p>
  * <p>
+ * Note that if <i>none</i> of the items can be processed due to
+ * insufficient provisioned throughput on all of the tables in the
+ * request, then <i>BatchGetItem</i> will throw a
+ * <i>ProvisionedThroughputExceededException</i> .
+ * </p>
+ * <p>
  * To write one item, you can use the <i>PutItem</i> operation; to delete
  * one item, you can use the <i>DeleteItem</i> operation.
  * </p>
@@ -59,15 +65,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If you use a programming language that supports concurrency, such as
  * Java, you can use threads to write items in parallel. Your application
- * must include the necessary logic to manage the threads.
- * </p>
- * <p>
- * With languages that don't support threading, such as PHP,
- * <i>BatchWriteItem</i> will write or delete the specified items one at
- * a time. In both situations, <i>BatchWriteItem</i> provides an
- * alternative where the API performs the specified put and delete
- * operations in parallel, giving you the power of the thread pool
- * approach without having to introduce complexity into your application.
+ * must include the necessary logic to manage the threads. With languages
+ * that don't support threading, such as PHP, you must update or delete
+ * the specified items one at a time. In both situations,
+ * <i>BatchWriteItem</i> provides an alternative where the API performs
+ * the specified put and delete operations in parallel, giving you the
+ * power of the thread pool approach without having to introduce
+ * complexity into your application.
  * </p>
  * <p>
  * Parallel processing reduces latency, but each specified put and delete
@@ -131,7 +135,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * empty values will be rejected with a <i>ValidationException</i>. <p>If
      * you specify any attributes that are part of an index key, then the
      * data types for those attributes must match those of the schema in the
-     * table's attribute definition.</li> </ul> </li> </ul>
+     * table's attribute definition. </li> </ul> </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
@@ -190,7 +194,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * empty values will be rejected with a <i>ValidationException</i>. <p>If
      * you specify any attributes that are part of an index key, then the
      * data types for those attributes must match those of the schema in the
-     * table's attribute definition.</li> </ul> </li> </ul>
+     * table's attribute definition. </li> </ul> </li> </ul>
      */
     public BatchWriteItemRequest(java.util.Map<String,java.util.List<WriteRequest>> requestItems) {
         setRequestItems(requestItems);
@@ -215,7 +219,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * empty values will be rejected with a <i>ValidationException</i>. <p>If
      * you specify any attributes that are part of an index key, then the
      * data types for those attributes must match those of the schema in the
-     * table's attribute definition.</li> </ul> </li> </ul>
+     * table's attribute definition. </li> </ul> </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
@@ -238,7 +242,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         empty values will be rejected with a <i>ValidationException</i>. <p>If
      *         you specify any attributes that are part of an index key, then the
      *         data types for those attributes must match those of the schema in the
-     *         table's attribute definition.</li> </ul> </li> </ul>
+     *         table's attribute definition. </li> </ul> </li> </ul>
      */
     public java.util.Map<String,java.util.List<WriteRequest>> getRequestItems() {
         
@@ -264,7 +268,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * empty values will be rejected with a <i>ValidationException</i>. <p>If
      * you specify any attributes that are part of an index key, then the
      * data types for those attributes must match those of the schema in the
-     * table's attribute definition.</li> </ul> </li> </ul>
+     * table's attribute definition. </li> </ul> </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
@@ -287,7 +291,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         empty values will be rejected with a <i>ValidationException</i>. <p>If
      *         you specify any attributes that are part of an index key, then the
      *         data types for those attributes must match those of the schema in the
-     *         table's attribute definition.</li> </ul> </li> </ul>
+     *         table's attribute definition. </li> </ul> </li> </ul>
      */
     public void setRequestItems(java.util.Map<String,java.util.List<WriteRequest>> requestItems) {
         this.requestItems = requestItems;
@@ -312,7 +316,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * empty values will be rejected with a <i>ValidationException</i>. <p>If
      * you specify any attributes that are part of an index key, then the
      * data types for those attributes must match those of the schema in the
-     * table's attribute definition.</li> </ul> </li> </ul>
+     * table's attribute definition. </li> </ul> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -337,7 +341,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         empty values will be rejected with a <i>ValidationException</i>. <p>If
      *         you specify any attributes that are part of an index key, then the
      *         data types for those attributes must match those of the schema in the
-     *         table's attribute definition.</li> </ul> </li> </ul>
+     *         table's attribute definition. </li> </ul> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -366,7 +370,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      * empty values will be rejected with a <i>ValidationException</i>. <p>If
      * you specify any attributes that are part of an index key, then the
      * data types for those attributes must match those of the schema in the
-     * table's attribute definition.</li> </ul> </li> </ul>
+     * table's attribute definition. </li> </ul> </li> </ul>
      * <p>
      * The method adds a new key-value pair into RequestItems parameter, and
      * returns a reference to this object so that method calls can be chained

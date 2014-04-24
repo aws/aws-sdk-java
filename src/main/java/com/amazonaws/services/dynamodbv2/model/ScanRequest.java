@@ -61,7 +61,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -78,7 +81,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -110,117 +113,54 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     private String select;
 
     /**
-     * Evaluates the scan results and returns only the desired values.
-     * Multiple conditions are treated as "AND" operations: all conditions
-     * must be met to be included in the results. <p>Each
-     * <i>ScanConditions</i> element consists of an attribute name to
-     * compare, along with the following: <ul>
-     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
+     * Evaluates the scan results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Scan:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     * specifying data types in JSON, see <a
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If the target attribute of the comparison is a
-     * String, then the operation checks for a substring match. If the target
-     * attribute of the comparison is Binary, then the operation looks for a
-     * subsequence of the target that matches the input. If the target
-     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     * operation checks for a member of the set (not as a substring). </li>
-     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     * subsequence, or absence of a value in a set.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If the target attribute of the comparison is a String, then the
-     * operation checks for the absence of a substring match. If the target
-     * attribute of the comparison is Binary, then the operation checks for
-     * the absence of a subsequence of the target that matches the input. If
-     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     * then the operation checks for the absence of a member of the set (not
-     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     * prefix. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     * checks for exact matches. <p><i>AttributeValueList</i> can contain
-     * more than one <i>AttributeValue</i> of type String, Number, or Binary
-     * (not a set). The target attribute of the comparison must be of the
-     * same type and exact value to match. A String never matches a String
-     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     * first value, and less than or equal to the second value.
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     * elements of the same type, either String, Number, or Binary (not a
-     * set). A target attribute matches if the target value is greater than,
-     * or equal to, the first element and less than, or equal to, the second
-     * element. If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not compare to
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
      */
     private java.util.Map<String,Condition> scanFilter;
+
+    /**
+     * A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     */
+    private String conditionalOperator;
 
     /**
      * The primary key of the first item that this operation will evaluate.
@@ -259,7 +199,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * specify <i>TotalSegments</i>, you must also specify <i>Segment</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 4096<br/>
+     * <b>Range: </b>1 - 1000000<br/>
      */
     private Integer totalSegments;
 
@@ -278,7 +218,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * specify <i>TotalSegments</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 4095<br/>
+     * <b>Range: </b>0 - 999999<br/>
      */
     private Integer segment;
 
@@ -348,7 +288,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -356,7 +299,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @return The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      */
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
@@ -366,7 +312,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -374,7 +323,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -390,7 +342,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -400,7 +355,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -417,7 +375,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result.
+     * result. <p>Note that <i>AttributesToGet</i> has no effect on
+     * provisioned throughput consumption. DynamoDB determines capacity units
+     * consumed based on item size, not on the amount of data that is
+     * returned to an application.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -427,7 +388,10 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result.
+     *         result. <p>Note that <i>AttributesToGet</i> has no effect on
+     *         provisioned throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -454,7 +418,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -470,7 +434,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         DynamoDB reaches this limit, it stops the operation and returns the
      *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      *         apply in a subsequent operation to continue the operation. For more
-     *         information see <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -488,7 +452,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -504,7 +468,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         DynamoDB reaches this limit, it stops the operation and returns the
      *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      *         apply in a subsequent operation to continue the operation. For more
-     *         information see <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
@@ -522,7 +486,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * DynamoDB reaches this limit, it stops the operation and returns the
      * matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      * apply in a subsequent operation to continue the operation. For more
-     * information see <a
+     * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
@@ -540,7 +504,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         DynamoDB reaches this limit, it stops the operation and returns the
      *         matching values up to the limit, and a <i>LastEvaluatedKey</i> to
      *         apply in a subsequent operation to continue the operation. For more
-     *         information see <a
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      *
@@ -775,225 +739,69 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * Evaluates the scan results and returns only the desired values.
-     * Multiple conditions are treated as "AND" operations: all conditions
-     * must be met to be included in the results. <p>Each
-     * <i>ScanConditions</i> element consists of an attribute name to
-     * compare, along with the following: <ul>
-     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
+     * Evaluates the scan results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Scan:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     * specifying data types in JSON, see <a
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If the target attribute of the comparison is a
-     * String, then the operation checks for a substring match. If the target
-     * attribute of the comparison is Binary, then the operation looks for a
-     * subsequence of the target that matches the input. If the target
-     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     * operation checks for a member of the set (not as a substring). </li>
-     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     * subsequence, or absence of a value in a set.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If the target attribute of the comparison is a String, then the
-     * operation checks for the absence of a substring match. If the target
-     * attribute of the comparison is Binary, then the operation checks for
-     * the absence of a subsequence of the target that matches the input. If
-     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     * then the operation checks for the absence of a member of the set (not
-     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     * prefix. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     * checks for exact matches. <p><i>AttributeValueList</i> can contain
-     * more than one <i>AttributeValue</i> of type String, Number, or Binary
-     * (not a set). The target attribute of the comparison must be of the
-     * same type and exact value to match. A String never matches a String
-     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     * first value, and less than or equal to the second value.
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     * elements of the same type, either String, Number, or Binary (not a
-     * set). A target attribute matches if the target value is greater than,
-     * or equal to, the first element and less than, or equal to, the second
-     * element. If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not compare to
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
      *
-     * @return Evaluates the scan results and returns only the desired values.
-     *         Multiple conditions are treated as "AND" operations: all conditions
-     *         must be met to be included in the results. <p>Each
-     *         <i>ScanConditions</i> element consists of an attribute name to
-     *         compare, along with the following: <ul>
-     *         <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     *         which case the list contains two values. <note> <p>For type Number,
-     *         value comparisons are numeric. <p>String value comparisons for greater
-     *         than, equals, or less than are based on ASCII character code values.
-     *         For example, <code>a</code> is greater than <code>A</code>, and
-     *         <code>aa</code> is greater than <code>B</code>. For a list of code
+     * @return Evaluates the scan results and returns only the desired values. <p>If
+     *         you specify more than one condition in the <i>ScanFilter</i> map, then
+     *         by default all of the conditions must evaluate to true. In other
+     *         words, the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     *         consists of an attribute name to compare, along with the following:
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     *         comparator for evaluating attributes. For example, equals, greater
-     *         than, less than, etc. <p>Valid comparison operators for Scan:
-     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     *         specifying data types in JSON, see <a
+     *         query expressions. <p>For information on specifying data types in
+     *         JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     *         following are descriptions of each comparison operator. <ul> <li>
-     *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     *         a set). If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     *         can contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>GE</code> : Greater than or equal.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If an item contains an <i>AttributeValue</i> of a different type than
-     *         the one specified in the request, the value does not match. For
-     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If an item contains an <i>AttributeValue</i> of a different type than
-     *         the one specified in the request, the value does not match. For
-     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     *         attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     *         not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     *         subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If the target attribute of the comparison is a
-     *         String, then the operation checks for a substring match. If the target
-     *         attribute of the comparison is Binary, then the operation looks for a
-     *         subsequence of the target that matches the input. If the target
-     *         attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     *         operation checks for a member of the set (not as a substring). </li>
-     *         <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     *         subsequence, or absence of a value in a set.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If the target attribute of the comparison is a String, then the
-     *         operation checks for the absence of a substring match. If the target
-     *         attribute of the comparison is Binary, then the operation checks for
-     *         the absence of a subsequence of the target that matches the input. If
-     *         the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     *         then the operation checks for the absence of a member of the set (not
-     *         as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     *         prefix. <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String or Binary (not a Number or a
-     *         set). The target attribute of the comparison must be a String or
-     *         Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     *         checks for exact matches. <p><i>AttributeValueList</i> can contain
-     *         more than one <i>AttributeValue</i> of type String, Number, or Binary
-     *         (not a set). The target attribute of the comparison must be of the
-     *         same type and exact value to match. A String never matches a String
-     *         set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     *         first value, and less than or equal to the second value.
-     *         <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     *         elements of the same type, either String, Number, or Binary (not a
-     *         set). A target attribute matches if the target value is greater than,
-     *         or equal to, the first element and less than, or equal to, the second
-     *         element. If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not compare to
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     *         attributes. For example, equals, greater than, less than, etc. <p>The
+     *         following comparison operators are available: <p><code>EQ | NE | LE |
+     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     *         operators, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     *         </li> </ul>
      */
     public java.util.Map<String,Condition> getScanFilter() {
         
@@ -1001,452 +809,140 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
     
     /**
-     * Evaluates the scan results and returns only the desired values.
-     * Multiple conditions are treated as "AND" operations: all conditions
-     * must be met to be included in the results. <p>Each
-     * <i>ScanConditions</i> element consists of an attribute name to
-     * compare, along with the following: <ul>
-     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
+     * Evaluates the scan results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Scan:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     * specifying data types in JSON, see <a
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If the target attribute of the comparison is a
-     * String, then the operation checks for a substring match. If the target
-     * attribute of the comparison is Binary, then the operation looks for a
-     * subsequence of the target that matches the input. If the target
-     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     * operation checks for a member of the set (not as a substring). </li>
-     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     * subsequence, or absence of a value in a set.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If the target attribute of the comparison is a String, then the
-     * operation checks for the absence of a substring match. If the target
-     * attribute of the comparison is Binary, then the operation checks for
-     * the absence of a subsequence of the target that matches the input. If
-     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     * then the operation checks for the absence of a member of the set (not
-     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     * prefix. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     * checks for exact matches. <p><i>AttributeValueList</i> can contain
-     * more than one <i>AttributeValue</i> of type String, Number, or Binary
-     * (not a set). The target attribute of the comparison must be of the
-     * same type and exact value to match. A String never matches a String
-     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     * first value, and less than or equal to the second value.
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     * elements of the same type, either String, Number, or Binary (not a
-     * set). A target attribute matches if the target value is greater than,
-     * or equal to, the first element and less than, or equal to, the second
-     * element. If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not compare to
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
      *
-     * @param scanFilter Evaluates the scan results and returns only the desired values.
-     *         Multiple conditions are treated as "AND" operations: all conditions
-     *         must be met to be included in the results. <p>Each
-     *         <i>ScanConditions</i> element consists of an attribute name to
-     *         compare, along with the following: <ul>
-     *         <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     *         which case the list contains two values. <note> <p>For type Number,
-     *         value comparisons are numeric. <p>String value comparisons for greater
-     *         than, equals, or less than are based on ASCII character code values.
-     *         For example, <code>a</code> is greater than <code>A</code>, and
-     *         <code>aa</code> is greater than <code>B</code>. For a list of code
+     * @param scanFilter Evaluates the scan results and returns only the desired values. <p>If
+     *         you specify more than one condition in the <i>ScanFilter</i> map, then
+     *         by default all of the conditions must evaluate to true. In other
+     *         words, the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     *         consists of an attribute name to compare, along with the following:
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     *         comparator for evaluating attributes. For example, equals, greater
-     *         than, less than, etc. <p>Valid comparison operators for Scan:
-     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     *         specifying data types in JSON, see <a
+     *         query expressions. <p>For information on specifying data types in
+     *         JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     *         following are descriptions of each comparison operator. <ul> <li>
-     *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     *         a set). If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     *         can contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>GE</code> : Greater than or equal.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If an item contains an <i>AttributeValue</i> of a different type than
-     *         the one specified in the request, the value does not match. For
-     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If an item contains an <i>AttributeValue</i> of a different type than
-     *         the one specified in the request, the value does not match. For
-     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     *         attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     *         not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     *         subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If the target attribute of the comparison is a
-     *         String, then the operation checks for a substring match. If the target
-     *         attribute of the comparison is Binary, then the operation looks for a
-     *         subsequence of the target that matches the input. If the target
-     *         attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     *         operation checks for a member of the set (not as a substring). </li>
-     *         <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     *         subsequence, or absence of a value in a set.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If the target attribute of the comparison is a String, then the
-     *         operation checks for the absence of a substring match. If the target
-     *         attribute of the comparison is Binary, then the operation checks for
-     *         the absence of a subsequence of the target that matches the input. If
-     *         the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     *         then the operation checks for the absence of a member of the set (not
-     *         as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     *         prefix. <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String or Binary (not a Number or a
-     *         set). The target attribute of the comparison must be a String or
-     *         Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     *         checks for exact matches. <p><i>AttributeValueList</i> can contain
-     *         more than one <i>AttributeValue</i> of type String, Number, or Binary
-     *         (not a set). The target attribute of the comparison must be of the
-     *         same type and exact value to match. A String never matches a String
-     *         set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     *         first value, and less than or equal to the second value.
-     *         <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     *         elements of the same type, either String, Number, or Binary (not a
-     *         set). A target attribute matches if the target value is greater than,
-     *         or equal to, the first element and less than, or equal to, the second
-     *         element. If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not compare to
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     *         attributes. For example, equals, greater than, less than, etc. <p>The
+     *         following comparison operators are available: <p><code>EQ | NE | LE |
+     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     *         operators, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     *         </li> </ul>
      */
     public void setScanFilter(java.util.Map<String,Condition> scanFilter) {
         this.scanFilter = scanFilter;
     }
     
     /**
-     * Evaluates the scan results and returns only the desired values.
-     * Multiple conditions are treated as "AND" operations: all conditions
-     * must be met to be included in the results. <p>Each
-     * <i>ScanConditions</i> element consists of an attribute name to
-     * compare, along with the following: <ul>
-     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
+     * Evaluates the scan results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Scan:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     * specifying data types in JSON, see <a
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If the target attribute of the comparison is a
-     * String, then the operation checks for a substring match. If the target
-     * attribute of the comparison is Binary, then the operation looks for a
-     * subsequence of the target that matches the input. If the target
-     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     * operation checks for a member of the set (not as a substring). </li>
-     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     * subsequence, or absence of a value in a set.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If the target attribute of the comparison is a String, then the
-     * operation checks for the absence of a substring match. If the target
-     * attribute of the comparison is Binary, then the operation checks for
-     * the absence of a subsequence of the target that matches the input. If
-     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     * then the operation checks for the absence of a member of the set (not
-     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     * prefix. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     * checks for exact matches. <p><i>AttributeValueList</i> can contain
-     * more than one <i>AttributeValue</i> of type String, Number, or Binary
-     * (not a set). The target attribute of the comparison must be of the
-     * same type and exact value to match. A String never matches a String
-     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     * first value, and less than or equal to the second value.
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     * elements of the same type, either String, Number, or Binary (not a
-     * set). A target attribute matches if the target value is greater than,
-     * or equal to, the first element and less than, or equal to, the second
-     * element. If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not compare to
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scanFilter Evaluates the scan results and returns only the desired values.
-     *         Multiple conditions are treated as "AND" operations: all conditions
-     *         must be met to be included in the results. <p>Each
-     *         <i>ScanConditions</i> element consists of an attribute name to
-     *         compare, along with the following: <ul>
-     *         <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     *         against the supplied attribute. This list contains exactly one value,
-     *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     *         which case the list contains two values. <note> <p>For type Number,
-     *         value comparisons are numeric. <p>String value comparisons for greater
-     *         than, equals, or less than are based on ASCII character code values.
-     *         For example, <code>a</code> is greater than <code>A</code>, and
-     *         <code>aa</code> is greater than <code>B</code>. For a list of code
+     * @param scanFilter Evaluates the scan results and returns only the desired values. <p>If
+     *         you specify more than one condition in the <i>ScanFilter</i> map, then
+     *         by default all of the conditions must evaluate to true. In other
+     *         words, the conditions are ANDed together. (You can use the
+     *         <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     *         you do this, then at least one of the conditions must evaluate to
+     *         true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     *         consists of an attribute name to compare, along with the following:
+     *         <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     *         evaluate against the supplied attribute. The number of values in the
+     *         list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     *         Number, value comparisons are numeric. <p>String value comparisons for
+     *         greater than, equals, or less than are based on ASCII character code
+     *         values. For example, <code>a</code> is greater than <code>A</code>,
+     *         and <code>aa</code> is greater than <code>B</code>. For a list of code
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     *         comparator for evaluating attributes. For example, equals, greater
-     *         than, less than, etc. <p>Valid comparison operators for Scan:
-     *         <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     *         specifying data types in JSON, see <a
+     *         query expressions. <p>For information on specifying data types in
+     *         JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     *         following are descriptions of each comparison operator. <ul> <li>
-     *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     *         a set). If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     *         <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     *         can contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     *         different type than the one specified in the request, the value does
-     *         not match. For example, <code>{"S":"6"}</code> does not equal
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     *         <p><code>GE</code> : Greater than or equal.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If an item contains an <i>AttributeValue</i> of a different type than
-     *         the one specified in the request, the value does not match. For
-     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If an item contains an <i>AttributeValue</i> of a different type than
-     *         the one specified in the request, the value does not match. For
-     *         example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     *         "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     *         attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     *         not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     *         subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     *         contain only one <i>AttributeValue</i> of type String, Number, or
-     *         Binary (not a set). If the target attribute of the comparison is a
-     *         String, then the operation checks for a substring match. If the target
-     *         attribute of the comparison is Binary, then the operation looks for a
-     *         subsequence of the target that matches the input. If the target
-     *         attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     *         operation checks for a member of the set (not as a substring). </li>
-     *         <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     *         subsequence, or absence of a value in a set.
-     *         <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     *         If the target attribute of the comparison is a String, then the
-     *         operation checks for the absence of a substring match. If the target
-     *         attribute of the comparison is Binary, then the operation checks for
-     *         the absence of a subsequence of the target that matches the input. If
-     *         the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     *         then the operation checks for the absence of a member of the set (not
-     *         as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     *         prefix. <p><i>AttributeValueList</i> can contain only one
-     *         <i>AttributeValue</i> of type String or Binary (not a Number or a
-     *         set). The target attribute of the comparison must be a String or
-     *         Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     *         checks for exact matches. <p><i>AttributeValueList</i> can contain
-     *         more than one <i>AttributeValue</i> of type String, Number, or Binary
-     *         (not a set). The target attribute of the comparison must be of the
-     *         same type and exact value to match. A String never matches a String
-     *         set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     *         first value, and less than or equal to the second value.
-     *         <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     *         elements of the same type, either String, Number, or Binary (not a
-     *         set). A target attribute matches if the target value is greater than,
-     *         or equal to, the first element and less than, or equal to, the second
-     *         element. If an item contains an <i>AttributeValue</i> of a different
-     *         type than the one specified in the request, the value does not match.
-     *         For example, <code>{"S":"6"}</code> does not compare to
-     *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     *         <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     *         attributes. For example, equals, greater than, less than, etc. <p>The
+     *         following comparison operators are available: <p><code>EQ | NE | LE |
+     *         LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     *         | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     *         operators, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     *         </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1457,115 +953,37 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
     }
 
     /**
-     * Evaluates the scan results and returns only the desired values.
-     * Multiple conditions are treated as "AND" operations: all conditions
-     * must be met to be included in the results. <p>Each
-     * <i>ScanConditions</i> element consists of an attribute name to
-     * compare, along with the following: <ul>
-     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
-     * against the supplied attribute. This list contains exactly one value,
-     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
-     * which case the list contains two values. <note> <p>For type Number,
-     * value comparisons are numeric. <p>String value comparisons for greater
-     * than, equals, or less than are based on ASCII character code values.
-     * For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>aa</code> is greater than <code>B</code>. For a list of code
+     * Evaluates the scan results and returns only the desired values. <p>If
+     * you specify more than one condition in the <i>ScanFilter</i> map, then
+     * by default all of the conditions must evaluate to true. In other
+     * words, the conditions are ANDed together. (You can use the
+     * <i>ConditionalOperator</i> parameter to OR the conditions instead. If
+     * you do this, then at least one of the conditions must evaluate to
+     * true, rather than all of them.) <p>Each <i>ScanFilter</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li> <p><i>AttributeValueList</i> - One or more values to
+     * evaluate against the supplied attribute. The number of values in the
+     * list depends on the <i>ComparisonOperator</i> being used. <p>For type
+     * Number, value comparisons are numeric. <p>String value comparisons for
+     * greater than, equals, or less than are based on ASCII character code
+     * values. For example, <code>a</code> is greater than <code>A</code>,
+     * and <code>aa</code> is greater than <code>B</code>. For a list of code
      * values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
-     * comparator for evaluating attributes. For example, equals, greater
-     * than, less than, etc. <p>Valid comparison operators for Scan:
-     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
-     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
-     * specifying data types in JSON, see <a
+     * query expressions. <p>For information on specifying data types in
+     * JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
-     * following are descriptions of each comparison operator. <ul> <li>
-     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
-     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
-     * a set). If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>NE</code> : Not equal. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LE</code> : Less than or equal. <p><i>AttributeValueList</i>
-     * can contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>LT</code> : Less than. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-     * different type than the one specified in the request, the value does
-     * not match. For example, <code>{"S":"6"}</code> does not equal
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code>. <p/> </li> <li>
-     * <p><code>GE</code> : Greater than or equal.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>GT</code> : Greater than.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If an item contains an <i>AttributeValue</i> of a different type than
-     * the one specified in the request, the value does not match. For
-     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-     * "2", "1"]}</code>. <p/> </li> <li> <p><code>NOT_NULL</code> : The
-     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
-     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
-     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
-     * contain only one <i>AttributeValue</i> of type String, Number, or
-     * Binary (not a set). If the target attribute of the comparison is a
-     * String, then the operation checks for a substring match. If the target
-     * attribute of the comparison is Binary, then the operation looks for a
-     * subsequence of the target that matches the input. If the target
-     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
-     * operation checks for a member of the set (not as a substring). </li>
-     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
-     * subsequence, or absence of a value in a set.
-     * <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
-     * If the target attribute of the comparison is a String, then the
-     * operation checks for the absence of a substring match. If the target
-     * attribute of the comparison is Binary, then the operation checks for
-     * the absence of a subsequence of the target that matches the input. If
-     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-     * then the operation checks for the absence of a member of the set (not
-     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
-     * prefix. <p><i>AttributeValueList</i> can contain only one
-     * <i>AttributeValue</i> of type String or Binary (not a Number or a
-     * set). The target attribute of the comparison must be a String or
-     * Binary (not a Number or a set). <p/> </li> <li> <p><code>IN</code> :
-     * checks for exact matches. <p><i>AttributeValueList</i> can contain
-     * more than one <i>AttributeValue</i> of type String, Number, or Binary
-     * (not a set). The target attribute of the comparison must be of the
-     * same type and exact value to match. A String never matches a String
-     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
-     * first value, and less than or equal to the second value.
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
-     * elements of the same type, either String, Number, or Binary (not a
-     * set). A target attribute matches if the target value is greater than,
-     * or equal to, the first element and less than, or equal to, the second
-     * element. If an item contains an <i>AttributeValue</i> of a different
-     * type than the one specified in the request, the value does not match.
-     * For example, <code>{"S":"6"}</code> does not compare to
-     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating
+     * attributes. For example, equals, greater than, less than, etc. <p>The
+     * following comparison operators are available: <p><code>EQ | NE | LE |
+     * LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+     * | IN | BETWEEN</code> <p>For complete descriptions of all comparison
+     * operators, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
+     * </li> </ul>
      * <p>
      * The method adds a new key-value pair into ScanFilter parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -1594,6 +1012,158 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         return this;
     }
     
+    /**
+     * A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @return A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public String getConditionalOperator() {
+        return conditionalOperator;
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public void setConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ConditionalOperator
+     */
+    public ScanRequest withConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+        return this;
+    }
+
+    /**
+     * A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @see ConditionalOperator
+     */
+    public void setConditionalOperator(ConditionalOperator conditionalOperator) {
+        this.conditionalOperator = conditionalOperator.toString();
+    }
+    
+    /**
+     * A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     * map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li>
+     * <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     * evaluate to true, then the entire map evaluates to true.</li> </ul>
+     * <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     * the default. <p>The operation will succeed only if the entire map
+     * evaluates to true.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>AND, OR
+     *
+     * @param conditionalOperator A logical operator to apply to the conditions in the <i>ScanFilter</i>
+     *         map: <ul> <li><p><code>AND</code> - If <i>all</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li>
+     *         <li><p><code>OR</code> - If <i>at least one</i> of the conditions
+     *         evaluate to true, then the entire map evaluates to true.</li> </ul>
+     *         <p>If you omit <i>ConditionalOperator</i>, then <code>AND</code> is
+     *         the default. <p>The operation will succeed only if the entire map
+     *         evaluates to true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ConditionalOperator
+     */
+    public ScanRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
+        this.conditionalOperator = conditionalOperator.toString();
+        return this;
+    }
+
     /**
      * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
@@ -1894,7 +1464,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * specify <i>TotalSegments</i>, you must also specify <i>Segment</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 4096<br/>
+     * <b>Range: </b>1 - 1000000<br/>
      *
      * @return For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
      *         the total number of segments into which the <i>Scan</i> operation will
@@ -1924,7 +1494,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * specify <i>TotalSegments</i>, you must also specify <i>Segment</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 4096<br/>
+     * <b>Range: </b>1 - 1000000<br/>
      *
      * @param totalSegments For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
      *         the total number of segments into which the <i>Scan</i> operation will
@@ -1956,7 +1526,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 4096<br/>
+     * <b>Range: </b>1 - 1000000<br/>
      *
      * @param totalSegments For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents
      *         the total number of segments into which the <i>Scan</i> operation will
@@ -1992,7 +1562,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * specify <i>TotalSegments</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 4095<br/>
+     * <b>Range: </b>0 - 999999<br/>
      *
      * @return For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      *         individual segment to be scanned by an application worker. <p>Segment
@@ -2026,7 +1596,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * specify <i>TotalSegments</i>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 4095<br/>
+     * <b>Range: </b>0 - 999999<br/>
      *
      * @param segment For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      *         individual segment to be scanned by an application worker. <p>Segment
@@ -2062,7 +1632,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 4095<br/>
+     * <b>Range: </b>0 - 999999<br/>
      *
      * @param segment For a parallel <i>Scan</i> request, <i>Segment</i> identifies an
      *         individual segment to be scanned by an application worker. <p>Segment
@@ -2102,6 +1672,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
         if (getSelect() != null) sb.append("Select: " + getSelect() + ",");
         if (getScanFilter() != null) sb.append("ScanFilter: " + getScanFilter() + ",");
+        if (getConditionalOperator() != null) sb.append("ConditionalOperator: " + getConditionalOperator() + ",");
         if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");
         if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
         if (getTotalSegments() != null) sb.append("TotalSegments: " + getTotalSegments() + ",");
@@ -2120,6 +1691,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode()); 
         hashCode = prime * hashCode + ((getSelect() == null) ? 0 : getSelect().hashCode()); 
         hashCode = prime * hashCode + ((getScanFilter() == null) ? 0 : getScanFilter().hashCode()); 
+        hashCode = prime * hashCode + ((getConditionalOperator() == null) ? 0 : getConditionalOperator().hashCode()); 
         hashCode = prime * hashCode + ((getExclusiveStartKey() == null) ? 0 : getExclusiveStartKey().hashCode()); 
         hashCode = prime * hashCode + ((getReturnConsumedCapacity() == null) ? 0 : getReturnConsumedCapacity().hashCode()); 
         hashCode = prime * hashCode + ((getTotalSegments() == null) ? 0 : getTotalSegments().hashCode()); 
@@ -2145,6 +1717,8 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
         if (other.getSelect() != null && other.getSelect().equals(this.getSelect()) == false) return false; 
         if (other.getScanFilter() == null ^ this.getScanFilter() == null) return false;
         if (other.getScanFilter() != null && other.getScanFilter().equals(this.getScanFilter()) == false) return false; 
+        if (other.getConditionalOperator() == null ^ this.getConditionalOperator() == null) return false;
+        if (other.getConditionalOperator() != null && other.getConditionalOperator().equals(this.getConditionalOperator()) == false) return false; 
         if (other.getExclusiveStartKey() == null ^ this.getExclusiveStartKey() == null) return false;
         if (other.getExclusiveStartKey() != null && other.getExclusiveStartKey().equals(this.getExclusiveStartKey()) == false) return false; 
         if (other.getReturnConsumedCapacity() == null ^ this.getReturnConsumedCapacity() == null) return false;

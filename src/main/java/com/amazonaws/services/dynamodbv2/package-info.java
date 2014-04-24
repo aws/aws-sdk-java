@@ -4,13 +4,31 @@
  *
  * Amazon DynamoDB <b>Overview</b> <p>
  * This is the Amazon DynamoDB API Reference. This guide provides
- * descriptions and samples of the DynamoDB API. For information about
- * application development using this API, see the Amazon DynamoDB
- * Developer Guide.
+ * descriptions and samples of the low-level DynamoDB API. For
+ * information about DynamoDB application development, go to the
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"> Amazon DynamoDB Developer Guide </a>
+ * .
  * </p>
  * <p>
- * The following are short descriptions of each API action, organized by
- * function.
+ * Instead of making the requests to the low-level DynamoDB API directly
+ * from your application, we recommend that you use the AWS Software
+ * Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs
+ * make it unnecessary to call the low-level DynamoDB API directly from
+ * your application. The libraries take care of request authentication,
+ * serialization, and connection management. For more information, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html"> Using the AWS SDKs with DynamoDB </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
+ * If you decide to code against the low-level DynamoDB API directly, you
+ * will need to write the necessary code to authenticate your requests.
+ * For more information on signing your requests, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html"> Using the DynamoDB API </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
+ * The following are short descriptions of each low-level API action,
+ * organized by function.
  * </p>
  * <p>
  * <b>Managing Tables</b>
@@ -51,6 +69,11 @@
  * 
  * </ul>
  * 
+ * </p>
+ * <p>
+ * For conceptual information about managing tables, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html"> Working with Tables </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  * <p>
  * <b>Reading Data</b>
@@ -96,6 +119,11 @@
  * 
  * </p>
  * <p>
+ * For conceptual information about reading data, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
+ * </p>
+ * <p>
  * <b>Modifying Data</b>
  * </p>
  * <p>
@@ -134,6 +162,11 @@
  * 
  * </ul>
  * 
+ * </p>
+ * <p>
+ * For conceptual information about modifying data, go to
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"> Working with Items </a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"> Query and Scan Operations </a>
+ * in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  */
  package com.amazonaws.services.dynamodbv2;

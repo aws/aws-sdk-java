@@ -39,8 +39,7 @@ public class CloudFrontSigner extends AbstractAWSSigner {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
 
-        Date signDate = getSignatureDate(getTimeOffset(request));
-        String date = new DateUtils().formatRfc822Date(signDate);
+        String date = new DateUtils().formatRfc822Date(new Date());
         request.addHeader("Date", date);
         String canonicalString = date;
         log.debug("Calculated string to sign:\n\"" + canonicalString + "\"");

@@ -45,9 +45,6 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
 
     /**
      * Maximum number of records to be returned.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      */
     private Integer maxRecords;
 
@@ -169,9 +166,6 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
 
     /**
      * Maximum number of records to be returned.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @return Maximum number of records to be returned.
      */
@@ -181,9 +175,6 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     
     /**
      * Maximum number of records to be returned.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords Maximum number of records to be returned.
      */
@@ -195,9 +186,6 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      * Maximum number of records to be returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords Maximum number of records to be returned.
      *

@@ -53,6 +53,10 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
                     context.nextToken();
                     queryResult.setCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ScannedCount", targetDepth)) {
+                    context.nextToken();
+                    queryResult.setScannedCount(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LastEvaluatedKey", targetDepth)) {
                     context.nextToken();
                     queryResult.setLastEvaluatedKey(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));

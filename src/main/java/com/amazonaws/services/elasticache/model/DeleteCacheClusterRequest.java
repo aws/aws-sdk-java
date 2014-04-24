@@ -40,6 +40,12 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     private String cacheClusterId;
 
     /**
+     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * snapshot, and then deletes the cache cluster immediately afterward.
+     */
+    private String finalSnapshotIdentifier;
+
+    /**
      * Default constructor for a new DeleteCacheClusterRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -97,6 +103,45 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * snapshot, and then deletes the cache cluster immediately afterward.
+     *
+     * @return The name of a final cache cluster snapshot. ElastiCache creates the
+     *         snapshot, and then deletes the cache cluster immediately afterward.
+     */
+    public String getFinalSnapshotIdentifier() {
+        return finalSnapshotIdentifier;
+    }
+    
+    /**
+     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * snapshot, and then deletes the cache cluster immediately afterward.
+     *
+     * @param finalSnapshotIdentifier The name of a final cache cluster snapshot. ElastiCache creates the
+     *         snapshot, and then deletes the cache cluster immediately afterward.
+     */
+    public void setFinalSnapshotIdentifier(String finalSnapshotIdentifier) {
+        this.finalSnapshotIdentifier = finalSnapshotIdentifier;
+    }
+    
+    /**
+     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * snapshot, and then deletes the cache cluster immediately afterward.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param finalSnapshotIdentifier The name of a final cache cluster snapshot. ElastiCache creates the
+     *         snapshot, and then deletes the cache cluster immediately afterward.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DeleteCacheClusterRequest withFinalSnapshotIdentifier(String finalSnapshotIdentifier) {
+        this.finalSnapshotIdentifier = finalSnapshotIdentifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -108,7 +153,8 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() );
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+        if (getFinalSnapshotIdentifier() != null) sb.append("FinalSnapshotIdentifier: " + getFinalSnapshotIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +165,7 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode()); 
+        hashCode = prime * hashCode + ((getFinalSnapshotIdentifier() == null) ? 0 : getFinalSnapshotIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -132,6 +179,8 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
         
         if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null) return false;
         if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false) return false; 
+        if (other.getFinalSnapshotIdentifier() == null ^ this.getFinalSnapshotIdentifier() == null) return false;
+        if (other.getFinalSnapshotIdentifier() != null && other.getFinalSnapshotIdentifier().equals(this.getFinalSnapshotIdentifier()) == false) return false; 
         return true;
     }
     

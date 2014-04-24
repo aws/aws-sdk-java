@@ -38,10 +38,13 @@ public class DeleteCacheClusterRequestMarshaller implements Marshaller<Request<D
 
         Request<DeleteCacheClusterRequest> request = new DefaultRequest<DeleteCacheClusterRequest>(deleteCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteCacheCluster");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2014-03-24");
 
         if (deleteCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(deleteCacheClusterRequest.getCacheClusterId()));
+        }
+        if (deleteCacheClusterRequest.getFinalSnapshotIdentifier() != null) {
+            request.addParameter("FinalSnapshotIdentifier", StringUtils.fromString(deleteCacheClusterRequest.getFinalSnapshotIdentifier()));
         }
 
         return request;

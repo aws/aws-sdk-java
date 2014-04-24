@@ -107,6 +107,10 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                     launchConfiguration.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PlacementTenancy", targetDepth)) {
+                    launchConfiguration.setPlacementTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchConfiguration;

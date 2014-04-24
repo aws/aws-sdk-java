@@ -48,9 +48,6 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
 
     /**
      * The maximum number of launch configurations. The default is 100.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      */
     private Integer maxRecords;
 
@@ -166,9 +163,6 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
 
     /**
      * The maximum number of launch configurations. The default is 100.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @return The maximum number of launch configurations. The default is 100.
      */
@@ -178,9 +172,6 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     
     /**
      * The maximum number of launch configurations. The default is 100.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of launch configurations. The default is 100.
      */
@@ -192,9 +183,6 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      * The maximum number of launch configurations. The default is 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of launch configurations. The default is 100.
      *

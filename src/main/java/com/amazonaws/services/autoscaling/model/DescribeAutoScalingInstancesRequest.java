@@ -47,9 +47,6 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     /**
      * The maximum number of Auto Scaling instances to be described with each
      * call.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      */
     private Integer maxRecords;
 
@@ -157,9 +154,6 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     /**
      * The maximum number of Auto Scaling instances to be described with each
      * call.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @return The maximum number of Auto Scaling instances to be described with each
      *         call.
@@ -171,9 +165,6 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     /**
      * The maximum number of Auto Scaling instances to be described with each
      * call.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of Auto Scaling instances to be described with each
      *         call.
@@ -187,9 +178,6 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      * call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of Auto Scaling instances to be described with each
      *         call.

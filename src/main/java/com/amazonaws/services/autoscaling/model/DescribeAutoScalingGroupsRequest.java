@@ -51,9 +51,6 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * The maximum number of records to return.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      */
     private Integer maxRecords;
 
@@ -169,9 +166,6 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
 
     /**
      * The maximum number of records to return.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @return The maximum number of records to return.
      */
@@ -181,9 +175,6 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
     
     /**
      * The maximum number of records to return.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of records to return.
      */
@@ -195,9 +186,6 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
      * The maximum number of records to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of records to return.
      *

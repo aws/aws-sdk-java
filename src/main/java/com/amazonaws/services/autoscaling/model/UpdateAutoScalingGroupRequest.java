@@ -116,8 +116,10 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The length of time that Auto Scaling waits before checking an
-     * instance's health status. The grace period begins when an instance
-     * comes into service.
+     * instance's health status. The grace period begins when the instance
+     * passes System Status and the Instance Status checks from Amazon EC2.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      */
     private Integer healthCheckGracePeriod;
 
@@ -547,12 +549,16 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The length of time that Auto Scaling waits before checking an
-     * instance's health status. The grace period begins when an instance
-     * comes into service.
+     * instance's health status. The grace period begins when the instance
+     * passes System Status and the Instance Status checks from Amazon EC2.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      *
      * @return The length of time that Auto Scaling waits before checking an
-     *         instance's health status. The grace period begins when an instance
-     *         comes into service.
+     *         instance's health status. The grace period begins when the instance
+     *         passes System Status and the Instance Status checks from Amazon EC2.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      */
     public Integer getHealthCheckGracePeriod() {
         return healthCheckGracePeriod;
@@ -560,12 +566,16 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The length of time that Auto Scaling waits before checking an
-     * instance's health status. The grace period begins when an instance
-     * comes into service.
+     * instance's health status. The grace period begins when the instance
+     * passes System Status and the Instance Status checks from Amazon EC2.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      *
      * @param healthCheckGracePeriod The length of time that Auto Scaling waits before checking an
-     *         instance's health status. The grace period begins when an instance
-     *         comes into service.
+     *         instance's health status. The grace period begins when the instance
+     *         passes System Status and the Instance Status checks from Amazon EC2.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      */
     public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
         this.healthCheckGracePeriod = healthCheckGracePeriod;
@@ -573,14 +583,18 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The length of time that Auto Scaling waits before checking an
-     * instance's health status. The grace period begins when an instance
-     * comes into service.
+     * instance's health status. The grace period begins when the instance
+     * passes System Status and the Instance Status checks from Amazon EC2.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param healthCheckGracePeriod The length of time that Auto Scaling waits before checking an
-     *         instance's health status. The grace period begins when an instance
-     *         comes into service.
+     *         instance's health status. The grace period begins when the instance
+     *         passes System Status and the Instance Status checks from Amazon EC2.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

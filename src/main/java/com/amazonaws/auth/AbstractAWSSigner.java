@@ -36,6 +36,7 @@ import org.apache.commons.codec.binary.Base64;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.internal.SdkDigestInputStream;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.StringInputStream;
 
@@ -116,7 +117,8 @@ public abstract class AbstractAWSSigner implements Signer {
     protected byte[] hash(InputStream input) throws AmazonClientException {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            DigestInputStream digestInputStream = new DigestInputStream(input, md);
+            @SuppressWarnings("resource")
+            DigestInputStream digestInputStream = new SdkDigestInputStream(input, md);
             byte[] buffer = new byte[1024];
             while (digestInputStream.read(buffer) > -1);
             return digestInputStream.getMessageDigest().digest();

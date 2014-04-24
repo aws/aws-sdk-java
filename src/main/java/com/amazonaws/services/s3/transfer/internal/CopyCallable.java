@@ -15,7 +15,11 @@
 package com.amazonaws.services.s3.transfer.internal;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
@@ -24,21 +28,25 @@ import java.util.concurrent.Future;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.Request;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListenerCallbackExecutor;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.model.CopyResult;
+import com.amazonaws.util.DateUtils;
 
 /**
  * An implementation of the Callable interface that helps
@@ -71,8 +79,8 @@ public class CopyCallable implements Callable<CopyResult> {
     private final CopyObjectRequest copyObjectRequest;
     /** Upload id to be used when sending copy part requests. */
     private String multipartUploadId;
-    /** Content length of the object in the source bucket to be copied. */
-    private long contentLength;
+    /** Metadata of the object in the source bucket to be copied. */
+    private final ObjectMetadata metadata;
     private final CopyImpl copy;
 
     private static final Log log = LogFactory.getLog(CopyCallable.class);
@@ -91,13 +99,13 @@ public class CopyCallable implements Callable<CopyResult> {
 
     public CopyCallable(TransferManager transferManager,
             ExecutorService threadPool, CopyImpl copy,
-            CopyObjectRequest copyObjectRequest, long contentLength,
+            CopyObjectRequest copyObjectRequest, ObjectMetadata metadata,
             ProgressListenerChain progressListenerChain) {
         this.s3 = transferManager.getAmazonS3Client();
         this.configuration = transferManager.getConfiguration();
         this.threadPool = threadPool;
         this.copyObjectRequest = copyObjectRequest;
-        this.contentLength = contentLength;
+        this.metadata = metadata;
         this.progressListenerChainCallbackExecutor = ProgressListenerCallbackExecutor
                 .wrapListener(progressListenerChain);
         this.copy = copy;
@@ -117,8 +125,8 @@ public class CopyCallable implements Callable<CopyResult> {
      * @return True if this CopyCallable is processing a multi-part copy.
      */
     public boolean isMultipartCopy() {
-        return (contentLength > configuration
-                .getDefaultMultipartCopyThreshold());
+        return (metadata.getContentLength() > configuration
+                .getMultipartCopyThreshold());
     }
 
     public CopyResult call() throws Exception {
@@ -168,12 +176,12 @@ public class CopyCallable implements Callable<CopyResult> {
 
         multipartUploadId = initiateMultipartUpload(copyObjectRequest);
 
-        long optimalPartSize = getOptimalPartSize(contentLength);
+        long optimalPartSize = getOptimalPartSize(metadata.getContentLength());
 
         try {
             CopyPartRequestFactory requestFactory = new CopyPartRequestFactory(
                     copyObjectRequest, multipartUploadId, optimalPartSize,
-                    contentLength);
+                    metadata.getContentLength());
             copyPartsInParallel(requestFactory);
         } catch (Exception e) {
             fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
@@ -223,8 +231,8 @@ public class CopyCallable implements Callable<CopyResult> {
         InitiateMultipartUploadRequest initiateMultipartUploadRequest = new InitiateMultipartUploadRequest(
                 copyObjectRequest.getDestinationBucketName(),
                 copyObjectRequest.getDestinationKey()).withCannedACL(
-                copyObjectRequest.getCannedAccessControlList())
-                .withObjectMetadata(copyObjectRequest.getNewObjectMetadata());
+                copyObjectRequest.getCannedAccessControlList());
+
         if (copyObjectRequest.getAccessControlList() != null) {
             initiateMultipartUploadRequest
                     .setAccessControlList(copyObjectRequest
@@ -235,6 +243,18 @@ public class CopyCallable implements Callable<CopyResult> {
             initiateMultipartUploadRequest.setStorageClass(StorageClass
                     .fromValue(copyObjectRequest.getStorageClass()));
         }
+
+        ObjectMetadata newObjectMetadata = copyObjectRequest.getNewObjectMetadata();
+        if(newObjectMetadata == null){
+            newObjectMetadata = new ObjectMetadata();
+        }
+        if(newObjectMetadata.getContentType() == null){
+            newObjectMetadata.setContentType(metadata.getContentType());
+        }
+
+        initiateMultipartUploadRequest.setObjectMetadata(newObjectMetadata);
+
+        populateMetadataWithEncryptionParams(metadata,newObjectMetadata);
 
         String uploadId = s3.initiateMultipartUpload(
                 initiateMultipartUploadRequest).getUploadId();
@@ -249,5 +269,32 @@ public class CopyCallable implements Callable<CopyResult> {
         ProgressEvent event = new ProgressEvent(0);
         event.setEventCode(eventType);
         progressListenerChainCallbackExecutor.progressChanged(event);
+    }
+
+    private void populateMetadataWithEncryptionParams(ObjectMetadata source, ObjectMetadata destination) {
+        Map<String, String> userMetadataSource = source.getUserMetadata();
+        Map<String, String> userMetadataDestination = destination.getUserMetadata();
+
+        String[] headersToCopy = { Headers.CRYPTO_CEK_ALGORITHM,
+                Headers.CRYPTO_IV, Headers.CRYPTO_KEY, Headers.CRYPTO_KEY_V2,
+                Headers.CRYPTO_KEYWRAP_ALGORITHM, Headers.CRYPTO_TAG_LENGTH,
+                Headers.MATERIALS_DESCRIPTION,
+                Headers.UNENCRYPTED_CONTENT_LENGTH,
+                Headers.UNENCRYPTED_CONTENT_MD5 };
+
+        if (userMetadataSource != null) {
+            if(userMetadataDestination == null){
+                userMetadataDestination= new HashMap<String,String>();
+                destination.setUserMetadata(userMetadataDestination);
+            }
+
+            String headerValue;
+            for(String header : headersToCopy){
+                headerValue = userMetadataSource.get(header);
+                if(headerValue != null){
+                    userMetadataDestination.put(header, headerValue);
+                }
+            }
+        }
     }
 }

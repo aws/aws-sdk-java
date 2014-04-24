@@ -60,9 +60,6 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The maximum number of policies that will be described with each call.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      */
     private Integer maxRecords;
 
@@ -261,9 +258,6 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The maximum number of policies that will be described with each call.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @return The maximum number of policies that will be described with each call.
      */
@@ -273,9 +267,6 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The maximum number of policies that will be described with each call.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of policies that will be described with each call.
      */
@@ -287,9 +278,6 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      * The maximum number of policies that will be described with each call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of policies that will be described with each call.
      *

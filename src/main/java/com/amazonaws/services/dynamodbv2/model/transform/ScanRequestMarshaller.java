@@ -182,6 +182,9 @@ public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, S
                 }
                 jsonWriter.endObject();
             }
+            if (scanRequest.getConditionalOperator() != null) {
+                jsonWriter.key("ConditionalOperator").value(scanRequest.getConditionalOperator());
+            }
             if (scanRequest.getExclusiveStartKey() != null) {
                 jsonWriter.key("ExclusiveStartKey");
                 jsonWriter.object();

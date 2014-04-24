@@ -1316,7 +1316,7 @@ public class TransferManager {
         CopyImpl copy = new CopyImpl(description, transferProgress,
                 listenerChain, stateChangeListener);
         CopyCallable copyCallable = new CopyCallable(this, threadPool, copy,
-                copyObjectRequest, metadata.getContentLength(), listenerChain);
+                copyObjectRequest, metadata, listenerChain);
         CopyMonitor watcher = new CopyMonitor(this, copy, threadPool,
                 copyCallable, copyObjectRequest, listenerChain);
         watcher.setTimedThreadPool(timedThreadPool);

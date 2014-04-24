@@ -63,6 +63,14 @@ public class TransferManagerConfiguration {
     private long multipartUploadThreshold = DEFAULT_MULTIPART_UPLOAD_THRESHOLD;
 
     /**
+     * The size threshold, in bytes, for when to use multi-part copy. Copy
+     * requests for objects over this size will automatically use a multi-part
+     * copy strategy, while copy requests for objects smaller than this
+     * threshold will use a single connection to copy the whole object.
+     */
+    private long multipartCopyThreshold = DEFAULT_MULTIPART_COPY_THRESHOLD;
+
+    /**
      * The minimum size in bytes of each part when a multi-part copy operation
      * is carried out. Decreasing the minimum part size will cause a large
      * number of copy part requests being initiated.
@@ -168,7 +176,20 @@ public class TransferManagerConfiguration {
      * @return The size threshold of an Amazon S3 object for when to use a
      *         multi-part copy
      */
-    public long getDefaultMultipartCopyThreshold() {
-        return DEFAULT_MULTIPART_COPY_THRESHOLD;
+    public long getMultipartCopyThreshold() {
+        return multipartCopyThreshold;
+    }
+
+    /**
+     * Sets the size threshold in bytes for when to use multi-part copy
+     * requests. Copy requests for objects over this size will automatically use
+     * a multi-part copy strategy, while copy requests for objects smaller than
+     * this threshold will use a single connection to copy the whole object.
+     *
+     * @param multipartCopyThreshold
+     *            The size threshold in bytes for when to use multi part copy.
+     */
+    public void setMultipartCopyThreshold(long multipartCopyThreshold) {
+        this.multipartCopyThreshold = multipartCopyThreshold;
     }
 }

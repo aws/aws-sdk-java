@@ -125,6 +125,14 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     cacheCluster.setReplicationGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SnapshotRetentionLimit", targetDepth)) {
+                    cacheCluster.setSnapshotRetentionLimit(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("SnapshotWindow", targetDepth)) {
+                    cacheCluster.setSnapshotWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheCluster;

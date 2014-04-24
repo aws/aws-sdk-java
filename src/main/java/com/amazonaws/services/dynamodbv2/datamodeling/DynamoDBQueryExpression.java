@@ -19,6 +19,7 @@ import java.util.Map;
 
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.Condition;
+import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 
 /**
  * A query expression
@@ -32,6 +33,8 @@ public class DynamoDBQueryExpression <T> {
     private Map<String, AttributeValue> exclusiveStartKey;
     private Integer limit;
     private String indexName;
+    private Map<String, Condition> queryFilter;
+    private String conditionalOperator;
 
     /**
      * Returns whether this query uses consistent reads
@@ -240,8 +243,87 @@ public class DynamoDBQueryExpression <T> {
      * <p>Returns a pointer to this object for method-chaining.
      */
     public DynamoDBQueryExpression<T> withIndexName(String indexName) {
-        this.indexName = indexName;
+        setIndexName(indexName);
         return this;
     }
 
+    /**
+     * Returns the query filter applied on this query.
+     */
+    public Map<String, Condition> getQueryFilter() {
+        return queryFilter;
+    }
+
+    /**
+     * Sets the query filter applied on this query.
+     */
+    public void setQueryFilter(Map<String, Condition> queryFilter) {
+        this.queryFilter = queryFilter;
+    }
+
+    /**
+     * Sets the query filter applied on this query.
+     * <p>Returns a pointer to this object for method-chaining.
+     */
+    public DynamoDBQueryExpression<T> withQueryFilter(Map<String, Condition> queryFilter) {
+        setQueryFilter(queryFilter);
+        return this;
+    }
+
+    /**
+     * Adds a new condition to the the query filter.
+     * <p>Returns a pointer to this object for method-chaining.
+     * 
+     * @param attributeName
+     *            The name of the attribute on which the specified condition
+     *            operates.
+     * @param condition
+     *            The filter condition applied on the attribute.
+     */
+    public DynamoDBQueryExpression<T> withQueryFilterEntry(String attributeName, Condition condition) {
+        if (queryFilter == null) {
+            queryFilter = new HashMap<String,Condition>();
+        }
+        queryFilter.put(attributeName, condition);
+        return this;
+    }
+
+    /**
+     * Returns the logical operator on the query filter conditions.
+     */
+    public String getConditionalOperator() {
+        return conditionalOperator;
+    }
+
+    /**
+     * Sets the logical operator on the query filter conditions.
+     */
+    public void setConditionalOperator(String conditionalOperator) {
+        this.conditionalOperator = conditionalOperator;
+    }
+
+    /**
+     * Sets the logical operator on the query filter conditions.
+     * <p>Returns a pointer to this object for method-chaining.
+     */
+    public DynamoDBQueryExpression<T> withConditionalOperator(String conditionalOperator) {
+        setConditionalOperator(conditionalOperator);
+        return this;
+    }
+
+    /**
+     * Sets the logical operator on the query filter conditions.
+     */
+    public void setConditionalOperator(ConditionalOperator conditionalOperator) {
+        this.conditionalOperator = conditionalOperator.toString();
+    }
+
+    /**
+     * Sets the logical operator on the query filter conditions.
+     * <p>Returns a pointer to this object for method-chaining.
+     */
+    public DynamoDBQueryExpression<T> withConditionalOperator(ConditionalOperator conditionalOperator) {
+        setConditionalOperator(conditionalOperator);
+        return this;
+    }
 }

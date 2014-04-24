@@ -38,7 +38,7 @@ public class DescribeReplicationGroupsRequestMarshaller implements Marshaller<Re
 
         Request<DescribeReplicationGroupsRequest> request = new DefaultRequest<DescribeReplicationGroupsRequest>(describeReplicationGroupsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeReplicationGroups");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2014-03-24");
 
         if (describeReplicationGroupsRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(describeReplicationGroupsRequest.getReplicationGroupId()));

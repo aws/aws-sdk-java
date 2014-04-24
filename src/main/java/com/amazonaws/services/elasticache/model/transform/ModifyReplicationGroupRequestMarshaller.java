@@ -38,7 +38,7 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         Request<ModifyReplicationGroupRequest> request = new DefaultRequest<ModifyReplicationGroupRequest>(modifyReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyReplicationGroup");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2014-03-24");
 
         if (modifyReplicationGroupRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(modifyReplicationGroupRequest.getReplicationGroupId()));
@@ -91,6 +91,15 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
         }
         if (modifyReplicationGroupRequest.getPrimaryClusterId() != null) {
             request.addParameter("PrimaryClusterId", StringUtils.fromString(modifyReplicationGroupRequest.getPrimaryClusterId()));
+        }
+        if (modifyReplicationGroupRequest.getSnapshotRetentionLimit() != null) {
+            request.addParameter("SnapshotRetentionLimit", StringUtils.fromInteger(modifyReplicationGroupRequest.getSnapshotRetentionLimit()));
+        }
+        if (modifyReplicationGroupRequest.getSnapshotWindow() != null) {
+            request.addParameter("SnapshotWindow", StringUtils.fromString(modifyReplicationGroupRequest.getSnapshotWindow()));
+        }
+        if (modifyReplicationGroupRequest.getSnapshottingClusterId() != null) {
+            request.addParameter("SnapshottingClusterId", StringUtils.fromString(modifyReplicationGroupRequest.getSnapshottingClusterId()));
         }
 
         return request;

@@ -79,7 +79,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -185,7 +185,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public CreateTableRequest(String tableName, java.util.List<KeySchemaElement> keySchema) {
@@ -218,7 +218,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * @param provisionedThroughput Represents the provisioned throughput
      * settings for a specified table or index. The settings can be modified
@@ -368,7 +368,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -390,7 +390,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
@@ -414,7 +414,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -436,7 +436,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -466,7 +466,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -490,7 +490,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -521,7 +521,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * <i>KeyType</i> of <code>HASH</code>, and the second element must have
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -545,7 +545,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         <i>KeyType</i> of <code>HASH</code>, and the second element must have
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 

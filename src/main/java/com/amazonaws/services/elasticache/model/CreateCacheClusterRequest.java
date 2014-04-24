@@ -132,6 +132,13 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> snapshotArns;
 
     /**
+     * The name of a snapshot from which to restore data into the new cache
+     * cluster. The snapshot's status changes to <code>restoring</code> while
+     * the new cache cluster is being created.
+     */
+    private String snapshotName;
+
+    /**
      * The EC2 Availability Zone in which the cache cluster will be created.
      * <p>All cache nodes belonging to a cache cluster are placed in the
      * preferred availability zone. <p>Default: System chosen availability
@@ -166,6 +173,25 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * disables automatic upgrades. <p>Default: <code>true</code>
      */
     private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted. <p>If you do
+     * not specify this parameter, then <i>SnapshotRetentionLimit</i> will be
+     * set to 0 (i.e., automatic backups will be disabled for this cache
+     * cluster).
+     */
+    private Integer snapshotRetentionLimit;
+
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
+     * ElastiCache will automatically choose an appropriate time range.
+     */
+    private String snapshotWindow;
 
     /**
      * Default constructor for a new CreateCacheClusterRequest object.  Callers should use the
@@ -988,6 +1014,51 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * The name of a snapshot from which to restore data into the new cache
+     * cluster. The snapshot's status changes to <code>restoring</code> while
+     * the new cache cluster is being created.
+     *
+     * @return The name of a snapshot from which to restore data into the new cache
+     *         cluster. The snapshot's status changes to <code>restoring</code> while
+     *         the new cache cluster is being created.
+     */
+    public String getSnapshotName() {
+        return snapshotName;
+    }
+    
+    /**
+     * The name of a snapshot from which to restore data into the new cache
+     * cluster. The snapshot's status changes to <code>restoring</code> while
+     * the new cache cluster is being created.
+     *
+     * @param snapshotName The name of a snapshot from which to restore data into the new cache
+     *         cluster. The snapshot's status changes to <code>restoring</code> while
+     *         the new cache cluster is being created.
+     */
+    public void setSnapshotName(String snapshotName) {
+        this.snapshotName = snapshotName;
+    }
+    
+    /**
+     * The name of a snapshot from which to restore data into the new cache
+     * cluster. The snapshot's status changes to <code>restoring</code> while
+     * the new cache cluster is being created.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotName The name of a snapshot from which to restore data into the new cache
+     *         cluster. The snapshot's status changes to <code>restoring</code> while
+     *         the new cache cluster is being created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateCacheClusterRequest withSnapshotName(String snapshotName) {
+        this.snapshotName = snapshotName;
+        return this;
+    }
+
+    /**
      * The EC2 Availability Zone in which the cache cluster will be created.
      * <p>All cache nodes belonging to a cache cluster are placed in the
      * preferred availability zone. <p>Default: System chosen availability
@@ -1234,6 +1305,126 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted. <p>If you do
+     * not specify this parameter, then <i>SnapshotRetentionLimit</i> will be
+     * set to 0 (i.e., automatic backups will be disabled for this cache
+     * cluster).
+     *
+     * @return The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted. <p>If you do
+     *         not specify this parameter, then <i>SnapshotRetentionLimit</i> will be
+     *         set to 0 (i.e., automatic backups will be disabled for this cache
+     *         cluster).
+     */
+    public Integer getSnapshotRetentionLimit() {
+        return snapshotRetentionLimit;
+    }
+    
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted. <p>If you do
+     * not specify this parameter, then <i>SnapshotRetentionLimit</i> will be
+     * set to 0 (i.e., automatic backups will be disabled for this cache
+     * cluster).
+     *
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted. <p>If you do
+     *         not specify this parameter, then <i>SnapshotRetentionLimit</i> will be
+     *         set to 0 (i.e., automatic backups will be disabled for this cache
+     *         cluster).
+     */
+    public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        this.snapshotRetentionLimit = snapshotRetentionLimit;
+    }
+    
+    /**
+     * The number of days for which ElastiCache will retain automatic cache
+     * cluster snapshots before deleting them. For example, if you set
+     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     * today will be retained for 5 days before being deleted. <p>If you do
+     * not specify this parameter, then <i>SnapshotRetentionLimit</i> will be
+     * set to 0 (i.e., automatic backups will be disabled for this cache
+     * cluster).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
+     *         cluster snapshots before deleting them. For example, if you set
+     *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
+     *         today will be retained for 5 days before being deleted. <p>If you do
+     *         not specify this parameter, then <i>SnapshotRetentionLimit</i> will be
+     *         set to 0 (i.e., automatic backups will be disabled for this cache
+     *         cluster).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateCacheClusterRequest withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        this.snapshotRetentionLimit = snapshotRetentionLimit;
+        return this;
+    }
+
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
+     * ElastiCache will automatically choose an appropriate time range.
+     *
+     * @return The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         <code>05:00-09:00</code> <p>If you do not specify this parameter, then
+     *         ElastiCache will automatically choose an appropriate time range.
+     */
+    public String getSnapshotWindow() {
+        return snapshotWindow;
+    }
+    
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
+     * ElastiCache will automatically choose an appropriate time range.
+     *
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         <code>05:00-09:00</code> <p>If you do not specify this parameter, then
+     *         ElastiCache will automatically choose an appropriate time range.
+     */
+    public void setSnapshotWindow(String snapshotWindow) {
+        this.snapshotWindow = snapshotWindow;
+    }
+    
+    /**
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of your cache cluster. <p>Example:
+     * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
+     * ElastiCache will automatically choose an appropriate time range.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         <code>05:00-09:00</code> <p>If you do not specify this parameter, then
+     *         ElastiCache will automatically choose an appropriate time range.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateCacheClusterRequest withSnapshotWindow(String snapshotWindow) {
+        this.snapshotWindow = snapshotWindow;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1256,11 +1447,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");
         if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
         if (getSnapshotArns() != null) sb.append("SnapshotArns: " + getSnapshotArns() + ",");
+        if (getSnapshotName() != null) sb.append("SnapshotName: " + getSnapshotName() + ",");
         if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getPort() != null) sb.append("Port: " + getPort() + ",");
         if (getNotificationTopicArn() != null) sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ",");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() );
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
+        if (getSnapshotRetentionLimit() != null) sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
+        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() );
         sb.append("}");
         return sb.toString();
     }
@@ -1281,11 +1475,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotArns() == null) ? 0 : getSnapshotArns().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotName() == null) ? 0 : getSnapshotName().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getNotificationTopicArn() == null) ? 0 : getNotificationTopicArn().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode()); 
         return hashCode;
     }
     
@@ -1319,6 +1516,8 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
         if (other.getSnapshotArns() == null ^ this.getSnapshotArns() == null) return false;
         if (other.getSnapshotArns() != null && other.getSnapshotArns().equals(this.getSnapshotArns()) == false) return false; 
+        if (other.getSnapshotName() == null ^ this.getSnapshotName() == null) return false;
+        if (other.getSnapshotName() != null && other.getSnapshotName().equals(this.getSnapshotName()) == false) return false; 
         if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null) return false;
         if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false) return false; 
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
@@ -1329,6 +1528,10 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getNotificationTopicArn() != null && other.getNotificationTopicArn().equals(this.getNotificationTopicArn()) == false) return false; 
         if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        if (other.getSnapshotRetentionLimit() == null ^ this.getSnapshotRetentionLimit() == null) return false;
+        if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false) return false; 
+        if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null) return false;
+        if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false) return false; 
         return true;
     }
     

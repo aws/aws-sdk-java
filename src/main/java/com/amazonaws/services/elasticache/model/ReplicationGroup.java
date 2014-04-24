@@ -58,6 +58,12 @@ public class ReplicationGroup implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup> nodeGroups;
 
     /**
+     * The cache cluster ID that is used as the daily snapshot source for the
+     * replication group.
+     */
+    private String snapshottingClusterId;
+
+    /**
      * The identifier for the replication group.
      *
      * @return The identifier for the replication group.
@@ -354,6 +360,45 @@ public class ReplicationGroup implements Serializable {
     }
 
     /**
+     * The cache cluster ID that is used as the daily snapshot source for the
+     * replication group.
+     *
+     * @return The cache cluster ID that is used as the daily snapshot source for the
+     *         replication group.
+     */
+    public String getSnapshottingClusterId() {
+        return snapshottingClusterId;
+    }
+    
+    /**
+     * The cache cluster ID that is used as the daily snapshot source for the
+     * replication group.
+     *
+     * @param snapshottingClusterId The cache cluster ID that is used as the daily snapshot source for the
+     *         replication group.
+     */
+    public void setSnapshottingClusterId(String snapshottingClusterId) {
+        this.snapshottingClusterId = snapshottingClusterId;
+    }
+    
+    /**
+     * The cache cluster ID that is used as the daily snapshot source for the
+     * replication group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshottingClusterId The cache cluster ID that is used as the daily snapshot source for the
+     *         replication group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ReplicationGroup withSnapshottingClusterId(String snapshottingClusterId) {
+        this.snapshottingClusterId = snapshottingClusterId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -370,7 +415,8 @@ public class ReplicationGroup implements Serializable {
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
         if (getMemberClusters() != null) sb.append("MemberClusters: " + getMemberClusters() + ",");
-        if (getNodeGroups() != null) sb.append("NodeGroups: " + getNodeGroups() );
+        if (getNodeGroups() != null) sb.append("NodeGroups: " + getNodeGroups() + ",");
+        if (getSnapshottingClusterId() != null) sb.append("SnapshottingClusterId: " + getSnapshottingClusterId() );
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +432,7 @@ public class ReplicationGroup implements Serializable {
         hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode()); 
         hashCode = prime * hashCode + ((getMemberClusters() == null) ? 0 : getMemberClusters().hashCode()); 
         hashCode = prime * hashCode + ((getNodeGroups() == null) ? 0 : getNodeGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode()); 
         return hashCode;
     }
     
@@ -409,6 +456,8 @@ public class ReplicationGroup implements Serializable {
         if (other.getMemberClusters() != null && other.getMemberClusters().equals(this.getMemberClusters()) == false) return false; 
         if (other.getNodeGroups() == null ^ this.getNodeGroups() == null) return false;
         if (other.getNodeGroups() != null && other.getNodeGroups().equals(this.getNodeGroups()) == false) return false; 
+        if (other.getSnapshottingClusterId() == null ^ this.getSnapshottingClusterId() == null) return false;
+        if (other.getSnapshottingClusterId() != null && other.getSnapshottingClusterId().equals(this.getSnapshottingClusterId()) == false) return false; 
         return true;
     }
     

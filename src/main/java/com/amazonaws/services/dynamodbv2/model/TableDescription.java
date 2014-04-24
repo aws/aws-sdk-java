@@ -125,7 +125,7 @@ public class TableDescription implements Serializable {
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
-     * reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     * reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      * the number of items in the index. DynamoDB updates this value
      * approximately every six hours. Recent changes might not be reflected
      * in this value. </li> </ul> <p>If the table is in the
@@ -793,7 +793,7 @@ public class TableDescription implements Serializable {
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
-     * reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     * reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      * the number of items in the index. DynamoDB updates this value
      * approximately every six hours. Recent changes might not be reflected
      * in this value. </li> </ul> <p>If the table is in the
@@ -828,7 +828,7 @@ public class TableDescription implements Serializable {
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. DynamoDB updates
      *         this value approximately every six hours. Recent changes might not be
-     *         reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     *         reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      *         the number of items in the index. DynamoDB updates this value
      *         approximately every six hours. Recent changes might not be reflected
      *         in this value. </li> </ul> <p>If the table is in the
@@ -868,7 +868,7 @@ public class TableDescription implements Serializable {
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
-     * reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     * reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      * the number of items in the index. DynamoDB updates this value
      * approximately every six hours. Recent changes might not be reflected
      * in this value. </li> </ul> <p>If the table is in the
@@ -903,7 +903,7 @@ public class TableDescription implements Serializable {
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. DynamoDB updates
      *         this value approximately every six hours. Recent changes might not be
-     *         reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     *         reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      *         the number of items in the index. DynamoDB updates this value
      *         approximately every six hours. Recent changes might not be reflected
      *         in this value. </li> </ul> <p>If the table is in the
@@ -949,7 +949,7 @@ public class TableDescription implements Serializable {
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
-     * reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     * reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      * the number of items in the index. DynamoDB updates this value
      * approximately every six hours. Recent changes might not be reflected
      * in this value. </li> </ul> <p>If the table is in the
@@ -986,7 +986,7 @@ public class TableDescription implements Serializable {
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. DynamoDB updates
      *         this value approximately every six hours. Recent changes might not be
-     *         reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     *         reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      *         the number of items in the index. DynamoDB updates this value
      *         approximately every six hours. Recent changes might not be reflected
      *         in this value. </li> </ul> <p>If the table is in the
@@ -1033,7 +1033,7 @@ public class TableDescription implements Serializable {
      * determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      * - Represents the total size of the index, in bytes. DynamoDB updates
      * this value approximately every six hours. Recent changes might not be
-     * reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     * reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      * the number of items in the index. DynamoDB updates this value
      * approximately every six hours. Recent changes might not be reflected
      * in this value. </li> </ul> <p>If the table is in the
@@ -1070,7 +1070,7 @@ public class TableDescription implements Serializable {
      *         determining the total. </li> </ul> </li> <li> <p><i>IndexSizeBytes</i>
      *         - Represents the total size of the index, in bytes. DynamoDB updates
      *         this value approximately every six hours. Recent changes might not be
-     *         reflected in this value.</li> <li> <p><i>ItemCount</i> - Represents
+     *         reflected in this value. </li> <li> <p><i>ItemCount</i> - Represents
      *         the number of items in the index. DynamoDB updates this value
      *         approximately every six hours. Recent changes might not be reflected
      *         in this value. </li> </ul> <p>If the table is in the
