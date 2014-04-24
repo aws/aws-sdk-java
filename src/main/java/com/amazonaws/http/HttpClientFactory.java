@@ -17,6 +17,7 @@ package com.amazonaws.http;
 import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -44,6 +45,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.conn.params.ConnRouteParams;
 import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeLayeredSocketFactory;
@@ -98,6 +100,10 @@ class HttpClientFactory {
         SdkHttpClient httpClient = new SdkHttpClient(connectionManager, httpClientParams);
         httpClient.setHttpRequestRetryHandler(HttpRequestNoRetryHandler.Singleton);
         httpClient.setRedirectStrategy(new LocationHeaderNotRequiredRedirectStrategy());
+
+        if (config.getLocalAddress() != null) {
+          ConnRouteParams.setLocalAddress(httpClientParams, config.getLocalAddress());
+        }
 
         try {
             Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());

@@ -14,6 +14,8 @@
  */
 package com.amazonaws;
 
+import java.net.InetAddress;
+
 import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.retry.PredefinedRetryPolicies;
@@ -74,6 +76,9 @@ public class ClientConfiguration {
 
     /** The retry policy upon failed requests. **/
     private RetryPolicy retryPolicy = DEFAULT_RETRY_POLICY;
+
+    /** Optionally specifies the local address to bind to */
+    private InetAddress localAddress;
 
     /**
      * The protocol to use when connecting to Amazon Web Services.
@@ -157,26 +162,25 @@ public class ClientConfiguration {
     public ClientConfiguration() {}
 
     public ClientConfiguration(ClientConfiguration other) {
-        this.connectionTimeout          = other.connectionTimeout;
-        this.maxConnections             = other.maxConnections;
-        this.maxErrorRetry              = other.maxErrorRetry;
-        this.retryPolicy                = other.retryPolicy;
-        this.protocol                   = other.protocol;
-        this.proxyDomain                = other.proxyDomain;
-        this.proxyHost                  = other.proxyHost;
-        this.proxyPassword              = other.proxyPassword;
-        this.proxyPort                  = other.proxyPort;
-        this.proxyUsername              = other.proxyUsername;
-        this.proxyWorkstation           = other.proxyWorkstation;
-        this.preemptiveBasicProxyAuth   = other.preemptiveBasicProxyAuth;
-        this.socketTimeout              = other.socketTimeout;
-        this.userAgent                  = other.userAgent;
-        this.useReaper                  = other.useReaper;
-
+        this.connectionTimeout           = other.connectionTimeout;
+        this.maxConnections              = other.maxConnections;
+        this.maxErrorRetry               = other.maxErrorRetry;
+        this.retryPolicy                 = other.retryPolicy;
+        this.localAddress                = other.localAddress;
+        this.protocol                    = other.protocol;
+        this.proxyDomain                 = other.proxyDomain;
+        this.proxyHost                   = other.proxyHost;
+        this.proxyPassword               = other.proxyPassword;
+        this.proxyPort                   = other.proxyPort;
+        this.proxyUsername               = other.proxyUsername;
+        this.proxyWorkstation            = other.proxyWorkstation;
+        this.preemptiveBasicProxyAuth    = other.preemptiveBasicProxyAuth;
+        this.socketTimeout               = other.socketTimeout;
+        this.userAgent                   = other.userAgent;
+        this.useReaper                   = other.useReaper;
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
-
-        this.signerOverride    = other.signerOverride;
+        this.signerOverride              = other.signerOverride;
     }
 
     /**
@@ -301,6 +305,39 @@ public class ClientConfiguration {
     public ClientConfiguration withUserAgent(String userAgent) {
         setUserAgent(userAgent);
         return this;
+    }
+
+    /**
+     * Returns the optional local address the client will bind to.
+     *
+     * @return The local address the client will bind to.
+     */
+    public InetAddress getLocalAddress() {
+        return localAddress;
+    }
+
+    /**
+     * Sets the optional local address the client will bind to.
+     *
+     * @param proxyHost
+     *            The local address the client will bind to.
+     */
+    public void setLocalAddress(InetAddress localAddress) {
+        this.localAddress = localAddress;
+    }
+
+    /**
+     * Sets the optional local address the client will bind to and returns
+     * the updated ClientConfiguration object.
+     *
+     * @param localAddress
+     *            The local address the client will bind to.
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withLocalAddress(InetAddress localAddress) {
+      setLocalAddress(localAddress);
+      return this;
     }
 
     /**
