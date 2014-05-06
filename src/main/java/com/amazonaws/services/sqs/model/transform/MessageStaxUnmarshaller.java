@@ -65,6 +65,42 @@ public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmars
         }
 
     }
+    
+    private static class MessageAttributesMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, MessageAttributeValue>, StaxUnmarshallerContext> {
+        @Override
+        public Entry<String, MessageAttributeValue> unmarshall(StaxUnmarshallerContext context) throws Exception {
+            int originalDepth = context.getCurrentDepth();
+            int targetDepth = originalDepth + 1;
+
+            MapEntry<String, MessageAttributeValue> entry
+                = new MapEntry<String, MessageAttributeValue>();
+
+            while (true) {
+                XMLEvent xmlEvent = context.nextEvent();
+                if (xmlEvent.isEndDocument()) return entry;
+
+                if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+                    if (context.testExpression("Name", targetDepth)) {
+                        entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                    if (context.testExpression("Value", targetDepth)) {
+                        entry.setValue(MessageAttributeValueStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                } else if (xmlEvent.isEndElement()) {
+                    if (context.getCurrentDepth() < originalDepth) return entry;
+                }
+            }
+        }
+
+        private static MessageAttributesMapEntryUnmarshaller instance;
+        public static MessageAttributesMapEntryUnmarshaller getInstance() {
+            if (instance == null) instance = new MessageAttributesMapEntryUnmarshaller();
+            return instance;
+        }
+
+    }
 
     public Message unmarshall(StaxUnmarshallerContext context) throws Exception {
         Message message = new Message();
@@ -97,6 +133,15 @@ public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmars
                 if (context.testExpression("Attribute", targetDepth)) {
                     Entry<String, String> entry = AttributesMapEntryUnmarshaller.getInstance().unmarshall(context);
                     message.getAttributes().put(entry.getKey(), entry.getValue());
+                    continue;
+                }
+                if (context.testExpression("MD5OfMessageAttributes", targetDepth)) {
+                    message.setMD5OfMessageAttributes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("MessageAttribute", targetDepth)) {
+                    Entry<String, MessageAttributeValue> entry = MessageAttributesMapEntryUnmarshaller.getInstance().unmarshall(context);
+                    message.getMessageAttributes().put(entry.getKey(), entry.getValue());
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

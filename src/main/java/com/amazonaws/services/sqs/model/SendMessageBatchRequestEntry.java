@@ -42,6 +42,14 @@ public class SendMessageBatchRequestEntry implements Serializable {
     private Integer delaySeconds;
 
     /**
+     * Each message attribute consists of a Name, Type, and Value. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     * Attribute Items</a>.
+     */
+    private java.util.Map<String,MessageAttributeValue> messageAttributes;
+
+    /**
      * Default constructor for a new SendMessageBatchRequestEntry object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -174,6 +182,94 @@ public class SendMessageBatchRequestEntry implements Serializable {
     }
 
     /**
+     * Each message attribute consists of a Name, Type, and Value. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     * Attribute Items</a>.
+     *
+     * @return Each message attribute consists of a Name, Type, and Value. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     *         Attribute Items</a>.
+     */
+    public java.util.Map<String,MessageAttributeValue> getMessageAttributes() {
+        
+        if (messageAttributes == null) {
+            messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
+        }
+        return messageAttributes;
+    }
+    
+    /**
+     * Each message attribute consists of a Name, Type, and Value. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     * Attribute Items</a>.
+     *
+     * @param messageAttributes Each message attribute consists of a Name, Type, and Value. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     *         Attribute Items</a>.
+     */
+    public void setMessageAttributes(java.util.Map<String,MessageAttributeValue> messageAttributes) {
+        this.messageAttributes = messageAttributes;
+    }
+    
+    /**
+     * Each message attribute consists of a Name, Type, and Value. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     * Attribute Items</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param messageAttributes Each message attribute consists of a Name, Type, and Value. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     *         Attribute Items</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public SendMessageBatchRequestEntry withMessageAttributes(java.util.Map<String,MessageAttributeValue> messageAttributes) {
+        setMessageAttributes(messageAttributes);
+        return this;
+    }
+
+    /**
+     * Each message attribute consists of a Name, Type, and Value. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+     * Attribute Items</a>.
+     * <p>
+     * The method adds a new key-value pair into MessageAttributes parameter,
+     * and returns a reference to this object so that method calls can be
+     * chained together.
+     *
+     * @param key The key of the entry to be added into MessageAttributes.
+     * @param value The corresponding value of the entry to be added into MessageAttributes.
+     */
+    public SendMessageBatchRequestEntry addMessageAttributesEntry(String key, MessageAttributeValue value) {
+        if (null == this.messageAttributes) {
+            this.messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
+        }
+        if (this.messageAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.messageAttributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MessageAttributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public SendMessageBatchRequestEntry clearMessageAttributesEntries() {
+        this.messageAttributes = null;
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -187,7 +283,8 @@ public class SendMessageBatchRequestEntry implements Serializable {
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ",");
-        if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() );
+        if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() + ",");
+        if (getMessageAttributes() != null) sb.append("MessageAttributes: " + getMessageAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -200,6 +297,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getMessageBody() == null) ? 0 : getMessageBody().hashCode()); 
         hashCode = prime * hashCode + ((getDelaySeconds() == null) ? 0 : getDelaySeconds().hashCode()); 
+        hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -217,6 +315,8 @@ public class SendMessageBatchRequestEntry implements Serializable {
         if (other.getMessageBody() != null && other.getMessageBody().equals(this.getMessageBody()) == false) return false; 
         if (other.getDelaySeconds() == null ^ this.getDelaySeconds() == null) return false;
         if (other.getDelaySeconds() != null && other.getDelaySeconds().equals(this.getDelaySeconds()) == false) return false; 
+        if (other.getMessageAttributes() == null ^ this.getMessageAttributes() == null) return false;
+        if (other.getMessageAttributes() != null && other.getMessageAttributes().equals(this.getMessageAttributes()) == false) return false; 
         return true;
     }
     

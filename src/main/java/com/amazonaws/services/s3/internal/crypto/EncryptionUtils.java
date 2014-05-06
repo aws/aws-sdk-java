@@ -66,7 +66,7 @@ import com.amazonaws.util.json.JSONObject;
 public class EncryptionUtils {
 
     /** Suffix appended to the end of instruction file names */
-    private static final String INSTRUCTION_SUFFIX = ".instruction";
+    static final String INSTRUCTION_SUFFIX = ".instruction";
 
     /**
      * Returns an updated request where the metadata contains encryption information and the input stream contains

@@ -53,7 +53,13 @@ public enum Jackson {
         }
     }
 
+    /**
+     * Returns the deserialized object from the given json string and target
+     * class; or null if the given json string is null.
+     */
     public static <T> T fromJsonString(String json, Class<T> clazz) {
+        if (json == null)
+            return null;
         try {
             return objectMapper.readValue(json, clazz);
         } catch (Exception e) {

@@ -25,7 +25,7 @@ import com.amazonaws.services.dynamodbv2.model.TableStatus;
 /**
  * Utility methods for working with AWS DynamoDB tables.
  *
- * <pre>
+ * <pre class="brush: java">
  * if (Tables.doesTableExist(dynamoDB, myTableName) == false) {
  *    // ... create your table ...
  *    Tables.waitForTableToBecomeActive(dynamoDB, myTableName);
@@ -97,10 +97,10 @@ public class Tables {
      *             stops polling.
      */
     public static void waitForTableToBecomeActive(AmazonDynamoDB dynamo, String tableName, int timeout, int interval) {
-    	if (timeout < 0)
-    		throw new AmazonClientException("Timeout must be >= 0");
-    	if (interval <= 0 || interval >= timeout)
-    		throw new AmazonClientException("Interval must be > 0 and < timeout");
+        if (timeout < 0)
+            throw new AmazonClientException("Timeout must be >= 0");
+        if (interval <= 0 || interval >= timeout)
+            throw new AmazonClientException("Interval must be > 0 and < timeout");
         long startTime = System.currentTimeMillis();
         long endTime = startTime + timeout;
         while (System.currentTimeMillis() < endTime) {

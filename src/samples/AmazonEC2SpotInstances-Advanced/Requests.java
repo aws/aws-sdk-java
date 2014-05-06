@@ -17,9 +17,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.ec2.AmazonEC2;
@@ -42,7 +43,7 @@ import com.amazonaws.services.ec2.model.Tag;
 import com.amazonaws.services.ec2.model.TerminateInstancesRequest;
 
 public class Requests {
-    private AmazonEC2      ec2;
+    private AmazonEC2 ec2;
     private ArrayList<String> instanceIds;
     private ArrayList<String> spotInstanceRequestIds;
     private String instanceType;
@@ -51,12 +52,12 @@ public class Requests {
     private String securityGroup;
     private String placementGroupName;
     private boolean deleteOnTermination;
-	private String availabilityZoneName;
-	private String availabilityZoneGroupName;
-	private String launchGroupName;
-	private Date validFrom;
-	private Date validTo;
-	private String requestType;
+    private String availabilityZoneName;
+    private String availabilityZoneGroupName;
+    private String launchGroupName;
+    private Date validFrom;
+    private Date validTo;
+    private String requestType;
 
     /**
      * Public constructor.
@@ -78,12 +79,25 @@ public class Requests {
      * @see com.amazonaws.ClientConfiguration
      */
     private void init(String instanceType, String amiID, String bidPrice, String securityGroup) throws Exception {
-        AWSCredentials credentials = new PropertiesCredentials(
-                InlineTaggingCodeSampleApp.class.getResourceAsStream("AwsCredentials.properties"));
+        /*
+         * The ProfileCredentialsProvider will return your [default]
+         * credential profile by reading from the credentials file located at
+         * (~/.aws/credentials).
+         */
+        AWSCredentials credentials = null;
+        try {
+            credentials = new ProfileCredentialsProvider().getCredentials();
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Cannot load the credentials from the credential profiles file. " +
+                    "Please make sure that your credentials file is at the correct " +
+                    "location (~/.aws/credentials), and is in valid format.",
+                    e);
+        }
 
         ec2 = new AmazonEC2Client(credentials);
-		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
-		ec2.setRegion(usWest2);
+        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+        ec2.setRegion(usWest2);
 
         this.instanceType = instanceType;
         this.amiID = amiID;
@@ -103,140 +117,140 @@ public class Requests {
      * one of which will be Amazon Linux. Simply use that AMI id.
      */
     public void submitRequests() {
-    	//==========================================================================//
-    	//================= Submit a Spot Instance Request =====================//
-    	//==========================================================================//
+        //==========================================================================//
+        //================= Submit a Spot Instance Request =====================//
+        //==========================================================================//
 
-    	// Initializes a Spot Instance Request
-    	RequestSpotInstancesRequest requestRequest = new RequestSpotInstancesRequest();
+        // Initializes a Spot Instance Request
+        RequestSpotInstancesRequest requestRequest = new RequestSpotInstancesRequest();
 
-    	// Request 1 x t1.micro instance with a bid price of $0.03.
-    	requestRequest.setSpotPrice(bidPrice);
-    	requestRequest.setInstanceCount(Integer.valueOf(1));
+        // Request 1 x t1.micro instance with a bid price of $0.03.
+        requestRequest.setSpotPrice(bidPrice);
+        requestRequest.setInstanceCount(Integer.valueOf(1));
 
-    	// Setup the specifications of the launch. This includes the instance type (e.g. t1.micro)
-    	// and the latest Amazon Linux AMI id available. Note, you should always use the latest
-    	// Amazon Linux AMI id or another of your choosing.
-    	LaunchSpecification launchSpecification = new LaunchSpecification();
-    	launchSpecification.setImageId(amiID);
-    	launchSpecification.setInstanceType(instanceType);
+        // Setup the specifications of the launch. This includes the instance type (e.g. t1.micro)
+        // and the latest Amazon Linux AMI id available. Note, you should always use the latest
+        // Amazon Linux AMI id or another of your choosing.
+        LaunchSpecification launchSpecification = new LaunchSpecification();
+        launchSpecification.setImageId(amiID);
+        launchSpecification.setInstanceType(instanceType);
 
-    	// Add the security group to the request.
-    	ArrayList<String> securityGroups = new ArrayList<String>();
-    	securityGroups.add(securityGroup);
-    	launchSpecification.setSecurityGroups(securityGroups);
+        // Add the security group to the request.
+        ArrayList<String> securityGroups = new ArrayList<String>();
+        securityGroups.add(securityGroup);
+        launchSpecification.setSecurityGroups(securityGroups);
 
-    	// If a placement group has been set, then we will use it in the request.
-    	if (placementGroupName != null && !placementGroupName.equals("")) {
-        	// Setup the placement group to use with whatever name you desire.
-        	SpotPlacement placement = new SpotPlacement();
-        	placement.setGroupName(placementGroupName);
-        	launchSpecification.setPlacement(placement);
-    	}
+        // If a placement group has been set, then we will use it in the request.
+        if (placementGroupName != null && !placementGroupName.equals("")) {
+            // Setup the placement group to use with whatever name you desire.
+            SpotPlacement placement = new SpotPlacement();
+            placement.setGroupName(placementGroupName);
+            launchSpecification.setPlacement(placement);
+        }
 
-    	// Check to see if we need to set the availability zone name.
-    	if (availabilityZoneName != null && !availabilityZoneName.equals("")) {
-    		// Setup the availability zone to use. Note we could retrieve the availability
-        	// zones using the ec2.describeAvailabilityZones() API.
-        	SpotPlacement placement = new SpotPlacement(availabilityZoneName);
-        	launchSpecification.setPlacement(placement);
-    	}
+        // Check to see if we need to set the availability zone name.
+        if (availabilityZoneName != null && !availabilityZoneName.equals("")) {
+            // Setup the availability zone to use. Note we could retrieve the availability
+            // zones using the ec2.describeAvailabilityZones() API.
+            SpotPlacement placement = new SpotPlacement(availabilityZoneName);
+            launchSpecification.setPlacement(placement);
+        }
 
-    	if (availabilityZoneGroupName != null && !availabilityZoneGroupName.equals("")) {
-    		// Set the availability zone group.
-        	requestRequest.setAvailabilityZoneGroup(availabilityZoneGroupName);
-    	}
+        if (availabilityZoneGroupName != null && !availabilityZoneGroupName.equals("")) {
+            // Set the availability zone group.
+            requestRequest.setAvailabilityZoneGroup(availabilityZoneGroupName);
+        }
 
-    	// Check to see if we need to set the launch group.
-    	if (launchGroupName != null && !launchGroupName.equals("")) {
-    		// Set the availability launch group.
-        	requestRequest.setLaunchGroup(launchGroupName);
-    	}
+        // Check to see if we need to set the launch group.
+        if (launchGroupName != null && !launchGroupName.equals("")) {
+            // Set the availability launch group.
+            requestRequest.setLaunchGroup(launchGroupName);
+        }
 
-    	// Check to see if we need to set the valid from option.
-    	if (validFrom != null) {
-   			requestRequest.setValidFrom(validFrom);
-    	}
+        // Check to see if we need to set the valid from option.
+        if (validFrom != null) {
+               requestRequest.setValidFrom(validFrom);
+        }
 
-    	// Check to see if we need to set the valid until option.
-    	if (validTo != null) {
-    		requestRequest.setValidUntil(validFrom);
-    	}
+        // Check to see if we need to set the valid until option.
+        if (validTo != null) {
+            requestRequest.setValidUntil(validFrom);
+        }
 
-    	// Check to see if we need to set the request type.
-    	if (requestType != null && !requestType.equals("")) {
-        	// Set the type of the bid.
-        	requestRequest.setType(requestType);
-    	}
+        // Check to see if we need to set the request type.
+        if (requestType != null && !requestType.equals("")) {
+            // Set the type of the bid.
+            requestRequest.setType(requestType);
+        }
 
 
-    	// If we should delete the EBS boot partition on termination.
-    	if (!deleteOnTermination) {
-        	// Create the block device mapping to describe the root partition.
-        	BlockDeviceMapping blockDeviceMapping = new BlockDeviceMapping();
-        	blockDeviceMapping.setDeviceName("/dev/sda1");
+        // If we should delete the EBS boot partition on termination.
+        if (!deleteOnTermination) {
+            // Create the block device mapping to describe the root partition.
+            BlockDeviceMapping blockDeviceMapping = new BlockDeviceMapping();
+            blockDeviceMapping.setDeviceName("/dev/sda1");
 
-        	// Set the delete on termination flag to false.
-        	EbsBlockDevice ebs = new EbsBlockDevice();
-        	ebs.setDeleteOnTermination(Boolean.FALSE);
-        	blockDeviceMapping.setEbs(ebs);
+            // Set the delete on termination flag to false.
+            EbsBlockDevice ebs = new EbsBlockDevice();
+            ebs.setDeleteOnTermination(Boolean.FALSE);
+            blockDeviceMapping.setEbs(ebs);
 
-        	// Add the block device mapping to the block list.
-        	ArrayList<BlockDeviceMapping> blockList = new ArrayList<BlockDeviceMapping>();
-        	blockList.add(blockDeviceMapping);
+            // Add the block device mapping to the block list.
+            ArrayList<BlockDeviceMapping> blockList = new ArrayList<BlockDeviceMapping>();
+            blockList.add(blockDeviceMapping);
 
-        	// Set the block device mapping configuration in the launch specifications.
-        	launchSpecification.setBlockDeviceMappings(blockList);
-    	}
+            // Set the block device mapping configuration in the launch specifications.
+            launchSpecification.setBlockDeviceMappings(blockList);
+        }
 
-    	// Add the launch specifications to the request.
-    	requestRequest.setLaunchSpecification(launchSpecification);
+        // Add the launch specifications to the request.
+        requestRequest.setLaunchSpecification(launchSpecification);
 
-    	// Call the RequestSpotInstance API.
-    	RequestSpotInstancesResult requestResult = ec2.requestSpotInstances(requestRequest);
-    	List<SpotInstanceRequest> requestResponses = requestResult.getSpotInstanceRequests();
+        // Call the RequestSpotInstance API.
+        RequestSpotInstancesResult requestResult = ec2.requestSpotInstances(requestRequest);
+        List<SpotInstanceRequest> requestResponses = requestResult.getSpotInstanceRequests();
 
-    	// Setup an arraylist to collect all of the request ids we want to watch hit the running
-    	// state.
-    	spotInstanceRequestIds = new ArrayList<String>();
+        // Setup an arraylist to collect all of the request ids we want to watch hit the running
+        // state.
+        spotInstanceRequestIds = new ArrayList<String>();
 
-    	// Add all of the request ids to the hashset, so we can determine when they hit the
-    	// active state.
-    	for (SpotInstanceRequest requestResponse : requestResponses) {
-    		System.out.println("Created Spot Request: "+requestResponse.getSpotInstanceRequestId());
-    		spotInstanceRequestIds.add(requestResponse.getSpotInstanceRequestId());
-    	}
+        // Add all of the request ids to the hashset, so we can determine when they hit the
+        // active state.
+        for (SpotInstanceRequest requestResponse : requestResponses) {
+            System.out.println("Created Spot Request: "+requestResponse.getSpotInstanceRequestId());
+            spotInstanceRequestIds.add(requestResponse.getSpotInstanceRequestId());
+        }
 
     }
 
     public void launchOnDemand () {
-    	//============================================================================================//
-    	//====================================== Launch an On-Demand Instance ========================//
-    	//====================================== If we Didn't Get a Spot Instance ====================//
-    	//============================================================================================//
+        //============================================================================================//
+        //====================================== Launch an On-Demand Instance ========================//
+        //====================================== If we Didn't Get a Spot Instance ====================//
+        //============================================================================================//
 
-	    	// Setup the request for 1 x t1.micro using the same security group and
-	    	// AMI id as the Spot request.
-	    	RunInstancesRequest runInstancesRequest = new RunInstancesRequest();
-	    	runInstancesRequest.setInstanceType(instanceType);
-	    	runInstancesRequest.setImageId(amiID);
-	    	runInstancesRequest.setMinCount(Integer.valueOf(1));
-	    	runInstancesRequest.setMaxCount(Integer.valueOf(1));
+            // Setup the request for 1 x t1.micro using the same security group and
+            // AMI id as the Spot request.
+            RunInstancesRequest runInstancesRequest = new RunInstancesRequest();
+            runInstancesRequest.setInstanceType(instanceType);
+            runInstancesRequest.setImageId(amiID);
+            runInstancesRequest.setMinCount(Integer.valueOf(1));
+            runInstancesRequest.setMaxCount(Integer.valueOf(1));
 
-	    	// Add the security group to the request.
-	    	ArrayList<String> securityGroups = new ArrayList<String>();
-	    	securityGroups.add(securityGroup);
-	    	runInstancesRequest.setSecurityGroups(securityGroups);
+            // Add the security group to the request.
+            ArrayList<String> securityGroups = new ArrayList<String>();
+            securityGroups.add(securityGroup);
+            runInstancesRequest.setSecurityGroups(securityGroups);
 
-	    	// Launch the instance.
-	    	RunInstancesResult runResult = ec2.runInstances(runInstancesRequest);
+            // Launch the instance.
+            RunInstancesResult runResult = ec2.runInstances(runInstancesRequest);
 
-	    	// Add the instance id into the instance id list, so we can potentially later
-	    	// terminate that list.
-	    	for (Instance instance: runResult.getReservation().getInstances()) {
-	    		System.out.println("Launched On-Demand Instace: "+instance.getInstanceId());
-	    		instanceIds.add(instance.getInstanceId());
-	    	}
+            // Add the instance id into the instance id list, so we can potentially later
+            // terminate that list.
+            for (Instance instance: runResult.getReservation().getInstances()) {
+                System.out.println("Launched On-Demand Instace: "+instance.getInstanceId());
+                instanceIds.add(instance.getInstanceId());
+            }
     }
 
     /**
@@ -246,54 +260,54 @@ public class Requests {
      * @return
      */
     public boolean areAnyOpen() {
-    	//==========================================================================//
-    	//============== Describe Spot Instance Requests to determine =============//
-    	//==========================================================================//
+        //==========================================================================//
+        //============== Describe Spot Instance Requests to determine =============//
+        //==========================================================================//
 
-    	// Create the describeRequest with tall of the request id to monitor (e.g. that we started).
-    	DescribeSpotInstanceRequestsRequest describeRequest = new DescribeSpotInstanceRequestsRequest();
-    	describeRequest.setSpotInstanceRequestIds(spotInstanceRequestIds);
+        // Create the describeRequest with tall of the request id to monitor (e.g. that we started).
+        DescribeSpotInstanceRequestsRequest describeRequest = new DescribeSpotInstanceRequestsRequest();
+        describeRequest.setSpotInstanceRequestIds(spotInstanceRequestIds);
 
-		System.out.println("Checking to determine if Spot Bids have reached the active state...");
+        System.out.println("Checking to determine if Spot Bids have reached the active state...");
 
-		// Initialize variables.
-		instanceIds = new ArrayList<String>();
+        // Initialize variables.
+        instanceIds = new ArrayList<String>();
 
-		try
-		{
-        	// Retrieve all of the requests we want to monitor.
-			DescribeSpotInstanceRequestsResult describeResult = ec2.describeSpotInstanceRequests(describeRequest);
-			List<SpotInstanceRequest> describeResponses = describeResult.getSpotInstanceRequests();
+        try
+        {
+            // Retrieve all of the requests we want to monitor.
+            DescribeSpotInstanceRequestsResult describeResult = ec2.describeSpotInstanceRequests(describeRequest);
+            List<SpotInstanceRequest> describeResponses = describeResult.getSpotInstanceRequests();
 
-        	// Look through each request and determine if they are all in the active state.
-        	for (SpotInstanceRequest describeResponse : describeResponses) {
-        		System.out.println(" " +describeResponse.getSpotInstanceRequestId() +
-        						   " is in the "+describeResponse.getState() + " state.");
+            // Look through each request and determine if they are all in the active state.
+            for (SpotInstanceRequest describeResponse : describeResponses) {
+                System.out.println(" " +describeResponse.getSpotInstanceRequestId() +
+                                   " is in the "+describeResponse.getState() + " state.");
 
-        		// If the state is open, it hasn't changed since we attempted to request it.
-        		// There is the potential for it to transition almost immediately to closed or
-        		// cancelled so we compare against open instead of active.
-        		if (describeResponse.getState().equals("open")) {
-        			return true;
-        		}
+                // If the state is open, it hasn't changed since we attempted to request it.
+                // There is the potential for it to transition almost immediately to closed or
+                // cancelled so we compare against open instead of active.
+                if (describeResponse.getState().equals("open")) {
+                    return true;
+                }
 
-        		// Add the instance id to the list we will eventually terminate.
-        		instanceIds.add(describeResponse.getInstanceId());
-        	}
-		} catch (AmazonServiceException e) {
-			// Print out the error.
-			System.out.println("Error when calling describeSpotInstances");
+                // Add the instance id to the list we will eventually terminate.
+                instanceIds.add(describeResponse.getInstanceId());
+            }
+        } catch (AmazonServiceException e) {
+            // Print out the error.
+            System.out.println("Error when calling describeSpotInstances");
             System.out.println("Caught Exception: " + e.getMessage());
             System.out.println("Reponse Status Code: " + e.getStatusCode());
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
 
             // If we have an exception, ensure we don't break out of the loop.
-			// This prevents the scenario where there was blip on the wire.
-			return true;
+            // This prevents the scenario where there was blip on the wire.
+            return true;
         }
 
-		return false;
+        return false;
     }
 
     /**
@@ -302,22 +316,22 @@ public class Requests {
      * @param tags
      */
     private void tagResources(List<String> resources, List<Tag> tags) {
-    	// Create a tag request.
-    	CreateTagsRequest createTagsRequest = new CreateTagsRequest();
-    	createTagsRequest.setResources(resources);
-    	createTagsRequest.setTags(tags);
+        // Create a tag request.
+        CreateTagsRequest createTagsRequest = new CreateTagsRequest();
+        createTagsRequest.setResources(resources);
+        createTagsRequest.setTags(tags);
 
-    	// Try to tag the Spot request submitted.
-    	try {
-    		ec2.createTags(createTagsRequest);
-    	} catch (AmazonServiceException e) {
-        	// Write out any exceptions that may have occurred.
+        // Try to tag the Spot request submitted.
+        try {
+            ec2.createTags(createTagsRequest);
+        } catch (AmazonServiceException e) {
+            // Write out any exceptions that may have occurred.
             System.out.println("Error terminating instances");
-        	System.out.println("Caught Exception: " + e.getMessage());
+            System.out.println("Caught Exception: " + e.getMessage());
             System.out.println("Reponse Status Code: " + e.getStatusCode());
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
-    	}
+        }
 
     }
 
@@ -326,7 +340,7 @@ public class Requests {
      * @param tags
      */
     public void tagInstances(List<Tag> tags) {
-    	tagResources(instanceIds, tags);
+        tagResources(instanceIds, tags);
     }
 
     /**
@@ -334,7 +348,7 @@ public class Requests {
      * @param tags
      */
     public void tagRequests(List<Tag> tags) {
-    	tagResources(spotInstanceRequestIds, tags);
+        tagResources(spotInstanceRequestIds, tags);
     }
 
     /**
@@ -342,47 +356,47 @@ public class Requests {
      * that were created using this object.
      */
     public void cleanup () {
-    	//==========================================================================//
-    	//================= Cancel/Terminate Your Spot Request =====================//
-    	//==========================================================================//
-    	try {
-        	// Cancel requests.
-        	System.out.println("Cancelling requests.");
-        	CancelSpotInstanceRequestsRequest cancelRequest = new CancelSpotInstanceRequestsRequest(spotInstanceRequestIds);
-        	ec2.cancelSpotInstanceRequests(cancelRequest);
-    	} catch (AmazonServiceException e) {
-    		// Write out any exceptions that may have occurred.
+        //==========================================================================//
+        //================= Cancel/Terminate Your Spot Request =====================//
+        //==========================================================================//
+        try {
+            // Cancel requests.
+            System.out.println("Cancelling requests.");
+            CancelSpotInstanceRequestsRequest cancelRequest = new CancelSpotInstanceRequestsRequest(spotInstanceRequestIds);
+            ec2.cancelSpotInstanceRequests(cancelRequest);
+        } catch (AmazonServiceException e) {
+            // Write out any exceptions that may have occurred.
             System.out.println("Error cancelling instances");
-		    System.out.println("Caught Exception: " + e.getMessage());
+            System.out.println("Caught Exception: " + e.getMessage());
             System.out.println("Reponse Status Code: " + e.getStatusCode());
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
         }
 
-    	try {
-        	// Terminate instances.
-        	System.out.println("Terminate instances");
-        	TerminateInstancesRequest terminateRequest = new TerminateInstancesRequest(instanceIds);
-        	ec2.terminateInstances(terminateRequest);
-    	} catch (AmazonServiceException e) {
-    		// Write out any exceptions that may have occurred.
+        try {
+            // Terminate instances.
+            System.out.println("Terminate instances");
+            TerminateInstancesRequest terminateRequest = new TerminateInstancesRequest(instanceIds);
+            ec2.terminateInstances(terminateRequest);
+        } catch (AmazonServiceException e) {
+            // Write out any exceptions that may have occurred.
             System.out.println("Error terminating instances");
-    		System.out.println("Caught Exception: " + e.getMessage());
+            System.out.println("Caught Exception: " + e.getMessage());
             System.out.println("Reponse Status Code: " + e.getStatusCode());
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
         }
 
-    	// Delete all requests and instances that we have terminated.
-    	instanceIds.clear();
-    	spotInstanceRequestIds.clear();
+        // Delete all requests and instances that we have terminated.
+        instanceIds.clear();
+        spotInstanceRequestIds.clear();
     }
 
     /**
      * Sets the request type to either persistent or one-time.
      */
     public void setRequestType(String type) {
-    	this.requestType = type;
+        this.requestType = type;
     }
 
     /**
@@ -392,8 +406,8 @@ public class Requests {
      * @param to
      */
     public void setValidPeriod(Date from, Date to) {
-    	this.validFrom = from;
-    	this.validTo = to;
+        this.validFrom = from;
+        this.validTo = to;
     }
 
     /**
@@ -402,7 +416,7 @@ public class Requests {
      * @param az
      */
     public void setLaunchGroup(String launchGroup) {
-    	this.launchGroupName = launchGroup;
+        this.launchGroupName = launchGroup;
     }
 
     /**
@@ -411,7 +425,7 @@ public class Requests {
      * @param az
      */
     public void setAvailabilityZoneGroup(String azGroup) {
-    	this.availabilityZoneGroupName = azGroup;
+        this.availabilityZoneGroupName = azGroup;
     }
 
     /**
@@ -420,7 +434,7 @@ public class Requests {
      * @param az
      */
     public void setAvailabilityZone(String az) {
-    	this.availabilityZoneName = az;
+        this.availabilityZoneName = az;
     }
 
     /**
@@ -429,7 +443,7 @@ public class Requests {
      * @param pg
      */
     public void setPlacementGroup(String pg) {
-    	this.placementGroupName = pg;
+        this.placementGroupName = pg;
     }
 
     /**
@@ -438,7 +452,7 @@ public class Requests {
      * @param terminate
      */
     public void setDeleteOnTermination(boolean terminate) {
-    	this.deleteOnTermination = terminate;
+        this.deleteOnTermination = terminate;
     }
 }
 

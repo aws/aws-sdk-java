@@ -42,10 +42,16 @@ public class GettingStartedApp {
     private static final long SLEEP_CYCLE = 5000;
 
     /*
-     * Important: Be sure to fill in your AWS access credentials in the
-     *            AwsCredentials.properties file before you try to run this
-     *            sample.
-     * http://aws.amazon.com/security-credentials
+     * Before running the code:
+     *      Fill in your AWS access credentials in the provided credentials
+     *      file template, and be sure to move the file to the default location
+     *      (~/.aws/credentials) where the sample code will load the
+     *      credentials from.
+     *      https://console.aws.amazon.com/iam/home?#security_credential
+     *
+     * WANRNING:
+     *      To avoid accidental leakage of your credentials, DO NOT keep
+     *      the credentials file in your source directory.
      */
 
     public static void main(String[] args) throws Exception {
@@ -66,51 +72,51 @@ public class GettingStartedApp {
          * the associated instance.
          */
         try {
-        	// Setup the helper object that will perform all of the API calls.
-        	Requests requests = new Requests("t1.micro","ami-8c1fece5","0.03","GettingStartedGroup");
+            // Setup the helper object that will perform all of the API calls.
+            Requests requests = new Requests("t1.micro","ami-8c1fece5","0.03","GettingStartedGroup");
 
-        	// Submit all of the requests.
-        	requests.submitRequests();
+            // Submit all of the requests.
+            requests.submitRequests();
 
-        	// Create the list of tags we want to create and tag any associated requests.
-        	ArrayList<Tag> tags = new ArrayList<Tag>();
-        	tags.add(new Tag("keyname1","value1"));
-        	requests.tagRequests(tags);
+            // Create the list of tags we want to create and tag any associated requests.
+            ArrayList<Tag> tags = new ArrayList<Tag>();
+            tags.add(new Tag("keyname1","value1"));
+            requests.tagRequests(tags);
 
-        	// Initialize the timer to now.
-    	    Calendar startTimer = Calendar.getInstance();
-    	    Calendar nowTimer = null;
+            // Initialize the timer to now.
+            Calendar startTimer = Calendar.getInstance();
+            Calendar nowTimer = null;
 
-        	// Loop through all of the requests until all bids are in the active state
-        	// (or at least not in the open state).
-        	do
-        	{
-	        	// Sleep for 60 seconds.
-	        	Thread.sleep(SLEEP_CYCLE);
+            // Loop through all of the requests until all bids are in the active state
+            // (or at least not in the open state).
+            do
+            {
+                // Sleep for 60 seconds.
+                Thread.sleep(SLEEP_CYCLE);
 
-		    	// Initialize the timer to now, and then subtract 15 minutes, so we can
-		    	// compare to see if we have exceeded 15 minutes compared to the startTime.
-		    	nowTimer = Calendar.getInstance();
-		    	nowTimer.add(Calendar.MINUTE, -15);
-	    	} while (requests.areAnyOpen() && !nowTimer.after(startTimer));
+                // Initialize the timer to now, and then subtract 15 minutes, so we can
+                // compare to see if we have exceeded 15 minutes compared to the startTime.
+                nowTimer = Calendar.getInstance();
+                nowTimer.add(Calendar.MINUTE, -15);
+            } while (requests.areAnyOpen() && !nowTimer.after(startTimer));
 
-    	    // If we couldn't launch Spot within the timeout period, then we should launch an On-Demand
-    	    // Instance.
-    	    if (nowTimer.after(startTimer)) {
-    	    	// Cancel all requests because we timed out.
-            	requests.cleanup();
+            // If we couldn't launch Spot within the timeout period, then we should launch an On-Demand
+            // Instance.
+            if (nowTimer.after(startTimer)) {
+                // Cancel all requests because we timed out.
+                requests.cleanup();
 
-            	// Launch On-Demand instances instead
-    	    	requests.launchOnDemand();
-    	    }
+                // Launch On-Demand instances instead
+                requests.launchOnDemand();
+            }
 
-        	// Tag any created instances.
-        	requests.tagInstances(tags);
+            // Tag any created instances.
+            requests.tagInstances(tags);
 
-    	    // Cancel all requests and terminate all running instances.
-        	requests.cleanup();
+            // Cancel all requests and terminate all running instances.
+            requests.cleanup();
         } catch (AmazonServiceException ase) {
-    		// Write out any exceptions that may have occurred.
+            // Write out any exceptions that may have occurred.
             System.out.println("Caught Exception: " + ase.getMessage());
             System.out.println("Reponse Status Code: " + ase.getStatusCode());
             System.out.println("Error Code: " + ase.getErrorCode());

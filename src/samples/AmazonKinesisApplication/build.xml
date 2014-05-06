@@ -1,5 +1,5 @@
 <!-- Ant build script for compiling and running the Amazon Kinesis Application Sample.
-     Don't forget to fill in your AWS access credentials in AwsCredentials.properties
+     Don't forget to fill in your AWS access credentials in (~/.aws/credentials)
      before trying to run it.  -->
 <project name="Amazon Kinesis Application Sample" default="run" basedir=".">
     <!-- The Amazon Kinesis Client Library jar file is downloaded to the tmp directory. -->

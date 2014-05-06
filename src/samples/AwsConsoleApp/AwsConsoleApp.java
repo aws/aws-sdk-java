@@ -18,8 +18,8 @@ import java.util.Set;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import com.amazonaws.services.ec2.model.DescribeAvailabilityZonesResult;
@@ -65,10 +65,16 @@ import com.amazonaws.services.simpledb.model.ListDomainsResult;
 public class AwsConsoleApp {
 
     /*
-     * Important: Be sure to fill in your AWS access credentials in the
-     *            AwsCredentials.properties file before you try to run this
-     *            sample.
-     * http://aws.amazon.com/security-credentials
+     * Before running the code:
+     *      Fill in your AWS access credentials in the provided credentials
+     *      file template, and be sure to move the file to the default location
+     *      (~/.aws/credentials) where the sample code will load the
+     *      credentials from.
+     *      https://console.aws.amazon.com/iam/home?#security_credential
+     *
+     * WANRNING:
+     *      To avoid accidental leakage of your credentials, DO NOT keep
+     *      the credentials file in your source directory.
      */
 
     static AmazonEC2      ec2;
@@ -87,15 +93,25 @@ public class AwsConsoleApp {
      * @see com.amazonaws.ClientConfiguration
      */
     private static void init() throws Exception {
-    	/*
-		 * This credentials provider implementation loads your AWS credentials
-		 * from a properties file at the root of your classpath.
-		 */
-        AWSCredentialsProvider credentialsProvider = new ClasspathPropertiesFileCredentialsProvider();
 
-        ec2 = new AmazonEC2Client(credentialsProvider);
-        s3  = new AmazonS3Client(credentialsProvider);
-        sdb = new AmazonSimpleDBClient(credentialsProvider);
+        /*
+         * The ProfileCredentialsProvider will return your [default]
+         * credential profile by reading from the credentials file located at
+         * (~/.aws/credentials).
+         */
+        AWSCredentials credentials = null;
+        try {
+            credentials = new ProfileCredentialsProvider().getCredentials();
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Cannot load the credentials from the credential profiles file. " +
+                    "Please make sure that your credentials file is at the correct " +
+                    "location (~/.aws/credentials), and is in valid format.",
+                    e);
+        }
+        ec2 = new AmazonEC2Client(credentials);
+        s3  = new AmazonS3Client(credentials);
+        sdb = new AmazonSimpleDBClient(credentials);
     }
 
 

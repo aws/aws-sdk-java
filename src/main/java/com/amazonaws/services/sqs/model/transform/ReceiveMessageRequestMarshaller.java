@@ -21,6 +21,7 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.internal.ListWithAutoConstructFlag;
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
@@ -53,6 +54,17 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
             }
 
             attributeNamesListIndex++;
+        }
+
+        java.util.List<String> messageAttributeNamesList = receiveMessageRequest.getMessageAttributeNames();
+        int messageAttributeNamesListIndex = 1;
+
+        for (String messageAttributeNamesListValue : messageAttributeNamesList) {
+            if (messageAttributeNamesListValue != null) {
+                request.addParameter("MessageAttributeName." + messageAttributeNamesListIndex, StringUtils.fromString(messageAttributeNamesListValue));
+            }
+
+            messageAttributeNamesListIndex++;
         }
         if (receiveMessageRequest.getMaxNumberOfMessages() != null) {
             request.addParameter("MaxNumberOfMessages", StringUtils.fromInteger(receiveMessageRequest.getMaxNumberOfMessages()));

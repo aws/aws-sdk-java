@@ -27,13 +27,13 @@ import javax.swing.JProgressBar;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.ProgressEvent;
-import com.amazonaws.services.s3.model.ProgressListener;
+import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.Upload;
@@ -43,17 +43,21 @@ import com.amazonaws.services.s3.transfer.Upload;
  * Swing progress bar.
  * <p>
  * <b>Prerequisites:</b> You must have a valid Amazon Web Services developer
- * account, and be signed up to use Amazon S3. For more information on
- * Amazon S3, see http://aws.amazon.com/s3.
+ * account, and be signed up to use Amazon S3. For more information on Amazon
+ * S3, see http://aws.amazon.com/s3.
  * <p>
- * <b>Important:</b> Be sure to fill in your AWS access credentials in the
- *                   AwsCredentials.properties file before you try to run this
- *                   sample.
+ * Fill in your AWS access credentials in the provided credentials file
+ * template, and be sure to move the file to the default location
+ * (~/.aws/credentials) where the sample code will load the credentials from.
+ * <p>
+ * <b>WANRNING:</b> To avoid accidental leakage of your credentials, DO NOT keep
+ * the credentials file in your source directory.
+ *
  * http://aws.amazon.com/security-credentials
  */
 public class S3TransferProgressSample {
 
-    private static AWSCredentials credentials;
+    private static AWSCredentials credentials = null;
     private static TransferManager tx;
     private static String bucketName;
 
@@ -64,15 +68,26 @@ public class S3TransferProgressSample {
 
     public static void main(String[] args) throws Exception {
         /*
-         * This credentials provider implementation loads your AWS credentials
-         * from a properties file at the root of your classpath.
+         * The ProfileCredentialsProvider will return your [default]
+         * credential profile by reading from the credentials file located at
+         * (~/.aws/credentials).
          *
          * TransferManager manages a pool of threads, so we create a
          * single instance and share it throughout our application.
          */
-        AmazonS3 s3 = new AmazonS3Client(credentials = new ClasspathPropertiesFileCredentialsProvider().getCredentials());
-		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
-		s3.setRegion(usWest2);
+        try {
+            credentials = new ProfileCredentialsProvider().getCredentials();
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Cannot load the credentials from the credential profiles file. " +
+                    "Please make sure that your credentials file is at the correct " +
+                    "location (~/.aws/credentials), and is in valid format.",
+                    e);
+        }
+
+        AmazonS3 s3 = new AmazonS3Client(credentials);
+        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+        s3.setRegion(usWest2);
         tx = new TransferManager(s3);
 
         bucketName = "s3-upload-sdk-sample-" + credentials.getAWSAccessKeyId().toLowerCase();
@@ -106,7 +121,7 @@ public class S3TransferProgressSample {
                 public void progressChanged(ProgressEvent progressEvent) {
                     if (upload == null) return;
 
-                    pb.setValue((int)upload.getProgress().getPercentTransfered());
+                    pb.setValue((int)upload.getProgress().getPercentTransferred());
 
                     switch (progressEvent.getEventCode()) {
                     case ProgressEvent.COMPLETED_EVENT_CODE:
@@ -127,7 +142,7 @@ public class S3TransferProgressSample {
             File fileToUpload = fileChooser.getSelectedFile();
             PutObjectRequest request = new PutObjectRequest(
                     bucketName, fileToUpload.getName(), fileToUpload)
-                .withProgressListener(progressListener);
+                .withGeneralProgressListener(progressListener);
             upload = tx.upload(request);
         }
     }

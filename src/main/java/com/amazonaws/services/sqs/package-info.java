@@ -28,6 +28,9 @@
  * <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a>
  * </li>
  * <li>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
+ * </li>
+ * <li>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"> Regions and Endpoints </a>
  * </li>
  * 

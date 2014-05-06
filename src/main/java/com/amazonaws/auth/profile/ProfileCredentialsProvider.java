@@ -22,38 +22,48 @@ import com.amazonaws.auth.AWSCredentialsProvider;
  * AWSCredentials from the profile configuration file for the default profile,
  * or for a specific, named profile.
  * <p>
- * AWS configuration profiles allow you to share multiple sets of AWS security
+ * AWS credential profiles allow you to share multiple sets of AWS security
  * credentials between different tools like the AWS SDK for Java and the
  * AWS CLI.
  * <p>
  * See
  * http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
- * 
+ *
  * @see ProfilesConfigFile
  */
 public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
-    private ProfilesConfigFile profilesConfigFile;
-    private String profileName;
+    /**
+     * The credential profiles file from which this provider loads the security
+     * credentials.
+     * Lazily loaded by the double-check idiom.
+     */
+    private volatile ProfilesConfigFile profilesConfigFile;
 
+    /** The name of the credential profile */
+    private final String profileName;
 
     /**
      * Creates a new profile credentials provider that returns the AWS security
      * credentials configured for the default profile.
+     * Loading the credential file is deferred until the getCredentials() method
+     * is called.
      */
     public ProfileCredentialsProvider() {
-        this(new ProfilesConfigFile(), ProfilesConfigFile.DEFAULT_PROFILE_NAME);
+        this(ProfilesConfigFile.DEFAULT_PROFILE_NAME);
     }
 
     /**
      * Creates a new profile credentials provider that returns the AWS security
      * credentials configured for the named profile.
+     * Loading the credential file is deferred until the getCredentials() method
+     * is called.
      *
      * @param profileName
      *            The name of a local configuration profile.
      */
     public ProfileCredentialsProvider(String profileName) {
-        this(new ProfilesConfigFile(), profileName);
+        this(null, profileName);
     }
 
     /**
@@ -75,6 +85,13 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     @Override
     public AWSCredentials getCredentials() {
+        if (profilesConfigFile == null) {
+            synchronized (this) {
+                if (profilesConfigFile == null) {
+                    profilesConfigFile = new ProfilesConfigFile();
+                }
+            }
+        }
         return profilesConfigFile.getCredentials(profileName);
     }
 

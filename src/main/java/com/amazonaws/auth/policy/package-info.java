@@ -42,7 +42,7 @@
  * <p>
  * The following code creates a policy to allow a specific AWS account to send
  * and receive messages using one of your Amazon SQS queues:
- * <pre>
+ * <pre class="brush: java">
  *    Policy policy = new Policy("MyQueuePolicy");
  *    policy.withStatements(new Statement(Effect.Allow)
  *           .withPrincipals(new Principal("123456789012"))

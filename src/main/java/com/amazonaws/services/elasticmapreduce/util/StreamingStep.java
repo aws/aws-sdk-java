@@ -27,7 +27,7 @@ import com.amazonaws.services.elasticmapreduce.model.HadoopJarStepConfig;
  * <p>
  * See also: <a href="http://hadoop.apache.org/common/docs/r0.20.2/streaming.html">Hadoop Streaming</a>
  *
- * <pre>
+ * <pre class="brush: java">
  * AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
  * AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
  *

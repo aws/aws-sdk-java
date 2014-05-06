@@ -16,6 +16,8 @@ package com.amazonaws.services.s3.model;
 
 import java.security.Provider;
 
+import com.amazonaws.services.s3.internal.crypto.CryptoRuntime;
+
 /**
  * Stores configuration parameters that will be used during encryption and
  * decryption by the Amazon S3 Encryption Client. With this object, you can set
@@ -25,6 +27,7 @@ import java.security.Provider;
  */
 public class CryptoConfiguration {
 
+    private CryptoMode cryptoMode;
     private CryptoStorageMode storageMode;
     private Provider cryptoProvider;
 
@@ -34,13 +37,26 @@ public class CryptoConfiguration {
      * is the JCE provider.
      */
     public CryptoConfiguration() {
-        // By default, store encryption info in metadata
-        this.storageMode = CryptoStorageMode.ObjectMetadata;
-
-        // A null value implies that the default JCE crypto provider will be used
-        this.cryptoProvider = null;
+        this(CryptoMode.EncryptionOnly);    // default to Encryption Only (EO) for backward compatibility
     }   
 
+    /**
+     * @param cryptoMode
+     *            cryptographic mode to be used
+     *
+     * @throws UnsupportedOperationException
+     *             if the necessary security provider cannot be found or the
+     *             necessary cryptographic operations are not supported for the
+     *             specified crypto mode.
+     */
+    public CryptoConfiguration(CryptoMode cryptoMode) {
+        check(cryptoMode);
+        // By default, store encryption info in metadata
+        this.storageMode = CryptoStorageMode.ObjectMetadata;
+        // A null value implies that the default JCE crypto provider will be used
+        this.cryptoProvider = null;
+        this.cryptoMode = cryptoMode;
+    }   
     /**
      * Sets the storage mode to the specified mode.
      * 
@@ -103,5 +119,65 @@ public class CryptoConfiguration {
      */
     public Provider getCryptoProvider() {
         return this.cryptoProvider;
+    }
+    /**
+     * Returns the optionally specified crypto mode applicable only to the S3
+     * encryption client; or null.  This attribute is ignored if the S3
+     * encryption client is not in use.
+     */
+    public CryptoMode getCryptoMode() {
+        return cryptoMode;
+    }
+
+    /**
+     * Sets the crypto mode; applicable only to the S3 encryption client.
+     * 
+     * @throws UnsupportedOperationException
+     *             if the necessary security provider cannot be found or the
+     *             necessary cryptographic operations are not supported for the
+     *             specified crypto mode.
+     */
+    public void setCryptoMode(CryptoMode cryptoMode) {
+        check(cryptoMode);
+        this.cryptoMode = cryptoMode;
+    }
+
+    /**
+     * Fluent API to set the crypto mode; applicable only to the S3 encryption
+     * client.
+     * 
+     * @throws UnsupportedOperationException
+     *             if the necessary security provider cannot be found or the
+     *             necessary cryptographic operations are not supported for the
+     *             specified crypto mode.
+     */
+    public CryptoConfiguration withCryptoMode(CryptoMode cryptoMode) {
+        check(cryptoMode);
+        this.cryptoMode = cryptoMode;
+        return this;
+    }
+
+    /**
+     * Checks if the crypto mode is supported by the runtime.
+     * 
+     * @throws UnsupportedOperationException
+     *             if the necessary security provider cannot be found or the
+     *             necessary cryptographic operations are not supported for the
+     *             specified crypto mode.
+     */
+    private void check(CryptoMode cryptoMode) {
+        if (cryptoMode == CryptoMode.AuthenticatedEncryption
+        ||  cryptoMode == CryptoMode.StrictAuthenticatedEncryption) {
+            if (!CryptoRuntime.isBouncyCastleAvailable()) {
+                CryptoRuntime.enableBouncyCastle();
+                if (!CryptoRuntime.isBouncyCastleAvailable()) {
+                    throw new UnsupportedOperationException(
+                            "The Bouncy castle library jar is required on the classpath to enable authenticated encryption");
+                }
+            }
+            if (!CryptoRuntime.isAesGcmAvailable())
+                throw new UnsupportedOperationException(
+                        "More recent version of the Bouncy castle library is required to enable authenticated encryption");
+        }
     }
 }

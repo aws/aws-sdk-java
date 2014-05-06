@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest) ReceiveMessage operation}.
  * <p>
- * Retrieves one or more messages from the specified queue. Long poll
- * support is enabled by using the <code>WaitTimeSeconds</code>
- * parameter. For more information, see
+ * Retrieves one or more messages, with a maximum limit of 10 messages,
+ * from the specified queue. Long poll support is enabled by using the
+ * <code>WaitTimeSeconds</code> parameter. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
  * in the <i>Amazon SQS Developer Guide</i> .
  * 
@@ -60,6 +60,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </li>
  * <li> <p>
  * Receipt handle.
+ * </p>
+ * </li>
+ * <li> <p>
+ * Message attributes.
+ * </p>
+ * </li>
+ * <li> <p>
+ * MD5 digest of the message attributes.
  * </p>
  * </li>
  * 
@@ -112,9 +120,22 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNames;
 
     /**
+     * The message attribute Name can contain the following characters: A-Z,
+     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     * attribute name must not start or end with a period, and it should not
+     * have successive periods. The message attribute name is case sensitive
+     * and must be unique among all attribute names for the message. The
+     * message attribute name can be up to 256 characters long. Attribute
+     * names cannot start with "AWS." or "Amazon." because these prefixes are
+     * reserved for use by Amazon Web Services.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> messageAttributeNames;
+
+    /**
      * The maximum number of messages to return. Amazon SQS never returns
-     * more messages than this value but may return fewer. <p>All of the
-     * messages are not necessarily returned.
+     * more messages than this value but may return fewer. Values can be from
+     * 1 to 10. Default is 1. <p>All of the messages are not necessarily
+     * returned.
      */
     private Integer maxNumberOfMessages;
 
@@ -374,13 +395,139 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * The message attribute Name can contain the following characters: A-Z,
+     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     * attribute name must not start or end with a period, and it should not
+     * have successive periods. The message attribute name is case sensitive
+     * and must be unique among all attribute names for the message. The
+     * message attribute name can be up to 256 characters long. Attribute
+     * names cannot start with "AWS." or "Amazon." because these prefixes are
+     * reserved for use by Amazon Web Services.
+     *
+     * @return The message attribute Name can contain the following characters: A-Z,
+     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     *         attribute name must not start or end with a period, and it should not
+     *         have successive periods. The message attribute name is case sensitive
+     *         and must be unique among all attribute names for the message. The
+     *         message attribute name can be up to 256 characters long. Attribute
+     *         names cannot start with "AWS." or "Amazon." because these prefixes are
+     *         reserved for use by Amazon Web Services.
+     */
+    public java.util.List<String> getMessageAttributeNames() {
+        if (messageAttributeNames == null) {
+              messageAttributeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              messageAttributeNames.setAutoConstruct(true);
+        }
+        return messageAttributeNames;
+    }
+    
+    /**
+     * The message attribute Name can contain the following characters: A-Z,
+     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     * attribute name must not start or end with a period, and it should not
+     * have successive periods. The message attribute name is case sensitive
+     * and must be unique among all attribute names for the message. The
+     * message attribute name can be up to 256 characters long. Attribute
+     * names cannot start with "AWS." or "Amazon." because these prefixes are
+     * reserved for use by Amazon Web Services.
+     *
+     * @param messageAttributeNames The message attribute Name can contain the following characters: A-Z,
+     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     *         attribute name must not start or end with a period, and it should not
+     *         have successive periods. The message attribute name is case sensitive
+     *         and must be unique among all attribute names for the message. The
+     *         message attribute name can be up to 256 characters long. Attribute
+     *         names cannot start with "AWS." or "Amazon." because these prefixes are
+     *         reserved for use by Amazon Web Services.
+     */
+    public void setMessageAttributeNames(java.util.Collection<String> messageAttributeNames) {
+        if (messageAttributeNames == null) {
+            this.messageAttributeNames = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> messageAttributeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(messageAttributeNames.size());
+        messageAttributeNamesCopy.addAll(messageAttributeNames);
+        this.messageAttributeNames = messageAttributeNamesCopy;
+    }
+    
+    /**
+     * The message attribute Name can contain the following characters: A-Z,
+     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     * attribute name must not start or end with a period, and it should not
+     * have successive periods. The message attribute name is case sensitive
+     * and must be unique among all attribute names for the message. The
+     * message attribute name can be up to 256 characters long. Attribute
+     * names cannot start with "AWS." or "Amazon." because these prefixes are
+     * reserved for use by Amazon Web Services.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param messageAttributeNames The message attribute Name can contain the following characters: A-Z,
+     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     *         attribute name must not start or end with a period, and it should not
+     *         have successive periods. The message attribute name is case sensitive
+     *         and must be unique among all attribute names for the message. The
+     *         message attribute name can be up to 256 characters long. Attribute
+     *         names cannot start with "AWS." or "Amazon." because these prefixes are
+     *         reserved for use by Amazon Web Services.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ReceiveMessageRequest withMessageAttributeNames(String... messageAttributeNames) {
+        if (getMessageAttributeNames() == null) setMessageAttributeNames(new java.util.ArrayList<String>(messageAttributeNames.length));
+        for (String value : messageAttributeNames) {
+            getMessageAttributeNames().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The message attribute Name can contain the following characters: A-Z,
+     * a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     * attribute name must not start or end with a period, and it should not
+     * have successive periods. The message attribute name is case sensitive
+     * and must be unique among all attribute names for the message. The
+     * message attribute name can be up to 256 characters long. Attribute
+     * names cannot start with "AWS." or "Amazon." because these prefixes are
+     * reserved for use by Amazon Web Services.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param messageAttributeNames The message attribute Name can contain the following characters: A-Z,
+     *         a-z, 0-9, underscore(_), hyphen(-), and period (.). The message
+     *         attribute name must not start or end with a period, and it should not
+     *         have successive periods. The message attribute name is case sensitive
+     *         and must be unique among all attribute names for the message. The
+     *         message attribute name can be up to 256 characters long. Attribute
+     *         names cannot start with "AWS." or "Amazon." because these prefixes are
+     *         reserved for use by Amazon Web Services.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ReceiveMessageRequest withMessageAttributeNames(java.util.Collection<String> messageAttributeNames) {
+        if (messageAttributeNames == null) {
+            this.messageAttributeNames = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> messageAttributeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(messageAttributeNames.size());
+            messageAttributeNamesCopy.addAll(messageAttributeNames);
+            this.messageAttributeNames = messageAttributeNamesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * The maximum number of messages to return. Amazon SQS never returns
-     * more messages than this value but may return fewer. <p>All of the
-     * messages are not necessarily returned.
+     * more messages than this value but may return fewer. Values can be from
+     * 1 to 10. Default is 1. <p>All of the messages are not necessarily
+     * returned.
      *
      * @return The maximum number of messages to return. Amazon SQS never returns
-     *         more messages than this value but may return fewer. <p>All of the
-     *         messages are not necessarily returned.
+     *         more messages than this value but may return fewer. Values can be from
+     *         1 to 10. Default is 1. <p>All of the messages are not necessarily
+     *         returned.
      */
     public Integer getMaxNumberOfMessages() {
         return maxNumberOfMessages;
@@ -388,12 +535,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The maximum number of messages to return. Amazon SQS never returns
-     * more messages than this value but may return fewer. <p>All of the
-     * messages are not necessarily returned.
+     * more messages than this value but may return fewer. Values can be from
+     * 1 to 10. Default is 1. <p>All of the messages are not necessarily
+     * returned.
      *
      * @param maxNumberOfMessages The maximum number of messages to return. Amazon SQS never returns
-     *         more messages than this value but may return fewer. <p>All of the
-     *         messages are not necessarily returned.
+     *         more messages than this value but may return fewer. Values can be from
+     *         1 to 10. Default is 1. <p>All of the messages are not necessarily
+     *         returned.
      */
     public void setMaxNumberOfMessages(Integer maxNumberOfMessages) {
         this.maxNumberOfMessages = maxNumberOfMessages;
@@ -401,14 +550,16 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The maximum number of messages to return. Amazon SQS never returns
-     * more messages than this value but may return fewer. <p>All of the
-     * messages are not necessarily returned.
+     * more messages than this value but may return fewer. Values can be from
+     * 1 to 10. Default is 1. <p>All of the messages are not necessarily
+     * returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxNumberOfMessages The maximum number of messages to return. Amazon SQS never returns
-     *         more messages than this value but may return fewer. <p>All of the
-     *         messages are not necessarily returned.
+     *         more messages than this value but may return fewer. Values can be from
+     *         1 to 10. Default is 1. <p>All of the messages are not necessarily
+     *         returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -522,6 +673,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
         sb.append("{");
         if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");
         if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ",");
+        if (getMessageAttributeNames() != null) sb.append("MessageAttributeNames: " + getMessageAttributeNames() + ",");
         if (getMaxNumberOfMessages() != null) sb.append("MaxNumberOfMessages: " + getMaxNumberOfMessages() + ",");
         if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() + ",");
         if (getWaitTimeSeconds() != null) sb.append("WaitTimeSeconds: " + getWaitTimeSeconds() );
@@ -536,6 +688,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
         
         hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode()); 
         hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode()); 
+        hashCode = prime * hashCode + ((getMessageAttributeNames() == null) ? 0 : getMessageAttributeNames().hashCode()); 
         hashCode = prime * hashCode + ((getMaxNumberOfMessages() == null) ? 0 : getMaxNumberOfMessages().hashCode()); 
         hashCode = prime * hashCode + ((getVisibilityTimeout() == null) ? 0 : getVisibilityTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getWaitTimeSeconds() == null) ? 0 : getWaitTimeSeconds().hashCode()); 
@@ -554,6 +707,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
         if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false) return false; 
         if (other.getAttributeNames() == null ^ this.getAttributeNames() == null) return false;
         if (other.getAttributeNames() != null && other.getAttributeNames().equals(this.getAttributeNames()) == false) return false; 
+        if (other.getMessageAttributeNames() == null ^ this.getMessageAttributeNames() == null) return false;
+        if (other.getMessageAttributeNames() != null && other.getMessageAttributeNames().equals(this.getMessageAttributeNames()) == false) return false; 
         if (other.getMaxNumberOfMessages() == null ^ this.getMaxNumberOfMessages() == null) return false;
         if (other.getMaxNumberOfMessages() != null && other.getMaxNumberOfMessages().equals(this.getMaxNumberOfMessages()) == false) return false; 
         if (other.getVisibilityTimeout() == null ^ this.getVisibilityTimeout() == null) return false;

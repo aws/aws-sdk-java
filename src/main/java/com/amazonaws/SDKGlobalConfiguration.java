@@ -37,7 +37,7 @@ public class SDKGlobalConfiguration {
      * System property used when starting up the JVM to enable the default
      * metrics collected by the AWS SDK, which uploads the derived statistics
      * to Amazon CloudWatch.
-     * 
+     *
      * <pre>
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics
@@ -128,10 +128,10 @@ public class SDKGlobalConfiguration {
     public static final String DEFAULT_S3_STREAM_BUFFER_SIZE =
         "com.amazonaws.sdk.s3.defaultStreamBufferSize";
 
-    /** 
+    /**
      * @deprecated by {@link #DEFAULT_METRICS_SYSTEM_PROPERTY}.
-     * 
-     * Internal system property to enable timing info collection. 
+     *
+     * Internal system property to enable timing info collection.
      */
     @Deprecated
     public static final String PROFILING_SYSTEM_PROPERTY =
@@ -149,6 +149,9 @@ public class SDKGlobalConfiguration {
 
     /** Alternate environment variable name for the AWS secret key */
     public static final String ALTERNATE_SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
+
+    /** Environment variable name for the AWS session token */
+    public static final String AWS_SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 
     /**
      * globalTimeOffset is a time offset that is used to globally adjust the

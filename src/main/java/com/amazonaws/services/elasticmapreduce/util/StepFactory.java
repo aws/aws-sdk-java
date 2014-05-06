@@ -29,7 +29,7 @@ import com.amazonaws.util.StringUtils;
  * "us-east-1.elasticmapreduce".
  * <p>
  * Example usage, create an interactive Hive job flow with debugging enabled:
- * <pre>
+ * <pre class="brush: java">
  *   AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
  *   AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
  *
@@ -70,9 +70,9 @@ public class StepFactory {
      *  Hive_0_7_1 Hive 0.7.1
      */
     public static enum HiveVersion {
-    	Hive_0_5("0.5"),
-    	Hive_0_7("0.7"),
-    	Hive_0_7_1("0.7.1"),
+        Hive_0_5("0.5"),
+        Hive_0_7("0.7"),
+        Hive_0_7_1("0.7.1"),
         Hive_0_8_1("0.8.1"),
         Hive_0_8_1_1("0.8.1.1"),
         Hive_0_8_1_2("0.8.1.2"),
@@ -83,7 +83,7 @@ public class StepFactory {
         Hive_0_8_1_7("0.8.1.7"),
         Hive_0_8_1_8("0.8.1.8"),
         Hive_0_11_0("0.11.0"),
-    	Hive_Latest("latest");
+        Hive_Latest("latest");
 
       private String stringVal;
 
@@ -91,10 +91,10 @@ public class StepFactory {
         stringVal = str;
       }
 
-    	@Override
-    	public String toString() {
-    		return stringVal;
-    	}
+        @Override
+        public String toString() {
+            return stringVal;
+        }
     }
 
     /**
@@ -166,7 +166,7 @@ public class StepFactory {
         }
         return newHivePigStep("hive", "--install-hive", "--hive-versions", "latest");
     }
-    
+
     /**
      * Step that installs the specified versions of Hive on your job flow.
      *
@@ -202,7 +202,7 @@ public class StepFactory {
      *            Arguments that get passed to the script.
      * @return HadoopJarStepConfig that can be passed to your job flow.
      */
-    public HadoopJarStepConfig newRunHiveScriptStepVersioned(String script, 
+    public HadoopJarStepConfig newRunHiveScriptStepVersioned(String script,
         String hiveVersion, String... scriptArgs) {
         List<String> hiveArgs = new ArrayList<String>();
         hiveArgs.add("--hive-versions");
@@ -214,7 +214,7 @@ public class StepFactory {
         hiveArgs.addAll(Arrays.asList(scriptArgs));
         return newHivePigStep("hive", hiveArgs.toArray(new String[0]));
     }
-    
+
     /**
      * Step that runs a Hive script on your job flow using the default Hive version.
      *
@@ -236,12 +236,12 @@ public class StepFactory {
     public HadoopJarStepConfig newInstallPigStep() {
         return newInstallPigStep(new String[0]);
     }
-    
+
     /**
      * Step that installs Pig on your job flow.
      *
      * @param pigVersions the versions of Pig to install.
-     * 
+     *
      * @return HadoopJarStepConfig that can be passed to your job flow.
      */
     public HadoopJarStepConfig newInstallPigStep(String... pigVersions) {
@@ -258,12 +258,12 @@ public class StepFactory {
      * @param script
      *            The script to run.
      * @param pigVersion
-     *            The Pig version to use. 
+     *            The Pig version to use.
      * @param scriptArgs
      *            Arguments that get passed to the script.
      * @return HadoopJarStepConfig that can be passed to your job flow.
      */
-    public HadoopJarStepConfig newRunPigScriptStep(String script, 
+    public HadoopJarStepConfig newRunPigScriptStep(String script,
         String pigVersion, String... scriptArgs) {
         List<String> pigArgs = new ArrayList<String>();
         pigArgs.add("--pig-versions");
@@ -275,7 +275,7 @@ public class StepFactory {
         pigArgs.addAll(Arrays.asList(scriptArgs));
         return newHivePigStep("pig", pigArgs.toArray(new String[0]));
     }
-    
+
     /**
      * Step that runs a Pig script on your job flow using the default Pig version.
      *

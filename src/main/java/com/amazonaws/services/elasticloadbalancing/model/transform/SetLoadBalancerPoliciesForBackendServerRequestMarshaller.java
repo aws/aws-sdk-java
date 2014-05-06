@@ -21,6 +21,7 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.internal.ListWithAutoConstructFlag;
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
@@ -50,7 +51,10 @@ public class SetLoadBalancerPoliciesForBackendServerRequestMarshaller implements
         java.util.List<String> policyNamesList = setLoadBalancerPoliciesForBackendServerRequest.getPolicyNames();
         int policyNamesListIndex = 1;
 
-            if (policyNamesList.isEmpty()) request.addParameter("PolicyNames", "");
+        if (policyNamesList.isEmpty()) {
+            request.addParameter("PolicyNames", "");
+        }
+
         for (String policyNamesListValue : policyNamesList) {
             if (policyNamesListValue != null) {
                 request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));

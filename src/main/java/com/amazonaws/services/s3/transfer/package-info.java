@@ -32,7 +32,7 @@
  * TransferManager and how to track progress for uploads.
  * <p>
  * Using TransferManager to upload data to Amazon S3 is easy:
- * <pre>
+ * <pre class="brush: java">
  * AWSCredentials myCredentials = new BasicAWSCredentials(...);
  * TransferManager tx = new TransferManager(myCredentials);
  * Upload myUpload = tx.upload(myBucket, myFile.getName(), myFile);

@@ -1,5 +1,5 @@
 <!-- Ant build script for compiling and running the AWS Java SDK EC2 Spot Instances sample.
-     Don't forget to fill in your AWS access credentials in AwsCredentials.properties
+     Don't forget to fill in your AWS access credentials in (~/.aws/credentials)
      before trying to run it.  -->
 <project name="Amazon EC2 Spot Instances Sample" default="GettingStartedApp" basedir=".">
     <path id="aws.java.sdk.classpath">

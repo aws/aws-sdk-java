@@ -998,11 +998,11 @@ public class ClientConfiguration {
      * servers using basic authentication, and returns the updated
      * ClientConfiguration object so that additional method calls may be chained
      * together.
-     * 
+     *
      * @param preemptiveBasicProxyAuth
      *            Whether to authenticate preemptively against proxy server.
      * @return The updated ClientConfiguration objectt=
-     * 
+     *
      */
     public ClientConfiguration withPreemptiveBasicProxyAuth(boolean preemptiveBasicProxyAuth) {
         setPreemptiveBasicProxyAuth(preemptiveBasicProxyAuth);

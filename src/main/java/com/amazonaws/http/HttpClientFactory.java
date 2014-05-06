@@ -17,7 +17,6 @@ package com.amazonaws.http;
 import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -102,7 +101,7 @@ class HttpClientFactory {
         httpClient.setRedirectStrategy(new LocationHeaderNotRequiredRedirectStrategy());
 
         if (config.getLocalAddress() != null) {
-          ConnRouteParams.setLocalAddress(httpClientParams, config.getLocalAddress());
+            ConnRouteParams.setLocalAddress(httpClientParams, config.getLocalAddress());
         }
 
         try {
@@ -277,7 +276,7 @@ class HttpClientFactory {
                 authCache.put(this.proxyHost, basicScheme);
                 context.setAttribute(ClientContext.AUTH_CACHE, authCache);
             } else {
-                authCache = 
+                authCache =
                     (AuthCache) context.getAttribute(ClientContext.AUTH_CACHE);
                 authCache.put(this.proxyHost, basicScheme);
             }

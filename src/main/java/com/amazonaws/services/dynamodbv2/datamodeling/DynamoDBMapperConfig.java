@@ -22,8 +22,8 @@ import com.amazonaws.metrics.RequestMetricCollector;
  * not provided explicitly, {@link DynamoDBMapperConfig#DEFAULT} is used. New
  * instances can be given to the mapper object on individual save, load, and
  * delete operations to override the defaults. For example:
- * 
- * <pre>
+ *
+ * <pre class="brush: java">
  * DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
  * // Force this read to be consistent
  * DomainClass obj = mapper.load(DomainClass.class, key, new DynamoDBMapperConfig(ConsistentReads.CONSISTENT));
@@ -54,7 +54,7 @@ public class DynamoDBMapperConfig {
          * By default, the mapper uses UPDATE.
          */
         UPDATE,
-        
+
         /**
          * UPDATE_SKIP_NULL_ATTRIBUTES is similar to UPDATE, except that it
          * ignores any null value attribute(s) and will NOT remove them from
@@ -62,14 +62,14 @@ public class DynamoDBMapperConfig {
          * updateItem request, no matter the object is key-only or not.
          */
         UPDATE_SKIP_NULL_ATTRIBUTES,
-        
+
         /**
          * CLOBBER will clear and replace all attributes, included unmodeled
          * ones, (delete and recreate) on save. Versioned field constraints will
          * also be disregarded.
          */
         CLOBBER,
-        
+
         /**
          * APPEND_SET treats scalar attributes (String, Number, Binary) the same
          * as UPDATE_SKIP_NULL_ATTRIBUTES does. However, for set attributes, it
@@ -105,7 +105,7 @@ public class DynamoDBMapperConfig {
          * By default, the mapper uses LAZY_LOADING.
          */
         LAZY_LOADING,
-        
+
         /**
          * Only supports using iterator to read from the paginated list. All
          * other list operations will return UnsupportedOperationException
@@ -118,14 +118,14 @@ public class DynamoDBMapperConfig {
          * large DynamoDB items.
          */
         ITERATION_ONLY,
-        
+
         /**
          * Paginated list will eagerly load all the paginated results from
          * DynamoDB as soon as the list is initialized.
          */
         EAGER_LOADING
     }
-    
+
     /**
      * Allows overriding the table name declared on a domain class by the
      * {@link DynamoDBTable} annotation.
@@ -134,7 +134,7 @@ public class DynamoDBMapperConfig {
 
         private final String tableNameOverride;
         private final String tableNamePrefix;
-        
+
         /**
          * Returns a new {@link TableNameOverride} object that will prepend the
          * given string to every table name.
@@ -148,14 +148,14 @@ public class DynamoDBMapperConfig {
          * every table name in requests with the given string.
          */
         public static TableNameOverride withTableNameReplacement(String tableNameReplacement) {
-            return new TableNameOverride(tableNameReplacement, null);            
+            return new TableNameOverride(tableNameReplacement, null);
         }
-        
+
         private TableNameOverride(String tableNameOverride, String tableNamePrefix) {
             this.tableNameOverride = tableNameOverride;
             this.tableNamePrefix = tableNamePrefix;
         }
-        
+
         /**
          * @see TableNameOverride#withTableNameReplacement(String)
          */
@@ -166,22 +166,22 @@ public class DynamoDBMapperConfig {
         /**
          * Returns the table name to use for all requests. Exclusive with
          * {@link TableNameOverride#getTableNamePrefix()}
-         * 
+         *
          * @see DynamoDBMapperConfig#getTableNameOverride()
          */
         public String getTableName() {
             return tableNameOverride;
         }
-        
+
         /**
          * Returns the table name prefix to prepend the table name for all
          * requests. Exclusive with {@link TableNameOverride#getTableName()}
-         * 
+         *
          * @see DynamoDBMapperConfig#getTableNameOverride()
          */
         public String getTableNamePrefix() {
             return tableNamePrefix;
-        }   
+        }
     }
 
     private final SaveBehavior saveBehavior;
@@ -199,7 +199,7 @@ public class DynamoDBMapperConfig {
     /**
      * Constructs a new configuration object with the save behavior, consistent
      * read behavior, and table name override given.
-     * 
+     *
      * @param saveBehavior
      *            The {@link SaveBehavior} to use, or null for default.
      * @param consistentReads
@@ -220,7 +220,7 @@ public class DynamoDBMapperConfig {
     /**
      * Constructs a new configuration object with the save behavior, consistent
      * read behavior, and table name override given.
-     * 
+     *
      * @param saveBehavior
      *            The {@link SaveBehavior} to use, or null for default.
      * @param consistentReads
@@ -265,7 +265,7 @@ public class DynamoDBMapperConfig {
     public DynamoDBMapperConfig(TableNameOverride tableNameOverride) {
         this(null, null, tableNameOverride, null);
     }
-    
+
     /**
      * Constructs a new configuration object with the pagination loading strategy given.
      */
@@ -322,14 +322,14 @@ public class DynamoDBMapperConfig {
      * either by replacing the table name entirely or else by pre-pending a
      * string to each table name. This is useful for partitioning data in
      * multiple tables at runtime.
-     * 
+     *
      * @see TableNameOverride#withTableNamePrefix(String)
      * @see TableNameOverride#withTableNameReplacement(String)
      */
     public TableNameOverride getTableNameOverride() {
         return tableNameOverride;
     }
-    
+
     /**
      * Returns the pagination loading strategy for this configuration.
      */

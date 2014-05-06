@@ -24,8 +24,8 @@ import com.amazonaws.services.s3.model.VersionListing;
 /**
  * Provides an easy way to iterate Amazon S3 object versions in a "foreach"
  * statement. For example:
- * 
- * <pre>
+ *
+ * <pre class="brush: java">
  * for ( S3VersionSummary summary : S3Versions.forPrefix(s3, &quot;my-bucket&quot;, &quot;photos/&quot;) ) {
  *     System.out.printf(&quot;Version '%s' of key '%s'\n&quot;, summary.getVersionId(), summary.getKey());
  * }
@@ -102,7 +102,7 @@ public class S3Versions implements Iterable<S3VersionSummary> {
     /**
      * Sets the batch size, i.e., how many {@link S3VersionSummary}s will be fetched at
      * once.
-     * 
+     *
      * @param batchSize
      *            How many object summaries to fetch at once.
      */

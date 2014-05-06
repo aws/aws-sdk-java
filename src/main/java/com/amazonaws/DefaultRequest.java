@@ -17,6 +17,7 @@ package com.amazonaws;
 import java.io.InputStream;
 import java.net.URI;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.apache.http.annotation.NotThreadSafe;
@@ -36,8 +37,14 @@ public class DefaultRequest<T> implements Request<T> {
     /** The resource path being requested */
     private String resourcePath;
 
-    /** Map of the parameters being sent as part of this request */
-    private Map<String, String> parameters = new HashMap<String, String>();
+    /**
+     * Map of the parameters being sent as part of this request.
+     * <p>
+     * Note that a LinkedHashMap is used, since we want to preserve the
+     * insertion order so that members of a list parameter will still be ordered
+     * by their indices when they are marshalled into the query string.
+     */
+    private Map<String, String> parameters = new LinkedHashMap<String, String>();
 
     /** Map of the headers included in this request */
     private Map<String, String> headers = new HashMap<String, String>();
@@ -59,11 +66,11 @@ public class DefaultRequest<T> implements Request<T> {
 
     /** An optional stream from which to read the request payload. */
     private InputStream content;
-    
+
     /** An optional time offset to account for clock skew */
     private int timeOffset;
 
-    /** All AWS Request metrics are collected into this object. */ 
+    /** All AWS Request metrics are collected into this object. */
     private AWSRequestMetrics metrics;
 
     /**
@@ -189,8 +196,8 @@ public class DefaultRequest<T> implements Request<T> {
         return serviceName;
     }
 
-    /** 
-     * @see com.amazonaws.Request#getContent() 
+    /**
+     * @see com.amazonaws.Request#getContent()
      */
     public InputStream getContent() {
         return content;
@@ -218,14 +225,14 @@ public class DefaultRequest<T> implements Request<T> {
         this.parameters.clear();
         this.parameters.putAll(parameters);
     }
-    
+
     /**
      * @see com.amazonaws.Request#getTimeOffset
      */
     public int getTimeOffset() {
         return timeOffset;
     }
-    
+
     /**
      * @see Request#setTimeOffset(int)
      */
