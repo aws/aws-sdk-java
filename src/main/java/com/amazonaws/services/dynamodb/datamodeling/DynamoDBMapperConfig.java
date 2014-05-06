@@ -20,8 +20,8 @@ package com.amazonaws.services.dynamodb.datamodeling;
  * not provided explicitly, {@link DynamoDBMapperConfig#DEFAULT} is used. New
  * instances can be given to the mapper object on individual save, load, and
  * delete operations to override the defaults. For example:
- * 
- * <pre>
+ *
+ * <pre class="brush: java">
  * DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
  * // Force this read to be consistent
  * DomainClass obj = mapper.load(DomainClass.class, key, new DynamoDBMapperConfig(ConsistentReads.CONSISTENT));
@@ -32,7 +32,7 @@ package com.amazonaws.services.dynamodb.datamodeling;
  * // Delete the object even if the version field is out of date
  * mapper.delete(obj, new DynamoDBMapperConfig(SaveBehavior.CLOBBER));
  * </pre>
- * 
+ *
  * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig} instead.
  */
 @Deprecated
@@ -73,7 +73,7 @@ public class DynamoDBMapperConfig {
 
         private final String tableNameOverride;
         private final String tableNamePrefix;
-        
+
         /**
          * Returns a new {@link TableNameOverride} object that will prepend the
          * given string to every table name.
@@ -87,9 +87,9 @@ public class DynamoDBMapperConfig {
          * every table name in requests with the given string.
          */
         public static TableNameOverride withTableNameReplacement(String tableNameReplacement) {
-            return new TableNameOverride(tableNameReplacement, null);            
+            return new TableNameOverride(tableNameReplacement, null);
         }
-        
+
         private TableNameOverride(String tableNameOverride, String tableNamePrefix) {
             this.tableNameOverride = tableNameOverride;
             this.tableNamePrefix = tableNamePrefix;
@@ -105,7 +105,7 @@ public class DynamoDBMapperConfig {
         /**
          * Returns the table name to use for all requests. Exclusive with
          * {@link TableNameOverride#getTableNamePrefix()}
-         * 
+         *
          * @see DynamoDBMapperConfig#getTableNameOverride()
          */
         public String getTableName() {
@@ -115,12 +115,12 @@ public class DynamoDBMapperConfig {
         /**
          * Returns the table name prefix to prepend the table name for all
          * requests. Exclusive with {@link TableNameOverride#getTableName()}
-         * 
+         *
          * @see DynamoDBMapperConfig#getTableNameOverride()
          */
         public String getTableNamePrefix() {
             return tableNamePrefix;
-        }        
+        }
     }
 
     private final SaveBehavior saveBehavior;
@@ -130,7 +130,7 @@ public class DynamoDBMapperConfig {
     /**
      * Constructs a new configuration object with the save behavior, consistent
      * read behavior, and table name override given.
-     * 
+     *
      * @param saveBehavior
      *            The {@link SaveBehavior} to use, or null for default.
      * @param consistentReads
@@ -210,7 +210,7 @@ public class DynamoDBMapperConfig {
      * either by replacing the table name entirely or else by pre-pending a
      * string to each table name. This is useful for partitioning data in
      * multiple tables at runtime.
-     * 
+     *
      * @see TableNameOverride#withTableNamePrefix(String)
      * @see TableNameOverride#withTableNameReplacement(String)
      */

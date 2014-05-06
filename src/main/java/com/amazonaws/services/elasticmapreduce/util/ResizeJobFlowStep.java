@@ -28,7 +28,7 @@ import com.amazonaws.services.elasticmapreduce.model.HadoopJarStepConfig;
  * this step to automatically add a task instance group before your most compute
  * intensive step.
  *
- * <pre>
+ * <pre class="brush: java">
  * AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
  * AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
  *

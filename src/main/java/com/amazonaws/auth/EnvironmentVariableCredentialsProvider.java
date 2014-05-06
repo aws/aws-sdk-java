@@ -17,6 +17,7 @@ import static com.amazonaws.SDKGlobalConfiguration.ACCESS_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_ACCESS_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_SECRET_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_SESSION_TOKEN_ENV_VAR;
 
 import com.amazonaws.AmazonClientException;
 
@@ -38,14 +39,19 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
             secretKey = System.getenv(ALTERNATE_SECRET_KEY_ENV_VAR);
         }
 
-        if (accessKey != null && secretKey != null) {
-            return new BasicAWSCredentials(accessKey, secretKey);
+        String sessionToken = System.getenv(AWS_SESSION_TOKEN_ENV_VAR);
+
+        if (accessKey == null || secretKey == null) {
+            throw new AmazonClientException(
+                    "Unable to load AWS credentials from environment variables " +
+                    "(" + ACCESS_KEY_ENV_VAR + " (or " + ALTERNATE_ACCESS_KEY_ENV_VAR + ") and " +
+                    SECRET_KEY_ENV_VAR + " (or " + ALTERNATE_SECRET_KEY_ENV_VAR + "))");
         }
 
-        throw new AmazonClientException(
-                "Unable to load AWS credentials from environment variables " +
-                "(" + ACCESS_KEY_ENV_VAR + " (or " + ALTERNATE_ACCESS_KEY_ENV_VAR + ") and " +
-                SECRET_KEY_ENV_VAR + " (or " + ALTERNATE_SECRET_KEY_ENV_VAR + "))");
+        return sessionToken == null ?
+                new BasicAWSCredentials(accessKey, secretKey)
+                :
+                new BasicSessionCredentials(accessKey, secretKey, sessionToken);
     }
 
     public void refresh() {}

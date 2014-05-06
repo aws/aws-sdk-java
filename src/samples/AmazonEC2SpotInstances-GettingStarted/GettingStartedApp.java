@@ -38,10 +38,16 @@ public class GettingStartedApp {
     private static final long SLEEP_CYCLE = 60000;
 
     /*
-     * Important: Be sure to fill in your AWS access credentials in the
-     *            AwsCredentials.properties file before you try to run this
-     *            sample.
-     * http://aws.amazon.com/security-credentials
+     * Before running the code:
+     *      Fill in your AWS access credentials in the provided credentials
+     *      file template, and be sure to move the file to the default location
+     *      (~/.aws/credentials) where the sample code will load the
+     *      credentials from.
+     *      https://console.aws.amazon.com/iam/home?#security_credential
+     *
+     * WANRNING:
+     *      To avoid accidental leakage of your credentials, DO NOT keep
+     *      the credentials file in your source directory.
      */
 
     public static void main(String[] args) throws Exception {
@@ -62,25 +68,25 @@ public class GettingStartedApp {
          * the associated instance.
          */
         try {
-        	// Setup the helper object that will perform all of the API calls.
-        	Requests requests = new Requests();
+            // Setup the helper object that will perform all of the API calls.
+            Requests requests = new Requests();
 
-        	// Submit all of the requests.
-        	requests.submitRequests();
+            // Submit all of the requests.
+            requests.submitRequests();
 
-        	// Loop through all of the requests until all bids are in the active state
-        	// (or at least not in the open state).
-        	do
-        	{
-	        	// Sleep for 60 seconds.
-	        	Thread.sleep(SLEEP_CYCLE);
-	    	} while (requests.areAnyOpen());
+            // Loop through all of the requests until all bids are in the active state
+            // (or at least not in the open state).
+            do
+            {
+                // Sleep for 60 seconds.
+                Thread.sleep(SLEEP_CYCLE);
+            } while (requests.areAnyOpen());
 
-        	// Cancel all requests and terminate all running instances.
-        	requests.cleanup();
+            // Cancel all requests and terminate all running instances.
+            requests.cleanup();
 
         } catch (AmazonServiceException ase) {
-    		// Write out any exceptions that may have occurred.
+            // Write out any exceptions that may have occurred.
             System.out.println("Caught Exception: " + ase.getMessage());
             System.out.println("Reponse Status Code: " + ase.getStatusCode());
             System.out.println("Error Code: " + ase.getErrorCode());

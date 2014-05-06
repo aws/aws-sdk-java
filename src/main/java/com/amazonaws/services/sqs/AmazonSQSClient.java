@@ -65,6 +65,9 @@ import com.amazonaws.services.sqs.model.transform.*;
  * <a href="http://aws.amazon.com/sqs/"> Amazon SQS product page </a>
  * </li>
  * <li>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
+ * </li>
+ * <li>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"> Regions and Endpoints </a>
  * </li>
  * 
@@ -248,6 +251,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         exceptionUnmarshallers.add(new QueueDeletedRecentlyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EmptyBatchRequestExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidMessageContentsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidBatchEntryIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OverLimitExceptionUnmarshaller());
@@ -272,7 +276,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Sets the value of one or more queue attributes.
+     * Sets the value of one or more queue attributes. When you change a
+     * queue's attributes, the change can take up to 60 seconds for most of
+     * the attributes to propagate throughout the SQS system. Changes made to
+     * the <code>MessageRetentionPeriod</code> attribute can take up to 15
+     * minutes.
      * </p>
      * <p>
      * <b>NOTE:</b>Going forward, new attributes might be added. If you are
@@ -391,6 +399,16 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * comes near you could again extend the time out by calling
      * ChangeMessageVisiblity, but this time the maximum allowed timeout
      * would be 9 hours and 30 minutes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> There is a 120,000 limit for the number of inflight
+     * messages per queue. Messages are inflight after they have been
+     * received from the queue by a consuming component, but have not yet
+     * been deleted from the queue. If you reach the 120,000 limit, you will
+     * receive an OverLimit error message from Amazon SQS. To help avoid
+     * reaching the limit, you should delete the messages from the queue
+     * after they have been processed. You can also increase the number of
+     * queues you use to process the messages.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>If you attempt to set the VisibilityTimeout to an
@@ -673,6 +691,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws BatchEntryIdsNotDistinctException
      * @throws TooManyEntriesInBatchRequestException
      * @throws BatchRequestTooLongException
+     * @throws UnsupportedOperationException
      * @throws InvalidBatchEntryIdException
      * @throws EmptyBatchRequestException
      *
@@ -705,6 +724,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Returns a list of your queues that have the RedrivePolicy queue
      * attribute configured with a dead letter queue.
+     * </p>
+     * <p>
+     * For more information about using dead letter queues, see
+     * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"> Using Amazon SQS Dead Letter Queues </a>
+     * .
      * </p>
      *
      * @param listDeadLetterSourceQueuesRequest Container for the necessary
@@ -819,6 +843,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         by AmazonSQS.
      * 
      * @throws InvalidMessageContentsException
+     * @throws UnsupportedOperationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -847,9 +872,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     
     /**
      * <p>
-     * Retrieves one or more messages from the specified queue. Long poll
-     * support is enabled by using the <code>WaitTimeSeconds</code>
-     * parameter. For more information, see
+     * Retrieves one or more messages, with a maximum limit of 10 messages,
+     * from the specified queue. Long poll support is enabled by using the
+     * <code>WaitTimeSeconds</code> parameter. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
      * in the <i>Amazon SQS Developer Guide</i> .
      * 
@@ -886,6 +911,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </li>
      * <li> <p>
      * Receipt handle.
+     * </p>
+     * </li>
+     * <li> <p>
+     * Message attributes.
+     * </p>
+     * </li>
+     * <li> <p>
+     * MD5 digest of the message attributes.
      * </p>
      * </li>
      * 
@@ -1268,7 +1301,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     
     /**
      * <p>
-     * Sets the value of one or more queue attributes.
+     * Sets the value of one or more queue attributes. When you change a
+     * queue's attributes, the change can take up to 60 seconds for most of
+     * the attributes to propagate throughout the SQS system. Changes made to
+     * the <code>MessageRetentionPeriod</code> attribute can take up to 15
+     * minutes.
      * </p>
      * <p>
      * <b>NOTE:</b>Going forward, new attributes might be added. If you are
@@ -1400,6 +1437,16 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * comes near you could again extend the time out by calling
      * ChangeMessageVisiblity, but this time the maximum allowed timeout
      * would be 9 hours and 30 minutes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> There is a 120,000 limit for the number of inflight
+     * messages per queue. Messages are inflight after they have been
+     * received from the queue by a consuming component, but have not yet
+     * been deleted from the queue. If you reach the 120,000 limit, you will
+     * receive an OverLimit error message from Amazon SQS. To help avoid
+     * reaching the limit, you should delete the messages from the queue
+     * after they have been processed. You can also increase the number of
+     * queues you use to process the messages.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>If you attempt to set the VisibilityTimeout to an
@@ -1655,6 +1702,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws BatchEntryIdsNotDistinctException
      * @throws TooManyEntriesInBatchRequestException
      * @throws BatchRequestTooLongException
+     * @throws UnsupportedOperationException
      * @throws InvalidBatchEntryIdException
      * @throws EmptyBatchRequestException
      *
@@ -1744,6 +1792,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         by AmazonSQS.
      * 
      * @throws InvalidMessageContentsException
+     * @throws UnsupportedOperationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1762,9 +1811,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     
     /**
      * <p>
-     * Retrieves one or more messages from the specified queue. Long poll
-     * support is enabled by using the <code>WaitTimeSeconds</code>
-     * parameter. For more information, see
+     * Retrieves one or more messages, with a maximum limit of 10 messages,
+     * from the specified queue. Long poll support is enabled by using the
+     * <code>WaitTimeSeconds</code> parameter. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
      * in the <i>Amazon SQS Developer Guide</i> .
      * 
@@ -1801,6 +1850,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </li>
      * <li> <p>
      * Receipt handle.
+     * </p>
+     * </li>
+     * <li> <p>
+     * Message attributes.
+     * </p>
+     * </li>
+     * <li> <p>
+     * MD5 digest of the message attributes.
      * </p>
      * </li>
      * 

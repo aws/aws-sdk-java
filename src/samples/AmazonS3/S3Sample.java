@@ -24,7 +24,8 @@ import java.util.UUID;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
@@ -38,33 +39,45 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 /**
- * This sample demonstrates how to make basic requests to Amazon S3 using
- * the AWS SDK for Java.
+ * This sample demonstrates how to make basic requests to Amazon S3 using the
+ * AWS SDK for Java.
  * <p>
  * <b>Prerequisites:</b> You must have a valid Amazon Web Services developer
- * account, and be signed up to use Amazon S3. For more information on
- * Amazon S3, see http://aws.amazon.com/s3.
+ * account, and be signed up to use Amazon S3. For more information on Amazon
+ * S3, see http://aws.amazon.com/s3.
  * <p>
- * <b>Important:</b> Be sure to fill in your AWS access credentials in the
- *                   AwsCredentials.properties file before you try to run this
- *                   sample.
+ * Fill in your AWS access credentials in the provided credentials file
+ * template, and be sure to move the file to the default location
+ * (~/.aws/credentials) where the sample code will load the credentials from.
+ * <p>
+ * <b>WANRNING:</b> To avoid accidental leakage of your credentials, DO NOT keep
+ * the credentials file in your source directory.
+ *
  * http://aws.amazon.com/security-credentials
  */
 public class S3Sample {
 
     public static void main(String[] args) throws IOException {
+
         /*
-         * This credentials provider implementation loads your AWS credentials
-         * from a properties file at the root of your classpath.
-         *
-         * Important: Be sure to fill in your AWS access credentials in the
-         *            AwsCredentials.properties file before you try to run this
-         *            sample.
-         * http://aws.amazon.com/security-credentials
+         * The ProfileCredentialsProvider will return your [default]
+         * credential profile by reading from the credentials file located at
+         * (~/.aws/credentials).
          */
-        AmazonS3 s3 = new AmazonS3Client(new ClasspathPropertiesFileCredentialsProvider());
-		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
-		s3.setRegion(usWest2);
+        AWSCredentials credentials = null;
+        try {
+            credentials = new ProfileCredentialsProvider().getCredentials();
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Cannot load the credentials from the credential profiles file. " +
+                    "Please make sure that your credentials file is at the correct " +
+                    "location (~/.aws/credentials), and is in valid format.",
+                    e);
+        }
+
+        AmazonS3 s3 = new AmazonS3Client(credentials);
+        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+        s3.setRegion(usWest2);
 
         String bucketName = "my-first-s3-bucket-" + UUID.randomUUID();
         String key = "MyObjectKey";

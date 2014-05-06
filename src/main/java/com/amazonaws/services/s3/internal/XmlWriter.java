@@ -25,7 +25,7 @@ import java.util.List;
  * open tags to simplify use.
  * <p>
  * Sampe usage:
- * <pre>
+ * <pre class="brush: java">
  * <code>
  * XmlWriter w = new XmlWriter();
  * w.start(DOC_TAG, "xmlns", DOC_NAMESPACE);

@@ -25,12 +25,12 @@ import com.amazonaws.auth.policy.actions.S3Actions;
  * For example, an object resource created for bucket 'mybucket' and key pattern
  * 'foo*' will match any object stored in 'mybucket' with a key that starts with
  * 'foo':
- * <pre>
+ * <pre class="brush: java">
  *    new S3ObjectResource("mybucket", "foo*");
  * </pre>
  * <p>
  * To match all objects in a bucket:
- * <pre>
+ * <pre class="brush: java">
  *    new S3ObjectResource("mybucket", "*");
  * </pre>
  * <p>

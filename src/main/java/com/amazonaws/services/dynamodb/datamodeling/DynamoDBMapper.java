@@ -63,7 +63,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * To use, annotate domain classes with the annotations found in the
  * com.amazonaws.services.dynamodb.datamodeling package. A minimal example:
  *
- * <pre>
+ * <pre class="brush: java">
  * &#064;DynamoDBTable(tableName = &quot;TestTable&quot;)
  * public class TestClass {
  *
@@ -114,7 +114,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * Save instances of annotated classes to DynamoDB, retrieve them, and delete
  * them using the {@link DynamoDBMapper} class, as in the following example.
  *
- * <pre>
+ * <pre class="brush: java">
  * DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
  * Long hashKey = 105L;
  * double rangeKey = 1.0d;
@@ -143,7 +143,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * @see DynamoDBIgnore
  * @see DynamoDBMarshalling
  * @see DynamoDBMapperConfig
- * 
+ *
  * @deprecated Use {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper} instead.
  */
 @Deprecated
@@ -1078,14 +1078,14 @@ public class DynamoDBMapper {
         ScanResult scanResult = db.scan(applyUserAgent(scanRequest));
         return new PaginatedScanList<T>(this, clazz, db, scanRequest, scanResult);
     }
-    
+
     /**
      * Scans through an Amazon DynamoDB table and returns a single page of matching
      * results. The table to scan is determined by looking at the annotations on
      * the specified class, which declares where to store the object data in AWS
      * DynamoDB, and the scan expression parameter allows the caller to filter
      * results and control how the scan is executed.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -1107,14 +1107,14 @@ public class DynamoDBMapper {
         ScanResultPage<T> result = new ScanResultPage<T>();
         result.setResults(marshallIntoObjects(clazz, scanResult.getItems()));
         result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
-        
+
         return result;
     }
-    
+
     /**
      * Scans through an Amazon DynamoDB table and returns a single page of matching
-     * results. 
-     * 
+     * results.
+     *
      * @see DynamoDBMapper#scanPage(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
      */
     public <T> ScanResultPage<T> scanPage(Class<T> clazz, DynamoDBScanExpression scanExpression) {
@@ -1147,7 +1147,7 @@ public class DynamoDBMapper {
      * <p>
      * The unmodifiable list returned is lazily loaded when possible, so calls
      * to DynamoDB will be made only as needed.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -1171,27 +1171,27 @@ public class DynamoDBMapper {
         QueryResult queryResult = db.query(applyUserAgent(queryRequest));
         return new PaginatedQueryList<T>(this, clazz, db, queryRequest, queryResult);
     }
-    
+
     /**
      * Queries an Amazon DynamoDB table and returns a single page of matching
      * results. The table to query is determined by looking at the annotations
      * on the specified class, which declares where to store the object data in
      * Amazon DynamoDB, and the query expression parameter allows the caller to
      * filter results and control how the query is executed.
-     * 
+     *
      * @see DynamoDBMapper#queryPage(Class, DynamoDBQueryExpression, DynamoDBMapperConfig)
      */
     public <T> QueryResultPage<T> queryPage(Class<T> clazz, DynamoDBQueryExpression queryExpression) {
         return queryPage(clazz, queryExpression, this.config);
     }
-    
+
     /**
      * Queries an Amazon DynamoDB table and returns a single page of matching
      * results. The table to query is determined by looking at the annotations
      * on the specified class, which declares where to store the object data in
      * Amazon DynamoDB, and the query expression parameter allows the caller to
      * filter results and control how the query is executed.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -1213,7 +1213,7 @@ public class DynamoDBMapper {
         QueryResultPage<T> result = new QueryResultPage<T>();
         result.setResults(marshallIntoObjects(clazz, scanResult.getItems()));
         result.setLastEvaluatedKey(scanResult.getLastEvaluatedKey());
-        
+
         return result;
     }
 
@@ -1351,13 +1351,13 @@ public class DynamoDBMapper {
         String rangeKeyName = rangeKeyGetter == null ? null : reflector.getAttributeName(rangeKeyGetter);
         return untransformAttributes(hashKeyName, rangeKeyName, attributeValues);
     }
-    
+
     /**
      * Transforms the attribute values after loading from DynamoDb.
      * Only ever called by {@link #untransformAttributes(Class, Map)}.
      * By default, returns the attributes unchanged. Currently, the
      * values associated with the hash key and range key must be left unchanged.
-     * 
+     *
      * @param hashKey the attribute name of the hash key
      * @param rangeKey the attribute name of the range key (or null if there is none)
      * @param attributeValues
@@ -1367,7 +1367,7 @@ public class DynamoDBMapper {
             Map<String, AttributeValue> attributeValues) {
         return attributeValues;
     }
-    
+
     /**
      * By default, just calls {@link #transformAttributes(String, String, Map)}.
      * @param clazz
@@ -1381,12 +1381,12 @@ public class DynamoDBMapper {
         String rangeKeyName = rangeKeyGetter == null ? null : reflector.getAttributeName(rangeKeyGetter);
         return transformAttributes(hashKeyName, rangeKeyName, attributeValues);
     }
-    
+
     /**
      * Transform attribute values prior to storing in DynamoDB.
      * Only ever called by {@link #transformAttributes(Class, Map)}.
      * By default, returns the attributes unchanged.
-     * 
+     *
      * @param hashKey the attribute name of the hash key
      * @param rangeKey the attribute name of the range key (or null if there is none)
      * @param attributeValues

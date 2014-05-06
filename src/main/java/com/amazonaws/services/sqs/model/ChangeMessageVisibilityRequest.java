@@ -39,6 +39,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * would be 9 hours and 30 minutes.
  * </p>
  * <p>
+ * <b>NOTE:</b> There is a 120,000 limit for the number of inflight
+ * messages per queue. Messages are inflight after they have been
+ * received from the queue by a consuming component, but have not yet
+ * been deleted from the queue. If you reach the 120,000 limit, you will
+ * receive an OverLimit error message from Amazon SQS. To help avoid
+ * reaching the limit, you should delete the messages from the queue
+ * after they have been processed. You can also increase the number of
+ * queues you use to process the messages.
+ * </p>
+ * <p>
  * <b>IMPORTANT:</b>If you attempt to set the VisibilityTimeout to an
  * amount more than the maximum time left, Amazon SQS returns an error.
  * It will not automatically recalculate and increase the timeout to the

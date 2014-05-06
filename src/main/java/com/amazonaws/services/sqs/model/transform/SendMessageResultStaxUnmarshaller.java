@@ -47,6 +47,10 @@ public class SendMessageResultStaxUnmarshaller implements Unmarshaller<SendMessa
                     sendMessageResult.setMD5OfMessageBody(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("MD5OfMessageAttributes", targetDepth)) {
+                    sendMessageResult.setMD5OfMessageAttributes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("MessageId", targetDepth)) {
                     sendMessageResult.setMessageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

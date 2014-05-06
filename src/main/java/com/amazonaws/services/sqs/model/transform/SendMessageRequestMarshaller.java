@@ -21,6 +21,7 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.internal.ListWithAutoConstructFlag;
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
@@ -48,6 +49,52 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
         }
         if (sendMessageRequest.getDelaySeconds() != null) {
             request.addParameter("DelaySeconds", StringUtils.fromInteger(sendMessageRequest.getDelaySeconds()));
+        }
+        if (sendMessageRequest != null) {
+            if (sendMessageRequest.getMessageAttributes() != null) {
+                int messageAttributesListIndex = 1;
+                for (Map.Entry<String, MessageAttributeValue> messageAttributesListValue : sendMessageRequest.getMessageAttributes().entrySet()) {
+
+                    if (messageAttributesListValue.getKey() != null) {
+                        request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Name", StringUtils.fromString(messageAttributesListValue.getKey()));
+                    }
+                    MessageAttributeValue messageAttributeValueValue = messageAttributesListValue.getValue();
+                    if (messageAttributeValueValue != null) {
+                        if (messageAttributeValueValue.getStringValue() != null) {
+                            request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.StringValue", StringUtils.fromString(messageAttributeValueValue.getStringValue()));
+                        }
+                        if (messageAttributeValueValue.getBinaryValue() != null) {
+                            request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.BinaryValue", StringUtils.fromByteBuffer(messageAttributeValueValue.getBinaryValue()));
+                        }
+
+                        java.util.List<String> stringListValuesList = messageAttributeValueValue.getStringListValues();
+                        int stringListValuesListIndex = 1;
+
+                        for (String stringListValuesListValue : stringListValuesList) {
+                            if (stringListValuesListValue != null) {
+                                request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.StringListValue." + stringListValuesListIndex, StringUtils.fromString(stringListValuesListValue));
+                            }
+
+                            stringListValuesListIndex++;
+                        }
+
+                        java.util.List<java.nio.ByteBuffer> binaryListValuesList = messageAttributeValueValue.getBinaryListValues();
+                        int binaryListValuesListIndex = 1;
+
+                        for (java.nio.ByteBuffer binaryListValuesListValue : binaryListValuesList) {
+                            if (binaryListValuesListValue != null) {
+                                request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.BinaryListValue." + binaryListValuesListIndex, StringUtils.fromByteBuffer(binaryListValuesListValue));
+                            }
+
+                            binaryListValuesListIndex++;
+                        }
+                        if (messageAttributeValueValue.getDataType() != null) {
+                            request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.DataType", StringUtils.fromString(messageAttributeValueValue.getDataType()));
+                        }
+                    }
+                    ++messageAttributesListIndex;
+                }
+            }
         }
 
         return request;

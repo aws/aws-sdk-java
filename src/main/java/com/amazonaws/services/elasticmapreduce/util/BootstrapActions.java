@@ -23,7 +23,7 @@ import com.amazonaws.services.elasticmapreduce.model.ScriptBootstrapActionConfig
 /**
  * Class that provides helper methods for constructing predefined bootstrap actions.
  *
- * <pre>
+ * <pre class="brush: java">
  * AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
  * AmazonElasticMapReduce emr = new AmazonElasticMapReduceClient(credentials);
  *

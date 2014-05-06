@@ -298,6 +298,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>importexport</ServiceName>
@@ -310,6 +311,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -463,6 +465,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>importexport</ServiceName>
@@ -475,6 +478,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -628,6 +632,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>importexport</ServiceName>
@@ -640,6 +645,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -793,6 +799,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>importexport</ServiceName>
@@ -805,6 +812,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -946,6 +954,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>importexport</ServiceName>
@@ -958,6 +967,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1105,6 +1115,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>importexport</ServiceName>
@@ -1117,6 +1128,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>
@@ -1252,6 +1264,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>importexport</ServiceName>
@@ -1264,6 +1277,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>storagegateway</ServiceName>

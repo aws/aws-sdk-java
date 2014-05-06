@@ -88,7 +88,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * annotation should be either applied to the getter method or the class field.
  * A minimal example using getter annotations:
  *
- * <pre>
+ * <pre class="brush: java">
  * &#064;DynamoDBTable(tableName = &quot;TestTable&quot;)
  * public class TestClass {
  *
@@ -139,7 +139,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * Save instances of annotated classes to DynamoDB, retrieve them, and delete
  * them using the {@link DynamoDBMapper} class, as in the following example.
  *
- * <pre>
+ * <pre class="brush: java">
  * DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
  * Long hashKey = 105L;
  * double rangeKey = 1.0d;
@@ -182,12 +182,12 @@ public class DynamoDBMapper {
     /** The max back off time for batch write */
     static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
 
-	/**
-	 * This retry count is applicable only when every batch get item request
-	 * results in no data retrieved from server and the un processed keys is
-	 * same as request items
-	 */
-	static final int BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS = 5;
+    /**
+     * This retry count is applicable only when every batch get item request
+     * results in no data retrieved from server and the un processed keys is
+     * same as request items
+     */
+    static final int BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS = 5;
 
     /**
      * User agent for requests made using the {@link DynamoDBMapper}.
@@ -510,7 +510,7 @@ public class DynamoDBMapper {
      * Returns a map of attribute name to EQ condition for the key prototype
      * object given. This method considers attributes annotated with either
      * {@link DynamoDBHashKey} or {@link DynamoDBIndexHashKey}.
-     * 
+     *
      * @param obj
      *            The prototype object that includes the hash key value.
      * @return A map of hash key attribute name to EQ condition for the key
@@ -1016,7 +1016,7 @@ public class DynamoDBMapper {
             this.object = object;
             this.tableName = tableName;
             this.saveConfig = saveConfig;
-            
+
             if (saveExpression != null) {
                 userProvidedExpectedValueConditions = saveExpression.getExpected();
                 userProvidedConditionOperator = saveExpression.getConditionalOperator();
@@ -1251,7 +1251,7 @@ public class DynamoDBMapper {
                     new AttributeValueUpdate().withAction("PUT").withValue(newVersionValue));
             inMemoryUpdates.add(new ValueUpdate(method, newVersionValue, object));
 
-            if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER 
+            if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER
                     && !internalExpectedValueAssertions.containsKey(attributeName)) {
                 // Add an expect clause to make sure that the item
                 // doesn't already exist, since it's supposed to be new
@@ -1808,16 +1808,16 @@ public class DynamoDBMapper {
         int noOfItemsInOriginalRequest = requestItems.size();
         do {
             if ( batchGetItemResult != null ) {
-            	retries++;
+                retries++;
 
-				if (noOfItemsInOriginalRequest == batchGetItemResult
-						.getUnprocessedKeys().size()){
-					pauseExponentially(retries);
-					if (retries > BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS) {
-						throw new AmazonClientException(
-								"Batch Get Item request to server hasn't received any data. Please try again later.");
-					}
-				}
+                if (noOfItemsInOriginalRequest == batchGetItemResult
+                        .getUnprocessedKeys().size()){
+                    pauseExponentially(retries);
+                    if (retries > BATCH_GET_MAX_RETRY_COUNT_ALL_KEYS) {
+                        throw new AmazonClientException(
+                                "Batch Get Item request to server hasn't received any data. Please try again later.");
+                    }
+                }
 
                 batchGetItemRequest.setRequestItems(batchGetItemResult.getUnprocessedKeys());
             }
@@ -1888,14 +1888,14 @@ public class DynamoDBMapper {
         Map<String, AttributeValue> map = new HashMap<String, AttributeValue>();
         for ( Entry<String, AttributeValueUpdate> entry : putValues.entrySet() ) {
             String attributeName = entry.getKey();
-            AttributeValue attributeValue = entry.getValue().getValue(); 
+            AttributeValue attributeValue = entry.getValue().getValue();
             String attributeAction = entry.getValue().getAction();
 
             /*
              * AttributeValueUpdate allows nulls for its values, since they are
              * semantically meaningful. AttributeValues never have null values.
              */
-            if ( attributeValue != null 
+            if ( attributeValue != null
                     && !AttributeAction.DELETE.toString().equals(attributeAction)) {
                 map.put(attributeName, attributeValue);
             }
@@ -2405,7 +2405,7 @@ public class DynamoDBMapper {
                 rangeKeyNameForThisQuery = rangeKeyName;
 
                 if (reflector.hasPrimaryRangeKey(clazz)
-	                && rangeKeyName.equals(reflector.getPrimaryRangeKeyName(clazz))) {
+                    && rangeKeyName.equals(reflector.getPrimaryRangeKeyName(clazz))) {
                     hasPrimaryRangeKeyCondition = true;
                 }
 

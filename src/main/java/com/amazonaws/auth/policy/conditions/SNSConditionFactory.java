@@ -56,7 +56,7 @@ public class SNSConditionFactory {
      * For example, this condition can restrict subscriptions to a topic to
      * email addresses in a certain domain ("*@my-company.com").
      *
-     * <pre>
+     * <pre class="brush: java">
      * Policy policy = new Policy(&quot;MyTopicPolicy&quot;);
      * policy.withStatements(new Statement(&quot;RestrictSubscriptions&quot;, Effect.Allow)
      *         .withPrincipals(new Principal(&quot;*&quot;)).withActions(SNSActions.Subscribe)

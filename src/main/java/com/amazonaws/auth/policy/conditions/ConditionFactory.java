@@ -100,7 +100,7 @@ public class ConditionFactory {
      * components of the ARN is checked separately and each can include a
      * wildcard.
      *
-     * <pre>
+     * <pre class="brush: java">
      * Policy policy = new Policy(&quot;MyQueuePolicy&quot;);
      * policy.withStatements(new Statement(&quot;AllowSNSMessages&quot;, Effect.Allow)
      *         .withPrincipals(new Principal(&quot;*&quot;)).withActions(SQSActions.SendMessage)

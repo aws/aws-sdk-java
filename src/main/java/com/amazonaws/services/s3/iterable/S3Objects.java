@@ -24,8 +24,8 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 /**
  * Provides an easy way to iterate Amazon S3 objects in a "foreach" statement.
  * For example:
- * 
- * <pre>
+ *
+ * <pre class="brush: java">
  * for ( S3ObjectSummary summary : S3Objects.withPrefix(s3, &quot;my-bucket&quot;, &quot;photos/&quot;) ) {
  *     System.out.printf(&quot;Object with key '%s'\n&quot;, summary.getKey());
  * }
@@ -50,7 +50,7 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
     /**
      * Constructs an iterable that covers all the objects in an Amazon S3
      * bucket.
-     * 
+     *
      * @param s3
      *            The Amazon S3 client.
      * @param bucketName
@@ -64,7 +64,7 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
     /**
      * Constructs an iterable that covers the objects in an Amazon S3 bucket
      * where the key begins with the given prefix.
-     * 
+     *
      * @param s3
      *            The Amazon S3 client.
      * @param bucketName
@@ -82,7 +82,7 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
     /**
      * Sets the batch size, i.e., how many {@link S3ObjectSummary}s will be
      * fetched at once.
-     * 
+     *
      * @param batchSize
      *            How many object summaries to fetch at once.
      */

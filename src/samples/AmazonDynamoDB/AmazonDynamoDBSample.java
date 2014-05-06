@@ -17,7 +17,8 @@ import java.util.Map;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
@@ -36,7 +37,6 @@ import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
-import com.amazonaws.services.dynamodbv2.model.TableStatus;
 import com.amazonaws.services.dynamodbv2.util.Tables;
 
 /**
@@ -46,10 +46,16 @@ import com.amazonaws.services.dynamodbv2.util.Tables;
 public class AmazonDynamoDBSample {
 
     /*
-     * Important: Be sure to fill in your AWS access credentials in the
-     *            AwsCredentials.properties file before you try to run this
-     *            sample.
-     * http://aws.amazon.com/security-credentials
+     * Before running the code:
+     *      Fill in your AWS access credentials in the provided credentials
+     *      file template, and be sure to move the file to the default location
+     *      (~/.aws/credentials) where the sample code will load the
+     *      credentials from.
+     *      https://console.aws.amazon.com/iam/home?#security_credential
+     *
+     * WANRNING:
+     *      To avoid accidental leakage of your credentials, DO NOT keep
+     *      the credentials file in your source directory.
      */
 
     static AmazonDynamoDBClient dynamoDB;
@@ -62,19 +68,29 @@ public class AmazonDynamoDBSample {
      * optional ClientConfiguration object when constructing a client.
      *
      * @see com.amazonaws.auth.BasicAWSCredentials
-     * @see com.amazonaws.auth.PropertiesCredentials
+     * @see com.amazonaws.auth.ProfilesConfigFile
      * @see com.amazonaws.ClientConfiguration
      */
     private static void init() throws Exception {
-    	/*
-		 * This credentials provider implementation loads your AWS credentials
-		 * from a properties file at the root of your classpath.
-		 */
-        dynamoDB = new AmazonDynamoDBClient(new ClasspathPropertiesFileCredentialsProvider());
+        /*
+         * The ProfileCredentialsProvider will return your [default]
+         * credential profile by reading from the credentials file located at
+         * (~/.aws/credentials).
+         */
+        AWSCredentials credentials = null;
+        try {
+            credentials = new ProfileCredentialsProvider().getCredentials();
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Cannot load the credentials from the credential profiles file. " +
+                    "Please make sure that your credentials file is at the correct " +
+                    "location (~/.aws/credentials), and is in valid format.",
+                    e);
+        }
+        dynamoDB = new AmazonDynamoDBClient(credentials);
         Region usWest2 = Region.getRegion(Regions.US_WEST_2);
         dynamoDB.setRegion(usWest2);
     }
-
 
     public static void main(String[] args) throws Exception {
         init();
@@ -84,7 +100,7 @@ public class AmazonDynamoDBSample {
 
             // Create table if it does not exist yet
             if (Tables.doesTableExist(dynamoDB, tableName)) {
-            	System.out.println("Table " + tableName + " is already ACTIVE");
+                System.out.println("Table " + tableName + " is already ACTIVE");
             } else {
                 // Create a table with a primary hash key named 'name', which holds a string
                 CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)

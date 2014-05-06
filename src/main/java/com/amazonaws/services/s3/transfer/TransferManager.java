@@ -101,7 +101,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * <p>
  * Using <code>TransferManager</code> to upload options to Amazon S3 is easy:
  *
- * <pre>
+ * <pre class="brush: java">
  * DefaultAWSCredentialsProviderChain credentialProviderChain = new DefaultAWSCredentialsProviderChain();
  * TransferManager tx = new TransferManager(
  * 		credentialProviderChain.getCredentials());

@@ -112,16 +112,17 @@ public interface Headers {
     public static final String GET_OBJECT_IF_NONE_MATCH = "If-None-Match";
 
     /**
-     * Encrypted symmetric key header that is used in the (v1) envelope
+     * Encrypted symmetric key header that is used in the Encryption Only (EO) envelope
      * encryption mechanism.
      */
     public static final String CRYPTO_KEY = "x-amz-key";
 
     /**
-     * Encrypted symmetric key header that is used in the v2 envelope encryption
-     * mechanism. The v1 S3 encryption client would not recognize this v2 key,
-     * and therefore will be prevented from mistakenly decrypting ciphertext in
-     * v2 format.
+     * Encrypted symmetric key header that is used in the Authenticated
+     * Encryption (AE) cryptographic module. Older versions of S3 encryption
+     * client with encryption-only capability would not be able to recognize
+     * this AE key, and therefore will be prevented from mistakenly decrypting
+     * ciphertext in AE format.
      */
     public static final String CRYPTO_KEY_V2 = "x-amz-key-v2";
 
