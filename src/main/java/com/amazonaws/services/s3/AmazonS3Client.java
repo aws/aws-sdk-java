@@ -1317,16 +1317,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
             }
 
-            FileInputStream fileInputStream = null;
-            try {
-                fileInputStream = new FileInputStream(file);
-                byte[] md5Hash = Md5Utils.computeMD5Hash(fileInputStream);
-                metadata.setContentMD5(BinaryUtils.toBase64(md5Hash));
-            } catch (Exception e) {
-                throw new AmazonClientException(
-                        "Unable to calculate MD5 hash: " + e.getMessage(), e);
-            } finally {
-                try {fileInputStream.close();} catch (Exception e) {}
+            if (metadata.getContentMD5() != null) {
+                FileInputStream fileInputStream = null;
+                try {
+                    fileInputStream = new FileInputStream(file);
+                    byte[] md5Hash = Md5Utils.computeMD5Hash(fileInputStream);
+                    metadata.setContentMD5(BinaryUtils.toBase64(md5Hash));
+                } catch (Exception e) {
+                    throw new AmazonClientException(
+                            "Unable to calculate MD5 hash: " + e.getMessage(), e);
+                } finally {
+                    try {fileInputStream.close();} catch (Exception e) {}
+                }
             }
 
             try {
