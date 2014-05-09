@@ -29,6 +29,7 @@ import com.amazonaws.internal.SdkFilterInputStream;
  * @see GCMCipherLite
  */
 public final class CipherLiteInputStream extends SdkFilterInputStream {
+    private static final int MAX_RETRY = 1000;
     private static final int DEFAULT_IN_BUFFER_SIZE = 512;
     private final CipherLite cipherLite;
     /**
@@ -76,9 +77,17 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
         if (curr_pos >= max_pos) {
             if (eof)
                 return -1;
-            int len = nextChunk();
-            if (len <= 0)
-                return len;
+            int count = 0;
+            int len;
+            do { 
+                if (count > MAX_RETRY)
+                    throw new IOException("exceeded maximum number of attempts to read next chunk of data");
+                len = nextChunk();
+                count++;
+            } while (len == 0);
+
+            if (len == -1)
+                return -1;
         }
         return ((int) bufout[curr_pos++] & 0xFF);
     };
@@ -94,9 +103,17 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
             // all buffered data has been read, let's get some more
             if (eof)
                 return -1;
-            int len = nextChunk();
-            if (len <= 0)
-                return len;
+            int count=0;
+            int len;
+            do {
+                if (count > MAX_RETRY)
+                    throw new IOException("exceeded maximum number of attempts to read next chunk of data");
+                len = nextChunk();
+                count++;
+            } while (len == 0);
+
+            if (len == -1)
+                return -1;
         }
         if (target_len <= 0)
             return 0;
@@ -172,7 +189,8 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
      *             if there is authentication failure
      */
     private int nextChunk() throws IOException {
-        bufout = null;
+        if (eof)
+            return -1;
         int len = in.read(bufin);
         if (len == -1) {
             eof = true;
