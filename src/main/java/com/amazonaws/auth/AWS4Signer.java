@@ -37,7 +37,7 @@ import com.amazonaws.util.HttpUtils;
  * Signer implementation that signs requests with the AWS4 signing protocol.
  */
 public class AWS4Signer extends AbstractAWSSigner
-        implements ServiceAwareSigner, RegionAwareSigner {
+        implements ServiceAwareSigner, RegionAwareSigner,Presigner {
 
     protected static final String ALGORITHM = "AWS4-HMAC-SHA256";
     protected static final String TERMINATOR = "aws4_request";
@@ -45,6 +45,9 @@ public class AWS4Signer extends AbstractAWSSigner
             .forPattern("yyyyMMdd").withZoneUTC();
     private static final DateTimeFormatter timeFormatter = DateTimeFormat
             .forPattern("yyyyMMdd'T'HHmmss'Z'").withZoneUTC();
+
+    /** Seconds in a week, which is the max expiration time Sig-v4 accepts */
+    private final static long MAX_EXPIRATION_TIME_IN_SECONDS = 60 * 60 * 24 * 7;
     /**
      * Service name override for use when the endpoint can't be used to
      * determine the service name.
@@ -386,5 +389,81 @@ public class AWS4Signer extends AbstractAWSSigner
             System.arraycopy(signature, 0, signatureCopy, 0, signature.length);
             return signatureCopy;
         }
+    }
+
+    @Override
+    public void presignRequest(Request<?> request, AWSCredentials credentials,
+            Date expiration) {
+
+        // annonymous credentials, don't sign
+        if (credentials instanceof AnonymousAWSCredentials) {
+            return;
+        }
+
+        long expirationInSeconds = MAX_EXPIRATION_TIME_IN_SECONDS;
+
+        if (expiration != null)
+            expirationInSeconds = (expiration.getTime() - System
+                    .currentTimeMillis()) / 1000L;
+
+        if (expirationInSeconds > MAX_EXPIRATION_TIME_IN_SECONDS) {
+            throw new AmazonClientException(
+                    "Requests that are pre-signed by SigV4 algorithm are valid for at most 7 days. "
+                            + "The expiration date set on the current request ["
+                            + getTimeStamp(expiration.getTime())
+                            + "] has exceeded this limit.");
+        }
+
+        addHostHeader(request);
+
+        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
+
+        if (sanitizedCredentials instanceof AWSSessionCredentials) {
+            // For SigV4 pre-signing URL, we need to add "x-amz-security-token"
+            // as a query string parameter, before constructing the canonical
+            // request.
+            request.addParameter("x-amz-security-token",
+                    ((AWSSessionCredentials) sanitizedCredentials)
+                            .getSessionToken());
+        }
+
+        long dateMilli = getDateFromRequest(request);
+        final String dateStamp = getDateStamp(dateMilli);
+
+        String scope = getScope(request, dateStamp);
+
+        String signingCredentials = sanitizedCredentials.getAWSAccessKeyId()
+                + "/" + scope;
+
+        // Add the important parameters for v4 signing
+        long now = System.currentTimeMillis();
+        final String timeStamp = getTimeStamp(now);
+        request.addParameter("X-Amz-Algorithm", ALGORITHM);
+        request.addParameter("X-Amz-Date", timeStamp);
+        request.addParameter("X-Amz-SignedHeaders",
+                getSignedHeadersString(request));
+        request.addParameter("X-Amz-Expires",
+                Long.toString(expirationInSeconds));
+        request.addParameter("X-Amz-Credential", signingCredentials);
+
+        String contentSha256 = calculateContentHashPresign(request);
+
+        HeaderSigningResult headerSigningResult = computeSignature(request,
+                dateStamp, timeStamp, ALGORITHM, contentSha256,
+                sanitizedCredentials);
+        request.addParameter("X-Amz-Signature",
+                BinaryUtils.toHex(headerSigningResult.getSignature()));
+    }
+
+    /**
+     * Calculate the hash of the request's payload. In case of pre-sign, the
+     * existing code would generate the hash of an empty byte array and returns
+     * it. This method can be overridden by sub classes to provide different
+     * values (e.g) For S3 pre-signing, the content hash calculation is
+     * different from the general implementation.
+     *
+     */
+    protected String calculateContentHashPresign(Request<?> request) {
+        return calculateContentHash(request);
     }
 }

@@ -64,6 +64,7 @@ import com.amazonaws.ResponseMetadata;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
+import com.amazonaws.handlers.CredentialsRequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.metrics.AwsSdkMetrics;
@@ -266,6 +267,11 @@ public class AmazonHttpClient {
         // Apply any additional service specific request handlers that need
         // to be run
         for (RequestHandler2 requestHandler2 : requestHandler2s) {
+            // If the request handler is a type of CredentialsRequestHandler,
+            // then set the credentials in the request handler.
+            if (requestHandler2 instanceof CredentialsRequestHandler)
+                ((CredentialsRequestHandler) requestHandler2)
+                        .setCredentials(executionContext.getCredentials());
             requestHandler2.beforeRequest(request);
         }
         return requestHandler2s;

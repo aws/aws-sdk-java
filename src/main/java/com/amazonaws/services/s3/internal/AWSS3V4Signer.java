@@ -16,16 +16,11 @@ package com.amazonaws.services.s3.internal;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.auth.AWS4Signer;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSSessionCredentials;
-import com.amazonaws.auth.AnonymousAWSCredentials;
 import com.amazonaws.auth.AwsChunkedEncodingInputStream;
-import com.amazonaws.auth.Presigner;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
@@ -34,11 +29,8 @@ import com.amazonaws.util.BinaryUtils;
 /**
  * AWS4 signer implementation for AWS S3
  */
-public class AWSS3V4Signer extends AWS4Signer implements Presigner {
+public class AWSS3V4Signer extends AWS4Signer {
     private static final String CONTENT_SHA_256 = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD";
-
-    /** Seconds in a week, which is the max expiration time Sig-v4 accepts */
-    private final static long MAX_EXPIRATION_TIME_IN_SECONDS = 60 * 60 * 24 * 7;
 
     /**
      * Don't double-url-encode path elements; S3 expects path elements to be
@@ -46,62 +38,6 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
      */
     public AWSS3V4Signer() {
         super(false);
-    }
-
-    /**
-     * Sign the URL using V4, it will compute the signature and add it to the
-     * query string as value of parameter 'X-Amz-Signature'.
-     */
-    public void presignRequest(Request<?> request, AWSCredentials credentials, Date expiration) {
-
-        addHostHeader(request);
-
-        // annonymous credentials, don't sign
-        if (credentials instanceof AnonymousAWSCredentials) {
-            return;
-        }
-
-        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
-        if (sanitizedCredentials instanceof AWSSessionCredentials) {
-            addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
-            // For SigV4 presigning URL, we need to add "x-amz-security-token"
-            // as a query string parameter, before constructing the canonical
-            // request.
-            request.addParameter(Headers.SECURITY_TOKEN, ((AWSSessionCredentials) sanitizedCredentials).getSessionToken());
-        }
-
-        long dateMilli = getDateFromRequest(request);
-        final String dateStamp = getDateStamp(dateMilli);
-
-        String scope = getScope(request, dateStamp);
-
-        String signingCredentials = sanitizedCredentials.getAWSAccessKeyId() + "/" + scope;
-        long expirationInSeconds = (expiration.getTime() - System.currentTimeMillis()) / 1000L;
-        if (expirationInSeconds > MAX_EXPIRATION_TIME_IN_SECONDS) {
-            throw new AmazonClientException("Requests that are pre-signed by SigV4 algorithm are valid for at most 7 days. " +
-                    "The expiration date set on the current request ["
-                    + getTimeStamp(expiration.getTime()) + "] has exceeded this limit.");
-        }
-
-        // Add the important parameters for v4 signing
-        long now = System.currentTimeMillis();
-        final String timeStamp = getTimeStamp(now);
-        request.addParameter("X-Amz-Algorithm", "AWS4-HMAC-SHA256");
-        request.addParameter("X-Amz-Date", timeStamp);
-        request.addParameter("X-Amz-SignedHeaders", getSignedHeadersString(request));
-        request.addParameter("X-Amz-Expires", Long.toString(expirationInSeconds));
-        request.addParameter("X-Amz-Credential", signingCredentials);
-
-        String contentSha256 = "UNSIGNED-PAYLOAD";
-
-        HeaderSigningResult headerSigningResult = computeSignature(
-                request,
-                dateStamp,
-                timeStamp,
-                ALGORITHM,
-                contentSha256,
-                sanitizedCredentials);
-        request.addParameter("X-Amz-Signature", BinaryUtils.toHex(headerSigningResult.getSignature()));
     }
 
     /**
@@ -121,6 +57,11 @@ public class AWSS3V4Signer extends AWS4Signer implements Presigner {
                     payloadStream, kSigning, dateTime, keyPath, signature, this);
             request.setContent(chunkEncodededStream);
         }
+    }
+
+    @Override
+    protected String calculateContentHashPresign(Request<?> request){
+        return "UNSIGNED-PAYLOAD";
     }
 
     /**
