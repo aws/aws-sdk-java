@@ -514,8 +514,9 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Events are returned, even if the stack never existed or
-     * has been successfully deleted.
+     * <b>NOTE:</b>You can list events for stacks that have failed to create
+     * or have been deleted by specifying the unique stack identifier (stack
+     * ID).
      * </p>
      *
      * @param describeStackEventsRequest Container for the necessary
@@ -546,8 +547,9 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Events are returned, even if the stack never existed or
-     * has been successfully deleted.
+     * <b>NOTE:</b>You can list events for stacks that have failed to create
+     * or have been deleted by specifying the unique stack identifier (stack
+     * ID).
      * </p>
      *
      * @param describeStackEventsRequest Container for the necessary

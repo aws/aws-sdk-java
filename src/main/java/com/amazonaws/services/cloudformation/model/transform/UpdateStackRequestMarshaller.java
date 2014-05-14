@@ -50,6 +50,9 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
         if (updateStackRequest.getTemplateURL() != null) {
             request.addParameter("TemplateURL", StringUtils.fromString(updateStackRequest.getTemplateURL()));
         }
+        if (updateStackRequest.isUsePreviousTemplate() != null) {
+            request.addParameter("UsePreviousTemplate", StringUtils.fromBoolean(updateStackRequest.isUsePreviousTemplate()));
+        }
         if (updateStackRequest.getStackPolicyDuringUpdateBody() != null) {
             request.addParameter("StackPolicyDuringUpdateBody", StringUtils.fromString(updateStackRequest.getStackPolicyDuringUpdateBody()));
         }
@@ -68,6 +71,9 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
                 }
                 if (parameterMember.getParameterValue() != null) {
                     request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.fromString(parameterMember.getParameterValue()));
+                }
+                if (parameterMember.isUsePreviousValue() != null) {
+                    request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue", StringUtils.fromBoolean(parameterMember.isUsePreviousValue()));
                 }
             }
 
@@ -89,6 +95,21 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
         }
         if (updateStackRequest.getStackPolicyURL() != null) {
             request.addParameter("StackPolicyURL", StringUtils.fromString(updateStackRequest.getStackPolicyURL()));
+        }
+
+        java.util.List<String> notificationARNsList = updateStackRequest.getNotificationARNs();
+        int notificationARNsListIndex = 1;
+
+        if (notificationARNsList.isEmpty() && !(((ListWithAutoConstructFlag<?>) notificationARNsList).isAutoConstruct())) {
+            request.addParameter("NotificationARNs", "");
+        }
+
+        for (String notificationARNsListValue : notificationARNsList) {
+            if (notificationARNsListValue != null) {
+                request.addParameter("NotificationARNs.member." + notificationARNsListIndex, StringUtils.fromString(notificationARNsListValue));
+            }
+
+            notificationARNsListIndex++;
         }
 
         return request;

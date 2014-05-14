@@ -34,6 +34,12 @@ public class Parameter implements Serializable {
     private String parameterValue;
 
     /**
+     * During a stack update, use the existing parameter value that is being
+     * used for the stack.
+     */
+    private Boolean usePreviousValue;
+
+    /**
      * The key associated with the parameter.
      *
      * @return The key associated with the parameter.
@@ -100,6 +106,56 @@ public class Parameter implements Serializable {
     }
 
     /**
+     * During a stack update, use the existing parameter value that is being
+     * used for the stack.
+     *
+     * @return During a stack update, use the existing parameter value that is being
+     *         used for the stack.
+     */
+    public Boolean isUsePreviousValue() {
+        return usePreviousValue;
+    }
+    
+    /**
+     * During a stack update, use the existing parameter value that is being
+     * used for the stack.
+     *
+     * @param usePreviousValue During a stack update, use the existing parameter value that is being
+     *         used for the stack.
+     */
+    public void setUsePreviousValue(Boolean usePreviousValue) {
+        this.usePreviousValue = usePreviousValue;
+    }
+    
+    /**
+     * During a stack update, use the existing parameter value that is being
+     * used for the stack.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param usePreviousValue During a stack update, use the existing parameter value that is being
+     *         used for the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Parameter withUsePreviousValue(Boolean usePreviousValue) {
+        this.usePreviousValue = usePreviousValue;
+        return this;
+    }
+
+    /**
+     * During a stack update, use the existing parameter value that is being
+     * used for the stack.
+     *
+     * @return During a stack update, use the existing parameter value that is being
+     *         used for the stack.
+     */
+    public Boolean getUsePreviousValue() {
+        return usePreviousValue;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -112,7 +168,8 @@ public class Parameter implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterKey() != null) sb.append("ParameterKey: " + getParameterKey() + ",");
-        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() );
+        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() + ",");
+        if (isUsePreviousValue() != null) sb.append("UsePreviousValue: " + isUsePreviousValue() );
         sb.append("}");
         return sb.toString();
     }
@@ -124,6 +181,7 @@ public class Parameter implements Serializable {
         
         hashCode = prime * hashCode + ((getParameterKey() == null) ? 0 : getParameterKey().hashCode()); 
         hashCode = prime * hashCode + ((getParameterValue() == null) ? 0 : getParameterValue().hashCode()); 
+        hashCode = prime * hashCode + ((isUsePreviousValue() == null) ? 0 : isUsePreviousValue().hashCode()); 
         return hashCode;
     }
     
@@ -139,6 +197,8 @@ public class Parameter implements Serializable {
         if (other.getParameterKey() != null && other.getParameterKey().equals(this.getParameterKey()) == false) return false; 
         if (other.getParameterValue() == null ^ this.getParameterValue() == null) return false;
         if (other.getParameterValue() != null && other.getParameterValue().equals(this.getParameterValue()) == false) return false; 
+        if (other.isUsePreviousValue() == null ^ this.isUsePreviousValue() == null) return false;
+        if (other.isUsePreviousValue() != null && other.isUsePreviousValue().equals(this.isUsePreviousValue()) == false) return false; 
         return true;
     }
     

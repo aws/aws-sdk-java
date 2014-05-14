@@ -57,11 +57,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeStackResourcesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name or the unique identifier associated with the stack.
-     * <p>Required: Conditional. If you do not specify
-     * <code>StackName</code>, you must specify
-     * <code>PhysicalResourceId</code>. <p>Default: There is no default
-     * value.
+     * The name or the unique identifier associated with the stack, which are
+     * not always interchangeable: <ul> <li>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</li> <li>Deleted
+     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
+     * There is no default value. <p>Required: Conditional. If you do not
+     * specify <code>StackName</code>, you must specify
+     * <code>PhysicalResourceId</code>.
      */
     private String stackName;
 
@@ -86,53 +88,65 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest imple
     private String physicalResourceId;
 
     /**
-     * The name or the unique identifier associated with the stack.
-     * <p>Required: Conditional. If you do not specify
-     * <code>StackName</code>, you must specify
-     * <code>PhysicalResourceId</code>. <p>Default: There is no default
-     * value.
+     * The name or the unique identifier associated with the stack, which are
+     * not always interchangeable: <ul> <li>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</li> <li>Deleted
+     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
+     * There is no default value. <p>Required: Conditional. If you do not
+     * specify <code>StackName</code>, you must specify
+     * <code>PhysicalResourceId</code>.
      *
-     * @return The name or the unique identifier associated with the stack.
-     *         <p>Required: Conditional. If you do not specify
-     *         <code>StackName</code>, you must specify
-     *         <code>PhysicalResourceId</code>. <p>Default: There is no default
-     *         value.
+     * @return The name or the unique identifier associated with the stack, which are
+     *         not always interchangeable: <ul> <li>Running stacks: You can specify
+     *         either the stack's name or its unique stack ID.</li> <li>Deleted
+     *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
+     *         There is no default value. <p>Required: Conditional. If you do not
+     *         specify <code>StackName</code>, you must specify
+     *         <code>PhysicalResourceId</code>.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack.
-     * <p>Required: Conditional. If you do not specify
-     * <code>StackName</code>, you must specify
-     * <code>PhysicalResourceId</code>. <p>Default: There is no default
-     * value.
+     * The name or the unique identifier associated with the stack, which are
+     * not always interchangeable: <ul> <li>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</li> <li>Deleted
+     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
+     * There is no default value. <p>Required: Conditional. If you do not
+     * specify <code>StackName</code>, you must specify
+     * <code>PhysicalResourceId</code>.
      *
-     * @param stackName The name or the unique identifier associated with the stack.
-     *         <p>Required: Conditional. If you do not specify
-     *         <code>StackName</code>, you must specify
-     *         <code>PhysicalResourceId</code>. <p>Default: There is no default
-     *         value.
+     * @param stackName The name or the unique identifier associated with the stack, which are
+     *         not always interchangeable: <ul> <li>Running stacks: You can specify
+     *         either the stack's name or its unique stack ID.</li> <li>Deleted
+     *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
+     *         There is no default value. <p>Required: Conditional. If you do not
+     *         specify <code>StackName</code>, you must specify
+     *         <code>PhysicalResourceId</code>.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack.
-     * <p>Required: Conditional. If you do not specify
-     * <code>StackName</code>, you must specify
-     * <code>PhysicalResourceId</code>. <p>Default: There is no default
-     * value.
+     * The name or the unique identifier associated with the stack, which are
+     * not always interchangeable: <ul> <li>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</li> <li>Deleted
+     * stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
+     * There is no default value. <p>Required: Conditional. If you do not
+     * specify <code>StackName</code>, you must specify
+     * <code>PhysicalResourceId</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name or the unique identifier associated with the stack.
-     *         <p>Required: Conditional. If you do not specify
-     *         <code>StackName</code>, you must specify
-     *         <code>PhysicalResourceId</code>. <p>Default: There is no default
-     *         value.
+     * @param stackName The name or the unique identifier associated with the stack, which are
+     *         not always interchangeable: <ul> <li>Running stacks: You can specify
+     *         either the stack's name or its unique stack ID.</li> <li>Deleted
+     *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
+     *         There is no default value. <p>Required: Conditional. If you do not
+     *         specify <code>StackName</code>, you must specify
+     *         <code>PhysicalResourceId</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

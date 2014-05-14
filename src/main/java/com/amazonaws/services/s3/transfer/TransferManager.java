@@ -1159,13 +1159,12 @@ public class TransferManager {
     /**
      * <p>
      * Schedules a new transfer to copy data from one Amazon S3 location to
-     * another Amazon S3 location. The copy is carried out in a single chunk if
-     * the Amazon S3 object size is less than 5 GB. The copy is carried out in
-     * multiple parts if the S3 object is greater than 5 GB.
+     * another Amazon S3 location. This method is non-blocking and returns
+     * immediately (i.e. before the copy has finished).
      * </p>
      * <p>
-     * <code>TransferManager</code> doesn't support copying of encrypted objects whose
-     * encryption materials is stored in instruction file.
+     * <code>TransferManager</code> doesn't support copying of encrypted objects
+     * whose encryption materials is stored in instruction file.
      * </p>
      * <p>
      * Use the returned <code>Copy</code> object to check if the copy is
@@ -1178,15 +1177,14 @@ public class TransferManager {
      * </p>
      *
      * @param sourceBucketName
-     *             The name of the bucket from where the object is to be
-     *            copied.
+     *            The name of the bucket from where the object is to be copied.
      * @param sourceKey
-     *             The name of the Amazon S3 object.
+     *            The name of the Amazon S3 object.
      * @param destinationBucketName
-     *             The name of the bucket to where the Amazon S3 object has to
-     *            be copied.
+     *            The name of the bucket to where the Amazon S3 object has to be
+     *            copied.
      * @param destinationKey
-     *             The name of the object in the destination bucket.
+     *            The name of the object in the destination bucket.
      *
      * @return A new <code>Copy</code> object to use to check the state of the
      *         copy request being processed.
@@ -1209,9 +1207,8 @@ public class TransferManager {
     /**
      * <p>
      * Schedules a new transfer to copy data from one Amazon S3 location to
-     * another Amazon S3 location. The copy is carried out in a single chunk if
-     * the Amazon S3 object size is less than 5 GB. The copy is carried out in
-     * multiple parts if the S3 object is greater than 5 GB.
+     * another Amazon S3 location. This method is non-blocking and returns
+     * immediately (i.e. before the copy has finished).
      * </p>
      * <p>
      * <code>TransferManager</code> doesn't support copying of encrypted objects whose
@@ -1247,9 +1244,8 @@ public class TransferManager {
     /**
      * <p>
      * Schedules a new transfer to copy data from one Amazon S3 location to
-     * another Amazon S3 location. The copy is carried out in a single chunk if
-     * the Amazon S3 object size is less than 5 GB. The copy is carried out in
-     * multiple parts if the S3 object is greater than 5 GB.
+     * another Amazon S3 location. This method is non-blocking and returns
+     * immediately (i.e. before the copy has finished).
      * </p>
      * <p>
      * <code>TransferManager</code> doesn't support copying of encrypted objects whose

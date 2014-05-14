@@ -344,7 +344,7 @@ public class AmazonHttpClient {
                     requestLog.debug("Sending Request: " + request.toString());
                  }
 
-                httpRequest = httpRequestFactory.createHttpRequest(request, config, entity, executionContext);
+                httpRequest = httpRequestFactory.createHttpRequest(request, config, executionContext);
 
                 if (httpRequest instanceof HttpEntityEnclosingRequest) {
                     entity = ((HttpEntityEnclosingRequest)httpRequest).getEntity();
