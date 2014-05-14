@@ -46,16 +46,13 @@ class HttpRequestFactory {
      *
      * @param request
      *            The request to convert to an HttpClient method object.
-     * @param previousEntity
-     *            The optional, previous HTTP entity to reuse in the new
-     *            request.
      * @param context
      *            The execution context of the HTTP method to be executed
      *
      * @return The converted HttpClient method object with any parameters,
      *         headers, etc. from the original request set.
      */
-    HttpRequestBase createHttpRequest(Request<?> request, ClientConfiguration clientConfiguration, HttpEntity previousEntity, ExecutionContext context) {
+    HttpRequestBase createHttpRequest(Request<?> request, ClientConfiguration clientConfiguration, ExecutionContext context) {
         URI endpoint = request.getEndpoint();
 
         /*
@@ -108,9 +105,17 @@ class HttpRequestFactory {
              */
             putMethod.getParams().setParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE, true);
 
-            if (previousEntity != null) {
-                putMethod.setEntity(previousEntity);
-            } else if (request.getContent() != null) {
+            /*
+             * We should never reuse the entity of the previous request, since
+             * reading from the buffered entity will bypass reading from the
+             * original request content. And if the content contains InputStream
+             * wrappers that were added for validation-purpose (e.g.
+             * Md5DigestCalculationInputStream), these wrappers would never be
+             * read and updated again after AmazonHttpClient resets it in
+             * preparation for the retry. Eventually, these wrappers would
+             * return incorrect validation result.
+             */
+            if (request.getContent() != null) {
                 HttpEntity entity = new RepeatableInputStreamRequestEntity(request);
                 if (request.getHeaders().get("Content-Length") == null) {
                     entity = newBufferedHttpEntity(entity);

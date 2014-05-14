@@ -29,9 +29,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ValidateTemplateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * String containing the template body. (For more information, go to <a
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
      * both are passed, only <code>TemplateBody</code> is used.
      * <p>
@@ -55,18 +56,20 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
     private String templateURL;
 
     /**
-     * String containing the template body. (For more information, go to <a
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
      * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return String containing the template body. (For more information, go to <a
+     * @return Structure containing the template body with a minimum length of 1 byte
+     *         and a maximum length of 51,200 bytes. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
      *         both are passed, only <code>TemplateBody</code> is used.
      */
@@ -75,18 +78,20 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * String containing the template body. (For more information, go to <a
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
      * both are passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param templateBody String containing the template body. (For more information, go to <a
+     * @param templateBody Structure containing the template body with a minimum length of 1 byte
+     *         and a maximum length of 51,200 bytes. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
      *         both are passed, only <code>TemplateBody</code> is used.
      */
@@ -95,9 +100,10 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * String containing the template body. (For more information, go to <a
+     * Structure containing the template body with a minimum length of 1 byte
+     * and a maximum length of 51,200 bytes. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     * Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
      * both are passed, only <code>TemplateBody</code> is used.
      * <p>
@@ -106,9 +112,10 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param templateBody String containing the template body. (For more information, go to <a
+     * @param templateBody Structure containing the template body with a minimum length of 1 byte
+     *         and a maximum length of 51,200 bytes. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the AWS CloudFormation User Guide.) <p>Conditional: You
+     *         Anatomy</a> in the AWS CloudFormation User Guide. <p>Conditional: You
      *         must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
      *         both are passed, only <code>TemplateBody</code> is used.
      *

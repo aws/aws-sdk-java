@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -73,7 +74,11 @@ public class ProfilesConfigFileWriter {
         }
 
         try {
-            ProfilesConfigFileWriterHelper writerHelper = new ProfilesConfigFileWriterHelper(writer, profiles);
+            final Map<String, Profile> modifications = new LinkedHashMap<String, Profile>();
+            for (Profile profile : profiles) {
+                modifications.put(profile.getProfileName(), profile);
+            }
+            ProfilesConfigFileWriterHelper writerHelper = new ProfilesConfigFileWriterHelper(writer, modifications);
 
             writerHelper.writeWithoutExistingContent();
         } finally {
@@ -86,7 +91,7 @@ public class ProfilesConfigFileWriter {
      * Modify or insert new profiles into an existing credentials file by
      * in-place modification. Only the properties of the affected profiles will
      * be modified; all the unaffected profiles and comment lines will remain
-     * the same.
+     * the same. This method does not support renaming a profile.
      *
      * @param destination
      *            The destination file to modify
@@ -94,6 +99,59 @@ public class ProfilesConfigFileWriter {
      *            All the credential profiles to be written.
      */
     public static void modifyOrInsertProfiles(File destination, Profile... profiles) {
+        final Map<String, Profile> modifications = new LinkedHashMap<String, Profile>();
+        for (Profile profile : profiles) {
+            modifications.put(profile.getProfileName(), profile);
+        }
+
+        modifyProfiles(destination, modifications);
+    }
+
+    /**
+     * Modify one profile in the existing credentials file by in-place
+     * modification. This method will rename the existing profile if the
+     * specified Profile has a different name.
+     *
+     * @param destination
+     *            The destination file to modify
+     * @param profileName
+     *            The name of the existing profile to be modified
+     * @param newProfile
+     *            The new Profile object.
+     */
+    public static void modifyOneProfile(File destination, String profileName, Profile newProfile) {
+        final Map<String, Profile> modifications = Collections.singletonMap(profileName, newProfile);
+
+        modifyProfiles(destination, modifications);
+    }
+
+    /**
+     * Remove one or more profiles from the existing credentials file by
+     * in-place modification.
+     *
+     * @param destination
+     *            The destination file to modify
+     * @param profileNames
+     *            The names of all the profiles to be deleted.
+     */
+    public static void deleteProfiles(File destination, String... profileNames) {
+        final Map<String, Profile> modifications = new LinkedHashMap<String, Profile>();
+        for (String profileName : profileNames) {
+            modifications.put(profileName, null); // null value indicates a deletion
+        }
+
+        modifyProfiles(destination, modifications);
+    }
+
+    /**
+     * A package-private method that supports all kinds of profile modification,
+     * including renaming or deleting one or more profiles.
+     *
+     * @param modifications
+     *            Use null key value to indicate a profile that is to be
+     *            deleted.
+     */
+    static void modifyProfiles(File destination, Map<String, Profile> modifications) {
         final boolean inPlaceModify = destination.exists();
         File stashLocation = null;
 
@@ -128,13 +186,25 @@ public class ProfilesConfigFileWriter {
         FileWriter writer = null;
         try {
             writer = new FileWriter(destination);
-            ProfilesConfigFileWriterHelper writerHelper = new ProfilesConfigFileWriterHelper(writer, profiles);
+            ProfilesConfigFileWriterHelper writerHelper = new ProfilesConfigFileWriterHelper(writer, modifications);
 
             if (inPlaceModify) {
                 Scanner existingContent = new Scanner(stashLocation);
                 writerHelper.writeWithExistingContent(existingContent);
             } else {
                 writerHelper.writeWithoutExistingContent();
+            }
+
+            // Make sure the output is valid and can be loaded by the loader
+            new ProfilesConfigFile(destination);
+
+            if ( inPlaceModify && !stashLocation.delete() ) {
+                if (LOG.isDebugEnabled()) {
+                    LOG.debug(String
+                            .format("Successfully modified the credentials file. But failed to " +
+                                    "delete the stashed copy of the original file (%s).",
+                                    stashLocation.getAbsolutePath()));
+                }
             }
 
         } catch (Exception e) {
@@ -183,19 +253,38 @@ public class ProfilesConfigFileWriter {
         private final Writer writer;
 
         /** Map of all the profiles to be modified, keyed by profile names */
-        private final Map<String, Profile> newProfiles;
+        private final Map<String, Profile> newProfiles = new LinkedHashMap<String, Profile>();
+
+        /** Map of the names of all the profiles to be deleted */
+        private final Set<String> deletedProfiles= new HashSet<String>();
 
         private final StringBuilder buffer = new StringBuilder();
-        private final Map<String, Set<String>> existingProfiles = new HashMap<String, Set<String>>();
+        private final Map<String, Set<String>> existingProfileProperties = new HashMap<String, Set<String>>();
 
-        public ProfilesConfigFileWriterHelper(Writer writer, Profile... newProfiles) {
-            Map<String, Profile> newProfilesMap = new LinkedHashMap<String, Profile>();
-            for (Profile newProfile : newProfiles) {
-                newProfilesMap.put(newProfile.getProfileName(), newProfile);
-            }
-
+        /**
+         * Creates ProfilesConfigFileWriterHelper with the specified new
+         * profiles.
+         *
+         * @param writer
+         *            The writer where the modified content is output to.
+         * @param modifications
+         *            A map of all the new profiles, keyed by the profile name.
+         *            If a profile name is associated with a null value, it's
+         *            profile content will be removed.
+         */
+        public ProfilesConfigFileWriterHelper(Writer writer, Map<String, Profile> modifications) {
             this.writer = writer;
-            this.newProfiles = newProfilesMap;
+
+            for (Entry<String, Profile> entry : modifications.entrySet()) {
+                String profileName = entry.getKey();
+                Profile profile    = entry.getValue();
+
+                if (profile == null) {
+                    deletedProfiles.add(profileName);
+                } else {
+                    newProfiles.put(profileName, profile);
+                }
+            }
         }
 
         /**
@@ -203,7 +292,7 @@ public class ProfilesConfigFileWriter {
          */
         public void writeWithoutExistingContent() {
             buffer.setLength(0);
-            existingProfiles.clear();
+            existingProfileProperties.clear();
 
             // Use empty String as input, since we are bootstrapping a new file.
             run(new Scanner(""));
@@ -216,13 +305,13 @@ public class ProfilesConfigFileWriter {
          */
         public void writeWithExistingContent(Scanner existingContent) {
             buffer.setLength(0);
-            existingProfiles.clear();
+            existingProfileProperties.clear();
 
             run(existingContent);
         }
 
         @Override
-        protected void onEmptyOrCommentLine(String line) {
+        protected void onEmptyOrCommentLine(String profileName, String line) {
             /*
              * Buffer the line until we reach the next property line or the end
              * of the profile. We do this so that new properties could be
@@ -239,15 +328,29 @@ public class ProfilesConfigFileWriter {
              * [next profile]
              * ...
              */
-            buffer(line);
+            if (profileName == null || !deletedProfiles.contains(profileName)) {
+                buffer(line);
+            }
         }
 
         @Override
-        protected void onProfileStartingLine(String newProfileName, String line) {
-            existingProfiles.put(newProfileName, new HashSet<String>());
+        protected void onProfileStartingLine(String profileName, String line) {
+            existingProfileProperties.put(profileName, new HashSet<String>());
 
             // Copy the line after flush the buffer
             flush();
+
+            if (deletedProfiles.contains(profileName))
+                return;
+
+            // If the profile name is changed
+            if (newProfiles.get(profileName) != null) {
+                String newProfileName = newProfiles.get(profileName).getProfileName();
+                if ( !newProfileName.equals(profileName) ) {
+                    line = "[" + newProfileName + "]";
+                }
+            }
+
             writeLine(line);
         }
 
@@ -259,7 +362,7 @@ public class ProfilesConfigFileWriter {
                 for (Entry<String, String> entry : modifiedProfile.getProperties().entrySet()) {
                     String propertyKey   = entry.getKey();
                     String propertyValue = entry.getValue();
-                    if ( !existingProfiles.get(prevProfileName).contains(propertyKey) ) {
+                    if ( !existingProfileProperties.get(prevProfileName).contains(propertyKey) ) {
                         writeProperty(propertyKey, propertyValue);
                     }
                 }
@@ -274,10 +377,13 @@ public class ProfilesConfigFileWriter {
                 String propertyKey, String propertyValue,
                 boolean isSupportedProperty, String line) {
             // Record that this property key has been declared for this profile
-            if (existingProfiles.get(profileName) == null) {
-                existingProfiles.put(profileName, new HashSet<String>());
+            if (existingProfileProperties.get(profileName) == null) {
+                existingProfileProperties.put(profileName, new HashSet<String>());
             }
-            existingProfiles.get(profileName).add(propertyKey);
+            existingProfileProperties.get(profileName).add(propertyKey);
+
+            if (deletedProfiles.contains(profileName))
+                return;
 
             // Keep the unsupported properties
             if ( !isSupportedProperty ) {
@@ -305,9 +411,14 @@ public class ProfilesConfigFileWriter {
         @Override
         protected void onEndOfFile() {
             // Append profiles that don't exist in the original file
-            for (Profile newProfile : newProfiles.values()) {
-                if ( !existingProfiles.containsKey(newProfile.getProfileName()) ) {
-                    writeProfile(newProfile);
+            for (Entry<String, Profile> entry : newProfiles.entrySet()) {
+                String profileName = entry.getKey();
+                Profile profile    = entry.getValue();
+
+                if ( !existingProfileProperties.containsKey(profileName) ) {
+                    // The profile name is not found in the file
+                    // Append the profile properties
+                    writeProfile(profile);
                     writeLine("");
                 }
             }
