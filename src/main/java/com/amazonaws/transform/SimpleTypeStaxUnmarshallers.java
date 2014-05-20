@@ -27,16 +27,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.StringUtils;
 
 /**
  * Collection of StAX unmarshallers for simple data types.
  */
 public class SimpleTypeStaxUnmarshallers {
-
-    /** Shared DateUtils object for parsing and formatting dates */
-    private static DateUtils dateUtils = new DateUtils();
-
     /** Shared logger */
     private static Log log = LogFactory.getLog(SimpleTypeStaxUnmarshallers.class);
 
@@ -188,7 +183,7 @@ public class SimpleTypeStaxUnmarshallers {
             if (dateString == null) return null;
 
             try {
-                return dateUtils.parseIso8601Date(dateString);
+                return DateUtils.parseISO8601Date(dateString);
             } catch (ParseException e) {
                 log.warn("Unable to parse date '" + dateString + "':  " + e.getMessage(), e);
                 return null;

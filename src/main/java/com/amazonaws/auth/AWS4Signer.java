@@ -24,11 +24,11 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.HttpUtils;

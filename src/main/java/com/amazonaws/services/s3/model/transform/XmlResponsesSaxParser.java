@@ -53,6 +53,7 @@ import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.NoncurrentVersionTransition;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
@@ -91,6 +92,7 @@ import com.amazonaws.services.s3.model.S3VersionSummary;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.util.DateUtils;
 
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
@@ -763,13 +765,13 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("Name")) {
                 currentBucket.setName(elementText);
             } else if (name.equals("CreationDate")) {
-                elementText += ".000Z";
                 try {
-                    currentBucket.setCreationDate(ServiceUtils.parseIso8601Date(elementText));
-                } catch (ParseException e) {
+                    Date creationDate = DateUtils.parseISO8601Date(elementText);
+                    currentBucket.setCreationDate(creationDate);
+                } catch (ParseException ex) {
                     throw new RuntimeException(
-                        "Non-ISO8601 date for CreationDate in list buckets output: "
-                        + elementText, e);
+                            "Non-ISO8601 date for CreationDate in list buckets output: "
+                            + elementText, ex);
                 }
             }
             this.currText = new StringBuilder();
@@ -2262,6 +2264,14 @@ public class XmlResponsesSaxParser {
         }
     }
 
+    private static enum Container {
+        NONE,
+        EXPIRATION,
+        TRANSITION,
+        NON_CURRENT_VERSION_EXPIRATION,
+        NON_CURRENT_VERSION_TRANSITION;
+    }
+
     /*
     HTTP/1.1 200 OK
     x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
@@ -2283,6 +2293,13 @@ public class XmlResponsesSaxParser {
           <Expiration>
               <Days>365</Days>
           </Expiration>
+          <NoncurrentVersionTransition>
+              <NoncurrentDays>7</NoncurrentDays>
+              <StorageClass>GLACIER</StorageClass>
+          </NoncurrentVersionTransition>
+          <NoncurrentVersionExpiration>
+              <NoncurrentDays>14</NoncurrentDays>
+          </NoncurrentVersionExpiration>
      </Rule>
      <Rule>
          <ID>image-rule</ID>
@@ -2303,7 +2320,9 @@ public class XmlResponsesSaxParser {
         private Rule rule;
         private List<Rule> rules = new LinkedList<Rule>();
         private Transition transition;
-        boolean inTransition = false;
+        private NoncurrentVersionTransition ncvTransition;
+
+        private Container container = Container.NONE;
 
         public BucketLifecycleConfiguration getConfiguration() {
             return new BucketLifecycleConfiguration(rules);
@@ -2322,13 +2341,20 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("ID")) {
             } else if (name.equals("Prefix")) {
             } else if (name.equals("Status")) {
+            } else if (name.equals("Expiration")) {
+                container = Container.EXPIRATION;
             } else if (name.equals("Transition")) {
                 transition = new Transition();
-                inTransition = true;
+                container = Container.TRANSITION;
+            } else if (name.equals("NoncurrentVersionExpiration")) {
+                container = Container.NON_CURRENT_VERSION_EXPIRATION;
+            } else if (name.equals("NoncurrentVersionTransition")) {
+                ncvTransition = new NoncurrentVersionTransition();
+                container = Container.NON_CURRENT_VERSION_TRANSITION;
             } else if (name.equals("StorageClass")) {
             } else if (name.equals("Date")) {
-            } else if (name.equals("Expiration")) {
             } else if (name.equals("Days")) {
+            } else if (name.equals("NoncurrentDays")) {
             } else {
                 log.warn("Unexpected tag: " + name);
             }
@@ -2347,34 +2373,106 @@ public class XmlResponsesSaxParser {
                 rule.setPrefix(text.toString());
             } else if ( name.equals("Status") ) {
                 rule.setStatus(text.toString());
+            } else if (name.equals("Expiration")) {
+                container = Container.NONE;
             } else if (name.equals("Transition")) {
                 rule.setTransition(transition);
-                inTransition = false;
+                container = Container.NONE;
+            } else if (name.equals("NoncurrentVersionExpiration")) {
+                container = Container.NONE;
+            } else if (name.equals("NoncurrentVersionTransition")) {
+                rule.setNoncurrentVersionTransition(ncvTransition);
+                container = Container.NONE;
             } else if (name.equals("StorageClass")) {
-              transition.setStorageClass(StorageClass.fromValue(text.toString()));
+                setStorageClass();
             } else if (name.equals("Date")) {
-                if (inTransition == false) {
-                    try {
-                        rule.setExpirationDate(ServiceUtils.parseIso8601Date(text.toString()));
-                    } catch (ParseException e) {
-                       rule.setExpirationDate(null);
-                    }
-                } else {
-                    try {
-                        transition.setDate(ServiceUtils.parseIso8601Date(text.toString()));
-                    } catch (ParseException e) {
-                        transition.setDate(null);
-                    }
-                }
-            } else if (name.equals("Expiration")) {
+                setDate();
             } else if (name.equals("Days")) {
-                if (inTransition == false) {
-                    rule.setExpirationInDays(Integer.parseInt(text.toString()));
-                } else {
-                    transition.setDays(Integer.parseInt(text.toString()));
-                }
+                setDays();
+            } else if (name.equals("NoncurrentDays")) {
+                setNoncurrentDays();
             } else {
                 log.warn("Unexpected tag: " + name);
+            }
+        }
+
+        private void setStorageClass() {
+            StorageClass storageClass =
+                StorageClass.fromValue(text.toString());
+
+            switch (container) {
+            case TRANSITION:
+                transition.setStorageClass(storageClass);
+                break;
+
+            case NON_CURRENT_VERSION_TRANSITION:
+                ncvTransition.setStorageClass(storageClass);
+                break;
+
+            default:
+                log.warn("Unexpected StorageClass tag in container "
+                         + container);
+                break;
+            }
+        }
+
+        private void setDate() {
+            Date date = null;
+
+            try {
+                date = ServiceUtils.parseIso8601Date(text.toString());
+            } catch (ParseException e) {
+            }
+
+            switch (container) {
+            case EXPIRATION:
+                rule.setExpirationDate(date);
+                break;
+
+            case TRANSITION:
+                transition.setDate(date);
+                break;
+
+            default:
+                log.warn("Unexpected Date tag in container " + container);
+                break;
+            }
+        }
+
+        private void setDays() {
+            int days = Integer.parseInt(text.toString());
+
+            switch (container) {
+            case EXPIRATION:
+                rule.setExpirationInDays(days);
+                break;
+
+            case TRANSITION:
+                transition.setDays(days);
+                break;
+
+            default:
+                log.warn("Unexpected Days tag in container " + container);
+                break;
+            }
+        }
+
+        private void setNoncurrentDays() {
+            int days = Integer.parseInt(text.toString());
+
+            switch (container) {
+            case NON_CURRENT_VERSION_EXPIRATION:
+                rule.setNoncurrentVersionExpirationInDays(days);
+                break;
+
+            case NON_CURRENT_VERSION_TRANSITION:
+                ncvTransition.setDays(days);
+                break;
+
+            default:
+                log.warn("Unexpected NoncurrentDays tag in container "
+                         + container);
+                break;
             }
         }
 

@@ -15,7 +15,6 @@
 package com.amazonaws.services.s3.internal;
 
 import java.text.ParseException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -128,7 +127,7 @@ public abstract class AbstractS3ResponseHandler<T>
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
             } else if (key.equals(Headers.EXPIRES)) {
                 try {
-                    metadata.setHttpExpiresDate(new DateUtils().parseRfc822Date(header.getValue()));
+                    metadata.setHttpExpiresDate(DateUtils.parseRFC822Date(header.getValue()));
                 } catch (ParseException pe) {
                     log.warn("Unable to parse http expiration date: " + header.getValue(), pe);
                 }

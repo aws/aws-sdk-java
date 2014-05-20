@@ -24,20 +24,10 @@ import java.util.Date;
 import java.util.Locale;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.util.DateUtils;
 
 public class SimpleTypeJsonUnmarshallers {
-
-    /** Shared DateUtils object for parsing and formatting dates */
-    private static DateUtils dateUtils = new DateUtils();
-
-    /** Shared logger */
-    private static Log log = LogFactory.getLog(SimpleTypeJsonUnmarshallers.class);
-
     /**
      * Unmarshaller for String values.
      */

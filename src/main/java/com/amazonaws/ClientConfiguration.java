@@ -319,7 +319,7 @@ public class ClientConfiguration {
     /**
      * Sets the optional local address the client will bind to.
      *
-     * @param proxyHost
+     * @param localAddress
      *            The local address the client will bind to.
      */
     public void setLocalAddress(InetAddress localAddress) {

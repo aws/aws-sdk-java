@@ -220,8 +220,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new TooManyEnvironmentsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new S3SubscriptionRequiredExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationVersionsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyApplicationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyApplicationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientPrivilegesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceBundleDeletionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new S3LocationNotInServiceRegionExceptionUnmarshaller());

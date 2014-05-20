@@ -55,7 +55,7 @@ public abstract class AbstractProfilesConfigFileScanner {
      *
      * @param profileName
      *            The name of the profile where this property is declared.
-     * @param propertyKey
+     * @param propertyName
      *            The name of the property.
      * @param propertyValue
      *            The value of the property.

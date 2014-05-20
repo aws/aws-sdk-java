@@ -163,8 +163,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
                 String expiration = expirationJsonNode.asText();
                 expiration = expiration.replaceAll("\\+0000$", "Z");
 
-                credentialsExpiration = new DateUtils()
-                        .parseIso8601Date(expiration);
+                credentialsExpiration = DateUtils.parseISO8601Date(expiration);
             }
         } catch (JsonMappingException e) {
             handleError("Unable to parse credentials from Amazon EC2 metadata service", e);

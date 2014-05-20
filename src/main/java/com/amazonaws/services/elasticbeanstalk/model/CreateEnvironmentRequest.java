@@ -79,6 +79,11 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
     private EnvironmentTier tier;
 
     /**
+     * This specifies the tags applied to resources in the environment.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
      * The name of the application version to deploy. <p> If the specified
      * application has no associated application versions, AWS Elastic
      * Beanstalk <code>UpdateEnvironment</code> returns an
@@ -435,6 +440,74 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      */
     public CreateEnvironmentRequest withTier(EnvironmentTier tier) {
         this.tier = tier;
+        return this;
+    }
+
+    /**
+     * This specifies the tags applied to resources in the environment.
+     *
+     * @return This specifies the tags applied to resources in the environment.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * This specifies the tags applied to resources in the environment.
+     *
+     * @param tags This specifies the tags applied to resources in the environment.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * This specifies the tags applied to resources in the environment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags This specifies the tags applied to resources in the environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateEnvironmentRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * This specifies the tags applied to resources in the environment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags This specifies the tags applied to resources in the environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateEnvironmentRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
         return this;
     }
 
@@ -863,6 +936,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getCNAMEPrefix() != null) sb.append("CNAMEPrefix: " + getCNAMEPrefix() + ",");
         if (getTier() != null) sb.append("Tier: " + getTier() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
         if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
         if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
@@ -882,6 +956,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getCNAMEPrefix() == null) ? 0 : getCNAMEPrefix().hashCode()); 
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode()); 
@@ -908,6 +983,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         if (other.getCNAMEPrefix() != null && other.getCNAMEPrefix().equals(this.getCNAMEPrefix()) == false) return false; 
         if (other.getTier() == null ^ this.getTier() == null) return false;
         if (other.getTier() != null && other.getTier().equals(this.getTier()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
         if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
         if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;

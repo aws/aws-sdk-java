@@ -17,24 +17,15 @@
  */
 package com.amazonaws.util;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Locale;
 
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 /**
  * Utilities for encoding and decoding binary data to and from different forms.
  */
 public class BinaryUtils {
-
-    private static final Log log = LogFactory.getLog(BinaryUtils.class);
-
     /**
      * Converts byte data to a Hex-encoded string.
      *
@@ -87,8 +78,7 @@ public class BinaryUtils {
      * @return encoded Base64 string.
      */
     public static String toBase64(byte[] data) {
-        byte[] b64 = Base64.encodeBase64(data);
-        return new String(b64);
+        return Base64.encodeAsString(data);
     }
 
     /**
@@ -100,8 +90,7 @@ public class BinaryUtils {
      * @return bytes decoded from a Base64 string.
      */
     public static byte[] fromBase64(String b64Data) {
-        return b64Data == null ? null : Base64.decodeBase64(b64Data
-                .getBytes(UTF8));
+        return b64Data == null ? null : Base64.decode(b64Data);
     }
 
     /**

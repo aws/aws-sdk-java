@@ -50,6 +50,17 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest {
     private String key;
 
     /**
+     * Optional version ID specifying which version of the object to restore.
+     * If not specified, the most recent version will be restored.
+     * <p>
+     * For more information about enabling versioning for a bucket, see
+     * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
+     * For more information about enabling lifecycle versioning for a bucket,
+     * see {@link AmazonS3#setBucketLifecycleConfiguration(SetBucketLifecycleConfigurationRequest)}.
+     */
+    private String versionId;
+
+    /**
      * <p>
      * Constructs a new RestoreObjectRequest.
      * </p>
@@ -157,6 +168,29 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest {
      */
     public RestoreObjectRequest withKey(String key) {
         this.key = key;
+        return this;
+    }
+
+    /**
+     * Returns the id of the version to be restored.
+     */
+    public String getVersionId() {
+        return versionId;
+    }
+
+    /**
+     * Sets the id of the version to be restored.
+     */
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
+    /**
+     * Sets the id of the version to be restored and returns a reference to
+     * this object for method chaining.
+     */
+    public RestoreObjectRequest withVersionId(String versionId) {
+        this.versionId = versionId;
         return this;
     }
 

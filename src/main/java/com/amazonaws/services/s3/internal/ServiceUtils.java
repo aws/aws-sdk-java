@@ -17,20 +17,20 @@
  */
 package com.amazonaws.services.s3.internal;
 import static com.amazonaws.util.StringUtils.UTF8;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.SocketException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.net.SocketException;
 
 import javax.net.ssl.SSLProtocolException;
 
@@ -45,7 +45,6 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.Md5Utils;
-import com.amazonaws.util.StringUtils;
 
 /**
  * General utility methods used throughout the AWS S3 Java client.
@@ -53,22 +52,23 @@ import com.amazonaws.util.StringUtils;
 public class ServiceUtils {
     private static final Log log = LogFactory.getLog(ServiceUtils.class);
 
+    @Deprecated
     protected static final DateUtils dateUtils = new DateUtils();
 
     public static Date parseIso8601Date(String dateString) throws ParseException {
-        return dateUtils.parseIso8601Date(dateString);
+        return DateUtils.parseISO8601Date(dateString);
     }
 
     public static String formatIso8601Date(Date date) {
-        return dateUtils.formatIso8601Date(date);
+        return DateUtils.formatISO8601Date(date);
     }
 
     public static Date parseRfc822Date(String dateString) throws ParseException {
-        return dateUtils.parseRfc822Date(dateString);
+        return DateUtils.parseRFC822Date(dateString);
     }
 
     public static String formatRfc822Date(Date date) {
-        return dateUtils.formatRfc822Date(date);
+        return DateUtils.formatRFC822Date(date);
     }
 
     /**

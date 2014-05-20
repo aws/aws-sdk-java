@@ -17,7 +17,7 @@ package com.amazonaws.util;
 /**
  * A Base 64 codec API.
  * 
- * @see http://www.ietf.org/rfc/rfc4648.txt
+ * see http://www.ietf.org/rfc/rfc4648.txt
  * 
  * @author Hanson Char
  */

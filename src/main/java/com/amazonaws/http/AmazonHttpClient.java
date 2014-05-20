@@ -156,10 +156,22 @@ public class AmazonHttpClient {
      *            is none.
      */
     public AmazonHttpClient(ClientConfiguration config, RequestMetricCollector requestMetricCollector) {
+        this(config, httpClientFactory.createHttpClient(config), requestMetricCollector);
+    }
+
+    /**
+     * Package-protected constructor for unit test purposes.
+     */
+    AmazonHttpClient(
+            ClientConfiguration config,
+            HttpClient httpClient,
+            RequestMetricCollector requestMetricCollector) {
+
         this.config = config;
-        this.httpClient = httpClientFactory.createHttpClient(config);
+        this.httpClient = httpClient;
         this.requestMetricCollector = requestMetricCollector;
     }
+
     /**
      * Returns additional response metadata for an executed request. Response
      * metadata isn't considered part of the standard results returned by an
@@ -739,6 +751,8 @@ public class AmazonHttpClient {
             return awsResponse.getResult();
         } catch (CRC32MismatchException e) {
             throw e;
+        } catch (IOException e) {
+            throw e;
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + "). Response Code: " +
                         httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText();
@@ -793,6 +807,8 @@ public class AmazonHttpClient {
                 exception.setStatusCode(503);
                 exception.setErrorType(ErrorType.Service);
                 exception.setErrorCode("Service unavailable");
+            } else if (e instanceof IOException) {
+                throw (IOException) e;
             } else {
                 String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + "). Response Code: " +
                         status + ", Response Text: " + apacheHttpResponse.getStatusLine().getReasonPhrase();
@@ -901,7 +917,6 @@ public class AmazonHttpClient {
     }
 
     private int parseClockSkewOffset(org.apache.http.HttpResponse response, AmazonServiceException exception) {
-        DateUtils dateUtils = new DateUtils();
         Date deviceDate = new Date();
         Date serverDate = null;
         String serverDateStr = null;
@@ -912,10 +927,10 @@ public class AmazonHttpClient {
             if(responseDateHeader.length == 0) {
                 // SQS doesn't return Date header
                 serverDateStr = getServerDateFromException(exception.getMessage());
-                serverDate = dateUtils.parseCompressedIso8601Date(serverDateStr);
+                serverDate = DateUtils.parseCompressedISO8601Date(serverDateStr);
             } else {
                 serverDateStr = responseDateHeader[0].getValue();
-                serverDate = dateUtils.parseRfc822Date(serverDateStr);
+                serverDate = DateUtils.parseRFC822Date(serverDateStr);
             }
 
         } catch (ParseException e) {

@@ -2802,6 +2802,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throws AmazonServiceException {
         String bucketName = restoreObjectRequest.getBucketName();
         String key = restoreObjectRequest.getKey();
+        String versionId = restoreObjectRequest.getVersionId();
         int expirationIndays = restoreObjectRequest.getExpirationInDays();
 
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when copying a glacier object");
@@ -2813,6 +2814,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<RestoreObjectRequest> request = createRequest(bucketName, key, restoreObjectRequest, HttpMethodName.POST);
         request.addParameter("restore", null);
+        if (versionId != null) {
+            request.addParameter("versionId", versionId);
+        }
 
         byte[] content = RequestXmlFactory.convertToXmlByteArray(restoreObjectRequest);
         request.addHeader("Content-Length", String.valueOf(content.length));
@@ -3168,7 +3172,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Date httpExpiresDate = metadata.getHttpExpiresDate();
         if (httpExpiresDate != null) {
-            request.addHeader(Headers.EXPIRES, new DateUtils().formatRfc822Date(httpExpiresDate));
+            request.addHeader(Headers.EXPIRES, DateUtils.formatRFC822Date(httpExpiresDate));
         }
 
         Map<String, String> userMetadata = metadata.getUserMetadata();

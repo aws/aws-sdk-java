@@ -29,9 +29,6 @@ public class StringUtils {
 
     private static final String DEFAULT_ENCODING = "UTF-8";
 
-    /** Shared date utils for converting dates to strings */
-    private static final DateUtils dateUtils = new DateUtils();
-
     public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
 
     public static Integer toInteger(StringBuilder value) {
@@ -93,7 +90,7 @@ public class StringUtils {
      * @return An ISO 8601 timestamp string created from the specified date.
      */
     public static String fromDate(Date value) {
-        return dateUtils.formatIso8601Date(value);
+        return DateUtils.formatISO8601Date(value);
     }
 
     /**
