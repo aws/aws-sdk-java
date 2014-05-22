@@ -14,16 +14,15 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.text.ParseException;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.amazonaws.http.HttpResponse;
-import com.amazonaws.services.s3.Headers;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import com.amazonaws.http.HttpResponse;
+import com.amazonaws.services.s3.Headers;
 
 /**
  * Header handler to pull the RESTORE header out of the response.
@@ -65,7 +64,7 @@ public class ObjectRestoreHeaderHandler<T extends ObjectRestoreResult>
             String date = matcher.group(1);
             try {
                 return ServiceUtils.parseRfc822Date(date);
-            } catch (ParseException exception) {
+            } catch (Exception exception) {
                 log.warn("Error parsing expiry-date from x-amz-restore "
                          + "header.",
                          exception);

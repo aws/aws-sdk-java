@@ -55,6 +55,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -210,6 +212,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -286,6 +290,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>
@@ -371,6 +377,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -447,6 +455,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>
@@ -534,6 +544,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -612,6 +624,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>
@@ -700,6 +714,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -778,6 +794,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>

@@ -42,7 +42,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     private String snapshotId;
 
     /**
-     * The snapshot attribute.
+     * The snapshot attribute you would like to view.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
@@ -61,7 +61,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the Amazon EBS snapshot.
-     * @param attribute The snapshot attribute.
+     * @param attribute The snapshot attribute you would like to view.
      */
     public DescribeSnapshotAttributeRequest(String snapshotId, String attribute) {
         setSnapshotId(snapshotId);
@@ -74,7 +74,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the Amazon EBS snapshot.
-     * @param attribute The snapshot attribute.
+     * @param attribute The snapshot attribute you would like to view.
      */
     public DescribeSnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute) {
         this.snapshotId = snapshotId;
@@ -115,12 +115,12 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The snapshot attribute.
+     * The snapshot attribute you would like to view.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @return The snapshot attribute.
+     * @return The snapshot attribute you would like to view.
      *
      * @see SnapshotAttributeName
      */
@@ -129,12 +129,12 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The snapshot attribute.
+     * The snapshot attribute you would like to view.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute.
+     * @param attribute The snapshot attribute you would like to view.
      *
      * @see SnapshotAttributeName
      */
@@ -143,14 +143,14 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The snapshot attribute.
+     * The snapshot attribute you would like to view.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute.
+     * @param attribute The snapshot attribute you would like to view.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -163,12 +163,12 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * The snapshot attribute.
+     * The snapshot attribute you would like to view.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute.
+     * @param attribute The snapshot attribute you would like to view.
      *
      * @see SnapshotAttributeName
      */
@@ -177,14 +177,14 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The snapshot attribute.
+     * The snapshot attribute you would like to view.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute The snapshot attribute.
+     * @param attribute The snapshot attribute you would like to view.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

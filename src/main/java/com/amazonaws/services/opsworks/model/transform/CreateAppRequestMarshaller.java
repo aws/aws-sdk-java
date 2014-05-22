@@ -89,6 +89,30 @@ public class CreateAppRequestMarshaller implements Marshaller<Request<CreateAppR
             if (createAppRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(createAppRequest.getDescription());
             }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<DataSource> dataSourcesList = (com.amazonaws.internal.ListWithAutoConstructFlag<DataSource>)(createAppRequest.getDataSources());
+            if (dataSourcesList != null && !(dataSourcesList.isAutoConstruct() && dataSourcesList.isEmpty())) {
+
+                jsonWriter.key("DataSources");
+                jsonWriter.array();
+
+                for (DataSource dataSourcesListValue : dataSourcesList) {
+                    if (dataSourcesListValue != null) {
+                        jsonWriter.object();
+                        if (dataSourcesListValue.getType() != null) {
+                            jsonWriter.key("Type").value(dataSourcesListValue.getType());
+                        }
+                        if (dataSourcesListValue.getArn() != null) {
+                            jsonWriter.key("Arn").value(dataSourcesListValue.getArn());
+                        }
+                        if (dataSourcesListValue.getDatabaseName() != null) {
+                            jsonWriter.key("DatabaseName").value(dataSourcesListValue.getDatabaseName());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
             if (createAppRequest.getType() != null) {
                 jsonWriter.key("Type").value(createAppRequest.getType());
             }

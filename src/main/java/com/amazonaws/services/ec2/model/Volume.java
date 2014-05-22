@@ -67,7 +67,8 @@ public class Volume implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The volume type.
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
@@ -79,6 +80,11 @@ public class Volume implements Serializable {
      * supports.
      */
     private Integer iops;
+
+    /**
+     * Indicates whether the volume is encrypted.
+     */
+    private Boolean encrypted;
 
     /**
      * The ID of the volume.
@@ -464,12 +470,14 @@ public class Volume implements Serializable {
     }
 
     /**
-     * The volume type.
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @return The volume type.
+     * @return The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
      *
      * @see VolumeType
      */
@@ -478,12 +486,14 @@ public class Volume implements Serializable {
     }
     
     /**
-     * The volume type.
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type.
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
      *
      * @see VolumeType
      */
@@ -492,14 +502,16 @@ public class Volume implements Serializable {
     }
     
     /**
-     * The volume type.
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type.
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -512,12 +524,14 @@ public class Volume implements Serializable {
     }
 
     /**
-     * The volume type.
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type.
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
      *
      * @see VolumeType
      */
@@ -526,14 +540,16 @@ public class Volume implements Serializable {
     }
     
     /**
-     * The volume type.
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type.
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -585,6 +601,48 @@ public class Volume implements Serializable {
     }
 
     /**
+     * Indicates whether the volume is encrypted.
+     *
+     * @return Indicates whether the volume is encrypted.
+     */
+    public Boolean isEncrypted() {
+        return encrypted;
+    }
+    
+    /**
+     * Indicates whether the volume is encrypted.
+     *
+     * @param encrypted Indicates whether the volume is encrypted.
+     */
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+    
+    /**
+     * Indicates whether the volume is encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encrypted Indicates whether the volume is encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Volume withEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    /**
+     * Indicates whether the volume is encrypted.
+     *
+     * @return Indicates whether the volume is encrypted.
+     */
+    public Boolean getEncrypted() {
+        return encrypted;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -605,7 +663,8 @@ public class Volume implements Serializable {
         if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
-        if (getIops() != null) sb.append("Iops: " + getIops() );
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
         sb.append("}");
         return sb.toString();
     }
@@ -625,6 +684,7 @@ public class Volume implements Serializable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
+        hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
         return hashCode;
     }
     
@@ -656,6 +716,8 @@ public class Volume implements Serializable {
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false) return false; 
         if (other.getIops() == null ^ this.getIops() == null) return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
+        if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
+        if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
         return true;
     }
     

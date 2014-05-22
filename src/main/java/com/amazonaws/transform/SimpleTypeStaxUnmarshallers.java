@@ -184,7 +184,7 @@ public class SimpleTypeStaxUnmarshallers {
 
             try {
                 return DateUtils.parseISO8601Date(dateString);
-            } catch (ParseException e) {
+            } catch (Exception e) {
                 log.warn("Unable to parse date '" + dateString + "':  " + e.getMessage(), e);
                 return null;
             }

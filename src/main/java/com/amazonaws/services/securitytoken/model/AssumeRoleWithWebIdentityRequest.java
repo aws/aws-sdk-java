@@ -44,14 +44,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  * default, the temporary security credentials are valid for 1 hour.
  * </p>
  * <p>
- * Optionally, you can pass an AWS IAM access policy to this operation.
- * The temporary security credentials that are returned by the operation
- * have the permissions that are associated with the access policy of the
- * role being assumed, except for any permissions explicitly denied by
- * the policy you pass. This gives you a way to further restrict the
- * permissions for the resulting temporary security credentials. These
- * policies and any applicable resource-based policies are evaluated when
- * calls to AWS are made using the temporary security credentials.
+ * Optionally, you can pass an IAM access policy to this operation. If
+ * you choose not to pass a policy, the temporary security credentials
+ * that are returned by the operation have the permissions that are
+ * defined in the access policy of the role that is being assumed. If you
+ * pass a policy to this operation, the temporary security credentials
+ * that are returned by the operation have the permissions that are
+ * allowed by both the access policy of the role that is being assumed,
+ * <i> and </i> the policy that you pass. This gives you a way to further
+ * restrict the permissions for the resulting temporary security
+ * credentials. You cannot use the passed policy to grant permissions
+ * that are in excess of those allowed by the access policy of the role
+ * that is being assumed. For more information, see
+ * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRoleWithWebIdentity </a>
+ * in <i>Using Temporary Security Credentials</i> .
  * </p>
  * <p>
  * Before your application can call
@@ -155,14 +161,18 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
     private String providerId;
 
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by the operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. These policies and any
-     * applicable resource-based policies are evaluated when calls to AWS are
-     * made using the temporary security credentials.
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
+     * Credentials</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -442,68 +452,88 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by the operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. These policies and any
-     * applicable resource-based policies are evaluated when calls to AWS are
-     * made using the temporary security credentials.
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
+     * Credentials</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return An AWS IAM policy in JSON format. <p>The temporary security
-     *         credentials that are returned by the operation have the permissions
-     *         that are associated with the access policy of the role being assumed,
-     *         except for any permissions explicitly denied by the policy you pass.
-     *         This gives you a way to further restrict the permissions for the
-     *         resulting temporary security credentials. These policies and any
-     *         applicable resource-based policies are evaluated when calls to AWS are
-     *         made using the temporary security credentials.
+     * @return An IAM policy in JSON format. <p>The policy parameter is optional. If
+     *         you pass a policy, the temporary security credentials that are
+     *         returned by the operation have the permissions that are allowed by
+     *         both the access policy of the role that is being assumed,
+     *         <i><b>and</b></i> the policy that you pass. This gives you a way to
+     *         further restrict the permissions for the resulting temporary security
+     *         credentials. You cannot use the passed policy to grant permissions
+     *         that are in excess of those allowed by the access policy of the role
+     *         that is being assumed. For more information, see <a
+     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
+     *         Credentials</i>.
      */
     public String getPolicy() {
         return policy;
     }
     
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by the operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. These policies and any
-     * applicable resource-based policies are evaluated when calls to AWS are
-     * made using the temporary security credentials.
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
+     * Credentials</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy An AWS IAM policy in JSON format. <p>The temporary security
-     *         credentials that are returned by the operation have the permissions
-     *         that are associated with the access policy of the role being assumed,
-     *         except for any permissions explicitly denied by the policy you pass.
-     *         This gives you a way to further restrict the permissions for the
-     *         resulting temporary security credentials. These policies and any
-     *         applicable resource-based policies are evaluated when calls to AWS are
-     *         made using the temporary security credentials.
+     * @param policy An IAM policy in JSON format. <p>The policy parameter is optional. If
+     *         you pass a policy, the temporary security credentials that are
+     *         returned by the operation have the permissions that are allowed by
+     *         both the access policy of the role that is being assumed,
+     *         <i><b>and</b></i> the policy that you pass. This gives you a way to
+     *         further restrict the permissions for the resulting temporary security
+     *         credentials. You cannot use the passed policy to grant permissions
+     *         that are in excess of those allowed by the access policy of the role
+     *         that is being assumed. For more information, see <a
+     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
+     *         Credentials</i>.
      */
     public void setPolicy(String policy) {
         this.policy = policy;
     }
     
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by the operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. These policies and any
-     * applicable resource-based policies are evaluated when calls to AWS are
-     * made using the temporary security credentials.
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
+     * Credentials</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -511,14 +541,18 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy An AWS IAM policy in JSON format. <p>The temporary security
-     *         credentials that are returned by the operation have the permissions
-     *         that are associated with the access policy of the role being assumed,
-     *         except for any permissions explicitly denied by the policy you pass.
-     *         This gives you a way to further restrict the permissions for the
-     *         resulting temporary security credentials. These policies and any
-     *         applicable resource-based policies are evaluated when calls to AWS are
-     *         made using the temporary security credentials.
+     * @param policy An IAM policy in JSON format. <p>The policy parameter is optional. If
+     *         you pass a policy, the temporary security credentials that are
+     *         returned by the operation have the permissions that are allowed by
+     *         both the access policy of the role that is being assumed,
+     *         <i><b>and</b></i> the policy that you pass. This gives you a way to
+     *         further restrict the permissions for the resulting temporary security
+     *         credentials. You cannot use the passed policy to grant permissions
+     *         that are in excess of those allowed by the access policy of the role
+     *         that is being assumed. For more information, see <a
+     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
+     *         Credentials</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -78,6 +78,11 @@ public class Snapshot implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
+     * Indicates whether the snapshot is encrypted.
+     */
+    private Boolean encrypted;
+
+    /**
      * The ID of the snapshot.
      *
      * @return The ID of the snapshot.
@@ -498,6 +503,48 @@ public class Snapshot implements Serializable {
     }
 
     /**
+     * Indicates whether the snapshot is encrypted.
+     *
+     * @return Indicates whether the snapshot is encrypted.
+     */
+    public Boolean isEncrypted() {
+        return encrypted;
+    }
+    
+    /**
+     * Indicates whether the snapshot is encrypted.
+     *
+     * @param encrypted Indicates whether the snapshot is encrypted.
+     */
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+    
+    /**
+     * Indicates whether the snapshot is encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encrypted Indicates whether the snapshot is encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Snapshot withEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    /**
+     * Indicates whether the snapshot is encrypted.
+     *
+     * @return Indicates whether the snapshot is encrypted.
+     */
+    public Boolean getEncrypted() {
+        return encrypted;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -518,7 +565,8 @@ public class Snapshot implements Serializable {
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getVolumeSize() != null) sb.append("VolumeSize: " + getVolumeSize() + ",");
         if (getOwnerAlias() != null) sb.append("OwnerAlias: " + getOwnerAlias() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
         sb.append("}");
         return sb.toString();
     }
@@ -538,6 +586,7 @@ public class Snapshot implements Serializable {
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode()); 
         hashCode = prime * hashCode + ((getOwnerAlias() == null) ? 0 : getOwnerAlias().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
         return hashCode;
     }
     
@@ -569,6 +618,8 @@ public class Snapshot implements Serializable {
         if (other.getOwnerAlias() != null && other.getOwnerAlias().equals(this.getOwnerAlias()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
+        if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
         return true;
     }
     

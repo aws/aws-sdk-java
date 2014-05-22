@@ -33,6 +33,8 @@ import com.amazonaws.services.s3.AmazonS3EncryptionClient;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.EncryptedInitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.EncryptedPutObjectRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -127,7 +129,7 @@ public class UploadCallable implements Callable<UploadResult> {
         boolean isUsingEncryption = s3 instanceof AmazonS3EncryptionClient;
         long optimalPartSize = getOptimalPartSize(isUsingEncryption);
 
-        multipartUploadId = initiateMultipartUpload(putObjectRequest);
+        multipartUploadId = initiateMultipartUpload(putObjectRequest, isUsingEncryption);
 
         try {
             UploadPartRequestFactory requestFactory = new UploadPartRequestFactory(putObjectRequest, multipartUploadId, optimalPartSize);
@@ -217,13 +219,22 @@ public class UploadCallable implements Callable<UploadResult> {
 
     /**
      * Initiates a multipart upload and returns the upload id
+     * @param isUsingEncryption 
      */
-    private String initiateMultipartUpload(PutObjectRequest putObjectRequest) {
+    private String initiateMultipartUpload(PutObjectRequest putObjectRequest, boolean isUsingEncryption) {
 
-        InitiateMultipartUploadRequest initiateMultipartUploadRequest =
-            new InitiateMultipartUploadRequest(putObjectRequest.getBucketName(), putObjectRequest.getKey())
+        InitiateMultipartUploadRequest initiateMultipartUploadRequest = null;
+        if (isUsingEncryption && putObjectRequest instanceof EncryptedPutObjectRequest) {
+            initiateMultipartUploadRequest = new EncryptedInitiateMultipartUploadRequest(
+                    putObjectRequest.getBucketName(), putObjectRequest.getKey()).withCannedACL(
+                    putObjectRequest.getCannedAcl()).withObjectMetadata(putObjectRequest.getMetadata());
+            ((EncryptedInitiateMultipartUploadRequest) initiateMultipartUploadRequest)
+                    .setMaterialsDescription(((EncryptedPutObjectRequest) putObjectRequest).getMaterialsDescription());
+        } else {
+            initiateMultipartUploadRequest = new InitiateMultipartUploadRequest(putObjectRequest.getBucketName(), putObjectRequest.getKey())
                 .withCannedACL(putObjectRequest.getCannedAcl())
                 .withObjectMetadata(putObjectRequest.getMetadata());
+        }
 
         if (putObjectRequest.getStorageClass() != null) {
             initiateMultipartUploadRequest.setStorageClass(

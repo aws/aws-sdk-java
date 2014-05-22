@@ -67,6 +67,22 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
     private Integer packedPolicySize;
 
     /**
+     * The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code>
+     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * <code>ProviderId</code> parameter that was passed in the
+     * <code>AssumeRoleWithWebIdentity</code> request.
+     */
+    private String provider;
+
+    /**
+     * The intended audience of the web identity token. This is traditionally
+     * the client identifier issued to the application that requested the web
+     * identity token.
+     */
+    private String audience;
+
+    /**
      * The temporary security credentials, which include an access key ID, a
      * secret access key, and a security token.
      *
@@ -307,6 +323,108 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
     }
 
     /**
+     * The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code>
+     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * <code>ProviderId</code> parameter that was passed in the
+     * <code>AssumeRoleWithWebIdentity</code> request.
+     *
+     * @return The issuing authority of the web identity token presented. For OpenID
+     *         Connect ID Tokens this contains the value of the <code>iss</code>
+     *         field. For OAuth 2.0 Access Tokens, this contains the value of the
+     *         <code>ProviderId</code> parameter that was passed in the
+     *         <code>AssumeRoleWithWebIdentity</code> request.
+     */
+    public String getProvider() {
+        return provider;
+    }
+    
+    /**
+     * The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code>
+     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * <code>ProviderId</code> parameter that was passed in the
+     * <code>AssumeRoleWithWebIdentity</code> request.
+     *
+     * @param provider The issuing authority of the web identity token presented. For OpenID
+     *         Connect ID Tokens this contains the value of the <code>iss</code>
+     *         field. For OAuth 2.0 Access Tokens, this contains the value of the
+     *         <code>ProviderId</code> parameter that was passed in the
+     *         <code>AssumeRoleWithWebIdentity</code> request.
+     */
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+    
+    /**
+     * The issuing authority of the web identity token presented. For OpenID
+     * Connect ID Tokens this contains the value of the <code>iss</code>
+     * field. For OAuth 2.0 Access Tokens, this contains the value of the
+     * <code>ProviderId</code> parameter that was passed in the
+     * <code>AssumeRoleWithWebIdentity</code> request.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param provider The issuing authority of the web identity token presented. For OpenID
+     *         Connect ID Tokens this contains the value of the <code>iss</code>
+     *         field. For OAuth 2.0 Access Tokens, this contains the value of the
+     *         <code>ProviderId</code> parameter that was passed in the
+     *         <code>AssumeRoleWithWebIdentity</code> request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public AssumeRoleWithWebIdentityResult withProvider(String provider) {
+        this.provider = provider;
+        return this;
+    }
+
+    /**
+     * The intended audience of the web identity token. This is traditionally
+     * the client identifier issued to the application that requested the web
+     * identity token.
+     *
+     * @return The intended audience of the web identity token. This is traditionally
+     *         the client identifier issued to the application that requested the web
+     *         identity token.
+     */
+    public String getAudience() {
+        return audience;
+    }
+    
+    /**
+     * The intended audience of the web identity token. This is traditionally
+     * the client identifier issued to the application that requested the web
+     * identity token.
+     *
+     * @param audience The intended audience of the web identity token. This is traditionally
+     *         the client identifier issued to the application that requested the web
+     *         identity token.
+     */
+    public void setAudience(String audience) {
+        this.audience = audience;
+    }
+    
+    /**
+     * The intended audience of the web identity token. This is traditionally
+     * the client identifier issued to the application that requested the web
+     * identity token.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param audience The intended audience of the web identity token. This is traditionally
+     *         the client identifier issued to the application that requested the web
+     *         identity token.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public AssumeRoleWithWebIdentityResult withAudience(String audience) {
+        this.audience = audience;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -321,7 +439,9 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         if (getCredentials() != null) sb.append("Credentials: " + getCredentials() + ",");
         if (getSubjectFromWebIdentityToken() != null) sb.append("SubjectFromWebIdentityToken: " + getSubjectFromWebIdentityToken() + ",");
         if (getAssumedRoleUser() != null) sb.append("AssumedRoleUser: " + getAssumedRoleUser() + ",");
-        if (getPackedPolicySize() != null) sb.append("PackedPolicySize: " + getPackedPolicySize() );
+        if (getPackedPolicySize() != null) sb.append("PackedPolicySize: " + getPackedPolicySize() + ",");
+        if (getProvider() != null) sb.append("Provider: " + getProvider() + ",");
+        if (getAudience() != null) sb.append("Audience: " + getAudience() );
         sb.append("}");
         return sb.toString();
     }
@@ -335,6 +455,8 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         hashCode = prime * hashCode + ((getSubjectFromWebIdentityToken() == null) ? 0 : getSubjectFromWebIdentityToken().hashCode()); 
         hashCode = prime * hashCode + ((getAssumedRoleUser() == null) ? 0 : getAssumedRoleUser().hashCode()); 
         hashCode = prime * hashCode + ((getPackedPolicySize() == null) ? 0 : getPackedPolicySize().hashCode()); 
+        hashCode = prime * hashCode + ((getProvider() == null) ? 0 : getProvider().hashCode()); 
+        hashCode = prime * hashCode + ((getAudience() == null) ? 0 : getAudience().hashCode()); 
         return hashCode;
     }
     
@@ -354,6 +476,10 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         if (other.getAssumedRoleUser() != null && other.getAssumedRoleUser().equals(this.getAssumedRoleUser()) == false) return false; 
         if (other.getPackedPolicySize() == null ^ this.getPackedPolicySize() == null) return false;
         if (other.getPackedPolicySize() != null && other.getPackedPolicySize().equals(this.getPackedPolicySize()) == false) return false; 
+        if (other.getProvider() == null ^ this.getProvider() == null) return false;
+        if (other.getProvider() != null && other.getProvider().equals(this.getProvider()) == false) return false; 
+        if (other.getAudience() == null ^ this.getAudience() == null) return false;
+        if (other.getAudience() != null && other.getAudience().equals(this.getAudience()) == false) return false; 
         return true;
     }
     

@@ -45,7 +45,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     private String snapshotId;
 
     /**
-     * 
+     * The snapshot attribute to modify.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
@@ -53,22 +53,22 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     private String attribute;
 
     /**
-     * 
+     * The type of operation to perform to the attribute.
      */
     private String operationType;
 
     /**
-     * 
+     * The account ID to modify for the snapshot.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> userIds;
 
     /**
-     * 
+     * The group to modify for the snapshot.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
     /**
-     * 
+     * A JSON representation of the snapshot attribute modification.
      */
     private CreateVolumePermissionModifications createVolumePermission;
 
@@ -84,8 +84,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the snapshot.
-     * @param attribute
-     * @param operationType
+     * @param attribute The snapshot attribute to modify.
+     * @param operationType The type of operation to perform to the
+     * attribute.
      */
     public ModifySnapshotAttributeRequest(String snapshotId, String attribute, String operationType) {
         setSnapshotId(snapshotId);
@@ -99,8 +100,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * initialize any additional object members.
      * 
      * @param snapshotId The ID of the snapshot.
-     * @param attribute
-     * @param operationType
+     * @param attribute The snapshot attribute to modify.
+     * @param operationType The type of operation to perform to the
+     * attribute.
      */
     public ModifySnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute, String operationType) {
         this.snapshotId = snapshotId;
@@ -142,12 +144,12 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * 
+     * The snapshot attribute to modify.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @return 
+     * @return The snapshot attribute to modify.
      *
      * @see SnapshotAttributeName
      */
@@ -156,12 +158,12 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The snapshot attribute to modify.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute 
+     * @param attribute The snapshot attribute to modify.
      *
      * @see SnapshotAttributeName
      */
@@ -170,14 +172,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The snapshot attribute to modify.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute 
+     * @param attribute The snapshot attribute to modify.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -190,12 +192,12 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * 
+     * The snapshot attribute to modify.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute 
+     * @param attribute The snapshot attribute to modify.
      *
      * @see SnapshotAttributeName
      */
@@ -204,14 +206,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The snapshot attribute to modify.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
-     * @param attribute 
+     * @param attribute The snapshot attribute to modify.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -224,29 +226,29 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * 
+     * The type of operation to perform to the attribute.
      *
-     * @return 
+     * @return The type of operation to perform to the attribute.
      */
     public String getOperationType() {
         return operationType;
     }
     
     /**
-     * 
+     * The type of operation to perform to the attribute.
      *
-     * @param operationType 
+     * @param operationType The type of operation to perform to the attribute.
      */
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
     
     /**
-     * 
+     * The type of operation to perform to the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param operationType 
+     * @param operationType The type of operation to perform to the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -257,9 +259,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * 
+     * The account ID to modify for the snapshot.
      *
-     * @return 
+     * @return The account ID to modify for the snapshot.
      */
     public java.util.List<String> getUserIds() {
         if (userIds == null) {
@@ -270,9 +272,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The account ID to modify for the snapshot.
      *
-     * @param userIds 
+     * @param userIds The account ID to modify for the snapshot.
      */
     public void setUserIds(java.util.Collection<String> userIds) {
         if (userIds == null) {
@@ -285,11 +287,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The account ID to modify for the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userIds 
+     * @param userIds The account ID to modify for the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -303,11 +305,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The account ID to modify for the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param userIds 
+     * @param userIds The account ID to modify for the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -325,9 +327,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * 
+     * The group to modify for the snapshot.
      *
-     * @return 
+     * @return The group to modify for the snapshot.
      */
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
@@ -338,9 +340,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The group to modify for the snapshot.
      *
-     * @param groupNames 
+     * @param groupNames The group to modify for the snapshot.
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
@@ -353,11 +355,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The group to modify for the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames 
+     * @param groupNames The group to modify for the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -371,11 +373,11 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * 
+     * The group to modify for the snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames 
+     * @param groupNames The group to modify for the snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -393,29 +395,29 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * 
+     * A JSON representation of the snapshot attribute modification.
      *
-     * @return 
+     * @return A JSON representation of the snapshot attribute modification.
      */
     public CreateVolumePermissionModifications getCreateVolumePermission() {
         return createVolumePermission;
     }
     
     /**
-     * 
+     * A JSON representation of the snapshot attribute modification.
      *
-     * @param createVolumePermission 
+     * @param createVolumePermission A JSON representation of the snapshot attribute modification.
      */
     public void setCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {
         this.createVolumePermission = createVolumePermission;
     }
     
     /**
-     * 
+     * A JSON representation of the snapshot attribute modification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createVolumePermission 
+     * @param createVolumePermission A JSON representation of the snapshot attribute modification.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

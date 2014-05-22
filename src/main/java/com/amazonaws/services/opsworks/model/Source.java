@@ -50,8 +50,8 @@ public class Source implements Serializable {
     /**
      * This parameter depends on the repository type. <ul> <li>For Amazon S3
      * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles, and Subversion repositories,
-     * set <code>Password</code> to the password.</li> </ul> <p>For more
+     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
+     * <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      */
@@ -239,15 +239,15 @@ public class Source implements Serializable {
     /**
      * This parameter depends on the repository type. <ul> <li>For Amazon S3
      * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles, and Subversion repositories,
-     * set <code>Password</code> to the password.</li> </ul> <p>For more
+     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
+     * <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      *
      * @return This parameter depends on the repository type. <ul> <li>For Amazon S3
      *         bundles, set <code>Password</code> to the appropriate IAM secret
-     *         access key.</li> <li>For HTTP bundles, and Subversion repositories,
-     *         set <code>Password</code> to the password.</li> </ul> <p>For more
+     *         access key.</li> <li>For HTTP bundles and Subversion repositories, set
+     *         <code>Password</code> to the password.</li> </ul> <p>For more
      *         information on how to safely handle IAM credentials, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      */
@@ -258,15 +258,15 @@ public class Source implements Serializable {
     /**
      * This parameter depends on the repository type. <ul> <li>For Amazon S3
      * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles, and Subversion repositories,
-     * set <code>Password</code> to the password.</li> </ul> <p>For more
+     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
+     * <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      *
      * @param password This parameter depends on the repository type. <ul> <li>For Amazon S3
      *         bundles, set <code>Password</code> to the appropriate IAM secret
-     *         access key.</li> <li>For HTTP bundles, and Subversion repositories,
-     *         set <code>Password</code> to the password.</li> </ul> <p>For more
+     *         access key.</li> <li>For HTTP bundles and Subversion repositories, set
+     *         <code>Password</code> to the password.</li> </ul> <p>For more
      *         information on how to safely handle IAM credentials, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      */
@@ -277,8 +277,8 @@ public class Source implements Serializable {
     /**
      * This parameter depends on the repository type. <ul> <li>For Amazon S3
      * bundles, set <code>Password</code> to the appropriate IAM secret
-     * access key.</li> <li>For HTTP bundles, and Subversion repositories,
-     * set <code>Password</code> to the password.</li> </ul> <p>For more
+     * access key.</li> <li>For HTTP bundles and Subversion repositories, set
+     * <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      * <p>
@@ -286,8 +286,8 @@ public class Source implements Serializable {
      *
      * @param password This parameter depends on the repository type. <ul> <li>For Amazon S3
      *         bundles, set <code>Password</code> to the appropriate IAM secret
-     *         access key.</li> <li>For HTTP bundles, and Subversion repositories,
-     *         set <code>Password</code> to the password.</li> </ul> <p>For more
+     *         access key.</li> <li>For HTTP bundles and Subversion repositories, set
+     *         <code>Password</code> to the password.</li> </ul> <p>For more
      *         information on how to safely handle IAM credentials, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      *

@@ -59,6 +59,14 @@ public class AssumeRoleWithWebIdentityResultStaxUnmarshaller implements Unmarsha
                     assumeRoleWithWebIdentityResult.setPackedPolicySize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Provider", targetDepth)) {
+                    assumeRoleWithWebIdentityResult.setProvider(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Audience", targetDepth)) {
+                    assumeRoleWithWebIdentityResult.setAudience(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return assumeRoleWithWebIdentityResult;

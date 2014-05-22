@@ -27,7 +27,6 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -55,7 +54,7 @@ public class ServiceUtils {
     @Deprecated
     protected static final DateUtils dateUtils = new DateUtils();
 
-    public static Date parseIso8601Date(String dateString) throws ParseException {
+    public static Date parseIso8601Date(String dateString) {
         return DateUtils.parseISO8601Date(dateString);
     }
 
@@ -63,7 +62,7 @@ public class ServiceUtils {
         return DateUtils.formatISO8601Date(date);
     }
 
-    public static Date parseRfc822Date(String dateString) throws ParseException {
+    public static Date parseRfc822Date(String dateString) {
         return DateUtils.parseRFC822Date(dateString);
     }
 

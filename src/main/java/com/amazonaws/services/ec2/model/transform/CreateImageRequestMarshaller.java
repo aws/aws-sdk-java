@@ -39,7 +39,7 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
 
         Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
-        request.addParameter("Version", "2014-02-01");
+        request.addParameter("Version", "2014-05-01");
 
         if (createImageRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));
@@ -82,6 +82,9 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
                     }
                     if (ebsBlockDeviceEbs.getIops() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsBlockDeviceEbs.getIops()));
+                    }
+                    if (ebsBlockDeviceEbs.isEncrypted() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted", StringUtils.fromBoolean(ebsBlockDeviceEbs.isEncrypted()));
                     }
                 }
                 if (blockDeviceMappingMember.getNoDevice() != null) {

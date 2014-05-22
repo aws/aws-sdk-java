@@ -42,6 +42,8 @@ import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoStorageMode;
+import com.amazonaws.services.s3.model.EncryptedInitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.EncryptedPutObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
@@ -118,9 +120,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
 
     private PutObjectResult putObjectUsingMetadata(PutObjectRequest req)
             throws AmazonClientException, AmazonServiceException {
-        ContentCryptoMaterial cekMaterial = newContentCryptoMaterial(
-                this.kekMaterialsProvider,
-                this.cryptoConfig.getCryptoProvider());
+        ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(req);
         // Wraps the object data with a cipher input stream
         PutObjectRequest wrappedReq = wrapWithCipher(req, cekMaterial);
         // Update the metadata
@@ -370,8 +370,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         appendUserAgent(req, USER_AGENT);
         // Generate a one-time use symmetric key and initialize a cipher to
         // encrypt object data
-        ContentCryptoMaterial cekMaterial = newContentCryptoMaterial(
-                kekMaterialsProvider, cryptoConfig.getCryptoProvider());
+        ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(req);
         if (cryptoConfig.getStorageMode() == CryptoStorageMode.ObjectMetadata) {
             ObjectMetadata metadata = req.getObjectMetadata();
             if (metadata == null)
@@ -503,9 +502,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             throws AmazonClientException, AmazonServiceException {
         PutObjectRequest putInstFileRequest = putObjectRequest.clone();
         // Create instruction
-        ContentCryptoMaterial cekMaterial = newContentCryptoMaterial(
-                this.kekMaterialsProvider,
-                this.cryptoConfig.getCryptoProvider());
+        ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(putObjectRequest);
         // Wraps the object data with a cipher input stream; note the metadata
         // is mutated as a side effect.
         PutObjectRequest req = wrapWithCipher(putObjectRequest, cekMaterial);

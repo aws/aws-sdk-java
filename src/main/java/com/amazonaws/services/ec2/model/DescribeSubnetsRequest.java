@@ -41,17 +41,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIds;
 
     /**
-     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the subnet. </li> <li>
+     * One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     * Availability Zone for the subnet. You can also use
+     * <code>availability-zone</code> as the filter name. </li> <li>
      * <p><code>available-ip-address-count</code> - The number of IP
      * addresses in the subnet that are available. </li> <li>
-     * <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     * you specify must exactly match the subnet's CIDR block for information
-     * to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     * - Indicates whether this is the default subnet for the Availability
-     * Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>). </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     * <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     * block you specify must exactly match the subnet's CIDR block for
+     * information to be returned for the subnet. You can also use
+     * <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     * </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     * the default subnet for the Availability Zone. You can also use
+     * <code>default-for-az</code> as the filter name. </li> <li>
+     * <p><code>state</code> - The state of the subnet (<code>pending</code>
+     * | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     * ID of the subnet. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -138,17 +142,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the subnet. </li> <li>
+     * One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     * Availability Zone for the subnet. You can also use
+     * <code>availability-zone</code> as the filter name. </li> <li>
      * <p><code>available-ip-address-count</code> - The number of IP
      * addresses in the subnet that are available. </li> <li>
-     * <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     * you specify must exactly match the subnet's CIDR block for information
-     * to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     * - Indicates whether this is the default subnet for the Availability
-     * Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>). </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     * <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     * block you specify must exactly match the subnet's CIDR block for
+     * information to be returned for the subnet. You can also use
+     * <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     * </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     * the default subnet for the Availability Zone. You can also use
+     * <code>default-for-az</code> as the filter name. </li> <li>
+     * <p><code>state</code> - The state of the subnet (<code>pending</code>
+     * | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     * ID of the subnet. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -164,17 +172,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      * subnet. </li> </ul>
      *
-     * @return One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone for the subnet. </li> <li>
+     * @return One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     *         Availability Zone for the subnet. You can also use
+     *         <code>availability-zone</code> as the filter name. </li> <li>
      *         <p><code>available-ip-address-count</code> - The number of IP
      *         addresses in the subnet that are available. </li> <li>
-     *         <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     *         you specify must exactly match the subnet's CIDR block for information
-     *         to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     *         - Indicates whether this is the default subnet for the Availability
-     *         Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     *         (<code>pending</code> | <code>available</code>). </li> <li>
-     *         <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     *         <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     *         block you specify must exactly match the subnet's CIDR block for
+     *         information to be returned for the subnet. You can also use
+     *         <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     *         </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     *         the default subnet for the Availability Zone. You can also use
+     *         <code>default-for-az</code> as the filter name. </li> <li>
+     *         <p><code>state</code> - The state of the subnet (<code>pending</code>
+     *         | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     *         ID of the subnet. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -199,17 +211,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the subnet. </li> <li>
+     * One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     * Availability Zone for the subnet. You can also use
+     * <code>availability-zone</code> as the filter name. </li> <li>
      * <p><code>available-ip-address-count</code> - The number of IP
      * addresses in the subnet that are available. </li> <li>
-     * <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     * you specify must exactly match the subnet's CIDR block for information
-     * to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     * - Indicates whether this is the default subnet for the Availability
-     * Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>). </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     * <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     * block you specify must exactly match the subnet's CIDR block for
+     * information to be returned for the subnet. You can also use
+     * <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     * </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     * the default subnet for the Availability Zone. You can also use
+     * <code>default-for-az</code> as the filter name. </li> <li>
+     * <p><code>state</code> - The state of the subnet (<code>pending</code>
+     * | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     * ID of the subnet. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -225,17 +241,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      * subnet. </li> </ul>
      *
-     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone for the subnet. </li> <li>
+     * @param filters One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     *         Availability Zone for the subnet. You can also use
+     *         <code>availability-zone</code> as the filter name. </li> <li>
      *         <p><code>available-ip-address-count</code> - The number of IP
      *         addresses in the subnet that are available. </li> <li>
-     *         <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     *         you specify must exactly match the subnet's CIDR block for information
-     *         to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     *         - Indicates whether this is the default subnet for the Availability
-     *         Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     *         (<code>pending</code> | <code>available</code>). </li> <li>
-     *         <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     *         <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     *         block you specify must exactly match the subnet's CIDR block for
+     *         information to be returned for the subnet. You can also use
+     *         <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     *         </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     *         the default subnet for the Availability Zone. You can also use
+     *         <code>default-for-az</code> as the filter name. </li> <li>
+     *         <p><code>state</code> - The state of the subnet (<code>pending</code>
+     *         | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     *         ID of the subnet. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -262,17 +282,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the subnet. </li> <li>
+     * One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     * Availability Zone for the subnet. You can also use
+     * <code>availability-zone</code> as the filter name. </li> <li>
      * <p><code>available-ip-address-count</code> - The number of IP
      * addresses in the subnet that are available. </li> <li>
-     * <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     * you specify must exactly match the subnet's CIDR block for information
-     * to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     * - Indicates whether this is the default subnet for the Availability
-     * Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>). </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     * <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     * block you specify must exactly match the subnet's CIDR block for
+     * information to be returned for the subnet. You can also use
+     * <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     * </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     * the default subnet for the Availability Zone. You can also use
+     * <code>default-for-az</code> as the filter name. </li> <li>
+     * <p><code>state</code> - The state of the subnet (<code>pending</code>
+     * | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     * ID of the subnet. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -290,17 +314,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone for the subnet. </li> <li>
+     * @param filters One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     *         Availability Zone for the subnet. You can also use
+     *         <code>availability-zone</code> as the filter name. </li> <li>
      *         <p><code>available-ip-address-count</code> - The number of IP
      *         addresses in the subnet that are available. </li> <li>
-     *         <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     *         you specify must exactly match the subnet's CIDR block for information
-     *         to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     *         - Indicates whether this is the default subnet for the Availability
-     *         Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     *         (<code>pending</code> | <code>available</code>). </li> <li>
-     *         <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     *         <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     *         block you specify must exactly match the subnet's CIDR block for
+     *         information to be returned for the subnet. You can also use
+     *         <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     *         </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     *         the default subnet for the Availability Zone. You can also use
+     *         <code>default-for-az</code> as the filter name. </li> <li>
+     *         <p><code>state</code> - The state of the subnet (<code>pending</code>
+     *         | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     *         ID of the subnet. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -328,17 +356,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the subnet. </li> <li>
+     * One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     * Availability Zone for the subnet. You can also use
+     * <code>availability-zone</code> as the filter name. </li> <li>
      * <p><code>available-ip-address-count</code> - The number of IP
      * addresses in the subnet that are available. </li> <li>
-     * <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     * you specify must exactly match the subnet's CIDR block for information
-     * to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     * - Indicates whether this is the default subnet for the Availability
-     * Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>). </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     * <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     * block you specify must exactly match the subnet's CIDR block for
+     * information to be returned for the subnet. You can also use
+     * <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     * </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     * the default subnet for the Availability Zone. You can also use
+     * <code>default-for-az</code> as the filter name. </li> <li>
+     * <p><code>state</code> - The state of the subnet (<code>pending</code>
+     * | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     * ID of the subnet. </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -356,17 +388,21 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
-     *         Availability Zone for the subnet. </li> <li>
+     * @param filters One or more filters. <ul> <li> <p><code>availabilityZone</code> - The
+     *         Availability Zone for the subnet. You can also use
+     *         <code>availability-zone</code> as the filter name. </li> <li>
      *         <p><code>available-ip-address-count</code> - The number of IP
      *         addresses in the subnet that are available. </li> <li>
-     *         <p><code>cidr</code> - The CIDR block of the subnet. The CIDR block
-     *         you specify must exactly match the subnet's CIDR block for information
-     *         to be returned for the subnet. </li> <li> <p><code>defaultForAz</code>
-     *         - Indicates whether this is the default subnet for the Availability
-     *         Zone. </li> <li> <p><code>state</code> - The state of the subnet
-     *         (<code>pending</code> | <code>available</code>). </li> <li>
-     *         <p><code>subnet-id</code> - The ID of the subnet. </li> <li>
+     *         <p><code>cidrBlock</code> - The CIDR block of the subnet. The CIDR
+     *         block you specify must exactly match the subnet's CIDR block for
+     *         information to be returned for the subnet. You can also use
+     *         <code>cidr</code> or <code>cidr-block</code> as the filter names.
+     *         </li> <li> <p><code>defaultForAz</code> - Indicates whether this is
+     *         the default subnet for the Availability Zone. You can also use
+     *         <code>default-for-az</code> as the filter name. </li> <li>
+     *         <p><code>state</code> - The state of the subnet (<code>pending</code>
+     *         | <code>available</code>). </li> <li> <p><code>subnet-id</code> - The
+     *         ID of the subnet. </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.

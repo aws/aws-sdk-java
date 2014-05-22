@@ -132,6 +132,11 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     private Boolean installUpdatesOnBoot;
 
     /**
+     * Whether this is an Amazon EBS-optimized instance.
+     */
+    private Boolean ebsOptimized;
+
+    /**
      * The instance ID.
      *
      * @return The instance ID.
@@ -894,6 +899,48 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return Whether this is an Amazon EBS-optimized instance.
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @param ebsOptimized Whether this is an Amazon EBS-optimized instance.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateInstanceRequest withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return Whether this is an Amazon EBS-optimized instance.
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -914,7 +961,8 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (getAmiId() != null) sb.append("AmiId: " + getAmiId() + ",");
         if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
-        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();
     }
@@ -934,6 +982,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -965,6 +1014,8 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

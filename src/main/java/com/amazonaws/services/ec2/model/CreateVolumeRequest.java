@@ -23,12 +23,22 @@ import com.amazonaws.services.ec2.model.transform.CreateVolumeRequestMarshaller;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest) CreateVolume operation}.
  * <p>
- * Creates an Amazon EBS volume that can be attached to any instance in
- * the same Availability Zone.
+ * Creates an Amazon EBS volume that can be attached to an instance in
+ * the same Availability Zone. The volume is created in the specified
+ * region.
  * </p>
  * <p>
- * Any AWS Marketplace product codes from the snapshot are propagated to
- * the volume.
+ * You can create a new empty volume or restore a volume from an Amazon
+ * EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+ * propagated to the volume.
+ * </p>
+ * <p>
+ * You can create encrypted volumes with the <code>Encrypted</code>
+ * parameter. Encrypted volumes may only be attached to instances that
+ * support Amazon EBS encryption. Volumes that are created from encrypted
+ * snapshots are also automatically encrypted. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  * <p>
  * For more information, see
@@ -61,7 +71,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String availabilityZone;
 
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
@@ -74,6 +86,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * required when the volume type is <code>io1</code>.
      */
     private Integer iops;
+
+    /**
+     * Specifies whether the volume should be encrypted.
+     */
+    private Boolean encrypted;
 
     /**
      * Default constructor for a new CreateVolumeRequest object.  Callers should use the
@@ -244,12 +261,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @return The volume type. <p>Default: <code>standard</code>
+     * @return The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @see VolumeType
      */
@@ -258,12 +279,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @see VolumeType
      */
@@ -272,14 +297,18 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -292,12 +321,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @see VolumeType
      */
@@ -306,14 +339,18 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. This can be <code>standard</code> for standard EBS
+     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
+     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -371,6 +408,48 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * Specifies whether the volume should be encrypted.
+     *
+     * @return Specifies whether the volume should be encrypted.
+     */
+    public Boolean isEncrypted() {
+        return encrypted;
+    }
+    
+    /**
+     * Specifies whether the volume should be encrypted.
+     *
+     * @param encrypted Specifies whether the volume should be encrypted.
+     */
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+    
+    /**
+     * Specifies whether the volume should be encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encrypted Specifies whether the volume should be encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateVolumeRequest withEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    /**
+     * Specifies whether the volume should be encrypted.
+     *
+     * @return Specifies whether the volume should be encrypted.
+     */
+    public Boolean getEncrypted() {
+        return encrypted;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -398,7 +477,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
-        if (getIops() != null) sb.append("Iops: " + getIops() );
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +493,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
+        hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
         return hashCode;
     }
     
@@ -434,6 +515,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false) return false; 
         if (other.getIops() == null ^ this.getIops() == null) return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
+        if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
+        if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
         return true;
     }
     

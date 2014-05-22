@@ -31,7 +31,7 @@ class Base64Codec {
     private static final int MASK_2BITS = (1 << 2) - 1;
     private static final int MASK_4BITS = (1 << 4) - 1;
     private static final int MASK_6BITS = (1 << 6) - 1;
-    // Base 32 alphabet as defined at http://www.ietf.org/rfc/rfc4648.txt
+    // Alphabet as defined at http://www.ietf.org/rfc/rfc4648.txt
     private static final byte PAD = '=';
     
     private static class LazyHolder {

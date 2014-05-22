@@ -34,6 +34,12 @@ public class Instance implements Serializable {
     private String ec2InstanceId;
 
     /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     */
+    private String virtualizationType;
+
+    /**
      * The instance host name.
      */
     private String hostname;
@@ -278,6 +284,45 @@ public class Instance implements Serializable {
      */
     public Instance withEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
+        return this;
+    }
+
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     *
+     * @return The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     */
+    public String getVirtualizationType() {
+        return virtualizationType;
+    }
+    
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     *
+     * @param virtualizationType The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     */
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+    
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param virtualizationType The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Instance withVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
         return this;
     }
 
@@ -1697,6 +1742,7 @@ public class Instance implements Serializable {
         sb.append("{");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");
         if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ",");
@@ -1735,6 +1781,7 @@ public class Instance implements Serializable {
         
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode()); 
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode()); 
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
         hashCode = prime * hashCode + ((getLayerIds() == null) ? 0 : getLayerIds().hashCode()); 
@@ -1777,6 +1824,8 @@ public class Instance implements Serializable {
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
         if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null) return false;
         if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false) return false; 
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null) return false;
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false) return false; 
         if (other.getHostname() == null ^ this.getHostname() == null) return false;
         if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false) return false; 
         if (other.getStackId() == null ^ this.getStackId() == null) return false;

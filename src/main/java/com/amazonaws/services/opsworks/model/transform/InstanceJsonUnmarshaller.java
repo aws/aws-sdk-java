@@ -53,6 +53,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setEc2InstanceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VirtualizationType", targetDepth)) {
+                    context.nextToken();
+                    instance.setVirtualizationType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Hostname", targetDepth)) {
                     context.nextToken();
                     instance.setHostname(StringJsonUnmarshaller.getInstance().unmarshall(context));

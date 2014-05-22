@@ -65,6 +65,10 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setDescription(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DataSources", targetDepth)) {
+                    context.nextToken();
+                    app.setDataSources(new ListUnmarshaller<DataSource>(DataSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     app.setType(StringJsonUnmarshaller.getInstance().unmarshall(context));

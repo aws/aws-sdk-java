@@ -53,10 +53,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone in which the
      * volume was created. </li> <li> <p><code>create-time</code> - The time
-     * stamp when the volume was created. </li> <li> <p><code>size</code> -
-     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     * - The snapshot from which the volume was created. </li> <li>
-     * <p><code>status</code> - The status of the volume
+     * stamp when the volume was created. </li> <li>
+     * <p><code>encrypted</code> - The encryption status of the volume. </li>
+     * <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     * <p><code>snapshot-id</code> - The snapshot from which the volume was
+     * created. </li> <li> <p><code>status</code> - The status of the volume
      * (<code>creating</code> | <code>available</code> | <code>in-use</code>
      * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -72,8 +73,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     * (<code>standard</code> | <code>io1</code>). </li> </ul>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     * can be <code>standard</code> for standard EBS volumes or
+     * <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
@@ -175,10 +177,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone in which the
      * volume was created. </li> <li> <p><code>create-time</code> - The time
-     * stamp when the volume was created. </li> <li> <p><code>size</code> -
-     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     * - The snapshot from which the volume was created. </li> <li>
-     * <p><code>status</code> - The status of the volume
+     * stamp when the volume was created. </li> <li>
+     * <p><code>encrypted</code> - The encryption status of the volume. </li>
+     * <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     * <p><code>snapshot-id</code> - The snapshot from which the volume was
+     * created. </li> <li> <p><code>status</code> - The status of the volume
      * (<code>creating</code> | <code>available</code> | <code>in-use</code>
      * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -194,8 +197,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     * (<code>standard</code> | <code>io1</code>). </li> </ul>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     * can be <code>standard</code> for standard EBS volumes or
+     * <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      *
      * @return One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
      *         - The time stamp when the attachment initiated. </li> <li>
@@ -209,10 +213,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone in which the
      *         volume was created. </li> <li> <p><code>create-time</code> - The time
-     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
-     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     *         - The snapshot from which the volume was created. </li> <li>
-     *         <p><code>status</code> - The status of the volume
+     *         stamp when the volume was created. </li> <li>
+     *         <p><code>encrypted</code> - The encryption status of the volume. </li>
+     *         <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     *         <p><code>snapshot-id</code> - The snapshot from which the volume was
+     *         created. </li> <li> <p><code>status</code> - The status of the volume
      *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
      *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -228,8 +233,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     *         can be <code>standard</code> for standard EBS volumes or
+     *         <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -252,10 +258,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone in which the
      * volume was created. </li> <li> <p><code>create-time</code> - The time
-     * stamp when the volume was created. </li> <li> <p><code>size</code> -
-     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     * - The snapshot from which the volume was created. </li> <li>
-     * <p><code>status</code> - The status of the volume
+     * stamp when the volume was created. </li> <li>
+     * <p><code>encrypted</code> - The encryption status of the volume. </li>
+     * <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     * <p><code>snapshot-id</code> - The snapshot from which the volume was
+     * created. </li> <li> <p><code>status</code> - The status of the volume
      * (<code>creating</code> | <code>available</code> | <code>in-use</code>
      * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -271,8 +278,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     * (<code>standard</code> | <code>io1</code>). </li> </ul>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     * can be <code>standard</code> for standard EBS volumes or
+     * <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      *
      * @param filters One or more filters. <ul> <li> <p><code>attachment.attach-time</code>
      *         - The time stamp when the attachment initiated. </li> <li>
@@ -286,10 +294,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone in which the
      *         volume was created. </li> <li> <p><code>create-time</code> - The time
-     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
-     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     *         - The snapshot from which the volume was created. </li> <li>
-     *         <p><code>status</code> - The status of the volume
+     *         stamp when the volume was created. </li> <li>
+     *         <p><code>encrypted</code> - The encryption status of the volume. </li>
+     *         <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     *         <p><code>snapshot-id</code> - The snapshot from which the volume was
+     *         created. </li> <li> <p><code>status</code> - The status of the volume
      *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
      *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -305,8 +314,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     *         can be <code>standard</code> for standard EBS volumes or
+     *         <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -331,10 +341,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone in which the
      * volume was created. </li> <li> <p><code>create-time</code> - The time
-     * stamp when the volume was created. </li> <li> <p><code>size</code> -
-     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     * - The snapshot from which the volume was created. </li> <li>
-     * <p><code>status</code> - The status of the volume
+     * stamp when the volume was created. </li> <li>
+     * <p><code>encrypted</code> - The encryption status of the volume. </li>
+     * <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     * <p><code>snapshot-id</code> - The snapshot from which the volume was
+     * created. </li> <li> <p><code>status</code> - The status of the volume
      * (<code>creating</code> | <code>available</code> | <code>in-use</code>
      * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -350,8 +361,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     * (<code>standard</code> | <code>io1</code>). </li> </ul>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     * can be <code>standard</code> for standard EBS volumes or
+     * <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -367,10 +379,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone in which the
      *         volume was created. </li> <li> <p><code>create-time</code> - The time
-     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
-     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     *         - The snapshot from which the volume was created. </li> <li>
-     *         <p><code>status</code> - The status of the volume
+     *         stamp when the volume was created. </li> <li>
+     *         <p><code>encrypted</code> - The encryption status of the volume. </li>
+     *         <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     *         <p><code>snapshot-id</code> - The snapshot from which the volume was
+     *         created. </li> <li> <p><code>status</code> - The status of the volume
      *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
      *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -386,8 +399,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     *         can be <code>standard</code> for standard EBS volumes or
+     *         <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -413,10 +427,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>detaching</code> | <code>detached</code>). </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone in which the
      * volume was created. </li> <li> <p><code>create-time</code> - The time
-     * stamp when the volume was created. </li> <li> <p><code>size</code> -
-     * The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     * - The snapshot from which the volume was created. </li> <li>
-     * <p><code>status</code> - The status of the volume
+     * stamp when the volume was created. </li> <li>
+     * <p><code>encrypted</code> - The encryption status of the volume. </li>
+     * <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     * <p><code>snapshot-id</code> - The snapshot from which the volume was
+     * created. </li> <li> <p><code>status</code> - The status of the volume
      * (<code>creating</code> | <code>available</code> | <code>in-use</code>
      * | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -432,8 +447,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
      * filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     * <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     * (<code>standard</code> | <code>io1</code>). </li> </ul>
+     * <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     * can be <code>standard</code> for standard EBS volumes or
+     * <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -449,10 +465,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <code>detaching</code> | <code>detached</code>). </li> <li>
      *         <p><code>availability-zone</code> - The Availability Zone in which the
      *         volume was created. </li> <li> <p><code>create-time</code> - The time
-     *         stamp when the volume was created. </li> <li> <p><code>size</code> -
-     *         The size of the volume, in GiB. </li> <li> <p><code>snapshot-id</code>
-     *         - The snapshot from which the volume was created. </li> <li>
-     *         <p><code>status</code> - The status of the volume
+     *         stamp when the volume was created. </li> <li>
+     *         <p><code>encrypted</code> - The encryption status of the volume. </li>
+     *         <li> <p><code>size</code> - The size of the volume, in GiB. </li> <li>
+     *         <p><code>snapshot-id</code> - The snapshot from which the volume was
+     *         created. </li> <li> <p><code>status</code> - The status of the volume
      *         (<code>creating</code> | <code>available</code> | <code>in-use</code>
      *         | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *         </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
@@ -468,8 +485,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> <li> <p><code>volume-id</code> - The volume ID. </li>
-     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type
-     *         (<code>standard</code> | <code>io1</code>). </li> </ul>
+     *         <li> <p><code>volume-type</code> - The Amazon EBS volume type. This
+     *         can be <code>standard</code> for standard EBS volumes or
+     *         <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

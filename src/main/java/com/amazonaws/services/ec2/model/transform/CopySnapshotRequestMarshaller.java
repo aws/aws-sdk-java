@@ -39,7 +39,7 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
 
         Request<CopySnapshotRequest> request = new DefaultRequest<CopySnapshotRequest>(copySnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "CopySnapshot");
-        request.addParameter("Version", "2014-02-01");
+        request.addParameter("Version", "2014-05-01");
 
         if (copySnapshotRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(copySnapshotRequest.getSourceRegion()));
@@ -49,6 +49,12 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
         }
         if (copySnapshotRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(copySnapshotRequest.getDescription()));
+        }
+        if (copySnapshotRequest.getDestinationRegion() != null) {
+            request.addParameter("DestinationRegion", StringUtils.fromString(copySnapshotRequest.getDestinationRegion()));
+        }
+        if (copySnapshotRequest.getPresignedUrl() != null) {
+            request.addParameter("PresignedUrl", StringUtils.fromString(copySnapshotRequest.getPresignedUrl()));
         }
 
         return request;
