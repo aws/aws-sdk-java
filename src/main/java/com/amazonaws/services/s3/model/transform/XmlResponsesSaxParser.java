@@ -24,7 +24,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -659,13 +658,7 @@ public class XmlResponsesSaxParser {
                 currentObject.setKey(elementText);
                 lastKey = elementText;
             } else if (name.equals("LastModified")) {
-                try {
-                    currentObject.setLastModified(ServiceUtils.parseIso8601Date(elementText));
-                } catch (ParseException e) {
-                    throw new RuntimeException(
-                        "Non-ISO8601 date for LastModified in bucket's object listing output: "
-                        + elementText, e);
-                }
+                currentObject.setLastModified(ServiceUtils.parseIso8601Date(elementText));
             } else if (name.equals("ETag")) {
                 currentObject.setETag(ServiceUtils.removeQuotes(elementText));
             } else if (name.equals("Size")) {
@@ -765,14 +758,8 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("Name")) {
                 currentBucket.setName(elementText);
             } else if (name.equals("CreationDate")) {
-                try {
-                    Date creationDate = DateUtils.parseISO8601Date(elementText);
-                    currentBucket.setCreationDate(creationDate);
-                } catch (ParseException ex) {
-                    throw new RuntimeException(
-                            "Non-ISO8601 date for CreationDate in list buckets output: "
-                            + elementText, ex);
-                }
+                Date creationDate = DateUtils.parseISO8601Date(elementText);
+                currentBucket.setCreationDate(creationDate);
             }
             this.currText = new StringBuilder();
         }
@@ -1112,13 +1099,7 @@ public class XmlResponsesSaxParser {
             String elementText = this.currText.toString();
 
             if (name.equals("LastModified")) {
-                try {
-                    lastModified = ServiceUtils.parseIso8601Date(elementText);
-                } catch (ParseException e) {
-                    throw new RuntimeException(
-                        "Non-ISO8601 date for LastModified in copy object output: "
-                        + elementText, e);
-                }
+                lastModified = ServiceUtils.parseIso8601Date(elementText);
             } else if (name.equals("ETag")) {
                 etag = ServiceUtils.removeQuotes(elementText);
             } else if (name.equals("Code")) {
@@ -1296,7 +1277,7 @@ public class XmlResponsesSaxParser {
                 assert(currentVersionSummary != null);
                 try {
                     currentVersionSummary.setLastModified(ServiceUtils.parseIso8601Date(text.toString()));
-                } catch (ParseException e) {
+                } catch (Exception e) {
                     throw new SAXException(
                         "Non-ISO8601 date for LastModified in copy object output: "
                         + text.toString(), e);
@@ -1872,7 +1853,7 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("Initiated")) {
                 try {
                     currentMultipartUpload.setInitiated(ServiceUtils.parseIso8601Date(text.toString()));
-                } catch (ParseException e) {
+                } catch (Exception e) {
                     throw new SAXException(
                             "Non-ISO8601 date for Initiated in initiate multipart upload result: "
                             + text.toString(), e);
@@ -2023,7 +2004,7 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("LastModified")) {
                 try {
                     currentPart.setLastModified(ServiceUtils.parseIso8601Date(text.toString()));
-                } catch (ParseException e) {
+                } catch (Exception e) {
                     throw new SAXException(
                             "Non-ISO8601 date for LastModified in list parts result: "
                             + text.toString(), e);
@@ -2418,12 +2399,10 @@ public class XmlResponsesSaxParser {
 
         private void setDate() {
             Date date = null;
-
             try {
                 date = ServiceUtils.parseIso8601Date(text.toString());
-            } catch (ParseException e) {
+            } catch(Exception ignore) {
             }
-
             switch (container) {
             case EXPIRATION:
                 rule.setExpirationDate(date);

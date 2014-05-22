@@ -136,17 +136,28 @@ public class EncryptionUtils {
       return generateInstruction(new StaticEncryptionMaterialsProvider(materials), cryptoProvider);
     }
 
-    public static EncryptionInstruction generateInstruction(EncryptionMaterialsProvider materialsProvider, Provider cryptoProvider) {
-        // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
+    public static EncryptionInstruction generateInstruction(EncryptionMaterialsProvider materialsProvider,
+            Provider cryptoProvider) {
+        return buildInstruction(materialsProvider.getEncryptionMaterials(), cryptoProvider);
+    }
+
+    public static EncryptionInstruction generateInstruction(EncryptionMaterialsProvider materialsProvider,
+            Map<String, String> materialsDescription, Provider cryptoProvider) {
+        return buildInstruction(materialsProvider.getEncryptionMaterials(materialsDescription), cryptoProvider);
+    }
+
+    private static EncryptionInstruction buildInstruction(EncryptionMaterials materials, Provider cryptoProvider) {
+        // Generate a one-time use symmetric key and initialize a cipher to
+        // encrypt object data
         SecretKey envelopeSymmetricKey = generateOneTimeUseSymmetricKey();
         CipherFactory cipherFactory = new CipherFactory(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, null, cryptoProvider);
 
         // Encrypt the envelope symmetric key
-        EncryptionMaterials materials = materialsProvider.getEncryptionMaterials();
         byte[] encryptedEnvelopeSymmetricKey = getEncryptedSymmetricKey(envelopeSymmetricKey, materials, cryptoProvider);
 
         // Return a new instruction with the appropriate fields.
-        return new EncryptionInstruction(materials.getMaterialsDescription(), encryptedEnvelopeSymmetricKey, envelopeSymmetricKey, cipherFactory);
+        return new EncryptionInstruction(materials.getMaterialsDescription(), encryptedEnvelopeSymmetricKey,
+                envelopeSymmetricKey, cipherFactory);
     }
 
     /**

@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.security.NoSuchAlgorithmException;
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -932,12 +931,6 @@ public class AmazonHttpClient {
                 serverDateStr = responseDateHeader[0].getValue();
                 serverDate = DateUtils.parseRFC822Date(serverDateStr);
             }
-
-        } catch (ParseException e) {
-            log.warn("Unable to parse clock skew offset from response: "
-                     + serverDateStr,
-                     e);
-            return 0;
         } catch (RuntimeException e) {
             log.warn("Unable to parse clock skew offset from response: "
                      + serverDateStr,

@@ -43,22 +43,28 @@ import com.amazonaws.AmazonWebServiceRequest;
  * specified.
  * </p>
  * <p>
- * Optionally, you can pass an AWS IAM access policy to this operation.
- * The temporary security credentials that are returned by the operation
- * have the permissions that are associated with the access policy of the
- * role being assumed, except for any permissions explicitly denied by
- * the policy you pass. This gives you a way to further restrict the
- * permissions for the resulting temporary security credentials. These
- * policies and any applicable resource-based policies are evaluated when
- * calls to AWS are made using the temporary security credentials.
+ * Optionally, you can pass an IAM access policy to this operation. If
+ * you choose not to pass a policy, the temporary security credentials
+ * that are returned by the operation have the permissions that are
+ * defined in the access policy of the role that is being assumed. If you
+ * pass a policy to this operation, the temporary security credentials
+ * that are returned by the operation have the permissions that are
+ * allowed by both the access policy of the role that is being assumed,
+ * <i> and </i> the policy that you pass. This gives you a way to further
+ * restrict the permissions for the resulting temporary security
+ * credentials. You cannot use the passed policy to grant permissions
+ * that are in excess of those allowed by the access policy of the role
+ * that is being assumed. For more information, see
+ * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html"> Permissions for AssumeRoleWithSAML </a>
+ * in <i>Using Temporary Security Credentials</i> .
  * </p>
  * <p>
- * Before your application can call <code>AssumeRoleWithSAML</code> ,
- * you must configure your SAML identity provider (IdP) to issue the
- * claims required by AWS. Additionally, you must use AWS Identity and
- * Access Management (AWS IAM) to create a SAML provider entity in your
- * AWS account that represents your identity provider, and create an AWS
- * IAM role that specifies this SAML provider in its trust policy.
+ * Before your application can call <code>AssumeRoleWithSAML</code> , you
+ * must configure your SAML identity provider (IdP) to issue the claims
+ * required by AWS. Additionally, you must use AWS Identity and Access
+ * Management (IAM) to create a SAML provider entity in your AWS account
+ * that represents your identity provider, and create an IAM role that
+ * specifies this SAML provider in its trust policy.
  * </p>
  * <p>
  * Calling <code>AssumeRoleWithSAML</code> does not require the use of
@@ -73,16 +79,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <ul>
  * <li>
  * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for SAML Federation </a>
- * in the <i>Using Temporary Security Credentials</i> guide. </li>
+ * in <i>Using Temporary Security Credentials</i> . </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/idp-managing-identityproviders.html"> SAML Providers </a>
- * in the <i>Using IAM</i> guide. </li>
+ * in <i>Using IAM</i> . </li>
  * <li>
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html"> Configuring a Relying Party and Claims in the Using IAM guide. </a>
- * </li>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html"> Configuring a Relying Party and Claims </a>
+ * in <i>Using IAM</i> . </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml.html"> Creating a Role for SAML-Based Federation </a>
- * in the <i>Using IAM</i> guide. </li>
+ * in <i>Using IAM</i> . </li>
  * 
  * </ul>
  * <p>
@@ -108,7 +114,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
     private String roleArn;
 
     /**
-     * The Amazon Resource Name (ARN) of the SAML provider in AWS IAM that
+     * The Amazon Resource Name (ARN) of the SAML provider in IAM that
      * describes the IdP.
      * <p>
      * <b>Constraints:</b><br/>
@@ -128,14 +134,19 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
     private String sAMLAssertion;
 
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by this operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * These policies and any applicable resource-based policies are
-     * evaluated when calls to AWS are made using the temporary security
-     * credentials. <note>The policy must be 2048 bytes or shorter, and its
-     * packed size must be less than 450 bytes.</note>
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithSAML</a> in <i>Using Temporary Security
+     * Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
+     * its packed size must be less than 450 bytes.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -206,13 +217,13 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the SAML provider in AWS IAM that
+     * The Amazon Resource Name (ARN) of the SAML provider in IAM that
      * describes the IdP.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the SAML provider in AWS IAM that
+     * @return The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *         describes the IdP.
      */
     public String getPrincipalArn() {
@@ -220,13 +231,13 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the SAML provider in AWS IAM that
+     * The Amazon Resource Name (ARN) of the SAML provider in IAM that
      * describes the IdP.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param principalArn The Amazon Resource Name (ARN) of the SAML provider in AWS IAM that
+     * @param principalArn The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *         describes the IdP.
      */
     public void setPrincipalArn(String principalArn) {
@@ -234,7 +245,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the SAML provider in AWS IAM that
+     * The Amazon Resource Name (ARN) of the SAML provider in IAM that
      * describes the IdP.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -242,7 +253,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param principalArn The Amazon Resource Name (ARN) of the SAML provider in AWS IAM that
+     * @param principalArn The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *         describes the IdP.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -314,68 +325,93 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by this operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * These policies and any applicable resource-based policies are
-     * evaluated when calls to AWS are made using the temporary security
-     * credentials. <note>The policy must be 2048 bytes or shorter, and its
-     * packed size must be less than 450 bytes.</note>
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithSAML</a> in <i>Using Temporary Security
+     * Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
+     * its packed size must be less than 450 bytes.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return An AWS IAM policy in JSON format. <p>The temporary security
-     *         credentials that are returned by this operation have the permissions
-     *         that are associated with the access policy of the role being assumed,
-     *         except for any permissions explicitly denied by the policy you pass.
-     *         These policies and any applicable resource-based policies are
-     *         evaluated when calls to AWS are made using the temporary security
-     *         credentials. <note>The policy must be 2048 bytes or shorter, and its
-     *         packed size must be less than 450 bytes.</note>
+     * @return An IAM policy in JSON format. <p>The policy parameter is optional. If
+     *         you pass a policy, the temporary security credentials that are
+     *         returned by the operation have the permissions that are allowed by
+     *         both the access policy of the role that is being assumed,
+     *         <i><b>and</b></i> the policy that you pass. This gives you a way to
+     *         further restrict the permissions for the resulting temporary security
+     *         credentials. You cannot use the passed policy to grant permissions
+     *         that are in excess of those allowed by the access policy of the role
+     *         that is being assumed. For more information, see <a
+     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         for AssumeRoleWithSAML</a> in <i>Using Temporary Security
+     *         Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
+     *         its packed size must be less than 450 bytes.</note>
      */
     public String getPolicy() {
         return policy;
     }
     
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by this operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * These policies and any applicable resource-based policies are
-     * evaluated when calls to AWS are made using the temporary security
-     * credentials. <note>The policy must be 2048 bytes or shorter, and its
-     * packed size must be less than 450 bytes.</note>
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithSAML</a> in <i>Using Temporary Security
+     * Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
+     * its packed size must be less than 450 bytes.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy An AWS IAM policy in JSON format. <p>The temporary security
-     *         credentials that are returned by this operation have the permissions
-     *         that are associated with the access policy of the role being assumed,
-     *         except for any permissions explicitly denied by the policy you pass.
-     *         These policies and any applicable resource-based policies are
-     *         evaluated when calls to AWS are made using the temporary security
-     *         credentials. <note>The policy must be 2048 bytes or shorter, and its
-     *         packed size must be less than 450 bytes.</note>
+     * @param policy An IAM policy in JSON format. <p>The policy parameter is optional. If
+     *         you pass a policy, the temporary security credentials that are
+     *         returned by the operation have the permissions that are allowed by
+     *         both the access policy of the role that is being assumed,
+     *         <i><b>and</b></i> the policy that you pass. This gives you a way to
+     *         further restrict the permissions for the resulting temporary security
+     *         credentials. You cannot use the passed policy to grant permissions
+     *         that are in excess of those allowed by the access policy of the role
+     *         that is being assumed. For more information, see <a
+     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         for AssumeRoleWithSAML</a> in <i>Using Temporary Security
+     *         Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
+     *         its packed size must be less than 450 bytes.</note>
      */
     public void setPolicy(String policy) {
         this.policy = policy;
     }
     
     /**
-     * An AWS IAM policy in JSON format. <p>The temporary security
-     * credentials that are returned by this operation have the permissions
-     * that are associated with the access policy of the role being assumed,
-     * except for any permissions explicitly denied by the policy you pass.
-     * These policies and any applicable resource-based policies are
-     * evaluated when calls to AWS are made using the temporary security
-     * credentials. <note>The policy must be 2048 bytes or shorter, and its
-     * packed size must be less than 450 bytes.</note>
+     * An IAM policy in JSON format. <p>The policy parameter is optional. If
+     * you pass a policy, the temporary security credentials that are
+     * returned by the operation have the permissions that are allowed by
+     * both the access policy of the role that is being assumed,
+     * <i><b>and</b></i> the policy that you pass. This gives you a way to
+     * further restrict the permissions for the resulting temporary security
+     * credentials. You cannot use the passed policy to grant permissions
+     * that are in excess of those allowed by the access policy of the role
+     * that is being assumed. For more information, see <a
+     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     * for AssumeRoleWithSAML</a> in <i>Using Temporary Security
+     * Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
+     * its packed size must be less than 450 bytes.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -383,14 +419,19 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param policy An AWS IAM policy in JSON format. <p>The temporary security
-     *         credentials that are returned by this operation have the permissions
-     *         that are associated with the access policy of the role being assumed,
-     *         except for any permissions explicitly denied by the policy you pass.
-     *         These policies and any applicable resource-based policies are
-     *         evaluated when calls to AWS are made using the temporary security
-     *         credentials. <note>The policy must be 2048 bytes or shorter, and its
-     *         packed size must be less than 450 bytes.</note>
+     * @param policy An IAM policy in JSON format. <p>The policy parameter is optional. If
+     *         you pass a policy, the temporary security credentials that are
+     *         returned by the operation have the permissions that are allowed by
+     *         both the access policy of the role that is being assumed,
+     *         <i><b>and</b></i> the policy that you pass. This gives you a way to
+     *         further restrict the permissions for the resulting temporary security
+     *         credentials. You cannot use the passed policy to grant permissions
+     *         that are in excess of those allowed by the access policy of the role
+     *         that is being assumed. For more information, see <a
+     *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+     *         for AssumeRoleWithSAML</a> in <i>Using Temporary Security
+     *         Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
+     *         its packed size must be less than 450 bytes.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -49,6 +49,11 @@ public class App implements Serializable {
     private String description;
 
     /**
+     * The app's data sources.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DataSource> dataSources;
+
+    /**
      * The app type.
      * <p>
      * <b>Constraints:</b><br/>
@@ -62,7 +67,7 @@ public class App implements Serializable {
     private Source appSource;
 
     /**
-     * The app vhost settings, with multiple domains separated by commas. For
+     * The app vhost settings with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> domains;
@@ -253,6 +258,74 @@ public class App implements Serializable {
     }
 
     /**
+     * The app's data sources.
+     *
+     * @return The app's data sources.
+     */
+    public java.util.List<DataSource> getDataSources() {
+        if (dataSources == null) {
+              dataSources = new com.amazonaws.internal.ListWithAutoConstructFlag<DataSource>();
+              dataSources.setAutoConstruct(true);
+        }
+        return dataSources;
+    }
+    
+    /**
+     * The app's data sources.
+     *
+     * @param dataSources The app's data sources.
+     */
+    public void setDataSources(java.util.Collection<DataSource> dataSources) {
+        if (dataSources == null) {
+            this.dataSources = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<DataSource> dataSourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DataSource>(dataSources.size());
+        dataSourcesCopy.addAll(dataSources);
+        this.dataSources = dataSourcesCopy;
+    }
+    
+    /**
+     * The app's data sources.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dataSources The app's data sources.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public App withDataSources(DataSource... dataSources) {
+        if (getDataSources() == null) setDataSources(new java.util.ArrayList<DataSource>(dataSources.length));
+        for (DataSource value : dataSources) {
+            getDataSources().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The app's data sources.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dataSources The app's data sources.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public App withDataSources(java.util.Collection<DataSource> dataSources) {
+        if (dataSources == null) {
+            this.dataSources = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<DataSource> dataSourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DataSource>(dataSources.size());
+            dataSourcesCopy.addAll(dataSources);
+            this.dataSources = dataSourcesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * The app type.
      * <p>
      * <b>Constraints:</b><br/>
@@ -368,10 +441,10 @@ public class App implements Serializable {
     }
 
     /**
-     * The app vhost settings, with multiple domains separated by commas. For
+     * The app vhost settings with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
      *
-     * @return The app vhost settings, with multiple domains separated by commas. For
+     * @return The app vhost settings with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
      */
     public java.util.List<String> getDomains() {
@@ -383,10 +456,10 @@ public class App implements Serializable {
     }
     
     /**
-     * The app vhost settings, with multiple domains separated by commas. For
+     * The app vhost settings with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
      *
-     * @param domains The app vhost settings, with multiple domains separated by commas. For
+     * @param domains The app vhost settings with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
      */
     public void setDomains(java.util.Collection<String> domains) {
@@ -400,12 +473,12 @@ public class App implements Serializable {
     }
     
     /**
-     * The app vhost settings, with multiple domains separated by commas. For
+     * The app vhost settings with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param domains The app vhost settings, with multiple domains separated by commas. For
+     * @param domains The app vhost settings with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -420,12 +493,12 @@ public class App implements Serializable {
     }
     
     /**
-     * The app vhost settings, with multiple domains separated by commas. For
+     * The app vhost settings with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param domains The app vhost settings, with multiple domains separated by commas. For
+     * @param domains The app vhost settings with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -635,6 +708,7 @@ public class App implements Serializable {
         if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getDataSources() != null) sb.append("DataSources: " + getDataSources() + ",");
         if (getType() != null) sb.append("Type: " + getType() + ",");
         if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ",");
         if (getDomains() != null) sb.append("Domains: " + getDomains() + ",");
@@ -656,6 +730,7 @@ public class App implements Serializable {
         hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode()); 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
         hashCode = prime * hashCode + ((getAppSource() == null) ? 0 : getAppSource().hashCode()); 
         hashCode = prime * hashCode + ((getDomains() == null) ? 0 : getDomains().hashCode()); 
@@ -684,6 +759,8 @@ public class App implements Serializable {
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getDataSources() == null ^ this.getDataSources() == null) return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false) return false; 
         if (other.getType() == null ^ this.getType() == null) return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false) return false; 
         if (other.getAppSource() == null ^ this.getAppSource() == null) return false;

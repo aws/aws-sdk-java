@@ -335,6 +335,154 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
             
     /**
      * <p>
+     * Deregisters an Amazon RDS instance.
+     * </p>
+     *
+     * @param deregisterRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterRdsDbInstance operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeregisterRdsDbInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deregisterRdsDbInstanceAsync(final DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deregisterRdsDbInstance(deregisterRdsDbInstanceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deregisters an Amazon RDS instance.
+     * </p>
+     *
+     * @param deregisterRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterRdsDbInstance operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeregisterRdsDbInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deregisterRdsDbInstanceAsync(
+            final DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest,
+            final AsyncHandler<DeregisterRdsDbInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deregisterRdsDbInstance(deregisterRdsDbInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deregisterRdsDbInstanceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Registers an Amazon RDS instance with a stack.
+     * </p>
+     *
+     * @param registerRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the RegisterRdsDbInstance operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RegisterRdsDbInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> registerRdsDbInstanceAsync(final RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                registerRdsDbInstance(registerRdsDbInstanceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Registers an Amazon RDS instance with a stack.
+     * </p>
+     *
+     * @param registerRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the RegisterRdsDbInstance operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RegisterRdsDbInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> registerRdsDbInstanceAsync(
+            final RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest,
+            final AsyncHandler<RegisterRdsDbInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                registerRdsDbInstance(registerRdsDbInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(registerRdsDbInstanceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Updates a user's SSH public key.
      * </p>
      * <p>
@@ -1247,6 +1395,80 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(updateAppRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Describes Amazon RDS instances.
+     * </p>
+     *
+     * @param describeRdsDbInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeRdsDbInstances operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeRdsDbInstances service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeRdsDbInstancesResult> describeRdsDbInstancesAsync(final DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeRdsDbInstancesResult>() {
+            public DescribeRdsDbInstancesResult call() throws Exception {
+                return describeRdsDbInstances(describeRdsDbInstancesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Describes Amazon RDS instances.
+     * </p>
+     *
+     * @param describeRdsDbInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeRdsDbInstances operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeRdsDbInstances service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeRdsDbInstancesResult> describeRdsDbInstancesAsync(
+            final DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest,
+            final AsyncHandler<DescribeRdsDbInstancesRequest, DescribeRdsDbInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeRdsDbInstancesResult>() {
+            public DescribeRdsDbInstancesResult call() throws Exception {
+              DescribeRdsDbInstancesResult result;
+                try {
+                result = describeRdsDbInstances(describeRdsDbInstancesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeRdsDbInstancesRequest, result);
+                 return result;
         }
     });
     }
@@ -2869,6 +3091,80 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
+     * Updates an Amazon RDS instance.
+     * </p>
+     *
+     * @param updateRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the UpdateRdsDbInstance operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateRdsDbInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateRdsDbInstanceAsync(final UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateRdsDbInstance(updateRdsDbInstanceRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates an Amazon RDS instance.
+     * </p>
+     *
+     * @param updateRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the UpdateRdsDbInstance operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateRdsDbInstance service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateRdsDbInstanceAsync(
+            final UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest,
+            final AsyncHandler<UpdateRdsDbInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                updateRdsDbInstance(updateRdsDbInstanceRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateRdsDbInstanceRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Updates a specified user profile.
      * </p>
      * <p>
@@ -4353,6 +4649,100 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
     
     /**
      * <p>
+     * Updates an Amazon EBS volume's name or mount point. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
+     * .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param updateVolumeRequest Container for the necessary parameters to
+     *           execute the UpdateVolume operation on AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateVolume service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateVolumeAsync(final UpdateVolumeRequest updateVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateVolume(updateVolumeRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Updates an Amazon EBS volume's name or mount point. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
+     * .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param updateVolumeRequest Container for the necessary parameters to
+     *           execute the UpdateVolume operation on AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateVolume service method, as returned by AWSOpsWorks.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateVolumeAsync(
+            final UpdateVolumeRequest updateVolumeRequest,
+            final AsyncHandler<UpdateVolumeRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                updateVolume(updateVolumeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateVolumeRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Deletes a user profile.
      * </p>
      * <p>
@@ -4533,100 +4923,6 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
               }
               asyncHandler.onSuccess(describeTimeBasedAutoScalingRequest, result);
                  return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Updates an Amazon EBS volume's name or mount point. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateVolumeRequest Container for the necessary parameters to
-     *           execute the UpdateVolume operation on AWSOpsWorks.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateVolume service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> updateVolumeAsync(final UpdateVolumeRequest updateVolumeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                updateVolume(updateVolumeRequest);
-                return null;
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Updates an Amazon EBS volume's name or mount point. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateVolumeRequest Container for the necessary parameters to
-     *           execute the UpdateVolume operation on AWSOpsWorks.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdateVolume service method, as returned by AWSOpsWorks.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> updateVolumeAsync(
-            final UpdateVolumeRequest updateVolumeRequest,
-            final AsyncHandler<UpdateVolumeRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-              try {
-                updateVolume(updateVolumeRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(updateVolumeRequest, null);
-                 return null;
         }
     });
     }

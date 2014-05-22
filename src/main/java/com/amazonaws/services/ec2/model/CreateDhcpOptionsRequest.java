@@ -31,6 +31,32 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
  * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
  * .
  * </p>
+ * 
+ * <ul>
+ * <li> <code>domain-name-servers</code> - The IP addresses of up to
+ * four domain name servers, or <code>AmazonProvidedDNS</code> . The
+ * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
+ * specifying more than one domain name server, specify the IP addresses
+ * in a single parameter, separated by commas.</li>
+ * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+ * <code>us-east-1</code> ,
+ * specify <code>ec2.internal</code> . If you're using
+ * AmazonProvidedDNS in another region, specify
+ * <code>region.compute.internal</code> (for example,
+ * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
+ * domain name (for example, <code>MyCompany.com</code> ).</li>
+ * <li> <code>ntp-servers</code> - The IP addresses of up to four
+ * Network Time Protocol (NTP) servers.</li>
+ * <li> <code>netbios-name-servers</code> - The IP addresses of up to
+ * four NetBIOS name servers.</li>
+ * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
+ * or 8). We recommend that you specify 2 (broadcast and multicast are
+ * not currently supported). For more information about these node types,
+ * see
+ * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+ * . </li>
+ * 
+ * </ul>
  * <p>
  * For more information about DHCP options, see
  * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>

@@ -49,8 +49,14 @@ import com.amazonaws.services.ec2.model.transform.CreateSnapshotRequestMarshalle
  * devices, you should stop the instance before taking the snapshot.
  * </p>
  * <p>
+ * Snapshots that are taken from encrypted volumes are automatically
+ * encrypted. Volumes that are created from encrypted snapshots are also
+ * automatically encrypted. Your encrypted volumes and any associated
+ * snapshots always remain protected.
+ * </p>
+ * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html"> Amazon Elastic Block Store </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
  *

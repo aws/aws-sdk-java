@@ -29,9 +29,9 @@ import com.amazonaws.services.ec2.model.transform.CreateVpcPeeringConnectionRequ
  * VPC cannot have overlapping CIDR blocks.
  * </p>
  * <p>
- * The owner of the peer VPC must accept the the peering request to
- * activate the peering connection. The VPC peering connection request
- * expires after 7 days, after which it cannot be accepted or rejected.
+ * The owner of the peer VPC must accept the peering request to activate
+ * the peering connection. The VPC peering connection request expires
+ * after 7 days, after which it cannot be accepted or rejected.
  * </p>
  * <p>
  * A <code>CreateVpcPeeringConnection</code> request between VPCs with

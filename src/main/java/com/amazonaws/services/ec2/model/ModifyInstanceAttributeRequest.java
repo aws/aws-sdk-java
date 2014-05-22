@@ -46,7 +46,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * The name of the attribute.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport
      */
     private String attribute;
 
@@ -138,7 +138,10 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     private Boolean ebsOptimized;
 
     /**
-     * 
+     * Set to <code>simple</code> to enable enhanced networking for the
+     * instance. <p>There is no way to disable enhanced networking at this
+     * time. <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.
      */
     private String sriovNetSupport;
 
@@ -211,7 +214,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * The name of the attribute.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport
      *
      * @return The name of the attribute.
      *
@@ -225,7 +228,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * The name of the attribute.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport
      *
      * @param attribute The name of the attribute.
      *
@@ -241,7 +244,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport
      *
      * @param attribute The name of the attribute.
      *
@@ -259,7 +262,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * The name of the attribute.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport
      *
      * @param attribute The name of the attribute.
      *
@@ -275,7 +278,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport
      *
      * @param attribute The name of the attribute.
      *
@@ -988,29 +991,47 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * 
+     * Set to <code>simple</code> to enable enhanced networking for the
+     * instance. <p>There is no way to disable enhanced networking at this
+     * time. <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.
      *
-     * @return 
+     * @return Set to <code>simple</code> to enable enhanced networking for the
+     *         instance. <p>There is no way to disable enhanced networking at this
+     *         time. <p>This option is supported only for HVM instances. Specifying
+     *         this option with a PV instance can make it unreachable.
      */
     public String getSriovNetSupport() {
         return sriovNetSupport;
     }
     
     /**
-     * 
+     * Set to <code>simple</code> to enable enhanced networking for the
+     * instance. <p>There is no way to disable enhanced networking at this
+     * time. <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.
      *
-     * @param sriovNetSupport 
+     * @param sriovNetSupport Set to <code>simple</code> to enable enhanced networking for the
+     *         instance. <p>There is no way to disable enhanced networking at this
+     *         time. <p>This option is supported only for HVM instances. Specifying
+     *         this option with a PV instance can make it unreachable.
      */
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
     
     /**
-     * 
+     * Set to <code>simple</code> to enable enhanced networking for the
+     * instance. <p>There is no way to disable enhanced networking at this
+     * time. <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sriovNetSupport 
+     * @param sriovNetSupport Set to <code>simple</code> to enable enhanced networking for the
+     *         instance. <p>There is no way to disable enhanced networking at this
+     *         time. <p>This option is supported only for HVM instances. Specifying
+     *         this option with a PV instance can make it unreachable.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

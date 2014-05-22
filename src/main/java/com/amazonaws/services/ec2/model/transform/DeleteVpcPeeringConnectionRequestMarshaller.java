@@ -39,7 +39,7 @@ public class DeleteVpcPeeringConnectionRequestMarshaller implements Marshaller<R
 
         Request<DeleteVpcPeeringConnectionRequest> request = new DefaultRequest<DeleteVpcPeeringConnectionRequest>(deleteVpcPeeringConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpcPeeringConnection");
-        request.addParameter("Version", "2014-02-01");
+        request.addParameter("Version", "2014-05-01");
 
         if (deleteVpcPeeringConnectionRequest.getVpcPeeringConnectionId() != null) {
             request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(deleteVpcPeeringConnectionRequest.getVpcPeeringConnectionId()));

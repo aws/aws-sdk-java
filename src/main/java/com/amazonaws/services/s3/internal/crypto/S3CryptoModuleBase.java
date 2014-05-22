@@ -47,6 +47,7 @@ import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
+import com.amazonaws.services.s3.model.MaterialsDescriptionProvider;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.util.LengthCheckInputStream;
@@ -109,21 +110,47 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
         }
         return instruction.toObjectMetadata(metadata);
     }
+    
+    protected final ContentCryptoMaterial createContentCryptoMaterial(AmazonWebServiceRequest req) {
+        if (req instanceof MaterialsDescriptionProvider) {
+            return newContentCryptoMaterial(this.kekMaterialsProvider, 
+                    ((MaterialsDescriptionProvider) req).getMaterialsDescription(), 
+                    this.cryptoConfig.getCryptoProvider());
+        } else {
+            return newContentCryptoMaterial(this.kekMaterialsProvider, this.cryptoConfig.getCryptoProvider());
+        }
+    }
+
+    /**
+     * Generates and returns the content encryption material with the given kek
+     * material, material description and security providers.
+     */
+    private ContentCryptoMaterial newContentCryptoMaterial(
+            EncryptionMaterialsProvider kekMaterialProvider,
+            Map<String, String> materialsDescription, Provider provider) {
+        EncryptionMaterials kekMaterials = kekMaterialProvider.getEncryptionMaterials(materialsDescription);
+        return buildContentCryptoMaterial(kekMaterials, provider);
+    }
 
     /**
      * Generates and returns the content encryption material with the given kek
      * material and security providers.
      */
-    protected final ContentCryptoMaterial newContentCryptoMaterial(
+    private ContentCryptoMaterial newContentCryptoMaterial(
             EncryptionMaterialsProvider kekMaterialProvider,
             Provider provider) {
+        EncryptionMaterials kekMaterials = kekMaterialProvider.getEncryptionMaterials();
+        return buildContentCryptoMaterial(kekMaterials, provider);
+    }
+    
+    private ContentCryptoMaterial buildContentCryptoMaterial(
+            EncryptionMaterials kekMaterials, Provider provider) {
         // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
         SecretKey cek = generateCEK();
         // Randomly generate the IV
         byte[] iv = new byte[contentCryptoScheme.getIVLengthInBytes()];
         cryptoScheme.getSecureRandom().nextBytes(iv);
         // Encrypt the envelope symmetric key
-        EncryptionMaterials kekMaterials = kekMaterialProvider.getEncryptionMaterials();
         SecuredCEK cekSecured = secureCEK(cek, kekMaterials, provider);
         // Return a new instruction with the appropriate fields.
         return new ContentCryptoMaterial(
@@ -132,6 +159,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
             cekSecured.keyWrapAlgorithm,
             contentCryptoScheme.createCipherLite
                 (cek, iv,Cipher.ENCRYPT_MODE, provider));
+        
     }
 
     protected final SecretKey generateCEK() {

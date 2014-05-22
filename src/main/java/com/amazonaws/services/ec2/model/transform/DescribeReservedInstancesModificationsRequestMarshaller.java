@@ -39,7 +39,7 @@ public class DescribeReservedInstancesModificationsRequestMarshaller implements 
 
         Request<DescribeReservedInstancesModificationsRequest> request = new DefaultRequest<DescribeReservedInstancesModificationsRequest>(describeReservedInstancesModificationsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesModifications");
-        request.addParameter("Version", "2014-02-01");
+        request.addParameter("Version", "2014-05-01");
 
         java.util.List<String> reservedInstancesModificationIdsList = describeReservedInstancesModificationsRequest.getReservedInstancesModificationIds();
         int reservedInstancesModificationIdsListIndex = 1;

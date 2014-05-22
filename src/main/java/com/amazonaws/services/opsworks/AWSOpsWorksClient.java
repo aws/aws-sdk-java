@@ -287,6 +287,80 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
+     * Deregisters an Amazon RDS instance.
+     * </p>
+     *
+     * @param deregisterRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the DeregisterRdsDbInstance service method on
+     *           AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterRdsDbInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeregisterRdsDbInstanceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DeregisterRdsDbInstanceRequestMarshaller().marshall(deregisterRdsDbInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Registers an Amazon RDS instance with a stack.
+     * </p>
+     *
+     * @param registerRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the RegisterRdsDbInstance service method on
+     *           AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void registerRdsDbInstance(RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerRdsDbInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RegisterRdsDbInstanceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new RegisterRdsDbInstanceRequestMarshaller().marshall(registerRdsDbInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
      * Updates a user's SSH public key.
      * </p>
      * <p>
@@ -778,6 +852,55 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         invoke(request, responseHandler, executionContext);
     }
     
+    /**
+     * <p>
+     * Describes Amazon RDS instances.
+     * </p>
+     *
+     * @param describeRdsDbInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeRdsDbInstances service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeRdsDbInstances service method,
+     *         as returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeRdsDbInstancesResult describeRdsDbInstances(DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeRdsDbInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRdsDbInstancesRequest> request = null;
+        Response<DescribeRdsDbInstancesResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRdsDbInstancesRequestMarshaller().marshall(describeRdsDbInstancesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeRdsDbInstancesResult, JsonUnmarshallerContext> unmarshaller = new DescribeRdsDbInstancesResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeRdsDbInstancesResult> responseHandler = new JsonResponseHandler<DescribeRdsDbInstancesResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
     /**
      * <p>
      * Describes the results of specified commands.
@@ -1674,6 +1797,43 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
+     * Updates an Amazon RDS instance.
+     * </p>
+     *
+     * @param updateRdsDbInstanceRequest Container for the necessary
+     *           parameters to execute the UpdateRdsDbInstance service method on
+     *           AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateRdsDbInstance(UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateRdsDbInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateRdsDbInstanceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new UpdateRdsDbInstanceRequestMarshaller().marshall(updateRdsDbInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
      * Updates a specified user profile.
      * </p>
      * <p>
@@ -2506,6 +2666,53 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
+     * Updates an Amazon EBS volume's name or mount point. For more
+     * information, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
+     * .
+     * </p>
+     * <p>
+     * <b>Required Permissions</b> : To use this action, an IAM user must
+     * have a Manage permissions level for the stack, or an attached policy
+     * that explicitly grants permissions. For more information on user
+     * permissions, see
+     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
+     * .
+     * </p>
+     *
+     * @param updateVolumeRequest Container for the necessary parameters to
+     *           execute the UpdateVolume service method on AWSOpsWorks.
+     * 
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateVolumeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateVolumeRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new UpdateVolumeRequestMarshaller().marshall(updateVolumeRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
      * Deletes a user profile.
      * </p>
      * <p>
@@ -2608,53 +2815,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         }
     }
 
-    /**
-     * <p>
-     * Updates an Amazon EBS volume's name or mount point. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
-     * .
-     * </p>
-     * <p>
-     * <b>Required Permissions</b> : To use this action, an IAM user must
-     * have a Manage permissions level for the stack, or an attached policy
-     * that explicitly grants permissions. For more information on user
-     * permissions, see
-     * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions </a>
-     * .
-     * </p>
-     *
-     * @param updateVolumeRequest Container for the necessary parameters to
-     *           execute the UpdateVolume service method on AWSOpsWorks.
-     * 
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateVolumeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateVolumeRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-        try {
-            request = new UpdateVolumeRequestMarshaller().marshall(updateVolumeRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-        } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-        }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
     /**
      * <p>
      * Describe specified users.

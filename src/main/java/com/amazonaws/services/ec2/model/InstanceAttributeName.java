@@ -30,7 +30,8 @@ public enum InstanceAttributeName {
     ProductCodes("productCodes"),
     SourceDestCheck("sourceDestCheck"),
     GroupSet("groupSet"),
-    EbsOptimized("ebsOptimized");
+    EbsOptimized("ebsOptimized"),
+    SriovNetSupport("sriovNetSupport");
 
     private String value;
 
@@ -78,6 +79,8 @@ public enum InstanceAttributeName {
             return InstanceAttributeName.GroupSet;
         } else if ("ebsOptimized".equals(value)) {
             return InstanceAttributeName.EbsOptimized;
+        } else if ("sriovNetSupport".equals(value)) {
+            return InstanceAttributeName.SriovNetSupport;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

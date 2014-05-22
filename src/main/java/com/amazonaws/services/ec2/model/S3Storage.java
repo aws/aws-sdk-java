@@ -37,7 +37,10 @@ public class S3Storage implements Serializable {
     private String prefix;
 
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      */
     private String aWSAccessKeyId;
 
@@ -137,29 +140,47 @@ public class S3Storage implements Serializable {
     }
 
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      *
-     * @return The access key ID of the owner of the bucket.
+     * @return The access key ID of the owner of the bucket. Before you specify a
+     *         value for your access key ID, review and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     *         Practices for Managing AWS Access Keys</a>.
      */
     public String getAWSAccessKeyId() {
         return aWSAccessKeyId;
     }
     
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      *
-     * @param aWSAccessKeyId The access key ID of the owner of the bucket.
+     * @param aWSAccessKeyId The access key ID of the owner of the bucket. Before you specify a
+     *         value for your access key ID, review and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     *         Practices for Managing AWS Access Keys</a>.
      */
     public void setAWSAccessKeyId(String aWSAccessKeyId) {
         this.aWSAccessKeyId = aWSAccessKeyId;
     }
     
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param aWSAccessKeyId The access key ID of the owner of the bucket.
+     * @param aWSAccessKeyId The access key ID of the owner of the bucket. Before you specify a
+     *         value for your access key ID, review and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     *         Practices for Managing AWS Access Keys</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

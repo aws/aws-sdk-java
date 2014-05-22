@@ -27,6 +27,12 @@ import com.amazonaws.services.ec2.model.transform.AttachVolumeRequestMarshaller;
  * exposes it to the instance with the specified device name.
  * </p>
  * <p>
+ * Encrypted Amazon EBS volumes may only be attached to instances that
+ * support Amazon EBS encryption. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
+ * <p>
  * For a list of supported device names, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .

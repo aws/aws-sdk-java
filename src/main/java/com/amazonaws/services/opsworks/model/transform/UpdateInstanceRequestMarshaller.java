@@ -118,6 +118,9 @@ public class UpdateInstanceRequestMarshaller implements Marshaller<Request<Updat
             if (updateInstanceRequest.isInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(updateInstanceRequest.isInstallUpdatesOnBoot());
             }
+            if (updateInstanceRequest.isEbsOptimized() != null) {
+                jsonWriter.key("EbsOptimized").value(updateInstanceRequest.isEbsOptimized());
+            }
 
           jsonWriter.endObject();
 

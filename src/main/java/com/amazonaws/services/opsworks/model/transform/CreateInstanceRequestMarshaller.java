@@ -115,6 +115,9 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             if (createInstanceRequest.getAvailabilityZone() != null) {
                 jsonWriter.key("AvailabilityZone").value(createInstanceRequest.getAvailabilityZone());
             }
+            if (createInstanceRequest.getVirtualizationType() != null) {
+                jsonWriter.key("VirtualizationType").value(createInstanceRequest.getVirtualizationType());
+            }
             if (createInstanceRequest.getSubnetId() != null) {
                 jsonWriter.key("SubnetId").value(createInstanceRequest.getSubnetId());
             }

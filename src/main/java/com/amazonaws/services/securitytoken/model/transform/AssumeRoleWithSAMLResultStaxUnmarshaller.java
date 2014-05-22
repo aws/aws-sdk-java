@@ -55,6 +55,26 @@ public class AssumeRoleWithSAMLResultStaxUnmarshaller implements Unmarshaller<As
                     assumeRoleWithSAMLResult.setPackedPolicySize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Subject", targetDepth)) {
+                    assumeRoleWithSAMLResult.setSubject(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("SubjectType", targetDepth)) {
+                    assumeRoleWithSAMLResult.setSubjectType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Issuer", targetDepth)) {
+                    assumeRoleWithSAMLResult.setIssuer(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Audience", targetDepth)) {
+                    assumeRoleWithSAMLResult.setAudience(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("NameQualifier", targetDepth)) {
+                    assumeRoleWithSAMLResult.setNameQualifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return assumeRoleWithSAMLResult;

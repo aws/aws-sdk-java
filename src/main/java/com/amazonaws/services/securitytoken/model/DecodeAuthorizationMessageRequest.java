@@ -42,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The message is encoded because the details of the authorization status
  * can constitute privileged information that the user who requested the
  * action should not see. To decode an authorization status message, a
- * user must be granted permissions via an AWS IAM policy to request the
+ * user must be granted permissions via an IAM policy to request the
  * <code>DecodeAuthorizationMessage</code> (
  * <code>sts:DecodeAuthorizationMessage</code> )
  * action.
@@ -55,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <li>Whether the request was denied due to an explicit deny or due to
  * the absence of an explicit allow. For more information, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow"> Determining Whether a Request is Allowed or Denied </a>
- * in <i>Using AWS IAM</i> . </li>
+ * in <i>Using IAM</i> . </li>
  * <li>The principal who made the request.</li>
  * <li>The requested action.</li>
  * <li>The requested resource.</li>

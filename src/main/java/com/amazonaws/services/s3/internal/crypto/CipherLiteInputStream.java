@@ -61,12 +61,12 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
         super(is);
         this.multipart = multipart;
         this.cipherLite = c;
-        this.bufin = new byte[buffsize];
         if (buffsize <= 0 || (buffsize % DEFAULT_IN_BUFFER_SIZE) != 0) {
             throw new IllegalArgumentException("buffsize (" + buffsize
                     + ") must be a positive multiple of "
                     + DEFAULT_IN_BUFFER_SIZE);
         }
+        this.bufin = new byte[buffsize];
     }
 
     protected CipherLiteInputStream(InputStream is) {

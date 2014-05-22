@@ -86,6 +86,30 @@ public class UpdateAppRequestMarshaller implements Marshaller<Request<UpdateAppR
             if (updateAppRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(updateAppRequest.getDescription());
             }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<DataSource> dataSourcesList = (com.amazonaws.internal.ListWithAutoConstructFlag<DataSource>)(updateAppRequest.getDataSources());
+            if (dataSourcesList != null && !(dataSourcesList.isAutoConstruct() && dataSourcesList.isEmpty())) {
+
+                jsonWriter.key("DataSources");
+                jsonWriter.array();
+
+                for (DataSource dataSourcesListValue : dataSourcesList) {
+                    if (dataSourcesListValue != null) {
+                        jsonWriter.object();
+                        if (dataSourcesListValue.getType() != null) {
+                            jsonWriter.key("Type").value(dataSourcesListValue.getType());
+                        }
+                        if (dataSourcesListValue.getArn() != null) {
+                            jsonWriter.key("Arn").value(dataSourcesListValue.getArn());
+                        }
+                        if (dataSourcesListValue.getDatabaseName() != null) {
+                            jsonWriter.key("DatabaseName").value(dataSourcesListValue.getDatabaseName());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
             if (updateAppRequest.getType() != null) {
                 jsonWriter.key("Type").value(updateAppRequest.getType());
             }

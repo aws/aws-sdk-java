@@ -39,7 +39,7 @@ public class CreateVpcPeeringConnectionRequestMarshaller implements Marshaller<R
 
         Request<CreateVpcPeeringConnectionRequest> request = new DefaultRequest<CreateVpcPeeringConnectionRequest>(createVpcPeeringConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpcPeeringConnection");
-        request.addParameter("Version", "2014-02-01");
+        request.addParameter("Version", "2014-05-01");
 
         if (createVpcPeeringConnectionRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getVpcId()));

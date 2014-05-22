@@ -33,6 +33,8 @@ import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
+import com.amazonaws.services.s3.model.EncryptedInitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.EncryptedPutObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -391,6 +393,15 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
             throw new IllegalArgumentException(errorMessage);
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Use {@link EncryptedPutObjectRequest} to specify materialsDescription for the EncryptionMaterials to be used for 
+     * this request.AmazonS3EncryptionClient would use {@link EncryptionMaterialsProvider#getEncryptionMaterials(java.util.Map)} to 
+     * retrieve encryption materials corresponding to the materialsDescription specified in the current request.
+     * </p>
+     * 
+     */
     @Override
     public PutObjectResult putObject(PutObjectRequest req) {
         return crypto.putObjectSecurely(req);
@@ -423,6 +434,14 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         return crypto.completeMultipartUploadSecurely(req);
     }
 
+    /** 
+     * {@inheritDoc}
+     * <p>
+     * Use {@link EncryptedInitiateMultipartUploadRequest} to specify materialsDescription for the EncryptionMaterials to be used for this request.
+     * AmazonS3EncryptionClient would use {@link EncryptionMaterialsProvider#getEncryptionMaterials(java.util.Map)} to retrieve encryption materials
+     * corresponding to the materialsDescription specified in the current request.
+     * </p>
+     */
     @Override
     public InitiateMultipartUploadResult initiateMultipartUpload(
             InitiateMultipartUploadRequest req) {

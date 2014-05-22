@@ -28,6 +28,7 @@ import javax.crypto.SecretKey;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
@@ -38,11 +39,14 @@ import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoStorageMode;
+import com.amazonaws.services.s3.model.EncryptedInitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.EncryptedPutObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.MaterialsDescriptionProvider;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
@@ -126,7 +130,12 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<EncryptedUploadContext> {
                     Cipher.ENCRYPT_MODE, cryptoConfig.getCryptoProvider(),
                     encryptedUploadContext.getFirstInitializationVector());
 
-            EncryptionMaterials encryptionMaterials = kekMaterialsProvider.getEncryptionMaterials();
+            EncryptionMaterials encryptionMaterials;
+            if (encryptedUploadContext.getMaterialsDescription() != null) {
+                encryptionMaterials = kekMaterialsProvider.getEncryptionMaterials(encryptedUploadContext.getMaterialsDescription());
+            } else {
+                encryptionMaterials = kekMaterialsProvider.getEncryptionMaterials();
+            }
 
             // Encrypt the envelope symmetric key
             byte[] encryptedEnvelopeSymmetricKey = getEncryptedSymmetricKey(encryptedUploadContext.getEnvelopeEncryptionKey(), encryptionMaterials, cryptoConfig.getCryptoProvider());
@@ -151,7 +160,12 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<EncryptedUploadContext> {
         Cipher symmetricCipher = createSymmetricCipher(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, cryptoConfig.getCryptoProvider(), null);
 
         if (cryptoConfig.getStorageMode() == CryptoStorageMode.ObjectMetadata) {
-      EncryptionMaterials encryptionMaterials = kekMaterialsProvider.getEncryptionMaterials();
+            EncryptionMaterials encryptionMaterials = null;
+            if (initiateMultipartUploadRequest instanceof EncryptedInitiateMultipartUploadRequest) {
+                encryptionMaterials = kekMaterialsProvider.getEncryptionMaterials(((EncryptedInitiateMultipartUploadRequest) initiateMultipartUploadRequest).getMaterialsDescription());
+            } else {
+                encryptionMaterials = kekMaterialsProvider.getEncryptionMaterials();
+            }
             // Encrypt the envelope symmetric key
             byte[] encryptedEnvelopeSymmetricKey = getEncryptedSymmetricKey(envelopeSymmetricKey, encryptionMaterials, cryptoConfig.getCryptoProvider());
 
@@ -166,6 +180,9 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<EncryptedUploadContext> {
         EncryptedUploadContext encryptedUploadContext = new EncryptedUploadContext(initiateMultipartUploadRequest.getBucketName(), initiateMultipartUploadRequest.getKey(), envelopeSymmetricKey);
         encryptedUploadContext.setNextInitializationVector(symmetricCipher.getIV());
         encryptedUploadContext.setFirstInitializationVector(symmetricCipher.getIV());
+        if (initiateMultipartUploadRequest instanceof EncryptedInitiateMultipartUploadRequest) {
+            encryptedUploadContext.setMaterialsDescription(((EncryptedInitiateMultipartUploadRequest) initiateMultipartUploadRequest).getMaterialsDescription());
+        }
         multipartUploadContexts.put(result.getUploadId(), encryptedUploadContext);
 
         return result;
@@ -267,8 +284,8 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<EncryptedUploadContext> {
     private PutObjectResult putObjectUsingMetadata(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         // Create instruction
-        EncryptionInstruction instruction = generateInstruction(this.kekMaterialsProvider, this.cryptoConfig.getCryptoProvider());
-
+        EncryptionInstruction instruction = encryptionInstructionOf(putObjectRequest);
+        
         // Encrypt the object data with the instruction
         PutObjectRequest encryptedObjectRequest = encryptRequestUsingInstruction(putObjectRequest, instruction);
 
@@ -298,8 +315,8 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<EncryptedUploadContext> {
     private PutObjectResult putObjectUsingInstructionFile(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         // Create instruction
-        EncryptionInstruction instruction = generateInstruction(this.kekMaterialsProvider, this.cryptoConfig.getCryptoProvider());
-
+        EncryptionInstruction instruction = encryptionInstructionOf(putObjectRequest);
+        
         // Encrypt the object data with the instruction
         PutObjectRequest encryptedObjectRequest = encryptRequestUsingInstruction(putObjectRequest, instruction);
 
@@ -312,6 +329,20 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<EncryptedUploadContext> {
 
         // Return the result of the encrypted object PUT.
         return encryptedObjectResult;
+    }
+    
+    private EncryptionInstruction encryptionInstructionOf(
+            AmazonWebServiceRequest req) {
+        EncryptionInstruction instruction;
+        if (req instanceof MaterialsDescriptionProvider) {
+            MaterialsDescriptionProvider p = (MaterialsDescriptionProvider)req;
+            instruction = generateInstruction(this.kekMaterialsProvider,
+                    p.getMaterialsDescription(),
+                    this.cryptoConfig.getCryptoProvider());
+        } else {
+            instruction = generateInstruction(this.kekMaterialsProvider, this.cryptoConfig.getCryptoProvider());
+        }
+        return instruction;
     }
 
     @Override

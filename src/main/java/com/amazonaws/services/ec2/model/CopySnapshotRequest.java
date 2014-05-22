@@ -26,7 +26,12 @@ import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
  * Copies a point-in-time snapshot of an Amazon EBS volume and stores it
  * in Amazon S3. You can copy the snapshot within the same region or from
  * one region to another. You can use the snapshot to create Amazon EBS
- * volumes or Amazon Machine Images (AMIs).
+ * volumes or Amazon Machine Images (AMIs). The snapshot is copied to the
+ * regional endpoint that you send the HTTP request to.
+ * </p>
+ * <p>
+ * Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of
+ * unencrypted snapshots remain unencrypted.
  * </p>
  * <p>
  * For more information, see
@@ -52,6 +57,33 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * A description for the new Amazon EBS snapshot.
      */
     private String description;
+
+    /**
+     * The destination region of the snapshot copy operation. This parameter
+     * is required in the <code>PresignedUrl</code>.
+     */
+    private String destinationRegion;
+
+    /**
+     * The pre-signed URL that facilitates copying an encrypted snapshot.
+     * This parameter is only required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional
+     * parameter in all other cases. The <code>PresignedUrl</code> should use
+     * the snapshot source endpoint, the <code>CopySnapshot</code> action,
+     * and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
+     * parameters. The <code>PresignedUrl</code> must be signed using AWS
+     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that
+     * is described in <a
+     * href="http://http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
+     * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy
+     * operation to fail asynchronously, and the snapshot will move to an
+     * <code>error</code> state.
+     */
+    private String presignedUrl;
 
     /**
      * The ID of the region that contains the snapshot to be copied.
@@ -153,6 +185,174 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * The destination region of the snapshot copy operation. This parameter
+     * is required in the <code>PresignedUrl</code>.
+     *
+     * @return The destination region of the snapshot copy operation. This parameter
+     *         is required in the <code>PresignedUrl</code>.
+     */
+    public String getDestinationRegion() {
+        return destinationRegion;
+    }
+    
+    /**
+     * The destination region of the snapshot copy operation. This parameter
+     * is required in the <code>PresignedUrl</code>.
+     *
+     * @param destinationRegion The destination region of the snapshot copy operation. This parameter
+     *         is required in the <code>PresignedUrl</code>.
+     */
+    public void setDestinationRegion(String destinationRegion) {
+        this.destinationRegion = destinationRegion;
+    }
+    
+    /**
+     * The destination region of the snapshot copy operation. This parameter
+     * is required in the <code>PresignedUrl</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param destinationRegion The destination region of the snapshot copy operation. This parameter
+     *         is required in the <code>PresignedUrl</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CopySnapshotRequest withDestinationRegion(String destinationRegion) {
+        this.destinationRegion = destinationRegion;
+        return this;
+    }
+
+    /**
+     * The pre-signed URL that facilitates copying an encrypted snapshot.
+     * This parameter is only required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional
+     * parameter in all other cases. The <code>PresignedUrl</code> should use
+     * the snapshot source endpoint, the <code>CopySnapshot</code> action,
+     * and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
+     * parameters. The <code>PresignedUrl</code> must be signed using AWS
+     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that
+     * is described in <a
+     * href="http://http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
+     * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy
+     * operation to fail asynchronously, and the snapshot will move to an
+     * <code>error</code> state.
+     *
+     * @return The pre-signed URL that facilitates copying an encrypted snapshot.
+     *         This parameter is only required when copying an encrypted snapshot
+     *         with the Amazon EC2 Query API; it is available as an optional
+     *         parameter in all other cases. The <code>PresignedUrl</code> should use
+     *         the snapshot source endpoint, the <code>CopySnapshot</code> action,
+     *         and include the <code>SourceRegion</code>,
+     *         <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
+     *         parameters. The <code>PresignedUrl</code> must be signed using AWS
+     *         Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
+     *         S3, the signing algorithm for this parameter uses the same logic that
+     *         is described in <a
+     *         href="http://http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in
+     *         the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     *         improperly signed <code>PresignedUrl</code> will cause the copy
+     *         operation to fail asynchronously, and the snapshot will move to an
+     *         <code>error</code> state.
+     */
+    public String getPresignedUrl() {
+        return presignedUrl;
+    }
+    
+    /**
+     * The pre-signed URL that facilitates copying an encrypted snapshot.
+     * This parameter is only required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional
+     * parameter in all other cases. The <code>PresignedUrl</code> should use
+     * the snapshot source endpoint, the <code>CopySnapshot</code> action,
+     * and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
+     * parameters. The <code>PresignedUrl</code> must be signed using AWS
+     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that
+     * is described in <a
+     * href="http://http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
+     * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy
+     * operation to fail asynchronously, and the snapshot will move to an
+     * <code>error</code> state.
+     *
+     * @param presignedUrl The pre-signed URL that facilitates copying an encrypted snapshot.
+     *         This parameter is only required when copying an encrypted snapshot
+     *         with the Amazon EC2 Query API; it is available as an optional
+     *         parameter in all other cases. The <code>PresignedUrl</code> should use
+     *         the snapshot source endpoint, the <code>CopySnapshot</code> action,
+     *         and include the <code>SourceRegion</code>,
+     *         <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
+     *         parameters. The <code>PresignedUrl</code> must be signed using AWS
+     *         Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
+     *         S3, the signing algorithm for this parameter uses the same logic that
+     *         is described in <a
+     *         href="http://http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in
+     *         the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     *         improperly signed <code>PresignedUrl</code> will cause the copy
+     *         operation to fail asynchronously, and the snapshot will move to an
+     *         <code>error</code> state.
+     */
+    public void setPresignedUrl(String presignedUrl) {
+        this.presignedUrl = presignedUrl;
+    }
+    
+    /**
+     * The pre-signed URL that facilitates copying an encrypted snapshot.
+     * This parameter is only required when copying an encrypted snapshot
+     * with the Amazon EC2 Query API; it is available as an optional
+     * parameter in all other cases. The <code>PresignedUrl</code> should use
+     * the snapshot source endpoint, the <code>CopySnapshot</code> action,
+     * and include the <code>SourceRegion</code>,
+     * <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
+     * parameters. The <code>PresignedUrl</code> must be signed using AWS
+     * Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
+     * S3, the signing algorithm for this parameter uses the same logic that
+     * is described in <a
+     * href="http://http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * Requests by Using Query Parameters (AWS Signature Version 4)</a> in
+     * the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy
+     * operation to fail asynchronously, and the snapshot will move to an
+     * <code>error</code> state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param presignedUrl The pre-signed URL that facilitates copying an encrypted snapshot.
+     *         This parameter is only required when copying an encrypted snapshot
+     *         with the Amazon EC2 Query API; it is available as an optional
+     *         parameter in all other cases. The <code>PresignedUrl</code> should use
+     *         the snapshot source endpoint, the <code>CopySnapshot</code> action,
+     *         and include the <code>SourceRegion</code>,
+     *         <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
+     *         parameters. The <code>PresignedUrl</code> must be signed using AWS
+     *         Signature Version 4. Because Amazon EBS snapshots are stored in Amazon
+     *         S3, the signing algorithm for this parameter uses the same logic that
+     *         is described in <a
+     *         href="http://http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in
+     *         the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     *         improperly signed <code>PresignedUrl</code> will cause the copy
+     *         operation to fail asynchronously, and the snapshot will move to an
+     *         <code>error</code> state.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CopySnapshotRequest withPresignedUrl(String presignedUrl) {
+        this.presignedUrl = presignedUrl;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -178,7 +378,9 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         sb.append("{");
         if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");
         if (getSourceSnapshotId() != null) sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() );
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getDestinationRegion() != null) sb.append("DestinationRegion: " + getDestinationRegion() + ",");
+        if (getPresignedUrl() != null) sb.append("PresignedUrl: " + getPresignedUrl() );
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +393,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode()); 
         hashCode = prime * hashCode + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getPresignedUrl() == null) ? 0 : getPresignedUrl().hashCode()); 
         return hashCode;
     }
     
@@ -208,6 +412,10 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         if (other.getSourceSnapshotId() != null && other.getSourceSnapshotId().equals(this.getSourceSnapshotId()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getDestinationRegion() == null ^ this.getDestinationRegion() == null) return false;
+        if (other.getDestinationRegion() != null && other.getDestinationRegion().equals(this.getDestinationRegion()) == false) return false; 
+        if (other.getPresignedUrl() == null ^ this.getPresignedUrl() == null) return false;
+        if (other.getPresignedUrl() != null && other.getPresignedUrl().equals(this.getPresignedUrl()) == false) return false; 
         return true;
     }
     

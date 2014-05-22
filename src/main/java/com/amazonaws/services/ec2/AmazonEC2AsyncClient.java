@@ -284,6 +284,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * If a Linux/Unix instance does not cleanly shut down within four
      * minutes, Amazon EC2 performs a hard reboot.
      * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html"> Getting Console Output and Rebooting Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
      *
      * @param rebootInstancesRequest Container for the necessary parameters
      *           to execute the RebootInstances operation on AmazonEC2.
@@ -320,6 +325,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * If a Linux/Unix instance does not cleanly shut down within four
      * minutes, Amazon EC2 performs a hard reboot.
+     * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html"> Getting Console Output and Rebooting Instances </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param rebootInstancesRequest Container for the necessary parameters
@@ -1505,6 +1515,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"> Troubleshooting Stopping Your Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
      *
      * @param stopInstancesRequest Container for the necessary parameters to
      *           execute the StopInstances operation on AmazonEC2.
@@ -1566,6 +1581,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * automatically deleted. For more information about the differences
      * between stopping and terminating instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"> Troubleshooting Stopping Your Instance </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
@@ -2341,6 +2361,32 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
      * .
      * </p>
+     * 
+     * <ul>
+     * <li> <code>domain-name-servers</code> - The IP addresses of up to
+     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
+     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
+     * specifying more than one domain name server, specify the IP addresses
+     * in a single parameter, separated by commas.</li>
+     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * <code>us-east-1</code> ,
+     * specify <code>ec2.internal</code> . If you're using
+     * AmazonProvidedDNS in another region, specify
+     * <code>region.compute.internal</code> (for example,
+     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
+     * domain name (for example, <code>MyCompany.com</code> ).</li>
+     * <li> <code>ntp-servers</code> - The IP addresses of up to four
+     * Network Time Protocol (NTP) servers.</li>
+     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
+     * four NetBIOS name servers.</li>
+     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
+     * or 8). We recommend that you specify 2 (broadcast and multicast are
+     * not currently supported). For more information about these node types,
+     * see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * . </li>
+     * 
+     * </ul>
      * <p>
      * For more information about DHCP options, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
@@ -2381,6 +2427,32 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
      * .
      * </p>
+     * 
+     * <ul>
+     * <li> <code>domain-name-servers</code> - The IP addresses of up to
+     * four domain name servers, or <code>AmazonProvidedDNS</code> . The
+     * default DHCP option set specifies <code>AmazonProvidedDNS</code> . If
+     * specifying more than one domain name server, specify the IP addresses
+     * in a single parameter, separated by commas.</li>
+     * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * <code>us-east-1</code> ,
+     * specify <code>ec2.internal</code> . If you're using
+     * AmazonProvidedDNS in another region, specify
+     * <code>region.compute.internal</code> (for example,
+     * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
+     * domain name (for example, <code>MyCompany.com</code> ).</li>
+     * <li> <code>ntp-servers</code> - The IP addresses of up to four
+     * Network Time Protocol (NTP) servers.</li>
+     * <li> <code>netbios-name-servers</code> - The IP addresses of up to
+     * four NetBIOS name servers.</li>
+     * <li> <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4,
+     * or 8). We recommend that you specify 2 (broadcast and multicast are
+     * not currently supported). For more information about these node types,
+     * see
+     * <a href="http://www.ietf.org/rfc/rfc2132.txt"> RFC 2132 </a>
+     * . </li>
+     * 
+     * </ul>
      * <p>
      * For more information about DHCP options, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
@@ -2659,7 +2731,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
-     * ec2-upload-disk-image command in the Amazon EC2 command-line interface
+     * ec2-import-volume command in the Amazon EC2 command-line interface
      * (CLI) tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -2693,7 +2765,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Creates an import volume task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
-     * ec2-upload-disk-image command in the Amazon EC2 command-line interface
+     * ec2-import-volume command in the Amazon EC2 command-line interface
      * (CLI) tools. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -3631,6 +3703,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * exposes it to the instance with the specified device name.
      * </p>
      * <p>
+     * Encrypted Amazon EBS volumes may only be attached to instances that
+     * support Amazon EBS encryption. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * <p>
      * For a list of supported device names, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"> Attaching an Amazon EBS Volume to an Instance </a> . Any device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"> Amazon EC2 Instance Store </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -3691,6 +3769,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Attaches an Amazon EBS volume to a running or stopped instance and
      * exposes it to the instance with the specified device name.
+     * </p>
+     * <p>
+     * Encrypted Amazon EBS volumes may only be attached to instances that
+     * support Amazon EBS encryption. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * For a list of supported device names, see
@@ -4193,8 +4277,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * devices, you should stop the instance before taking the snapshot.
      * </p>
      * <p>
+     * Snapshots that are taken from encrypted volumes are automatically
+     * encrypted. Volumes that are created from encrypted snapshots are also
+     * automatically encrypted. Your encrypted volumes and any associated
+     * snapshots always remain protected.
+     * </p>
+     * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html"> Amazon Elastic Block Store </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
@@ -4250,8 +4340,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * devices, you should stop the instance before taking the snapshot.
      * </p>
      * <p>
+     * Snapshots that are taken from encrypted volumes are automatically
+     * encrypted. Volumes that are created from encrypted snapshots are also
+     * automatically encrypted. Your encrypted volumes and any associated
+     * snapshots always remain protected.
+     * </p>
+     * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html"> Creating an Amazon EBS Snapshot </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html"> Amazon Elastic Block Store </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
@@ -4299,7 +4395,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <code>available</code> state (not attached to an instance).
      * </p>
      * <p>
-     * <b>NOTE:</b> The volume remains in the deleting state for several
+     * <b>NOTE:</b> The volume may remain in the deleting state for several
      * minutes.
      * </p>
      * <p>
@@ -4339,7 +4435,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <code>available</code> state (not attached to an instance).
      * </p>
      * <p>
-     * <b>NOTE:</b> The volume remains in the deleting state for several
+     * <b>NOTE:</b> The volume may remain in the deleting state for several
      * minutes.
      * </p>
      * <p>
@@ -5335,9 +5431,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * VPC cannot have overlapping CIDR blocks.
      * </p>
      * <p>
-     * The owner of the peer VPC must accept the the peering request to
-     * activate the peering connection. The VPC peering connection request
-     * expires after 7 days, after which it cannot be accepted or rejected.
+     * The owner of the peer VPC must accept the peering request to activate
+     * the peering connection. The VPC peering connection request expires
+     * after 7 days, after which it cannot be accepted or rejected.
      * </p>
      * <p>
      * A <code>CreateVpcPeeringConnection</code> request between VPCs with
@@ -5378,9 +5474,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * VPC cannot have overlapping CIDR blocks.
      * </p>
      * <p>
-     * The owner of the peer VPC must accept the the peering request to
-     * activate the peering connection. The VPC peering connection request
-     * expires after 7 days, after which it cannot be accepted or rejected.
+     * The owner of the peer VPC must accept the peering request to activate
+     * the peering connection. The VPC peering connection request expires
+     * after 7 days, after which it cannot be accepted or rejected.
      * </p>
      * <p>
      * A <code>CreateVpcPeeringConnection</code> request between VPCs with
@@ -6175,7 +6271,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Creates an import instance task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
-     * ec2-upload-disk-image command in the EC2 command line tools. For more
+     * ec2-import-volume command in the EC2 command line tools. For more
      * information, see Using the Command Line Tools to Import Your Virtual
      * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
      * </p>
@@ -6208,7 +6304,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Creates an import instance task using metadata from the specified disk
      * image. After importing the image, you then upload it using the
-     * ec2-upload-disk-image command in the EC2 command line tools. For more
+     * ec2-import-volume command in the EC2 command line tools. For more
      * information, see Using the Command Line Tools to Import Your Virtual
      * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
      * </p>
@@ -7700,6 +7796,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * If any of the AMIs have a product code attached for which the user has
      * not subscribed, <code>RunInstances</code> fails.
      * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html"> What To Do If An Instance Immediately Terminates </a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"> Troubleshooting Connecting to Your Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
      *
      * @param runInstancesRequest Container for the necessary parameters to
      *           execute the RunInstances operation on AmazonEC2.
@@ -7759,6 +7860,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * If any of the AMIs have a product code attached for which the user has
      * not subscribed, <code>RunInstances</code> fails.
+     * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html"> What To Do If An Instance Immediately Terminates </a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"> Troubleshooting Connecting to Your Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param runInstancesRequest Container for the necessary parameters to
@@ -9330,7 +9436,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Initiates the copy of an AMI from the specified source region to the
-     * region in which the request was made.
+     * region in which the request was made. You specify the destination
+     * region by using its endpoint when making the request. AMIs that use
+     * encrypted Amazon EBS snapshots cannot be copied with this method.
      * </p>
      * <p>
      * For more information, see
@@ -9365,7 +9473,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Initiates the copy of an AMI from the specified source region to the
-     * region in which the request was made.
+     * region in which the request was made. You specify the destination
+     * region by using its endpoint when making the request. AMIs that use
+     * encrypted Amazon EBS snapshots cannot be copied with this method.
      * </p>
      * <p>
      * For more information, see
@@ -10683,6 +10793,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html"> Troubleshooting Terminating Your Instance </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
      *
      * @param terminateInstancesRequest Container for the necessary
      *           parameters to execute the TerminateInstances operation on AmazonEC2.
@@ -10732,6 +10847,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * automatically deleted. For more information about the differences
      * between stopping and terminating instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
+     * <p>
+     * For more information about troubleshooting, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html"> Troubleshooting Terminating Your Instance </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
@@ -11771,12 +11891,22 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Creates an Amazon EBS volume that can be attached to any instance in
-     * the same Availability Zone.
+     * Creates an Amazon EBS volume that can be attached to an instance in
+     * the same Availability Zone. The volume is created in the specified
+     * region.
      * </p>
      * <p>
-     * Any AWS Marketplace product codes from the snapshot are propagated to
-     * the volume.
+     * You can create a new empty volume or restore a volume from an Amazon
+     * EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+     * propagated to the volume.
+     * </p>
+     * <p>
+     * You can create encrypted volumes with the <code>Encrypted</code>
+     * parameter. Encrypted volumes may only be attached to instances that
+     * support Amazon EBS encryption. Volumes that are created from encrypted
+     * snapshots are also automatically encrypted. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * For more information, see
@@ -11810,12 +11940,22 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Creates an Amazon EBS volume that can be attached to any instance in
-     * the same Availability Zone.
+     * Creates an Amazon EBS volume that can be attached to an instance in
+     * the same Availability Zone. The volume is created in the specified
+     * region.
      * </p>
      * <p>
-     * Any AWS Marketplace product codes from the snapshot are propagated to
-     * the volume.
+     * You can create a new empty volume or restore a volume from an Amazon
+     * EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+     * propagated to the volume.
+     * </p>
+     * <p>
+     * You can create encrypted volumes with the <code>Encrypted</code>
+     * parameter. Encrypted volumes may only be attached to instances that
+     * support Amazon EBS encryption. Volumes that are created from encrypted
+     * snapshots are also automatically encrypted. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"> Amazon EBS Encryption </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * For more information, see
@@ -11948,6 +12088,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * This ensures that your instance is started on a different underlying
      * host.
      * </p>
+     * <p>
+     * For more information about failed status checks, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html"> Troubleshooting Instances with Failed Status Checks </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions"> Working with an Instance That Has a Scheduled Event </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * </p>
      *
      * @param describeInstanceStatusRequest Container for the necessary
      *           parameters to execute the DescribeInstanceStatus operation on
@@ -12060,6 +12205,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * instance when its event code is <code>instance-retirement</code> .
      * This ensures that your instance is started on a different underlying
      * host.
+     * </p>
+     * <p>
+     * For more information about failed status checks, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html"> Troubleshooting Instances with Failed Status Checks </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions"> Working with an Instance That Has a Scheduled Event </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      *
      * @param describeInstanceStatusRequest Container for the necessary
@@ -13116,7 +13266,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Copies a point-in-time snapshot of an Amazon EBS volume and stores it
      * in Amazon S3. You can copy the snapshot within the same region or from
      * one region to another. You can use the snapshot to create Amazon EBS
-     * volumes or Amazon Machine Images (AMIs).
+     * volumes or Amazon Machine Images (AMIs). The snapshot is copied to the
+     * regional endpoint that you send the HTTP request to.
+     * </p>
+     * <p>
+     * Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of
+     * unencrypted snapshots remain unencrypted.
      * </p>
      * <p>
      * For more information, see
@@ -13153,7 +13308,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * Copies a point-in-time snapshot of an Amazon EBS volume and stores it
      * in Amazon S3. You can copy the snapshot within the same region or from
      * one region to another. You can use the snapshot to create Amazon EBS
-     * volumes or Amazon Machine Images (AMIs).
+     * volumes or Amazon Machine Images (AMIs). The snapshot is copied to the
+     * regional endpoint that you send the HTTP request to.
+     * </p>
+     * <p>
+     * Copies of encrypted Amazon EBS snapshots remain encrypted. Copies of
+     * unencrypted snapshots remain unencrypted.
      * </p>
      * <p>
      * For more information, see

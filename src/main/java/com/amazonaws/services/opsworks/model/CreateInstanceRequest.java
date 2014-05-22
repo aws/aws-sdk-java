@@ -119,6 +119,12 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String availabilityZone;
 
     /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     */
+    private String virtualizationType;
+
+    /**
      * The ID of the instance's subnet. If the stack is running in a VPC, you
      * can use this parameter to override the stack's default subnet ID value
      * and direct AWS OpsWorks to launch the instance in a different subnet.
@@ -776,6 +782,45 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     *
+     * @return The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     */
+    public String getVirtualizationType() {
+        return virtualizationType;
+    }
+    
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     *
+     * @param virtualizationType The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     */
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+    
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param virtualizationType The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateInstanceRequest withVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+        return this;
+    }
+
+    /**
      * The ID of the instance's subnet. If the stack is running in a VPC, you
      * can use this parameter to override the stack's default subnet ID value
      * and direct AWS OpsWorks to launch the instance in a different subnet.
@@ -1223,6 +1268,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (getAmiId() != null) sb.append("AmiId: " + getAmiId() + ",");
         if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");
         if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
@@ -1246,6 +1292,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode()); 
         hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode()); 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
@@ -1280,6 +1327,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (other.getSshKeyName() != null && other.getSshKeyName().equals(this.getSshKeyName()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null) return false;
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false) return false; 
         if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
         if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;

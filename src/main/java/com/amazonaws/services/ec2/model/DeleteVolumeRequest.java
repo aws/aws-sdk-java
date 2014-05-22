@@ -27,7 +27,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVolumeRequestMarshaller;
  * <code>available</code> state (not attached to an instance).
  * </p>
  * <p>
- * <b>NOTE:</b> The volume remains in the deleting state for several
+ * <b>NOTE:</b> The volume may remain in the deleting state for several
  * minutes.
  * </p>
  * <p>

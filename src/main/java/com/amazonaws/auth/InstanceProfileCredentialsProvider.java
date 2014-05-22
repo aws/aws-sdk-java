@@ -15,7 +15,6 @@
 package com.amazonaws.auth;
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.Date;
 
 import org.apache.commons.logging.Log;
@@ -163,14 +162,16 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
                 String expiration = expirationJsonNode.asText();
                 expiration = expiration.replaceAll("\\+0000$", "Z");
 
-                credentialsExpiration = DateUtils.parseISO8601Date(expiration);
+                try {
+                    credentialsExpiration = DateUtils.parseISO8601Date(expiration);
+                } catch(Exception ex) {
+                    handleError("Unable to parse credentials expiration date from Amazon EC2 metadata service", ex);
+                }
             }
         } catch (JsonMappingException e) {
             handleError("Unable to parse credentials from Amazon EC2 metadata service", e);
         } catch (IOException e) {
             handleError("Unable to load credentials from Amazon EC2 metadata service", e);
-        } catch (ParseException e) {
-            handleError("Unable to parse credentials expiration date from Amazon EC2 metadata service", e);
         }
     }
 

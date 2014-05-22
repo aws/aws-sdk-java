@@ -111,7 +111,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Set to <code>simple</code> to enable enhanced networking for the AMI
-     * and any instances that you launch from the AMI.
+     * and any instances that you launch from the AMI. <p>There is no way to
+     * disable enhanced networking at this time. <p>This option is supported
+     * only for HVM AMIs. Specifying this option with a PV AMI can make
+     * instances launched from the AMI unreachable.
      */
     private String sriovNetSupport;
 
@@ -554,10 +557,16 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Set to <code>simple</code> to enable enhanced networking for the AMI
-     * and any instances that you launch from the AMI.
+     * and any instances that you launch from the AMI. <p>There is no way to
+     * disable enhanced networking at this time. <p>This option is supported
+     * only for HVM AMIs. Specifying this option with a PV AMI can make
+     * instances launched from the AMI unreachable.
      *
      * @return Set to <code>simple</code> to enable enhanced networking for the AMI
-     *         and any instances that you launch from the AMI.
+     *         and any instances that you launch from the AMI. <p>There is no way to
+     *         disable enhanced networking at this time. <p>This option is supported
+     *         only for HVM AMIs. Specifying this option with a PV AMI can make
+     *         instances launched from the AMI unreachable.
      */
     public String getSriovNetSupport() {
         return sriovNetSupport;
@@ -565,10 +574,16 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Set to <code>simple</code> to enable enhanced networking for the AMI
-     * and any instances that you launch from the AMI.
+     * and any instances that you launch from the AMI. <p>There is no way to
+     * disable enhanced networking at this time. <p>This option is supported
+     * only for HVM AMIs. Specifying this option with a PV AMI can make
+     * instances launched from the AMI unreachable.
      *
      * @param sriovNetSupport Set to <code>simple</code> to enable enhanced networking for the AMI
-     *         and any instances that you launch from the AMI.
+     *         and any instances that you launch from the AMI. <p>There is no way to
+     *         disable enhanced networking at this time. <p>This option is supported
+     *         only for HVM AMIs. Specifying this option with a PV AMI can make
+     *         instances launched from the AMI unreachable.
      */
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
@@ -576,12 +591,18 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * Set to <code>simple</code> to enable enhanced networking for the AMI
-     * and any instances that you launch from the AMI.
+     * and any instances that you launch from the AMI. <p>There is no way to
+     * disable enhanced networking at this time. <p>This option is supported
+     * only for HVM AMIs. Specifying this option with a PV AMI can make
+     * instances launched from the AMI unreachable.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sriovNetSupport Set to <code>simple</code> to enable enhanced networking for the AMI
-     *         and any instances that you launch from the AMI.
+     *         and any instances that you launch from the AMI. <p>There is no way to
+     *         disable enhanced networking at this time. <p>This option is supported
+     *         only for HVM AMIs. Specifying this option with a PV AMI can make
+     *         instances launched from the AMI unreachable.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

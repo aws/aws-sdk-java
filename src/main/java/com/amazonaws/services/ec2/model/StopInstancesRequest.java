@@ -59,6 +59,11 @@ import com.amazonaws.services.ec2.model.transform.StopInstancesRequestMarshaller
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
+ * <p>
+ * For more information about troubleshooting, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"> Troubleshooting Stopping Your Instance </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest)
  */
