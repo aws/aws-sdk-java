@@ -20,8 +20,6 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Date;
 
-import org.apache.commons.codec.binary.Base64;
-
 /**
  * Utilities for converting objects to strings.
  */
@@ -127,15 +125,11 @@ public class StringUtils {
      * @return The base64 encoded contents of the specified byte buffer.
      */
     public static String fromByteBuffer(ByteBuffer byteBuffer) {
-        byte[] encodedBytes = null;
-        if (byteBuffer.hasArray()) {
-            encodedBytes = Base64.encodeBase64(byteBuffer.array());
-        } else {
-            byte[] binaryData = new byte[byteBuffer.limit()];
-            byteBuffer.get(binaryData);
-            encodedBytes = Base64.encodeBase64(binaryData);
-        }
-        return new String(encodedBytes);
+        if (byteBuffer.hasArray())
+            return Base64.encodeAsString(byteBuffer.array());
+        byte[] binaryData = new byte[byteBuffer.limit()];
+        byteBuffer.get(binaryData);
+        return Base64.encodeAsString(binaryData);
     }
 
     public static String replace( String originalString, String partToMatch, String replacement ) {

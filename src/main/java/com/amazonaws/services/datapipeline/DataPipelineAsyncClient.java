@@ -757,8 +757,8 @@ public class DataPipelineAsyncClient extends DataPipelineClient
     
     /**
      * <p>
-     * Queries a pipeline for the names of objects that match a specified set
-     * of conditions.
+     * Queries a pipeline for the names of objects that match a specified
+     * set of conditions.
      * </p>
      * <p>
      * The objects returned by QueryObjects are paginated and then filtered
@@ -795,8 +795,8 @@ public class DataPipelineAsyncClient extends DataPipelineClient
 
     /**
      * <p>
-     * Queries a pipeline for the names of objects that match a specified set
-     * of conditions.
+     * Queries a pipeline for the names of objects that match a specified
+     * set of conditions.
      * </p>
      * <p>
      * The objects returned by QueryObjects are paginated and then filtered
@@ -1173,8 +1173,9 @@ public class DataPipelineAsyncClient extends DataPipelineClient
     
     /**
      * <p>
-     * Evaluates a string in the context of a specified object. A task runner
-     * can use this action to evaluate SQL queries stored in Amazon S3.
+     * Evaluates a string in the context of a specified object. A task
+     * runner can use this action to evaluate SQL queries stored in Amazon
+     * S3.
      * </p>
      *
      * @param evaluateExpressionRequest Container for the necessary
@@ -1204,8 +1205,9 @@ public class DataPipelineAsyncClient extends DataPipelineClient
 
     /**
      * <p>
-     * Evaluates a string in the context of a specified object. A task runner
-     * can use this action to evaluate SQL queries stored in Amazon S3.
+     * Evaluates a string in the context of a specified object. A task
+     * runner can use this action to evaluate SQL queries stored in Amazon
+     * S3.
      * </p>
      *
      * @param evaluateExpressionRequest Container for the necessary

@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /** 
@@ -54,7 +55,10 @@ public class EncryptedInitiateMultipartUploadRequest extends InitiateMultipartUp
      * @param materialsDescription the materialsDescription to set
      */
     public void setMaterialsDescription(Map<String, String> materialsDescription) {
-        this.materialsDescription = Collections.unmodifiableMap(materialsDescription);
+        this.materialsDescription = materialsDescription == null
+                ? null 
+                : Collections.unmodifiableMap(new HashMap<String,String>(materialsDescription))
+                ;
     }
     
     /**
@@ -65,5 +69,4 @@ public class EncryptedInitiateMultipartUploadRequest extends InitiateMultipartUp
         setMaterialsDescription(materialsDescription);
         return this;
     }
-    
 }

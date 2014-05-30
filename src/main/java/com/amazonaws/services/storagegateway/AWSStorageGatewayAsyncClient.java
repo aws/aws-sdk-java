@@ -317,8 +317,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * the volume by providing its Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2
-     * API. in Amazon Elastic Compute Cloud API Reference.
+     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon
+     * EC2 API. in Amazon Elastic Compute Cloud API Reference.
      * </p>
      *
      * @param deleteSnapshotScheduleRequest Container for the necessary
@@ -360,8 +360,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * the volume by providing its Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2
-     * API. in Amazon Elastic Compute Cloud API Reference.
+     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon
+     * EC2 API. in Amazon Elastic Compute Cloud API Reference.
      * </p>
      *
      * @param deleteSnapshotScheduleRequest Container for the necessary
@@ -486,8 +486,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation creates a volume on a specified gateway. This operation
-     * is supported only for the gateway-cached volume architecture.
+     * This operation creates a volume on a specified gateway. This
+     * operation is supported only for the gateway-cached volume
+     * architecture.
      * </p>
      * <p>
      * The size of the volume to create is inferred from the disk size. You
@@ -532,8 +533,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation creates a volume on a specified gateway. This operation
-     * is supported only for the gateway-cached volume architecture.
+     * This operation creates a volume on a specified gateway. This
+     * operation is supported only for the gateway-cached volume
+     * architecture.
      * </p>
      * <p>
      * The size of the volume to create is inferred from the disk size. You
@@ -711,9 +713,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * Console.
      * </p>
      * <p>
-     * In the CreateSnapshot request you identify the volume by providing its
-     * Amazon Resource Name (ARN). You must also provide description for the
-     * snapshot. When AWS Storage Gateway takes the snapshot of specified
+     * In the CreateSnapshot request you identify the volume by providing
+     * its Amazon Resource Name (ARN). You must also provide description for
+     * the snapshot. When AWS Storage Gateway takes the snapshot of specified
      * volume, the snapshot and description appears in the AWS Storage
      * Gateway Console. In response, AWS Storage Gateway returns you a
      * snapshot ID. You can use this snapshot ID to check the snapshot
@@ -764,9 +766,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * Console.
      * </p>
      * <p>
-     * In the CreateSnapshot request you identify the volume by providing its
-     * Amazon Resource Name (ARN). You must also provide description for the
-     * snapshot. When AWS Storage Gateway takes the snapshot of specified
+     * In the CreateSnapshot request you identify the volume by providing
+     * its Amazon Resource Name (ARN). You must also provide description for
+     * the snapshot. When AWS Storage Gateway takes the snapshot of specified
      * volume, the snapshot and description appears in the AWS Storage
      * Gateway Console. In response, AWS Storage Gateway returns you a
      * snapshot ID. You can use this snapshot ID to check the snapshot
@@ -823,9 +825,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * gateway-stored volume architecture.
      * </p>
      * <p>
-     * <b>NOTE:</b> Working storage is also referred to as upload buffer. You
-     * can also use the AddUploadBuffer operation to add upload buffer to a
-     * stored-volume gateway.
+     * <b>NOTE:</b> Working storage is also referred to as upload buffer.
+     * You can also use the AddUploadBuffer operation to add upload buffer to
+     * a stored-volume gateway.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to
@@ -864,9 +866,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * gateway-stored volume architecture.
      * </p>
      * <p>
-     * <b>NOTE:</b> Working storage is also referred to as upload buffer. You
-     * can also use the AddUploadBuffer operation to add upload buffer to a
-     * stored-volume gateway.
+     * <b>NOTE:</b> Working storage is also referred to as upload buffer.
+     * You can also use the AddUploadBuffer operation to add upload buffer to
+     * a stored-volume gateway.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to
@@ -995,8 +997,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * limiting is in effect.
      * </p>
      * <p>
-     * This operation only returns a value for a bandwidth rate limit only if
-     * the limit is set. If no limits are set for the gateway, then this
+     * This operation only returns a value for a bandwidth rate limit only
+     * if the limit is set. If no limits are set for the gateway, then this
      * operation returns only the gateway ARN in the response body. To
      * specify which gateway to describe, use the Amazon Resource Name (ARN)
      * of the gateway in your request.
@@ -1035,8 +1037,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * limiting is in effect.
      * </p>
      * <p>
-     * This operation only returns a value for a bandwidth rate limit only if
-     * the limit is set. If no limits are set for the gateway, then this
+     * This operation only returns a value for a bandwidth rate limit only
+     * if the limit is set. If no limits are set for the gateway, then this
      * operation returns only the gateway ARN in the response body. To
      * specify which gateway to describe, use the Amazon Resource Name (ARN)
      * of the gateway in your request.
@@ -1171,9 +1173,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * gateway.
      * </p>
      * <p>
-     * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway. The
-     * retrieved tape is read-only. The virtual tape can be retrieved to only
-     * a Gateway-Virtual Tape Library. There is no charge for retrieving
+     * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway.
+     * The retrieved tape is read-only. The virtual tape can be retrieved to
+     * only a Gateway-Virtual Tape Library. There is no charge for retrieving
      * recovery points.
      * </p>
      *
@@ -1214,9 +1216,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * gateway.
      * </p>
      * <p>
-     * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway. The
-     * retrieved tape is read-only. The virtual tape can be retrieved to only
-     * a Gateway-Virtual Tape Library. There is no charge for retrieving
+     * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway.
+     * The retrieved tape is read-only. The virtual tape can be retrieved to
+     * only a Gateway-Virtual Tape Library. There is no charge for retrieving
      * recovery points.
      * </p>
      *
@@ -1262,10 +1264,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation updates the Challenge-Handshake Authentication Protocol
-     * (CHAP) credentials for a specified iSCSI target. By default, a gateway
-     * does not have CHAP enabled; however, for added security, you might use
-     * it.
+     * This operation updates the Challenge-Handshake Authentication
+     * Protocol (CHAP) credentials for a specified iSCSI target. By default,
+     * a gateway does not have CHAP enabled; however, for added security, you
+     * might use it.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> When you update CHAP credentials, all existing
@@ -1301,10 +1303,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation updates the Challenge-Handshake Authentication Protocol
-     * (CHAP) credentials for a specified iSCSI target. By default, a gateway
-     * does not have CHAP enabled; however, for added security, you might use
-     * it.
+     * This operation updates the Challenge-Handshake Authentication
+     * Protocol (CHAP) credentials for a specified iSCSI target. By default,
+     * a gateway does not have CHAP enabled; however, for added security, you
+     * might use it.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> When you update CHAP credentials, all existing
@@ -1354,8 +1356,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * Creates one or more virtual tapes. You write data to the virtual tapes
-     * and then archive the tapes.
+     * Creates one or more virtual tapes. You write data to the virtual
+     * tapes and then archive the tapes.
      * </p>
      * <p>
      * <b>NOTE:</b>Cache storage must be allocated to the gateway before you
@@ -1389,8 +1391,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * Creates one or more virtual tapes. You write data to the virtual tapes
-     * and then archive the tapes.
+     * Creates one or more virtual tapes. You write data to the virtual
+     * tapes and then archive the tapes.
      * </p>
      * <p>
      * <b>NOTE:</b>Cache storage must be allocated to the gateway before you
@@ -1604,8 +1606,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation configures one or more gateway local disks as cache for
-     * a cached-volume gateway. This operation is supported only for the
+     * This operation configures one or more gateway local disks as cache
+     * for a cached-volume gateway. This operation is supported only for the
      * gateway-cached volume architecture (see
      * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html"> Storage Gateway Concepts </a>
      * ).
@@ -1642,8 +1644,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation configures one or more gateway local disks as cache for
-     * a cached-volume gateway. This operation is supported only for the
+     * This operation configures one or more gateway local disks as cache
+     * for a cached-volume gateway. This operation is supported only for the
      * gateway-cached volume architecture (see
      * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html"> Storage Gateway Concepts </a>
      * ).
@@ -2278,10 +2280,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation updates the bandwidth rate limits of a gateway. You can
-     * update both the upload and download bandwidth rate limit or specify
-     * only one of the two. If you don't set a bandwidth rate limit, the
-     * existing rate limit remains.
+     * This operation updates the bandwidth rate limits of a gateway. You
+     * can update both the upload and download bandwidth rate limit or
+     * specify only one of the two. If you don't set a bandwidth rate limit,
+     * the existing rate limit remains.
      * </p>
      * <p>
      * By default, a gateway's bandwidth rate limits are not set. If you
@@ -2290,8 +2292,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * bandwidth.
      * </p>
      * <p>
-     * To specify which gateway to update, use the Amazon Resource Name (ARN)
-     * of the gateway in your request.
+     * To specify which gateway to update, use the Amazon Resource Name
+     * (ARN) of the gateway in your request.
      * </p>
      *
      * @param updateBandwidthRateLimitRequest Container for the necessary
@@ -2322,10 +2324,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation updates the bandwidth rate limits of a gateway. You can
-     * update both the upload and download bandwidth rate limit or specify
-     * only one of the two. If you don't set a bandwidth rate limit, the
-     * existing rate limit remains.
+     * This operation updates the bandwidth rate limits of a gateway. You
+     * can update both the upload and download bandwidth rate limit or
+     * specify only one of the two. If you don't set a bandwidth rate limit,
+     * the existing rate limit remains.
      * </p>
      * <p>
      * By default, a gateway's bandwidth rate limits are not set. If you
@@ -2334,8 +2336,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * bandwidth.
      * </p>
      * <p>
-     * To specify which gateway to update, use the Amazon Resource Name (ARN)
-     * of the gateway in your request.
+     * To specify which gateway to update, use the Amazon Resource Name
+     * (ARN) of the gateway in your request.
      * </p>
      *
      * @param updateBandwidthRateLimitRequest Container for the necessary
@@ -2475,13 +2477,14 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * volume architecture.
      * </p>
      * <p>
-     * <b>NOTE:</b> Working storage is also referred to as upload buffer. You
-     * can also use the DescribeUploadBuffer operation to add upload buffer
-     * to a stored-volume gateway.
+     * <b>NOTE:</b> Working storage is also referred to as upload buffer.
+     * You can also use the DescribeUploadBuffer operation to add upload
+     * buffer to a stored-volume gateway.
      * </p>
      * <p>
-     * The response includes disk IDs that are configured as working storage,
-     * and it includes the amount of working storage allocated and used.
+     * The response includes disk IDs that are configured as working
+     * storage, and it includes the amount of working storage allocated and
+     * used.
      * </p>
      *
      * @param describeWorkingStorageRequest Container for the necessary
@@ -2517,13 +2520,14 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * volume architecture.
      * </p>
      * <p>
-     * <b>NOTE:</b> Working storage is also referred to as upload buffer. You
-     * can also use the DescribeUploadBuffer operation to add upload buffer
-     * to a stored-volume gateway.
+     * <b>NOTE:</b> Working storage is also referred to as upload buffer.
+     * You can also use the DescribeUploadBuffer operation to add upload
+     * buffer to a stored-volume gateway.
      * </p>
      * <p>
-     * The response includes disk IDs that are configured as working storage,
-     * and it includes the amount of working storage allocated and used.
+     * The response includes disk IDs that are configured as working
+     * storage, and it includes the amount of working storage allocated and
+     * used.
      * </p>
      *
      * @param describeWorkingStorageRequest Container for the necessary
@@ -2980,11 +2984,11 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation delete the specified gateway volume that you previously
-     * created using the CreateStorediSCSIVolume API. For gateway-stored
-     * volumes, the local disk that was configured as the storage volume is
-     * not deleted. You can reuse the local disk to create another storage
-     * volume.
+     * This operation delete the specified gateway volume that you
+     * previously created using the CreateStorediSCSIVolume API. For
+     * gateway-stored volumes, the local disk that was configured as the
+     * storage volume is not deleted. You can reuse the local disk to create
+     * another storage volume.
      * </p>
      * <p>
      * Before you delete a gateway volume, make sure there are no iSCSI
@@ -2997,8 +3001,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * in the <i>Amazon Elastic Compute Cloud API Reference</i> .
      * </p>
      * <p>
-     * In the request, you must provide the Amazon Resource Name (ARN) of the
-     * storage volume you want to delete.
+     * In the request, you must provide the Amazon Resource Name (ARN) of
+     * the storage volume you want to delete.
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -3027,11 +3031,11 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation delete the specified gateway volume that you previously
-     * created using the CreateStorediSCSIVolume API. For gateway-stored
-     * volumes, the local disk that was configured as the storage volume is
-     * not deleted. You can reuse the local disk to create another storage
-     * volume.
+     * This operation delete the specified gateway volume that you
+     * previously created using the CreateStorediSCSIVolume API. For
+     * gateway-stored volumes, the local disk that was configured as the
+     * storage volume is not deleted. You can reuse the local disk to create
+     * another storage volume.
      * </p>
      * <p>
      * Before you delete a gateway volume, make sure there are no iSCSI
@@ -3044,8 +3048,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * in the <i>Amazon Elastic Compute Cloud API Reference</i> .
      * </p>
      * <p>
-     * In the request, you must provide the Amazon Resource Name (ARN) of the
-     * storage volume you want to delete.
+     * In the request, you must provide the Amazon Resource Name (ARN) of
+     * the storage volume you want to delete.
      * </p>
      *
      * @param deleteVolumeRequest Container for the necessary parameters to
@@ -3099,9 +3103,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * ListVolumeRecoveryPoints.
      * </p>
      * <p>
-     * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you
-     * identify the volume by providing its Amazon Resource Name (ARN). You
-     * must also provide a description for the snapshot. When AWS Storage
+     * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request,
+     * you identify the volume by providing its Amazon Resource Name (ARN).
+     * You must also provide a description for the snapshot. When AWS Storage
      * Gateway takes a snapshot of the specified volume, the snapshot and its
      * description appear in the AWS Storage Gateway console. In response,
      * AWS Storage Gateway returns you a snapshot ID. You can use this
@@ -3109,8 +3113,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * want to create a volume from a snapshot.
      * </p>
      * <p>
-     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2
-     * API. For more information, in Amazon Elastic Compute Cloud API
+     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon
+     * EC2 API. For more information, in Amazon Elastic Compute Cloud API
      * Reference.
      * </p>
      *
@@ -3153,9 +3157,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * ListVolumeRecoveryPoints.
      * </p>
      * <p>
-     * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you
-     * identify the volume by providing its Amazon Resource Name (ARN). You
-     * must also provide a description for the snapshot. When AWS Storage
+     * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request,
+     * you identify the volume by providing its Amazon Resource Name (ARN).
+     * You must also provide a description for the snapshot. When AWS Storage
      * Gateway takes a snapshot of the specified volume, the snapshot and its
      * description appear in the AWS Storage Gateway console. In response,
      * AWS Storage Gateway returns you a snapshot ID. You can use this
@@ -3163,8 +3167,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * want to create a volume from a snapshot.
      * </p>
      * <p>
-     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2
-     * API. For more information, in Amazon Elastic Compute Cloud API
+     * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon
+     * EC2 API. For more information, in Amazon Elastic Compute Cloud API
      * Reference.
      * </p>
      *
@@ -3223,14 +3227,14 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * environment.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You no longer pay software charges after the gateway
-     * is deleted; however, your existing Amazon EBS snapshots persist and
-     * you will continue to be billed for these snapshots.??You can choose to
-     * remove all remaining Amazon EBS snapshots by canceling your Amazon EC2
-     * subscription.?? If you prefer not to cancel your Amazon EC2
-     * subscription, you can delete your snapshots using the Amazon EC2
-     * console. For more information, see the AWS Storage Gateway Detail
-     * Page.
+     * <b>IMPORTANT:</b> You no longer pay software charges after the
+     * gateway is deleted; however, your existing Amazon EBS snapshots
+     * persist and you will continue to be billed for these snapshots.??You
+     * can choose to remove all remaining Amazon EBS snapshots by canceling
+     * your Amazon EC2 subscription.?? If you prefer not to cancel your
+     * Amazon EC2 subscription, you can delete your snapshots using the
+     * Amazon EC2 console. For more information, see the AWS Storage Gateway
+     * Detail Page.
      * </p>
      *
      * @param deleteGatewayRequest Container for the necessary parameters to
@@ -3272,14 +3276,14 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * environment.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You no longer pay software charges after the gateway
-     * is deleted; however, your existing Amazon EBS snapshots persist and
-     * you will continue to be billed for these snapshots.??You can choose to
-     * remove all remaining Amazon EBS snapshots by canceling your Amazon EC2
-     * subscription.?? If you prefer not to cancel your Amazon EC2
-     * subscription, you can delete your snapshots using the Amazon EC2
-     * console. For more information, see the AWS Storage Gateway Detail
-     * Page.
+     * <b>IMPORTANT:</b> You no longer pay software charges after the
+     * gateway is deleted; however, your existing Amazon EBS snapshots
+     * persist and you will continue to be billed for these snapshots.??You
+     * can choose to remove all remaining Amazon EBS snapshots by canceling
+     * your Amazon EC2 subscription.?? If you prefer not to cancel your
+     * Amazon EC2 subscription, you can delete your snapshots using the
+     * Amazon EC2 console. For more information, see the AWS Storage Gateway
+     * Detail Page.
      * </p>
      *
      * @param deleteGatewayRequest Container for the necessary parameters to
@@ -3455,9 +3459,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * to check the status. For more information, see ActivateGateway.
      * </p>
      * <p>
-     * If do not intend to use the gateway again, you must delete the gateway
-     * (using DeleteGateway) to no longer pay software charges associated
-     * with the gateway.
+     * If do not intend to use the gateway again, you must delete the
+     * gateway (using DeleteGateway) to no longer pay software charges
+     * associated with the gateway.
      * </p>
      *
      * @param shutdownGatewayRequest Container for the necessary parameters
@@ -3513,9 +3517,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * to check the status. For more information, see ActivateGateway.
      * </p>
      * <p>
-     * If do not intend to use the gateway again, you must delete the gateway
-     * (using DeleteGateway) to no longer pay software charges associated
-     * with the gateway.
+     * If do not intend to use the gateway again, you must delete the
+     * gateway (using DeleteGateway) to no longer pay software charges
+     * associated with the gateway.
      * </p>
      *
      * @param shutdownGatewayRequest Container for the necessary parameters
@@ -3558,9 +3562,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation deletes the bandwidth rate limits of a gateway. You can
-     * delete either the upload and download bandwidth rate limit, or you can
-     * delete both. If you delete only one of the limits, the other limit
+     * This operation deletes the bandwidth rate limits of a gateway. You
+     * can delete either the upload and download bandwidth rate limit, or you
+     * can delete both. If you delete only one of the limits, the other limit
      * remains unchanged. To specify which gateway to work with, use the
      * Amazon Resource Name (ARN) of the gateway in your request.
      * </p>
@@ -3593,9 +3597,9 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation deletes the bandwidth rate limits of a gateway. You can
-     * delete either the upload and download bandwidth rate limit, or you can
-     * delete both. If you delete only one of the limits, the other limit
+     * This operation deletes the bandwidth rate limits of a gateway. You
+     * can delete either the upload and download bandwidth rate limit, or you
+     * can delete both. If you delete only one of the limits, the other limit
      * remains unchanged. To specify which gateway to work with, use the
      * Amazon Resource Name (ARN) of the gateway in your request.
      * </p>
@@ -3648,8 +3652,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * DescribeStorediSCSIVolumes API.
      * </p>
      * <p>
-     * The operation supports pagination. By default, the operation returns a
-     * maximum of up to 100 volumes. You can optionally specify the
+     * The operation supports pagination. By default, the operation returns
+     * a maximum of up to 100 volumes. You can optionally specify the
      * <code>Limit</code> field in the body to limit the number of volumes in
      * the response. If the number of volumes returned in the response is
      * truncated, the response includes a Marker field. You can use this
@@ -3689,8 +3693,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * DescribeStorediSCSIVolumes API.
      * </p>
      * <p>
-     * The operation supports pagination. By default, the operation returns a
-     * maximum of up to 100 volumes. You can optionally specify the
+     * The operation supports pagination. By default, the operation returns
+     * a maximum of up to 100 volumes. You can optionally specify the
      * <code>Limit</code> field in the body to limit the number of volumes in
      * the response. If the number of volumes returned in the response is
      * truncated, the response includes a Marker field. You can use this
@@ -3938,10 +3942,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * number of gateways returned in a response.
      * </p>
      * <p>
-     * If you have more gateways than are returned in a response-that is, the
-     * response returns only a truncated list of your gateways-the response
-     * contains a marker that you can specify in your next request to fetch
-     * the next page of gateways.
+     * If you have more gateways than are returned in a response-that is,
+     * the response returns only a truncated list of your gateways-the
+     * response contains a marker that you can specify in your next request
+     * to fetch the next page of gateways.
      * </p>
      *
      * @param listGatewaysRequest Container for the necessary parameters to
@@ -3980,10 +3984,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * number of gateways returned in a response.
      * </p>
      * <p>
-     * If you have more gateways than are returned in a response-that is, the
-     * response returns only a truncated list of your gateways-the response
-     * contains a marker that you can specify in your next request to fetch
-     * the next page of gateways.
+     * If you have more gateways than are returned in a response-that is,
+     * the response returns only a truncated list of your gateways-the
+     * response contains a marker that you can specify in your next request
+     * to fetch the next page of gateways.
      * </p>
      *
      * @param listGatewaysRequest Container for the necessary parameters to
@@ -4202,10 +4206,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation returns description of the gateway volumes specified in
-     * the request. The list of gateway volumes in the request must be from
-     * one gateway. In the response Amazon Storage Gateway returns volume
-     * information sorted by volume ARNs.
+     * This operation returns description of the gateway volumes specified
+     * in the request. The list of gateway volumes in the request must be
+     * from one gateway. In the response Amazon Storage Gateway returns
+     * volume information sorted by volume ARNs.
      * </p>
      *
      * @param describeStorediSCSIVolumesRequest Container for the necessary
@@ -4236,10 +4240,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation returns description of the gateway volumes specified in
-     * the request. The list of gateway volumes in the request must be from
-     * one gateway. In the response Amazon Storage Gateway returns volume
-     * information sorted by volume ARNs.
+     * This operation returns description of the gateway volumes specified
+     * in the request. The list of gateway volumes in the request must be
+     * from one gateway. In the response Amazon Storage Gateway returns
+     * volume information sorted by volume ARNs.
      * </p>
      *
      * @param describeStorediSCSIVolumesRequest Container for the necessary
@@ -4284,8 +4288,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     
     /**
      * <p>
-     * This operation lists the recovery points for a specified gateway. This
-     * operation is supported only for the gateway-cached volume
+     * This operation lists the recovery points for a specified gateway.
+     * This operation is supported only for the gateway-cached volume
      * architecture.
      * </p>
      * <p>
@@ -4324,8 +4328,8 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
     /**
      * <p>
-     * This operation lists the recovery points for a specified gateway. This
-     * operation is supported only for the gateway-cached volume
+     * This operation lists the recovery points for a specified gateway.
+     * This operation is supported only for the gateway-cached volume
      * architecture.
      * </p>
      * <p>

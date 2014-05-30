@@ -135,15 +135,16 @@ public interface AWSSecurityTokenService {
     
     /**
      * <p>
-     * Returns a set of temporary credentials for an AWS account or IAM user.
-     * The credentials consist of an access key ID, a secret access key, and
-     * a security token. Typically, you use <code>GetSessionToken</code> if
-     * you want to use MFA to protect programmatic calls to specific AWS APIs
-     * like Amazon EC2 <code>StopInstances</code> . MFA-enabled IAM users
-     * would need to call <code>GetSessionToken</code> and submit an MFA code
-     * that is associated with their MFA device. Using the temporary security
-     * credentials that are returned from the call, IAM users can then make
-     * programmatic calls to APIs that require MFA authentication.
+     * Returns a set of temporary credentials for an AWS account or IAM
+     * user. The credentials consist of an access key ID, a secret access
+     * key, and a security token. Typically, you use
+     * <code>GetSessionToken</code> if you want to use MFA to protect
+     * programmatic calls to specific AWS APIs like Amazon EC2
+     * <code>StopInstances</code> . MFA-enabled IAM users would need to call
+     * <code>GetSessionToken</code> and submit an MFA code that is associated
+     * with their MFA device. Using the temporary security credentials that
+     * are returned from the call, IAM users can then make programmatic calls
+     * to APIs that require MFA authentication.
      * </p>
      * <p>
      * The <code>GetSessionToken</code> action must be called by using the
@@ -215,13 +216,12 @@ public interface AWSSecurityTokenService {
      * HTTP code.
      * </p>
      * <p>
-     * The message is encoded because the details of the authorization status
-     * can constitute privileged information that the user who requested the
-     * action should not see. To decode an authorization status message, a
-     * user must be granted permissions via an IAM policy to request the
-     * <code>DecodeAuthorizationMessage</code> (
-     * <code>sts:DecodeAuthorizationMessage</code> )
-     * action.
+     * The message is encoded because the details of the authorization
+     * status can constitute privileged information that the user who
+     * requested the action should not see. To decode an authorization status
+     * message, a user must be granted permissions via an IAM policy to
+     * request the <code>DecodeAuthorizationMessage</code> (
+     * <code>sts:DecodeAuthorizationMessage</code> ) action.
      * </p>
      * <p>
      * The decoded message includes the following type of information:
@@ -300,12 +300,12 @@ public interface AWSSecurityTokenService {
      * in <i>Using Temporary Security Credentials</i> .
      * </p>
      * <p>
-     * Before your application can call <code>AssumeRoleWithSAML</code> , you
-     * must configure your SAML identity provider (IdP) to issue the claims
-     * required by AWS. Additionally, you must use AWS Identity and Access
-     * Management (IAM) to create a SAML provider entity in your AWS account
-     * that represents your identity provider, and create an IAM role that
-     * specifies this SAML provider in its trust policy.
+     * Before your application can call <code>AssumeRoleWithSAML</code> ,
+     * you must configure your SAML identity provider (IdP) to issue the
+     * claims required by AWS. Additionally, you must use AWS Identity and
+     * Access Management (IAM) to create a SAML provider entity in your AWS
+     * account that represents your identity provider, and create an IAM role
+     * that specifies this SAML provider in its trust policy.
      * </p>
      * <p>
      * Calling <code>AssumeRoleWithSAML</code> does not require the use of
@@ -333,12 +333,16 @@ public interface AWSSecurityTokenService {
      * 
      * </ul>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      *
      * @param assumeRoleWithSAMLRequest Container for the necessary
@@ -442,16 +446,22 @@ public interface AWSSecurityTokenService {
      * 
      * </ul>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      *
      * @param assumeRoleWithWebIdentityRequest Container for the necessary
@@ -498,14 +508,14 @@ public interface AWSSecurityTokenService {
      * <code>AssumeRoleWithWebIdentity</code> .
      * </p>
      * <p>
-     * The <code>GetFederationToken</code> action must be called by using the
-     * long-term AWS security credentials of an IAM user. You can also call
-     * <code>GetFederationToken</code> using the security credentials of an
-     * AWS account (root), but this is not recommended. Instead, we recommend
-     * that you create an IAM user for the purpose of the proxy application
-     * and then attach a policy to the IAM user that limits federated users
-     * to only the actions and resources they need access to. For more
-     * information, see
+     * The <code>GetFederationToken</code> action must be called by using
+     * the long-term AWS security credentials of an IAM user. You can also
+     * call <code>GetFederationToken</code> using the security credentials of
+     * an AWS account (root), but this is not recommended. Instead, we
+     * recommend that you create an IAM user for the purpose of the proxy
+     * application and then attach a policy to the IAM user that limits
+     * federated users to only the actions and resources they need access to.
+     * For more information, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html"> IAM Best Practices </a>
      * in <i>Using IAM</i> .
      * </p>
@@ -627,9 +637,10 @@ public interface AWSSecurityTokenService {
      * in <i>Using Temporary Security Credentials</i> .
      * </p>
      * <p>
-     * The temporary security credentials are valid for the duration that you
-     * specified when calling <code>AssumeRole</code> , which can be from 900
-     * seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour.
+     * The temporary security credentials are valid for the duration that
+     * you specified when calling <code>AssumeRole</code> , which can be from
+     * 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1
+     * hour.
      * </p>
      * <p>
      * Optionally, you can pass an IAM access policy to this operation. If
@@ -683,14 +694,19 @@ public interface AWSSecurityTokenService {
      * one-time password (TOTP) that the MFA devices produces.
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      * <p>
+     * 
      * </p>
      *
      * @param assumeRoleRequest Container for the necessary parameters to
@@ -715,15 +731,16 @@ public interface AWSSecurityTokenService {
 
     /**
      * <p>
-     * Returns a set of temporary credentials for an AWS account or IAM user.
-     * The credentials consist of an access key ID, a secret access key, and
-     * a security token. Typically, you use <code>GetSessionToken</code> if
-     * you want to use MFA to protect programmatic calls to specific AWS APIs
-     * like Amazon EC2 <code>StopInstances</code> . MFA-enabled IAM users
-     * would need to call <code>GetSessionToken</code> and submit an MFA code
-     * that is associated with their MFA device. Using the temporary security
-     * credentials that are returned from the call, IAM users can then make
-     * programmatic calls to APIs that require MFA authentication.
+     * Returns a set of temporary credentials for an AWS account or IAM
+     * user. The credentials consist of an access key ID, a secret access
+     * key, and a security token. Typically, you use
+     * <code>GetSessionToken</code> if you want to use MFA to protect
+     * programmatic calls to specific AWS APIs like Amazon EC2
+     * <code>StopInstances</code> . MFA-enabled IAM users would need to call
+     * <code>GetSessionToken</code> and submit an MFA code that is associated
+     * with their MFA device. Using the temporary security credentials that
+     * are returned from the call, IAM users can then make programmatic calls
+     * to APIs that require MFA authentication.
      * </p>
      * <p>
      * The <code>GetSessionToken</code> action must be called by using the

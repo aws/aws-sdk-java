@@ -13,8 +13,6 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.transform;
-import static com.amazonaws.util.StringUtils.UTF8;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -23,9 +21,8 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
 
-import org.apache.commons.codec.binary.Base64;
-
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.util.Base64;
 
 public class SimpleTypeJsonUnmarshallers {
     /**
@@ -195,10 +192,7 @@ public class SimpleTypeJsonUnmarshallers {
     public static class ByteBufferJsonUnmarshaller implements Unmarshaller<ByteBuffer, JsonUnmarshallerContext> {
         public ByteBuffer unmarshall(JsonUnmarshallerContext unmarshallerContext) throws Exception {
             String base64EncodedString = unmarshallerContext.readText();
-            if (base64EncodedString == null) return null;
-            byte[] base64EncodedBytes = base64EncodedString
-                    .getBytes(UTF8);
-            byte[] decodedBytes = Base64.decodeBase64(base64EncodedBytes);
+            byte[] decodedBytes = Base64.decode(base64EncodedString);
             return ByteBuffer.wrap(decodedBytes);
 
         }

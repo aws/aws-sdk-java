@@ -52,6 +52,9 @@ public class UpdateScalingParametersRequestMarshaller implements Marshaller<Requ
             if (scalingParametersScalingParameters.getDesiredReplicationCount() != null) {
                 request.addParameter("ScalingParameters.DesiredReplicationCount", StringUtils.fromInteger(scalingParametersScalingParameters.getDesiredReplicationCount()));
             }
+            if (scalingParametersScalingParameters.getDesiredPartitionCount() != null) {
+                request.addParameter("ScalingParameters.DesiredPartitionCount", StringUtils.fromInteger(scalingParametersScalingParameters.getDesiredPartitionCount()));
+            }
         }
 
         return request;

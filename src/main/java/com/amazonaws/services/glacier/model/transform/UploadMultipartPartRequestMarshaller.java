@@ -47,7 +47,6 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         Request<UploadMultipartPartRequest> request = new DefaultRequest<UploadMultipartPartRequest>(uploadMultipartPartRequest, "AmazonGlacier");
         String target = "Glacier.UploadMultipartPart";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.PUT);
         if (uploadMultipartPartRequest.getChecksum() != null)
@@ -55,7 +54,7 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         
         if (uploadMultipartPartRequest.getRange() != null)
           request.addHeader("Content-Range", StringUtils.fromString(uploadMultipartPartRequest.getRange()));
-
+        
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (uploadMultipartPartRequest.getAccountId() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadMultipartPartRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getVaultName())); 
@@ -70,17 +69,17 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(uploadMultipartPartRequest.getBody());
-        request.addHeader("Content-Type", "binary/octet-stream");
+        if (!request.getHeaders().containsKey("Content-Type")) {
+            request.addHeader("Content-Type", "binary/octet-stream");
+        }
 
         return request;
     }

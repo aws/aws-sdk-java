@@ -307,7 +307,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
         if (request.getFile() != null) {
             return request.getFile().length();
         } else if (request.getInputStream() != null
-                && metadata.getRawMetadata().get(Headers.CONTENT_LENGTH) != null) {
+                && metadata.getRawMetadataValue(Headers.CONTENT_LENGTH) != null) {
             return metadata.getContentLength();
         }
         return -1;

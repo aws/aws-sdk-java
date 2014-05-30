@@ -43,6 +43,16 @@ public class ScalingParameters implements Serializable {
     private Integer desiredReplicationCount;
 
     /**
+     * The number of partitions you want to preconfigure for your domain.
+     * Only valid when you select <code>m2.2xlarge</code> as the desired
+     * instance type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     */
+    private Integer desiredPartitionCount;
+
+    /**
      * The instance type that you want to preconfigure for your domain. For
      * example, <code>search.m1.small</code>.
      * <p>
@@ -183,6 +193,60 @@ public class ScalingParameters implements Serializable {
     }
 
     /**
+     * The number of partitions you want to preconfigure for your domain.
+     * Only valid when you select <code>m2.2xlarge</code> as the desired
+     * instance type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     *
+     * @return The number of partitions you want to preconfigure for your domain.
+     *         Only valid when you select <code>m2.2xlarge</code> as the desired
+     *         instance type.
+     */
+    public Integer getDesiredPartitionCount() {
+        return desiredPartitionCount;
+    }
+    
+    /**
+     * The number of partitions you want to preconfigure for your domain.
+     * Only valid when you select <code>m2.2xlarge</code> as the desired
+     * instance type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     *
+     * @param desiredPartitionCount The number of partitions you want to preconfigure for your domain.
+     *         Only valid when you select <code>m2.2xlarge</code> as the desired
+     *         instance type.
+     */
+    public void setDesiredPartitionCount(Integer desiredPartitionCount) {
+        this.desiredPartitionCount = desiredPartitionCount;
+    }
+    
+    /**
+     * The number of partitions you want to preconfigure for your domain.
+     * Only valid when you select <code>m2.2xlarge</code> as the desired
+     * instance type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - <br/>
+     *
+     * @param desiredPartitionCount The number of partitions you want to preconfigure for your domain.
+     *         Only valid when you select <code>m2.2xlarge</code> as the desired
+     *         instance type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ScalingParameters withDesiredPartitionCount(Integer desiredPartitionCount) {
+        this.desiredPartitionCount = desiredPartitionCount;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -195,7 +259,8 @@ public class ScalingParameters implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDesiredInstanceType() != null) sb.append("DesiredInstanceType: " + getDesiredInstanceType() + ",");
-        if (getDesiredReplicationCount() != null) sb.append("DesiredReplicationCount: " + getDesiredReplicationCount() );
+        if (getDesiredReplicationCount() != null) sb.append("DesiredReplicationCount: " + getDesiredReplicationCount() + ",");
+        if (getDesiredPartitionCount() != null) sb.append("DesiredPartitionCount: " + getDesiredPartitionCount() );
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +272,7 @@ public class ScalingParameters implements Serializable {
         
         hashCode = prime * hashCode + ((getDesiredInstanceType() == null) ? 0 : getDesiredInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getDesiredReplicationCount() == null) ? 0 : getDesiredReplicationCount().hashCode()); 
+        hashCode = prime * hashCode + ((getDesiredPartitionCount() == null) ? 0 : getDesiredPartitionCount().hashCode()); 
         return hashCode;
     }
     
@@ -222,6 +288,8 @@ public class ScalingParameters implements Serializable {
         if (other.getDesiredInstanceType() != null && other.getDesiredInstanceType().equals(this.getDesiredInstanceType()) == false) return false; 
         if (other.getDesiredReplicationCount() == null ^ this.getDesiredReplicationCount() == null) return false;
         if (other.getDesiredReplicationCount() != null && other.getDesiredReplicationCount().equals(this.getDesiredReplicationCount()) == false) return false; 
+        if (other.getDesiredPartitionCount() == null ^ this.getDesiredPartitionCount() == null) return false;
+        if (other.getDesiredPartitionCount() != null && other.getDesiredPartitionCount().equals(this.getDesiredPartitionCount()) == false) return false; 
         return true;
     }
     

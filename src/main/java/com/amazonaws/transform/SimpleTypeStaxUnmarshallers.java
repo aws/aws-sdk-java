@@ -14,18 +14,15 @@
  */
 package com.amazonaws.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
-import java.text.ParseException;
 import java.util.Date;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.util.Base64;
 import com.amazonaws.util.DateUtils;
 
 /**
@@ -203,11 +200,7 @@ public class SimpleTypeStaxUnmarshallers {
     public static class ByteBufferStaxUnmarshaller implements Unmarshaller<ByteBuffer, StaxUnmarshallerContext> {
         public ByteBuffer unmarshall(StaxUnmarshallerContext unmarshallerContext) throws Exception {
             String base64EncodedString = unmarshallerContext.readText();
-            if (base64EncodedString == null) return null;
-
-            byte[] base64EncodedBytes = base64EncodedString
-                    .getBytes(UTF8);
-            byte[] decodedBytes = Base64.decodeBase64(base64EncodedBytes);
+            byte[] decodedBytes = Base64.decode(base64EncodedString);
             return ByteBuffer.wrap(decodedBytes);
 
         }

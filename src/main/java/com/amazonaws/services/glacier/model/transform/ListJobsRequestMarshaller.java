@@ -47,10 +47,8 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
         Request<ListJobsRequest> request = new DefaultRequest<ListJobsRequest>(listJobsRequest, "AmazonGlacier");
         String target = "Glacier.ListJobs";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.GET);
-
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs?marker={marker};limit={limit};completed={completed};statuscode={statuscode}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (listJobsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listJobsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (listJobsRequest.getVaultName() == null) ? "" : StringUtils.fromString(listJobsRequest.getVaultName())); 
@@ -68,15 +66,13 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

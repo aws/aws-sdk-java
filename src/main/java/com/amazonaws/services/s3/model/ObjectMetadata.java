@@ -207,7 +207,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * @return A map of the raw metadata/headers for the associated object.
      */
     public Map<String, Object> getRawMetadata() {
-        return Collections.unmodifiableMap(metadata);
+        return Collections.unmodifiableMap(new HashMap<String,Object>(metadata));
     }
 
     /**

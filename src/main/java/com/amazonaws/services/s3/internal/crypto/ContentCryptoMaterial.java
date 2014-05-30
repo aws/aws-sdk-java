@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,14 +28,13 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.commons.codec.binary.Base64;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsAccessor;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.util.Base64;
 import com.amazonaws.util.json.Jackson;
 
 /**
@@ -79,12 +76,6 @@ final class ContentCryptoMaterial {
         return cipherLite.getContentCryptoScheme();
     }
 
-    // No need for this routine once we upgraded from commons codec 1.3 to 1.6
-    private String encodeBase64String(byte[] b) {
-        byte[] encoded = Base64.encodeBase64(b);
-        return new String(encoded, UTF8);
-    }
-
     /**
      * Returns the given metadata updated with this content crypto material.
      */
@@ -92,10 +83,11 @@ final class ContentCryptoMaterial {
         // If we generated a symmetric key to encrypt the data, store it in the
         // object metadata.
         byte[] encryptedCEK = getEncryptedCEK();
-        metadata.addUserMetadata(Headers.CRYPTO_KEY_V2, encodeBase64String(encryptedCEK));
+        metadata.addUserMetadata(Headers.CRYPTO_KEY_V2,
+                Base64.encodeAsString(encryptedCEK));
         // Put the cipher initialization vector (IV) into the object metadata
         byte[] iv = cipherLite.getIV();
-        metadata.addUserMetadata(Headers.CRYPTO_IV, encodeBase64String(iv));
+        metadata.addUserMetadata(Headers.CRYPTO_IV, Base64.encodeAsString(iv));
         // Put the materials description into the object metadata as JSON
         metadata.addUserMetadata(Headers.MATERIALS_DESCRIPTION,
                 kekMaterialDescAsJson());
@@ -120,9 +112,9 @@ final class ContentCryptoMaterial {
     String toJsonString() {
         Map<String, String> map = new HashMap<String, String>();
         byte[] encryptedCEK = getEncryptedCEK();
-        map.put(Headers.CRYPTO_KEY_V2, encodeBase64String(encryptedCEK));
+        map.put(Headers.CRYPTO_KEY_V2, Base64.encodeAsString(encryptedCEK));
         byte[] iv = cipherLite.getIV();
-        map.put(Headers.CRYPTO_IV, encodeBase64String(iv));
+        map.put(Headers.CRYPTO_IV, Base64.encodeAsString(iv));
         map.put(Headers.MATERIALS_DESCRIPTION, kekMaterialDescAsJson());
         // The CRYPTO_CEK_ALGORITHM, CRYPTO_TAG_LENGTH and
         // CRYPTO_KEYWRAP_ALGORITHM were not available in the Encryption Only
@@ -147,14 +139,6 @@ final class ContentCryptoMaterial {
         if (kekMaterialDesc == null)
             kekMaterialDesc = Collections.emptyMap();
         return Jackson.toJsonString(kekMaterialDesc);
-    }
-
-    /**
-     * Returns the binary value decoded from a Base 64 string; or null if the
-     * input is null.
-     */
-    private static byte[] decodeB64(String b64s) {
-        return b64s == null ? null : Base64.decodeBase64(b64s.getBytes(UTF8));
     }
 
     /**
@@ -240,8 +224,8 @@ final class ContentCryptoMaterial {
             if (b64key == null)
                 throw new AmazonClientException("Content encrypting key not found.");
         }
-        byte[] cekWrapped = decodeB64(b64key);
-        byte[] iv = decodeB64(userMeta.get(Headers.CRYPTO_IV));
+        byte[] cekWrapped = Base64.decode(b64key);
+        byte[] iv = Base64.decode(userMeta.get(Headers.CRYPTO_IV));
         if (cekWrapped == null || iv == null) {
             throw new AmazonClientException("Content encrypting key or IV not found.");
         }
@@ -312,8 +296,8 @@ final class ContentCryptoMaterial {
             if (b64key == null)
                 throw new AmazonClientException("Content encrypting key not found.");
         }
-        byte[] cekWrapped = decodeB64(b64key);
-        byte[] iv = decodeB64(map.get(Headers.CRYPTO_IV));
+        byte[] cekWrapped = Base64.decode(b64key);
+        byte[] iv = Base64.decode(map.get(Headers.CRYPTO_IV));
         if (cekWrapped == null || iv == null) {
             throw new AmazonClientException(
                     "Necessary encryption info not found in the instruction file "

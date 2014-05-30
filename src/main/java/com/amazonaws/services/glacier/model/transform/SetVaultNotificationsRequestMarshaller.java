@@ -47,10 +47,8 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         Request<SetVaultNotificationsRequest> request = new DefaultRequest<SetVaultNotificationsRequest>(setVaultNotificationsRequest, "AmazonGlacier");
         String target = "Glacier.SetVaultNotifications";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.PUT);
-
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (setVaultNotificationsRequest.getAccountId() == null) ? "" : StringUtils.fromString(setVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (setVaultNotificationsRequest.getVaultName() == null) ? "" : StringUtils.fromString(setVaultNotificationsRequest.getVaultName())); 
@@ -64,15 +62,13 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
@@ -106,6 +102,7 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
           byte[] content = snippet.getBytes(UTF8);
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
+          request.addHeader("Content-Type", "application/x-amz-json-1.0");
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

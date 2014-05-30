@@ -1788,8 +1788,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <p>
      * Modifies the parameters of a DB parameter group. To modify more than
      * one parameter, submit a list of the following:
-     * <code>ParameterName</code> ,
-     * <code>ParameterValue</code> , and
+     * <code>ParameterName</code> , <code>ParameterValue</code> , and
      * <code>ApplyMethod</code> . A maximum of 20 parameters can be modified
      * in a single request.
      * </p>
@@ -2011,8 +2010,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     
     /**
      * <p>
-     * Creates an RDS event notification subscription. This action requires a
-     * topic ARN (Amazon Resource Name) created by either the RDS console,
+     * Creates an RDS event notification subscription. This action requires
+     * a topic ARN (Amazon Resource Name) created by either the RDS console,
      * the SNS console, or the SNS API. To obtain an ARN with SNS, you must
      * create a topic in Amazon SNS and subscribe to the topic. The ARN is
      * displayed in the SNS console.
@@ -2026,14 +2025,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * EventCategories = Availability, Backup.
      * </p>
      * <p>
-     * If you specify both the SourceType and SourceIds, such as SourceType =
-     * db-instance and SourceIdentifier = myDBInstance1, you will be notified
-     * of all the db-instance events for the specified source. If you specify
-     * a SourceType but do not specify a SourceIdentifier, you will receive
-     * notice of the events for that source type for all your RDS sources. If
-     * you do not specify either the SourceType nor the SourceIdentifier, you
-     * will be notified of events generated from all RDS sources belonging to
-     * your customer account.
+     * If you specify both the SourceType and SourceIds, such as SourceType
+     * = db-instance and SourceIdentifier = myDBInstance1, you will be
+     * notified of all the db-instance events for the specified source. If
+     * you specify a SourceType but do not specify a SourceIdentifier, you
+     * will receive notice of the events for that source type for all your
+     * RDS sources. If you do not specify either the SourceType nor the
+     * SourceIdentifier, you will be notified of events generated from all
+     * RDS sources belonging to your customer account.
      * </p>
      *
      * @param createEventSubscriptionRequest Container for the necessary
@@ -2528,8 +2527,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Deletes a DB subnet group.
      * </p>
      * <p>
-     * <b>NOTE:</b>The specified database subnet group must not be associated
-     * with any DB instances.
+     * <b>NOTE:</b>The specified database subnet group must not be
+     * associated with any DB instances.
      * </p>
      *
      * @param deleteDBSubnetGroupRequest Container for the necessary

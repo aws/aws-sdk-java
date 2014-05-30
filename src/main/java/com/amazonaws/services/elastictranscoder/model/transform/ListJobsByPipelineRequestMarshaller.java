@@ -47,10 +47,8 @@ public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<L
         Request<ListJobsByPipelineRequest> request = new DefaultRequest<ListJobsByPipelineRequest>(listJobsByPipelineRequest, "AmazonElasticTranscoder");
         String target = "EtsCustomerService.ListJobsByPipeline";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.GET);
-
         String uriResourcePath = "2012-09-25/jobsByPipeline/{PipelineId}?Ascending={Ascending};PageToken={PageToken}"; 
         uriResourcePath = uriResourcePath.replace("{PipelineId}", (listJobsByPipelineRequest.getPipelineId() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getPipelineId())); 
         uriResourcePath = uriResourcePath.replace("{Ascending}", (listJobsByPipelineRequest.getAscending() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getAscending())); 
@@ -65,15 +63,13 @@ public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<L
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

@@ -532,9 +532,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * status is one of the following values:
      * </p>
      * <p>
-     * - <code>PENDING</code> indicates that the changes in this request have
-     * not replicated to all Route 53 DNS servers. This is the initial status
-     * of all change batch requests.
+     * - <code>PENDING</code> indicates that the changes in this request
+     * have not replicated to all Route 53 DNS servers. This is the initial
+     * status of all change batch requests.
      * </p>
      * <p>
      * - <code>INSYNC</code> indicates that the changes have replicated to
@@ -571,9 +571,9 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * status is one of the following values:
      * </p>
      * <p>
-     * - <code>PENDING</code> indicates that the changes in this request have
-     * not replicated to all Route 53 DNS servers. This is the initial status
-     * of all change batch requests.
+     * - <code>PENDING</code> indicates that the changes in this request
+     * have not replicated to all Route 53 DNS servers. This is the initial
+     * status of all change batch requests.
      * </p>
      * <p>
      * - <code>INSYNC</code> indicates that the changes have replicated to
@@ -1291,24 +1291,24 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * specifying the record set's name and type, and setting MaxItems = 1
      * </p>
      * <p>
-     * To retrieve all the records in a HostedZone, first pause any processes
-     * making calls to ChangeResourceRecordSets. Initially call
+     * To retrieve all the records in a HostedZone, first pause any
+     * processes making calls to ChangeResourceRecordSets. Initially call
      * ListResourceRecordSets without a Name and Type to get the first page
      * of record sets. For subsequent calls, set Name and Type to the
      * NextName and NextType values returned by the previous response.
      * </p>
      * <p>
-     * In the presence of concurrent ChangeResourceRecordSets calls, there is
-     * no consistency of results across calls to ListResourceRecordSets. The
-     * only way to get a consistent multi-page snapshot of all RRSETs in a
-     * zone is to stop making changes while pagination is in progress.
+     * In the presence of concurrent ChangeResourceRecordSets calls, there
+     * is no consistency of results across calls to ListResourceRecordSets.
+     * The only way to get a consistent multi-page snapshot of all RRSETs in
+     * a zone is to stop making changes while pagination is in progress.
      * </p>
      * <p>
-     * However, the results from ListResourceRecordSets are consistent within
-     * a page. If MakeChange calls are taking place concurrently, the result
-     * of each one will either be completely visible in your results or not
-     * at all. You will not see partial changes, or changes that do not
-     * ultimately succeed. (This follows from the fact that MakeChange is
+     * However, the results from ListResourceRecordSets are consistent
+     * within a page. If MakeChange calls are taking place concurrently, the
+     * result of each one will either be completely visible in your results
+     * or not at all. You will not see partial changes, or changes that do
+     * not ultimately succeed. (This follows from the fact that MakeChange is
      * atomic)
      * </p>
      * <p>
@@ -1371,24 +1371,24 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * specifying the record set's name and type, and setting MaxItems = 1
      * </p>
      * <p>
-     * To retrieve all the records in a HostedZone, first pause any processes
-     * making calls to ChangeResourceRecordSets. Initially call
+     * To retrieve all the records in a HostedZone, first pause any
+     * processes making calls to ChangeResourceRecordSets. Initially call
      * ListResourceRecordSets without a Name and Type to get the first page
      * of record sets. For subsequent calls, set Name and Type to the
      * NextName and NextType values returned by the previous response.
      * </p>
      * <p>
-     * In the presence of concurrent ChangeResourceRecordSets calls, there is
-     * no consistency of results across calls to ListResourceRecordSets. The
-     * only way to get a consistent multi-page snapshot of all RRSETs in a
-     * zone is to stop making changes while pagination is in progress.
+     * In the presence of concurrent ChangeResourceRecordSets calls, there
+     * is no consistency of results across calls to ListResourceRecordSets.
+     * The only way to get a consistent multi-page snapshot of all RRSETs in
+     * a zone is to stop making changes while pagination is in progress.
      * </p>
      * <p>
-     * However, the results from ListResourceRecordSets are consistent within
-     * a page. If MakeChange calls are taking place concurrently, the result
-     * of each one will either be completely visible in your results or not
-     * at all. You will not see partial changes, or changes that do not
-     * ultimately succeed. (This follows from the fact that MakeChange is
+     * However, the results from ListResourceRecordSets are consistent
+     * within a page. If MakeChange calls are taking place concurrently, the
+     * result of each one will either be completely visible in your results
+     * or not at all. You will not see partial changes, or changes that do
+     * not ultimately succeed. (This follows from the fact that MakeChange is
      * atomic)
      * </p>
      * <p>

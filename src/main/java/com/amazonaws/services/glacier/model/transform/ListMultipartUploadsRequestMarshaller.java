@@ -47,10 +47,8 @@ public class ListMultipartUploadsRequestMarshaller implements Marshaller<Request
         Request<ListMultipartUploadsRequest> request = new DefaultRequest<ListMultipartUploadsRequest>(listMultipartUploadsRequest, "AmazonGlacier");
         String target = "Glacier.ListMultipartUploads";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.GET);
-
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads?marker={marker};limit={limit}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (listMultipartUploadsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (listMultipartUploadsRequest.getVaultName() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getVaultName())); 
@@ -66,15 +64,13 @@ public class ListMultipartUploadsRequestMarshaller implements Marshaller<Request
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

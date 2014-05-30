@@ -245,8 +245,8 @@ public interface AmazonElasticTranscoder {
 
     /**
      * <p>
-     * The CreatePipeline operation creates a pipeline with settings that you
-     * specify.
+     * The CreatePipeline operation creates a pipeline with settings that
+     * you specify.
      * </p>
      *
      * @param createPipelineRequest Container for the necessary parameters to
@@ -410,7 +410,8 @@ public interface AmazonElasticTranscoder {
 
     /**
      * <p>
-     * The TestRole operation tests the IAM role used to create the pipeline.
+     * The TestRole operation tests the IAM role used to create the
+     * pipeline.
      * </p>
      * <p>
      * The <code>TestRole</code> action lets you determine whether the IAM
@@ -474,7 +475,8 @@ public interface AmazonElasticTranscoder {
 
     /**
      * <p>
-     * The ReadPipeline operation gets detailed information about a pipeline.
+     * The ReadPipeline operation gets detailed information about a
+     * pipeline.
      * </p>
      *
      * @param readPipelineRequest Container for the necessary parameters to
@@ -588,10 +590,10 @@ public interface AmazonElasticTranscoder {
      * that is created.
      * </p>
      * <p>
-     * If you have specified more than one output for your jobs (for example,
-     * one output for the Kindle Fire and another output for the Apple iPhone
-     * 4s), you currently must use the Elastic Transcoder API to list the
-     * jobs (as opposed to the AWS Console).
+     * If you have specified more than one output for your jobs (for
+     * example, one output for the Kindle Fire and another output for the
+     * Apple iPhone 4s), you currently must use the Elastic Transcoder API to
+     * list the jobs (as opposed to the AWS Console).
      * </p>
      *
      * @param createJobRequest Container for the necessary parameters to

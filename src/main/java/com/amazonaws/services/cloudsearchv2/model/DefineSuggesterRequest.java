@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * When you configure a suggester, you must specify the name of the text
  * field you want to search for possible matches and a unique name for
  * the suggester. For more information, see
- * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html"> Getting Search Suggestions </a>
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"> Getting Search Suggestions </a>
  * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *

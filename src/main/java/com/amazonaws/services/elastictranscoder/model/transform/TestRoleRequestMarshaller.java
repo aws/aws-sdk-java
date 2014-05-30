@@ -47,10 +47,8 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
         Request<TestRoleRequest> request = new DefaultRequest<TestRoleRequest>(testRoleRequest, "AmazonElasticTranscoder");
         String target = "EtsCustomerService.TestRole";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.POST);
-
         String uriResourcePath = "2012-09-25/roleTests"; 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
@@ -62,15 +60,13 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
@@ -107,6 +103,7 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
           byte[] content = snippet.getBytes(UTF8);
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
+          request.addHeader("Content-Type", "application/x-amz-json-1.0");
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
