@@ -553,7 +553,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides all available details about the instance groups in a cluster.
+     * Provides all available details about the instance groups in a
+     * cluster.
      * </p>
      *
      * @param listInstanceGroupsRequest Container for the necessary
@@ -578,7 +579,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides all available details about the instance groups in a cluster.
+     * Provides all available details about the instance groups in a
+     * cluster.
      * </p>
      *
      * @param listInstanceGroupsRequest Container for the necessary
@@ -870,10 +872,9 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * </p>
      * <p>
      * To terminate a job flow that has been locked by setting
-     * SetTerminationProtection to <code>true</code> ,
-     * you must first unlock the job flow by a subsequent call to
-     * SetTerminationProtection in which you set the value to
-     * <code>false</code> .
+     * SetTerminationProtection to <code>true</code> , you must first unlock
+     * the job flow by a subsequent call to SetTerminationProtection in which
+     * you set the value to <code>false</code> .
      * </p>
      * <p>
      * For more information, go to
@@ -919,10 +920,9 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * </p>
      * <p>
      * To terminate a job flow that has been locked by setting
-     * SetTerminationProtection to <code>true</code> ,
-     * you must first unlock the job flow by a subsequent call to
-     * SetTerminationProtection in which you set the value to
-     * <code>false</code> .
+     * SetTerminationProtection to <code>true</code> , you must first unlock
+     * the job flow by a subsequent call to SetTerminationProtection in which
+     * you set the value to <code>false</code> .
      * </p>
      * <p>
      * For more information, go to
@@ -974,11 +974,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * <ul>
      * <li>Job flows created and completed in the last two weeks</li>
      * <li> Job flows created within the last two months that are in one of
-     * the following states: <code>RUNNING</code> ,
-     * <code>WAITING</code> ,
-     * <code>SHUTTING_DOWN</code> ,
-     * 
-     * <code>STARTING</code> </li>
+     * the following states: <code>RUNNING</code> , <code>WAITING</code> ,
+     * <code>SHUTTING_DOWN</code> , <code>STARTING</code> </li>
      * 
      * </ul>
      * <p>
@@ -1025,11 +1022,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * <ul>
      * <li>Job flows created and completed in the last two weeks</li>
      * <li> Job flows created within the last two months that are in one of
-     * the following states: <code>RUNNING</code> ,
-     * <code>WAITING</code> ,
-     * <code>SHUTTING_DOWN</code> ,
-     * 
-     * <code>STARTING</code> </li>
+     * the following states: <code>RUNNING</code> , <code>WAITING</code> ,
+     * <code>SHUTTING_DOWN</code> , <code>STARTING</code> </li>
      * 
      * </ul>
      * <p>
@@ -1174,9 +1168,9 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides cluster-level details including status, hardware and software
-     * configuration, VPC settings, and so on. For information about the
-     * cluster steps, see ListSteps.
+     * Provides cluster-level details including status, hardware and
+     * software configuration, VPC settings, and so on. For information about
+     * the cluster steps, see ListSteps.
      * </p>
      *
      * @param describeClusterRequest Container for the necessary parameters
@@ -1199,9 +1193,9 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides cluster-level details including status, hardware and software
-     * configuration, VPC settings, and so on. For information about the
-     * cluster steps, see ListSteps.
+     * Provides cluster-level details including status, hardware and
+     * software configuration, VPC settings, and so on. For information about
+     * the cluster steps, see ListSteps.
      * </p>
      *
      * @param describeClusterRequest Container for the necessary parameters

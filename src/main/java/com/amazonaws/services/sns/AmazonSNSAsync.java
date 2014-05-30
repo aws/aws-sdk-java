@@ -250,8 +250,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Subscribe</code> action prepares to subscribe an endpoint by
-     * sending the endpoint a confirmation message. To actually create a
+     * The <code>Subscribe</code> action prepares to subscribe an endpoint
+     * by sending the endpoint a confirmation message. To actually create a
      * subscription, the endpoint owner must call the
      * <code>ConfirmSubscription</code> action with the token from the
      * confirmation message. Confirmation tokens are valid for three days.
@@ -277,8 +277,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Subscribe</code> action prepares to subscribe an endpoint by
-     * sending the endpoint a confirmation message. To actually create a
+     * The <code>Subscribe</code> action prepares to subscribe an endpoint
+     * by sending the endpoint a confirmation message. To actually create a
      * subscription, the endpoint owner must call the
      * <code>ConfirmSubscription</code> action with the token from the
      * confirmation message. Confirmation tokens are valid for three days.
@@ -366,8 +366,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetTopicAttributes</code> action allows a topic owner to set
-     * an attribute of the topic to a new value.
+     * The <code>SetTopicAttributes</code> action allows a topic owner to
+     * set an attribute of the topic to a new value.
      * </p>
      *
      * @param setTopicAttributesRequest Container for the necessary
@@ -390,8 +390,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetTopicAttributes</code> action allows a topic owner to set
-     * an attribute of the topic to a new value.
+     * The <code>SetTopicAttributes</code> action allows a topic owner to
+     * set an attribute of the topic to a new value.
      * </p>
      *
      * @param setTopicAttributesRequest Container for the necessary
@@ -594,8 +594,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreatePlatformEndpoint</code> action creates an endpoint for
-     * a device and mobile app on one of the supported push notification
+     * The <code>CreatePlatformEndpoint</code> action creates an endpoint
+     * for a device and mobile app on one of the supported push notification
      * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
      * requires the PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code> . The EndpointArn that is
@@ -631,8 +631,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreatePlatformEndpoint</code> action creates an endpoint for
-     * a device and mobile app on one of the supported push notification
+     * The <code>CreatePlatformEndpoint</code> action creates an endpoint
+     * for a device and mobile app on one of the supported push notification
      * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
      * requires the PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code> . The EndpointArn that is
@@ -1224,9 +1224,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetPlatformApplicationAttributes</code> action retrieves the
-     * attributes of the platform application object for the supported push
-     * notification services, such as APNS and GCM. For more information, see
+     * The <code>GetPlatformApplicationAttributes</code> action retrieves
+     * the attributes of the platform application object for the supported
+     * push notification services, such as APNS and GCM. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -1253,9 +1254,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetPlatformApplicationAttributes</code> action retrieves the
-     * attributes of the platform application object for the supported push
-     * notification services, such as APNS and GCM. For more information, see
+     * The <code>GetPlatformApplicationAttributes</code> action retrieves
+     * the attributes of the platform application object for the supported
+     * push notification services, such as APNS and GCM. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -1484,9 +1486,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListSubscriptionsByTopic</code> action returns a list of the
-     * subscriptions to a specific topic. Each call returns a limited list of
-     * subscriptions, up to 100. If there are more subscriptions, a
+     * The <code>ListSubscriptionsByTopic</code> action returns a list of
+     * the subscriptions to a specific topic. Each call returns a limited
+     * list of subscriptions, up to 100. If there are more subscriptions, a
      * <code>NextToken</code> is also returned. Use the
      * <code>NextToken</code> parameter in a new
      * <code>ListSubscriptionsByTopic</code> call to get further results.
@@ -1513,9 +1515,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListSubscriptionsByTopic</code> action returns a list of the
-     * subscriptions to a specific topic. Each call returns a limited list of
-     * subscriptions, up to 100. If there are more subscriptions, a
+     * The <code>ListSubscriptionsByTopic</code> action returns a list of
+     * the subscriptions to a specific topic. Each call returns a limited
+     * list of subscriptions, up to 100. If there are more subscriptions, a
      * <code>NextToken</code> is also returned. Use the
      * <code>NextToken</code> parameter in a new
      * <code>ListSubscriptionsByTopic</code> call to get further results.

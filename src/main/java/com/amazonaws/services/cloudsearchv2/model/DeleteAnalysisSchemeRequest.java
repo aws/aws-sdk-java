@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#deleteAnalysisScheme(DeleteAnalysisSchemeRequest) DeleteAnalysisScheme operation}.
  * <p>
  * Deletes an analysis scheme. For more information, see
- * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html.html"> Configuring Analysis Schemes </a>
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"> Configuring Analysis Schemes </a>
  * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *

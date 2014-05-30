@@ -229,36 +229,32 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * This operation returns the following information about the stream: the
-     * current status of the stream, the stream Amazon Resource Name (ARN),
-     * and an array of shard objects that comprise the stream. For each shard
-     * object there is information about the hash key and sequence number
-     * ranges that the shard spans, and the IDs of any earlier shards that
-     * played in a role in a MergeShards or SplitShard operation that created
-     * the shard. A sequence number is the identifier associated with every
-     * record ingested in the Amazon Kinesis stream. The sequence number is
-     * assigned by the Amazon Kinesis service when a record is put into the
-     * stream.
+     * This operation returns the following information about the stream:
+     * the current status of the stream, the stream Amazon Resource Name
+     * (ARN), and an array of shard objects that comprise the stream. For
+     * each shard object there is information about the hash key and sequence
+     * number ranges that the shard spans, and the IDs of any earlier shards
+     * that played in a role in a MergeShards or SplitShard operation that
+     * created the shard. A sequence number is the identifier associated with
+     * every record ingested in the Amazon Kinesis stream. The sequence
+     * number is assigned by the Amazon Kinesis service when a record is put
+     * into the stream.
      * </p>
      * <p>
      * You can limit the number of returned shards using the
      * <code>Limit</code> parameter. The number of shards in a stream may be
      * too large to return from a single call to <code>DescribeStream</code>
-     * .
-     * You can detect this by using the
-     * <code>HasMoreShards</code> flag in the returned output.
-     * <code>HasMoreShards</code> is set to <code>true</code> when there is
-     * more data available.
+     * . You can detect this by using the <code>HasMoreShards</code> flag in
+     * the returned output. <code>HasMoreShards</code> is set to
+     * <code>true</code> when there is more data available.
      * </p>
      * <p>
      * If there are more shards available, you can request more shards by
      * using the shard ID of the last shard returned by the
      * <code>DescribeStream</code> request, in the
      * <code>ExclusiveStartShardId</code> parameter in a subsequent request
-     * to <code>DescribeStream</code> .
-     * 
-     * <code>DescribeStream</code> is a paginated
-     * operation.
+     * to <code>DescribeStream</code> . <code>DescribeStream</code> is a
+     * paginated operation.
      * </p>
      * <p>
      * <code>DescribeStream</code> has a limit of 10 transactions per second
@@ -345,13 +341,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * iterator returned by the <code>GetRecords</code> request in
      * <code>NextShardIterator</code> for subsequent reads. A new shard
      * iterator is returned by every <code>GetRecords</code> request in
-     * <code>NextShardIterator</code> ,
-     * which you use in the <code>ShardIterator</code> parameter
-     * of the next <code>GetRecords</code> request.
+     * <code>NextShardIterator</code> , which you use in the
+     * <code>ShardIterator</code> parameter of the next
+     * <code>GetRecords</code> request.
      * </p>
      * <p>
-     * If a <code>GetShardIterator</code> request is made too often, you will
-     * receive a <code>ProvisionedThroughputExceededException</code> .
+     * If a <code>GetShardIterator</code> request is made too often, you
+     * will receive a <code>ProvisionedThroughputExceededException</code> .
      * For more information about throughput limits, see the
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
      * .
@@ -413,14 +409,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * This operation puts a data record into an Amazon Kinesis stream from a
-     * producer. This operation must be called to send data from the producer
-     * into the Amazon Kinesis stream for real-time ingestion and subsequent
-     * processing. The <code>PutRecord</code> operation requires the name of
-     * the stream that captures, stores, and transports the data; a partition
-     * key; and the data blob itself. The data blob could be a segment from a
-     * log file, geographic/location data, website clickstream data, or any
-     * other data type.
+     * This operation puts a data record into an Amazon Kinesis stream from
+     * a producer. This operation must be called to send data from the
+     * producer into the Amazon Kinesis stream for real-time ingestion and
+     * subsequent processing. The <code>PutRecord</code> operation requires
+     * the name of the stream that captures, stores, and transports the data;
+     * a partition key; and the data blob itself. The data blob could be a
+     * segment from a log file, geographic/location data, website clickstream
+     * data, or any other data type.
      * </p>
      * <p>
      * The partition key is used to distribute data across shards. Amazon
@@ -429,13 +425,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * record to determine which shard a given data record belongs to.
      * </p>
      * <p>
-     * Partition keys are Unicode strings, with a maximum length limit of 256
-     * bytes. An MD5 hash function is used to map partition keys to 128-bit
-     * integer values and to map associated data records to shards using the
-     * hash key ranges of the shards. You can override hashing the partition
-     * key to determine the shard by explicitly specifying a hash value using
-     * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the
+     * Partition keys are Unicode strings, with a maximum length limit of
+     * 256 bytes. An MD5 hash function is used to map partition keys to
+     * 128-bit integer values and to map associated data records to shards
+     * using the hash key ranges of the shards. You can override hashing the
+     * partition key to determine the shard by explicitly specifying a hash
+     * value using the <code>ExplicitHashKey</code> parameter. For more
+     * information, see the
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
      * .
      * </p>
@@ -533,12 +529,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * A new shard iterator is returned by every <code>GetRecords</code>
-     * request in <code>NextShardIterator</code> ,
-     * which you use in the <code>ShardIterator</code> parameter
-     * of the next <code>GetRecords</code> request. When you repeatedly read
-     * from an Amazon Kinesis stream use a GetShardIterator request to get
-     * the first shard iterator to use in your first <code>GetRecords</code>
-     * request and then use the shard iterator returned in
+     * request in <code>NextShardIterator</code> , which you use in the
+     * <code>ShardIterator</code> parameter of the next
+     * <code>GetRecords</code> request. When you repeatedly read from an
+     * Amazon Kinesis stream use a GetShardIterator request to get the first
+     * shard iterator to use in your first <code>GetRecords</code> request
+     * and then use the shard iterator returned in
      * <code>NextShardIterator</code> for subsequent reads.
      * </p>
      * <p>
@@ -627,8 +623,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * .
      * </p>
      * <p>
-     * You can use the DescribeStream operation to determine the shard ID and
-     * hash key values for the <code>ShardToSplit</code> and
+     * You can use the DescribeStream operation to determine the shard ID
+     * and hash key values for the <code>ShardToSplit</code> and
      * <code>NewStartingHashKey</code> parameters that are specified in the
      * <code>SplitShard</code> request.
      * </p>
@@ -642,18 +638,16 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can use <code>DescribeStream</code> to check the status of the
-     * stream, which is returned in <code>StreamStatus</code> .
-     * If the stream is in the ACTIVE state, you can call
-     * <code>SplitShard</code> .
-     * If a stream is in CREATING or UPDATING or DELETING
-     * states, then Amazon Kinesis returns a
-     * <code>ResourceInUseException</code> .
+     * stream, which is returned in <code>StreamStatus</code> . If the stream
+     * is in the ACTIVE state, you can call <code>SplitShard</code> . If a
+     * stream is in CREATING or UPDATING or DELETING states, then Amazon
+     * Kinesis returns a <code>ResourceInUseException</code> .
      * </p>
      * <p>
      * If the specified stream does not exist, Amazon Kinesis returns a
-     * <code>ResourceNotFoundException</code> .
-     * If you try to create more shards than are authorized
-     * for your account, you receive a <code>LimitExceededException</code> .
+     * <code>ResourceNotFoundException</code> . If you try to create more
+     * shards than are authorized for your account, you receive a
+     * <code>LimitExceededException</code> .
      * </p>
      * <p>
      * <b>Note:</b> The default limit for an AWS account is 10 shards per
@@ -706,21 +700,21 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This operation adds a new Amazon Kinesis stream to your AWS account. A
-     * stream captures and transports data records that are continuously
-     * emitted from different data sources or <i>producers</i> .
-     * Scale-out within an Amazon Kinesis stream is explicitly
-     * supported by means of shards, which are uniquely identified groups of
-     * data records in an Amazon Kinesis stream.
+     * This operation adds a new Amazon Kinesis stream to your AWS account.
+     * A stream captures and transports data records that are continuously
+     * emitted from different data sources or <i>producers</i> . Scale-out
+     * within an Amazon Kinesis stream is explicitly supported by means of
+     * shards, which are uniquely identified groups of data records in an
+     * Amazon Kinesis stream.
      * </p>
      * <p>
-     * You specify and control the number of shards that a stream is composed
-     * of. Each open shard can support up to 5 read transactions per second,
-     * up to a maximum total of 2 MB of data read per second. Each shard can
-     * support up to 1000 write transactions per second, up to a maximum
-     * total of 1 MB data written per second. You can add shards to a stream
-     * if the amount of data input increases and you can remove shards if the
-     * amount of data input decreases.
+     * You specify and control the number of shards that a stream is
+     * composed of. Each open shard can support up to 5 read transactions per
+     * second, up to a maximum total of 2 MB of data read per second. Each
+     * shard can support up to 1000 write transactions per second, up to a
+     * maximum total of 1 MB data written per second. You can add shards to a
+     * stream if the amount of data input increases and you can remove shards
+     * if the amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -865,11 +859,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * The number of streams may be too large to return from a single call
-     * to <code>ListStreams</code> .
-     * You can limit the number of returned streams using the
-     * <code>Limit</code> parameter. If you do not specify a value for the
-     * <code>Limit</code> parameter, Amazon Kinesis uses the default limit,
-     * which is currently 10.
+     * to <code>ListStreams</code> . You can limit the number of returned
+     * streams using the <code>Limit</code> parameter. If you do not specify
+     * a value for the <code>Limit</code> parameter, Amazon Kinesis uses the
+     * default limit, which is currently 10.
      * </p>
      * <p>
      * You can detect if there are more streams available to list by using
@@ -878,10 +871,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * using the name of the last stream returned by the
      * <code>ListStreams</code> request in the
      * <code>ExclusiveStartStreamName</code> parameter in a subsequent
-     * request to <code>ListStreams</code> .
-     * The group of stream names returned by the subsequent
-     * request is then added to the list. You can continue this process until
-     * all the stream names have been collected in the list.
+     * request to <code>ListStreams</code> . The group of stream names
+     * returned by the subsequent request is then added to the list. You can
+     * continue this process until all the stream names have been collected
+     * in the list.
      * </p>
      * <p>
      * <code>ListStreams</code> has a limit of 5 transactions per second per
@@ -956,9 +949,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * If the stream is in the ACTIVE state, you can call
      * <code>MergeShards</code> . If a stream is in CREATING or UPDATING or
      * DELETING states, then Amazon Kinesis returns a
-     * <code>ResourceInUseException</code> .
-     * If the specified stream does not exist, Amazon Kinesis
-     * returns a <code>ResourceNotFoundException</code> .
+     * <code>ResourceInUseException</code> . If the specified stream does not
+     * exist, Amazon Kinesis returns a <code>ResourceNotFoundException</code>
+     * .
      * </p>
      * <p>
      * You can use the DescribeStream operation to check the state of the
@@ -1028,11 +1021,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * The number of streams may be too large to return from a single call
-     * to <code>ListStreams</code> .
-     * You can limit the number of returned streams using the
-     * <code>Limit</code> parameter. If you do not specify a value for the
-     * <code>Limit</code> parameter, Amazon Kinesis uses the default limit,
-     * which is currently 10.
+     * to <code>ListStreams</code> . You can limit the number of returned
+     * streams using the <code>Limit</code> parameter. If you do not specify
+     * a value for the <code>Limit</code> parameter, Amazon Kinesis uses the
+     * default limit, which is currently 10.
      * </p>
      * <p>
      * You can detect if there are more streams available to list by using
@@ -1041,10 +1033,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * using the name of the last stream returned by the
      * <code>ListStreams</code> request in the
      * <code>ExclusiveStartStreamName</code> parameter in a subsequent
-     * request to <code>ListStreams</code> .
-     * The group of stream names returned by the subsequent
-     * request is then added to the list. You can continue this process until
-     * all the stream names have been collected in the list.
+     * request to <code>ListStreams</code> . The group of stream names
+     * returned by the subsequent request is then added to the list. You can
+     * continue this process until all the stream names have been collected
+     * in the list.
      * </p>
      * <p>
      * <code>ListStreams</code> has a limit of 5 transactions per second per
@@ -1070,36 +1062,32 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This operation returns the following information about the stream: the
-     * current status of the stream, the stream Amazon Resource Name (ARN),
-     * and an array of shard objects that comprise the stream. For each shard
-     * object there is information about the hash key and sequence number
-     * ranges that the shard spans, and the IDs of any earlier shards that
-     * played in a role in a MergeShards or SplitShard operation that created
-     * the shard. A sequence number is the identifier associated with every
-     * record ingested in the Amazon Kinesis stream. The sequence number is
-     * assigned by the Amazon Kinesis service when a record is put into the
-     * stream.
+     * This operation returns the following information about the stream:
+     * the current status of the stream, the stream Amazon Resource Name
+     * (ARN), and an array of shard objects that comprise the stream. For
+     * each shard object there is information about the hash key and sequence
+     * number ranges that the shard spans, and the IDs of any earlier shards
+     * that played in a role in a MergeShards or SplitShard operation that
+     * created the shard. A sequence number is the identifier associated with
+     * every record ingested in the Amazon Kinesis stream. The sequence
+     * number is assigned by the Amazon Kinesis service when a record is put
+     * into the stream.
      * </p>
      * <p>
      * You can limit the number of returned shards using the
      * <code>Limit</code> parameter. The number of shards in a stream may be
      * too large to return from a single call to <code>DescribeStream</code>
-     * .
-     * You can detect this by using the
-     * <code>HasMoreShards</code> flag in the returned output.
-     * <code>HasMoreShards</code> is set to <code>true</code> when there is
-     * more data available.
+     * . You can detect this by using the <code>HasMoreShards</code> flag in
+     * the returned output. <code>HasMoreShards</code> is set to
+     * <code>true</code> when there is more data available.
      * </p>
      * <p>
      * If there are more shards available, you can request more shards by
      * using the shard ID of the last shard returned by the
      * <code>DescribeStream</code> request, in the
      * <code>ExclusiveStartShardId</code> parameter in a subsequent request
-     * to <code>DescribeStream</code> .
-     * 
-     * <code>DescribeStream</code> is a paginated
-     * operation.
+     * to <code>DescribeStream</code> . <code>DescribeStream</code> is a
+     * paginated operation.
      * </p>
      * <p>
      * <code>DescribeStream</code> has a limit of 10 transactions per second
@@ -1131,36 +1119,32 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This operation returns the following information about the stream: the
-     * current status of the stream, the stream Amazon Resource Name (ARN),
-     * and an array of shard objects that comprise the stream. For each shard
-     * object there is information about the hash key and sequence number
-     * ranges that the shard spans, and the IDs of any earlier shards that
-     * played in a role in a MergeShards or SplitShard operation that created
-     * the shard. A sequence number is the identifier associated with every
-     * record ingested in the Amazon Kinesis stream. The sequence number is
-     * assigned by the Amazon Kinesis service when a record is put into the
-     * stream.
+     * This operation returns the following information about the stream:
+     * the current status of the stream, the stream Amazon Resource Name
+     * (ARN), and an array of shard objects that comprise the stream. For
+     * each shard object there is information about the hash key and sequence
+     * number ranges that the shard spans, and the IDs of any earlier shards
+     * that played in a role in a MergeShards or SplitShard operation that
+     * created the shard. A sequence number is the identifier associated with
+     * every record ingested in the Amazon Kinesis stream. The sequence
+     * number is assigned by the Amazon Kinesis service when a record is put
+     * into the stream.
      * </p>
      * <p>
      * You can limit the number of returned shards using the
      * <code>Limit</code> parameter. The number of shards in a stream may be
      * too large to return from a single call to <code>DescribeStream</code>
-     * .
-     * You can detect this by using the
-     * <code>HasMoreShards</code> flag in the returned output.
-     * <code>HasMoreShards</code> is set to <code>true</code> when there is
-     * more data available.
+     * . You can detect this by using the <code>HasMoreShards</code> flag in
+     * the returned output. <code>HasMoreShards</code> is set to
+     * <code>true</code> when there is more data available.
      * </p>
      * <p>
      * If there are more shards available, you can request more shards by
      * using the shard ID of the last shard returned by the
      * <code>DescribeStream</code> request, in the
      * <code>ExclusiveStartShardId</code> parameter in a subsequent request
-     * to <code>DescribeStream</code> .
-     * 
-     * <code>DescribeStream</code> is a paginated
-     * operation.
+     * to <code>DescribeStream</code> . <code>DescribeStream</code> is a
+     * paginated operation.
      * </p>
      * <p>
      * <code>DescribeStream</code> has a limit of 10 transactions per second
@@ -1195,36 +1179,32 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This operation returns the following information about the stream: the
-     * current status of the stream, the stream Amazon Resource Name (ARN),
-     * and an array of shard objects that comprise the stream. For each shard
-     * object there is information about the hash key and sequence number
-     * ranges that the shard spans, and the IDs of any earlier shards that
-     * played in a role in a MergeShards or SplitShard operation that created
-     * the shard. A sequence number is the identifier associated with every
-     * record ingested in the Amazon Kinesis stream. The sequence number is
-     * assigned by the Amazon Kinesis service when a record is put into the
-     * stream.
+     * This operation returns the following information about the stream:
+     * the current status of the stream, the stream Amazon Resource Name
+     * (ARN), and an array of shard objects that comprise the stream. For
+     * each shard object there is information about the hash key and sequence
+     * number ranges that the shard spans, and the IDs of any earlier shards
+     * that played in a role in a MergeShards or SplitShard operation that
+     * created the shard. A sequence number is the identifier associated with
+     * every record ingested in the Amazon Kinesis stream. The sequence
+     * number is assigned by the Amazon Kinesis service when a record is put
+     * into the stream.
      * </p>
      * <p>
      * You can limit the number of returned shards using the
      * <code>Limit</code> parameter. The number of shards in a stream may be
      * too large to return from a single call to <code>DescribeStream</code>
-     * .
-     * You can detect this by using the
-     * <code>HasMoreShards</code> flag in the returned output.
-     * <code>HasMoreShards</code> is set to <code>true</code> when there is
-     * more data available.
+     * . You can detect this by using the <code>HasMoreShards</code> flag in
+     * the returned output. <code>HasMoreShards</code> is set to
+     * <code>true</code> when there is more data available.
      * </p>
      * <p>
      * If there are more shards available, you can request more shards by
      * using the shard ID of the last shard returned by the
      * <code>DescribeStream</code> request, in the
      * <code>ExclusiveStartShardId</code> parameter in a subsequent request
-     * to <code>DescribeStream</code> .
-     * 
-     * <code>DescribeStream</code> is a paginated
-     * operation.
+     * to <code>DescribeStream</code> . <code>DescribeStream</code> is a
+     * paginated operation.
      * </p>
      * <p>
      * <code>DescribeStream</code> has a limit of 10 transactions per second
@@ -1296,13 +1276,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * iterator returned by the <code>GetRecords</code> request in
      * <code>NextShardIterator</code> for subsequent reads. A new shard
      * iterator is returned by every <code>GetRecords</code> request in
-     * <code>NextShardIterator</code> ,
-     * which you use in the <code>ShardIterator</code> parameter
-     * of the next <code>GetRecords</code> request.
+     * <code>NextShardIterator</code> , which you use in the
+     * <code>ShardIterator</code> parameter of the next
+     * <code>GetRecords</code> request.
      * </p>
      * <p>
-     * If a <code>GetShardIterator</code> request is made too often, you will
-     * receive a <code>ProvisionedThroughputExceededException</code> .
+     * If a <code>GetShardIterator</code> request is made too often, you
+     * will receive a <code>ProvisionedThroughputExceededException</code> .
      * For more information about throughput limits, see the
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
      * .
@@ -1392,13 +1372,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * iterator returned by the <code>GetRecords</code> request in
      * <code>NextShardIterator</code> for subsequent reads. A new shard
      * iterator is returned by every <code>GetRecords</code> request in
-     * <code>NextShardIterator</code> ,
-     * which you use in the <code>ShardIterator</code> parameter
-     * of the next <code>GetRecords</code> request.
+     * <code>NextShardIterator</code> , which you use in the
+     * <code>ShardIterator</code> parameter of the next
+     * <code>GetRecords</code> request.
      * </p>
      * <p>
-     * If a <code>GetShardIterator</code> request is made too often, you will
-     * receive a <code>ProvisionedThroughputExceededException</code> .
+     * If a <code>GetShardIterator</code> request is made too often, you
+     * will receive a <code>ProvisionedThroughputExceededException</code> .
      * For more information about throughput limits, see the
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
      * .
@@ -1456,14 +1436,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This operation puts a data record into an Amazon Kinesis stream from a
-     * producer. This operation must be called to send data from the producer
-     * into the Amazon Kinesis stream for real-time ingestion and subsequent
-     * processing. The <code>PutRecord</code> operation requires the name of
-     * the stream that captures, stores, and transports the data; a partition
-     * key; and the data blob itself. The data blob could be a segment from a
-     * log file, geographic/location data, website clickstream data, or any
-     * other data type.
+     * This operation puts a data record into an Amazon Kinesis stream from
+     * a producer. This operation must be called to send data from the
+     * producer into the Amazon Kinesis stream for real-time ingestion and
+     * subsequent processing. The <code>PutRecord</code> operation requires
+     * the name of the stream that captures, stores, and transports the data;
+     * a partition key; and the data blob itself. The data blob could be a
+     * segment from a log file, geographic/location data, website clickstream
+     * data, or any other data type.
      * </p>
      * <p>
      * The partition key is used to distribute data across shards. Amazon
@@ -1472,13 +1452,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * record to determine which shard a given data record belongs to.
      * </p>
      * <p>
-     * Partition keys are Unicode strings, with a maximum length limit of 256
-     * bytes. An MD5 hash function is used to map partition keys to 128-bit
-     * integer values and to map associated data records to shards using the
-     * hash key ranges of the shards. You can override hashing the partition
-     * key to determine the shard by explicitly specifying a hash value using
-     * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the
+     * Partition keys are Unicode strings, with a maximum length limit of
+     * 256 bytes. An MD5 hash function is used to map partition keys to
+     * 128-bit integer values and to map associated data records to shards
+     * using the hash key ranges of the shards. You can override hashing the
+     * partition key to determine the shard by explicitly specifying a hash
+     * value using the <code>ExplicitHashKey</code> parameter. For more
+     * information, see the
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
      * .
      * </p>
@@ -1545,14 +1525,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This operation puts a data record into an Amazon Kinesis stream from a
-     * producer. This operation must be called to send data from the producer
-     * into the Amazon Kinesis stream for real-time ingestion and subsequent
-     * processing. The <code>PutRecord</code> operation requires the name of
-     * the stream that captures, stores, and transports the data; a partition
-     * key; and the data blob itself. The data blob could be a segment from a
-     * log file, geographic/location data, website clickstream data, or any
-     * other data type.
+     * This operation puts a data record into an Amazon Kinesis stream from
+     * a producer. This operation must be called to send data from the
+     * producer into the Amazon Kinesis stream for real-time ingestion and
+     * subsequent processing. The <code>PutRecord</code> operation requires
+     * the name of the stream that captures, stores, and transports the data;
+     * a partition key; and the data blob itself. The data blob could be a
+     * segment from a log file, geographic/location data, website clickstream
+     * data, or any other data type.
      * </p>
      * <p>
      * The partition key is used to distribute data across shards. Amazon
@@ -1561,13 +1541,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * record to determine which shard a given data record belongs to.
      * </p>
      * <p>
-     * Partition keys are Unicode strings, with a maximum length limit of 256
-     * bytes. An MD5 hash function is used to map partition keys to 128-bit
-     * integer values and to map associated data records to shards using the
-     * hash key ranges of the shards. You can override hashing the partition
-     * key to determine the shard by explicitly specifying a hash value using
-     * the <code>ExplicitHashKey</code> parameter. For more information, see
-     * the
+     * Partition keys are Unicode strings, with a maximum length limit of
+     * 256 bytes. An MD5 hash function is used to map partition keys to
+     * 128-bit integer values and to map associated data records to shards
+     * using the hash key ranges of the shards. You can override hashing the
+     * partition key to determine the shard by explicitly specifying a hash
+     * value using the <code>ExplicitHashKey</code> parameter. For more
+     * information, see the
      * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
      * .
      * </p>
@@ -1668,8 +1648,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * .
      * </p>
      * <p>
-     * You can use the DescribeStream operation to determine the shard ID and
-     * hash key values for the <code>ShardToSplit</code> and
+     * You can use the DescribeStream operation to determine the shard ID
+     * and hash key values for the <code>ShardToSplit</code> and
      * <code>NewStartingHashKey</code> parameters that are specified in the
      * <code>SplitShard</code> request.
      * </p>
@@ -1683,18 +1663,16 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can use <code>DescribeStream</code> to check the status of the
-     * stream, which is returned in <code>StreamStatus</code> .
-     * If the stream is in the ACTIVE state, you can call
-     * <code>SplitShard</code> .
-     * If a stream is in CREATING or UPDATING or DELETING
-     * states, then Amazon Kinesis returns a
-     * <code>ResourceInUseException</code> .
+     * stream, which is returned in <code>StreamStatus</code> . If the stream
+     * is in the ACTIVE state, you can call <code>SplitShard</code> . If a
+     * stream is in CREATING or UPDATING or DELETING states, then Amazon
+     * Kinesis returns a <code>ResourceInUseException</code> .
      * </p>
      * <p>
      * If the specified stream does not exist, Amazon Kinesis returns a
-     * <code>ResourceNotFoundException</code> .
-     * If you try to create more shards than are authorized
-     * for your account, you receive a <code>LimitExceededException</code> .
+     * <code>ResourceNotFoundException</code> . If you try to create more
+     * shards than are authorized for your account, you receive a
+     * <code>LimitExceededException</code> .
      * </p>
      * <p>
      * <b>Note:</b> The default limit for an AWS account is 10 shards per
@@ -1751,21 +1729,21 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This operation adds a new Amazon Kinesis stream to your AWS account. A
-     * stream captures and transports data records that are continuously
-     * emitted from different data sources or <i>producers</i> .
-     * Scale-out within an Amazon Kinesis stream is explicitly
-     * supported by means of shards, which are uniquely identified groups of
-     * data records in an Amazon Kinesis stream.
+     * This operation adds a new Amazon Kinesis stream to your AWS account.
+     * A stream captures and transports data records that are continuously
+     * emitted from different data sources or <i>producers</i> . Scale-out
+     * within an Amazon Kinesis stream is explicitly supported by means of
+     * shards, which are uniquely identified groups of data records in an
+     * Amazon Kinesis stream.
      * </p>
      * <p>
-     * You specify and control the number of shards that a stream is composed
-     * of. Each open shard can support up to 5 read transactions per second,
-     * up to a maximum total of 2 MB of data read per second. Each shard can
-     * support up to 1000 write transactions per second, up to a maximum
-     * total of 1 MB data written per second. You can add shards to a stream
-     * if the amount of data input increases and you can remove shards if the
-     * amount of data input decreases.
+     * You specify and control the number of shards that a stream is
+     * composed of. Each open shard can support up to 5 read transactions per
+     * second, up to a maximum total of 2 MB of data read per second. Each
+     * shard can support up to 1000 write transactions per second, up to a
+     * maximum total of 1 MB data written per second. You can add shards to a
+     * stream if the amount of data input increases and you can remove shards
+     * if the amount of data input decreases.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the AWS
@@ -1907,11 +1885,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * The number of streams may be too large to return from a single call
-     * to <code>ListStreams</code> .
-     * You can limit the number of returned streams using the
-     * <code>Limit</code> parameter. If you do not specify a value for the
-     * <code>Limit</code> parameter, Amazon Kinesis uses the default limit,
-     * which is currently 10.
+     * to <code>ListStreams</code> . You can limit the number of returned
+     * streams using the <code>Limit</code> parameter. If you do not specify
+     * a value for the <code>Limit</code> parameter, Amazon Kinesis uses the
+     * default limit, which is currently 10.
      * </p>
      * <p>
      * You can detect if there are more streams available to list by using
@@ -1920,10 +1897,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * using the name of the last stream returned by the
      * <code>ListStreams</code> request in the
      * <code>ExclusiveStartStreamName</code> parameter in a subsequent
-     * request to <code>ListStreams</code> .
-     * The group of stream names returned by the subsequent
-     * request is then added to the list. You can continue this process until
-     * all the stream names have been collected in the list.
+     * request to <code>ListStreams</code> . The group of stream names
+     * returned by the subsequent request is then added to the list. You can
+     * continue this process until all the stream names have been collected
+     * in the list.
      * </p>
      * <p>
      * <code>ListStreams</code> has a limit of 5 transactions per second per
@@ -1962,11 +1939,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * The number of streams may be too large to return from a single call
-     * to <code>ListStreams</code> .
-     * You can limit the number of returned streams using the
-     * <code>Limit</code> parameter. If you do not specify a value for the
-     * <code>Limit</code> parameter, Amazon Kinesis uses the default limit,
-     * which is currently 10.
+     * to <code>ListStreams</code> . You can limit the number of returned
+     * streams using the <code>Limit</code> parameter. If you do not specify
+     * a value for the <code>Limit</code> parameter, Amazon Kinesis uses the
+     * default limit, which is currently 10.
      * </p>
      * <p>
      * You can detect if there are more streams available to list by using
@@ -1975,10 +1951,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * using the name of the last stream returned by the
      * <code>ListStreams</code> request in the
      * <code>ExclusiveStartStreamName</code> parameter in a subsequent
-     * request to <code>ListStreams</code> .
-     * The group of stream names returned by the subsequent
-     * request is then added to the list. You can continue this process until
-     * all the stream names have been collected in the list.
+     * request to <code>ListStreams</code> . The group of stream names
+     * returned by the subsequent request is then added to the list. You can
+     * continue this process until all the stream names have been collected
+     * in the list.
      * </p>
      * <p>
      * <code>ListStreams</code> has a limit of 5 transactions per second per
@@ -2036,9 +2012,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * If the stream is in the ACTIVE state, you can call
      * <code>MergeShards</code> . If a stream is in CREATING or UPDATING or
      * DELETING states, then Amazon Kinesis returns a
-     * <code>ResourceInUseException</code> .
-     * If the specified stream does not exist, Amazon Kinesis
-     * returns a <code>ResourceNotFoundException</code> .
+     * <code>ResourceInUseException</code> . If the specified stream does not
+     * exist, Amazon Kinesis returns a <code>ResourceNotFoundException</code>
+     * .
      * </p>
      * <p>
      * You can use the DescribeStream operation to check the state of the

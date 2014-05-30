@@ -20,9 +20,7 @@ import static com.amazonaws.util.CodecUtils.sanityCheckLastPos;
  * 
  * @author Hanson Char
  */
-class Base64Codec {
-    protected static final String UTF8 = "UTF-8";
-    
+class Base64Codec implements Codec {
     private static final int OFFSET_OF_a = 'a' - 26;
     private static final int OFFSET_OF_0 = '0' - 52;
     private static final int OFFSET_OF_PLUS = '+' - 62;
@@ -68,7 +66,8 @@ class Base64Codec {
     protected Base64Codec(byte[] alphabets) {
         ALPAHBETS = alphabets;
     }
-    
+
+    @Override
     public byte[] encode(byte[] src) {
         final int num3bytes = src.length / 3;
         final int remainder = src.length % 3;
@@ -189,7 +188,8 @@ class Base64Codec {
                     ;                                               //     2 6
         return;
     }
-    
+
+    @Override
     public byte[] decode(byte[] src, final int length) 
     {
         if (length % 4 != 0)

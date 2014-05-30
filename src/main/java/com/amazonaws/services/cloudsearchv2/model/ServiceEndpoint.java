@@ -18,71 +18,61 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The endpoint to which service requests can be submitted, including the
- * actual URL prefix for sending requests and the Amazon Resource Name
- * (ARN) so the endpoint can be referenced in other API calls such as
- * UpdateServiceAccessPolicies.
+ * The endpoint to which service requests can be submitted.
  * </p>
  */
 public class ServiceEndpoint implements Serializable {
 
     /**
-     * The URL to which service requests can be submitted. Includes the API
-     * version and path prefix. For example,
-     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</code>
+     * The endpoint to which service requests can be submitted. For example,
+     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>
      * or
-     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</code>.
+     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      */
     private String endpoint;
 
     /**
-     * The URL to which service requests can be submitted. Includes the API
-     * version and path prefix. For example,
-     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</code>
+     * The endpoint to which service requests can be submitted. For example,
+     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>
      * or
-     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</code>.
+     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      *
-     * @return The URL to which service requests can be submitted. Includes the API
-     *         version and path prefix. For example,
-     *         <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</code>
+     * @return The endpoint to which service requests can be submitted. For example,
+     *         <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>
      *         or
-     *         <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</code>.
+     *         <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      */
     public String getEndpoint() {
         return endpoint;
     }
     
     /**
-     * The URL to which service requests can be submitted. Includes the API
-     * version and path prefix. For example,
-     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</code>
+     * The endpoint to which service requests can be submitted. For example,
+     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>
      * or
-     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</code>.
+     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      *
-     * @param endpoint The URL to which service requests can be submitted. Includes the API
-     *         version and path prefix. For example,
-     *         <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</code>
+     * @param endpoint The endpoint to which service requests can be submitted. For example,
+     *         <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>
      *         or
-     *         <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</code>.
+     *         <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      */
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
     
     /**
-     * The URL to which service requests can be submitted. Includes the API
-     * version and path prefix. For example,
-     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</code>
+     * The endpoint to which service requests can be submitted. For example,
+     * <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>
      * or
-     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</code>.
+     * <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endpoint The URL to which service requests can be submitted. Includes the API
-     *         version and path prefix. For example,
-     *         <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</code>
+     * @param endpoint The endpoint to which service requests can be submitted. For example,
+     *         <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>
      *         or
-     *         <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</code>.
+     *         <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

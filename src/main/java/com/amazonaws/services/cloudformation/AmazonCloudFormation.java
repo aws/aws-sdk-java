@@ -161,8 +161,8 @@ public interface AmazonCloudFormation {
      * template for running or deleted stacks.
      * </p>
      * <p>
-     * For deleted stacks, GetTemplate returns the template for up to 90 days
-     * after the stack has been deleted.
+     * For deleted stacks, GetTemplate returns the template for up to 90
+     * days after the stack has been deleted.
      * </p>
      * <p>
      * <b>NOTE:</b> If the template does not exist, a ValidationError is
@@ -241,9 +241,9 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Creates a stack as specified in the template. After the call completes
-     * successfully, the stack creation starts. You can check the status of
-     * the stack via the DescribeStacks API.
+     * Creates a stack as specified in the template. After the call
+     * completes successfully, the stack creation starts. You can check the
+     * status of the stack via the DescribeStacks API.
      * </p>
      *
      * @param createStackRequest Container for the necessary parameters to
@@ -352,8 +352,8 @@ public interface AmazonCloudFormation {
      * stack.
      * </p>
      * <p>
-     * For deleted stacks, DescribeStackResource returns resource information
-     * for up to 90 days after the stack has been deleted.
+     * For deleted stacks, DescribeStackResource returns resource
+     * information for up to 90 days after the stack has been deleted.
      * </p>
      *
      * @param describeStackResourceRequest Container for the necessary
@@ -405,9 +405,9 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Updates a stack as specified in the template. After the call completes
-     * successfully, the stack update starts. You can check the status of the
-     * stack via the DescribeStacks action.
+     * Updates a stack as specified in the template. After the call
+     * completes successfully, the stack update starts. You can check the
+     * status of the stack via the DescribeStacks action.
      * </p>
      * <p>
      * To get a copy of the template for an existing stack, you can use the
@@ -498,9 +498,9 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Deletes a specified stack. Once the call completes successfully, stack
-     * deletion starts. Deleted stacks do not show up in the DescribeStacks
-     * API if the deletion has been completed successfully.
+     * Deletes a specified stack. Once the call completes successfully,
+     * stack deletion starts. Deleted stacks do not show up in the
+     * DescribeStacks API if the deletion has been completed successfully.
      * </p>
      *
      * @param deleteStackRequest Container for the necessary parameters to

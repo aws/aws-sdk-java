@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the <code>Deployed</code> option to <code>true</code> to show the
  * active configuration and exclude pending changes. For more
  * information, see
- * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html"> Getting Domain Information </a>
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"> Getting Domain Information </a>
  * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *

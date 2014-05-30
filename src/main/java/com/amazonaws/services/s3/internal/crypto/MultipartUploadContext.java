@@ -15,7 +15,10 @@
 package com.amazonaws.services.s3.internal.crypto;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
+
+import com.amazonaws.util.Classes;
 
 /**
  * Contextual information for an in-flight multipart upload.
@@ -60,7 +63,10 @@ public abstract class MultipartUploadContext {
     /**
      * @param materialsDescription the materialsDescription to set
      */
-    public final void setMaterialsDescription(Map<String, String> materialsDescription) {
-        this.materialsDescription = Collections.unmodifiableMap(materialsDescription);
+    public final void setMaterialsDescription(
+            Map<String, String> materialsDescription) {
+        this.materialsDescription = materialsDescription == null 
+            ? null
+            : Collections.unmodifiableMap(new HashMap<String, String>(materialsDescription));
     }
 }

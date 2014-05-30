@@ -421,13 +421,14 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <code>ChangeMessageVisibilityBatch</code> action.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Because the batch request can result in a combination
-     * of successful and unsuccessful actions, you should check for batch
-     * errors even when the call returns an HTTP status code of 200.
+     * <b>IMPORTANT:</b>Because the batch request can result in a
+     * combination of successful and unsuccessful actions, you should check
+     * for batch errors even when the call returns an HTTP status code of
+     * 200.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -472,13 +473,14 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <code>ChangeMessageVisibilityBatch</code> action.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Because the batch request can result in a combination
-     * of successful and unsuccessful actions, you should check for batch
-     * errors even when the call returns an HTTP status code of 200.
+     * <b>IMPORTANT:</b>Because the batch request can result in a
+     * combination of successful and unsuccessful actions, you should check
+     * for batch errors even when the call returns an HTTP status code of
+     * 200.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -693,7 +695,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * see AddPermission or go to
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      *
      * @param getQueueUrlRequest Container for the necessary parameters to
@@ -733,7 +734,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * see AddPermission or go to
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html"> Shared Queues </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      *
      * @param getQueueUrlRequest Container for the necessary parameters to
@@ -776,9 +776,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
     
     /**
      * <p>
-     * Revokes any permissions in the queue policy that matches the specified
-     * <code>Label</code> parameter. Only the owner of the queue can remove
-     * permissions.
+     * Revokes any permissions in the queue policy that matches the
+     * specified <code>Label</code> parameter. Only the owner of the queue
+     * can remove permissions.
      * </p>
      *
      * @param removePermissionRequest Container for the necessary parameters
@@ -808,9 +808,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
 
     /**
      * <p>
-     * Revokes any permissions in the queue policy that matches the specified
-     * <code>Label</code> parameter. Only the owner of the queue can remove
-     * permissions.
+     * Revokes any permissions in the queue policy that matches the
+     * specified <code>Label</code> parameter. Only the owner of the queue
+     * can remove permissions.
      * </p>
      *
      * @param removePermissionRequest Container for the necessary parameters
@@ -904,8 +904,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * your code so that it can handle new attributes gracefully.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -994,8 +994,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * your code so that it can handle new attributes gracefully.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -1074,8 +1074,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 200.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -1140,8 +1140,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 200.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -1299,7 +1299,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * more than 30 days. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html"> How Amazon SQS Queues Work </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      *
      * @param deleteQueueRequest Container for the necessary parameters to
@@ -1350,7 +1349,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * more than 30 days. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html"> How Amazon SQS Queues Work </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      *
      * @param deleteQueueRequest Container for the necessary parameters to
@@ -1399,12 +1397,12 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * for an AWS SDK, check the SDK release notes.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> The following list shows the characters (in Unicode)
-     * allowed in your message, according to the W3C XML specification. For
-     * more information, go to http://www.w3.org/TR/REC-xml/#charsets If you
-     * send any characters not included in the list, your request will be
-     * rejected. #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] |
-     * [#x10000 to #x10FFFF]
+     * <b>IMPORTANT:</b> The following list shows the characters (in
+     * Unicode) allowed in your message, according to the W3C XML
+     * specification. For more information, go to
+     * http://www.w3.org/TR/REC-xml/#charsets If you send any characters not
+     * included in the list, your request will be rejected. #x9 | #xA | #xD |
+     * [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
      * </p>
      *
      * @param sendMessageRequest Container for the necessary parameters to
@@ -1440,12 +1438,12 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * for an AWS SDK, check the SDK release notes.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> The following list shows the characters (in Unicode)
-     * allowed in your message, according to the W3C XML specification. For
-     * more information, go to http://www.w3.org/TR/REC-xml/#charsets If you
-     * send any characters not included in the list, your request will be
-     * rejected. #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] |
-     * [#x10000 to #x10FFFF]
+     * <b>IMPORTANT:</b> The following list shows the characters (in
+     * Unicode) allowed in your message, according to the W3C XML
+     * specification. For more information, go to
+     * http://www.w3.org/TR/REC-xml/#charsets If you send any characters not
+     * included in the list, your request will be rejected. #x9 | #xA | #xD |
+     * [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
      * </p>
      *
      * @param sendMessageRequest Container for the necessary parameters to
@@ -1493,7 +1491,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <code>WaitTimeSeconds</code> parameter. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      * <p>
      * Short poll is the default behavior where a weighted random set of
@@ -1544,7 +1541,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * the message. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      * <p>
      * You can provide the <code>VisibilityTimeout</code> parameter in your
@@ -1554,7 +1550,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      * <p>
      * <b>NOTE:</b> Going forward, new attributes might be added. If you are
@@ -1593,7 +1588,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * <code>WaitTimeSeconds</code> parameter. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html"> Amazon SQS Long Poll </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      * <p>
      * Short poll is the default behavior where a weighted random set of
@@ -1644,7 +1638,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * the message. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"> Queue and Message Identifiers </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      * <p>
      * You can provide the <code>VisibilityTimeout</code> parameter in your
@@ -1654,7 +1647,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a>
      * in the <i>Amazon SQS Developer Guide</i> .
-     * 
      * </p>
      * <p>
      * <b>NOTE:</b> Going forward, new attributes might be added. If you are
@@ -1791,8 +1783,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 200.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -1840,8 +1832,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * 200.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -1919,8 +1911,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * an existing queue, <code>CreateQueue</code> returns an error.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -1984,8 +1976,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * an existing queue, <code>CreateQueue</code> returns an error.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -2054,8 +2046,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * Using The Access Policy Language in the Amazon SQS Developer Guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -2111,8 +2103,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * Using The Access Policy Language in the Amazon SQS Developer Guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Some API actions take lists of parameters. These lists are
-     * specified using the param.n notation. Values of n are integers
+     * <b>NOTE:</b>Some API actions take lists of parameters. These lists
+     * are specified using the param.n notation. Values of n are integers
      * starting from 1. For example, a parameter list with two elements looks
      * like this:
      * </p>
@@ -2171,21 +2163,21 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * period, Amazon SQS automatically deletes it.
      * </p>
      * <p>
-     * <b>NOTE:</b> The receipt handle is associated with a specific instance
-     * of receiving the message. If you receive a message more than once, the
-     * receipt handle you get each time you receive the message is different.
-     * When you request DeleteMessage, if you don't provide the most recently
-     * received receipt handle for the message, the request will still
-     * succeed, but the message might not be deleted.
+     * <b>NOTE:</b> The receipt handle is associated with a specific
+     * instance of receiving the message. If you receive a message more than
+     * once, the receipt handle you get each time you receive the message is
+     * different. When you request DeleteMessage, if you don't provide the
+     * most recently received receipt handle for the message, the request
+     * will still succeed, but the message might not be deleted.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> It is possible you will receive a message even after
-     * you have deleted it. This might happen on rare occasions if one of the
-     * servers storing a copy of the message is unavailable when you request
-     * to delete the message. The copy remains on the server and might be
-     * returned to you again on a subsequent receive request. You should
-     * create your system to be idempotent so that receiving a particular
-     * message more than once is not a problem.
+     * <b>IMPORTANT:</b> It is possible you will receive a message even
+     * after you have deleted it. This might happen on rare occasions if one
+     * of the servers storing a copy of the message is unavailable when you
+     * request to delete the message. The copy remains on the server and
+     * might be returned to you again on a subsequent receive request. You
+     * should create your system to be idempotent so that receiving a
+     * particular message more than once is not a problem.
      * </p>
      *
      * @param deleteMessageRequest Container for the necessary parameters to
@@ -2224,21 +2216,21 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * period, Amazon SQS automatically deletes it.
      * </p>
      * <p>
-     * <b>NOTE:</b> The receipt handle is associated with a specific instance
-     * of receiving the message. If you receive a message more than once, the
-     * receipt handle you get each time you receive the message is different.
-     * When you request DeleteMessage, if you don't provide the most recently
-     * received receipt handle for the message, the request will still
-     * succeed, but the message might not be deleted.
+     * <b>NOTE:</b> The receipt handle is associated with a specific
+     * instance of receiving the message. If you receive a message more than
+     * once, the receipt handle you get each time you receive the message is
+     * different. When you request DeleteMessage, if you don't provide the
+     * most recently received receipt handle for the message, the request
+     * will still succeed, but the message might not be deleted.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> It is possible you will receive a message even after
-     * you have deleted it. This might happen on rare occasions if one of the
-     * servers storing a copy of the message is unavailable when you request
-     * to delete the message. The copy remains on the server and might be
-     * returned to you again on a subsequent receive request. You should
-     * create your system to be idempotent so that receiving a particular
-     * message more than once is not a problem.
+     * <b>IMPORTANT:</b> It is possible you will receive a message even
+     * after you have deleted it. This might happen on rare occasions if one
+     * of the servers storing a copy of the message is unavailable when you
+     * request to delete the message. The copy remains on the server and
+     * might be returned to you again on a subsequent receive request. You
+     * should create your system to be idempotent so that receiving a
+     * particular message more than once is not a problem.
      * </p>
      *
      * @param deleteMessageRequest Container for the necessary parameters to

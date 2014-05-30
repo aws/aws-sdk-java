@@ -31,12 +31,11 @@ import java.util.TreeMap;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.commons.codec.binary.Base64;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.internal.SdkDigestInputStream;
+import com.amazonaws.util.Base64;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.StringInputStream;
 
@@ -67,7 +66,7 @@ public abstract class AbstractAWSSigner implements Signer {
             throws AmazonClientException {
         try {
             byte[] signature = sign(data, key.getBytes(UTF8), algorithm);
-            return new String(Base64.encodeBase64(signature));
+            return Base64.encodeAsString(signature);
         } catch (Exception e) {
             throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
         }

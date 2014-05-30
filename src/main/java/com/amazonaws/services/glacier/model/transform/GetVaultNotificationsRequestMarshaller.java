@@ -47,10 +47,8 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         Request<GetVaultNotificationsRequest> request = new DefaultRequest<GetVaultNotificationsRequest>(getVaultNotificationsRequest, "AmazonGlacier");
         String target = "Glacier.GetVaultNotifications";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.GET);
-
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (getVaultNotificationsRequest.getAccountId() == null) ? "" : StringUtils.fromString(getVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (getVaultNotificationsRequest.getVaultName() == null) ? "" : StringUtils.fromString(getVaultNotificationsRequest.getVaultName())); 
@@ -64,15 +62,13 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

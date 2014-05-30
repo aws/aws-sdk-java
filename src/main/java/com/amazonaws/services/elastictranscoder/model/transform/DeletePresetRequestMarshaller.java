@@ -47,10 +47,8 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
         Request<DeletePresetRequest> request = new DefaultRequest<DeletePresetRequest>(deletePresetRequest, "AmazonElasticTranscoder");
         String target = "EtsCustomerService.DeletePreset";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.DELETE);
-
         String uriResourcePath = "2012-09-25/presets/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", (deletePresetRequest.getId() == null) ? "" : StringUtils.fromString(deletePresetRequest.getId())); 
 
@@ -63,15 +61,13 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

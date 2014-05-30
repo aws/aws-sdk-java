@@ -41,8 +41,8 @@ import com.amazonaws.services.simpleemail.model.*;
 public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService {
     /**
      * <p>
-     * Deletes the specified identity (email address or domain) from the list
-     * of verified identities.
+     * Deletes the specified identity (email address or domain) from the
+     * list of verified identities.
      * </p>
      * <p>
      * This action is throttled at one request per second.
@@ -69,8 +69,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes the specified identity (email address or domain) from the list
-     * of verified identities.
+     * Deletes the specified identity (email address or domain) from the
+     * list of verified identities.
      * </p>
      * <p>
      * This action is throttled at one request per second.
@@ -586,9 +586,9 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * message to be sent to the specified address.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the
-     * May 15, 2012 release of Domain Verification. The VerifyEmailIdentity
-     * action is now preferred.
+     * <b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of
+     * the May 15, 2012 release of Domain Verification. The
+     * VerifyEmailIdentity action is now preferred.
      * </p>
      * <p>
      * This action is throttled at one request per second.
@@ -620,9 +620,9 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * message to be sent to the specified address.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the
-     * May 15, 2012 release of Domain Verification. The VerifyEmailIdentity
-     * action is now preferred.
+     * <b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of
+     * the May 15, 2012 release of Domain Verification. The
+     * VerifyEmailIdentity action is now preferred.
      * </p>
      * <p>
      * This action is throttled at one request per second.
@@ -1368,11 +1368,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Given an identity (email address or domain), sets the Amazon SNS topic
-     * to which Amazon SES will publish bounce and complaint notifications
-     * for emails sent with that identity as the <code>Source</code> .
-     * Publishing to topics may only be disabled when feedback
-     * forwarding is enabled.
+     * Given an identity (email address or domain), sets the Amazon SNS
+     * topic to which Amazon SES will publish bounce and complaint
+     * notifications for emails sent with that identity as the
+     * <code>Source</code> . Publishing to topics may only be disabled when
+     * feedback forwarding is enabled.
      * </p>
      * <p>
      * This action is throttled at one request per second.
@@ -1405,11 +1405,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Given an identity (email address or domain), sets the Amazon SNS topic
-     * to which Amazon SES will publish bounce and complaint notifications
-     * for emails sent with that identity as the <code>Source</code> .
-     * Publishing to topics may only be disabled when feedback
-     * forwarding is enabled.
+     * Given an identity (email address or domain), sets the Amazon SNS
+     * topic to which Amazon SES will publish bounce and complaint
+     * notifications for emails sent with that identity as the
+     * <code>Source</code> . Publishing to topics may only be disabled when
+     * feedback forwarding is enabled.
      * </p>
      * <p>
      * This action is throttled at one request per second.

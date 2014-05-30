@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#deleteSuggester(DeleteSuggesterRequest) DeleteSuggester operation}.
  * <p>
  * Deletes a suggester. For more information, see
- * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html"> Getting Search Suggestions </a>
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"> Getting Search Suggestions </a>
  * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *

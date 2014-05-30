@@ -47,10 +47,8 @@ public class ReadJobRequestMarshaller implements Marshaller<Request<ReadJobReque
         Request<ReadJobRequest> request = new DefaultRequest<ReadJobRequest>(readJobRequest, "AmazonElasticTranscoder");
         String target = "EtsCustomerService.ReadJob";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.GET);
-
         String uriResourcePath = "2012-09-25/jobs/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", (readJobRequest.getId() == null) ? "" : StringUtils.fromString(readJobRequest.getId())); 
 
@@ -63,15 +61,13 @@ public class ReadJobRequestMarshaller implements Marshaller<Request<ReadJobReque
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

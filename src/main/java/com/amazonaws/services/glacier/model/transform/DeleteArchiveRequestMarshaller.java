@@ -47,10 +47,8 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
         Request<DeleteArchiveRequest> request = new DefaultRequest<DeleteArchiveRequest>(deleteArchiveRequest, "AmazonGlacier");
         String target = "Glacier.DeleteArchive";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.DELETE);
-
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (deleteArchiveRequest.getAccountId() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (deleteArchiveRequest.getVaultName() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getVaultName())); 
@@ -65,15 +63,13 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

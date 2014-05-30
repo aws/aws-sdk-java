@@ -59,8 +59,8 @@ public class AnalysisOptions implements Serializable {
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      * available levels vary depending on the language. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     * target="_blank">Langage Specific Text Processing Settings</a> in the
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     * target="_blank">Language Specific Text Processing Settings</a> in the
      * <i>Amazon CloudSearch Developer Guide</i>
      * <p>
      * <b>Constraints:</b><br/>
@@ -268,8 +268,8 @@ public class AnalysisOptions implements Serializable {
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      * available levels vary depending on the language. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     * target="_blank">Langage Specific Text Processing Settings</a> in the
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     * target="_blank">Language Specific Text Processing Settings</a> in the
      * <i>Amazon CloudSearch Developer Guide</i>
      * <p>
      * <b>Constraints:</b><br/>
@@ -279,8 +279,8 @@ public class AnalysisOptions implements Serializable {
      *         <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      *         available levels vary depending on the language. For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     *         target="_blank">Langage Specific Text Processing Settings</a> in the
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     *         target="_blank">Language Specific Text Processing Settings</a> in the
      *         <i>Amazon CloudSearch Developer Guide</i>
      *
      * @see AlgorithmicStemming
@@ -294,8 +294,8 @@ public class AnalysisOptions implements Serializable {
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      * available levels vary depending on the language. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     * target="_blank">Langage Specific Text Processing Settings</a> in the
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     * target="_blank">Language Specific Text Processing Settings</a> in the
      * <i>Amazon CloudSearch Developer Guide</i>
      * <p>
      * <b>Constraints:</b><br/>
@@ -305,8 +305,8 @@ public class AnalysisOptions implements Serializable {
      *         <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      *         available levels vary depending on the language. For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     *         target="_blank">Langage Specific Text Processing Settings</a> in the
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     *         target="_blank">Language Specific Text Processing Settings</a> in the
      *         <i>Amazon CloudSearch Developer Guide</i>
      *
      * @see AlgorithmicStemming
@@ -320,8 +320,8 @@ public class AnalysisOptions implements Serializable {
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      * available levels vary depending on the language. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     * target="_blank">Langage Specific Text Processing Settings</a> in the
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     * target="_blank">Language Specific Text Processing Settings</a> in the
      * <i>Amazon CloudSearch Developer Guide</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -333,8 +333,8 @@ public class AnalysisOptions implements Serializable {
      *         <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      *         available levels vary depending on the language. For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     *         target="_blank">Langage Specific Text Processing Settings</a> in the
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     *         target="_blank">Language Specific Text Processing Settings</a> in the
      *         <i>Amazon CloudSearch Developer Guide</i>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -352,8 +352,8 @@ public class AnalysisOptions implements Serializable {
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      * available levels vary depending on the language. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     * target="_blank">Langage Specific Text Processing Settings</a> in the
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     * target="_blank">Language Specific Text Processing Settings</a> in the
      * <i>Amazon CloudSearch Developer Guide</i>
      * <p>
      * <b>Constraints:</b><br/>
@@ -363,8 +363,8 @@ public class AnalysisOptions implements Serializable {
      *         <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      *         available levels vary depending on the language. For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     *         target="_blank">Langage Specific Text Processing Settings</a> in the
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     *         target="_blank">Language Specific Text Processing Settings</a> in the
      *         <i>Amazon CloudSearch Developer Guide</i>
      *
      * @see AlgorithmicStemming
@@ -378,8 +378,8 @@ public class AnalysisOptions implements Serializable {
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      * available levels vary depending on the language. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     * target="_blank">Langage Specific Text Processing Settings</a> in the
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     * target="_blank">Language Specific Text Processing Settings</a> in the
      * <i>Amazon CloudSearch Developer Guide</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -391,8 +391,8 @@ public class AnalysisOptions implements Serializable {
      *         <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      *         available levels vary depending on the language. For more information,
      *         see <a
-     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing-settings.html"
-     *         target="_blank">Langage Specific Text Processing Settings</a> in the
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+     *         target="_blank">Language Specific Text Processing Settings</a> in the
      *         <i>Amazon CloudSearch Developer Guide</i>
      *
      * @return A reference to this updated object so that method calls can be chained 

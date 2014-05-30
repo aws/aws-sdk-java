@@ -286,9 +286,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
             
     /**
      * <p>
-     * The <i>ModifyCacheParameterGroup</i> operation modifies the parameters
-     * of a cache parameter group. You can modify up to 20 parameters in a
-     * single request by submitting a list parameter name and value pairs.
+     * The <i>ModifyCacheParameterGroup</i> operation modifies the
+     * parameters of a cache parameter group. You can modify up to 20
+     * parameters in a single request by submitting a list parameter name and
+     * value pairs.
      * </p>
      *
      * @param modifyCacheParameterGroupRequest Container for the necessary
@@ -319,9 +320,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>ModifyCacheParameterGroup</i> operation modifies the parameters
-     * of a cache parameter group. You can modify up to 20 parameters in a
-     * single request by submitting a list parameter name and value pairs.
+     * The <i>ModifyCacheParameterGroup</i> operation modifies the
+     * parameters of a cache parameter group. You can modify up to 20
+     * parameters in a single request by submitting a list parameter name and
+     * value pairs.
      * </p>
      *
      * @param modifyCacheParameterGroupRequest Container for the necessary
@@ -606,8 +608,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet
-     * group.
+     * The <i>CreateCacheSubnetGroup</i> operation creates a new cache
+     * subnet group.
      * </p>
      * <p>
      * Use this parameter only when you are creating a cluster in an Amazon
@@ -642,8 +644,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet
-     * group.
+     * The <i>CreateCacheSubnetGroup</i> operation creates a new cache
+     * subnet group.
      * </p>
      * <p>
      * Use this parameter only when you are creating a cluster in an Amazon
@@ -692,10 +694,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network
-     * ingress to a cache security group. Applications using ElastiCache must
-     * be running on Amazon EC2, and Amazon EC2 security groups are used as
-     * the authorization mechanism.
+     * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows
+     * network ingress to a cache security group. Applications using
+     * ElastiCache must be running on Amazon EC2, and Amazon EC2 security
+     * groups are used as the authorization mechanism.
      * </p>
      * <p>
      * <b>NOTE:</b> You cannot authorize ingress from an Amazon EC2 security
@@ -730,10 +732,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network
-     * ingress to a cache security group. Applications using ElastiCache must
-     * be running on Amazon EC2, and Amazon EC2 security groups are used as
-     * the authorization mechanism.
+     * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows
+     * network ingress to a cache security group. Applications using
+     * ElastiCache must be running on Amazon EC2, and Amazon EC2 security
+     * groups are used as the authorization mechanism.
      * </p>
      * <p>
      * <b>NOTE:</b> You cannot authorize ingress from an Amazon EC2 security
@@ -782,8 +784,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security
-     * group.
+     * The <i>DeleteCacheSecurityGroup</i> operation deletes a cache
+     * security group.
      * </p>
      * <p>
      * <b>NOTE:</b>You cannot delete a cache security group if it is
@@ -819,8 +821,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security
-     * group.
+     * The <i>DeleteCacheSecurityGroup</i> operation deletes a cache
+     * security group.
      * </p>
      * <p>
      * <b>NOTE:</b>You cannot delete a cache security group if it is
@@ -948,8 +950,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache
-     * subnet group.
+     * The <i>ModifyCacheSubnetGroup</i> operation modifies an existing
+     * cache subnet group.
      * </p>
      *
      * @param modifyCacheSubnetGroupRequest Container for the necessary
@@ -980,8 +982,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache
-     * subnet group.
+     * The <i>ModifyCacheSubnetGroup</i> operation modifies an existing
+     * cache subnet group.
      * </p>
      *
      * @param modifyCacheSubnetGroupRequest Container for the necessary
@@ -1358,10 +1360,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When
-     * you receive a successful response from this operation, ElastiCache
-     * immediately begins deleting the snapshot; you cannot cancel or revert
-     * this operation.
+     * The <i>DeleteSnapshot</i> operation deletes an existing snapshot.
+     * When you receive a successful response from this operation,
+     * ElastiCache immediately begins deleting the snapshot; you cannot
+     * cancel or revert this operation.
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -1390,10 +1392,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When
-     * you receive a successful response from this operation, ElastiCache
-     * immediately begins deleting the snapshot; you cannot cancel or revert
-     * this operation.
+     * The <i>DeleteSnapshot</i> operation deletes an existing snapshot.
+     * When you receive a successful response from this operation,
+     * ElastiCache immediately begins deleting the snapshot; you cannot
+     * cancel or revert this operation.
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -1514,9 +1516,9 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache
-     * subnet group descriptions. If a subnet group name is specified, the
-     * list will contain only the description of that group.
+     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of
+     * cache subnet group descriptions. If a subnet group name is specified,
+     * the list will contain only the description of that group.
      * </p>
      *
      * @param describeCacheSubnetGroupsRequest Container for the necessary
@@ -1547,9 +1549,9 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache
-     * subnet group descriptions. If a subnet group name is specified, the
-     * list will contain only the description of that group.
+     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of
+     * cache subnet group descriptions. If a subnet group name is specified,
+     * the list will contain only the description of that group.
      * </p>
      *
      * @param describeCacheSubnetGroupsRequest Container for the necessary
@@ -1998,10 +2000,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>DescribeSnapshots</i> operation returns information about cache
-     * cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of
-     * your snapshots; it can optionally describe a single snapshot, or just
-     * the snapshots associated with a particular cache cluster.
+     * The <i>DescribeSnapshots</i> operation returns information about
+     * cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
+     * all of your snapshots; it can optionally describe a single snapshot,
+     * or just the snapshots associated with a particular cache cluster.
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -2030,10 +2032,10 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>DescribeSnapshots</i> operation returns information about cache
-     * cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of
-     * your snapshots; it can optionally describe a single snapshot, or just
-     * the snapshots associated with a particular cache cluster.
+     * The <i>DescribeSnapshots</i> operation returns information about
+     * cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
+     * all of your snapshots; it can optionally describe a single snapshot,
+     * or just the snapshots associated with a particular cache cluster.
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -2150,8 +2152,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
-     * The <i>DescribeCacheEngineVersions</i> operation returns a list of the
-     * available cache engines and their versions.
+     * The <i>DescribeCacheEngineVersions</i> operation returns a list of
+     * the available cache engines and their versions.
      * </p>
      *
      * @param describeCacheEngineVersionsRequest Container for the necessary
@@ -2182,8 +2184,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
 
     /**
      * <p>
-     * The <i>DescribeCacheEngineVersions</i> operation returns a list of the
-     * available cache engines and their versions.
+     * The <i>DescribeCacheEngineVersions</i> operation returns a list of
+     * the available cache engines and their versions.
      * </p>
      *
      * @param describeCacheEngineVersionsRequest Container for the necessary
@@ -2392,8 +2394,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
      * group.
      * </p>
      * <p>
-     * <b>NOTE:</b>You cannot delete a cache subnet group if it is associated
-     * with any cache clusters.
+     * <b>NOTE:</b>You cannot delete a cache subnet group if it is
+     * associated with any cache clusters.
      * </p>
      *
      * @param deleteCacheSubnetGroupRequest Container for the necessary
@@ -2429,8 +2431,8 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
      * group.
      * </p>
      * <p>
-     * <b>NOTE:</b>You cannot delete a cache subnet group if it is associated
-     * with any cache clusters.
+     * <b>NOTE:</b>You cannot delete a cache subnet group if it is
+     * associated with any cache clusters.
      * </p>
      *
      * @param deleteCacheSubnetGroupRequest Container for the necessary

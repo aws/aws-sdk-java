@@ -268,8 +268,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deregisters an Amazon EBS volume. The volume can then be registered by
-     * another stack. For more information, see
+     * Deregisters an Amazon EBS volume. The volume can then be registered
+     * by another stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .
      * </p>
@@ -302,8 +302,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deregisters an Amazon EBS volume. The volume can then be registered by
-     * another stack. For more information, see
+     * Deregisters an Amazon EBS volume. The volume can then be registered
+     * by another stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .
      * </p>
@@ -554,8 +554,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified instance. You must stop an instance before you can
-     * delete it. For more information, see
+     * Deletes a specified instance. You must stop an instance before you
+     * can delete it. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a>
      * .
      * </p>
@@ -588,8 +588,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified instance. You must stop an instance before you can
-     * delete it. For more information, see
+     * Deletes a specified instance. You must stop an instance before you
+     * can delete it. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a>
      * .
      * </p>
@@ -1110,8 +1110,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Unassigns an assigned Amazon EBS volume. The volume remains registered
-     * with the stack. For more information, see
+     * Unassigns an assigned Amazon EBS volume. The volume remains
+     * registered with the stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .
      * </p>
@@ -1144,8 +1144,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Unassigns an assigned Amazon EBS volume. The volume remains registered
-     * with the stack. For more information, see
+     * Unassigns an assigned Amazon EBS volume. The volume remains
+     * registered with the stack. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .
      * </p>
@@ -1847,12 +1847,13 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * .
      * </p>
      * <p>
-     * <b>NOTE:</b> You should use CreateLayer for noncustom layer types such
-     * as PHP App Server only if the stack does not have an existing layer of
-     * that type. A stack can have at most one instance of each noncustom
-     * layer; if you attempt to create a second instance, CreateLayer fails.
-     * A stack can have an arbitrary number of custom layers, so you can call
-     * CreateLayer as many times as you like for that layer type.
+     * <b>NOTE:</b> You should use CreateLayer for noncustom layer types
+     * such as PHP App Server only if the stack does not have an existing
+     * layer of that type. A stack can have at most one instance of each
+     * noncustom layer; if you attempt to create a second instance,
+     * CreateLayer fails. A stack can have an arbitrary number of custom
+     * layers, so you can call CreateLayer as many times as you like for that
+     * layer type.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -1888,12 +1889,13 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * .
      * </p>
      * <p>
-     * <b>NOTE:</b> You should use CreateLayer for noncustom layer types such
-     * as PHP App Server only if the stack does not have an existing layer of
-     * that type. A stack can have at most one instance of each noncustom
-     * layer; if you attempt to create a second instance, CreateLayer fails.
-     * A stack can have an arbitrary number of custom layers, so you can call
-     * CreateLayer as many times as you like for that layer type.
+     * <b>NOTE:</b> You should use CreateLayer for noncustom layer types
+     * such as PHP App Server only if the stack does not have an existing
+     * layer of that type. A stack can have at most one instance of each
+     * noncustom layer; if you attempt to create a second instance,
+     * CreateLayer fails. A stack can have an arbitrary number of custom
+     * layers, so you can call CreateLayer as many times as you like for that
+     * layer type.
      * </p>
      * <p>
      * <b>Required Permissions</b> : To use this action, an IAM user must
@@ -2144,8 +2146,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Registers an Amazon EBS volume with a specified stack. A volume can be
-     * registered with only one stack at a time. If the volume is already
+     * Registers an Amazon EBS volume with a specified stack. A volume can
+     * be registered with only one stack at a time. If the volume is already
      * registered, you must first deregister it by calling DeregisterVolume.
      * For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
@@ -2180,8 +2182,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Registers an Amazon EBS volume with a specified stack. A volume can be
-     * registered with only one stack at a time. If the volume is already
+     * Registers an Amazon EBS volume with a specified stack. A volume can
+     * be registered with only one stack at a time. If the volume is already
      * registered, you must first deregister it by calling DeregisterVolume.
      * For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
@@ -2692,8 +2694,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Attaches an Elastic Load Balancing load balancer to a specified layer.
-     * For more information, see
+     * Attaches an Elastic Load Balancing load balancer to a specified
+     * layer. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"> Elastic Load Balancing </a>
      * .
      * </p>
@@ -2732,8 +2734,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Attaches an Elastic Load Balancing load balancer to a specified layer.
-     * For more information, see
+     * Attaches an Elastic Load Balancing load balancer to a specified
+     * layer. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html"> Elastic Load Balancing </a>
      * .
      * </p>
@@ -2982,7 +2984,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Describes load-based auto scaling configurations for specified layers.
+     * Describes load-based auto scaling configurations for specified
+     * layers.
      * </p>
      * <p>
      * <b>NOTE:</b> You must specify at least one of the parameters.
@@ -3018,7 +3021,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Describes load-based auto scaling configurations for specified layers.
+     * Describes load-based auto scaling configurations for specified
+     * layers.
      * </p>
      * <p>
      * <b>NOTE:</b> You must specify at least one of the parameters.
@@ -3848,9 +3852,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Registers an Elastic IP address with a specified stack. An address can
-     * be registered with only one stack at a time. If the address is already
-     * registered, you must first deregister it by calling
+     * Registers an Elastic IP address with a specified stack. An address
+     * can be registered with only one stack at a time. If the address is
+     * already registered, you must first deregister it by calling
      * DeregisterElasticIp. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .
@@ -3884,9 +3888,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Registers an Elastic IP address with a specified stack. An address can
-     * be registered with only one stack at a time. If the address is already
-     * registered, you must first deregister it by calling
+     * Registers an Elastic IP address with a specified stack. An address
+     * can be registered with only one stack at a time. If the address is
+     * already registered, you must first deregister it by calling
      * DeregisterElasticIp. For more information, see
      * <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"> Resource Management </a>
      * .

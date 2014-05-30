@@ -35,8 +35,6 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.commons.codec.binary.Base64;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.InputSubstream;
@@ -55,6 +53,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
+import com.amazonaws.util.Base64;
 import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
@@ -195,16 +194,16 @@ public class EncryptionUtils {
         JSONObject instructionJSON = parseJSONInstruction(instructionFile);
         try {
             // Get fields from instruction object
-            byte[] encryptedSymmetricKeyBytes = instructionJSON.getString(Headers.CRYPTO_KEY).getBytes();
-            byte[] initVectorBytes = instructionJSON.getString(Headers.CRYPTO_IV).getBytes();
+            String encryptedSymmetricKeyB64 = instructionJSON.getString(Headers.CRYPTO_KEY);
+            String ivB64 = instructionJSON.getString(Headers.CRYPTO_IV);
             String materialsDescriptionString = instructionJSON.tryGetString(Headers.MATERIALS_DESCRIPTION);
             Map<String, String> materialsDescription = convertJSONToMap(materialsDescriptionString);
 
             // Decode from Base 64 to standard binary bytes
-            encryptedSymmetricKeyBytes = Base64.decodeBase64(encryptedSymmetricKeyBytes);
-            initVectorBytes = Base64.decodeBase64(initVectorBytes);
+            byte[] encryptedSymmetricKey = Base64.decode(encryptedSymmetricKeyB64);
+            byte[] iv = Base64.decode(ivB64);
 
-            if (encryptedSymmetricKeyBytes == null || initVectorBytes == null) {
+            if (encryptedSymmetricKey == null || iv == null) {
                 // If necessary encryption info was not found in the instruction file, throw an exception.
                 throw new AmazonClientException(
                         String.format("Necessary encryption info not found in the instruction file '%s' in bucket '%s'",
@@ -222,10 +221,10 @@ public class EncryptionUtils {
             }
 
             // Decrypt the symmetric key and create the symmetric cipher
-            SecretKey symmetricKey = getDecryptedSymmetricKey(encryptedSymmetricKeyBytes, materials, cryptoProvider);
-            CipherFactory cipherFactory = new CipherFactory(symmetricKey, Cipher.DECRYPT_MODE, initVectorBytes, cryptoProvider);
+            SecretKey symmetricKey = getDecryptedSymmetricKey(encryptedSymmetricKey, materials, cryptoProvider);
+            CipherFactory cipherFactory = new CipherFactory(symmetricKey, Cipher.DECRYPT_MODE, iv, cryptoProvider);
 
-            return new EncryptionInstruction(materialsDescription, encryptedSymmetricKeyBytes, symmetricKey, cipherFactory);
+            return new EncryptionInstruction(materialsDescription, encryptedSymmetricKey, symmetricKey, cipherFactory);
         } catch (JSONException e) {
             throw new AmazonClientException("Unable to parse retrieved instruction file : " + e.getMessage());
         }
@@ -690,9 +689,8 @@ public class EncryptionUtils {
         if (userMetadata == null || !userMetadata.containsKey(headerName)) {
             return null;
         } else {
-            byte[] valueBytes = userMetadata.get(headerName).getBytes();
             // Convert Base64 bytes to binary data.
-            return Base64.decodeBase64(valueBytes);
+            return Base64.decode(userMetadata.get(headerName));
         }
     }
 
@@ -759,14 +757,13 @@ public class EncryptionUtils {
     private static void updateMetadata(ObjectMetadata metadata, byte[] keyBytesToStoreInMetadata, Cipher symmetricCipher, Map<String, String> materialsDescription) {
         // If we generated a symmetric key to encrypt the data, store it in the object metadata.
         if (keyBytesToStoreInMetadata != null) {
-            keyBytesToStoreInMetadata = Base64.encodeBase64(keyBytesToStoreInMetadata);
-            metadata.addUserMetadata(Headers.CRYPTO_KEY, new String(keyBytesToStoreInMetadata));
+            metadata.addUserMetadata(Headers.CRYPTO_KEY,
+                    Base64.encodeAsString(keyBytesToStoreInMetadata));
         }
 
         // Put the cipher initialization vector (IV) into the object metadata
-        byte[] initVectorBytes = symmetricCipher.getIV();
-        initVectorBytes = Base64.encodeBase64(initVectorBytes);
-        metadata.addUserMetadata(Headers.CRYPTO_IV, new String(initVectorBytes));
+        metadata.addUserMetadata(Headers.CRYPTO_IV,
+                Base64.encodeAsString(symmetricCipher.getIV()));
 
         // Put the materials description into the object metadata as JSON
         JSONObject descriptionJSON = new JSONObject(materialsDescription);
@@ -842,7 +839,7 @@ public class EncryptionUtils {
         if (request.getFile() != null) {
             return request.getFile().length();
         } else if (request.getInputStream() != null
-                   && metadata.getRawMetadata().get(Headers.CONTENT_LENGTH) != null) {
+                   && metadata.getRawMetadataValue(Headers.CONTENT_LENGTH) != null) {
             return metadata.getContentLength();
         }
 
@@ -855,16 +852,14 @@ public class EncryptionUtils {
     private static JSONObject convertInstructionToJSONObject(EncryptionInstruction instruction) {
         JSONObject instructionJSON = new JSONObject();
         try {
-            JSONObject materialsDescriptionJSON = new JSONObject(instruction.getMaterialsDescription());
-            byte[] initVector = instruction.getSymmetricCipher().getIV();
-            initVector = Base64.encodeBase64(initVector);
-            byte[] encryptedKeyBytes = instruction.getEncryptedSymmetricKey();
-            encryptedKeyBytes = Base64.encodeBase64(encryptedKeyBytes);
-
-            instructionJSON.put(Headers.MATERIALS_DESCRIPTION, materialsDescriptionJSON.toString());
-            instructionJSON.put(Headers.CRYPTO_KEY, new String(encryptedKeyBytes));
-            instructionJSON.put(Headers.CRYPTO_IV, new String(initVector));
-
+            JSONObject materialsDescriptionJSON = new JSONObject(
+                    instruction.getMaterialsDescription());
+            instructionJSON.put(Headers.MATERIALS_DESCRIPTION,
+                    materialsDescriptionJSON.toString());
+            instructionJSON.put(Headers.CRYPTO_KEY, 
+                Base64.encodeAsString(instruction.getEncryptedSymmetricKey()));
+            byte[] iv = instruction.getSymmetricCipher().getIV();
+            instructionJSON.put(Headers.CRYPTO_IV, Base64.encodeAsString(iv));
         } catch (JSONException e) {} // Keys are never null, so JSONException will never be thrown.
         return instructionJSON;
     }

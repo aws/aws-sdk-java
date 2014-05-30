@@ -47,7 +47,6 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         Request<UploadArchiveRequest> request = new DefaultRequest<UploadArchiveRequest>(uploadArchiveRequest, "AmazonGlacier");
         String target = "Glacier.UploadArchive";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.POST);
         if (uploadArchiveRequest.getContentLength() != null)
@@ -58,7 +57,7 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         
         if (uploadArchiveRequest.getChecksum() != null)
           request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadArchiveRequest.getChecksum()));
-
+        
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadArchiveRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadArchiveRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{accountId}", (uploadArchiveRequest.getAccountId() == null) ? "" : StringUtils.fromString(uploadArchiveRequest.getAccountId())); 
@@ -72,17 +71,17 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(uploadArchiveRequest.getBody());
-        request.addHeader("Content-Type", "binary/octet-stream");
+        if (!request.getHeaders().containsKey("Content-Type")) {
+            request.addHeader("Content-Type", "binary/octet-stream");
+        }
 
         return request;
     }

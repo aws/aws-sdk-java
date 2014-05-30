@@ -34,6 +34,7 @@ public enum AnalysisSchemeLanguage {
     Fr("fr"),
     Ga("ga"),
     Gl("gl"),
+    He("he"),
     Hi("hi"),
     Hu("hu"),
     Hy("hy"),
@@ -106,6 +107,8 @@ public enum AnalysisSchemeLanguage {
             return AnalysisSchemeLanguage.Ga;
         } else if ("gl".equals(value)) {
             return AnalysisSchemeLanguage.Gl;
+        } else if ("he".equals(value)) {
+            return AnalysisSchemeLanguage.He;
         } else if ("hi".equals(value)) {
             return AnalysisSchemeLanguage.Hi;
         } else if ("hu".equals(value)) {

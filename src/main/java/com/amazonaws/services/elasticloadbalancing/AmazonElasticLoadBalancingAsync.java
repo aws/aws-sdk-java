@@ -284,8 +284,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * You can modify the load balancer attributes, such as
-     * <code>AccessLogs</code> ,
-     * <code>ConnectionDraining</code> , and
+     * <code>AccessLogs</code> , <code>ConnectionDraining</code> , and
      * <code>CrossZoneLoadBalancing</code> by either enabling or disabling
      * them.
      * </p>
@@ -323,8 +322,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * You can modify the load balancer attributes, such as
-     * <code>AccessLogs</code> ,
-     * <code>ConnectionDraining</code> , and
+     * <code>AccessLogs</code> , <code>ConnectionDraining</code> , and
      * <code>CrossZoneLoadBalancing</code> by either enabling or disabling
      * them.
      * </p>
@@ -1070,9 +1068,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * registered Availability Zones that contain instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in the
-     * same EC2 Region as the Availability Zones for which the load balancer
-     * was created.
+     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in
+     * the same EC2 Region as the Availability Zones for which the load
+     * balancer was created.
      * </p>
      * <p>
      * For more information, see
@@ -1110,9 +1108,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * registered Availability Zones that contain instances.
      * </p>
      * <p>
-     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in the
-     * same EC2 Region as the Availability Zones for which the load balancer
-     * was created.
+     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in
+     * the same EC2 Region as the Availability Zones for which the load
+     * balancer was created.
      * </p>
      * <p>
      * For more information, see
@@ -1793,7 +1791,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * registered subnets. For more information, see
      * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
-     * 
      * </p>
      *
      * @param attachLoadBalancerToSubnetsRequest Container for the necessary
@@ -1826,7 +1823,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * registered subnets. For more information, see
      * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC </a>
      * in the <i>Elastic Load Balancing Developer Guide</i> .
-     * 
      * </p>
      *
      * @param attachLoadBalancerToSubnetsRequest Container for the necessary
@@ -1881,9 +1877,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b> In order for this call to be successful, you must provide
-     * the same account credentials as those that were used to create the
-     * load balancer.
+     * <b>NOTE:</b> In order for this call to be successful, you must
+     * provide the same account credentials as those that were used to create
+     * the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> Completion of this API does not guarantee that operation
@@ -1942,9 +1938,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * in the <i>Elastic Load Balancing Developer Guide</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b> In order for this call to be successful, you must provide
-     * the same account credentials as those that were used to create the
-     * load balancer.
+     * <b>NOTE:</b> In order for this call to be successful, you must
+     * provide the same account credentials as those that were used to create
+     * the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> Completion of this API does not guarantee that operation

@@ -60,7 +60,10 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements Mater
      * @param materialsDescription the materialsDescription to set
      */
     public void setMaterialsDescription(Map<String, String> materialsDescription) {
-        this.materialsDescription = Collections.unmodifiableMap(materialsDescription);
+        this.materialsDescription = materialsDescription == null
+                ? null
+                : Collections.unmodifiableMap(new HashMap<String,String>(materialsDescription))
+                ;
     }
     
     /**

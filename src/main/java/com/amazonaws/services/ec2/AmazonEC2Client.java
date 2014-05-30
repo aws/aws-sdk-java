@@ -353,8 +353,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * stuck in a busy state while detaching.
      * </p>
      * <p>
-     * If an Amazon EBS volume is the root device of an instance, it can't be
-     * detached while the instance is running. To detach the root volume,
+     * If an Amazon EBS volume is the root device of an instance, it can't
+     * be detached while the instance is running. To detach the root volume,
      * stop the instance first.
      * </p>
      * <p>
@@ -402,8 +402,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deletes the specified key pair, by removing the public key from Amazon
-     * EC2.
+     * Deletes the specified key pair, by removing the public key from
+     * Amazon EC2.
      * </p>
      *
      * @param deleteKeyPairRequest Container for the necessary parameters to
@@ -436,8 +436,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Disables monitoring for a running instance. For more information about
-     * monitoring instances, see
+     * Disables monitoring for a running instance. For more information
+     * about monitoring instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"> Monitoring Your Instances and Volumes </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -477,7 +477,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Attaches a virtual private gateway to a VPC. For more information, see
+     * Attaches a virtual private gateway to a VPC. For more information,
+     * see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html"> Adding a Hardware Virtual Private Gateway to Your VPC </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
@@ -650,8 +651,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Retrieves the encrypted administrator password for an instance running
-     * Windows.
+     * Retrieves the encrypted administrator password for an instance
+     * running Windows.
      * </p>
      * <p>
      * The Windows password is only generated the first time an AMI is
@@ -703,8 +704,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Associates a set of DHCP options (that you've previously created) with
-     * the specified VPC, or associates no DHCP options with the VPC.
+     * Associates a set of DHCP options (that you've previously created)
+     * with the specified VPC, or associates no DHCP options with the VPC.
      * </p>
      * <p>
      * After you associate the options with the VPC, any existing instances
@@ -1011,8 +1012,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups.
-     * EC2-VPC: You can create up to 100 security groups per VPC.
+     * <b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security
+     * groups. EC2-VPC: You can create up to 100 security groups per VPC.
      * </p>
      * <p>
      * When you create a security group, you specify a friendly name of your
@@ -1022,12 +1023,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * two security groups for use in a VPC with the same name.
      * </p>
      * <p>
-     * You have a default security group for use in EC2-Classic and a default
-     * security group for use in your VPC. If you don't specify a security
-     * group when you launch an instance, the instance is launched into the
-     * appropriate default security group. A default security group includes
-     * a default rule that grants instances unrestricted network access to
-     * each other.
+     * You have a default security group for use in EC2-Classic and a
+     * default security group for use in your VPC. If you don't specify a
+     * security group when you launch an instance, the instance is launched
+     * into the appropriate default security group. A default security group
+     * includes a default rule that grants instances unrestricted network
+     * access to each other.
      * </p>
      * <p>
      * You can add or remove rules from your security groups using
@@ -1265,9 +1266,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * specifying more than one domain name server, specify the IP addresses
      * in a single parameter, separated by commas.</li>
      * <li> <code>domain-name</code> - If you're using AmazonProvidedDNS in
-     * <code>us-east-1</code> ,
-     * specify <code>ec2.internal</code> . If you're using
-     * AmazonProvidedDNS in another region, specify
+     * <code>us-east-1</code> , specify <code>ec2.internal</code> . If you're
+     * using AmazonProvidedDNS in another region, specify
      * <code>region.compute.internal</code> (for example,
      * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
      * domain name (for example, <code>MyCompany.com</code> ).</li>
@@ -1679,8 +1679,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deletes the specified set of tags from the specified set of resources.
-     * This call is designed to follow a <code>DescribeTags</code> request.
+     * Deletes the specified set of tags from the specified set of
+     * resources. This call is designed to follow a <code>DescribeTags</code>
+     * request.
      * </p>
      * <p>
      * For more information about tags, see
@@ -1718,8 +1719,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deletes the specified subnet. You must terminate all running instances
-     * in the subnet before you can delete the subnet.
+     * Deletes the specified subnet. You must terminate all running
+     * instances in the subnet before you can delete the subnet.
      * </p>
      *
      * @param deleteSubnetRequest Container for the necessary parameters to
@@ -1992,20 +1993,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * response to the event.
      * </p>
      * <p>
-     * The <code>DescribeVolumeStatus</code> operation provides the following
-     * information about the specified volumes:
+     * The <code>DescribeVolumeStatus</code> operation provides the
+     * following information about the specified volumes:
      * </p>
      * <p>
      * <i>Status</i> : Reflects the current status of the volume. The
-     * possible values are <code>ok</code> ,
-     * <code>impaired</code> ,
-     * <code>warning</code> , or
-     * <code>insufficient-data</code> . If all checks pass, the overall
-     * status of the volume is <code>ok</code> . If the check fails, the
-     * overall status is <code>impaired</code> . If the status is
-     * <code>insufficient-data</code> , then the checks may still be taking
-     * place on your volume at the time. We recommend that you retry the
-     * request. For more information on volume status, see
+     * possible values are <code>ok</code> , <code>impaired</code> ,
+     * <code>warning</code> , or <code>insufficient-data</code> . If all
+     * checks pass, the overall status of the volume is <code>ok</code> . If
+     * the check fails, the overall status is <code>impaired</code> . If the
+     * status is <code>insufficient-data</code> , then the checks may still
+     * be taking place on your volume at the time. We recommend that you
+     * retry the request. For more information on volume status, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html"> Monitoring the Status of Your Volumes </a>
      * .
      * </p>
@@ -2180,25 +2179,25 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3.
-     * You can use snapshots for backups, to make copies of Amazon EBS
+     * Creates a snapshot of an Amazon EBS volume and stores it in Amazon
+     * S3. You can use snapshots for backups, to make copies of Amazon EBS
      * volumes, and to save data before shutting down an instance.
      * </p>
      * <p>
-     * When a snapshot is created, any AWS Marketplace product codes that are
-     * associated with the source volume are propagated to the snapshot.
+     * When a snapshot is created, any AWS Marketplace product codes that
+     * are associated with the source volume are propagated to the snapshot.
      * </p>
      * <p>
-     * You can take a snapshot of an attached volume that is in use. However,
-     * snapshots only capture data that has been written to your Amazon EBS
-     * volume at the time the snapshot command is issued; this may exclude
-     * any data that has been cached by any applications or the operating
-     * system. If you can pause any file writes to the volume long enough to
-     * take a snapshot, your snapshot should be complete. However, if you
-     * cannot pause all file writes to the volume, you should unmount the
-     * volume from within the instance, issue the snapshot command, and then
-     * remount the volume to ensure a consistent and complete snapshot. You
-     * may remount and use your volume while the snapshot status is
+     * You can take a snapshot of an attached volume that is in use.
+     * However, snapshots only capture data that has been written to your
+     * Amazon EBS volume at the time the snapshot command is issued; this may
+     * exclude any data that has been cached by any applications or the
+     * operating system. If you can pause any file writes to the volume long
+     * enough to take a snapshot, your snapshot should be complete. However,
+     * if you cannot pause all file writes to the volume, you should unmount
+     * the volume from within the instance, issue the snapshot command, and
+     * then remount the volume to ensure a consistent and complete snapshot.
+     * You may remount and use your volume while the snapshot status is
      * <code>pending</code> .
      * </p>
      * <p>
@@ -2497,8 +2496,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * interface.
      * </p>
      * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see
+     * An Elastic IP address is for use in either the EC2-Classic platform
+     * or in a VPC. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -2938,8 +2937,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Submits feedback about the status of an instance. The instance must be
-     * in the <code>running</code> state. If your experience with the
+     * Submits feedback about the status of an instance. The instance must
+     * be in the <code>running</code> state. If your experience with the
      * instance differs from the instance status returned by
      * DescribeInstanceStatus, use ReportInstanceStatus to report your
      * experience with the instance. Amazon EC2 collects this information to
@@ -3190,8 +3189,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates an import instance task using metadata from the specified disk
-     * image. After importing the image, you then upload it using the
+     * Creates an import instance task using metadata from the specified
+     * disk image. After importing the image, you then upload it using the
      * ec2-import-volume command in the EC2 command line tools. For more
      * information, see Using the Command Line Tools to Import Your Virtual
      * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
@@ -3494,8 +3493,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Modifies the specified attribute of the specified AMI. You can specify
-     * only one attribute at a time.
+     * Modifies the specified attribute of the specified AMI. You can
+     * specify only one attribute at a time.
      * </p>
      * <p>
      * <b>NOTE:</b> AWS Marketplace product codes cannot be modified. Images
@@ -3676,9 +3675,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Deletes the specified VPN connection.
      * </p>
      * <p>
-     * If you're deleting the VPC and its associated components, we recommend
-     * that you detach the virtual private gateway from the VPC and delete
-     * the VPC before deleting the VPN connection.
+     * If you're deleting the VPC and its associated components, we
+     * recommend that you detach the virtual private gateway from the VPC and
+     * delete the VPC before deleting the VPN connection.
      * </p>
      *
      * @param deleteVpnConnectionRequest Container for the necessary
@@ -3935,8 +3934,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * have permissions.
      * </p>
      * <p>
-     * When you launch an instance, it enters the <code>pending</code> state.
-     * After the instance is ready for you, it enters the
+     * When you launch an instance, it enters the <code>pending</code>
+     * state. After the instance is ready for you, it enters the
      * <code>running</code> state. To check the state of your instance, call
      * DescribeInstances.
      * </p>
@@ -3947,10 +3946,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
-     * Linux instances have access to the public key of the key pair at boot.
-     * You can use this key to provide secure access to the instance. Amazon
-     * EC2 public images use this feature to provide secure access without
-     * passwords. For more information, see
+     * Linux instances have access to the public key of the key pair at
+     * boot. You can use this key to provide secure access to the instance.
+     * Amazon EC2 public images use this feature to provide secure access
+     * without passwords. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -3961,8 +3960,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
-     * If any of the AMIs have a product code attached for which the user has
-     * not subscribed, <code>RunInstances</code> fails.
+     * If any of the AMIs have a product code attached for which the user
+     * has not subscribed, <code>RunInstances</code> fails.
      * </p>
      * <p>
      * For more information about troubleshooting, see
@@ -4452,9 +4451,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Adds one or more ingress rules to a security group.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per group.
-     * EC2-VPC: You can have up to 50 rules per group (covering both ingress
-     * and egress rules).
+     * <b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per
+     * group. EC2-VPC: You can have up to 50 rules per group (covering both
+     * ingress and egress rules).
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as
@@ -4506,12 +4505,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the Spot Instance requests that belong to your account. Spot
-     * Instances are instances that Amazon EC2 starts on your behalf when the
-     * maximum price that you specify exceeds the current Spot Price. Amazon
-     * EC2 periodically sets the Spot Price based on available Spot Instance
-     * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see
+     * Describes the Spot Instance requests that belong to your account.
+     * Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot
+     * Price. Amazon EC2 periodically sets the Spot Price based on available
+     * Spot Instance capacity and current Spot Instance requests. For more
+     * information about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -4714,8 +4713,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * 
      * </ul>
      * <p>
-     * Both routes apply to the traffic destined for <code>192.0.2.3</code> .
-     * However, the second route in the list covers a smaller number of IP
+     * Both routes apply to the traffic destined for <code>192.0.2.3</code>
+     * . However, the second route in the list covers a smaller number of IP
      * addresses and is therefore more specific, so we use that route to
      * determine where to target the traffic.
      * </p>
@@ -5241,8 +5240,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate
-     * running Spot Instances associated with the request.
+     * <b>IMPORTANT:</b> Canceling a Spot Instance request does not
+     * terminate running Spot Instances associated with the request.
      * </p>
      *
      * @param cancelSpotInstanceRequestsRequest Container for the necessary
@@ -5411,8 +5410,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Shuts down one or more instances. This operation is idempotent; if you
-     * terminate an instance more than once, each call succeeds.
+     * Shuts down one or more instances. This operation is idempotent; if
+     * you terminate an instance more than once, each call succeeds.
      * </p>
      * <p>
      * Terminated instances remain visible after termination (for
@@ -5591,16 +5590,16 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Changes the route table associated with a given subnet in a VPC. After
-     * the operation completes, the subnet uses the routes in the new route
-     * table it's associated with. For more information about route tables,
-     * see
+     * Changes the route table associated with a given subnet in a VPC.
+     * After the operation completes, the subnet uses the routes in the new
+     * route table it's associated with. For more information about route
+     * tables, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
-     * You can also use ReplaceRouteTableAssociation to change which table is
-     * the main route table in the VPC. You just specify the main route
+     * You can also use ReplaceRouteTableAssociation to change which table
+     * is the main route table in the VPC. You just specify the main route
      * table's association ID and the route table to be the new main route
      * table.
      * </p>
@@ -5643,8 +5642,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes one or more of your Elastic IP addresses.
      * </p>
      * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see
+     * An Elastic IP address is for use in either the EC2-Classic platform
+     * or in a VPC. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -5764,10 +5763,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Determines whether a product code is associated with an instance. This
-     * action can only be used by the owner of the product code. It is useful
-     * when a product code owner needs to verify whether another user's
-     * instance is eligible for support.
+     * Determines whether a product code is associated with an instance.
+     * This action can only be used by the owner of the product code. It is
+     * useful when a product code owner needs to verify whether another
+     * user's instance is eligible for support.
      * </p>
      *
      * @param confirmProductInstanceRequest Container for the necessary
@@ -5808,9 +5807,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Disassociates a subnet from a route table.
      * </p>
      * <p>
-     * After you perform this action, the subnet no longer uses the routes in
-     * the route table. Instead, it uses the routes in the VPC's main route
-     * table. For more information about route tables, see
+     * After you perform this action, the subnet no longer uses the routes
+     * in the route table. Instead, it uses the routes in the VPC's main
+     * route table. For more information about route tables, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
@@ -6023,8 +6022,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the status of one or more instances, including any scheduled
-     * events.
+     * Describes the status of one or more instances, including any
+     * scheduled events.
      * </p>
      * <p>
      * Instance status has two main components:
@@ -6078,8 +6077,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * </li>
      * <li> <p>
-     * Scheduled Retirement: When Amazon EC2 determines that an instance must
-     * be shut down, the instance status is the event code
+     * Scheduled Retirement: When Amazon EC2 determines that an instance
+     * must be shut down, the instance status is the event code
      * <code>instance-retirement</code> . Retirement commonly occurs when the
      * underlying host is degraded and must be replaced. Retirement events
      * include a scheduled start and end time. You will also be notified by
@@ -6090,10 +6089,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <li> <p>
      * Scheduled Stop: When Amazon EC2 determines that an instance must be
      * shut down, the instances status returns an event code called
-     * <code>instance-stop</code> .
-     * Stop events include a scheduled start and end time. You will
-     * also be notified by email if one of your instances is set to stop. The
-     * email message indicates when your instance will be stopped.
+     * <code>instance-stop</code> . Stop events include a scheduled start and
+     * end time. You will also be notified by email if one of your instances
+     * is set to stop. The email message indicates when your instance will be
+     * stopped.
      * </p>
      * </li>
      * 
@@ -6195,14 +6194,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Creates a subnet in an existing VPC.
      * </p>
      * <p>
-     * When you create each subnet, you provide the VPC ID and the CIDR block
-     * you want for the subnet. After you create a subnet, you can't change
-     * its CIDR block. The subnet's CIDR block can be the same as the VPC's
-     * CIDR block (assuming you want only a single subnet in the VPC), or a
-     * subset of the VPC's CIDR block. If you create more than one subnet in
-     * a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet
-     * (and VPC) you can create uses a /28 netmask (16 IP addresses), and the
-     * largest uses a /16 netmask (65,536 IP addresses).
+     * When you create each subnet, you provide the VPC ID and the CIDR
+     * block you want for the subnet. After you create a subnet, you can't
+     * change its CIDR block. The subnet's CIDR block can be the same as the
+     * VPC's CIDR block (assuming you want only a single subnet in the VPC),
+     * or a subset of the VPC's CIDR block. If you create more than one
+     * subnet in a VPC, the subnets' CIDR blocks must not overlap. The
+     * smallest subnet (and VPC) you can create uses a /28 netmask (16 IP
+     * addresses), and the largest uses a /16 netmask (65,536 IP addresses).
      * </p>
      * <p>
      * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP
@@ -6252,11 +6251,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes Reserved Instance offerings that are available for purchase.
-     * With Reserved Instances, you purchase the right to launch instances
-     * for a period of time. During that time period, you do not receive
-     * insufficient capacity errors, and you pay a lower usage rate than the
-     * rate charged for On-Demand instances for the actual time used.
+     * Describes Reserved Instance offerings that are available for
+     * purchase. With Reserved Instances, you purchase the right to launch
+     * instances for a period of time. During that time period, you do not
+     * receive insufficient capacity errors, and you pay a lower usage rate
+     * than the rate charged for On-Demand instances for the actual time
+     * used.
      * </p>
      * <p>
      * For more information, see
@@ -6395,9 +6395,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Changes which network ACL a subnet is associated with. By default when
-     * you create a subnet, it's automatically associated with the default
-     * network ACL. For more information about network ACLs, see
+     * Changes which network ACL a subnet is associated with. By default
+     * when you create a subnet, it's automatically associated with the
+     * default network ACL. For more information about network ACLs, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html"> Network ACLs </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
@@ -6481,7 +6481,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * account.
      * </p>
      * <p>
-     * For more information about placement groups and cluster instances, see
+     * For more information about placement groups and cluster instances,
+     * see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Cluster Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -6520,12 +6521,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Bundles an Amazon instance store-backed Windows instance.
      * </p>
      * <p>
-     * During bundling, only the root device volume (C:\) is bundled. Data on
-     * other instance store volumes is not preserved.
+     * During bundling, only the root device volume (C:\) is bundled. Data
+     * on other instance store volumes is not preserved.
      * </p>
      * <p>
-     * <b>NOTE:</b> This procedure is not applicable for Linux/Unix instances
-     * or Windows instances that are backed by Amazon EBS.
+     * <b>NOTE:</b> This procedure is not applicable for Linux/Unix
+     * instances or Windows instances that are backed by Amazon EBS.
      * </p>
      * <p>
      * For more information, see
@@ -6697,8 +6698,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Acquires an Elastic IP address.
      * </p>
      * <p>
-     * An Elastic IP address is for use either in the EC2-Classic platform or
-     * in a VPC. For more information, see
+     * An Elastic IP address is for use either in the EC2-Classic platform
+     * or in a VPC. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -7007,9 +7008,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates a network ACL in a VPC. Network ACLs provide an optional layer
-     * of security (in addition to security groups) for the instances in your
-     * VPC.
+     * Creates a network ACL in a VPC. Network ACLs provide an optional
+     * layer of security (in addition to security groups) for the instances
+     * in your VPC.
      * </p>
      * <p>
      * For more information about network ACLs, see
@@ -7509,20 +7510,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * response to the event.
      * </p>
      * <p>
-     * The <code>DescribeVolumeStatus</code> operation provides the following
-     * information about the specified volumes:
+     * The <code>DescribeVolumeStatus</code> operation provides the
+     * following information about the specified volumes:
      * </p>
      * <p>
      * <i>Status</i> : Reflects the current status of the volume. The
-     * possible values are <code>ok</code> ,
-     * <code>impaired</code> ,
-     * <code>warning</code> , or
-     * <code>insufficient-data</code> . If all checks pass, the overall
-     * status of the volume is <code>ok</code> . If the check fails, the
-     * overall status is <code>impaired</code> . If the status is
-     * <code>insufficient-data</code> , then the checks may still be taking
-     * place on your volume at the time. We recommend that you retry the
-     * request. For more information on volume status, see
+     * possible values are <code>ok</code> , <code>impaired</code> ,
+     * <code>warning</code> , or <code>insufficient-data</code> . If all
+     * checks pass, the overall status of the volume is <code>ok</code> . If
+     * the check fails, the overall status is <code>impaired</code> . If the
+     * status is <code>insufficient-data</code> , then the checks may still
+     * be taking place on your volume at the time. We recommend that you
+     * retry the request. For more information on volume status, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html"> Monitoring the Status of Your Volumes </a>
      * .
      * </p>
@@ -7748,8 +7747,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Submits feedback about the status of an instance. The instance must be
-     * in the <code>running</code> state. If your experience with the
+     * Submits feedback about the status of an instance. The instance must
+     * be in the <code>running</code> state. If your experience with the
      * instance differs from the instance status returned by
      * DescribeInstanceStatus, use ReportInstanceStatus to report your
      * experience with the instance. Amazon EC2 collects this information to
@@ -8119,9 +8118,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Adds one or more ingress rules to a security group.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per group.
-     * EC2-VPC: You can have up to 50 rules per group (covering both ingress
-     * and egress rules).
+     * <b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per
+     * group. EC2-VPC: You can have up to 50 rules per group (covering both
+     * ingress and egress rules).
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as
@@ -8158,12 +8157,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the Spot Instance requests that belong to your account. Spot
-     * Instances are instances that Amazon EC2 starts on your behalf when the
-     * maximum price that you specify exceeds the current Spot Price. Amazon
-     * EC2 periodically sets the Spot Price based on available Spot Instance
-     * capacity and current Spot Instance requests. For more information
-     * about Spot Instances, see
+     * Describes the Spot Instance requests that belong to your account.
+     * Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot
+     * Price. Amazon EC2 periodically sets the Spot Price based on available
+     * Spot Instance capacity and current Spot Instance requests. For more
+     * information about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -8294,8 +8293,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes one or more of your Elastic IP addresses.
      * </p>
      * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or
-     * in a VPC. For more information, see
+     * An Elastic IP address is for use in either the EC2-Classic platform
+     * or in a VPC. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
@@ -8344,8 +8343,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the status of one or more instances, including any scheduled
-     * events.
+     * Describes the status of one or more instances, including any
+     * scheduled events.
      * </p>
      * <p>
      * Instance status has two main components:
@@ -8399,8 +8398,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * </li>
      * <li> <p>
-     * Scheduled Retirement: When Amazon EC2 determines that an instance must
-     * be shut down, the instance status is the event code
+     * Scheduled Retirement: When Amazon EC2 determines that an instance
+     * must be shut down, the instance status is the event code
      * <code>instance-retirement</code> . Retirement commonly occurs when the
      * underlying host is degraded and must be replaced. Retirement events
      * include a scheduled start and end time. You will also be notified by
@@ -8411,10 +8410,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <li> <p>
      * Scheduled Stop: When Amazon EC2 determines that an instance must be
      * shut down, the instances status returns an event code called
-     * <code>instance-stop</code> .
-     * Stop events include a scheduled start and end time. You will
-     * also be notified by email if one of your instances is set to stop. The
-     * email message indicates when your instance will be stopped.
+     * <code>instance-stop</code> . Stop events include a scheduled start and
+     * end time. You will also be notified by email if one of your instances
+     * is set to stop. The email message indicates when your instance will be
+     * stopped.
      * </p>
      * </li>
      * 
@@ -8479,11 +8478,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes Reserved Instance offerings that are available for purchase.
-     * With Reserved Instances, you purchase the right to launch instances
-     * for a period of time. During that time period, you do not receive
-     * insufficient capacity errors, and you pay a lower usage rate than the
-     * rate charged for On-Demand instances for the actual time used.
+     * Describes Reserved Instance offerings that are available for
+     * purchase. With Reserved Instances, you purchase the right to launch
+     * instances for a period of time. During that time period, you do not
+     * receive insufficient capacity errors, and you pay a lower usage rate
+     * than the rate charged for On-Demand instances for the actual time
+     * used.
      * </p>
      * <p>
      * For more information, see
@@ -8536,8 +8536,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Acquires an Elastic IP address.
      * </p>
      * <p>
-     * An Elastic IP address is for use either in the EC2-Classic platform or
-     * in a VPC. For more information, see
+     * An Elastic IP address is for use either in the EC2-Classic platform
+     * or in a VPC. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
