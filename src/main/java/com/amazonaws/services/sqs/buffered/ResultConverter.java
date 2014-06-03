@@ -31,6 +31,7 @@ class ResultConverter {
         SendMessageResult toReturn = new SendMessageResult();
         toReturn.setMD5OfMessageBody(br.getMD5OfMessageBody());
         toReturn.setMessageId(br.getMessageId());
+        toReturn.setMD5OfMessageAttributes(br.getMD5OfMessageAttributes());
         return toReturn;
     }
 
