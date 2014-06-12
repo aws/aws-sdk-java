@@ -147,7 +147,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
      *         no wildcard values permitted in <code>workerGroup</code>, the string
      *         must be an exact, case-sensitive, match.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForTaskRequest withWorkerGroup(String workerGroup) {
@@ -192,7 +192,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param hostname The public DNS name of the calling task runner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForTaskRequest withHostname(String hostname) {
@@ -273,7 +273,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements Seria
      *         EC2 instance, and ensures the proper AWS Data Pipeline service charges
      *         are applied to your pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForTaskRequest withInstanceIdentity(InstanceIdentity instanceIdentity) {

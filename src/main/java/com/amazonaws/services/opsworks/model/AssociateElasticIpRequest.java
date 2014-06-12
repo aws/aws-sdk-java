@@ -75,7 +75,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest implement
      *
      * @param elasticIp The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateElasticIpRequest withElasticIp(String elasticIp) {
@@ -108,7 +108,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceId The instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateElasticIpRequest withInstanceId(String instanceId) {

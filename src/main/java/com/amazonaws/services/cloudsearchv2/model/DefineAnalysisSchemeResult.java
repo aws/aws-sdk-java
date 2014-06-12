@@ -54,7 +54,7 @@ public class DefineAnalysisSchemeResult implements Serializable {
      *
      * @param analysisScheme The status and configuration of an <code>AnalysisScheme</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineAnalysisSchemeResult withAnalysisScheme(AnalysisSchemeStatus analysisScheme) {

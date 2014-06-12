@@ -63,7 +63,7 @@ public class DescribePipelinesResult implements Serializable {
      *
      * @param pipelineDescriptionList An array of descriptions returned for the specified pipelines.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePipelinesResult withPipelineDescriptionList(PipelineDescription... pipelineDescriptionList) {
@@ -81,7 +81,7 @@ public class DescribePipelinesResult implements Serializable {
      *
      * @param pipelineDescriptionList An array of descriptions returned for the specified pipelines.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePipelinesResult withPipelineDescriptionList(java.util.Collection<PipelineDescription> pipelineDescriptionList) {

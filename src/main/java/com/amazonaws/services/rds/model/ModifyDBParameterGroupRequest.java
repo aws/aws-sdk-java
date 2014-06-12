@@ -141,7 +141,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {
@@ -226,7 +226,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         You can use the pending-reboot value for both dynamic and static
      *         parameters, and changes are applied when DB instance reboots. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBParameterGroupRequest withParameters(Parameter... parameters) {
@@ -258,7 +258,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         You can use the pending-reboot value for both dynamic and static
      *         parameters, and changes are applied when DB instance reboots. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {

@@ -90,7 +90,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * @param groupNames One or more placement group names. <p>Default: Describes all your
      *         placement groups, or only those otherwise specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
@@ -110,7 +110,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * @param groupNames One or more placement group names. <p>Default: Describes all your
      *         placement groups, or only those otherwise specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePlacementGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
@@ -190,7 +190,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *         <p><code>strategy</code> - The strategy of the placement group
      *         (<code>cluster</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePlacementGroupsRequest withFilters(Filter... filters) {
@@ -218,7 +218,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *         <p><code>strategy</code> - The strategy of the placement group
      *         (<code>cluster</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePlacementGroupsRequest withFilters(java.util.Collection<Filter> filters) {

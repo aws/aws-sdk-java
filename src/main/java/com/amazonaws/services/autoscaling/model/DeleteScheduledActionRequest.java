@@ -84,7 +84,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteScheduledActionRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -129,7 +129,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
      *
      * @param scheduledActionName The name of the action you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteScheduledActionRequest withScheduledActionName(String scheduledActionName) {

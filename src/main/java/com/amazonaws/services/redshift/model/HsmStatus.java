@@ -73,7 +73,7 @@ public class HsmStatus implements Serializable {
      * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
      *         cluster uses to retrieve the data encryption keys stored in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HsmStatus withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
@@ -118,7 +118,7 @@ public class HsmStatus implements Serializable {
      *         information the Amazon Redshift cluster can use to retrieve and store
      *         keys in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HsmStatus withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
@@ -163,7 +163,7 @@ public class HsmStatus implements Serializable {
      *         HSM settings changes specified in a modify cluster command. <p>Values:
      *         active, applying
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HsmStatus withStatus(String status) {

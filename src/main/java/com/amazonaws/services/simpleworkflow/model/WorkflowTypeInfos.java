@@ -75,7 +75,7 @@ public class WorkflowTypeInfos implements Serializable {
      *
      * @param typeInfos The list of workflow type information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeInfos withTypeInfos(WorkflowTypeInfo... typeInfos) {
@@ -93,7 +93,7 @@ public class WorkflowTypeInfos implements Serializable {
      *
      * @param typeInfos The list of workflow type information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeInfos withTypeInfos(java.util.Collection<WorkflowTypeInfo> typeInfos) {
@@ -160,7 +160,7 @@ public class WorkflowTypeInfos implements Serializable {
      *         repeating the request (that returned the structure) with the this
      *         token and all other arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeInfos withNextPageToken(String nextPageToken) {

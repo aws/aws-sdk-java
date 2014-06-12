@@ -194,7 +194,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         that identifies a DB instance. This parameter is stored as a lowercase
      *         string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -263,7 +263,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         instance must have automatic backups enabled, its backup retention
      *         period must be greater than 0.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withSourceDBInstanceIdentifier(String sourceDBInstanceIdentifier) {
@@ -314,7 +314,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
      *         Inherits from the source DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withDBInstanceClass(String dBInstanceClass) {
@@ -359,7 +359,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         in. <p> Default: A random, system-chosen Availability Zone in the
      *         endpoint's region. <p> Example: <code>us-east-1d</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withAvailabilityZone(String availabilityZone) {
@@ -404,7 +404,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         Inherits from the source DB instance <p>Valid Values:
      *         <code>1150-65535</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withPort(Integer port) {
@@ -449,7 +449,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         the read replica during the maintenance window. <p>Default: Inherits
      *         from the source DB instance
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -501,7 +501,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withIops(Integer iops) {
@@ -540,7 +540,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * @param optionGroupName The option group the DB instance will be associated with. If omitted,
      *         the default option group for the engine specified will be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withOptionGroupName(String optionGroupName) {
@@ -645,7 +645,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withPubliclyAccessible(Boolean publiclyAccessible) {
@@ -721,7 +721,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withTags(Tag... tags) {
@@ -739,7 +739,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withTags(java.util.Collection<Tag> tags) {
@@ -803,7 +803,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         replicas that share the source instance should lie within the same
      *         VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withDBSubnetGroupName(String dBSubnetGroupName) {

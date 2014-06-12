@@ -56,7 +56,7 @@ public class ImportKeyPairResult implements Serializable {
      *
      * @param keyName The key pair name you provided.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportKeyPairResult withKeyName(String keyName) {
@@ -89,7 +89,7 @@ public class ImportKeyPairResult implements Serializable {
      *
      * @param keyFingerprint The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportKeyPairResult withKeyFingerprint(String keyFingerprint) {

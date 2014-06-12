@@ -68,7 +68,7 @@ public class SelfUserProfile implements Serializable {
      *
      * @param iamUserArn The user's IAM ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelfUserProfile withIamUserArn(String iamUserArn) {
@@ -101,7 +101,7 @@ public class SelfUserProfile implements Serializable {
      *
      * @param name The user's name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelfUserProfile withName(String name) {
@@ -134,7 +134,7 @@ public class SelfUserProfile implements Serializable {
      *
      * @param sshUsername The user's SSH user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelfUserProfile withSshUsername(String sshUsername) {
@@ -167,7 +167,7 @@ public class SelfUserProfile implements Serializable {
      *
      * @param sshPublicKey The user's SSH public key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelfUserProfile withSshPublicKey(String sshPublicKey) {

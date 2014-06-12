@@ -84,7 +84,7 @@ public class ValidationMessage implements Serializable {
      *
      * @param message A message describing the error or warning.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationMessage withMessage(String message) {
@@ -172,7 +172,7 @@ public class ValidationMessage implements Serializable {
      *         warning: This message is providing information you should take into
      *         account. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ValidationSeverity
@@ -234,7 +234,7 @@ public class ValidationMessage implements Serializable {
      *         warning: This message is providing information you should take into
      *         account. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ValidationSeverity
@@ -269,7 +269,7 @@ public class ValidationMessage implements Serializable {
      *
      * @param namespace <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationMessage withNamespace(String namespace) {
@@ -302,7 +302,7 @@ public class ValidationMessage implements Serializable {
      *
      * @param optionName <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationMessage withOptionName(String optionName) {

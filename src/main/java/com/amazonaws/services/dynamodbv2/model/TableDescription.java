@@ -238,7 +238,7 @@ public class TableDescription implements Serializable {
      *         <li> <p><i>AttributeName</i> - The name of the attribute. </li> <li>
      *         <p><i>AttributeType</i> - The data type for the attribute. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withAttributeDefinitions(AttributeDefinition... attributeDefinitions) {
@@ -264,7 +264,7 @@ public class TableDescription implements Serializable {
      *         <li> <p><i>AttributeName</i> - The name of the attribute. </li> <li>
      *         <p><i>AttributeType</i> - The data type for the attribute. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
@@ -316,7 +316,7 @@ public class TableDescription implements Serializable {
      *
      * @param tableName The name of the table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withTableName(String tableName) {
@@ -400,7 +400,7 @@ public class TableDescription implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      *         Key</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withKeySchema(KeySchemaElement... keySchema) {
@@ -433,7 +433,7 @@ public class TableDescription implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      *         Key</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -522,7 +522,7 @@ public class TableDescription implements Serializable {
      *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
      *         is ready for use. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see TableStatus
@@ -580,7 +580,7 @@ public class TableDescription implements Serializable {
      *         <i>DeleteTable</i> operation. </li> <li> <p><i>ACTIVE</i> - The table
      *         is ready for use. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see TableStatus
@@ -621,7 +621,7 @@ public class TableDescription implements Serializable {
      * @param creationDateTime The date and time when the table was created, in <a
      *         href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withCreationDateTime(java.util.Date creationDateTime) {
@@ -666,7 +666,7 @@ public class TableDescription implements Serializable {
      *         and write capacity units, along with data about increases and
      *         decreases.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput) {
@@ -711,7 +711,7 @@ public class TableDescription implements Serializable {
      *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withTableSizeBytes(Long tableSizeBytes) {
@@ -756,7 +756,7 @@ public class TableDescription implements Serializable {
      *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withItemCount(Long itemCount) {
@@ -993,7 +993,7 @@ public class TableDescription implements Serializable {
      *         <code>DELETING</code> state, no information about indexes will be
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withLocalSecondaryIndexes(LocalSecondaryIndexDescription... localSecondaryIndexes) {
@@ -1077,7 +1077,7 @@ public class TableDescription implements Serializable {
      *         <code>DELETING</code> state, no information about indexes will be
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withLocalSecondaryIndexes(java.util.Collection<LocalSecondaryIndexDescription> localSecondaryIndexes) {
@@ -1351,7 +1351,7 @@ public class TableDescription implements Serializable {
      *         <p>If the table is in the <code>DELETING</code> state, no information
      *         about indexes will be returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withGlobalSecondaryIndexes(GlobalSecondaryIndexDescription... globalSecondaryIndexes) {
@@ -1445,7 +1445,7 @@ public class TableDescription implements Serializable {
      *         <p>If the table is in the <code>DELETING</code> state, no information
      *         about indexes will be returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TableDescription withGlobalSecondaryIndexes(java.util.Collection<GlobalSecondaryIndexDescription> globalSecondaryIndexes) {

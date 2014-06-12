@@ -69,7 +69,7 @@ public class CreatePresetResult implements Serializable {
      * @param preset A section of the response body that provides information about the
      *         preset that is created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePresetResult withPreset(Preset preset) {
@@ -126,7 +126,7 @@ public class CreatePresetResult implements Serializable {
      *         Transcoder created the preset because the settings might produce
      *         acceptable output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePresetResult withWarning(String warning) {

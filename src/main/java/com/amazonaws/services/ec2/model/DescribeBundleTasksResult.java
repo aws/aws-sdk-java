@@ -61,7 +61,7 @@ public class DescribeBundleTasksResult implements Serializable {
      *
      * @param bundleTasks Information about one or more bundle tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBundleTasksResult withBundleTasks(BundleTask... bundleTasks) {
@@ -79,7 +79,7 @@ public class DescribeBundleTasksResult implements Serializable {
      *
      * @param bundleTasks Information about one or more bundle tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBundleTasksResult withBundleTasks(java.util.Collection<BundleTask> bundleTasks) {

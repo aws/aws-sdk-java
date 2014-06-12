@@ -74,7 +74,7 @@ public class VolumeStatusDetails implements Serializable {
      *
      * @param name The name of the volume status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeStatusName
@@ -108,7 +108,7 @@ public class VolumeStatusDetails implements Serializable {
      *
      * @param name The name of the volume status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeStatusName
@@ -143,7 +143,7 @@ public class VolumeStatusDetails implements Serializable {
      *
      * @param status The intended status of the volume status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusDetails withStatus(String status) {

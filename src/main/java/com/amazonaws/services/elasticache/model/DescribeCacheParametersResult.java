@@ -64,7 +64,7 @@ public class DescribeCacheParametersResult implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersResult withMarker(String marker) {
@@ -107,7 +107,7 @@ public class DescribeCacheParametersResult implements Serializable {
      *
      * @param parameters A list of <a>Parameter</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersResult withParameters(Parameter... parameters) {
@@ -125,7 +125,7 @@ public class DescribeCacheParametersResult implements Serializable {
      *
      * @param parameters A list of <a>Parameter</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersResult withParameters(java.util.Collection<Parameter> parameters) {
@@ -181,7 +181,7 @@ public class DescribeCacheParametersResult implements Serializable {
      * @param cacheNodeTypeSpecificParameters A list of parameters specific to a particular cache node type. Each
      *         element in the list contains detailed information about one parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersResult withCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter... cacheNodeTypeSpecificParameters) {
@@ -201,7 +201,7 @@ public class DescribeCacheParametersResult implements Serializable {
      * @param cacheNodeTypeSpecificParameters A list of parameters specific to a particular cache node type. Each
      *         element in the list contains detailed information about one parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersResult withCacheNodeTypeSpecificParameters(java.util.Collection<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters) {

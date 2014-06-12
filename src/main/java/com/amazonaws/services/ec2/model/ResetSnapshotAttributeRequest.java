@@ -108,7 +108,7 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @param snapshotId The ID of the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetSnapshotAttributeRequest withSnapshotId(String snapshotId) {
@@ -160,7 +160,7 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      * @param attribute The attribute to reset (currently only the attribute for permission to
      *         create volumes can be reset).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SnapshotAttributeName
@@ -198,7 +198,7 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      * @param attribute The attribute to reset (currently only the attribute for permission to
      *         create volumes can be reset).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SnapshotAttributeName

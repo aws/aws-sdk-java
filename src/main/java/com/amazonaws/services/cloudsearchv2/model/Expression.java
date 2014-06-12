@@ -112,7 +112,7 @@ public class Expression implements Serializable {
      *         cannot be used as a field name. To reference a document's ID, you can
      *         use the name <code>_id</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Expression withExpressionName(String expressionName) {
@@ -184,7 +184,7 @@ public class Expression implements Serializable {
      *         target="_blank">Configuring Expressions</a> in the <i>Amazon
      *         CloudSearch Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Expression withExpressionValue(String expressionValue) {

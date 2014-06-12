@@ -76,7 +76,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
      *
      * @param parameterGroupName The name of the cluster parameter group to be reset.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
@@ -115,7 +115,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
      * @param resetAllParameters If <code>true</code>, all parameters in the specified parameter group
      *         will be reset to their default values. <p>Default: <code>true</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetClusterParameterGroupRequest withResetAllParameters(Boolean resetAllParameters) {
@@ -187,7 +187,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
      *         parameter name must be supplied. <p>Constraints: A maximum of 20
      *         parameters can be reset in a single request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetClusterParameterGroupRequest withParameters(Parameter... parameters) {
@@ -211,7 +211,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
      *         parameter name must be supplied. <p>Constraints: A maximum of 20
      *         parameters can be reset in a single request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetClusterParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {

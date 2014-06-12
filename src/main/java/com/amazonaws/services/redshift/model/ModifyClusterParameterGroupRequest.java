@@ -42,7 +42,9 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * An array of parameters to be modified. A maximum of 20 parameters can
      * be modified in a single request. <p> For each parameter to be
      * modified, you must supply at least the parameter name and parameter
-     * value; other name-value pairs of the parameter are optional.
+     * value; other name-value pairs of the parameter are optional. <p> For
+     * the workload management (WLM) configuration, you must supply all the
+     * name-value pairs in the wlm_json_configuration parameter.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
@@ -71,7 +73,7 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *
      * @param parameterGroupName The name of the parameter group to be modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
@@ -83,12 +85,16 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * An array of parameters to be modified. A maximum of 20 parameters can
      * be modified in a single request. <p> For each parameter to be
      * modified, you must supply at least the parameter name and parameter
-     * value; other name-value pairs of the parameter are optional.
+     * value; other name-value pairs of the parameter are optional. <p> For
+     * the workload management (WLM) configuration, you must supply all the
+     * name-value pairs in the wlm_json_configuration parameter.
      *
      * @return An array of parameters to be modified. A maximum of 20 parameters can
      *         be modified in a single request. <p> For each parameter to be
      *         modified, you must supply at least the parameter name and parameter
-     *         value; other name-value pairs of the parameter are optional.
+     *         value; other name-value pairs of the parameter are optional. <p> For
+     *         the workload management (WLM) configuration, you must supply all the
+     *         name-value pairs in the wlm_json_configuration parameter.
      */
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
@@ -102,12 +108,16 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * An array of parameters to be modified. A maximum of 20 parameters can
      * be modified in a single request. <p> For each parameter to be
      * modified, you must supply at least the parameter name and parameter
-     * value; other name-value pairs of the parameter are optional.
+     * value; other name-value pairs of the parameter are optional. <p> For
+     * the workload management (WLM) configuration, you must supply all the
+     * name-value pairs in the wlm_json_configuration parameter.
      *
      * @param parameters An array of parameters to be modified. A maximum of 20 parameters can
      *         be modified in a single request. <p> For each parameter to be
      *         modified, you must supply at least the parameter name and parameter
-     *         value; other name-value pairs of the parameter are optional.
+     *         value; other name-value pairs of the parameter are optional. <p> For
+     *         the workload management (WLM) configuration, you must supply all the
+     *         name-value pairs in the wlm_json_configuration parameter.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -123,16 +133,20 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * An array of parameters to be modified. A maximum of 20 parameters can
      * be modified in a single request. <p> For each parameter to be
      * modified, you must supply at least the parameter name and parameter
-     * value; other name-value pairs of the parameter are optional.
+     * value; other name-value pairs of the parameter are optional. <p> For
+     * the workload management (WLM) configuration, you must supply all the
+     * name-value pairs in the wlm_json_configuration parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of parameters to be modified. A maximum of 20 parameters can
      *         be modified in a single request. <p> For each parameter to be
      *         modified, you must supply at least the parameter name and parameter
-     *         value; other name-value pairs of the parameter are optional.
+     *         value; other name-value pairs of the parameter are optional. <p> For
+     *         the workload management (WLM) configuration, you must supply all the
+     *         name-value pairs in the wlm_json_configuration parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterParameterGroupRequest withParameters(Parameter... parameters) {
@@ -147,16 +161,20 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * An array of parameters to be modified. A maximum of 20 parameters can
      * be modified in a single request. <p> For each parameter to be
      * modified, you must supply at least the parameter name and parameter
-     * value; other name-value pairs of the parameter are optional.
+     * value; other name-value pairs of the parameter are optional. <p> For
+     * the workload management (WLM) configuration, you must supply all the
+     * name-value pairs in the wlm_json_configuration parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of parameters to be modified. A maximum of 20 parameters can
      *         be modified in a single request. <p> For each parameter to be
      *         modified, you must supply at least the parameter name and parameter
-     *         value; other name-value pairs of the parameter are optional.
+     *         value; other name-value pairs of the parameter are optional. <p> For
+     *         the workload management (WLM) configuration, you must supply all the
+     *         name-value pairs in the wlm_json_configuration parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {

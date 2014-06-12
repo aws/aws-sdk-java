@@ -61,7 +61,7 @@ public class ProductCode implements Serializable {
      *
      * @param productCodeId The product code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProductCode withProductCodeId(String productCodeId) {
@@ -107,7 +107,7 @@ public class ProductCode implements Serializable {
      *
      * @param productCodeType The type of product code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ProductCodeValues
@@ -141,7 +141,7 @@ public class ProductCode implements Serializable {
      *
      * @param productCodeType The type of product code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ProductCodeValues

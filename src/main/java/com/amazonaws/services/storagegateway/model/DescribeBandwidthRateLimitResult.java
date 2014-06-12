@@ -98,7 +98,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBandwidthRateLimitResult withGatewayARN(String gatewayARN) {
@@ -146,7 +146,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable {
      * @param averageUploadRateLimitInBitsPerSec The average upload bandwidth rate limit in bits per second. This field
      *         does not appear in the response if the upload rate limit is not set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBandwidthRateLimitResult withAverageUploadRateLimitInBitsPerSec(Long averageUploadRateLimitInBitsPerSec) {
@@ -200,7 +200,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable {
      *         field does not appear in the response if the download rate limit is
      *         not set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBandwidthRateLimitResult withAverageDownloadRateLimitInBitsPerSec(Long averageDownloadRateLimitInBitsPerSec) {

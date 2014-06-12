@@ -71,7 +71,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param networkAclId The ID of the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
@@ -104,7 +104,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param ruleNumber The rule number of the entry to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
@@ -137,7 +137,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param egress Indicates whether the rule is an egress rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteNetworkAclEntryRequest withEgress(Boolean egress) {

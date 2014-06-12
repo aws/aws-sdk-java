@@ -70,7 +70,7 @@ public class DescribeOptionGroupOptionsResult implements Serializable {
      *
      * @param optionGroupOptions List of available option group options.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupOptionsResult withOptionGroupOptions(OptionGroupOption... optionGroupOptions) {
@@ -88,7 +88,7 @@ public class DescribeOptionGroupOptionsResult implements Serializable {
      *
      * @param optionGroupOptions List of available option group options.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupOptionsResult withOptionGroupOptions(java.util.Collection<OptionGroupOption> optionGroupOptions) {
@@ -140,7 +140,7 @@ public class DescribeOptionGroupOptionsResult implements Serializable {
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupOptionsResult withMarker(String marker) {

@@ -71,7 +71,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param clusterId The identifier of the cluster for which to list the steps.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsRequest withClusterId(String clusterId) {
@@ -114,7 +114,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param stepStates The filter to limit the step list based on certain states.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsRequest withStepStates(String... stepStates) {
@@ -132,7 +132,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param stepStates The filter to limit the step list based on certain states.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsRequest withStepStates(java.util.Collection<String> stepStates) {
@@ -154,7 +154,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param stepStates The filter to limit the step list based on certain states.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsRequest withStepStates(StepState... stepStates) {
@@ -213,7 +213,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements Seriali
      *         calls to retrieve the next page of results. When the value is null,
      *         all results have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsRequest withMarker(String marker) {

@@ -89,7 +89,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
      *
      * @param details Details of the cancellation (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskCanceledEventAttributes withDetails(String details) {
@@ -140,7 +140,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskCanceledEventAttributes withScheduledEventId(Long scheduledEventId) {
@@ -191,7 +191,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskCanceledEventAttributes withStartedEventId(Long startedEventId) {
@@ -242,7 +242,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
      *         activity task. This information can be useful for diagnosing problems
      *         by tracing back the chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskCanceledEventAttributes withLatestCancelRequestedEventId(Long latestCancelRequestedEventId) {

@@ -75,7 +75,7 @@ public class VolumeStatusAction implements Serializable {
      * @param code The code identifying the operation, for example,
      *         <code>enable-volume-io</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusAction withCode(String code) {
@@ -108,7 +108,7 @@ public class VolumeStatusAction implements Serializable {
      *
      * @param description A description of the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusAction withDescription(String description) {
@@ -141,7 +141,7 @@ public class VolumeStatusAction implements Serializable {
      *
      * @param eventType The event type associated with this operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusAction withEventType(String eventType) {
@@ -174,7 +174,7 @@ public class VolumeStatusAction implements Serializable {
      *
      * @param eventId The ID of the event associated with this operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusAction withEventId(String eventId) {

@@ -162,7 +162,7 @@ public class AliasTarget implements Serializable {
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AliasTarget withHostedZoneId(String hostedZoneId) {
@@ -234,7 +234,7 @@ public class AliasTarget implements Serializable {
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AliasTarget withDNSName(String dNSName) {
@@ -303,7 +303,7 @@ public class AliasTarget implements Serializable {
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AliasTarget withEvaluateTargetHealth(Boolean evaluateTargetHealth) {

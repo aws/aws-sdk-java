@@ -121,7 +121,7 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
      *
      * @param selectExpression The expression used to query the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelectRequest withSelectExpression(String selectExpression) {
@@ -160,7 +160,7 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
      * @param nextToken A string informing Amazon SimpleDB where to start the next list of
      *         <code>ItemNames</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelectRequest withNextToken(String nextToken) {
@@ -217,7 +217,7 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
      *         consistent eventually, and the client may not see data that was
      *         written immediately before your read.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelectRequest withConsistentRead(Boolean consistentRead) {

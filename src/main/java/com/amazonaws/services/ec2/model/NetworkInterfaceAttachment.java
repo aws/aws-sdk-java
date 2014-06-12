@@ -87,7 +87,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      *
      * @param attachmentId The ID of the network interface attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachment withAttachmentId(String attachmentId) {
@@ -120,7 +120,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachment withInstanceId(String instanceId) {
@@ -153,7 +153,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      *
      * @param instanceOwnerId The AWS account ID of the owner of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachment withInstanceOwnerId(String instanceOwnerId) {
@@ -186,7 +186,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      *
      * @param deviceIndex The device index of the network interface attachment on the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachment withDeviceIndex(Integer deviceIndex) {
@@ -232,7 +232,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      *
      * @param status The attachment state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttachmentStatus
@@ -266,7 +266,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      *
      * @param status The attachment state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttachmentStatus
@@ -301,7 +301,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      *
      * @param attachTime The timestamp indicating when the attachment initiated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachment withAttachTime(java.util.Date attachTime) {
@@ -340,7 +340,7 @@ public class NetworkInterfaceAttachment implements Serializable {
      * @param deleteOnTermination Indicates whether the network interface is deleted when the instance
      *         is terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachment withDeleteOnTermination(Boolean deleteOnTermination) {

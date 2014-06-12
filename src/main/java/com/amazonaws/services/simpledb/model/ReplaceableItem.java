@@ -87,7 +87,7 @@ public class ReplaceableItem implements Serializable {
      *
      * @param name The name of the replaceable item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceableItem withName(String name) {
@@ -130,7 +130,7 @@ public class ReplaceableItem implements Serializable {
      *
      * @param attributes The list of attributes for a replaceable item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceableItem withAttributes(ReplaceableAttribute... attributes) {
@@ -148,7 +148,7 @@ public class ReplaceableItem implements Serializable {
      *
      * @param attributes The list of attributes for a replaceable item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceableItem withAttributes(java.util.Collection<ReplaceableAttribute> attributes) {

@@ -177,7 +177,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMultipartUploadsRequest withAccountId(String accountId) {
@@ -210,7 +210,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMultipartUploadsRequest withVaultName(String vaultName) {
@@ -267,7 +267,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
      *         marker if you are continuing the pagination of results started in a
      *         previous List Uploads request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMultipartUploadsRequest withUploadIdMarker(String uploadIdMarker) {
@@ -312,7 +312,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
      *         If this value is not specified, the List Uploads operation returns up
      *         to 1,000 uploads.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMultipartUploadsRequest withLimit(String limit) {

@@ -97,7 +97,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         returns descriptions of the instances associated with the specified
      *         stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withStackId(String stackId) {
@@ -142,7 +142,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         returns descriptions of the instances associated with the specified
      *         layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withLayerId(String layerId) {
@@ -197,7 +197,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeInstances</code> returns a description of the specified
      *         instances. Otherwise, it returns a description of every instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withInstanceIds(String... instanceIds) {
@@ -219,7 +219,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeInstances</code> returns a description of the specified
      *         instances. Otherwise, it returns a description of every instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {

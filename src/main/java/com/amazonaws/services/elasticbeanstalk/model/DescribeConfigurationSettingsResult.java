@@ -64,7 +64,7 @@ public class DescribeConfigurationSettingsResult implements Serializable {
      *
      * @param configurationSettings A list of <a>ConfigurationSettingsDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationSettingsResult withConfigurationSettings(ConfigurationSettingsDescription... configurationSettings) {
@@ -82,7 +82,7 @@ public class DescribeConfigurationSettingsResult implements Serializable {
      *
      * @param configurationSettings A list of <a>ConfigurationSettingsDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationSettingsResult withConfigurationSettings(java.util.Collection<ConfigurationSettingsDescription> configurationSettings) {

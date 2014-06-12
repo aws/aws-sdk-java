@@ -180,7 +180,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
      *         maximum of 3600 seconds (one hour). If the duration is longer than one
      *         hour, the session for AWS account owners defaults to one hour.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSessionTokenRequest withDurationSeconds(Integer durationSeconds) {
@@ -273,7 +273,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
      *         device for an IAM user by going to the AWS Management Console and
      *         viewing the user's security credentials.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSessionTokenRequest withSerialNumber(String serialNumber) {
@@ -348,7 +348,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
      *         credentials, the user will receive an "access denied" response when
      *         requesting resources that require MFA authentication.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSessionTokenRequest withTokenCode(String tokenCode) {

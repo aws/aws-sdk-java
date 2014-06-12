@@ -153,7 +153,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *
      * @param input The input provided to the workflow execution (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withInput(String input) {
@@ -213,7 +213,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
@@ -273,7 +273,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
@@ -379,7 +379,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -453,7 +453,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -494,7 +494,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @param taskList The name of the task list for scheduling the decision tasks for this
      *         workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTaskList(TaskList taskList) {
@@ -527,7 +527,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *
      * @param workflowType The workflow type of this execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withWorkflowType(WorkflowType workflowType) {
@@ -585,7 +585,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @param tagList The list of tags associated with this workflow execution. An execution
      *         can have up to 5 tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTagList(String... tagList) {
@@ -608,7 +608,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      * @param tagList The list of tags associated with this workflow execution. An execution
      *         can have up to 5 tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTagList(java.util.Collection<String> tagList) {
@@ -675,7 +675,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         the <code>runId</code> of the previous workflow execution that was
      *         closed and continued as this execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withContinuedExecutionRunId(String continuedExecutionRunId) {
@@ -720,7 +720,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         The member is not set if the workflow execution was not started by a
      *         workflow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withParentWorkflowExecution(WorkflowExecution parentWorkflowExecution) {
@@ -783,7 +783,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         execution. This information can be useful for diagnosing problems by
      *         tracing back the chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionStartedEventAttributes withParentInitiatedEventId(Long parentInitiatedEventId) {

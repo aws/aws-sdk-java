@@ -84,7 +84,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
      *
      * @param workflowExecution The child workflow execution that was completed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
@@ -117,7 +117,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
      *
      * @param workflowType The type of the child workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withWorkflowType(WorkflowType workflowType) {
@@ -159,7 +159,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
      *
      * @param result The result of the child workflow execution (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withResult(String result) {
@@ -216,7 +216,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withInitiatedEventId(Long initiatedEventId) {
@@ -267,7 +267,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withStartedEventId(Long startedEventId) {

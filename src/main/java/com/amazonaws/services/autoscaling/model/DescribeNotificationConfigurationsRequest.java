@@ -83,7 +83,7 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      *
      * @param autoScalingGroupNames The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
@@ -101,7 +101,7 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      *
      * @param autoScalingGroupNames The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
@@ -156,7 +156,7 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      * @param nextToken A string that is used to mark the start of the next batch of returned
      *         results for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNotificationConfigurationsRequest withNextToken(String nextToken) {
@@ -189,7 +189,7 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      *
      * @param maxRecords Maximum number of records to be returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNotificationConfigurationsRequest withMaxRecords(Integer maxRecords) {

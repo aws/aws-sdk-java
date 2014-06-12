@@ -76,7 +76,7 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
      *         described event categories apply. <p> Valid values: cluster, snapshot,
      *         parameter group, and security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventCategoriesRequest withSourceType(String sourceType) {

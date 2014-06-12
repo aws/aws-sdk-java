@@ -97,7 +97,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest implem
      *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
      *         There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourceRequest withStackName(String stackName) {
@@ -136,7 +136,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest implem
      * @param logicalResourceId The logical name of the resource as specified in the template.
      *         <p>Default: There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourceRequest withLogicalResourceId(String logicalResourceId) {

@@ -79,7 +79,7 @@ public class ListStacksResult implements Serializable {
      * @param stackSummaries A list of <code>StackSummary</code> structures containing information
      *         about the specified stacks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStacksResult withStackSummaries(StackSummary... stackSummaries) {
@@ -99,7 +99,7 @@ public class ListStacksResult implements Serializable {
      * @param stackSummaries A list of <code>StackSummary</code> structures containing information
      *         about the specified stacks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStacksResult withStackSummaries(java.util.Collection<StackSummary> stackSummaries) {
@@ -154,7 +154,7 @@ public class ListStacksResult implements Serializable {
      * @param nextToken String that identifies the start of the next list of stacks, if there
      *         is one.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStacksResult withNextToken(String nextToken) {

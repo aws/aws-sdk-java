@@ -81,7 +81,7 @@ public class GatewayInfo implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GatewayInfo withGatewayARN(String gatewayARN) {
@@ -123,7 +123,7 @@ public class GatewayInfo implements Serializable {
      *
      * @param gatewayType The new value for the GatewayType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GatewayInfo withGatewayType(String gatewayType) {
@@ -170,7 +170,7 @@ public class GatewayInfo implements Serializable {
      * @param gatewayOperationalState The new value for the GatewayOperationalState property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GatewayInfo withGatewayOperationalState(String gatewayOperationalState) {

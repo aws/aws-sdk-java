@@ -61,7 +61,7 @@ public class DescribeRegionsResult implements Serializable {
      *
      * @param regions Information about one or more regions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRegionsResult withRegions(Region... regions) {
@@ -79,7 +79,7 @@ public class DescribeRegionsResult implements Serializable {
      *
      * @param regions Information about one or more regions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRegionsResult withRegions(java.util.Collection<Region> regions) {

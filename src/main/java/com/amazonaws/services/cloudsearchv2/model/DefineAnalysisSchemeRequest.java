@@ -108,7 +108,7 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineAnalysisSchemeRequest withDomainName(String domainName) {
@@ -165,7 +165,7 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
      *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineAnalysisSchemeRequest withAnalysisScheme(AnalysisScheme analysisScheme) {

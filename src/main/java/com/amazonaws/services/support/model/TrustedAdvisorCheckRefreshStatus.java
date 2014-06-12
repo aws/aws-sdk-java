@@ -66,7 +66,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable {
      *
      * @param checkId The unique identifier for the Trusted Advisor check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckRefreshStatus withCheckId(String checkId) {
@@ -111,7 +111,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable {
      *         requested: "none", "enqueued", "processing", "success", or
      *         "abandoned".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckRefreshStatus withStatus(String status) {
@@ -150,7 +150,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable {
      * @param millisUntilNextRefreshable The amount of time, in milliseconds, until the Trusted Advisor check
      *         is eligible for refresh.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckRefreshStatus withMillisUntilNextRefreshable(Long millisUntilNextRefreshable) {

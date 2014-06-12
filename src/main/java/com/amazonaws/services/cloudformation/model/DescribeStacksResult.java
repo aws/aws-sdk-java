@@ -72,7 +72,7 @@ public class DescribeStacksResult implements Serializable {
      *
      * @param stacks A list of stack structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksResult withStacks(Stack... stacks) {
@@ -90,7 +90,7 @@ public class DescribeStacksResult implements Serializable {
      *
      * @param stacks A list of stack structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksResult withStacks(java.util.Collection<Stack> stacks) {
@@ -145,7 +145,7 @@ public class DescribeStacksResult implements Serializable {
      * @param nextToken String that identifies the start of the next list of stacks, if there
      *         is one.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksResult withNextToken(String nextToken) {

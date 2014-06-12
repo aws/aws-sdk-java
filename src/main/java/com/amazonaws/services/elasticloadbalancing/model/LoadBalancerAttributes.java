@@ -101,7 +101,7 @@ public class LoadBalancerAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable
      *         Cross-Zone Load Balancing</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancerAttributes withCrossZoneLoadBalancing(CrossZoneLoadBalancing crossZoneLoadBalancing) {
@@ -164,7 +164,7 @@ public class LoadBalancerAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      *         Access Logs</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancerAttributes withAccessLog(AccessLog accessLog) {
@@ -227,7 +227,7 @@ public class LoadBalancerAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
      *         Connection Draining</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancerAttributes withConnectionDraining(ConnectionDraining connectionDraining) {

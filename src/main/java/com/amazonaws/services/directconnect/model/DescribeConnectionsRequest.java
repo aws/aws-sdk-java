@@ -62,7 +62,7 @@ public class DescribeConnectionsRequest extends AmazonWebServiceRequest implemen
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConnectionsRequest withConnectionId(String connectionId) {

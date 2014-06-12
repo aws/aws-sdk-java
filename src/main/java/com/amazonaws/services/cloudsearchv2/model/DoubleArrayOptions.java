@@ -87,7 +87,7 @@ public class DoubleArrayOptions implements Serializable {
      * @param defaultValue A value to use for the field if the field isn't specified for a
      *         document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleArrayOptions withDefaultValue(Double defaultValue) {
@@ -129,7 +129,7 @@ public class DoubleArrayOptions implements Serializable {
      *
      * @param sourceFields A list of source fields to map to the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleArrayOptions withSourceFields(String sourceFields) {
@@ -162,7 +162,7 @@ public class DoubleArrayOptions implements Serializable {
      *
      * @param facetEnabled Whether facet information can be returned for the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleArrayOptions withFacetEnabled(Boolean facetEnabled) {
@@ -204,7 +204,7 @@ public class DoubleArrayOptions implements Serializable {
      *
      * @param searchEnabled Whether the contents of the field are searchable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleArrayOptions withSearchEnabled(Boolean searchEnabled) {
@@ -252,7 +252,7 @@ public class DoubleArrayOptions implements Serializable {
      * @param returnEnabled Whether the contents of the field can be returned in the search
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleArrayOptions withReturnEnabled(Boolean returnEnabled) {

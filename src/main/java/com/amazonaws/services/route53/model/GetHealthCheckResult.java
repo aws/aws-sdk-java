@@ -61,7 +61,7 @@ public class GetHealthCheckResult implements Serializable {
      * @param healthCheck A complex type that contains the information about the specified
      *         health check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetHealthCheckResult withHealthCheck(HealthCheck healthCheck) {

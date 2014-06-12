@@ -215,7 +215,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      * @param workflowType The type of the workflow execution to be started. This field is
      *         required.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withWorkflowType(WorkflowType workflowType) {
@@ -287,7 +287,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withWorkflowId(String workflowId) {
@@ -341,7 +341,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         subsequent workflow tasks. This data is not sent to the child workflow
      *         execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withControl(String control) {
@@ -383,7 +383,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *
      * @param input The input to be provided to the workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withInput(String input) {
@@ -479,7 +479,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         set nor a default execution start-to-close timeout was specified at
      *         registration time then a fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
@@ -566,7 +566,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withTaskList(TaskList taskList) {
@@ -674,7 +674,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
@@ -822,7 +822,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         policy was specified at registration time then a fault will be
      *         returned. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -924,7 +924,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         policy was specified at registration time then a fault will be
      *         returned. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -996,7 +996,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withTagList(String... tagList) {
@@ -1023,7 +1023,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionDecisionAttributes withTagList(java.util.Collection<String> tagList) {

@@ -96,7 +96,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      *         in a VPC. <p>Default: The address is for use with instances in
      *         EC2-Classic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DomainType
@@ -138,7 +138,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      *         in a VPC. <p>Default: The address is for use with instances in
      *         EC2-Classic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DomainType

@@ -75,7 +75,7 @@ public class SAMLProviderListEntry implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) of the SAML provider.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SAMLProviderListEntry withArn(String arn) {
@@ -108,7 +108,7 @@ public class SAMLProviderListEntry implements Serializable {
      *
      * @param validUntil The expiration date and time for the SAML provider.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SAMLProviderListEntry withValidUntil(java.util.Date validUntil) {
@@ -141,7 +141,7 @@ public class SAMLProviderListEntry implements Serializable {
      *
      * @param createDate The date and time when the SAML provider was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SAMLProviderListEntry withCreateDate(java.util.Date createDate) {

@@ -21,10 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createPlatformEndpoint(CreatePlatformEndpointRequest) CreatePlatformEndpoint operation}.
  * <p>
- * The <code>CreatePlatformEndpoint</code> action creates an endpoint for
- * a device and mobile app on one of the supported push notification
- * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
- * requires the PlatformApplicationArn that is returned from
+ * Creates an endpoint for a device and mobile app on one of the
+ * supported push notification services, such as GCM and APNS.
+ * <code>CreatePlatformEndpoint</code> requires the
+ * PlatformApplicationArn that is returned from
  * <code>CreatePlatformApplication</code> . The EndpointArn that is
  * returned when using <code>CreatePlatformEndpoint</code> can then be
  * used by the <code>Publish</code> action to send a message to a mobile
@@ -34,6 +34,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * token and attributes, that endpoint's ARN is returned without creating
  * a new endpoint. For more information, see
  * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+ * .
+ * </p>
+ * <p>
+ * When using <code>CreatePlatformEndpoint</code> with Baidu, two
+ * attributes must be provided: ChannelId and UserId. The token field
+ * must also contain the ChannelId. For more information, see
+ * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html"> Creating an Amazon SNS Endpoint for Baidu </a>
  * .
  * </p>
  *
@@ -58,8 +65,8 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest imple
     private String token;
 
     /**
-     * Arbitrary user data to associate with the endpoint. SNS does not use
-     * this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does
+     * not use this data. The data must be in UTF-8 format and less than 2KB.
      */
     private String customUserData;
 
@@ -100,7 +107,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest imple
      * @param platformApplicationArn PlatformApplicationArn returned from CreatePlatformApplication is used
      *         to create a an endpoint.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformEndpointRequest withPlatformApplicationArn(String platformApplicationArn) {
@@ -163,7 +170,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest imple
      *         when using GCM or ADM, the device token equivalent is called the
      *         registration ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformEndpointRequest withToken(String token) {
@@ -172,37 +179,37 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Arbitrary user data to associate with the endpoint. SNS does not use
-     * this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does
+     * not use this data. The data must be in UTF-8 format and less than 2KB.
      *
-     * @return Arbitrary user data to associate with the endpoint. SNS does not use
-     *         this data. The data must be in UTF-8 format and less than 2KB.
+     * @return Arbitrary user data to associate with the endpoint. Amazon SNS does
+     *         not use this data. The data must be in UTF-8 format and less than 2KB.
      */
     public String getCustomUserData() {
         return customUserData;
     }
     
     /**
-     * Arbitrary user data to associate with the endpoint. SNS does not use
-     * this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does
+     * not use this data. The data must be in UTF-8 format and less than 2KB.
      *
-     * @param customUserData Arbitrary user data to associate with the endpoint. SNS does not use
-     *         this data. The data must be in UTF-8 format and less than 2KB.
+     * @param customUserData Arbitrary user data to associate with the endpoint. Amazon SNS does
+     *         not use this data. The data must be in UTF-8 format and less than 2KB.
      */
     public void setCustomUserData(String customUserData) {
         this.customUserData = customUserData;
     }
     
     /**
-     * Arbitrary user data to associate with the endpoint. SNS does not use
-     * this data. The data must be in UTF-8 format and less than 2KB.
+     * Arbitrary user data to associate with the endpoint. Amazon SNS does
+     * not use this data. The data must be in UTF-8 format and less than 2KB.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customUserData Arbitrary user data to associate with the endpoint. SNS does not use
-     *         this data. The data must be in UTF-8 format and less than 2KB.
+     * @param customUserData Arbitrary user data to associate with the endpoint. Amazon SNS does
+     *         not use this data. The data must be in UTF-8 format and less than 2KB.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformEndpointRequest withCustomUserData(String customUserData) {
@@ -245,7 +252,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest imple
      * @param attributes For a list of attributes, see <a
      *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformEndpointRequest withAttributes(java.util.Map<String,String> attributes) {

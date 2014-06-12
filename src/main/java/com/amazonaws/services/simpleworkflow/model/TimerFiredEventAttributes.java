@@ -72,7 +72,7 @@ public class TimerFiredEventAttributes implements Serializable {
      *
      * @param timerId The unique Id of the timer that fired.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerFiredEventAttributes withTimerId(String timerId) {
@@ -117,7 +117,7 @@ public class TimerFiredEventAttributes implements Serializable {
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerFiredEventAttributes withStartedEventId(Long startedEventId) {

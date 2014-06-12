@@ -99,7 +99,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param subnetId The ID of the subnet to associate with the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withSubnetId(String subnetId) {
@@ -132,7 +132,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param description A description for the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withDescription(String description) {
@@ -177,7 +177,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *         specify an IP address, Amazon EC2 selects one for you from the subnet
      *         range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withPrivateIpAddress(String privateIpAddress) {
@@ -220,7 +220,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param groups The IDs of one or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withGroups(String... groups) {
@@ -238,7 +238,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param groups The IDs of one or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withGroups(java.util.Collection<String> groups) {
@@ -288,7 +288,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param privateIpAddresses One or more private IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withPrivateIpAddresses(PrivateIpAddressSpecification... privateIpAddresses) {
@@ -306,7 +306,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param privateIpAddresses One or more private IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
@@ -388,7 +388,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *         IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      *         Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceRequest withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {

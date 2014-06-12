@@ -102,7 +102,7 @@ public class StreamingDistribution implements Serializable {
      * @param id The identifier for the streaming distribution. For example:
      *         EGTXBD79H29TRA8.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistribution withId(String id) {
@@ -147,7 +147,7 @@ public class StreamingDistribution implements Serializable {
      *         Deployed, the distribution's information is fully propagated
      *         throughout the Amazon CloudFront system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistribution withStatus(String status) {
@@ -180,7 +180,7 @@ public class StreamingDistribution implements Serializable {
      *
      * @param lastModifiedTime The date and time the distribution was last modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistribution withLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -219,7 +219,7 @@ public class StreamingDistribution implements Serializable {
      * @param domainName The domain name corresponding to the streaming distribution. For
      *         example: s5c39gqb8ow64r.cloudfront.net.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistribution withDomainName(String domainName) {
@@ -300,7 +300,7 @@ public class StreamingDistribution implements Serializable {
      *         KeyPairId element appears for a Signer, that signer can't create
      *         working signed URLs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistribution withActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
@@ -333,7 +333,7 @@ public class StreamingDistribution implements Serializable {
      *
      * @param streamingDistributionConfig The current configuration information for the streaming distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistribution withStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig) {

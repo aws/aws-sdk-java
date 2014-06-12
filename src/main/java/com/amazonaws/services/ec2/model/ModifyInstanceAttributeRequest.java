@@ -202,7 +202,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withInstanceId(String instanceId) {
@@ -248,7 +248,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param attribute The name of the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceAttributeName
@@ -282,7 +282,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param attribute The name of the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceAttributeName
@@ -335,7 +335,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         <code>disableApiTermination</code>, or
      *         <code>intanceInitiateShutdownBehavior</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withValue(String value) {
@@ -432,7 +432,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         the Block Device Mapping when Launching an Instance</a> in the
      *         <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withBlockDeviceMappings(InstanceBlockDeviceMappingSpecification... blockDeviceMappings) {
@@ -468,7 +468,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         the Block Device Mapping when Launching an Instance</a> in the
      *         <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMappingSpecification> blockDeviceMappings) {
@@ -526,7 +526,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         <code>false</code> means checking is disabled. This value must be
      *         <code>false</code> for a NAT instance to perform NAT.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withSourceDestCheck(Boolean sourceDestCheck) {
@@ -580,7 +580,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * @param disableApiTermination Specifies whether to disable the ability to terminate the instance
      *         using the Amazon EC2 console, CLI, and API.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withDisableApiTermination(Boolean disableApiTermination) {
@@ -648,7 +648,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         Types</a>. If the instance type is not valid, the error returned is
      *         <code>InvalidInstanceAttributeValue</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withInstanceType(String instanceType) {
@@ -681,7 +681,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param kernel Changes the instance's kernel to the specified value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withKernel(String kernel) {
@@ -714,7 +714,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param ramdisk Changes the instance's RAM disk to the specified value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withRamdisk(String ramdisk) {
@@ -747,7 +747,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param userData Changes the instance's user data to the specified value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withUserData(String userData) {
@@ -792,7 +792,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         shutdown from the instance (using the operating system command for
      *         system shutdown).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
@@ -871,7 +871,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         <code>GroupId.1=sg-1a1a1a1a</code> and
      *         <code>GroupId.2=sg-9b9b9b9b</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withGroups(String... groups) {
@@ -901,7 +901,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         <code>GroupId.1=sg-1a1a1a1a</code> and
      *         <code>GroupId.2=sg-9b9b9b9b</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withGroups(java.util.Collection<String> groups) {
@@ -965,7 +965,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         This optimization isn't available with all instance types. Additional
      *         usage charges apply when using an EBS Optimized instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withEbsOptimized(Boolean ebsOptimized) {
@@ -1033,7 +1033,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         time. <p>This option is supported only for HVM instances. Specifying
      *         this option with a PV instance can make it unreachable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceAttributeRequest withSriovNetSupport(String sriovNetSupport) {

@@ -124,7 +124,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      *
      * @param dhcpConfigurations A DHCP configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDhcpOptionsRequest withDhcpConfigurations(DhcpConfiguration... dhcpConfigurations) {
@@ -142,7 +142,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      *
      * @param dhcpConfigurations A DHCP configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDhcpOptionsRequest withDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {

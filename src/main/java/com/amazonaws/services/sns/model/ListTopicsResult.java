@@ -69,7 +69,7 @@ public class ListTopicsResult implements Serializable {
      *
      * @param topics A list of topic ARNs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTopicsResult withTopics(Topic... topics) {
@@ -87,7 +87,7 @@ public class ListTopicsResult implements Serializable {
      *
      * @param topics A list of topic ARNs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTopicsResult withTopics(java.util.Collection<Topic> topics) {
@@ -133,7 +133,7 @@ public class ListTopicsResult implements Serializable {
      * @param nextToken Token to pass along to the next <code>ListTopics</code> request. This
      *         element is returned if there are additional topics to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTopicsResult withNextToken(String nextToken) {

@@ -152,7 +152,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      *
      * @param type The type of VPN connection that this customer gateway supports.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see GatewayType
@@ -186,7 +186,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      *
      * @param type The type of VPN connection that this customer gateway supports.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see GatewayType
@@ -227,7 +227,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * @param publicIp The Internet-routable IP address for the customer gateway's outside
      *         interface. The address must be static.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCustomerGatewayRequest withPublicIp(String publicIp) {
@@ -266,7 +266,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * @param bgpAsn For devices that support BGP, the customer gateway's BGP ASN.
      *         <p>Default: 65000
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCustomerGatewayRequest withBgpAsn(Integer bgpAsn) {

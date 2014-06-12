@@ -109,7 +109,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * @param resources The ID of the resource. For example, ami-1a2b3c4d. You can specify
      *         more than one resource ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTagsRequest withResources(String... resources) {
@@ -129,7 +129,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * @param resources The ID of the resource. For example, ami-1a2b3c4d. You can specify
      *         more than one resource ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTagsRequest withResources(java.util.Collection<String> resources) {
@@ -197,7 +197,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      *         this parameter with an empty string as the value, we delete the key
      *         only if its value is an empty string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTagsRequest withTags(Tag... tags) {
@@ -221,7 +221,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      *         this parameter with an empty string as the value, we delete the key
      *         only if its value is an empty string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTagsRequest withTags(java.util.Collection<Tag> tags) {

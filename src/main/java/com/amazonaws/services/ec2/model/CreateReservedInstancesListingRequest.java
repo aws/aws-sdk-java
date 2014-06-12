@@ -88,7 +88,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      *
      * @param reservedInstancesId The ID of the active Reserved Instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReservedInstancesListingRequest withReservedInstancesId(String reservedInstancesId) {
@@ -139,7 +139,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      *         be less than or equal to the instance count associated with the
      *         Reserved Instance ID specified in this call.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReservedInstancesListingRequest withInstanceCount(Integer instanceCount) {
@@ -188,7 +188,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * @param priceSchedules A list specifying the price of the Reserved Instance for each month
      *         remaining in the Reserved Instance term.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReservedInstancesListingRequest withPriceSchedules(PriceScheduleSpecification... priceSchedules) {
@@ -208,7 +208,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * @param priceSchedules A list specifying the price of the Reserved Instance for each month
      *         remaining in the Reserved Instance term.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReservedInstancesListingRequest withPriceSchedules(java.util.Collection<PriceScheduleSpecification> priceSchedules) {
@@ -272,7 +272,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReservedInstancesListingRequest withClientToken(String clientToken) {

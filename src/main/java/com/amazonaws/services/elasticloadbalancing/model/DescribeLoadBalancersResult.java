@@ -68,7 +68,7 @@ public class DescribeLoadBalancersResult implements Serializable {
      *
      * @param loadBalancerDescriptions A list of load balancer description structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(LoadBalancerDescription... loadBalancerDescriptions) {
@@ -86,7 +86,7 @@ public class DescribeLoadBalancersResult implements Serializable {
      *
      * @param loadBalancerDescriptions A list of load balancer description structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
@@ -126,7 +126,7 @@ public class DescribeLoadBalancersResult implements Serializable {
      *
      * @param nextMarker An optional parameter reserved for future use.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancersResult withNextMarker(String nextMarker) {

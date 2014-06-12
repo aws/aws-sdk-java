@@ -90,7 +90,7 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDBSubnetGroupRequest withDBSubnetGroupName(String dBSubnetGroupName) {

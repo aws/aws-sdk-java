@@ -54,7 +54,7 @@ public class DeleteAnalysisSchemeResult implements Serializable {
      *
      * @param analysisScheme The status of the analysis scheme being deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAnalysisSchemeResult withAnalysisScheme(AnalysisSchemeStatus analysisScheme) {

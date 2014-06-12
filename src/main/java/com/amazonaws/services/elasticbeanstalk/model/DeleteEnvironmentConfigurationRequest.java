@@ -109,7 +109,7 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
      *
      * @param applicationName The name of the application the environment is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteEnvironmentConfigurationRequest withApplicationName(String applicationName) {
@@ -151,7 +151,7 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
      *
      * @param environmentName The name of the environment to delete the draft configuration from.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteEnvironmentConfigurationRequest withEnvironmentName(String environmentName) {

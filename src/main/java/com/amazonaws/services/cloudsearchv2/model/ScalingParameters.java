@@ -96,7 +96,7 @@ public class ScalingParameters implements Serializable {
      * @param desiredInstanceType The instance type that you want to preconfigure for your domain. For
      *         example, <code>search.m1.small</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PartitionInstanceType
@@ -134,7 +134,7 @@ public class ScalingParameters implements Serializable {
      * @param desiredInstanceType The instance type that you want to preconfigure for your domain. For
      *         example, <code>search.m1.small</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PartitionInstanceType
@@ -184,7 +184,7 @@ public class ScalingParameters implements Serializable {
      * @param desiredReplicationCount The number of replicas you want to preconfigure for each index
      *         partition.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingParameters withDesiredReplicationCount(Integer desiredReplicationCount) {
@@ -238,7 +238,7 @@ public class ScalingParameters implements Serializable {
      *         Only valid when you select <code>m2.2xlarge</code> as the desired
      *         instance type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingParameters withDesiredPartitionCount(Integer desiredPartitionCount) {

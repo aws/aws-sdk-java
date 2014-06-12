@@ -132,7 +132,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param reservedInstancesOfferingId The ID of the Reserved Instance offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
@@ -178,7 +178,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -212,7 +212,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -247,7 +247,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param availabilityZone The Availability Zone in which the Reserved Instance can be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withAvailabilityZone(String availabilityZone) {
@@ -280,7 +280,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param duration The duration of the Reserved Instance, in seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withDuration(Long duration) {
@@ -313,7 +313,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param usagePrice The usage price of the Reserved Instance, per hour.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withUsagePrice(Float usagePrice) {
@@ -346,7 +346,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param fixedPrice The purchase price of the Reserved Instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withFixedPrice(Float fixedPrice) {
@@ -392,7 +392,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param productDescription The Reserved Instance description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -426,7 +426,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param productDescription The Reserved Instance description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -474,7 +474,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param instanceTenancy The tenancy of the reserved instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -508,7 +508,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param instanceTenancy The tenancy of the reserved instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -568,7 +568,7 @@ public class ReservedInstancesOffering implements Serializable {
      *         It's specified using ISO 4217 standard currency codes. At this time,
      *         the only supported currency is <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues
@@ -610,7 +610,7 @@ public class ReservedInstancesOffering implements Serializable {
      *         It's specified using ISO 4217 standard currency codes. At this time,
      *         the only supported currency is <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues
@@ -658,7 +658,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param offeringType The Reserved Instance offering type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OfferingTypeValues
@@ -692,7 +692,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param offeringType The Reserved Instance offering type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OfferingTypeValues
@@ -737,7 +737,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param recurringCharges The recurring charge tag assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withRecurringCharges(RecurringCharge... recurringCharges) {
@@ -755,7 +755,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param recurringCharges The recurring charge tag assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
@@ -807,7 +807,7 @@ public class ReservedInstancesOffering implements Serializable {
      *         Instance Marketplace (resale) or AWS. If it's a Reserved Instance
      *         Marketplace offering, this is <code>true</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withMarketplace(Boolean marketplace) {
@@ -863,7 +863,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param pricingDetails The pricing details of the Reserved Instance offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withPricingDetails(PricingDetail... pricingDetails) {
@@ -881,7 +881,7 @@ public class ReservedInstancesOffering implements Serializable {
      *
      * @param pricingDetails The pricing details of the Reserved Instance offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesOffering withPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {

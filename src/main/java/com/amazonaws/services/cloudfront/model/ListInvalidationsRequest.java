@@ -93,7 +93,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      *
      * @param distributionId The distribution's id.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInvalidationsRequest withDistributionId(String distributionId) {
@@ -168,7 +168,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      *         value is the same as the ID of the last invalidation batch on that
      *         page.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInvalidationsRequest withMarker(String marker) {
@@ -207,7 +207,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      * @param maxItems The maximum number of invalidation batches you want in the response
      *         body.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInvalidationsRequest withMaxItems(String maxItems) {

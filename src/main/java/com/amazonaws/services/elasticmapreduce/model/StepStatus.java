@@ -79,7 +79,7 @@ public class StepStatus implements Serializable {
      *
      * @param state The execution state of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StepState
@@ -113,7 +113,7 @@ public class StepStatus implements Serializable {
      *
      * @param state The execution state of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StepState
@@ -148,7 +148,7 @@ public class StepStatus implements Serializable {
      *
      * @param stateChangeReason The reason for the step execution status change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepStatus withStateChangeReason(StepStateChangeReason stateChangeReason) {
@@ -181,7 +181,7 @@ public class StepStatus implements Serializable {
      *
      * @param timeline The timeline of the cluster step status over time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepStatus withTimeline(StepTimeline timeline) {

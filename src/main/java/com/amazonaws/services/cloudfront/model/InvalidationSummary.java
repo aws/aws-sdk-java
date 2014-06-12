@@ -66,7 +66,7 @@ public class InvalidationSummary implements Serializable {
      *
      * @param id The unique ID for an invalidation request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationSummary withId(String id) {
@@ -99,7 +99,7 @@ public class InvalidationSummary implements Serializable {
      *
      * @param createTime The new value for the CreateTime property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationSummary withCreateTime(java.util.Date createTime) {
@@ -132,7 +132,7 @@ public class InvalidationSummary implements Serializable {
      *
      * @param status The status of an invalidation request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationSummary withStatus(String status) {

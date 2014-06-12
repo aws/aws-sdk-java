@@ -58,7 +58,7 @@ public class AvailabilityOptionsStatus implements Serializable {
      *
      * @param options The availability options configured for the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityOptionsStatus withOptions(Boolean options) {
@@ -100,7 +100,7 @@ public class AvailabilityOptionsStatus implements Serializable {
      *
      * @param status The status of domain configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityOptionsStatus withStatus(OptionStatus status) {

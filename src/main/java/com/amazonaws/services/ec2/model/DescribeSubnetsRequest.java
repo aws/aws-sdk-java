@@ -108,7 +108,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *
      * @param subnetIds One or more subnet IDs. <p>Default: Describes all your subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSubnetsRequest withSubnetIds(String... subnetIds) {
@@ -126,7 +126,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *
      * @param subnetIds One or more subnet IDs. <p>Default: Describes all your subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSubnetsRequest withSubnetIds(java.util.Collection<String> subnetIds) {
@@ -344,7 +344,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         subnet. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSubnetsRequest withFilters(Filter... filters) {
@@ -418,7 +418,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         subnet. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSubnetsRequest withFilters(java.util.Collection<Filter> filters) {

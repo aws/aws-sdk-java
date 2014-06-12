@@ -122,7 +122,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param networkAclId The ID of the ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
@@ -167,7 +167,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *         processed in ascending order by rule number. <p>Constraints: Positive
      *         integer from 1 to 32766
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
@@ -200,7 +200,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param protocol The protocol. A value of -1 means all protocols.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclEntryRequest withProtocol(String protocol) {
@@ -246,7 +246,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RuleAction
@@ -280,7 +280,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RuleAction
@@ -321,7 +321,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      * @param egress Indicates whether this is an egress rule (rule is applied to traffic
      *         leaving the subnet).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclEntryRequest withEgress(Boolean egress) {
@@ -365,7 +365,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param cidrBlock The network range to allow or deny, in CIDR notation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclEntryRequest withCidrBlock(String cidrBlock) {
@@ -398,7 +398,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclEntryRequest withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
@@ -431,7 +431,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      *
      * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclEntryRequest withPortRange(PortRange portRange) {

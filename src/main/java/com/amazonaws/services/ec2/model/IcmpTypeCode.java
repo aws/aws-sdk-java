@@ -65,7 +65,7 @@ public class IcmpTypeCode implements Serializable {
      * @param type The ICMP code. A value of -1 means all codes for the specified ICMP
      *         type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IcmpTypeCode withType(Integer type) {
@@ -98,7 +98,7 @@ public class IcmpTypeCode implements Serializable {
      *
      * @param code The ICMP type. A value of -1 means all types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IcmpTypeCode withCode(Integer code) {

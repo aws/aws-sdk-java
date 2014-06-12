@@ -662,7 +662,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param tableName The name of the table containing the item to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateItemRequest withTableName(String tableName) {
@@ -702,7 +702,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key The primary key that defines the item. Each element consists of an
      *         attribute name and a value for that attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateItemRequest withKey(java.util.Map<String,AttributeValue> key) {
@@ -1226,7 +1226,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         the data types for those attributes must match those of the schema in
      *         the table's attribute definition.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateItemRequest withAttributeUpdates(java.util.Map<String,AttributeValueUpdate> attributeUpdates) {
@@ -2218,7 +2218,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         parameters at once, DynamoDB will throw a <i>ValidationException</i>.
      *         </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateItemRequest withExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
@@ -2479,7 +2479,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -2541,7 +2541,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -2661,7 +2661,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
      *         attributes are returned. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnValue
@@ -2743,7 +2743,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
      *         attributes are returned. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnValue
@@ -2815,7 +2815,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -2865,7 +2865,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -2931,7 +2931,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics
@@ -2977,7 +2977,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics

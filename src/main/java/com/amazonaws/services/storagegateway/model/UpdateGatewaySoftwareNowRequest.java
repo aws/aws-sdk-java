@@ -99,7 +99,7 @@ public class UpdateGatewaySoftwareNowRequest extends AmazonWebServiceRequest imp
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateGatewaySoftwareNowRequest withGatewayARN(String gatewayARN) {

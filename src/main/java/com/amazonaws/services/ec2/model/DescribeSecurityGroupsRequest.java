@@ -116,7 +116,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * @param groupNames [EC2-Classic, default VPC] One or more security group names.
      *         <p>Default: Describes all your security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsRequest withGroupNames(String... groupNames) {
@@ -136,7 +136,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * @param groupNames [EC2-Classic, default VPC] One or more security group names.
      *         <p>Default: Describes all your security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
@@ -192,7 +192,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * @param groupIds One or more security group IDs. <p>Default: Describes all your
      *         security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
@@ -212,7 +212,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * @param groupIds One or more security group IDs. <p>Default: Describes all your
      *         security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsRequest withGroupIds(java.util.Collection<String> groupIds) {
@@ -394,7 +394,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <p><code>vpc-id</code> - The ID of the VPC specified when the security
      *         group was created. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsRequest withFilters(Filter... filters) {
@@ -456,7 +456,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <p><code>vpc-id</code> - The ID of the VPC specified when the security
      *         group was created. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsRequest withFilters(java.util.Collection<Filter> filters) {

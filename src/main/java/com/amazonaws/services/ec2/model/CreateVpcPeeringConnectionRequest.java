@@ -85,7 +85,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
      *
      * @param vpcId The ID of the requester VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpcPeeringConnectionRequest withVpcId(String vpcId) {
@@ -124,7 +124,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
      * @param peerVpcId The ID of the VPC with which you are creating the VPC peering
      *         connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpcPeeringConnectionRequest withPeerVpcId(String peerVpcId) {
@@ -163,7 +163,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
      * @param peerOwnerId The AWS account ID of the owner of the peer VPC. <p>Default: Your AWS
      *         account ID
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpcPeeringConnectionRequest withPeerOwnerId(String peerOwnerId) {

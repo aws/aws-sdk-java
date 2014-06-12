@@ -61,7 +61,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Se
      *
      * @param snapshotName The name of the snapshot to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSnapshotRequest withSnapshotName(String snapshotName) {

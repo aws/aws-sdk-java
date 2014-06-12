@@ -103,7 +103,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DownloadDBLogFilePortionRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -136,7 +136,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      *
      * @param logFileName The name of the log file to be downloaded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DownloadDBLogFilePortionRequest withLogFileName(String logFileName) {
@@ -181,7 +181,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      *         parameter is specified the response includes only records beyond the
      *         marker, up to MaxRecords.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DownloadDBLogFilePortionRequest withMarker(String marker) {
@@ -214,7 +214,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      *
      * @param numberOfLines The number of lines remaining to be downloaded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DownloadDBLogFilePortionRequest withNumberOfLines(Integer numberOfLines) {

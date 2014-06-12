@@ -107,7 +107,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
      *         is an alphanumeric string formatted as shown in this example:
      *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsRequest withCaseId(String caseId) {
@@ -146,7 +146,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
      * @param beforeTime The end date for a filtered date search on support case
      *         communications.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsRequest withBeforeTime(String beforeTime) {
@@ -185,7 +185,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
      * @param afterTime The start date for a filtered date search on support case
      *         communications.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsRequest withAfterTime(String afterTime) {
@@ -218,7 +218,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
      *
      * @param nextToken A resumption point for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsRequest withNextToken(String nextToken) {
@@ -260,7 +260,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
      *
      * @param maxResults The maximum number of results to return before paginating.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsRequest withMaxResults(Integer maxResults) {

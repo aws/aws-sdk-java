@@ -99,7 +99,7 @@ public class DeleteStreamRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param streamName The name of the stream to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteStreamRequest withStreamName(String streamName) {

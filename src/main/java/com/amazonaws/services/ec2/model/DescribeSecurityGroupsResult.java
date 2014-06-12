@@ -61,7 +61,7 @@ public class DescribeSecurityGroupsResult implements Serializable {
      *
      * @param securityGroups Information about one or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsResult withSecurityGroups(SecurityGroup... securityGroups) {
@@ -79,7 +79,7 @@ public class DescribeSecurityGroupsResult implements Serializable {
      *
      * @param securityGroups Information about one or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSecurityGroupsResult withSecurityGroups(java.util.Collection<SecurityGroup> securityGroups) {

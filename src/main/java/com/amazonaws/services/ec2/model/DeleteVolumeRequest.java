@@ -87,7 +87,7 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVolumeRequest withVolumeId(String volumeId) {

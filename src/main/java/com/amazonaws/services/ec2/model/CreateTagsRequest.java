@@ -107,7 +107,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param resources The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTagsRequest withResources(String... resources) {
@@ -125,7 +125,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param resources The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTagsRequest withResources(java.util.Collection<String> resources) {
@@ -187,7 +187,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      *         you don't want the tag to have a value, specify the parameter with no
      *         value, and we set the value to an empty string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTagsRequest withTags(Tag... tags) {
@@ -209,7 +209,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      *         you don't want the tag to have a value, specify the parameter with no
      *         value, and we set the value to an empty string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTagsRequest withTags(java.util.Collection<Tag> tags) {

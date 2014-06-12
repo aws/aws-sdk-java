@@ -101,7 +101,7 @@ public class StepConfig implements Serializable {
      *
      * @param name The name of the job flow step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepConfig withName(String name) {
@@ -147,7 +147,7 @@ public class StepConfig implements Serializable {
      *
      * @param actionOnFailure The action to take if the job flow step fails.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActionOnFailure
@@ -181,7 +181,7 @@ public class StepConfig implements Serializable {
      *
      * @param actionOnFailure The action to take if the job flow step fails.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActionOnFailure
@@ -216,7 +216,7 @@ public class StepConfig implements Serializable {
      *
      * @param hadoopJarStep The JAR file used for the job flow step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepConfig withHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {

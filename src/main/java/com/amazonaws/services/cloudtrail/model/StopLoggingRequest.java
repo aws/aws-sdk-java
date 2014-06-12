@@ -68,7 +68,7 @@ public class StopLoggingRequest extends AmazonWebServiceRequest implements Seria
      * @param name Communicates to CloudTrail the name of the <a>Trail</a> for which to
      *         stop logging AWS API calls.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopLoggingRequest withName(String name) {

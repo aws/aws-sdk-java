@@ -90,7 +90,7 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest implements 
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MonitorInstancesRequest withInstanceIds(String... instanceIds) {
@@ -108,7 +108,7 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest implements 
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MonitorInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {

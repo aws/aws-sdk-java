@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * security or parameter group, update the preferred maintenance window,
  * or change the master user password. Resetting a cluster password or
  * modifying the security groups associated with a cluster do not need a
- * reboot. However, modifying parameter group requires a reboot for
+ * reboot. However, modifying a parameter group requires a reboot for
  * parameters to take effect. For more information about managing
  * clusters, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
@@ -94,7 +94,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * A list of cluster security groups to be authorized on this cluster.
      * This change is asynchronously applied as soon as possible. <p>Security
-     * groups currently associated with the cluster and not in the list of
+     * groups currently associated with the cluster, and not in the list of
      * groups to apply, will be revoked from the cluster. <p>Constraints:
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -103,7 +103,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterSecurityGroups;
 
     /**
-     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * A list of virtual private cloud (VPC) security groups to be associated
      * with the cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIds;
@@ -139,9 +139,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * The number of days that automated snapshots are retained. If the value
      * is 0, automated snapshots are disabled. Even if automated snapshots
      * are disabled, you can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. <p>If you decrease the automated
+     * <a>CreateClusterSnapshot</a>. <p> If you decrease the automated
      * snapshot retention period from its current value, existing automated
-     * snapshots which fall outside of the new retention period will be
+     * snapshots that fall outside of the new retention period will be
      * immediately deleted. <p>Default: Uses existing setting.
      * <p>Constraints: Must be a value from 0 to 35.
      */
@@ -195,6 +195,16 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     private String hsmConfigurationIdentifier;
 
     /**
+     * The new identifier for the cluster. <p>Constraints: <ul> <li>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</li>
+     * <li>Alphabetic characters must be lowercase.</li> <li>First character
+     * must be a letter.</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> <li>Must be unique for all clusters within
+     * an AWS account.</li> </ul> <p>Example: <code>examplecluster</code>
+     */
+    private String newClusterIdentifier;
+
+    /**
      * The unique identifier of the cluster to be modified. <p>Example:
      * <code>examplecluster</code>
      *
@@ -225,7 +235,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * @param clusterIdentifier The unique identifier of the cluster to be modified. <p>Example:
      *         <code>examplecluster</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withClusterIdentifier(String clusterIdentifier) {
@@ -294,7 +304,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <a>DescribeResize</a> to track the progress of the resize request.
      *         <p>Valid Values: <code> multi-node | single-node </code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withClusterType(String clusterType) {
@@ -393,7 +403,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      *         <code>dw2.8xlarge</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withNodeType(String nodeType) {
@@ -486,7 +496,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         the resize request. <p>Valid Values: Integer greater than
      *         <code>0</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withNumberOfNodes(Integer numberOfNodes) {
@@ -497,7 +507,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * A list of cluster security groups to be authorized on this cluster.
      * This change is asynchronously applied as soon as possible. <p>Security
-     * groups currently associated with the cluster and not in the list of
+     * groups currently associated with the cluster, and not in the list of
      * groups to apply, will be revoked from the cluster. <p>Constraints:
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -505,7 +515,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *
      * @return A list of cluster security groups to be authorized on this cluster.
      *         This change is asynchronously applied as soon as possible. <p>Security
-     *         groups currently associated with the cluster and not in the list of
+     *         groups currently associated with the cluster, and not in the list of
      *         groups to apply, will be revoked from the cluster. <p>Constraints:
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -522,7 +532,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * A list of cluster security groups to be authorized on this cluster.
      * This change is asynchronously applied as soon as possible. <p>Security
-     * groups currently associated with the cluster and not in the list of
+     * groups currently associated with the cluster, and not in the list of
      * groups to apply, will be revoked from the cluster. <p>Constraints:
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -530,7 +540,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param clusterSecurityGroups A list of cluster security groups to be authorized on this cluster.
      *         This change is asynchronously applied as soon as possible. <p>Security
-     *         groups currently associated with the cluster and not in the list of
+     *         groups currently associated with the cluster, and not in the list of
      *         groups to apply, will be revoked from the cluster. <p>Constraints:
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -549,7 +559,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * A list of cluster security groups to be authorized on this cluster.
      * This change is asynchronously applied as soon as possible. <p>Security
-     * groups currently associated with the cluster and not in the list of
+     * groups currently associated with the cluster, and not in the list of
      * groups to apply, will be revoked from the cluster. <p>Constraints:
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -559,13 +569,13 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param clusterSecurityGroups A list of cluster security groups to be authorized on this cluster.
      *         This change is asynchronously applied as soon as possible. <p>Security
-     *         groups currently associated with the cluster and not in the list of
+     *         groups currently associated with the cluster, and not in the list of
      *         groups to apply, will be revoked from the cluster. <p>Constraints:
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withClusterSecurityGroups(String... clusterSecurityGroups) {
@@ -579,7 +589,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     /**
      * A list of cluster security groups to be authorized on this cluster.
      * This change is asynchronously applied as soon as possible. <p>Security
-     * groups currently associated with the cluster and not in the list of
+     * groups currently associated with the cluster, and not in the list of
      * groups to apply, will be revoked from the cluster. <p>Constraints:
      * <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -589,13 +599,13 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param clusterSecurityGroups A list of cluster security groups to be authorized on this cluster.
      *         This change is asynchronously applied as soon as possible. <p>Security
-     *         groups currently associated with the cluster and not in the list of
+     *         groups currently associated with the cluster, and not in the list of
      *         groups to apply, will be revoked from the cluster. <p>Constraints:
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withClusterSecurityGroups(java.util.Collection<String> clusterSecurityGroups) {
@@ -611,10 +621,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * A list of virtual private cloud (VPC) security groups to be associated
      * with the cluster.
      *
-     * @return A list of Virtual Private Cloud (VPC) security groups to be associated
+     * @return A list of virtual private cloud (VPC) security groups to be associated
      *         with the cluster.
      */
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -626,10 +636,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * A list of virtual private cloud (VPC) security groups to be associated
      * with the cluster.
      *
-     * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
+     * @param vpcSecurityGroupIds A list of virtual private cloud (VPC) security groups to be associated
      *         with the cluster.
      */
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -643,15 +653,15 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * A list of virtual private cloud (VPC) security groups to be associated
      * with the cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
+     * @param vpcSecurityGroupIds A list of virtual private cloud (VPC) security groups to be associated
      *         with the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
@@ -663,15 +673,15 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * A list of virtual private cloud (VPC) security groups to be associated
      * with the cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
+     * @param vpcSecurityGroupIds A list of virtual private cloud (VPC) security groups to be associated
      *         with the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -789,7 +799,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         33 to 126) except ' (single quote), " (double quote), \, /, @, or
      *         space.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withMasterUserPassword(String masterUserPassword) {
@@ -846,7 +856,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <p>Constraints: The cluster parameter group must be in the same
      *         parameter group family that matches the cluster version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withClusterParameterGroupName(String clusterParameterGroupName) {
@@ -858,18 +868,18 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * The number of days that automated snapshots are retained. If the value
      * is 0, automated snapshots are disabled. Even if automated snapshots
      * are disabled, you can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. <p>If you decrease the automated
+     * <a>CreateClusterSnapshot</a>. <p> If you decrease the automated
      * snapshot retention period from its current value, existing automated
-     * snapshots which fall outside of the new retention period will be
+     * snapshots that fall outside of the new retention period will be
      * immediately deleted. <p>Default: Uses existing setting.
      * <p>Constraints: Must be a value from 0 to 35.
      *
      * @return The number of days that automated snapshots are retained. If the value
      *         is 0, automated snapshots are disabled. Even if automated snapshots
      *         are disabled, you can still create manual snapshots when you want with
-     *         <a>CreateClusterSnapshot</a>. <p>If you decrease the automated
+     *         <a>CreateClusterSnapshot</a>. <p> If you decrease the automated
      *         snapshot retention period from its current value, existing automated
-     *         snapshots which fall outside of the new retention period will be
+     *         snapshots that fall outside of the new retention period will be
      *         immediately deleted. <p>Default: Uses existing setting.
      *         <p>Constraints: Must be a value from 0 to 35.
      */
@@ -881,18 +891,18 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * The number of days that automated snapshots are retained. If the value
      * is 0, automated snapshots are disabled. Even if automated snapshots
      * are disabled, you can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. <p>If you decrease the automated
+     * <a>CreateClusterSnapshot</a>. <p> If you decrease the automated
      * snapshot retention period from its current value, existing automated
-     * snapshots which fall outside of the new retention period will be
+     * snapshots that fall outside of the new retention period will be
      * immediately deleted. <p>Default: Uses existing setting.
      * <p>Constraints: Must be a value from 0 to 35.
      *
      * @param automatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value
      *         is 0, automated snapshots are disabled. Even if automated snapshots
      *         are disabled, you can still create manual snapshots when you want with
-     *         <a>CreateClusterSnapshot</a>. <p>If you decrease the automated
+     *         <a>CreateClusterSnapshot</a>. <p> If you decrease the automated
      *         snapshot retention period from its current value, existing automated
-     *         snapshots which fall outside of the new retention period will be
+     *         snapshots that fall outside of the new retention period will be
      *         immediately deleted. <p>Default: Uses existing setting.
      *         <p>Constraints: Must be a value from 0 to 35.
      */
@@ -904,9 +914,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * The number of days that automated snapshots are retained. If the value
      * is 0, automated snapshots are disabled. Even if automated snapshots
      * are disabled, you can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. <p>If you decrease the automated
+     * <a>CreateClusterSnapshot</a>. <p> If you decrease the automated
      * snapshot retention period from its current value, existing automated
-     * snapshots which fall outside of the new retention period will be
+     * snapshots that fall outside of the new retention period will be
      * immediately deleted. <p>Default: Uses existing setting.
      * <p>Constraints: Must be a value from 0 to 35.
      * <p>
@@ -915,13 +925,13 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * @param automatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value
      *         is 0, automated snapshots are disabled. Even if automated snapshots
      *         are disabled, you can still create manual snapshots when you want with
-     *         <a>CreateClusterSnapshot</a>. <p>If you decrease the automated
+     *         <a>CreateClusterSnapshot</a>. <p> If you decrease the automated
      *         snapshot retention period from its current value, existing automated
-     *         snapshots which fall outside of the new retention period will be
+     *         snapshots that fall outside of the new retention period will be
      *         immediately deleted. <p>Default: Uses existing setting.
      *         <p>Constraints: Must be a value from 0 to 35.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
@@ -1008,7 +1018,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
      *         Must be at least 30 minutes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1095,7 +1105,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      *         Guide</i>. <p>Example: <code>1.0</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withClusterVersion(String clusterVersion) {
@@ -1134,7 +1144,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * @param allowVersionUpgrade If <code>true</code>, upgrades will be applied automatically to the
      *         cluster during the maintenance window. <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withAllowVersionUpgrade(Boolean allowVersionUpgrade) {
@@ -1184,7 +1194,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
      *         cluster uses to retrieve the data encryption keys stored in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
@@ -1229,11 +1239,74 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      *         information the Amazon Redshift cluster can use to retrieve and store
      *         keys in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
         this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+        return this;
+    }
+
+    /**
+     * The new identifier for the cluster. <p>Constraints: <ul> <li>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</li>
+     * <li>Alphabetic characters must be lowercase.</li> <li>First character
+     * must be a letter.</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> <li>Must be unique for all clusters within
+     * an AWS account.</li> </ul> <p>Example: <code>examplecluster</code>
+     *
+     * @return The new identifier for the cluster. <p>Constraints: <ul> <li>Must
+     *         contain from 1 to 63 alphanumeric characters or hyphens.</li>
+     *         <li>Alphabetic characters must be lowercase.</li> <li>First character
+     *         must be a letter.</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens.</li> <li>Must be unique for all clusters within
+     *         an AWS account.</li> </ul> <p>Example: <code>examplecluster</code>
+     */
+    public String getNewClusterIdentifier() {
+        return newClusterIdentifier;
+    }
+    
+    /**
+     * The new identifier for the cluster. <p>Constraints: <ul> <li>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</li>
+     * <li>Alphabetic characters must be lowercase.</li> <li>First character
+     * must be a letter.</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> <li>Must be unique for all clusters within
+     * an AWS account.</li> </ul> <p>Example: <code>examplecluster</code>
+     *
+     * @param newClusterIdentifier The new identifier for the cluster. <p>Constraints: <ul> <li>Must
+     *         contain from 1 to 63 alphanumeric characters or hyphens.</li>
+     *         <li>Alphabetic characters must be lowercase.</li> <li>First character
+     *         must be a letter.</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens.</li> <li>Must be unique for all clusters within
+     *         an AWS account.</li> </ul> <p>Example: <code>examplecluster</code>
+     */
+    public void setNewClusterIdentifier(String newClusterIdentifier) {
+        this.newClusterIdentifier = newClusterIdentifier;
+    }
+    
+    /**
+     * The new identifier for the cluster. <p>Constraints: <ul> <li>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</li>
+     * <li>Alphabetic characters must be lowercase.</li> <li>First character
+     * must be a letter.</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> <li>Must be unique for all clusters within
+     * an AWS account.</li> </ul> <p>Example: <code>examplecluster</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param newClusterIdentifier The new identifier for the cluster. <p>Constraints: <ul> <li>Must
+     *         contain from 1 to 63 alphanumeric characters or hyphens.</li>
+     *         <li>Alphabetic characters must be lowercase.</li> <li>First character
+     *         must be a letter.</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens.</li> <li>Must be unique for all clusters within
+     *         an AWS account.</li> </ul> <p>Example: <code>examplecluster</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyClusterRequest withNewClusterIdentifier(String newClusterIdentifier) {
+        this.newClusterIdentifier = newClusterIdentifier;
         return this;
     }
 
@@ -1262,7 +1335,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
         if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
         if (getHsmClientCertificateIdentifier() != null) sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
-        if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() );
+        if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
+        if (getNewClusterIdentifier() != null) sb.append("NewClusterIdentifier: " + getNewClusterIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -1286,6 +1360,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((isAllowVersionUpgrade() == null) ? 0 : isAllowVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getNewClusterIdentifier() == null) ? 0 : getNewClusterIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -1325,6 +1400,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         if (other.getHsmClientCertificateIdentifier() != null && other.getHsmClientCertificateIdentifier().equals(this.getHsmClientCertificateIdentifier()) == false) return false; 
         if (other.getHsmConfigurationIdentifier() == null ^ this.getHsmConfigurationIdentifier() == null) return false;
         if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false) return false; 
+        if (other.getNewClusterIdentifier() == null ^ this.getNewClusterIdentifier() == null) return false;
+        if (other.getNewClusterIdentifier() != null && other.getNewClusterIdentifier().equals(this.getNewClusterIdentifier()) == false) return false; 
         return true;
     }
     

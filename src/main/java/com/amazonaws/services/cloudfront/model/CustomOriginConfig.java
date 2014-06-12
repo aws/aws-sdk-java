@@ -66,7 +66,7 @@ public class CustomOriginConfig implements Serializable {
      *
      * @param hTTPPort The HTTP port the custom origin listens on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomOriginConfig withHTTPPort(Integer hTTPPort) {
@@ -99,7 +99,7 @@ public class CustomOriginConfig implements Serializable {
      *
      * @param hTTPSPort The HTTPS port the custom origin listens on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomOriginConfig withHTTPSPort(Integer hTTPSPort) {
@@ -145,7 +145,7 @@ public class CustomOriginConfig implements Serializable {
      *
      * @param originProtocolPolicy The origin protocol policy to apply to your origin.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OriginProtocolPolicy
@@ -179,7 +179,7 @@ public class CustomOriginConfig implements Serializable {
      *
      * @param originProtocolPolicy The origin protocol policy to apply to your origin.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OriginProtocolPolicy

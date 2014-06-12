@@ -107,7 +107,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
      * @param alarmName The descriptive name for the alarm. This name must be unique within
      *         the user's AWS account. The maximum length is 255 characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetAlarmStateRequest withAlarmName(String alarmName) {
@@ -153,7 +153,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param stateValue The value of the state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StateValue
@@ -187,7 +187,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param stateValue The value of the state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StateValue
@@ -237,7 +237,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
      * @param stateReason The reason that this alarm is set to this specific state (in
      *         human-readable text format)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetAlarmStateRequest withStateReason(String stateReason) {
@@ -285,7 +285,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
      * @param stateReasonData The reason that this alarm is set to this specific state (in
      *         machine-readable JSON format)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetAlarmStateRequest withStateReasonData(String stateReasonData) {

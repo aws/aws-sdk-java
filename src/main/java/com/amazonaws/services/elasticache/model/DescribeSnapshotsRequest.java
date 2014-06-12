@@ -104,7 +104,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         only snapshots associated with that specific cache cluster will be
      *         described.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withCacheClusterId(String cacheClusterId) {
@@ -143,7 +143,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param snapshotName A user-supplied name of the snapshot. If this parameter is specified,
      *         only this snapshot will be described.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withSnapshotName(String snapshotName) {
@@ -188,7 +188,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         (<code>automated</code>) or was created manually
      *         (<code>manual</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withSnapshotSource(String snapshotSource) {
@@ -239,7 +239,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withMarker(String marker) {
@@ -290,7 +290,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         marker is included in the response so that the remaining results can
      *         be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withMaxRecords(Integer maxRecords) {

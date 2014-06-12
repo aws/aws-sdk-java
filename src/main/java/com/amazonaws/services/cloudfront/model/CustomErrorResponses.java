@@ -60,7 +60,7 @@ public class CustomErrorResponses implements Serializable {
      *
      * @param quantity The number of custom error responses for this distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomErrorResponses withQuantity(Integer quantity) {
@@ -109,7 +109,7 @@ public class CustomErrorResponses implements Serializable {
      * @param items Optional: A complex type that contains custom error responses for this
      *         distribution. If Quantity is 0, you can omit Items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomErrorResponses withItems(CustomErrorResponse... items) {
@@ -129,7 +129,7 @@ public class CustomErrorResponses implements Serializable {
      * @param items Optional: A complex type that contains custom error responses for this
      *         distribution. If Quantity is 0, you can omit Items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomErrorResponses withItems(java.util.Collection<CustomErrorResponse> items) {

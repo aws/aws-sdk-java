@@ -60,7 +60,7 @@ public class VpnConnectionOptionsSpecification implements Serializable {
      * @param staticRoutesOnly Indicates whether the VPN connection uses static routes only. Static
      *         routes must be used for devices that don't support BGP.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnConnectionOptionsSpecification withStaticRoutesOnly(Boolean staticRoutesOnly) {

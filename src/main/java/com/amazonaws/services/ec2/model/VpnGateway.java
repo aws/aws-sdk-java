@@ -84,7 +84,7 @@ public class VpnGateway implements Serializable {
      *
      * @param vpnGatewayId The ID of the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnGateway withVpnGatewayId(String vpnGatewayId) {
@@ -130,7 +130,7 @@ public class VpnGateway implements Serializable {
      *
      * @param state The current state of the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpnState
@@ -164,7 +164,7 @@ public class VpnGateway implements Serializable {
      *
      * @param state The current state of the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpnState
@@ -212,7 +212,7 @@ public class VpnGateway implements Serializable {
      *
      * @param type The type of VPN connection the virtual private gateway supports.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see GatewayType
@@ -246,7 +246,7 @@ public class VpnGateway implements Serializable {
      *
      * @param type The type of VPN connection the virtual private gateway supports.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see GatewayType
@@ -281,7 +281,7 @@ public class VpnGateway implements Serializable {
      *
      * @param availabilityZone The Availability Zone where the virtual private gateway was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnGateway withAvailabilityZone(String availabilityZone) {
@@ -324,7 +324,7 @@ public class VpnGateway implements Serializable {
      *
      * @param vpcAttachments Any VPCs attached to the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnGateway withVpcAttachments(VpcAttachment... vpcAttachments) {
@@ -342,7 +342,7 @@ public class VpnGateway implements Serializable {
      *
      * @param vpcAttachments Any VPCs attached to the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnGateway withVpcAttachments(java.util.Collection<VpcAttachment> vpcAttachments) {
@@ -392,7 +392,7 @@ public class VpnGateway implements Serializable {
      *
      * @param tags Any tags assigned to the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnGateway withTags(Tag... tags) {
@@ -410,7 +410,7 @@ public class VpnGateway implements Serializable {
      *
      * @param tags Any tags assigned to the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnGateway withTags(java.util.Collection<Tag> tags) {

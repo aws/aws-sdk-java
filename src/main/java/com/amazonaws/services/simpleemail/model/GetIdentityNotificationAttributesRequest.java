@@ -77,7 +77,7 @@ public class GetIdentityNotificationAttributesRequest extends AmazonWebServiceRe
      *
      * @param identities A list of one or more identities.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityNotificationAttributesRequest withIdentities(String... identities) {
@@ -95,7 +95,7 @@ public class GetIdentityNotificationAttributesRequest extends AmazonWebServiceRe
      *
      * @param identities A list of one or more identities.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityNotificationAttributesRequest withIdentities(java.util.Collection<String> identities) {

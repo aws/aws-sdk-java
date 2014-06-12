@@ -343,7 +343,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         data types for those attributes must match those of the schema in the
      *         table's attribute definition. </li> </ul> </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchWriteItemRequest withRequestItems(java.util.Map<String,java.util.List<WriteRequest>> requestItems) {
@@ -464,7 +464,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -514,7 +514,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -580,7 +580,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics
@@ -626,7 +626,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements Se
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics

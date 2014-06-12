@@ -54,7 +54,7 @@ public class UpdateServiceAccessPoliciesResult implements Serializable {
      *
      * @param accessPolicies The access rules configured for the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateServiceAccessPoliciesResult withAccessPolicies(AccessPoliciesStatus accessPolicies) {

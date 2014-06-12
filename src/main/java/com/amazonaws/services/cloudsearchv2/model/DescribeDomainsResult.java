@@ -65,7 +65,7 @@ public class DescribeDomainsResult implements Serializable {
      *
      * @param domainStatusList A list that contains the status of each requested domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDomainsResult withDomainStatusList(DomainStatus... domainStatusList) {
@@ -83,7 +83,7 @@ public class DescribeDomainsResult implements Serializable {
      *
      * @param domainStatusList A list that contains the status of each requested domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDomainsResult withDomainStatusList(java.util.Collection<DomainStatus> domainStatusList) {

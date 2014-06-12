@@ -61,7 +61,7 @@ public class CreateReservedInstancesListingResult implements Serializable {
      *
      * @param reservedInstancesListings Information about the Reserved Instances listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReservedInstancesListingResult withReservedInstancesListings(ReservedInstancesListing... reservedInstancesListings) {
@@ -79,7 +79,7 @@ public class CreateReservedInstancesListingResult implements Serializable {
      *
      * @param reservedInstancesListings Information about the Reserved Instances listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReservedInstancesListingResult withReservedInstancesListings(java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {

@@ -127,7 +127,7 @@ public class GetPlatformApplicationAttributesResult implements Serializable {
      *         delivery failure (permanent) to one of the application's
      *         endpoints.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetPlatformApplicationAttributesResult withAttributes(java.util.Map<String,String> attributes) {

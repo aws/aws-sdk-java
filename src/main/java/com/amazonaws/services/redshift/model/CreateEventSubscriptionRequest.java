@@ -160,7 +160,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         be a letter.</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSubscriptionName(String subscriptionName) {
@@ -205,7 +205,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         transmit the event notifications. The ARN is created by Amazon SNS
      *         when you create a topic and subscribe to it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSnsTopicArn(String snsTopicArn) {
@@ -274,7 +274,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         values: cluster, cluster-parameter-group, cluster-security-group, and
      *         cluster-snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSourceType(String sourceType) {
@@ -347,7 +347,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         returned for all objects within the source type specified. <p>Example:
      *         my-cluster-1, my-cluster-2 <p>Example: my-snapshot-20131010
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSourceIds(String... sourceIds) {
@@ -375,7 +375,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         returned for all objects within the source type specified. <p>Example:
      *         my-cluster-1, my-cluster-2 <p>Example: my-snapshot-20131010
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSourceIds(java.util.Collection<String> sourceIds) {
@@ -437,7 +437,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         event notification subscription. <p>Values: Configuration, Management,
      *         Monitoring, Security
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withEventCategories(String... eventCategories) {
@@ -459,7 +459,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         event notification subscription. <p>Values: Configuration, Management,
      *         Monitoring, Security
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withEventCategories(java.util.Collection<String> eventCategories) {
@@ -505,7 +505,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * @param severity Specifies the Amazon Redshift event severity to be published by the
      *         event notification subscription. <p>Values: ERROR, INFO
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSeverity(String severity) {
@@ -550,7 +550,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         subscription, set to <code>false</code> to create the subscription but
      *         not active it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withEnabled(Boolean enabled) {

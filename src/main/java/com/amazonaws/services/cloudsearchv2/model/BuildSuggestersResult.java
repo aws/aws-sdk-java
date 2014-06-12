@@ -64,7 +64,7 @@ public class BuildSuggestersResult implements Serializable {
      *
      * @param fieldNames A list of field names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BuildSuggestersResult withFieldNames(String... fieldNames) {
@@ -82,7 +82,7 @@ public class BuildSuggestersResult implements Serializable {
      *
      * @param fieldNames A list of field names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BuildSuggestersResult withFieldNames(java.util.Collection<String> fieldNames) {

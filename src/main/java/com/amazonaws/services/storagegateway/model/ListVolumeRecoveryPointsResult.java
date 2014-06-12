@@ -79,7 +79,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVolumeRecoveryPointsResult withGatewayARN(String gatewayARN) {
@@ -127,7 +127,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable {
      * @param volumeRecoveryPointInfos The new value for the VolumeRecoveryPointInfos property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(VolumeRecoveryPointInfo... volumeRecoveryPointInfos) {
@@ -147,7 +147,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable {
      * @param volumeRecoveryPointInfos The new value for the VolumeRecoveryPointInfos property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {

@@ -72,7 +72,7 @@ public class GetSendStatisticsResult implements Serializable {
      * @param sendDataPoints A list of data points, each of which represents 15 minutes of
      *         activity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSendStatisticsResult withSendDataPoints(SendDataPoint... sendDataPoints) {
@@ -92,7 +92,7 @@ public class GetSendStatisticsResult implements Serializable {
      * @param sendDataPoints A list of data points, each of which represents 15 minutes of
      *         activity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSendStatisticsResult withSendDataPoints(java.util.Collection<SendDataPoint> sendDataPoints) {

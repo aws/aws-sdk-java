@@ -118,7 +118,7 @@ public class IpPermission implements Serializable {
      *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      *         Numbers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IpPermission withIpProtocol(String ipProtocol) {
@@ -157,7 +157,7 @@ public class IpPermission implements Serializable {
      * @param fromPort The start of port range for the TCP and UDP protocols, or an ICMP type
      *         number. A value of <code>-1</code> indicates all ICMP types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IpPermission withFromPort(Integer fromPort) {
@@ -202,7 +202,7 @@ public class IpPermission implements Serializable {
      *         A value of <code>-1</code> indicates all ICMP codes for the specified
      *         ICMP type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IpPermission withToPort(Integer toPort) {
@@ -245,7 +245,7 @@ public class IpPermission implements Serializable {
      *
      * @param userIdGroupPairs One or more security group and AWS account ID pairs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IpPermission withUserIdGroupPairs(UserIdGroupPair... userIdGroupPairs) {
@@ -263,7 +263,7 @@ public class IpPermission implements Serializable {
      *
      * @param userIdGroupPairs One or more security group and AWS account ID pairs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IpPermission withUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
@@ -313,7 +313,7 @@ public class IpPermission implements Serializable {
      *
      * @param ipRanges One or more IP ranges.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IpPermission withIpRanges(String... ipRanges) {
@@ -331,7 +331,7 @@ public class IpPermission implements Serializable {
      *
      * @param ipRanges One or more IP ranges.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IpPermission withIpRanges(java.util.Collection<String> ipRanges) {

@@ -55,7 +55,7 @@ public class GetQueueUrlResult implements Serializable {
      *
      * @param queueUrl The URL for the queue.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetQueueUrlResult withQueueUrl(String queueUrl) {

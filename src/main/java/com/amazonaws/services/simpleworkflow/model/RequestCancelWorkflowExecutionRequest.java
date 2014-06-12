@@ -128,7 +128,7 @@ public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceReque
      *
      * @param domain The name of the domain containing the workflow execution to cancel.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelWorkflowExecutionRequest withDomain(String domain) {
@@ -170,7 +170,7 @@ public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceReque
      *
      * @param workflowId The workflowId of the workflow execution to cancel.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelWorkflowExecutionRequest withWorkflowId(String workflowId) {
@@ -212,7 +212,7 @@ public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceReque
      *
      * @param runId The runId of the workflow execution to cancel.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelWorkflowExecutionRequest withRunId(String runId) {

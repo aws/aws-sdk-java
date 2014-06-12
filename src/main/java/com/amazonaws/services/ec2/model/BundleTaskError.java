@@ -58,7 +58,7 @@ public class BundleTaskError implements Serializable {
      *
      * @param code The error code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BundleTaskError withCode(String code) {
@@ -91,7 +91,7 @@ public class BundleTaskError implements Serializable {
      *
      * @param message The error message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BundleTaskError withMessage(String message) {

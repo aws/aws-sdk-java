@@ -83,7 +83,7 @@ public class Trail implements Serializable {
      * @param name Name of the trail defined when you call when you call
      *         <a>CreateTrail</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Trail withName(String name) {
@@ -122,7 +122,7 @@ public class Trail implements Serializable {
      * @param s3BucketName Name of the Amazon S3 bucket into which CloudTrail delivers your trail
      *         files. Passed when you call <a>CreateTrail</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Trail withS3BucketName(String s3BucketName) {
@@ -155,7 +155,7 @@ public class Trail implements Serializable {
      *
      * @param s3KeyPrefix Value of the Amazon S3 prefix
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Trail withS3KeyPrefix(String s3KeyPrefix) {
@@ -194,7 +194,7 @@ public class Trail implements Serializable {
      * @param snsTopicName Name of the existing Amazon SNS topic that CloudTrail uses to notify
      *         the account owner when new CloudTrail log files have been delivered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Trail withSnsTopicName(String snsTopicName) {
@@ -233,7 +233,7 @@ public class Trail implements Serializable {
      * @param includeGlobalServiceEvents Set to <b>True</b> to include AWS API calls from AWS global services
      *         such as IAM. Otherwise, <b>False</b>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Trail withIncludeGlobalServiceEvents(Boolean includeGlobalServiceEvents) {

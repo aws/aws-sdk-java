@@ -61,7 +61,7 @@ public class TrustedAdvisorCategorySpecificSummary implements Serializable {
      * @param costOptimizing The summary information about cost savings for a Trusted Advisor check
      *         that is in the Cost Optimizing category.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCategorySpecificSummary withCostOptimizing(TrustedAdvisorCostOptimizingSummary costOptimizing) {

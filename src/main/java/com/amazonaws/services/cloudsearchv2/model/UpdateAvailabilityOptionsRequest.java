@@ -109,7 +109,7 @@ public class UpdateAvailabilityOptionsRequest extends AmazonWebServiceRequest im
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAvailabilityOptionsRequest withDomainName(String domainName) {
@@ -160,7 +160,7 @@ public class UpdateAvailabilityOptionsRequest extends AmazonWebServiceRequest im
      *         Multi-AZ option to downgrade the domain to a single Availability Zone
      *         by setting the Multi-AZ option to <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAvailabilityOptionsRequest withMultiAZ(Boolean multiAZ) {

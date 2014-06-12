@@ -69,7 +69,7 @@ public class PutScalingPolicyResult implements Serializable {
      *
      * @param policyARN A policy's Amazon Resource Name (ARN).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutScalingPolicyResult withPolicyARN(String policyARN) {

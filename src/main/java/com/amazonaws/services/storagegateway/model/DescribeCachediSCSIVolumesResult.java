@@ -70,7 +70,7 @@ public class DescribeCachediSCSIVolumesResult implements Serializable {
      * @param cachediSCSIVolumes An array of objects where each object contains metadata about one
      *         cached volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCachediSCSIVolumesResult withCachediSCSIVolumes(CachediSCSIVolume... cachediSCSIVolumes) {
@@ -90,7 +90,7 @@ public class DescribeCachediSCSIVolumesResult implements Serializable {
      * @param cachediSCSIVolumes An array of objects where each object contains metadata about one
      *         cached volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCachediSCSIVolumesResult withCachediSCSIVolumes(java.util.Collection<CachediSCSIVolume> cachediSCSIVolumes) {

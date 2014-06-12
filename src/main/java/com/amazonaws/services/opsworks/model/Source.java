@@ -108,7 +108,7 @@ public class Source implements Serializable {
      *
      * @param type The repository type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SourceType
@@ -142,7 +142,7 @@ public class Source implements Serializable {
      *
      * @param type The repository type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SourceType
@@ -177,7 +177,7 @@ public class Source implements Serializable {
      *
      * @param url The source URL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Source withUrl(String url) {
@@ -228,7 +228,7 @@ public class Source implements Serializable {
      *         ID.</li> <li>For HTTP bundles, Git repositories, and Subversion
      *         repositories, set <code>Username</code> to the user name.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Source withUsername(String username) {
@@ -291,7 +291,7 @@ public class Source implements Serializable {
      *         information on how to safely handle IAM credentials, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Source withPassword(String password) {
@@ -324,7 +324,7 @@ public class Source implements Serializable {
      *
      * @param sshKey The repository's SSH key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Source withSshKey(String sshKey) {
@@ -375,7 +375,7 @@ public class Source implements Serializable {
      *         have branches or revisions in your repository that represent different
      *         versions that can potentially be deployed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Source withRevision(String revision) {

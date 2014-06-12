@@ -57,7 +57,7 @@ public class GetIdentityVerificationAttributesResult implements Serializable {
      *
      * @param verificationAttributes A map of Identities to IdentityVerificationAttributes objects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityVerificationAttributesResult withVerificationAttributes(java.util.Map<String,IdentityVerificationAttributes> verificationAttributes) {

@@ -78,7 +78,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param networkAclId The ID of the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withNetworkAclId(String networkAclId) {
@@ -111,7 +111,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param vpcId The ID of the VPC for the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withVpcId(String vpcId) {
@@ -144,7 +144,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param isDefault Indicates whether this is the default network ACL for the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withIsDefault(Boolean isDefault) {
@@ -196,7 +196,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param entries One or more entries (rules) in the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withEntries(NetworkAclEntry... entries) {
@@ -214,7 +214,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param entries One or more entries (rules) in the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withEntries(java.util.Collection<NetworkAclEntry> entries) {
@@ -264,7 +264,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param associations Any associations between the network ACL and one or more subnets
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withAssociations(NetworkAclAssociation... associations) {
@@ -282,7 +282,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param associations Any associations between the network ACL and one or more subnets
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withAssociations(java.util.Collection<NetworkAclAssociation> associations) {
@@ -332,7 +332,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param tags Any tags assigned to the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withTags(Tag... tags) {
@@ -350,7 +350,7 @@ public class NetworkAcl implements Serializable {
      *
      * @param tags Any tags assigned to the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAcl withTags(java.util.Collection<Tag> tags) {

@@ -276,7 +276,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *
      * @param tableName The name of the table containing the requested items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withTableName(String tableName) {
@@ -360,7 +360,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         consumed based on item size, not on the amount of data that is
      *         returned to an application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withAttributesToGet(String... attributesToGet) {
@@ -393,7 +393,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         consumed based on item size, not on the amount of data that is
      *         returned to an application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -508,7 +508,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withLimit(Integer limit) {
@@ -638,7 +638,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Select
@@ -728,7 +728,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Select
@@ -944,7 +944,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withScanFilter(java.util.Map<String,Condition> scanFilter) {
@@ -1092,7 +1092,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -1154,7 +1154,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -1232,7 +1232,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <i>Scan</i> returned the corresponding value of
      *         <i>LastEvaluatedKey</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
@@ -1391,7 +1391,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -1441,7 +1441,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -1539,7 +1539,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         the <i>Scan</i> will be sequential rather than parallel. <p>If you
      *         specify <i>TotalSegments</i>, you must also specify <i>Segment</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withTotalSegments(Integer totalSegments) {
@@ -1647,7 +1647,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements Serializable
      *         <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
      *         specify <i>TotalSegments</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScanRequest withSegment(Integer segment) {

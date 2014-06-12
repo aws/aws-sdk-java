@@ -53,7 +53,7 @@ public class PropagatingVgw implements Serializable {
      *
      * @param gatewayId The ID of the virtual private gateway (VGW).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PropagatingVgw withGatewayId(String gatewayId) {

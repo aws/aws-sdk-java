@@ -64,7 +64,7 @@ public class ListSAMLProvidersResult implements Serializable {
      *
      * @param sAMLProviderList The list of SAML providers for this account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSAMLProvidersResult withSAMLProviderList(SAMLProviderListEntry... sAMLProviderList) {
@@ -82,7 +82,7 @@ public class ListSAMLProvidersResult implements Serializable {
      *
      * @param sAMLProviderList The list of SAML providers for this account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSAMLProvidersResult withSAMLProviderList(java.util.Collection<SAMLProviderListEntry> sAMLProviderList) {

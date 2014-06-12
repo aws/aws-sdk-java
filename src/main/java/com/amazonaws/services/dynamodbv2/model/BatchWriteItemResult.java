@@ -267,7 +267,7 @@ public class BatchWriteItemResult implements Serializable {
      *         unprocessed items remaining, the response contains an empty
      *         <i>UnprocessedItems</i> map.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchWriteItemResult withUnprocessedItems(java.util.Map<String,java.util.List<WriteRequest>> unprocessedItems) {
@@ -437,7 +437,7 @@ public class BatchWriteItemResult implements Serializable {
      *         size limit. <p>The estimate is subject to change over time; therefore,
      *         do not rely on the precision or accuracy of the estimate. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchWriteItemResult withItemCollectionMetrics(java.util.Map<String,java.util.List<ItemCollectionMetrics>> itemCollectionMetrics) {
@@ -537,7 +537,7 @@ public class BatchWriteItemResult implements Serializable {
      *         provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The total
      *         number of capacity units consumed. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchWriteItemResult withConsumedCapacity(ConsumedCapacity... consumedCapacity) {
@@ -561,7 +561,7 @@ public class BatchWriteItemResult implements Serializable {
      *         provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The total
      *         number of capacity units consumed. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchWriteItemResult withConsumedCapacity(java.util.Collection<ConsumedCapacity> consumedCapacity) {

@@ -138,7 +138,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
      *         than 50 items. If unknown activities are requested, they are ignored
      *         with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScalingActivitiesRequest withActivityIds(String... activityIds) {
@@ -166,7 +166,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
      *         than 50 items. If unknown activities are requested, they are ignored
      *         with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScalingActivitiesRequest withActivityIds(java.util.Collection<String> activityIds) {
@@ -218,7 +218,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
      *
      * @param autoScalingGroupName The name of the <a>AutoScalingGroup</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScalingActivitiesRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -251,7 +251,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
      *
      * @param maxRecords The maximum number of scaling activities to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScalingActivitiesRequest withMaxRecords(Integer maxRecords) {
@@ -299,7 +299,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
      * @param nextToken A string that marks the start of the next batch of returned results
      *         for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScalingActivitiesRequest withNextToken(String nextToken) {

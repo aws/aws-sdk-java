@@ -76,7 +76,7 @@ public class UserProfile implements Serializable {
      *
      * @param iamUserArn The user's IAM ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserProfile withIamUserArn(String iamUserArn) {
@@ -109,7 +109,7 @@ public class UserProfile implements Serializable {
      *
      * @param name The user's name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserProfile withName(String name) {
@@ -142,7 +142,7 @@ public class UserProfile implements Serializable {
      *
      * @param sshUsername The user's SSH user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserProfile withSshUsername(String sshUsername) {
@@ -175,7 +175,7 @@ public class UserProfile implements Serializable {
      *
      * @param sshPublicKey The user's SSH public key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserProfile withSshPublicKey(String sshPublicKey) {
@@ -226,7 +226,7 @@ public class UserProfile implements Serializable {
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
      *         User Permissions</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserProfile withAllowSelfManagement(Boolean allowSelfManagement) {

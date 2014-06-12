@@ -63,7 +63,7 @@ public class DescribeStackResourcesResult implements Serializable {
      *
      * @param stackResources A list of <code>StackResource</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourcesResult withStackResources(StackResource... stackResources) {
@@ -81,7 +81,7 @@ public class DescribeStackResourcesResult implements Serializable {
      *
      * @param stackResources A list of <code>StackResource</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourcesResult withStackResources(java.util.Collection<StackResource> stackResources) {

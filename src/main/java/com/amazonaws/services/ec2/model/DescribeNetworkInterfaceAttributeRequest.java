@@ -81,7 +81,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -114,7 +114,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      *
      * @param description The <code>description</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withDescription(String description) {
@@ -147,7 +147,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      *
      * @param sourceDestCheck The <code>sourceDestCheck</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withSourceDestCheck(String sourceDestCheck) {
@@ -180,7 +180,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      *
      * @param groups The <code>groupSet</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withGroups(String groups) {
@@ -213,7 +213,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      *
      * @param attachment The <code>attachment</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withAttachment(String attachment) {

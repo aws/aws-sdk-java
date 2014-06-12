@@ -76,7 +76,7 @@ public class History implements Serializable {
      *
      * @param events The list of history events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public History withEvents(HistoryEvent... events) {
@@ -94,7 +94,7 @@ public class History implements Serializable {
      *
      * @param events The list of history events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public History withEvents(java.util.Collection<HistoryEvent> events) {
@@ -155,7 +155,7 @@ public class History implements Serializable {
      *         one page and the next page can be retrieved by repeating the request
      *         with this token and all other arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public History withNextPageToken(String nextPageToken) {

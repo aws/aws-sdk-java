@@ -75,6 +75,24 @@ public interface Headers {
     /** Header for optional server-side encryption algorithm */
     public static final String SERVER_SIDE_ENCRYPTION = "x-amz-server-side-encryption";
 
+    /** Header for the encryption algorithm used when encrypting the object with customer-provided keys */
+    public static final String SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM = "x-amz-server-side-encryption-customer-algorithm";
+
+    /** Header for the customer-provided key for server-side encryption */
+    public static final String SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY = "x-amz-server-side-encryption-customer-key";
+
+    /** Header for the MD5 digest of the customer-provided key for server-side encryption */
+    public static final String SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5 = "x-amz-server-side-encryption-customer-key-MD5";
+
+    /** Header for the encryption algorithm used when encrypting the object with customer-provided keys */
+    public static final String COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM = "x-amz-copy-source-server-side-encryption-customer-algorithm";
+
+    /** Header for the customer-provided key for server-side encryption */
+    public static final String COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY = "x-amz-copy-source-server-side-encryption-customer-key";
+
+    /** Header for the MD5 digest of the customer-provided key for server-side encryption */
+    public static final String COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5 = "x-amz-copy-source-server-side-encryption-customer-key-MD5";
+
     /** Header for optional object expiration */
     public static final String EXPIRATION = "x-amz-expiration";
 

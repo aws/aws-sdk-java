@@ -156,7 +156,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStorediSCSIVolumeRequest withGatewayARN(String gatewayARN) {
@@ -216,7 +216,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
      *         href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      *         to list disk IDs for a gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStorediSCSIVolumeRequest withDiskId(String diskId) {
@@ -288,7 +288,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      *         in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStorediSCSIVolumeRequest withSnapshotId(String snapshotId) {
@@ -333,7 +333,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
      *         local disk. Otherwise, specifying this field as false creates an empty
      *         volume. <p><i>Valid Values</i>: true, false
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStorediSCSIVolumeRequest withPreserveExistingData(Boolean preserveExistingData) {
@@ -421,7 +421,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
      *         arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      *         The target name must be unique across all volumes of a gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStorediSCSIVolumeRequest withTargetName(String targetName) {
@@ -487,7 +487,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
      *         interfaces available on a gateway. <p><i>Valid Values</i>: A valid IP
      *         address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStorediSCSIVolumeRequest withNetworkInterfaceId(String networkInterfaceId) {

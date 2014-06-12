@@ -112,7 +112,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements Serializ
      * @param role The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      *         Transcoder to test.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TestRoleRequest withRole(String role) {
@@ -160,7 +160,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements Serializ
      * @param inputBucket The Amazon S3 bucket that contains media files to be transcoded. The
      *         action attempts to read from this bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TestRoleRequest withInputBucket(String inputBucket) {
@@ -208,7 +208,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements Serializ
      * @param outputBucket The Amazon S3 bucket that Elastic Transcoder will write transcoded
      *         media files to. The action attempts to read from this bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TestRoleRequest withOutputBucket(String outputBucket) {
@@ -266,7 +266,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements Serializ
      * @param topics The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TestRoleRequest withTopics(String... topics) {
@@ -289,7 +289,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements Serializ
      * @param topics The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TestRoleRequest withTopics(java.util.Collection<String> topics) {

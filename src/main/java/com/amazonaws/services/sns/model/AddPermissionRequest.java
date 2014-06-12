@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest) AddPermission operation}.
  * <p>
- * The <code>AddPermission</code> action adds a statement to a topic's
- * access control policy, granting access for the specified AWS accounts
- * to the specified actions.
+ * Adds a statement to a topic's access control policy, granting access
+ * for the specified AWS accounts to the specified actions.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest)
@@ -105,7 +104,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param topicArn The ARN of the topic whose access control policy you wish to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withTopicArn(String topicArn) {
@@ -138,7 +137,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param label A unique identifier for the new policy statement.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withLabel(String label) {
@@ -193,7 +192,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         to the specified actions. The users must have AWS accounts, but do not
      *         need to be signed up for this service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
@@ -215,7 +214,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         to the specified actions. The users must have AWS accounts, but do not
      *         need to be signed up for this service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
@@ -271,7 +270,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * @param actionNames The action you want to allow for the specified principal(s). <p>Valid
      *         values: any Amazon SNS action name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withActionNames(String... actionNames) {
@@ -291,7 +290,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      * @param actionNames The action you want to allow for the specified principal(s). <p>Valid
      *         values: any Amazon SNS action name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withActionNames(java.util.Collection<String> actionNames) {

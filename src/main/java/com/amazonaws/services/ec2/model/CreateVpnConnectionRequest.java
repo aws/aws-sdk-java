@@ -119,7 +119,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      *
      * @param type The type of VPN connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnConnectionRequest withType(String type) {
@@ -152,7 +152,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      *
      * @param customerGatewayId The ID of the customer gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnConnectionRequest withCustomerGatewayId(String customerGatewayId) {
@@ -185,7 +185,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      *
      * @param vpnGatewayId The ID of the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnConnectionRequest withVpnGatewayId(String vpnGatewayId) {
@@ -230,7 +230,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      *         are creating a VPN connection for a device that does not support BGP,
      *         you must specify <code>true</code>. <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnConnectionRequest withOptions(VpnConnectionOptionsSpecification options) {

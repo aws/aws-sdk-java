@@ -116,7 +116,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
      * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSnapshotScheduleRequest withVolumeARN(String volumeARN) {
@@ -170,7 +170,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
      *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
      *         day is in the time zone of the gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSnapshotScheduleRequest withStartAt(Integer startAt) {
@@ -212,7 +212,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
      *
      * @param recurrenceInHours Frequency of snapshots. Specify the number of hours between snapshots.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSnapshotScheduleRequest withRecurrenceInHours(Integer recurrenceInHours) {
@@ -260,7 +260,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
      * @param description Optional description of the snapshot that overwrites the existing
      *         description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSnapshotScheduleRequest withDescription(String description) {

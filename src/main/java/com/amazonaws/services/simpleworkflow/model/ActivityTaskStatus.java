@@ -53,7 +53,7 @@ public class ActivityTaskStatus implements Serializable {
      *
      * @param cancelRequested Set to <code>true</code> if cancellation of the task is requested.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskStatus withCancelRequested(Boolean cancelRequested) {

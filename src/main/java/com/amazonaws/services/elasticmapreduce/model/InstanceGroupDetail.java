@@ -213,7 +213,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param instanceGroupId Unique identifier for the instance group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withInstanceGroupId(String instanceGroupId) {
@@ -258,7 +258,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param name Friendly name for the instance group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withName(String name) {
@@ -304,7 +304,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param market Market type of the Amazon EC2 instances used to create a cluster node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see MarketType
@@ -338,7 +338,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param market Market type of the Amazon EC2 instances used to create a cluster node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see MarketType
@@ -386,7 +386,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param instanceRole Instance group role in the cluster
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceRoleType
@@ -420,7 +420,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param instanceRole Instance group role in the cluster
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceRoleType
@@ -473,7 +473,7 @@ public class InstanceGroupDetail implements Serializable {
      * @param bidPrice Bid price for EC2 Instances when launching nodes as Spot Instances,
      *         expressed in USD.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withBidPrice(String bidPrice) {
@@ -518,7 +518,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param instanceType Amazon EC2 Instance type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withInstanceType(String instanceType) {
@@ -551,7 +551,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param instanceRequestCount Target number of instances to run in the instance group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withInstanceRequestCount(Integer instanceRequestCount) {
@@ -584,7 +584,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param instanceRunningCount Actual count of running instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withInstanceRunningCount(Integer instanceRunningCount) {
@@ -636,7 +636,7 @@ public class InstanceGroupDetail implements Serializable {
      * @param state State of instance group. The following values are deprecated:
      *         STARTING, TERMINATED, and FAILED.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceGroupState
@@ -674,7 +674,7 @@ public class InstanceGroupDetail implements Serializable {
      * @param state State of instance group. The following values are deprecated:
      *         STARTING, TERMINATED, and FAILED.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceGroupState
@@ -721,7 +721,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param lastStateChangeReason Details regarding the state of the instance group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withLastStateChangeReason(String lastStateChangeReason) {
@@ -754,7 +754,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param creationDateTime The date/time the instance group was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withCreationDateTime(java.util.Date creationDateTime) {
@@ -787,7 +787,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param startDateTime The date/time the instance group was started.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withStartDateTime(java.util.Date startDateTime) {
@@ -820,7 +820,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param readyDateTime The date/time the instance group was available to the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withReadyDateTime(java.util.Date readyDateTime) {
@@ -853,7 +853,7 @@ public class InstanceGroupDetail implements Serializable {
      *
      * @param endDateTime The date/time the instance group was terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupDetail withEndDateTime(java.util.Date endDateTime) {

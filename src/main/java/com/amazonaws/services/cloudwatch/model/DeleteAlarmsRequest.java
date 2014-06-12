@@ -81,7 +81,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param alarmNames A list of alarms to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAlarmsRequest withAlarmNames(String... alarmNames) {
@@ -102,7 +102,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param alarmNames A list of alarms to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAlarmsRequest withAlarmNames(java.util.Collection<String> alarmNames) {

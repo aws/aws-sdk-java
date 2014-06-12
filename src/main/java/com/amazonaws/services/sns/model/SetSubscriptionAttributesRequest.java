@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest) SetSubscriptionAttributes operation}.
  * <p>
- * The <code>SetSubscriptionAttributes</code> action allows a
- * subscription owner to set an attribute of the topic to a new value.
+ * Allows a subscription owner to set an attribute of the topic to a new
+ * value.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest)
@@ -94,7 +94,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
      *
      * @param subscriptionArn The ARN of the subscription to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetSubscriptionAttributesRequest withSubscriptionArn(String subscriptionArn) {
@@ -139,7 +139,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
      *         subscriptions attributes are mutable. <p>Valid values:
      *         <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetSubscriptionAttributesRequest withAttributeName(String attributeName) {
@@ -172,7 +172,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
      *
      * @param attributeValue The new value for the attribute in JSON format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetSubscriptionAttributesRequest withAttributeValue(String attributeValue) {

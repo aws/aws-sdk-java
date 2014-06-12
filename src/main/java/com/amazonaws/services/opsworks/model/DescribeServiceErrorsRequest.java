@@ -94,7 +94,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
      *         <code>DescribeServiceErrors</code> returns descriptions of the errors
      *         associated with the specified stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceErrorsRequest withStackId(String stackId) {
@@ -139,7 +139,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
      *         <code>DescribeServiceErrors</code> returns descriptions of the errors
      *         associated with the specified instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceErrorsRequest withInstanceId(String instanceId) {
@@ -194,7 +194,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
      *         <code>DescribeServiceErrors</code> returns descriptions of the
      *         specified errors. Otherwise, it returns a description of every error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceErrorsRequest withServiceErrorIds(String... serviceErrorIds) {
@@ -216,7 +216,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
      *         <code>DescribeServiceErrors</code> returns descriptions of the
      *         specified errors. Otherwise, it returns a description of every error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceErrorsRequest withServiceErrorIds(java.util.Collection<String> serviceErrorIds) {

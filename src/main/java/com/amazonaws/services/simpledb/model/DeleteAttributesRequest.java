@@ -164,7 +164,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest implements 
      *
      * @param domainName The name of the domain in which to perform the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAttributesRequest withDomainName(String domainName) {
@@ -209,7 +209,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest implements 
      *         represent individual objects that contain one or more value-attribute
      *         pairs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAttributesRequest withItemName(String itemName) {
@@ -258,7 +258,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest implements 
      * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
      *         represent categories of data that can be assigned to items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAttributesRequest withAttributes(Attribute... attributes) {
@@ -278,7 +278,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest implements 
      * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
      *         represent categories of data that can be assigned to items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAttributesRequest withAttributes(java.util.Collection<Attribute> attributes) {
@@ -336,7 +336,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest implements 
      *         be satisfied in order for this request to be processed and the
      *         attributes to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAttributesRequest withExpected(UpdateCondition expected) {

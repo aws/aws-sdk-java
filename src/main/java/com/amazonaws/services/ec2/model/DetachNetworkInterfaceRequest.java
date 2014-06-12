@@ -65,7 +65,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param attachmentId The ID of the attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachNetworkInterfaceRequest withAttachmentId(String attachmentId) {
@@ -98,7 +98,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param force Specifies whether to force a detachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachNetworkInterfaceRequest withForce(Boolean force) {

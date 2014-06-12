@@ -88,7 +88,7 @@ public class GetUserPolicyResult implements Serializable {
      *
      * @param userName The user the policy is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetUserPolicyResult withUserName(String userName) {
@@ -133,7 +133,7 @@ public class GetUserPolicyResult implements Serializable {
      *
      * @param policyName The name of the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetUserPolicyResult withPolicyName(String policyName) {
@@ -178,7 +178,7 @@ public class GetUserPolicyResult implements Serializable {
      *
      * @param policyDocument The policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetUserPolicyResult withPolicyDocument(String policyDocument) {

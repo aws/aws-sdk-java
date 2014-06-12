@@ -108,7 +108,7 @@ public class ViewerCertificate implements Serializable {
      *         of the custom viewer certificate for this distribution. Specify either
      *         this value or CloudFrontDefaultCertificate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ViewerCertificate withIAMCertificateId(String iAMCertificateId) {
@@ -159,7 +159,7 @@ public class ViewerCertificate implements Serializable {
      *         URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
      *         set to true. Omit this value if you are setting an IAMCertificateId.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ViewerCertificate withCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
@@ -280,7 +280,7 @@ public class ViewerCertificate implements Serializable {
      *         SSLSupportMethod if you specified true for
      *         CloudFrontDefaultCertificate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SSLSupportMethod
@@ -354,7 +354,7 @@ public class ViewerCertificate implements Serializable {
      *         SSLSupportMethod if you specified true for
      *         CloudFrontDefaultCertificate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SSLSupportMethod

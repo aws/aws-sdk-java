@@ -107,7 +107,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
      *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchRequestEntry withId(String id) {
@@ -140,7 +140,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
      *
      * @param messageBody Body of the message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchRequestEntry withMessageBody(String messageBody) {
@@ -173,7 +173,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
      *
      * @param delaySeconds The number of seconds for which the message has to be delayed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchRequestEntry withDelaySeconds(Integer delaySeconds) {
@@ -228,7 +228,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
      *         Attribute Items</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchRequestEntry withMessageAttributes(java.util.Map<String,MessageAttributeValue> messageAttributes) {

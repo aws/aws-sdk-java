@@ -71,7 +71,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable {
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(String networkInterfaceId) {
@@ -104,7 +104,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable {
      *
      * @param description The description of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeResult withDescription(String description) {
@@ -137,7 +137,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable {
      *
      * @param sourceDestCheck Indicates whether source/destination checking is enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(Boolean sourceDestCheck) {
@@ -189,7 +189,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable {
      *
      * @param groups The security groups associated with the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeResult withGroups(GroupIdentifier... groups) {
@@ -207,7 +207,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable {
      *
      * @param groups The security groups associated with the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeResult withGroups(java.util.Collection<GroupIdentifier> groups) {
@@ -247,7 +247,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable {
      *
      * @param attachment The attachment (if any) of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfaceAttributeResult withAttachment(NetworkInterfaceAttachment attachment) {

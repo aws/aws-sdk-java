@@ -78,7 +78,7 @@ public class EnabledMetric implements Serializable {
      *
      * @param metric The name of the enabled metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnabledMetric withMetric(String metric) {
@@ -123,7 +123,7 @@ public class EnabledMetric implements Serializable {
      *
      * @param granularity The granularity of the enabled metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnabledMetric withGranularity(String granularity) {

@@ -98,7 +98,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
      *
      * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
@@ -116,7 +116,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
      *
      * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {

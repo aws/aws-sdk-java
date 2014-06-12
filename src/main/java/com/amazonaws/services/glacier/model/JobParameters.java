@@ -165,7 +165,7 @@ public class JobParameters implements Serializable {
      *         Format field, JSON is the default format. Valid values are "CSV" and
      *         "JSON".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobParameters withFormat(String format) {
@@ -210,7 +210,7 @@ public class JobParameters implements Serializable {
      *         inventory of a vault. Valid values are "archive-retrieval" and
      *         "inventory-retrieval".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobParameters withType(String type) {
@@ -261,7 +261,7 @@ public class JobParameters implements Serializable {
      *         error occurs if you specify this request parameter for an inventory
      *         retrieval job request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobParameters withArchiveId(String archiveId) {
@@ -312,7 +312,7 @@ public class JobParameters implements Serializable {
      *         without control codes-specifically, ASCII values 32-126 decimal or
      *         0x20-0x7E hexadecimal.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobParameters withDescription(String description) {
@@ -363,7 +363,7 @@ public class JobParameters implements Serializable {
      *         The specified topic publishes the notification to its subscribers. The
      *         SNS topic must exist.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobParameters withSNSTopic(String sNSTopic) {
@@ -444,7 +444,7 @@ public class JobParameters implements Serializable {
      *         aligned, this operation returns a 400 response. <p>An error occurs if
      *         you specify this field for an inventory retrieval job request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobParameters withRetrievalByteRange(String retrievalByteRange) {
@@ -477,7 +477,7 @@ public class JobParameters implements Serializable {
      *
      * @param inventoryRetrievalParameters Input parameters used for range inventory retrieval.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobParameters withInventoryRetrievalParameters(InventoryRetrievalJobInput inventoryRetrievalParameters) {

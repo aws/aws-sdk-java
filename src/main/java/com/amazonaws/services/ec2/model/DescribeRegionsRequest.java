@@ -83,7 +83,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *
      * @param regionNames The names of one or more regions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRegionsRequest withRegionNames(String... regionNames) {
@@ -101,7 +101,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *
      * @param regionNames The names of one or more regions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRegionsRequest withRegionNames(java.util.Collection<String> regionNames) {
@@ -169,7 +169,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *         </li> <li> <p><code>region-name</code> - The name of the region (for
      *         example, <code>us-east-1</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRegionsRequest withFilters(Filter... filters) {
@@ -193,7 +193,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *         </li> <li> <p><code>region-name</code> - The name of the region (for
      *         example, <code>us-east-1</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRegionsRequest withFilters(java.util.Collection<Filter> filters) {

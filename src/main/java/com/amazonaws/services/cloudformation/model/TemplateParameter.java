@@ -69,7 +69,7 @@ public class TemplateParameter implements Serializable {
      *
      * @param parameterKey The name associated with the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TemplateParameter withParameterKey(String parameterKey) {
@@ -102,7 +102,7 @@ public class TemplateParameter implements Serializable {
      *
      * @param defaultValue The default value associated with the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TemplateParameter withDefaultValue(String defaultValue) {
@@ -141,7 +141,7 @@ public class TemplateParameter implements Serializable {
      * @param noEcho Flag indicating whether the parameter should be displayed as plain
      *         text in logs and UIs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TemplateParameter withNoEcho(Boolean noEcho) {
@@ -185,7 +185,7 @@ public class TemplateParameter implements Serializable {
      *
      * @param description User defined description associated with the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TemplateParameter withDescription(String description) {

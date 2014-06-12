@@ -86,7 +86,7 @@ public class Attribute implements Serializable {
      *
      * @param name The name of the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Attribute withName(String name) {
@@ -119,7 +119,7 @@ public class Attribute implements Serializable {
      *
      * @param alternateNameEncoding <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Attribute withAlternateNameEncoding(String alternateNameEncoding) {
@@ -152,7 +152,7 @@ public class Attribute implements Serializable {
      *
      * @param value The value of the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Attribute withValue(String value) {
@@ -185,7 +185,7 @@ public class Attribute implements Serializable {
      *
      * @param alternateValueEncoding <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Attribute withAlternateValueEncoding(String alternateValueEncoding) {

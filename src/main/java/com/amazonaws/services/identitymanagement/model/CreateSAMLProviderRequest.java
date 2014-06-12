@@ -166,7 +166,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         Temporary Security Credentials for SAML Federation</a> in the <i>Using
      *         Temporary Security Credentials</i> guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSAMLProviderRequest withSAMLMetadataDocument(String sAMLMetadataDocument) {
@@ -211,7 +211,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *
      * @param name The name of the provider to create.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSAMLProviderRequest withName(String name) {

@@ -188,7 +188,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param environmentName The name of this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withEnvironmentName(String environmentName) {
@@ -221,7 +221,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param environmentId The ID of this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withEnvironmentId(String environmentId) {
@@ -263,7 +263,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param applicationName The name of the application associated with this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withApplicationName(String applicationName) {
@@ -305,7 +305,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param versionLabel The application version deployed in this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withVersionLabel(String versionLabel) {
@@ -353,7 +353,7 @@ public class TerminateEnvironmentResult implements Serializable {
      * @param solutionStackName The name of the <code>SolutionStack</code> deployed with this
      *         environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withSolutionStackName(String solutionStackName) {
@@ -401,7 +401,7 @@ public class TerminateEnvironmentResult implements Serializable {
      * @param templateName The name of the configuration template used to originally launch this
      *         environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withTemplateName(String templateName) {
@@ -443,7 +443,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param description Describes this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withDescription(String description) {
@@ -488,7 +488,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *         LoadBalancer. For single-instance environments, the IP address of the
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withEndpointURL(String endpointURL) {
@@ -530,7 +530,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param cNAME The URL to the CNAME for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withCNAME(String cNAME) {
@@ -563,7 +563,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param dateCreated The creation date for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withDateCreated(java.util.Date dateCreated) {
@@ -596,7 +596,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param dateUpdated The last modified date for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withDateUpdated(java.util.Date dateUpdated) {
@@ -690,7 +690,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentStatus
@@ -756,7 +756,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentStatus
@@ -906,7 +906,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentHealth
@@ -1008,7 +1008,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentHealth
@@ -1043,7 +1043,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param resources The description of the AWS resources used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withResources(EnvironmentResourcesDescription resources) {
@@ -1076,7 +1076,7 @@ public class TerminateEnvironmentResult implements Serializable {
      *
      * @param tier Describes the current tier of this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentResult withTier(EnvironmentTier tier) {

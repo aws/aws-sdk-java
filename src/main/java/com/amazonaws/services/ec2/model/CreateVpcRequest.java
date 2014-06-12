@@ -113,7 +113,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * @param cidrBlock The network range for the VPC, in CIDR notation. For example,
      *         <code>10.0.0.0/16</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpcRequest withCidrBlock(String cidrBlock) {
@@ -195,7 +195,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *         launch. Dedicated tenancy instances runs on single-tenant hardware.
      *         <p>Default: <code>default</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -253,7 +253,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *         launch. Dedicated tenancy instances runs on single-tenant hardware.
      *         <p>Default: <code>default</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy

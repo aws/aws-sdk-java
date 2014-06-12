@@ -109,7 +109,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param reservedCacheNodeId The unique identifier for the reservation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withReservedCacheNodeId(String reservedCacheNodeId) {
@@ -142,7 +142,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param reservedCacheNodesOfferingId The offering identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
@@ -175,7 +175,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param cacheNodeType The cache node type for the reserved cache nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withCacheNodeType(String cacheNodeType) {
@@ -208,7 +208,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param startTime The time the reservation started.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withStartTime(java.util.Date startTime) {
@@ -241,7 +241,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param duration The duration of the reservation in seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withDuration(Integer duration) {
@@ -274,7 +274,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param fixedPrice The fixed price charged for this reserved cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withFixedPrice(Double fixedPrice) {
@@ -307,7 +307,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param usagePrice The hourly price charged for this reserved cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withUsagePrice(Double usagePrice) {
@@ -340,7 +340,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param cacheNodeCount The number of cache nodes that have been reserved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withCacheNodeCount(Integer cacheNodeCount) {
@@ -373,7 +373,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param productDescription The description of the reserved cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withProductDescription(String productDescription) {
@@ -406,7 +406,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param offeringType The offering type of this reserved cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withOfferingType(String offeringType) {
@@ -439,7 +439,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param state The state of the reserved cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withState(String state) {
@@ -482,7 +482,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param recurringCharges The recurring price charged to run this reserved cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withRecurringCharges(RecurringCharge... recurringCharges) {
@@ -500,7 +500,7 @@ public class ReservedCacheNode implements Serializable {
      *
      * @param recurringCharges The recurring price charged to run this reserved cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedCacheNode withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {

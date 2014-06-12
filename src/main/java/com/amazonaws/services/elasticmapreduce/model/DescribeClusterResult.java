@@ -53,7 +53,7 @@ public class DescribeClusterResult implements Serializable {
      *
      * @param cluster This output contains the details for the requested cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterResult withCluster(Cluster cluster) {

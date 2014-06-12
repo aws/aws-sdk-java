@@ -98,7 +98,7 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
      *
      * @param cacheSecurityGroupName The name of the cache security group to revoke ingress from.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeCacheSecurityGroupIngressRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {
@@ -131,7 +131,7 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
      *
      * @param eC2SecurityGroupName The name of the Amazon EC2 security group to revoke access from.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeCacheSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
@@ -176,7 +176,7 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
      *         that this is not the same thing as an AWS access key ID - you must
      *         provide a valid AWS account number for this parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeCacheSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {

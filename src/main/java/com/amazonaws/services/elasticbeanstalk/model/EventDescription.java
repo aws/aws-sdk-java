@@ -110,7 +110,7 @@ public class EventDescription implements Serializable {
      *
      * @param eventDate The date when the event occurred.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventDescription withEventDate(java.util.Date eventDate) {
@@ -143,7 +143,7 @@ public class EventDescription implements Serializable {
      *
      * @param message The event message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventDescription withMessage(String message) {
@@ -185,7 +185,7 @@ public class EventDescription implements Serializable {
      *
      * @param applicationName The application associated with the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventDescription withApplicationName(String applicationName) {
@@ -233,7 +233,7 @@ public class EventDescription implements Serializable {
      * @param versionLabel The release label for the application version associated with this
      *         event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventDescription withVersionLabel(String versionLabel) {
@@ -275,7 +275,7 @@ public class EventDescription implements Serializable {
      *
      * @param templateName The name of the configuration associated with this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventDescription withTemplateName(String templateName) {
@@ -317,7 +317,7 @@ public class EventDescription implements Serializable {
      *
      * @param environmentName The name of the environment associated with this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventDescription withEnvironmentName(String environmentName) {
@@ -350,7 +350,7 @@ public class EventDescription implements Serializable {
      *
      * @param requestId The web service request ID for the activity of this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventDescription withRequestId(String requestId) {
@@ -396,7 +396,7 @@ public class EventDescription implements Serializable {
      *
      * @param severity The severity level of this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EventSeverity
@@ -430,7 +430,7 @@ public class EventDescription implements Serializable {
      *
      * @param severity The severity level of this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EventSeverity

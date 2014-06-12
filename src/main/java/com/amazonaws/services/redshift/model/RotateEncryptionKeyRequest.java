@@ -72,7 +72,7 @@ public class RotateEncryptionKeyRequest extends AmazonWebServiceRequest implemen
      *         encryption keys for. <p> Constraints: Must be the name of valid
      *         cluster that has encryption enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RotateEncryptionKeyRequest withClusterIdentifier(String clusterIdentifier) {

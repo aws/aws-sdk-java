@@ -121,7 +121,7 @@ public class Distribution implements Serializable {
      *
      * @param id The identifier for the distribution. For example: EDFDVBD632BHDS5.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Distribution withId(String id) {
@@ -172,7 +172,7 @@ public class Distribution implements Serializable {
      *         information is fully propagated throughout the Amazon CloudFront
      *         system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Distribution withStatus(String status) {
@@ -205,7 +205,7 @@ public class Distribution implements Serializable {
      *
      * @param lastModifiedTime The date and time the distribution was last modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Distribution withLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -238,7 +238,7 @@ public class Distribution implements Serializable {
      *
      * @param inProgressInvalidationBatches The number of invalidation batches currently in progress.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Distribution withInProgressInvalidationBatches(Integer inProgressInvalidationBatches) {
@@ -277,7 +277,7 @@ public class Distribution implements Serializable {
      * @param domainName The domain name corresponding to the distribution. For example:
      *         d604721fxaaqy9.cloudfront.net.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Distribution withDomainName(String domainName) {
@@ -358,7 +358,7 @@ public class Distribution implements Serializable {
      *         KeyPairId element appears for a Signer, that signer can't create
      *         working signed URLs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Distribution withActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
@@ -391,7 +391,7 @@ public class Distribution implements Serializable {
      *
      * @param distributionConfig The current configuration information for the distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Distribution withDistributionConfig(DistributionConfig distributionConfig) {

@@ -134,7 +134,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         identifier. <p>Example:
      *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
@@ -173,7 +173,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
      *         only the available offerings matching the specified DB instance class.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withDBInstanceClass(String dBInstanceClass) {
@@ -218,7 +218,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         parameter to show only reservations for this duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withDuration(String duration) {
@@ -257,7 +257,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * @param productDescription Product description filter value. Specify this parameter to show only
      *         the available offerings matching the specified product description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withProductDescription(String productDescription) {
@@ -308,7 +308,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withOfferingType(String offeringType) {
@@ -347,7 +347,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * @param multiAZ The Multi-AZ filter value. Specify this parameter to show only the
      *         available offerings matching the specified Multi-AZ parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withMultiAZ(Boolean multiAZ) {
@@ -415,7 +415,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
      *         maximum 100
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withMaxRecords(Integer maxRecords) {
@@ -460,7 +460,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesOfferingsRequest withMarker(String marker) {

@@ -76,7 +76,7 @@ public class Tag implements Serializable {
      *         maximum of 128 characters for a tag key. Tags owned by Amazon Web
      *         Services (AWS) have the reserved prefix: <code>aws:</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withKey(String key) {
@@ -115,7 +115,7 @@ public class Tag implements Serializable {
      * @param value <i>Required</i>. A string containing the value for this tag. You can
      *         specify a maximum of 256 characters for a tag value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withValue(String value) {

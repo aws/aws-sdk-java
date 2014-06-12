@@ -60,7 +60,7 @@ public class DescribeStackResourceResult implements Serializable {
      * @param stackResourceDetail A <code>StackResourceDetail</code> structure containing the
      *         description of the specified resource in the specified stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourceResult withStackResourceDetail(StackResourceDetail stackResourceDetail) {

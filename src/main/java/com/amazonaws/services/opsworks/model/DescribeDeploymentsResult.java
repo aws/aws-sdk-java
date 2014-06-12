@@ -70,7 +70,7 @@ public class DescribeDeploymentsResult implements Serializable {
      * @param deployments An array of <code>Deployment</code> objects that describe the
      *         deployments.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDeploymentsResult withDeployments(Deployment... deployments) {
@@ -90,7 +90,7 @@ public class DescribeDeploymentsResult implements Serializable {
      * @param deployments An array of <code>Deployment</code> objects that describe the
      *         deployments.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDeploymentsResult withDeployments(java.util.Collection<Deployment> deployments) {

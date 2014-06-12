@@ -27,7 +27,7 @@ import com.amazonaws.event.ProgressListener;
  */
 public class UploadPartRequest extends AmazonWebServiceRequest {
 
-	/**
+    /**
      * The name of the bucket containing the initiated multipart upload with
      * which this new part will be associated.
      */
@@ -84,11 +84,17 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      */
     private ProgressListener generalProgressListener;
 
-	/**
-	 * Allows the caller to indicate if this is the last part being uploaded in
-	 * a multipart upload.
-	 */
-	private boolean isLastPart;
+    /**
+     * Allows the caller to indicate if this is the last part being uploaded in
+     * a multipart upload.
+     */
+    private boolean isLastPart;
+
+    /**
+     * The optional customer-provided server-side encryption key to use to
+     * encrypt the object part being uploaded.
+     */
+    private SSECustomerKey sseCustomerKey;
 
 
     /**
@@ -458,7 +464,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      *
      * @param progressListener
      *            The legacy progress listener that is used exclusively for Amazon S3 client.
-     * 
+     *
      * @deprecated use {@link #setGeneralProgressListener(ProgressListener)} instead.
      */
     @Deprecated
@@ -472,7 +478,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      *
      * @return the optional progress listener for receiving updates about object
      *         upload status.
-     * 
+     *
      * @deprecated use {@link #getGeneralProgressListener()} instead.
      */
     @Deprecated
@@ -493,7 +499,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      *            The legacy progress listener that is used exclusively for Amazon S3 client.
      *
      * @return This updated UploadPartRequest object.
-     * 
+     *
      * @deprecated use {@link #withGeneralProgressListener(ProgressListener)} instead.
      */
     @Deprecated
@@ -538,6 +544,46 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      */
     public UploadPartRequest withLastPart(boolean isLastPart) {
         setLastPart(isLastPart);
+        return this;
+    }
+
+    /**
+     * Returns the optional customer-provided server-side encryption key to use
+     * to encrypt the object part being uploaded.
+     *
+     * @return The optional customer-provided server-side encryption key to use
+     *         to encrypt the object part being uploaded.
+     */
+    public SSECustomerKey getSSECustomerKey() {
+        return sseCustomerKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the object part being uploaded.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the object part being uploaded.
+     */
+    public void setSSECustomerKey(SSECustomerKey sseKey) {
+        this.sseCustomerKey = sseKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the object part being uploaded, and returns the updated request
+     * object so that additional method calls can be chained together.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the object part being uploaded.
+     *
+     * @return This updated request object so that additional method calls can
+     *         be chained together.
+     */
+    public UploadPartRequest withSSECustomerKey(SSECustomerKey sseKey) {
+        setSSECustomerKey(sseKey);
         return this;
     }
 

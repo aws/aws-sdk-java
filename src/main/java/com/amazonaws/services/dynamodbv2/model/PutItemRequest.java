@@ -413,7 +413,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param tableName The name of the table to contain the item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutItemRequest withTableName(String tableName) {
@@ -501,7 +501,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
      *         <i>Item</i> map is an <i>AttributeValue</i> object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutItemRequest withItem(java.util.Map<String,AttributeValue> item) {
@@ -1432,7 +1432,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         parameters at once, DynamoDB will throw a <i>ValidationException</i>.
      *         </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutItemRequest withExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
@@ -1693,7 +1693,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>PutItem</i> overwrote an attribute name-value pair, then the
      *         content of the old item is returned. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnValue
@@ -1755,7 +1755,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         <i>PutItem</i> overwrote an attribute name-value pair, then the
      *         content of the old item is returned. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnValue
@@ -1827,7 +1827,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -1877,7 +1877,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -1943,7 +1943,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics
@@ -1989,7 +1989,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics
@@ -2079,7 +2079,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -2141,7 +2141,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator

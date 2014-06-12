@@ -93,7 +93,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param routeTableId The ID of the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteRequest withRouteTableId(String routeTableId) {
@@ -132,7 +132,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      * @param destinationCidrBlock The CIDR address block used for the destination match. The value you
      *         provide must match the CIDR of an existing route in the table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {
@@ -165,7 +165,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param gatewayId The ID of an Internet gateway attached to your VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteRequest withGatewayId(String gatewayId) {
@@ -198,7 +198,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param instanceId The ID of a NAT instance in your VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteRequest withInstanceId(String instanceId) {
@@ -231,7 +231,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param networkInterfaceId The ID of a network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -264,7 +264,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param vpcPeeringConnectionId The ID of a VPC peering connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteRequest withVpcPeeringConnectionId(String vpcPeeringConnectionId) {

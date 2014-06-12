@@ -164,7 +164,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
      *
      * @param domain The name of the domain containing the workflow executions to count.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountClosedWorkflowExecutionsRequest withDomain(String domain) {
@@ -215,7 +215,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
      *         and <code>closeTimeFilter</code> are mutually exclusive. You must
      *         specify one of these in a request but not both.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountClosedWorkflowExecutionsRequest withStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
@@ -266,7 +266,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
      *         and <code>closeTimeFilter</code> are mutually exclusive. You must
      *         specify one of these in a request but not both.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountClosedWorkflowExecutionsRequest withCloseTimeFilter(ExecutionTimeFilter closeTimeFilter) {
@@ -323,7 +323,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
      *         <code>typeFilter</code> and <code>tagFilter</code> are mutually
      *         exclusive. You can specify at most one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountClosedWorkflowExecutionsRequest withExecutionFilter(WorkflowExecutionFilter executionFilter) {
@@ -380,7 +380,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountClosedWorkflowExecutionsRequest withTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -437,7 +437,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountClosedWorkflowExecutionsRequest withTagFilter(TagFilter tagFilter) {
@@ -500,7 +500,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
      *         <code>typeFilter</code> and <code>tagFilter</code> are mutually
      *         exclusive. You can specify at most one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountClosedWorkflowExecutionsRequest withCloseStatusFilter(CloseStatusFilter closeStatusFilter) {

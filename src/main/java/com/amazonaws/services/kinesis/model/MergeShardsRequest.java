@@ -144,7 +144,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param streamName The name of the stream for the merge.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MergeShardsRequest withStreamName(String streamName) {
@@ -195,7 +195,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements Seria
      * @param shardToMerge The shard ID of the shard to combine with the adjacent shard for the
      *         merge.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MergeShardsRequest withShardToMerge(String shardToMerge) {
@@ -240,7 +240,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param adjacentShardToMerge The shard ID of the adjacent shard for the merge.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MergeShardsRequest withAdjacentShardToMerge(String adjacentShardToMerge) {

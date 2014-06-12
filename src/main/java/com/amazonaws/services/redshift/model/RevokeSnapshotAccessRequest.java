@@ -79,7 +79,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
      *
      * @param snapshotIdentifier The identifier of the snapshot that the account can no longer access.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSnapshotAccessRequest withSnapshotIdentifier(String snapshotIdentifier) {
@@ -130,7 +130,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
      *         snapshot resource element that specifies anything other than * for the
      *         cluster name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSnapshotAccessRequest withSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
@@ -169,7 +169,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
      * @param accountWithRestoreAccess The identifier of the AWS customer account that can no longer restore
      *         the specified snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSnapshotAccessRequest withAccountWithRestoreAccess(String accountWithRestoreAccess) {

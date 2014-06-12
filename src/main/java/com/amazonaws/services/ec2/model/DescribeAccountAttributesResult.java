@@ -61,7 +61,7 @@ public class DescribeAccountAttributesResult implements Serializable {
      *
      * @param accountAttributes Information about one or more account attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAccountAttributesResult withAccountAttributes(AccountAttribute... accountAttributes) {
@@ -79,7 +79,7 @@ public class DescribeAccountAttributesResult implements Serializable {
      *
      * @param accountAttributes Information about one or more account attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAccountAttributesResult withAccountAttributes(java.util.Collection<AccountAttribute> accountAttributes) {

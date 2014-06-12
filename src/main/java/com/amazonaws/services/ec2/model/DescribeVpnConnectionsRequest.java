@@ -118,7 +118,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      * @param vpnConnectionIds One or more VPN connection IDs. <p>Default: Describes your VPN
      *         connections.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnConnectionsRequest withVpnConnectionIds(String... vpnConnectionIds) {
@@ -138,7 +138,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      * @param vpnConnectionIds One or more VPN connection IDs. <p>Default: Describes your VPN
      *         connections.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnConnectionsRequest withVpnConnectionIds(java.util.Collection<String> vpnConnectionIds) {
@@ -374,7 +374,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of a virtual
      *         private gateway associated with the VPN connection. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnConnectionsRequest withFilters(Filter... filters) {
@@ -454,7 +454,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of a virtual
      *         private gateway associated with the VPN connection. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnConnectionsRequest withFilters(java.util.Collection<Filter> filters) {

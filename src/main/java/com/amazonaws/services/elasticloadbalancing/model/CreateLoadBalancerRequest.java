@@ -192,7 +192,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * @param loadBalancerName The name associated with the load balancer. The name must be unique
      *         within your set of load balancers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
@@ -241,7 +241,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
      *         Protocol.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withListeners(Listener... listeners) {
@@ -261,7 +261,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
      *         Protocol.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withListeners(java.util.Collection<Listener> listeners) {
@@ -341,7 +341,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *         the creation of the load balancer by calling
      *         <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
@@ -369,7 +369,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *         the creation of the load balancer by calling
      *         <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -425,7 +425,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * @param subnets A list of subnet IDs in your VPC to attach to your load balancer.
      *         Specify one subnet per Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withSubnets(String... subnets) {
@@ -445,7 +445,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * @param subnets A list of subnet IDs in your VPC to attach to your load balancer.
      *         Specify one subnet per Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withSubnets(java.util.Collection<String> subnets) {
@@ -495,7 +495,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *
      * @param securityGroups The security groups to assign to your load balancer within your VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withSecurityGroups(String... securityGroups) {
@@ -513,7 +513,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *
      * @param securityGroups The security groups to assign to your load balancer within your VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -607,7 +607,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *         <p>This option is only available for load balancers created within
      *         EC2-VPC. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerRequest withScheme(String scheme) {

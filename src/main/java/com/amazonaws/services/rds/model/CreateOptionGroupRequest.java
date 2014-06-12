@@ -108,7 +108,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      *         or contain two consecutive hyphens</li> </ul> <p>Example:
      *         <code>myoptiongroup</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOptionGroupRequest withOptionGroupName(String optionGroupName) {
@@ -147,7 +147,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      * @param engineName Specifies the name of the engine that this option group should be
      *         associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOptionGroupRequest withEngineName(String engineName) {
@@ -186,7 +186,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      * @param majorEngineVersion Specifies the major version of the engine that this option group
      *         should be associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOptionGroupRequest withMajorEngineVersion(String majorEngineVersion) {
@@ -219,7 +219,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      *
      * @param optionGroupDescription The description of the option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOptionGroupRequest withOptionGroupDescription(String optionGroupDescription) {
@@ -262,7 +262,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOptionGroupRequest withTags(Tag... tags) {
@@ -280,7 +280,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOptionGroupRequest withTags(java.util.Collection<Tag> tags) {

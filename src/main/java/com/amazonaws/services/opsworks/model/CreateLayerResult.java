@@ -53,7 +53,7 @@ public class CreateLayerResult implements Serializable {
      *
      * @param layerId The layer ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerResult withLayerId(String layerId) {

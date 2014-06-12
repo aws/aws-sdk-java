@@ -66,7 +66,7 @@ public class DescribeAccountLimitsResult implements Serializable {
      * @param maxNumberOfAutoScalingGroups The maximum number of Auto Scaling groups allowed for your AWS
      *         account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAccountLimitsResult withMaxNumberOfAutoScalingGroups(Integer maxNumberOfAutoScalingGroups) {
@@ -105,7 +105,7 @@ public class DescribeAccountLimitsResult implements Serializable {
      * @param maxNumberOfLaunchConfigurations The maximum number of launch configurations allowed for your AWS
      *         account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAccountLimitsResult withMaxNumberOfLaunchConfigurations(Integer maxNumberOfLaunchConfigurations) {

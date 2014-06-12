@@ -60,7 +60,7 @@ public class OptionGroupMembership implements Serializable {
      *
      * @param optionGroupName The name of the option group that the instance belongs to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupMembership withOptionGroupName(String optionGroupName) {
@@ -99,7 +99,7 @@ public class OptionGroupMembership implements Serializable {
      * @param status The status of the DB instance's option group membership (e.g. in-sync,
      *         pending, pending-maintenance, applying).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupMembership withStatus(String status) {

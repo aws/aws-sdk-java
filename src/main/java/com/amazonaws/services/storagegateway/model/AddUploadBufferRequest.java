@@ -93,7 +93,7 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest implements S
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddUploadBufferRequest withGatewayARN(String gatewayARN) {
@@ -136,7 +136,7 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest implements S
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddUploadBufferRequest withDiskIds(String... diskIds) {
@@ -154,7 +154,7 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest implements S
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddUploadBufferRequest withDiskIds(java.util.Collection<String> diskIds) {

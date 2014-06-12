@@ -61,7 +61,7 @@ public class CancelledSpotInstanceRequest implements Serializable {
      *
      * @param spotInstanceRequestId The ID of the Spot Instance request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelledSpotInstanceRequest withSpotInstanceRequestId(String spotInstanceRequestId) {
@@ -107,7 +107,7 @@ public class CancelledSpotInstanceRequest implements Serializable {
      *
      * @param state The state of the Spot Instance request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CancelSpotInstanceRequestState
@@ -141,7 +141,7 @@ public class CancelledSpotInstanceRequest implements Serializable {
      *
      * @param state The state of the Spot Instance request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CancelSpotInstanceRequestState

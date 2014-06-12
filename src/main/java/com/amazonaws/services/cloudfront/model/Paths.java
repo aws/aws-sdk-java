@@ -60,7 +60,7 @@ public class Paths implements Serializable {
      *
      * @param quantity The number of objects that you want to invalidate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Paths withQuantity(Integer quantity) {
@@ -109,7 +109,7 @@ public class Paths implements Serializable {
      * @param items A complex type that contains a list of the objects that you want to
      *         invalidate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Paths withItems(String... items) {
@@ -129,7 +129,7 @@ public class Paths implements Serializable {
      * @param items A complex type that contains a list of the objects that you want to
      *         invalidate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Paths withItems(java.util.Collection<String> items) {

@@ -126,7 +126,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withStackId(String stackId) {
@@ -159,7 +159,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param shortname The app's short name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withShortname(String shortname) {
@@ -192,7 +192,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param name The app name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withName(String name) {
@@ -225,7 +225,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param description A description of the app.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withDescription(String description) {
@@ -268,7 +268,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param dataSources The app's data source.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withDataSources(DataSource... dataSources) {
@@ -286,7 +286,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param dataSources The app's data source.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withDataSources(java.util.Collection<DataSource> dataSources) {
@@ -357,7 +357,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *         AWS OpsWorks deploys an application to those instances that are
      *         members of the corresponding layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AppType
@@ -403,7 +403,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *         AWS OpsWorks deploys an application to those instances that are
      *         members of the corresponding layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AppType
@@ -438,7 +438,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param appSource A <code>Source</code> object that specifies the app repository.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withAppSource(Source appSource) {
@@ -487,7 +487,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param domains The app virtual host settings, with multiple domains separated by
      *         commas. For example: <code>'www.example.com, example.com'</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withDomains(String... domains) {
@@ -507,7 +507,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param domains The app virtual host settings, with multiple domains separated by
      *         commas. For example: <code>'www.example.com, example.com'</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withDomains(java.util.Collection<String> domains) {
@@ -547,7 +547,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param enableSsl Whether to enable SSL for the app.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withEnableSsl(Boolean enableSsl) {
@@ -589,7 +589,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param sslConfiguration An <code>SslConfiguration</code> object with the SSL configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withSslConfiguration(SslConfiguration sslConfiguration) {
@@ -632,7 +632,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements Seriali
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAppRequest withAttributes(java.util.Map<String,String> attributes) {

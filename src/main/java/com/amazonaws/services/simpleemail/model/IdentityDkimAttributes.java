@@ -86,7 +86,7 @@ public class IdentityDkimAttributes implements Serializable {
      * @param dkimEnabled True if DKIM signing is enabled for email sent from the identity;
      *         false otherwise.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IdentityDkimAttributes withDkimEnabled(Boolean dkimEnabled) {
@@ -155,7 +155,7 @@ public class IdentityDkimAttributes implements Serializable {
      *         records (tokens) published in the domain name's DNS. (This only
      *         applies to domain identities, not email address identities.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VerificationStatus
@@ -197,7 +197,7 @@ public class IdentityDkimAttributes implements Serializable {
      *         records (tokens) published in the domain name's DNS. (This only
      *         applies to domain identities, not email address identities.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VerificationStatus
@@ -302,7 +302,7 @@ public class IdentityDkimAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
      *         SES Developer Guide</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IdentityDkimAttributes withDkimTokens(String... dkimTokens) {
@@ -340,7 +340,7 @@ public class IdentityDkimAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
      *         SES Developer Guide</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IdentityDkimAttributes withDkimTokens(java.util.Collection<String> dkimTokens) {

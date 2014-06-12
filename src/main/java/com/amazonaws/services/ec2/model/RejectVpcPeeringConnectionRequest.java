@@ -63,7 +63,7 @@ public class RejectVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
      *
      * @param vpcPeeringConnectionId The ID of the VPC peering connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RejectVpcPeeringConnectionRequest withVpcPeeringConnectionId(String vpcPeeringConnectionId) {

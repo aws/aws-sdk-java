@@ -113,7 +113,7 @@ public class Message implements Serializable {
      * @param messageId A unique identifier for the message. Message IDs are considered unique
      *         across all AWS accounts for an extended period of time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Message withMessageId(String messageId) {
@@ -164,7 +164,7 @@ public class Message implements Serializable {
      *         deleting a message, you provide the last received receipt handle to
      *         delete the message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Message withReceiptHandle(String receiptHandle) {
@@ -197,7 +197,7 @@ public class Message implements Serializable {
      *
      * @param mD5OfBody An MD5 digest of the non-URL-encoded message body string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Message withMD5OfBody(String mD5OfBody) {
@@ -230,7 +230,7 @@ public class Message implements Serializable {
      *
      * @param body The message's contents (not URL-encoded).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Message withBody(String body) {
@@ -309,7 +309,7 @@ public class Message implements Serializable {
      *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      *         milliseconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Message withAttributes(java.util.Map<String,String> attributes) {
@@ -403,7 +403,7 @@ public class Message implements Serializable {
      *         digest. For information about MD5, go to <a
      *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Message withMD5OfMessageAttributes(String mD5OfMessageAttributes) {
@@ -458,7 +458,7 @@ public class Message implements Serializable {
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
      *         Attribute Items</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Message withMessageAttributes(java.util.Map<String,MessageAttributeValue> messageAttributes) {

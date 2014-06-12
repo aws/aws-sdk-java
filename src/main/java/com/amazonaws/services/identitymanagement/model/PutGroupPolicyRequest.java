@@ -130,7 +130,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      *
      * @param groupName Name of the group to associate the policy with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutGroupPolicyRequest withGroupName(String groupName) {
@@ -175,7 +175,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      *
      * @param policyName Name of the policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutGroupPolicyRequest withPolicyName(String policyName) {
@@ -220,7 +220,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      *
      * @param policyDocument The policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutGroupPolicyRequest withPolicyDocument(String policyDocument) {

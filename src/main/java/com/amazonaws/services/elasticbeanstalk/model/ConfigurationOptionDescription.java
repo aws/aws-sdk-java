@@ -163,7 +163,7 @@ public class ConfigurationOptionDescription implements Serializable {
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withNamespace(String namespace) {
@@ -196,7 +196,7 @@ public class ConfigurationOptionDescription implements Serializable {
      *
      * @param name The name of the configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withName(String name) {
@@ -229,7 +229,7 @@ public class ConfigurationOptionDescription implements Serializable {
      *
      * @param defaultValue The default value for this configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withDefaultValue(String defaultValue) {
@@ -376,7 +376,7 @@ public class ConfigurationOptionDescription implements Serializable {
      *         application servers on the running Amazon EC2 instances are restarted.
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withChangeSeverity(String changeSeverity) {
@@ -481,7 +481,7 @@ public class ConfigurationOptionDescription implements Serializable {
      *         <code>UserDefined</code> options from a configuration. <p> Valid
      *         Values: <code>true</code> | <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withUserDefined(Boolean userDefined) {
@@ -650,7 +650,7 @@ public class ConfigurationOptionDescription implements Serializable {
      *         values. </li> <li> <code>Boolean</code> : Values for this option are
      *         either <code>true</code> or <code>false</code> . </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConfigurationOptionValueType
@@ -744,7 +744,7 @@ public class ConfigurationOptionDescription implements Serializable {
      *         values. </li> <li> <code>Boolean</code> : Values for this option are
      *         either <code>true</code> or <code>false</code> . </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConfigurationOptionValueType
@@ -795,7 +795,7 @@ public class ConfigurationOptionDescription implements Serializable {
      * @param valueOptions If specified, values for the configuration option are selected from
      *         this list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withValueOptions(String... valueOptions) {
@@ -815,7 +815,7 @@ public class ConfigurationOptionDescription implements Serializable {
      * @param valueOptions If specified, values for the configuration option are selected from
      *         this list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withValueOptions(java.util.Collection<String> valueOptions) {
@@ -861,7 +861,7 @@ public class ConfigurationOptionDescription implements Serializable {
      * @param minValue If specified, the configuration option must be a numeric value greater
      *         than this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withMinValue(Integer minValue) {
@@ -900,7 +900,7 @@ public class ConfigurationOptionDescription implements Serializable {
      * @param maxValue If specified, the configuration option must be a numeric value less
      *         than this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withMaxValue(Integer maxValue) {
@@ -939,7 +939,7 @@ public class ConfigurationOptionDescription implements Serializable {
      * @param maxLength If specified, the configuration option must be a string value no
      *         longer than this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withMaxLength(Integer maxLength) {
@@ -978,7 +978,7 @@ public class ConfigurationOptionDescription implements Serializable {
      * @param regex If specified, the configuration option must be a string value that
      *         satisfies this regular expression.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionDescription withRegex(OptionRestrictionRegex regex) {

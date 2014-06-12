@@ -125,7 +125,7 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *         AWS account.</li> </ul> <note>This value is stored as a lower-case
      *         string.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
@@ -206,7 +206,7 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *         associated with the default parameter groups provide you the valid
      *         values. For example, a valid family name is "redshift-1.0".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterParameterGroupRequest withParameterGroupFamily(String parameterGroupFamily) {
@@ -239,7 +239,7 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *
      * @param description A description of the parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterParameterGroupRequest withDescription(String description) {

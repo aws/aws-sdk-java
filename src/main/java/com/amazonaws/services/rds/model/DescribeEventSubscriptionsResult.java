@@ -79,7 +79,7 @@ public class DescribeEventSubscriptionsResult implements Serializable {
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsResult withMarker(String marker) {
@@ -122,7 +122,7 @@ public class DescribeEventSubscriptionsResult implements Serializable {
      *
      * @param eventSubscriptionsList A list of EventSubscriptions data types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsResult withEventSubscriptionsList(EventSubscription... eventSubscriptionsList) {
@@ -140,7 +140,7 @@ public class DescribeEventSubscriptionsResult implements Serializable {
      *
      * @param eventSubscriptionsList A list of EventSubscriptions data types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsResult withEventSubscriptionsList(java.util.Collection<EventSubscription> eventSubscriptionsList) {

@@ -103,6 +103,9 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The data to upload.
+     *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
      */
     private java.io.InputStream body;
 
@@ -179,7 +182,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param contentLength The new value for the ContentLength property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadArchiveRequest withContentLength(Long contentLength) {
@@ -212,7 +215,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadArchiveRequest withVaultName(String vaultName) {
@@ -269,7 +272,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadArchiveRequest withAccountId(String accountId) {
@@ -302,7 +305,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param archiveDescription The optional description of the archive you are uploading.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadArchiveRequest withArchiveDescription(String archiveDescription) {
@@ -335,7 +338,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param checksum The SHA256 checksum (a linear hash) of the payload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadArchiveRequest withChecksum(String checksum) {
@@ -346,6 +349,9 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The data to upload.
      *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
+     *
      * @return The data to upload.
      */
     public java.io.InputStream getBody() {
@@ -355,6 +361,9 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The data to upload.
      *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
+     *
      * @param body The data to upload.
      */
     public void setBody(java.io.InputStream body) {
@@ -363,12 +372,15 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The data to upload.
+     *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param body The data to upload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadArchiveRequest withBody(java.io.InputStream body) {

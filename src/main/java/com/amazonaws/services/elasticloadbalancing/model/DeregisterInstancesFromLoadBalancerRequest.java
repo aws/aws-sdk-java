@@ -98,7 +98,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
      *
      * @param loadBalancerName The name associated with the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeregisterInstancesFromLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
@@ -147,7 +147,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
      * @param instances A list of EC2 instance IDs consisting of all instances to be
      *         deregistered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeregisterInstancesFromLoadBalancerRequest withInstances(Instance... instances) {
@@ -167,7 +167,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
      * @param instances A list of EC2 instance IDs consisting of all instances to be
      *         deregistered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeregisterInstancesFromLoadBalancerRequest withInstances(java.util.Collection<Instance> instances) {

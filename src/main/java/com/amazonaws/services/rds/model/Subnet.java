@@ -66,7 +66,7 @@ public class Subnet implements Serializable {
      *
      * @param subnetIdentifier Specifies the identifier of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withSubnetIdentifier(String subnetIdentifier) {
@@ -111,7 +111,7 @@ public class Subnet implements Serializable {
      *         an element in the following data type: <ul>
      *         <li><a>OrderableDBInstanceOption</a></li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
@@ -144,7 +144,7 @@ public class Subnet implements Serializable {
      *
      * @param subnetStatus Specifies the status of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withSubnetStatus(String subnetStatus) {

@@ -89,7 +89,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssignPrivateIpAddressesRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -150,7 +150,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      *         address, Amazon EC2 automatically selects an IP address within the
      *         subnet range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssignPrivateIpAddressesRequest withPrivateIpAddresses(String... privateIpAddresses) {
@@ -174,7 +174,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      *         address, Amazon EC2 automatically selects an IP address within the
      *         subnet range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssignPrivateIpAddressesRequest withPrivateIpAddresses(java.util.Collection<String> privateIpAddresses) {
@@ -220,7 +220,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      * @param secondaryPrivateIpAddressCount The number of secondary IP addresses to assign to the network
      *         interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssignPrivateIpAddressesRequest withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
@@ -265,7 +265,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      *         another network interface or instance to be reassigned to the
      *         specified network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssignPrivateIpAddressesRequest withAllowReassignment(Boolean allowReassignment) {

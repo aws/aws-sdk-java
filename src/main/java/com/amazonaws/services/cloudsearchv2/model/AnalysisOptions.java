@@ -135,7 +135,7 @@ public class AnalysisOptions implements Serializable {
      *         considered a synonym of the specified term, but the term is not
      *         considered a synonym of the alias.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisOptions withSynonyms(String synonyms) {
@@ -186,7 +186,7 @@ public class AnalysisOptions implements Serializable {
      *         explicitly list each word you want to ignore. Wildcards and regular
      *         expressions are not supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisOptions withStopwords(String stopwords) {
@@ -255,7 +255,7 @@ public class AnalysisOptions implements Serializable {
      *         overstemming or understemming. The maximum size of a stemming
      *         dictionary is 500 KB.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisOptions withStemmingDictionary(String stemmingDictionary) {
@@ -337,7 +337,7 @@ public class AnalysisOptions implements Serializable {
      *         target="_blank">Language Specific Text Processing Settings</a> in the
      *         <i>Amazon CloudSearch Developer Guide</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AlgorithmicStemming
@@ -395,7 +395,7 @@ public class AnalysisOptions implements Serializable {
      *         target="_blank">Language Specific Text Processing Settings</a> in the
      *         <i>Amazon CloudSearch Developer Guide</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AlgorithmicStemming

@@ -79,7 +79,7 @@ public abstract class AmazonWebServiceClient {
 
     /** Optional request handlers for additional request processing. */
     protected final List<RequestHandler2> requestHandler2s;
-    
+
     /** Optional offset (in seconds) to use when signing requests */
     protected int timeOffset;
 
@@ -106,7 +106,7 @@ public abstract class AmazonWebServiceClient {
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
      * configuration and request metric collector.
-     * 
+     *
      * @param clientConfiguration
      *            The client configuration for this client.
      * @param requestMetricCollector
@@ -143,10 +143,10 @@ public abstract class AmazonWebServiceClient {
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see: 
+     * a complete list of all available endpoints for all AWS services, see:
      * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     * 
+     *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
      *            including the protocol (ex: "https://ec2.amazonaws.com") of
@@ -158,9 +158,9 @@ public abstract class AmazonWebServiceClient {
     public void setEndpoint(String endpoint) throws IllegalArgumentException {
         URI uri = toURI(endpoint);
         Signer signer = computeSignerByURI(uri, signerRegionOverride, false);
-        synchronized(this)  { 
+        synchronized(this)  {
             this.endpoint = uri;
-            this.signer = signer; 
+            this.signer = signer;
         }
     }
 
@@ -205,7 +205,7 @@ public abstract class AmazonWebServiceClient {
      * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
      * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
      * 3912</a>
-     * 
+     *
      * @param endpoint
      *            The endpoint (ex: "dynamodb.us-east-1.amazonaws.com/") or a
      *            full URL, including the protocol (ex:
@@ -226,13 +226,13 @@ public abstract class AmazonWebServiceClient {
         URI uri = toURI(endpoint);
         Signer signer = computeSignerByServiceRegion(serviceName, regionId,
                 regionId, true);
-        synchronized(this)  { 
+        synchronized(this)  {
             this.signer = signer;
             this.endpoint = uri;
             this.signerRegionOverride = regionId;
         }
     }
-    
+
     /**
      * @deprecated this method is now a no-op, as overriding the signer from
      *             sublcass is no longer supported.
@@ -263,7 +263,7 @@ public abstract class AmazonWebServiceClient {
      * <p>
      * Note, however, the signer returned for S3 is incomplete at this stage as
      * the information on the S3 bucket and key is not yet known.
-     * 
+     *
      * @param signerRegionOverride
      *            the overriding signer region; or null if there is none.
      * @param isRegionIdAsSignerParam
@@ -275,6 +275,10 @@ public abstract class AmazonWebServiceClient {
      */
     private Signer computeSignerByURI(URI uri, String signerRegionOverride,
             boolean isRegionIdAsSignerParam) {
+        if (uri == null) {
+            throw new IllegalArgumentException(
+                    "Endpoint is not set. Use setEndpoint to set an endpoint before performing any request.");
+        }
         String service = getServiceNameIntern();
         String region = AwsHostNameUtils.parseRegionName(uri.getHost(), service);
         return computeSignerByServiceRegion(
@@ -287,7 +291,7 @@ public abstract class AmazonWebServiceClient {
      * <p>
      * Note, however, the signer returned for S3 is incomplete at this stage as
      * the information on the S3 bucket and key is not yet known.
-     * 
+     *
      * @param regionId
      *            the region for sending AWS requests
      * @param signerRegionOverride
@@ -305,14 +309,14 @@ public abstract class AmazonWebServiceClient {
             boolean isRegionIdAsSignerParam) {
         String signerType = clientConfiguration.getSignerOverride();
         Signer signer = signerType == null
-             ? SignerFactory.getSigner(serviceName, regionId) 
+             ? SignerFactory.getSigner(serviceName, regionId)
              : SignerFactory.getSignerByTypeAndService(signerType, serviceName)
              ;
          if (signer instanceof RegionAwareSigner) {
              // Overrides the default region computed
              RegionAwareSigner regionAwareSigner = (RegionAwareSigner)signer;
             // (signerRegionOverride != null) means that it is likely to be AWS
-            // internal dev work, as "signerRegionOverride" is typically null 
+            // internal dev work, as "signerRegionOverride" is typically null
              // when used in the external release
              if (signerRegionOverride != null)
                  regionAwareSigner.setRegionName(signerRegionOverride);
@@ -335,7 +339,7 @@ public abstract class AmazonWebServiceClient {
      * By default, all service endpoints in all regions use the https protocol.
      * To use http instead, specify it in the {@link ClientConfiguration}
      * supplied at construction.
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
@@ -383,9 +387,9 @@ public abstract class AmazonWebServiceClient {
         URI uri = toURI(serviceEndpoint);
         Signer signer = computeSignerByServiceRegion(serviceName,
                 region.getName(), signerRegionOverride, false);
-        synchronized(this)  { 
+        synchronized(this)  {
             this.endpoint = uri;
-            this.signer = signer; 
+            this.signer = signer;
         }
     }
 
@@ -450,7 +454,7 @@ public abstract class AmazonWebServiceClient {
 
     /**
      * @deprecated by {@link #addRequestHandler(RequestHandler2)}.
-     * 
+     *
      * Appends a request handler to the list of registered handlers that are run
      * as part of a request's lifecycle.
      *
@@ -460,7 +464,7 @@ public abstract class AmazonWebServiceClient {
      */
     @Deprecated
     public void addRequestHandler(RequestHandler requestHandler) {
-    	requestHandler2s.add(RequestHandler2.adapt(requestHandler));
+        requestHandler2s.add(RequestHandler2.adapt(requestHandler));
     }
 
     /**
@@ -502,7 +506,7 @@ public abstract class AmazonWebServiceClient {
 
     /**
      * @deprecated by {@link #createExecutionContext(AmazonWebServiceRequest)}.
-     * 
+     *
      *             This method exists only for backward compatiblity reason, so
      *             that clients compiled against the older version of this class
      *             won't get {@link NoSuchMethodError} at runtime. However,
@@ -521,7 +525,7 @@ public abstract class AmazonWebServiceClient {
     protected static boolean isProfilingEnabled() {
         return System.getProperty(PROFILING_SYSTEM_PROPERTY) != null;
     }
-    
+
     /**
      * Returns true if request metric collection is applicable to the given
      * request; false otherwise.
@@ -542,7 +546,7 @@ public abstract class AmazonWebServiceClient {
         RequestMetricCollector c = requestMetricCollector();
         return c != null && c.isEnabled();
     }
-    
+
     /**
      * Sets the optional value for time offset for this client.  This
      * value will be applied to all requests processed through this client.
@@ -555,7 +559,7 @@ public abstract class AmazonWebServiceClient {
     public void setTimeOffset(int timeOffset) {
         this.timeOffset = timeOffset;
     }
-    
+
     /**
      * Sets the optional value for time offset for this client.  This
      * value will be applied to all requests processed through this client.
@@ -564,14 +568,14 @@ public abstract class AmazonWebServiceClient {
      *
      * @param timeOffset
      *            The optional value for time offset (in seconds) for this client.
-     * 
+     *
      * @return the updated web service client
      */
     public AmazonWebServiceClient withTimeOffset(int timeOffset) {
         setTimeOffset(timeOffset);
         return this;
     }
-    
+
     /**
      * Returns the optional value for time offset for this client.  This
      * value will be applied to all requests processed through this client.
@@ -737,7 +741,7 @@ public abstract class AmazonWebServiceClient {
 
     /**
      * Returns the signer region override.
-     * 
+     *
      * @see #setSignerRegionOverride(String).
      */
     public final String getSignerRegionOverride() {
@@ -751,7 +755,7 @@ public abstract class AmazonWebServiceClient {
      */
     public final void setSignerRegionOverride(String signerRegionOverride) {
         Signer signer = computeSignerByURI(endpoint, signerRegionOverride, true);
-        synchronized(this)  { 
+        synchronized(this)  {
             this.signer = signer;
             this.signerRegionOverride = signerRegionOverride;
         }

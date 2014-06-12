@@ -101,7 +101,7 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      *
      * @param reservedInstancesOfferingId The ID of the Reserved Instance offering to purchase.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedInstancesOfferingRequest withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
@@ -134,7 +134,7 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      *
      * @param instanceCount The number of Reserved Instances to purchase.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedInstancesOfferingRequest withInstanceCount(Integer instanceCount) {
@@ -179,7 +179,7 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      *         total order and ensure that the Reserved Instances are not purchased
      *         at unexpected prices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedInstancesOfferingRequest withLimitPrice(ReservedInstanceLimitPrice limitPrice) {

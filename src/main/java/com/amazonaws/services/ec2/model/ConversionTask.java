@@ -89,7 +89,7 @@ public class ConversionTask implements Serializable {
      *
      * @param conversionTaskId The ID of the conversion task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConversionTask withConversionTaskId(String conversionTaskId) {
@@ -128,7 +128,7 @@ public class ConversionTask implements Serializable {
      * @param expirationTime The time when the task expires. If the upload isn't complete before
      *         the expiration time, we automatically cancel the task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConversionTask withExpirationTime(String expirationTime) {
@@ -167,7 +167,7 @@ public class ConversionTask implements Serializable {
      * @param importInstance If the task is for importing an instance, this contains information
      *         about the import instance task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConversionTask withImportInstance(ImportInstanceTaskDetails importInstance) {
@@ -206,7 +206,7 @@ public class ConversionTask implements Serializable {
      * @param importVolume If the task is for importing a volume, this contains information about
      *         the import volume task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConversionTask withImportVolume(ImportVolumeTaskDetails importVolume) {
@@ -252,7 +252,7 @@ public class ConversionTask implements Serializable {
      *
      * @param state The state of the conversion task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConversionTaskState
@@ -286,7 +286,7 @@ public class ConversionTask implements Serializable {
      *
      * @param state The state of the conversion task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConversionTaskState
@@ -321,7 +321,7 @@ public class ConversionTask implements Serializable {
      *
      * @param statusMessage The status message related to the conversion task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConversionTask withStatusMessage(String statusMessage) {
@@ -364,7 +364,7 @@ public class ConversionTask implements Serializable {
      *
      * @param tags 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConversionTask withTags(Tag... tags) {
@@ -382,7 +382,7 @@ public class ConversionTask implements Serializable {
      *
      * @param tags 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConversionTask withTags(java.util.Collection<Tag> tags) {

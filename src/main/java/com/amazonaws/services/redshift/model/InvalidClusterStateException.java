@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified cluster is not in the <i>available</i> state.
+ * The specified cluster is not in the <code>available</code> state.
  * </p>
  */        
 public class InvalidClusterStateException extends AmazonServiceException {

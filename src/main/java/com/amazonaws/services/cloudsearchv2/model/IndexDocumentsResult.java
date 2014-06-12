@@ -64,7 +64,7 @@ public class IndexDocumentsResult implements Serializable {
      *
      * @param fieldNames The names of the fields that are currently being indexed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexDocumentsResult withFieldNames(String... fieldNames) {
@@ -82,7 +82,7 @@ public class IndexDocumentsResult implements Serializable {
      *
      * @param fieldNames The names of the fields that are currently being indexed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexDocumentsResult withFieldNames(java.util.Collection<String> fieldNames) {

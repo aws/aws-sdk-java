@@ -113,7 +113,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
      * @param credentials The temporary security credentials, which include an access key ID, a
      *         secret access key, and a security token.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityResult withCredentials(Credentials credentials) {
@@ -197,7 +197,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
      *         <code>WebIdentityToken</code>, this value is returned by the identity
      *         provider as the token's <code>sub</code> (Subject) claim.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityResult withSubjectFromWebIdentityToken(String subjectFromWebIdentityToken) {
@@ -260,7 +260,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
      *         role ID. The ARN and ID include the <code>RoleSessionName</code> that
      *         you specified when you called <code>AssumeRole</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityResult withAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
@@ -314,7 +314,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
      *         form. The service rejects any policy with a packed size greater than
      *         100 percent, which means the policy exceeded the allowed space.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityResult withPackedPolicySize(Integer packedPolicySize) {
@@ -371,7 +371,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
      *         <code>ProviderId</code> parameter that was passed in the
      *         <code>AssumeRoleWithWebIdentity</code> request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityResult withProvider(String provider) {
@@ -416,7 +416,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
      *         the client identifier issued to the application that requested the web
      *         identity token.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityResult withAudience(String audience) {

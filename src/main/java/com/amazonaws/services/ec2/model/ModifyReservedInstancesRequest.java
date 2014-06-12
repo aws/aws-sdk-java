@@ -78,7 +78,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
      * @param clientToken A unique, case-sensitive token you provide to ensure idempotency of
      *         your modification request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReservedInstancesRequest withClientToken(String clientToken) {
@@ -121,7 +121,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
      *
      * @param reservedInstancesIds The IDs of the Reserved Instances to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReservedInstancesRequest withReservedInstancesIds(String... reservedInstancesIds) {
@@ -139,7 +139,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
      *
      * @param reservedInstancesIds The IDs of the Reserved Instances to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReservedInstancesRequest withReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
@@ -189,7 +189,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
      *
      * @param targetConfigurations The configuration settings for the Reserved Instances to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReservedInstancesRequest withTargetConfigurations(ReservedInstancesConfiguration... targetConfigurations) {
@@ -207,7 +207,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
      *
      * @param targetConfigurations The configuration settings for the Reserved Instances to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReservedInstancesRequest withTargetConfigurations(java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {

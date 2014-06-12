@@ -59,7 +59,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param jobId A unique identifier which refers to a particular job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelJobRequest withJobId(String jobId) {

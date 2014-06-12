@@ -99,7 +99,7 @@ public class FailWorkflowExecutionDecisionAttributes implements Serializable {
      *
      * @param reason A descriptive reason for the failure that may help in diagnostics.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public FailWorkflowExecutionDecisionAttributes withReason(String reason) {
@@ -141,7 +141,7 @@ public class FailWorkflowExecutionDecisionAttributes implements Serializable {
      *
      * @param details Optional details of the failure.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public FailWorkflowExecutionDecisionAttributes withDetails(String details) {

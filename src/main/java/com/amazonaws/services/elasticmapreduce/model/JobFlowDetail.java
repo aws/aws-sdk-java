@@ -173,7 +173,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param jobFlowId The job flow identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withJobFlowId(String jobFlowId) {
@@ -218,7 +218,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param name The name of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withName(String name) {
@@ -263,7 +263,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param logUri The location in Amazon S3 where log files for the job are stored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withLogUri(String logUri) {
@@ -338,7 +338,7 @@ public class JobFlowDetail implements Serializable {
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withAmiVersion(String amiVersion) {
@@ -371,7 +371,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param executionStatusDetail Describes the execution status of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withExecutionStatusDetail(JobFlowExecutionStatusDetail executionStatusDetail) {
@@ -404,7 +404,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param instances Describes the Amazon EC2 instances of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withInstances(JobFlowInstancesDetail instances) {
@@ -447,7 +447,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param steps A list of steps run by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withSteps(StepDetail... steps) {
@@ -465,7 +465,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param steps A list of steps run by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withSteps(java.util.Collection<StepDetail> steps) {
@@ -515,7 +515,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param bootstrapActions A list of the bootstrap actions run by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withBootstrapActions(BootstrapActionDetail... bootstrapActions) {
@@ -533,7 +533,7 @@ public class JobFlowDetail implements Serializable {
      *
      * @param bootstrapActions A list of the bootstrap actions run by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withBootstrapActions(java.util.Collection<BootstrapActionDetail> bootstrapActions) {
@@ -595,7 +595,7 @@ public class JobFlowDetail implements Serializable {
      *         launched. If you are not using third party software to manage the job
      *         flow this value is empty.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withSupportedProducts(String... supportedProducts) {
@@ -617,7 +617,7 @@ public class JobFlowDetail implements Serializable {
      *         launched. If you are not using third party software to manage the job
      *         flow this value is empty.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withSupportedProducts(java.util.Collection<String> supportedProducts) {
@@ -693,7 +693,7 @@ public class JobFlowDetail implements Serializable {
      *         job flow can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -765,7 +765,7 @@ public class JobFlowDetail implements Serializable {
      * @param jobFlowRole The IAM role that was specified when the job flow was launched. The
      *         EC2 instances of the job flow assume this role.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowDetail withJobFlowRole(String jobFlowRole) {

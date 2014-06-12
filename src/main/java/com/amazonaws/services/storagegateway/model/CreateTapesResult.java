@@ -70,7 +70,7 @@ public class CreateTapesResult implements Serializable {
      * @param tapeARNs A list of unique Amazon Resource Named (ARN) the represents the
      *         virtual tapes that were created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTapesResult withTapeARNs(String... tapeARNs) {
@@ -90,7 +90,7 @@ public class CreateTapesResult implements Serializable {
      * @param tapeARNs A list of unique Amazon Resource Named (ARN) the represents the
      *         virtual tapes that were created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTapesResult withTapeARNs(java.util.Collection<String> tapeARNs) {

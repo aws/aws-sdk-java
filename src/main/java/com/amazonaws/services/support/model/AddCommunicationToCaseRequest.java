@@ -102,7 +102,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
      *         is an alphanumeric string formatted as shown in this example:
      *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCommunicationToCaseRequest withCaseId(String caseId) {
@@ -144,7 +144,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
      *
      * @param communicationBody The body of an email communication to add to the support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCommunicationToCaseRequest withCommunicationBody(String communicationBody) {
@@ -202,7 +202,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
      * @param ccEmailAddresses The email addresses in the CC line of an email to be added to the
      *         support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCommunicationToCaseRequest withCcEmailAddresses(String... ccEmailAddresses) {
@@ -225,7 +225,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
      * @param ccEmailAddresses The email addresses in the CC line of an email to be added to the
      *         support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCommunicationToCaseRequest withCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {

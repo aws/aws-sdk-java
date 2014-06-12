@@ -61,7 +61,7 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable {
      *
      * @param vpcPeeringConnections Information about the VPC peering connections
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcPeeringConnectionsResult withVpcPeeringConnections(VpcPeeringConnection... vpcPeeringConnections) {
@@ -79,7 +79,7 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable {
      *
      * @param vpcPeeringConnections Information about the VPC peering connections
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcPeeringConnectionsResult withVpcPeeringConnections(java.util.Collection<VpcPeeringConnection> vpcPeeringConnections) {

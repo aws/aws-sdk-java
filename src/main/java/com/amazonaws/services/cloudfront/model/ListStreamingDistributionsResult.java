@@ -53,7 +53,7 @@ public class ListStreamingDistributionsResult implements Serializable {
      *
      * @param streamingDistributionList The StreamingDistributionList type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStreamingDistributionsResult withStreamingDistributionList(StreamingDistributionList streamingDistributionList) {

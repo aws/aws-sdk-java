@@ -79,7 +79,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
      * @param resourcesProcessed The number of AWS resources that were analyzed by the Trusted Advisor
      *         check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourcesSummary withResourcesProcessed(Long resourcesProcessed) {
@@ -118,7 +118,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
      * @param resourcesFlagged The number of AWS resources that were flagged (listed) by the Trusted
      *         Advisor check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourcesSummary withResourcesFlagged(Long resourcesFlagged) {
@@ -157,7 +157,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
      * @param resourcesIgnored The number of AWS resources ignored by Trusted Advisor because
      *         information was unavailable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourcesSummary withResourcesIgnored(Long resourcesIgnored) {
@@ -196,7 +196,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable {
      * @param resourcesSuppressed The number of AWS resources ignored by Trusted Advisor because they
      *         were marked as suppressed by the user.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourcesSummary withResourcesSuppressed(Long resourcesSuppressed) {

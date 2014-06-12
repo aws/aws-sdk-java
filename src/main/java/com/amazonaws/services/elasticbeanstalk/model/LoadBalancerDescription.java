@@ -63,7 +63,7 @@ public class LoadBalancerDescription implements Serializable {
      *
      * @param loadBalancerName The name of the LoadBalancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancerDescription withLoadBalancerName(String loadBalancerName) {
@@ -96,7 +96,7 @@ public class LoadBalancerDescription implements Serializable {
      *
      * @param domain The domain name of the LoadBalancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancerDescription withDomain(String domain) {
@@ -139,7 +139,7 @@ public class LoadBalancerDescription implements Serializable {
      *
      * @param listeners A list of Listeners used by the LoadBalancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancerDescription withListeners(Listener... listeners) {
@@ -157,7 +157,7 @@ public class LoadBalancerDescription implements Serializable {
      *
      * @param listeners A list of Listeners used by the LoadBalancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancerDescription withListeners(java.util.Collection<Listener> listeners) {

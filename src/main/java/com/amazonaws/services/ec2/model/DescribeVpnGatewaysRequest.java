@@ -112,7 +112,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * @param vpnGatewayIds One or more virtual private gateway IDs. <p>Default: Describes all
      *         your virtual private gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnGatewaysRequest withVpnGatewayIds(String... vpnGatewayIds) {
@@ -132,7 +132,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * @param vpnGatewayIds One or more virtual private gateway IDs. <p>Default: Describes all
      *         your virtual private gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnGatewaysRequest withVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
@@ -332,7 +332,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
      *         private gateway. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnGatewaysRequest withFilters(Filter... filters) {
@@ -400,7 +400,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      *         </li> <li> <p><code>vpn-gateway-id</code> - The ID of the virtual
      *         private gateway. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnGatewaysRequest withFilters(java.util.Collection<Filter> filters) {

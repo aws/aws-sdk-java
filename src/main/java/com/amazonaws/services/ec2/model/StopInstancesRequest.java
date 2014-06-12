@@ -135,7 +135,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesRequest withInstanceIds(String... instanceIds) {
@@ -153,7 +153,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -217,7 +217,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *         option is not recommended for Windows instances. <p>Default:
      *         <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesRequest withForce(Boolean force) {

@@ -110,7 +110,7 @@ public class InstanceState implements Serializable {
      *         <code>stopping</code></li> <li><p><code>80</code> :
      *         <code>stopped</code></li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceState withCode(Integer code) {
@@ -156,7 +156,7 @@ public class InstanceState implements Serializable {
      *
      * @param name The current state of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceStateName
@@ -190,7 +190,7 @@ public class InstanceState implements Serializable {
      *
      * @param name The current state of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceStateName

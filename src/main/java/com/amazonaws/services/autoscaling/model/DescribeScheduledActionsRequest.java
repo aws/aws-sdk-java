@@ -110,7 +110,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -177,7 +177,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      *         name is provided, the results are limited to that group. If unknown
      *         scheduled actions are requested, they are ignored with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsRequest withScheduledActionNames(String... scheduledActionNames) {
@@ -203,7 +203,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      *         name is provided, the results are limited to that group. If unknown
      *         scheduled actions are requested, they are ignored with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsRequest withScheduledActionNames(java.util.Collection<String> scheduledActionNames) {
@@ -249,7 +249,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      * @param startTime The earliest scheduled start time to return. If scheduled action names
      *         are provided, this field will be ignored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsRequest withStartTime(java.util.Date startTime) {
@@ -288,7 +288,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      * @param endTime The latest scheduled start time to return. If scheduled action names
      *         are provided, this field is ignored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsRequest withEndTime(java.util.Date endTime) {
@@ -330,7 +330,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsRequest withNextToken(String nextToken) {
@@ -363,7 +363,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      *
      * @param maxRecords The maximum number of scheduled actions to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsRequest withMaxRecords(Integer maxRecords) {

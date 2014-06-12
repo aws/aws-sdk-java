@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest) RemovePermission operation}.
  * <p>
- * The <code>RemovePermission</code> action removes a statement from a
- * topic's access control policy.
+ * Removes a statement from a topic's access control policy.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest)
@@ -84,7 +83,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      *
      * @param topicArn The ARN of the topic whose access control policy you wish to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemovePermissionRequest withTopicArn(String topicArn) {
@@ -117,7 +116,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      *
      * @param label The unique label of the statement you want to remove.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemovePermissionRequest withLabel(String label) {

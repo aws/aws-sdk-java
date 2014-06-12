@@ -58,7 +58,7 @@ public class ClusterSecurityGroupMembership implements Serializable {
      *
      * @param clusterSecurityGroupName The name of the cluster security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterSecurityGroupMembership withClusterSecurityGroupName(String clusterSecurityGroupName) {
@@ -91,7 +91,7 @@ public class ClusterSecurityGroupMembership implements Serializable {
      *
      * @param status The status of the cluster security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterSecurityGroupMembership withStatus(String status) {

@@ -303,7 +303,7 @@ public class AWS4Signer extends AbstractAWSSigner
     }
 
     protected final long getDateFromRequest(Request<?> request) {
-    	int timeOffset = getTimeOffset(request);
+        int timeOffset = getTimeOffset(request);
         Date date = getSignatureDate(timeOffset);
         if (overriddenDate != null) date = overriddenDate;
         return date.getTime();
@@ -422,7 +422,7 @@ public class AWS4Signer extends AbstractAWSSigner
             // For SigV4 pre-signing URL, we need to add "x-amz-security-token"
             // as a query string parameter, before constructing the canonical
             // request.
-            request.addParameter("x-amz-security-token",
+            request.addParameter("X-Amz-Security-Token",
                     ((AWSSessionCredentials) sanitizedCredentials)
                             .getSessionToken());
         }

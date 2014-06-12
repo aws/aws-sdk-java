@@ -96,7 +96,7 @@ public class InventoryRetrievalJobInput implements Serializable {
      *         representation of ISO 8601 date format, for example,
      *         2013-03-20T17:03:43Z.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobInput withStartDate(String startDate) {
@@ -141,7 +141,7 @@ public class InventoryRetrievalJobInput implements Serializable {
      *         includes archives created before this date. A string representation of
      *         ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobInput withEndDate(String endDate) {
@@ -186,7 +186,7 @@ public class InventoryRetrievalJobInput implements Serializable {
      *         inventory retrieval request. Valid values are greater than or equal to
      *         1.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobInput withLimit(String limit) {
@@ -237,7 +237,7 @@ public class InventoryRetrievalJobInput implements Serializable {
      *         <b>InitiateJob</b> request to obtain additional inventory items. If
      *         there are no more inventory items, this value is <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobInput withMarker(String marker) {

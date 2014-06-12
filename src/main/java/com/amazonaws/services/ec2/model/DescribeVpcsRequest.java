@@ -95,7 +95,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param vpcIds One or more VPC IDs. <p>Default: Describes all your VPCs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcsRequest withVpcIds(String... vpcIds) {
@@ -113,7 +113,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param vpcIds One or more VPC IDs. <p>Default: Describes all your VPCs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcsRequest withVpcIds(java.util.Collection<String> vpcIds) {
@@ -283,7 +283,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcsRequest withFilters(Filter... filters) {
@@ -341,7 +341,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC. </li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcsRequest withFilters(java.util.Collection<Filter> filters) {

@@ -74,7 +74,7 @@ public class PriceScheduleSpecification implements Serializable {
      * @param term The number of months remaining in the reservation. For example, 2 is
      *         the second to the last month before the capacity reservation expires.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PriceScheduleSpecification withTerm(Long term) {
@@ -107,7 +107,7 @@ public class PriceScheduleSpecification implements Serializable {
      *
      * @param price The fixed price for the term.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PriceScheduleSpecification withPrice(Double price) {
@@ -159,7 +159,7 @@ public class PriceScheduleSpecification implements Serializable {
      * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues
@@ -197,7 +197,7 @@ public class PriceScheduleSpecification implements Serializable {
      * @param currencyCode The currency for transacting the Reserved Instance resale. At this
      *         time, the only supported currency is <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues

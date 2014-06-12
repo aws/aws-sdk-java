@@ -161,7 +161,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param volumeIds One or more volume IDs. <p>Default: Describes all your volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusRequest withVolumeIds(String... volumeIds) {
@@ -179,7 +179,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param volumeIds One or more volume IDs. <p>Default: Describes all your volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusRequest withVolumeIds(java.util.Collection<String> volumeIds) {
@@ -385,7 +385,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *         - The status of the volume (<code>ok</code> | <code>impaired</code> |
      *         <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusRequest withFilters(Filter... filters) {
@@ -455,7 +455,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *         - The status of the volume (<code>ok</code> | <code>impaired</code> |
      *         <code>warning</code> | <code>insufficient-data</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusRequest withFilters(java.util.Collection<Filter> filters) {
@@ -501,7 +501,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * @param nextToken The next paginated set of results to return using the pagination token
      *         returned by a previous call.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusRequest withNextToken(String nextToken) {
@@ -534,7 +534,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param maxResults The maximum number of paginated volume items per response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusRequest withMaxResults(Integer maxResults) {

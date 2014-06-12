@@ -135,7 +135,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -180,7 +180,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         failover. <p>Constraint: You cannot specify <code>true</code> if the
      *         instance is not configured for MultiAZ.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootDBInstanceRequest withForceFailover(Boolean forceFailover) {

@@ -94,7 +94,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements Se
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelArchivalRequest withGatewayARN(String gatewayARN) {
@@ -142,7 +142,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements Se
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape you want to cancel
      *         archiving for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelArchivalRequest withTapeARN(String tapeARN) {

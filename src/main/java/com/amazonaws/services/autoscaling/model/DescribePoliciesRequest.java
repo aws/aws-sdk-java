@@ -100,7 +100,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -167,7 +167,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      *         requested policy names cannot contain more than 50 items. If unknown
      *         policy names are requested, they are ignored with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesRequest withPolicyNames(String... policyNames) {
@@ -193,7 +193,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      *         requested policy names cannot contain more than 50 items. If unknown
      *         policy names are requested, they are ignored with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesRequest withPolicyNames(java.util.Collection<String> policyNames) {
@@ -248,7 +248,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      * @param nextToken A string that is used to mark the start of the next batch of returned
      *         results for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesRequest withNextToken(String nextToken) {
@@ -281,7 +281,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      *
      * @param maxRecords The maximum number of policies that will be described with each call.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesRequest withMaxRecords(Integer maxRecords) {

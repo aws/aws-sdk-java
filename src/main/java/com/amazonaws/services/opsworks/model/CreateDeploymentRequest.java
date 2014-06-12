@@ -113,7 +113,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDeploymentRequest withStackId(String stackId) {
@@ -152,7 +152,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      * @param appId The app ID. This parameter is required for app deployments, but not
      *         for other deployment commands.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDeploymentRequest withAppId(String appId) {
@@ -195,7 +195,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      *
      * @param instanceIds The instance IDs for the deployment targets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDeploymentRequest withInstanceIds(String... instanceIds) {
@@ -213,7 +213,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      *
      * @param instanceIds The instance IDs for the deployment targets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDeploymentRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -259,7 +259,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      * @param command A <code>DeploymentCommand</code> object that specifies the deployment
      *         command and any associated arguments.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDeploymentRequest withCommand(DeploymentCommand command) {
@@ -292,7 +292,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      *
      * @param comment A user-defined comment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDeploymentRequest withComment(String comment) {
@@ -361,7 +361,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements 
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDeploymentRequest withCustomJson(String customJson) {

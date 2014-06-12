@@ -109,7 +109,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param roleName Name of the role to associate the policy with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRolePolicyRequest withRoleName(String roleName) {
@@ -154,7 +154,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param policyName Name of the policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRolePolicyRequest withPolicyName(String policyName) {
@@ -199,7 +199,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param policyDocument The policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRolePolicyRequest withPolicyDocument(String policyDocument) {

@@ -239,7 +239,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -302,7 +302,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         group using an existing launch configuration instead of an EC2
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withLaunchConfigurationName(String launchConfigurationName) {
@@ -413,7 +413,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         an Auto Scaling Group Using EC2 Instance</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withInstanceId(String instanceId) {
@@ -446,7 +446,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param minSize The minimum size of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withMinSize(Integer minSize) {
@@ -479,7 +479,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param maxSize The maximum size of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withMaxSize(Integer maxSize) {
@@ -530,7 +530,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         minimum size and less than or equal to the maximum size specified for
      *         the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withDesiredCapacity(Integer desiredCapacity) {
@@ -599,7 +599,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
      *         Period</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withDefaultCooldown(Integer defaultCooldown) {
@@ -657,7 +657,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * @param availabilityZones A list of Availability Zones for the Auto Scaling group. This is
      *         required unless you have specified subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withAvailabilityZones(String... availabilityZones) {
@@ -680,7 +680,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * @param availabilityZones A list of Availability Zones for the Auto Scaling group. This is
      *         required unless you have specified subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -760,7 +760,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Load Balancer to Load Balance Your Auto Scaling Group</a> in the
      *         <i>Auto Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withLoadBalancerNames(String... loadBalancerNames) {
@@ -788,7 +788,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Load Balancer to Load Balance Your Auto Scaling Group</a> in the
      *         <i>Auto Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
@@ -876,7 +876,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#healthcheck">Health
      *         Check</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withHealthCheckType(String healthCheckType) {
@@ -951,7 +951,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         period of the group to match the expected startup period of your
      *         application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
@@ -1020,7 +1020,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Using
      *         Cluster Instances</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withPlacementGroup(String placementGroup) {
@@ -1107,7 +1107,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Auto Scaling Instances into Amazon VPC</a> in the <i>Auto Scaling
      *         Developer Guide</i> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withVPCZoneIdentifier(String vPCZoneIdentifier) {
@@ -1186,7 +1186,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Termination Policy for Your Auto Scaling Group</a> in the <i>Auto
      *         Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withTerminationPolicies(String... terminationPolicies) {
@@ -1216,7 +1216,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Termination Policy for Your Auto Scaling Group</a> in the <i>Auto
      *         Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
@@ -1308,7 +1308,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Your Auto Scaling Groups and Amazon EC2 Instances</a> in the <i>Auto
      *         Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withTags(Tag... tags) {
@@ -1340,7 +1340,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Your Auto Scaling Groups and Amazon EC2 Instances</a> in the <i>Auto
      *         Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateAutoScalingGroupRequest withTags(java.util.Collection<Tag> tags) {

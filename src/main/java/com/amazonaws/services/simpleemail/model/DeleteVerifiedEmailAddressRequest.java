@@ -67,7 +67,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest i
      *
      * @param emailAddress An email address to be removed from the list of verified addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVerifiedEmailAddressRequest withEmailAddress(String emailAddress) {

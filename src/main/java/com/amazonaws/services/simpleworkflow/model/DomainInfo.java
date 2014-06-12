@@ -86,7 +86,7 @@ public class DomainInfo implements Serializable {
      *
      * @param name The name of the domain. This name is unique within the account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainInfo withName(String name) {
@@ -162,7 +162,7 @@ public class DomainInfo implements Serializable {
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -216,7 +216,7 @@ public class DomainInfo implements Serializable {
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -260,7 +260,7 @@ public class DomainInfo implements Serializable {
      *
      * @param description The description of the domain provided through <a>RegisterDomain</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainInfo withDescription(String description) {

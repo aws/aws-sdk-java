@@ -119,7 +119,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest imp
      *
      * @param userName Name of the user the signing certificate is for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadSigningCertificateRequest withUserName(String userName) {
@@ -164,7 +164,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest imp
      *
      * @param certificateBody The contents of the signing certificate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadSigningCertificateRequest withCertificateBody(String certificateBody) {

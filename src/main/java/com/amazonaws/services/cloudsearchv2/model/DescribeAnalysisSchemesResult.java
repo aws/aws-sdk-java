@@ -65,7 +65,7 @@ public class DescribeAnalysisSchemesResult implements Serializable {
      *
      * @param analysisSchemes The analysis scheme descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAnalysisSchemesResult withAnalysisSchemes(AnalysisSchemeStatus... analysisSchemes) {
@@ -83,7 +83,7 @@ public class DescribeAnalysisSchemesResult implements Serializable {
      *
      * @param analysisSchemes The analysis scheme descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAnalysisSchemesResult withAnalysisSchemes(java.util.Collection<AnalysisSchemeStatus> analysisSchemes) {

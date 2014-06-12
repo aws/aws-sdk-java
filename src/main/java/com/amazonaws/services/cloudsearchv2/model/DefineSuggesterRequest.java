@@ -109,7 +109,7 @@ public class DefineSuggesterRequest extends AmazonWebServiceRequest implements S
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineSuggesterRequest withDomainName(String domainName) {
@@ -160,7 +160,7 @@ public class DefineSuggesterRequest extends AmazonWebServiceRequest implements S
      *         suggestions. The following options can be configured for a suggester:
      *         <code>FuzzyMatching</code>, <code>SortExpression</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineSuggesterRequest withSuggester(Suggester suggester) {

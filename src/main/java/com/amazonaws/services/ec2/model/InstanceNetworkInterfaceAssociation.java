@@ -63,7 +63,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable {
      *
      * @param publicIp The address of the Elastic IP address bound to the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceAssociation withPublicIp(String publicIp) {
@@ -96,7 +96,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable {
      *
      * @param publicDnsName The public DNS name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceAssociation withPublicDnsName(String publicDnsName) {
@@ -129,7 +129,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable {
      *
      * @param ipOwnerId The ID of the owner of the Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {

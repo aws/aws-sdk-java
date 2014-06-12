@@ -59,7 +59,7 @@ public class PrivateIpAddressSpecification implements Serializable {
      *
      * @param privateIpAddress The private IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PrivateIpAddressSpecification withPrivateIpAddress(String privateIpAddress) {
@@ -98,7 +98,7 @@ public class PrivateIpAddressSpecification implements Serializable {
      * @param primary Indicates whether the private IP address is the primary private IP
      *         address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PrivateIpAddressSpecification withPrimary(Boolean primary) {

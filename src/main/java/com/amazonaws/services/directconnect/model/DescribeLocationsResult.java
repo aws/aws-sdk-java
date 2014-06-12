@@ -58,7 +58,7 @@ public class DescribeLocationsResult implements Serializable {
      *
      * @param locations The new value for the Locations property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLocationsResult withLocations(Location... locations) {
@@ -76,7 +76,7 @@ public class DescribeLocationsResult implements Serializable {
      *
      * @param locations The new value for the Locations property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLocationsResult withLocations(java.util.Collection<Location> locations) {

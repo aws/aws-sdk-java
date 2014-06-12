@@ -21,12 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest) Publish operation}.
  * <p>
- * The <code>Publish</code> action sends a message to all of a topic's
- * subscribed endpoints. When a <code>messageId</code> is returned, the
- * message has been saved and Amazon SNS will attempt to deliver it to
- * the topic's subscribers shortly. The format of the outgoing message to
- * each subscribed endpoint depends on the notification protocol
- * selected.
+ * Sends a message to all of a topic's subscribed endpoints. When a
+ * <code>messageId</code> is returned, the message has been saved and
+ * Amazon SNS will attempt to deliver it to the topic's subscribers
+ * shortly. The format of the outgoing message to each subscribed
+ * endpoint depends on the notification protocol selected.
  * </p>
  * <p>
  * To use the <code>Publish</code> action for sending a message to a
@@ -107,6 +106,11 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
      * <code>json</code>
      */
     private String messageStructure;
+
+    /**
+     * Message attributes for Publish action.
+     */
+    private java.util.Map<String,MessageAttributeValue> messageAttributes;
 
     /**
      * Default constructor for a new PublishRequest object.  Callers should use the
@@ -217,7 +221,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param topicArn The topic you want to publish to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PublishRequest withTopicArn(String topicArn) {
@@ -250,7 +254,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param targetArn Either TopicArn or EndpointArn, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PublishRequest withTargetArn(String targetArn) {
@@ -415,7 +419,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
      *         <code>Publish</code> call to return an error (no partial
      *         delivery).</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PublishRequest withMessage(String message) {
@@ -478,7 +482,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
      *         number, or punctuation mark; must not include line breaks or control
      *         characters; and must be less than 100 characters long.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PublishRequest withSubject(String subject) {
@@ -601,7 +605,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
      *         Notification Service Getting Started Guide</i>. <p>Valid value:
      *         <code>json</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PublishRequest withMessageStructure(String messageStructure) {
@@ -609,6 +613,73 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
         return this;
     }
 
+    /**
+     * Message attributes for Publish action.
+     *
+     * @return Message attributes for Publish action.
+     */
+    public java.util.Map<String,MessageAttributeValue> getMessageAttributes() {
+        
+        if (messageAttributes == null) {
+            messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
+        }
+        return messageAttributes;
+    }
+    
+    /**
+     * Message attributes for Publish action.
+     *
+     * @param messageAttributes Message attributes for Publish action.
+     */
+    public void setMessageAttributes(java.util.Map<String,MessageAttributeValue> messageAttributes) {
+        this.messageAttributes = messageAttributes;
+    }
+    
+    /**
+     * Message attributes for Publish action.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param messageAttributes Message attributes for Publish action.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PublishRequest withMessageAttributes(java.util.Map<String,MessageAttributeValue> messageAttributes) {
+        setMessageAttributes(messageAttributes);
+        return this;
+    }
+
+    /**
+     * Message attributes for Publish action.
+     * <p>
+     * The method adds a new key-value pair into MessageAttributes parameter,
+     * and returns a reference to this object so that method calls can be
+     * chained together.
+     *
+     * @param key The key of the entry to be added into MessageAttributes.
+     * @param value The corresponding value of the entry to be added into MessageAttributes.
+     */
+    public PublishRequest addMessageAttributesEntry(String key, MessageAttributeValue value) {
+        if (null == this.messageAttributes) {
+            this.messageAttributes = new java.util.HashMap<String,MessageAttributeValue>();
+        }
+        if (this.messageAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.messageAttributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MessageAttributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     */
+    public PublishRequest clearMessageAttributesEntries() {
+        this.messageAttributes = null;
+        return this;
+    }
+    
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -625,7 +696,8 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
         if (getTargetArn() != null) sb.append("TargetArn: " + getTargetArn() + ",");
         if (getMessage() != null) sb.append("Message: " + getMessage() + ",");
         if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");
-        if (getMessageStructure() != null) sb.append("MessageStructure: " + getMessageStructure() );
+        if (getMessageStructure() != null) sb.append("MessageStructure: " + getMessageStructure() + ",");
+        if (getMessageAttributes() != null) sb.append("MessageAttributes: " + getMessageAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -640,6 +712,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode()); 
         hashCode = prime * hashCode + ((getMessageStructure() == null) ? 0 : getMessageStructure().hashCode()); 
+        hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -661,6 +734,8 @@ public class PublishRequest extends AmazonWebServiceRequest implements Serializa
         if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false) return false; 
         if (other.getMessageStructure() == null ^ this.getMessageStructure() == null) return false;
         if (other.getMessageStructure() != null && other.getMessageStructure().equals(this.getMessageStructure()) == false) return false; 
+        if (other.getMessageAttributes() == null ^ this.getMessageAttributes() == null) return false;
+        if (other.getMessageAttributes() != null && other.getMessageAttributes().equals(this.getMessageAttributes()) == false) return false; 
         return true;
     }
     

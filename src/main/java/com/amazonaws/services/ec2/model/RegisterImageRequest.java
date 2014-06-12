@@ -161,7 +161,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param imageLocation The full path to your AMI manifest in Amazon S3 storage.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withImageLocation(String imageLocation) {
@@ -206,7 +206,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
      *         (_)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withName(String name) {
@@ -239,7 +239,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param description A description for your AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withDescription(String description) {
@@ -297,7 +297,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         <code>i386</code>. For instance store-backed AMIs, the architecture
      *         specified in the manifest file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ArchitectureValues
@@ -339,7 +339,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         <code>i386</code>. For instance store-backed AMIs, the architecture
      *         specified in the manifest file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ArchitectureValues
@@ -374,7 +374,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param kernelId The ID of the kernel.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withKernelId(String kernelId) {
@@ -407,7 +407,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param ramdiskId The ID of the RAM disk.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withRamdiskId(String ramdiskId) {
@@ -446,7 +446,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * @param rootDeviceName The name of the root device (for example, <code>/dev/sda1</code>, or
      *         <code>xvda</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withRootDeviceName(String rootDeviceName) {
@@ -489,7 +489,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param blockDeviceMappings One or more block device mapping entries.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
@@ -507,7 +507,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param blockDeviceMappings One or more block device mapping entries.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -547,7 +547,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param virtualizationType The type of virtualization. <p>Default: <code>paravirtual</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withVirtualizationType(String virtualizationType) {
@@ -604,7 +604,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         only for HVM AMIs. Specifying this option with a PV AMI can make
      *         instances launched from the AMI unreachable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageRequest withSriovNetSupport(String sriovNetSupport) {

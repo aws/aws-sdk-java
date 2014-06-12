@@ -73,7 +73,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest implem
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterRdsDbInstanceRequest withStackId(String stackId) {
@@ -106,7 +106,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest implem
      *
      * @param rdsDbInstanceArn The Amazon RDS instance's ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterRdsDbInstanceRequest withRdsDbInstanceArn(String rdsDbInstanceArn) {
@@ -139,7 +139,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest implem
      *
      * @param dbUser The database's master user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterRdsDbInstanceRequest withDbUser(String dbUser) {
@@ -172,7 +172,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest implem
      *
      * @param dbPassword The database password.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterRdsDbInstanceRequest withDbPassword(String dbPassword) {

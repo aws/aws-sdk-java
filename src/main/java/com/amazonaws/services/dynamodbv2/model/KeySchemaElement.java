@@ -110,7 +110,7 @@ public class KeySchemaElement implements Serializable {
      *
      * @param attributeName The name of a key attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeySchemaElement withAttributeName(String attributeName) {
@@ -162,7 +162,7 @@ public class KeySchemaElement implements Serializable {
      * @param keyType The attribute data, consisting of the data type and the attribute
      *         value itself.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see KeyType
@@ -200,7 +200,7 @@ public class KeySchemaElement implements Serializable {
      * @param keyType The attribute data, consisting of the data type and the attribute
      *         value itself.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see KeyType

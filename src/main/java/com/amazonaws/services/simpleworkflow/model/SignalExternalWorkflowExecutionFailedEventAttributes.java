@@ -116,7 +116,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      * @param workflowId The <code>workflowId</code> of the external workflow execution that
      *         the signal was being delivered to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionFailedEventAttributes withWorkflowId(String workflowId) {
@@ -164,7 +164,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      * @param runId The <code>runId</code> of the external workflow execution that the
      *         signal was being delivered to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionFailedEventAttributes withRunId(String runId) {
@@ -246,7 +246,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SignalExternalWorkflowExecutionFailedCause
@@ -304,7 +304,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SignalExternalWorkflowExecutionFailedCause
@@ -363,7 +363,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      *         signal. This information can be useful for diagnosing problems by
      *         tracing back the chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionFailedEventAttributes withInitiatedEventId(Long initiatedEventId) {
@@ -420,7 +420,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      *         This information can be useful for diagnosing problems by tracing back
      *         the cause of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -462,7 +462,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      *
      * @param control The new value for the Control property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionFailedEventAttributes withControl(String control) {

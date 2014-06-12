@@ -193,7 +193,7 @@ public class IndexField implements Serializable {
      *         name "score" is reserved and cannot be specified as field or
      *         expression name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withIndexFieldName(String indexFieldName) {
@@ -263,7 +263,7 @@ public class IndexField implements Serializable {
      *         target="_blank">Configuring Index Fields</a> in the <i>Amazon
      *         CloudSearch Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see IndexFieldType
@@ -313,7 +313,7 @@ public class IndexField implements Serializable {
      *         target="_blank">Configuring Index Fields</a> in the <i>Amazon
      *         CloudSearch Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see IndexFieldType
@@ -360,7 +360,7 @@ public class IndexField implements Serializable {
      *         <code>IndexFieldType</code> specifies the field is of type
      *         <code>int</code>. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withIntOptions(IntOptions intOptions) {
@@ -405,7 +405,7 @@ public class IndexField implements Serializable {
      *         <code>IndexFieldType</code> specifies the field is of type
      *         <code>double</code>. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withDoubleOptions(DoubleOptions doubleOptions) {
@@ -450,7 +450,7 @@ public class IndexField implements Serializable {
      *         specifies the field is of type <code>literal</code>. All options are
      *         enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withLiteralOptions(LiteralOptions literalOptions) {
@@ -495,7 +495,7 @@ public class IndexField implements Serializable {
      *         specifies the field is of type <code>text</code>. A <code>text</code>
      *         field is always searchable. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withTextOptions(TextOptions textOptions) {
@@ -552,7 +552,7 @@ public class IndexField implements Serializable {
      *         the field is of type <code>date</code>. All options are enabled by
      *         default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withDateOptions(DateOptions dateOptions) {
@@ -603,7 +603,7 @@ public class IndexField implements Serializable {
      *         <code>IndexFieldType</code> specifies the field is of type
      *         <code>latlon</code>. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withLatLonOptions(LatLonOptions latLonOptions) {
@@ -648,7 +648,7 @@ public class IndexField implements Serializable {
      *         Present if <code>IndexFieldType</code> specifies the field is of type
      *         <code>int-array</code>. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withIntArrayOptions(IntArrayOptions intArrayOptions) {
@@ -699,7 +699,7 @@ public class IndexField implements Serializable {
      *         specifies the field is of type <code>double-array</code>. All options
      *         are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withDoubleArrayOptions(DoubleArrayOptions doubleArrayOptions) {
@@ -744,7 +744,7 @@ public class IndexField implements Serializable {
      *         if <code>IndexFieldType</code> specifies the field is of type
      *         <code>literal-array</code>. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withLiteralArrayOptions(LiteralArrayOptions literalArrayOptions) {
@@ -795,7 +795,7 @@ public class IndexField implements Serializable {
      *         <code>text-array</code>. A <code>text-array</code> field is always
      *         searchable. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withTextArrayOptions(TextArrayOptions textArrayOptions) {
@@ -840,7 +840,7 @@ public class IndexField implements Serializable {
      *         <code>IndexFieldType</code> specifies the field is of type
      *         <code>date-array</code>. All options are enabled by default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexField withDateArrayOptions(DateArrayOptions dateArrayOptions) {

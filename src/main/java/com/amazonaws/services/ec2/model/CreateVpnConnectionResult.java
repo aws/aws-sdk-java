@@ -51,7 +51,7 @@ public class CreateVpnConnectionResult implements Serializable {
      *
      * @param vpnConnection Information about the VPN connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnConnectionResult withVpnConnection(VpnConnection vpnConnection) {

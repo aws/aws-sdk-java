@@ -21,10 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest) ListSubscriptions operation}.
  * <p>
- * The <code>ListSubscriptions</code> action returns a list of the
- * requester's subscriptions. Each call returns a limited list of
- * subscriptions, up to 100. If there are more subscriptions, a
- * <code>NextToken</code> is also returned. Use the
+ * Returns a list of the requester's subscriptions. Each call returns a
+ * limited list of subscriptions, up to 100. If there are more
+ * subscriptions, a <code>NextToken</code> is also returned. Use the
  * <code>NextToken</code> parameter in a new
  * <code>ListSubscriptions</code> call to get further results.
  * </p>
@@ -81,7 +80,7 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements
      *
      * @param nextToken Token returned by the previous <code>ListSubscriptions</code> request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSubscriptionsRequest withNextToken(String nextToken) {

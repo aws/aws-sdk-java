@@ -63,7 +63,7 @@ public class DescribeStacksResult implements Serializable {
      *
      * @param stacks An array of <code>Stack</code> objects that describe the stacks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksResult withStacks(Stack... stacks) {
@@ -81,7 +81,7 @@ public class DescribeStacksResult implements Serializable {
      *
      * @param stacks An array of <code>Stack</code> objects that describe the stacks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksResult withStacks(java.util.Collection<Stack> stacks) {

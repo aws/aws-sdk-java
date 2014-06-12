@@ -102,7 +102,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      *         <p>Constraints: Must be a valid bucket associated with your AWS
      *         account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSpotDatafeedSubscriptionRequest withBucket(String bucket) {
@@ -135,7 +135,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      *
      * @param prefix A prefix for the datafeed file names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSpotDatafeedSubscriptionRequest withPrefix(String prefix) {

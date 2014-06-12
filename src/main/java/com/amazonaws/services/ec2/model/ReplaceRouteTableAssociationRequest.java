@@ -76,7 +76,7 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
      *
      * @param associationId The association ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteTableAssociationRequest withAssociationId(String associationId) {
@@ -109,7 +109,7 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
      *
      * @param routeTableId The ID of the new route table to associate with the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceRouteTableAssociationRequest withRouteTableId(String routeTableId) {

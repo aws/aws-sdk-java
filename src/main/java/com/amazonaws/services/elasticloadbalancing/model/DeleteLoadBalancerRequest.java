@@ -91,7 +91,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implement
      *
      * @param loadBalancerName The name associated with the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {

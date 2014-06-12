@@ -216,8 +216,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("cloudsearch.us-east-1.amazonaws.com/");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudsearchv2/request.handlers"));

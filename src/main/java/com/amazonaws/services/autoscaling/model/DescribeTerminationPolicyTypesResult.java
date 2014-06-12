@@ -84,7 +84,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      *         <code>Default</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(String... terminationPolicyTypes) {
@@ -108,7 +108,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      *         <code>Default</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(java.util.Collection<String> terminationPolicyTypes) {

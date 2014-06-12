@@ -218,7 +218,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *
      * @param domain The name of the domain in which this activity is to be registered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withDomain(String domain) {
@@ -284,7 +284,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withName(String name) {
@@ -362,7 +362,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withVersion(String version) {
@@ -404,7 +404,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *
      * @param description A textual description of the activity type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withDescription(String description) {
@@ -482,7 +482,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
@@ -602,7 +602,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskHeartbeatTimeout(String defaultTaskHeartbeatTimeout) {
@@ -653,7 +653,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         not provided when a task is scheduled through the
      *         <code>ScheduleActivityTask</code> <a>Decision</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskList(TaskList defaultTaskList) {
@@ -731,7 +731,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskScheduleToStartTimeout(String defaultTaskScheduleToStartTimeout) {
@@ -809,7 +809,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest impleme
      *         duration in seconds while <code>NONE</code> can be used to specify
      *         unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskScheduleToCloseTimeout(String defaultTaskScheduleToCloseTimeout) {

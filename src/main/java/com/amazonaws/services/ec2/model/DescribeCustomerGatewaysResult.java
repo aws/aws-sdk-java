@@ -61,7 +61,7 @@ public class DescribeCustomerGatewaysResult implements Serializable {
      *
      * @param customerGateways Information about one or more customer gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCustomerGatewaysResult withCustomerGateways(CustomerGateway... customerGateways) {
@@ -79,7 +79,7 @@ public class DescribeCustomerGatewaysResult implements Serializable {
      *
      * @param customerGateways Information about one or more customer gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCustomerGatewaysResult withCustomerGateways(java.util.Collection<CustomerGateway> customerGateways) {

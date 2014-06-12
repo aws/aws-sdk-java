@@ -142,7 +142,7 @@ public class CountOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest 
      *
      * @param domain The name of the domain containing the workflow executions to count.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountOpenWorkflowExecutionsRequest withDomain(String domain) {
@@ -181,7 +181,7 @@ public class CountOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest 
      * @param startTimeFilter Specifies the start time criteria that workflow executions must meet
      *         in order to be counted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountOpenWorkflowExecutionsRequest withStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
@@ -232,7 +232,7 @@ public class CountOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest 
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountOpenWorkflowExecutionsRequest withTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -283,7 +283,7 @@ public class CountOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest 
      *         <code>typeFilter</code> and <code>tagFilter</code> are mutually
      *         exclusive. You can specify at most one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountOpenWorkflowExecutionsRequest withTagFilter(TagFilter tagFilter) {
@@ -340,7 +340,7 @@ public class CountOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest 
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CountOpenWorkflowExecutionsRequest withExecutionFilter(WorkflowExecutionFilter executionFilter) {

@@ -87,7 +87,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *         string. <p>Constraints: Must contain no more than 255 alphanumeric
      *         characters or hyphens. <p>Example: <code>mysubnetgroup</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -120,7 +120,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param cacheSubnetGroupDescription A description for the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheSubnetGroupRequest withCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
@@ -163,7 +163,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param subnetIds A list of VPC subnet IDs for the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheSubnetGroupRequest withSubnetIds(String... subnetIds) {
@@ -181,7 +181,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param subnetIds A list of VPC subnet IDs for the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {

@@ -64,7 +64,7 @@ public class DeleteConnectionRequest extends AmazonWebServiceRequest implements 
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteConnectionRequest withConnectionId(String connectionId) {

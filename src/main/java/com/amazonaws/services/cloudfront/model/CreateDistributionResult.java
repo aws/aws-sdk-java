@@ -65,7 +65,7 @@ public class CreateDistributionResult implements Serializable {
      *
      * @param distribution The distribution's information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDistributionResult withDistribution(Distribution distribution) {
@@ -110,7 +110,7 @@ public class CreateDistributionResult implements Serializable {
      *         For example:
      *         https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDistributionResult withLocation(String location) {
@@ -143,7 +143,7 @@ public class CreateDistributionResult implements Serializable {
      *
      * @param eTag The current version of the distribution created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDistributionResult withETag(String eTag) {

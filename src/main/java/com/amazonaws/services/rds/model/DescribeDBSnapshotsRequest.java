@@ -140,7 +140,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         character must be a letter</li> <li>Cannot end with a hyphen or
      *         contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSnapshotsRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -215,7 +215,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         the <code>SnapshotType</code> parameter must also be specified.</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSnapshotsRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
@@ -260,7 +260,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         or "manual." If not specified, the returned results will include all
      *         snapshots types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSnapshotsRequest withSnapshotType(String snapshotType) {
@@ -303,7 +303,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSnapshotsRequest withFilters(Filter... filters) {
@@ -321,7 +321,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSnapshotsRequest withFilters(java.util.Collection<Filter> filters) {
@@ -385,7 +385,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSnapshotsRequest withMaxRecords(Integer maxRecords) {
@@ -436,7 +436,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSnapshotsRequest withMarker(String marker) {

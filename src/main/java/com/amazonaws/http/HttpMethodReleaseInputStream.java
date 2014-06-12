@@ -27,6 +27,7 @@ import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.client.methods.AbortableHttpRequest;
 
 import com.amazonaws.HttpMethod;
+import com.amazonaws.internal.SdkInputStream;
 
 /**
  * Utility class to wrap InputStreams obtained from an HttpClient library's
@@ -43,13 +44,13 @@ import com.amazonaws.HttpMethod;
  * <b>Important!</b> This input stream must be completely consumed or closed to
  * ensure the necessary cleanup operations can be performed.
  */
-public class HttpMethodReleaseInputStream extends InputStream {
+public class HttpMethodReleaseInputStream extends SdkInputStream {
     private static final Log log = LogFactory.getLog(HttpMethodReleaseInputStream.class);
 
-    private InputStream inputStream = null;
-    private HttpEntityEnclosingRequest httpRequest = null;
-    private boolean alreadyReleased = false;
-    private boolean underlyingStreamConsumed = false;
+    private InputStream in;
+    private HttpEntityEnclosingRequest httpRequest;
+    private boolean alreadyReleased;
+    private boolean underlyingStreamConsumed;
 
     /**
      * Constructs an input stream based on an {@link HttpMethod} object
@@ -66,7 +67,7 @@ public class HttpMethodReleaseInputStream extends InputStream {
         this.httpRequest = httpMethod;
 
         try {
-        	this.inputStream = httpMethod.getEntity().getContent();
+        	this.in = httpMethod.getEntity().getContent();
         } catch (IOException e) {
         	if (log.isWarnEnabled()) {
         		log.warn("Unable to obtain HttpMethod's response data stream", e);
@@ -74,7 +75,7 @@ public class HttpMethodReleaseInputStream extends InputStream {
         	try {
         		httpMethod.getEntity().getContent().close();
         	} catch (Exception ex) {}
-            this.inputStream = new ByteArrayInputStream(new byte[] {}); // Empty input stream;
+            this.in = new ByteArrayInputStream(new byte[0]); // Empty input stream;
         }
     }
 
@@ -100,12 +101,12 @@ public class HttpMethodReleaseInputStream extends InputStream {
             if (!underlyingStreamConsumed) {
                 // Underlying input stream has not been consumed, abort method
                 // to force connection to be closed and cleaned-up.
-            	if (httpRequest instanceof AbortableHttpRequest) {
-            		AbortableHttpRequest abortableHttpRequest = (AbortableHttpRequest)httpRequest;
-            		abortableHttpRequest.abort();
-            	}
+                if (httpRequest instanceof AbortableHttpRequest) {
+                    AbortableHttpRequest abortableHttpRequest = (AbortableHttpRequest) httpRequest;
+                    abortableHttpRequest.abort();
+                }
             }
-            inputStream.close();
+            in.close();
             alreadyReleased = true;
         }
     }
@@ -118,7 +119,7 @@ public class HttpMethodReleaseInputStream extends InputStream {
      */
     public int read() throws IOException {
         try {
-            int read = inputStream.read();
+            int read = in.read();
             if (read == -1) {
                 underlyingStreamConsumed = true;
                 if (!alreadyReleased) {
@@ -146,7 +147,7 @@ public class HttpMethodReleaseInputStream extends InputStream {
      */
     public int read(byte[] b, int off, int len) throws IOException {
         try {
-            int read = inputStream.read(b, off, len);
+            int read = in.read(b, off, len);
             if (read == -1) {
                 underlyingStreamConsumed = true;
                 if (!alreadyReleased) {
@@ -175,7 +176,7 @@ public class HttpMethodReleaseInputStream extends InputStream {
      */
     public int available() throws IOException {
         try {
-            return inputStream.available();
+            return in.available();
         } catch (IOException e) {
             releaseConnection();
             if (log.isDebugEnabled()) {
@@ -198,7 +199,7 @@ public class HttpMethodReleaseInputStream extends InputStream {
             	log.debug("Released HttpMethod as its response data stream is closed");
             }
         }
-        inputStream.close();
+        in.close();
     }
 
     /**
@@ -228,4 +229,8 @@ public class HttpMethodReleaseInputStream extends InputStream {
         super.finalize();
     }
 
+    @Override
+    protected InputStream getWrappedInputStream() {
+        return in;
+    }
 }

@@ -74,7 +74,7 @@ public class OptionConfiguration implements Serializable {
      *
      * @param optionName The configuration of options to include in a group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withOptionName(String optionName) {
@@ -107,7 +107,7 @@ public class OptionConfiguration implements Serializable {
      *
      * @param port The optional port for the option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withPort(Integer port) {
@@ -150,7 +150,7 @@ public class OptionConfiguration implements Serializable {
      *
      * @param dBSecurityGroupMemberships A list of DBSecurityGroupMemebrship name strings used for this option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withDBSecurityGroupMemberships(String... dBSecurityGroupMemberships) {
@@ -168,7 +168,7 @@ public class OptionConfiguration implements Serializable {
      *
      * @param dBSecurityGroupMemberships A list of DBSecurityGroupMemebrship name strings used for this option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withDBSecurityGroupMemberships(java.util.Collection<String> dBSecurityGroupMemberships) {
@@ -224,7 +224,7 @@ public class OptionConfiguration implements Serializable {
      * @param vpcSecurityGroupMemberships A list of VpcSecurityGroupMemebrship name strings used for this
      *         option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withVpcSecurityGroupMemberships(String... vpcSecurityGroupMemberships) {
@@ -244,7 +244,7 @@ public class OptionConfiguration implements Serializable {
      * @param vpcSecurityGroupMemberships A list of VpcSecurityGroupMemebrship name strings used for this
      *         option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withVpcSecurityGroupMemberships(java.util.Collection<String> vpcSecurityGroupMemberships) {
@@ -294,7 +294,7 @@ public class OptionConfiguration implements Serializable {
      *
      * @param optionSettings The option settings to include in an option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withOptionSettings(OptionSetting... optionSettings) {
@@ -312,7 +312,7 @@ public class OptionConfiguration implements Serializable {
      *
      * @param optionSettings The option settings to include in an option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionConfiguration withOptionSettings(java.util.Collection<OptionSetting> optionSettings) {

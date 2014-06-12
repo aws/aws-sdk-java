@@ -82,7 +82,7 @@ public class Permission implements Serializable {
      *
      * @param stackId A stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withStackId(String stackId) {
@@ -133,7 +133,7 @@ public class Permission implements Serializable {
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withIamUserArn(String iamUserArn) {
@@ -166,7 +166,7 @@ public class Permission implements Serializable {
      *
      * @param allowSsh Whether the user can use SSH.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withAllowSsh(Boolean allowSsh) {
@@ -208,7 +208,7 @@ public class Permission implements Serializable {
      *
      * @param allowSudo Whether the user can use <b>sudo</b>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withAllowSudo(Boolean allowSudo) {
@@ -286,7 +286,7 @@ public class Permission implements Serializable {
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withLevel(String level) {

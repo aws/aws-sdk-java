@@ -66,7 +66,7 @@ public class EventInfoMap implements Serializable {
      *
      * @param eventId The identifier of an Amazon Redshift event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventInfoMap withEventId(String eventId) {
@@ -109,7 +109,7 @@ public class EventInfoMap implements Serializable {
      *
      * @param eventCategories The category of an Amazon Redshift event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventInfoMap withEventCategories(String... eventCategories) {
@@ -127,7 +127,7 @@ public class EventInfoMap implements Serializable {
      *
      * @param eventCategories The category of an Amazon Redshift event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventInfoMap withEventCategories(java.util.Collection<String> eventCategories) {
@@ -167,7 +167,7 @@ public class EventInfoMap implements Serializable {
      *
      * @param eventDescription The description of an Amazon Redshift event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventInfoMap withEventDescription(String eventDescription) {
@@ -200,7 +200,7 @@ public class EventInfoMap implements Serializable {
      *
      * @param severity The severity of the event. <p>Values: ERROR, INFO
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventInfoMap withSeverity(String severity) {

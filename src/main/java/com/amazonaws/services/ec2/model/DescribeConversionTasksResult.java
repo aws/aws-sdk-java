@@ -61,7 +61,7 @@ public class DescribeConversionTasksResult implements Serializable {
      *
      * @param conversionTasks 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConversionTasksResult withConversionTasks(ConversionTask... conversionTasks) {
@@ -79,7 +79,7 @@ public class DescribeConversionTasksResult implements Serializable {
      *
      * @param conversionTasks 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConversionTasksResult withConversionTasks(java.util.Collection<ConversionTask> conversionTasks) {

@@ -70,7 +70,7 @@ public class DeleteMessageBatchResult implements Serializable {
      *
      * @param successful A list of <a>DeleteMessageBatchResultEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchResult withSuccessful(DeleteMessageBatchResultEntry... successful) {
@@ -88,7 +88,7 @@ public class DeleteMessageBatchResult implements Serializable {
      *
      * @param successful A list of <a>DeleteMessageBatchResultEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchResult withSuccessful(java.util.Collection<DeleteMessageBatchResultEntry> successful) {
@@ -138,7 +138,7 @@ public class DeleteMessageBatchResult implements Serializable {
      *
      * @param failed A list of <a>BatchResultErrorEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchResult withFailed(BatchResultErrorEntry... failed) {
@@ -156,7 +156,7 @@ public class DeleteMessageBatchResult implements Serializable {
      *
      * @param failed A list of <a>BatchResultErrorEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchResult withFailed(java.util.Collection<BatchResultErrorEntry> failed) {

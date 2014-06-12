@@ -60,7 +60,7 @@ public class SecurityGroupMembership implements Serializable {
      *
      * @param securityGroupId The identifier of the cache security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroupMembership withSecurityGroupId(String securityGroupId) {
@@ -105,7 +105,7 @@ public class SecurityGroupMembership implements Serializable {
      *         whenever a cache security group is modified, or when the cache
      *         security groups assigned to a cache cluster are modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroupMembership withStatus(String status) {

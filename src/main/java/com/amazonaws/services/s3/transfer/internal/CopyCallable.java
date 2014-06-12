@@ -244,6 +244,11 @@ public class CopyCallable implements Callable<CopyResult> {
                     .fromValue(copyObjectRequest.getStorageClass()));
         }
 
+        if (copyObjectRequest.getDestinationSSECustomerKey() != null) {
+            initiateMultipartUploadRequest.setSSECustomerKey(
+                    copyObjectRequest.getDestinationSSECustomerKey());
+        }
+
         ObjectMetadata newObjectMetadata = copyObjectRequest.getNewObjectMetadata();
         if(newObjectMetadata == null){
             newObjectMetadata = new ObjectMetadata();

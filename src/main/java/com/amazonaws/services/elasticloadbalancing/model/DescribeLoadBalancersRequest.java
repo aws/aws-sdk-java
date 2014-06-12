@@ -99,7 +99,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
      *
      * @param loadBalancerNames A list of load balancer names associated with the account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancersRequest withLoadBalancerNames(String... loadBalancerNames) {
@@ -117,7 +117,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
      *
      * @param loadBalancerNames A list of load balancer names associated with the account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancersRequest withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
@@ -157,7 +157,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
      *
      * @param marker An optional parameter reserved for future use.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancersRequest withMarker(String marker) {

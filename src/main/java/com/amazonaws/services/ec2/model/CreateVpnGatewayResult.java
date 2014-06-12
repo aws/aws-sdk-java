@@ -51,7 +51,7 @@ public class CreateVpnGatewayResult implements Serializable {
      *
      * @param vpnGateway Information about the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnGatewayResult withVpnGateway(VpnGateway vpnGateway) {

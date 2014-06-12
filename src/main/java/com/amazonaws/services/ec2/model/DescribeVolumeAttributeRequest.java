@@ -74,7 +74,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeAttributeRequest withVolumeId(String volumeId) {
@@ -120,7 +120,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param attribute The instance attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeAttributeName
@@ -154,7 +154,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param attribute The instance attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeAttributeName

@@ -208,7 +208,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withAccountId(String accountId) {
@@ -241,7 +241,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withVaultName(String vaultName) {
@@ -286,7 +286,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      *         items or fewer. If not specified, the List Jobs operation returns up
      *         to 1,000 jobs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withLimit(String limit) {
@@ -343,7 +343,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      *         are continuing the pagination of results started in a previous List
      *         Jobs request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withMarker(String marker) {
@@ -382,7 +382,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      * @param statuscode Specifies the type of job status to return. You can specify the
      *         following values: "InProgress", "Succeeded", or "Failed".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withStatuscode(String statuscode) {
@@ -421,7 +421,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      * @param completed Specifies the state of the jobs to return. You can specify
      *         <code>true</code> or <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withCompleted(String completed) {

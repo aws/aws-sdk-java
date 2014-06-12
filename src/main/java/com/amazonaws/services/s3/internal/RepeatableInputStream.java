@@ -23,6 +23,8 @@ import java.io.InputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.internal.SdkInputStream;
+
 /**
  * A repeatable input stream wrapper for any input stream. This input stream
  * relies on buffered data to repeat, and can therefore only be repeated when
@@ -32,15 +34,15 @@ import org.apache.commons.logging.LogFactory;
  * class if you are sourcing data from a file, as the file-based repeatable
  * input stream can be repeated without any limitations.
  */
-public class RepeatableInputStream extends InputStream {
+public class RepeatableInputStream extends SdkInputStream {
     private static final Log log = LogFactory.getLog(RepeatableInputStream.class);
 
-    private InputStream is = null;
-    private int bufferSize = 0;
-    private int bufferOffset = 0;
-    private long bytesReadPastMark = 0;
-    private byte[] buffer = null;
-    private boolean hasWarnedBufferOverflow = false;
+    private InputStream is;
+    private int bufferSize;
+    private int bufferOffset;
+    private long bytesReadPastMark;
+    private byte[] buffer;
+    private boolean hasWarnedBufferOverflow;
 
     /**
      * Creates a repeatable input stream based on another input stream.
@@ -76,6 +78,7 @@ public class RepeatableInputStream extends InputStream {
      *             case the input stream data cannot be repeated.
      */
     public void reset() throws IOException {
+        abortIfNeeded();
         if (bytesReadPastMark <= bufferSize) {
         	if (log.isDebugEnabled()) {
         		log.debug("Reset after reading " + bytesReadPastMark + " bytes.");
@@ -101,6 +104,7 @@ public class RepeatableInputStream extends InputStream {
      * entirely.
      */
     public synchronized void mark(int readlimit) {
+        abortIfNeeded();
     	if (log.isDebugEnabled()) {
     		log.debug("Input stream marked at " + bytesReadPastMark + " bytes");
     	}
@@ -127,6 +131,7 @@ public class RepeatableInputStream extends InputStream {
      * @see java.io.InputStream#available()
      */
     public int available() throws IOException {
+        abortIfNeeded();
         return is.available();
     }
 
@@ -135,12 +140,14 @@ public class RepeatableInputStream extends InputStream {
      */
     public void close() throws IOException {
         is.close();
+        abortIfNeeded();
     }
 
     /**
      * @see java.io.InputStream#read(byte[], int, int)
      */
     public int read(byte[] out, int outOffset, int outLength) throws IOException {
+        abortIfNeeded();
         // Check whether we already have buffered data.
         if (bufferOffset < bytesReadPastMark && buffer != null) {
             // Data is being repeated, so read from buffer instead of wrapped input stream.
@@ -188,6 +195,7 @@ public class RepeatableInputStream extends InputStream {
      * @see java.io.InputStream#read()
      */
     public int read() throws IOException {
+        abortIfNeeded();
         byte[] tmp = new byte[1];
         int count = read(tmp);
         if (count != -1) {
@@ -198,8 +206,8 @@ public class RepeatableInputStream extends InputStream {
         }
     }
 
+    @Override
     public InputStream getWrappedInputStream() {
         return is;
     }
-
 }

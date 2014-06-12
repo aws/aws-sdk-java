@@ -94,7 +94,7 @@ public class StartTimerFailedEventAttributes implements Serializable {
      * @param timerId The timerId provided in the <code>StartTimer</code> decision that
      *         failed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartTimerFailedEventAttributes withTimerId(String timerId) {
@@ -176,7 +176,7 @@ public class StartTimerFailedEventAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StartTimerFailedCause
@@ -234,7 +234,7 @@ public class StartTimerFailedEventAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StartTimerFailedCause
@@ -287,7 +287,7 @@ public class StartTimerFailedEventAttributes implements Serializable {
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartTimerFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

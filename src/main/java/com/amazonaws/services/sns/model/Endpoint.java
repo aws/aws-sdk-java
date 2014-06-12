@@ -58,7 +58,7 @@ public class Endpoint implements Serializable {
      *
      * @param endpointArn EndpointArn for mobile app and device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Endpoint withEndpointArn(String endpointArn) {
@@ -95,7 +95,7 @@ public class Endpoint implements Serializable {
      *
      * @param attributes Attributes for endpoint.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Endpoint withAttributes(java.util.Map<String,String> attributes) {

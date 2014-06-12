@@ -108,7 +108,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest imp
      *
      * @param userName Name of the user the signing certificate belongs to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSigningCertificateRequest withUserName(String userName) {
@@ -153,7 +153,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest imp
      *
      * @param certificateId ID of the signing certificate to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSigningCertificateRequest withCertificateId(String certificateId) {

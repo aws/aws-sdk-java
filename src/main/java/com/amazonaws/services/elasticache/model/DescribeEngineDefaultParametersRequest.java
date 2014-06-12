@@ -109,7 +109,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         <code>memcached1.4</code> | <code>redis2.6</code> |
      *         <code>redis2.8</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEngineDefaultParametersRequest withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -160,7 +160,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         marker is included in the response so that the remaining results can
      *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEngineDefaultParametersRequest withMaxRecords(Integer maxRecords) {
@@ -211,7 +211,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEngineDefaultParametersRequest withMarker(String marker) {

@@ -58,7 +58,7 @@ public class SpotInstanceStateFault implements Serializable {
      *
      * @param code The reason code for the Spot Instance state change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceStateFault withCode(String code) {
@@ -91,7 +91,7 @@ public class SpotInstanceStateFault implements Serializable {
      *
      * @param message The message for the Spot Instance state change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceStateFault withMessage(String message) {

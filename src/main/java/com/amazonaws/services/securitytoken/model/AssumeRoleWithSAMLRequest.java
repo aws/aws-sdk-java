@@ -208,7 +208,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * @param roleArn The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLRequest withRoleArn(String roleArn) {
@@ -256,7 +256,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      * @param principalArn The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *         describes the IdP.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLRequest withPrincipalArn(String principalArn) {
@@ -316,7 +316,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
      *         a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLRequest withSAMLAssertion(String sAMLAssertion) {
@@ -433,7 +433,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      *         Credentials</i>. <note>The policy must be 2048 bytes or shorter, and
      *         its packed size must be less than 450 bytes.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLRequest withPolicy(String policy) {
@@ -511,7 +511,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest implement
      *         maximum duration for a session is 1 hour, and the minimum duration is
      *         15 minutes, even if values outside this range are specified. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLRequest withDurationSeconds(Integer durationSeconds) {

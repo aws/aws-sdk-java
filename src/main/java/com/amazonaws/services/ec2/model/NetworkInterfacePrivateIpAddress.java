@@ -70,7 +70,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable {
      *
      * @param privateIpAddress The private IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfacePrivateIpAddress withPrivateIpAddress(String privateIpAddress) {
@@ -103,7 +103,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable {
      *
      * @param privateDnsName The private DNS name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfacePrivateIpAddress withPrivateDnsName(String privateDnsName) {
@@ -142,7 +142,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable {
      * @param primary Indicates whether this IP address is the primary private IP address of
      *         the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfacePrivateIpAddress withPrimary(Boolean primary) {
@@ -192,7 +192,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable {
      * @param association The association information for an Elastic IP address associated with
      *         the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfacePrivateIpAddress withAssociation(NetworkInterfaceAssociation association) {

@@ -109,7 +109,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      *
      * @param workflowId The <code>workflowId</code> of the external workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionInitiatedEventAttributes withWorkflowId(String workflowId) {
@@ -157,7 +157,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      * @param runId The <code>runId</code> of the external workflow execution to send the
      *         signal to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionInitiatedEventAttributes withRunId(String runId) {
@@ -199,7 +199,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      *
      * @param signalName The name of the signal.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionInitiatedEventAttributes withSignalName(String signalName) {
@@ -241,7 +241,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      *
      * @param input Input provided to the signal (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionInitiatedEventAttributes withInput(String input) {
@@ -298,7 +298,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      *         This information can be useful for diagnosing problems by tracing back
      *         the cause of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -346,7 +346,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent decision tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalExternalWorkflowExecutionInitiatedEventAttributes withControl(String control) {

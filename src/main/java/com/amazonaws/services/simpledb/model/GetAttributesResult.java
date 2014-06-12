@@ -61,7 +61,7 @@ public class GetAttributesResult implements Serializable {
      *
      * @param attributes The list of attributes returned by the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAttributesResult withAttributes(Attribute... attributes) {
@@ -79,7 +79,7 @@ public class GetAttributesResult implements Serializable {
      *
      * @param attributes The list of attributes returned by the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAttributesResult withAttributes(java.util.Collection<Attribute> attributes) {

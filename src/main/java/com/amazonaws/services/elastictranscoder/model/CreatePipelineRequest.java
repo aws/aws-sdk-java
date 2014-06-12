@@ -262,7 +262,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *         the AWS account, but uniqueness is not enforced. <p>Constraints:
      *         Maximum 40 characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withName(String name) {
@@ -310,7 +310,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * @param inputBucket The Amazon S3 bucket in which you saved the media files that you want
      *         to transcode.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withInputBucket(String inputBucket) {
@@ -460,7 +460,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *         <code>OutputBucket</code> and specify values for
      *         <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withOutputBucket(String outputBucket) {
@@ -508,7 +508,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      * @param role The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      *         Transcoder to use to create the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withRole(String role) {
@@ -655,7 +655,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *         error condition while processing a job in this pipeline. This is the
      *         ARN that Amazon SNS returned when you created the topic.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withNotifications(Notifications notifications) {
@@ -1000,7 +1000,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *         Elastic Transcoder to assign to the video files and playlists that it
      *         stores in your Amazon S3 bucket.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withContentConfig(PipelineOutputConfig contentConfig) {
@@ -1315,7 +1315,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *         assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withThumbnailConfig(PipelineOutputConfig thumbnailConfig) {

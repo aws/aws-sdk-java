@@ -68,7 +68,7 @@ public class ListMetricsResult implements Serializable {
      *
      * @param metrics A list of metrics used to generate statistics for an AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsResult withMetrics(Metric... metrics) {
@@ -86,7 +86,7 @@ public class ListMetricsResult implements Serializable {
      *
      * @param metrics A list of metrics used to generate statistics for an AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsResult withMetrics(java.util.Collection<Metric> metrics) {
@@ -126,7 +126,7 @@ public class ListMetricsResult implements Serializable {
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsResult withNextToken(String nextToken) {

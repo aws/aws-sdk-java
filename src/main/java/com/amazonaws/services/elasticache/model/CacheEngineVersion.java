@@ -74,7 +74,7 @@ public class CacheEngineVersion implements Serializable {
      *
      * @param engine The name of the cache engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheEngineVersion withEngine(String engine) {
@@ -107,7 +107,7 @@ public class CacheEngineVersion implements Serializable {
      *
      * @param engineVersion The version number of the cache engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheEngineVersion withEngineVersion(String engineVersion) {
@@ -146,7 +146,7 @@ public class CacheEngineVersion implements Serializable {
      * @param cacheParameterGroupFamily The name of the cache parameter group family associated with this
      *         cache engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheEngineVersion withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -179,7 +179,7 @@ public class CacheEngineVersion implements Serializable {
      *
      * @param cacheEngineDescription The description of the cache engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheEngineVersion withCacheEngineDescription(String cacheEngineDescription) {
@@ -212,7 +212,7 @@ public class CacheEngineVersion implements Serializable {
      *
      * @param cacheEngineVersionDescription The description of the cache engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheEngineVersion withCacheEngineVersionDescription(String cacheEngineVersionDescription) {

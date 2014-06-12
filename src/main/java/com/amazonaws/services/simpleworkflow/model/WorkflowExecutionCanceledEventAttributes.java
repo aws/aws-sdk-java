@@ -74,7 +74,7 @@ public class WorkflowExecutionCanceledEventAttributes implements Serializable {
      *
      * @param details Details for the cancellation (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCanceledEventAttributes withDetails(String details) {
@@ -131,7 +131,7 @@ public class WorkflowExecutionCanceledEventAttributes implements Serializable {
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCanceledEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

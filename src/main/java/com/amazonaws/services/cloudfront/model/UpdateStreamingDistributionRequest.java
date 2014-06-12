@@ -93,7 +93,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      *
      * @param streamingDistributionConfig The streaming distribution's configuration information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStreamingDistributionRequest withStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig) {
@@ -126,7 +126,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      *
      * @param id The streaming distribution's id.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStreamingDistributionRequest withId(String id) {
@@ -165,7 +165,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      * @param ifMatch The value of the ETag header you received when retrieving the
      *         streaming distribution's configuration. For example: E2QWRUHAPOMQZL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStreamingDistributionRequest withIfMatch(String ifMatch) {

@@ -63,7 +63,7 @@ public class DescribeApplicationsResult implements Serializable {
      *
      * @param applications This parameter contains a list of <a>ApplicationDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationsResult withApplications(ApplicationDescription... applications) {
@@ -81,7 +81,7 @@ public class DescribeApplicationsResult implements Serializable {
      *
      * @param applications This parameter contains a list of <a>ApplicationDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationsResult withApplications(java.util.Collection<ApplicationDescription> applications) {

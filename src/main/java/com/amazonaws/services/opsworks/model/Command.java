@@ -106,7 +106,7 @@ public class Command implements Serializable {
      *
      * @param commandId The command ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withCommandId(String commandId) {
@@ -139,7 +139,7 @@ public class Command implements Serializable {
      *
      * @param instanceId The ID of the instance where the command was executed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withInstanceId(String instanceId) {
@@ -172,7 +172,7 @@ public class Command implements Serializable {
      *
      * @param deploymentId The command deployment ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withDeploymentId(String deploymentId) {
@@ -205,7 +205,7 @@ public class Command implements Serializable {
      *
      * @param createdAt Date and time when the command was run.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withCreatedAt(String createdAt) {
@@ -238,7 +238,7 @@ public class Command implements Serializable {
      *
      * @param acknowledgedAt Date and time when the command was acknowledged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withAcknowledgedAt(String acknowledgedAt) {
@@ -271,7 +271,7 @@ public class Command implements Serializable {
      *
      * @param completedAt Date when the command completed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withCompletedAt(String completedAt) {
@@ -310,7 +310,7 @@ public class Command implements Serializable {
      * @param status The command status: <ul> <li>failed</li> <li>successful</li>
      *         <li>skipped</li> <li>pending</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withStatus(String status) {
@@ -343,7 +343,7 @@ public class Command implements Serializable {
      *
      * @param exitCode The command exit code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withExitCode(Integer exitCode) {
@@ -376,7 +376,7 @@ public class Command implements Serializable {
      *
      * @param logUrl The URL of the command log.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withLogUrl(String logUrl) {
@@ -451,7 +451,7 @@ public class Command implements Serializable {
      *         <li><code>update_custom_cookbooks</code></li>
      *         <li><code>execute_recipes</code></li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withType(String type) {

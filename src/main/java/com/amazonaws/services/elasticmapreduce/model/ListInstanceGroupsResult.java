@@ -71,7 +71,7 @@ public class ListInstanceGroupsResult implements Serializable {
      *
      * @param instanceGroups The list of instance groups for the cluster and given filters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceGroupsResult withInstanceGroups(InstanceGroup... instanceGroups) {
@@ -89,7 +89,7 @@ public class ListInstanceGroupsResult implements Serializable {
      *
      * @param instanceGroups The list of instance groups for the cluster and given filters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceGroupsResult withInstanceGroups(java.util.Collection<InstanceGroup> instanceGroups) {
@@ -147,7 +147,7 @@ public class ListInstanceGroupsResult implements Serializable {
      *         retrieve the next page of results. When the value is null, all results
      *         have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceGroupsResult withMarker(String marker) {

@@ -61,7 +61,7 @@ public class DescribePlacementGroupsResult implements Serializable {
      *
      * @param placementGroups One or more placement groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePlacementGroupsResult withPlacementGroups(PlacementGroup... placementGroups) {
@@ -79,7 +79,7 @@ public class DescribePlacementGroupsResult implements Serializable {
      *
      * @param placementGroups One or more placement groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePlacementGroupsResult withPlacementGroups(java.util.Collection<PlacementGroup> placementGroups) {

@@ -130,7 +130,7 @@ public class ScalingPolicy implements Serializable {
      * @param autoScalingGroupName The name of the Auto Scaling group associated with this scaling
      *         policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withAutoScalingGroupName(String autoScalingGroupName) {
@@ -175,7 +175,7 @@ public class ScalingPolicy implements Serializable {
      *
      * @param policyName The name of the scaling policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withPolicyName(String policyName) {
@@ -220,7 +220,7 @@ public class ScalingPolicy implements Serializable {
      *         value adds to the current capacity and a negative value removes from
      *         the current capacity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withScalingAdjustment(Integer scalingAdjustment) {
@@ -283,7 +283,7 @@ public class ScalingPolicy implements Serializable {
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withAdjustmentType(String adjustmentType) {
@@ -322,7 +322,7 @@ public class ScalingPolicy implements Serializable {
      * @param cooldown The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withCooldown(Integer cooldown) {
@@ -367,7 +367,7 @@ public class ScalingPolicy implements Serializable {
      *
      * @param policyARN The Amazon Resource Name (ARN) of the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withPolicyARN(String policyARN) {
@@ -410,7 +410,7 @@ public class ScalingPolicy implements Serializable {
      *
      * @param alarms A list of CloudWatch Alarms related to the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withAlarms(Alarm... alarms) {
@@ -428,7 +428,7 @@ public class ScalingPolicy implements Serializable {
      *
      * @param alarms A list of CloudWatch Alarms related to the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withAlarms(java.util.Collection<Alarm> alarms) {
@@ -474,7 +474,7 @@ public class ScalingPolicy implements Serializable {
      * @param minAdjustmentStep Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
      *         at least the specified number of instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingPolicy withMinAdjustmentStep(Integer minAdjustmentStep) {

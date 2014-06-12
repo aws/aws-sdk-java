@@ -113,7 +113,7 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
      *         the value that <code>ChangeResourceRecordSets</code> returned in the
      *         Id element when you submitted the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetChangeRequest withId(String id) {

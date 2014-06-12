@@ -19,7 +19,6 @@ import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.URI;
@@ -42,6 +41,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
 
+import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
@@ -170,6 +170,7 @@ import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
+import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -195,6 +196,7 @@ import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjec
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
@@ -987,6 +989,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<GetObjectMetadataRequest> request = createRequest(bucketName, key, getObjectMetadataRequest, HttpMethodName.HEAD);
         if (versionId != null) request.addParameter("versionId", versionId);
 
+        populateSseCpkRequestParameters(request, getObjectMetadataRequest.getSSECustomerKey());
+
         return invoke(request, new S3MetadataResponseHandler(), bucketName, key);
     }
 
@@ -1117,6 +1121,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addStringListHeader(request, Headers.GET_OBJECT_IF_NONE_MATCH,
                 getObjectRequest.getNonmatchingETagConstraints());
 
+        // Populate the SSE-CPK parameters to the request header
+        populateSseCpkRequestParameters(request, getObjectRequest.getSSECustomerKey());
+
         /*
          * This is compatible with progress listener set by either the legacy
          * method GetObjectRequest#setProgressListener or the new method
@@ -1160,8 +1167,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // we're downloading the whole object, by default we wrap the
             // stream in a validator that calculates an MD5 of the downloaded
             // bytes and complains if what we received doesn't match the Etag.
-            if (getObjectRequest.getRange() == null
-            &&  System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") == null) {
+            if ( !skipContentMd5IntegrityCheck(getObjectRequest) ) {
                 byte[] serverSideHash = null;
                 String etag = s3Object.getObjectMetadata().getETag();
                 if (etag != null && ServiceUtils.isMultipartUploadETag(etag) == false) {
@@ -1227,7 +1233,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             @Override
             public boolean needIntegrityCheck() {
-                return getObjectRequest.getRange()== null;
+                return !skipContentMd5IntegrityCheck(getObjectRequest);
             }
 
         });
@@ -1235,6 +1241,33 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (s3Object == null) return null;
 
         return s3Object.getObjectMetadata();
+    }
+
+    /**
+     * Returns whether the specified request should skip MD5 check on the
+     * requested object content.
+     */
+    private static boolean skipContentMd5IntegrityCheck(AmazonWebServiceRequest request) {
+        if (System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") != null)
+            return true;
+
+        if (request instanceof GetObjectRequest) {
+            GetObjectRequest getObjectRequest = (GetObjectRequest)request;
+            // Skip MD5 check for range get
+            if (getObjectRequest.getRange() != null)
+                return true;
+
+            if (getObjectRequest.getSSECustomerKey() != null)
+                return true;
+        } else if (request instanceof PutObjectRequest) {
+            PutObjectRequest putObjectRequest = (PutObjectRequest)request;
+            return putObjectRequest.getSSECustomerKey() != null;
+        } else if (request instanceof UploadPartRequest) {
+            UploadPartRequest uploadPartRequest = (UploadPartRequest)request;
+            return uploadPartRequest.getSSECustomerKey() != null;
+        }
+
+        return false;
     }
 
     /* (non-Javadoc)
@@ -1305,6 +1338,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when uploading an object");
         assertParameterNotNull(key, "The key parameter must be specified when uploading an object");
 
+        final boolean skipContentMd5Check = skipContentMd5IntegrityCheck(putObjectRequest);
+
         // If a file is specified for upload, we need to pull some additional
         // information from it to auto-configure a few options
         if (putObjectRequest.getFile() != null) {
@@ -1317,16 +1352,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
             }
 
-            FileInputStream fileInputStream = null;
-            try {
-                fileInputStream = new FileInputStream(file);
-                byte[] md5Hash = Md5Utils.computeMD5Hash(fileInputStream);
-                metadata.setContentMD5(BinaryUtils.toBase64(md5Hash));
-            } catch (Exception e) {
-                throw new AmazonClientException(
-                        "Unable to calculate MD5 hash: " + e.getMessage(), e);
-            } finally {
-                try {fileInputStream.close();} catch (Exception e) {}
+            if (!skipContentMd5Check) {
+                try {
+                    String contentMd5_b64 = Md5Utils.md5AsBase64(file);
+                    metadata.setContentMD5(contentMd5_b64);
+                } catch (Exception e) {
+                    throw new AmazonClientException(
+                            "Unable to calculate MD5 hash: " + e.getMessage(), e);
+                }
             }
 
             try {
@@ -1354,6 +1387,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 input = new ByteArrayInputStream(new byte[0]);
             }
         }
+
+        // Populate the SSE-CPK parameters to the request header
+        populateSseCpkRequestParameters(request, putObjectRequest.getSSECustomerKey());
 
         // Use internal interface to differentiate 0 from unset.
         final Long contentLength = (Long)metadata.getRawMetadataValue(Headers.CONTENT_LENGTH);
@@ -1405,7 +1441,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         MD5DigestCalculatingInputStream md5DigestStream = null;
-        if (metadata.getContentMD5() == null) {
+        if (metadata.getContentMD5() == null
+                && !skipContentMd5Check ) {
             /*
              * If the user hasn't set the content MD5, then we don't want to
              * buffer the whole stream in memory just to calculate it. Instead,
@@ -1439,8 +1476,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
             throw ace;
         } finally {
-            try {input.close();} catch (Exception e) {
-                log.warn("Unable to cleanly close input stream: " + e.getMessage(), e);
+            try {
+                input.close();
+            } catch (AbortedException ignore) {
+            } catch (Exception e) {
+                log.debug("Unable to cleanly close input stream: " + e.getMessage(), e);
             }
         }
 
@@ -1449,7 +1489,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             contentMd5 = BinaryUtils.toBase64(md5DigestStream.getMd5Digest());
         }
 
-        if (returnedMetadata != null && contentMd5 != null) {
+        if (returnedMetadata != null && contentMd5 != null && !skipContentMd5Check) {
             byte[] clientSideHash = BinaryUtils.fromBase64(contentMd5);
             byte[] serverSideHash = BinaryUtils.fromHex(returnedMetadata.getETag());
 
@@ -1467,7 +1507,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         PutObjectResult result = new PutObjectResult();
         result.setETag(returnedMetadata.getETag());
         result.setVersionId(returnedMetadata.getVersionId());
-        result.setServerSideEncryption(returnedMetadata.getServerSideEncryption());
+        result.setSSEAlgorithm(returnedMetadata.getSSEAlgorithm());
+        result.setSSECustomerAlgorithm(returnedMetadata.getSSECustomerAlgorithm());
+        result.setSSECustomerKeyMd5(returnedMetadata.getSSECustomerKeyMd5());
         result.setExpirationTime(returnedMetadata.getExpirationTime());
         result.setExpirationTimeRuleId(returnedMetadata.getExpirationTimeRuleId());
         result.setContentMd5(contentMd5);
@@ -1545,8 +1587,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         try {
             @SuppressWarnings("unchecked")
             ResponseHeaderHandlerChain<CopyObjectResultHandler> handler = new ResponseHeaderHandlerChain<CopyObjectResultHandler>(
+                    // xml payload unmarshaller
                     new Unmarshallers.CopyObjectUnmarshaller(),
-                    new ServerSideEncryptionHeaderHandler<CopyObjectResultHandler>(), new S3VersionHeaderHandler(), new ObjectExpirationHeaderHandler<CopyObjectResultHandler>());
+                    // header handlers
+                    new ServerSideEncryptionHeaderHandler<CopyObjectResultHandler>(),
+                    new S3VersionHeaderHandler(),
+                    new ObjectExpirationHeaderHandler<CopyObjectResultHandler>());
             copyObjectResultHandler = invoke(request, handler, destinationBucketName, destinationKey);
         } catch (AmazonS3Exception ase) {
             /*
@@ -1598,7 +1644,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         copyObjectResult.setETag(copyObjectResultHandler.getETag());
         copyObjectResult.setLastModifiedDate(copyObjectResultHandler.getLastModified());
         copyObjectResult.setVersionId(copyObjectResultHandler.getVersionId());
-        copyObjectResult.setServerSideEncryption(copyObjectResultHandler.getServerSideEncryption());
+        copyObjectResult.setSSEAlgorithm(copyObjectResultHandler.getSSEAlgorithm());
+        copyObjectResult.setSSECustomerAlgorithm(copyObjectResultHandler.getSSECustomerAlgorithm());
+        copyObjectResult.setSSECustomerKeyMd5(copyObjectResultHandler.getSSECustomerKeyMd5());
         copyObjectResult.setExpirationTime(copyObjectResultHandler.getExpirationTime());
         copyObjectResult.setExpirationTimeRuleId(copyObjectResultHandler.getExpirationTimeRuleId());
 
@@ -1675,8 +1723,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         try {
             @SuppressWarnings("unchecked")
             ResponseHeaderHandlerChain<CopyObjectResultHandler> handler = new ResponseHeaderHandlerChain<CopyObjectResultHandler>(
+                    // xml payload unmarshaller
                     new Unmarshallers.CopyObjectUnmarshaller(),
-                    new ServerSideEncryptionHeaderHandler<CopyObjectResultHandler>(), new S3VersionHeaderHandler());
+                    // header handlers
+                    new ServerSideEncryptionHeaderHandler<CopyObjectResultHandler>(),
+                    new S3VersionHeaderHandler());
             copyObjectResultHandler = invoke(request, handler, destinationBucketName, destinationKey);
         } catch ( AmazonS3Exception ase ) {
             /*
@@ -1727,7 +1778,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         copyPartResult.setPartNumber(copyPartRequest.getPartNumber());
         copyPartResult.setLastModifiedDate(copyObjectResultHandler.getLastModified());
         copyPartResult.setVersionId(copyObjectResultHandler.getVersionId());
-        copyPartResult.setServerSideEncryption(copyObjectResultHandler.getServerSideEncryption());
+        copyPartResult.setSSEAlgorithm(copyObjectResultHandler.getSSEAlgorithm());
+        copyPartResult.setSSECustomerAlgorithm(copyObjectResultHandler.getSSECustomerAlgorithm());
+        copyPartResult.setSSECustomerKeyMd5(copyObjectResultHandler.getSSECustomerKeyMd5());
 
         return copyPartResult;
     }
@@ -2476,6 +2529,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(Headers.CONTENT_MD5, generatePresignedUrlRequest.getContentMd5());
         }
 
+        populateSseCpkRequestParameters(request, generatePresignedUrlRequest.getSSECustomerKey());
+
         addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());
 
         Signer signer = createSigner(request, bucketName, key);
@@ -2560,7 +2615,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         @SuppressWarnings("unchecked")
         ResponseHeaderHandlerChain<CompleteMultipartUploadHandler> responseHandler = new ResponseHeaderHandlerChain<CompleteMultipartUploadHandler>(
+                // xml payload unmarshaller
                 new Unmarshallers.CompleteMultipartUploadResultUnmarshaller(),
+                // header handlers
                 new ServerSideEncryptionHeaderHandler<CompleteMultipartUploadHandler>(),
                 new ObjectExpirationHeaderHandler<CompleteMultipartUploadHandler>());
         CompleteMultipartUploadHandler handler = invoke(request, responseHandler, bucketName, key);
@@ -2603,7 +2660,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(Headers.S3_CANNED_ACL, initiateMultipartUploadRequest.getCannedACL().toString());
         }
 
-        if (initiateMultipartUploadRequest.objectMetadata != null) populateRequestMetadata(request, initiateMultipartUploadRequest.objectMetadata);
+        if (initiateMultipartUploadRequest.objectMetadata != null) {
+            populateRequestMetadata(request, initiateMultipartUploadRequest.objectMetadata);
+        }
+
+        // Populate the SSE-CPK parameters to the request header
+        populateSseCpkRequestParameters(request, initiateMultipartUploadRequest.getSSECustomerKey());
 
         // Be careful that we don't send the object's total size as the content
         // length for the InitiateMultipartUpload request.
@@ -2614,7 +2676,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         @SuppressWarnings("unchecked")
         ResponseHeaderHandlerChain<InitiateMultipartUploadResult> responseHandler = new ResponseHeaderHandlerChain<InitiateMultipartUploadResult>(
+                // xml payload unmarshaller
                 new Unmarshallers.InitiateMultipartUploadResultUnmarshaller(),
+                // header handlers
                 new ServerSideEncryptionHeaderHandler<InitiateMultipartUploadResult>());
         return invoke(request, responseHandler,
                 initiateMultipartUploadRequest.getBucketName(), initiateMultipartUploadRequest.getKey());
@@ -2698,10 +2762,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addParameter("uploadId", uploadId);
         request.addParameter("partNumber", Integer.toString(partNumber));
 
-        if (uploadPartRequest.getMd5Digest() != null)
-            request.addHeader(Headers.CONTENT_MD5, uploadPartRequest.getMd5Digest());
-
+        addHeaderIfNotNull(request, Headers.CONTENT_MD5, uploadPartRequest.getMd5Digest());
         request.addHeader(Headers.CONTENT_LENGTH, Long.toString(partSize));
+
+        // Populate the SSE-CPK parameters to the request header
+        populateSseCpkRequestParameters(request, uploadPartRequest.getSSECustomerKey());
 
         InputStream inputStream = null;
         if (uploadPartRequest.getInputStream() != null) {
@@ -2718,7 +2783,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         MD5DigestCalculatingInputStream md5DigestStream = null;
-        if (uploadPartRequest.getMd5Digest() == null) {
+        if ( uploadPartRequest.getMd5Digest() == null
+                && !skipContentMd5IntegrityCheck(uploadPartRequest) ) {
             /*
              * If the user hasn't set the content MD5, then we don't want to
              * buffer the whole stream in memory just to calculate it. Instead,
@@ -2769,7 +2835,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             UploadPartResult result = new UploadPartResult();
             result.setETag(metadata.getETag());
             result.setPartNumber(partNumber);
-            result.setServerSideEncryption(metadata.getServerSideEncryption());
+            result.setSSEAlgorithm(metadata.getSSEAlgorithm());
+            result.setSSECustomerAlgorithm(metadata.getSSECustomerAlgorithm());
+            result.setSSECustomerKeyMd5(metadata.getSSECustomerKeyMd5());
             return result;
         } catch (AmazonClientException ace) {
             fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_FAILED_EVENT_CODE);
@@ -3268,6 +3336,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(Headers.METADATA_DIRECTIVE, "REPLACE");
             populateRequestMetadata(request, newObjectMetadata);
         }
+
+        // Populate the SSE-CPK parameters for the destination object
+        populateSourceSseCpkRequestParameters(request, copyObjectRequest.getSourceSSECustomerKey());
+        populateSseCpkRequestParameters(request, copyObjectRequest.getDestinationSSECustomerKey());
     }
 
     /**
@@ -3305,6 +3377,83 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if ( copyPartRequest.getFirstByte() != null && copyPartRequest.getLastByte() != null ) {
             String range = "bytes=" + copyPartRequest.getFirstByte() + "-" + copyPartRequest.getLastByte();
             request.addHeader(Headers.COPY_PART_RANGE, range);
+        }
+
+        // Populate the SSE-CPK parameters for the destination object
+        populateSourceSseCpkRequestParameters(request, copyPartRequest.getSourceSSECustomerKey());
+        populateSseCpkRequestParameters(request, copyPartRequest.getDestinationSSECustomerKey());
+    }
+
+    /**
+     * <p>
+     * Populates the specified request with the numerous attributes available in
+     * <code>SSEWithCustomerKeyRequest</code>.
+     * </p>
+     *
+     * @param request
+     *            The request to populate with headers to represent all the
+     *            options expressed in the
+     *            <code>ServerSideEncryptionWithCustomerKeyRequest</code>
+     *            object.
+     * @param sseCpkRequest
+     *            The request object for an S3 operation that allows server-side
+     *            encryption using customer-provided keys.
+     */
+    private static void populateSseCpkRequestParameters(Request<?> request, SSECustomerKey sseKey) {
+        if (sseKey == null) return;
+
+        addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM,
+                sseKey.getAlgorithm());
+        addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY,
+                sseKey.getKey());
+        addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5,
+                sseKey.getMd5());
+        // Calculate the MD5 hash of the encryption key and fill it in the
+        // header, if the user didn't specify it in the metadata
+        if (sseKey.getKey() != null
+                && sseKey.getMd5() == null) {
+            String encryptionKey_b64 = sseKey.getKey();
+            byte[] encryptionKey = Base64.decode(encryptionKey_b64);
+            request.addHeader(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5,
+                    Md5Utils.md5AsBase64(encryptionKey));
+        }
+    }
+
+    private static void populateSourceSseCpkRequestParameters(Request<?> request, SSECustomerKey sseKey) {
+        if (sseKey == null) return;
+
+        // Populate the SSE-CPK parameters for the source object
+        addHeaderIfNotNull(request, Headers.COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM,
+                sseKey.getAlgorithm());
+        addHeaderIfNotNull(request, Headers.COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY,
+                sseKey.getKey());
+        addHeaderIfNotNull(request, Headers.COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5,
+                sseKey.getMd5());
+        // Calculate the MD5 hash of the encryption key and fill it in the
+        // header, if the user didn't specify it in the metadata
+        if (sseKey.getKey() != null
+                && sseKey.getMd5() == null) {
+            String encryptionKey_b64 = sseKey.getKey();
+            byte[] encryptionKey = Base64.decode(encryptionKey_b64);
+            request.addHeader(Headers.COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5,
+                    Md5Utils.md5AsBase64(encryptionKey));
+        }
+    }
+
+    /**
+     * Adds the specified header to the specified request, if the header value
+     * is not null.
+     *
+     * @param request
+     *            The request to add the header to.
+     * @param header
+     *            The header name.
+     * @param value
+     *            The header value.
+     */
+    private static void addHeaderIfNotNull(Request<?> request, String header, String value) {
+        if (value != null) {
+            request.addHeader(header, value);
         }
     }
 
@@ -3683,5 +3832,5 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // https://github.com/aws/aws-sdk-java/pull/215
         // http://aws.amazon.com/articles/1109#14
         req.addHeader(Headers.CONTENT_LENGTH, String.valueOf(0));
-   }
+    }
 }

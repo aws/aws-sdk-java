@@ -84,7 +84,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest 
      *
      * @param id The distribution id.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteStreamingDistributionRequest withId(String id) {
@@ -123,7 +123,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest 
      * @param ifMatch The value of the ETag header you received when you disabled the
      *         streaming distribution. For example: E2QWRUHAPOMQZL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteStreamingDistributionRequest withIfMatch(String ifMatch) {

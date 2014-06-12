@@ -58,7 +58,7 @@ public class DeregisterRdsDbInstanceRequest extends AmazonWebServiceRequest impl
      *
      * @param rdsDbInstanceArn The Amazon RDS instance's ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeregisterRdsDbInstanceRequest withRdsDbInstanceArn(String rdsDbInstanceArn) {

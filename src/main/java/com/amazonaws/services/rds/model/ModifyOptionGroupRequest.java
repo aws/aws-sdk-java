@@ -98,7 +98,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      *         removed from an option group, and that option group cannot be removed
      *         from a DB instance once it is associated with a DB instance
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyOptionGroupRequest withOptionGroupName(String optionGroupName) {
@@ -153,7 +153,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      *         present, the specified configuration is used to update the existing
      *         configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyOptionGroupRequest withOptionsToInclude(OptionConfiguration... optionsToInclude) {
@@ -175,7 +175,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      *         present, the specified configuration is used to update the existing
      *         configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyOptionGroupRequest withOptionsToInclude(java.util.Collection<OptionConfiguration> optionsToInclude) {
@@ -225,7 +225,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      *
      * @param optionsToRemove Options in this list are removed from the option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyOptionGroupRequest withOptionsToRemove(String... optionsToRemove) {
@@ -243,7 +243,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      *
      * @param optionsToRemove Options in this list are removed from the option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyOptionGroupRequest withOptionsToRemove(java.util.Collection<String> optionsToRemove) {
@@ -295,7 +295,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      *         the next maintenance window for each instance associated with the
      *         option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyOptionGroupRequest withApplyImmediately(Boolean applyImmediately) {

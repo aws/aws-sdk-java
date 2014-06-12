@@ -83,7 +83,7 @@ public class CreateHsmClientCertificateRequest extends AmazonWebServiceRequest i
      *         the cluster will use to connect to the HSM to use the database
      *         encryption keys.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHsmClientCertificateRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {

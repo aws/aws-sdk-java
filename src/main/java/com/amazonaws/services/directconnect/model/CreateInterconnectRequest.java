@@ -94,7 +94,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest implement
      * @param interconnectName The name of the interconnect. <p>Example: "<i>1G Interconnect to
      *         AWS</i>" <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInterconnectRequest withInterconnectName(String interconnectName) {
@@ -133,7 +133,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest implement
      * @param bandwidth The port bandwidth <p>Example: 1Gbps <p>Default: None <p>Available
      *         values: 1Gbps,10Gbps
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInterconnectRequest withBandwidth(String bandwidth) {
@@ -166,7 +166,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest implement
      *
      * @param location Where the interconnect is located <p>Example: EqSV5 <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInterconnectRequest withLocation(String location) {

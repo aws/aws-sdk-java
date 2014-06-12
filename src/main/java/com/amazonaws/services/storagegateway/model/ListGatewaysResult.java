@@ -60,7 +60,7 @@ public class ListGatewaysResult implements Serializable {
      *
      * @param gateways The new value for the Gateways property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGatewaysResult withGateways(GatewayInfo... gateways) {
@@ -78,7 +78,7 @@ public class ListGatewaysResult implements Serializable {
      *
      * @param gateways The new value for the Gateways property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGatewaysResult withGateways(java.util.Collection<GatewayInfo> gateways) {
@@ -127,7 +127,7 @@ public class ListGatewaysResult implements Serializable {
      *
      * @param marker The new value for the Marker property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGatewaysResult withMarker(String marker) {

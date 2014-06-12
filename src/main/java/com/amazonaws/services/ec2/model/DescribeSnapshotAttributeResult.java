@@ -61,7 +61,7 @@ public class DescribeSnapshotAttributeResult implements Serializable {
      *
      * @param snapshotId The ID of the Amazon EBS snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotAttributeResult withSnapshotId(String snapshotId) {
@@ -104,7 +104,7 @@ public class DescribeSnapshotAttributeResult implements Serializable {
      *
      * @param createVolumePermissions A list of permissions for creating volumes from the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(CreateVolumePermission... createVolumePermissions) {
@@ -122,7 +122,7 @@ public class DescribeSnapshotAttributeResult implements Serializable {
      *
      * @param createVolumePermissions A list of permissions for creating volumes from the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(java.util.Collection<CreateVolumePermission> createVolumePermissions) {
@@ -172,7 +172,7 @@ public class DescribeSnapshotAttributeResult implements Serializable {
      *
      * @param productCodes A list of product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotAttributeResult withProductCodes(ProductCode... productCodes) {
@@ -190,7 +190,7 @@ public class DescribeSnapshotAttributeResult implements Serializable {
      *
      * @param productCodes A list of product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotAttributeResult withProductCodes(java.util.Collection<ProductCode> productCodes) {

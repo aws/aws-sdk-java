@@ -68,7 +68,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
      *
      * @param exportTaskIds One or more export task IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExportTasksRequest withExportTaskIds(String... exportTaskIds) {
@@ -86,7 +86,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
      *
      * @param exportTaskIds One or more export task IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExportTasksRequest withExportTaskIds(java.util.Collection<String> exportTaskIds) {

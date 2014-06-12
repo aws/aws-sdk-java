@@ -144,7 +144,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *         <p>Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
      *         ._-:/()#,@[]+=&;{}!$*
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSecurityGroupRequest withGroupName(String groupName) {
@@ -177,7 +177,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param description A description for the security group. This is informational only.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSecurityGroupRequest withDescription(String description) {
@@ -210,7 +210,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param vpcId [EC2-VPC] The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSecurityGroupRequest withVpcId(String vpcId) {

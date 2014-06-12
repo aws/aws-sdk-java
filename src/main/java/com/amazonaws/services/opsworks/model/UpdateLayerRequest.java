@@ -157,7 +157,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param layerId The layer ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withLayerId(String layerId) {
@@ -190,7 +190,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param name The layer name, which is used by the console.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withName(String name) {
@@ -241,7 +241,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         your app files are installed. It can have a maximum of 200 characters
      *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withShortname(String shortname) {
@@ -284,7 +284,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withAttributes(java.util.Map<String,String> attributes) {
@@ -366,7 +366,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withCustomInstanceProfileArn(String customInstanceProfileArn) {
@@ -409,7 +409,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param customSecurityGroupIds An array containing the layer's custom security group IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withCustomSecurityGroupIds(String... customSecurityGroupIds) {
@@ -427,7 +427,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param customSecurityGroupIds An array containing the layer's custom security group IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withCustomSecurityGroupIds(java.util.Collection<String> customSecurityGroupIds) {
@@ -483,7 +483,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param packages An array of <code>Package</code> objects that describe the layer's
      *         packages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withPackages(String... packages) {
@@ -503,7 +503,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param packages An array of <code>Package</code> objects that describe the layer's
      *         packages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withPackages(java.util.Collection<String> packages) {
@@ -559,7 +559,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withVolumeConfigurations(VolumeConfiguration... volumeConfigurations) {
@@ -579,7 +579,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
@@ -619,7 +619,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param enableAutoHealing Whether to disable auto healing for the layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withEnableAutoHealing(Boolean enableAutoHealing) {
@@ -685,7 +685,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      *         to Edit a Layer</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withAutoAssignElasticIps(Boolean autoAssignElasticIps) {
@@ -759,7 +759,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      *         to Edit a Layer</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withAutoAssignPublicIps(Boolean autoAssignPublicIps) {
@@ -815,7 +815,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param customRecipes A <code>LayerCustomRecipes</code> object that specifies the layer's
      *         custom recipes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withCustomRecipes(Recipes customRecipes) {
@@ -896,7 +896,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         recommend using the default value of <code>true</code>, to ensure that
      *         your instances have the latest security updates. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
@@ -954,7 +954,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param useEbsOptimizedInstances Whether to use Amazon EBS-optimized instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLayerRequest withUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {

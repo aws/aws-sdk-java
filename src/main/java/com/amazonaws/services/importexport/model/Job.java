@@ -72,7 +72,7 @@ public class Job implements Serializable {
      *
      * @param jobId A unique identifier which refers to a particular job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Job withJobId(String jobId) {
@@ -111,7 +111,7 @@ public class Job implements Serializable {
      * @param creationDate Timestamp of the CreateJob request in ISO8601 date format. For example
      *         "2010-03-28T20:27:35Z".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Job withCreationDate(java.util.Date creationDate) {
@@ -144,7 +144,7 @@ public class Job implements Serializable {
      *
      * @param isCanceled Indicates whether the job was canceled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Job withIsCanceled(Boolean isCanceled) {
@@ -199,7 +199,7 @@ public class Job implements Serializable {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType
@@ -233,7 +233,7 @@ public class Job implements Serializable {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType

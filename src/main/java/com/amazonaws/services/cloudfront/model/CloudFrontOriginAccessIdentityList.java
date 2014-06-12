@@ -92,7 +92,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
      *
      * @param marker The value you provided for the Marker request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityList withMarker(String marker) {
@@ -137,7 +137,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
      *         you can use for the Marker request parameter to continue listing your
      *         origin access identities where they left off.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityList withNextMarker(String nextMarker) {
@@ -170,7 +170,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
      *
      * @param maxItems The value you provided for the MaxItems request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityList withMaxItems(Integer maxItems) {
@@ -221,7 +221,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
      *         pagination request using the Marker request parameter to retrieve more
      *         items in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityList withIsTruncated(Boolean isTruncated) {
@@ -275,7 +275,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
      * @param quantity The number of CloudFront origin access identities that were created by
      *         the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityList withQuantity(Integer quantity) {
@@ -330,7 +330,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
      *         element for each origin access identity that was created by the
      *         current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityList withItems(CloudFrontOriginAccessIdentitySummary... items) {
@@ -352,7 +352,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable {
      *         element for each origin access identity that was created by the
      *         current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityList withItems(java.util.Collection<CloudFrontOriginAccessIdentitySummary> items) {

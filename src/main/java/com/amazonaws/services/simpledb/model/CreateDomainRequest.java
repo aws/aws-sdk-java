@@ -107,7 +107,7 @@ public class CreateDomainRequest extends AmazonWebServiceRequest implements Seri
      *         characters and can contain the following characters: a-z, A-Z, 0-9,
      *         '_', '-', and '.'.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDomainRequest withDomainName(String domainName) {

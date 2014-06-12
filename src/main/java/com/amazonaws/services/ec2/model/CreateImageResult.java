@@ -51,7 +51,7 @@ public class CreateImageResult implements Serializable {
      *
      * @param imageId The ID of the new AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateImageResult withImageId(String imageId) {

@@ -63,7 +63,7 @@ public class InternetGateway implements Serializable {
      *
      * @param internetGatewayId The ID of the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InternetGateway withInternetGatewayId(String internetGatewayId) {
@@ -106,7 +106,7 @@ public class InternetGateway implements Serializable {
      *
      * @param attachments Any VPCs attached to the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InternetGateway withAttachments(InternetGatewayAttachment... attachments) {
@@ -124,7 +124,7 @@ public class InternetGateway implements Serializable {
      *
      * @param attachments Any VPCs attached to the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InternetGateway withAttachments(java.util.Collection<InternetGatewayAttachment> attachments) {
@@ -174,7 +174,7 @@ public class InternetGateway implements Serializable {
      *
      * @param tags Any tags assigned to the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InternetGateway withTags(Tag... tags) {
@@ -192,7 +192,7 @@ public class InternetGateway implements Serializable {
      *
      * @param tags Any tags assigned to the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InternetGateway withTags(java.util.Collection<Tag> tags) {

@@ -61,7 +61,7 @@ public class DescribeInternetGatewaysResult implements Serializable {
      *
      * @param internetGateways Information about one or more Internet gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInternetGatewaysResult withInternetGateways(InternetGateway... internetGateways) {
@@ -79,7 +79,7 @@ public class DescribeInternetGatewaysResult implements Serializable {
      *
      * @param internetGateways Information about one or more Internet gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInternetGatewaysResult withInternetGateways(java.util.Collection<InternetGateway> internetGateways) {

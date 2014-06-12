@@ -143,7 +143,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         hyphens</li> </ul> <note>This value is stored as a lower-case
      *         string.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {
@@ -194,7 +194,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         applied only to a DB instance running a database engine and engine
      *         version compatible with that DB parameter group family.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBParameterGroupRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -227,7 +227,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param description The description for the DB parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBParameterGroupRequest withDescription(String description) {
@@ -270,7 +270,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBParameterGroupRequest withTags(Tag... tags) {
@@ -288,7 +288,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBParameterGroupRequest withTags(java.util.Collection<Tag> tags) {

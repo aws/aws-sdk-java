@@ -97,7 +97,7 @@ public class Parameter implements Serializable {
      *
      * @param parameterName The name of the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withParameterName(String parameterName) {
@@ -130,7 +130,7 @@ public class Parameter implements Serializable {
      *
      * @param parameterValue The value of the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withParameterValue(String parameterValue) {
@@ -163,7 +163,7 @@ public class Parameter implements Serializable {
      *
      * @param description A description of the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withDescription(String description) {
@@ -196,7 +196,7 @@ public class Parameter implements Serializable {
      *
      * @param source The source of the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withSource(String source) {
@@ -229,7 +229,7 @@ public class Parameter implements Serializable {
      *
      * @param dataType The valid data type for the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withDataType(String dataType) {
@@ -262,7 +262,7 @@ public class Parameter implements Serializable {
      *
      * @param allowedValues The valid range of values for the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withAllowedValues(String allowedValues) {
@@ -307,7 +307,7 @@ public class Parameter implements Serializable {
      *         parameter can be modified. Some parameters have security or
      *         operational implications that prevent them from being changed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withIsModifiable(Boolean isModifiable) {
@@ -353,7 +353,7 @@ public class Parameter implements Serializable {
      *
      * @param minimumEngineVersion The earliest cache engine version to which the parameter can apply.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withMinimumEngineVersion(String minimumEngineVersion) {

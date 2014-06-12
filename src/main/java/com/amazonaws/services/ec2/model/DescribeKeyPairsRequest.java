@@ -82,7 +82,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      *
      * @param keyNames One or more key pair names. <p>Default: Describes all your key pairs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeKeyPairsRequest withKeyNames(String... keyNames) {
@@ -100,7 +100,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      *
      * @param keyNames One or more key pair names. <p>Default: Describes all your key pairs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeKeyPairsRequest withKeyNames(java.util.Collection<String> keyNames) {
@@ -162,7 +162,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      *         fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
      *         name of the key pair. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeKeyPairsRequest withFilters(Filter... filters) {
@@ -184,7 +184,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      *         fingerprint of the key pair. </li> <li> <p><code>key-name</code> - The
      *         name of the key pair. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeKeyPairsRequest withFilters(java.util.Collection<Filter> filters) {

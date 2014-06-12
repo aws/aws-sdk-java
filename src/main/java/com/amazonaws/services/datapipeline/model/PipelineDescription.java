@@ -100,7 +100,7 @@ public class PipelineDescription implements Serializable {
      * @param pipelineId The pipeline identifier that was assigned by AWS Data Pipeline. This
      *         is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineDescription withPipelineId(String pipelineId) {
@@ -145,7 +145,7 @@ public class PipelineDescription implements Serializable {
      *
      * @param name Name of the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineDescription withName(String name) {
@@ -194,7 +194,7 @@ public class PipelineDescription implements Serializable {
      * @param fields A list of read-only fields that contain metadata about the pipeline:
      *         @userId, @accountId, and @pipelineState.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineDescription withFields(Field... fields) {
@@ -214,7 +214,7 @@ public class PipelineDescription implements Serializable {
      * @param fields A list of read-only fields that contain metadata about the pipeline:
      *         @userId, @accountId, and @pipelineState.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineDescription withFields(java.util.Collection<Field> fields) {
@@ -266,7 +266,7 @@ public class PipelineDescription implements Serializable {
      *
      * @param description Description of the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineDescription withDescription(String description) {

@@ -104,7 +104,7 @@ public class MetricDatum implements Serializable {
      *
      * @param metricName The name of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MetricDatum withMetricName(String metricName) {
@@ -156,7 +156,7 @@ public class MetricDatum implements Serializable {
      *
      * @param dimensions A list of dimensions associated with the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MetricDatum withDimensions(Dimension... dimensions) {
@@ -177,7 +177,7 @@ public class MetricDatum implements Serializable {
      *
      * @param dimensions A list of dimensions associated with the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MetricDatum withDimensions(java.util.Collection<Dimension> dimensions) {
@@ -223,7 +223,7 @@ public class MetricDatum implements Serializable {
      * @param timestamp The time stamp used for the metric. If not specified, the default
      *         value is set to the time the metric data was received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MetricDatum withTimestamp(java.util.Date timestamp) {
@@ -286,7 +286,7 @@ public class MetricDatum implements Serializable {
      *         Likewise, values with base-10 exponents less than -130 (1 x 10^-130)
      *         are also truncated. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MetricDatum withValue(Double value) {
@@ -319,7 +319,7 @@ public class MetricDatum implements Serializable {
      *
      * @param statisticValues A set of statistical values describing the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MetricDatum withStatisticValues(StatisticSet statisticValues) {
@@ -365,7 +365,7 @@ public class MetricDatum implements Serializable {
      *
      * @param unit The unit of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StandardUnit
@@ -399,7 +399,7 @@ public class MetricDatum implements Serializable {
      *
      * @param unit The unit of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StandardUnit

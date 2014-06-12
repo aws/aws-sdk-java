@@ -92,7 +92,7 @@ public class SpotPrice implements Serializable {
      *
      * @param instanceType The instance type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -126,7 +126,7 @@ public class SpotPrice implements Serializable {
      *
      * @param instanceType The instance type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -174,7 +174,7 @@ public class SpotPrice implements Serializable {
      *
      * @param productDescription A general description of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -208,7 +208,7 @@ public class SpotPrice implements Serializable {
      *
      * @param productDescription A general description of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -243,7 +243,7 @@ public class SpotPrice implements Serializable {
      *
      * @param spotPrice The maximum price you will pay to launch one or more Spot Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotPrice withSpotPrice(String spotPrice) {
@@ -276,7 +276,7 @@ public class SpotPrice implements Serializable {
      *
      * @param timestamp The date and time the request was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotPrice withTimestamp(java.util.Date timestamp) {
@@ -309,7 +309,7 @@ public class SpotPrice implements Serializable {
      *
      * @param availabilityZone The Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotPrice withAvailabilityZone(String availabilityZone) {

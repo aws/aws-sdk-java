@@ -59,7 +59,7 @@ public class DescribeLoadBalancerAttributesRequest extends AmazonWebServiceReque
      *
      * @param loadBalancerName The name of the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerAttributesRequest withLoadBalancerName(String loadBalancerName) {

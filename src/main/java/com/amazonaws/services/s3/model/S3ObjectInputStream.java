@@ -16,8 +16,8 @@ package com.amazonaws.services.s3.model;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.SocketException;
 
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.conn.EofSensorInputStream;
@@ -70,6 +70,8 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     }
 
     /**
+     * {@inheritDoc}
+     * 
      * Aborts the underlying http request without reading any more data and
      * closes the stream.
      * <p>
@@ -84,12 +86,14 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      *
      * @see EofSensorInputStream
      */
-    public void abort() throws IOException {
+    @Override
+    public void abort() {
         getHttpRequest().abort();
         try {
             close();
-        } catch (SocketException e) {
+        } catch (IOException e) {
             // expected from some implementations because the stream is closed
+            LogFactory.getLog(getClass()).debug("FYI", e);
         }
     }
 
@@ -99,5 +103,4 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     public HttpRequestBase getHttpRequest() {
         return httpRequest;
     }
-
 }

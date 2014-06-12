@@ -122,7 +122,7 @@ public class Cluster implements Serializable {
      *
      * @param id The unique identifier for the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withId(String id) {
@@ -155,7 +155,7 @@ public class Cluster implements Serializable {
      *
      * @param name The name of the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withName(String name) {
@@ -188,7 +188,7 @@ public class Cluster implements Serializable {
      *
      * @param status The current status details about the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withStatus(ClusterStatus status) {
@@ -233,7 +233,7 @@ public class Cluster implements Serializable {
      *         category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
      *         so on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
@@ -272,7 +272,7 @@ public class Cluster implements Serializable {
      * @param logUri The path to the Amazon S3 location where logs for this cluster are
      *         stored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withLogUri(String logUri) {
@@ -305,7 +305,7 @@ public class Cluster implements Serializable {
      *
      * @param requestedAmiVersion The AMI version requested for this cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withRequestedAmiVersion(String requestedAmiVersion) {
@@ -350,7 +350,7 @@ public class Cluster implements Serializable {
      *         requested version only if the requested version is a meta version,
      *         such as "latest".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withRunningAmiVersion(String runningAmiVersion) {
@@ -389,7 +389,7 @@ public class Cluster implements Serializable {
      * @param autoTerminate Specifies whether the cluster should terminate after completing all
      *         steps.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withAutoTerminate(Boolean autoTerminate) {
@@ -445,7 +445,7 @@ public class Cluster implements Serializable {
      *         instances from being terminated by an API call or user intervention,
      *         or in the event of a cluster error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withTerminationProtected(Boolean terminationProtected) {
@@ -527,7 +527,7 @@ public class Cluster implements Serializable {
      *         cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -591,7 +591,7 @@ public class Cluster implements Serializable {
      *
      * @param applications The applications installed on this cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withApplications(Application... applications) {
@@ -609,7 +609,7 @@ public class Cluster implements Serializable {
      *
      * @param applications The applications installed on this cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withApplications(java.util.Collection<Application> applications) {
@@ -659,7 +659,7 @@ public class Cluster implements Serializable {
      *
      * @param tags A list of tags associated with a cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withTags(Tag... tags) {
@@ -677,7 +677,7 @@ public class Cluster implements Serializable {
      *
      * @param tags A list of tags associated with a cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Cluster withTags(java.util.Collection<Tag> tags) {

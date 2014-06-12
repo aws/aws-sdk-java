@@ -116,7 +116,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      * @param reservedCacheNodeId The reserved cache node identifier filter value. Use this parameter to
      *         show only the reservation that matches the specified reservation ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withReservedCacheNodeId(String reservedCacheNodeId) {
@@ -155,7 +155,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      * @param reservedCacheNodesOfferingId The offering identifier filter value. Use this parameter to show only
      *         purchased reservations matching the specified offering identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
@@ -194,7 +194,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      * @param cacheNodeType The cache node type filter value. Use this parameter to show only
      *         those reservations matching the specified cache node type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withCacheNodeType(String cacheNodeType) {
@@ -239,7 +239,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      *         parameter to show only reservations for this duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withDuration(String duration) {
@@ -278,7 +278,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      * @param productDescription The product description filter value. Use this parameter to show only
      *         those reservations matching the specified product description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withProductDescription(String productDescription) {
@@ -329,7 +329,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      *         values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withOfferingType(String offeringType) {
@@ -380,7 +380,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      *         marker is included in the response so that the remaining results can
      *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withMaxRecords(Integer maxRecords) {
@@ -431,7 +431,7 @@ public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest i
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesRequest withMarker(String marker) {

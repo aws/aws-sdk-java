@@ -152,7 +152,7 @@ public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondActivityTaskCompletedRequest withTaskToken(String taskToken) {
@@ -200,7 +200,7 @@ public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest
      * @param result The result of the activity task. It is a free form string that is
      *         implementation specific.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondActivityTaskCompletedRequest withResult(String result) {

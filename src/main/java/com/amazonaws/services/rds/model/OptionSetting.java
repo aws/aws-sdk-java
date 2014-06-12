@@ -98,7 +98,7 @@ public class OptionSetting implements Serializable {
      *
      * @param name The name of the option that has settings that you can set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withName(String name) {
@@ -131,7 +131,7 @@ public class OptionSetting implements Serializable {
      *
      * @param value The current value of the option setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withValue(String value) {
@@ -164,7 +164,7 @@ public class OptionSetting implements Serializable {
      *
      * @param defaultValue The default value of the option setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withDefaultValue(String defaultValue) {
@@ -197,7 +197,7 @@ public class OptionSetting implements Serializable {
      *
      * @param description The description of the option setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withDescription(String description) {
@@ -230,7 +230,7 @@ public class OptionSetting implements Serializable {
      *
      * @param applyType The DB engine specific parameter type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withApplyType(String applyType) {
@@ -263,7 +263,7 @@ public class OptionSetting implements Serializable {
      *
      * @param dataType The data type of the option setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withDataType(String dataType) {
@@ -296,7 +296,7 @@ public class OptionSetting implements Serializable {
      *
      * @param allowedValues The allowed values of the option setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withAllowedValues(String allowedValues) {
@@ -335,7 +335,7 @@ public class OptionSetting implements Serializable {
      * @param isModifiable A Boolean value that, when true, indicates the option setting can be
      *         modified from the default.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withIsModifiable(Boolean isModifiable) {
@@ -379,7 +379,7 @@ public class OptionSetting implements Serializable {
      *
      * @param isCollection Indicates if the option setting is part of a collection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSetting withIsCollection(Boolean isCollection) {

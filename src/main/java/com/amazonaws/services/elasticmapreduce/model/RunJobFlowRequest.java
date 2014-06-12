@@ -234,7 +234,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param name The name of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withName(String name) {
@@ -285,7 +285,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param logUri The location in Amazon S3 to write the log files of the job flow. If a
      *         value is not provided, logs are not created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withLogUri(String logUri) {
@@ -330,7 +330,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param additionalInfo A JSON string for selecting additional features.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withAdditionalInfo(String additionalInfo) {
@@ -441,7 +441,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withAmiVersion(String amiVersion) {
@@ -480,7 +480,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param instances A specification of the number and type of Amazon EC2 instances on
      *         which to run the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withInstances(JobFlowInstancesConfig instances) {
@@ -523,7 +523,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param steps A list of steps to be executed by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withSteps(StepConfig... steps) {
@@ -541,7 +541,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param steps A list of steps to be executed by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withSteps(java.util.Collection<StepConfig> steps) {
@@ -597,7 +597,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
      *         on the cluster nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withBootstrapActions(BootstrapActionConfig... bootstrapActions) {
@@ -617,7 +617,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
      *         on the cluster nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
@@ -703,7 +703,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *         Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5
      *         Edition.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withSupportedProducts(String... supportedProducts) {
@@ -733,7 +733,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *         Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5
      *         Edition.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withSupportedProducts(java.util.Collection<String> supportedProducts) {
@@ -843,7 +843,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *         "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
      *         or M5 Edition respectively.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withNewSupportedProducts(SupportedProductConfig... newSupportedProducts) {
@@ -881,7 +881,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *         "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3
      *         or M5 Edition respectively.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withNewSupportedProducts(java.util.Collection<SupportedProductConfig> newSupportedProducts) {
@@ -951,7 +951,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *         it is set to <code>false</code>, only the IAM user that created the
      *         job flow can view and manage it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -1033,7 +1033,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      *         order to use the default role, you must have already created it using
      *         the CLI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withJobFlowRole(String jobFlowRole) {
@@ -1082,7 +1082,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param tags A list of tags to associate with a cluster and propagate to Amazon EC2
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withTags(Tag... tags) {
@@ -1102,7 +1102,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param tags A list of tags to associate with a cluster and propagate to Amazon EC2
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowRequest withTags(java.util.Collection<Tag> tags) {

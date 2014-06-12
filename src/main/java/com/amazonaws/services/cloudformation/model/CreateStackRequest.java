@@ -210,7 +210,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         (case sensitive) and start with an alpha character. Maximum length of
      *         the name is 255 characters.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withStackName(String stackName) {
@@ -282,7 +282,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         must specify either the <code>TemplateBody</code> or the
      *         <code>TemplateURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withTemplateBody(String templateBody) {
@@ -360,7 +360,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         must specify either the <code>TemplateBody</code> or the
      *         <code>TemplateURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withTemplateURL(String templateURL) {
@@ -409,7 +409,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withParameters(Parameter... parameters) {
@@ -429,7 +429,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withParameters(java.util.Collection<Parameter> parameters) {
@@ -487,7 +487,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         or <code>OnFailure</code>, but not both. <p>Default:
      *         <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withDisableRollback(Boolean disableRollback) {
@@ -556,7 +556,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
      *         <code>false</code>, the stack will be rolled back.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withTimeoutInMinutes(Integer timeoutInMinutes) {
@@ -626,7 +626,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://console.aws.amazon.com/sns">SNS console</a> or your
      *         Command Line Interface (CLI).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withNotificationARNs(String... notificationARNs) {
@@ -653,7 +653,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://console.aws.amazon.com/sns">SNS console</a> or your
      *         Command Line Interface (CLI).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withNotificationARNs(java.util.Collection<String> notificationARNs) {
@@ -817,7 +817,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withCapabilities(String... capabilities) {
@@ -873,7 +873,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withCapabilities(java.util.Collection<String> capabilities) {
@@ -933,7 +933,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withCapabilities(Capability... capabilities) {
@@ -1005,7 +1005,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
      *         both. <p>Default: <code>ROLLBACK</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OnFailure
@@ -1051,7 +1051,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
      *         both. <p>Default: <code>ROLLBACK</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OnFailure
@@ -1125,7 +1125,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         Guide. You can specify either the <code>StackPolicyBody</code> or the
      *         <code>StackPolicyURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withStackPolicyBody(String stackPolicyBody) {
@@ -1185,7 +1185,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         as the stack. You can specify either the <code>StackPolicyBody</code>
      *         or the <code>StackPolicyURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withStackPolicyURL(String stackPolicyURL) {
@@ -1246,7 +1246,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         propagated to EC2 resources that are created as part of the stack. A
      *         maximum number of 10 tags can be specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withTags(Tag... tags) {
@@ -1270,7 +1270,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         propagated to EC2 resources that are created as part of the stack. A
      *         maximum number of 10 tags can be specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withTags(java.util.Collection<Tag> tags) {

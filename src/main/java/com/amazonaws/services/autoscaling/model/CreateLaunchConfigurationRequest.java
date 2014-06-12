@@ -287,7 +287,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param launchConfigurationName The name of the launch configuration to create.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withLaunchConfigurationName(String launchConfigurationName) {
@@ -362,7 +362,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         a Suitable AMI</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withImageId(String imageId) {
@@ -419,7 +419,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/generating-a-keypair.html">Getting
      *         a Key Pair</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withKeyName(String keyName) {
@@ -522,7 +522,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      *         Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withSecurityGroups(String... securityGroups) {
@@ -560,7 +560,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">Security
      *         Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -642,7 +642,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         Guide</i>. <note> At this time, Auto Scaling launch configurations
      *         don't support compressed (e.g. zipped) user data files. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withUserData(String userData) {
@@ -765,7 +765,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         a Launch Configuration Using an Amazon EC2 Instance</a> in the <i>Auto
      *         Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withInstanceId(String instanceId) {
@@ -834,7 +834,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute
      *         User Guide.</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withInstanceType(String instanceType) {
@@ -879,7 +879,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param kernelId The ID of the kernel associated with the Amazon EC2 AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withKernelId(String kernelId) {
@@ -924,7 +924,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param ramdiskId The ID of the RAM disk associated with the Amazon EC2 AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withRamdiskId(String ramdiskId) {
@@ -1003,7 +1003,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
@@ -1033,7 +1033,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -1133,7 +1133,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/Welcome.html">Amazon
      *         CloudWatch Developer Guide</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -1211,7 +1211,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withSpotPrice(String spotPrice) {
@@ -1310,7 +1310,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withIamInstanceProfile(String iamInstanceProfile) {
@@ -1391,7 +1391,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#EBSOptimized">EBS-Optimized
      *         Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withEbsOptimized(Boolean ebsOptimized) {
@@ -1515,7 +1515,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
      *         Started with Auto Scaling Using the Command Line Interface</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -1627,7 +1627,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         Developer Guide</i>. <p>Valid values: <code>default</code> |
      *         <code>dedicated</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLaunchConfigurationRequest withPlacementTenancy(String placementTenancy) {

@@ -107,7 +107,7 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param cacheClusterId The cache cluster identifier. This parameter is stored as a lowercase
      *         string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootCacheClusterRequest withCacheClusterId(String cacheClusterId) {
@@ -162,7 +162,7 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
      *         identifier (0001, 0002, etc.). To reboot an entire cache cluster,
      *         specify all of the cache cluster node IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootCacheClusterRequest withCacheNodeIdsToReboot(String... cacheNodeIdsToReboot) {
@@ -184,7 +184,7 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
      *         identifier (0001, 0002, etc.). To reboot an entire cache cluster,
      *         specify all of the cache cluster node IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootCacheClusterRequest withCacheNodeIdsToReboot(java.util.Collection<String> cacheNodeIdsToReboot) {

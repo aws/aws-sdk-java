@@ -67,7 +67,7 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable {
      *         <code>True</code>, the task runner that called
      *         <a>ReportTaskRunnerHeartbeat</a> should terminate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportTaskRunnerHeartbeatResult withTerminate(Boolean terminate) {

@@ -117,7 +117,7 @@ public class App implements Serializable {
      *
      * @param appId The app ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withAppId(String appId) {
@@ -150,7 +150,7 @@ public class App implements Serializable {
      *
      * @param stackId The app stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withStackId(String stackId) {
@@ -183,7 +183,7 @@ public class App implements Serializable {
      *
      * @param shortname The app's short name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withShortname(String shortname) {
@@ -216,7 +216,7 @@ public class App implements Serializable {
      *
      * @param name The app name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withName(String name) {
@@ -249,7 +249,7 @@ public class App implements Serializable {
      *
      * @param description A description of the app.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withDescription(String description) {
@@ -292,7 +292,7 @@ public class App implements Serializable {
      *
      * @param dataSources The app's data sources.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withDataSources(DataSource... dataSources) {
@@ -310,7 +310,7 @@ public class App implements Serializable {
      *
      * @param dataSources The app's data sources.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withDataSources(java.util.Collection<DataSource> dataSources) {
@@ -363,7 +363,7 @@ public class App implements Serializable {
      *
      * @param type The app type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AppType
@@ -397,7 +397,7 @@ public class App implements Serializable {
      *
      * @param type The app type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AppType
@@ -432,7 +432,7 @@ public class App implements Serializable {
      *
      * @param appSource A <code>Source</code> object that describes the app repository.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withAppSource(Source appSource) {
@@ -481,7 +481,7 @@ public class App implements Serializable {
      * @param domains The app vhost settings with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withDomains(String... domains) {
@@ -501,7 +501,7 @@ public class App implements Serializable {
      * @param domains The app vhost settings with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withDomains(java.util.Collection<String> domains) {
@@ -541,7 +541,7 @@ public class App implements Serializable {
      *
      * @param enableSsl Whether to enable SSL for the app.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withEnableSsl(Boolean enableSsl) {
@@ -583,7 +583,7 @@ public class App implements Serializable {
      *
      * @param sslConfiguration An <code>SslConfiguration</code> object with the SSL configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withSslConfiguration(SslConfiguration sslConfiguration) {
@@ -620,7 +620,7 @@ public class App implements Serializable {
      *
      * @param attributes The stack attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withAttributes(java.util.Map<String,String> attributes) {
@@ -683,7 +683,7 @@ public class App implements Serializable {
      *
      * @param createdAt When the app was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public App withCreatedAt(String createdAt) {

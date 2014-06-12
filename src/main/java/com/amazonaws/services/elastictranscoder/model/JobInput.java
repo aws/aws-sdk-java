@@ -176,7 +176,7 @@ public class JobInput implements Serializable {
      *         include the prefix in the key. If the file isn't in the specified
      *         bucket, Elastic Transcoder returns an error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobInput withKey(String key) {
@@ -260,7 +260,7 @@ public class JobInput implements Serializable {
      *         a value other than <code>auto</code>, Elastic Transcoder disables
      *         automatic detection of the frame rate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobInput withFrameRate(String frameRate) {
@@ -308,7 +308,7 @@ public class JobInput implements Serializable {
      * @param resolution This value must be <code>auto</code>, which causes Elastic Transcoder
      *         to automatically detect the resolution of the input file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobInput withResolution(String resolution) {
@@ -386,7 +386,7 @@ public class JobInput implements Serializable {
      *         specify a value other than <code>auto</code>, Elastic Transcoder
      *         disables automatic detection of the aspect ratio.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobInput withAspectRatio(String aspectRatio) {
@@ -464,7 +464,7 @@ public class JobInput implements Serializable {
      *         <code>auto</code>, Elastic Transcoder disables automatic detection of
      *         interlacing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobInput withInterlaced(String interlaced) {
@@ -560,7 +560,7 @@ public class JobInput implements Serializable {
      *         <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      *         <code>vob</code>, <code>wav</code>, <code>webm</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobInput withContainer(String container) {

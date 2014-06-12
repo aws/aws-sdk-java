@@ -103,7 +103,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param instanceId The ID of the instance to bundle.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BundleInstanceRequest withInstanceId(String instanceId) {
@@ -154,7 +154,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
      *         behalf. If you specify a bucket that belongs to someone else, Amazon
      *         EC2 returns an error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BundleInstanceRequest withStorage(Storage storage) {

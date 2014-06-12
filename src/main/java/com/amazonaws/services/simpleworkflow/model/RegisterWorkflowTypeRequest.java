@@ -213,7 +213,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *
      * @param domain The name of the domain in which to register the workflow type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterWorkflowTypeRequest withDomain(String domain) {
@@ -279,7 +279,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterWorkflowTypeRequest withName(String name) {
@@ -363,7 +363,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterWorkflowTypeRequest withVersion(String version) {
@@ -405,7 +405,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *
      * @param description Textual description of the workflow type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterWorkflowTypeRequest withDescription(String description) {
@@ -483,7 +483,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterWorkflowTypeRequest withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
@@ -579,7 +579,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *         max limit on the time that a workflow execution can run. Exceeding
      *         this limit will always cause the workflow execution to time out.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterWorkflowTypeRequest withDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
@@ -636,7 +636,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *         <a>StartWorkflowExecution</a> Action or
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterWorkflowTypeRequest withDefaultTaskList(TaskList defaultTaskList) {
@@ -760,7 +760,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -846,7 +846,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy

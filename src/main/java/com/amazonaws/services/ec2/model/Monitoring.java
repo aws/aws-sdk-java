@@ -69,7 +69,7 @@ public class Monitoring implements Serializable {
      *
      * @param state Indicates whether monitoring is enabled for the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see MonitoringState
@@ -103,7 +103,7 @@ public class Monitoring implements Serializable {
      *
      * @param state Indicates whether monitoring is enabled for the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see MonitoringState

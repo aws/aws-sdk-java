@@ -78,7 +78,7 @@ public class Alarm implements Serializable {
      *
      * @param alarmName The name of the alarm.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Alarm withAlarmName(String alarmName) {
@@ -123,7 +123,7 @@ public class Alarm implements Serializable {
      *
      * @param alarmARN The Amazon Resource Name (ARN) of the alarm.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Alarm withAlarmARN(String alarmARN) {

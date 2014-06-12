@@ -71,7 +71,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable {
      *
      * @param autoScalingGroups A list of Auto Scaling groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
@@ -89,7 +89,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable {
      *
      * @param autoScalingGroups A list of Auto Scaling groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
@@ -138,7 +138,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable {
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingGroupsResult withNextToken(String nextToken) {

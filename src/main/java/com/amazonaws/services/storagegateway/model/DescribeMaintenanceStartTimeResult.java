@@ -85,7 +85,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMaintenanceStartTimeResult withGatewayARN(String gatewayARN) {
@@ -127,7 +127,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
      *
      * @param hourOfDay The new value for the HourOfDay property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMaintenanceStartTimeResult withHourOfDay(Integer hourOfDay) {
@@ -169,7 +169,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
      *
      * @param minuteOfHour The new value for the MinuteOfHour property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMaintenanceStartTimeResult withMinuteOfHour(Integer minuteOfHour) {
@@ -211,7 +211,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
      *
      * @param dayOfWeek The new value for the DayOfWeek property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMaintenanceStartTimeResult withDayOfWeek(Integer dayOfWeek) {
@@ -253,7 +253,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
      *
      * @param timezone The new value for the Timezone property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMaintenanceStartTimeResult withTimezone(String timezone) {

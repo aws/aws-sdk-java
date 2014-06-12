@@ -56,7 +56,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable {
      *
      * @param volumeId The ID of the Amazon EBS volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsInstanceBlockDeviceSpecification withVolumeId(String volumeId) {
@@ -89,7 +89,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable {
      *
      * @param deleteOnTermination Indicates whether the volume is deleted on instance termination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsInstanceBlockDeviceSpecification withDeleteOnTermination(Boolean deleteOnTermination) {

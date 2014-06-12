@@ -112,7 +112,7 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *         requested instances cannot contain more than 50 items. If unknown
      *         instances are requested, they are ignored with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingInstancesRequest withInstanceIds(String... instanceIds) {
@@ -136,7 +136,7 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *         requested instances cannot contain more than 50 items. If unknown
      *         instances are requested, they are ignored with no error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -182,7 +182,7 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      * @param maxRecords The maximum number of Auto Scaling instances to be described with each
      *         call.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingInstancesRequest withMaxRecords(Integer maxRecords) {
@@ -230,7 +230,7 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      * @param nextToken The token returned by a previous call to indicate that there is more
      *         data available.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingInstancesRequest withNextToken(String nextToken) {

@@ -119,7 +119,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *         pipelines associated with your AWS account, because AWS Data Pipeline
      *         assigns each new pipeline a unique pipeline identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withName(String name) {
@@ -236,7 +236,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *         uniqueness of the name and unique identifier combination is scoped to
      *         the AWS account or IAM user credentials.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withUniqueId(String uniqueId) {
@@ -281,7 +281,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
      *
      * @param description The description of the new pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineRequest withDescription(String description) {

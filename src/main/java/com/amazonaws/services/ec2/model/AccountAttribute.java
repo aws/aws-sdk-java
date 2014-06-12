@@ -58,7 +58,7 @@ public class AccountAttribute implements Serializable {
      *
      * @param attributeName The name of the account attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccountAttribute withAttributeName(String attributeName) {
@@ -101,7 +101,7 @@ public class AccountAttribute implements Serializable {
      *
      * @param attributeValues One or more values for the account attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccountAttribute withAttributeValues(AccountAttributeValue... attributeValues) {
@@ -119,7 +119,7 @@ public class AccountAttribute implements Serializable {
      *
      * @param attributeValues One or more values for the account attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccountAttribute withAttributeValues(java.util.Collection<AccountAttributeValue> attributeValues) {

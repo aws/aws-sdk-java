@@ -189,7 +189,7 @@ public class Image implements Serializable {
      *
      * @param imageId The ID of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withImageId(String imageId) {
@@ -222,7 +222,7 @@ public class Image implements Serializable {
      *
      * @param imageLocation The location of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withImageLocation(String imageLocation) {
@@ -280,7 +280,7 @@ public class Image implements Serializable {
      *         the image is successfully registered and can be used to launch an
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ImageState
@@ -322,7 +322,7 @@ public class Image implements Serializable {
      *         the image is successfully registered and can be used to launch an
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ImageState
@@ -357,7 +357,7 @@ public class Image implements Serializable {
      *
      * @param ownerId The AWS account ID of the image owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withOwnerId(String ownerId) {
@@ -408,7 +408,7 @@ public class Image implements Serializable {
      *         <code>false</code> if it has only implicit and explicit launch
      *         permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withPublic(Boolean publicValue) {
@@ -466,7 +466,7 @@ public class Image implements Serializable {
      *
      * @param productCodes Any product codes associated with the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withProductCodes(ProductCode... productCodes) {
@@ -484,7 +484,7 @@ public class Image implements Serializable {
      *
      * @param productCodes Any product codes associated with the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -537,7 +537,7 @@ public class Image implements Serializable {
      *
      * @param architecture The architecture of the image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ArchitectureValues
@@ -571,7 +571,7 @@ public class Image implements Serializable {
      *
      * @param architecture The architecture of the image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ArchitectureValues
@@ -619,7 +619,7 @@ public class Image implements Serializable {
      *
      * @param imageType The type of image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ImageTypeValues
@@ -653,7 +653,7 @@ public class Image implements Serializable {
      *
      * @param imageType The type of image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ImageTypeValues
@@ -694,7 +694,7 @@ public class Image implements Serializable {
      * @param kernelId The kernel associated with the image, if any. Only applicable for
      *         machine images.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withKernelId(String kernelId) {
@@ -733,7 +733,7 @@ public class Image implements Serializable {
      * @param ramdiskId The RAM disk associated with the image, if any. Only applicable for
      *         machine images.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withRamdiskId(String ramdiskId) {
@@ -779,7 +779,7 @@ public class Image implements Serializable {
      *
      * @param platform The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues
@@ -813,7 +813,7 @@ public class Image implements Serializable {
      *
      * @param platform The value is <code>Windows</code> for Windows AMIs; otherwise blank.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues
@@ -848,7 +848,7 @@ public class Image implements Serializable {
      *
      * @param sriovNetSupport Specifies whether enhanced networking is enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withSriovNetSupport(String sriovNetSupport) {
@@ -881,7 +881,7 @@ public class Image implements Serializable {
      *
      * @param stateReason The reason for the state change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withStateReason(StateReason stateReason) {
@@ -920,7 +920,7 @@ public class Image implements Serializable {
      * @param imageOwnerAlias The AWS account alias (for example, <code>amazon</code>,
      *         <code>self</code>) or the AWS account ID of the AMI owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withImageOwnerAlias(String imageOwnerAlias) {
@@ -953,7 +953,7 @@ public class Image implements Serializable {
      *
      * @param name The name of the AMI that was provided during image creation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withName(String name) {
@@ -986,7 +986,7 @@ public class Image implements Serializable {
      *
      * @param description The description of the AMI that was provided during image creation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withDescription(String description) {
@@ -1038,7 +1038,7 @@ public class Image implements Serializable {
      * @param rootDeviceType The type of root device used by the AMI. The AMI can use an Amazon EBS
      *         volume or an instance store volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DeviceType
@@ -1076,7 +1076,7 @@ public class Image implements Serializable {
      * @param rootDeviceType The type of root device used by the AMI. The AMI can use an Amazon EBS
      *         volume or an instance store volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DeviceType
@@ -1117,7 +1117,7 @@ public class Image implements Serializable {
      * @param rootDeviceName The device name of the root device (for example,
      *         <filename>/dev/sda1</filename> or <filename>xvda</filename>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withRootDeviceName(String rootDeviceName) {
@@ -1160,7 +1160,7 @@ public class Image implements Serializable {
      *
      * @param blockDeviceMappings Any block device mapping entries.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
@@ -1178,7 +1178,7 @@ public class Image implements Serializable {
      *
      * @param blockDeviceMappings Any block device mapping entries.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -1231,7 +1231,7 @@ public class Image implements Serializable {
      *
      * @param virtualizationType The type of virtualization of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VirtualizationType
@@ -1265,7 +1265,7 @@ public class Image implements Serializable {
      *
      * @param virtualizationType The type of virtualization of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VirtualizationType
@@ -1310,7 +1310,7 @@ public class Image implements Serializable {
      *
      * @param tags Any tags assigned to the image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withTags(Tag... tags) {
@@ -1328,7 +1328,7 @@ public class Image implements Serializable {
      *
      * @param tags Any tags assigned to the image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Image withTags(java.util.Collection<Tag> tags) {
@@ -1381,7 +1381,7 @@ public class Image implements Serializable {
      *
      * @param hypervisor The hypervisor type of the image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HypervisorType
@@ -1415,7 +1415,7 @@ public class Image implements Serializable {
      *
      * @param hypervisor The hypervisor type of the image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HypervisorType

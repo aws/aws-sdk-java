@@ -296,7 +296,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withCacheClusterId(String cacheClusterId) {
@@ -353,7 +353,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         cluster will be a standalone primary that is not part of any
      *         replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withReplicationGroupId(String replicationGroupId) {
@@ -422,7 +422,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         . <p>For Redis, only single-node cache clusters are supported at this
      *         time, so the value for this parameter must be 1.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withNumCacheNodes(Integer numCacheNodes) {
@@ -533,7 +533,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         complete listing of cache node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/"/>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withCacheNodeType(String cacheNodeType) {
@@ -578,7 +578,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>Valid values for this parameter are: <p><code>memcached</code> |
      *         <code>redis</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withEngine(String engine) {
@@ -623,7 +623,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         view the supported cache engine versions, use the
      *         <i>DescribeCacheEngineVersions</i> operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withEngineVersion(String engineVersion) {
@@ -668,7 +668,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         cluster. If this argument is omitted, the default cache parameter
      *         group for the specified engine will be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -713,7 +713,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>Use this parameter only when you are creating a cluster in an
      *         Amazon Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -768,7 +768,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         cluster. <p>Use this parameter only when you are creating a cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withCacheSecurityGroupNames(String... cacheSecurityGroupNames) {
@@ -790,7 +790,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         cluster. <p>Use this parameter only when you are creating a cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
@@ -852,7 +852,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>Use this parameter only when you are creating a cluster in an
      *         Amazon Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSecurityGroupIds(String... securityGroupIds) {
@@ -874,7 +874,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>Use this parameter only when you are creating a cluster in an
      *         Amazon Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -966,7 +966,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         parameter is only valid if the <code>Engine</code> parameter is
      *         <code>redis</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSnapshotArns(String... snapshotArns) {
@@ -998,7 +998,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         parameter is only valid if the <code>Engine</code> parameter is
      *         <code>redis</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSnapshotArns(java.util.Collection<String> snapshotArns) {
@@ -1050,7 +1050,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         cluster. The snapshot's status changes to <code>restoring</code> while
      *         the new cache cluster is being created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSnapshotName(String snapshotName) {
@@ -1101,7 +1101,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         preferred availability zone. <p>Default: System chosen availability
      *         zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withPreferredAvailabilityZone(String preferredAvailabilityZone) {
@@ -1140,7 +1140,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur. <p>Example: <code>sun:05:00-sun:09:00</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1179,7 +1179,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param port The port number on which each of the cache nodes will accept
      *         connections.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withPort(Integer port) {
@@ -1230,7 +1230,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         Amazon SNS topic owner must be the same as the cache cluster owner.
      *         </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withNotificationTopicArn(String notificationTopicArn) {
@@ -1281,7 +1281,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>true</code> allows these upgrades to occur; <code>false</code>
      *         disables automatic upgrades. <p>Default: <code>true</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1365,7 +1365,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         set to 0 (i.e., automatic backups will be disabled for this cache
      *         cluster).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -1416,7 +1416,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      *         ElastiCache will automatically choose an appropriate time range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSnapshotWindow(String snapshotWindow) {

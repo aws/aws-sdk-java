@@ -60,7 +60,7 @@ public class CreateStackResult implements Serializable {
      * @param stackId The stack ID, which is an opaque string that you use to identify the
      *         stack when performing actions such as <code>DescribeStacks</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackResult withStackId(String stackId) {

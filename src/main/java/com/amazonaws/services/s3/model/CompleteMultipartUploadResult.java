@@ -17,14 +17,14 @@ package com.amazonaws.services.s3.model;
 import java.util.Date;
 
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
-import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+import com.amazonaws.services.s3.internal.SSEResultBase;
 
 
 /**
  * The CompleteMultipartUploadResult contains all the information about the
  * CompleteMultipartUpload method.
  */
-public class CompleteMultipartUploadResult implements ServerSideEncryptionResult, ObjectExpirationResult {
+public class CompleteMultipartUploadResult extends SSEResultBase implements ObjectExpirationResult {
 
     /** The name of the bucket containing the completed multipart upload. */
     private String bucketName;
@@ -46,13 +46,10 @@ public class CompleteMultipartUploadResult implements ServerSideEncryptionResult
      * enabled for the bucket.
      */
     private String versionId;
-    
-    /** The server side encryption algorithm of the new object */
-    private String serverSideEncryption;
-    
+
     /** The time this object expires, or null if it has no expiration */
     private Date expirationTime;
-    
+
     /** The expiration rule for this object */
     private String expirationTimeRuleId;
 
@@ -153,25 +150,7 @@ public class CompleteMultipartUploadResult implements ServerSideEncryptionResult
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
-    
-    /**
-     * Returns the server-side encryption algorithm for the newly created
-     * object, or null if none was used.
-     */
-    public String getServerSideEncryption() {
-        return serverSideEncryption;
-    }
 
-    /**
-     * Sets the server-side encryption algorithm for the newly created object.
-     * 
-     * @param serverSideEncryption
-     *            The server-side encryption algorithm for the new object.
-     */
-    public void setServerSideEncryption(String serverSideEncryption) {
-        this.serverSideEncryption = serverSideEncryption;
-    }
-    
     /**
      * Returns the expiration time for this object, or null if it doesn't expire.
      */
@@ -181,7 +160,7 @@ public class CompleteMultipartUploadResult implements ServerSideEncryptionResult
 
     /**
      * Sets the expiration time for the object.
-     * 
+     *
      * @param expirationTime
      *            The expiration time for the object.
      */
@@ -200,7 +179,7 @@ public class CompleteMultipartUploadResult implements ServerSideEncryptionResult
     /**
      * Sets the {@link BucketLifecycleConfiguration} rule ID for this object's
      * expiration
-     * 
+     *
      * @param expirationTimeRuleId
      *            The rule ID for this object's expiration
      */

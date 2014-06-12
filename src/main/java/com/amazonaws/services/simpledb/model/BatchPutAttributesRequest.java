@@ -153,7 +153,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param domainName The name of the domain in which the attributes are being stored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchPutAttributesRequest withDomainName(String domainName) {
@@ -196,7 +196,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param items A list of items on which to perform the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchPutAttributesRequest withItems(ReplaceableItem... items) {
@@ -214,7 +214,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param items A list of items on which to perform the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchPutAttributesRequest withItems(java.util.Collection<ReplaceableItem> items) {

@@ -103,7 +103,7 @@ public class CustomErrorResponse implements Serializable {
      *         of HTTP status codes that you can customize, see CloudFront
      *         documentation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomErrorResponse withErrorCode(Integer errorCode) {
@@ -166,7 +166,7 @@ public class CustomErrorResponse implements Serializable {
      *         those characters. Do not URL encode any other characters in the path,
      *         or CloudFront will not return the custom error page to the viewer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomErrorResponse withResponsePagePath(String responsePagePath) {
@@ -211,7 +211,7 @@ public class CustomErrorResponse implements Serializable {
      *         custom error page to the viewer. For a list of HTTP status codes that
      *         you can replace, see CloudFront Documentation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomErrorResponse withResponseCode(String responseCode) {
@@ -262,7 +262,7 @@ public class CustomErrorResponse implements Serializable {
      *         the object has been updated. You can specify a value from 0 to
      *         31,536,000.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomErrorResponse withErrorCachingMinTTL(Long errorCachingMinTTL) {

@@ -53,7 +53,7 @@ public class DescribeServiceAccessPoliciesResult implements Serializable {
      *
      * @param accessPolicies The access rules configured for the domain specified in the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceAccessPoliciesResult withAccessPolicies(AccessPoliciesStatus accessPolicies) {

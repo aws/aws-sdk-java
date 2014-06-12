@@ -107,7 +107,7 @@ public class Snapshot implements Serializable {
      *
      * @param snapshotId The ID of the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotId(String snapshotId) {
@@ -140,7 +140,7 @@ public class Snapshot implements Serializable {
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withVolumeId(String volumeId) {
@@ -186,7 +186,7 @@ public class Snapshot implements Serializable {
      *
      * @param state The snapshot state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SnapshotState
@@ -220,7 +220,7 @@ public class Snapshot implements Serializable {
      *
      * @param state The snapshot state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SnapshotState
@@ -255,7 +255,7 @@ public class Snapshot implements Serializable {
      *
      * @param startTime The time stamp when the snapshot was initiated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withStartTime(java.util.Date startTime) {
@@ -288,7 +288,7 @@ public class Snapshot implements Serializable {
      *
      * @param progress The progress of the snapshot, as a percentage.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withProgress(String progress) {
@@ -321,7 +321,7 @@ public class Snapshot implements Serializable {
      *
      * @param ownerId The AWS account ID of the Amazon EBS snapshot owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withOwnerId(String ownerId) {
@@ -354,7 +354,7 @@ public class Snapshot implements Serializable {
      *
      * @param description The description for the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withDescription(String description) {
@@ -387,7 +387,7 @@ public class Snapshot implements Serializable {
      *
      * @param volumeSize The size of the volume, in GiB.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withVolumeSize(Integer volumeSize) {
@@ -426,7 +426,7 @@ public class Snapshot implements Serializable {
      * @param ownerAlias The AWS account alias (for example, <code>amazon</code>,
      *         <code>self</code>) or AWS account ID that owns the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withOwnerAlias(String ownerAlias) {
@@ -469,7 +469,7 @@ public class Snapshot implements Serializable {
      *
      * @param tags Any tags assigned to the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withTags(Tag... tags) {
@@ -487,7 +487,7 @@ public class Snapshot implements Serializable {
      *
      * @param tags Any tags assigned to the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withTags(java.util.Collection<Tag> tags) {
@@ -527,7 +527,7 @@ public class Snapshot implements Serializable {
      *
      * @param encrypted Indicates whether the snapshot is encrypted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withEncrypted(Boolean encrypted) {

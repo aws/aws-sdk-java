@@ -75,7 +75,7 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest implements S
      *
      * @param domainNames The names of the domains you want to include in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDomainsRequest withDomainNames(String... domainNames) {
@@ -93,7 +93,7 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest implements S
      *
      * @param domainNames The names of the domains you want to include in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDomainsRequest withDomainNames(java.util.Collection<String> domainNames) {

@@ -75,7 +75,7 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest implem
      *
      * @param id The distribution's id.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetDistributionConfigRequest withId(String id) {

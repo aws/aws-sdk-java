@@ -136,7 +136,7 @@ public class DescribeResizeResult implements Serializable {
      * @param targetNodeType The node type that the cluster will have after the resize operation is
      *         complete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withTargetNodeType(String targetNodeType) {
@@ -175,7 +175,7 @@ public class DescribeResizeResult implements Serializable {
      * @param targetNumberOfNodes The number of nodes that the cluster will have after the resize
      *         operation is complete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withTargetNumberOfNodes(Integer targetNumberOfNodes) {
@@ -214,7 +214,7 @@ public class DescribeResizeResult implements Serializable {
      * @param targetClusterType The cluster type after the resize operation is complete. <p>Valid
      *         Values: <code>multi-node</code> | <code>single-node</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withTargetClusterType(String targetClusterType) {
@@ -259,7 +259,7 @@ public class DescribeResizeResult implements Serializable {
      *         | <code>IN_PROGRESS</code> | <code>FAILED</code> |
      *         <code>SUCCEEDED</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withStatus(String status) {
@@ -308,7 +308,7 @@ public class DescribeResizeResult implements Serializable {
      * @param importTablesCompleted The names of tables that have been completely imported . <p>Valid
      *         Values: List of table names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withImportTablesCompleted(String... importTablesCompleted) {
@@ -328,7 +328,7 @@ public class DescribeResizeResult implements Serializable {
      * @param importTablesCompleted The names of tables that have been completely imported . <p>Valid
      *         Values: List of table names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withImportTablesCompleted(java.util.Collection<String> importTablesCompleted) {
@@ -384,7 +384,7 @@ public class DescribeResizeResult implements Serializable {
      * @param importTablesInProgress The names of tables that are being currently imported. <p>Valid
      *         Values: List of table names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withImportTablesInProgress(String... importTablesInProgress) {
@@ -404,7 +404,7 @@ public class DescribeResizeResult implements Serializable {
      * @param importTablesInProgress The names of tables that are being currently imported. <p>Valid
      *         Values: List of table names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withImportTablesInProgress(java.util.Collection<String> importTablesInProgress) {
@@ -460,7 +460,7 @@ public class DescribeResizeResult implements Serializable {
      * @param importTablesNotStarted The names of tables that have not been yet imported. <p>Valid Values:
      *         List of table names
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withImportTablesNotStarted(String... importTablesNotStarted) {
@@ -480,7 +480,7 @@ public class DescribeResizeResult implements Serializable {
      * @param importTablesNotStarted The names of tables that have not been yet imported. <p>Valid Values:
      *         List of table names
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withImportTablesNotStarted(java.util.Collection<String> importTablesNotStarted) {
@@ -538,7 +538,7 @@ public class DescribeResizeResult implements Serializable {
      *         completes, this value shows the average rate of the entire resize
      *         operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withAvgResizeRateInMegaBytesPerSecond(Double avgResizeRateInMegaBytesPerSecond) {
@@ -577,7 +577,7 @@ public class DescribeResizeResult implements Serializable {
      * @param totalResizeDataInMegaBytes The estimated total amount of data, in megabytes, on the cluster
      *         before the resize operation began.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withTotalResizeDataInMegaBytes(Long totalResizeDataInMegaBytes) {
@@ -640,7 +640,7 @@ public class DescribeResizeResult implements Serializable {
      *         less than TotalResizeDataInMegaBytes (the estimated total amount of
      *         data before resize).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withProgressInMegaBytes(Long progressInMegaBytes) {
@@ -685,7 +685,7 @@ public class DescribeResizeResult implements Serializable {
      *         began. After the resize operation completes, this value shows the
      *         total actual time, in seconds, for the resize operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
@@ -736,7 +736,7 @@ public class DescribeResizeResult implements Serializable {
      *         and the estimated amount of data remaining to be processed. Once the
      *         resize operation is complete, this value will be 0.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeResult withEstimatedTimeToCompletionInSeconds(Long estimatedTimeToCompletionInSeconds) {

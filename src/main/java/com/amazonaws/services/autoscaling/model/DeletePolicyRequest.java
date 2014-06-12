@@ -83,7 +83,7 @@ public class DeletePolicyRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeletePolicyRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -128,7 +128,7 @@ public class DeletePolicyRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param policyName The name or PolicyARN of the policy you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeletePolicyRequest withPolicyName(String policyName) {

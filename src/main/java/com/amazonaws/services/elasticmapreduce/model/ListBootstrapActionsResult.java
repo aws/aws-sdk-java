@@ -71,7 +71,7 @@ public class ListBootstrapActionsResult implements Serializable {
      *
      * @param bootstrapActions The bootstrap actions associated with the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListBootstrapActionsResult withBootstrapActions(Command... bootstrapActions) {
@@ -89,7 +89,7 @@ public class ListBootstrapActionsResult implements Serializable {
      *
      * @param bootstrapActions The bootstrap actions associated with the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListBootstrapActionsResult withBootstrapActions(java.util.Collection<Command> bootstrapActions) {
@@ -147,7 +147,7 @@ public class ListBootstrapActionsResult implements Serializable {
      *         retrieve the next page of results. When the value is null, all results
      *         have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListBootstrapActionsResult withMarker(String marker) {

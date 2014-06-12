@@ -69,7 +69,7 @@ public class UnassignVolumeRequest extends AmazonWebServiceRequest implements Se
      *
      * @param volumeId The volume ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UnassignVolumeRequest withVolumeId(String volumeId) {

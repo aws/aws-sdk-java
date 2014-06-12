@@ -77,7 +77,7 @@ public class StepDetail implements Serializable {
      *
      * @param stepConfig The step configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepDetail withStepConfig(StepConfig stepConfig) {
@@ -110,7 +110,7 @@ public class StepDetail implements Serializable {
      *
      * @param executionStatusDetail The description of the step status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepDetail withExecutionStatusDetail(StepExecutionStatusDetail executionStatusDetail) {

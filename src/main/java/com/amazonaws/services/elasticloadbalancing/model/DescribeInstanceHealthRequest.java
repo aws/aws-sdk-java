@@ -86,7 +86,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
      *
      * @param loadBalancerName The name of the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceHealthRequest withLoadBalancerName(String loadBalancerName) {
@@ -129,7 +129,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
      *
      * @param instances A list of instance IDs whose states are being queried.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceHealthRequest withInstances(Instance... instances) {
@@ -147,7 +147,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
      *
      * @param instances A list of instance IDs whose states are being queried.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceHealthRequest withInstances(java.util.Collection<Instance> instances) {

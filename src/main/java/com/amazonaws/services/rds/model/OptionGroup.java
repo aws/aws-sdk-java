@@ -90,7 +90,7 @@ public class OptionGroup implements Serializable {
      *
      * @param optionGroupName Specifies the name of the option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withOptionGroupName(String optionGroupName) {
@@ -123,7 +123,7 @@ public class OptionGroup implements Serializable {
      *
      * @param optionGroupDescription Provides the description of the option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withOptionGroupDescription(String optionGroupDescription) {
@@ -156,7 +156,7 @@ public class OptionGroup implements Serializable {
      *
      * @param engineName Engine name that this option group can be applied to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withEngineName(String engineName) {
@@ -189,7 +189,7 @@ public class OptionGroup implements Serializable {
      *
      * @param majorEngineVersion Indicates the major engine version associated with this option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withMajorEngineVersion(String majorEngineVersion) {
@@ -232,7 +232,7 @@ public class OptionGroup implements Serializable {
      *
      * @param options Indicates what options are available in the option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withOptions(Option... options) {
@@ -250,7 +250,7 @@ public class OptionGroup implements Serializable {
      *
      * @param options Indicates what options are available in the option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withOptions(java.util.Collection<Option> options) {
@@ -302,7 +302,7 @@ public class OptionGroup implements Serializable {
      *         non-VPC instances. The value 'true' indicates the option group can be
      *         applied to both VPC and non-VPC instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withAllowsVpcAndNonVpcInstanceMemberships(Boolean allowsVpcAndNonVpcInstanceMemberships) {
@@ -378,7 +378,7 @@ public class OptionGroup implements Serializable {
      *         group can only be applied to instances that are in the VPC indicated
      *         by this field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroup withVpcId(String vpcId) {

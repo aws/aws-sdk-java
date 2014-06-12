@@ -241,7 +241,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *
      * @param domain The name of the domain in which the workflow execution is created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withDomain(String domain) {
@@ -337,7 +337,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withWorkflowId(String workflowId) {
@@ -370,7 +370,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *
      * @param workflowType The type of the workflow to start.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withWorkflowType(WorkflowType workflowType) {
@@ -463,7 +463,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withTaskList(TaskList taskList) {
@@ -523,7 +523,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <code>input</code> is made available to the new workflow execution in
      *         the <code>WorkflowExecutionStarted</code> history event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withInput(String input) {
@@ -631,7 +631,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         parameter nor a default execution start-to-close timeout is specified,
      *         a fault is returned. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
@@ -701,7 +701,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withTagList(String... tagList) {
@@ -728,7 +728,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withTagList(java.util.Collection<String> tagList) {
@@ -843,7 +843,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartWorkflowExecutionRequest withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
@@ -985,7 +985,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time then a fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -1083,7 +1083,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time then a fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy

@@ -134,7 +134,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityRequest withQueueUrl(String queueUrl) {
@@ -179,7 +179,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
      *         timeout should be changed. This parameter is returned by the
      *         <a>ReceiveMessage</a> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityRequest withReceiptHandle(String receiptHandle) {
@@ -218,7 +218,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
      * @param visibilityTimeout The new value (in seconds - from 0 to 43200 - maximum 12 hours) for
      *         the message's visibility timeout.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityRequest withVisibilityTimeout(Integer visibilityTimeout) {

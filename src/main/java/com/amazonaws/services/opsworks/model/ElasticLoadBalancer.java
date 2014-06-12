@@ -94,7 +94,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param elasticLoadBalancerName The Elastic Load Balancing instance's name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withElasticLoadBalancerName(String elasticLoadBalancerName) {
@@ -127,7 +127,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param region The instance's AWS region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withRegion(String region) {
@@ -160,7 +160,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param dnsName The instance's public DNS name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withDnsName(String dnsName) {
@@ -193,7 +193,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param stackId The ID of the stack that the instance is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withStackId(String stackId) {
@@ -226,7 +226,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param layerId The ID of the layer that the instance is attached to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withLayerId(String layerId) {
@@ -259,7 +259,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param vpcId The VPC ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withVpcId(String vpcId) {
@@ -302,7 +302,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param availabilityZones A list of Availability Zones.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withAvailabilityZones(String... availabilityZones) {
@@ -320,7 +320,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param availabilityZones A list of Availability Zones.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -370,7 +370,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param subnetIds A list of subnet IDs, if the stack is running in a VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withSubnetIds(String... subnetIds) {
@@ -388,7 +388,7 @@ public class ElasticLoadBalancer implements Serializable {
      *
      * @param subnetIds A list of subnet IDs, if the stack is running in a VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withSubnetIds(java.util.Collection<String> subnetIds) {
@@ -444,7 +444,7 @@ public class ElasticLoadBalancer implements Serializable {
      * @param ec2InstanceIds A list of the EC2 instances that the Elastic Load Balancing instance
      *         is managing traffic for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withEc2InstanceIds(String... ec2InstanceIds) {
@@ -464,7 +464,7 @@ public class ElasticLoadBalancer implements Serializable {
      * @param ec2InstanceIds A list of the EC2 instances that the Elastic Load Balancing instance
      *         is managing traffic for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticLoadBalancer withEc2InstanceIds(java.util.Collection<String> ec2InstanceIds) {

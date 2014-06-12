@@ -62,7 +62,7 @@ public class DeleteRouteTableRequest extends AmazonWebServiceRequest implements 
      *
      * @param routeTableId The ID of the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteRouteTableRequest withRouteTableId(String routeTableId) {

@@ -61,7 +61,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable {
      *
      * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(CancelledSpotInstanceRequest... cancelledSpotInstanceRequests) {
@@ -79,7 +79,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable {
      *
      * @param cancelledSpotInstanceRequests One or more Spot Instance requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {

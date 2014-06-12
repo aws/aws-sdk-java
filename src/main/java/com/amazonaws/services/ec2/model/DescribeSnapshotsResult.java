@@ -61,7 +61,7 @@ public class DescribeSnapshotsResult implements Serializable {
      *
      * @param snapshots 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsResult withSnapshots(Snapshot... snapshots) {
@@ -79,7 +79,7 @@ public class DescribeSnapshotsResult implements Serializable {
      *
      * @param snapshots 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsResult withSnapshots(java.util.Collection<Snapshot> snapshots) {

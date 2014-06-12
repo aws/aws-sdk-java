@@ -59,7 +59,7 @@ public class AutoScalingGroup implements Serializable {
      *
      * @param name The name of the <code>AutoScalingGroup</code> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AutoScalingGroup withName(String name) {

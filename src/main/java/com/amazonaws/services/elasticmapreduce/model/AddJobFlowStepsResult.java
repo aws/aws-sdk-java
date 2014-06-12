@@ -63,7 +63,7 @@ public class AddJobFlowStepsResult implements Serializable {
      *
      * @param stepIds The identifiers of the list of steps added to the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddJobFlowStepsResult withStepIds(String... stepIds) {
@@ -81,7 +81,7 @@ public class AddJobFlowStepsResult implements Serializable {
      *
      * @param stepIds The identifiers of the list of steps added to the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddJobFlowStepsResult withStepIds(java.util.Collection<String> stepIds) {

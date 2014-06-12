@@ -89,7 +89,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest imple
      *
      * @param identity The identity for which DKIM signing should be enabled or disabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetIdentityDkimEnabledRequest withIdentity(String identity) {
@@ -134,7 +134,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest imple
      *         <code>true</code> to enable DKIM signing for this identity;
      *         <code>false</code> to disable it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetIdentityDkimEnabledRequest withDkimEnabled(Boolean dkimEnabled) {

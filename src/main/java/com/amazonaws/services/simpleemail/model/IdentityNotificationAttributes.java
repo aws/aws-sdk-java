@@ -84,7 +84,7 @@ public class IdentityNotificationAttributes implements Serializable {
      *         Service (SNS) topic where Amazon SES will publish bounce
      *         notifications.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IdentityNotificationAttributes withBounceTopic(String bounceTopic) {
@@ -129,7 +129,7 @@ public class IdentityNotificationAttributes implements Serializable {
      *         Service (SNS) topic where Amazon SES will publish complaint
      *         notifications.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IdentityNotificationAttributes withComplaintTopic(String complaintTopic) {
@@ -180,7 +180,7 @@ public class IdentityNotificationAttributes implements Serializable {
      *         email, while <code>false</code> indicates that feedback will be
      *         published only to the specified Bounce and Complaint topics.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IdentityNotificationAttributes withForwardingEnabled(Boolean forwardingEnabled) {

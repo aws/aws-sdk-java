@@ -210,7 +210,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         alphanumeric characters (case sensitive) and start with an alpha
      *         character. Maximum length of the name is 255 characters. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withStackName(String stackName) {
@@ -282,7 +282,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         must specify either the <code>TemplateBody</code> or the
      *         <code>TemplateURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withTemplateBody(String templateBody) {
@@ -360,7 +360,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         must specify either the <code>TemplateBody</code> or the
      *         <code>TemplateURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withTemplateURL(String templateURL) {
@@ -399,7 +399,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param usePreviousTemplate Reuse the existing template that is associated with the stack that you
      *         are updating.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withUsePreviousTemplate(Boolean usePreviousTemplate) {
@@ -482,7 +482,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         stack policy during this update. If you do not specify a stack policy,
      *         the current policy that is associated with the stack will be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withStackPolicyDuringUpdateBody(String stackPolicyDuringUpdateBody) {
@@ -566,7 +566,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         stack policy during this update. If you do not specify a stack policy,
      *         the current policy that is associated with the stack will be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withStackPolicyDuringUpdateURL(String stackPolicyDuringUpdateURL) {
@@ -615,7 +615,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withParameters(Parameter... parameters) {
@@ -635,7 +635,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withParameters(java.util.Collection<Parameter> parameters) {
@@ -757,7 +757,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withCapabilities(String... capabilities) {
@@ -799,7 +799,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withCapabilities(java.util.Collection<String> capabilities) {
@@ -845,7 +845,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withCapabilities(Capability... capabilities) {
@@ -925,7 +925,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         stack update. If you do not specify a stack policy, the current policy
      *         that is associated with the stack is unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withStackPolicyBody(String stackPolicyBody) {
@@ -1009,7 +1009,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         stack update. If you do not specify a stack policy, the current policy
      *         that is associated with the stack is unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withStackPolicyURL(String stackPolicyURL) {
@@ -1067,7 +1067,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param notificationARNs Update the ARNs for the Amazon SNS topics that are associated with the
      *         stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withNotificationARNs(String... notificationARNs) {
@@ -1090,7 +1090,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param notificationARNs Update the ARNs for the Amazon SNS topics that are associated with the
      *         stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStackRequest withNotificationARNs(java.util.Collection<String> notificationARNs) {

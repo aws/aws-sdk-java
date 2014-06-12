@@ -81,7 +81,7 @@ public class MarkerRecordedEventAttributes implements Serializable {
      *
      * @param markerName The name of the marker.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MarkerRecordedEventAttributes withMarkerName(String markerName) {
@@ -123,7 +123,7 @@ public class MarkerRecordedEventAttributes implements Serializable {
      *
      * @param details Details of the marker (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MarkerRecordedEventAttributes withDetails(String details) {
@@ -174,7 +174,7 @@ public class MarkerRecordedEventAttributes implements Serializable {
      *         decision that requested this marker. This information can be useful
      *         for diagnosing problems by tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MarkerRecordedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

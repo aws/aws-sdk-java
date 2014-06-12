@@ -64,7 +64,7 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
      *
      * @param routeTableId The ID of the routing table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
@@ -97,7 +97,7 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
      *
      * @param gatewayId The ID of the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableVgwRoutePropagationRequest withGatewayId(String gatewayId) {

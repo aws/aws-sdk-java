@@ -61,7 +61,7 @@ public class DescribeNetworkAclsResult implements Serializable {
      *
      * @param networkAcls Information about one or more network ACLs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkAclsResult withNetworkAcls(NetworkAcl... networkAcls) {
@@ -79,7 +79,7 @@ public class DescribeNetworkAclsResult implements Serializable {
      *
      * @param networkAcls Information about one or more network ACLs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkAclsResult withNetworkAcls(java.util.Collection<NetworkAcl> networkAcls) {

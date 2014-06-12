@@ -92,7 +92,7 @@ public class DescribeHsmConfigurationsResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmConfigurationsResult withMarker(String marker) {
@@ -135,7 +135,7 @@ public class DescribeHsmConfigurationsResult implements Serializable {
      *
      * @param hsmConfigurations A list of Amazon Redshift HSM configurations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmConfigurationsResult withHsmConfigurations(HsmConfiguration... hsmConfigurations) {
@@ -153,7 +153,7 @@ public class DescribeHsmConfigurationsResult implements Serializable {
      *
      * @param hsmConfigurations A list of Amazon Redshift HSM configurations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmConfigurationsResult withHsmConfigurations(java.util.Collection<HsmConfiguration> hsmConfigurations) {

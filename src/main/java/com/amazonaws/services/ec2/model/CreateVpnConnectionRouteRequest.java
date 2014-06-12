@@ -72,7 +72,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
      *
      * @param vpnConnectionId The ID of the VPN connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnConnectionRouteRequest withVpnConnectionId(String vpnConnectionId) {
@@ -111,7 +111,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
      * @param destinationCidrBlock The CIDR block associated with the local subnet of the customer
      *         network.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpnConnectionRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {

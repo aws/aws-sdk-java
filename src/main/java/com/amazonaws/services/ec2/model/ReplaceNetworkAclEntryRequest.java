@@ -103,7 +103,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      *
      * @param networkAclId The ID of the ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
@@ -136,7 +136,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      *
      * @param ruleNumber The rule number of the entry to replace.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
@@ -175,7 +175,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      * @param protocol The IP protocol. You can specify <code>all</code> or <code>-1</code>
      *         to mean all protocols.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclEntryRequest withProtocol(String protocol) {
@@ -221,7 +221,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      *
      * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RuleAction
@@ -255,7 +255,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      *
      * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RuleAction
@@ -296,7 +296,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      * @param egress Indicates whether to replace the egress rule. <p>Default: If no value
      *         is specified, we replace the ingress rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclEntryRequest withEgress(Boolean egress) {
@@ -340,7 +340,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      *
      * @param cidrBlock The network range to allow or deny, in CIDR notation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclEntryRequest withCidrBlock(String cidrBlock) {
@@ -373,7 +373,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      *
      * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclEntryRequest withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
@@ -406,7 +406,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      *
      * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclEntryRequest withPortRange(PortRange portRange) {

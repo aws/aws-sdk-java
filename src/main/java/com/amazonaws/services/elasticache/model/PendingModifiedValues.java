@@ -72,7 +72,7 @@ public class PendingModifiedValues implements Serializable {
      *
      * @param numCacheNodes The new number of cache nodes for the cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withNumCacheNodes(Integer numCacheNodes) {
@@ -127,7 +127,7 @@ public class PendingModifiedValues implements Serializable {
      *         from the cache cluster. A node ID is a numeric identifier (0001, 0002,
      *         etc.).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withCacheNodeIdsToRemove(String... cacheNodeIdsToRemove) {
@@ -149,7 +149,7 @@ public class PendingModifiedValues implements Serializable {
      *         from the cache cluster. A node ID is a numeric identifier (0001, 0002,
      *         etc.).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
@@ -189,7 +189,7 @@ public class PendingModifiedValues implements Serializable {
      *
      * @param engineVersion The new cache engine version that the cache cluster will run.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withEngineVersion(String engineVersion) {

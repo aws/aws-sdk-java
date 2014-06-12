@@ -70,7 +70,7 @@ public class DescribeServiceErrorsResult implements Serializable {
      * @param serviceErrors An array of <code>ServiceError</code> objects that describe the
      *         specified service errors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceErrorsResult withServiceErrors(ServiceError... serviceErrors) {
@@ -90,7 +90,7 @@ public class DescribeServiceErrorsResult implements Serializable {
      * @param serviceErrors An array of <code>ServiceError</code> objects that describe the
      *         specified service errors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceErrorsResult withServiceErrors(java.util.Collection<ServiceError> serviceErrors) {

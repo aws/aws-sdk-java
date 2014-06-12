@@ -103,7 +103,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * @param dhcpOptionsIds The IDs of one or more DHCP options sets. <p>Default: Describes all
      *         your DHCP options sets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDhcpOptionsRequest withDhcpOptionsIds(String... dhcpOptionsIds) {
@@ -123,7 +123,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      * @param dhcpOptionsIds The IDs of one or more DHCP options sets. <p>Default: Describes all
      *         your DHCP options sets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDhcpOptionsRequest withDhcpOptionsIds(java.util.Collection<String> dhcpOptionsIds) {
@@ -269,7 +269,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDhcpOptionsRequest withFilters(Filter... filters) {
@@ -319,7 +319,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDhcpOptionsRequest withFilters(java.util.Collection<Filter> filters) {

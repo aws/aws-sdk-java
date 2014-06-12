@@ -30,10 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * with the restored cluster.
  * </p>
  * <p>
- * If a snapshot is taken of a cluster in VPC, you can restore it only
- * in VPC. In this case, you must provide a cluster subnet group where
- * you want the cluster restored. If snapshot is taken of a cluster
- * outside VPC, then you can restore it only outside VPC.
+ * If you restore a cluster into a VPC, you must provide a cluster
+ * subnet group where you want the cluster restored.
  * </p>
  * <p>
  * For more information about working with snapshots, go to
@@ -130,6 +128,60 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     private String elasticIp;
 
     /**
+     * The name of the parameter group to be associated with this cluster.
+     * <p>Default: The default Amazon Redshift cluster parameter group. For
+     * information about the default parameter group, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * with Amazon Redshift Parameter Groups</a>. <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
+     */
+    private String clusterParameterGroupName;
+
+    /**
+     * A list of security groups to be associated with this cluster. <p>
+     * Default: The default cluster security group for Amazon Redshift.
+     * <p>Cluster security groups only apply to clusters outside of VPCs.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterSecurityGroups;
+
+    /**
+     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * with the cluster. <p> Default: The default VPC security group is
+     * associated with the cluster. <p> VPC security groups only apply to
+     * clusters in VPCs.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIds;
+
+    /**
+     * The weekly time range (in UTC) during which automated cluster
+     * maintenance can occur. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
+     * for the cluster from which the snapshot was taken. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Oregon)
+     * Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b>
+     * 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore) Region</b>
+     * 14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b>
+     * 12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region</b>
+     * 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
+     * | Sat | Sun <p>Constraints: Minimum 30-minute window.
+     */
+    private String preferredMaintenanceWindow;
+
+    /**
+     * The number of days that automated snapshots are retained. If the value
+     * is 0, automated snapshots are disabled. Even if automated snapshots
+     * are disabled, you can still create manual snapshots when you want with
+     * <a>CreateClusterSnapshot</a>. <p> Default: The value selected for the
+     * cluster from which the snapshot was taken. <p>Constraints: Must be a
+     * value from 0 to 35.
+     */
+    private Integer automatedSnapshotRetentionPeriod;
+
+    /**
      * The identifier of the cluster that will be created from restoring the
      * snapshot. <p> <p>Constraints: <ul> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</li> <li>Alphabetic characters
@@ -184,7 +236,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
      *         <li>Must be unique for all clusters within an AWS account.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withClusterIdentifier(String clusterIdentifier) {
@@ -229,7 +281,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         parameter isn't case sensitive. <p>Example:
      *         <code>my-snapshot-id</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
@@ -280,7 +332,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         snapshot resource element that specifies anything other than * for the
      *         cluster name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
@@ -325,7 +377,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         The same port as the original cluster. <p>Constraints: Must be between
      *         <code>1115</code> and <code>65535</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withPort(Integer port) {
@@ -370,7 +422,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         <p>Default: A random, system-chosen Availability Zone. <p>Example:
      *         <code>us-east-1a</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withAvailabilityZone(String availabilityZone) {
@@ -415,7 +467,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         window to the Amazon Redshift engine that is running on the cluster.
      *         <p>Default: <code>true</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withAllowVersionUpgrade(Boolean allowVersionUpgrade) {
@@ -473,7 +525,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         snapshot of cluster in VPC can be restored only in VPC. Therefore, you
      *         must provide subnet group name where you want the cluster restored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
@@ -512,7 +564,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * @param publiclyAccessible If <code>true</code>, the cluster can be accessed from a public
      *         network.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withPubliclyAccessible(Boolean publiclyAccessible) {
@@ -568,7 +620,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         if you are restoring a snapshot you do not own, optional if you own
      *         the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withOwnerAccount(String ownerAccount) {
@@ -607,7 +659,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
      *         cluster uses to retrieve the data encryption keys stored in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
@@ -652,7 +704,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *         information the Amazon Redshift cluster can use to retrieve and store
      *         keys in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
@@ -685,11 +737,430 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      *
      * @param elasticIp The elastic IP (EIP) address for the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreFromClusterSnapshotRequest withElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
+        return this;
+    }
+
+    /**
+     * The name of the parameter group to be associated with this cluster.
+     * <p>Default: The default Amazon Redshift cluster parameter group. For
+     * information about the default parameter group, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * with Amazon Redshift Parameter Groups</a>. <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
+     *
+     * @return The name of the parameter group to be associated with this cluster.
+     *         <p>Default: The default Amazon Redshift cluster parameter group. For
+     *         information about the default parameter group, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     *         with Amazon Redshift Parameter Groups</a>. <p> Constraints: <ul>
+     *         <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+     *         <li>First character must be a letter.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul>
+     */
+    public String getClusterParameterGroupName() {
+        return clusterParameterGroupName;
+    }
+    
+    /**
+     * The name of the parameter group to be associated with this cluster.
+     * <p>Default: The default Amazon Redshift cluster parameter group. For
+     * information about the default parameter group, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * with Amazon Redshift Parameter Groups</a>. <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
+     *
+     * @param clusterParameterGroupName The name of the parameter group to be associated with this cluster.
+     *         <p>Default: The default Amazon Redshift cluster parameter group. For
+     *         information about the default parameter group, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     *         with Amazon Redshift Parameter Groups</a>. <p> Constraints: <ul>
+     *         <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+     *         <li>First character must be a letter.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul>
+     */
+    public void setClusterParameterGroupName(String clusterParameterGroupName) {
+        this.clusterParameterGroupName = clusterParameterGroupName;
+    }
+    
+    /**
+     * The name of the parameter group to be associated with this cluster.
+     * <p>Default: The default Amazon Redshift cluster parameter group. For
+     * information about the default parameter group, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * with Amazon Redshift Parameter Groups</a>. <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clusterParameterGroupName The name of the parameter group to be associated with this cluster.
+     *         <p>Default: The default Amazon Redshift cluster parameter group. For
+     *         information about the default parameter group, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     *         with Amazon Redshift Parameter Groups</a>. <p> Constraints: <ul>
+     *         <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+     *         <li>First character must be a letter.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withClusterParameterGroupName(String clusterParameterGroupName) {
+        this.clusterParameterGroupName = clusterParameterGroupName;
+        return this;
+    }
+
+    /**
+     * A list of security groups to be associated with this cluster. <p>
+     * Default: The default cluster security group for Amazon Redshift.
+     * <p>Cluster security groups only apply to clusters outside of VPCs.
+     *
+     * @return A list of security groups to be associated with this cluster. <p>
+     *         Default: The default cluster security group for Amazon Redshift.
+     *         <p>Cluster security groups only apply to clusters outside of VPCs.
+     */
+    public java.util.List<String> getClusterSecurityGroups() {
+        if (clusterSecurityGroups == null) {
+              clusterSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              clusterSecurityGroups.setAutoConstruct(true);
+        }
+        return clusterSecurityGroups;
+    }
+    
+    /**
+     * A list of security groups to be associated with this cluster. <p>
+     * Default: The default cluster security group for Amazon Redshift.
+     * <p>Cluster security groups only apply to clusters outside of VPCs.
+     *
+     * @param clusterSecurityGroups A list of security groups to be associated with this cluster. <p>
+     *         Default: The default cluster security group for Amazon Redshift.
+     *         <p>Cluster security groups only apply to clusters outside of VPCs.
+     */
+    public void setClusterSecurityGroups(java.util.Collection<String> clusterSecurityGroups) {
+        if (clusterSecurityGroups == null) {
+            this.clusterSecurityGroups = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(clusterSecurityGroups.size());
+        clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
+        this.clusterSecurityGroups = clusterSecurityGroupsCopy;
+    }
+    
+    /**
+     * A list of security groups to be associated with this cluster. <p>
+     * Default: The default cluster security group for Amazon Redshift.
+     * <p>Cluster security groups only apply to clusters outside of VPCs.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clusterSecurityGroups A list of security groups to be associated with this cluster. <p>
+     *         Default: The default cluster security group for Amazon Redshift.
+     *         <p>Cluster security groups only apply to clusters outside of VPCs.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withClusterSecurityGroups(String... clusterSecurityGroups) {
+        if (getClusterSecurityGroups() == null) setClusterSecurityGroups(new java.util.ArrayList<String>(clusterSecurityGroups.length));
+        for (String value : clusterSecurityGroups) {
+            getClusterSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of security groups to be associated with this cluster. <p>
+     * Default: The default cluster security group for Amazon Redshift.
+     * <p>Cluster security groups only apply to clusters outside of VPCs.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clusterSecurityGroups A list of security groups to be associated with this cluster. <p>
+     *         Default: The default cluster security group for Amazon Redshift.
+     *         <p>Cluster security groups only apply to clusters outside of VPCs.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withClusterSecurityGroups(java.util.Collection<String> clusterSecurityGroups) {
+        if (clusterSecurityGroups == null) {
+            this.clusterSecurityGroups = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(clusterSecurityGroups.size());
+            clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
+            this.clusterSecurityGroups = clusterSecurityGroupsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * with the cluster. <p> Default: The default VPC security group is
+     * associated with the cluster. <p> VPC security groups only apply to
+     * clusters in VPCs.
+     *
+     * @return A list of Virtual Private Cloud (VPC) security groups to be associated
+     *         with the cluster. <p> Default: The default VPC security group is
+     *         associated with the cluster. <p> VPC security groups only apply to
+     *         clusters in VPCs.
+     */
+    public java.util.List<String> getVpcSecurityGroupIds() {
+        if (vpcSecurityGroupIds == null) {
+              vpcSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpcSecurityGroupIds.setAutoConstruct(true);
+        }
+        return vpcSecurityGroupIds;
+    }
+    
+    /**
+     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * with the cluster. <p> Default: The default VPC security group is
+     * associated with the cluster. <p> VPC security groups only apply to
+     * clusters in VPCs.
+     *
+     * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
+     *         with the cluster. <p> Default: The default VPC security group is
+     *         associated with the cluster. <p> VPC security groups only apply to
+     *         clusters in VPCs.
+     */
+    public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
+        vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
+        this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
+    }
+    
+    /**
+     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * with the cluster. <p> Default: The default VPC security group is
+     * associated with the cluster. <p> VPC security groups only apply to
+     * clusters in VPCs.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
+     *         with the cluster. <p> Default: The default VPC security group is
+     *         associated with the cluster. <p> VPC security groups only apply to
+     *         clusters in VPCs.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
+        if (getVpcSecurityGroupIds() == null) setVpcSecurityGroupIds(new java.util.ArrayList<String>(vpcSecurityGroupIds.length));
+        for (String value : vpcSecurityGroupIds) {
+            getVpcSecurityGroupIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of Virtual Private Cloud (VPC) security groups to be associated
+     * with the cluster. <p> Default: The default VPC security group is
+     * associated with the cluster. <p> VPC security groups only apply to
+     * clusters in VPCs.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
+     *         with the cluster. <p> Default: The default VPC security group is
+     *         associated with the cluster. <p> VPC security groups only apply to
+     *         clusters in VPCs.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
+            vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
+            this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * The weekly time range (in UTC) during which automated cluster
+     * maintenance can occur. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
+     * for the cluster from which the snapshot was taken. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Oregon)
+     * Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b>
+     * 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore) Region</b>
+     * 14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b>
+     * 12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region</b>
+     * 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
+     * | Sat | Sun <p>Constraints: Minimum 30-minute window.
+     *
+     * @return The weekly time range (in UTC) during which automated cluster
+     *         maintenance can occur. <p> Format:
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
+     *         for the cluster from which the snapshot was taken. The following list
+     *         shows the time blocks for each region from which the default
+     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Oregon)
+     *         Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b>
+     *         22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore) Region</b>
+     *         14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b>
+     *         12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region</b>
+     *         17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
+     *         | Sat | Sun <p>Constraints: Minimum 30-minute window.
+     */
+    public String getPreferredMaintenanceWindow() {
+        return preferredMaintenanceWindow;
+    }
+    
+    /**
+     * The weekly time range (in UTC) during which automated cluster
+     * maintenance can occur. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
+     * for the cluster from which the snapshot was taken. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Oregon)
+     * Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b>
+     * 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore) Region</b>
+     * 14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b>
+     * 12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region</b>
+     * 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
+     * | Sat | Sun <p>Constraints: Minimum 30-minute window.
+     *
+     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
+     *         maintenance can occur. <p> Format:
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
+     *         for the cluster from which the snapshot was taken. The following list
+     *         shows the time blocks for each region from which the default
+     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Oregon)
+     *         Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b>
+     *         22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore) Region</b>
+     *         14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b>
+     *         12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region</b>
+     *         17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
+     *         | Sat | Sun <p>Constraints: Minimum 30-minute window.
+     */
+    public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
+        this.preferredMaintenanceWindow = preferredMaintenanceWindow;
+    }
+    
+    /**
+     * The weekly time range (in UTC) during which automated cluster
+     * maintenance can occur. <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
+     * for the cluster from which the snapshot was taken. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Oregon)
+     * Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b>
+     * 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore) Region</b>
+     * 14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b>
+     * 12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region</b>
+     * 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
+     * | Sat | Sun <p>Constraints: Minimum 30-minute window.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param preferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
+     *         maintenance can occur. <p> Format:
+     *         <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: The value selected
+     *         for the cluster from which the snapshot was taken. The following list
+     *         shows the time blocks for each region from which the default
+     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Oregon)
+     *         Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b>
+     *         22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore) Region</b>
+     *         14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b>
+     *         12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region</b>
+     *         17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri
+     *         | Sat | Sun <p>Constraints: Minimum 30-minute window.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
+        this.preferredMaintenanceWindow = preferredMaintenanceWindow;
+        return this;
+    }
+
+    /**
+     * The number of days that automated snapshots are retained. If the value
+     * is 0, automated snapshots are disabled. Even if automated snapshots
+     * are disabled, you can still create manual snapshots when you want with
+     * <a>CreateClusterSnapshot</a>. <p> Default: The value selected for the
+     * cluster from which the snapshot was taken. <p>Constraints: Must be a
+     * value from 0 to 35.
+     *
+     * @return The number of days that automated snapshots are retained. If the value
+     *         is 0, automated snapshots are disabled. Even if automated snapshots
+     *         are disabled, you can still create manual snapshots when you want with
+     *         <a>CreateClusterSnapshot</a>. <p> Default: The value selected for the
+     *         cluster from which the snapshot was taken. <p>Constraints: Must be a
+     *         value from 0 to 35.
+     */
+    public Integer getAutomatedSnapshotRetentionPeriod() {
+        return automatedSnapshotRetentionPeriod;
+    }
+    
+    /**
+     * The number of days that automated snapshots are retained. If the value
+     * is 0, automated snapshots are disabled. Even if automated snapshots
+     * are disabled, you can still create manual snapshots when you want with
+     * <a>CreateClusterSnapshot</a>. <p> Default: The value selected for the
+     * cluster from which the snapshot was taken. <p>Constraints: Must be a
+     * value from 0 to 35.
+     *
+     * @param automatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value
+     *         is 0, automated snapshots are disabled. Even if automated snapshots
+     *         are disabled, you can still create manual snapshots when you want with
+     *         <a>CreateClusterSnapshot</a>. <p> Default: The value selected for the
+     *         cluster from which the snapshot was taken. <p>Constraints: Must be a
+     *         value from 0 to 35.
+     */
+    public void setAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
+        this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
+    }
+    
+    /**
+     * The number of days that automated snapshots are retained. If the value
+     * is 0, automated snapshots are disabled. Even if automated snapshots
+     * are disabled, you can still create manual snapshots when you want with
+     * <a>CreateClusterSnapshot</a>. <p> Default: The value selected for the
+     * cluster from which the snapshot was taken. <p>Constraints: Must be a
+     * value from 0 to 35.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param automatedSnapshotRetentionPeriod The number of days that automated snapshots are retained. If the value
+     *         is 0, automated snapshots are disabled. Even if automated snapshots
+     *         are disabled, you can still create manual snapshots when you want with
+     *         <a>CreateClusterSnapshot</a>. <p> Default: The value selected for the
+     *         cluster from which the snapshot was taken. <p>Constraints: Must be a
+     *         value from 0 to 35.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
+        this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
         return this;
     }
 
@@ -716,7 +1187,12 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (getOwnerAccount() != null) sb.append("OwnerAccount: " + getOwnerAccount() + ",");
         if (getHsmClientCertificateIdentifier() != null) sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
         if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
-        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() );
+        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ",");
+        if (getClusterParameterGroupName() != null) sb.append("ClusterParameterGroupName: " + getClusterParameterGroupName() + ",");
+        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() );
         sb.append("}");
         return sb.toString();
     }
@@ -738,6 +1214,11 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
+        hashCode = prime * hashCode + ((getClusterParameterGroupName() == null) ? 0 : getClusterParameterGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getClusterSecurityGroups() == null) ? 0 : getClusterSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
+        hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode()); 
         return hashCode;
     }
     
@@ -773,6 +1254,16 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false) return false; 
         if (other.getElasticIp() == null ^ this.getElasticIp() == null) return false;
         if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false) return false; 
+        if (other.getClusterParameterGroupName() == null ^ this.getClusterParameterGroupName() == null) return false;
+        if (other.getClusterParameterGroupName() != null && other.getClusterParameterGroupName().equals(this.getClusterParameterGroupName()) == false) return false; 
+        if (other.getClusterSecurityGroups() == null ^ this.getClusterSecurityGroups() == null) return false;
+        if (other.getClusterSecurityGroups() != null && other.getClusterSecurityGroups().equals(this.getClusterSecurityGroups()) == false) return false; 
+        if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null) return false;
+        if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false) return false; 
+        if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
+        if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
+        if (other.getAutomatedSnapshotRetentionPeriod() == null ^ this.getAutomatedSnapshotRetentionPeriod() == null) return false;
+        if (other.getAutomatedSnapshotRetentionPeriod() != null && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false) return false; 
         return true;
     }
     

@@ -95,7 +95,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
      * @param productCode The product code. This must be an Amazon DevPay product code that you
      *         own.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfirmProductInstanceRequest withProductCode(String productCode) {
@@ -128,7 +128,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfirmProductInstanceRequest withInstanceId(String instanceId) {

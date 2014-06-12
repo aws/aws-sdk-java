@@ -109,7 +109,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      *
      * @param userName Name of the user whose key you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAccessKeyRequest withUserName(String userName) {
@@ -160,7 +160,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * @param accessKeyId The access key ID for the access key ID and secret access key you want
      *         to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAccessKeyRequest withAccessKeyId(String accessKeyId) {

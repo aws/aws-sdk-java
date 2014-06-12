@@ -93,7 +93,7 @@ public class InstanceGroupStatus implements Serializable {
      *         deprecated: ARRESTED, SHUTTING_DOWN, and ENDED. Use SUSPENDED,
      *         TERMINATING, and TERMINATED instead, respectively.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceGroupState
@@ -135,7 +135,7 @@ public class InstanceGroupStatus implements Serializable {
      *         deprecated: ARRESTED, SHUTTING_DOWN, and ENDED. Use SUSPENDED,
      *         TERMINATING, and TERMINATED instead, respectively.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceGroupState
@@ -170,7 +170,7 @@ public class InstanceGroupStatus implements Serializable {
      *
      * @param stateChangeReason The status change reason details for the instance group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupStatus withStateChangeReason(InstanceGroupStateChangeReason stateChangeReason) {
@@ -203,7 +203,7 @@ public class InstanceGroupStatus implements Serializable {
      *
      * @param timeline The timeline of the instance group status over time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupStatus withTimeline(InstanceGroupTimeline timeline) {

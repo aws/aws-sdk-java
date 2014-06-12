@@ -96,7 +96,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      *         key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
      *         <i>false</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTagsRequest withTags(Tag... tags) {
@@ -122,7 +122,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      *         key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
      *         <i>false</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTagsRequest withTags(java.util.Collection<Tag> tags) {

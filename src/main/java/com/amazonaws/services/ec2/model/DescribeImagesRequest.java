@@ -159,7 +159,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * @param imageIds One or more image IDs. <p>Default: Describes all images available to
      *         you.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withImageIds(String... imageIds) {
@@ -179,7 +179,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * @param imageIds One or more image IDs. <p>Default: Describes all images available to
      *         you.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withImageIds(java.util.Collection<String> imageIds) {
@@ -247,7 +247,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         (owner is AWS Marketplace), <code>self</code> (owner is the sender of
      *         the request), or <code>all</code> (all owners).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withOwners(String... owners) {
@@ -271,7 +271,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         (owner is AWS Marketplace), <code>self</code> (owner is the sender of
      *         the request), or <code>all</code> (all owners).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withOwners(java.util.Collection<String> owners) {
@@ -333,7 +333,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         an AWS account ID, <code>self</code> (the sender of the request), or
      *         <code>all</code> (public AMIs).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withExecutableUsers(String... executableUsers) {
@@ -355,7 +355,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         an AWS account ID, <code>self</code> (the sender of the request), or
      *         <code>all</code> (public AMIs).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withExecutableUsers(java.util.Collection<String> executableUsers) {
@@ -735,7 +735,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withFilters(Filter... filters) {
@@ -863,7 +863,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         virtualization type (<code>paravirtual</code> | <code>hvm</code>).
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImagesRequest withFilters(java.util.Collection<Filter> filters) {

@@ -175,7 +175,7 @@ public class ProcessType implements Serializable {
      *
      * @param processName The name of a process.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProcessType withProcessName(String processName) {

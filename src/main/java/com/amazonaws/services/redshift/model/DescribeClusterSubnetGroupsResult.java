@@ -93,7 +93,7 @@ public class DescribeClusterSubnetGroupsResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSubnetGroupsResult withMarker(String marker) {
@@ -136,7 +136,7 @@ public class DescribeClusterSubnetGroupsResult implements Serializable {
      *
      * @param clusterSubnetGroups A list of <a>ClusterSubnetGroup</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(ClusterSubnetGroup... clusterSubnetGroups) {
@@ -154,7 +154,7 @@ public class DescribeClusterSubnetGroupsResult implements Serializable {
      *
      * @param clusterSubnetGroups A list of <a>ClusterSubnetGroup</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(java.util.Collection<ClusterSubnetGroup> clusterSubnetGroups) {

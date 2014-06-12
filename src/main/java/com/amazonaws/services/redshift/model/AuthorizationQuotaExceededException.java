@@ -19,10 +19,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The authorization quota for the cluster security group has been
- * reached. For information about increasing your quota, go to
- * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html"> Limits in Amazon Redshift </a>
- * in the <i>Amazon Redshift Management Guide</i> .
- * 
+ * reached.
  * </p>
  */        
 public class AuthorizationQuotaExceededException extends AmazonServiceException {

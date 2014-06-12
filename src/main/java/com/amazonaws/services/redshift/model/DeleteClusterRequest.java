@@ -117,7 +117,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
      *         be a letter.</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteClusterRequest withClusterIdentifier(String clusterIdentifier) {
@@ -186,7 +186,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
      *         <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</note>
      *         <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteClusterRequest withSkipFinalClusterSnapshot(Boolean skipFinalClusterSnapshot) {
@@ -270,7 +270,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
      *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteClusterRequest withFinalClusterSnapshotIdentifier(String finalClusterSnapshotIdentifier) {

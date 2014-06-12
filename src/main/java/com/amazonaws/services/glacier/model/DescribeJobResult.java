@@ -165,7 +165,7 @@ public class DescribeJobResult implements Serializable {
      *
      * @param jobId An opaque string that identifies an Amazon Glacier job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withJobId(String jobId) {
@@ -198,7 +198,7 @@ public class DescribeJobResult implements Serializable {
      *
      * @param jobDescription The job description you provided when you initiated the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withJobDescription(String jobDescription) {
@@ -244,7 +244,7 @@ public class DescribeJobResult implements Serializable {
      *
      * @param action The job type. It is either ArchiveRetrieval or InventoryRetrieval.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActionCode
@@ -278,7 +278,7 @@ public class DescribeJobResult implements Serializable {
      *
      * @param action The job type. It is either ArchiveRetrieval or InventoryRetrieval.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActionCode
@@ -319,7 +319,7 @@ public class DescribeJobResult implements Serializable {
      * @param archiveId For an ArchiveRetrieval job, this is the archive ID requested for
      *         download. Otherwise, this field is null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withArchiveId(String archiveId) {
@@ -358,7 +358,7 @@ public class DescribeJobResult implements Serializable {
      * @param vaultARN The Amazon Resource Name (ARN) of the vault from which the archive
      *         retrieval was requested.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withVaultARN(String vaultARN) {
@@ -397,7 +397,7 @@ public class DescribeJobResult implements Serializable {
      * @param creationDate The UTC date when the job was created. A string representation of ISO
      *         8601 date format, for example, "2012-03-20T17:03:43.221Z".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withCreationDate(String creationDate) {
@@ -430,7 +430,7 @@ public class DescribeJobResult implements Serializable {
      *
      * @param completed The job status. When a job is completed, you get the job's output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withCompleted(Boolean completed) {
@@ -491,7 +491,7 @@ public class DescribeJobResult implements Serializable {
      * @param statusCode The status code can be InProgress, Succeeded, or Failed, and indicates
      *         the status of the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusCode
@@ -529,7 +529,7 @@ public class DescribeJobResult implements Serializable {
      * @param statusCode The status code can be InProgress, Succeeded, or Failed, and indicates
      *         the status of the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusCode
@@ -564,7 +564,7 @@ public class DescribeJobResult implements Serializable {
      *
      * @param statusMessage A friendly message that describes the job status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withStatusMessage(String statusMessage) {
@@ -609,7 +609,7 @@ public class DescribeJobResult implements Serializable {
      *         being requested for download. For the InventoryRetrieval job, the
      *         value is null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withArchiveSizeInBytes(Long archiveSizeInBytes) {
@@ -654,7 +654,7 @@ public class DescribeJobResult implements Serializable {
      *         inventory requested for download. For the ArchiveRetrieval job, the
      *         value is null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withInventorySizeInBytes(Long inventorySizeInBytes) {
@@ -693,7 +693,7 @@ public class DescribeJobResult implements Serializable {
      * @param sNSTopic An Amazon Simple Notification Service (Amazon SNS) topic that receives
      *         notification.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withSNSTopic(String sNSTopic) {
@@ -732,7 +732,7 @@ public class DescribeJobResult implements Serializable {
      * @param completionDate The UTC time that the archive retrieval request completed. While the
      *         job is in progress, the value will be null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withCompletionDate(String completionDate) {
@@ -825,7 +825,7 @@ public class DescribeJobResult implements Serializable {
      *         that is equal to the whole archive and the job status is
      *         InProgress.</li> </ul> <ul> <li><p>Inventory jobs.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withSHA256TreeHash(String sHA256TreeHash) {
@@ -864,7 +864,7 @@ public class DescribeJobResult implements Serializable {
      * @param archiveSHA256TreeHash The SHA256 tree hash of the entire archive for an archive retrieval.
      *         For inventory retrieval jobs, this field is null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
@@ -927,7 +927,7 @@ public class DescribeJobResult implements Serializable {
      *         of the archive minus 1. For inventory retrieval jobs this field is
      *         null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withRetrievalByteRange(String retrievalByteRange) {
@@ -960,7 +960,7 @@ public class DescribeJobResult implements Serializable {
      *
      * @param inventoryRetrievalParameters Parameters used for range inventory retrieval.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobResult withInventoryRetrievalParameters(InventoryRetrievalJobDescription inventoryRetrievalParameters) {

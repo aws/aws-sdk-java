@@ -174,7 +174,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <p>Default: If you're creating the volume from a snapshot and don't
      *         specify a volume size, the default is the snapshot size.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumeRequest withSize(Integer size) {
@@ -207,7 +207,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param snapshotId The snapshot from which to create the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumeRequest withSnapshotId(String snapshotId) {
@@ -252,7 +252,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <a>DescribeAvailabilityZones</a> to list the Availability Zones that
      *         are currently available to you.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumeRequest withAvailabilityZone(String availabilityZone) {
@@ -310,7 +310,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
      *         <code>standard</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -352,7 +352,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
      *         <code>standard</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -399,7 +399,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         supports. This parameter is not used with standard volumes, but is
      *         required when the volume type is <code>io1</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumeRequest withIops(Integer iops) {
@@ -432,7 +432,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param encrypted Specifies whether the volume should be encrypted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumeRequest withEncrypted(Boolean encrypted) {

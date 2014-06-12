@@ -66,7 +66,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
      *
      * @param reservedInstancesOfferings A list of Reserved Instances offerings.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(ReservedInstancesOffering... reservedInstancesOfferings) {
@@ -84,7 +84,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
      *
      * @param reservedInstancesOfferings A list of Reserved Instances offerings.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(java.util.Collection<ReservedInstancesOffering> reservedInstancesOfferings) {
@@ -124,7 +124,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
      *
      * @param nextToken The next paginated set of results to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesOfferingsResult withNextToken(String nextToken) {

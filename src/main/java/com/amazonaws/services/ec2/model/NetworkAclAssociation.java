@@ -63,7 +63,7 @@ public class NetworkAclAssociation implements Serializable {
      *
      * @param networkAclAssociationId The ID of the association between a network ACL and a subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclAssociation withNetworkAclAssociationId(String networkAclAssociationId) {
@@ -96,7 +96,7 @@ public class NetworkAclAssociation implements Serializable {
      *
      * @param networkAclId The ID of the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclAssociation withNetworkAclId(String networkAclId) {
@@ -129,7 +129,7 @@ public class NetworkAclAssociation implements Serializable {
      *
      * @param subnetId The ID of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclAssociation withSubnetId(String subnetId) {

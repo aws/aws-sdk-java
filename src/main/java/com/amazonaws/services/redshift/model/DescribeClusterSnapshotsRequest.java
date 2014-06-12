@@ -129,7 +129,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      * @param clusterIdentifier The identifier of the cluster for which information about snapshots is
      *         requested.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withClusterIdentifier(String clusterIdentifier) {
@@ -168,7 +168,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      * @param snapshotIdentifier The snapshot identifier of the snapshot about which to return
      *         information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withSnapshotIdentifier(String snapshotIdentifier) {
@@ -213,7 +213,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      *         default, snapshots of all types are returned. <p> Valid Values:
      *         <code>automated</code> | <code>manual</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withSnapshotType(String snapshotType) {
@@ -270,7 +270,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2012-07-16T18:00:00Z</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withStartTime(java.util.Date startTime) {
@@ -327,7 +327,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2012-07-16T18:00:00Z</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withEndTime(java.util.Date endTime) {
@@ -390,7 +390,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withMaxRecords(Integer maxRecords) {
@@ -459,7 +459,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withMarker(String marker) {
@@ -510,7 +510,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest imp
      *         account. To describe snapshots you own, either specify your AWS
      *         customer account, or do not specify the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsRequest withOwnerAccount(String ownerAccount) {

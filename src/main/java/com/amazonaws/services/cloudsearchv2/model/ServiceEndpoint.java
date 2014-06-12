@@ -74,7 +74,7 @@ public class ServiceEndpoint implements Serializable {
      *         or
      *         <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServiceEndpoint withEndpoint(String endpoint) {

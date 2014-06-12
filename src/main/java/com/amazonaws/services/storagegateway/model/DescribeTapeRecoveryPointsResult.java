@@ -97,7 +97,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeRecoveryPointsResult withGatewayARN(String gatewayARN) {
@@ -146,7 +146,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable {
      * @param tapeRecoveryPointInfos An array of TapeRecoveryPointInfos that are available for the
      *         specified gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeRecoveryPointsResult withTapeRecoveryPointInfos(TapeRecoveryPointInfo... tapeRecoveryPointInfos) {
@@ -166,7 +166,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable {
      * @param tapeRecoveryPointInfos An array of TapeRecoveryPointInfos that are available for the
      *         specified gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeRecoveryPointsResult withTapeRecoveryPointInfos(java.util.Collection<TapeRecoveryPointInfo> tapeRecoveryPointInfos) {
@@ -239,7 +239,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable {
      *         recovery points in the list. If there are no more recovery points to
      *         describe, this field does not appear in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeRecoveryPointsResult withMarker(String marker) {

@@ -58,7 +58,7 @@ public class Endpoint implements Serializable {
      *
      * @param address The DNS address of the Cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Endpoint withAddress(String address) {
@@ -91,7 +91,7 @@ public class Endpoint implements Serializable {
      *
      * @param port The port that the database engine is listening on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Endpoint withPort(Integer port) {

@@ -73,7 +73,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
      *
      * @param checkIds The IDs of the Trusted Advisor checks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckSummariesRequest withCheckIds(String... checkIds) {
@@ -91,7 +91,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
      *
      * @param checkIds The IDs of the Trusted Advisor checks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckSummariesRequest withCheckIds(java.util.Collection<String> checkIds) {

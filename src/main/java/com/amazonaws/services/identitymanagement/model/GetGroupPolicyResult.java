@@ -88,7 +88,7 @@ public class GetGroupPolicyResult implements Serializable {
      *
      * @param groupName The group the policy is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupPolicyResult withGroupName(String groupName) {
@@ -133,7 +133,7 @@ public class GetGroupPolicyResult implements Serializable {
      *
      * @param policyName The name of the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupPolicyResult withPolicyName(String policyName) {
@@ -178,7 +178,7 @@ public class GetGroupPolicyResult implements Serializable {
      *
      * @param policyDocument The policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupPolicyResult withPolicyDocument(String policyDocument) {

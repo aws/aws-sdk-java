@@ -96,7 +96,7 @@ public class DescribeHsmConfigurationsRequest extends AmazonWebServiceRequest im
      *         described. If no identifier is specified, information is returned for
      *         all HSM configurations owned by your AWS customer account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmConfigurationsRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
@@ -159,7 +159,7 @@ public class DescribeHsmConfigurationsRequest extends AmazonWebServiceRequest im
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmConfigurationsRequest withMaxRecords(Integer maxRecords) {
@@ -228,7 +228,7 @@ public class DescribeHsmConfigurationsRequest extends AmazonWebServiceRequest im
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmConfigurationsRequest withMarker(String marker) {

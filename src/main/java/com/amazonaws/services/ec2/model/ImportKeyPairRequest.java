@@ -96,7 +96,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param keyName A unique name for the key pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportKeyPairRequest withKeyName(String keyName) {
@@ -135,7 +135,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
      * @param publicKeyMaterial The public key. You must base64 encode the public key material before
      *         sending it to AWS.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportKeyPairRequest withPublicKeyMaterial(String publicKeyMaterial) {

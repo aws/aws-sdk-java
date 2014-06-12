@@ -199,7 +199,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param launchConfigurationName Specifies the name of the launch configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withLaunchConfigurationName(String launchConfigurationName) {
@@ -244,7 +244,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param launchConfigurationARN The launch configuration's Amazon Resource Name (ARN).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withLaunchConfigurationARN(String launchConfigurationARN) {
@@ -295,7 +295,7 @@ public class LaunchConfiguration implements Serializable {
      * @param imageId Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that
      *         was assigned during registration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withImageId(String imageId) {
@@ -340,7 +340,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param keyName Provides the name of the Amazon EC2 key pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withKeyName(String keyName) {
@@ -389,7 +389,7 @@ public class LaunchConfiguration implements Serializable {
      * @param securityGroups A description of the security groups to associate with the Amazon EC2
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withSecurityGroups(String... securityGroups) {
@@ -409,7 +409,7 @@ public class LaunchConfiguration implements Serializable {
      * @param securityGroups A description of the security groups to associate with the Amazon EC2
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -461,7 +461,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param userData The user data available to the launched Amazon EC2 instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withUserData(String userData) {
@@ -506,7 +506,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param instanceType Specifies the instance type of the Amazon EC2 instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withInstanceType(String instanceType) {
@@ -551,7 +551,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param kernelId Provides the ID of the kernel associated with the Amazon EC2 AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withKernelId(String kernelId) {
@@ -596,7 +596,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param ramdiskId Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withRamdiskId(String ramdiskId) {
@@ -645,7 +645,7 @@ public class LaunchConfiguration implements Serializable {
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a <i>virtualName</i> and a <i>deviceName</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
@@ -665,7 +665,7 @@ public class LaunchConfiguration implements Serializable {
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a <i>virtualName</i> and a <i>deviceName</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -711,7 +711,7 @@ public class LaunchConfiguration implements Serializable {
      * @param instanceMonitoring Controls whether instances in this group are launched with detailed
      *         monitoring or not.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -753,7 +753,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param spotPrice Specifies the price to bid when launching Spot Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withSpotPrice(String spotPrice) {
@@ -810,7 +810,7 @@ public class LaunchConfiguration implements Serializable {
      *         profile associated with the IAM role for the instance. The instance
      *         profile contains the IAM role.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withIamInstanceProfile(String iamInstanceProfile) {
@@ -843,7 +843,7 @@ public class LaunchConfiguration implements Serializable {
      *
      * @param createdTime Provides the creation date and time for this launch configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withCreatedTime(java.util.Date createdTime) {
@@ -882,7 +882,7 @@ public class LaunchConfiguration implements Serializable {
      * @param ebsOptimized Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
      *         or not (<i>false</i>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withEbsOptimized(Boolean ebsOptimized) {
@@ -932,7 +932,7 @@ public class LaunchConfiguration implements Serializable {
      * @param associatePublicIpAddress Specifies whether the instance is associated with a public IP address
      *         (<code>true</code>) or not (<code>false</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -1006,7 +1006,7 @@ public class LaunchConfiguration implements Serializable {
      *         <code>dedicated</code> tenancy runs in an isolated, single-tenant
      *         hardware and it can only be launched in a VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchConfiguration withPlacementTenancy(String placementTenancy) {

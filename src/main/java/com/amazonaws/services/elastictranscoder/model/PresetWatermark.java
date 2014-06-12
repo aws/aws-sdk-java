@@ -257,7 +257,7 @@ public class PresetWatermark implements Serializable {
      * @param id A unique identifier for the settings for one watermark. The value of
      *         <code>Id</code> can be up to 40 characters long.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withId(String id) {
@@ -347,7 +347,7 @@ public class PresetWatermark implements Serializable {
      *         in pixels, it must be less than or equal to the value of
      *         <code>MaxWidth</code>.</ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withMaxWidth(String maxWidth) {
@@ -437,7 +437,7 @@ public class PresetWatermark implements Serializable {
      *         value in pixels, it must be less than or equal to the value of
      *         <code>MaxHeight</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withMaxHeight(String maxHeight) {
@@ -557,7 +557,7 @@ public class PresetWatermark implements Serializable {
      *         exceeding either value. If you specify this option, Elastic Transcoder
      *         does not scale the watermark up.</li></ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withSizingPolicy(String sizingPolicy) {
@@ -635,7 +635,7 @@ public class PresetWatermark implements Serializable {
      *         The watermark is centered between the left and right
      *         borders.</li></ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withHorizontalAlign(String horizontalAlign) {
@@ -779,7 +779,7 @@ public class PresetWatermark implements Serializable {
      *         the black bars that are added by Elastic Transcoder, if any, in the
      *         offset calculation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withHorizontalOffset(String horizontalOffset) {
@@ -857,7 +857,7 @@ public class PresetWatermark implements Serializable {
      *         The watermark is centered between the top and bottom
      *         borders.</li></ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withVerticalAlign(String verticalAlign) {
@@ -1001,7 +1001,7 @@ public class PresetWatermark implements Serializable {
      *         you want Elastic Transcoder to include the black bars that are added
      *         by Elastic Transcoder, if any, in the offset calculation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withVerticalOffset(String verticalOffset) {
@@ -1085,7 +1085,7 @@ public class PresetWatermark implements Serializable {
      *         appears as if you had specified a value of 0 for <code>Opacity</code>.
      *         The .jpg file format doesn't support transparency.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withOpacity(String opacity) {
@@ -1217,7 +1217,7 @@ public class PresetWatermark implements Serializable {
      *         percentage, are calculated based on the borders of the video including
      *         black bars added by Elastic Transcoder, if any.</ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PresetWatermark withTarget(String target) {

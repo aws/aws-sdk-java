@@ -63,7 +63,7 @@ public class DescribeInterconnectsResult implements Serializable {
      *
      * @param interconnects A list of interconnects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInterconnectsResult withInterconnects(Interconnect... interconnects) {
@@ -81,7 +81,7 @@ public class DescribeInterconnectsResult implements Serializable {
      *
      * @param interconnects A list of interconnects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInterconnectsResult withInterconnects(java.util.Collection<Interconnect> interconnects) {

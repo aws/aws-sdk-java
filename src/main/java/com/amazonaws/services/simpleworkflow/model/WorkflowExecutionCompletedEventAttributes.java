@@ -82,7 +82,7 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
      * @param result The result produced by the workflow execution upon successful
      *         completion.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCompletedEventAttributes withResult(String result) {
@@ -139,7 +139,7 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable {
      *         execution. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCompletedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

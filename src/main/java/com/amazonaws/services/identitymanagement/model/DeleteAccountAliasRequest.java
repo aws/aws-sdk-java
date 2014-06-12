@@ -94,7 +94,7 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implement
      *
      * @param accountAlias Name of the account alias to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAccountAliasRequest withAccountAlias(String accountAlias) {

@@ -83,7 +83,7 @@ public class ValidateTemplateResult implements Serializable {
      *
      * @param parameters A list of <code>TemplateParameter</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidateTemplateResult withParameters(TemplateParameter... parameters) {
@@ -101,7 +101,7 @@ public class ValidateTemplateResult implements Serializable {
      *
      * @param parameters A list of <code>TemplateParameter</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidateTemplateResult withParameters(java.util.Collection<TemplateParameter> parameters) {
@@ -141,7 +141,7 @@ public class ValidateTemplateResult implements Serializable {
      *
      * @param description The description found within the template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidateTemplateResult withDescription(String description) {
@@ -214,7 +214,7 @@ public class ValidateTemplateResult implements Serializable {
      *         actions with your template; otherwise, those actions return an
      *         InsufficientCapabilities error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidateTemplateResult withCapabilities(String... capabilities) {
@@ -242,7 +242,7 @@ public class ValidateTemplateResult implements Serializable {
      *         actions with your template; otherwise, those actions return an
      *         InsufficientCapabilities error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidateTemplateResult withCapabilities(java.util.Collection<String> capabilities) {
@@ -274,7 +274,7 @@ public class ValidateTemplateResult implements Serializable {
      *         actions with your template; otherwise, those actions return an
      *         InsufficientCapabilities error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidateTemplateResult withCapabilities(Capability... capabilities) {
@@ -315,7 +315,7 @@ public class ValidateTemplateResult implements Serializable {
      *
      * @param capabilitiesReason The capabilities reason found within the template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidateTemplateResult withCapabilitiesReason(String capabilitiesReason) {

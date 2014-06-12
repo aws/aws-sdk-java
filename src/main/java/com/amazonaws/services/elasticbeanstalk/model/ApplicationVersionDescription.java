@@ -103,7 +103,7 @@ public class ApplicationVersionDescription implements Serializable {
      *
      * @param applicationName The name of the application associated with this release.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationVersionDescription withApplicationName(String applicationName) {
@@ -145,7 +145,7 @@ public class ApplicationVersionDescription implements Serializable {
      *
      * @param description The description of this application version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationVersionDescription withDescription(String description) {
@@ -193,7 +193,7 @@ public class ApplicationVersionDescription implements Serializable {
      * @param versionLabel A label uniquely identifying the version for the associated
      *         application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationVersionDescription withVersionLabel(String versionLabel) {
@@ -226,7 +226,7 @@ public class ApplicationVersionDescription implements Serializable {
      *
      * @param sourceBundle The location where the source bundle is located for this version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationVersionDescription withSourceBundle(S3Location sourceBundle) {
@@ -259,7 +259,7 @@ public class ApplicationVersionDescription implements Serializable {
      *
      * @param dateCreated The creation date of the application version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationVersionDescription withDateCreated(java.util.Date dateCreated) {
@@ -292,7 +292,7 @@ public class ApplicationVersionDescription implements Serializable {
      *
      * @param dateUpdated The last modified date of the application version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationVersionDescription withDateUpdated(java.util.Date dateUpdated) {

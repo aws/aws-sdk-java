@@ -111,7 +111,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      *
      * @param monday The schedule for Monday.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WeeklyAutoScalingSchedule withMonday(java.util.Map<String,String> monday) {
@@ -178,7 +178,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      *
      * @param tuesday The schedule for Tuesday.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WeeklyAutoScalingSchedule withTuesday(java.util.Map<String,String> tuesday) {
@@ -245,7 +245,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      *
      * @param wednesday The schedule for Wednesday.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WeeklyAutoScalingSchedule withWednesday(java.util.Map<String,String> wednesday) {
@@ -312,7 +312,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      *
      * @param thursday The schedule for Thursday.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WeeklyAutoScalingSchedule withThursday(java.util.Map<String,String> thursday) {
@@ -379,7 +379,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      *
      * @param friday The schedule for Friday.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WeeklyAutoScalingSchedule withFriday(java.util.Map<String,String> friday) {
@@ -446,7 +446,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      *
      * @param saturday The schedule for Saturday.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WeeklyAutoScalingSchedule withSaturday(java.util.Map<String,String> saturday) {
@@ -513,7 +513,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
      *
      * @param sunday The schedule for Sunday.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WeeklyAutoScalingSchedule withSunday(java.util.Map<String,String> sunday) {

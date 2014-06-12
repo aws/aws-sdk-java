@@ -58,7 +58,7 @@ public class DescribeStorediSCSIVolumesResult implements Serializable {
      *
      * @param storediSCSIVolumes The new value for the StorediSCSIVolumes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(StorediSCSIVolume... storediSCSIVolumes) {
@@ -76,7 +76,7 @@ public class DescribeStorediSCSIVolumesResult implements Serializable {
      *
      * @param storediSCSIVolumes The new value for the StorediSCSIVolumes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(java.util.Collection<StorediSCSIVolume> storediSCSIVolumes) {

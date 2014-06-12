@@ -188,7 +188,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadServerCertificateRequest withPath(String path) {
@@ -239,7 +239,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * @param serverCertificateName The name for the server certificate. Do not include the path in this
      *         value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadServerCertificateRequest withServerCertificateName(String serverCertificateName) {
@@ -284,7 +284,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @param certificateBody The contents of the public key certificate in PEM-encoded format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadServerCertificateRequest withCertificateBody(String certificateBody) {
@@ -329,7 +329,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @param privateKey The contents of the private key in PEM-encoded format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadServerCertificateRequest withPrivateKey(String privateKey) {
@@ -380,7 +380,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      * @param certificateChain The contents of the certificate chain. This is typically a
      *         concatenation of the PEM-encoded public key certificates of the chain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadServerCertificateRequest withCertificateChain(String certificateChain) {

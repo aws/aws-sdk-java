@@ -96,7 +96,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *         descriptions to only include ones that are associated with the
      *         specified application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationVersionsRequest withApplicationName(String applicationName) {
@@ -145,7 +145,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      * @param versionLabels If specified, restricts the returned descriptions to only include ones
      *         that have the specified version labels.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationVersionsRequest withVersionLabels(String... versionLabels) {
@@ -165,7 +165,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      * @param versionLabels If specified, restricts the returned descriptions to only include ones
      *         that have the specified version labels.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationVersionsRequest withVersionLabels(java.util.Collection<String> versionLabels) {

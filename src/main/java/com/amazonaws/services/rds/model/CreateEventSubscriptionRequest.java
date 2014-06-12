@@ -141,7 +141,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * @param subscriptionName The name of the subscription. <p>Constraints: The name must be less
      *         than 255 characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSubscriptionName(String subscriptionName) {
@@ -186,7 +186,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         notification. The ARN is created by Amazon SNS when you create a topic
      *         and subscribe to it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSnsTopicArn(String snsTopicArn) {
@@ -243,7 +243,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         specified, all events are returned. <p>Valid values: db-instance |
      *         db-parameter-group | db-security-group | db-snapshot
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSourceType(String sourceType) {
@@ -316,7 +316,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withEventCategories(String... eventCategories) {
@@ -344,7 +344,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withEventCategories(java.util.Collection<String> eventCategories) {
@@ -466,7 +466,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      *         be supplied.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSourceIds(String... sourceIds) {
@@ -508,7 +508,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *         source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      *         be supplied.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withSourceIds(java.util.Collection<String> sourceIds) {
@@ -554,7 +554,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * @param enabled A Boolean value; set to <b>true</b> to activate the subscription, set
      *         to <b>false</b> to create the subscription but not active it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withEnabled(Boolean enabled) {
@@ -608,7 +608,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withTags(Tag... tags) {
@@ -626,7 +626,7 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest impl
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEventSubscriptionRequest withTags(java.util.Collection<Tag> tags) {

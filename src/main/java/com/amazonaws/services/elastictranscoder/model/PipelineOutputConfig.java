@@ -187,7 +187,7 @@ public class PipelineOutputConfig implements Serializable {
      *         omit OutputBucket and specify values for <code>ContentConfig</code>
      *         and <code>ThumbnailConfig</code> instead.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineOutputConfig withBucket(String bucket) {
@@ -247,7 +247,7 @@ public class PipelineOutputConfig implements Serializable {
      *         assign to the video files and playlists that it stores in your Amazon
      *         S3 bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineOutputConfig withStorageClass(String storageClass) {
@@ -371,7 +371,7 @@ public class PipelineOutputConfig implements Serializable {
      *         owner of the role specified by <code>Role</code>, and grants no other
      *         permissions to any other user or group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineOutputConfig withPermissions(Permission... permissions) {
@@ -416,7 +416,7 @@ public class PipelineOutputConfig implements Serializable {
      *         owner of the role specified by <code>Role</code>, and grants no other
      *         permissions to any other user or group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineOutputConfig withPermissions(java.util.Collection<Permission> permissions) {

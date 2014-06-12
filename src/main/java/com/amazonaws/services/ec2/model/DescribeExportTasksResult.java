@@ -61,7 +61,7 @@ public class DescribeExportTasksResult implements Serializable {
      *
      * @param exportTasks 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExportTasksResult withExportTasks(ExportTask... exportTasks) {
@@ -79,7 +79,7 @@ public class DescribeExportTasksResult implements Serializable {
      *
      * @param exportTasks 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExportTasksResult withExportTasks(java.util.Collection<ExportTask> exportTasks) {

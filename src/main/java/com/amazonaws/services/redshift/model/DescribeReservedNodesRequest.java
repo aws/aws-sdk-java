@@ -79,7 +79,7 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implem
      *
      * @param reservedNodeId Identifier for the node reservation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodesRequest withReservedNodeId(String reservedNodeId) {
@@ -142,7 +142,7 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implem
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodesRequest withMaxRecords(Integer maxRecords) {
@@ -211,7 +211,7 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implem
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodesRequest withMarker(String marker) {

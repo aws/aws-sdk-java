@@ -85,7 +85,7 @@ public class AdjustmentType implements Serializable {
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AdjustmentType withAdjustmentType(String adjustmentType) {

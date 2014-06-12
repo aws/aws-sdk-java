@@ -83,7 +83,7 @@ public class InstanceStatusDetails implements Serializable {
      *
      * @param name The type of instance status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusName
@@ -117,7 +117,7 @@ public class InstanceStatusDetails implements Serializable {
      *
      * @param name The type of instance status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusName
@@ -165,7 +165,7 @@ public class InstanceStatusDetails implements Serializable {
      *
      * @param status The status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType
@@ -199,7 +199,7 @@ public class InstanceStatusDetails implements Serializable {
      *
      * @param status The status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType
@@ -240,7 +240,7 @@ public class InstanceStatusDetails implements Serializable {
      * @param impairedSince The time when a status check failed. For an instance that was launched
      *         and impaired, this is the time when the instance was launched.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatusDetails withImpairedSince(java.util.Date impairedSince) {

@@ -93,7 +93,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      * @param subscriptionName The name of the RDS event notification subscription you want to
      *         describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withSubscriptionName(String subscriptionName) {
@@ -136,7 +136,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withFilters(Filter... filters) {
@@ -154,7 +154,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withFilters(java.util.Collection<Filter> filters) {
@@ -218,7 +218,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      *         the remaining results can be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withMaxRecords(Integer maxRecords) {
@@ -269,7 +269,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withMarker(String marker) {

@@ -63,7 +63,7 @@ public class GetPipelineDefinitionResult implements Serializable {
      *
      * @param pipelineObjects An array of objects defined in the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetPipelineDefinitionResult withPipelineObjects(PipelineObject... pipelineObjects) {
@@ -81,7 +81,7 @@ public class GetPipelineDefinitionResult implements Serializable {
      *
      * @param pipelineObjects An array of objects defined in the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetPipelineDefinitionResult withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {

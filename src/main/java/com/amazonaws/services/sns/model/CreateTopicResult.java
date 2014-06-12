@@ -53,7 +53,7 @@ public class CreateTopicResult implements Serializable {
      *
      * @param topicArn The Amazon Resource Name (ARN) assigned to the created topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTopicResult withTopicArn(String topicArn) {

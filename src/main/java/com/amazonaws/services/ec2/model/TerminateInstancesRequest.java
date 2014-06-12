@@ -114,7 +114,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateInstancesRequest withInstanceIds(String... instanceIds) {
@@ -132,7 +132,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {

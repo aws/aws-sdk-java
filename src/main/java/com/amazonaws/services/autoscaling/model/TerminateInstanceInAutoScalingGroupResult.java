@@ -53,7 +53,7 @@ public class TerminateInstanceInAutoScalingGroupResult implements Serializable {
      *
      * @param activity A scaling Activity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateInstanceInAutoScalingGroupResult withActivity(Activity activity) {

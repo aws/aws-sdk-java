@@ -78,7 +78,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @param minimumPasswordLength The new value for the MinimumPasswordLength property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withMinimumPasswordLength(Integer minimumPasswordLength) {
@@ -111,7 +111,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @param requireSymbols The new value for the RequireSymbols property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireSymbols(Boolean requireSymbols) {
@@ -153,7 +153,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      *
      * @param requireNumbers The new value for the RequireNumbers property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireNumbers(Boolean requireNumbers) {
@@ -200,7 +200,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * @param requireUppercaseCharacters The new value for the RequireUppercaseCharacters property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
@@ -248,7 +248,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * @param requireLowercaseCharacters The new value for the RequireLowercaseCharacters property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
@@ -296,7 +296,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
      * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccountPasswordPolicyRequest withAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {

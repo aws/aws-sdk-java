@@ -60,7 +60,7 @@ public class ResolveCaseResult implements Serializable {
      *
      * @param initialCaseStatus The status of the case when the <a>ResolveCase</a> request was sent.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResolveCaseResult withInitialCaseStatus(String initialCaseStatus) {
@@ -99,7 +99,7 @@ public class ResolveCaseResult implements Serializable {
      * @param finalCaseStatus The status of the case after the <a>ResolveCase</a> request was
      *         processed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResolveCaseResult withFinalCaseStatus(String finalCaseStatus) {

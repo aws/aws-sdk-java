@@ -201,7 +201,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -246,7 +246,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param launchConfigurationName The name of the launch configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withLaunchConfigurationName(String launchConfigurationName) {
@@ -279,7 +279,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param minSize The minimum size of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withMinSize(Integer minSize) {
@@ -312,7 +312,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param maxSize The maximum size of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withMaxSize(Integer maxSize) {
@@ -345,7 +345,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param desiredCapacity The desired capacity for the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withDesiredCapacity(Integer desiredCapacity) {
@@ -402,7 +402,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
      *         Period</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withDefaultCooldown(Integer defaultCooldown) {
@@ -454,7 +454,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param availabilityZones Availability Zones for the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withAvailabilityZones(String... availabilityZones) {
@@ -475,7 +475,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param availabilityZones Availability Zones for the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -539,7 +539,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         The health check type can either be <code>EC2</code> for Amazon EC2 or
      *         <code>ELB</code> for Elastic Load Balancing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withHealthCheckType(String healthCheckType) {
@@ -596,7 +596,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
@@ -659,7 +659,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withPlacementGroup(String placementGroup) {
@@ -758,7 +758,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
      *         Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withVPCZoneIdentifier(String vPCZoneIdentifier) {
@@ -837,7 +837,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withTerminationPolicies(String... terminationPolicies) {
@@ -867,7 +867,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAutoScalingGroupRequest withTerminationPolicies(java.util.Collection<String> terminationPolicies) {

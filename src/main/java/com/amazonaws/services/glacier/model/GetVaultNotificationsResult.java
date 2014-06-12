@@ -53,7 +53,7 @@ public class GetVaultNotificationsResult implements Serializable {
      *
      * @param vaultNotificationConfig Returns the notification configuration set on the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetVaultNotificationsResult withVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig) {

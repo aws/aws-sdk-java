@@ -177,7 +177,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withEnvironmentId(String environmentId) {
@@ -249,7 +249,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withEnvironmentName(String environmentName) {
@@ -297,7 +297,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
      *         description of this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withDescription(String description) {
@@ -348,7 +348,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         you change the name of the type, AWS Elastic Beanstalk returns
      *         <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withTier(EnvironmentTier tier) {
@@ -402,7 +402,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         named application version to the environment. If no such application
      *         version is found, returns an <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withVersionLabel(String versionLabel) {
@@ -462,7 +462,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         template is found, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withTemplateName(String templateName) {
@@ -517,7 +517,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         associated with the running environment and sets the specified
      *         configuration options to the requested value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
@@ -539,7 +539,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         associated with the running environment and sets the specified
      *         configuration options to the requested value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
@@ -595,7 +595,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @param optionsToRemove A list of custom user-defined configuration options to remove from the
      *         configuration set for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
@@ -615,7 +615,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @param optionsToRemove A list of custom user-defined configuration options to remove from the
      *         configuration set for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateEnvironmentRequest withOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {

@@ -82,7 +82,7 @@ public class Communication implements Serializable {
      *         is an alphanumeric string formatted as shown in this example:
      *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Communication withCaseId(String caseId) {
@@ -115,7 +115,7 @@ public class Communication implements Serializable {
      *
      * @param body The text of the communication between the customer and AWS Support.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Communication withBody(String body) {
@@ -148,7 +148,7 @@ public class Communication implements Serializable {
      *
      * @param submittedBy The email address of the account that submitted the AWS Support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Communication withSubmittedBy(String submittedBy) {
@@ -181,7 +181,7 @@ public class Communication implements Serializable {
      *
      * @param timeCreated The time the support case was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Communication withTimeCreated(String timeCreated) {

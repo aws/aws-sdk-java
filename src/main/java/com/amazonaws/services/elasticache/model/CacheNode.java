@@ -102,7 +102,7 @@ public class CacheNode implements Serializable {
      *         0002, etc.). The combination of cluster ID and node ID uniquely
      *         identifies every cache node used in a customer's AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNode withCacheNodeId(String cacheNodeId) {
@@ -135,7 +135,7 @@ public class CacheNode implements Serializable {
      *
      * @param cacheNodeStatus The current state of this cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNode withCacheNodeStatus(String cacheNodeStatus) {
@@ -168,7 +168,7 @@ public class CacheNode implements Serializable {
      *
      * @param cacheNodeCreateTime The date and time when the cache node was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNode withCacheNodeCreateTime(java.util.Date cacheNodeCreateTime) {
@@ -201,7 +201,7 @@ public class CacheNode implements Serializable {
      *
      * @param endpoint The hostname and IP address for connecting to this cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNode withEndpoint(Endpoint endpoint) {
@@ -234,7 +234,7 @@ public class CacheNode implements Serializable {
      *
      * @param parameterGroupStatus The status of the parameter group applied to this cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNode withParameterGroupStatus(String parameterGroupStatus) {
@@ -279,7 +279,7 @@ public class CacheNode implements Serializable {
      *         synchronized. If this field is empty, then this node is not associated
      *         with a primary cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNode withSourceCacheNodeId(String sourceCacheNodeId) {

@@ -70,7 +70,7 @@ public class ReadPipelineRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param id The identifier of the pipeline to read.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReadPipelineRequest withId(String id) {

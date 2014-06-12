@@ -303,7 +303,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param imageId The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withImageId(String imageId) {
@@ -384,7 +384,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
      *         FAQ.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withMinCount(Integer minCount) {
@@ -471,7 +471,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         many instances can I run in Amazon EC2</a> in the Amazon EC2 General
      *         FAQ.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withMaxCount(Integer maxCount) {
@@ -522,7 +522,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         launch an instance without specifying a key pair, you can't connect to
      *         the instance. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withKeyName(String keyName) {
@@ -577,7 +577,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         nondefault VPC, you must use security group IDs instead. <p>Default:
      *         Amazon EC2 uses the default security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withSecurityGroups(String... securityGroups) {
@@ -599,7 +599,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         nondefault VPC, you must use security group IDs instead. <p>Default:
      *         Amazon EC2 uses the default security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -661,7 +661,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         <a>CreateSecurityGroup</a>. <p>Default: Amazon EC2 uses the default
      *         security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withSecurityGroupIds(String... securityGroupIds) {
@@ -683,7 +683,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         <a>CreateSecurityGroup</a>. <p>Default: Amazon EC2 uses the default
      *         security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -723,7 +723,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param userData The Base64-encoded MIME user data for the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withUserData(String userData) {
@@ -787,7 +787,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *         <p>Default: <code>m1.small</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -833,7 +833,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *         <p>Default: <code>m1.small</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -868,7 +868,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param placement The placement for the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withPlacement(Placement placement) {
@@ -925,7 +925,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
      *         Compute Cloud User Guide</i>. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withKernelId(String kernelId) {
@@ -958,7 +958,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param ramdiskId The ID of the RAM disk.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withRamdiskId(String ramdiskId) {
@@ -1001,7 +1001,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param blockDeviceMappings The block device mapping.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
@@ -1019,7 +1019,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param blockDeviceMappings The block device mapping.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -1059,7 +1059,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param monitoring The monitoring for the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withMonitoring(Boolean monitoring) {
@@ -1101,7 +1101,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param subnetId [EC2-VPC] The ID of the subnet to launch the instance into.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withSubnetId(String subnetId) {
@@ -1188,7 +1188,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         <code>terminate</code>, you can terminate the instance by running the
      *         shutdown command from the instance. <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withDisableApiTermination(Boolean disableApiTermination) {
@@ -1273,7 +1273,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         shutdown from the instance (using the operating system command for
      *         system shutdown). <p>Default: <code>stop</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ShutdownBehavior
@@ -1315,7 +1315,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         shutdown from the instance (using the operating system command for
      *         system shutdown). <p>Default: <code>stop</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ShutdownBehavior
@@ -1386,7 +1386,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         address. <p>Default: We select an IP address from the IP address range
      *         of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withPrivateIpAddress(String privateIpAddress) {
@@ -1443,7 +1443,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>. <p>Constraints: Maximum 64 ASCII characters
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withClientToken(String clientToken) {
@@ -1476,7 +1476,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param additionalInfo 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withAdditionalInfo(String additionalInfo) {
@@ -1519,7 +1519,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param networkInterfaces One or more network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
@@ -1537,7 +1537,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param networkInterfaces One or more network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -1577,7 +1577,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param iamInstanceProfile The IAM instance profile.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
@@ -1640,7 +1640,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         types. Additional usage charges apply when using an EBS-optimized
      *         instance. <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesRequest withEbsOptimized(Boolean ebsOptimized) {

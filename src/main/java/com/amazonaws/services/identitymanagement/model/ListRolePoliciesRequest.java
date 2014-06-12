@@ -103,7 +103,7 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
      *
      * @param roleName The name of the role to list policies for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolePoliciesRequest withRoleName(String roleName) {
@@ -166,7 +166,7 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolePoliciesRequest withMarker(String marker) {
@@ -232,7 +232,7 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolePoliciesRequest withMaxItems(Integer maxItems) {

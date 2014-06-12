@@ -66,7 +66,7 @@ public class NotificationConfiguration implements Serializable {
      *
      * @param topicArn The Amazon Resource Name (ARN) that identifies the topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NotificationConfiguration withTopicArn(String topicArn) {
@@ -99,7 +99,7 @@ public class NotificationConfiguration implements Serializable {
      *
      * @param topicStatus The current state of the topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NotificationConfiguration withTopicStatus(String topicStatus) {

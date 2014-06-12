@@ -80,7 +80,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
      *
      * @param dhcpOptionsId The ID of the DHCP options set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDhcpOptionsRequest withDhcpOptionsId(String dhcpOptionsId) {

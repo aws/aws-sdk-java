@@ -81,7 +81,7 @@ public class ListJobsByPipelineResult implements Serializable {
      * @param jobs An array of <code>Job</code> objects that are in the specified
      *         pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByPipelineResult withJobs(Job... jobs) {
@@ -101,7 +101,7 @@ public class ListJobsByPipelineResult implements Serializable {
      * @param jobs An array of <code>Job</code> objects that are in the specified
      *         pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByPipelineResult withJobs(java.util.Collection<Job> jobs) {
@@ -168,7 +168,7 @@ public class ListJobsByPipelineResult implements Serializable {
      *         page or when you've reached the last page of results, the value of
      *         <code>NextPageToken</code> is <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByPipelineResult withNextPageToken(String nextPageToken) {

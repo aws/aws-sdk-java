@@ -109,7 +109,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      * @param customerGatewayIds One or more customer gateway IDs. <p>Default: Describes all your
      *         customer gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(String... customerGatewayIds) {
@@ -129,7 +129,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      * @param customerGatewayIds One or more customer gateway IDs. <p>Default: Describes all your
      *         customer gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(java.util.Collection<String> customerGatewayIds) {
@@ -311,7 +311,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCustomerGatewaysRequest withFilters(Filter... filters) {
@@ -373,7 +373,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCustomerGatewaysRequest withFilters(java.util.Collection<Filter> filters) {

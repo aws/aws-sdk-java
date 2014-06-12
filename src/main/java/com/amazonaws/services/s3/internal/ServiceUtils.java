@@ -245,11 +245,7 @@ public class ServiceUtils {
                 outputStream.write(buffer, 0, bytesRead);
             }
         } catch (IOException e) {
-            try {
-                s3Object.getObjectContent().abort();
-            } catch ( IOException abortException ) {
-                log.warn("Couldn't abort stream", e);
-            }
+            s3Object.getObjectContent().abort();
             throw new AmazonClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
@@ -325,6 +321,8 @@ public class ServiceUtils {
             try {
                 ServiceUtils.downloadObjectToFile(s3Object, file, retryableS3DownloadTask.needIntegrityCheck());
             } catch (AmazonClientException ace) {
+                if (!ace.isRetryable())
+                    throw ace;
                 // Determine whether an immediate retry is needed according to the captured AmazonClientException.
                 // (There are three cases when downloadObjectToFile() throws AmazonClientException:
                 // 		1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
@@ -343,7 +341,7 @@ public class ServiceUtils {
                     }
                 }
             } finally {
-                try { s3Object.getObjectContent().abort(); } catch (IOException e) {}
+                s3Object.getObjectContent().abort();
             }
         } while ( needRetry );
         return s3Object;

@@ -61,7 +61,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
      *
      * @param snapshotId The new value for the SnapshotId property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotFromVolumeRecoveryPointResult withSnapshotId(String snapshotId) {
@@ -103,7 +103,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotFromVolumeRecoveryPointResult withVolumeARN(String volumeARN) {
@@ -141,7 +141,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
      * @param volumeRecoveryPointTime The new value for the VolumeRecoveryPointTime property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotFromVolumeRecoveryPointResult withVolumeRecoveryPointTime(String volumeRecoveryPointTime) {

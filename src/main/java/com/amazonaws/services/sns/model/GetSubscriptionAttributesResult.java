@@ -134,7 +134,7 @@ public class GetSubscriptionAttributesResult implements Serializable {
      *         the effective delivery policy that takes into account the topic
      *         delivery policy and account system defaults</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSubscriptionAttributesResult withAttributes(java.util.Map<String,String> attributes) {

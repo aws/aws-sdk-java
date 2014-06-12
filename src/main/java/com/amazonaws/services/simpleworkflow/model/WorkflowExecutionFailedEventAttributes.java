@@ -82,7 +82,7 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable {
      *
      * @param reason The descriptive reason provided for the failure (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionFailedEventAttributes withReason(String reason) {
@@ -124,7 +124,7 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable {
      *
      * @param details The details of the failure (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionFailedEventAttributes withDetails(String details) {
@@ -181,7 +181,7 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable {
      *         This information can be useful for diagnosing problems by tracing back
      *         the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

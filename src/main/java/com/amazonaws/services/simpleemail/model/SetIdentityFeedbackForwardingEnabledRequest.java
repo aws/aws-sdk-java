@@ -87,7 +87,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServic
      * @param identity The identity for which to set feedback notification forwarding.
      *         Examples: <code>user@example.com</code>, <code>example.com</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetIdentityFeedbackForwardingEnabledRequest withIdentity(String identity) {
@@ -156,7 +156,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServic
      *         only be set to <code>false</code> when topics are specified for both
      *         <code>Bounce</code> and <code>Complaint</code> topic types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetIdentityFeedbackForwardingEnabledRequest withForwardingEnabled(Boolean forwardingEnabled) {

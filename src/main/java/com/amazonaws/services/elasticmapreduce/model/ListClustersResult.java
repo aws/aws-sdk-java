@@ -72,7 +72,7 @@ public class ListClustersResult implements Serializable {
      *
      * @param clusters The list of clusters for the account based on the given filters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersResult withClusters(ClusterSummary... clusters) {
@@ -90,7 +90,7 @@ public class ListClustersResult implements Serializable {
      *
      * @param clusters The list of clusters for the account based on the given filters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersResult withClusters(java.util.Collection<ClusterSummary> clusters) {
@@ -148,7 +148,7 @@ public class ListClustersResult implements Serializable {
      *         retrieve the next page of results. When the value is null, all results
      *         have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersResult withMarker(String marker) {

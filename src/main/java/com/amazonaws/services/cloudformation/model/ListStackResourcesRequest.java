@@ -99,7 +99,7 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest implement
      *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
      *         There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesRequest withStackName(String stackName) {
@@ -147,7 +147,7 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest implement
      * @param nextToken String that identifies the start of the next list of stack resource
      *         summaries, if there is one. <p>Default: There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesRequest withNextToken(String nextToken) {

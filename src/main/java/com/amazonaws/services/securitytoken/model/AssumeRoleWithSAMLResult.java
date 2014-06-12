@@ -81,7 +81,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      *
      * @param credentials AWS credentials for API authentication.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withCredentials(Credentials credentials) {
@@ -120,7 +120,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      * @param assumedRoleUser The identifiers for the temporary security credentials that the
      *         operation returns.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
@@ -174,7 +174,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      *         form. The service rejects any policy with a packed size greater than
      *         100 percent, which means the policy exceeded the allowed space.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withPackedPolicySize(Integer packedPolicySize) {
@@ -207,7 +207,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      *
      * @param subject The new value for the Subject property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withSubject(String subject) {
@@ -240,7 +240,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      *
      * @param subjectType The new value for the SubjectType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withSubjectType(String subjectType) {
@@ -273,7 +273,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      *
      * @param issuer The new value for the Issuer property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withIssuer(String issuer) {
@@ -306,7 +306,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      *
      * @param audience The new value for the Audience property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withAudience(String audience) {
@@ -339,7 +339,7 @@ public class AssumeRoleWithSAMLResult implements Serializable {
      *
      * @param nameQualifier The new value for the NameQualifier property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithSAMLResult withNameQualifier(String nameQualifier) {

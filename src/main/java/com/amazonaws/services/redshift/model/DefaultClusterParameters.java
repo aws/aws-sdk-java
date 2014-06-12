@@ -75,7 +75,7 @@ public class DefaultClusterParameters implements Serializable {
      * @param parameterGroupFamily The name of the cluster parameter group family to which the engine
      *         default parameters apply.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefaultClusterParameters withParameterGroupFamily(String parameterGroupFamily) {
@@ -138,7 +138,7 @@ public class DefaultClusterParameters implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefaultClusterParameters withMarker(String marker) {
@@ -181,7 +181,7 @@ public class DefaultClusterParameters implements Serializable {
      *
      * @param parameters The list of cluster default parameters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefaultClusterParameters withParameters(Parameter... parameters) {
@@ -199,7 +199,7 @@ public class DefaultClusterParameters implements Serializable {
      *
      * @param parameters The list of cluster default parameters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefaultClusterParameters withParameters(java.util.Collection<Parameter> parameters) {

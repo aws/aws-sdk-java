@@ -61,7 +61,7 @@ public class DescribeNetworkInterfacesResult implements Serializable {
      *
      * @param networkInterfaces Information about one or more network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesResult withNetworkInterfaces(NetworkInterface... networkInterfaces) {
@@ -79,7 +79,7 @@ public class DescribeNetworkInterfacesResult implements Serializable {
      *
      * @param networkInterfaces Information about one or more network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesResult withNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {

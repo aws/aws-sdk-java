@@ -73,7 +73,7 @@ public class Tag implements Serializable {
      *
      * @param key The key of the tag.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withKey(String key) {
@@ -115,7 +115,7 @@ public class Tag implements Serializable {
      *
      * @param value The value of the tag.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withValue(String value) {

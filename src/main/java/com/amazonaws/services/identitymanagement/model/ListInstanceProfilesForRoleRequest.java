@@ -106,7 +106,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      *
      * @param roleName The name of the role to list instance profiles for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesForRoleRequest withRoleName(String roleName) {
@@ -169,7 +169,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesForRoleRequest withMarker(String marker) {
@@ -235,7 +235,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesForRoleRequest withMaxItems(Integer maxItems) {

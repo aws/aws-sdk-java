@@ -109,7 +109,7 @@ public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements 
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineIndexFieldRequest withDomainName(String domainName) {
@@ -142,7 +142,7 @@ public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements 
      *
      * @param indexField The index field and field options you want to configure.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineIndexFieldRequest withIndexField(IndexField indexField) {

@@ -101,7 +101,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      *
      * @param publicIp [EC2-Classic] The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReleaseAddressRequest withPublicIp(String publicIp) {
@@ -134,7 +134,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      *
      * @param allocationId [EC2-VPC] The allocation ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReleaseAddressRequest withAllocationId(String allocationId) {

@@ -124,7 +124,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements Se
      *
      * @param streamName The name of the stream to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStreamRequest withStreamName(String streamName) {
@@ -166,7 +166,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements Se
      *
      * @param limit The maximum number of shards to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStreamRequest withLimit(Integer limit) {
@@ -211,7 +211,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements Se
      *
      * @param exclusiveStartShardId The shard ID of the shard to start with for the stream description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStreamRequest withExclusiveStartShardId(String exclusiveStartShardId) {

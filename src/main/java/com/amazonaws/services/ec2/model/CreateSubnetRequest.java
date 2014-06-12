@@ -115,7 +115,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSubnetRequest withVpcId(String vpcId) {
@@ -154,7 +154,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * @param cidrBlock The network range for the subnet, in CIDR notation. For example,
      *         <code>10.0.0.0/24</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSubnetRequest withCidrBlock(String cidrBlock) {
@@ -193,7 +193,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * @param availabilityZone The Availability Zone for the subnet. <p>Default: Amazon EC2 selects
      *         one for you (recommended).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSubnetRequest withAvailabilityZone(String availabilityZone) {

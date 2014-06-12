@@ -134,7 +134,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *
      * @param autoScalingGroupName The name of the Auto Scaling group to be updated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withAutoScalingGroupName(String autoScalingGroupName) {
@@ -179,7 +179,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *
      * @param scheduledActionName The name of this scheduled action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withScheduledActionName(String scheduledActionName) {
@@ -224,7 +224,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *
      * @param scheduledActionARN The Amazon Resource Name (ARN) of this scheduled action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withScheduledActionARN(String scheduledActionARN) {
@@ -269,7 +269,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *         scheduled to begin. <code>Time</code> is an alias for
      *         <code>StartTime</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withTime(java.util.Date time) {
@@ -320,7 +320,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
      *         form the boundaries of when the recurring action will start and stop.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withStartTime(java.util.Date startTime) {
@@ -359,7 +359,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      * @param endTime The time that the action is scheduled to end. This value can be up to
      *         one month in the future.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withEndTime(java.util.Date endTime) {
@@ -404,7 +404,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *
      * @param recurrence The regular schedule that an action occurs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withRecurrence(String recurrence) {
@@ -437,7 +437,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *
      * @param minSize The minimum size of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withMinSize(Integer minSize) {
@@ -470,7 +470,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      *
      * @param maxSize The maximum size of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withMaxSize(Integer maxSize) {
@@ -509,7 +509,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
      * @param desiredCapacity The number of instances you prefer to maintain in your Auto Scaling
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduledUpdateGroupAction withDesiredCapacity(Integer desiredCapacity) {

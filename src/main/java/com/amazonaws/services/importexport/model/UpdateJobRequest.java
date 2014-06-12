@@ -81,7 +81,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param jobId A unique identifier which refers to a particular job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateJobRequest withJobId(String jobId) {
@@ -114,7 +114,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param manifest The UTF-8 encoded text of the manifest file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateJobRequest withManifest(String manifest) {
@@ -160,7 +160,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType
@@ -194,7 +194,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType
@@ -235,7 +235,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
      * @param validateOnly Validate the manifest and parameter values in the request but do not
      *         actually create a job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateJobRequest withValidateOnly(Boolean validateOnly) {

@@ -203,7 +203,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *
      * @param activityType The type of the activity task to schedule. This field is required.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withActivityType(ActivityType activityType) {
@@ -275,7 +275,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withActivityId(String activityId) {
@@ -323,7 +323,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks. This data is not sent to the activity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withControl(String control) {
@@ -365,7 +365,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *
      * @param input The input provided to the activity task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withInput(String input) {
@@ -449,7 +449,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         set nor a default schedule-to-close timeout was specified at
      *         registration time then a fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withScheduleToCloseTimeout(String scheduleToCloseTimeout) {
@@ -542,7 +542,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withTaskList(TaskList taskList) {
@@ -644,7 +644,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         schedule-to-start timeout was specified at registration time then a
      *         fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withScheduleToStartTimeout(String scheduleToStartTimeout) {
@@ -746,7 +746,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withStartToCloseTimeout(String startToCloseTimeout) {
@@ -848,7 +848,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScheduleActivityTaskDecisionAttributes withHeartbeatTimeout(String heartbeatTimeout) {

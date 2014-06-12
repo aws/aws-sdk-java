@@ -75,7 +75,7 @@ public class ElasticIp implements Serializable {
      *
      * @param ip The IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticIp withIp(String ip) {
@@ -108,7 +108,7 @@ public class ElasticIp implements Serializable {
      *
      * @param name The name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticIp withName(String name) {
@@ -141,7 +141,7 @@ public class ElasticIp implements Serializable {
      *
      * @param domain The domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticIp withDomain(String domain) {
@@ -186,7 +186,7 @@ public class ElasticIp implements Serializable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticIp withRegion(String region) {
@@ -219,7 +219,7 @@ public class ElasticIp implements Serializable {
      *
      * @param instanceId The ID of the instance that the address is attached to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticIp withInstanceId(String instanceId) {

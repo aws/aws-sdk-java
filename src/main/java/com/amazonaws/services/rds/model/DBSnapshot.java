@@ -153,7 +153,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param dBSnapshotIdentifier Specifies the identifier for the DB snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
@@ -192,7 +192,7 @@ public class DBSnapshot implements Serializable {
      * @param dBInstanceIdentifier Specifies the DB instance identifier of the DB instance this DB
      *         snapshot was created from.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -225,7 +225,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param snapshotCreateTime Provides the time (UTC) when the snapshot was taken.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withSnapshotCreateTime(java.util.Date snapshotCreateTime) {
@@ -258,7 +258,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param engine Specifies the name of the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withEngine(String engine) {
@@ -291,7 +291,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param allocatedStorage Specifies the allocated storage size in gigabytes (GB).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withAllocatedStorage(Integer allocatedStorage) {
@@ -324,7 +324,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param status Specifies the status of this DB snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withStatus(String status) {
@@ -363,7 +363,7 @@ public class DBSnapshot implements Serializable {
      * @param port Specifies the port that the database engine was listening on at the
      *         time of the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withPort(Integer port) {
@@ -402,7 +402,7 @@ public class DBSnapshot implements Serializable {
      * @param availabilityZone Specifies the name of the Availability Zone the DB instance was
      *         located in at the time of the DB snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withAvailabilityZone(String availabilityZone) {
@@ -435,7 +435,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param vpcId Provides the Vpc Id associated with the DB snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withVpcId(String vpcId) {
@@ -468,7 +468,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param instanceCreateTime Specifies the time (UTC) when the snapshot was taken.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withInstanceCreateTime(java.util.Date instanceCreateTime) {
@@ -501,7 +501,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param masterUsername Provides the master username for the DB snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withMasterUsername(String masterUsername) {
@@ -534,7 +534,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param engineVersion Specifies the version of the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withEngineVersion(String engineVersion) {
@@ -567,7 +567,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param licenseModel License model information for the restored DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withLicenseModel(String licenseModel) {
@@ -600,7 +600,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param snapshotType Provides the type of the DB snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withSnapshotType(String snapshotType) {
@@ -639,7 +639,7 @@ public class DBSnapshot implements Serializable {
      * @param iops Specifies the Provisioned IOPS (I/O operations per second) value of
      *         the DB instance at the time of the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withIops(Integer iops) {
@@ -672,7 +672,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param optionGroupName Provides the option group name for the DB snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withOptionGroupName(String optionGroupName) {
@@ -705,7 +705,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param percentProgress The percentage of the estimated data that has been transferred.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withPercentProgress(Integer percentProgress) {
@@ -738,7 +738,7 @@ public class DBSnapshot implements Serializable {
      *
      * @param sourceRegion The region that the DB snapshot was created in or copied from.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSnapshot withSourceRegion(String sourceRegion) {

@@ -47,12 +47,12 @@ import com.amazonaws.services.sns.model.*;
 public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
-     * The <code>ConfirmSubscription</code> action verifies an endpoint
-     * owner's intent to receive messages by validating the token sent to the
-     * endpoint by an earlier <code>Subscribe</code> action. If the token is
-     * valid, the action creates a new subscription and returns its Amazon
-     * Resource Name (ARN). This call requires an AWS signature only when the
-     * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".
+     * Verifies an endpoint owner's intent to receive messages by validating
+     * the token sent to the endpoint by an earlier <code>Subscribe</code>
+     * action. If the token is valid, the action creates a new subscription
+     * and returns its Amazon Resource Name (ARN). This call requires an AWS
+     * signature only when the <code>AuthenticateOnUnsubscribe</code> flag is
+     * set to "true".
      * </p>
      *
      * @param confirmSubscriptionRequest Container for the necessary
@@ -75,12 +75,12 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ConfirmSubscription</code> action verifies an endpoint
-     * owner's intent to receive messages by validating the token sent to the
-     * endpoint by an earlier <code>Subscribe</code> action. If the token is
-     * valid, the action creates a new subscription and returns its Amazon
-     * Resource Name (ARN). This call requires an AWS signature only when the
-     * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".
+     * Verifies an endpoint owner's intent to receive messages by validating
+     * the token sent to the endpoint by an earlier <code>Subscribe</code>
+     * action. If the token is valid, the action creates a new subscription
+     * and returns its Amazon Resource Name (ARN). This call requires an AWS
+     * signature only when the <code>AuthenticateOnUnsubscribe</code> flag is
+     * set to "true".
      * </p>
      *
      * @param confirmSubscriptionRequest Container for the necessary
@@ -108,21 +108,20 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreatePlatformApplication</code> action creates a platform
-     * application object for one of the supported push notification
-     * services, such as APNS and GCM, to which devices and mobile apps may
-     * register. You must specify PlatformPrincipal and PlatformCredential
-     * attributes when using the <code>CreatePlatformApplication</code>
-     * action. The PlatformPrincipal is received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL
-     * certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
-     * PlatformPrincipal is "client id". The PlatformCredential is also
-     * received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is "private key". For GCM, PlatformCredential is
-     * "API key". For ADM, PlatformCredential is "client secret". The
-     * PlatformApplicationArn that is returned when using
-     * <code>CreatePlatformApplication</code> is then used as an attribute
-     * for the <code>CreatePlatformEndpoint</code> action. For more
+     * Creates a platform application object for one of the supported push
+     * notification services, such as APNS and GCM, to which devices and
+     * mobile apps may register. You must specify PlatformPrincipal and
+     * PlatformCredential attributes when using the
+     * <code>CreatePlatformApplication</code> action. The PlatformPrincipal
+     * is received from the notification service. For APNS/APNS_SANDBOX,
+     * PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is
+     * not applicable. For ADM, PlatformPrincipal is "client id". The
+     * PlatformCredential is also received from the notification service. For
+     * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
+     * PlatformCredential is "API key". For ADM, PlatformCredential is
+     * "client secret". The PlatformApplicationArn that is returned when
+     * using <code>CreatePlatformApplication</code> is then used as an
+     * attribute for the <code>CreatePlatformEndpoint</code> action. For more
      * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
@@ -149,21 +148,20 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreatePlatformApplication</code> action creates a platform
-     * application object for one of the supported push notification
-     * services, such as APNS and GCM, to which devices and mobile apps may
-     * register. You must specify PlatformPrincipal and PlatformCredential
-     * attributes when using the <code>CreatePlatformApplication</code>
-     * action. The PlatformPrincipal is received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL
-     * certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
-     * PlatformPrincipal is "client id". The PlatformCredential is also
-     * received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is "private key". For GCM, PlatformCredential is
-     * "API key". For ADM, PlatformCredential is "client secret". The
-     * PlatformApplicationArn that is returned when using
-     * <code>CreatePlatformApplication</code> is then used as an attribute
-     * for the <code>CreatePlatformEndpoint</code> action. For more
+     * Creates a platform application object for one of the supported push
+     * notification services, such as APNS and GCM, to which devices and
+     * mobile apps may register. You must specify PlatformPrincipal and
+     * PlatformCredential attributes when using the
+     * <code>CreatePlatformApplication</code> action. The PlatformPrincipal
+     * is received from the notification service. For APNS/APNS_SANDBOX,
+     * PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is
+     * not applicable. For ADM, PlatformPrincipal is "client id". The
+     * PlatformCredential is also received from the notification service. For
+     * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
+     * PlatformCredential is "API key". For ADM, PlatformCredential is
+     * "client secret". The PlatformApplicationArn that is returned when
+     * using <code>CreatePlatformApplication</code> is then used as an
+     * attribute for the <code>CreatePlatformEndpoint</code> action. For more
      * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
@@ -195,9 +193,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetTopicAttributes</code> action returns all of the
-     * properties of a topic. Topic properties returned might differ based on
-     * the authorization of the user.
+     * Returns all of the properties of a topic. Topic properties returned
+     * might differ based on the authorization of the user.
      * </p>
      *
      * @param getTopicAttributesRequest Container for the necessary
@@ -220,9 +217,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetTopicAttributes</code> action returns all of the
-     * properties of a topic. Topic properties returned might differ based on
-     * the authorization of the user.
+     * Returns all of the properties of a topic. Topic properties returned
+     * might differ based on the authorization of the user.
      * </p>
      *
      * @param getTopicAttributesRequest Container for the necessary
@@ -250,11 +246,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Subscribe</code> action prepares to subscribe an endpoint
-     * by sending the endpoint a confirmation message. To actually create a
-     * subscription, the endpoint owner must call the
-     * <code>ConfirmSubscription</code> action with the token from the
-     * confirmation message. Confirmation tokens are valid for three days.
+     * Prepares to subscribe an endpoint by sending the endpoint a
+     * confirmation message. To actually create a subscription, the endpoint
+     * owner must call the <code>ConfirmSubscription</code> action with the
+     * token from the confirmation message. Confirmation tokens are valid for
+     * three days.
      * </p>
      *
      * @param subscribeRequest Container for the necessary parameters to
@@ -277,11 +273,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Subscribe</code> action prepares to subscribe an endpoint
-     * by sending the endpoint a confirmation message. To actually create a
-     * subscription, the endpoint owner must call the
-     * <code>ConfirmSubscription</code> action with the token from the
-     * confirmation message. Confirmation tokens are valid for three days.
+     * Prepares to subscribe an endpoint by sending the endpoint a
+     * confirmation message. To actually create a subscription, the endpoint
+     * owner must call the <code>ConfirmSubscription</code> action with the
+     * token from the confirmation message. Confirmation tokens are valid for
+     * three days.
      * </p>
      *
      * @param subscribeRequest Container for the necessary parameters to
@@ -309,8 +305,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>DeleteEndpoint</code> action, which is idempotent, deletes
-     * the endpoint from SNS. For more information, see
+     * Deletes the endpoint from Amazon SNS. This action is idempotent. For
+     * more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -335,8 +331,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>DeleteEndpoint</code> action, which is idempotent, deletes
-     * the endpoint from SNS. For more information, see
+     * Deletes the endpoint from Amazon SNS. This action is idempotent. For
+     * more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -366,8 +362,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetTopicAttributes</code> action allows a topic owner to
-     * set an attribute of the topic to a new value.
+     * Allows a topic owner to set an attribute of the topic to a new value.
      * </p>
      *
      * @param setTopicAttributesRequest Container for the necessary
@@ -390,8 +385,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetTopicAttributes</code> action allows a topic owner to
-     * set an attribute of the topic to a new value.
+     * Allows a topic owner to set an attribute of the topic to a new value.
      * </p>
      *
      * @param setTopicAttributesRequest Container for the necessary
@@ -419,8 +413,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>RemovePermission</code> action removes a statement from a
-     * topic's access control policy.
+     * Removes a statement from a topic's access control policy.
      * </p>
      *
      * @param removePermissionRequest Container for the necessary parameters
@@ -443,8 +436,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>RemovePermission</code> action removes a statement from a
-     * topic's access control policy.
+     * Removes a statement from a topic's access control policy.
      * </p>
      *
      * @param removePermissionRequest Container for the necessary parameters
@@ -472,9 +464,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetEndpointAttributes</code> retrieves the endpoint
-     * attributes for a device on one of the supported push notification
-     * services, such as GCM and APNS. For more information, see
+     * Retrieves the endpoint attributes for a device on one of the
+     * supported push notification services, such as GCM and APNS. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -500,9 +492,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetEndpointAttributes</code> retrieves the endpoint
-     * attributes for a device on one of the supported push notification
-     * services, such as GCM and APNS. For more information, see
+     * Retrieves the endpoint attributes for a device on one of the
+     * supported push notification services, such as GCM and APNS. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -533,10 +525,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListSubscriptions</code> action returns a list of the
-     * requester's subscriptions. Each call returns a limited list of
-     * subscriptions, up to 100. If there are more subscriptions, a
-     * <code>NextToken</code> is also returned. Use the
+     * Returns a list of the requester's subscriptions. Each call returns a
+     * limited list of subscriptions, up to 100. If there are more
+     * subscriptions, a <code>NextToken</code> is also returned. Use the
      * <code>NextToken</code> parameter in a new
      * <code>ListSubscriptions</code> call to get further results.
      * </p>
@@ -561,10 +552,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListSubscriptions</code> action returns a list of the
-     * requester's subscriptions. Each call returns a limited list of
-     * subscriptions, up to 100. If there are more subscriptions, a
-     * <code>NextToken</code> is also returned. Use the
+     * Returns a list of the requester's subscriptions. Each call returns a
+     * limited list of subscriptions, up to 100. If there are more
+     * subscriptions, a <code>NextToken</code> is also returned. Use the
      * <code>NextToken</code> parameter in a new
      * <code>ListSubscriptions</code> call to get further results.
      * </p>
@@ -594,10 +584,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreatePlatformEndpoint</code> action creates an endpoint
-     * for a device and mobile app on one of the supported push notification
-     * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
-     * requires the PlatformApplicationArn that is returned from
+     * Creates an endpoint for a device and mobile app on one of the
+     * supported push notification services, such as GCM and APNS.
+     * <code>CreatePlatformEndpoint</code> requires the
+     * PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code> . The EndpointArn that is
      * returned when using <code>CreatePlatformEndpoint</code> can then be
      * used by the <code>Publish</code> action to send a message to a mobile
@@ -607,6 +597,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * token and attributes, that endpoint's ARN is returned without creating
      * a new endpoint. For more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
+     * </p>
+     * <p>
+     * When using <code>CreatePlatformEndpoint</code> with Baidu, two
+     * attributes must be provided: ChannelId and UserId. The token field
+     * must also contain the ChannelId. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html"> Creating an Amazon SNS Endpoint for Baidu </a>
      * .
      * </p>
      *
@@ -631,10 +628,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreatePlatformEndpoint</code> action creates an endpoint
-     * for a device and mobile app on one of the supported push notification
-     * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
-     * requires the PlatformApplicationArn that is returned from
+     * Creates an endpoint for a device and mobile app on one of the
+     * supported push notification services, such as GCM and APNS.
+     * <code>CreatePlatformEndpoint</code> requires the
+     * PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code> . The EndpointArn that is
      * returned when using <code>CreatePlatformEndpoint</code> can then be
      * used by the <code>Publish</code> action to send a message to a mobile
@@ -644,6 +641,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * token and attributes, that endpoint's ARN is returned without creating
      * a new endpoint. For more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
+     * .
+     * </p>
+     * <p>
+     * When using <code>CreatePlatformEndpoint</code> with Baidu, two
+     * attributes must be provided: ChannelId and UserId. The token field
+     * must also contain the ChannelId. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html"> Creating an Amazon SNS Endpoint for Baidu </a>
      * .
      * </p>
      *
@@ -673,8 +677,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetSubscriptionAttributes</code> action allows a
-     * subscription owner to set an attribute of the topic to a new value.
+     * Allows a subscription owner to set an attribute of the topic to a new
+     * value.
      * </p>
      *
      * @param setSubscriptionAttributesRequest Container for the necessary
@@ -698,8 +702,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetSubscriptionAttributes</code> action allows a
-     * subscription owner to set an attribute of the topic to a new value.
+     * Allows a subscription owner to set an attribute of the topic to a new
+     * value.
      * </p>
      *
      * @param setSubscriptionAttributesRequest Container for the necessary
@@ -728,9 +732,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreateTopic</code> action creates a topic to which
-     * notifications can be published. Users can create at most 3000 topics.
-     * For more information, see
+     * Creates a topic to which notifications can be published. Users can
+     * create at most 3000 topics. For more information, see
      * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
      * . This action is idempotent, so if the requester already owns a topic
      * with the specified name, that topic's ARN is returned without creating
@@ -757,9 +760,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>CreateTopic</code> action creates a topic to which
-     * notifications can be published. Users can create at most 3000 topics.
-     * For more information, see
+     * Creates a topic to which notifications can be published. Users can
+     * create at most 3000 topics. For more information, see
      * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
      * . This action is idempotent, so if the requester already owns a topic
      * with the specified name, that topic's ARN is returned without creating
@@ -791,8 +793,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetSubscriptionAttribtues</code> action returns all of the
-     * properties of a subscription.
+     * Returns all of the properties of a subscription.
      * </p>
      *
      * @param getSubscriptionAttributesRequest Container for the necessary
@@ -816,8 +817,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetSubscriptionAttribtues</code> action returns all of the
-     * properties of a subscription.
+     * Returns all of the properties of a subscription.
      * </p>
      *
      * @param getSubscriptionAttributesRequest Container for the necessary
@@ -846,11 +846,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListTopics</code> action returns a list of the requester's
-     * topics. Each call returns a limited list of topics, up to 100. If
-     * there are more topics, a <code>NextToken</code> is also returned. Use
-     * the <code>NextToken</code> parameter in a new <code>ListTopics</code>
-     * call to get further results.
+     * Returns a list of the requester's topics. Each call returns a limited
+     * list of topics, up to 100. If there are more topics, a
+     * <code>NextToken</code> is also returned. Use the
+     * <code>NextToken</code> parameter in a new <code>ListTopics</code> call
+     * to get further results.
      * </p>
      *
      * @param listTopicsRequest Container for the necessary parameters to
@@ -873,11 +873,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListTopics</code> action returns a list of the requester's
-     * topics. Each call returns a limited list of topics, up to 100. If
-     * there are more topics, a <code>NextToken</code> is also returned. Use
-     * the <code>NextToken</code> parameter in a new <code>ListTopics</code>
-     * call to get further results.
+     * Returns a list of the requester's topics. Each call returns a limited
+     * list of topics, up to 100. If there are more topics, a
+     * <code>NextToken</code> is also returned. Use the
+     * <code>NextToken</code> parameter in a new <code>ListTopics</code> call
+     * to get further results.
      * </p>
      *
      * @param listTopicsRequest Container for the necessary parameters to
@@ -905,9 +905,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>DeletePlatformApplication</code> action deletes a platform
-     * application object for one of the supported push notification
-     * services, such as APNS and GCM. For more information, see
+     * Deletes a platform application object for one of the supported push
+     * notification services, such as APNS and GCM. For more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -933,9 +932,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>DeletePlatformApplication</code> action deletes a platform
-     * application object for one of the supported push notification
-     * services, such as APNS and GCM. For more information, see
+     * Deletes a platform application object for one of the supported push
+     * notification services, such as APNS and GCM. For more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -966,12 +964,12 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListPlatformApplications</code> action lists the platform
-     * application objects for the supported push notification services, such
-     * as APNS and GCM. The results for <code>ListPlatformApplications</code>
-     * are paginated and return a limited list of applications, up to 100. If
-     * additional records are available after the first page results, then a
-     * NextToken string will be returned. To receive the next page, you call
+     * Lists the platform application objects for the supported push
+     * notification services, such as APNS and GCM. The results for
+     * <code>ListPlatformApplications</code> are paginated and return a
+     * limited list of applications, up to 100. If additional records are
+     * available after the first page results, then a NextToken string will
+     * be returned. To receive the next page, you call
      * <code>ListPlatformApplications</code> using the NextToken string
      * received from the previous call. When there are no more records to
      * return, NextToken will be null. For more information, see
@@ -1000,12 +998,12 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListPlatformApplications</code> action lists the platform
-     * application objects for the supported push notification services, such
-     * as APNS and GCM. The results for <code>ListPlatformApplications</code>
-     * are paginated and return a limited list of applications, up to 100. If
-     * additional records are available after the first page results, then a
-     * NextToken string will be returned. To receive the next page, you call
+     * Lists the platform application objects for the supported push
+     * notification services, such as APNS and GCM. The results for
+     * <code>ListPlatformApplications</code> are paginated and return a
+     * limited list of applications, up to 100. If additional records are
+     * available after the first page results, then a NextToken string will
+     * be returned. To receive the next page, you call
      * <code>ListPlatformApplications</code> using the NextToken string
      * received from the previous call. When there are no more records to
      * return, NextToken will be null. For more information, see
@@ -1039,9 +1037,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetEndpointAttributes</code> action sets the attributes for
-     * an endpoint for a device on one of the supported push notification
-     * services, such as GCM and APNS. For more information, see
+     * Sets the attributes for an endpoint for a device on one of the
+     * supported push notification services, such as GCM and APNS. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -1067,9 +1065,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetEndpointAttributes</code> action sets the attributes for
-     * an endpoint for a device on one of the supported push notification
-     * services, such as GCM and APNS. For more information, see
+     * Sets the attributes for an endpoint for a device on one of the
+     * supported push notification services, such as GCM and APNS. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -1100,14 +1098,14 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Unsubscribe</code> action deletes a subscription. If the
-     * subscription requires authentication for deletion, only the owner of
-     * the subscription or the topic's owner can unsubscribe, and an AWS
-     * signature is required. If the <code>Unsubscribe</code> call does not
-     * require authentication and the requester is not the subscription
-     * owner, a final cancellation message is delivered to the endpoint, so
-     * that the endpoint owner can easily resubscribe to the topic if the
-     * <code>Unsubscribe</code> request was unintended.
+     * Deletes a subscription. If the subscription requires authentication
+     * for deletion, only the owner of the subscription or the topic's owner
+     * can unsubscribe, and an AWS signature is required. If the
+     * <code>Unsubscribe</code> call does not require authentication and the
+     * requester is not the subscription owner, a final cancellation message
+     * is delivered to the endpoint, so that the endpoint owner can easily
+     * resubscribe to the topic if the <code>Unsubscribe</code> request was
+     * unintended.
      * </p>
      *
      * @param unsubscribeRequest Container for the necessary parameters to
@@ -1130,14 +1128,14 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Unsubscribe</code> action deletes a subscription. If the
-     * subscription requires authentication for deletion, only the owner of
-     * the subscription or the topic's owner can unsubscribe, and an AWS
-     * signature is required. If the <code>Unsubscribe</code> call does not
-     * require authentication and the requester is not the subscription
-     * owner, a final cancellation message is delivered to the endpoint, so
-     * that the endpoint owner can easily resubscribe to the topic if the
-     * <code>Unsubscribe</code> request was unintended.
+     * Deletes a subscription. If the subscription requires authentication
+     * for deletion, only the owner of the subscription or the topic's owner
+     * can unsubscribe, and an AWS signature is required. If the
+     * <code>Unsubscribe</code> call does not require authentication and the
+     * requester is not the subscription owner, a final cancellation message
+     * is delivered to the endpoint, so that the endpoint owner can easily
+     * resubscribe to the topic if the <code>Unsubscribe</code> request was
+     * unintended.
      * </p>
      *
      * @param unsubscribeRequest Container for the necessary parameters to
@@ -1165,11 +1163,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>DeleteTopic</code> action deletes a topic and all its
-     * subscriptions. Deleting a topic might prevent some messages previously
-     * sent to the topic from being delivered to subscribers. This action is
-     * idempotent, so deleting a topic that does not exist does not result in
-     * an error.
+     * Deletes a topic and all its subscriptions. Deleting a topic might
+     * prevent some messages previously sent to the topic from being
+     * delivered to subscribers. This action is idempotent, so deleting a
+     * topic that does not exist does not result in an error.
      * </p>
      *
      * @param deleteTopicRequest Container for the necessary parameters to
@@ -1192,11 +1189,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>DeleteTopic</code> action deletes a topic and all its
-     * subscriptions. Deleting a topic might prevent some messages previously
-     * sent to the topic from being delivered to subscribers. This action is
-     * idempotent, so deleting a topic that does not exist does not result in
-     * an error.
+     * Deletes a topic and all its subscriptions. Deleting a topic might
+     * prevent some messages previously sent to the topic from being
+     * delivered to subscribers. This action is idempotent, so deleting a
+     * topic that does not exist does not result in an error.
      * </p>
      *
      * @param deleteTopicRequest Container for the necessary parameters to
@@ -1224,9 +1220,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetPlatformApplicationAttributes</code> action retrieves
-     * the attributes of the platform application object for the supported
-     * push notification services, such as APNS and GCM. For more
+     * Retrieves the attributes of the platform application object for the
+     * supported push notification services, such as APNS and GCM. For more
      * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
@@ -1254,9 +1249,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetPlatformApplicationAttributes</code> action retrieves
-     * the attributes of the platform application object for the supported
-     * push notification services, such as APNS and GCM. For more
+     * Retrieves the attributes of the platform application object for the
+     * supported push notification services, such as APNS and GCM. For more
      * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
@@ -1289,9 +1283,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetPlatformApplicationAttributes</code> action sets the
-     * attributes of the platform application object for the supported push
-     * notification services, such as APNS and GCM. For more information, see
+     * Sets the attributes of the platform application object for the
+     * supported push notification services, such as APNS and GCM. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -1318,9 +1312,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>SetPlatformApplicationAttributes</code> action sets the
-     * attributes of the platform application object for the supported push
-     * notification services, such as APNS and GCM. For more information, see
+     * Sets the attributes of the platform application object for the
+     * supported push notification services, such as APNS and GCM. For more
+     * information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
      * .
      * </p>
@@ -1352,9 +1346,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>AddPermission</code> action adds a statement to a topic's
-     * access control policy, granting access for the specified AWS accounts
-     * to the specified actions.
+     * Adds a statement to a topic's access control policy, granting access
+     * for the specified AWS accounts to the specified actions.
      * </p>
      *
      * @param addPermissionRequest Container for the necessary parameters to
@@ -1377,9 +1370,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>AddPermission</code> action adds a statement to a topic's
-     * access control policy, granting access for the specified AWS accounts
-     * to the specified actions.
+     * Adds a statement to a topic's access control policy, granting access
+     * for the specified AWS accounts to the specified actions.
      * </p>
      *
      * @param addPermissionRequest Container for the necessary parameters to
@@ -1407,10 +1399,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListEndpointsByPlatformApplication</code> action lists the
-     * endpoints and endpoint attributes for devices in a supported push
-     * notification service, such as GCM and APNS. The results for
-     * <code>ListEndpointsByPlatformApplication</code> are paginated and
+     * Lists the endpoints and endpoint attributes for devices in a
+     * supported push notification service, such as GCM and APNS. The results
+     * for <code>ListEndpointsByPlatformApplication</code> are paginated and
      * return a limited list of endpoints, up to 100. If additional records
      * are available after the first page results, then a NextToken string
      * will be returned. To receive the next page, you call
@@ -1444,10 +1435,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListEndpointsByPlatformApplication</code> action lists the
-     * endpoints and endpoint attributes for devices in a supported push
-     * notification service, such as GCM and APNS. The results for
-     * <code>ListEndpointsByPlatformApplication</code> are paginated and
+     * Lists the endpoints and endpoint attributes for devices in a
+     * supported push notification service, such as GCM and APNS. The results
+     * for <code>ListEndpointsByPlatformApplication</code> are paginated and
      * return a limited list of endpoints, up to 100. If additional records
      * are available after the first page results, then a NextToken string
      * will be returned. To receive the next page, you call
@@ -1486,10 +1476,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListSubscriptionsByTopic</code> action returns a list of
-     * the subscriptions to a specific topic. Each call returns a limited
-     * list of subscriptions, up to 100. If there are more subscriptions, a
-     * <code>NextToken</code> is also returned. Use the
+     * Returns a list of the subscriptions to a specific topic. Each call
+     * returns a limited list of subscriptions, up to 100. If there are more
+     * subscriptions, a <code>NextToken</code> is also returned. Use the
      * <code>NextToken</code> parameter in a new
      * <code>ListSubscriptionsByTopic</code> call to get further results.
      * </p>
@@ -1515,10 +1504,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>ListSubscriptionsByTopic</code> action returns a list of
-     * the subscriptions to a specific topic. Each call returns a limited
-     * list of subscriptions, up to 100. If there are more subscriptions, a
-     * <code>NextToken</code> is also returned. Use the
+     * Returns a list of the subscriptions to a specific topic. Each call
+     * returns a limited list of subscriptions, up to 100. If there are more
+     * subscriptions, a <code>NextToken</code> is also returned. Use the
      * <code>NextToken</code> parameter in a new
      * <code>ListSubscriptionsByTopic</code> call to get further results.
      * </p>
@@ -1549,12 +1537,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Publish</code> action sends a message to all of a topic's
-     * subscribed endpoints. When a <code>messageId</code> is returned, the
-     * message has been saved and Amazon SNS will attempt to deliver it to
-     * the topic's subscribers shortly. The format of the outgoing message to
-     * each subscribed endpoint depends on the notification protocol
-     * selected.
+     * Sends a message to all of a topic's subscribed endpoints. When a
+     * <code>messageId</code> is returned, the message has been saved and
+     * Amazon SNS will attempt to deliver it to the topic's subscribers
+     * shortly. The format of the outgoing message to each subscribed
+     * endpoint depends on the notification protocol selected.
      * </p>
      * <p>
      * To use the <code>Publish</code> action for sending a message to a
@@ -1585,12 +1572,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The <code>Publish</code> action sends a message to all of a topic's
-     * subscribed endpoints. When a <code>messageId</code> is returned, the
-     * message has been saved and Amazon SNS will attempt to deliver it to
-     * the topic's subscribers shortly. The format of the outgoing message to
-     * each subscribed endpoint depends on the notification protocol
-     * selected.
+     * Sends a message to all of a topic's subscribed endpoints. When a
+     * <code>messageId</code> is returned, the message has been saved and
+     * Amazon SNS will attempt to deliver it to the topic's subscribers
+     * shortly. The format of the outgoing message to each subscribed
+     * endpoint depends on the notification protocol selected.
      * </p>
      * <p>
      * To use the <code>Publish</code> action for sending a message to a

@@ -70,7 +70,7 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable {
      * @param instances An updated list of remaining instances registered with the load
      *         balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeregisterInstancesFromLoadBalancerResult withInstances(Instance... instances) {
@@ -90,7 +90,7 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable {
      * @param instances An updated list of remaining instances registered with the load
      *         balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeregisterInstancesFromLoadBalancerResult withInstances(java.util.Collection<Instance> instances) {

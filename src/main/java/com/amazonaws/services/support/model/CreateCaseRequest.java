@@ -155,7 +155,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param subject The title of the AWS Support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withSubject(String subject) {
@@ -203,7 +203,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      * @param serviceCode The code for the AWS service returned by the call to
      *         <a>DescribeServices</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withServiceCode(String serviceCode) {
@@ -260,7 +260,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      *         words, your subscription may not necessarily require the urgent level
      *         of response time.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withSeverityCode(String severityCode) {
@@ -293,7 +293,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param categoryCode The category of problem for the AWS Support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withCategoryCode(String categoryCode) {
@@ -341,7 +341,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      * @param communicationBody The communication body text when you create an AWS Support case by
      *         calling <a>CreateCase</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withCommunicationBody(String communicationBody) {
@@ -399,7 +399,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      * @param ccEmailAddresses A list of email addresses that AWS Support copies on case
      *         correspondence.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withCcEmailAddresses(String... ccEmailAddresses) {
@@ -422,7 +422,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      * @param ccEmailAddresses A list of email addresses that AWS Support copies on case
      *         correspondence.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {
@@ -480,7 +480,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      *         Language parameters must be passed explicitly for operations that take
      *         them.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withLanguage(String language) {
@@ -525,7 +525,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      *         "customer-service" or "technical." If you do not indicate a value, the
      *         default is "technical."
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseRequest withIssueType(String issueType) {

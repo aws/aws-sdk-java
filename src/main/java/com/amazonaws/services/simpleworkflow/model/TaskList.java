@@ -65,7 +65,7 @@ public class TaskList implements Serializable {
      *
      * @param name The name of the task list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TaskList withName(String name) {

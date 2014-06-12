@@ -143,7 +143,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param queueName The name for the queue to be created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateQueueRequest withQueueName(String queueName) {
@@ -342,7 +342,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      *         Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateQueueRequest withAttributes(java.util.Map<String,String> attributes) {

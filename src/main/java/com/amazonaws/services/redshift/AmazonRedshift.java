@@ -299,7 +299,7 @@ public interface AmazonRedshift {
      * security or parameter group, update the preferred maintenance window,
      * or change the master user password. Resetting a cluster password or
      * modifying the security groups associated with a cluster do not need a
-     * reboot. However, modifying parameter group requires a reboot for
+     * reboot. However, modifying a parameter group requires a reboot for
      * parameters to take effect. For more information about managing
      * clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
@@ -329,6 +329,7 @@ public interface AmazonRedshift {
      * @throws UnsupportedOptionException
      * @throws ClusterSecurityGroupNotFoundException
      * @throws HsmClientCertificateNotFoundException
+     * @throws ClusterAlreadyExistsException
      * @throws ClusterParameterGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -603,7 +604,7 @@ public interface AmazonRedshift {
     /**
      * <p>
      * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the "available" state.
+     * be in the <code>available</code> state.
      * </p>
      * <p>
      * For more information about working with snapshots, go to
@@ -883,6 +884,7 @@ public interface AmazonRedshift {
      *         as returned by AmazonRedshift.
      * 
      * @throws SubscriptionCategoryNotFoundException
+     * @throws InvalidSubscriptionStateException
      * @throws SubscriptionEventIdNotFoundException
      * @throws SubscriptionSeverityNotFoundException
      * @throws SourceNotFoundException
@@ -1007,10 +1009,8 @@ public interface AmazonRedshift {
      * with the restored cluster.
      * </p>
      * <p>
-     * If a snapshot is taken of a cluster in VPC, you can restore it only
-     * in VPC. In this case, you must provide a cluster subnet group where
-     * you want the cluster restored. If snapshot is taken of a cluster
-     * outside VPC, then you can restore it only outside VPC.
+     * If you restore a cluster into a VPC, you must provide a cluster
+     * subnet group where you want the cluster restored.
      * </p>
      * <p>
      * For more information about working with snapshots, go to
@@ -1032,6 +1032,7 @@ public interface AmazonRedshift {
      * @throws InvalidClusterSubnetGroupStateException
      * @throws ClusterAlreadyExistsException
      * @throws InvalidVPCNetworkStateException
+     * @throws ClusterParameterGroupNotFoundException
      * @throws InvalidClusterSnapshotStateException
      * @throws AccessToSnapshotDeniedException
      * @throws InvalidRestoreException
@@ -1042,6 +1043,7 @@ public interface AmazonRedshift {
      * @throws ClusterSnapshotNotFoundException
      * @throws ClusterQuotaExceededException
      * @throws HsmClientCertificateNotFoundException
+     * @throws ClusterSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1204,8 +1206,8 @@ public interface AmazonRedshift {
     /**
      * <p>
      * Deletes the specified manual snapshot. The snapshot must be in the
-     * "available" state, with no other users authorized to access the
-     * snapshot.
+     * <code>available</code> state, with no other users authorized to access
+     * the snapshot.
      * </p>
      * <p>
      * Unlike automated snapshots, manual snapshots are retained even after
@@ -1547,6 +1549,7 @@ public interface AmazonRedshift {
      *           AmazonRedshift.
      * 
      * 
+     * @throws InvalidSubscriptionStateException
      * @throws SubscriptionNotFoundException
      *
      * @throws AmazonClientException

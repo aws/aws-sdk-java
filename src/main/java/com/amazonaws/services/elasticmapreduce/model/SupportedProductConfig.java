@@ -76,7 +76,7 @@ public class SupportedProductConfig implements Serializable {
      *
      * @param name The name of the product configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SupportedProductConfig withName(String name) {
@@ -119,7 +119,7 @@ public class SupportedProductConfig implements Serializable {
      *
      * @param args The list of user-supplied arguments.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SupportedProductConfig withArgs(String... args) {
@@ -137,7 +137,7 @@ public class SupportedProductConfig implements Serializable {
      *
      * @param args The list of user-supplied arguments.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SupportedProductConfig withArgs(java.util.Collection<String> args) {

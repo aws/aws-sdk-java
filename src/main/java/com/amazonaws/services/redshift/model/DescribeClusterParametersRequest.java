@@ -102,7 +102,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
      *
      * @param parameterGroupName The name of a cluster parameter group for which to return details.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterParametersRequest withParameterGroupName(String parameterGroupName) {
@@ -159,7 +159,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
      *         the default parameter group. <p>Default: All parameter types returned.
      *         <p>Valid Values: <code>user</code> | <code>engine-default</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterParametersRequest withSource(String source) {
@@ -222,7 +222,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterParametersRequest withMaxRecords(Integer maxRecords) {
@@ -291,7 +291,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterParametersRequest withMarker(String marker) {

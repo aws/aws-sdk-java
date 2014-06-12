@@ -83,7 +83,7 @@ public class DescribeTrustedAdvisorChecksRequest extends AmazonWebServiceRequest
      *         Language parameters must be passed explicitly for operations that take
      *         them.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorChecksRequest withLanguage(String language) {

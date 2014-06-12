@@ -67,7 +67,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest impleme
      *
      * @param clusterId The cluster identifier for the bootstrap actions to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListBootstrapActionsRequest withClusterId(String clusterId) {
@@ -118,7 +118,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest impleme
      *         calls to retrieve the next page of results. When the value is null,
      *         all results have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListBootstrapActionsRequest withMarker(String marker) {

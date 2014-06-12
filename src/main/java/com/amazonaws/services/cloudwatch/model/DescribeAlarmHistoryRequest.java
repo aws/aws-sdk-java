@@ -108,7 +108,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest impleme
      *
      * @param alarmName The name of the alarm.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAlarmHistoryRequest withAlarmName(String alarmName) {
@@ -154,7 +154,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest impleme
      *
      * @param historyItemType The type of alarm histories to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HistoryItemType
@@ -188,7 +188,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest impleme
      *
      * @param historyItemType The type of alarm histories to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HistoryItemType
@@ -223,7 +223,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest impleme
      *
      * @param startDate The starting date to retrieve alarm history.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAlarmHistoryRequest withStartDate(java.util.Date startDate) {
@@ -256,7 +256,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest impleme
      *
      * @param endDate The ending date to retrieve alarm history.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAlarmHistoryRequest withEndDate(java.util.Date endDate) {
@@ -298,7 +298,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest impleme
      *
      * @param maxRecords The maximum number of alarm history records to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAlarmHistoryRequest withMaxRecords(Integer maxRecords) {
@@ -337,7 +337,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest impleme
      * @param nextToken The token returned by a previous call to indicate that there is more
      *         data available.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAlarmHistoryRequest withNextToken(String nextToken) {

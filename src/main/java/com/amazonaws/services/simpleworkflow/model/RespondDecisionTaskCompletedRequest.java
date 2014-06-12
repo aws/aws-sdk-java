@@ -135,7 +135,7 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondDecisionTaskCompletedRequest withTaskToken(String taskToken) {
@@ -190,7 +190,7 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      *         processing this decision task. See the docs for the <a>Decision</a>
      *         structure for details.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondDecisionTaskCompletedRequest withDecisions(Decision... decisions) {
@@ -212,7 +212,7 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      *         processing this decision task. See the docs for the <a>Decision</a>
      *         structure for details.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondDecisionTaskCompletedRequest withDecisions(java.util.Collection<Decision> decisions) {
@@ -261,7 +261,7 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      *
      * @param executionContext User defined context to add to workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondDecisionTaskCompletedRequest withExecutionContext(String executionContext) {

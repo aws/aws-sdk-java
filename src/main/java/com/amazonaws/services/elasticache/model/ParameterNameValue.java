@@ -89,7 +89,7 @@ public class ParameterNameValue implements Serializable {
      *
      * @param parameterName The name of the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ParameterNameValue withParameterName(String parameterName) {
@@ -122,7 +122,7 @@ public class ParameterNameValue implements Serializable {
      *
      * @param parameterValue The value of the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ParameterNameValue withParameterValue(String parameterValue) {

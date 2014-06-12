@@ -69,7 +69,7 @@ public class ReservedInstanceLimitPrice implements Serializable {
      * @param amount Used for Reserved Instance Marketplace offerings. Specifies the limit
      *         price on the total order (instanceCount * price).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstanceLimitPrice withAmount(Double amount) {
@@ -121,7 +121,7 @@ public class ReservedInstanceLimitPrice implements Serializable {
      * @param currencyCode The currency in which the <code>limitPrice</code> amount is specified.
      *         At this time, the only supported currency is <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues
@@ -159,7 +159,7 @@ public class ReservedInstanceLimitPrice implements Serializable {
      * @param currencyCode The currency in which the <code>limitPrice</code> amount is specified.
      *         At this time, the only supported currency is <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues

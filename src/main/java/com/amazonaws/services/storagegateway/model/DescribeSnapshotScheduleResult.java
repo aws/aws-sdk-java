@@ -65,7 +65,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotScheduleResult withVolumeARN(String volumeARN) {
@@ -107,7 +107,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
      *
      * @param startAt The new value for the StartAt property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotScheduleResult withStartAt(Integer startAt) {
@@ -149,7 +149,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
      *
      * @param recurrenceInHours The new value for the RecurrenceInHours property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotScheduleResult withRecurrenceInHours(Integer recurrenceInHours) {
@@ -191,7 +191,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
      *
      * @param description The new value for the Description property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotScheduleResult withDescription(String description) {
@@ -233,7 +233,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
      *
      * @param timezone The new value for the Timezone property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotScheduleResult withTimezone(String timezone) {

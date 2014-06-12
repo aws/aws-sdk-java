@@ -64,7 +64,7 @@ public class CacheNodeTypeSpecificValue implements Serializable {
      *
      * @param cacheNodeType The cache node type for which this value applies.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNodeTypeSpecificValue withCacheNodeType(String cacheNodeType) {
@@ -97,7 +97,7 @@ public class CacheNodeTypeSpecificValue implements Serializable {
      *
      * @param value The value for the cache node type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheNodeTypeSpecificValue withValue(String value) {

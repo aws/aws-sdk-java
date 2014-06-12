@@ -67,7 +67,7 @@ public class DescribeTagsResult implements Serializable {
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsResult withTags(TagDescription... tags) {
@@ -85,7 +85,7 @@ public class DescribeTagsResult implements Serializable {
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsResult withTags(java.util.Collection<TagDescription> tags) {
@@ -131,7 +131,7 @@ public class DescribeTagsResult implements Serializable {
      * @param nextToken The token to use when requesting the next set of items. If there are
      *         no additional items to return, the string is empty.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsResult withNextToken(String nextToken) {

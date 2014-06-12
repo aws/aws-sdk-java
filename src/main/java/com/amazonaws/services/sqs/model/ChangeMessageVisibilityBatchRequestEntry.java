@@ -115,7 +115,7 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable {
      *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchRequestEntry withId(String id) {
@@ -148,7 +148,7 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable {
      *
      * @param receiptHandle A receipt handle.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchRequestEntry withReceiptHandle(String receiptHandle) {
@@ -181,7 +181,7 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable {
      *
      * @param visibilityTimeout The new value (in seconds) for the message's visibility timeout.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchRequestEntry withVisibilityTimeout(Integer visibilityTimeout) {

@@ -89,7 +89,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest implement
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetDesiredCapacityRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -122,7 +122,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest implement
      *
      * @param desiredCapacity The new capacity setting for the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetDesiredCapacityRequest withDesiredCapacity(Integer desiredCapacity) {
@@ -185,7 +185,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest implement
      *         initiating a scaling activity to set your Auto Scaling group to the
      *         new capacity setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetDesiredCapacityRequest withHonorCooldown(Boolean honorCooldown) {

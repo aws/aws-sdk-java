@@ -58,7 +58,7 @@ public class ListDomainNamesResult implements Serializable {
      *
      * @param domainNames The names of the search domains owned by an account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDomainNamesResult withDomainNames(java.util.Map<String,String> domainNames) {

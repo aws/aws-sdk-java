@@ -190,7 +190,7 @@ public class Thumbnails implements Serializable {
      *         and <code>png</code>. <p>You specify whether you want Elastic
      *         Transcoder to create thumbnails when you create a job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withFormat(String format) {
@@ -232,7 +232,7 @@ public class Thumbnails implements Serializable {
      *
      * @param interval The number of seconds between thumbnails. Specify an integer value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withInterval(String interval) {
@@ -334,7 +334,7 @@ public class Thumbnails implements Serializable {
      *         values cannot exceed the width and height that you specified in the
      *         <code>Video:Resolution</code> object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withResolution(String resolution) {
@@ -436,7 +436,7 @@ public class Thumbnails implements Serializable {
      *         <code>auto</code>, Elastic Transcoder tries to preserve the aspect
      *         ratio of the video in the output file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withAspectRatio(String aspectRatio) {
@@ -490,7 +490,7 @@ public class Thumbnails implements Serializable {
      *         Elastic Transcoder uses 1920 (Full HD) as the default value. If you
      *         specify a numeric value, enter an even integer between 32 and 4096.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withMaxWidth(String maxWidth) {
@@ -544,7 +544,7 @@ public class Thumbnails implements Serializable {
      *         Elastic Transcoder uses 1080 (Full HD) as the default value. If you
      *         specify a numeric value, enter an even integer between 32 and 3072.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withMaxHeight(String maxHeight) {
@@ -748,7 +748,7 @@ public class Thumbnails implements Serializable {
      *         specify this option, Elastic Transcoder does not scale thumbnails
      *         up.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withSizingPolicy(String sizingPolicy) {
@@ -814,7 +814,7 @@ public class Thumbnails implements Serializable {
      *         match the values that you specified for thumbnail
      *         <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Thumbnails withPaddingPolicy(String paddingPolicy) {

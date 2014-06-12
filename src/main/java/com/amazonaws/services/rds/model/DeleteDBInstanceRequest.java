@@ -142,7 +142,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         character must be a letter</li> <li>Cannot end with a hyphen or
      *         contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -217,7 +217,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         SkipFinalSnapshot is <code>false</code>.</note> <p>Default:
      *         <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDBInstanceRequest withSkipFinalSnapshot(Boolean skipFinalSnapshot) {
@@ -309,7 +309,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         <li>Cannot be specified when deleting a read replica.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDBInstanceRequest withFinalDBSnapshotIdentifier(String finalDBSnapshotIdentifier) {

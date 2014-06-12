@@ -84,7 +84,7 @@ public class WorkflowExecutionDetail implements Serializable {
      *
      * @param executionInfo Information about the workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionDetail withExecutionInfo(WorkflowExecutionInfo executionInfo) {
@@ -123,7 +123,7 @@ public class WorkflowExecutionDetail implements Serializable {
      * @param executionConfiguration The configuration settings for this workflow execution including
      *         timeout values, tasklist etc.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionDetail withExecutionConfiguration(WorkflowExecutionConfiguration executionConfiguration) {
@@ -162,7 +162,7 @@ public class WorkflowExecutionDetail implements Serializable {
      * @param openCounts The number of tasks for this workflow execution. This includes open
      *         and closed tasks of all types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionDetail withOpenCounts(WorkflowExecutionOpenCounts openCounts) {
@@ -213,7 +213,7 @@ public class WorkflowExecutionDetail implements Serializable {
      *         has not made progress for an unusually long period of time and might
      *         require a corrective action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionDetail withLatestActivityTaskTimestamp(java.util.Date latestActivityTaskTimestamp) {
@@ -273,7 +273,7 @@ public class WorkflowExecutionDetail implements Serializable {
      *         form string, when closing a decision task using
      *         <a>RespondDecisionTaskCompleted</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionDetail withLatestExecutionContext(String latestExecutionContext) {

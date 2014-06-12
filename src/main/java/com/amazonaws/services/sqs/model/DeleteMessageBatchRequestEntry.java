@@ -93,7 +93,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable {
      *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchRequestEntry withId(String id) {
@@ -126,7 +126,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable {
      *
      * @param receiptHandle A receipt handle.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchRequestEntry withReceiptHandle(String receiptHandle) {

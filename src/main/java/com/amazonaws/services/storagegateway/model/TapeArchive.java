@@ -105,7 +105,7 @@ public class TapeArchive implements Serializable {
      *
      * @param tapeARN The Amazon Resource Name (ARN) of an archived virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeArchive withTapeARN(String tapeARN) {
@@ -150,7 +150,7 @@ public class TapeArchive implements Serializable {
      *
      * @param tapeBarcode The barcode that identifies the archived virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeArchive withTapeBarcode(String tapeBarcode) {
@@ -192,7 +192,7 @@ public class TapeArchive implements Serializable {
      *
      * @param tapeSizeInBytes The size, in bytes, of the archived virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeArchive withTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -237,7 +237,7 @@ public class TapeArchive implements Serializable {
      *         string format of the completion time is in the ISO8601 extended
      *         YYYY-MM-DD'T'HH:MM:SS'Z' format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeArchive withCompletionTime(java.util.Date completionTime) {
@@ -291,7 +291,7 @@ public class TapeArchive implements Serializable {
      *         that the virtual tape is being retrieved to. <p>The virtual tape is
      *         retrieved from the Virtual Tape Shelf (VTS).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeArchive withRetrievedTo(String retrievedTo) {
@@ -324,7 +324,7 @@ public class TapeArchive implements Serializable {
      *
      * @param tapeStatus The current state of the archived virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeArchive withTapeStatus(String tapeStatus) {

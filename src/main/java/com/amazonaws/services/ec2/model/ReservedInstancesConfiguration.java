@@ -73,7 +73,7 @@ public class ReservedInstancesConfiguration implements Serializable {
      *
      * @param availabilityZone The Availability Zone for the modified Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesConfiguration withAvailabilityZone(String availabilityZone) {
@@ -112,7 +112,7 @@ public class ReservedInstancesConfiguration implements Serializable {
      * @param platform The network platform of the modified Reserved Instances, which is
      *         either EC2-Classic or EC2-VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesConfiguration withPlatform(String platform) {
@@ -145,7 +145,7 @@ public class ReservedInstancesConfiguration implements Serializable {
      *
      * @param instanceCount The number of modified Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesConfiguration withInstanceCount(Integer instanceCount) {
@@ -191,7 +191,7 @@ public class ReservedInstancesConfiguration implements Serializable {
      *
      * @param instanceType The instance type for the modified Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -225,7 +225,7 @@ public class ReservedInstancesConfiguration implements Serializable {
      *
      * @param instanceType The instance type for the modified Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType

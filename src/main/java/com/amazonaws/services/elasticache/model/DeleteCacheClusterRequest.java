@@ -94,7 +94,7 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param cacheClusterId The cache cluster identifier for the cluster to be deleted. This
      *         parameter is not case sensitive.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteCacheClusterRequest withCacheClusterId(String cacheClusterId) {
@@ -133,7 +133,7 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param finalSnapshotIdentifier The name of a final cache cluster snapshot. ElastiCache creates the
      *         snapshot, and then deletes the cache cluster immediately afterward.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteCacheClusterRequest withFinalSnapshotIdentifier(String finalSnapshotIdentifier) {

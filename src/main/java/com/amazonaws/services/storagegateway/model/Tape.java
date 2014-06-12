@@ -103,7 +103,7 @@ public class Tape implements Serializable {
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tape withTapeARN(String tapeARN) {
@@ -148,7 +148,7 @@ public class Tape implements Serializable {
      *
      * @param tapeBarcode The barcode that identifies a specific virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tape withTapeBarcode(String tapeBarcode) {
@@ -190,7 +190,7 @@ public class Tape implements Serializable {
      *
      * @param tapeSizeInBytes The size, in bytes, of the virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tape withTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -223,7 +223,7 @@ public class Tape implements Serializable {
      *
      * @param tapeStatus The current state of the virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tape withTapeStatus(String tapeStatus) {
@@ -271,7 +271,7 @@ public class Tape implements Serializable {
      * @param vTLDevice The Virtual Tape Library (VTL) device that the virtual tape is
      *         associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tape withVTLDevice(String vTLDevice) {
@@ -316,7 +316,7 @@ public class Tape implements Serializable {
      *         uploaded before archiving is complete. <p>Range: 0 (not started) to
      *         100 (complete).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tape withProgress(Double progress) {

@@ -260,7 +260,7 @@ public class Condition implements Serializable {
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Condition withAttributeValueList(AttributeValue... attributeValueList) {
@@ -298,7 +298,7 @@ public class Condition implements Serializable {
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Condition withAttributeValueList(java.util.Collection<AttributeValue> attributeValueList) {
@@ -903,7 +903,7 @@ public class Condition implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
      *         Expressions</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ComparisonOperator
@@ -1305,7 +1305,7 @@ public class Condition implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
      *         Expressions</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ComparisonOperator

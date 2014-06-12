@@ -98,7 +98,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape you want to
      *         retrieve from the Virtual Tape Shelf (VTS).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveTapeArchiveRequest withTapeARN(String tapeARN) {
@@ -164,7 +164,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      *         virtual tapes to only one gateway and the gateway must be a
      *         Gateway-Virtual Tape Library.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveTapeArchiveRequest withGatewayARN(String gatewayARN) {

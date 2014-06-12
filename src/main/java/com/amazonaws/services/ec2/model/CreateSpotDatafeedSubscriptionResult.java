@@ -51,7 +51,7 @@ public class CreateSpotDatafeedSubscriptionResult implements Serializable {
      *
      * @param spotDatafeedSubscription The Spot Instance datafeed subscription.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSpotDatafeedSubscriptionResult withSpotDatafeedSubscription(SpotDatafeedSubscription spotDatafeedSubscription) {

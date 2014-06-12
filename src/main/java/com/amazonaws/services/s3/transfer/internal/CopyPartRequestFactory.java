@@ -71,7 +71,9 @@ public class CopyPartRequestFactory {
                 .withDestinationKey(copyObjectRequest.getDestinationKey())
                 .withSourceVersionId(copyObjectRequest.getSourceVersionId())
                 .withFirstByte(new Long(offset))
-                .withLastByte(new Long(offset + partSize - 1));
+                .withLastByte(new Long(offset + partSize - 1))
+                .withSourceSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey())
+                .withDestinationSSECustomerKey(copyObjectRequest.getDestinationSSECustomerKey());
 
         setOtherMetadataInRequest(request);
         offset += partSize;

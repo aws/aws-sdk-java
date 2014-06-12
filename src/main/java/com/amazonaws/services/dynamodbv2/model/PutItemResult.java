@@ -106,7 +106,7 @@ public class PutItemResult implements Serializable {
      *         <code>ALL_OLD</code> in the request. Each element consists of an
      *         attribute name and an attribute value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutItemResult withAttributes(java.util.Map<String,AttributeValue> attributes) {
@@ -208,7 +208,7 @@ public class PutItemResult implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
@@ -331,7 +331,7 @@ public class PutItemResult implements Serializable {
      *         time; therefore, do not rely on the precision or accuracy of the
      *         estimate. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutItemResult withItemCollectionMetrics(ItemCollectionMetrics itemCollectionMetrics) {

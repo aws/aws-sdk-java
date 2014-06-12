@@ -113,7 +113,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * @param vpcPeeringConnectionIds One or more VPC peering connection IDs. <p>Default: Describes all your
      *         VPC peering connections.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(String... vpcPeeringConnectionIds) {
@@ -133,7 +133,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * @param vpcPeeringConnectionIds One or more VPC peering connection IDs. <p>Default: Describes all your
      *         VPC peering connections.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(java.util.Collection<String> vpcPeeringConnectionIds) {
@@ -369,7 +369,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         filter. </li> <li> <p><code>vpc-peering-connection-id</code> - The ID
      *         of the VPC peering connection. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcPeeringConnectionsRequest withFilters(Filter... filters) {
@@ -449,7 +449,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         filter. </li> <li> <p><code>vpc-peering-connection-id</code> - The ID
      *         of the VPC peering connection. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcPeeringConnectionsRequest withFilters(java.util.Collection<Filter> filters) {

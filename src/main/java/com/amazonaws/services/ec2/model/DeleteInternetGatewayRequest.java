@@ -61,7 +61,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implem
      *
      * @param internetGatewayId The ID of the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteInternetGatewayRequest withInternetGatewayId(String internetGatewayId) {

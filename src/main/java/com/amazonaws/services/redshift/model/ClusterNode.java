@@ -63,7 +63,7 @@ public class ClusterNode implements Serializable {
      *
      * @param nodeRole Whether the node is a leader node or a compute node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterNode withNodeRole(String nodeRole) {
@@ -96,7 +96,7 @@ public class ClusterNode implements Serializable {
      *
      * @param privateIPAddress The private IP address of a node within a cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterNode withPrivateIPAddress(String privateIPAddress) {
@@ -129,7 +129,7 @@ public class ClusterNode implements Serializable {
      *
      * @param publicIPAddress The public IP address of a node within a cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterNode withPublicIPAddress(String publicIPAddress) {

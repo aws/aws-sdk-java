@@ -100,7 +100,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
      *         <code>DescribeElasticIps</code> returns a description of the Elastic
      *         IP addresses associated with the specified instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeElasticIpsRequest withInstanceId(String instanceId) {
@@ -145,7 +145,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
      *         <code>DescribeElasticIps</code> returns a description of the Elastic
      *         IP addresses that are registered with the specified stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeElasticIpsRequest withStackId(String stackId) {
@@ -206,7 +206,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
      *         the specified Elastic IP addresses. Otherwise, it returns a
      *         description of every Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeElasticIpsRequest withIps(String... ips) {
@@ -230,7 +230,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
      *         the specified Elastic IP addresses. Otherwise, it returns a
      *         description of every Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeElasticIpsRequest withIps(java.util.Collection<String> ips) {

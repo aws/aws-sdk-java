@@ -78,7 +78,7 @@ public class NodeGroup implements Serializable {
      * @param nodeGroupId The identifier for the node group. A replication group contains only
      *         one node group; therefore, the node group ID is 0001.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroup withNodeGroupId(String nodeGroupId) {
@@ -117,7 +117,7 @@ public class NodeGroup implements Serializable {
      * @param status The current state of this replication group - <i>creating</i>,
      *         <i>available</i>, etc.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroup withStatus(String status) {
@@ -156,7 +156,7 @@ public class NodeGroup implements Serializable {
      * @param primaryEndpoint Represents the information required for client programs to connect to
      *         a cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroup withPrimaryEndpoint(Endpoint primaryEndpoint) {
@@ -205,7 +205,7 @@ public class NodeGroup implements Serializable {
      * @param nodeGroupMembers A list containing information about individual nodes within the node
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroup withNodeGroupMembers(NodeGroupMember... nodeGroupMembers) {
@@ -225,7 +225,7 @@ public class NodeGroup implements Serializable {
      * @param nodeGroupMembers A list containing information about individual nodes within the node
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroup withNodeGroupMembers(java.util.Collection<NodeGroupMember> nodeGroupMembers) {

@@ -148,7 +148,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest imple
      *         specify <code>StackName</code>, you must specify
      *         <code>PhysicalResourceId</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourcesRequest withStackName(String stackName) {
@@ -187,7 +187,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest imple
      * @param logicalResourceId The logical name of the resource as specified in the template.
      *         <p>Default: There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourcesRequest withLogicalResourceId(String logicalResourceId) {
@@ -274,7 +274,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest imple
      *         <code>PhysicalResourceId</code>, you must specify
      *         <code>StackName</code>. <p>Default: There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackResourcesRequest withPhysicalResourceId(String physicalResourceId) {

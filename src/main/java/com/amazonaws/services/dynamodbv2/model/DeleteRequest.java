@@ -96,7 +96,7 @@ public class DeleteRequest implements Serializable {
      *         must be specified, and their data types must match those of the
      *         table's key schema.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteRequest withKey(java.util.Map<String,AttributeValue> key) {

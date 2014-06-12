@@ -128,7 +128,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      * @param loadBalancerName The name associated with the load balancer. The name must be unique
      *         within your set of load balancers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterInstancesWithLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
@@ -177,7 +177,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      * @param instances A list of instance IDs that should be registered with the load
      *         balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterInstancesWithLoadBalancerRequest withInstances(Instance... instances) {
@@ -197,7 +197,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      * @param instances A list of instance IDs that should be registered with the load
      *         balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterInstancesWithLoadBalancerRequest withInstances(java.util.Collection<Instance> instances) {

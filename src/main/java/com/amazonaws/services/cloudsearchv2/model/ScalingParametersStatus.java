@@ -65,7 +65,7 @@ public class ScalingParametersStatus implements Serializable {
      * @param options The desired instance type and desired number of replicas of each index
      *         partition.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingParametersStatus withOptions(ScalingParameters options) {
@@ -98,7 +98,7 @@ public class ScalingParametersStatus implements Serializable {
      *
      * @param status The status of domain configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScalingParametersStatus withStatus(OptionStatus status) {

@@ -70,7 +70,7 @@ public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      * @param cacheSubnetGroupName The name of the cache subnet group to delete. <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters or hyphens.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {

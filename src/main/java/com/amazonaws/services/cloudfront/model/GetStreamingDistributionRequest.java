@@ -75,7 +75,7 @@ public class GetStreamingDistributionRequest extends AmazonWebServiceRequest imp
      *
      * @param id The streaming distribution's id.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStreamingDistributionRequest withId(String id) {

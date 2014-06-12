@@ -72,7 +72,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
      *
      * @param notificationConfigurations The list of notification configurations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(NotificationConfiguration... notificationConfigurations) {
@@ -90,7 +90,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
      *
      * @param notificationConfigurations The list of notification configurations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(java.util.Collection<NotificationConfiguration> notificationConfigurations) {
@@ -145,7 +145,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable {
      * @param nextToken A string that is used to mark the start of the next batch of returned
      *         results for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNotificationConfigurationsResult withNextToken(String nextToken) {

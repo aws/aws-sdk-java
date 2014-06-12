@@ -69,7 +69,7 @@ public class CreateHealthCheckResult implements Serializable {
      * @param healthCheck A complex type that contains identifying information about the health
      *         check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHealthCheckResult withHealthCheck(HealthCheck healthCheck) {
@@ -111,7 +111,7 @@ public class CreateHealthCheckResult implements Serializable {
      *
      * @param location The unique URL representing the new health check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHealthCheckResult withLocation(String location) {

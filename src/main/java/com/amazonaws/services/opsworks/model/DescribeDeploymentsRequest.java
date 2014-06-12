@@ -98,7 +98,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implemen
      *         <code>DescribeDeployments</code> returns a description of the commands
      *         associated with the specified stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDeploymentsRequest withStackId(String stackId) {
@@ -143,7 +143,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implemen
      *         <code>DescribeDeployments</code> returns a description of the commands
      *         associated with the specified app.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDeploymentsRequest withAppId(String appId) {
@@ -204,7 +204,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implemen
      *         the specified deployments. Otherwise, it returns a description of
      *         every deployment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDeploymentsRequest withDeploymentIds(String... deploymentIds) {
@@ -228,7 +228,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implemen
      *         the specified deployments. Otherwise, it returns a description of
      *         every deployment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDeploymentsRequest withDeploymentIds(java.util.Collection<String> deploymentIds) {

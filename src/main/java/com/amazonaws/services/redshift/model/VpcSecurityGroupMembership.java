@@ -58,7 +58,7 @@ public class VpcSecurityGroupMembership implements Serializable {
      *
      * @param vpcSecurityGroupId 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcSecurityGroupMembership withVpcSecurityGroupId(String vpcSecurityGroupId) {
@@ -91,7 +91,7 @@ public class VpcSecurityGroupMembership implements Serializable {
      *
      * @param status 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcSecurityGroupMembership withStatus(String status) {

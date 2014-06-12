@@ -73,7 +73,7 @@ public class GetFederationTokenResult implements Serializable {
      *
      * @param credentials Credentials for the service API authentication.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetFederationTokenResult withCredentials(Credentials credentials) {
@@ -124,7 +124,7 @@ public class GetFederationTokenResult implements Serializable {
      *         <code>123456789012:Bob</code>). You can use the federated user's ARN
      *         in your resource-based policies, such as an Amazon S3 bucket policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetFederationTokenResult withFederatedUser(FederatedUser federatedUser) {
@@ -178,7 +178,7 @@ public class GetFederationTokenResult implements Serializable {
      *         The service rejects policies for which the packed size is greater than
      *         100 percent of the allowed value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetFederationTokenResult withPackedPolicySize(Integer packedPolicySize) {

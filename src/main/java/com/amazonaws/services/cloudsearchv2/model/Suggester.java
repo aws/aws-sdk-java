@@ -106,7 +106,7 @@ public class Suggester implements Serializable {
      *         cannot be used as a field name. To reference a document's ID, you can
      *         use the name <code>_id</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Suggester withSuggesterName(String suggesterName) {
@@ -139,7 +139,7 @@ public class Suggester implements Serializable {
      *
      * @param documentSuggesterOptions Options for a search suggester.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Suggester withDocumentSuggesterOptions(DocumentSuggesterOptions documentSuggesterOptions) {

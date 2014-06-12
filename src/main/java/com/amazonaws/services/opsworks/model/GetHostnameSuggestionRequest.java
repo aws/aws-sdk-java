@@ -67,7 +67,7 @@ public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest implem
      *
      * @param layerId The layer ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetHostnameSuggestionRequest withLayerId(String layerId) {

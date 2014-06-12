@@ -93,7 +93,7 @@ public class DescribeExpressionsRequest extends AmazonWebServiceRequest implemen
      *
      * @param domainName The name of the domain you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExpressionsRequest withDomainName(String domainName) {
@@ -142,7 +142,7 @@ public class DescribeExpressionsRequest extends AmazonWebServiceRequest implemen
      * @param expressionNames Limits the <code><a>DescribeExpressions</a></code> response to the
      *         specified expressions. If not specified, all expressions are shown.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExpressionsRequest withExpressionNames(String... expressionNames) {
@@ -162,7 +162,7 @@ public class DescribeExpressionsRequest extends AmazonWebServiceRequest implemen
      * @param expressionNames Limits the <code><a>DescribeExpressions</a></code> response to the
      *         specified expressions. If not specified, all expressions are shown.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExpressionsRequest withExpressionNames(java.util.Collection<String> expressionNames) {
@@ -214,7 +214,7 @@ public class DescribeExpressionsRequest extends AmazonWebServiceRequest implemen
      *         include any pending changes (<code>false</code>). Defaults to
      *         <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExpressionsRequest withDeployed(Boolean deployed) {

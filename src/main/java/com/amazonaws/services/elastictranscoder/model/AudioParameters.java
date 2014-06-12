@@ -114,7 +114,7 @@ public class AudioParameters implements Serializable {
      * @param codec The audio codec for the output file. Valid values include
      *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AudioParameters withCodec(String codec) {
@@ -180,7 +180,7 @@ public class AudioParameters implements Serializable {
      *         <code>96000</code> <p>If you specify <code>auto</code>, Elastic
      *         Transcoder automatically detects the sample rate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AudioParameters withSampleRate(String sampleRate) {
@@ -228,7 +228,7 @@ public class AudioParameters implements Serializable {
      * @param bitRate The bit rate of the audio stream in the output file, in
      *         kilobits/second. Enter an integer between 64 and 320, inclusive.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AudioParameters withBitRate(String bitRate) {
@@ -288,7 +288,7 @@ public class AudioParameters implements Serializable {
      *         <p>If you specify <code>auto</code>, Elastic Transcoder automatically
      *         detects the number of channels in the input file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AudioParameters withChannels(String channels) {
@@ -351,7 +351,7 @@ public class AudioParameters implements Serializable {
      *         <code>auto</code>, Elastic Transcoder chooses a profile based on the
      *         bit rate of the output file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AudioParameters withCodecOptions(AudioCodecOptions codecOptions) {

@@ -170,7 +170,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      *         can have the same name, and two streams in the same AWS account, but
      *         in two different regions, can have the same name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStreamRequest withStreamName(String streamName) {
@@ -248,7 +248,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements Seri
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
      *         AWS Support</a> to increase the limit on your account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStreamRequest withShardCount(Integer shardCount) {

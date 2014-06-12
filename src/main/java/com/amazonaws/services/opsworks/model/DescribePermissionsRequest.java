@@ -85,7 +85,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest implemen
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePermissionsRequest withIamUserArn(String iamUserArn) {
@@ -118,7 +118,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest implemen
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePermissionsRequest withStackId(String stackId) {

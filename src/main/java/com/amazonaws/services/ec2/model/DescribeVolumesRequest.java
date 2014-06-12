@@ -131,7 +131,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *
      * @param volumeIds One or more volume IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
@@ -149,7 +149,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *
      * @param volumeIds One or more volume IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumesRequest withVolumeIds(java.util.Collection<String> volumeIds) {
@@ -403,7 +403,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         can be <code>standard</code> for standard EBS volumes or
      *         <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumesRequest withFilters(Filter... filters) {
@@ -489,7 +489,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         can be <code>standard</code> for standard EBS volumes or
      *         <code>io1</code> for Provisioned IOPS volumes. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumesRequest withFilters(java.util.Collection<Filter> filters) {

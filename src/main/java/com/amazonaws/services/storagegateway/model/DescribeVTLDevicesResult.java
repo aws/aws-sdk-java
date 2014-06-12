@@ -97,7 +97,7 @@ public class DescribeVTLDevicesResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVTLDevicesResult withGatewayARN(String gatewayARN) {
@@ -146,7 +146,7 @@ public class DescribeVTLDevicesResult implements Serializable {
      * @param vTLDevices An array of VTL device objects composed of the Amazon Resource
      *         Name(ARN) of the VTL devices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVTLDevicesResult withVTLDevices(VTLDevice... vTLDevices) {
@@ -166,7 +166,7 @@ public class DescribeVTLDevicesResult implements Serializable {
      * @param vTLDevices An array of VTL device objects composed of the Amazon Resource
      *         Name(ARN) of the VTL devices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVTLDevicesResult withVTLDevices(java.util.Collection<VTLDevice> vTLDevices) {
@@ -239,7 +239,7 @@ public class DescribeVTLDevicesResult implements Serializable {
      *         no more VTL devices to describe, this field does not appear in the
      *         response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVTLDevicesResult withMarker(String marker) {

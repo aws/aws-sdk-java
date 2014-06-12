@@ -99,7 +99,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddTagsToResourceRequest withResourceName(String resourceName) {
@@ -142,7 +142,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      *
      * @param tags The tags to be assigned to the Amazon RDS resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddTagsToResourceRequest withTags(Tag... tags) {
@@ -160,7 +160,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      *
      * @param tags The tags to be assigned to the Amazon RDS resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddTagsToResourceRequest withTags(java.util.Collection<Tag> tags) {

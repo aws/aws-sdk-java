@@ -69,7 +69,7 @@ public class ListAvailableSolutionStacksResult implements Serializable {
      *
      * @param solutionStacks A list of available solution stacks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAvailableSolutionStacksResult withSolutionStacks(String... solutionStacks) {
@@ -87,7 +87,7 @@ public class ListAvailableSolutionStacksResult implements Serializable {
      *
      * @param solutionStacks A list of available solution stacks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAvailableSolutionStacksResult withSolutionStacks(java.util.Collection<String> solutionStacks) {
@@ -143,7 +143,7 @@ public class ListAvailableSolutionStacksResult implements Serializable {
      * @param solutionStackDetails A list of available solution stacks and their
      *         <a>SolutionStackDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAvailableSolutionStacksResult withSolutionStackDetails(SolutionStackDescription... solutionStackDetails) {
@@ -163,7 +163,7 @@ public class ListAvailableSolutionStacksResult implements Serializable {
      * @param solutionStackDetails A list of available solution stacks and their
      *         <a>SolutionStackDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAvailableSolutionStacksResult withSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {

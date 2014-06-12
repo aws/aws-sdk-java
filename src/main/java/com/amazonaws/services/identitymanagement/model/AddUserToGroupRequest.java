@@ -102,7 +102,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements Se
      *
      * @param groupName Name of the group to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddUserToGroupRequest withGroupName(String groupName) {
@@ -147,7 +147,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements Se
      *
      * @param userName Name of the user to add.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddUserToGroupRequest withUserName(String userName) {

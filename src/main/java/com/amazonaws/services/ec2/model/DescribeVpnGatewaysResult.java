@@ -61,7 +61,7 @@ public class DescribeVpnGatewaysResult implements Serializable {
      *
      * @param vpnGateways Information about one or more virtual private gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnGatewaysResult withVpnGateways(VpnGateway... vpnGateways) {
@@ -79,7 +79,7 @@ public class DescribeVpnGatewaysResult implements Serializable {
      *
      * @param vpnGateways Information about one or more virtual private gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpnGatewaysResult withVpnGateways(java.util.Collection<VpnGateway> vpnGateways) {

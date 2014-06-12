@@ -136,7 +136,7 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
      *         that was returned for <i>LastEvaluatedTableName</i> in a previous
      *         operation, so that you can obtain the next page of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTablesRequest withExclusiveStartTableName(String exclusiveStartTableName) {
@@ -184,7 +184,7 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
      * @param limit A maximum number of table names to return. If this parameter is not
      *         specified, the limit is 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTablesRequest withLimit(Integer limit) {

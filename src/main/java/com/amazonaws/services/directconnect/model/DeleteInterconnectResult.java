@@ -118,7 +118,7 @@ public class DeleteInterconnectResult implements Serializable {
      *         The network link is down.</li> <li><b>Deleted</b>: The interconnect
      *         has been deleted.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InterconnectState
@@ -180,7 +180,7 @@ public class DeleteInterconnectResult implements Serializable {
      *         The network link is down.</li> <li><b>Deleted</b>: The interconnect
      *         has been deleted.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InterconnectState

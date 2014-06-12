@@ -103,7 +103,7 @@ public class GlobalSecondaryIndex implements Serializable {
      * @param indexName The name of the global secondary index. The name must be unique among
      *         all other indexes on this table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GlobalSecondaryIndex withIndexName(String indexName) {
@@ -163,7 +163,7 @@ public class GlobalSecondaryIndex implements Serializable {
      *         of one or more pairs of attribute names and key types
      *         (<code>HASH</code> or <code>RANGE</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GlobalSecondaryIndex withKeySchema(KeySchemaElement... keySchema) {
@@ -188,7 +188,7 @@ public class GlobalSecondaryIndex implements Serializable {
      *         of one or more pairs of attribute names and key types
      *         (<code>HASH</code> or <code>RANGE</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GlobalSecondaryIndex withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -240,7 +240,7 @@ public class GlobalSecondaryIndex implements Serializable {
      *         an index. These are in addition to the primary key attributes and
      *         index key attributes, which are automatically projected.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GlobalSecondaryIndex withProjection(Projection projection) {
@@ -303,7 +303,7 @@ public class GlobalSecondaryIndex implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GlobalSecondaryIndex withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {

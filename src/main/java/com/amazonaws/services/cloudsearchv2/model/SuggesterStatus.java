@@ -79,7 +79,7 @@ public class SuggesterStatus implements Serializable {
      *         suggestions. The following options can be configured for a suggester:
      *         <code>FuzzyMatching</code>, <code>SortExpression</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SuggesterStatus withOptions(Suggester options) {
@@ -112,7 +112,7 @@ public class SuggesterStatus implements Serializable {
      *
      * @param status The status of domain configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SuggesterStatus withStatus(OptionStatus status) {
