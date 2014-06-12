@@ -570,7 +570,11 @@ public class TransferManager {
                 listenerChain);
         getObjectRequest.setGeneralProgressListener(listenerChainForGetObjectRequest);
 
-        final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectRequest.getBucketName(), getObjectRequest.getKey());
+        GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey());
+        if (getObjectRequest.getSSECustomerKey() != null) {
+            getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
+        }
+        final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
 
         final StartDownloadLock startDownloadLock = new StartDownloadLock();
         // We still pass the unfiltered listener chain into DownloadImpl
@@ -1299,10 +1303,13 @@ public class TransferManager {
                 + copyObjectRequest.getDestinationBucketName() + "/"
                 + copyObjectRequest.getDestinationKey();
 
-        ObjectMetadata metadata = s3
-                .getObjectMetadata(new GetObjectMetadataRequest(
+        GetObjectMetadataRequest getObjectMetadataRequest =
+                new GetObjectMetadataRequest(
                         copyObjectRequest.getSourceBucketName(),
-                        copyObjectRequest.getSourceKey()));
+                        copyObjectRequest.getSourceKey())
+                        .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey());
+
+        ObjectMetadata metadata = s3.getObjectMetadata(getObjectMetadataRequest);
 
         TransferProgressImpl transferProgress = new TransferProgressImpl();
         transferProgress.setTotalBytesToTransfer(metadata.getContentLength());

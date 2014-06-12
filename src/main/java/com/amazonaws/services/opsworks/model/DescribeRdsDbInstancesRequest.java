@@ -70,7 +70,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest imple
      * @param stackId The stack ID that the instances are registered with. The operation
      *         returns descriptions of all registered Amazon RDS instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRdsDbInstancesRequest withStackId(String stackId) {
@@ -113,7 +113,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest imple
      *
      * @param rdsDbInstanceArns An array containing the ARNs of the instances to be described.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRdsDbInstancesRequest withRdsDbInstanceArns(String... rdsDbInstanceArns) {
@@ -131,7 +131,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest imple
      *
      * @param rdsDbInstanceArns An array containing the ARNs of the instances to be described.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRdsDbInstancesRequest withRdsDbInstanceArns(java.util.Collection<String> rdsDbInstanceArns) {

@@ -94,7 +94,7 @@ public class DescribeHsmClientCertificatesResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmClientCertificatesResult withMarker(String marker) {
@@ -149,7 +149,7 @@ public class DescribeHsmClientCertificatesResult implements Serializable {
      *         by Amazon Redshift clusters to store and retrieve database encryption
      *         keys in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmClientCertificatesResult withHsmClientCertificates(HsmClientCertificate... hsmClientCertificates) {
@@ -171,7 +171,7 @@ public class DescribeHsmClientCertificatesResult implements Serializable {
      *         by Amazon Redshift clusters to store and retrieve database encryption
      *         keys in an HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmClientCertificatesResult withHsmClientCertificates(java.util.Collection<HsmClientCertificate> hsmClientCertificates) {

@@ -77,6 +77,37 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
         if (restoreFromClusterSnapshotRequest.getElasticIp() != null) {
             request.addParameter("ElasticIp", StringUtils.fromString(restoreFromClusterSnapshotRequest.getElasticIp()));
         }
+        if (restoreFromClusterSnapshotRequest.getClusterParameterGroupName() != null) {
+            request.addParameter("ClusterParameterGroupName", StringUtils.fromString(restoreFromClusterSnapshotRequest.getClusterParameterGroupName()));
+        }
+
+        java.util.List<String> clusterSecurityGroupsList = restoreFromClusterSnapshotRequest.getClusterSecurityGroups();
+        int clusterSecurityGroupsListIndex = 1;
+
+        for (String clusterSecurityGroupsListValue : clusterSecurityGroupsList) {
+            if (clusterSecurityGroupsListValue != null) {
+                request.addParameter("ClusterSecurityGroups.ClusterSecurityGroupName." + clusterSecurityGroupsListIndex, StringUtils.fromString(clusterSecurityGroupsListValue));
+            }
+
+            clusterSecurityGroupsListIndex++;
+        }
+
+        java.util.List<String> vpcSecurityGroupIdsList = restoreFromClusterSnapshotRequest.getVpcSecurityGroupIds();
+        int vpcSecurityGroupIdsListIndex = 1;
+
+        for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+            if (vpcSecurityGroupIdsListValue != null) {
+                request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex, StringUtils.fromString(vpcSecurityGroupIdsListValue));
+            }
+
+            vpcSecurityGroupIdsListIndex++;
+        }
+        if (restoreFromClusterSnapshotRequest.getPreferredMaintenanceWindow() != null) {
+            request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(restoreFromClusterSnapshotRequest.getPreferredMaintenanceWindow()));
+        }
+        if (restoreFromClusterSnapshotRequest.getAutomatedSnapshotRetentionPeriod() != null) {
+            request.addParameter("AutomatedSnapshotRetentionPeriod", StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getAutomatedSnapshotRetentionPeriod()));
+        }
 
         return request;
     }

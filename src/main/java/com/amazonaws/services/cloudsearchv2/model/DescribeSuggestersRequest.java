@@ -94,7 +94,7 @@ public class DescribeSuggestersRequest extends AmazonWebServiceRequest implement
      *
      * @param domainName The name of the domain you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSuggestersRequest withDomainName(String domainName) {
@@ -137,7 +137,7 @@ public class DescribeSuggestersRequest extends AmazonWebServiceRequest implement
      *
      * @param suggesterNames The suggesters you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSuggestersRequest withSuggesterNames(String... suggesterNames) {
@@ -155,7 +155,7 @@ public class DescribeSuggestersRequest extends AmazonWebServiceRequest implement
      *
      * @param suggesterNames The suggesters you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSuggestersRequest withSuggesterNames(java.util.Collection<String> suggesterNames) {
@@ -207,7 +207,7 @@ public class DescribeSuggestersRequest extends AmazonWebServiceRequest implement
      *         include any pending changes (<code>false</code>). Defaults to
      *         <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSuggestersRequest withDeployed(Boolean deployed) {

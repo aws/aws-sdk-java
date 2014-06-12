@@ -93,7 +93,7 @@ public class GetStackPolicyResult implements Serializable {
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User
      *         Guide.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStackPolicyResult withStackPolicyBody(String stackPolicyBody) {

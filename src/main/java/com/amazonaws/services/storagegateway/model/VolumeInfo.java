@@ -59,7 +59,7 @@ public class VolumeInfo implements Serializable {
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeInfo withVolumeARN(String volumeARN) {
@@ -101,7 +101,7 @@ public class VolumeInfo implements Serializable {
      *
      * @param volumeType The new value for the VolumeType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeInfo withVolumeType(String volumeType) {

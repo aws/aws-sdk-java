@@ -92,7 +92,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      *
      * @param cloudFrontOriginAccessIdentityConfig The identity's configuration information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateCloudFrontOriginAccessIdentityRequest withCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
@@ -125,7 +125,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      *
      * @param id The identity's id.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateCloudFrontOriginAccessIdentityRequest withId(String id) {
@@ -164,7 +164,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      * @param ifMatch The value of the ETag header you received when retrieving the
      *         identity's configuration. For example: E2QWRUHAPOMQZL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateCloudFrontOriginAccessIdentityRequest withIfMatch(String ifMatch) {

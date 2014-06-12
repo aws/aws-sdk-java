@@ -79,7 +79,7 @@ public class SuspendedProcess implements Serializable {
      *
      * @param processName The name of the suspended process.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SuspendedProcess withProcessName(String processName) {
@@ -124,7 +124,7 @@ public class SuspendedProcess implements Serializable {
      *
      * @param suspensionReason The reason that the process was suspended.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SuspendedProcess withSuspensionReason(String suspensionReason) {

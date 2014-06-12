@@ -86,7 +86,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      *
      * @param launchConfigurationNames A list of launch configuration names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(String... launchConfigurationNames) {
@@ -104,7 +104,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      *
      * @param launchConfigurationNames A list of launch configuration names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(java.util.Collection<String> launchConfigurationNames) {
@@ -153,7 +153,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLaunchConfigurationsRequest withNextToken(String nextToken) {
@@ -186,7 +186,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      *
      * @param maxRecords The maximum number of launch configurations. The default is 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLaunchConfigurationsRequest withMaxRecords(Integer maxRecords) {

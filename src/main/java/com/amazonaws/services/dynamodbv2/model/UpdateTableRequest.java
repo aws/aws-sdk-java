@@ -136,7 +136,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param tableName The name of the table to be updated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTableRequest withTableName(String tableName) {
@@ -199,7 +199,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTableRequest withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
@@ -244,7 +244,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
      *         together with provisioned throughput settings for each index.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTableRequest withGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdate... globalSecondaryIndexUpdates) {
@@ -264,7 +264,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements Seria
      * @param globalSecondaryIndexUpdates An array of one or more global secondary indexes on the table,
      *         together with provisioned throughput settings for each index.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTableRequest withGlobalSecondaryIndexUpdates(java.util.Collection<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates) {

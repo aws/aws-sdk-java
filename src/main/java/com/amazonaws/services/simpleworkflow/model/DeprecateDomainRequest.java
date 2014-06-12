@@ -105,7 +105,7 @@ public class DeprecateDomainRequest extends AmazonWebServiceRequest implements S
      *
      * @param name The name of the domain to deprecate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeprecateDomainRequest withName(String name) {

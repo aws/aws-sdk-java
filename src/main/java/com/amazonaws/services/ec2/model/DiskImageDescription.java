@@ -88,7 +88,7 @@ public class DiskImageDescription implements Serializable {
      *
      * @param format The disk image format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -122,7 +122,7 @@ public class DiskImageDescription implements Serializable {
      *
      * @param format The disk image format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -157,7 +157,7 @@ public class DiskImageDescription implements Serializable {
      *
      * @param size The size of the disk image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImageDescription withSize(Long size) {
@@ -226,7 +226,7 @@ public class DiskImageDescription implements Serializable {
      *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
      *         Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImageDescription withImportManifestUrl(String importManifestUrl) {
@@ -259,7 +259,7 @@ public class DiskImageDescription implements Serializable {
      *
      * @param checksum The checksum computed for the disk image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImageDescription withChecksum(String checksum) {

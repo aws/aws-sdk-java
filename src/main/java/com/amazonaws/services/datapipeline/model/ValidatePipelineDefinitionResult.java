@@ -81,7 +81,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
      * @param validationErrors Lists the validation errors that were found by
      *         <a>ValidatePipelineDefinition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionResult withValidationErrors(ValidationError... validationErrors) {
@@ -101,7 +101,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
      * @param validationErrors Lists the validation errors that were found by
      *         <a>ValidatePipelineDefinition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionResult withValidationErrors(java.util.Collection<ValidationError> validationErrors) {
@@ -157,7 +157,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
      * @param validationWarnings Lists the validation warnings that were found by
      *         <a>ValidatePipelineDefinition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionResult withValidationWarnings(ValidationWarning... validationWarnings) {
@@ -177,7 +177,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
      * @param validationWarnings Lists the validation warnings that were found by
      *         <a>ValidatePipelineDefinition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionResult withValidationWarnings(java.util.Collection<ValidationWarning> validationWarnings) {
@@ -217,7 +217,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
      *
      * @param errored If <code>True</code>, there were validation errors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionResult withErrored(Boolean errored) {

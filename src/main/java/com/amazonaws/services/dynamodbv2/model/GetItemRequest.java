@@ -159,7 +159,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *
      * @param tableName The name of the table containing the requested item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetItemRequest withTableName(String tableName) {
@@ -199,7 +199,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetItemRequest withKey(java.util.Map<String,AttributeValue> key) {
@@ -353,7 +353,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         consumed based on item size, not on the amount of data that is
      *         returned to an application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetItemRequest withAttributesToGet(String... attributesToGet) {
@@ -386,7 +386,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         consumed based on item size, not on the amount of data that is
      *         returned to an application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetItemRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -432,7 +432,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      * @param consistentRead If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetItemRequest withConsistentRead(Boolean consistentRead) {
@@ -513,7 +513,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -563,7 +563,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements Serializa
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity

@@ -106,7 +106,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param limit The maximum number of streams to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStreamsRequest withLimit(Integer limit) {
@@ -151,7 +151,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param exclusiveStartStreamName The name of the stream to start the list with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStreamsRequest withExclusiveStartStreamName(String exclusiveStartStreamName) {

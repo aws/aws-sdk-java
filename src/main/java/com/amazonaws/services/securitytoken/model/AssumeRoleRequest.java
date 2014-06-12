@@ -266,7 +266,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * @param roleArn The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleRequest withRoleArn(String roleArn) {
@@ -317,7 +317,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * @param roleSessionName An identifier for the assumed role session. The session name is
      *         included as part of the <code>AssumedRoleUser</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleRequest withRoleSessionName(String roleSessionName) {
@@ -422,7 +422,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
      *         for AssumeRole</a> in <i>Using Temporary Security Credentials</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleRequest withPolicy(String policy) {
@@ -476,7 +476,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      *         the value is set to 3600 seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleRequest withDurationSeconds(Integer durationSeconds) {
@@ -581,7 +581,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         target="_blank">About the External ID</a> in <i>Using Temporary
      *         Security Credentials</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleRequest withExternalId(String externalId) {
@@ -668,7 +668,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         virtual device (such as
      *         <code>arn:aws:iam::123456789012:mfa/user</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleRequest withSerialNumber(String serialNumber) {
@@ -737,7 +737,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      *         and if the <code>TokenCode</code> value is missing or expired, the
      *         <code>AssumeRole</code> call returns an "access denied" error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleRequest withTokenCode(String tokenCode) {

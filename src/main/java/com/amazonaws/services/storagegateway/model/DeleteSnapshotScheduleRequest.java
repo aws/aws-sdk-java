@@ -76,7 +76,7 @@ public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest imple
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSnapshotScheduleRequest withVolumeARN(String volumeARN) {

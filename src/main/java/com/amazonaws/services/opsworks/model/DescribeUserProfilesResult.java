@@ -63,7 +63,7 @@ public class DescribeUserProfilesResult implements Serializable {
      *
      * @param userProfiles A <code>Users</code> object that describes the specified users.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeUserProfilesResult withUserProfiles(UserProfile... userProfiles) {
@@ -81,7 +81,7 @@ public class DescribeUserProfilesResult implements Serializable {
      *
      * @param userProfiles A <code>Users</code> object that describes the specified users.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeUserProfilesResult withUserProfiles(java.util.Collection<UserProfile> userProfiles) {

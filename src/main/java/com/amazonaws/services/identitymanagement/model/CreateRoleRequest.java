@@ -130,7 +130,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRoleRequest withPath(String path) {
@@ -175,7 +175,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param roleName Name of the role to create.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRoleRequest withRoleName(String roleName) {
@@ -220,7 +220,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRoleRequest withAssumeRolePolicyDocument(String assumeRolePolicyDocument) {

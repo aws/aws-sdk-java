@@ -58,7 +58,7 @@ public class DeleteHsmConfigurationRequest extends AmazonWebServiceRequest imple
      *
      * @param hsmConfigurationIdentifier The identifier of the Amazon Redshift HSM configuration to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteHsmConfigurationRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {

@@ -121,7 +121,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param pipelineId Identifier of the pipeline to be queried for object names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsRequest withPipelineId(String pipelineId) {
@@ -172,7 +172,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements Seri
      *         are limited to top-level String fields in the object. These filters
      *         can be applied to components, instances, and attempts.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsRequest withQuery(Query query) {
@@ -229,7 +229,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements Seri
      *         Allowable values: <code>COMPONENT</code>, <code>INSTANCE</code>,
      *         <code>ATTEMPT</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsRequest withSphere(String sphere) {
@@ -298,7 +298,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements Seri
      *         can call <a>QueryObjects</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsRequest withMarker(String marker) {
@@ -337,7 +337,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements Seri
      * @param limit Specifies the maximum number of object names that <a>QueryObjects</a>
      *         will return in a single call. The default value is 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsRequest withLimit(Integer limit) {

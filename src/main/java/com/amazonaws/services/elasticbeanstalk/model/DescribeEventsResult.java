@@ -70,7 +70,7 @@ public class DescribeEventsResult implements Serializable {
      *
      * @param events A list of <a>EventDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsResult withEvents(EventDescription... events) {
@@ -88,7 +88,7 @@ public class DescribeEventsResult implements Serializable {
      *
      * @param events A list of <a>EventDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsResult withEvents(java.util.Collection<EventDescription> events) {
@@ -140,7 +140,7 @@ public class DescribeEventsResult implements Serializable {
      *         this token in the next <a>DescribeEvents</a> call to get the next
      *         batch of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsResult withNextToken(String nextToken) {

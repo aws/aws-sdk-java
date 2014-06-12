@@ -93,7 +93,7 @@ public class DescribeReservedNodesResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodesResult withMarker(String marker) {
@@ -136,7 +136,7 @@ public class DescribeReservedNodesResult implements Serializable {
      *
      * @param reservedNodes The list of reserved nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodesResult withReservedNodes(ReservedNode... reservedNodes) {
@@ -154,7 +154,7 @@ public class DescribeReservedNodesResult implements Serializable {
      *
      * @param reservedNodes The list of reserved nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodesResult withReservedNodes(java.util.Collection<ReservedNode> reservedNodes) {

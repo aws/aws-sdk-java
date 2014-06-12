@@ -110,7 +110,7 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
      *         <b>ClusterSecurityGroupName</b> parameter, but not both. <p> Example:
      *         <code>securitygroup1</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSecurityGroupsRequest withClusterSecurityGroupName(String clusterSecurityGroupName) {
@@ -173,7 +173,7 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSecurityGroupsRequest withMaxRecords(Integer maxRecords) {
@@ -260,7 +260,7 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
      *         <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
      *         parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSecurityGroupsRequest withMarker(String marker) {

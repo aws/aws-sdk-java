@@ -82,7 +82,7 @@ public class VolumeAttachment implements Serializable {
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeAttachment withVolumeId(String volumeId) {
@@ -115,7 +115,7 @@ public class VolumeAttachment implements Serializable {
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeAttachment withInstanceId(String instanceId) {
@@ -148,7 +148,7 @@ public class VolumeAttachment implements Serializable {
      *
      * @param device The device name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeAttachment withDevice(String device) {
@@ -194,7 +194,7 @@ public class VolumeAttachment implements Serializable {
      *
      * @param state The attachment state of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeAttachmentState
@@ -228,7 +228,7 @@ public class VolumeAttachment implements Serializable {
      *
      * @param state The attachment state of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeAttachmentState
@@ -263,7 +263,7 @@ public class VolumeAttachment implements Serializable {
      *
      * @param attachTime The time stamp when the attachment initiated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeAttachment withAttachTime(java.util.Date attachTime) {
@@ -302,7 +302,7 @@ public class VolumeAttachment implements Serializable {
      * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
      *         termination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeAttachment withDeleteOnTermination(Boolean deleteOnTermination) {

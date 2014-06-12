@@ -73,7 +73,7 @@ public class WorkflowExecutionCount implements Serializable {
      *
      * @param count The number of workflow executions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCount withCount(Integer count) {
@@ -118,7 +118,7 @@ public class WorkflowExecutionCount implements Serializable {
      *         maximum supported by this API and the count returned is the truncated
      *         value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCount withTruncated(Boolean truncated) {

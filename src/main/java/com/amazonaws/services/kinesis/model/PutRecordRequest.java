@@ -168,7 +168,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param streamName The name of the stream to put the data record into.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRecordRequest withStreamName(String streamName) {
@@ -222,7 +222,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
      *         blob is serialized. The maximum size of the data blob (the payload
      *         after Base64-decoding) is 50 kilobytes (KB)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRecordRequest withData(java.nio.ByteBuffer data) {
@@ -306,7 +306,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
      *         shards. As a result of this hashing mechanism, all data records with
      *         the same partition key will map to the same shard within the stream.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRecordRequest withPartitionKey(String partitionKey) {
@@ -354,7 +354,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
      * @param explicitHashKey The hash value used to explicitly determine the shard the data record
      *         is assigned to by overriding the partition key hash.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRecordRequest withExplicitHashKey(String explicitHashKey) {
@@ -432,7 +432,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
      *         parameter is not set, records will be coarsely ordered based on
      *         arrival time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRecordRequest withSequenceNumberForOrdering(String sequenceNumberForOrdering) {

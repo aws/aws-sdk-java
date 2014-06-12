@@ -89,7 +89,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param ownerId The AWS account ID of the owner of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withOwnerId(String ownerId) {
@@ -122,7 +122,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param groupName The name of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withGroupName(String groupName) {
@@ -155,7 +155,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param groupId The ID of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withGroupId(String groupId) {
@@ -188,7 +188,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param description A description of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withDescription(String description) {
@@ -231,7 +231,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param ipPermissions One or more inbound rules associated with the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withIpPermissions(IpPermission... ipPermissions) {
@@ -249,7 +249,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param ipPermissions One or more inbound rules associated with the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
@@ -305,7 +305,7 @@ public class SecurityGroup implements Serializable {
      * @param ipPermissionsEgress [EC2-VPC] One or more outbound rules associated with the security
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withIpPermissionsEgress(IpPermission... ipPermissionsEgress) {
@@ -325,7 +325,7 @@ public class SecurityGroup implements Serializable {
      * @param ipPermissionsEgress [EC2-VPC] One or more outbound rules associated with the security
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withIpPermissionsEgress(java.util.Collection<IpPermission> ipPermissionsEgress) {
@@ -365,7 +365,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param vpcId [EC2-VPC] The ID of the VPC for the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withVpcId(String vpcId) {
@@ -408,7 +408,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param tags Any tags assigned to the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withTags(Tag... tags) {
@@ -426,7 +426,7 @@ public class SecurityGroup implements Serializable {
      *
      * @param tags Any tags assigned to the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SecurityGroup withTags(java.util.Collection<Tag> tags) {

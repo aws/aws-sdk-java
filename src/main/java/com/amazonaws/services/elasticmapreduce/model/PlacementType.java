@@ -87,7 +87,7 @@ public class PlacementType implements Serializable {
      *
      * @param availabilityZone The Amazon EC2 Availability Zone for the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PlacementType withAvailabilityZone(String availabilityZone) {

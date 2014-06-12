@@ -17,7 +17,9 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Response for ListSubscriptions action
+ * </p>
  */
 public class ListSubscriptionsResult implements Serializable {
 
@@ -68,7 +70,7 @@ public class ListSubscriptionsResult implements Serializable {
      *
      * @param subscriptions A list of subscriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSubscriptionsResult withSubscriptions(Subscription... subscriptions) {
@@ -86,7 +88,7 @@ public class ListSubscriptionsResult implements Serializable {
      *
      * @param subscriptions A list of subscriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSubscriptionsResult withSubscriptions(java.util.Collection<Subscription> subscriptions) {
@@ -138,7 +140,7 @@ public class ListSubscriptionsResult implements Serializable {
      *         request. This element is returned if there are more subscriptions to
      *         retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSubscriptionsResult withNextToken(String nextToken) {

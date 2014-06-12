@@ -161,7 +161,7 @@ public class Role implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Role withPath(String path) {
@@ -206,7 +206,7 @@ public class Role implements Serializable {
      *
      * @param roleName The name identifying the role.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Role withRoleName(String roleName) {
@@ -275,7 +275,7 @@ public class Role implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Role withRoleId(String roleId) {
@@ -341,7 +341,7 @@ public class Role implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Role withArn(String arn) {
@@ -374,7 +374,7 @@ public class Role implements Serializable {
      *
      * @param createDate The date when the role was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Role withCreateDate(java.util.Date createDate) {
@@ -437,7 +437,7 @@ public class Role implements Serializable {
      *         information about RFC 3986, go to <a
      *         href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Role withAssumeRolePolicyDocument(String assumeRolePolicyDocument) {

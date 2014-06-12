@@ -70,7 +70,7 @@ public class DescribeElasticIpsResult implements Serializable {
      * @param elasticIps An <code>ElasticIps</code> object that describes the specified Elastic
      *         IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeElasticIpsResult withElasticIps(ElasticIp... elasticIps) {
@@ -90,7 +90,7 @@ public class DescribeElasticIpsResult implements Serializable {
      * @param elasticIps An <code>ElasticIps</code> object that describes the specified Elastic
      *         IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeElasticIpsResult withElasticIps(java.util.Collection<ElasticIp> elasticIps) {

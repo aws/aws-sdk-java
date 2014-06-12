@@ -61,7 +61,7 @@ public class StopInstancesResult implements Serializable {
      *
      * @param stoppingInstances Information about one or more stopped instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesResult withStoppingInstances(InstanceStateChange... stoppingInstances) {
@@ -79,7 +79,7 @@ public class StopInstancesResult implements Serializable {
      *
      * @param stoppingInstances Information about one or more stopped instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesResult withStoppingInstances(java.util.Collection<InstanceStateChange> stoppingInstances) {

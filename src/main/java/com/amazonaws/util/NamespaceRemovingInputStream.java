@@ -51,6 +51,7 @@ class NamespaceRemovingInputStream extends SdkFilterInputStream {
      */
     @Override
     public int read() throws IOException {
+        abortIfNeeded();
         int b = in.read();
         if (b == 'x' && !hasRemovedNamespace) {
             lookAheadData[0] = (byte)b;

@@ -21,11 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest) Subscribe operation}.
  * <p>
- * The <code>Subscribe</code> action prepares to subscribe an endpoint by
- * sending the endpoint a confirmation message. To actually create a
- * subscription, the endpoint owner must call the
- * <code>ConfirmSubscription</code> action with the token from the
- * confirmation message. Confirmation tokens are valid for three days.
+ * Prepares to subscribe an endpoint by sending the endpoint a
+ * confirmation message. To actually create a subscription, the endpoint
+ * owner must call the <code>ConfirmSubscription</code> action with the
+ * token from the confirmation message. Confirmation tokens are valid for
+ * three days.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest)
@@ -131,7 +131,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param topicArn The ARN of the topic you want to subscribe to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SubscribeRequest withTopicArn(String topicArn) {
@@ -218,7 +218,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements Seriali
      *         JSON-encoded message to an EndpointArn for a mobile app and
      *         device.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SubscribeRequest withProtocol(String protocol) {
@@ -311,7 +311,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements Seriali
      *         queue</li> <li>For the <code>application</code> protocol, the endpoint
      *         is the EndpointArn of a mobile app and device.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SubscribeRequest withEndpoint(String endpoint) {

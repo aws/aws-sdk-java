@@ -63,7 +63,7 @@ public class DescribeDBLogFilesDetails implements Serializable {
      *
      * @param logFileName The name of the log file for the specified DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesDetails withLogFileName(String logFileName) {
@@ -96,7 +96,7 @@ public class DescribeDBLogFilesDetails implements Serializable {
      *
      * @param lastWritten A POSIX timestamp when the last log entry was written.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesDetails withLastWritten(Long lastWritten) {
@@ -129,7 +129,7 @@ public class DescribeDBLogFilesDetails implements Serializable {
      *
      * @param size The size, in bytes, of the log file for the specified DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesDetails withSize(Long size) {

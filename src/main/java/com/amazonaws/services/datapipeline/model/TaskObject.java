@@ -102,7 +102,7 @@ public class TaskObject implements Serializable {
      * @param taskId An internal identifier for the task. This ID is passed to the
      *         <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TaskObject withTaskId(String taskId) {
@@ -147,7 +147,7 @@ public class TaskObject implements Serializable {
      *
      * @param pipelineId Identifier of the pipeline that provided the task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TaskObject withPipelineId(String pipelineId) {
@@ -198,7 +198,7 @@ public class TaskObject implements Serializable {
      * @param attemptId Identifier of the pipeline task attempt object. AWS Data Pipeline uses
      *         this value to track how many times a task is attempted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TaskObject withAttemptId(String attemptId) {
@@ -241,7 +241,7 @@ public class TaskObject implements Serializable {
      * @param objects Connection information for the location where the task runner will
      *         publish the output of the task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TaskObject withObjects(java.util.Map<String,PipelineObject> objects) {

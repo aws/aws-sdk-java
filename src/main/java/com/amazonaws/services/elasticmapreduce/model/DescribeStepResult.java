@@ -53,7 +53,7 @@ public class DescribeStepResult implements Serializable {
      *
      * @param step The step details for the requested step identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStepResult withStep(Step step) {

@@ -97,7 +97,7 @@ public class IndexDocumentsRequest extends AmazonWebServiceRequest implements Se
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexDocumentsRequest withDomainName(String domainName) {

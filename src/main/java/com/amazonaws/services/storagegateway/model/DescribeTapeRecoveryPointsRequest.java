@@ -109,7 +109,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest i
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeRecoveryPointsRequest withGatewayARN(String gatewayARN) {
@@ -157,7 +157,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest i
      * @param marker An opaque string that indicates the position at which to begin
      *         describing the virtual tape recovery points.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeRecoveryPointsRequest withMarker(String marker) {
@@ -205,7 +205,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest i
      * @param limit Specifies that the number of virtual tape recovery points that are
      *         described be limited to the specified number.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeRecoveryPointsRequest withLimit(Integer limit) {

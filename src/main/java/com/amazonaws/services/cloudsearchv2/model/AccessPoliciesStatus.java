@@ -94,7 +94,7 @@ public class AccessPoliciesStatus implements Serializable {
      *         <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a
      *         policy document is 100 KB.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessPoliciesStatus withOptions(String options) {
@@ -127,7 +127,7 @@ public class AccessPoliciesStatus implements Serializable {
      *
      * @param status The status of domain configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessPoliciesStatus withStatus(OptionStatus status) {

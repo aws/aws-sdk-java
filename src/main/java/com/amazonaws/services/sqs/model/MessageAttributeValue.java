@@ -102,7 +102,7 @@ public class MessageAttributeValue implements Serializable {
      *         values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MessageAttributeValue withStringValue(String stringValue) {
@@ -141,7 +141,7 @@ public class MessageAttributeValue implements Serializable {
      * @param binaryValue Binary type attributes can store any binary data, for example,
      *         compressed data, encrypted data, or images.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MessageAttributeValue withBinaryValue(java.nio.ByteBuffer binaryValue) {
@@ -184,7 +184,7 @@ public class MessageAttributeValue implements Serializable {
      *
      * @param stringListValues Not implemented. Reserved for future use.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MessageAttributeValue withStringListValues(String... stringListValues) {
@@ -202,7 +202,7 @@ public class MessageAttributeValue implements Serializable {
      *
      * @param stringListValues Not implemented. Reserved for future use.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MessageAttributeValue withStringListValues(java.util.Collection<String> stringListValues) {
@@ -252,7 +252,7 @@ public class MessageAttributeValue implements Serializable {
      *
      * @param binaryListValues Not implemented. Reserved for future use.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MessageAttributeValue withBinaryListValues(java.nio.ByteBuffer... binaryListValues) {
@@ -270,7 +270,7 @@ public class MessageAttributeValue implements Serializable {
      *
      * @param binaryListValues Not implemented. Reserved for future use.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MessageAttributeValue withBinaryListValues(java.util.Collection<java.nio.ByteBuffer> binaryListValues) {
@@ -334,7 +334,7 @@ public class MessageAttributeValue implements Serializable {
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      *         Attribute Data Types</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MessageAttributeValue withDataType(String dataType) {

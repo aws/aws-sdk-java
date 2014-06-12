@@ -71,7 +71,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable {
      *
      * @param autoScalingInstances A list of Auto Scaling instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingInstancesResult withAutoScalingInstances(AutoScalingInstanceDetails... autoScalingInstances) {
@@ -89,7 +89,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable {
      *
      * @param autoScalingInstances A list of Auto Scaling instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingInstancesResult withAutoScalingInstances(java.util.Collection<AutoScalingInstanceDetails> autoScalingInstances) {
@@ -138,7 +138,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable {
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingInstancesResult withNextToken(String nextToken) {

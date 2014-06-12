@@ -83,7 +83,7 @@ public class ListGroupsForUserResult implements Serializable {
      *
      * @param groups A list of groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupsForUserResult withGroups(Group... groups) {
@@ -101,7 +101,7 @@ public class ListGroupsForUserResult implements Serializable {
      *
      * @param groups A list of groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupsForUserResult withGroups(java.util.Collection<Group> groups) {
@@ -159,7 +159,7 @@ public class ListGroupsForUserResult implements Serializable {
      *         using the <code>Marker</code> request parameter to retrieve more
      *         groups in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupsForUserResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListGroupsForUserResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupsForUserResult withMarker(String marker) {

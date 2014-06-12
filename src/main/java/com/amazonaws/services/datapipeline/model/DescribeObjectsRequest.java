@@ -102,7 +102,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
      *
      * @param pipelineId Identifier of the pipeline that contains the object definitions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsRequest withPipelineId(String pipelineId) {
@@ -157,7 +157,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
      *         described. You can pass as many as 25 identifiers in a single call to
      *         DescribeObjects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsRequest withObjectIds(String... objectIds) {
@@ -179,7 +179,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
      *         described. You can pass as many as 25 identifiers in a single call to
      *         DescribeObjects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsRequest withObjectIds(java.util.Collection<String> objectIds) {
@@ -225,7 +225,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
      * @param evaluateExpressions Indicates whether any expressions in the object should be evaluated
      *         when the object descriptions are returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsRequest withEvaluateExpressions(Boolean evaluateExpressions) {
@@ -305,7 +305,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
      *         you can call <a>DescribeObjects</a> again and pass the marker value
      *         from the response to retrieve the next set of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsRequest withMarker(String marker) {

@@ -61,7 +61,7 @@ public class CancelReservedInstancesListingResult implements Serializable {
      *
      * @param reservedInstancesListings The Reserved Instance listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelReservedInstancesListingResult withReservedInstancesListings(ReservedInstancesListing... reservedInstancesListings) {
@@ -79,7 +79,7 @@ public class CancelReservedInstancesListingResult implements Serializable {
      *
      * @param reservedInstancesListings The Reserved Instance listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelReservedInstancesListingResult withReservedInstancesListings(java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {

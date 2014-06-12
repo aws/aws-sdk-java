@@ -51,7 +51,7 @@ public class DetachVolumeResult implements Serializable {
      *
      * @param attachment 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachVolumeResult withAttachment(VolumeAttachment attachment) {

@@ -151,7 +151,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *
      * @param masterInstanceType The EC2 instance type of the master node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withMasterInstanceType(String masterInstanceType) {
@@ -196,7 +196,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *
      * @param slaveInstanceType The EC2 instance type of the slave nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withSlaveInstanceType(String slaveInstanceType) {
@@ -229,7 +229,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *
      * @param instanceCount The number of Amazon EC2 instances used to execute the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withInstanceCount(Integer instanceCount) {
@@ -272,7 +272,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *
      * @param instanceGroups Configuration for the job flow's instance groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withInstanceGroups(InstanceGroupConfig... instanceGroups) {
@@ -290,7 +290,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *
      * @param instanceGroups Configuration for the job flow's instance groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
@@ -348,7 +348,7 @@ public class JobFlowInstancesConfig implements Serializable {
      * @param ec2KeyName The name of the Amazon EC2 key pair that can be used to ssh to the
      *         master node as the user called "hadoop."
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withEc2KeyName(String ec2KeyName) {
@@ -381,7 +381,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *
      * @param placement The Availability Zone the job flow will run in.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withPlacement(PlacementType placement) {
@@ -420,7 +420,7 @@ public class JobFlowInstancesConfig implements Serializable {
      * @param keepJobFlowAliveWhenNoSteps Specifies whether the job flow should terminate after completing all
      *         steps.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withKeepJobFlowAliveWhenNoSteps(Boolean keepJobFlowAliveWhenNoSteps) {
@@ -476,7 +476,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *         instances from being terminated by API call, user intervention, or in
      *         the event of a job flow error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withTerminationProtected(Boolean terminationProtected) {
@@ -558,7 +558,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *         in which case the default version of Hadoop for that AMI version is
      *         used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withHadoopVersion(String hadoopVersion) {
@@ -645,7 +645,7 @@ public class JobFlowInstancesConfig implements Serializable {
      *         specify the cc1.4xlarge instance type for nodes of a job flow launched
      *         in a Amazon VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowInstancesConfig withEc2SubnetId(String ec2SubnetId) {

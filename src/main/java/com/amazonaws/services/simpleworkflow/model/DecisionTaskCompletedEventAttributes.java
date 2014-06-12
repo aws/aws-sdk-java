@@ -81,7 +81,7 @@ public class DecisionTaskCompletedEventAttributes implements Serializable {
      *
      * @param executionContext User defined context for the workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecisionTaskCompletedEventAttributes withExecutionContext(String executionContext) {
@@ -132,7 +132,7 @@ public class DecisionTaskCompletedEventAttributes implements Serializable {
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecisionTaskCompletedEventAttributes withScheduledEventId(Long scheduledEventId) {
@@ -183,7 +183,7 @@ public class DecisionTaskCompletedEventAttributes implements Serializable {
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecisionTaskCompletedEventAttributes withStartedEventId(Long startedEventId) {

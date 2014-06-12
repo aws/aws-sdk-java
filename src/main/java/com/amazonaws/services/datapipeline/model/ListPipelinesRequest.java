@@ -104,7 +104,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements Ser
      *         can call <a>ListPipelines</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesRequest withMarker(String marker) {

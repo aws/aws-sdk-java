@@ -66,7 +66,7 @@ public class DisableLoggingRequest extends AmazonWebServiceRequest implements Se
      * @param clusterIdentifier The identifier of the cluster on which logging is to be stopped.
      *         <p>Example: <code>examplecluster</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableLoggingRequest withClusterIdentifier(String clusterIdentifier) {

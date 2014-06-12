@@ -59,7 +59,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable {
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCachediSCSIVolumeResult withVolumeARN(String volumeARN) {
@@ -101,7 +101,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable {
      *
      * @param targetARN The new value for the TargetARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCachediSCSIVolumeResult withTargetARN(String targetARN) {

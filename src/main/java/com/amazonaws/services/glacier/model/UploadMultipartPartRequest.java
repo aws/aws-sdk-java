@@ -122,6 +122,9 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
 
     /**
      * The data to upload.
+     *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
      */
     private java.io.InputStream body;
 
@@ -232,7 +235,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadMultipartPartRequest withAccountId(String accountId) {
@@ -265,7 +268,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadMultipartPartRequest withVaultName(String vaultName) {
@@ -298,7 +301,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
      *
      * @param uploadId The upload ID of the multipart upload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadMultipartPartRequest withUploadId(String uploadId) {
@@ -331,7 +334,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
      *
      * @param checksum The SHA256 tree hash of the data being uploaded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadMultipartPartRequest withChecksum(String checksum) {
@@ -388,7 +391,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
      *         follows RFC 2616. An example header is Content-Range:bytes
      *         0-4194303/*.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadMultipartPartRequest withRange(String range) {
@@ -399,6 +402,9 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
     /**
      * The data to upload.
      *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
+     *
      * @return The data to upload.
      */
     public java.io.InputStream getBody() {
@@ -408,6 +414,9 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
     /**
      * The data to upload.
      *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
+     *
      * @param body The data to upload.
      */
     public void setBody(java.io.InputStream body) {
@@ -416,12 +425,15 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
     
     /**
      * The data to upload.
+     *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param body The data to upload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadMultipartPartRequest withBody(java.io.InputStream body) {

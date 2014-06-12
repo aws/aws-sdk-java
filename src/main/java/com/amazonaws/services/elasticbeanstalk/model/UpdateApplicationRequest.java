@@ -117,7 +117,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      *         found, <code>UpdateApplication</code> returns an
      *         <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateApplicationRequest withApplicationName(String applicationName) {
@@ -165,7 +165,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @param description A new description for the application. <p>Default: If not specified,
      *         AWS Elastic Beanstalk does not update the description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateApplicationRequest withDescription(String description) {

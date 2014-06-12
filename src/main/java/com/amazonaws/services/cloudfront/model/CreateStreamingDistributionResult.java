@@ -65,7 +65,7 @@ public class CreateStreamingDistributionResult implements Serializable {
      *
      * @param streamingDistribution The streaming distribution's information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStreamingDistributionResult withStreamingDistribution(StreamingDistribution streamingDistribution) {
@@ -110,7 +110,7 @@ public class CreateStreamingDistributionResult implements Serializable {
      *         just created. For example:
      *         https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStreamingDistributionResult withLocation(String location) {
@@ -143,7 +143,7 @@ public class CreateStreamingDistributionResult implements Serializable {
      *
      * @param eTag The current version of the streaming distribution created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStreamingDistributionResult withETag(String eTag) {

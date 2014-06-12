@@ -66,7 +66,7 @@ public class ConnectionDraining implements Serializable {
      * @param enabled Specifies whether connection draining is enabled for the load
      *         balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConnectionDraining withEnabled(Boolean enabled) {
@@ -116,7 +116,7 @@ public class ConnectionDraining implements Serializable {
      * @param timeout Specifies the maximum time (in seconds) to keep the existing
      *         connections open before deregistering the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConnectionDraining withTimeout(Integer timeout) {

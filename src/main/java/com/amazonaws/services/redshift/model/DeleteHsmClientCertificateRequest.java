@@ -58,7 +58,7 @@ public class DeleteHsmClientCertificateRequest extends AmazonWebServiceRequest i
      *
      * @param hsmClientCertificateIdentifier The identifier of the HSM client certificate to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteHsmClientCertificateRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {

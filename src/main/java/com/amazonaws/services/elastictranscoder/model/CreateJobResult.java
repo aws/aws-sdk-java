@@ -60,7 +60,7 @@ public class CreateJobResult implements Serializable {
      * @param job A section of the response body that provides information about the job
      *         that is created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobResult withJob(Job job) {

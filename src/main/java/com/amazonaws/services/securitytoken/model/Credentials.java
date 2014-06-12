@@ -111,7 +111,7 @@ public class Credentials implements Serializable {
      *
      * @param accessKeyId The access key ID that identifies the temporary security credentials.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Credentials withAccessKeyId(String accessKeyId) {
@@ -144,7 +144,7 @@ public class Credentials implements Serializable {
      *
      * @param secretAccessKey The secret access key that can be used to sign requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Credentials withSecretAccessKey(String secretAccessKey) {
@@ -183,7 +183,7 @@ public class Credentials implements Serializable {
      * @param sessionToken The token that users must pass to the service API to use the temporary
      *         credentials.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Credentials withSessionToken(String sessionToken) {
@@ -216,7 +216,7 @@ public class Credentials implements Serializable {
      *
      * @param expiration The date on which the current credentials expire.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Credentials withExpiration(java.util.Date expiration) {

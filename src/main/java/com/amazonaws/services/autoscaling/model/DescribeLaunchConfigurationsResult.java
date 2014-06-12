@@ -71,7 +71,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
      *
      * @param launchConfigurations A list of launch configurations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(LaunchConfiguration... launchConfigurations) {
@@ -89,7 +89,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
      *
      * @param launchConfigurations A list of launch configurations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
@@ -138,7 +138,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable {
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLaunchConfigurationsResult withNextToken(String nextToken) {

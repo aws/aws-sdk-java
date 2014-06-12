@@ -156,7 +156,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      *         returned by <a>RunJobFlow</a> and can also be obtained from
      *         <a>DescribeJobFlows</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddJobFlowStepsRequest withJobFlowId(String jobFlowId) {
@@ -199,7 +199,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      *
      * @param steps A list of <a>StepConfig</a> to be executed by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddJobFlowStepsRequest withSteps(StepConfig... steps) {
@@ -217,7 +217,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      *
      * @param steps A list of <a>StepConfig</a> to be executed by the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddJobFlowStepsRequest withSteps(java.util.Collection<StepConfig> steps) {

@@ -63,7 +63,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable {
      *
      * @param cidrBlock The CIDR block for the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnectionVpcInfo withCidrBlock(String cidrBlock) {
@@ -96,7 +96,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable {
      *
      * @param ownerId The AWS account ID of the VPC owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnectionVpcInfo withOwnerId(String ownerId) {
@@ -129,7 +129,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable {
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnectionVpcInfo withVpcId(String vpcId) {

@@ -141,7 +141,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *
      * @param solutionStackName The name of the solution stack this configuration set uses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withSolutionStackName(String solutionStackName) {
@@ -183,7 +183,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *
      * @param applicationName The name of the application associated with this configuration set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withApplicationName(String applicationName) {
@@ -231,7 +231,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      * @param templateName If not <code>null</code>, the name of the configuration template for
      *         this configuration set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withTemplateName(String templateName) {
@@ -273,7 +273,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *
      * @param description Describes this configuration set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withDescription(String description) {
@@ -321,7 +321,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      * @param environmentName If not <code>null</code>, the name of the environment for this
      *         configuration set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withEnvironmentName(String environmentName) {
@@ -475,7 +475,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *         </li> <li> <code>failed</code>: This is a draft configuration that
      *         failed to successfully deploy. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConfigurationDeploymentStatus
@@ -581,7 +581,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *         </li> <li> <code>failed</code>: This is a draft configuration that
      *         failed to successfully deploy. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConfigurationDeploymentStatus
@@ -616,7 +616,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *
      * @param dateCreated The date (in UTC time) when this configuration set was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withDateCreated(java.util.Date dateCreated) {
@@ -649,7 +649,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *
      * @param dateUpdated The date (in UTC time) when this configuration set was last modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withDateUpdated(java.util.Date dateUpdated) {
@@ -698,7 +698,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      * @param optionSettings A list of the configuration options and their values in this
      *         configuration set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withOptionSettings(ConfigurationOptionSetting... optionSettings) {
@@ -718,7 +718,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
      * @param optionSettings A list of the configuration options and their values in this
      *         configuration set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateResult withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {

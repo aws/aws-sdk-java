@@ -73,7 +73,7 @@ public class DomainInfos implements Serializable {
      *
      * @param domainInfos A list of DomainInfo structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainInfos withDomainInfos(DomainInfo... domainInfos) {
@@ -91,7 +91,7 @@ public class DomainInfos implements Serializable {
      *
      * @param domainInfos A list of DomainInfo structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainInfos withDomainInfos(java.util.Collection<DomainInfo> domainInfos) {
@@ -152,7 +152,7 @@ public class DomainInfos implements Serializable {
      *         results, repeat the request specifying this token and all other
      *         arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainInfos withNextPageToken(String nextPageToken) {

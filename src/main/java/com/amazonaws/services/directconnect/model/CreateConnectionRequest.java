@@ -80,7 +80,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
      *
      * @param location Where the connection is located. <p>Example: EqSV5 <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConnectionRequest withLocation(String location) {
@@ -113,7 +113,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
      *
      * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConnectionRequest withBandwidth(String bandwidth) {
@@ -152,7 +152,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
      * @param connectionName The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      *         <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConnectionRequest withConnectionName(String connectionName) {

@@ -195,7 +195,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         snapshot identifier when <i>SourceType</i> is
      *         <code>cluster-snapshot</code>.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsRequest withSourceIdentifier(String sourceIdentifier) {
@@ -301,7 +301,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
      *         cluster snapshot identifier.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SourceType
@@ -375,7 +375,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
      *         cluster snapshot identifier.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SourceType
@@ -428,7 +428,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2009-07-08T18:00Z</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsRequest withStartTime(java.util.Date startTime) {
@@ -479,7 +479,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2009-07-08T18:00Z</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsRequest withEndTime(java.util.Date endTime) {
@@ -530,7 +530,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         specify a duration of 60, then only events which have occurred after
      *         17:00 will be returned. <p>Default: <code>60</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsRequest withDuration(Integer duration) {
@@ -593,7 +593,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsRequest withMaxRecords(Integer maxRecords) {
@@ -662,7 +662,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         returned marker value in the <code>Marker</code> parameter and
      *         retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsRequest withMarker(String marker) {

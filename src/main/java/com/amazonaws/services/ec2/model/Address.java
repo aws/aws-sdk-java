@@ -95,7 +95,7 @@ public class Address implements Serializable {
      *
      * @param instanceId The ID of the instance the address is associated with (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Address withInstanceId(String instanceId) {
@@ -128,7 +128,7 @@ public class Address implements Serializable {
      *
      * @param publicIp The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Address withPublicIp(String publicIp) {
@@ -167,7 +167,7 @@ public class Address implements Serializable {
      * @param allocationId The ID representing the allocation of the address for use with
      *         EC2-VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Address withAllocationId(String allocationId) {
@@ -206,7 +206,7 @@ public class Address implements Serializable {
      * @param associationId The ID representing the association of the address with an instance in
      *         a VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Address withAssociationId(String associationId) {
@@ -264,7 +264,7 @@ public class Address implements Serializable {
      *         EC2-Classic (<code>standard</code>) or instances in a VPC
      *         (<code>vpc</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DomainType
@@ -306,7 +306,7 @@ public class Address implements Serializable {
      *         EC2-Classic (<code>standard</code>) or instances in a VPC
      *         (<code>vpc</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DomainType
@@ -341,7 +341,7 @@ public class Address implements Serializable {
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Address withNetworkInterfaceId(String networkInterfaceId) {
@@ -374,7 +374,7 @@ public class Address implements Serializable {
      *
      * @param networkInterfaceOwnerId The ID of the AWS account that owns the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Address withNetworkInterfaceOwnerId(String networkInterfaceOwnerId) {
@@ -407,7 +407,7 @@ public class Address implements Serializable {
      *
      * @param privateIpAddress The private IP address associated with the Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Address withPrivateIpAddress(String privateIpAddress) {

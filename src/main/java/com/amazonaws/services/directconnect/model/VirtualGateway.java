@@ -78,7 +78,7 @@ public class VirtualGateway implements Serializable {
      * @param virtualGatewayId The ID of the virtual private gateway to a VPC. This only applies to
      *         private virtual interfaces. <p>Example: vgw-123er56
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VirtualGateway withVirtualGatewayId(String virtualGatewayId) {
@@ -147,7 +147,7 @@ public class VirtualGateway implements Serializable {
      *         state, a private virtual interface is unable to send traffic over this
      *         gateway.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VirtualGateway withVirtualGatewayState(String virtualGatewayState) {

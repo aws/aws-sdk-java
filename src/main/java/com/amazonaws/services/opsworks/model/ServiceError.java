@@ -78,7 +78,7 @@ public class ServiceError implements Serializable {
      *
      * @param serviceErrorId The error ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServiceError withServiceErrorId(String serviceErrorId) {
@@ -111,7 +111,7 @@ public class ServiceError implements Serializable {
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServiceError withStackId(String stackId) {
@@ -144,7 +144,7 @@ public class ServiceError implements Serializable {
      *
      * @param instanceId The instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServiceError withInstanceId(String instanceId) {
@@ -177,7 +177,7 @@ public class ServiceError implements Serializable {
      *
      * @param type The error type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServiceError withType(String type) {
@@ -210,7 +210,7 @@ public class ServiceError implements Serializable {
      *
      * @param message A message that describes the error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServiceError withMessage(String message) {
@@ -243,7 +243,7 @@ public class ServiceError implements Serializable {
      *
      * @param createdAt When the error occurred.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServiceError withCreatedAt(String createdAt) {

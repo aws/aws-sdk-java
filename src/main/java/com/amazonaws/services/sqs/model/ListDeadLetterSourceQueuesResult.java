@@ -70,7 +70,7 @@ public class ListDeadLetterSourceQueuesResult implements Serializable {
      * @param queueUrls A list of source queue URLs that have the RedrivePolicy queue
      *         attribute configured with a dead letter queue.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDeadLetterSourceQueuesResult withQueueUrls(String... queueUrls) {
@@ -90,7 +90,7 @@ public class ListDeadLetterSourceQueuesResult implements Serializable {
      * @param queueUrls A list of source queue URLs that have the RedrivePolicy queue
      *         attribute configured with a dead letter queue.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDeadLetterSourceQueuesResult withQueueUrls(java.util.Collection<String> queueUrls) {

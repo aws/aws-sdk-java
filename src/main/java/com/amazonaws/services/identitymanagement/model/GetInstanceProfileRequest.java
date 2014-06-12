@@ -78,7 +78,7 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceProfileName Name of the instance profile to get information about.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {

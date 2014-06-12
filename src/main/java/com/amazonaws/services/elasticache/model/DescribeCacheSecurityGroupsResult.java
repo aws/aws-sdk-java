@@ -60,7 +60,7 @@ public class DescribeCacheSecurityGroupsResult implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSecurityGroupsResult withMarker(String marker) {
@@ -109,7 +109,7 @@ public class DescribeCacheSecurityGroupsResult implements Serializable {
      * @param cacheSecurityGroups A list of cache security groups. Each element in the list contains
      *         detailed information about one group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSecurityGroupsResult withCacheSecurityGroups(CacheSecurityGroup... cacheSecurityGroups) {
@@ -129,7 +129,7 @@ public class DescribeCacheSecurityGroupsResult implements Serializable {
      * @param cacheSecurityGroups A list of cache security groups. Each element in the list contains
      *         detailed information about one group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSecurityGroupsResult withCacheSecurityGroups(java.util.Collection<CacheSecurityGroup> cacheSecurityGroups) {

@@ -63,7 +63,7 @@ public class InstanceTimeline implements Serializable {
      *
      * @param creationDateTime The creation date and time of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceTimeline withCreationDateTime(java.util.Date creationDateTime) {
@@ -96,7 +96,7 @@ public class InstanceTimeline implements Serializable {
      *
      * @param readyDateTime The date and time when the instance was ready to perform tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceTimeline withReadyDateTime(java.util.Date readyDateTime) {
@@ -129,7 +129,7 @@ public class InstanceTimeline implements Serializable {
      *
      * @param endDateTime The date and time when the instance was terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceTimeline withEndDateTime(java.util.Date endDateTime) {

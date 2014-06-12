@@ -64,7 +64,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable 
      *
      * @param summaries The summary information for the requested Trusted Advisor checks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(TrustedAdvisorCheckSummary... summaries) {
@@ -82,7 +82,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable 
      *
      * @param summaries The summary information for the requested Trusted Advisor checks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(java.util.Collection<TrustedAdvisorCheckSummary> summaries) {

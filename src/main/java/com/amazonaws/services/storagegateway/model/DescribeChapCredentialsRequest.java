@@ -86,7 +86,7 @@ public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest impl
      *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
      *         TargetARN for specified VolumeARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeChapCredentialsRequest withTargetARN(String targetARN) {

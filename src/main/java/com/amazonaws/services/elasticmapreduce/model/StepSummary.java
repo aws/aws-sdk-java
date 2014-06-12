@@ -63,7 +63,7 @@ public class StepSummary implements Serializable {
      *
      * @param id The identifier of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepSummary withId(String id) {
@@ -96,7 +96,7 @@ public class StepSummary implements Serializable {
      *
      * @param name The name of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepSummary withName(String name) {
@@ -129,7 +129,7 @@ public class StepSummary implements Serializable {
      *
      * @param status The current execution status details of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepSummary withStatus(StepStatus status) {

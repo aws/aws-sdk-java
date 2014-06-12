@@ -106,7 +106,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
      *         unique within the set of load balancers associated with your AWS
      *         account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigureHealthCheckRequest withLoadBalancerName(String loadBalancerName) {
@@ -145,7 +145,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
      * @param healthCheck A structure containing the configuration information for the new
      *         healthcheck.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigureHealthCheckRequest withHealthCheck(HealthCheck healthCheck) {

@@ -221,7 +221,7 @@ public class StreamingDistributionConfig implements Serializable {
      *         StreamingDistributionConfig is different from the original request,
      *         CloudFront returns a DistributionAlreadyExists error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionConfig withCallerReference(String callerReference) {
@@ -266,7 +266,7 @@ public class StreamingDistributionConfig implements Serializable {
      *         from which you want CloudFront to get your media files for
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionConfig withS3Origin(S3Origin s3Origin) {
@@ -305,7 +305,7 @@ public class StreamingDistributionConfig implements Serializable {
      * @param aliases A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this streaming distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionConfig withAliases(Aliases aliases) {
@@ -338,7 +338,7 @@ public class StreamingDistributionConfig implements Serializable {
      *
      * @param comment Any comments you want to include about the streaming distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionConfig withComment(String comment) {
@@ -377,7 +377,7 @@ public class StreamingDistributionConfig implements Serializable {
      * @param logging A complex type that controls whether access logs are written for the
      *         streaming distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionConfig withLogging(StreamingLoggingConfig logging) {
@@ -482,7 +482,7 @@ public class StreamingDistributionConfig implements Serializable {
      *         the trusted signers that you want to include in the updated
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionConfig withTrustedSigners(TrustedSigners trustedSigners) {
@@ -534,7 +534,7 @@ public class StreamingDistributionConfig implements Serializable {
      * @param priceClass A complex type that contains information about price class for this
      *         streaming distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PriceClass
@@ -572,7 +572,7 @@ public class StreamingDistributionConfig implements Serializable {
      * @param priceClass A complex type that contains information about price class for this
      *         streaming distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PriceClass
@@ -613,7 +613,7 @@ public class StreamingDistributionConfig implements Serializable {
      * @param enabled Whether the streaming distribution is enabled to accept end user
      *         requests for content.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionConfig withEnabled(Boolean enabled) {

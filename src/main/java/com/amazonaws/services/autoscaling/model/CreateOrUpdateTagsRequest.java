@@ -184,7 +184,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      *         tag of the same name already exists, the operation overwrites the
      *         previous tag definition, but you will not get an error message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOrUpdateTagsRequest withTags(Tag... tags) {
@@ -232,7 +232,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      *         tag of the same name already exists, the operation overwrites the
      *         previous tag definition, but you will not get an error message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateOrUpdateTagsRequest withTags(java.util.Collection<Tag> tags) {

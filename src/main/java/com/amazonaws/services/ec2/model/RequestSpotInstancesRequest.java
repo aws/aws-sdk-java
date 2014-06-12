@@ -156,7 +156,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestSpotInstancesRequest withSpotPrice(String spotPrice) {
@@ -189,7 +189,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *
      * @param instanceCount The maximum number of Spot Instances to launch. <p>Default: 1
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestSpotInstancesRequest withInstanceCount(Integer instanceCount) {
@@ -235,7 +235,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *
      * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SpotInstanceType
@@ -269,7 +269,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *
      * @param type The Spot Instance request type. <p>Default: <code>one-time</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SpotInstanceType
@@ -334,7 +334,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         and time and remains active until it expires or is canceled.
      *         <p>Default: The request is effective indefinitely.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestSpotInstancesRequest withValidFrom(java.util.Date validFrom) {
@@ -391,7 +391,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         remains active until it is canceled or this date and time is reached.
      *         <p>Default: The request is effective indefinitely.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestSpotInstancesRequest withValidUntil(java.util.Date validUntil) {
@@ -436,7 +436,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         launch together and terminate together. <p>Default: Instances are
      *         launched and terminated individually
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestSpotInstancesRequest withLaunchGroup(String launchGroup) {
@@ -565,7 +565,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         specified the same Availability Zone group. <p>Default: Instances are
      *         launched in any available Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestSpotInstancesRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
@@ -598,7 +598,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *
      * @param launchSpecification The launch specification.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestSpotInstancesRequest withLaunchSpecification(LaunchSpecification launchSpecification) {

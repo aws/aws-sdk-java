@@ -93,7 +93,7 @@ public class BootstrapActionConfig implements Serializable {
      *
      * @param name The name of the bootstrap action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BootstrapActionConfig withName(String name) {
@@ -126,7 +126,7 @@ public class BootstrapActionConfig implements Serializable {
      *
      * @param scriptBootstrapAction The script run by the bootstrap action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BootstrapActionConfig withScriptBootstrapAction(ScriptBootstrapActionConfig scriptBootstrapAction) {

@@ -68,7 +68,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
      *         <code>--apply-immediately</code> was specified), or during the next
      *         maintenance window.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroupPendingModifiedValues withPrimaryClusterId(String primaryClusterId) {

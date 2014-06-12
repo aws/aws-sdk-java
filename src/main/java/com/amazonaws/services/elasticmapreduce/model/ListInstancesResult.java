@@ -71,7 +71,7 @@ public class ListInstancesResult implements Serializable {
      *
      * @param instances The list of instances for the cluster and given filters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesResult withInstances(Instance... instances) {
@@ -89,7 +89,7 @@ public class ListInstancesResult implements Serializable {
      *
      * @param instances The list of instances for the cluster and given filters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesResult withInstances(java.util.Collection<Instance> instances) {
@@ -147,7 +147,7 @@ public class ListInstancesResult implements Serializable {
      *         retrieve the next page of results. When the value is null, all results
      *         have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesResult withMarker(String marker) {

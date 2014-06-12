@@ -68,7 +68,7 @@ public class StepTimeline implements Serializable {
      *
      * @param creationDateTime The date and time when the cluster step was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepTimeline withCreationDateTime(java.util.Date creationDateTime) {
@@ -119,7 +119,7 @@ public class StepTimeline implements Serializable {
      *         pre-dates a previous call to DescribeStep that indicated the step was
      *         not yet running.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepTimeline withStartDateTime(java.util.Date startDateTime) {
@@ -164,7 +164,7 @@ public class StepTimeline implements Serializable {
      *         This can display a time that pre-dates a call to DescribeStep that
      *         indicates the step is running, due to delays in step status reporting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepTimeline withEndDateTime(java.util.Date endDateTime) {

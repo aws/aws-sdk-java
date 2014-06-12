@@ -73,7 +73,7 @@ public class VolumeStatusEvent implements Serializable {
      *
      * @param eventType The type of this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusEvent withEventType(String eventType) {
@@ -106,7 +106,7 @@ public class VolumeStatusEvent implements Serializable {
      *
      * @param description A description of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusEvent withDescription(String description) {
@@ -139,7 +139,7 @@ public class VolumeStatusEvent implements Serializable {
      *
      * @param notBefore The earliest start time of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusEvent withNotBefore(java.util.Date notBefore) {
@@ -172,7 +172,7 @@ public class VolumeStatusEvent implements Serializable {
      *
      * @param notAfter The latest end time of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusEvent withNotAfter(java.util.Date notAfter) {
@@ -205,7 +205,7 @@ public class VolumeStatusEvent implements Serializable {
      *
      * @param eventId The ID of this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeStatusEvent withEventId(String eventId) {

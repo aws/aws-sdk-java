@@ -115,7 +115,7 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      *         versions. <p>Constraints: Must be one of the version returned from
      *         <a>DescribeClusterVersions</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOrderableClusterOptionsRequest withClusterVersion(String clusterVersion) {
@@ -154,7 +154,7 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      * @param nodeType The node type filter value. Specify this parameter to show only the
      *         available offerings matching the specified node type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOrderableClusterOptionsRequest withNodeType(String nodeType) {
@@ -217,7 +217,7 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOrderableClusterOptionsRequest withMaxRecords(Integer maxRecords) {
@@ -286,7 +286,7 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOrderableClusterOptionsRequest withMarker(String marker) {

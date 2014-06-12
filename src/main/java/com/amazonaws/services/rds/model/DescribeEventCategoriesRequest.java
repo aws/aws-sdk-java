@@ -76,7 +76,7 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
      *         values: db-instance | db-parameter-group | db-security-group |
      *         db-snapshot
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventCategoriesRequest withSourceType(String sourceType) {

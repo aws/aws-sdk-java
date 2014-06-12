@@ -71,7 +71,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param zoneName The name of the Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityZone withZoneName(String zoneName) {
@@ -117,7 +117,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param state The state of the Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AvailabilityZoneState
@@ -151,7 +151,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param state The state of the Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AvailabilityZoneState
@@ -186,7 +186,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param regionName The name of the region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityZone withRegionName(String regionName) {
@@ -229,7 +229,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param messages Any messages about the Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityZone withMessages(AvailabilityZoneMessage... messages) {
@@ -247,7 +247,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param messages Any messages about the Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityZone withMessages(java.util.Collection<AvailabilityZoneMessage> messages) {

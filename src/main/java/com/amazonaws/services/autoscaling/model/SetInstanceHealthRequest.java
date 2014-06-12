@@ -103,7 +103,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      *
      * @param instanceId The identifier of the Amazon EC2 instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetInstanceHealthRequest withInstanceId(String instanceId) {
@@ -166,7 +166,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      *         if you want the instance to be out of service. Auto Scaling will
      *         terminate and replace the unhealthy instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetInstanceHealthRequest withHealthStatus(String healthStatus) {
@@ -235,7 +235,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      *         <code>HealthCheckGracePeriod</code> parameter description in the
      *         <a>CreateAutoScalingGroup</a> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetInstanceHealthRequest withShouldRespectGracePeriod(Boolean shouldRespectGracePeriod) {

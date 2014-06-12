@@ -116,7 +116,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentRequest withEnvironmentId(String environmentId) {
@@ -176,7 +176,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentRequest withEnvironmentName(String environmentName) {
@@ -299,7 +299,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
      *         Elastic Beanstalk User Guide. </a> <p> Default: <code>true</code> <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateEnvironmentRequest withTerminateResources(Boolean terminateResources) {

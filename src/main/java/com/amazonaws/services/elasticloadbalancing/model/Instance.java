@@ -70,7 +70,7 @@ public class Instance implements Serializable {
      *
      * @param instanceId Provides an EC2 instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withInstanceId(String instanceId) {

@@ -91,7 +91,7 @@ public class CancelTimerDecisionAttributes implements Serializable {
      *
      * @param timerId The unique Id of the timer to cancel. This field is required.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelTimerDecisionAttributes withTimerId(String timerId) {

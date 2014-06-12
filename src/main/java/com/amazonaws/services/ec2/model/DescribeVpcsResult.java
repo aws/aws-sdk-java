@@ -61,7 +61,7 @@ public class DescribeVpcsResult implements Serializable {
      *
      * @param vpcs Information about one or more VPCs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcsResult withVpcs(Vpc... vpcs) {
@@ -79,7 +79,7 @@ public class DescribeVpcsResult implements Serializable {
      *
      * @param vpcs Information about one or more VPCs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcsResult withVpcs(java.util.Collection<Vpc> vpcs) {

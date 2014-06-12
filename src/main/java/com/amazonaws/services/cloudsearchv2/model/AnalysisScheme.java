@@ -117,7 +117,7 @@ public class AnalysisScheme implements Serializable {
      *         cannot be used as a field name. To reference a document's ID, you can
      *         use the name <code>_id</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisScheme withAnalysisSchemeName(String analysisSchemeName) {
@@ -169,7 +169,7 @@ public class AnalysisScheme implements Serializable {
      * @param analysisSchemeLanguage An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF
      *         RFC 4646</a> language code or <code>mul</code> for multiple languages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AnalysisSchemeLanguage
@@ -207,7 +207,7 @@ public class AnalysisScheme implements Serializable {
      * @param analysisSchemeLanguage An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF
      *         RFC 4646</a> language code or <code>mul</code> for multiple languages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AnalysisSchemeLanguage
@@ -242,7 +242,7 @@ public class AnalysisScheme implements Serializable {
      *
      * @param analysisOptions Synonyms, stopwords, and stemming options for an analysis scheme.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisScheme withAnalysisOptions(AnalysisOptions analysisOptions) {

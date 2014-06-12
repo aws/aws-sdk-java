@@ -83,7 +83,7 @@ public class Instance implements Serializable {
      *
      * @param id The unique identifier for the instance in Amazon EMR.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withId(String id) {
@@ -116,7 +116,7 @@ public class Instance implements Serializable {
      *
      * @param ec2InstanceId The unique identifier of the instance in Amazon EC2.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withEc2InstanceId(String ec2InstanceId) {
@@ -149,7 +149,7 @@ public class Instance implements Serializable {
      *
      * @param publicDnsName The public DNS name of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withPublicDnsName(String publicDnsName) {
@@ -182,7 +182,7 @@ public class Instance implements Serializable {
      *
      * @param publicIpAddress The public IP address of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withPublicIpAddress(String publicIpAddress) {
@@ -215,7 +215,7 @@ public class Instance implements Serializable {
      *
      * @param privateDnsName The private DNS name of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withPrivateDnsName(String privateDnsName) {
@@ -248,7 +248,7 @@ public class Instance implements Serializable {
      *
      * @param privateIpAddress The private IP address of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withPrivateIpAddress(String privateIpAddress) {
@@ -281,7 +281,7 @@ public class Instance implements Serializable {
      *
      * @param status The current status of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withStatus(InstanceStatus status) {

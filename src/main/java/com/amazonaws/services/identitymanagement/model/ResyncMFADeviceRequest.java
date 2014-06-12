@@ -128,7 +128,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements S
      *
      * @param userName Name of the user whose MFA device you want to resynchronize.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResyncMFADeviceRequest withUserName(String userName) {
@@ -173,7 +173,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements S
      *
      * @param serialNumber Serial number that uniquely identifies the MFA device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResyncMFADeviceRequest withSerialNumber(String serialNumber) {
@@ -218,7 +218,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements S
      *
      * @param authenticationCode1 An authentication code emitted by the device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResyncMFADeviceRequest withAuthenticationCode1(String authenticationCode1) {
@@ -263,7 +263,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements S
      *
      * @param authenticationCode2 A subsequent authentication code emitted by the device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResyncMFADeviceRequest withAuthenticationCode2(String authenticationCode2) {

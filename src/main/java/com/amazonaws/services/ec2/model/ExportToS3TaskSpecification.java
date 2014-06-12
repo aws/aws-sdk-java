@@ -86,7 +86,7 @@ public class ExportToS3TaskSpecification implements Serializable {
      *
      * @param diskImageFormat 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -120,7 +120,7 @@ public class ExportToS3TaskSpecification implements Serializable {
      *
      * @param diskImageFormat 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -168,7 +168,7 @@ public class ExportToS3TaskSpecification implements Serializable {
      *
      * @param containerFormat 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ContainerFormat
@@ -202,7 +202,7 @@ public class ExportToS3TaskSpecification implements Serializable {
      *
      * @param containerFormat 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ContainerFormat
@@ -237,7 +237,7 @@ public class ExportToS3TaskSpecification implements Serializable {
      *
      * @param s3Bucket 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportToS3TaskSpecification withS3Bucket(String s3Bucket) {
@@ -276,7 +276,7 @@ public class ExportToS3TaskSpecification implements Serializable {
      * @param s3Prefix The image is written to a single object in the Amazon S3 bucket at the
      *         S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportToS3TaskSpecification withS3Prefix(String s3Prefix) {

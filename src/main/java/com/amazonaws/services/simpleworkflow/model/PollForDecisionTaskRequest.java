@@ -181,7 +181,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
      *
      * @param domain The name of the domain containing the task lists to poll.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForDecisionTaskRequest withDomain(String domain) {
@@ -238,7 +238,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForDecisionTaskRequest withTaskList(TaskList taskList) {
@@ -298,7 +298,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
      *         diagnostic tracing when problems arise. The form of this identity is
      *         user defined.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForDecisionTaskRequest withIdentity(String identity) {
@@ -394,7 +394,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
      *         <code>nextPageToken</code> will not return a new decision
      *         task.</note>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForDecisionTaskRequest withNextPageToken(String nextPageToken) {
@@ -466,7 +466,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForDecisionTaskRequest withMaximumPageSize(Integer maximumPageSize) {
@@ -511,7 +511,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
      *         default the results are returned in ascending order of the
      *         <code>eventTimestamp</code> of the events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForDecisionTaskRequest withReverseOrder(Boolean reverseOrder) {

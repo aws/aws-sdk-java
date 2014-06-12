@@ -59,7 +59,7 @@ public class DescribeCacheClustersResult implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheClustersResult withMarker(String marker) {
@@ -108,7 +108,7 @@ public class DescribeCacheClustersResult implements Serializable {
      * @param cacheClusters A list of cache clusters. Each item in the list contains detailed
      *         information about one cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheClustersResult withCacheClusters(CacheCluster... cacheClusters) {
@@ -128,7 +128,7 @@ public class DescribeCacheClustersResult implements Serializable {
      * @param cacheClusters A list of cache clusters. Each item in the list contains detailed
      *         information about one cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheClustersResult withCacheClusters(java.util.Collection<CacheCluster> cacheClusters) {

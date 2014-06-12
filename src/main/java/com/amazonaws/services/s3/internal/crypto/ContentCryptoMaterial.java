@@ -147,7 +147,8 @@ final class ContentCryptoMaterial {
      */
     @SuppressWarnings("unchecked")
     private static Map<String, String> matdescFromJson(String json) {
-        return Collections.unmodifiableMap(Jackson.fromJsonString(json, Map.class));
+        Map<String,String> map = Jackson.fromJsonString(json, Map.class);
+        return map == null ? null : Collections.unmodifiableMap(map);
     }
 
     /**

@@ -86,7 +86,7 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the same as the ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVirtualMFADeviceRequest withSerialNumber(String serialNumber) {

@@ -94,7 +94,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *
      * @param loadBalancerName The name of the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerName(String loadBalancerName) {
@@ -127,7 +127,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *
      * @param loadBalancerPort The external port of the load balancer to associate the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerPort(Integer loadBalancerPort) {
@@ -176,7 +176,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * @param policyNames List of policies to be associated with the listener. If the list is
      *         empty, the current policy is removed from the listener.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(String... policyNames) {
@@ -196,7 +196,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * @param policyNames List of policies to be associated with the listener. If the list is
      *         empty, the current policy is removed from the listener.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(java.util.Collection<String> policyNames) {

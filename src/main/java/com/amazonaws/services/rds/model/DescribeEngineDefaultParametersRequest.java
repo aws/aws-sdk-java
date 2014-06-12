@@ -94,7 +94,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *
      * @param dBParameterGroupFamily The name of the DB parameter group family.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEngineDefaultParametersRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -151,7 +151,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEngineDefaultParametersRequest withMaxRecords(Integer maxRecords) {
@@ -202,7 +202,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEngineDefaultParametersRequest withMarker(String marker) {

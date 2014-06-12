@@ -70,7 +70,7 @@ public class BootstrapActionDetail implements Serializable {
      *
      * @param bootstrapActionConfig A description of the bootstrap action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BootstrapActionDetail withBootstrapActionConfig(BootstrapActionConfig bootstrapActionConfig) {

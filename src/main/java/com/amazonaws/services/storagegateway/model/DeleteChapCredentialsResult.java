@@ -74,7 +74,7 @@ public class DeleteChapCredentialsResult implements Serializable {
      *
      * @param targetARN The Amazon Resource Name (ARN) of the target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteChapCredentialsResult withTargetARN(String targetARN) {
@@ -119,7 +119,7 @@ public class DeleteChapCredentialsResult implements Serializable {
      *
      * @param initiatorName The iSCSI initiator that connects to the target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteChapCredentialsResult withInitiatorName(String initiatorName) {

@@ -51,7 +51,7 @@ public class CreateNetworkAclResult implements Serializable {
      *
      * @param networkAcl Information about the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclResult withNetworkAcl(NetworkAcl networkAcl) {

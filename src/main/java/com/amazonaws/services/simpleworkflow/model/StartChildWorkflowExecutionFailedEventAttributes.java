@@ -103,7 +103,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      * @param workflowType The workflow type provided in the
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a> that failed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withWorkflowType(WorkflowType workflowType) {
@@ -185,7 +185,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StartChildWorkflowExecutionFailedCause
@@ -243,7 +243,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StartChildWorkflowExecutionFailedCause
@@ -287,7 +287,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *
      * @param workflowId The <code>workflowId</code> of the child workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withWorkflowId(String workflowId) {
@@ -344,7 +344,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withInitiatedEventId(Long initiatedEventId) {
@@ -401,7 +401,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *         this child workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -443,7 +443,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      *
      * @param control The new value for the Control property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withControl(String control) {

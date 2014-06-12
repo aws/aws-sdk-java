@@ -226,7 +226,7 @@ public class Pipeline implements Serializable {
      *         pipeline in which you want to perform a variety of operations, such as
      *         creating a job or a preset.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withId(String id) {
@@ -259,7 +259,7 @@ public class Pipeline implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) for the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withArn(String arn) {
@@ -313,7 +313,7 @@ public class Pipeline implements Serializable {
      *         the AWS account, but uniqueness is not enforced. <p>Constraints:
      *         Maximum 40 characters
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withName(String name) {
@@ -367,7 +367,7 @@ public class Pipeline implements Serializable {
      *         pipeline is processing jobs.</li> <li><code>Paused</code>: The
      *         pipeline is not currently processing jobs.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withStatus(String status) {
@@ -421,7 +421,7 @@ public class Pipeline implements Serializable {
      *         for transcoding and the graphics files, if any, that you want to use
      *         for watermarks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withInputBucket(String inputBucket) {
@@ -481,7 +481,7 @@ public class Pipeline implements Serializable {
      *         value, or you specify both <code>ContentConfig</code> and
      *         <code>ThumbnailConfig</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withOutputBucket(String outputBucket) {
@@ -529,7 +529,7 @@ public class Pipeline implements Serializable {
      * @param role The IAM Amazon Resource Name (ARN) for the role that Elastic
      *         Transcoder uses to transcode jobs for this pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withRole(String role) {
@@ -634,7 +634,7 @@ public class Pipeline implements Serializable {
      *         notify when Elastic Transcoder encounters an error condition.</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withNotifications(Notifications notifications) {
@@ -859,7 +859,7 @@ public class Pipeline implements Serializable {
      *         Elastic Transcoder to assign to the video files and playlists that it
      *         stores in your Amazon S3 bucket. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withContentConfig(PipelineOutputConfig contentConfig) {
@@ -1090,7 +1090,7 @@ public class Pipeline implements Serializable {
      *         Elastic Transcoder to assign to the thumbnails that it stores in your
      *         Amazon S3 bucket.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Pipeline withThumbnailConfig(PipelineOutputConfig thumbnailConfig) {

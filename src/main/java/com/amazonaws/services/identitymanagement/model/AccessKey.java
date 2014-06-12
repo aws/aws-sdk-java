@@ -145,7 +145,7 @@ public class AccessKey implements Serializable {
      *
      * @param userName Name of the user the key is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessKey withUserName(String userName) {
@@ -190,7 +190,7 @@ public class AccessKey implements Serializable {
      *
      * @param accessKeyId The ID for this access key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessKey withAccessKeyId(String accessKeyId) {
@@ -242,7 +242,7 @@ public class AccessKey implements Serializable {
      * @param status The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType
@@ -280,7 +280,7 @@ public class AccessKey implements Serializable {
      * @param status The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType
@@ -315,7 +315,7 @@ public class AccessKey implements Serializable {
      *
      * @param secretAccessKey The secret key used to sign requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessKey withSecretAccessKey(String secretAccessKey) {
@@ -348,7 +348,7 @@ public class AccessKey implements Serializable {
      *
      * @param createDate The date when the access key was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessKey withCreateDate(java.util.Date createDate) {

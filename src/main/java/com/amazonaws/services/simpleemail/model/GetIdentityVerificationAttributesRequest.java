@@ -73,7 +73,7 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
      *
      * @param identities A list of identities.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityVerificationAttributesRequest withIdentities(String... identities) {
@@ -91,7 +91,7 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
      *
      * @param identities A list of identities.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityVerificationAttributesRequest withIdentities(java.util.Collection<String> identities) {

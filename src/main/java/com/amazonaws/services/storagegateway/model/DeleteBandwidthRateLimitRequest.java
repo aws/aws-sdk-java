@@ -90,7 +90,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteBandwidthRateLimitRequest withGatewayARN(String gatewayARN) {
@@ -132,7 +132,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
      *
      * @param bandwidthType The new value for the BandwidthType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteBandwidthRateLimitRequest withBandwidthType(String bandwidthType) {

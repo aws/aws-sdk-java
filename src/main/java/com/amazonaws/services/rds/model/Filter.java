@@ -56,7 +56,7 @@ public class Filter implements Serializable {
      *
      * @param filterName This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withFilterName(String filterName) {
@@ -99,7 +99,7 @@ public class Filter implements Serializable {
      *
      * @param filterValue This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withFilterValue(String... filterValue) {
@@ -117,7 +117,7 @@ public class Filter implements Serializable {
      *
      * @param filterValue This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withFilterValue(java.util.Collection<String> filterValue) {

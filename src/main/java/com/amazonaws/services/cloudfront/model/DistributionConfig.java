@@ -237,7 +237,7 @@ public class DistributionConfig implements Serializable {
      *         different from the original request, CloudFront returns a
      *         DistributionAlreadyExists error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withCallerReference(String callerReference) {
@@ -276,7 +276,7 @@ public class DistributionConfig implements Serializable {
      * @param aliases A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withAliases(Aliases aliases) {
@@ -369,7 +369,7 @@ public class DistributionConfig implements Serializable {
      *         element. To replace the default root object, update the distribution
      *         configuration and specify the new object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withDefaultRootObject(String defaultRootObject) {
@@ -408,7 +408,7 @@ public class DistributionConfig implements Serializable {
      * @param origins A complex type that contains information about origins for this
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withOrigins(Origins origins) {
@@ -459,7 +459,7 @@ public class DistributionConfig implements Serializable {
      *         values of PathPattern in CacheBehavior elements.You must create
      *         exactly one default cache behavior.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
@@ -492,7 +492,7 @@ public class DistributionConfig implements Serializable {
      *
      * @param cacheBehaviors A complex type that contains zero or more CacheBehavior elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withCacheBehaviors(CacheBehaviors cacheBehaviors) {
@@ -531,7 +531,7 @@ public class DistributionConfig implements Serializable {
      * @param customErrorResponses A complex type that contains zero or more CustomErrorResponse
      *         elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withCustomErrorResponses(CustomErrorResponses customErrorResponses) {
@@ -564,7 +564,7 @@ public class DistributionConfig implements Serializable {
      *
      * @param comment Any comments you want to include about the distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withComment(String comment) {
@@ -603,7 +603,7 @@ public class DistributionConfig implements Serializable {
      * @param logging A complex type that controls whether access logs are written for the
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withLogging(LoggingConfig logging) {
@@ -655,7 +655,7 @@ public class DistributionConfig implements Serializable {
      * @param priceClass A complex type that contains information about price class for this
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PriceClass
@@ -693,7 +693,7 @@ public class DistributionConfig implements Serializable {
      * @param priceClass A complex type that contains information about price class for this
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PriceClass
@@ -734,7 +734,7 @@ public class DistributionConfig implements Serializable {
      * @param enabled Whether the distribution is enabled to accept end user requests for
      *         content.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withEnabled(Boolean enabled) {
@@ -784,7 +784,7 @@ public class DistributionConfig implements Serializable {
      * @param viewerCertificate A complex type that contains information about viewer certificates for
      *         this distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withViewerCertificate(ViewerCertificate viewerCertificate) {
@@ -823,7 +823,7 @@ public class DistributionConfig implements Serializable {
      * @param restrictions A complex type that identifies ways in which you want to restrict
      *         distribution of your content.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionConfig withRestrictions(Restrictions restrictions) {

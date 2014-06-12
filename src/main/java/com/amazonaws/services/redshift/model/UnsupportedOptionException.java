@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An request option was specified that is not supported.
+ * A request option was specified that is not supported.
  * </p>
  */        
 public class UnsupportedOptionException extends AmazonServiceException {

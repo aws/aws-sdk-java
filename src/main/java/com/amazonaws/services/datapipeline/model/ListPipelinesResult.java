@@ -101,7 +101,7 @@ public class ListPipelinesResult implements Serializable {
      *         pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesResult withPipelineIdList(PipelineIdName... pipelineIdList) {
@@ -125,7 +125,7 @@ public class ListPipelinesResult implements Serializable {
      *         pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesResult withPipelineIdList(java.util.Collection<PipelineIdName> pipelineIdList) {
@@ -189,7 +189,7 @@ public class ListPipelinesResult implements Serializable {
      *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
      *         If null, there are no more pipeline identifiers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesResult withMarker(String marker) {
@@ -228,7 +228,7 @@ public class ListPipelinesResult implements Serializable {
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
      *         subsequent call to <a>ListPipelines</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesResult withHasMoreResults(Boolean hasMoreResults) {

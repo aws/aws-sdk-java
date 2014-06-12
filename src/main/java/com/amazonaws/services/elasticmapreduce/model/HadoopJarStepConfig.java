@@ -115,7 +115,7 @@ public class HadoopJarStepConfig implements Serializable {
      * @param properties A list of Java properties that are set when the step runs. You can use
      *         these properties to pass key value pairs to your main function.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HadoopJarStepConfig withProperties(KeyValue... properties) {
@@ -135,7 +135,7 @@ public class HadoopJarStepConfig implements Serializable {
      * @param properties A list of Java properties that are set when the step runs. You can use
      *         these properties to pass key value pairs to your main function.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HadoopJarStepConfig withProperties(java.util.Collection<KeyValue> properties) {
@@ -187,7 +187,7 @@ public class HadoopJarStepConfig implements Serializable {
      *
      * @param jar A path to a JAR file run during the step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HadoopJarStepConfig withJar(String jar) {
@@ -244,7 +244,7 @@ public class HadoopJarStepConfig implements Serializable {
      *         specified, the JAR file should specify a Main-Class in its manifest
      *         file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HadoopJarStepConfig withMainClass(String mainClass) {
@@ -293,7 +293,7 @@ public class HadoopJarStepConfig implements Serializable {
      * @param args A list of command line arguments passed to the JAR file's main
      *         function when executed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HadoopJarStepConfig withArgs(String... args) {
@@ -313,7 +313,7 @@ public class HadoopJarStepConfig implements Serializable {
      * @param args A list of command line arguments passed to the JAR file's main
      *         function when executed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HadoopJarStepConfig withArgs(java.util.Collection<String> args) {

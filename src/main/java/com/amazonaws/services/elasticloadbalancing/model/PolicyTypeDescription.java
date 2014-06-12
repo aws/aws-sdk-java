@@ -64,7 +64,7 @@ public class PolicyTypeDescription implements Serializable {
      *
      * @param policyTypeName The name of the policy type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyTypeDescription withPolicyTypeName(String policyTypeName) {
@@ -97,7 +97,7 @@ public class PolicyTypeDescription implements Serializable {
      *
      * @param description A human-readable description of the policy type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyTypeDescription withDescription(String description) {
@@ -146,7 +146,7 @@ public class PolicyTypeDescription implements Serializable {
      * @param policyAttributeTypeDescriptions The description of the policy attributes associated with the load
      *         balancer policies defined by the Elastic Load Balancing service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyTypeDescription withPolicyAttributeTypeDescriptions(PolicyAttributeTypeDescription... policyAttributeTypeDescriptions) {
@@ -166,7 +166,7 @@ public class PolicyTypeDescription implements Serializable {
      * @param policyAttributeTypeDescriptions The description of the policy attributes associated with the load
      *         balancer policies defined by the Elastic Load Balancing service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyTypeDescription withPolicyAttributeTypeDescriptions(java.util.Collection<PolicyAttributeTypeDescription> policyAttributeTypeDescriptions) {

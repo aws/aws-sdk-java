@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createClusterSnapshot(CreateClusterSnapshotRequest) CreateClusterSnapshot operation}.
  * <p>
  * Creates a manual snapshot of the specified cluster. The cluster must
- * be in the "available" state.
+ * be in the <code>available</code> state.
  * </p>
  * <p>
  * For more information about working with snapshots, go to
@@ -111,7 +111,7 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implem
      *         or contain two consecutive hyphens</li> </ul> <p>Example:
      *         <code>my-snapshot-id</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
@@ -144,7 +144,7 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implem
      *
      * @param clusterIdentifier The cluster identifier for which you want a snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterSnapshotRequest withClusterIdentifier(String clusterIdentifier) {

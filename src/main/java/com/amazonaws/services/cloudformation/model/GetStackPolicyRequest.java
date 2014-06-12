@@ -66,7 +66,7 @@ public class GetStackPolicyRequest extends AmazonWebServiceRequest implements Se
      * @param stackName The name or stack ID that is associated with the stack whose policy
      *         you want to get.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStackPolicyRequest withStackName(String stackName) {

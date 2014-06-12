@@ -88,7 +88,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      * @param subscriptionName The name of the Amazon Redshift event notification subscription to be
      *         described.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withSubscriptionName(String subscriptionName) {
@@ -151,7 +151,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withMaxRecords(Integer maxRecords) {
@@ -220,7 +220,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventSubscriptionsRequest withMarker(String marker) {

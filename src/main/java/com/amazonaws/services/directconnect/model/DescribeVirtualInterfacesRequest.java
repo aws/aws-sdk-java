@@ -78,7 +78,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest im
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVirtualInterfacesRequest withConnectionId(String connectionId) {
@@ -117,7 +117,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest im
      * @param virtualInterfaceId ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      *         None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVirtualInterfacesRequest withVirtualInterfaceId(String virtualInterfaceId) {

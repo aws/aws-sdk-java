@@ -63,7 +63,7 @@ public class DescribeLoadBalancerPoliciesResult implements Serializable {
      *
      * @param policyDescriptions A list of policy description structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPoliciesResult withPolicyDescriptions(PolicyDescription... policyDescriptions) {
@@ -81,7 +81,7 @@ public class DescribeLoadBalancerPoliciesResult implements Serializable {
      *
      * @param policyDescriptions A list of policy description structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPoliciesResult withPolicyDescriptions(java.util.Collection<PolicyDescription> policyDescriptions) {

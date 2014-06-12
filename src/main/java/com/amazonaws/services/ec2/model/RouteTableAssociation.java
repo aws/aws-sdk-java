@@ -68,7 +68,7 @@ public class RouteTableAssociation implements Serializable {
      *
      * @param routeTableAssociationId The ID of the association between a route table and a subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTableAssociation withRouteTableAssociationId(String routeTableAssociationId) {
@@ -101,7 +101,7 @@ public class RouteTableAssociation implements Serializable {
      *
      * @param routeTableId The ID of the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTableAssociation withRouteTableId(String routeTableId) {
@@ -134,7 +134,7 @@ public class RouteTableAssociation implements Serializable {
      *
      * @param subnetId The ID of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTableAssociation withSubnetId(String subnetId) {
@@ -167,7 +167,7 @@ public class RouteTableAssociation implements Serializable {
      *
      * @param main Indicates whether this is the main route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTableAssociation withMain(Boolean main) {

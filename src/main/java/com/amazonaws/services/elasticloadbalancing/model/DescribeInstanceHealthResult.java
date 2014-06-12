@@ -63,7 +63,7 @@ public class DescribeInstanceHealthResult implements Serializable {
      *
      * @param instanceStates A list containing health information for the specified instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceHealthResult withInstanceStates(InstanceState... instanceStates) {
@@ -81,7 +81,7 @@ public class DescribeInstanceHealthResult implements Serializable {
      *
      * @param instanceStates A list containing health information for the specified instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceHealthResult withInstanceStates(java.util.Collection<InstanceState> instanceStates) {

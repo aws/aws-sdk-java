@@ -180,7 +180,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *
      * @param input The input provided to the new workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withInput(String input) {
@@ -282,7 +282,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *         timeout was specified at registration time then a fault will be
      *         returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
@@ -315,7 +315,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *
      * @param taskList Represents a task list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTaskList(TaskList taskList) {
@@ -423,7 +423,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
@@ -565,7 +565,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *         field. If neither this field is set nor a default child policy was
      *         specified at registration time then a fault will be returned. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -663,7 +663,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *         field. If neither this field is set nor a default child policy was
      *         specified at registration time then a fault will be returned. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -735,7 +735,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTagList(String... tagList) {
@@ -762,7 +762,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTagList(java.util.Collection<String> tagList) {
@@ -811,7 +811,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *
      * @param workflowTypeVersion The new value for the WorkflowTypeVersion property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withWorkflowTypeVersion(String workflowTypeVersion) {

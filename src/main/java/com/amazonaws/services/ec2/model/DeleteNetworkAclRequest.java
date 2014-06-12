@@ -61,7 +61,7 @@ public class DeleteNetworkAclRequest extends AmazonWebServiceRequest implements 
      *
      * @param networkAclId The ID of the network ACL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteNetworkAclRequest withNetworkAclId(String networkAclId) {

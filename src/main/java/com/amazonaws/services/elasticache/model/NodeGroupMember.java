@@ -76,7 +76,7 @@ public class NodeGroupMember implements Serializable {
      *
      * @param cacheClusterId The ID of the cache cluster to which the node belongs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroupMember withCacheClusterId(String cacheClusterId) {
@@ -115,7 +115,7 @@ public class NodeGroupMember implements Serializable {
      * @param cacheNodeId The ID of the node within its cache cluster. A node ID is a numeric
      *         identifier (0001, 0002, etc.).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroupMember withCacheNodeId(String cacheNodeId) {
@@ -154,7 +154,7 @@ public class NodeGroupMember implements Serializable {
      * @param readEndpoint Represents the information required for client programs to connect to
      *         a cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroupMember withReadEndpoint(Endpoint readEndpoint) {
@@ -187,7 +187,7 @@ public class NodeGroupMember implements Serializable {
      *
      * @param preferredAvailabilityZone The name of the Availability Zone in which the node is located.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroupMember withPreferredAvailabilityZone(String preferredAvailabilityZone) {
@@ -226,7 +226,7 @@ public class NodeGroupMember implements Serializable {
      * @param currentRole The role that is currently assigned to the node - <i>primary</i> or
      *         <i>replica</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeGroupMember withCurrentRole(String currentRole) {

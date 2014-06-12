@@ -89,7 +89,7 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
      * @param replicationGroupId The identifier for the replication group to be deleted. This parameter
      *         is not case sensitive.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteReplicationGroupRequest withReplicationGroupId(String replicationGroupId) {
@@ -128,7 +128,7 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
      * @param retainPrimaryCluster If set to <i>true</i>, all of the read replicas will be deleted, but
      *         the primary cache cluster will be retained.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteReplicationGroupRequest withRetainPrimaryCluster(Boolean retainPrimaryCluster) {
@@ -196,7 +196,7 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         freshest data. After the final snapshot is taken, the replication
      *         group is deleted immediately afterward.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteReplicationGroupRequest withFinalSnapshotIdentifier(String finalSnapshotIdentifier) {

@@ -53,7 +53,7 @@ public class DeleteMessageBatchResultEntry implements Serializable {
      *
      * @param id Represents a successfully deleted message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchResultEntry withId(String id) {

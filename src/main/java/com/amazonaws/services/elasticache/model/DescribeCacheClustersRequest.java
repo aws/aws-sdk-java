@@ -129,7 +129,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
      *         only information about that specific cache cluster is returned. This
      *         parameter isn't case sensitive.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheClustersRequest withCacheClusterId(String cacheClusterId) {
@@ -180,7 +180,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
      *         marker is included in the response so that the remaining results can
      *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheClustersRequest withMaxRecords(Integer maxRecords) {
@@ -231,7 +231,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheClustersRequest withMarker(String marker) {
@@ -270,7 +270,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
      * @param showCacheNodeInfo An optional flag that can be included in the DescribeCacheCluster
      *         request to retrieve information about the individual cache nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheClustersRequest withShowCacheNodeInfo(Boolean showCacheNodeInfo) {

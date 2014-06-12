@@ -63,7 +63,7 @@ public class EnvironmentTier implements Serializable {
      *
      * @param name The name of this environment tier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentTier withName(String name) {
@@ -96,7 +96,7 @@ public class EnvironmentTier implements Serializable {
      *
      * @param type The type of this environment tier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentTier withType(String type) {
@@ -129,7 +129,7 @@ public class EnvironmentTier implements Serializable {
      *
      * @param version The version of this environment tier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentTier withVersion(String version) {

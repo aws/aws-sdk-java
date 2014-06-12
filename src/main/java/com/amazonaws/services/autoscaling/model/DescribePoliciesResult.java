@@ -71,7 +71,7 @@ public class DescribePoliciesResult implements Serializable {
      *
      * @param scalingPolicies A list of scaling policies.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesResult withScalingPolicies(ScalingPolicy... scalingPolicies) {
@@ -89,7 +89,7 @@ public class DescribePoliciesResult implements Serializable {
      *
      * @param scalingPolicies A list of scaling policies.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesResult withScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
@@ -138,7 +138,7 @@ public class DescribePoliciesResult implements Serializable {
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePoliciesResult withNextToken(String nextToken) {

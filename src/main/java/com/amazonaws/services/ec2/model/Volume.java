@@ -111,7 +111,7 @@ public class Volume implements Serializable {
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withVolumeId(String volumeId) {
@@ -144,7 +144,7 @@ public class Volume implements Serializable {
      *
      * @param size The size of the volume, in GiBs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withSize(Integer size) {
@@ -177,7 +177,7 @@ public class Volume implements Serializable {
      *
      * @param snapshotId The snapshot from which the volume was created, if applicable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withSnapshotId(String snapshotId) {
@@ -210,7 +210,7 @@ public class Volume implements Serializable {
      *
      * @param availabilityZone The Availability Zone for the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withAvailabilityZone(String availabilityZone) {
@@ -256,7 +256,7 @@ public class Volume implements Serializable {
      *
      * @param state The volume state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeState
@@ -290,7 +290,7 @@ public class Volume implements Serializable {
      *
      * @param state The volume state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeState
@@ -325,7 +325,7 @@ public class Volume implements Serializable {
      *
      * @param createTime The time stamp when volume creation was initiated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withCreateTime(java.util.Date createTime) {
@@ -368,7 +368,7 @@ public class Volume implements Serializable {
      *
      * @param attachments 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withAttachments(VolumeAttachment... attachments) {
@@ -386,7 +386,7 @@ public class Volume implements Serializable {
      *
      * @param attachments 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withAttachments(java.util.Collection<VolumeAttachment> attachments) {
@@ -436,7 +436,7 @@ public class Volume implements Serializable {
      *
      * @param tags Any tags assigned to the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withTags(Tag... tags) {
@@ -454,7 +454,7 @@ public class Volume implements Serializable {
      *
      * @param tags Any tags assigned to the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withTags(java.util.Collection<Tag> tags) {
@@ -513,7 +513,7 @@ public class Volume implements Serializable {
      * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
      *         volumes or <code>io1</code> for Provisioned IOPS volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -551,7 +551,7 @@ public class Volume implements Serializable {
      * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
      *         volumes or <code>io1</code> for Provisioned IOPS volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -592,7 +592,7 @@ public class Volume implements Serializable {
      * @param iops The number of I/O operations per second (IOPS) that the volume
      *         supports.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withIops(Integer iops) {
@@ -625,7 +625,7 @@ public class Volume implements Serializable {
      *
      * @param encrypted Indicates whether the volume is encrypted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withEncrypted(Boolean encrypted) {

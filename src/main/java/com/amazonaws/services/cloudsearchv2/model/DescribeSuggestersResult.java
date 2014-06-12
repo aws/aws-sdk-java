@@ -63,7 +63,7 @@ public class DescribeSuggestersResult implements Serializable {
      *
      * @param suggesters The suggesters configured for the domain specified in the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSuggestersResult withSuggesters(SuggesterStatus... suggesters) {
@@ -81,7 +81,7 @@ public class DescribeSuggestersResult implements Serializable {
      *
      * @param suggesters The suggesters configured for the domain specified in the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSuggestersResult withSuggesters(java.util.Collection<SuggesterStatus> suggesters) {

@@ -78,7 +78,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
      *
      * @param filters 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConversionTasksRequest withFilters(Filter... filters) {
@@ -96,7 +96,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
      *
      * @param filters 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConversionTasksRequest withFilters(java.util.Collection<Filter> filters) {
@@ -146,7 +146,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
      *
      * @param conversionTaskIds One or more conversion task IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConversionTasksRequest withConversionTaskIds(String... conversionTaskIds) {
@@ -164,7 +164,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
      *
      * @param conversionTaskIds One or more conversion task IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConversionTasksRequest withConversionTaskIds(java.util.Collection<String> conversionTaskIds) {

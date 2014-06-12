@@ -105,7 +105,7 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchRequest withQueueUrl(String queueUrl) {
@@ -154,7 +154,7 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      * @param entries A list of receipt handles of the messages for which the visibility
      *         timeout must be changed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchRequest withEntries(ChangeMessageVisibilityBatchRequestEntry... entries) {
@@ -174,7 +174,7 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      * @param entries A list of receipt handles of the messages for which the visibility
      *         timeout must be changed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchRequest withEntries(java.util.Collection<ChangeMessageVisibilityBatchRequestEntry> entries) {

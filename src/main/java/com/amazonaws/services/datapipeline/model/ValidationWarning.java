@@ -77,7 +77,7 @@ public class ValidationWarning implements Serializable {
      *
      * @param id The identifier of the object that contains the validation warning.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationWarning withId(String id) {
@@ -120,7 +120,7 @@ public class ValidationWarning implements Serializable {
      *
      * @param warnings A description of the validation warning.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationWarning withWarnings(String... warnings) {
@@ -138,7 +138,7 @@ public class ValidationWarning implements Serializable {
      *
      * @param warnings A description of the validation warning.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationWarning withWarnings(java.util.Collection<String> warnings) {

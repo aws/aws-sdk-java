@@ -155,7 +155,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
      *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
      *         literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterDomainRequest withName(String name) {
@@ -197,7 +197,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
      *
      * @param description Textual description of the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterDomainRequest withDescription(String description) {
@@ -269,7 +269,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
      *         a duration of <code>NONE</code> is specified, the records for workflow
      *         executions in this domain are not retained at all.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterDomainRequest withWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {

@@ -93,7 +93,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
      *
      * @param pipelineId The identifier of the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EvaluateExpressionRequest withPipelineId(String pipelineId) {
@@ -138,7 +138,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
      *
      * @param objectId The identifier of the object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EvaluateExpressionRequest withObjectId(String objectId) {
@@ -183,7 +183,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
      *
      * @param expression The expression to evaluate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EvaluateExpressionRequest withExpression(String expression) {

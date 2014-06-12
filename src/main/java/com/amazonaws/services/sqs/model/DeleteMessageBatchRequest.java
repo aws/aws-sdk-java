@@ -114,7 +114,7 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchRequest withQueueUrl(String queueUrl) {
@@ -157,7 +157,7 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
      *
      * @param entries A list of receipt handles for the messages to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchRequest withEntries(DeleteMessageBatchRequestEntry... entries) {
@@ -175,7 +175,7 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
      *
      * @param entries A list of receipt handles for the messages to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteMessageBatchRequest withEntries(java.util.Collection<DeleteMessageBatchRequestEntry> entries) {

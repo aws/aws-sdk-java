@@ -107,7 +107,7 @@ public class DeleteExpressionRequest extends AmazonWebServiceRequest implements 
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteExpressionRequest withDomainName(String domainName) {
@@ -152,7 +152,7 @@ public class DeleteExpressionRequest extends AmazonWebServiceRequest implements 
      *
      * @param expressionName The name of the <code><a>Expression</a></code> to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteExpressionRequest withExpressionName(String expressionName) {

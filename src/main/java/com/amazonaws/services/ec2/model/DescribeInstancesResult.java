@@ -67,7 +67,7 @@ public class DescribeInstancesResult implements Serializable {
      *
      * @param reservations One or more reservations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesResult withReservations(Reservation... reservations) {
@@ -85,7 +85,7 @@ public class DescribeInstancesResult implements Serializable {
      *
      * @param reservations One or more reservations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesResult withReservations(java.util.Collection<Reservation> reservations) {
@@ -131,7 +131,7 @@ public class DescribeInstancesResult implements Serializable {
      * @param nextToken The token to use when requesting the next set of items. If there are
      *         no additional items to return, the string is empty.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesResult withNextToken(String nextToken) {

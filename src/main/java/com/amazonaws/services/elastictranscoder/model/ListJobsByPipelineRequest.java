@@ -96,7 +96,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest implement
      *
      * @param pipelineId The ID of the pipeline for which you want to get job information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByPipelineRequest withPipelineId(String pipelineId) {
@@ -150,7 +150,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest implement
      *         were submitted, enter <code>true</code>. To list jobs in reverse
      *         chronological order, enter <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByPipelineRequest withAscending(String ascending) {
@@ -204,7 +204,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest implement
      *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
      *         each successive page of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByPipelineRequest withPageToken(String pageToken) {

@@ -158,7 +158,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * @param networkInterfaceIds One or more network interface IDs. <p>Default: Describes all your
      *         network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(String... networkInterfaceIds) {
@@ -178,7 +178,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * @param networkInterfaceIds One or more network interface IDs. <p>Default: Describes all your
      *         network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
@@ -684,7 +684,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withFilters(Filter... filters) {
@@ -854,7 +854,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withFilters(java.util.Collection<Filter> filters) {

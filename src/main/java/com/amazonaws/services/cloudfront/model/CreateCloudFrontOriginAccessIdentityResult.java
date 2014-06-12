@@ -65,7 +65,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements Serializable 
      *
      * @param cloudFrontOriginAccessIdentity The origin access identity's information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
@@ -110,7 +110,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements Serializable 
      *         created. For example:
      *         https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCloudFrontOriginAccessIdentityResult withLocation(String location) {
@@ -143,7 +143,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements Serializable 
      *
      * @param eTag The current version of the origin access identity created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCloudFrontOriginAccessIdentityResult withETag(String eTag) {

@@ -106,7 +106,7 @@ public class Instance implements Serializable {
      *
      * @param instanceId Specifies the ID of the Amazon EC2 instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withInstanceId(String instanceId) {
@@ -151,7 +151,7 @@ public class Instance implements Serializable {
      *
      * @param availabilityZone Availability Zones associated with this instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withAvailabilityZone(String availabilityZone) {
@@ -209,7 +209,7 @@ public class Instance implements Serializable {
      *         <p>The <code>Quarantined</code> lifecycle state is currently not used.
      *         </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see LifecycleState
@@ -251,7 +251,7 @@ public class Instance implements Serializable {
      *         <p>The <code>Quarantined</code> lifecycle state is currently not used.
      *         </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see LifecycleState
@@ -298,7 +298,7 @@ public class Instance implements Serializable {
      *
      * @param healthStatus The instance's health status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withHealthStatus(String healthStatus) {
@@ -343,7 +343,7 @@ public class Instance implements Serializable {
      *
      * @param launchConfigurationName The launch configuration associated with this instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Instance withLaunchConfigurationName(String launchConfigurationName) {

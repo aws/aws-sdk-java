@@ -73,7 +73,7 @@ public class NetworkInterfaceAssociation implements Serializable {
      *
      * @param publicIp The address of the Elastic IP address bound to the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAssociation withPublicIp(String publicIp) {
@@ -106,7 +106,7 @@ public class NetworkInterfaceAssociation implements Serializable {
      *
      * @param publicDnsName The public DNS name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAssociation withPublicDnsName(String publicDnsName) {
@@ -139,7 +139,7 @@ public class NetworkInterfaceAssociation implements Serializable {
      *
      * @param ipOwnerId The ID of the Elastic IP address owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
@@ -172,7 +172,7 @@ public class NetworkInterfaceAssociation implements Serializable {
      *
      * @param allocationId The allocation ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAssociation withAllocationId(String allocationId) {
@@ -205,7 +205,7 @@ public class NetworkInterfaceAssociation implements Serializable {
      *
      * @param associationId The association ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAssociation withAssociationId(String associationId) {

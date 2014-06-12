@@ -83,7 +83,7 @@ public class GetSAMLProviderResult implements Serializable {
      * @param sAMLMetadataDocument The XML metadata document that includes information about an identity
      *         provider.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSAMLProviderResult withSAMLMetadataDocument(String sAMLMetadataDocument) {
@@ -116,7 +116,7 @@ public class GetSAMLProviderResult implements Serializable {
      *
      * @param createDate The date and time when the SAML provider was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSAMLProviderResult withCreateDate(java.util.Date createDate) {
@@ -149,7 +149,7 @@ public class GetSAMLProviderResult implements Serializable {
      *
      * @param validUntil The expiration date and time for the SAML provider.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSAMLProviderResult withValidUntil(java.util.Date validUntil) {

@@ -80,7 +80,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param availabilityZone The Availability Zone for the resulting Amazon EBS volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeRequest withAvailabilityZone(String availabilityZone) {
@@ -113,7 +113,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param image 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeRequest withImage(DiskImageDetail image) {
@@ -146,7 +146,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param description An optional description for the volume being imported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeRequest withDescription(String description) {
@@ -179,7 +179,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param volume 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeRequest withVolume(VolumeDetail volume) {

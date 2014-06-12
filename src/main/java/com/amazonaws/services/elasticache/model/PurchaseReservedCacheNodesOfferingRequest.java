@@ -78,7 +78,7 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
      * @param reservedCacheNodesOfferingId The ID of the reserved cache node offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedCacheNodesOfferingRequest withReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
@@ -117,7 +117,7 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
      * @param reservedCacheNodeId A customer-specified identifier to track this reservation. <p>Example:
      *         myreservationID
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedCacheNodesOfferingRequest withReservedCacheNodeId(String reservedCacheNodeId) {
@@ -156,7 +156,7 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
      * @param cacheNodeCount The number of cache node instances to reserve. <p>Default:
      *         <code>1</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedCacheNodesOfferingRequest withCacheNodeCount(Integer cacheNodeCount) {

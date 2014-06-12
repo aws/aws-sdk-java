@@ -63,7 +63,7 @@ public class DescribeInstancesResult implements Serializable {
      *
      * @param instances An array of <code>Instance</code> objects that describe the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesResult withInstances(Instance... instances) {
@@ -81,7 +81,7 @@ public class DescribeInstancesResult implements Serializable {
      *
      * @param instances An array of <code>Instance</code> objects that describe the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesResult withInstances(java.util.Collection<Instance> instances) {

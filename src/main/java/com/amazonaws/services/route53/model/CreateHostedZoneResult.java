@@ -82,7 +82,7 @@ public class CreateHostedZoneResult implements Serializable {
      * @param hostedZone A complex type that contains identifying information about the hosted
      *         zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHostedZoneResult withHostedZone(HostedZone hostedZone) {
@@ -133,7 +133,7 @@ public class CreateHostedZoneResult implements Serializable {
      *         <a>GetChange</a> action to get the current status of the change
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHostedZoneResult withChangeInfo(ChangeInfo changeInfo) {
@@ -166,7 +166,7 @@ public class CreateHostedZoneResult implements Serializable {
      *
      * @param delegationSet A complex type that contains name server information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHostedZoneResult withDelegationSet(DelegationSet delegationSet) {
@@ -208,7 +208,7 @@ public class CreateHostedZoneResult implements Serializable {
      *
      * @param location The unique URL representing the new hosted zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHostedZoneResult withLocation(String location) {

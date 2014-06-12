@@ -58,7 +58,7 @@ public class UpdateStreamingDistributionResult implements Serializable {
      *
      * @param streamingDistribution The streaming distribution's information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStreamingDistributionResult withStreamingDistribution(StreamingDistribution streamingDistribution) {
@@ -91,7 +91,7 @@ public class UpdateStreamingDistributionResult implements Serializable {
      *
      * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateStreamingDistributionResult withETag(String eTag) {

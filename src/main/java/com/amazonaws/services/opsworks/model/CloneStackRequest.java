@@ -274,7 +274,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param sourceStackId The source stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withSourceStackId(String sourceStackId) {
@@ -307,7 +307,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param name The cloned stack name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withName(String name) {
@@ -358,7 +358,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withRegion(String region) {
@@ -517,7 +517,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         Platforms</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withVpcId(String vpcId) {
@@ -560,7 +560,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * @param attributes A list of stack attributes and values as key/value pairs to be added
      *         to the cloned stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withAttributes(java.util.Map<String,String> attributes) {
@@ -690,7 +690,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         You can specify the source stack's service role ARN, if you prefer,
      *         but you must do so explicitly. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withServiceRoleArn(String serviceRoleArn) {
@@ -741,7 +741,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
@@ -786,7 +786,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
      *         default option is <code>Amazon Linux</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withDefaultOs(String defaultOs) {
@@ -903,7 +903,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         name, call <code>GetHostNameSuggestion</code>, which returns a host
      *         name based on the current theme.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withHostnameTheme(String hostnameTheme) {
@@ -966,7 +966,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
      *         more information, see the <code>VpcId</code> parameter description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
@@ -1029,7 +1029,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         and when this parameter is required, see the <code>VpcId</code>
      *         parameter description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withDefaultSubnetId(String defaultSubnetId) {
@@ -1098,7 +1098,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withCustomJson(String customJson) {
@@ -1143,7 +1143,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         you use the configuration manager to specify the Chef version, 0.9,
      *         11.4, or 11.10. The default value is currently 11.4.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withConfigurationManager(StackConfigurationManager configurationManager) {
@@ -1200,7 +1200,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withChefConfiguration(ChefConfiguration chefConfiguration) {
@@ -1233,7 +1233,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param useCustomCookbooks Whether to use custom cookbooks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
@@ -1377,7 +1377,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
@@ -1483,7 +1483,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withCustomCookbooksSource(Source customCookbooksSource) {
@@ -1522,7 +1522,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * @param defaultSshKeyName A default SSH key for the stack instances. You can override this value
      *         when you create or update an instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
@@ -1555,7 +1555,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param clonePermissions Whether to clone the source stack's permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withClonePermissions(Boolean clonePermissions) {
@@ -1607,7 +1607,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param cloneAppIds A list of source stack app IDs to be included in the cloned stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withCloneAppIds(String... cloneAppIds) {
@@ -1625,7 +1625,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param cloneAppIds A list of source stack app IDs to be included in the cloned stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloneStackRequest withCloneAppIds(java.util.Collection<String> cloneAppIds) {
@@ -1702,7 +1702,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RootDeviceType
@@ -1752,7 +1752,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RootDeviceType

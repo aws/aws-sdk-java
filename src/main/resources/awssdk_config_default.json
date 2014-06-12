@@ -2,7 +2,7 @@
   "defaultSigner" : {
     "signerType" : "AWS4SignerType"
   },
-  // "regionSigners" configuration takes precedence over 
+  // "regionSigners" configuration takes precedence over
   // the "serviceSigners" configuration,
   // but not the "serviceRegionSigners" configuration
   "serviceSigners" : [ {
@@ -34,6 +34,11 @@
     "key" : "sdb",
     "config" : {
       "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "cloudsearchdomain",
+    "config" : {
+      "signerType" : "NoOpSignerType"
     }
   } ],
   "regionSigners" : [ {

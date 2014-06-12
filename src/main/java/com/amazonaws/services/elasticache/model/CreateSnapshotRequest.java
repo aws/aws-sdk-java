@@ -71,7 +71,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
      * @param cacheClusterId The identifier of an existing cache cluster. The snapshot will be
      *         created from this cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotRequest withCacheClusterId(String cacheClusterId) {
@@ -104,7 +104,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
      *
      * @param snapshotName A name for the snapshot being created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotRequest withSnapshotName(String snapshotName) {

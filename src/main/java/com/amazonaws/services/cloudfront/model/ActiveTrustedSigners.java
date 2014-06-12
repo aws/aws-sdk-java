@@ -92,7 +92,7 @@ public class ActiveTrustedSigners implements Serializable {
      *
      * @param enabled Each active trusted signer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActiveTrustedSigners withEnabled(Boolean enabled) {
@@ -146,7 +146,7 @@ public class ActiveTrustedSigners implements Serializable {
      *         For example, if three cache behaviors all list the same three AWS
      *         accounts, the value of Quantity for ActiveTrustedSigners will be 3.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActiveTrustedSigners withQuantity(Integer quantity) {
@@ -207,7 +207,7 @@ public class ActiveTrustedSigners implements Serializable {
      *         including trusted signers in the default cache behavior and in all of
      *         the other cache behaviors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActiveTrustedSigners withItems(Signer... items) {
@@ -231,7 +231,7 @@ public class ActiveTrustedSigners implements Serializable {
      *         including trusted signers in the default cache behavior and in all of
      *         the other cache behaviors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActiveTrustedSigners withItems(java.util.Collection<Signer> items) {

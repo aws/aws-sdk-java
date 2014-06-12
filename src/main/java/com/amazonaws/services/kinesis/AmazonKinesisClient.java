@@ -212,8 +212,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("kinesis.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/kinesis/request.handlers"));
@@ -298,7 +300,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -401,7 +403,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -496,7 +498,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -589,7 +591,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -917,7 +919,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2073,8 +2075,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         mergeShards(mergeShardsRequest);
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

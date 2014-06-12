@@ -102,7 +102,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
      *
      * @param userName Name of the user the policy is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteUserPolicyRequest withUserName(String userName) {
@@ -147,7 +147,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
      *
      * @param policyName Name of the policy document to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteUserPolicyRequest withPolicyName(String policyName) {

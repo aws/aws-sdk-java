@@ -63,7 +63,7 @@ public class ReceiveMessageResult implements Serializable {
      *
      * @param messages A list of messages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageResult withMessages(Message... messages) {
@@ -81,7 +81,7 @@ public class ReceiveMessageResult implements Serializable {
      *
      * @param messages A list of messages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageResult withMessages(java.util.Collection<Message> messages) {

@@ -63,7 +63,7 @@ public class ClusterSummary implements Serializable {
      *
      * @param id The unique identifier for the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterSummary withId(String id) {
@@ -96,7 +96,7 @@ public class ClusterSummary implements Serializable {
      *
      * @param name The name of the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterSummary withName(String name) {
@@ -129,7 +129,7 @@ public class ClusterSummary implements Serializable {
      *
      * @param status The details about the current status of the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterSummary withStatus(ClusterStatus status) {

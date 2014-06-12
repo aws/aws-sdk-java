@@ -106,7 +106,7 @@ public class LoginProfile implements Serializable {
      * @param userName The name of the user, which can be used for signing into the AWS
      *         Management Console.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoginProfile withUserName(String userName) {
@@ -139,7 +139,7 @@ public class LoginProfile implements Serializable {
      *
      * @param createDate The date when the password for the user was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoginProfile withCreateDate(java.util.Date createDate) {

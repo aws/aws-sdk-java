@@ -95,7 +95,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements Serializ
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCacheRequest withGatewayARN(String gatewayARN) {
@@ -138,7 +138,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements Serializ
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCacheRequest withDiskIds(String... diskIds) {
@@ -156,7 +156,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements Serializ
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCacheRequest withDiskIds(java.util.Collection<String> diskIds) {

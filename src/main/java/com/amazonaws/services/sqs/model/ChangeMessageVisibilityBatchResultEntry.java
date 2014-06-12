@@ -60,7 +60,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable {
      * @param id Represents a message whose visibility timeout has been changed
      *         successfully.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchResultEntry withId(String id) {

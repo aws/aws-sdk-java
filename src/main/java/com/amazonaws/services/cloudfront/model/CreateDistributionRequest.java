@@ -76,7 +76,7 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest implement
      *
      * @param distributionConfig The distribution's configuration information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDistributionRequest withDistributionConfig(DistributionConfig distributionConfig) {

@@ -100,7 +100,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      * @param reservedDBInstancesOfferingId The ID of the Reserved DB instance offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
@@ -139,7 +139,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      * @param reservedDBInstanceId Customer-specified identifier to track this reservation. <p>Example:
      *         myreservationID
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withReservedDBInstanceId(String reservedDBInstanceId) {
@@ -172,7 +172,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      *
      * @param dBInstanceCount The number of instances to reserve. <p>Default: <code>1</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withDBInstanceCount(Integer dBInstanceCount) {
@@ -215,7 +215,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withTags(Tag... tags) {
@@ -233,7 +233,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withTags(java.util.Collection<Tag> tags) {

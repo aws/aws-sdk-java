@@ -110,7 +110,7 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest i
      *
      * @param encodedMessage The encoded message that was returned with the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecodeAuthorizationMessageRequest withEncodedMessage(String encodedMessage) {

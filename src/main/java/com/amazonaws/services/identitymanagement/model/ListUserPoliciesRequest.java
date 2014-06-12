@@ -120,7 +120,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
      *
      * @param userName The name of the user to list policies for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUserPoliciesRequest withUserName(String userName) {
@@ -183,7 +183,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUserPoliciesRequest withMarker(String marker) {
@@ -249,7 +249,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUserPoliciesRequest withMaxItems(Integer maxItems) {

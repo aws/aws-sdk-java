@@ -99,7 +99,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * @param internetGatewayIds One or more Internet gateway IDs. <p>Default: Describes all your
      *         Internet gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInternetGatewaysRequest withInternetGatewayIds(String... internetGatewayIds) {
@@ -119,7 +119,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * @param internetGatewayIds One or more Internet gateway IDs. <p>Default: Describes all your
      *         Internet gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInternetGatewaysRequest withInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
@@ -271,7 +271,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInternetGatewaysRequest withFilters(Filter... filters) {
@@ -323,7 +323,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      *         resource. This filter is independent of the <code>tag-key</code>
      *         filter. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInternetGatewaysRequest withFilters(java.util.Collection<Filter> filters) {

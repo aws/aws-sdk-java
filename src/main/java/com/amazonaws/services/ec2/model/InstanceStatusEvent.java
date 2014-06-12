@@ -84,7 +84,7 @@ public class InstanceStatusEvent implements Serializable {
      *
      * @param code The associated code of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EventCode
@@ -118,7 +118,7 @@ public class InstanceStatusEvent implements Serializable {
      *
      * @param code The associated code of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EventCode
@@ -153,7 +153,7 @@ public class InstanceStatusEvent implements Serializable {
      *
      * @param description A description of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatusEvent withDescription(String description) {
@@ -186,7 +186,7 @@ public class InstanceStatusEvent implements Serializable {
      *
      * @param notBefore The earliest scheduled start time for the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatusEvent withNotBefore(java.util.Date notBefore) {
@@ -219,7 +219,7 @@ public class InstanceStatusEvent implements Serializable {
      *
      * @param notAfter The latest scheduled end time for the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatusEvent withNotAfter(java.util.Date notAfter) {

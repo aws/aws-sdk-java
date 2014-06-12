@@ -149,7 +149,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      *         files to transcode and the bucket into which Elastic Transcoder puts
      *         the transcoded files.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withPipelineId(String pipelineId) {
@@ -188,7 +188,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      * @param input A section of the request body that provides information about the file
      *         that is being transcoded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withInput(JobInput input) {
@@ -221,7 +221,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param output The <code>CreateJobOutput</code> structure.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withOutput(CreateJobOutput output) {
@@ -285,7 +285,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      *         transcoded (target) files. We recommend that you use the
      *         <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withOutputs(CreateJobOutput... outputs) {
@@ -310,7 +310,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      *         transcoded (target) files. We recommend that you use the
      *         <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withOutputs(java.util.Collection<CreateJobOutput> outputs) {
@@ -371,7 +371,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      *         names of all files that this job creates, including output files,
      *         thumbnails, and playlists.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withOutputKeyPrefix(String outputKeyPrefix) {
@@ -447,7 +447,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      *         Transcoder to create. <p>We recommend that you create only one master
      *         playlist. The maximum number of master playlists in a job is 30.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withPlaylists(CreateJobPlaylist... playlists) {
@@ -476,7 +476,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      *         Transcoder to create. <p>We recommend that you create only one master
      *         playlist. The maximum number of master playlists in a job is 30.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobRequest withPlaylists(java.util.Collection<CreateJobPlaylist> playlists) {

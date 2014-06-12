@@ -151,7 +151,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetQueueAttributesRequest withQueueUrl(String queueUrl) {
@@ -368,7 +368,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest implement
      *         RedrivePolicy and dead letter queues, see Using Amazon SQS Dead Letter
      *         Queues in the <i>Amazon SQS Developer Guide</i>.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetQueueAttributesRequest withAttributes(java.util.Map<String,String> attributes) {

@@ -72,7 +72,7 @@ public class RetrieveTapeRecoveryPointResult implements Serializable {
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape for which the
      *         recovery point was retrieved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveTapeRecoveryPointResult withTapeARN(String tapeARN) {

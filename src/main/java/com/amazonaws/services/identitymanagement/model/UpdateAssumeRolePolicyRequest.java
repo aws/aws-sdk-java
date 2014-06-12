@@ -87,7 +87,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest imple
      *
      * @param roleName Name of the role to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAssumeRolePolicyRequest withRoleName(String roleName) {
@@ -132,7 +132,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest imple
      *
      * @param policyDocument The policy that grants an entity permission to assume the role.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAssumeRolePolicyRequest withPolicyDocument(String policyDocument) {

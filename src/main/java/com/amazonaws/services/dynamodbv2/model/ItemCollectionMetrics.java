@@ -76,7 +76,7 @@ public class ItemCollectionMetrics implements Serializable {
      * @param itemCollectionKey The hash key value of the item collection. This is the same as the
      *         hash key of the item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ItemCollectionMetrics withItemCollectionKey(java.util.Map<String,AttributeValue> itemCollectionKey) {
@@ -188,7 +188,7 @@ public class ItemCollectionMetrics implements Serializable {
      *         is subject to change over time; therefore, do not rely on the
      *         precision or accuracy of the estimate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ItemCollectionMetrics withSizeEstimateRangeGB(Double... sizeEstimateRangeGB) {
@@ -220,7 +220,7 @@ public class ItemCollectionMetrics implements Serializable {
      *         is subject to change over time; therefore, do not rely on the
      *         precision or accuracy of the estimate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ItemCollectionMetrics withSizeEstimateRangeGB(java.util.Collection<Double> sizeEstimateRangeGB) {

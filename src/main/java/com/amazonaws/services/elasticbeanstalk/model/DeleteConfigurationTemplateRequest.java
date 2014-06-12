@@ -104,7 +104,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *
      * @param applicationName The name of the application to delete the configuration template from.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteConfigurationTemplateRequest withApplicationName(String applicationName) {
@@ -146,7 +146,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *
      * @param templateName The name of the configuration template to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteConfigurationTemplateRequest withTemplateName(String templateName) {

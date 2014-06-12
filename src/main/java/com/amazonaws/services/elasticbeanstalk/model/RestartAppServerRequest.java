@@ -97,7 +97,7 @@ public class RestartAppServerRequest extends AmazonWebServiceRequest implements 
      *         not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestartAppServerRequest withEnvironmentId(String environmentId) {
@@ -157,7 +157,7 @@ public class RestartAppServerRequest extends AmazonWebServiceRequest implements 
      *         not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestartAppServerRequest withEnvironmentName(String environmentName) {

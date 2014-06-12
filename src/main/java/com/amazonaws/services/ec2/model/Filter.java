@@ -86,7 +86,7 @@ public class Filter implements Serializable {
      *
      * @param name The name of the filter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withName(String name) {
@@ -129,7 +129,7 @@ public class Filter implements Serializable {
      *
      * @param values One or more filter values.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withValues(String... values) {
@@ -147,7 +147,7 @@ public class Filter implements Serializable {
      *
      * @param values One or more filter values.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withValues(java.util.Collection<String> values) {

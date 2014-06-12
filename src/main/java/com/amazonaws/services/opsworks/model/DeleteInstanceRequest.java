@@ -79,7 +79,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param instanceId The instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteInstanceRequest withInstanceId(String instanceId) {
@@ -112,7 +112,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param deleteElasticIp Whether to delete the instance Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteInstanceRequest withDeleteElasticIp(Boolean deleteElasticIp) {
@@ -154,7 +154,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param deleteVolumes Whether to delete the instance's Amazon EBS volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteInstanceRequest withDeleteVolumes(Boolean deleteVolumes) {

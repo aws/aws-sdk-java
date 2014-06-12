@@ -119,7 +119,7 @@ public class DescribePermissionsResult implements Serializable {
      *         single <code>Permission</code> object with permissions for the
      *         specified stack and IAM ARN.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePermissionsResult withPermissions(Permission... permissions) {
@@ -153,7 +153,7 @@ public class DescribePermissionsResult implements Serializable {
      *         single <code>Permission</code> object with permissions for the
      *         specified stack and IAM ARN.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePermissionsResult withPermissions(java.util.Collection<Permission> permissions) {

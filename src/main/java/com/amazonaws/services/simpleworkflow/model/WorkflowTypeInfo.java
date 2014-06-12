@@ -81,7 +81,7 @@ public class WorkflowTypeInfo implements Serializable {
      *
      * @param workflowType The workflow type this information is about.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeInfo withWorkflowType(WorkflowType workflowType) {
@@ -127,7 +127,7 @@ public class WorkflowTypeInfo implements Serializable {
      *
      * @param status The current status of the workflow type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -161,7 +161,7 @@ public class WorkflowTypeInfo implements Serializable {
      *
      * @param status The current status of the workflow type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -211,7 +211,7 @@ public class WorkflowTypeInfo implements Serializable {
      * @param description The description of the type registered through
      *         <a>RegisterWorkflowType</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeInfo withDescription(String description) {
@@ -244,7 +244,7 @@ public class WorkflowTypeInfo implements Serializable {
      *
      * @param creationDate The date when this type was registered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeInfo withCreationDate(java.util.Date creationDate) {
@@ -283,7 +283,7 @@ public class WorkflowTypeInfo implements Serializable {
      * @param deprecationDate If the type is in deprecated state, then it is set to the date when
      *         the type was deprecated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeInfo withDeprecationDate(java.util.Date deprecationDate) {

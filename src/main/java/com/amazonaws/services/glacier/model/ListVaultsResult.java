@@ -70,7 +70,7 @@ public class ListVaultsResult implements Serializable {
      *
      * @param vaultList List of vaults.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVaultsResult withVaultList(DescribeVaultOutput... vaultList) {
@@ -88,7 +88,7 @@ public class ListVaultsResult implements Serializable {
      *
      * @param vaultList List of vaults.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVaultsResult withVaultList(java.util.Collection<DescribeVaultOutput> vaultList) {
@@ -140,7 +140,7 @@ public class ListVaultsResult implements Serializable {
      *         the marker in another List Vaults request to obtain more vaults in the
      *         list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVaultsResult withMarker(String marker) {

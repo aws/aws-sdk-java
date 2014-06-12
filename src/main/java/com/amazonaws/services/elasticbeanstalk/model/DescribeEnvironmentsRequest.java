@@ -127,7 +127,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      *         descriptions to include only those that are associated with this
      *         application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withApplicationName(String applicationName) {
@@ -181,7 +181,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      *         descriptions to include only those that are associated with this
      *         application version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withVersionLabel(String versionLabel) {
@@ -230,7 +230,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      * @param environmentIds If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to include only those that have the specified IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withEnvironmentIds(String... environmentIds) {
@@ -250,7 +250,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      * @param environmentIds If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to include only those that have the specified IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withEnvironmentIds(java.util.Collection<String> environmentIds) {
@@ -306,7 +306,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      * @param environmentNames If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to include only those that have the specified names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withEnvironmentNames(String... environmentNames) {
@@ -326,7 +326,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      * @param environmentNames If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to include only those that have the specified names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withEnvironmentNames(java.util.Collection<String> environmentNames) {
@@ -384,7 +384,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      *         <code>IncludedDeletedBackTo</code> are displayed. <p>
      *         <code>false</code>: Do not include deleted environments.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withIncludeDeleted(Boolean includeDeleted) {
@@ -444,7 +444,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      *         <code>true</code>, then environments deleted after this date are
      *         displayed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsRequest withIncludedDeletedBackTo(java.util.Date includedDeletedBackTo) {

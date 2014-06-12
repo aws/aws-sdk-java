@@ -112,7 +112,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetInstanceAttributeRequest withInstanceId(String instanceId) {
@@ -158,7 +158,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @param attribute The attribute to reset.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceAttributeName
@@ -192,7 +192,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @param attribute The attribute to reset.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceAttributeName

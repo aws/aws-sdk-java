@@ -140,7 +140,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      *
      * @param domain The name of the domain containing the workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetWorkflowExecutionHistoryRequest withDomain(String domain) {
@@ -173,7 +173,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      *
      * @param execution Specifies the workflow execution for which to return the history.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetWorkflowExecutionHistoryRequest withExecution(WorkflowExecution execution) {
@@ -227,7 +227,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      *         one pages. To get the next page, repeat the call and specify the
      *         nextPageToken with all other arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetWorkflowExecutionHistoryRequest withNextPageToken(String nextPageToken) {
@@ -311,7 +311,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetWorkflowExecutionHistoryRequest withMaximumPageSize(Integer maximumPageSize) {
@@ -356,7 +356,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      *         default the results are returned in ascending order of the
      *         <code>eventTimeStamp</code> of the events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetWorkflowExecutionHistoryRequest withReverseOrder(Boolean reverseOrder) {

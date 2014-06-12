@@ -100,7 +100,7 @@ public class InventoryRetrievalJobDescription implements Serializable {
      *         <b>InitiateJob</b> request when initiating a job to retrieve a vault
      *         inventory. Valid values are "CSV" and "JSON".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobDescription withFormat(String format) {
@@ -151,7 +151,7 @@ public class InventoryRetrievalJobDescription implements Serializable {
      *         representation of ISO 8601 date format, for example,
      *         2013-03-20T17:03:43Z.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobDescription withStartDate(String startDate) {
@@ -196,7 +196,7 @@ public class InventoryRetrievalJobDescription implements Serializable {
      *         includes archives created before this date. A string representation of
      *         ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobDescription withEndDate(String endDate) {
@@ -241,7 +241,7 @@ public class InventoryRetrievalJobDescription implements Serializable {
      *         inventory retrieval request. This limit is set when initiating the job
      *         with the a <b>InitiateJob</b> request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobDescription withLimit(String limit) {
@@ -310,7 +310,7 @@ public class InventoryRetrievalJobDescription implements Serializable {
      *         href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      *         Range Inventory Retrieval</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InventoryRetrievalJobDescription withMarker(String marker) {

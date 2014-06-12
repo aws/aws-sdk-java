@@ -167,7 +167,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVaultsRequest withAccountId(String accountId) {
@@ -206,7 +206,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * @param marker A string used for pagination. The marker specifies the vault ARN after
      *         which the listing of vaults should begin.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVaultsRequest withMarker(String marker) {
@@ -245,7 +245,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      * @param limit The maximum number of items returned in the response. If you don't
      *         specify a value, the List Vaults operation returns up to 1,000 items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVaultsRequest withLimit(String limit) {

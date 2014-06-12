@@ -98,7 +98,7 @@ public class VirtualMFADevice implements Serializable {
      *
      * @param serialNumber The serial number associated with <code>VirtualMFADevice</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VirtualMFADevice withSerialNumber(String serialNumber) {
@@ -149,7 +149,7 @@ public class VirtualMFADevice implements Serializable {
      *         target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
      *         Base64-encoded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VirtualMFADevice withBase32StringSeed(java.nio.ByteBuffer base32StringSeed) {
@@ -212,7 +212,7 @@ public class VirtualMFADevice implements Serializable {
      *         otherwise), and Base32String is the seed in Base32 format. The
      *         <code>Base32String</code> is Base64-encoded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VirtualMFADevice withQRCodePNG(java.nio.ByteBuffer qRCodePNG) {
@@ -263,7 +263,7 @@ public class VirtualMFADevice implements Serializable {
      *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      *         <li><p><a>ListUsers</a></li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VirtualMFADevice withUser(User user) {
@@ -296,7 +296,7 @@ public class VirtualMFADevice implements Serializable {
      *
      * @param enableDate The new value for the EnableDate property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VirtualMFADevice withEnableDate(java.util.Date enableDate) {

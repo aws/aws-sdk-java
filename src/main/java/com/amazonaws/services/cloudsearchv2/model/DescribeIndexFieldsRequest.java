@@ -94,7 +94,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
      *
      * @param domainName The name of the domain you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeIndexFieldsRequest withDomainName(String domainName) {
@@ -143,7 +143,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
      * @param fieldNames A list of the index fields you want to describe. If not specified,
      *         information is returned for all configured index fields.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeIndexFieldsRequest withFieldNames(String... fieldNames) {
@@ -163,7 +163,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
      * @param fieldNames A list of the index fields you want to describe. If not specified,
      *         information is returned for all configured index fields.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeIndexFieldsRequest withFieldNames(java.util.Collection<String> fieldNames) {
@@ -215,7 +215,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
      *         include any pending changes (<code>false</code>). Defaults to
      *         <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeIndexFieldsRequest withDeployed(Boolean deployed) {

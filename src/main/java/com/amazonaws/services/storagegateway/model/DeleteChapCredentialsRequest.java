@@ -94,7 +94,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implem
      *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
      *         TargetARN for specified VolumeARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteChapCredentialsRequest withTargetARN(String targetARN) {
@@ -139,7 +139,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implem
      *
      * @param initiatorName The iSCSI initiator that connects to the target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteChapCredentialsRequest withInitiatorName(String initiatorName) {

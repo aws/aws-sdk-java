@@ -80,7 +80,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param clusterId The identifier of the cluster for which to list the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesRequest withClusterId(String clusterId) {
@@ -113,7 +113,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceGroupId The identifier of the instance group for which to list the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesRequest withInstanceGroupId(String instanceGroupId) {
@@ -156,7 +156,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceGroupTypes The type of instance group for which to list the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesRequest withInstanceGroupTypes(String... instanceGroupTypes) {
@@ -174,7 +174,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceGroupTypes The type of instance group for which to list the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesRequest withInstanceGroupTypes(java.util.Collection<String> instanceGroupTypes) {
@@ -196,7 +196,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceGroupTypes The type of instance group for which to list the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesRequest withInstanceGroupTypes(InstanceGroupType... instanceGroupTypes) {
@@ -255,7 +255,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements Ser
      *         calls to retrieve the next page of results. When the value is null,
      *         all results have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstancesRequest withMarker(String marker) {

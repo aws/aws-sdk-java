@@ -64,7 +64,7 @@ public class DescribeServicesResult implements Serializable {
      *
      * @param services A JSON-formatted list of AWS services.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServicesResult withServices(Service... services) {
@@ -82,7 +82,7 @@ public class DescribeServicesResult implements Serializable {
      *
      * @param services A JSON-formatted list of AWS services.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServicesResult withServices(java.util.Collection<Service> services) {

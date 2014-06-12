@@ -63,7 +63,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeRecoveryPointInfo withVolumeARN(String volumeARN) {
@@ -96,7 +96,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
      *
      * @param volumeSizeInBytes The new value for the VolumeSizeInBytes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeRecoveryPointInfo withVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -129,7 +129,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
      *
      * @param volumeUsageInBytes The new value for the VolumeUsageInBytes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeRecoveryPointInfo withVolumeUsageInBytes(Long volumeUsageInBytes) {
@@ -167,7 +167,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
      * @param volumeRecoveryPointTime The new value for the VolumeRecoveryPointTime property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeRecoveryPointInfo withVolumeRecoveryPointTime(String volumeRecoveryPointTime) {

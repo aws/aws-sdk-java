@@ -134,7 +134,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateGroupRequest withPath(String path) {
@@ -179,7 +179,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param groupName Name of the group to create. Do not include the path in this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateGroupRequest withGroupName(String groupName) {

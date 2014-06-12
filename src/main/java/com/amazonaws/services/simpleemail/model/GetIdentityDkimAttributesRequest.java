@@ -102,7 +102,7 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest im
      * @param identities A list of one or more verified identities - email addresses, domains,
      *         or both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityDkimAttributesRequest withIdentities(String... identities) {
@@ -122,7 +122,7 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest im
      * @param identities A list of one or more verified identities - email addresses, domains,
      *         or both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityDkimAttributesRequest withIdentities(java.util.Collection<String> identities) {

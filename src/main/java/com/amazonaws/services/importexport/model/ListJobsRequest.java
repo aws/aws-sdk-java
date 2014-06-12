@@ -90,7 +90,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      *         the response contains <IsTruncated>true</IsTruncated>. To return the
      *         additional jobs, see Marker.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withMaxJobs(Integer maxJobs) {
@@ -135,7 +135,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      *         your account. AWS Import/Export lists your jobs in reverse
      *         chronological order. See MaxJobs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsRequest withMarker(String marker) {

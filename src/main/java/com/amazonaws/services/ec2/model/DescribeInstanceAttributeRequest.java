@@ -101,7 +101,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceAttributeRequest withInstanceId(String instanceId) {
@@ -147,7 +147,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      *
      * @param attribute The instance attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceAttributeName
@@ -181,7 +181,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      *
      * @param attribute The instance attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceAttributeName

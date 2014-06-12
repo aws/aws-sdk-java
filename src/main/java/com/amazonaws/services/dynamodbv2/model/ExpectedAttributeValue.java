@@ -288,7 +288,7 @@ public class ExpectedAttributeValue implements Serializable {
      * @param value Represents the data for an attribute. You can set one, and only one,
      *         of the elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExpectedAttributeValue withValue(AttributeValue value) {
@@ -441,7 +441,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <i>Value</i>. (You cannot expect an attribute to have a value, while
      *         also expecting it not to exist.) </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExpectedAttributeValue withExists(Boolean exists) {
@@ -1070,7 +1070,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ComparisonOperator
@@ -1460,7 +1460,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ComparisonOperator
@@ -1579,7 +1579,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExpectedAttributeValue withAttributeValueList(AttributeValue... attributeValueList) {
@@ -1623,7 +1623,7 @@ public class ExpectedAttributeValue implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      *         Data Format</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExpectedAttributeValue withAttributeValueList(java.util.Collection<AttributeValue> attributeValueList) {

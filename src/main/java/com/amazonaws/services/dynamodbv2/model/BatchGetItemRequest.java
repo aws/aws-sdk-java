@@ -324,7 +324,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      *         <code>false</code> (the default), an eventually consistent read is
      *         used. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchGetItemRequest withRequestItems(java.util.Map<String,KeysAndAttributes> requestItems) {
@@ -441,7 +441,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -491,7 +491,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity

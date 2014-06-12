@@ -51,7 +51,7 @@ public class CreateInstanceExportTaskResult implements Serializable {
      *
      * @param exportTask 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceExportTaskResult withExportTask(ExportTask exportTask) {

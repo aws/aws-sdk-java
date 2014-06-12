@@ -65,7 +65,7 @@ public class ExpressionStatus implements Serializable {
      * @param options The expression that is evaluated for sorting or filtering while
      *         processing a search request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExpressionStatus withOptions(Expression options) {
@@ -98,7 +98,7 @@ public class ExpressionStatus implements Serializable {
      *
      * @param status The status of domain configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExpressionStatus withStatus(OptionStatus status) {

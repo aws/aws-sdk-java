@@ -88,7 +88,7 @@ public class RecordMarkerFailedEventAttributes implements Serializable {
      *
      * @param markerName The marker's name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RecordMarkerFailedEventAttributes withMarkerName(String markerName) {
@@ -170,7 +170,7 @@ public class RecordMarkerFailedEventAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RecordMarkerFailedCause
@@ -228,7 +228,7 @@ public class RecordMarkerFailedEventAttributes implements Serializable {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RecordMarkerFailedCause
@@ -287,7 +287,7 @@ public class RecordMarkerFailedEventAttributes implements Serializable {
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RecordMarkerFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

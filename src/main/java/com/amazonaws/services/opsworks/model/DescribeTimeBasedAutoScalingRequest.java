@@ -80,7 +80,7 @@ public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      *
      * @param instanceIds An array of instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTimeBasedAutoScalingRequest withInstanceIds(String... instanceIds) {
@@ -98,7 +98,7 @@ public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      *
      * @param instanceIds An array of instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTimeBasedAutoScalingRequest withInstanceIds(java.util.Collection<String> instanceIds) {

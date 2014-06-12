@@ -83,7 +83,7 @@ public class Event implements Serializable {
      *
      * @param sourceIdentifier Provides the identifier for the source of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Event withSourceIdentifier(String sourceIdentifier) {
@@ -129,7 +129,7 @@ public class Event implements Serializable {
      *
      * @param sourceType Specifies the source type for this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SourceType
@@ -163,7 +163,7 @@ public class Event implements Serializable {
      *
      * @param sourceType Specifies the source type for this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SourceType
@@ -198,7 +198,7 @@ public class Event implements Serializable {
      *
      * @param message Provides the text of this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Event withMessage(String message) {
@@ -241,7 +241,7 @@ public class Event implements Serializable {
      *
      * @param eventCategories Specifies the category for the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Event withEventCategories(String... eventCategories) {
@@ -259,7 +259,7 @@ public class Event implements Serializable {
      *
      * @param eventCategories Specifies the category for the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Event withEventCategories(java.util.Collection<String> eventCategories) {
@@ -299,7 +299,7 @@ public class Event implements Serializable {
      *
      * @param date Specifies the date and time of the event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Event withDate(java.util.Date date) {

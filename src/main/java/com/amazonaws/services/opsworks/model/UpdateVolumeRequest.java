@@ -79,7 +79,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param volumeId The volume ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateVolumeRequest withVolumeId(String volumeId) {
@@ -112,7 +112,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param name The new name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateVolumeRequest withName(String name) {
@@ -145,7 +145,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param mountPoint The new mount point.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateVolumeRequest withMountPoint(String mountPoint) {

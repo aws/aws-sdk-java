@@ -83,7 +83,7 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements Se
      *
      * @param pipelineId The identifier of the pipeline to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeletePipelineRequest withPipelineId(String pipelineId) {

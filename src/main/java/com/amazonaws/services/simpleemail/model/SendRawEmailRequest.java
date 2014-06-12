@@ -194,7 +194,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      *         takes precedence over any <i>Return-Path</i> header that you might
      *         include in the raw text of the message. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendRawEmailRequest withSource(String source) {
@@ -237,7 +237,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param destinations A list of destinations for the message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendRawEmailRequest withDestinations(String... destinations) {
@@ -255,7 +255,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param destinations A list of destinations for the message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendRawEmailRequest withDestinations(java.util.Collection<String> destinations) {
@@ -343,7 +343,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      *         SES Developer Guide</a>. </li> <li>Content must be base64-encoded, if
      *         MIME requires it.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendRawEmailRequest withRawMessage(RawMessage rawMessage) {

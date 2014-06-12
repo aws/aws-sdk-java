@@ -61,7 +61,7 @@ public class SendEmailResult implements Serializable {
      * @param messageId The unique message identifier returned from the <code>SendEmail</code>
      *         action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendEmailResult withMessageId(String messageId) {

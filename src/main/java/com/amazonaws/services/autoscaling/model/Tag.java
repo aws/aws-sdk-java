@@ -100,7 +100,7 @@ public class Tag implements Serializable {
      *
      * @param resourceId The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withResourceId(String resourceId) {
@@ -148,7 +148,7 @@ public class Tag implements Serializable {
      * @param resourceType The kind of resource to which the tag is applied. Currently, Auto
      *         Scaling supports the <code>auto-scaling-group</code> resource type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withResourceType(String resourceType) {
@@ -193,7 +193,7 @@ public class Tag implements Serializable {
      *
      * @param key The key of the tag.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withKey(String key) {
@@ -238,7 +238,7 @@ public class Tag implements Serializable {
      *
      * @param value The value of the tag.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withValue(String value) {
@@ -289,7 +289,7 @@ public class Tag implements Serializable {
      *         change a tag, the changed tag will be applied to all instances
      *         launched after you made the change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withPropagateAtLaunch(Boolean propagateAtLaunch) {

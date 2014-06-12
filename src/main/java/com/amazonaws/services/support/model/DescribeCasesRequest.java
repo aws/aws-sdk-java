@@ -142,7 +142,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      * @param caseIdList A list of ID numbers of the support cases you want returned. The
      *         maximum number of cases is 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withCaseIdList(String... caseIdList) {
@@ -165,7 +165,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      * @param caseIdList A list of ID numbers of the support cases you want returned. The
      *         maximum number of cases is 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withCaseIdList(java.util.Collection<String> caseIdList) {
@@ -205,7 +205,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param displayId The ID displayed for a case in the AWS Support Center user interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withDisplayId(String displayId) {
@@ -244,7 +244,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      * @param afterTime The start date for a filtered date search on support case
      *         communications.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withAfterTime(String afterTime) {
@@ -283,7 +283,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      * @param beforeTime The end date for a filtered date search on support case
      *         communications.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withBeforeTime(String beforeTime) {
@@ -322,7 +322,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      * @param includeResolvedCases Specifies whether resolved support cases should be included in the
      *         <a>DescribeCases</a> results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withIncludeResolvedCases(Boolean includeResolvedCases) {
@@ -366,7 +366,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param nextToken A resumption point for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withNextToken(String nextToken) {
@@ -408,7 +408,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param maxResults The maximum number of results to return before paginating.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withMaxResults(Integer maxResults) {
@@ -459,7 +459,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      *         Language parameters must be passed explicitly for operations that take
      *         them.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesRequest withLanguage(String language) {

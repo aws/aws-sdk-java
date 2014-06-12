@@ -77,7 +77,7 @@ public class DescribeScheduledActionsResult implements Serializable {
      *
      * @param scheduledUpdateGroupActions A list of scheduled actions designed to update an Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(ScheduledUpdateGroupAction... scheduledUpdateGroupActions) {
@@ -95,7 +95,7 @@ public class DescribeScheduledActionsResult implements Serializable {
      *
      * @param scheduledUpdateGroupActions A list of scheduled actions designed to update an Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(java.util.Collection<ScheduledUpdateGroupAction> scheduledUpdateGroupActions) {
@@ -144,7 +144,7 @@ public class DescribeScheduledActionsResult implements Serializable {
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeScheduledActionsResult withNextToken(String nextToken) {

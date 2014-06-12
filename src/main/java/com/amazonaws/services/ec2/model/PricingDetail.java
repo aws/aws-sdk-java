@@ -58,7 +58,7 @@ public class PricingDetail implements Serializable {
      *
      * @param price The price per instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PricingDetail withPrice(Double price) {
@@ -91,7 +91,7 @@ public class PricingDetail implements Serializable {
      *
      * @param count The number of instances available for the price.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PricingDetail withCount(Integer count) {

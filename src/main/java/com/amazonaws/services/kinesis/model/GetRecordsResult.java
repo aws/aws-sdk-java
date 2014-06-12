@@ -73,7 +73,7 @@ public class GetRecordsResult implements Serializable {
      *
      * @param records <P>The data records retrieved from the shard.</P>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetRecordsResult withRecords(Record... records) {
@@ -91,7 +91,7 @@ public class GetRecordsResult implements Serializable {
      *
      * @param records <P>The data records retrieved from the shard.</P>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetRecordsResult withRecords(java.util.Collection<Record> records) {
@@ -152,7 +152,7 @@ public class GetRecordsResult implements Serializable {
      *         reading data records. If set to <code>null</code>, the shard has been
      *         closed and the requested iterator will not return any more data.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetRecordsResult withNextShardIterator(String nextShardIterator) {

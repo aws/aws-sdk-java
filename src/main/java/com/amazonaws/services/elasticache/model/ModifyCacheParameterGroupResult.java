@@ -59,7 +59,7 @@ public class ModifyCacheParameterGroupResult implements Serializable {
      *
      * @param cacheParameterGroupName The name of the cache parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheParameterGroupResult withCacheParameterGroupName(String cacheParameterGroupName) {

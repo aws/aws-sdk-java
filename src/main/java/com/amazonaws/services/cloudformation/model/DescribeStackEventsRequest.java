@@ -103,7 +103,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest implemen
      *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
      *         There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackEventsRequest withStackName(String stackName) {
@@ -151,7 +151,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest implemen
      * @param nextToken String that identifies the start of the next list of events, if there
      *         is one. <p>Default: There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackEventsRequest withNextToken(String nextToken) {

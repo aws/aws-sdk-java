@@ -109,7 +109,7 @@ public class LatLonOptions implements Serializable {
      * @param defaultValue A value to use for the field if the field isn't specified for a
      *         document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LatLonOptions withDefaultValue(String defaultValue) {
@@ -178,7 +178,7 @@ public class LatLonOptions implements Serializable {
      *         cannot be used as a field name. To reference a document's ID, you can
      *         use the name <code>_id</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LatLonOptions withSourceField(String sourceField) {
@@ -211,7 +211,7 @@ public class LatLonOptions implements Serializable {
      *
      * @param facetEnabled Whether facet information can be returned for the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LatLonOptions withFacetEnabled(Boolean facetEnabled) {
@@ -253,7 +253,7 @@ public class LatLonOptions implements Serializable {
      *
      * @param searchEnabled Whether the contents of the field are searchable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LatLonOptions withSearchEnabled(Boolean searchEnabled) {
@@ -301,7 +301,7 @@ public class LatLonOptions implements Serializable {
      * @param returnEnabled Whether the contents of the field can be returned in the search
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LatLonOptions withReturnEnabled(Boolean returnEnabled) {
@@ -345,7 +345,7 @@ public class LatLonOptions implements Serializable {
      *
      * @param sortEnabled Whether the field can be used to sort the search results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LatLonOptions withSortEnabled(Boolean sortEnabled) {

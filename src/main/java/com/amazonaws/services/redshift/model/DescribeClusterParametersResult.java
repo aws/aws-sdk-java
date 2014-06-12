@@ -80,7 +80,7 @@ public class DescribeClusterParametersResult implements Serializable {
      * @param parameters A list of <a>Parameter</a> instances. Each instance lists the
      *         parameters of one cluster parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterParametersResult withParameters(Parameter... parameters) {
@@ -100,7 +100,7 @@ public class DescribeClusterParametersResult implements Serializable {
      * @param parameters A list of <a>Parameter</a> instances. Each instance lists the
      *         parameters of one cluster parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterParametersResult withParameters(java.util.Collection<Parameter> parameters) {
@@ -170,7 +170,7 @@ public class DescribeClusterParametersResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterParametersResult withMarker(String marker) {

@@ -104,7 +104,7 @@ public class JobWatermark implements Serializable {
      *         preset specified by Preset for the current output. In that preset, the
      *         value of Watermarks Id tells Elastic Transcoder which settings to use.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobWatermark withPresetWatermarkId(String presetWatermarkId) {
@@ -191,7 +191,7 @@ public class JobWatermark implements Serializable {
      *         the key. If the file isn't in the specified bucket, Elastic Transcoder
      *         returns an error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobWatermark withInputKey(String inputKey) {

@@ -276,7 +276,7 @@ public class AttributeValueUpdate implements Serializable {
      * @param value Represents the data for an attribute. You can set one, and only one,
      *         of the elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttributeValueUpdate withValue(AttributeValue value) {
@@ -646,7 +646,7 @@ public class AttributeValueUpdate implements Serializable {
      *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttributeAction
@@ -896,7 +896,7 @@ public class AttributeValueUpdate implements Serializable {
      *         attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttributeAction

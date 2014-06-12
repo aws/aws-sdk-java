@@ -98,7 +98,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implement
      *         either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebuildEnvironmentRequest withEnvironmentId(String environmentId) {
@@ -158,7 +158,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implement
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebuildEnvironmentRequest withEnvironmentName(String environmentName) {

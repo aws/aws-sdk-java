@@ -116,7 +116,7 @@ public class EventSubscription implements Serializable {
      * @param customerAwsId The AWS customer account associated with the Amazon Redshift event
      *         notification subscription.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withCustomerAwsId(String customerAwsId) {
@@ -149,7 +149,7 @@ public class EventSubscription implements Serializable {
      *
      * @param custSubscriptionId The name of the Amazon Redshift event notification subscription.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withCustSubscriptionId(String custSubscriptionId) {
@@ -188,7 +188,7 @@ public class EventSubscription implements Serializable {
      * @param snsTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic used by the
      *         event notification subscription.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withSnsTopicArn(String snsTopicArn) {
@@ -251,7 +251,7 @@ public class EventSubscription implements Serializable {
      *         Amazon SNS topic. The status "topic-not-exist" indicates that the
      *         topic was deleted after the subscription was created.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withStatus(String status) {
@@ -290,7 +290,7 @@ public class EventSubscription implements Serializable {
      * @param subscriptionCreationTime The date and time the Amazon Redshift event notification subscription
      *         was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withSubscriptionCreationTime(java.util.Date subscriptionCreationTime) {
@@ -329,7 +329,7 @@ public class EventSubscription implements Serializable {
      * @param sourceType The source type of the events returned the Amazon Redshift event
      *         notification, such as cluster, or cluster-snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withSourceType(String sourceType) {
@@ -378,7 +378,7 @@ public class EventSubscription implements Serializable {
      * @param sourceIdsList A list of the sources that publish events to the Amazon Redshift event
      *         notification subscription.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withSourceIdsList(String... sourceIdsList) {
@@ -398,7 +398,7 @@ public class EventSubscription implements Serializable {
      * @param sourceIdsList A list of the sources that publish events to the Amazon Redshift event
      *         notification subscription.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withSourceIdsList(java.util.Collection<String> sourceIdsList) {
@@ -460,7 +460,7 @@ public class EventSubscription implements Serializable {
      *         notification subscription. <p>Values: Configuration, Management,
      *         Monitoring, Security
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withEventCategoriesList(String... eventCategoriesList) {
@@ -482,7 +482,7 @@ public class EventSubscription implements Serializable {
      *         notification subscription. <p>Values: Configuration, Management,
      *         Monitoring, Security
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withEventCategoriesList(java.util.Collection<String> eventCategoriesList) {
@@ -528,7 +528,7 @@ public class EventSubscription implements Serializable {
      * @param severity The event severity specified in the Amazon Redshift event notification
      *         subscription. <p>Values: ERROR, INFO
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withSeverity(String severity) {
@@ -567,7 +567,7 @@ public class EventSubscription implements Serializable {
      * @param enabled A Boolean value indicating whether the subscription is enabled.
      *         <code>true</code> indicates the subscription is enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventSubscription withEnabled(Boolean enabled) {

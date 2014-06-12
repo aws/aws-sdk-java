@@ -78,7 +78,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param subnetId The ID of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSubnetRequest withSubnetId(String subnetId) {

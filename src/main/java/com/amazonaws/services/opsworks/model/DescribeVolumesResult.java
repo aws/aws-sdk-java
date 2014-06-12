@@ -63,7 +63,7 @@ public class DescribeVolumesResult implements Serializable {
      *
      * @param volumes An array of volume IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumesResult withVolumes(Volume... volumes) {
@@ -81,7 +81,7 @@ public class DescribeVolumesResult implements Serializable {
      *
      * @param volumes An array of volume IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumesResult withVolumes(java.util.Collection<Volume> volumes) {

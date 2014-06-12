@@ -270,8 +270,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("opsworks.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/opsworks/request.handlers"));
@@ -548,7 +550,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -605,7 +607,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -709,7 +711,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -895,7 +897,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -954,7 +956,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1110,7 +1112,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1168,7 +1170,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1281,7 +1283,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1386,7 +1388,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1590,7 +1592,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1790,7 +1792,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1972,7 +1974,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2030,7 +2032,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2273,7 +2275,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2332,7 +2334,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2393,7 +2395,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2453,7 +2455,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2554,7 +2556,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2660,7 +2662,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2811,7 +2813,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2867,7 +2869,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2971,7 +2973,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -3032,7 +3034,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -3094,7 +3096,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -3150,7 +3152,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -3209,7 +3211,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -3268,7 +3270,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -3382,14 +3384,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

@@ -63,7 +63,7 @@ public class DescribeEnvironmentsResult implements Serializable {
      *
      * @param environments Returns an <a>EnvironmentDescription</a> list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsResult withEnvironments(EnvironmentDescription... environments) {
@@ -81,7 +81,7 @@ public class DescribeEnvironmentsResult implements Serializable {
      *
      * @param environments Returns an <a>EnvironmentDescription</a> list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentsResult withEnvironments(java.util.Collection<EnvironmentDescription> environments) {

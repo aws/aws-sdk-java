@@ -58,7 +58,7 @@ public class ElasticIpStatus implements Serializable {
      *
      * @param elasticIp The elastic IP (EIP) address for the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticIpStatus withElasticIp(String elasticIp) {
@@ -91,7 +91,7 @@ public class ElasticIpStatus implements Serializable {
      *
      * @param status Describes the status of the elastic IP (EIP) address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ElasticIpStatus withStatus(String status) {

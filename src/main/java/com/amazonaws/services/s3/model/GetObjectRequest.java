@@ -91,7 +91,6 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      */
     private ResponseHeaderOverrides responseHeaders;
 
-
     /**
      * The optional progress listener for receiving updates about object download
      * status.
@@ -103,6 +102,14 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * Requester Pays Buckets.
      */
     private boolean isRequesterPays;
+
+    /**
+     * The optional customer-provided server-side encryption key to use to
+     * decrypt this object.
+     */
+    private SSECustomerKey sseCustomerKey;
+
+
 
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
@@ -836,5 +843,45 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      */
     public void setRequesterPays(boolean isRequesterPays) {
         this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Returns the optional customer-provided server-side encryption key to use
+     * to decrypt this object.
+     *
+     * @return The optional customer-provided server-side encryption key to
+     *         use to decrypt this object.
+     */
+    public SSECustomerKey getSSECustomerKey() {
+        return sseCustomerKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * decrypt this object.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to decrypt this object.
+     */
+    public void setSSECustomerKey(SSECustomerKey sseKey) {
+        this.sseCustomerKey = sseKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * decrypt this object, and returns the updated GetObjectRequest so that
+     * additional method calls may be chained together.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to decrypt this object.
+     *
+     * @return The optional customer-provided server-side encryption key to use
+     *         to decrypt this object.
+     */
+    public GetObjectRequest withSSECustomerKey(SSECustomerKey sseKey) {
+        setSSECustomerKey(sseKey);
+        return this;
     }
 }

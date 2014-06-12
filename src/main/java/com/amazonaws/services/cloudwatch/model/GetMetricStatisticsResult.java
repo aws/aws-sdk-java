@@ -58,7 +58,7 @@ public class GetMetricStatisticsResult implements Serializable {
      *
      * @param label A label describing the specified metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsResult withLabel(String label) {
@@ -101,7 +101,7 @@ public class GetMetricStatisticsResult implements Serializable {
      *
      * @param datapoints The datapoints for the specified metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsResult withDatapoints(Datapoint... datapoints) {
@@ -119,7 +119,7 @@ public class GetMetricStatisticsResult implements Serializable {
      *
      * @param datapoints The datapoints for the specified metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsResult withDatapoints(java.util.Collection<Datapoint> datapoints) {

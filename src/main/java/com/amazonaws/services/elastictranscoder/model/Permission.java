@@ -151,7 +151,7 @@ public class Permission implements Serializable {
      *         groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      *         <code>LogDelivery</code>.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withGranteeType(String granteeType) {
@@ -217,7 +217,7 @@ public class Permission implements Serializable {
      *         CloudFront distribution, the registered email address of an AWS
      *         account, or a predefined Amazon S3 group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withGrantee(String grantee) {
@@ -329,7 +329,7 @@ public class Permission implements Serializable {
      *         WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds
      *         to the Amazon S3 bucket.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withAccess(String... access) {
@@ -370,7 +370,7 @@ public class Permission implements Serializable {
      *         WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds
      *         to the Amazon S3 bucket.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Permission withAccess(java.util.Collection<String> access) {

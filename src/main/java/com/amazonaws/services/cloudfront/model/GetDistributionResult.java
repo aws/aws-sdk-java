@@ -59,7 +59,7 @@ public class GetDistributionResult implements Serializable {
      *
      * @param distribution The distribution's information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetDistributionResult withDistribution(Distribution distribution) {
@@ -98,7 +98,7 @@ public class GetDistributionResult implements Serializable {
      * @param eTag The current version of the distribution's information. For example:
      *         E2QWRUHAPOMQZL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetDistributionResult withETag(String eTag) {

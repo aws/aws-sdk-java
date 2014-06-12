@@ -263,7 +263,7 @@ public class DBInstance implements Serializable {
      * @param dBInstanceIdentifier Contains a user-supplied database identifier. This is the unique key
      *         that identifies a DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -302,7 +302,7 @@ public class DBInstance implements Serializable {
      * @param dBInstanceClass Contains the name of the compute and memory capacity class of the DB
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBInstanceClass(String dBInstanceClass) {
@@ -341,7 +341,7 @@ public class DBInstance implements Serializable {
      * @param engine Provides the name of the database engine to be used for this DB
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withEngine(String engine) {
@@ -374,7 +374,7 @@ public class DBInstance implements Serializable {
      *
      * @param dBInstanceStatus Specifies the current state of this database.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBInstanceStatus(String dBInstanceStatus) {
@@ -407,7 +407,7 @@ public class DBInstance implements Serializable {
      *
      * @param masterUsername Contains the master username for the DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withMasterUsername(String masterUsername) {
@@ -494,7 +494,7 @@ public class DBInstance implements Serializable {
      *         created DB instance. Not shown when the returned parameters do not
      *         apply to an Oracle DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBName(String dBName) {
@@ -527,7 +527,7 @@ public class DBInstance implements Serializable {
      *
      * @param endpoint Specifies the connection endpoint.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withEndpoint(Endpoint endpoint) {
@@ -560,7 +560,7 @@ public class DBInstance implements Serializable {
      *
      * @param allocatedStorage Specifies the allocated storage size specified in gigabytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withAllocatedStorage(Integer allocatedStorage) {
@@ -593,7 +593,7 @@ public class DBInstance implements Serializable {
      *
      * @param instanceCreateTime Provides the date and time the DB instance was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withInstanceCreateTime(java.util.Date instanceCreateTime) {
@@ -638,7 +638,7 @@ public class DBInstance implements Serializable {
      *         created if automated backups are enabled, as determined by the
      *         <code>BackupRetentionPeriod</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withPreferredBackupWindow(String preferredBackupWindow) {
@@ -677,7 +677,7 @@ public class DBInstance implements Serializable {
      * @param backupRetentionPeriod Specifies the number of days for which automatic DB snapshots are
      *         retained.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -732,7 +732,7 @@ public class DBInstance implements Serializable {
      *         <code>DBSecurityGroup.Name</code> and
      *         <code>DBSecurityGroup.Status</code> subelements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBSecurityGroups(DBSecurityGroupMembership... dBSecurityGroups) {
@@ -754,7 +754,7 @@ public class DBInstance implements Serializable {
      *         <code>DBSecurityGroup.Name</code> and
      *         <code>DBSecurityGroup.Status</code> subelements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBSecurityGroups(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroups) {
@@ -810,7 +810,7 @@ public class DBInstance implements Serializable {
      * @param vpcSecurityGroups Provides List of VPC security group elements that the DB instance
      *         belongs to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withVpcSecurityGroups(VpcSecurityGroupMembership... vpcSecurityGroups) {
@@ -830,7 +830,7 @@ public class DBInstance implements Serializable {
      * @param vpcSecurityGroups Provides List of VPC security group elements that the DB instance
      *         belongs to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withVpcSecurityGroups(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroups) {
@@ -880,7 +880,7 @@ public class DBInstance implements Serializable {
      *
      * @param dBParameterGroups Provides the list of DB parameter groups applied to this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBParameterGroups(DBParameterGroupStatus... dBParameterGroups) {
@@ -898,7 +898,7 @@ public class DBInstance implements Serializable {
      *
      * @param dBParameterGroups Provides the list of DB parameter groups applied to this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBParameterGroups(java.util.Collection<DBParameterGroupStatus> dBParameterGroups) {
@@ -944,7 +944,7 @@ public class DBInstance implements Serializable {
      * @param availabilityZone Specifies the name of the Availability Zone the DB instance is located
      *         in.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withAvailabilityZone(String availabilityZone) {
@@ -989,7 +989,7 @@ public class DBInstance implements Serializable {
      *         instance, including the name, description, and subnets in the subnet
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withDBSubnetGroup(DBSubnetGroup dBSubnetGroup) {
@@ -1028,7 +1028,7 @@ public class DBInstance implements Serializable {
      * @param preferredMaintenanceWindow Specifies the weekly time range (in UTC) during which system
      *         maintenance can occur.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1073,7 +1073,7 @@ public class DBInstance implements Serializable {
      *         only included when changes are pending. Specific changes are
      *         identified by subelements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withPendingModifiedValues(PendingModifiedValues pendingModifiedValues) {
@@ -1112,7 +1112,7 @@ public class DBInstance implements Serializable {
      * @param latestRestorableTime Specifies the latest time to which a database can be restored with
      *         point-in-time restore.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withLatestRestorableTime(java.util.Date latestRestorableTime) {
@@ -1145,7 +1145,7 @@ public class DBInstance implements Serializable {
      *
      * @param multiAZ Specifies if the DB instance is a Multi-AZ deployment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withMultiAZ(Boolean multiAZ) {
@@ -1187,7 +1187,7 @@ public class DBInstance implements Serializable {
      *
      * @param engineVersion Indicates the database engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withEngineVersion(String engineVersion) {
@@ -1220,7 +1220,7 @@ public class DBInstance implements Serializable {
      *
      * @param autoMinorVersionUpgrade Indicates that minor version patches are applied automatically.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1268,7 +1268,7 @@ public class DBInstance implements Serializable {
      * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB instance if this DB instance
      *         is a read replica.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withReadReplicaSourceDBInstanceIdentifier(String readReplicaSourceDBInstanceIdentifier) {
@@ -1317,7 +1317,7 @@ public class DBInstance implements Serializable {
      * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
      *         this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withReadReplicaDBInstanceIdentifiers(String... readReplicaDBInstanceIdentifiers) {
@@ -1337,7 +1337,7 @@ public class DBInstance implements Serializable {
      * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the read replicas associated with
      *         this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withReadReplicaDBInstanceIdentifiers(java.util.Collection<String> readReplicaDBInstanceIdentifiers) {
@@ -1377,7 +1377,7 @@ public class DBInstance implements Serializable {
      *
      * @param licenseModel License model information for this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withLicenseModel(String licenseModel) {
@@ -1410,7 +1410,7 @@ public class DBInstance implements Serializable {
      *
      * @param iops Specifies the Provisioned IOPS (I/O operations per second) value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withIops(Integer iops) {
@@ -1453,7 +1453,7 @@ public class DBInstance implements Serializable {
      *
      * @param optionGroupMemberships Provides the list of option group memberships for this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withOptionGroupMemberships(OptionGroupMembership... optionGroupMemberships) {
@@ -1471,7 +1471,7 @@ public class DBInstance implements Serializable {
      *
      * @param optionGroupMemberships Provides the list of option group memberships for this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withOptionGroupMemberships(java.util.Collection<OptionGroupMembership> optionGroupMemberships) {
@@ -1517,7 +1517,7 @@ public class DBInstance implements Serializable {
      * @param characterSetName If present, specifies the name of the character set that this instance
      *         is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withCharacterSetName(String characterSetName) {
@@ -1556,7 +1556,7 @@ public class DBInstance implements Serializable {
      * @param secondaryAvailabilityZone If present, specifies the name of the secondary Availability Zone for
      *         a DB instance with multi-AZ support.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withSecondaryAvailabilityZone(String secondaryAvailabilityZone) {
@@ -1661,7 +1661,7 @@ public class DBInstance implements Serializable {
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1743,7 +1743,7 @@ public class DBInstance implements Serializable {
      * @param statusInfos The status of a read replica. If the instance is not a read replica,
      *         this will be blank.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withStatusInfos(DBInstanceStatusInfo... statusInfos) {
@@ -1763,7 +1763,7 @@ public class DBInstance implements Serializable {
      * @param statusInfos The status of a read replica. If the instance is not a read replica,
      *         this will be blank.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBInstance withStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {

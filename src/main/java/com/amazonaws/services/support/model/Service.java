@@ -74,7 +74,7 @@ public class Service implements Serializable {
      * @param code The code for an AWS service returned by <a>DescribeServices</a>
      *         response. Has a corresponding name represented by Service.name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Service withCode(String code) {
@@ -113,7 +113,7 @@ public class Service implements Serializable {
      * @param name The friendly name for an AWS service. Has a corresponding code
      *         represented by Service.code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Service withName(String name) {
@@ -174,7 +174,7 @@ public class Service implements Serializable {
      *         Category names and codes are passed to AWS Support when you call
      *         <a>CreateCase</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Service withCategories(Category... categories) {
@@ -198,7 +198,7 @@ public class Service implements Serializable {
      *         Category names and codes are passed to AWS Support when you call
      *         <a>CreateCase</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Service withCategories(java.util.Collection<Category> categories) {

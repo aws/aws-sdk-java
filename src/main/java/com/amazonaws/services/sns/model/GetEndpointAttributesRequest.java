@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getEndpointAttributes(GetEndpointAttributesRequest) GetEndpointAttributes operation}.
  * <p>
- * The <code>GetEndpointAttributes</code> retrieves the endpoint
- * attributes for a device on one of the supported push notification
- * services, such as GCM and APNS. For more information, see
+ * Retrieves the endpoint attributes for a device on one of the supported
+ * push notification services, such as GCM and APNS. For more
+ * information, see
  * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
  * .
  * </p>
@@ -62,7 +62,7 @@ public class GetEndpointAttributesRequest extends AmazonWebServiceRequest implem
      *
      * @param endpointArn EndpointArn for GetEndpointAttributes input.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetEndpointAttributesRequest withEndpointArn(String endpointArn) {

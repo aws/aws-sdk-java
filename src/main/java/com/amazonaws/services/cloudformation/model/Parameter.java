@@ -64,7 +64,7 @@ public class Parameter implements Serializable {
      *
      * @param parameterKey The key associated with the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withParameterKey(String parameterKey) {
@@ -97,7 +97,7 @@ public class Parameter implements Serializable {
      *
      * @param parameterValue The value associated with the parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withParameterValue(String parameterValue) {
@@ -136,7 +136,7 @@ public class Parameter implements Serializable {
      * @param usePreviousValue During a stack update, use the existing parameter value that is being
      *         used for the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Parameter withUsePreviousValue(Boolean usePreviousValue) {

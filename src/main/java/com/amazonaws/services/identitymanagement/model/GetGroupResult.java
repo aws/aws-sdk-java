@@ -77,7 +77,7 @@ public class GetGroupResult implements Serializable {
      *
      * @param group Information about the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupResult withGroup(Group group) {
@@ -120,7 +120,7 @@ public class GetGroupResult implements Serializable {
      *
      * @param users A list of users in the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupResult withUsers(User... users) {
@@ -138,7 +138,7 @@ public class GetGroupResult implements Serializable {
      *
      * @param users A list of users in the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupResult withUsers(java.util.Collection<User> users) {
@@ -196,7 +196,7 @@ public class GetGroupResult implements Serializable {
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more user names in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupResult withIsTruncated(Boolean isTruncated) {
@@ -268,7 +268,7 @@ public class GetGroupResult implements Serializable {
      *         contains the value to use for the <code>Marker</code> parameter in a
      *         subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetGroupResult withMarker(String marker) {

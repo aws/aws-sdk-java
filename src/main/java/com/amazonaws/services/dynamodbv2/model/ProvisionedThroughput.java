@@ -148,7 +148,7 @@ public class ProvisionedThroughput implements Serializable {
      *         Read and Write Requirements</a> in the Amazon DynamoDB Developer
      *         Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProvisionedThroughput withReadCapacityUnits(Long readCapacityUnits) {
@@ -214,7 +214,7 @@ public class ProvisionedThroughput implements Serializable {
      *         Read and Write Requirements</a> in the Amazon DynamoDB Developer
      *         Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProvisionedThroughput withWriteCapacityUnits(Long writeCapacityUnits) {

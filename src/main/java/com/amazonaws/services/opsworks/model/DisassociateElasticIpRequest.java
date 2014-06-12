@@ -69,7 +69,7 @@ public class DisassociateElasticIpRequest extends AmazonWebServiceRequest implem
      *
      * @param elasticIp The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisassociateElasticIpRequest withElasticIp(String elasticIp) {

@@ -54,7 +54,7 @@ public class Clip implements Serializable {
      *
      * @param timeSpan Settings that determine when a clip begins and how long it lasts.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Clip withTimeSpan(TimeSpan timeSpan) {

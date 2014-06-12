@@ -86,7 +86,7 @@ public class Placement implements Serializable {
      *
      * @param availabilityZone The Availability Zone of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Placement withAvailabilityZone(String availabilityZone) {
@@ -125,7 +125,7 @@ public class Placement implements Serializable {
      * @param groupName The name of the placement group the instance is in (for cluster
      *         compute instances).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Placement withGroupName(String groupName) {
@@ -183,7 +183,7 @@ public class Placement implements Serializable {
      *         instance with a tenancy of <code>dedicated</code> runs on
      *         single-tenant hardware.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -225,7 +225,7 @@ public class Placement implements Serializable {
      *         instance with a tenancy of <code>dedicated</code> runs on
      *         single-tenant hardware.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy

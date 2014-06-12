@@ -53,7 +53,7 @@ public class RegisterElasticIpResult implements Serializable {
      *
      * @param elasticIp The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterElasticIpResult withElasticIp(String elasticIp) {

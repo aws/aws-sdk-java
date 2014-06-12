@@ -112,7 +112,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageRequest withQueueUrl(String queueUrl) {
@@ -151,7 +151,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
      * @param messageBody The message to send. String maximum 256 KB in size. For a list of
      *         allowed characters, see the preceding important note.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageRequest withMessageBody(String messageBody) {
@@ -202,7 +202,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
      *         become available for processing after the delay time is finished. If
      *         you don't specify a value, the default value for the queue applies.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageRequest withDelaySeconds(Integer delaySeconds) {
@@ -257,7 +257,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
      *         Attribute Items</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageRequest withMessageAttributes(java.util.Map<String,MessageAttributeValue> messageAttributes) {

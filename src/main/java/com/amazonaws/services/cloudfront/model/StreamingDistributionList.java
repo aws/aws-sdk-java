@@ -91,7 +91,7 @@ public class StreamingDistributionList implements Serializable {
      *
      * @param marker The value you provided for the Marker request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionList withMarker(String marker) {
@@ -136,7 +136,7 @@ public class StreamingDistributionList implements Serializable {
      *         you can use for the Marker request parameter to continue listing your
      *         streaming distributions where they left off.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionList withNextMarker(String nextMarker) {
@@ -169,7 +169,7 @@ public class StreamingDistributionList implements Serializable {
      *
      * @param maxItems The value you provided for the MaxItems request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionList withMaxItems(Integer maxItems) {
@@ -220,7 +220,7 @@ public class StreamingDistributionList implements Serializable {
      *         pagination request using the Marker request parameter to retrieve more
      *         distributions in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionList withIsTruncated(Boolean isTruncated) {
@@ -274,7 +274,7 @@ public class StreamingDistributionList implements Serializable {
      * @param quantity The number of streaming distributions that were created by the current
      *         AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionList withQuantity(Integer quantity) {
@@ -323,7 +323,7 @@ public class StreamingDistributionList implements Serializable {
      * @param items A complex type that contains one StreamingDistributionSummary element
      *         for each distribution that was created by the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionList withItems(StreamingDistributionSummary... items) {
@@ -343,7 +343,7 @@ public class StreamingDistributionList implements Serializable {
      * @param items A complex type that contains one StreamingDistributionSummary element
      *         for each distribution that was created by the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionList withItems(java.util.Collection<StreamingDistributionSummary> items) {

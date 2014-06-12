@@ -87,7 +87,7 @@ public class Policies implements Serializable {
      * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Policies withAppCookieStickinessPolicies(AppCookieStickinessPolicy... appCookieStickinessPolicies) {
@@ -107,7 +107,7 @@ public class Policies implements Serializable {
      * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Policies withAppCookieStickinessPolicies(java.util.Collection<AppCookieStickinessPolicy> appCookieStickinessPolicies) {
@@ -163,7 +163,7 @@ public class Policies implements Serializable {
      * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Policies withLBCookieStickinessPolicies(LBCookieStickinessPolicy... lBCookieStickinessPolicies) {
@@ -183,7 +183,7 @@ public class Policies implements Serializable {
      * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Policies withLBCookieStickinessPolicies(java.util.Collection<LBCookieStickinessPolicy> lBCookieStickinessPolicies) {
@@ -233,7 +233,7 @@ public class Policies implements Serializable {
      *
      * @param otherPolicies A list of policy names other than the stickiness policies.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Policies withOtherPolicies(String... otherPolicies) {
@@ -251,7 +251,7 @@ public class Policies implements Serializable {
      *
      * @param otherPolicies A list of policy names other than the stickiness policies.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Policies withOtherPolicies(java.util.Collection<String> otherPolicies) {

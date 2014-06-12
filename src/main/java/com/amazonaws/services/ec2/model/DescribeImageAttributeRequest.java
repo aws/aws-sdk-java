@@ -101,7 +101,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @param imageId The ID of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImageAttributeRequest withImageId(String imageId) {
@@ -147,7 +147,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @param attribute The AMI attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ImageAttributeName
@@ -181,7 +181,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @param attribute The AMI attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ImageAttributeName

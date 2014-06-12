@@ -197,7 +197,7 @@ public class Snapshot implements Serializable {
      *
      * @param snapshotIdentifier The snapshot identifier that is provided in the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotIdentifier(String snapshotIdentifier) {
@@ -230,7 +230,7 @@ public class Snapshot implements Serializable {
      *
      * @param clusterIdentifier The identifier of the cluster for which the snapshot was taken.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withClusterIdentifier(String clusterIdentifier) {
@@ -269,7 +269,7 @@ public class Snapshot implements Serializable {
      * @param snapshotCreateTime The time (UTC) when Amazon Redshift began the snapshot. A snapshot
      *         contains a copy of the cluster data as of this exact time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotCreateTime(java.util.Date snapshotCreateTime) {
@@ -338,7 +338,7 @@ public class Snapshot implements Serializable {
      *         <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withStatus(String status) {
@@ -371,7 +371,7 @@ public class Snapshot implements Serializable {
      *
      * @param port The port that the cluster is listening on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withPort(Integer port) {
@@ -404,7 +404,7 @@ public class Snapshot implements Serializable {
      *
      * @param availabilityZone The Availability Zone in which the cluster was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withAvailabilityZone(String availabilityZone) {
@@ -437,7 +437,7 @@ public class Snapshot implements Serializable {
      *
      * @param clusterCreateTime The time (UTC) when the cluster was originally created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withClusterCreateTime(java.util.Date clusterCreateTime) {
@@ -470,7 +470,7 @@ public class Snapshot implements Serializable {
      *
      * @param masterUsername The master user name for the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withMasterUsername(String masterUsername) {
@@ -509,7 +509,7 @@ public class Snapshot implements Serializable {
      * @param clusterVersion The version ID of the Amazon Redshift engine that is running on the
      *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withClusterVersion(String clusterVersion) {
@@ -554,7 +554,7 @@ public class Snapshot implements Serializable {
      *         <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> will be of
      *         type "manual".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotType(String snapshotType) {
@@ -587,7 +587,7 @@ public class Snapshot implements Serializable {
      *
      * @param nodeType The node type of the nodes in the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withNodeType(String nodeType) {
@@ -620,7 +620,7 @@ public class Snapshot implements Serializable {
      *
      * @param numberOfNodes The number of nodes in the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withNumberOfNodes(Integer numberOfNodes) {
@@ -659,7 +659,7 @@ public class Snapshot implements Serializable {
      * @param dBName The name of the database that was created when the cluster was
      *         created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withDBName(String dBName) {
@@ -698,7 +698,7 @@ public class Snapshot implements Serializable {
      * @param vpcId The VPC identifier of the cluster if the snapshot is from a cluster in
      *         a VPC. Otherwise, this field is not in the output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withVpcId(String vpcId) {
@@ -731,7 +731,7 @@ public class Snapshot implements Serializable {
      *
      * @param encrypted If <code>true</code>, the data in the snapshot is encrypted at rest.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withEncrypted(Boolean encrypted) {
@@ -785,7 +785,7 @@ public class Snapshot implements Serializable {
      *         the HSM keys of the source cluster. <code>true</code> indicates that
      *         the data is encrypted using HSM keys.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withEncryptedWithHSM(Boolean encryptedWithHSM) {
@@ -853,7 +853,7 @@ public class Snapshot implements Serializable {
      *         snapshot. Returns <code>null</code> if no accounts are authorized.
      *         Visible only to the snapshot owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withAccountsWithRestoreAccess(AccountWithRestoreAccess... accountsWithRestoreAccess) {
@@ -875,7 +875,7 @@ public class Snapshot implements Serializable {
      *         snapshot. Returns <code>null</code> if no accounts are authorized.
      *         Visible only to the snapshot owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withAccountsWithRestoreAccess(java.util.Collection<AccountWithRestoreAccess> accountsWithRestoreAccess) {
@@ -933,7 +933,7 @@ public class Snapshot implements Serializable {
      *         owner can perform all snapshot actions, such as sharing a manual
      *         snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withOwnerAccount(String ownerAccount) {
@@ -972,7 +972,7 @@ public class Snapshot implements Serializable {
      * @param totalBackupSizeInMegaBytes The size of the complete set of backup data that would be used to
      *         restore the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withTotalBackupSizeInMegaBytes(Double totalBackupSizeInMegaBytes) {
@@ -1005,7 +1005,7 @@ public class Snapshot implements Serializable {
      *
      * @param actualIncrementalBackupSizeInMegaBytes The size of the incremental backup.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withActualIncrementalBackupSizeInMegaBytes(Double actualIncrementalBackupSizeInMegaBytes) {
@@ -1044,7 +1044,7 @@ public class Snapshot implements Serializable {
      * @param backupProgressInMegaBytes The number of megabytes that have been transferred to the snapshot
      *         backup.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withBackupProgressInMegaBytes(Double backupProgressInMegaBytes) {
@@ -1083,7 +1083,7 @@ public class Snapshot implements Serializable {
      * @param currentBackupRateInMegaBytesPerSecond The number of megabytes per second being transferred to the snapshot
      *         backup. Returns <code>0</code> for a completed backup.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withCurrentBackupRateInMegaBytesPerSecond(Double currentBackupRateInMegaBytesPerSecond) {
@@ -1122,7 +1122,7 @@ public class Snapshot implements Serializable {
      * @param estimatedSecondsToCompletion The estimate of the time remaining before the snapshot backup will
      *         complete. Returns <code>0</code> for a completed backup.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withEstimatedSecondsToCompletion(Long estimatedSecondsToCompletion) {
@@ -1161,7 +1161,7 @@ public class Snapshot implements Serializable {
      * @param elapsedTimeInSeconds The amount of time an in-progress snapshot backup has been running, or
      *         the amount of time it took a completed backup to finish.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
@@ -1194,7 +1194,7 @@ public class Snapshot implements Serializable {
      *
      * @param sourceRegion The source region from which the snapshot was copied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSourceRegion(String sourceRegion) {

@@ -90,7 +90,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UnmonitorInstancesRequest withInstanceIds(String... instanceIds) {
@@ -108,7 +108,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UnmonitorInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {

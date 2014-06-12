@@ -99,7 +99,7 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
      *
      * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SuspendProcessesRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -172,7 +172,7 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
      *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
      *         omit this parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SuspendProcessesRequest withScalingProcesses(String... scalingProcesses) {
@@ -200,7 +200,7 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
      *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
      *         omit this parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SuspendProcessesRequest withScalingProcesses(java.util.Collection<String> scalingProcesses) {

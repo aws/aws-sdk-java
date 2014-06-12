@@ -110,7 +110,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param name The name of the option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withName(String name) {
@@ -143,7 +143,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param description The description of the option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withDescription(String description) {
@@ -176,7 +176,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param engineName Engine name that this option can be applied to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withEngineName(String engineName) {
@@ -209,7 +209,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param majorEngineVersion Indicates the major engine version that the option is available for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withMajorEngineVersion(String majorEngineVersion) {
@@ -242,7 +242,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param minimumRequiredMinorEngineVersion The minimum required engine version for the option to be applied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withMinimumRequiredMinorEngineVersion(String minimumRequiredMinorEngineVersion) {
@@ -275,7 +275,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param portRequired Specifies whether the option requires a port.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withPortRequired(Boolean portRequired) {
@@ -323,7 +323,7 @@ public class OptionGroupOption implements Serializable {
      * @param defaultPort If the option requires a port, specifies the default port for the
      *         option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withDefaultPort(Integer defaultPort) {
@@ -366,7 +366,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param optionsDependedOn List of all options that are prerequisites for this option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withOptionsDependedOn(String... optionsDependedOn) {
@@ -384,7 +384,7 @@ public class OptionGroupOption implements Serializable {
      *
      * @param optionsDependedOn List of all options that are prerequisites for this option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withOptionsDependedOn(java.util.Collection<String> optionsDependedOn) {
@@ -442,7 +442,7 @@ public class OptionGroupOption implements Serializable {
      *         instance while modifying the related data and assigning another option
      *         group without this option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withPersistent(Boolean persistent) {
@@ -502,7 +502,7 @@ public class OptionGroupOption implements Serializable {
      *         option group is used, and it cannot be removed from the db instance
      *         after assigning an option group with this permanent option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withPermanent(Boolean permanent) {
@@ -564,7 +564,7 @@ public class OptionGroupOption implements Serializable {
      * @param optionGroupOptionSettings Specifies the option settings that are available (and the default
      *         value) for each option in an option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withOptionGroupOptionSettings(OptionGroupOptionSetting... optionGroupOptionSettings) {
@@ -584,7 +584,7 @@ public class OptionGroupOption implements Serializable {
      * @param optionGroupOptionSettings Specifies the option settings that are available (and the default
      *         value) for each option in an option group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionGroupOption withOptionGroupOptionSettings(java.util.Collection<OptionGroupOptionSetting> optionGroupOptionSettings) {

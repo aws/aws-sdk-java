@@ -81,7 +81,7 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      *
      * @param reservedInstancesId One or more Reserved Instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesListingsRequest withReservedInstancesId(String reservedInstancesId) {
@@ -114,7 +114,7 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      *
      * @param reservedInstancesListingId One or more Reserved Instance Listing IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesListingsRequest withReservedInstancesListingId(String reservedInstancesListingId) {
@@ -199,7 +199,7 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      *         </li> <li> <p><code>status-message</code> - The reason for the status.
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesListingsRequest withFilters(Filter... filters) {
@@ -231,7 +231,7 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      *         </li> <li> <p><code>status-message</code> - The reason for the status.
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesListingsRequest withFilters(java.util.Collection<Filter> filters) {

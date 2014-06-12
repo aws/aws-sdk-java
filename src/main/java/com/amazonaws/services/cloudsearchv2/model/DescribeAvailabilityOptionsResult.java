@@ -62,7 +62,7 @@ public class DescribeAvailabilityOptionsResult implements Serializable {
      * @param availabilityOptions The availability options configured for the domain. Indicates whether
      *         Multi-AZ is enabled for the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityOptionsResult withAvailabilityOptions(AvailabilityOptionsStatus availabilityOptions) {

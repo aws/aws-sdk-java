@@ -102,7 +102,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutNotificationConfigurationRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -153,7 +153,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      * @param topicARN The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutNotificationConfigurationRequest withTopicARN(String topicARN) {
@@ -208,7 +208,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         details about notification types supported by Auto Scaling, see
      *         <a>DescribeAutoScalingNotificationTypes</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutNotificationConfigurationRequest withNotificationTypes(String... notificationTypes) {
@@ -230,7 +230,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         details about notification types supported by Auto Scaling, see
      *         <a>DescribeAutoScalingNotificationTypes</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutNotificationConfigurationRequest withNotificationTypes(java.util.Collection<String> notificationTypes) {

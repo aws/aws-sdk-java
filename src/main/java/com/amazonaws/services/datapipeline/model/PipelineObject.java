@@ -85,7 +85,7 @@ public class PipelineObject implements Serializable {
      *
      * @param id Identifier of the object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineObject withId(String id) {
@@ -130,7 +130,7 @@ public class PipelineObject implements Serializable {
      *
      * @param name Name of the object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineObject withName(String name) {
@@ -173,7 +173,7 @@ public class PipelineObject implements Serializable {
      *
      * @param fields Key-value pairs that define the properties of the object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineObject withFields(Field... fields) {
@@ -191,7 +191,7 @@ public class PipelineObject implements Serializable {
      *
      * @param fields Key-value pairs that define the properties of the object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PipelineObject withFields(java.util.Collection<Field> fields) {

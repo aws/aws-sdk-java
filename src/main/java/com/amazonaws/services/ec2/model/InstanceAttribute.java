@@ -87,6 +87,13 @@ public class InstanceAttribute implements Serializable {
     private String sriovNetSupport;
 
     /**
+     * Indicates whether source/destination checking is enabled. A value of
+     * true means checking is enabled, and false means checking is disabled.
+     * This value must be false for a NAT instance to perform NAT.
+     */
+    private Boolean sourceDestCheck;
+
+    /**
      * The ID of the instance.
      *
      * @return The ID of the instance.
@@ -111,7 +118,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withInstanceId(String instanceId) {
@@ -144,7 +151,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param instanceType The instance type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withInstanceType(String instanceType) {
@@ -177,7 +184,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param kernelId The kernel ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withKernelId(String kernelId) {
@@ -210,7 +217,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param ramdiskId The RAM disk ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withRamdiskId(String ramdiskId) {
@@ -243,7 +250,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param userData The Base64-encoded MIME user data.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withUserData(String userData) {
@@ -282,7 +289,7 @@ public class InstanceAttribute implements Serializable {
      * @param disableApiTermination If the value is <code>true</code>, you can't terminate the instance
      *         through the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withDisableApiTermination(Boolean disableApiTermination) {
@@ -338,7 +345,7 @@ public class InstanceAttribute implements Serializable {
      *         shutdown from the instance (using the operating system command for
      *         system shutdown).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
@@ -371,7 +378,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param rootDeviceName The name of the root device (for example, <code>/dev/sda1</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withRootDeviceName(String rootDeviceName) {
@@ -414,7 +421,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param blockDeviceMappings The block device mapping of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withBlockDeviceMappings(InstanceBlockDeviceMapping... blockDeviceMappings) {
@@ -432,7 +439,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param blockDeviceMappings The block device mapping of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
@@ -482,7 +489,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param productCodes A list of product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withProductCodes(ProductCode... productCodes) {
@@ -500,7 +507,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param productCodes A list of product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -540,7 +547,7 @@ public class InstanceAttribute implements Serializable {
      *
      * @param ebsOptimized Indicates whether the instance is optimized for EBS I/O.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withEbsOptimized(Boolean ebsOptimized) {
@@ -582,12 +589,70 @@ public class InstanceAttribute implements Serializable {
      *
      * @param sriovNetSupport 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceAttribute withSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
         return this;
+    }
+
+    /**
+     * Indicates whether source/destination checking is enabled. A value of
+     * true means checking is enabled, and false means checking is disabled.
+     * This value must be false for a NAT instance to perform NAT.
+     *
+     * @return Indicates whether source/destination checking is enabled. A value of
+     *         true means checking is enabled, and false means checking is disabled.
+     *         This value must be false for a NAT instance to perform NAT.
+     */
+    public Boolean isSourceDestCheck() {
+        return sourceDestCheck;
+    }
+    
+    /**
+     * Indicates whether source/destination checking is enabled. A value of
+     * true means checking is enabled, and false means checking is disabled.
+     * This value must be false for a NAT instance to perform NAT.
+     *
+     * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
+     *         true means checking is enabled, and false means checking is disabled.
+     *         This value must be false for a NAT instance to perform NAT.
+     */
+    public void setSourceDestCheck(Boolean sourceDestCheck) {
+        this.sourceDestCheck = sourceDestCheck;
+    }
+    
+    /**
+     * Indicates whether source/destination checking is enabled. A value of
+     * true means checking is enabled, and false means checking is disabled.
+     * This value must be false for a NAT instance to perform NAT.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
+     *         true means checking is enabled, and false means checking is disabled.
+     *         This value must be false for a NAT instance to perform NAT.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceAttribute withSourceDestCheck(Boolean sourceDestCheck) {
+        this.sourceDestCheck = sourceDestCheck;
+        return this;
+    }
+
+    /**
+     * Indicates whether source/destination checking is enabled. A value of
+     * true means checking is enabled, and false means checking is disabled.
+     * This value must be false for a NAT instance to perform NAT.
+     *
+     * @return Indicates whether source/destination checking is enabled. A value of
+     *         true means checking is enabled, and false means checking is disabled.
+     *         This value must be false for a NAT instance to perform NAT.
+     */
+    public Boolean getSourceDestCheck() {
+        return sourceDestCheck;
     }
 
     /**
@@ -613,7 +678,8 @@ public class InstanceAttribute implements Serializable {
         if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
         if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
-        if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() );
+        if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() );
         sb.append("}");
         return sb.toString();
     }
@@ -635,6 +701,7 @@ public class InstanceAttribute implements Serializable {
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
+        hashCode = prime * hashCode + ((isSourceDestCheck() == null) ? 0 : isSourceDestCheck().hashCode()); 
         return hashCode;
     }
     
@@ -670,6 +737,8 @@ public class InstanceAttribute implements Serializable {
         if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null) return false;
         if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
+        if (other.isSourceDestCheck() == null ^ this.isSourceDestCheck() == null) return false;
+        if (other.isSourceDestCheck() != null && other.isSourceDestCheck().equals(this.isSourceDestCheck()) == false) return false; 
         return true;
     }
     

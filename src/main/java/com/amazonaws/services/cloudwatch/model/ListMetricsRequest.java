@@ -108,7 +108,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param namespace The namespace to filter against.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsRequest withNamespace(String namespace) {
@@ -150,7 +150,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param metricName The name of the metric to filter against.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsRequest withMetricName(String metricName) {
@@ -202,7 +202,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param dimensions A list of dimensions to filter against.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsRequest withDimensions(DimensionFilter... dimensions) {
@@ -223,7 +223,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param dimensions A list of dimensions to filter against.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsRequest withDimensions(java.util.Collection<DimensionFilter> dimensions) {
@@ -269,7 +269,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements Seria
      * @param nextToken The token returned by a previous call to indicate that there is more
      *         data available.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMetricsRequest withNextToken(String nextToken) {

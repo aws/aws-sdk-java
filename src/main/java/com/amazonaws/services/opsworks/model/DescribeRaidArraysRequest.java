@@ -90,7 +90,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
      *         <code>DescribeRaidArrays</code> returns descriptions of the RAID
      *         arrays associated with the specified instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRaidArraysRequest withInstanceId(String instanceId) {
@@ -145,7 +145,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
      *         <code>DescribeRaidArrays</code> returns descriptions of the specified
      *         arrays. Otherwise, it returns a description of every array.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRaidArraysRequest withRaidArrayIds(String... raidArrayIds) {
@@ -167,7 +167,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
      *         <code>DescribeRaidArrays</code> returns descriptions of the specified
      *         arrays. Otherwise, it returns a description of every array.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRaidArraysRequest withRaidArrayIds(java.util.Collection<String> raidArrayIds) {

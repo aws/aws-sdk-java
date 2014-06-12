@@ -71,7 +71,7 @@ public class SendMessageBatchResult implements Serializable {
      *
      * @param successful A list of <a>SendMessageBatchResultEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResult withSuccessful(SendMessageBatchResultEntry... successful) {
@@ -89,7 +89,7 @@ public class SendMessageBatchResult implements Serializable {
      *
      * @param successful A list of <a>SendMessageBatchResultEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResult withSuccessful(java.util.Collection<SendMessageBatchResultEntry> successful) {
@@ -145,7 +145,7 @@ public class SendMessageBatchResult implements Serializable {
      * @param failed A list of <a>BatchResultErrorEntry</a> items with the error detail
      *         about each message that could not be enqueued.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResult withFailed(BatchResultErrorEntry... failed) {
@@ -165,7 +165,7 @@ public class SendMessageBatchResult implements Serializable {
      * @param failed A list of <a>BatchResultErrorEntry</a> items with the error detail
      *         about each message that could not be enqueued.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResult withFailed(java.util.Collection<BatchResultErrorEntry> failed) {

@@ -70,7 +70,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable {
      *
      * @param endpoints Endpoints returned for ListEndpointsByPlatformApplication action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListEndpointsByPlatformApplicationResult withEndpoints(Endpoint... endpoints) {
@@ -88,7 +88,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable {
      *
      * @param endpoints Endpoints returned for ListEndpointsByPlatformApplication action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListEndpointsByPlatformApplicationResult withEndpoints(java.util.Collection<Endpoint> endpoints) {
@@ -140,7 +140,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable {
      *         ListEndpointsByPlatformApplication action if additional records are
      *         available after the first page results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListEndpointsByPlatformApplicationResult withNextToken(String nextToken) {

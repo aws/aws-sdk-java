@@ -69,7 +69,7 @@ public class EvaluateExpressionResult implements Serializable {
      *
      * @param evaluatedExpression The evaluated expression.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EvaluateExpressionResult withEvaluatedExpression(String evaluatedExpression) {

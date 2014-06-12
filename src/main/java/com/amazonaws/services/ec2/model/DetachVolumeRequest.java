@@ -117,7 +117,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachVolumeRequest withVolumeId(String volumeId) {
@@ -150,7 +150,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachVolumeRequest withInstanceId(String instanceId) {
@@ -183,7 +183,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param device The device name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachVolumeRequest withDevice(String device) {
@@ -258,7 +258,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         you use this option, you must perform file system check and repair
      *         procedures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachVolumeRequest withForce(Boolean force) {

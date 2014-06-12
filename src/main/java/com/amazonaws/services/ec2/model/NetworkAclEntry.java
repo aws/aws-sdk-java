@@ -94,7 +94,7 @@ public class NetworkAclEntry implements Serializable {
      * @param ruleNumber The rule number for the entry. ACL entries are processed in ascending
      *         order by rule number.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclEntry withRuleNumber(Integer ruleNumber) {
@@ -127,7 +127,7 @@ public class NetworkAclEntry implements Serializable {
      *
      * @param protocol The protocol. A value of <code>-1</code> means all protocols.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclEntry withProtocol(String protocol) {
@@ -173,7 +173,7 @@ public class NetworkAclEntry implements Serializable {
      *
      * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RuleAction
@@ -207,7 +207,7 @@ public class NetworkAclEntry implements Serializable {
      *
      * @param ruleAction Indicates whether to allow or deny the traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RuleAction
@@ -248,7 +248,7 @@ public class NetworkAclEntry implements Serializable {
      * @param egress Indicates whether the rule is an egress rule (applied to traffic
      *         leaving the subnet).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclEntry withEgress(Boolean egress) {
@@ -292,7 +292,7 @@ public class NetworkAclEntry implements Serializable {
      *
      * @param cidrBlock The network range to allow or deny, in CIDR notation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclEntry withCidrBlock(String cidrBlock) {
@@ -325,7 +325,7 @@ public class NetworkAclEntry implements Serializable {
      *
      * @param icmpTypeCode ICMP protocol: The ICMP type and code.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclEntry withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
@@ -358,7 +358,7 @@ public class NetworkAclEntry implements Serializable {
      *
      * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkAclEntry withPortRange(PortRange portRange) {

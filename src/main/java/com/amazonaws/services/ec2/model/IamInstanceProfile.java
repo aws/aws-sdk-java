@@ -58,7 +58,7 @@ public class IamInstanceProfile implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) of the instance profile.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IamInstanceProfile withArn(String arn) {
@@ -91,7 +91,7 @@ public class IamInstanceProfile implements Serializable {
      *
      * @param id The ID of the instance profile.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IamInstanceProfile withId(String id) {

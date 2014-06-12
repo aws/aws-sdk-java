@@ -64,7 +64,7 @@ public class OptionSpecification implements Serializable {
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSpecification withNamespace(String namespace) {
@@ -97,7 +97,7 @@ public class OptionSpecification implements Serializable {
      *
      * @param optionName The name of the configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionSpecification withOptionName(String optionName) {

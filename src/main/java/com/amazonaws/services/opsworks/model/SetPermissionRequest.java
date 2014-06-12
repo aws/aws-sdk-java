@@ -95,7 +95,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetPermissionRequest withStackId(String stackId) {
@@ -128,7 +128,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param iamUserArn The user's IAM ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetPermissionRequest withIamUserArn(String iamUserArn) {
@@ -161,7 +161,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param allowSsh The user is allowed to use SSH to communicate with the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetPermissionRequest withAllowSsh(Boolean allowSsh) {
@@ -203,7 +203,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param allowSudo The user is allowed to use <b>sudo</b> to elevate privileges.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetPermissionRequest withAllowSudo(Boolean allowSudo) {
@@ -287,7 +287,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      *         User Permissions</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetPermissionRequest withLevel(String level) {

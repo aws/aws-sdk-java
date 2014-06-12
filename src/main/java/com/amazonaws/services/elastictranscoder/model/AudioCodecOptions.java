@@ -149,7 +149,7 @@ public class AudioCodecOptions implements Serializable {
      *         Elastic Transcoder automatically updated your presets to use AAC-LC.
      *         You can change the value as required.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AudioCodecOptions withProfile(String profile) {

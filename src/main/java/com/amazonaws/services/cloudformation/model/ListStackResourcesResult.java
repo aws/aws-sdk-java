@@ -72,7 +72,7 @@ public class ListStackResourcesResult implements Serializable {
      *
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesResult withStackResourceSummaries(StackResourceSummary... stackResourceSummaries) {
@@ -90,7 +90,7 @@ public class ListStackResourcesResult implements Serializable {
      *
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesResult withStackResourceSummaries(java.util.Collection<StackResourceSummary> stackResourceSummaries) {
@@ -145,7 +145,7 @@ public class ListStackResourcesResult implements Serializable {
      * @param nextToken String that identifies the start of the next list of stack resources,
      *         if there is one.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesResult withNextToken(String nextToken) {

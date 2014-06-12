@@ -65,7 +65,7 @@ public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest imple
      * @param virtualInterfaceId ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      *         None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVirtualInterfaceRequest withVirtualInterfaceId(String virtualInterfaceId) {

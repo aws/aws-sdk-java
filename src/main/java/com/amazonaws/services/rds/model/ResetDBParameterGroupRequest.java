@@ -128,7 +128,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {
@@ -173,7 +173,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      *         reset all parameters in the DB parameter group to default values.
      *         <p>Default: <code>true</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetDBParameterGroupRequest withResetAllParameters(Boolean resetAllParameters) {
@@ -283,7 +283,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      *         when DB instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
      *         method): <code>pending-reboot</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetDBParameterGroupRequest withParameters(Parameter... parameters) {
@@ -319,7 +319,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      *         when DB instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
      *         method): <code>pending-reboot</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetDBParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {

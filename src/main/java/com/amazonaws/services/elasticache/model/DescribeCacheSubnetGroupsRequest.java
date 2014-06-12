@@ -76,7 +76,7 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
      *
      * @param cacheSubnetGroupName The name of the cache subnet group to return details for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSubnetGroupsRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -127,7 +127,7 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
      *         marker is included in the response so that the remaining results can
      *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSubnetGroupsRequest withMaxRecords(Integer maxRecords) {
@@ -178,7 +178,7 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSubnetGroupsRequest withMarker(String marker) {

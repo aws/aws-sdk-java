@@ -106,7 +106,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param userName Name of the user who the policy is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetUserPolicyRequest withUserName(String userName) {
@@ -151,7 +151,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param policyName Name of the policy document to get.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetUserPolicyRequest withPolicyName(String policyName) {

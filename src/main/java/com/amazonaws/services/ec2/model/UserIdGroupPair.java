@@ -63,7 +63,7 @@ public class UserIdGroupPair implements Serializable {
      *
      * @param userId The ID of an AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserIdGroupPair withUserId(String userId) {
@@ -96,7 +96,7 @@ public class UserIdGroupPair implements Serializable {
      *
      * @param groupName The ID of the security group owned by the specified AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserIdGroupPair withGroupName(String groupName) {
@@ -129,7 +129,7 @@ public class UserIdGroupPair implements Serializable {
      *
      * @param groupId The name of the security group in the specified AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UserIdGroupPair withGroupId(String groupId) {

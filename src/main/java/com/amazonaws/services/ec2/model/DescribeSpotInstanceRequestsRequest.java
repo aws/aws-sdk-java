@@ -168,7 +168,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *
      * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
@@ -186,7 +186,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *
      * @param spotInstanceRequestIds One or more Spot Instance request IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
@@ -704,7 +704,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         start date of the request. </li> <li> <p><code>valid-until</code> -
      *         The end date of the request. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotInstanceRequestsRequest withFilters(Filter... filters) {
@@ -878,7 +878,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         start date of the request. </li> <li> <p><code>valid-until</code> -
      *         The end date of the request. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotInstanceRequestsRequest withFilters(java.util.Collection<Filter> filters) {

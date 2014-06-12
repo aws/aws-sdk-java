@@ -150,7 +150,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *
      * @param ownerAccount The new value for the OwnerAccount property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withOwnerAccount(String ownerAccount) {
@@ -189,7 +189,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param virtualInterfaceId ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      *         None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceId(String virtualInterfaceId) {
@@ -222,7 +222,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *
      * @param location Where the connection is located. <p>Example: EqSV5 <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withLocation(String location) {
@@ -255,7 +255,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withConnectionId(String connectionId) {
@@ -294,7 +294,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param virtualInterfaceType The type of virtual interface. <p>Example: private (Amazon VPC) or
      *         public (Amazon S3, Amazon DynamoDB, and so on.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceType(String virtualInterfaceType) {
@@ -333,7 +333,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param virtualInterfaceName The name of the virtual interface assigned by the customer.
      *         <p>Example: "My VPC"
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withVirtualInterfaceName(String virtualInterfaceName) {
@@ -366,7 +366,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *
      * @param vlan The VLAN ID. <p>Example: 101
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withVlan(Integer vlan) {
@@ -405,7 +405,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param asn Autonomous system (AS) number for Border Gateway Protocol (BGP)
      *         configuration. <p>Example: 65000
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withAsn(Integer asn) {
@@ -438,7 +438,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *
      * @param authKey Authentication key for BGP configuration. <p>Example: asdf34example
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withAuthKey(String authKey) {
@@ -477,7 +477,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param amazonAddress IP address assigned to the Amazon interface. <p>Example:
      *         192.168.1.1/30
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withAmazonAddress(String amazonAddress) {
@@ -516,7 +516,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param customerAddress IP address assigned to the customer interface. <p>Example:
      *         192.168.1.2/30
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withCustomerAddress(String customerAddress) {
@@ -670,7 +670,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *         in the 'Confirming' state is deleted by the virtual interface owner,
      *         the virtual interface will enter the 'Rejected' state.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VirtualInterfaceState
@@ -776,7 +776,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *         in the 'Confirming' state is deleted by the virtual interface owner,
      *         the virtual interface will enter the 'Rejected' state.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VirtualInterfaceState
@@ -811,7 +811,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      *
      * @param customerRouterConfig Information for generating the customer router configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withCustomerRouterConfig(String customerRouterConfig) {
@@ -850,7 +850,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param virtualGatewayId The ID of the virtual private gateway to a VPC. This only applies to
      *         private virtual interfaces. <p>Example: vgw-123er56
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withVirtualGatewayId(String virtualGatewayId) {
@@ -899,7 +899,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param routeFilterPrefixes A list of routes to be advertised to the AWS network in this region
      *         (public virtual interface) or your VPC (private virtual interface).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withRouteFilterPrefixes(RouteFilterPrefix... routeFilterPrefixes) {
@@ -919,7 +919,7 @@ public class AllocatePrivateVirtualInterfaceResult implements Serializable {
      * @param routeFilterPrefixes A list of routes to be advertised to the AWS network in this region
      *         (public virtual interface) or your VPC (private virtual interface).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocatePrivateVirtualInterfaceResult withRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {

@@ -110,7 +110,7 @@ public class RawMessage implements Serializable {
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      *         SES Developer Guide</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RawMessage withData(java.nio.ByteBuffer data) {

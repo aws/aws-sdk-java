@@ -77,7 +77,7 @@ public class ModifyLoadBalancerAttributesRequest extends AmazonWebServiceRequest
      *
      * @param loadBalancerName The name of the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyLoadBalancerAttributesRequest withLoadBalancerName(String loadBalancerName) {
@@ -110,7 +110,7 @@ public class ModifyLoadBalancerAttributesRequest extends AmazonWebServiceRequest
      *
      * @param loadBalancerAttributes Attributes of the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyLoadBalancerAttributesRequest withLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {

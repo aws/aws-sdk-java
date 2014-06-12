@@ -209,7 +209,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputRequest withAccountId(String accountId) {
@@ -242,7 +242,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputRequest withVaultName(String vaultName) {
@@ -275,7 +275,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param jobId The job ID whose data is downloaded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputRequest withJobId(String jobId) {
@@ -326,7 +326,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
      *         bytes=0-1048575". By default, this operation downloads the entire
      *         output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputRequest withRange(String range) {

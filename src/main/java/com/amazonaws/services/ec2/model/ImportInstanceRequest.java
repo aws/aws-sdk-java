@@ -82,7 +82,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param description A description for the instance being imported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withDescription(String description) {
@@ -115,7 +115,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param launchSpecification <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
@@ -158,7 +158,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param diskImages 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withDiskImages(DiskImage... diskImages) {
@@ -176,7 +176,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param diskImages 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withDiskImages(java.util.Collection<DiskImage> diskImages) {
@@ -229,7 +229,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param platform The instance operating system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues
@@ -263,7 +263,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param platform The instance operating system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues

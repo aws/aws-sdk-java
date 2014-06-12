@@ -74,7 +74,7 @@ public class InstanceStatusSummary implements Serializable {
      *
      * @param status The status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SummaryStatus
@@ -108,7 +108,7 @@ public class InstanceStatusSummary implements Serializable {
      *
      * @param status The status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SummaryStatus
@@ -153,7 +153,7 @@ public class InstanceStatusSummary implements Serializable {
      *
      * @param details The system instance health or application instance health.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatusSummary withDetails(InstanceStatusDetails... details) {
@@ -171,7 +171,7 @@ public class InstanceStatusSummary implements Serializable {
      *
      * @param details The system instance health or application instance health.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatusSummary withDetails(java.util.Collection<InstanceStatusDetails> details) {

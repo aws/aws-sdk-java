@@ -71,7 +71,7 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      *
      * @param clusterSubnetGroupName The name of the subnet group to be modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterSubnetGroupRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
@@ -104,7 +104,7 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      *
      * @param description A text description of the subnet group to be modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterSubnetGroupRequest withDescription(String description) {
@@ -153,7 +153,7 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterSubnetGroupRequest withSubnetIds(String... subnetIds) {
@@ -173,7 +173,7 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyClusterSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {

@@ -55,18 +55,25 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
      * An optional access control list to apply to the new upload. If specified,
      * cannedAcl will be ignored.
      */
-    private AccessControlList accessControlList;    
-    
+    private AccessControlList accessControlList;
+
     /**
      * The optional storage class to use when storing this upload's data in S3.
      * If not specified, the default storage class is used.
      */
     private StorageClass storageClass;
-    
+
     /**
      * The optional redirect location for the new object.
      */
     private String redirectLocation;
+
+    /**
+     * The optional customer-provided server-side encryption key to use to
+     * encrypt the upload being started.
+     */
+    private SSECustomerKey sseCustomerKey;
+
 
     /**
      * Constructs a request to initiate a new multipart upload in the specified
@@ -106,7 +113,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
         this.key = key;
         this.objectMetadata = objectMetadata;
     }
-    
+
 
     /**
      * Returns the name of the bucket in which to create the new multipart
@@ -239,7 +246,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
         this.cannedACL = acl;
         return this;
     }
-    
+
     /**
      * Returns the optional access control list for the new upload. If
      * specified, cannedAcl will be ignored.
@@ -247,23 +254,23 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
     public AccessControlList getAccessControlList() {
         return accessControlList;
     }
-    
+
     /**
      * Sets the optional access control list for the new upload. If specified,
      * cannedAcl will be ignored.
-     * 
+     *
      * @param accessControlList
      *            The access control list for the new upload.
      */
     public void setAccessControlList(AccessControlList accessControlList) {
         this.accessControlList = accessControlList;
     }
-    
+
     /**
      * Sets the optional access control list for the new upload. If specified,
      * cannedAcl will be ignored. Returns this {@link InitiateMultipartUploadRequest},
      * enabling additional method calls to be chained together.
-     * 
+     *
      * @param accessControlList
      *            The access control list for the new upload.
      */
@@ -363,34 +370,74 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
         setObjectMetadata(objectMetadata);
         return this;
     }
-    
-	/**
-	 * Sets the optional redirect location for the new object.
-	 * 
-	 * @param redirectLocation
-	 *            The redirect location for the new object.
-	 */
-	public void setRedirectLocation(String redirectLocation) {
-		this.redirectLocation = redirectLocation;
-	}
 
-	/**
-	 * Gets the optional redirect location for the new object.
-	 */
-	public String getRedirectLocation() {
-		return this.redirectLocation;
-	}
+    /**
+     * Sets the optional redirect location for the new object.
+     *
+     * @param redirectLocation
+     *            The redirect location for the new object.
+     */
+    public void setRedirectLocation(String redirectLocation) {
+        this.redirectLocation = redirectLocation;
+    }
 
-	/**
-	 * Sets the optional redirect location for the new object. Returns this
-	 * {@link InitiateMultipartUploadRequest}, enabling additional method calls to be chained
-	 * together.
-	 * @param redirectLocation
-	 *            The redirect location for the new object.
-	 */
-	public InitiateMultipartUploadRequest withRedirectLocation(String redirectLocation) {
-		this.redirectLocation = redirectLocation;
-		return this;
-	}
+    /**
+     * Gets the optional redirect location for the new object.
+     */
+    public String getRedirectLocation() {
+        return this.redirectLocation;
+    }
 
+    /**
+     * Sets the optional redirect location for the new object. Returns this
+     * {@link InitiateMultipartUploadRequest}, enabling additional method calls to be chained
+     * together.
+     * @param redirectLocation
+     *            The redirect location for the new object.
+     */
+    public InitiateMultipartUploadRequest withRedirectLocation(String redirectLocation) {
+        this.redirectLocation = redirectLocation;
+        return this;
+    }
+
+    /**
+     * Returns the optional customer-provided server-side encryption key to use to
+     * encrypt the upload being started.
+     *
+     * @return The optional customer-provided server-side encryption key to use
+     *         to encrypt the upload being started.
+     */
+    public SSECustomerKey getSSECustomerKey() {
+        return sseCustomerKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the upload being started.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the upload being started.
+     */
+    public void setSSECustomerKey(SSECustomerKey sseKey) {
+        this.sseCustomerKey = sseKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the upload being started, and returns the updated
+     * InitiateMultipartUploadRequest so that additional method calls may be
+     * chained together.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the upload being started.
+     *
+     * @return The updated request object, so that additional method calls can
+     *         be chained together.
+     */
+    public InitiateMultipartUploadRequest withSSECustomerKey(SSECustomerKey sseKey) {
+        setSSECustomerKey(sseKey);
+        return this;
+    }
 }

@@ -109,7 +109,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param domainName The name of the domain in which to perform the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAttributesRequest withDomainName(String domainName) {
@@ -142,7 +142,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param itemName The name of the item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAttributesRequest withItemName(String itemName) {
@@ -185,7 +185,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param attributeNames The names of the attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAttributesRequest withAttributeNames(String... attributeNames) {
@@ -203,7 +203,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param attributeNames The names of the attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAttributesRequest withAttributeNames(java.util.Collection<String> attributeNames) {
@@ -267,7 +267,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
      *         consistent eventually, and the client may not see data that was
      *         written immediately before your read.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAttributesRequest withConsistentRead(Boolean consistentRead) {

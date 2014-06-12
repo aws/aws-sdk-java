@@ -102,7 +102,7 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements 
      *         requesting. This parameter is case sensitive. <p>The default is that
      *         all clusters defined for an account are returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClustersRequest withClusterIdentifier(String clusterIdentifier) {
@@ -165,7 +165,7 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements 
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClustersRequest withMaxRecords(Integer maxRecords) {
@@ -246,7 +246,7 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements 
      *         <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but
      *         not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClustersRequest withMarker(String marker) {

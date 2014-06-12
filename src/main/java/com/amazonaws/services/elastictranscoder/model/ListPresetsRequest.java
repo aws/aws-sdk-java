@@ -96,7 +96,7 @@ public class ListPresetsRequest extends AmazonWebServiceRequest implements Seria
      *         were created, enter <code>true</code>. To list presets in reverse
      *         chronological order, enter <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPresetsRequest withAscending(String ascending) {
@@ -150,7 +150,7 @@ public class ListPresetsRequest extends AmazonWebServiceRequest implements Seria
      *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
      *         each successive page of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPresetsRequest withPageToken(String pageToken) {

@@ -251,7 +251,7 @@ public class DeploymentCommand implements Serializable {
      *         application server.</li> <li><code>undeploy</code>: Undeploy the
      *         app.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DeploymentCommandName
@@ -385,7 +385,7 @@ public class DeploymentCommand implements Serializable {
      *         application server.</li> <li><code>undeploy</code>: Undeploy the
      *         app.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DeploymentCommandName
@@ -436,7 +436,7 @@ public class DeploymentCommand implements Serializable {
      *         to a JSON object with the following format:
      *         <p><code>{"arg_name":["value1", "value2", ...]}</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeploymentCommand withArgs(java.util.Map<String,java.util.List<String>> args) {

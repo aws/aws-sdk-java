@@ -84,7 +84,7 @@ public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequ
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteNotificationConfigurationRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -135,7 +135,7 @@ public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequ
      * @param topicARN The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteNotificationConfigurationRequest withTopicARN(String topicARN) {

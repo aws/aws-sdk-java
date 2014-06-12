@@ -80,7 +80,7 @@ public class VolumeConfiguration implements Serializable {
      *
      * @param mountPoint The volume mount point. For example "/dev/sdh".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeConfiguration withMountPoint(String mountPoint) {
@@ -125,7 +125,7 @@ public class VolumeConfiguration implements Serializable {
      *         href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      *         level</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeConfiguration withRaidLevel(Integer raidLevel) {
@@ -158,7 +158,7 @@ public class VolumeConfiguration implements Serializable {
      *
      * @param numberOfDisks The number of disks in the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeConfiguration withNumberOfDisks(Integer numberOfDisks) {
@@ -191,7 +191,7 @@ public class VolumeConfiguration implements Serializable {
      *
      * @param size The volume size.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeConfiguration withSize(Integer size) {
@@ -224,7 +224,7 @@ public class VolumeConfiguration implements Serializable {
      *
      * @param volumeType The volume type, standard or PIOPS.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeConfiguration withVolumeType(String volumeType) {
@@ -257,7 +257,7 @@ public class VolumeConfiguration implements Serializable {
      *
      * @param iops For PIOPS volumes, the IOPS per disk.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeConfiguration withIops(Integer iops) {

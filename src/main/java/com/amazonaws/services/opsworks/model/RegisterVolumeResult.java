@@ -53,7 +53,7 @@ public class RegisterVolumeResult implements Serializable {
      *
      * @param volumeId The volume ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterVolumeResult withVolumeId(String volumeId) {

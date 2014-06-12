@@ -89,7 +89,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      * @param description A description for the conversion task or the resource being exported.
      *         The maximum length is 255 bytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceExportTaskRequest withDescription(String description) {
@@ -122,7 +122,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceExportTaskRequest withInstanceId(String instanceId) {
@@ -168,7 +168,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      *
      * @param targetEnvironment The target virtualization environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ExportEnvironment
@@ -202,7 +202,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      *
      * @param targetEnvironment The target virtualization environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ExportEnvironment
@@ -237,7 +237,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      *
      * @param exportToS3Task 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceExportTaskRequest withExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {

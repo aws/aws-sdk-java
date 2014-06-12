@@ -98,7 +98,7 @@ public class SendMessageResult implements Serializable {
      *         information about MD5, go to <a
      *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageResult withMD5OfMessageBody(String mD5OfMessageBody) {
@@ -155,7 +155,7 @@ public class SendMessageResult implements Serializable {
      *         digest. For information about MD5, go to <a
      *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageResult withMD5OfMessageAttributes(String mD5OfMessageAttributes) {
@@ -206,7 +206,7 @@ public class SendMessageResult implements Serializable {
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
      *         and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageResult withMessageId(String messageId) {

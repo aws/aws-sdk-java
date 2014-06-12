@@ -95,7 +95,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      *
      * @param instanceProfileName Name of the instance profile to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemoveRoleFromInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
@@ -140,7 +140,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      *
      * @param roleName Name of the role to remove.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemoveRoleFromInstanceProfileRequest withRoleName(String roleName) {

@@ -103,7 +103,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * @param bundleIds One or more bundle task IDs. <p>Default: Describes all your bundle
      *         tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBundleTasksRequest withBundleIds(String... bundleIds) {
@@ -123,7 +123,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * @param bundleIds One or more bundle task IDs. <p>Default: Describes all your bundle
      *         tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBundleTasksRequest withBundleIds(java.util.Collection<String> bundleIds) {
@@ -263,7 +263,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      *         | <code>failed</code>). </li> <li> <p><code>update-time</code> - The
      *         time of the most recent update for the task. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBundleTasksRequest withFilters(Filter... filters) {
@@ -311,7 +311,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      *         | <code>failed</code>). </li> <li> <p><code>update-time</code> - The
      *         time of the most recent update for the task. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeBundleTasksRequest withFilters(java.util.Collection<Filter> filters) {

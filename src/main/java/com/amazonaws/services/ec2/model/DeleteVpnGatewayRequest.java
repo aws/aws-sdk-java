@@ -81,7 +81,7 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements 
      *
      * @param vpnGatewayId The ID of the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVpnGatewayRequest withVpnGatewayId(String vpnGatewayId) {

@@ -69,7 +69,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
      *
      * @param trailNameList The list of <a>Trail</a> object names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrailsRequest withTrailNameList(String... trailNameList) {
@@ -87,7 +87,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
      *
      * @param trailNameList The list of <a>Trail</a> object names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrailsRequest withTrailNameList(java.util.Collection<String> trailNameList) {

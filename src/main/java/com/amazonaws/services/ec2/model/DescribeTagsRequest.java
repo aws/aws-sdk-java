@@ -194,7 +194,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
      *         <p><code>value</code> - The tag value. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withFilters(Filter... filters) {
@@ -234,7 +234,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>
      *         <p><code>value</code> - The tag value. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withFilters(java.util.Collection<Filter> filters) {
@@ -292,7 +292,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         next set of results. If the value is greater than 1000, we return only
      *         1000 items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withMaxResults(Integer maxResults) {
@@ -331,7 +331,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * @param nextToken The token for the next set of items to return. (You received this
      *         token from a prior call.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withNextToken(String nextToken) {

@@ -98,7 +98,7 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
      *
      * @param cacheParameterGroupName A user-specified name for the cache parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheParameterGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -143,7 +143,7 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
      *         can be used with. <p>Valid values are: <code>memcached1.4</code> |
      *         <code>redis2.6</code> | <code>redis2.8</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheParameterGroupRequest withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -176,7 +176,7 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
      *
      * @param description A user-specified description for the cache parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheParameterGroupRequest withDescription(String description) {

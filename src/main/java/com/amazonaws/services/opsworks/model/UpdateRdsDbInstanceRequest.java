@@ -68,7 +68,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest implemen
      *
      * @param rdsDbInstanceArn The Amazon RDS instance's ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateRdsDbInstanceRequest withRdsDbInstanceArn(String rdsDbInstanceArn) {
@@ -101,7 +101,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest implemen
      *
      * @param dbUser The master user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateRdsDbInstanceRequest withDbUser(String dbUser) {
@@ -134,7 +134,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest implemen
      *
      * @param dbPassword The database password.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateRdsDbInstanceRequest withDbPassword(String dbPassword) {

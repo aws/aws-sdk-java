@@ -113,7 +113,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest imp
      *         This identifier is returned by <a>RunJobFlow</a> and can also be
      *         obtained from <a>DescribeJobFlows</a> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTerminationProtectionRequest withJobFlowIds(String... jobFlowIds) {
@@ -135,7 +135,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest imp
      *         This identifier is returned by <a>RunJobFlow</a> and can also be
      *         obtained from <a>DescribeJobFlows</a> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTerminationProtectionRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
@@ -187,7 +187,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest imp
      *         the Amazon EC2 instances in the cluster from shutting down due to API
      *         calls, user intervention, or job-flow error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTerminationProtectionRequest withTerminationProtected(Boolean terminationProtected) {

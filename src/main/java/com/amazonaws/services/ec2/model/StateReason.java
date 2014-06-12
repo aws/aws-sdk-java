@@ -73,7 +73,7 @@ public class StateReason implements Serializable {
      *
      * @param code The reason code for the state change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StateReason withCode(String code) {
@@ -196,7 +196,7 @@ public class StateReason implements Serializable {
      *         exceeded.</li> <li><p><code>Client.InvalidSnapshot.NotFound</code>:
      *         The specified snapshot was not found.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StateReason withMessage(String message) {

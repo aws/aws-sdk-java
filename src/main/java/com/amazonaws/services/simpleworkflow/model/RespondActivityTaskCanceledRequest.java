@@ -153,7 +153,7 @@ public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest 
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondActivityTaskCanceledRequest withTaskToken(String taskToken) {
@@ -195,7 +195,7 @@ public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest 
      *
      * @param details Optional information about the cancellation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondActivityTaskCanceledRequest withDetails(String details) {

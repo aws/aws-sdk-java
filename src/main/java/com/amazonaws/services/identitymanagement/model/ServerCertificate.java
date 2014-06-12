@@ -103,7 +103,7 @@ public class ServerCertificate implements Serializable {
      * @param serverCertificateMetadata The meta information of the server certificate, such as its name,
      *         path, ID, and ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificate withServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata) {
@@ -148,7 +148,7 @@ public class ServerCertificate implements Serializable {
      *
      * @param certificateBody The contents of the public key certificate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificate withCertificateBody(String certificateBody) {
@@ -193,7 +193,7 @@ public class ServerCertificate implements Serializable {
      *
      * @param certificateChain The contents of the public key certificate chain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificate withCertificateChain(String certificateChain) {

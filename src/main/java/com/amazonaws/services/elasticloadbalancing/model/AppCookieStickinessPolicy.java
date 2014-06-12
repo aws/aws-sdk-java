@@ -86,7 +86,7 @@ public class AppCookieStickinessPolicy implements Serializable {
      * @param policyName The mnemonic name for the policy being created. The name must be
      *         unique within a set of policies for this load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AppCookieStickinessPolicy withPolicyName(String policyName) {
@@ -119,7 +119,7 @@ public class AppCookieStickinessPolicy implements Serializable {
      *
      * @param cookieName The name of the application cookie used for stickiness.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AppCookieStickinessPolicy withCookieName(String cookieName) {

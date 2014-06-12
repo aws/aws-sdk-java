@@ -222,7 +222,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CompleteMultipartUploadRequest withAccountId(String accountId) {
@@ -255,7 +255,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CompleteMultipartUploadRequest withVaultName(String vaultName) {
@@ -288,7 +288,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      *
      * @param uploadId The upload ID of the multipart upload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CompleteMultipartUploadRequest withUploadId(String uploadId) {
@@ -327,7 +327,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      * @param archiveSize The total size, in bytes, of the entire archive. This value should be
      *         the sum of all the sizes of the individual parts that you uploaded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CompleteMultipartUploadRequest withArchiveSize(String archiveSize) {
@@ -384,7 +384,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      *         archive as computed by Amazon Glacier, Amazon Glacier returns an error
      *         and the request fails.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CompleteMultipartUploadRequest withChecksum(String checksum) {

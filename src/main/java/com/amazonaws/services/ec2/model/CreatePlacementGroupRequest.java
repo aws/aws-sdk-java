@@ -116,7 +116,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * @param groupName A name for the placement group. <p>Constraints: Up to 255 ASCII
      *         characters
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlacementGroupRequest withGroupName(String groupName) {
@@ -162,7 +162,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      *
      * @param strategy The placement strategy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlacementStrategy
@@ -196,7 +196,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      *
      * @param strategy The placement strategy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlacementStrategy

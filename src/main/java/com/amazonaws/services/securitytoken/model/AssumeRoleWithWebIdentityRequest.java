@@ -230,7 +230,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      * @param roleArn The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityRequest withRoleArn(String roleArn) {
@@ -305,7 +305,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         is included as part of the ARN and assumed role ID in the
      *         <code>AssumedRoleUser</code> response element.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityRequest withRoleSessionName(String roleSessionName) {
@@ -371,7 +371,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         identity provider before the application makes an
      *         <code>AssumeRoleWithWebIdentity</code> call.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityRequest withWebIdentityToken(String webIdentityToken) {
@@ -443,7 +443,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         numbers. Currently, <code>www.amazon.com</code> and
      *         <code>graph.facebook.com</code> are supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityRequest withProviderId(String providerId) {
@@ -554,7 +554,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         for AssumeRoleWithWebIdentity</a> in <i>Using Temporary Security
      *         Credentials</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityRequest withPolicy(String policy) {
@@ -608,7 +608,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      *         the value is set to 3600 seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleWithWebIdentityRequest withDurationSeconds(Integer durationSeconds) {

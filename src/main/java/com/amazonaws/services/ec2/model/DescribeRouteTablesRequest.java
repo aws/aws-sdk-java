@@ -124,7 +124,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * @param routeTableIds One or more route table IDs. <p>Default: Describes all your route
      *         tables.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRouteTablesRequest withRouteTableIds(String... routeTableIds) {
@@ -144,7 +144,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * @param routeTableIds One or more route table IDs. <p>Default: Describes all your route
      *         tables.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRouteTablesRequest withRouteTableIds(java.util.Collection<String> routeTableIds) {
@@ -416,7 +416,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         route table. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRouteTablesRequest withFilters(Filter... filters) {
@@ -508,7 +508,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         route table. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRouteTablesRequest withFilters(java.util.Collection<Filter> filters) {

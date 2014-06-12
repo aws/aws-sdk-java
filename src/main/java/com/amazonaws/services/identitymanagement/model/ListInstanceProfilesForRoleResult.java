@@ -83,7 +83,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable {
      *
      * @param instanceProfiles A list of instance profiles.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesForRoleResult withInstanceProfiles(InstanceProfile... instanceProfiles) {
@@ -101,7 +101,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable {
      *
      * @param instanceProfiles A list of instance profiles.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesForRoleResult withInstanceProfiles(java.util.Collection<InstanceProfile> instanceProfiles) {
@@ -159,7 +159,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable {
      *         pagination request using the <code>Marker</code> request parameter to
      *         retrieve more instance profiles in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesForRoleResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesForRoleResult withMarker(String marker) {

@@ -61,7 +61,7 @@ public class StartInstancesResult implements Serializable {
      *
      * @param startingInstances Information about one or more started instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartInstancesResult withStartingInstances(InstanceStateChange... startingInstances) {
@@ -79,7 +79,7 @@ public class StartInstancesResult implements Serializable {
      *
      * @param startingInstances Information about one or more started instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartInstancesResult withStartingInstances(java.util.Collection<InstanceStateChange> startingInstances) {

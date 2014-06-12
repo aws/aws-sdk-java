@@ -159,7 +159,7 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest impleme
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AbortMultipartUploadRequest withAccountId(String accountId) {
@@ -192,7 +192,7 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest impleme
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AbortMultipartUploadRequest withVaultName(String vaultName) {
@@ -225,7 +225,7 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest impleme
      *
      * @param uploadId The upload ID of the multipart upload to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AbortMultipartUploadRequest withUploadId(String uploadId) {

@@ -113,7 +113,7 @@ public class PendingModifiedValues implements Serializable {
      * @param dBInstanceClass Contains the new <code>DBInstanceClass</code> for the DB instance that
      *         will be applied or is in progress.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withDBInstanceClass(String dBInstanceClass) {
@@ -152,7 +152,7 @@ public class PendingModifiedValues implements Serializable {
      * @param allocatedStorage Contains the new <code>AllocatedStorage</code> size for the DB
      *         instance that will be applied or is in progress.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withAllocatedStorage(Integer allocatedStorage) {
@@ -191,7 +191,7 @@ public class PendingModifiedValues implements Serializable {
      * @param masterUserPassword Contains the pending or in-progress change of the master credentials
      *         for the DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withMasterUserPassword(String masterUserPassword) {
@@ -224,7 +224,7 @@ public class PendingModifiedValues implements Serializable {
      *
      * @param port Specifies the pending port for the DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withPort(Integer port) {
@@ -263,7 +263,7 @@ public class PendingModifiedValues implements Serializable {
      * @param backupRetentionPeriod Specifies the pending number of days for which automated backups are
      *         retained.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -302,7 +302,7 @@ public class PendingModifiedValues implements Serializable {
      * @param multiAZ Indicates that the Single-AZ DB instance is to change to a Multi-AZ
      *         deployment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withMultiAZ(Boolean multiAZ) {
@@ -346,7 +346,7 @@ public class PendingModifiedValues implements Serializable {
      *
      * @param engineVersion Indicates the database engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withEngineVersion(String engineVersion) {
@@ -385,7 +385,7 @@ public class PendingModifiedValues implements Serializable {
      * @param iops Specifies the new Provisioned IOPS value for the DB instance that will
      *         be applied or is being applied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withIops(Integer iops) {
@@ -424,7 +424,7 @@ public class PendingModifiedValues implements Serializable {
      * @param dBInstanceIdentifier Contains the new <code>DBInstanceIdentifier</code> for the DB instance
      *         that will be applied or is in progress.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withDBInstanceIdentifier(String dBInstanceIdentifier) {

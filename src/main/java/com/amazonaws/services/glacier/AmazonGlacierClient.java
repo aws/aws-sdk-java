@@ -259,8 +259,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new GlacierErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("glacier.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/glacier/request.handlers"));
@@ -343,7 +345,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -420,7 +422,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -499,7 +501,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -572,7 +574,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -676,7 +678,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -764,7 +766,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -857,7 +859,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1098,9 +1100,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             response = invoke(request, responseHandler, executionContext);
             
             GetJobOutputResult awsResponse = response.getAwsResponse();
-            awsResponse.setBody(new ServiceClientHolderInputStream(awsResponse.getBody(),this));
-            
-            return response.getAwsResponse();
+          awsResponse.setBody(new ServiceClientHolderInputStream(awsResponse.getBody(),this));
+          
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1305,7 +1307,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1402,7 +1404,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1585,7 +1587,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1696,7 +1698,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1770,7 +1772,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1913,7 +1915,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1981,8 +1983,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
         invoke(request, responseHandler, executionContext);
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

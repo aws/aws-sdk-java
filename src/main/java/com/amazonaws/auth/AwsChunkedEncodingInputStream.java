@@ -22,12 +22,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.internal.SdkInputStream;
 import com.amazonaws.util.BinaryUtils;
 
 /**
  * A wrapper class of InputStream that implements chunked-encoding.
  */
-public final class AwsChunkedEncodingInputStream extends InputStream {
+public final class AwsChunkedEncodingInputStream extends SdkInputStream {
 
     protected static final String DEFAULT_ENCODING = "UTF-8";
 
@@ -63,7 +64,6 @@ public final class AwsChunkedEncodingInputStream extends InputStream {
     private boolean isTerminating = false;
 
     private static final Log log = LogFactory.getLog(AwsChunkedEncodingInputStream.class);
-
 
     public AwsChunkedEncodingInputStream(InputStream in, byte[] kSigning,
             String datetime, String keyPath, String headerSignature,
@@ -138,6 +138,7 @@ public final class AwsChunkedEncodingInputStream extends InputStream {
 
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
+        abortIfNeeded();
         if (b == null) {
             throw new NullPointerException();
         } else if (off < 0 || len < 0 || len > b.length - off) {
@@ -195,6 +196,7 @@ public final class AwsChunkedEncodingInputStream extends InputStream {
      */
     @Override
     public synchronized void mark(int readlimit) {
+        abortIfNeeded();
         if ( !isAtStart )
             throw new UnsupportedOperationException("Chunk-encoded stream only supports mark() at the start of the stream.");
         if (is.markSupported()) {
@@ -219,6 +221,7 @@ public final class AwsChunkedEncodingInputStream extends InputStream {
      */
     @Override
     public synchronized void reset() throws IOException {
+        abortIfNeeded();
         // Clear up any encoded data
         currentChunkIterator = null;
         priorChunkSignature = headerSignature;
@@ -344,93 +347,8 @@ public final class AwsChunkedEncodingInputStream extends InputStream {
         }
     }
 
-    private class DecodedStreamBuffer {
-
-        private byte[] bufferArray;
-        private int maxBufferSize;
-        private int byteBuffered = 0;
-        private int pos = -1;
-        private boolean bufferSizeOverflow = false;
-
-        public DecodedStreamBuffer(int maxBufferSize) {
-            bufferArray = new byte[maxBufferSize];
-            this.maxBufferSize = maxBufferSize;
-        }
-
-        @SuppressWarnings("unused")
-        public void buffer(byte read) {
-            pos = -1;
-            if (byteBuffered >= maxBufferSize) {
-                if (log.isDebugEnabled()) {
-                    log.debug("Buffer size " + maxBufferSize + " has been exceeded and the input stream "
-                    + "will not be repeatable. Freeing buffer memory");
-                }
-                bufferSizeOverflow = true;
-            }
-            else
-                bufferArray[byteBuffered++] = read;
-        }
-
-        public void buffer(byte[] array, int offset, int length) {
-            pos = -1;
-            if (byteBuffered + length > maxBufferSize) {
-                if (log.isDebugEnabled()) {
-                    log.debug("Buffer size " + maxBufferSize + " has been exceeded and the input stream "
-                    + "will not be repeatable. Freeing buffer memory");
-                }
-                bufferSizeOverflow = true;
-            }
-            else {
-                System.arraycopy(array, offset, bufferArray, byteBuffered, length);
-                byteBuffered += length;
-            }
-        }
-
-        public boolean hasNext() {
-            return (pos != -1) && (pos < byteBuffered);
-        }
-
-        public byte next() {
-            return bufferArray[pos++];
-        }
-
-        public void startReadBuffer() {
-            if (bufferSizeOverflow) {
-                throw new AmazonClientException("The input stream is not repeatable since the buffer size "
-                                                + maxBufferSize + " has been exceeded.");
-            }
-            else {
-                pos = 0;
-            }
-        }
-    }
-
-
-    private class ChunkContentIterator {
-
-        private final byte[] signedChunk;
-        private int pos = 0;
-
-        public ChunkContentIterator(byte[] signedChunk) {
-            this.signedChunk = signedChunk;
-        }
-
-        public boolean hasNext() {
-            return pos < signedChunk.length;
-        }
-
-        public int read(byte[] output, int offset, int length) {
-            if (length == 0)
-                return 0;
-            else if ( !hasNext() )
-                return -1;
-            else {
-                int remaingBytesNum = signedChunk.length - pos;
-                int bytesToRead = Math.min(remaingBytesNum, length);
-                System.arraycopy(signedChunk, pos, output, offset, bytesToRead);
-                pos += bytesToRead;
-                return bytesToRead;
-            }
-        }
+    @Override
+    protected InputStream getWrappedInputStream() {
+        return is;
     }
 }

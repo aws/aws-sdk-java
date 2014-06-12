@@ -90,7 +90,7 @@ public class S3Origin implements Serializable {
      *
      * @param domainName The DNS name of the S3 origin.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3Origin withDomainName(String domainName) {
@@ -123,7 +123,7 @@ public class S3Origin implements Serializable {
      *
      * @param originAccessIdentity Your S3 origin's origin access identity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3Origin withOriginAccessIdentity(String originAccessIdentity) {

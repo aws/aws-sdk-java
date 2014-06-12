@@ -80,7 +80,7 @@ public class CustomerGateway implements Serializable {
      *
      * @param customerGatewayId The ID of the customer gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomerGateway withCustomerGatewayId(String customerGatewayId) {
@@ -113,7 +113,7 @@ public class CustomerGateway implements Serializable {
      *
      * @param state The current state of the customer gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomerGateway withState(String state) {
@@ -146,7 +146,7 @@ public class CustomerGateway implements Serializable {
      *
      * @param type The type of VPN connection the customer gateway supports.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomerGateway withType(String type) {
@@ -185,7 +185,7 @@ public class CustomerGateway implements Serializable {
      * @param ipAddress The Internet-routable IP address of the customer gateway's outside
      *         interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomerGateway withIpAddress(String ipAddress) {
@@ -224,7 +224,7 @@ public class CustomerGateway implements Serializable {
      * @param bgpAsn The customer gateway's Border Gateway Protocol (BGP) Autonomous System
      *         Number (ASN).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomerGateway withBgpAsn(String bgpAsn) {
@@ -267,7 +267,7 @@ public class CustomerGateway implements Serializable {
      *
      * @param tags Any tags assigned to the customer gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomerGateway withTags(Tag... tags) {
@@ -285,7 +285,7 @@ public class CustomerGateway implements Serializable {
      *
      * @param tags Any tags assigned to the customer gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CustomerGateway withTags(java.util.Collection<Tag> tags) {

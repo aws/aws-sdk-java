@@ -54,7 +54,7 @@ public class CreateVirtualMFADeviceResult implements Serializable {
      *
      * @param virtualMFADevice A newly created virtual MFA device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVirtualMFADeviceResult withVirtualMFADevice(VirtualMFADevice virtualMFADevice) {

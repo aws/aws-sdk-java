@@ -80,7 +80,7 @@ public class PutRecordResult implements Serializable {
      *
      * @param shardId The shard ID of the shard where the data record was placed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRecordResult withShardId(String shardId) {
@@ -140,7 +140,7 @@ public class PutRecordResult implements Serializable {
      *         records in the stream. A sequence number is the identifier associated
      *         with every record put into the stream.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRecordResult withSequenceNumber(String sequenceNumber) {

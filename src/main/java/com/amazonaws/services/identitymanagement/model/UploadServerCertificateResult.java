@@ -61,7 +61,7 @@ public class UploadServerCertificateResult implements Serializable {
      * @param serverCertificateMetadata The meta information of the uploaded server certificate without its
      *         certificate body, certificate chain, and private key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadServerCertificateResult withServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata) {

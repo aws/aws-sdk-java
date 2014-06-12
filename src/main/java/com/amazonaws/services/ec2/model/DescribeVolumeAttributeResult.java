@@ -61,7 +61,7 @@ public class DescribeVolumeAttributeResult implements Serializable {
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeAttributeResult withVolumeId(String volumeId) {
@@ -94,7 +94,7 @@ public class DescribeVolumeAttributeResult implements Serializable {
      *
      * @param autoEnableIO The state of <code>autoEnableIO</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeAttributeResult withAutoEnableIO(Boolean autoEnableIO) {
@@ -146,7 +146,7 @@ public class DescribeVolumeAttributeResult implements Serializable {
      *
      * @param productCodes A list of product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeAttributeResult withProductCodes(ProductCode... productCodes) {
@@ -164,7 +164,7 @@ public class DescribeVolumeAttributeResult implements Serializable {
      *
      * @param productCodes A list of product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeAttributeResult withProductCodes(java.util.Collection<ProductCode> productCodes) {

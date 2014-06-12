@@ -91,7 +91,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRe
      *
      * @param checkId The unique identifier for the Trusted Advisor check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckResultRequest withCheckId(String checkId) {
@@ -142,7 +142,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRe
      *         Language parameters must be passed explicitly for operations that take
      *         them.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckResultRequest withLanguage(String language) {

@@ -88,7 +88,7 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param name The new value for the Name property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTrailRequest withName(String name) {
@@ -121,7 +121,7 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param s3BucketName The new value for the S3BucketName property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTrailRequest withS3BucketName(String s3BucketName) {
@@ -154,7 +154,7 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param s3KeyPrefix The new value for the S3KeyPrefix property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTrailRequest withS3KeyPrefix(String s3KeyPrefix) {
@@ -187,7 +187,7 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param snsTopicName The new value for the SnsTopicName property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTrailRequest withSnsTopicName(String snsTopicName) {
@@ -225,7 +225,7 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
      * @param includeGlobalServiceEvents The new value for the IncludeGlobalServiceEvents property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTrailRequest withIncludeGlobalServiceEvents(Boolean includeGlobalServiceEvents) {
@@ -274,7 +274,7 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
      * @param trail Contains the <a>Trail</a> structure that specifies the settings for
      *         each trail.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTrailRequest withTrail(Trail trail) {

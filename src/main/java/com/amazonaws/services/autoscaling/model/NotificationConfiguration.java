@@ -88,7 +88,7 @@ public class NotificationConfiguration implements Serializable {
      *
      * @param autoScalingGroupName Specifies the Auto Scaling group name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NotificationConfiguration withAutoScalingGroupName(String autoScalingGroupName) {
@@ -139,7 +139,7 @@ public class NotificationConfiguration implements Serializable {
      * @param topicARN The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NotificationConfiguration withTopicARN(String topicARN) {
@@ -184,7 +184,7 @@ public class NotificationConfiguration implements Serializable {
      *
      * @param notificationType The types of events for an action to start.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NotificationConfiguration withNotificationType(String notificationType) {

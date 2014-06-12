@@ -65,7 +65,7 @@ public class UpdateMyUserProfileRequest extends AmazonWebServiceRequest implemen
      *
      * @param sshPublicKey The user's SSH public key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateMyUserProfileRequest withSshPublicKey(String sshPublicKey) {

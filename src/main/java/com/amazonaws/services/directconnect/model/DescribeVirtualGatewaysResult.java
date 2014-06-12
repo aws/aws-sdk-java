@@ -63,7 +63,7 @@ public class DescribeVirtualGatewaysResult implements Serializable {
      *
      * @param virtualGateways A list of virtual private gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVirtualGatewaysResult withVirtualGateways(VirtualGateway... virtualGateways) {
@@ -81,7 +81,7 @@ public class DescribeVirtualGatewaysResult implements Serializable {
      *
      * @param virtualGateways A list of virtual private gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVirtualGatewaysResult withVirtualGateways(java.util.Collection<VirtualGateway> virtualGateways) {

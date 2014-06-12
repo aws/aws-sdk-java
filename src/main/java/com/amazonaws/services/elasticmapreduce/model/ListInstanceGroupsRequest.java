@@ -66,7 +66,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest implement
      *
      * @param clusterId The identifier of the cluster for which to list the instance groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceGroupsRequest withClusterId(String clusterId) {
@@ -117,7 +117,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest implement
      *         calls to retrieve the next page of results. When the value is null,
      *         all results have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceGroupsRequest withMarker(String marker) {

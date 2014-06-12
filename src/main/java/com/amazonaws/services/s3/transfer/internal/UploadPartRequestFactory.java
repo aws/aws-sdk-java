@@ -18,6 +18,7 @@ import java.io.File;
 
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 
 /**
@@ -39,6 +40,7 @@ public class UploadPartRequestFactory {
     private int partNumber = 1;
     private long offset = 0;
     private long remainingBytes;
+    private SSECustomerKey sseCustomerKey;
 
     public UploadPartRequestFactory(PutObjectRequest putObjectRequest, String uploadId, long optimalPartSize) {
         this.putObjectRequest = putObjectRequest;
@@ -48,6 +50,7 @@ public class UploadPartRequestFactory {
         this.key = putObjectRequest.getKey();
         this.file = TransferManagerUtils.getRequestFile(putObjectRequest);
         this.remainingBytes = TransferManagerUtils.getContentLength(putObjectRequest);
+        this.sseCustomerKey = putObjectRequest.getSSECustomerKey();
     }
 
     public synchronized boolean hasMoreRequests() {
@@ -78,9 +81,11 @@ public class UploadPartRequestFactory {
                 .withPartSize(partSize);
         }
 
+        if (sseCustomerKey != null) request.setSSECustomerKey(sseCustomerKey);
+
         offset += partSize;
         remainingBytes -= partSize;
-        
+
         request.setLastPart(isLastPart);
         request.setGeneralProgressListener(putObjectRequest.getGeneralProgressListener());
 

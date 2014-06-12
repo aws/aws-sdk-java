@@ -72,7 +72,7 @@ public class PendingTaskCount implements Serializable {
      *
      * @param count The number of tasks in the task list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingTaskCount withCount(Integer count) {
@@ -117,7 +117,7 @@ public class PendingTaskCount implements Serializable {
      *         maximum supported by this API and the count returned is the truncated
      *         value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingTaskCount withTruncated(Boolean truncated) {

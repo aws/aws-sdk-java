@@ -51,7 +51,7 @@ public class CopySnapshotResult implements Serializable {
      *
      * @param snapshotId The ID of the new snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotResult withSnapshotId(String snapshotId) {

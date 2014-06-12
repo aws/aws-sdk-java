@@ -94,7 +94,7 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest impl
      *
      * @param domainName The name of the domain you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAnalysisSchemesRequest withDomainName(String domainName) {
@@ -137,7 +137,7 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest impl
      *
      * @param analysisSchemeNames The analysis schemes you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAnalysisSchemesRequest withAnalysisSchemeNames(String... analysisSchemeNames) {
@@ -155,7 +155,7 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest impl
      *
      * @param analysisSchemeNames The analysis schemes you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAnalysisSchemesRequest withAnalysisSchemeNames(java.util.Collection<String> analysisSchemeNames) {
@@ -207,7 +207,7 @@ public class DescribeAnalysisSchemesRequest extends AmazonWebServiceRequest impl
      *         include any pending changes (<code>false</code>). Defaults to
      *         <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAnalysisSchemesRequest withDeployed(Boolean deployed) {

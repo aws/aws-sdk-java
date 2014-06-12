@@ -103,7 +103,7 @@ public class DescribeTapeArchivesResult implements Serializable {
      *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress
      *         of the description and tape barcode.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeArchivesResult withTapeArchives(TapeArchive... tapeArchives) {
@@ -129,7 +129,7 @@ public class DescribeTapeArchivesResult implements Serializable {
      *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress
      *         of the description and tape barcode.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeArchivesResult withTapeArchives(java.util.Collection<TapeArchive> tapeArchives) {
@@ -202,7 +202,7 @@ public class DescribeTapeArchivesResult implements Serializable {
      *         Tape Shelf (VTS). If there are no more virtual tapes to describe, this
      *         field does not appear in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeArchivesResult withMarker(String marker) {

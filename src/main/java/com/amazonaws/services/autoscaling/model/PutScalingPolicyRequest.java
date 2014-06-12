@@ -130,7 +130,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      *
      * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutScalingPolicyRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -175,7 +175,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      *
      * @param policyName The name of the policy you want to create or update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutScalingPolicyRequest withPolicyName(String policyName) {
@@ -232,7 +232,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      *         positive increment adds to the current capacity and a negative value
      *         removes from the current capacity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutScalingPolicyRequest withScalingAdjustment(Integer scalingAdjustment) {
@@ -313,7 +313,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale
      *         Based on Demand</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutScalingPolicyRequest withAdjustmentType(String adjustmentType) {
@@ -370,7 +370,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
      *         Period</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutScalingPolicyRequest withCooldown(Integer cooldown) {
@@ -439,7 +439,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements 
      *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutScalingPolicyRequest withMinAdjustmentStep(Integer minAdjustmentStep) {

@@ -170,7 +170,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param domainName The name of the domain in which to perform the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutAttributesRequest withDomainName(String domainName) {
@@ -203,7 +203,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param itemName The name of the item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutAttributesRequest withItemName(String itemName) {
@@ -246,7 +246,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param attributes The list of attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutAttributesRequest withAttributes(ReplaceableAttribute... attributes) {
@@ -264,7 +264,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param attributes The list of attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutAttributesRequest withAttributes(java.util.Collection<ReplaceableAttribute> attributes) {
@@ -322,7 +322,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest implements Ser
      *         be satisfied in order for this request to be processed and the
      *         attributes to be updated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutAttributesRequest withExpected(UpdateCondition expected) {

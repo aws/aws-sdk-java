@@ -84,7 +84,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      * @param externalWorkflowExecution The external workflow execution for which the cancellation was
      *         requested.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCancelRequestedEventAttributes withExternalWorkflowExecution(WorkflowExecution externalWorkflowExecution) {
@@ -159,7 +159,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      *         useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionCancelRequestedEventAttributes withExternalInitiatedEventId(Long externalInitiatedEventId) {
@@ -223,7 +223,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      *         the parent workflow execution times out or is terminated, and the
      *         child policy is set to cancel child executions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see WorkflowExecutionCancelRequestedCause
@@ -269,7 +269,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      *         the parent workflow execution times out or is terminated, and the
      *         child policy is set to cancel child executions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see WorkflowExecutionCancelRequestedCause

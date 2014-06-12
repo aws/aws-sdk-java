@@ -64,7 +64,7 @@ public class RetrieveEnvironmentInfoResult implements Serializable {
      *
      * @param environmentInfo The <a>EnvironmentInfoDescription</a> of the environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveEnvironmentInfoResult withEnvironmentInfo(EnvironmentInfoDescription... environmentInfo) {
@@ -82,7 +82,7 @@ public class RetrieveEnvironmentInfoResult implements Serializable {
      *
      * @param environmentInfo The <a>EnvironmentInfoDescription</a> of the environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveEnvironmentInfoResult withEnvironmentInfo(java.util.Collection<EnvironmentInfoDescription> environmentInfo) {

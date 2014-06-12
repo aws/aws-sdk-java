@@ -99,7 +99,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateGatewayInformationRequest withGatewayARN(String gatewayARN) {
@@ -156,7 +156,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
      *         to other operations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateGatewayInformationRequest withGatewayName(String gatewayName) {
@@ -198,7 +198,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
      *
      * @param gatewayTimezone The new value for the GatewayTimezone property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateGatewayInformationRequest withGatewayTimezone(String gatewayTimezone) {

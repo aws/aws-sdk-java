@@ -87,7 +87,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
      *
      * @param iamUserArn The user IAM ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateUserProfileRequest withIamUserArn(String iamUserArn) {
@@ -144,7 +144,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
      *         will be changed to <code>myname</code>. If you do not specify an SSH
      *         user name, AWS OpsWorks generates one from the IAM user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateUserProfileRequest withSshUsername(String sshUsername) {
@@ -177,7 +177,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
      *
      * @param sshPublicKey The user's new SSH public key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateUserProfileRequest withSshPublicKey(String sshPublicKey) {
@@ -228,7 +228,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
      *         User Permissions</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateUserProfileRequest withAllowSelfManagement(Boolean allowSelfManagement) {

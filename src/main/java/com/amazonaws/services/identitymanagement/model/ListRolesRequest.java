@@ -147,7 +147,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all roles.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolesRequest withPathPrefix(String pathPrefix) {
@@ -210,7 +210,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolesRequest withMarker(String marker) {
@@ -276,7 +276,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolesRequest withMaxItems(Integer maxItems) {

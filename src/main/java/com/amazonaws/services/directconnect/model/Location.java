@@ -60,7 +60,7 @@ public class Location implements Serializable {
      *
      * @param locationCode The code used to indicate the AWS Direct Connect location.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Location withLocationCode(String locationCode) {
@@ -99,7 +99,7 @@ public class Location implements Serializable {
      * @param locationName The name of the AWS Direct Connect location. The name includes the
      *         colocation partner name and the physical site of the lit building.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Location withLocationName(String locationName) {

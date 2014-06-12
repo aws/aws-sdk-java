@@ -81,7 +81,7 @@ public class QueryObjectsResult implements Serializable {
      *
      * @param ids A list of identifiers that match the query selectors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsResult withIds(String... ids) {
@@ -99,7 +99,7 @@ public class QueryObjectsResult implements Serializable {
      *
      * @param ids A list of identifiers that match the query selectors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsResult withIds(java.util.Collection<String> ids) {
@@ -169,7 +169,7 @@ public class QueryObjectsResult implements Serializable {
      *         can call <a>QueryObjects</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsResult withMarker(String marker) {
@@ -208,7 +208,7 @@ public class QueryObjectsResult implements Serializable {
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
      *         subsequent call to <a>QueryObjects</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryObjectsResult withHasMoreResults(Boolean hasMoreResults) {

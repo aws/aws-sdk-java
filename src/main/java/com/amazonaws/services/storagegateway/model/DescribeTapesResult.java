@@ -74,7 +74,7 @@ public class DescribeTapesResult implements Serializable {
      *
      * @param tapes An array of virtual tape descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapesResult withTapes(Tape... tapes) {
@@ -92,7 +92,7 @@ public class DescribeTapesResult implements Serializable {
      *
      * @param tapes An array of virtual tape descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapesResult withTapes(java.util.Collection<Tape> tapes) {
@@ -159,7 +159,7 @@ public class DescribeTapesResult implements Serializable {
      *         response does not contain a marker, then there are no more results to
      *         be retrieved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapesResult withMarker(String marker) {

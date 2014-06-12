@@ -86,7 +86,7 @@ public class DescribeObjectsResult implements Serializable {
      * @param pipelineObjects An array of object definitions that are returned by the call to
      *         <a>DescribeObjects</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsResult withPipelineObjects(PipelineObject... pipelineObjects) {
@@ -106,7 +106,7 @@ public class DescribeObjectsResult implements Serializable {
      * @param pipelineObjects An array of object definitions that are returned by the call to
      *         <a>DescribeObjects</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsResult withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
@@ -164,7 +164,7 @@ public class DescribeObjectsResult implements Serializable {
      * @param marker The starting point for the next page of results. To view the next page
      *         of results, call <a>DescribeObjects</a> again with this marker value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsResult withMarker(String marker) {
@@ -197,7 +197,7 @@ public class DescribeObjectsResult implements Serializable {
      *
      * @param hasMoreResults If <code>True</code>, there are more pages of results to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeObjectsResult withHasMoreResults(Boolean hasMoreResults) {

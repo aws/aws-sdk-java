@@ -53,7 +53,7 @@ public class CreateApplicationResult implements Serializable {
      *
      * @param application The <a>ApplicationDescription</a> of the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateApplicationResult withApplication(ApplicationDescription application) {

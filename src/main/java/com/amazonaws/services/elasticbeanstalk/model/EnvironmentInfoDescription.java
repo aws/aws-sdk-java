@@ -90,7 +90,7 @@ public class EnvironmentInfoDescription implements Serializable {
      *
      * @param infoType The type of information retrieved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentInfoType
@@ -124,7 +124,7 @@ public class EnvironmentInfoDescription implements Serializable {
      *
      * @param infoType The type of information retrieved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentInfoType
@@ -159,7 +159,7 @@ public class EnvironmentInfoDescription implements Serializable {
      *
      * @param ec2InstanceId The Amazon EC2 Instance ID for this information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentInfoDescription withEc2InstanceId(String ec2InstanceId) {
@@ -192,7 +192,7 @@ public class EnvironmentInfoDescription implements Serializable {
      *
      * @param sampleTimestamp The time stamp when this information was retrieved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentInfoDescription withSampleTimestamp(java.util.Date sampleTimestamp) {
@@ -225,7 +225,7 @@ public class EnvironmentInfoDescription implements Serializable {
      *
      * @param message The retrieved information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentInfoDescription withMessage(String message) {

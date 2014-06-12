@@ -144,7 +144,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param jobId A unique identifier which refers to a particular job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withJobId(String jobId) {
@@ -190,7 +190,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType
@@ -224,7 +224,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType
@@ -259,7 +259,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param awsShippingAddress Address you ship your storage device to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withAwsShippingAddress(String awsShippingAddress) {
@@ -298,7 +298,7 @@ public class GetStatusResult implements Serializable {
      * @param locationCode A token representing the location of the storage device, such as
      *         "AtAWS".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withLocationCode(String locationCode) {
@@ -337,7 +337,7 @@ public class GetStatusResult implements Serializable {
      * @param locationMessage A more human readable form of the physical location of the storage
      *         device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withLocationMessage(String locationMessage) {
@@ -370,7 +370,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param progressCode A token representing the state of the job, such as "Started".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withProgressCode(String progressCode) {
@@ -403,7 +403,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param progressMessage A more human readable form of the job status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withProgressMessage(String progressMessage) {
@@ -442,7 +442,7 @@ public class GetStatusResult implements Serializable {
      * @param carrier Name of the shipping company. This value is included when the
      *         LocationCode is "Returned".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withCarrier(String carrier) {
@@ -487,7 +487,7 @@ public class GetStatusResult implements Serializable {
      *         storage device when it's returned to you. We return this value when
      *         the LocationCode is "Returned".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withTrackingNumber(String trackingNumber) {
@@ -520,7 +520,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param logBucket Amazon S3 bucket for user logs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withLogBucket(String logBucket) {
@@ -553,7 +553,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param logKey The key where the user logs were stored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withLogKey(String logKey) {
@@ -592,7 +592,7 @@ public class GetStatusResult implements Serializable {
      * @param errorCount Number of errors. We return this value when the ProgressCode is
      *         Success or SuccessWithErrors.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withErrorCount(Integer errorCount) {
@@ -643,7 +643,7 @@ public class GetStatusResult implements Serializable {
      *         want to create the signature file yourself. Generally you should use
      *         the SignatureFileContents value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withSignature(String signature) {
@@ -694,7 +694,7 @@ public class GetStatusResult implements Serializable {
      *         want to create the signature file yourself. Generally you should use
      *         the SignatureFileContents value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withSignatureFileContents(String signatureFileContents) {
@@ -727,7 +727,7 @@ public class GetStatusResult implements Serializable {
      *
      * @param currentManifest The last manifest submitted, which will be used to process the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withCurrentManifest(String currentManifest) {
@@ -766,7 +766,7 @@ public class GetStatusResult implements Serializable {
      * @param creationDate Timestamp of the CreateJob request in ISO8601 date format. For example
      *         "2010-03-28T20:27:35Z".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetStatusResult withCreationDate(java.util.Date creationDate) {

@@ -93,7 +93,7 @@ public class DescribeClusterSecurityGroupsResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSecurityGroupsResult withMarker(String marker) {
@@ -136,7 +136,7 @@ public class DescribeClusterSecurityGroupsResult implements Serializable {
      *
      * @param clusterSecurityGroups A list of <a>ClusterSecurityGroup</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(ClusterSecurityGroup... clusterSecurityGroups) {
@@ -154,7 +154,7 @@ public class DescribeClusterSecurityGroupsResult implements Serializable {
      *
      * @param clusterSecurityGroups A list of <a>ClusterSecurityGroup</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(java.util.Collection<ClusterSecurityGroup> clusterSecurityGroups) {

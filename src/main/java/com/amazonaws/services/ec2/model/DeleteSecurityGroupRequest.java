@@ -89,7 +89,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param groupName [EC2-Classic, default VPC] The name of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSecurityGroupRequest withGroupName(String groupName) {
@@ -122,7 +122,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param groupId The ID of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSecurityGroupRequest withGroupId(String groupId) {

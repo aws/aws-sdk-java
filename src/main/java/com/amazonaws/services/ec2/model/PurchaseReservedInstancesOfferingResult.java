@@ -51,7 +51,7 @@ public class PurchaseReservedInstancesOfferingResult implements Serializable {
      *
      * @param reservedInstancesId The IDs of the purchased Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PurchaseReservedInstancesOfferingResult withReservedInstancesId(String reservedInstancesId) {

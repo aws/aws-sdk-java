@@ -107,7 +107,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
      *         characters; alphanumeric characters, hyphens (-), and underscores (_)
      *         are allowed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetQueueUrlRequest withQueueName(String queueName) {
@@ -140,7 +140,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param queueOwnerAWSAccountId The AWS account ID of the account that created the queue.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetQueueUrlRequest withQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {

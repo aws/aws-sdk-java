@@ -58,7 +58,7 @@ public class GetIdentityNotificationAttributesResult implements Serializable {
      *
      * @param notificationAttributes A map of Identity to IdentityNotificationAttributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetIdentityNotificationAttributesResult withNotificationAttributes(java.util.Map<String,IdentityNotificationAttributes> notificationAttributes) {

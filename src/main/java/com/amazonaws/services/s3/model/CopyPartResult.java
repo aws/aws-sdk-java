@@ -16,17 +16,17 @@ package com.amazonaws.services.s3.model;
 
 import java.util.Date;
 
-import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+import com.amazonaws.services.s3.internal.SSEResultBase;
 
 
 /**
  * Result of the copy part operation.
  */
-public class CopyPartResult implements ServerSideEncryptionResult {
+public class CopyPartResult extends SSEResultBase {
 
     /** The ETag value of the new part */
     private String etag;
-    
+
     /** The last modified date for the new part */
     private Date lastModifiedDate;
 
@@ -36,15 +36,12 @@ public class CopyPartResult implements ServerSideEncryptionResult {
      * was copied.
      */
     private String versionId;
-    
+
     /**
      * The part number of the copied part
      */
     private int partNumber;
-    
-    /** The server side encryption algorithm of the new object */
-    private String serverSideEncryption;
-    
+
     /**
      * Gets the part number of the newly copied part.
      */
@@ -65,9 +62,9 @@ public class CopyPartResult implements ServerSideEncryptionResult {
     /**
      * Gets the ETag value for the new part that was created in the
      * associated {@link CopyPartRequest}.
-     * 
+     *
      * @return The ETag value for the new part.
-     * 
+     *
      * @see CopyPartResult#setETag(String)
      */
     public String getETag() {
@@ -77,21 +74,21 @@ public class CopyPartResult implements ServerSideEncryptionResult {
     /**
      * Sets the ETag value for the new part that was created from the
      * associated copy object request.
-     * 
+     *
      * @param etag
      *            The ETag value for the new part.
-     *            
-     * @see CopyPartResult#getETag()           
+     *
+     * @see CopyPartResult#getETag()
      */
     public void setETag(String etag) {
         this.etag = etag;
     }
-    
+
     /**
      * Returns an identifier which identifies the copy part by its part number
      * and the entity tag computed from the part's data. This information is
      * later needed to complete a multipart copy.
-     * 
+     *
      * @return An identifier which identifies the copy part by its part number
      *         and the entity tag computed from the part's data.
      */
@@ -101,9 +98,9 @@ public class CopyPartResult implements ServerSideEncryptionResult {
 
     /**
      * Gets the date the newly copied part was last modified.
-     * 
+     *
      * @return The date the newly copied part was last modified.
-     * 
+     *
      * @see CopyPartResult#setLastModifiedDate(Date)
      */
     public Date getLastModifiedDate() {
@@ -112,11 +109,11 @@ public class CopyPartResult implements ServerSideEncryptionResult {
 
     /**
      * Sets the date the newly copied part was last modified.
-     * 
+     *
      * @param lastModifiedDate
      *            The date the new, copied part was last modified.
-     *            
-     * @see CopyPartResult#getLastModifiedDate()          
+     *
+     * @see CopyPartResult#getLastModifiedDate()
      */
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
@@ -126,9 +123,9 @@ public class CopyPartResult implements ServerSideEncryptionResult {
      * Gets the version ID of the source object. This field is only
      * present if object versioning has been enabled for the bucket the
      * object was copied from.
-     * 
+     *
      * @return The version ID of the newly copied object.
-     * 
+     *
      * @see CopyPartResult#setVersionId(String)
      */
     public String getVersionId() {
@@ -137,31 +134,13 @@ public class CopyPartResult implements ServerSideEncryptionResult {
 
     /**
      * Sets the version ID of the source object.
-     * 
+     *
      * @param versionId
      *            The version ID of the source object.
-     *            
+     *
      * @see CopyPartResult#getVersionId()
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;
-    }
-
-    /**
-     * Returns the server-side encryption algorithm for the newly created
-     * object, or null if none was used.
-     */
-    public String getServerSideEncryption() {
-        return serverSideEncryption;
-    }
-
-    /**
-     * Sets the server-side encryption algorithm for the newly created object.
-     * 
-     * @param serverSideEncryption
-     *            The server-side encryption algorithm for the new object.
-     */
-    public void setServerSideEncryption(String serverSideEncryption) {
-        this.serverSideEncryption = serverSideEncryption;
     }
 }

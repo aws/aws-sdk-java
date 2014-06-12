@@ -281,7 +281,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *
      * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withInstanceIds(String... instanceIds) {
@@ -299,7 +299,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *
      * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -1429,7 +1429,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         association ID returned when the network interface was associated with
      *         an IP address. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withFilters(Filter... filters) {
@@ -1807,7 +1807,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         association ID returned when the network interface was associated with
      *         an IP address. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withFilters(java.util.Collection<Filter> filters) {
@@ -1853,7 +1853,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @param nextToken The token for the next set of items to return. (You received this
      *         token from a prior call.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withNextToken(String nextToken) {
@@ -1904,7 +1904,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         next set of results. If the value is greater than 1000, we return only
      *         1000 items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstancesRequest withMaxResults(Integer maxResults) {

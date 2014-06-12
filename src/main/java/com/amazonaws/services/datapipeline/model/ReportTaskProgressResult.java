@@ -67,7 +67,7 @@ public class ReportTaskProgressResult implements Serializable {
      *         of the task. The task runner does not need to call
      *         <a>SetTaskStatus</a> for canceled tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportTaskProgressResult withCanceled(Boolean canceled) {

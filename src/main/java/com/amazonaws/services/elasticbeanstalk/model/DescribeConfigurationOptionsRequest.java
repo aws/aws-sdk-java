@@ -134,7 +134,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *         options associated with either the configuration template or
      *         environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationOptionsRequest withApplicationName(String applicationName) {
@@ -182,7 +182,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      * @param templateName The name of the configuration template whose configuration options you
      *         want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationOptionsRequest withTemplateName(String templateName) {
@@ -230,7 +230,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      * @param environmentName The name of the environment whose configuration options you want to
      *         describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationOptionsRequest withEnvironmentName(String environmentName) {
@@ -278,7 +278,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      * @param solutionStackName The name of the solution stack whose configuration options you want to
      *         describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationOptionsRequest withSolutionStackName(String solutionStackName) {
@@ -327,7 +327,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      * @param options If specified, restricts the descriptions to only the specified
      *         options.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationOptionsRequest withOptions(OptionSpecification... options) {
@@ -347,7 +347,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      * @param options If specified, restricts the descriptions to only the specified
      *         options.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationOptionsRequest withOptions(java.util.Collection<OptionSpecification> options) {

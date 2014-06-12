@@ -65,7 +65,7 @@ public class PartListElement implements Serializable {
      *
      * @param rangeInBytes The byte range of a part, inclusive of the upper value of the range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PartListElement withRangeInBytes(String rangeInBytes) {
@@ -104,7 +104,7 @@ public class PartListElement implements Serializable {
      * @param sHA256TreeHash The SHA256 tree hash value that Amazon Glacier calculated for the
      *         part. This field is never <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PartListElement withSHA256TreeHash(String sHA256TreeHash) {

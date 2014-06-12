@@ -114,7 +114,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
      *         alphanumeric characters. Must not be the word "Default". <p>Example:
      *         <code>mysecuritygroup</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheSecurityGroupRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {
@@ -147,7 +147,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
      *
      * @param description A description for the cache security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheSecurityGroupRequest withDescription(String description) {

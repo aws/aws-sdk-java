@@ -75,7 +75,7 @@ public class InstanceCount implements Serializable {
      *
      * @param state The states of the listed Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ListingState
@@ -109,7 +109,7 @@ public class InstanceCount implements Serializable {
      *
      * @param state The states of the listed Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ListingState
@@ -150,7 +150,7 @@ public class InstanceCount implements Serializable {
      * @param instanceCount he number of listed Reserved Instances in the state specified by the
      *         <code>state</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceCount withInstanceCount(Integer instanceCount) {

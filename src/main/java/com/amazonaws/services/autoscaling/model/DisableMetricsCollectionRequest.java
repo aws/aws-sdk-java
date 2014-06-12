@@ -88,7 +88,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      *
      * @param autoScalingGroupName The name or ARN of the Auto Scaling Group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableMetricsCollectionRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -167,7 +167,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableMetricsCollectionRequest withMetrics(String... metrics) {
@@ -197,7 +197,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableMetricsCollectionRequest withMetrics(java.util.Collection<String> metrics) {

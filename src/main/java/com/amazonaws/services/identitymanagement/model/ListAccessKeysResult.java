@@ -83,7 +83,7 @@ public class ListAccessKeysResult implements Serializable {
      *
      * @param accessKeyMetadata A list of access key metadata.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccessKeysResult withAccessKeyMetadata(AccessKeyMetadata... accessKeyMetadata) {
@@ -101,7 +101,7 @@ public class ListAccessKeysResult implements Serializable {
      *
      * @param accessKeyMetadata A list of access key metadata.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccessKeysResult withAccessKeyMetadata(java.util.Collection<AccessKeyMetadata> accessKeyMetadata) {
@@ -159,7 +159,7 @@ public class ListAccessKeysResult implements Serializable {
      *         using the <code>Marker</code> request parameter to retrieve more keys
      *         in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccessKeysResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListAccessKeysResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccessKeysResult withMarker(String marker) {

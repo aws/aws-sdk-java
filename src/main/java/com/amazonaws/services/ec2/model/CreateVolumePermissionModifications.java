@@ -74,7 +74,7 @@ public class CreateVolumePermissionModifications implements Serializable {
      * @param add Adds a specific AWS account ID or group to a volume's list of create
      *         volume permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumePermissionModifications withAdd(CreateVolumePermission... add) {
@@ -94,7 +94,7 @@ public class CreateVolumePermissionModifications implements Serializable {
      * @param add Adds a specific AWS account ID or group to a volume's list of create
      *         volume permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumePermissionModifications withAdd(java.util.Collection<CreateVolumePermission> add) {
@@ -150,7 +150,7 @@ public class CreateVolumePermissionModifications implements Serializable {
      * @param remove Removes a specific AWS account ID or group from a volume's list of
      *         create volume permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumePermissionModifications withRemove(CreateVolumePermission... remove) {
@@ -170,7 +170,7 @@ public class CreateVolumePermissionModifications implements Serializable {
      * @param remove Removes a specific AWS account ID or group from a volume's list of
      *         create volume permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumePermissionModifications withRemove(java.util.Collection<CreateVolumePermission> remove) {

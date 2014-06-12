@@ -89,7 +89,7 @@ public class ConfigurationOptionSetting implements Serializable {
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionSetting withNamespace(String namespace) {
@@ -122,7 +122,7 @@ public class ConfigurationOptionSetting implements Serializable {
      *
      * @param optionName The name of the configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionSetting withOptionName(String optionName) {
@@ -155,7 +155,7 @@ public class ConfigurationOptionSetting implements Serializable {
      *
      * @param value The current value for the configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigurationOptionSetting withValue(String value) {

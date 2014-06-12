@@ -165,7 +165,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param streamName The name of the stream for the shard split.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SplitShardRequest withStreamName(String streamName) {
@@ -210,7 +210,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param shardToSplit The shard ID of the shard to split.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SplitShardRequest withShardToSplit(String shardToSplit) {
@@ -294,7 +294,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements Serial
      *         distributed to one of the child shards. All the lower hash key values
      *         in the range are distributed to the other child shard.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SplitShardRequest withNewStartingHashKey(String newStartingHashKey) {

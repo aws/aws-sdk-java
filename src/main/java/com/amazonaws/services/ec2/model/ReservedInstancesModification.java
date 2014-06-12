@@ -95,7 +95,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param reservedInstancesModificationId A unique ID for the Reserved Instance modification.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withReservedInstancesModificationId(String reservedInstancesModificationId) {
@@ -138,7 +138,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withReservedInstancesIds(ReservedInstancesId... reservedInstancesIds) {
@@ -156,7 +156,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param reservedInstancesIds The IDs of one or more Reserved Instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withReservedInstancesIds(java.util.Collection<ReservedInstancesId> reservedInstancesIds) {
@@ -212,7 +212,7 @@ public class ReservedInstancesModification implements Serializable {
      * @param modificationResults Contains target configurations along with their corresponding new
      *         Reserved Instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withModificationResults(ReservedInstancesModificationResult... modificationResults) {
@@ -232,7 +232,7 @@ public class ReservedInstancesModification implements Serializable {
      * @param modificationResults Contains target configurations along with their corresponding new
      *         Reserved Instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withModificationResults(java.util.Collection<ReservedInstancesModificationResult> modificationResults) {
@@ -272,7 +272,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param createDate The time when the modification request was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withCreateDate(java.util.Date createDate) {
@@ -305,7 +305,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param updateDate The time when the modification request was last updated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withUpdateDate(java.util.Date updateDate) {
@@ -338,7 +338,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param effectiveDate The time for the modification to become effective.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withEffectiveDate(java.util.Date effectiveDate) {
@@ -371,7 +371,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param status The status of the Reserved Instances modification request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withStatus(String status) {
@@ -404,7 +404,7 @@ public class ReservedInstancesModification implements Serializable {
      *
      * @param statusMessage The reason for the status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withStatusMessage(String statusMessage) {
@@ -443,7 +443,7 @@ public class ReservedInstancesModification implements Serializable {
      * @param clientToken A unique, case-sensitive key supplied by the client to ensure that the
      *         modification request is idempotent.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModification withClientToken(String clientToken) {

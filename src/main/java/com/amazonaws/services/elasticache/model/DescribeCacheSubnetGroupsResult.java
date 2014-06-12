@@ -59,7 +59,7 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSubnetGroupsResult withMarker(String marker) {
@@ -108,7 +108,7 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
      * @param cacheSubnetGroups A list of cache subnet groups. Each element in the list contains
      *         detailed information about one group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSubnetGroupsResult withCacheSubnetGroups(CacheSubnetGroup... cacheSubnetGroups) {
@@ -128,7 +128,7 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
      * @param cacheSubnetGroups A list of cache subnet groups. Each element in the list contains
      *         detailed information about one group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheSubnetGroupsResult withCacheSubnetGroups(java.util.Collection<CacheSubnetGroup> cacheSubnetGroups) {

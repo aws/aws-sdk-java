@@ -90,7 +90,7 @@ public class UploadCallable implements Callable<UploadResult> {
      * @return True if this UploadCallable is processing a multipart upload.
      */
     public boolean isMultipartUpload() {
-    	return TransferManagerUtils.shouldUseMultipartUpload(putObjectRequest, configuration);
+        return TransferManagerUtils.shouldUseMultipartUpload(putObjectRequest, configuration);
     }
 
     public UploadResult call() throws Exception {
@@ -219,7 +219,7 @@ public class UploadCallable implements Callable<UploadResult> {
 
     /**
      * Initiates a multipart upload and returns the upload id
-     * @param isUsingEncryption 
+     * @param isUsingEncryption
      */
     private String initiateMultipartUpload(PutObjectRequest putObjectRequest, boolean isUsingEncryption) {
 
@@ -239,6 +239,10 @@ public class UploadCallable implements Callable<UploadResult> {
         if (putObjectRequest.getStorageClass() != null) {
             initiateMultipartUploadRequest.setStorageClass(
                     StorageClass.fromValue(putObjectRequest.getStorageClass()));
+        }
+
+        if (putObjectRequest.getSSECustomerKey() != null) {
+            initiateMultipartUploadRequest.setSSECustomerKey(putObjectRequest.getSSECustomerKey());
         }
 
         String uploadId = s3.initiateMultipartUpload(initiateMultipartUploadRequest).getUploadId();

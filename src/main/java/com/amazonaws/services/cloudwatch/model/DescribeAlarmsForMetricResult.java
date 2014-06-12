@@ -63,7 +63,7 @@ public class DescribeAlarmsForMetricResult implements Serializable {
      *
      * @param metricAlarms A list of information for each alarm with the specified metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAlarmsForMetricResult withMetricAlarms(MetricAlarm... metricAlarms) {
@@ -81,7 +81,7 @@ public class DescribeAlarmsForMetricResult implements Serializable {
      *
      * @param metricAlarms A list of information for each alarm with the specified metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAlarmsForMetricResult withMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {

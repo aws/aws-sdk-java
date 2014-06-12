@@ -82,7 +82,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withInstanceId(String instanceId) {
@@ -115,7 +115,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param availabilityZone The Availability Zone of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withAvailabilityZone(String availabilityZone) {
@@ -158,7 +158,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param events Extra information regarding events associated with the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withEvents(InstanceStatusEvent... events) {
@@ -176,7 +176,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param events Extra information regarding events associated with the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withEvents(java.util.Collection<InstanceStatusEvent> events) {
@@ -222,7 +222,7 @@ public class InstanceStatus implements Serializable {
      * @param instanceState The intended state of the instance. <a>DescribeInstanceStatus</a>
      *         requires that an instance be in the <code>running</code> state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withInstanceState(InstanceState instanceState) {
@@ -267,7 +267,7 @@ public class InstanceStatus implements Serializable {
      *         systems that support an instance, such as hardware failures and
      *         network connectivity problems.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withSystemStatus(InstanceStatusSummary systemStatus) {
@@ -306,7 +306,7 @@ public class InstanceStatus implements Serializable {
      * @param instanceStatus Reports impaired functionality that stems from issues internal to the
      *         instance, such as impaired reachability.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withInstanceStatus(InstanceStatusSummary instanceStatus) {

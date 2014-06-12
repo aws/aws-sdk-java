@@ -113,7 +113,7 @@ public class ListHostedZonesResult implements Serializable {
      * @param hostedZones A complex type that contains information about the hosted zones
      *         associated with the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesResult withHostedZones(HostedZone... hostedZones) {
@@ -133,7 +133,7 @@ public class ListHostedZonesResult implements Serializable {
      * @param hostedZones A complex type that contains information about the hosted zones
      *         associated with the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesResult withHostedZones(java.util.Collection<HostedZone> hostedZones) {
@@ -200,7 +200,7 @@ public class ListHostedZonesResult implements Serializable {
      *         response in the <code>marker</code> parameter to get the next page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesResult withMarker(String marker) {
@@ -251,7 +251,7 @@ public class ListHostedZonesResult implements Serializable {
      *         next page of results by using the <code>Marker</code> element.
      *         <p>Valid Values: <code>true</code> | <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesResult withIsTruncated(Boolean isTruncated) {
@@ -332,7 +332,7 @@ public class ListHostedZonesResult implements Serializable {
      *         of the <code>NextMarker</code> element in the <code>Marker</code>
      *         element to get the next page of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesResult withNextMarker(String nextMarker) {
@@ -407,7 +407,7 @@ public class ListHostedZonesResult implements Serializable {
      *         <a>ListHostedZonesRequest$Marker</a> element to get the next page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHostedZonesResult withMaxItems(String maxItems) {

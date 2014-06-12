@@ -113,7 +113,7 @@ public class ActivityTask implements Serializable {
      *         workers to communicate progress and response information back to the
      *         system about the task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTask withTaskToken(String taskToken) {
@@ -155,7 +155,7 @@ public class ActivityTask implements Serializable {
      *
      * @param activityId The unique ID of the task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTask withActivityId(String activityId) {
@@ -194,7 +194,7 @@ public class ActivityTask implements Serializable {
      * @param startedEventId The id of the <code>ActivityTaskStarted</code> event recorded in the
      *         history.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTask withStartedEventId(Long startedEventId) {
@@ -227,7 +227,7 @@ public class ActivityTask implements Serializable {
      *
      * @param workflowExecution The workflow execution that started this activity task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTask withWorkflowExecution(WorkflowExecution workflowExecution) {
@@ -260,7 +260,7 @@ public class ActivityTask implements Serializable {
      *
      * @param activityType The type of this activity task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTask withActivityType(ActivityType activityType) {
@@ -314,7 +314,7 @@ public class ActivityTask implements Serializable {
      *         the input is user defined and should be meaningful to the activity
      *         implementation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTask withInput(String input) {

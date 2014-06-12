@@ -61,7 +61,7 @@ public class LaunchPermission implements Serializable {
      *
      * @param userId The AWS account ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchPermission withUserId(String userId) {
@@ -107,7 +107,7 @@ public class LaunchPermission implements Serializable {
      *
      * @param group The name of the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PermissionGroup
@@ -141,7 +141,7 @@ public class LaunchPermission implements Serializable {
      *
      * @param group The name of the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PermissionGroup

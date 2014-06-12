@@ -95,7 +95,7 @@ public class Body implements Serializable {
      *         email clients, or clients on high-latency networks (such as mobile
      *         devices).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Body withText(Content text) {
@@ -140,7 +140,7 @@ public class Body implements Serializable {
      *         that can process HTML. You can include clickable links, formatted
      *         text, and much more in an HTML message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Body withHtml(Content html) {

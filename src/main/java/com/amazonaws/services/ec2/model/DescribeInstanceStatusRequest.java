@@ -221,7 +221,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
      *         <p>Constraints: Maximum 100 explicitly specified instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusRequest withInstanceIds(String... instanceIds) {
@@ -241,7 +241,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * @param instanceIds One or more instance IDs. <p>Default: Describes all your instances.
      *         <p>Constraints: Maximum 100 explicitly specified instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -489,7 +489,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         <code>initializing</code> | <code>insufficient-data</code> |
      *         <code>not-applicable</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusRequest withFilters(Filter... filters) {
@@ -573,7 +573,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         <code>initializing</code> | <code>insufficient-data</code> |
      *         <code>not-applicable</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusRequest withFilters(java.util.Collection<Filter> filters) {
@@ -613,7 +613,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *
      * @param nextToken The next paginated set of results to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusRequest withNextToken(String nextToken) {
@@ -652,7 +652,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * @param maxResults The maximum number of paginated instance items per response.
      *         <p>Default: 1000
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusRequest withMaxResults(Integer maxResults) {
@@ -697,7 +697,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         When <code>false</code>, includes the health status for running
      *         instances only. <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusRequest withIncludeAllInstances(Boolean includeAllInstances) {

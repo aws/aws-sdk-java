@@ -116,7 +116,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         You must generate the metadata document using the identity management
      *         software that is used as your organization's IdP.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSAMLProviderRequest withSAMLMetadataDocument(String sAMLMetadataDocument) {
@@ -158,7 +158,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *
      * @param sAMLProviderArn The Amazon Resource Name (ARN) of the SAML provider to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSAMLProviderRequest withSAMLProviderArn(String sAMLProviderArn) {

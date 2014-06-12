@@ -91,7 +91,7 @@ public class Vpc implements Serializable {
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Vpc withVpcId(String vpcId) {
@@ -137,7 +137,7 @@ public class Vpc implements Serializable {
      *
      * @param state The current state of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpcState
@@ -171,7 +171,7 @@ public class Vpc implements Serializable {
      *
      * @param state The current state of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpcState
@@ -206,7 +206,7 @@ public class Vpc implements Serializable {
      *
      * @param cidrBlock The CIDR block for the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Vpc withCidrBlock(String cidrBlock) {
@@ -251,7 +251,7 @@ public class Vpc implements Serializable {
      *         <code>default</code> if the default options are associated with the
      *         VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Vpc withDhcpOptionsId(String dhcpOptionsId) {
@@ -294,7 +294,7 @@ public class Vpc implements Serializable {
      *
      * @param tags Any tags assigned to the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Vpc withTags(Tag... tags) {
@@ -312,7 +312,7 @@ public class Vpc implements Serializable {
      *
      * @param tags Any tags assigned to the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Vpc withTags(java.util.Collection<Tag> tags) {
@@ -365,7 +365,7 @@ public class Vpc implements Serializable {
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -399,7 +399,7 @@ public class Vpc implements Serializable {
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -434,7 +434,7 @@ public class Vpc implements Serializable {
      *
      * @param isDefault Indicates whether the VPC is the default VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Vpc withIsDefault(Boolean isDefault) {

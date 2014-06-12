@@ -155,7 +155,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetQueueAttributesRequest withQueueUrl(String queueUrl) {
@@ -198,7 +198,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param attributeNames A list of attributes to retrieve information for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetQueueAttributesRequest withAttributeNames(String... attributeNames) {
@@ -216,7 +216,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param attributeNames A list of attributes to retrieve information for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetQueueAttributesRequest withAttributeNames(java.util.Collection<String> attributeNames) {
@@ -238,7 +238,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param attributeNames A list of attributes to retrieve information for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetQueueAttributesRequest withAttributeNames(QueueAttributeName... attributeNames) {

@@ -73,7 +73,7 @@ public class ActivityTypeInfos implements Serializable {
      *
      * @param typeInfos List of activity type information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeInfos withTypeInfos(ActivityTypeInfo... typeInfos) {
@@ -91,7 +91,7 @@ public class ActivityTypeInfos implements Serializable {
      *
      * @param typeInfos List of activity type information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeInfos withTypeInfos(java.util.Collection<ActivityTypeInfo> typeInfos) {
@@ -152,7 +152,7 @@ public class ActivityTypeInfos implements Serializable {
      *         results, repeat the request specifying this token and all other
      *         arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeInfos withNextPageToken(String nextPageToken) {

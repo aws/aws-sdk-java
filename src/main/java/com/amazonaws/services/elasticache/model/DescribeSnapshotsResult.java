@@ -80,7 +80,7 @@ public class DescribeSnapshotsResult implements Serializable {
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsResult withMarker(String marker) {
@@ -129,7 +129,7 @@ public class DescribeSnapshotsResult implements Serializable {
      * @param snapshots A list of snapshots. Each item in the list contains detailed
      *         information about one snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsResult withSnapshots(Snapshot... snapshots) {
@@ -149,7 +149,7 @@ public class DescribeSnapshotsResult implements Serializable {
      * @param snapshots A list of snapshots. Each item in the list contains detailed
      *         information about one snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsResult withSnapshots(java.util.Collection<Snapshot> snapshots) {

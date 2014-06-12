@@ -112,7 +112,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
      * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotRequest withVolumeARN(String volumeARN) {
@@ -172,7 +172,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
      *         field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
      *         <b>Description</b> field
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotRequest withSnapshotDescription(String snapshotDescription) {

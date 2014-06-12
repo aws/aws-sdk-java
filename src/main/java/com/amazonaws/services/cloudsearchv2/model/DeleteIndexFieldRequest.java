@@ -108,7 +108,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteIndexFieldRequest withDomainName(String domainName) {
@@ -159,7 +159,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
      * @param indexFieldName The name of the index field your want to remove from the domain's
      *         indexing options.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteIndexFieldRequest withIndexFieldName(String indexFieldName) {

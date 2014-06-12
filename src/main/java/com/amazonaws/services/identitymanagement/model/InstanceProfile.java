@@ -159,7 +159,7 @@ public class InstanceProfile implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceProfile withPath(String path) {
@@ -204,7 +204,7 @@ public class InstanceProfile implements Serializable {
      *
      * @param instanceProfileName The name identifying the instance profile.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceProfile withInstanceProfileName(String instanceProfileName) {
@@ -273,7 +273,7 @@ public class InstanceProfile implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceProfile withInstanceProfileId(String instanceProfileId) {
@@ -339,7 +339,7 @@ public class InstanceProfile implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceProfile withArn(String arn) {
@@ -372,7 +372,7 @@ public class InstanceProfile implements Serializable {
      *
      * @param createDate The date when the instance profile was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceProfile withCreateDate(java.util.Date createDate) {
@@ -415,7 +415,7 @@ public class InstanceProfile implements Serializable {
      *
      * @param roles The role associated with the instance profile.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceProfile withRoles(Role... roles) {
@@ -433,7 +433,7 @@ public class InstanceProfile implements Serializable {
      *
      * @param roles The role associated with the instance profile.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceProfile withRoles(java.util.Collection<Role> roles) {

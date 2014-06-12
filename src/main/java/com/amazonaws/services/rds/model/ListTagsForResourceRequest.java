@@ -91,7 +91,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest implemen
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTagsForResourceRequest withResourceName(String resourceName) {

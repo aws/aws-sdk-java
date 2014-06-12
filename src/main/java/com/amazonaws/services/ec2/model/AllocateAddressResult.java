@@ -67,7 +67,7 @@ public class AllocateAddressResult implements Serializable {
      *
      * @param publicIp The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocateAddressResult withPublicIp(String publicIp) {
@@ -125,7 +125,7 @@ public class AllocateAddressResult implements Serializable {
      *         EC2-Classic (<code>standard</code>) or instances in a VPC
      *         (<code>vpc</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DomainType
@@ -167,7 +167,7 @@ public class AllocateAddressResult implements Serializable {
      *         EC2-Classic (<code>standard</code>) or instances in a VPC
      *         (<code>vpc</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DomainType
@@ -208,7 +208,7 @@ public class AllocateAddressResult implements Serializable {
      * @param allocationId [EC2-VPC] The ID that AWS assigns to represent the allocation of the
      *         Elastic IP address for use with instances in a VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocateAddressResult withAllocationId(String allocationId) {

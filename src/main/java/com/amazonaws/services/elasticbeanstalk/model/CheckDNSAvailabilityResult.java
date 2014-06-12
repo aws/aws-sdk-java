@@ -97,7 +97,7 @@ public class CheckDNSAvailabilityResult implements Serializable {
      *         The CNAME is available. </li> <li> <code>false</code> : The CNAME is
      *         not available. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CheckDNSAvailabilityResult withAvailable(Boolean available) {
@@ -164,7 +164,7 @@ public class CheckDNSAvailabilityResult implements Serializable {
      * @param fullyQualifiedCNAME The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is
      *         called with the provided prefix.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CheckDNSAvailabilityResult withFullyQualifiedCNAME(String fullyQualifiedCNAME) {

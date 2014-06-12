@@ -59,7 +59,7 @@ public class LoadBalancer implements Serializable {
      *
      * @param name The name of the LoadBalancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBalancer withName(String name) {

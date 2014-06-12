@@ -88,7 +88,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param id The identifier of the pipeline to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdatePipelineStatusRequest withId(String id) {
@@ -142,7 +142,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest impleme
      *         pipeline is processing jobs.</li> <li> <code>Paused</code>: The
      *         pipeline is not currently processing jobs.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdatePipelineStatusRequest withStatus(String status) {

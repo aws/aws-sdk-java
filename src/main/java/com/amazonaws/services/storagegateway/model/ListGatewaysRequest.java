@@ -99,7 +99,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements Seri
      * @param marker An opaque string that indicates the position at which to begin the
      *         returned list of gateways.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGatewaysRequest withMarker(String marker) {
@@ -147,7 +147,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements Seri
      * @param limit Specifies that the list of gateways returned be limited to the
      *         specified number of items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGatewaysRequest withLimit(Integer limit) {

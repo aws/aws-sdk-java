@@ -162,7 +162,7 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobRequest withAccountId(String accountId) {
@@ -195,7 +195,7 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobRequest withVaultName(String vaultName) {
@@ -228,7 +228,7 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param jobId The ID of the job to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobRequest withJobId(String jobId) {

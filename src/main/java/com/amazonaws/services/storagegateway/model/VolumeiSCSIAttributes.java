@@ -91,7 +91,7 @@ public class VolumeiSCSIAttributes implements Serializable {
      *
      * @param targetARN The Amazon Resource Name (ARN) of the volume target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeiSCSIAttributes withTargetARN(String targetARN) {
@@ -133,7 +133,7 @@ public class VolumeiSCSIAttributes implements Serializable {
      *
      * @param networkInterfaceId The network interface identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeiSCSIAttributes withNetworkInterfaceId(String networkInterfaceId) {
@@ -166,7 +166,7 @@ public class VolumeiSCSIAttributes implements Serializable {
      *
      * @param networkInterfacePort The port used to communicate with iSCSI targets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeiSCSIAttributes withNetworkInterfacePort(Integer networkInterfacePort) {
@@ -208,7 +208,7 @@ public class VolumeiSCSIAttributes implements Serializable {
      *
      * @param lunNumber The logical disk number.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeiSCSIAttributes withLunNumber(Integer lunNumber) {
@@ -241,7 +241,7 @@ public class VolumeiSCSIAttributes implements Serializable {
      *
      * @param chapEnabled Indicates whether mutual CHAP is enabled for the iSCSI target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeiSCSIAttributes withChapEnabled(Boolean chapEnabled) {

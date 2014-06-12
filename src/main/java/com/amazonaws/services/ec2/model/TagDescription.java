@@ -71,7 +71,7 @@ public class TagDescription implements Serializable {
      *
      * @param resourceId The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TagDescription withResourceId(String resourceId) {
@@ -117,7 +117,7 @@ public class TagDescription implements Serializable {
      *
      * @param resourceType The type of resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ResourceType
@@ -151,7 +151,7 @@ public class TagDescription implements Serializable {
      *
      * @param resourceType The type of resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ResourceType
@@ -186,7 +186,7 @@ public class TagDescription implements Serializable {
      *
      * @param key The key of the tag.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TagDescription withKey(String key) {
@@ -219,7 +219,7 @@ public class TagDescription implements Serializable {
      *
      * @param value The value of the tag.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TagDescription withValue(String value) {

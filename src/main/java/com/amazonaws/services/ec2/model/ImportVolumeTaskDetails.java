@@ -73,7 +73,7 @@ public class ImportVolumeTaskDetails implements Serializable {
      *
      * @param bytesConverted The number of bytes converted so far.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeTaskDetails withBytesConverted(Long bytesConverted) {
@@ -106,7 +106,7 @@ public class ImportVolumeTaskDetails implements Serializable {
      *
      * @param availabilityZone The Availability Zone where the resulting volume will reside.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeTaskDetails withAvailabilityZone(String availabilityZone) {
@@ -139,7 +139,7 @@ public class ImportVolumeTaskDetails implements Serializable {
      *
      * @param description The description you provided when starting the import volume task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeTaskDetails withDescription(String description) {
@@ -172,7 +172,7 @@ public class ImportVolumeTaskDetails implements Serializable {
      *
      * @param image The image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeTaskDetails withImage(DiskImageDescription image) {
@@ -205,7 +205,7 @@ public class ImportVolumeTaskDetails implements Serializable {
      *
      * @param volume The volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportVolumeTaskDetails withVolume(DiskImageVolumeDescription volume) {

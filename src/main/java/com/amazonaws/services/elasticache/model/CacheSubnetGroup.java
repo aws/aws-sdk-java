@@ -75,7 +75,7 @@ public class CacheSubnetGroup implements Serializable {
      *
      * @param cacheSubnetGroupName The name of the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSubnetGroup withCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -108,7 +108,7 @@ public class CacheSubnetGroup implements Serializable {
      *
      * @param cacheSubnetGroupDescription The description of the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSubnetGroup withCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
@@ -147,7 +147,7 @@ public class CacheSubnetGroup implements Serializable {
      * @param vpcId The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
      *         subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSubnetGroup withVpcId(String vpcId) {
@@ -190,7 +190,7 @@ public class CacheSubnetGroup implements Serializable {
      *
      * @param subnets A list of subnets associated with the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSubnetGroup withSubnets(Subnet... subnets) {
@@ -208,7 +208,7 @@ public class CacheSubnetGroup implements Serializable {
      *
      * @param subnets A list of subnets associated with the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSubnetGroup withSubnets(java.util.Collection<Subnet> subnets) {

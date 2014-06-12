@@ -100,7 +100,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implement
      *
      * @param userName Name of the user whose password you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteLoginProfileRequest withUserName(String userName) {

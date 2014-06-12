@@ -63,7 +63,7 @@ public class EventCategoriesMap implements Serializable {
      * @param sourceType The Amazon Redshift source type, such as cluster or cluster-snapshot,
      *         that the returned categories belong to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventCategoriesMap withSourceType(String sourceType) {
@@ -106,7 +106,7 @@ public class EventCategoriesMap implements Serializable {
      *
      * @param events The events in the event category.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventCategoriesMap withEvents(EventInfoMap... events) {
@@ -124,7 +124,7 @@ public class EventCategoriesMap implements Serializable {
      *
      * @param events The events in the event category.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EventCategoriesMap withEvents(java.util.Collection<EventInfoMap> events) {

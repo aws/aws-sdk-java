@@ -72,7 +72,7 @@ public class EbsInstanceBlockDevice implements Serializable {
      *
      * @param volumeId The ID of the Amazon EBS volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsInstanceBlockDevice withVolumeId(String volumeId) {
@@ -118,7 +118,7 @@ public class EbsInstanceBlockDevice implements Serializable {
      *
      * @param status The attachment state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttachmentStatus
@@ -152,7 +152,7 @@ public class EbsInstanceBlockDevice implements Serializable {
      *
      * @param status The attachment state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttachmentStatus
@@ -187,7 +187,7 @@ public class EbsInstanceBlockDevice implements Serializable {
      *
      * @param attachTime The time stamp when the attachment initiated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsInstanceBlockDevice withAttachTime(java.util.Date attachTime) {
@@ -220,7 +220,7 @@ public class EbsInstanceBlockDevice implements Serializable {
      *
      * @param deleteOnTermination Indicates whether the volume is deleted on instance termination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsInstanceBlockDevice withDeleteOnTermination(Boolean deleteOnTermination) {

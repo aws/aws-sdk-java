@@ -63,7 +63,7 @@ public class DhcpOptions implements Serializable {
      *
      * @param dhcpOptionsId The ID of the set of DHCP options.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DhcpOptions withDhcpOptionsId(String dhcpOptionsId) {
@@ -106,7 +106,7 @@ public class DhcpOptions implements Serializable {
      *
      * @param dhcpConfigurations One or more DHCP options in the set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DhcpOptions withDhcpConfigurations(DhcpConfiguration... dhcpConfigurations) {
@@ -124,7 +124,7 @@ public class DhcpOptions implements Serializable {
      *
      * @param dhcpConfigurations One or more DHCP options in the set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DhcpOptions withDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
@@ -174,7 +174,7 @@ public class DhcpOptions implements Serializable {
      *
      * @param tags Any tags assigned to the DHCP options set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DhcpOptions withTags(Tag... tags) {
@@ -192,7 +192,7 @@ public class DhcpOptions implements Serializable {
      *
      * @param tags Any tags assigned to the DHCP options set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DhcpOptions withTags(java.util.Collection<Tag> tags) {

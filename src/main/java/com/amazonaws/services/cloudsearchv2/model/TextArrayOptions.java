@@ -102,7 +102,7 @@ public class TextArrayOptions implements Serializable {
      * @param defaultValue A value to use for the field if the field isn't specified for a
      *         document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextArrayOptions withDefaultValue(String defaultValue) {
@@ -144,7 +144,7 @@ public class TextArrayOptions implements Serializable {
      *
      * @param sourceFields A list of source fields to map to the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextArrayOptions withSourceFields(String sourceFields) {
@@ -183,7 +183,7 @@ public class TextArrayOptions implements Serializable {
      * @param returnEnabled Whether the contents of the field can be returned in the search
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextArrayOptions withReturnEnabled(Boolean returnEnabled) {
@@ -227,7 +227,7 @@ public class TextArrayOptions implements Serializable {
      *
      * @param highlightEnabled Whether highlights can be returned for the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextArrayOptions withHighlightEnabled(Boolean highlightEnabled) {
@@ -278,7 +278,7 @@ public class TextArrayOptions implements Serializable {
      *
      * @param analysisScheme The name of an analysis scheme for a <code>text-array</code> field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextArrayOptions withAnalysisScheme(String analysisScheme) {

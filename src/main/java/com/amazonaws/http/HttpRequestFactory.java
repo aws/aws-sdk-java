@@ -23,6 +23,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
+import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -121,6 +122,27 @@ class HttpRequestFactory {
                     entity = newBufferedHttpEntity(entity);
                 }
                 putMethod.setEntity(entity);
+            }
+        } else if (request.getHttpMethod() == HttpMethodName.PATCH) {
+            HttpPatch patchMethod = new HttpPatch(uri);
+            httpRequest = patchMethod;
+
+            /*
+             * We should never reuse the entity of the previous request, since
+             * reading from the buffered entity will bypass reading from the
+             * original request content. And if the content contains InputStream
+             * wrappers that were added for validation-purpose (e.g.
+             * Md5DigestCalculationInputStream), these wrappers would never be
+             * read and updated again after AmazonHttpClient resets it in
+             * preparation for the retry. Eventually, these wrappers would
+             * return incorrect validation result.
+             */
+            if (request.getContent() != null) {
+                HttpEntity entity = new RepeatableInputStreamRequestEntity(request);
+                if (request.getHeaders().get("Content-Length") == null) {
+                    entity = newBufferedHttpEntity(entity);
+                }
+                patchMethod.setEntity(entity);
             }
         } else if (request.getHttpMethod() == HttpMethodName.GET) {
             httpRequest = new HttpGet(uri);

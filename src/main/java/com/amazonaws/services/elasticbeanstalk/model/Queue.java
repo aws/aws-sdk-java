@@ -58,7 +58,7 @@ public class Queue implements Serializable {
      *
      * @param name The name of the queue.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Queue withName(String name) {
@@ -91,7 +91,7 @@ public class Queue implements Serializable {
      *
      * @param uRL The URL of the queue.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Queue withURL(String uRL) {

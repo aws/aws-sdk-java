@@ -163,7 +163,7 @@ public class InvalidationBatch implements Serializable {
      *         not URL encode any other characters in the path, or CloudFront will
      *         not invalidate the old version of the updated object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationBatch withPaths(Paths paths) {
@@ -250,7 +250,7 @@ public class InvalidationBatch implements Serializable {
      *         Path is different from the original request, CloudFront returns an
      *         InvalidationBatchAlreadyExists error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationBatch withCallerReference(String callerReference) {

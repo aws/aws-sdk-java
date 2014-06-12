@@ -59,7 +59,7 @@ public class VpcPeeringConnectionStateReason implements Serializable {
      *
      * @param code The status of the VPC peering connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnectionStateReason withCode(String code) {
@@ -98,7 +98,7 @@ public class VpcPeeringConnectionStateReason implements Serializable {
      * @param message A message that provides more information about the status, if
      *         applicable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnectionStateReason withMessage(String message) {

@@ -87,7 +87,7 @@ public class DecisionTaskStartedEventAttributes implements Serializable {
      *         tracing when problems arise. The form of this identity is user
      *         defined.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecisionTaskStartedEventAttributes withIdentity(String identity) {
@@ -138,7 +138,7 @@ public class DecisionTaskStartedEventAttributes implements Serializable {
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecisionTaskStartedEventAttributes withScheduledEventId(Long scheduledEventId) {

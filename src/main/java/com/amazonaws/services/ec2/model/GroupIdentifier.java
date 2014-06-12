@@ -58,7 +58,7 @@ public class GroupIdentifier implements Serializable {
      *
      * @param groupName The name of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GroupIdentifier withGroupName(String groupName) {
@@ -91,7 +91,7 @@ public class GroupIdentifier implements Serializable {
      *
      * @param groupId The ID of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GroupIdentifier withGroupId(String groupId) {

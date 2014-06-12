@@ -60,7 +60,7 @@ public class Subnet implements Serializable {
      *
      * @param subnetIdentifier The unique identifier for the subnet
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withSubnetIdentifier(String subnetIdentifier) {
@@ -93,7 +93,7 @@ public class Subnet implements Serializable {
      *
      * @param subnetAvailabilityZone The Availability Zone associated with the subnet
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {

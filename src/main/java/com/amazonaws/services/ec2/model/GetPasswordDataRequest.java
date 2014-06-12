@@ -93,7 +93,7 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest implements S
      *
      * @param instanceId The ID of the Windows instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetPasswordDataRequest withInstanceId(String instanceId) {

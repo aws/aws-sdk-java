@@ -80,7 +80,7 @@ public class DisableSnapshotCopyRequest extends AmazonWebServiceRequest implemen
      *         the valid name of an existing cluster that has cross-region snapshot
      *         copy enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableSnapshotCopyRequest withClusterIdentifier(String clusterIdentifier) {

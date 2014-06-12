@@ -69,7 +69,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcAttributeRequest withVpcId(String vpcId) {
@@ -115,7 +115,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param attribute The VPC attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpcAttributeName
@@ -149,7 +149,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param attribute The VPC attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpcAttributeName

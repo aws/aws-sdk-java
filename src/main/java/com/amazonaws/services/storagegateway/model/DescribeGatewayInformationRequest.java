@@ -87,7 +87,7 @@ public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest i
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeGatewayInformationRequest withGatewayARN(String gatewayARN) {

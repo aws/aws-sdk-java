@@ -120,7 +120,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param instances One or more instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withInstances(String... instances) {
@@ -138,7 +138,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param instances One or more instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withInstances(java.util.Collection<String> instances) {
@@ -191,7 +191,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param status The status of all instances listed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReportStatusType
@@ -225,7 +225,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param status The status of all instances listed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReportStatusType
@@ -260,7 +260,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param startTime The time at which the reported instance health state began.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withStartTime(java.util.Date startTime) {
@@ -293,7 +293,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param endTime The time at which the reported instance health state ended.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withEndTime(java.util.Date endTime) {
@@ -438,7 +438,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *         <li><p><code>other</code>: [explain using the description
      *         parameter]</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withReasonCodes(String... reasonCodes) {
@@ -490,7 +490,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *         <li><p><code>other</code>: [explain using the description
      *         parameter]</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withReasonCodes(java.util.Collection<String> reasonCodes) {
@@ -546,7 +546,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *         <li><p><code>other</code>: [explain using the description
      *         parameter]</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withReasonCodes(ReportInstanceReasonCodes... reasonCodes) {
@@ -587,7 +587,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      *
      * @param description Descriptive text about the health state of your instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportInstanceStatusRequest withDescription(String description) {

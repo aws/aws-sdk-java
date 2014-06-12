@@ -63,7 +63,7 @@ public class DescribeLayersResult implements Serializable {
      *
      * @param layers An array of <code>Layer</code> objects that describe the layers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLayersResult withLayers(Layer... layers) {
@@ -81,7 +81,7 @@ public class DescribeLayersResult implements Serializable {
      *
      * @param layers An array of <code>Layer</code> objects that describe the layers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLayersResult withLayers(java.util.Collection<Layer> layers) {

@@ -72,7 +72,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
      *
      * @param loadBalancerName The name associated with the load balancer to be detached.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachLoadBalancerFromSubnetsRequest withLoadBalancerName(String loadBalancerName) {
@@ -121,7 +121,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
      * @param subnets A list of subnet IDs to remove from the set of configured subnets for
      *         the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachLoadBalancerFromSubnetsRequest withSubnets(String... subnets) {
@@ -141,7 +141,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
      * @param subnets A list of subnet IDs to remove from the set of configured subnets for
      *         the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachLoadBalancerFromSubnetsRequest withSubnets(java.util.Collection<String> subnets) {

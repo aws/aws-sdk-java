@@ -87,7 +87,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param autoScalingGroupName The name of the Auto Scaling group to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAutoScalingGroupRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -132,7 +132,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         group will be deleted along with all instances associated with the
      *         group, without waiting for all instances to be terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAutoScalingGroupRequest withForceDelete(Boolean forceDelete) {

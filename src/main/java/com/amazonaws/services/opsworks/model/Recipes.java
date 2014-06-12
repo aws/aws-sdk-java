@@ -110,7 +110,7 @@ public class Recipes implements Serializable {
      * @param setup An array of custom recipe names to be run following a
      *         <code>setup</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withSetup(String... setup) {
@@ -130,7 +130,7 @@ public class Recipes implements Serializable {
      * @param setup An array of custom recipe names to be run following a
      *         <code>setup</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withSetup(java.util.Collection<String> setup) {
@@ -186,7 +186,7 @@ public class Recipes implements Serializable {
      * @param configure An array of custom recipe names to be run following a
      *         <code>configure</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withConfigure(String... configure) {
@@ -206,7 +206,7 @@ public class Recipes implements Serializable {
      * @param configure An array of custom recipe names to be run following a
      *         <code>configure</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withConfigure(java.util.Collection<String> configure) {
@@ -262,7 +262,7 @@ public class Recipes implements Serializable {
      * @param deploy An array of custom recipe names to be run following a
      *         <code>deploy</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withDeploy(String... deploy) {
@@ -282,7 +282,7 @@ public class Recipes implements Serializable {
      * @param deploy An array of custom recipe names to be run following a
      *         <code>deploy</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withDeploy(java.util.Collection<String> deploy) {
@@ -338,7 +338,7 @@ public class Recipes implements Serializable {
      * @param undeploy An array of custom recipe names to be run following a
      *         <code>undeploy</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withUndeploy(String... undeploy) {
@@ -358,7 +358,7 @@ public class Recipes implements Serializable {
      * @param undeploy An array of custom recipe names to be run following a
      *         <code>undeploy</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withUndeploy(java.util.Collection<String> undeploy) {
@@ -414,7 +414,7 @@ public class Recipes implements Serializable {
      * @param shutdown An array of custom recipe names to be run following a
      *         <code>shutdown</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withShutdown(String... shutdown) {
@@ -434,7 +434,7 @@ public class Recipes implements Serializable {
      * @param shutdown An array of custom recipe names to be run following a
      *         <code>shutdown</code> event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Recipes withShutdown(java.util.Collection<String> shutdown) {

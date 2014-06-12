@@ -96,7 +96,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param rdsDbInstanceArn The instance's ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withRdsDbInstanceArn(String rdsDbInstanceArn) {
@@ -129,7 +129,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param dbInstanceIdentifier The DB instance identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withDbInstanceIdentifier(String dbInstanceIdentifier) {
@@ -162,7 +162,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param dbUser The master user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withDbUser(String dbUser) {
@@ -195,7 +195,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param dbPassword The database password.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withDbPassword(String dbPassword) {
@@ -228,7 +228,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param region The instance's AWS region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withRegion(String region) {
@@ -261,7 +261,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param address The instance's address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withAddress(String address) {
@@ -294,7 +294,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param engine The instance's database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withEngine(String engine) {
@@ -327,7 +327,7 @@ public class RdsDbInstance implements Serializable {
      *
      * @param stackId The ID of the stack that the instance is registered with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withStackId(String stackId) {
@@ -378,7 +378,7 @@ public class RdsDbInstance implements Serializable {
      *         only once. If this value is set to <code>true</code>, you must
      *         deregister the instance and then register it again.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RdsDbInstance withMissingOnRds(Boolean missingOnRds) {

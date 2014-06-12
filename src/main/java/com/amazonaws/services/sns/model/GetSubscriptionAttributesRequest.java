@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getSubscriptionAttributes(GetSubscriptionAttributesRequest) GetSubscriptionAttributes operation}.
  * <p>
- * The <code>GetSubscriptionAttribtues</code> action returns all of the
- * properties of a subscription.
+ * Returns all of the properties of a subscription.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getSubscriptionAttributes(GetSubscriptionAttributesRequest)
@@ -77,7 +76,7 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest im
      *
      * @param subscriptionArn The ARN of the subscription whose properties you want to get.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSubscriptionAttributesRequest withSubscriptionArn(String subscriptionArn) {

@@ -86,7 +86,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @param instanceProfileName Name of the instance profile to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {

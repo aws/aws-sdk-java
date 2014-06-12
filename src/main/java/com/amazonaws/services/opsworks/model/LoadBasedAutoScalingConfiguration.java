@@ -72,7 +72,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
      *
      * @param layerId The layer ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBasedAutoScalingConfiguration withLayerId(String layerId) {
@@ -105,7 +105,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
      *
      * @param enable Whether load-based auto scaling is enabled for the layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBasedAutoScalingConfiguration withEnable(Boolean enable) {
@@ -159,7 +159,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
      *         the upscaling configuration, which defines how and when AWS OpsWorks
      *         increases the number of instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBasedAutoScalingConfiguration withUpScaling(AutoScalingThresholds upScaling) {
@@ -204,7 +204,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable {
      *         the downscaling configuration, which defines how and when AWS OpsWorks
      *         reduces the number of instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LoadBasedAutoScalingConfiguration withDownScaling(AutoScalingThresholds downScaling) {

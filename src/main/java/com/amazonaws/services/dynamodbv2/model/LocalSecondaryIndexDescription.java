@@ -100,7 +100,7 @@ public class LocalSecondaryIndexDescription implements Serializable {
      *
      * @param indexName Represents the name of the local secondary index.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndexDescription withIndexName(String indexName) {
@@ -160,7 +160,7 @@ public class LocalSecondaryIndexDescription implements Serializable {
      *         attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndexDescription withKeySchema(KeySchemaElement... keySchema) {
@@ -185,7 +185,7 @@ public class LocalSecondaryIndexDescription implements Serializable {
      *         attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndexDescription withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -237,7 +237,7 @@ public class LocalSecondaryIndexDescription implements Serializable {
      *         an index. These are in addition to the primary key attributes and
      *         index key attributes, which are automatically projected.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndexDescription withProjection(Projection projection) {
@@ -282,7 +282,7 @@ public class LocalSecondaryIndexDescription implements Serializable {
      *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndexDescription withIndexSizeBytes(Long indexSizeBytes) {
@@ -327,7 +327,7 @@ public class LocalSecondaryIndexDescription implements Serializable {
      *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndexDescription withItemCount(Long itemCount) {

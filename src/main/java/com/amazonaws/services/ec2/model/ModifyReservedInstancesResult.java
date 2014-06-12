@@ -51,7 +51,7 @@ public class ModifyReservedInstancesResult implements Serializable {
      *
      * @param reservedInstancesModificationId The ID for the modification.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReservedInstancesResult withReservedInstancesModificationId(String reservedInstancesModificationId) {

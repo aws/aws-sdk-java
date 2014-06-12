@@ -92,7 +92,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
      *
      * @param clusterVersion The specific cluster version to return. <p>Example: <code>1.0</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterVersionsRequest withClusterVersion(String clusterVersion) {
@@ -143,7 +143,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
      *         characters</li> <li>First character must be a letter</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterVersionsRequest withClusterParameterGroupFamily(String clusterParameterGroupFamily) {
@@ -206,7 +206,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterVersionsRequest withMaxRecords(Integer maxRecords) {
@@ -275,7 +275,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterVersionsRequest withMarker(String marker) {

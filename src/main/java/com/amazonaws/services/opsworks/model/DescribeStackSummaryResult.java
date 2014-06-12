@@ -53,7 +53,7 @@ public class DescribeStackSummaryResult implements Serializable {
      *
      * @param stackSummary A <code>StackSummary</code> object that contains the results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackSummaryResult withStackSummary(StackSummary stackSummary) {

@@ -78,7 +78,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeARN(String volumeARN) {
@@ -120,7 +120,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeId The new value for the VolumeId property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeId(String volumeId) {
@@ -162,7 +162,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeType The new value for the VolumeType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeType(String volumeType) {
@@ -204,7 +204,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeStatus The new value for the VolumeStatus property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeStatus(String volumeStatus) {
@@ -237,7 +237,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeSizeInBytes The new value for the VolumeSizeInBytes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -270,7 +270,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeProgress The new value for the VolumeProgress property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeProgress(Double volumeProgress) {
@@ -312,7 +312,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeDiskId The new value for the VolumeDiskId property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeDiskId(String volumeDiskId) {
@@ -354,7 +354,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param sourceSnapshotId The new value for the SourceSnapshotId property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
@@ -388,7 +388,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param preservedExistingData The new value for the PreservedExistingData property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withPreservedExistingData(Boolean preservedExistingData) {
@@ -431,7 +431,7 @@ public class StorediSCSIVolume implements Serializable {
      *
      * @param volumeiSCSIAttributes Lists iSCSI information about a volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StorediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {

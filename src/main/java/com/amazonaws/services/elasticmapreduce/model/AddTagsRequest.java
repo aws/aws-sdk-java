@@ -112,7 +112,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
      * @param resourceId The Amazon EMR resource identifier to which tags will be added. This
      *         value must be a cluster identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddTagsRequest withResourceId(String resourceId) {
@@ -173,7 +173,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
      *         required key string with a maximum of 128 characters, and an optional
      *         value string with a maximum of 256 characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddTagsRequest withTags(Tag... tags) {
@@ -197,7 +197,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements Serializa
      *         required key string with a maximum of 128 characters, and an optional
      *         value string with a maximum of 256 characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddTagsRequest withTags(java.util.Collection<Tag> tags) {

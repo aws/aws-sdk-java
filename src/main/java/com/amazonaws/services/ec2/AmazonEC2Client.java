@@ -201,8 +201,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     private void init() {
         
         exceptionUnmarshallers.add(new LegacyErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("ec2.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/ec2/request.handlers"));

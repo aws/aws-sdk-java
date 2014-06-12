@@ -88,7 +88,7 @@ public class ExportToS3Task implements Serializable {
      *
      * @param diskImageFormat The format for the exported image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -122,7 +122,7 @@ public class ExportToS3Task implements Serializable {
      *
      * @param diskImageFormat The format for the exported image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -176,7 +176,7 @@ public class ExportToS3Task implements Serializable {
      * @param containerFormat The container format used to combine disk images with metadata (such
      *         as OVF). If absent, only the disk image is exported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ContainerFormat
@@ -214,7 +214,7 @@ public class ExportToS3Task implements Serializable {
      * @param containerFormat The container format used to combine disk images with metadata (such
      *         as OVF). If absent, only the disk image is exported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ContainerFormat
@@ -261,7 +261,7 @@ public class ExportToS3Task implements Serializable {
      *         must exist and grant WRITE and READ_ACL permissions to the AWS account
      *         <code>vm-import-export@amazon.com</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportToS3Task withS3Bucket(String s3Bucket) {
@@ -294,7 +294,7 @@ public class ExportToS3Task implements Serializable {
      *
      * @param s3Key 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportToS3Task withS3Key(String s3Key) {

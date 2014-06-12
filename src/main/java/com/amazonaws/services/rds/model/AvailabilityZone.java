@@ -66,7 +66,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param name The name of the availability zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityZone withName(String name) {
@@ -99,7 +99,7 @@ public class AvailabilityZone implements Serializable {
      *
      * @param provisionedIopsCapable True indicates the availability zone is capable of provisioned IOPs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityZone withProvisionedIopsCapable(Boolean provisionedIopsCapable) {

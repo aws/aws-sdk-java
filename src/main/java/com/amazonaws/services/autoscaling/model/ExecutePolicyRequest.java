@@ -95,7 +95,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param autoScalingGroupName The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExecutePolicyRequest withAutoScalingGroupName(String autoScalingGroupName) {
@@ -140,7 +140,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param policyName The name or ARN of the policy you want to run.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExecutePolicyRequest withPolicyName(String policyName) {
@@ -215,7 +215,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
      *         Period</a> in the <i>Auto Scaling Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExecutePolicyRequest withHonorCooldown(Boolean honorCooldown) {

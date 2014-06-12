@@ -93,7 +93,7 @@ public class DescribeClusterSnapshotsResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsResult withMarker(String marker) {
@@ -136,7 +136,7 @@ public class DescribeClusterSnapshotsResult implements Serializable {
      *
      * @param snapshots A list of <a>Snapshot</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsResult withSnapshots(Snapshot... snapshots) {
@@ -154,7 +154,7 @@ public class DescribeClusterSnapshotsResult implements Serializable {
      *
      * @param snapshots A list of <a>Snapshot</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSnapshotsResult withSnapshots(java.util.Collection<Snapshot> snapshots) {

@@ -195,7 +195,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withQueueUrl(String queueUrl) {
@@ -298,7 +298,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         <li><code>SentTimestamp</code> - returns the time when the message was
      *         sent (epoch time in milliseconds).</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withAttributeNames(String... attributeNames) {
@@ -336,7 +336,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         <li><code>SentTimestamp</code> - returns the time when the message was
      *         sent (epoch time in milliseconds).</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withAttributeNames(java.util.Collection<String> attributeNames) {
@@ -378,7 +378,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         <li><code>SentTimestamp</code> - returns the time when the message was
      *         sent (epoch time in milliseconds).</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withAttributeNames(QueueAttributeName... attributeNames) {
@@ -471,7 +471,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         names cannot start with "AWS." or "Amazon." because these prefixes are
      *         reserved for use by Amazon Web Services.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withMessageAttributeNames(String... messageAttributeNames) {
@@ -503,7 +503,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         names cannot start with "AWS." or "Amazon." because these prefixes are
      *         reserved for use by Amazon Web Services.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withMessageAttributeNames(java.util.Collection<String> messageAttributeNames) {
@@ -561,7 +561,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         1 to 10. Default is 1. <p>All of the messages are not necessarily
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withMaxNumberOfMessages(Integer maxNumberOfMessages) {
@@ -606,7 +606,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         subsequent retrieve requests after being retrieved by a
      *         <code>ReceiveMessage</code> request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withVisibilityTimeout(Integer visibilityTimeout) {
@@ -651,7 +651,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Se
      *         to arrive in the queue before returning. If a message is available,
      *         the call will return sooner than WaitTimeSeconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReceiveMessageRequest withWaitTimeSeconds(Integer waitTimeSeconds) {

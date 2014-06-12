@@ -71,7 +71,7 @@ public class DescribeRdsDbInstancesResult implements Serializable {
      * @param rdsDbInstances An a array of <code>RdsDbInstance</code> objects that describe the
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRdsDbInstancesResult withRdsDbInstances(RdsDbInstance... rdsDbInstances) {
@@ -91,7 +91,7 @@ public class DescribeRdsDbInstancesResult implements Serializable {
      * @param rdsDbInstances An a array of <code>RdsDbInstance</code> objects that describe the
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRdsDbInstancesResult withRdsDbInstances(java.util.Collection<RdsDbInstance> rdsDbInstances) {

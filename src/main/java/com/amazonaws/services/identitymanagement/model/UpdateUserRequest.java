@@ -131,7 +131,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
      * @param userName Name of the user to update. If you're changing the name of the user,
      *         this is the original user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateUserRequest withUserName(String userName) {
@@ -182,7 +182,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
      * @param newPath New path for the user. Include this parameter only if you're changing
      *         the user's path.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateUserRequest withNewPath(String newPath) {
@@ -233,7 +233,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
      * @param newUserName New name for the user. Include this parameter only if you're changing
      *         the user's name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateUserRequest withNewUserName(String newUserName) {

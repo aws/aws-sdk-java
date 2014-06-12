@@ -51,7 +51,7 @@ public class CreateSubnetResult implements Serializable {
      *
      * @param subnet Information about the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSubnetResult withSubnet(Subnet subnet) {

@@ -79,7 +79,7 @@ public class Run implements Serializable {
      *         by the service and can be used to uniquely identify the workflow
      *         execution within a domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Run withRunId(String runId) {

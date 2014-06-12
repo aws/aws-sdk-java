@@ -127,6 +127,7 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
     }
 
     @Override public long skip(long n) throws IOException {
+        abortIfNeeded();
         int available = max_pos - curr_pos;
         if (n > available)
             n = available;
@@ -136,7 +137,10 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
         return n;
     }
 
-    @Override public int available() { return max_pos - curr_pos; }
+    @Override public int available() {
+        abortIfNeeded();
+        return max_pos - curr_pos; 
+    }
 
     @Override public void close() throws IOException {
         in.close();
@@ -154,21 +158,25 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
             }
         }
         curr_pos = max_pos = 0;
+        abortIfNeeded();
     }
 
     @Override
     public boolean markSupported() {
+        abortIfNeeded();
         return in.markSupported() && cipherLite.markSupported();
     }
 
     @Override
     public void mark(int readlimit) {
+        abortIfNeeded();
         in.mark(readlimit);
         cipherLite.mark();
     }
 
     @Override
     public void reset() throws IOException {
+        abortIfNeeded();
         in.reset();
         cipherLite.reset();
         if (markSupported()) {
@@ -189,6 +197,7 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
      *             if there is authentication failure
      */
     private int nextChunk() throws IOException {
+        abortIfNeeded();
         if (eof)
             return -1;
         int len = in.read(bufin);

@@ -177,7 +177,7 @@ public class Group implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Group withPath(String path) {
@@ -222,7 +222,7 @@ public class Group implements Serializable {
      *
      * @param groupName The name that identifies the group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Group withGroupName(String groupName) {
@@ -291,7 +291,7 @@ public class Group implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Group withGroupId(String groupId) {
@@ -357,7 +357,7 @@ public class Group implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Group withArn(String arn) {
@@ -390,7 +390,7 @@ public class Group implements Serializable {
      *
      * @param createDate The date when the group was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Group withCreateDate(java.util.Date createDate) {

@@ -113,7 +113,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements 
      *         <code>Submitted</code>, <code>Progressing</code>,
      *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByStatusRequest withStatus(String status) {
@@ -167,7 +167,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements 
      *         were submitted, enter <code>true</code>. To list jobs in reverse
      *         chronological order, enter <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByStatusRequest withAscending(String ascending) {
@@ -221,7 +221,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements 
      *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
      *         each successive page of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsByStatusRequest withPageToken(String pageToken) {

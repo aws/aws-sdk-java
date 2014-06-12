@@ -152,7 +152,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
      * @param domain The name of the domain in which the workflow types have been
      *         registered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListWorkflowTypesRequest withDomain(String domain) {
@@ -194,7 +194,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
      *
      * @param name If specified, lists the workflow type with this name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListWorkflowTypesRequest withName(String name) {
@@ -240,7 +240,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
      *
      * @param registrationStatus Specifies the registration status of the workflow types to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -274,7 +274,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
      *
      * @param registrationStatus Specifies the registration status of the workflow types to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -336,7 +336,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
      *         results, repeat the call with the returned token and all other
      *         arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListWorkflowTypesRequest withNextPageToken(String nextPageToken) {
@@ -408,7 +408,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListWorkflowTypesRequest withMaximumPageSize(Integer maximumPageSize) {
@@ -453,7 +453,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
      *         By default the results are returned in ascending alphabetical order of
      *         the <code>name</code> of the workflow types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListWorkflowTypesRequest withReverseOrder(Boolean reverseOrder) {

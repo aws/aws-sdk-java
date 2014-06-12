@@ -195,7 +195,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param cacheClusterId The cache cluster identifier. This value is stored as a lowercase
      *         string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withCacheClusterId(String cacheClusterId) {
@@ -264,7 +264,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
      *         specific cache nodes to be removed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withNumCacheNodes(Integer numCacheNodes) {
@@ -337,7 +337,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         difference between the existing number of cache nodes in the cluster
      *         and the value of <i>NumCacheNodes</i> in the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withCacheNodeIdsToRemove(String... cacheNodeIdsToRemove) {
@@ -365,7 +365,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         difference between the existing number of cache nodes in the cluster
      *         and the value of <i>NumCacheNodes</i> in the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
@@ -445,7 +445,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         contain no more than 255 alphanumeric characters. Must not be
      *         "Default".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withCacheSecurityGroupNames(String... cacheSecurityGroupNames) {
@@ -473,7 +473,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         contain no more than 255 alphanumeric characters. Must not be
      *         "Default".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
@@ -535,7 +535,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withSecurityGroupIds(String... securityGroupIds) {
@@ -557,7 +557,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -621,7 +621,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         current time, there must be at least 120 minutes between the current
      *         time and end of the window to ensure that pending changes are applied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -666,7 +666,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         will be sent. <note> The SNS topic owner must be same as the cache
      *         cluster owner. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withNotificationTopicArn(String notificationTopicArn) {
@@ -717,7 +717,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         parameters when the <i>ApplyImmediately</i> parameter is specified as
      *         <i>true</i> for this request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -762,7 +762,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         sent only if the status is <i>active</i>. <p>Valid values:
      *         <code>active</code> | <code>inactive</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withNotificationTopicStatus(String notificationTopicStatus) {
@@ -837,7 +837,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         occurs first. <p>Valid values: <code>true</code> | <code>false</code>
      *         <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withApplyImmediately(Boolean applyImmediately) {
@@ -899,7 +899,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param engineVersion The upgraded version of the cache engine to be run on the cache
      *         cluster nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withEngineVersion(String engineVersion) {
@@ -950,7 +950,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      *         <code>true</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1016,7 +1016,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -1055,7 +1055,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
      *         taking a daily snapshot of your cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheClusterRequest withSnapshotWindow(String snapshotWindow) {

@@ -141,7 +141,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest impleme
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all instance profiles.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesRequest withPathPrefix(String pathPrefix) {
@@ -204,7 +204,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest impleme
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesRequest withMarker(String marker) {
@@ -270,7 +270,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest impleme
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListInstanceProfilesRequest withMaxItems(Integer maxItems) {

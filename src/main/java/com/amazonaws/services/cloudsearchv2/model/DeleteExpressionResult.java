@@ -54,7 +54,7 @@ public class DeleteExpressionResult implements Serializable {
      *
      * @param expression The status of the expression being deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteExpressionResult withExpression(ExpressionStatus expression) {

@@ -137,7 +137,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      *         have written a custom task runner, you should assign a unique
      *         identifier for the task runner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportTaskRunnerHeartbeatRequest withTaskrunnerId(String taskrunnerId) {
@@ -218,7 +218,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      *         permitted in <code>workerGroup</code>, the string must be an exact,
      *         case-sensitive, match.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportTaskRunnerHeartbeatRequest withWorkerGroup(String workerGroup) {
@@ -263,7 +263,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
      *
      * @param hostname The public DNS name of the calling task runner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReportTaskRunnerHeartbeatRequest withHostname(String hostname) {

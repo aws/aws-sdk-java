@@ -53,7 +53,7 @@ public class VolumeDetail implements Serializable {
      *
      * @param size The size of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VolumeDetail withSize(Long size) {

@@ -115,7 +115,7 @@ public class Deployment implements Serializable {
      *
      * @param deploymentId The deployment ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withDeploymentId(String deploymentId) {
@@ -148,7 +148,7 @@ public class Deployment implements Serializable {
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withStackId(String stackId) {
@@ -181,7 +181,7 @@ public class Deployment implements Serializable {
      *
      * @param appId The app ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withAppId(String appId) {
@@ -214,7 +214,7 @@ public class Deployment implements Serializable {
      *
      * @param createdAt Date when the deployment was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withCreatedAt(String createdAt) {
@@ -247,7 +247,7 @@ public class Deployment implements Serializable {
      *
      * @param completedAt Date when the deployment completed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withCompletedAt(String completedAt) {
@@ -280,7 +280,7 @@ public class Deployment implements Serializable {
      *
      * @param duration The deployment duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withDuration(Integer duration) {
@@ -313,7 +313,7 @@ public class Deployment implements Serializable {
      *
      * @param iamUserArn The user's IAM ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withIamUserArn(String iamUserArn) {
@@ -346,7 +346,7 @@ public class Deployment implements Serializable {
      *
      * @param comment A user-defined comment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withComment(String comment) {
@@ -379,7 +379,7 @@ public class Deployment implements Serializable {
      *
      * @param command Used to specify a deployment operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withCommand(DeploymentCommand command) {
@@ -418,7 +418,7 @@ public class Deployment implements Serializable {
      * @param status The deployment status: <ul> <li>running</li> <li>successful</li>
      *         <li>failed</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withStatus(String status) {
@@ -487,7 +487,7 @@ public class Deployment implements Serializable {
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withCustomJson(String customJson) {
@@ -530,7 +530,7 @@ public class Deployment implements Serializable {
      *
      * @param instanceIds The IDs of the target instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withInstanceIds(String... instanceIds) {
@@ -548,7 +548,7 @@ public class Deployment implements Serializable {
      *
      * @param instanceIds The IDs of the target instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Deployment withInstanceIds(java.util.Collection<String> instanceIds) {

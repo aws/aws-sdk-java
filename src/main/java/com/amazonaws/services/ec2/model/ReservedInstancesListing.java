@@ -102,7 +102,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param reservedInstancesListingId The ID of the Reserved Instance listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withReservedInstancesListingId(String reservedInstancesListingId) {
@@ -135,7 +135,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param reservedInstancesId The ID of the Reserved Instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withReservedInstancesId(String reservedInstancesId) {
@@ -168,7 +168,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param createDate The time the listing was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withCreateDate(java.util.Date createDate) {
@@ -201,7 +201,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param updateDate The last modified timestamp of the listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withUpdateDate(java.util.Date updateDate) {
@@ -247,7 +247,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param status The status of the Reserved Instance listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ListingStatus
@@ -281,7 +281,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param status The status of the Reserved Instance listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ListingStatus
@@ -322,7 +322,7 @@ public class ReservedInstancesListing implements Serializable {
      * @param statusMessage The reason for the current status of the Reserved Instance listing.
      *         The response can be blank.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withStatusMessage(String statusMessage) {
@@ -365,7 +365,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param instanceCounts The number of instances in this state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withInstanceCounts(InstanceCount... instanceCounts) {
@@ -383,7 +383,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param instanceCounts The number of instances in this state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withInstanceCounts(java.util.Collection<InstanceCount> instanceCounts) {
@@ -433,7 +433,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param priceSchedules The price of the Reserved Instance listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withPriceSchedules(PriceSchedule... priceSchedules) {
@@ -451,7 +451,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param priceSchedules The price of the Reserved Instance listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withPriceSchedules(java.util.Collection<PriceSchedule> priceSchedules) {
@@ -501,7 +501,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withTags(Tag... tags) {
@@ -519,7 +519,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withTags(java.util.Collection<Tag> tags) {
@@ -559,7 +559,7 @@ public class ReservedInstancesListing implements Serializable {
      *
      * @param clientToken The idempotency token you provided when you created the listing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesListing withClientToken(String clientToken) {

@@ -168,7 +168,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param snapshotIds One or more snapshot IDs. <p>Default: Describes snapshots for which
      *         you have launch permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withSnapshotIds(String... snapshotIds) {
@@ -188,7 +188,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param snapshotIds One or more snapshot IDs. <p>Default: Describes snapshots for which
      *         you have launch permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withSnapshotIds(java.util.Collection<String> snapshotIds) {
@@ -244,7 +244,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param ownerIds Returns the snapshots owned by the specified owner. Multiple owners
      *         can be specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withOwnerIds(String... ownerIds) {
@@ -264,7 +264,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param ownerIds Returns the snapshots owned by the specified owner. Multiple owners
      *         can be specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withOwnerIds(java.util.Collection<String> ownerIds) {
@@ -320,7 +320,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param restorableByUserIds One or more AWS accounts IDs that can create volumes from the
      *         snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withRestorableByUserIds(String... restorableByUserIds) {
@@ -340,7 +340,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param restorableByUserIds One or more AWS accounts IDs that can create volumes from the
      *         snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withRestorableByUserIds(java.util.Collection<String> restorableByUserIds) {
@@ -540,7 +540,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
      *         of the volume, in GiB. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withFilters(Filter... filters) {
@@ -608,7 +608,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         the snapshot is for. </li> <li> <p><code>volume-size</code> - The size
      *         of the volume, in GiB. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSnapshotsRequest withFilters(java.util.Collection<Filter> filters) {

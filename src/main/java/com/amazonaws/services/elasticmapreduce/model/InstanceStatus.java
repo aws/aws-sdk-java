@@ -79,7 +79,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param state The current state of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceState
@@ -113,7 +113,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param state The current state of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceState
@@ -148,7 +148,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param stateChangeReason The details of the status change reason for the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withStateChangeReason(InstanceStateChangeReason stateChangeReason) {
@@ -181,7 +181,7 @@ public class InstanceStatus implements Serializable {
      *
      * @param timeline The timeline of the instance status over time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceStatus withTimeline(InstanceTimeline timeline) {

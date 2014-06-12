@@ -237,7 +237,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      *         example, you can reference the federated user name in a resource-based
      *         policy, such as in an Amazon S3 bucket policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetFederationTokenRequest withName(String name) {
@@ -384,7 +384,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      *         for GetFederationToken</a> in <i>Using Temporary Security
      *         Credentials</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetFederationTokenRequest withPolicy(String policy) {
@@ -462,7 +462,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      *         duration is longer than one hour, the session obtained by using AWS
      *         account (root) credentials defaults to one hour.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetFederationTokenRequest withDurationSeconds(Integer durationSeconds) {

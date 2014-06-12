@@ -96,7 +96,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
      *         stacks: You must specify the unique stack ID.</li> </ul> <p>Default:
      *         There is no default value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksRequest withStackName(String stackName) {
@@ -144,7 +144,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
      * @param nextToken String that identifies the start of the next list of stacks, if there
      *         is one.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksRequest withNextToken(String nextToken) {

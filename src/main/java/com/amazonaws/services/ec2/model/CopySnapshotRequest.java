@@ -110,7 +110,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param sourceRegion The ID of the region that contains the snapshot to be copied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotRequest withSourceRegion(String sourceRegion) {
@@ -143,7 +143,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param sourceSnapshotId The ID of the Amazon EBS snapshot to copy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotRequest withSourceSnapshotId(String sourceSnapshotId) {
@@ -176,7 +176,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param description A description for the new Amazon EBS snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotRequest withDescription(String description) {
@@ -215,7 +215,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * @param destinationRegion The destination region of the snapshot copy operation. This parameter
      *         is required in the <code>PresignedUrl</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotRequest withDestinationRegion(String destinationRegion) {
@@ -344,7 +344,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *         operation to fail asynchronously, and the snapshot will move to an
      *         <code>error</code> state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotRequest withPresignedUrl(String presignedUrl) {

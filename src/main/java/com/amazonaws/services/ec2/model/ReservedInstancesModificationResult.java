@@ -71,7 +71,7 @@ public class ReservedInstancesModificationResult implements Serializable {
      *         modification request. This field is only available when the
      *         modification is fulfilled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModificationResult withReservedInstancesId(String reservedInstancesId) {
@@ -110,7 +110,7 @@ public class ReservedInstancesModificationResult implements Serializable {
      * @param targetConfiguration The target Reserved Instances configurations supplied as part of the
      *         modification request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstancesModificationResult withTargetConfiguration(ReservedInstancesConfiguration targetConfiguration) {

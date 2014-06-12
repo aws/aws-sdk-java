@@ -63,7 +63,7 @@ public class ClusterTimeline implements Serializable {
      *
      * @param creationDateTime The creation date and time of the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterTimeline withCreationDateTime(java.util.Date creationDateTime) {
@@ -96,7 +96,7 @@ public class ClusterTimeline implements Serializable {
      *
      * @param readyDateTime The date and time when the cluster was ready to execute steps.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterTimeline withReadyDateTime(java.util.Date readyDateTime) {
@@ -129,7 +129,7 @@ public class ClusterTimeline implements Serializable {
      *
      * @param endDateTime The date and time when the cluster was terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterTimeline withEndDateTime(java.util.Date endDateTime) {

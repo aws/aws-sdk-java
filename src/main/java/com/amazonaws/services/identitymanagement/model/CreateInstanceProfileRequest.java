@@ -97,7 +97,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @param instanceProfileName Name of the instance profile to create.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
@@ -172,7 +172,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceProfileRequest withPath(String path) {

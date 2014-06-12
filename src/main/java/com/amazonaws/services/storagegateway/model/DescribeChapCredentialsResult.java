@@ -147,7 +147,7 @@ public class DescribeChapCredentialsResult implements Serializable {
      *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
      *         volume. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeChapCredentialsResult withChapCredentials(ChapInfo... chapCredentials) {
@@ -189,7 +189,7 @@ public class DescribeChapCredentialsResult implements Serializable {
      *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
      *         volume. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeChapCredentialsResult withChapCredentials(java.util.Collection<ChapInfo> chapCredentials) {

@@ -93,7 +93,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *
      * @param loadBalancerName The name of the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerListenersRequest withLoadBalancerName(String loadBalancerName) {
@@ -142,7 +142,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * @param listeners A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerListenersRequest withListeners(Listener... listeners) {
@@ -162,7 +162,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * @param listeners A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerListenersRequest withListeners(java.util.Collection<Listener> listeners) {

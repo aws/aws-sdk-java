@@ -28,7 +28,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * </p>
  * <p>
  * Pre-signed URLs allow clients to form a URL for an Amazon S3 resource and
- * sign it with the current AWS security credentials. 
+ * sign it with the current AWS security credentials.
  * A pre-signed URL may be passed around for other users to access
  * the resource without providing them
  * access to an account's AWS security credentials.
@@ -67,11 +67,18 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
      * object, or for specifying a version ID when accessing an object.
      */
     private Map<String, String> requestParameters = new HashMap<String, String>();
-    
+
     /**
      * Optional field that overrides headers on the response.
      */
     private ResponseHeaderOverrides responseHeaders;
+
+    /**
+     * Optional customer-provided server-side encryption key to use as part of
+     * the generated pre-signed URL.
+     */
+    private SSECustomerKey sseCustomerKey;
+
 
     /**
      * Creates a new request for generating a pre-signed URL that can be used as
@@ -296,10 +303,10 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
     public Map<String, String> getRequestParameters() {
         return requestParameters;
     }
-    
+
     /**
      * Returns the headers to be overridden in the service response.
-     * 
+     *
      * @return the headers to be overridden in the service response.
      */
     public ResponseHeaderOverrides getResponseHeaders() {
@@ -308,7 +315,7 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the headers to be overridden in the service response.
-     * 
+     *
      * @param responseHeaders
      *            The headers to be overridden in the service response.
      */
@@ -319,11 +326,11 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
     /**
      * Sets the headers to be overridden in the service response and returns
      * this object, for method chaining.
-     * 
+     *
      * @param responseHeaders
      *            The headers to be overridden in the service response.
-     * 
-     *            
+     *
+     *
      * @return This {@link GeneratePresignedUrlRequest} for method chaining.
      */
     public GeneratePresignedUrlRequest withResponseHeaders(ResponseHeaderOverrides responseHeaders) {
@@ -370,7 +377,7 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
      * Gets the expected content-md5 header of the request. This header value
      * will be included when calculating the signature, and future requests must
      * include the same content-md5 header value to access the presigned URL.
-     * 
+     *
      * @return The expected content-md5 header value.
      */
     public String getContentMd5() {
@@ -381,7 +388,7 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
      * Sets the expected content-md5 header of the request. This header value
      * will be included when calculating the signature, and future requests must
      * include the same content-md5 header value to access the presigned URL.
-     
+
      * @param contentMd5
      *            The expected content-md5 header value.
      */
@@ -392,14 +399,54 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
     /**
      * Sets the expected content-md5 header of the request and returns this
      * object, for method chaining.
-     * 
+     *
      * @param contentMd5
      *            The expected content-md5 header value.
-     * 
+     *
      * @return This {@link GeneratePresignedUrlRequest} for method chaining.
      */
     public GeneratePresignedUrlRequest withContentMd5(String contentMd5) {
         this.contentMd5 = contentMd5;
+        return this;
+    }
+
+    /**
+     * Returns the customer-provided server-side encryption key to use as part
+     * of the generated pre-signed URL.
+     *
+     * @return The customer-provided server-side encryption key to use as part
+     *         of the generated pre-signed URL.
+     */
+    public SSECustomerKey getSSECustomerKey() {
+        return sseCustomerKey;
+    }
+
+    /**
+     * Sets the customer-provided server-side encryption key to use as part of
+     * the generated pre-signed URL.
+     *
+     * @param sseKey
+     *            The customer-provided server-side encryption key to use as
+     *            part of the generated pre-signed URL.
+     */
+    public void setSSECustomerKey(SSECustomerKey sseKey) {
+        this.sseCustomerKey = sseKey;
+    }
+
+    /**
+     * Sets the customer-provided server-side encryption key to use as part of
+     * the generated pre-signed URL, and returns the updated request object so
+     * that additional method calls can be chained together.
+     *
+     * @param sseKey
+     *            The customer-provided server-side encryption key to use as
+     *            part of the generated pre-signed URL.
+     *
+     * @return This updated request object so that additional method calls can
+     *         be chained together.
+     */
+    public GeneratePresignedUrlRequest withSSECustomerKey(SSECustomerKey sseKey) {
+        setSSECustomerKey(sseKey);
         return this;
     }
 }

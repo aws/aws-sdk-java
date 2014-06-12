@@ -91,7 +91,7 @@ public class InvalidationList implements Serializable {
      *
      * @param marker The value you provided for the Marker request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationList withMarker(String marker) {
@@ -136,7 +136,7 @@ public class InvalidationList implements Serializable {
      *         you can use for the Marker request parameter to continue listing your
      *         invalidation batches where they left off.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationList withNextMarker(String nextMarker) {
@@ -169,7 +169,7 @@ public class InvalidationList implements Serializable {
      *
      * @param maxItems The value you provided for the MaxItems request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationList withMaxItems(Integer maxItems) {
@@ -220,7 +220,7 @@ public class InvalidationList implements Serializable {
      *         pagination request using the Marker request parameter to retrieve more
      *         invalidation batches in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationList withIsTruncated(Boolean isTruncated) {
@@ -274,7 +274,7 @@ public class InvalidationList implements Serializable {
      * @param quantity The number of invalidation batches that were created by the current
      *         AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationList withQuantity(Integer quantity) {
@@ -323,7 +323,7 @@ public class InvalidationList implements Serializable {
      * @param items A complex type that contains one InvalidationSummary element for each
      *         invalidation batch that was created by the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationList withItems(InvalidationSummary... items) {
@@ -343,7 +343,7 @@ public class InvalidationList implements Serializable {
      * @param items A complex type that contains one InvalidationSummary element for each
      *         invalidation batch that was created by the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InvalidationList withItems(java.util.Collection<InvalidationSummary> items) {

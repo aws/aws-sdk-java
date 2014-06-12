@@ -99,7 +99,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest impleme
      * @param serverCertificateName The name of the server certificate you want to retrieve information
      *         about.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetServerCertificateRequest withServerCertificateName(String serverCertificateName) {

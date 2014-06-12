@@ -188,7 +188,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param environmentName The name of this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withEnvironmentName(String environmentName) {
@@ -221,7 +221,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param environmentId The ID of this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withEnvironmentId(String environmentId) {
@@ -263,7 +263,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param applicationName The name of the application associated with this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withApplicationName(String applicationName) {
@@ -305,7 +305,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param versionLabel The application version deployed in this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withVersionLabel(String versionLabel) {
@@ -353,7 +353,7 @@ public class CreateEnvironmentResult implements Serializable {
      * @param solutionStackName The name of the <code>SolutionStack</code> deployed with this
      *         environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withSolutionStackName(String solutionStackName) {
@@ -401,7 +401,7 @@ public class CreateEnvironmentResult implements Serializable {
      * @param templateName The name of the configuration template used to originally launch this
      *         environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withTemplateName(String templateName) {
@@ -443,7 +443,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param description Describes this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withDescription(String description) {
@@ -488,7 +488,7 @@ public class CreateEnvironmentResult implements Serializable {
      *         LoadBalancer. For single-instance environments, the IP address of the
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withEndpointURL(String endpointURL) {
@@ -530,7 +530,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param cNAME The URL to the CNAME for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withCNAME(String cNAME) {
@@ -563,7 +563,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param dateCreated The creation date for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withDateCreated(java.util.Date dateCreated) {
@@ -596,7 +596,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param dateUpdated The last modified date for this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withDateUpdated(java.util.Date dateUpdated) {
@@ -690,7 +690,7 @@ public class CreateEnvironmentResult implements Serializable {
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentStatus
@@ -756,7 +756,7 @@ public class CreateEnvironmentResult implements Serializable {
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentStatus
@@ -906,7 +906,7 @@ public class CreateEnvironmentResult implements Serializable {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentHealth
@@ -1008,7 +1008,7 @@ public class CreateEnvironmentResult implements Serializable {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentHealth
@@ -1043,7 +1043,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param resources The description of the AWS resources used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withResources(EnvironmentResourcesDescription resources) {
@@ -1076,7 +1076,7 @@ public class CreateEnvironmentResult implements Serializable {
      *
      * @param tier Describes the current tier of this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateEnvironmentResult withTier(EnvironmentTier tier) {

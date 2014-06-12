@@ -51,7 +51,7 @@ public class RegisterImageResult implements Serializable {
      *
      * @param imageId The ID of the newly registered AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterImageResult withImageId(String imageId) {

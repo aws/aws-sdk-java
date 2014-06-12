@@ -100,7 +100,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
      *
      * @param userName Name of the user whose password you want to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLoginProfileRequest withUserName(String userName) {
@@ -145,7 +145,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
      *
      * @param password The new password for the user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateLoginProfileRequest withPassword(String password) {

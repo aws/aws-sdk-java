@@ -95,7 +95,7 @@ public class DescribeHsmClientCertificatesRequest extends AmazonWebServiceReques
      *         information. If no identifier is specified, information is returned
      *         for all HSM client certificates owned by your AWS customer account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmClientCertificatesRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
@@ -158,7 +158,7 @@ public class DescribeHsmClientCertificatesRequest extends AmazonWebServiceReques
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmClientCertificatesRequest withMaxRecords(Integer maxRecords) {
@@ -227,7 +227,7 @@ public class DescribeHsmClientCertificatesRequest extends AmazonWebServiceReques
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeHsmClientCertificatesRequest withMarker(String marker) {

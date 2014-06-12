@@ -67,7 +67,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable {
      * @param estimatedMonthlySavings The estimated monthly savings that might be realized if the
      *         recommended actions are taken.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCostOptimizingSummary withEstimatedMonthlySavings(Double estimatedMonthlySavings) {
@@ -106,7 +106,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable {
      * @param estimatedPercentMonthlySavings The estimated percentage of savings that might be realized if the
      *         recommended actions are taken.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCostOptimizingSummary withEstimatedPercentMonthlySavings(Double estimatedPercentMonthlySavings) {

@@ -58,7 +58,7 @@ public class InstanceMonitoring implements Serializable {
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceMonitoring withInstanceId(String instanceId) {
@@ -91,7 +91,7 @@ public class InstanceMonitoring implements Serializable {
      *
      * @param monitoring The monitoring information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceMonitoring withMonitoring(Monitoring monitoring) {

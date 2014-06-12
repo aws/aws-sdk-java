@@ -88,7 +88,7 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
      * @param cacheSecurityGroupName The name of the cache security group to delete. <note>You cannot
      *         delete the default security group.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteCacheSecurityGroupRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {

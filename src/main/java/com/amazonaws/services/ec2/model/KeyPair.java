@@ -63,7 +63,7 @@ public class KeyPair implements Serializable {
      *
      * @param keyName The name of the key pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeyPair withKeyName(String keyName) {
@@ -96,7 +96,7 @@ public class KeyPair implements Serializable {
      *
      * @param keyFingerprint The SHA-1 digest of the DER encoded private key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeyPair withKeyFingerprint(String keyFingerprint) {
@@ -129,7 +129,7 @@ public class KeyPair implements Serializable {
      *
      * @param keyMaterial An unencrypted PEM encoded RSA private key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeyPair withKeyMaterial(String keyMaterial) {

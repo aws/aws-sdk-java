@@ -140,7 +140,7 @@ public class HealthCheckConfig implements Serializable {
      *
      * @param iPAddress IP Address of the instance being checked.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheckConfig withIPAddress(String iPAddress) {
@@ -200,7 +200,7 @@ public class HealthCheckConfig implements Serializable {
      *         not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if
      *         the port is not specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheckConfig withPort(Integer port) {
@@ -252,7 +252,7 @@ public class HealthCheckConfig implements Serializable {
      * @param type The type of health check to be performed. Currently supported types
      *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HealthCheckType
@@ -290,7 +290,7 @@ public class HealthCheckConfig implements Serializable {
      * @param type The type of health check to be performed. Currently supported types
      *         are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HealthCheckType
@@ -346,7 +346,7 @@ public class HealthCheckConfig implements Serializable {
      *         HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
      *         is issued to the instance on the given port and path.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheckConfig withResourcePath(String resourcePath) {
@@ -388,7 +388,7 @@ public class HealthCheckConfig implements Serializable {
      *
      * @param fullyQualifiedDomainName Fully qualified domain name of the instance to be health checked.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheckConfig withFullyQualifiedDomainName(String fullyQualifiedDomainName) {
@@ -436,7 +436,7 @@ public class HealthCheckConfig implements Serializable {
      * @param searchString A string to search for in the body of a health check response.
      *         Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheckConfig withSearchString(String searchString) {
@@ -496,7 +496,7 @@ public class HealthCheckConfig implements Serializable {
      *         request. <p>Each Route 53 health checker makes requests at this
      *         interval. Valid values are 10 and 30. The default value is 30.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheckConfig withRequestInterval(Integer requestInterval) {
@@ -568,7 +568,7 @@ public class HealthCheckConfig implements Serializable {
      *         Determines Whether an Endpoint Is Healthy" in the Amazon Route 53
      *         Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheckConfig withFailureThreshold(Integer failureThreshold) {

@@ -165,7 +165,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      *         name, and <code>AutoCreateApplication</code> is <code>false</code>,
      *         returns an <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateApplicationVersionRequest withApplicationName(String applicationName) {
@@ -225,7 +225,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      *         for the specified application, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateApplicationVersionRequest withVersionLabel(String versionLabel) {
@@ -267,7 +267,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      *
      * @param description Describes this version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateApplicationVersionRequest withDescription(String description) {
@@ -348,7 +348,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      *         Amazon S3 location, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterCombination</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateApplicationVersionRequest withSourceBundle(S3Location sourceBundle) {
@@ -453,7 +453,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      *         </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
      *         <code>true</code> | <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateApplicationVersionRequest withAutoCreateApplication(Boolean autoCreateApplication) {

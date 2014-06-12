@@ -63,7 +63,7 @@ public class DescribeEventCategoriesResult implements Serializable {
      *
      * @param eventCategoriesMapList A list of EventCategoriesMap data types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventCategoriesResult withEventCategoriesMapList(EventCategoriesMap... eventCategoriesMapList) {
@@ -81,7 +81,7 @@ public class DescribeEventCategoriesResult implements Serializable {
      *
      * @param eventCategoriesMapList A list of EventCategoriesMap data types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventCategoriesResult withEventCategoriesMapList(java.util.Collection<EventCategoriesMap> eventCategoriesMapList) {

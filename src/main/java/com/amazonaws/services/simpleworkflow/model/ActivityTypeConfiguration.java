@@ -166,7 +166,7 @@ public class ActivityTypeConfiguration implements Serializable {
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
@@ -280,7 +280,7 @@ public class ActivityTypeConfiguration implements Serializable {
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskHeartbeatTimeout(String defaultTaskHeartbeatTimeout) {
@@ -343,7 +343,7 @@ public class ActivityTypeConfiguration implements Serializable {
      *         this default when scheduling a task through the
      *         <code>ScheduleActivityTask</code> <a>Decision</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskList(TaskList defaultTaskList) {
@@ -427,7 +427,7 @@ public class ActivityTypeConfiguration implements Serializable {
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskScheduleToStartTimeout(String defaultTaskScheduleToStartTimeout) {
@@ -505,7 +505,7 @@ public class ActivityTypeConfiguration implements Serializable {
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskScheduleToCloseTimeout(String defaultTaskScheduleToCloseTimeout) {

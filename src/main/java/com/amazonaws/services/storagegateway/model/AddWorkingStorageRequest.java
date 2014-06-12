@@ -104,7 +104,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddWorkingStorageRequest withGatewayARN(String gatewayARN) {
@@ -165,7 +165,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      *         length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *         API.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddWorkingStorageRequest withDiskIds(String... diskIds) {
@@ -189,7 +189,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      *         length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *         API.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddWorkingStorageRequest withDiskIds(java.util.Collection<String> diskIds) {

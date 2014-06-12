@@ -185,7 +185,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         template. If no application is found with this name, AWS Elastic
      *         Beanstalk returns an <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withApplicationName(String applicationName) {
@@ -245,7 +245,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         already exists with this name, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withTemplateName(String templateName) {
@@ -347,7 +347,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         parameter is specified, AWS Elastic Beanstalk uses the same solution
      *         stack as the source configuration template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withSolutionStackName(String solutionStackName) {
@@ -440,7 +440,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         name or else AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterCombination</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withSourceConfiguration(SourceConfiguration sourceConfiguration) {
@@ -473,7 +473,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *
      * @param environmentId The ID of the environment used with this configuration template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withEnvironmentId(String environmentId) {
@@ -515,7 +515,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *
      * @param description Describes this configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withDescription(String description) {
@@ -570,7 +570,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         option to the requested value. The new value overrides the value
      *         obtained from the solution stack or the source configuration template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
@@ -592,7 +592,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         option to the requested value. The new value overrides the value
      *         obtained from the solution stack or the source configuration template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateConfigurationTemplateRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {

@@ -361,7 +361,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param tableName The name of the table from which to delete the item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteItemRequest withTableName(String tableName) {
@@ -401,7 +401,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteItemRequest withKey(java.util.Map<String,AttributeValue> key) {
@@ -1363,7 +1363,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         parameters at once, DynamoDB will throw a <i>ValidationException</i>.
      *         </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteItemRequest withExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
@@ -1624,7 +1624,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -1686,7 +1686,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         the default. <p>The operation will succeed only if the entire map
      *         evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -1770,7 +1770,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         <p><code>ALL_OLD</code> - The content of the old item is returned.
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnValue
@@ -1828,7 +1828,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         <p><code>ALL_OLD</code> - The content of the old item is returned.
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnValue
@@ -1900,7 +1900,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -1950,7 +1950,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -2016,7 +2016,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics
@@ -2062,7 +2062,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements Serial
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnItemCollectionMetrics

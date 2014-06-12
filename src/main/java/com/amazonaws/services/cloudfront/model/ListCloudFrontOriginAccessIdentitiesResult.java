@@ -53,7 +53,7 @@ public class ListCloudFrontOriginAccessIdentitiesResult implements Serializable 
      *
      * @param cloudFrontOriginAccessIdentityList The CloudFrontOriginAccessIdentityList type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListCloudFrontOriginAccessIdentitiesResult withCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList) {

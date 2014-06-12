@@ -1691,6 +1691,12 @@ public class DynamoDBMapper {
      * Retrieves multiple items from multiple tables using their primary keys.
      *
      * @see DynamoDBMapper#batchLoad(List, DynamoDBMapperConfig)
+     *
+     * @return A map of the loaded objects. Each key in the map is the name of a
+     *         DynamoDB table. Each value in the map is a list of objects that
+     *         have been loaded from that table. All objects for each table can
+     *         be cast to the associated user defined type that is annotated as
+     *         mapping that table.
      */
     public Map<String, List<Object>> batchLoad(List<Object> itemsToGet) {
         return batchLoad(itemsToGet, this.config);
@@ -1706,6 +1712,12 @@ public class DynamoDBMapper {
      *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} and
      *            {@link DynamoDBMapperConfig#getConsistentReads()} are
      *            considered.
+     *
+     * @return A map of the loaded objects. Each key in the map is the name of a
+     *         DynamoDB table. Each value in the map is a list of objects that
+     *         have been loaded from that table. All objects for each table can
+     *         be cast to the associated user defined type that is annotated as
+     *         mapping that table.
      */
     public Map<String, List<Object>> batchLoad(List<Object> itemsToGet, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
@@ -1755,6 +1767,12 @@ public class DynamoDBMapper {
      * their primary keys.
      * {@link AmazonDynamoDB#batchGetItem(BatchGetItemRequest)} API.
      *
+     * @return A map of the loaded objects. Each key in the map is the name of a
+     *         DynamoDB table. Each value in the map is a list of objects that
+     *         have been loaded from that table. All objects for each table can
+     *         be cast to the associated user defined type that is annotated as
+     *         mapping that table.
+     *
      * @see #batchLoad(List, DynamoDBMapperConfig)
      * @see #batchLoad(Map, DynamoDBMapperConfig)
      */
@@ -1774,6 +1792,12 @@ public class DynamoDBMapper {
      *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} and
      *            {@link DynamoDBMapperConfig#getConsistentReads()} are
      *            considered.
+     *
+     * @return A map of the loaded objects. Each key in the map is the name of a
+     *         DynamoDB table. Each value in the map is a list of objects that
+     *         have been loaded from that table. All objects for each table can
+     *         be cast to the associated user defined type that is annotated as
+     *         mapping that table.
      */
     public Map<String, List<Object>> batchLoad(Map<Class<?>, List<KeyPair>> itemsToGet, DynamoDBMapperConfig config) {
 

@@ -70,7 +70,7 @@ public class NodeSnapshot implements Serializable {
      *
      * @param cacheNodeId The cache node identifier for the node in the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeSnapshot withCacheNodeId(String cacheNodeId) {
@@ -103,7 +103,7 @@ public class NodeSnapshot implements Serializable {
      *
      * @param cacheSize The size of the cache on the source cache node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeSnapshot withCacheSize(String cacheSize) {
@@ -142,7 +142,7 @@ public class NodeSnapshot implements Serializable {
      * @param cacheNodeCreateTime The date and time when the cache node was created in the source cache
      *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeSnapshot withCacheNodeCreateTime(java.util.Date cacheNodeCreateTime) {
@@ -181,7 +181,7 @@ public class NodeSnapshot implements Serializable {
      * @param snapshotCreateTime The date and time when the source node's metadata and cache data set
      *         was obtained for the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NodeSnapshot withSnapshotCreateTime(java.util.Date snapshotCreateTime) {

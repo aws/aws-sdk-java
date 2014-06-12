@@ -91,7 +91,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends AmazonWebServiceRe
      *         destination region. <p> Constraints: Must be the valid name of an
      *         existing cluster that has cross-region snapshot copy enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotCopyRetentionPeriodRequest withClusterIdentifier(String clusterIdentifier) {
@@ -160,7 +160,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends AmazonWebServiceRe
      *         that fall outside of the new retention period. <p> Constraints: Must
      *         be at least 1 and no more than 35.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotCopyRetentionPeriodRequest withRetentionPeriod(Integer retentionPeriod) {

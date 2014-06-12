@@ -88,7 +88,7 @@ public class ReplicationGroup implements Serializable {
      *
      * @param replicationGroupId The identifier for the replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withReplicationGroupId(String replicationGroupId) {
@@ -121,7 +121,7 @@ public class ReplicationGroup implements Serializable {
      *
      * @param description The description of the replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withDescription(String description) {
@@ -160,7 +160,7 @@ public class ReplicationGroup implements Serializable {
      * @param status The current state of this replication group - <i>creating</i>,
      *         <i>available</i>, etc.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withStatus(String status) {
@@ -199,7 +199,7 @@ public class ReplicationGroup implements Serializable {
      * @param pendingModifiedValues A group of settings to be applied to the replication group, either
      *         immediately or during the next maintenance window.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withPendingModifiedValues(ReplicationGroupPendingModifiedValues pendingModifiedValues) {
@@ -248,7 +248,7 @@ public class ReplicationGroup implements Serializable {
      * @param memberClusters The names of all the cache clusters that are part of this replication
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withMemberClusters(String... memberClusters) {
@@ -268,7 +268,7 @@ public class ReplicationGroup implements Serializable {
      * @param memberClusters The names of all the cache clusters that are part of this replication
      *         group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withMemberClusters(java.util.Collection<String> memberClusters) {
@@ -324,7 +324,7 @@ public class ReplicationGroup implements Serializable {
      * @param nodeGroups A single element list with information about the nodes in the
      *         replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withNodeGroups(NodeGroup... nodeGroups) {
@@ -344,7 +344,7 @@ public class ReplicationGroup implements Serializable {
      * @param nodeGroups A single element list with information about the nodes in the
      *         replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withNodeGroups(java.util.Collection<NodeGroup> nodeGroups) {
@@ -390,7 +390,7 @@ public class ReplicationGroup implements Serializable {
      * @param snapshottingClusterId The cache cluster ID that is used as the daily snapshot source for the
      *         replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplicationGroup withSnapshottingClusterId(String snapshottingClusterId) {

@@ -99,7 +99,7 @@ public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest impleme
      * @param tapeARNs Specifies one or more unique Amazon Resource Names (ARNs) that
      *         represent the virtual tapes you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeArchivesRequest withTapeARNs(String... tapeARNs) {
@@ -119,7 +119,7 @@ public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest impleme
      * @param tapeARNs Specifies one or more unique Amazon Resource Names (ARNs) that
      *         represent the virtual tapes you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeArchivesRequest withTapeARNs(java.util.Collection<String> tapeARNs) {
@@ -174,7 +174,7 @@ public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest impleme
      * @param marker An opaque string that indicates the position at which to begin
      *         describing virtual tapes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeArchivesRequest withMarker(String marker) {
@@ -222,7 +222,7 @@ public class DescribeTapeArchivesRequest extends AmazonWebServiceRequest impleme
      * @param limit Specifies that the number of virtual tapes descried be limited to the
      *         specified number.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTapeArchivesRequest withLimit(Integer limit) {

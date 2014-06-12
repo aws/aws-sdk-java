@@ -74,7 +74,7 @@ public class ChangeResourceRecordSetsResult implements Serializable {
      *         performing a <a>GetChange</a> action to get detailed information about
      *         the change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeResourceRecordSetsResult withChangeInfo(ChangeInfo changeInfo) {

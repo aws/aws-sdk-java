@@ -117,7 +117,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartInstancesRequest withInstanceIds(String... instanceIds) {
@@ -135,7 +135,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -175,7 +175,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
      *
      * @param additionalInfo 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartInstancesRequest withAdditionalInfo(String additionalInfo) {

@@ -61,7 +61,7 @@ public class DescribeSpotInstanceRequestsResult implements Serializable {
      *
      * @param spotInstanceRequests One or more Spot Instance requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotInstanceRequestsResult withSpotInstanceRequests(SpotInstanceRequest... spotInstanceRequests) {
@@ -79,7 +79,7 @@ public class DescribeSpotInstanceRequestsResult implements Serializable {
      *
      * @param spotInstanceRequests One or more Spot Instance requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotInstanceRequestsResult withSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {

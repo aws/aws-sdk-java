@@ -70,7 +70,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable {
      *
      * @param successful A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchResult withSuccessful(ChangeMessageVisibilityBatchResultEntry... successful) {
@@ -88,7 +88,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable {
      *
      * @param successful A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchResult withSuccessful(java.util.Collection<ChangeMessageVisibilityBatchResultEntry> successful) {
@@ -138,7 +138,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable {
      *
      * @param failed A list of <a>BatchResultErrorEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchResult withFailed(BatchResultErrorEntry... failed) {
@@ -156,7 +156,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable {
      *
      * @param failed A list of <a>BatchResultErrorEntry</a> items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeMessageVisibilityBatchResult withFailed(java.util.Collection<BatchResultErrorEntry> failed) {

@@ -88,7 +88,7 @@ public class EbsBlockDevice implements Serializable {
      *
      * @param snapshotId The ID of the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withSnapshotId(String snapshotId) {
@@ -139,7 +139,7 @@ public class EbsBlockDevice implements Serializable {
      *         <p>Default: If you're creating the volume from a snapshot and don't
      *         specify a volume size, the default is the snapshot size.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withVolumeSize(Integer volumeSize) {
@@ -178,7 +178,7 @@ public class EbsBlockDevice implements Serializable {
      * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
      *         termination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withDeleteOnTermination(Boolean deleteOnTermination) {
@@ -235,7 +235,7 @@ public class EbsBlockDevice implements Serializable {
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -269,7 +269,7 @@ public class EbsBlockDevice implements Serializable {
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -322,7 +322,7 @@ public class EbsBlockDevice implements Serializable {
      *         when the volume type is <code>io1</code>; not used with
      *         <code>standard</code> volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withIops(Integer iops) {
@@ -355,7 +355,7 @@ public class EbsBlockDevice implements Serializable {
      *
      * @param encrypted Indicates whether the Amazon EBS volume is encrypted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withEncrypted(Boolean encrypted) {

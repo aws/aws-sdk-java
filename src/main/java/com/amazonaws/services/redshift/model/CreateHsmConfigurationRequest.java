@@ -103,7 +103,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
      * @param hsmConfigurationIdentifier The identifier to be assigned to the new Amazon Redshift HSM
      *         configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHsmConfigurationRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
@@ -136,7 +136,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
      *
      * @param description A text description of the HSM configuration to be created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHsmConfigurationRequest withDescription(String description) {
@@ -175,7 +175,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
      * @param hsmIpAddress The IP address that the Amazon Redshift cluster must use to access the
      *         HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHsmConfigurationRequest withHsmIpAddress(String hsmIpAddress) {
@@ -214,7 +214,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
      * @param hsmPartitionName The name of the partition in the HSM where the Amazon Redshift
      *         clusters will store their database encryption keys.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHsmConfigurationRequest withHsmPartitionName(String hsmPartitionName) {
@@ -247,7 +247,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
      *
      * @param hsmPartitionPassword The password required to access the HSM partition.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHsmConfigurationRequest withHsmPartitionPassword(String hsmPartitionPassword) {
@@ -286,7 +286,7 @@ public class CreateHsmConfigurationRequest extends AmazonWebServiceRequest imple
      * @param hsmServerPublicCertificate The HSMs public certificate file. When using Cloud HSM, the file name
      *         is server.pem.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHsmConfigurationRequest withHsmServerPublicCertificate(String hsmServerPublicCertificate) {

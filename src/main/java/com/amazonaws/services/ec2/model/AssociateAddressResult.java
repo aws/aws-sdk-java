@@ -58,7 +58,7 @@ public class AssociateAddressResult implements Serializable {
      * @param associationId [EC2-VPC] The ID that represents the association of the Elastic IP
      *         address with an instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateAddressResult withAssociationId(String associationId) {

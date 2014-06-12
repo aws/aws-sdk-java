@@ -70,7 +70,7 @@ public class DataSource implements Serializable {
      * @param type The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
      *         <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DataSource withType(String type) {
@@ -103,7 +103,7 @@ public class DataSource implements Serializable {
      *
      * @param arn The data source's ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DataSource withArn(String arn) {
@@ -136,7 +136,7 @@ public class DataSource implements Serializable {
      *
      * @param databaseName The database name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DataSource withDatabaseName(String databaseName) {

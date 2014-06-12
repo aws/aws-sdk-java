@@ -139,7 +139,7 @@ public class S3OriginConfig implements Serializable {
      *         CloudFront returned in the Id element when you created the origin
      *         access identity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3OriginConfig withOriginAccessIdentity(String originAccessIdentity) {

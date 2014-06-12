@@ -87,7 +87,7 @@ public class ReplaceableAttribute implements Serializable {
      *
      * @param name The name of the replaceable attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceableAttribute withName(String name) {
@@ -120,7 +120,7 @@ public class ReplaceableAttribute implements Serializable {
      *
      * @param value The value of the replaceable attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceableAttribute withValue(String value) {
@@ -165,7 +165,7 @@ public class ReplaceableAttribute implements Serializable {
      *         or to add a new attribute/value pair. The default setting is
      *         <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceableAttribute withReplace(Boolean replace) {

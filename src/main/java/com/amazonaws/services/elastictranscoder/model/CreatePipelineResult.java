@@ -61,7 +61,7 @@ public class CreatePipelineResult implements Serializable {
      * @param pipeline A section of the response body that provides information about the
      *         pipeline that is created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineResult withPipeline(Pipeline pipeline) {

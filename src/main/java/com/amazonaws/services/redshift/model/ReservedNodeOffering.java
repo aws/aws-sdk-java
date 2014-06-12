@@ -94,7 +94,7 @@ public class ReservedNodeOffering implements Serializable {
      *
      * @param reservedNodeOfferingId The offering identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withReservedNodeOfferingId(String reservedNodeOfferingId) {
@@ -127,7 +127,7 @@ public class ReservedNodeOffering implements Serializable {
      *
      * @param nodeType The node type offered by the reserved node offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withNodeType(String nodeType) {
@@ -166,7 +166,7 @@ public class ReservedNodeOffering implements Serializable {
      * @param duration The duration, in seconds, for which the offering will reserve the
      *         node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withDuration(Integer duration) {
@@ -205,7 +205,7 @@ public class ReservedNodeOffering implements Serializable {
      * @param fixedPrice The upfront fixed charge you will pay to purchase the specific
      *         reserved node offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withFixedPrice(Double fixedPrice) {
@@ -244,7 +244,7 @@ public class ReservedNodeOffering implements Serializable {
      * @param usagePrice The rate you are charged for each hour the cluster that is using the
      *         offering is running.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withUsagePrice(Double usagePrice) {
@@ -277,7 +277,7 @@ public class ReservedNodeOffering implements Serializable {
      *
      * @param currencyCode The currency code for the compute nodes offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withCurrencyCode(String currencyCode) {
@@ -316,7 +316,7 @@ public class ReservedNodeOffering implements Serializable {
      * @param offeringType The anticipated utilization of the reserved node, as defined in the
      *         reserved node offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withOfferingType(String offeringType) {
@@ -371,7 +371,7 @@ public class ReservedNodeOffering implements Serializable {
      *         clusters using the node offering. Recurring charges are only in effect
      *         for heavy-utilization reserved nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withRecurringCharges(RecurringCharge... recurringCharges) {
@@ -393,7 +393,7 @@ public class ReservedNodeOffering implements Serializable {
      *         clusters using the node offering. Recurring charges are only in effect
      *         for heavy-utilization reserved nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNodeOffering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {

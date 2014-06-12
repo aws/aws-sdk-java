@@ -59,7 +59,7 @@ public class Trigger implements Serializable {
      *
      * @param name The name of the trigger.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Trigger withName(String name) {

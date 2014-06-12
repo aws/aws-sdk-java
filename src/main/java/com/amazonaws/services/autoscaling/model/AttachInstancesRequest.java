@@ -92,7 +92,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
      * @param instanceIds One or more IDs of the Amazon EC2 instances to attach to the specified
      *         Auto Scaling group. You must specify at least one instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachInstancesRequest withInstanceIds(String... instanceIds) {
@@ -112,7 +112,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
      * @param instanceIds One or more IDs of the Amazon EC2 instances to attach to the specified
      *         Auto Scaling group. You must specify at least one instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -170,7 +170,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements S
      * @param autoScalingGroupName The name of the Auto Scaling group to which to attach the specified
      *         instance(s).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachInstancesRequest withAutoScalingGroupName(String autoScalingGroupName) {

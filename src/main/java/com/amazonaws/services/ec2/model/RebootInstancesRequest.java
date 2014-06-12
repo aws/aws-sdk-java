@@ -99,7 +99,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootInstancesRequest withInstanceIds(String... instanceIds) {
@@ -117,7 +117,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {

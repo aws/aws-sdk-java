@@ -91,7 +91,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param ownerId Provides the AWS ID of the owner of a specific DB security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withOwnerId(String ownerId) {
@@ -124,7 +124,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param dBSecurityGroupName Specifies the name of the DB security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withDBSecurityGroupName(String dBSecurityGroupName) {
@@ -157,7 +157,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param dBSecurityGroupDescription Provides the description of the DB security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withDBSecurityGroupDescription(String dBSecurityGroupDescription) {
@@ -190,7 +190,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param vpcId Provides the VpcId of the DB security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withVpcId(String vpcId) {
@@ -233,7 +233,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withEC2SecurityGroups(EC2SecurityGroup... eC2SecurityGroups) {
@@ -251,7 +251,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
@@ -301,7 +301,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param iPRanges Contains a list of <a>IPRange</a> elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withIPRanges(IPRange... iPRanges) {
@@ -319,7 +319,7 @@ public class DBSecurityGroup implements Serializable {
      *
      * @param iPRanges Contains a list of <a>IPRange</a> elements.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBSecurityGroup withIPRanges(java.util.Collection<IPRange> iPRanges) {

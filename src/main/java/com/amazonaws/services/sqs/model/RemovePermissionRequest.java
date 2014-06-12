@@ -86,7 +86,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemovePermissionRequest withQueueUrl(String queueUrl) {
@@ -125,7 +125,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      * @param label The identification of the permission to remove. This is the label
      *         added with the <a>AddPermission</a> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemovePermissionRequest withLabel(String label) {

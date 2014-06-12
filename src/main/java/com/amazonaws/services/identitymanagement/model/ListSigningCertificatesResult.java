@@ -83,7 +83,7 @@ public class ListSigningCertificatesResult implements Serializable {
      *
      * @param certificates A list of the user's signing certificate information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSigningCertificatesResult withCertificates(SigningCertificate... certificates) {
@@ -101,7 +101,7 @@ public class ListSigningCertificatesResult implements Serializable {
      *
      * @param certificates A list of the user's signing certificate information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSigningCertificatesResult withCertificates(java.util.Collection<SigningCertificate> certificates) {
@@ -159,7 +159,7 @@ public class ListSigningCertificatesResult implements Serializable {
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more certificates in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSigningCertificatesResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListSigningCertificatesResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListSigningCertificatesResult withMarker(String marker) {

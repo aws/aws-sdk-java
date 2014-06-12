@@ -83,7 +83,7 @@ public class DiskImageDetail implements Serializable {
      *
      * @param format The disk image format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -117,7 +117,7 @@ public class DiskImageDetail implements Serializable {
      *
      * @param format The disk image format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DiskImageFormat
@@ -152,7 +152,7 @@ public class DiskImageDetail implements Serializable {
      *
      * @param bytes 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImageDetail withBytes(Long bytes) {
@@ -221,7 +221,7 @@ public class DiskImageDetail implements Serializable {
      *         REST Requests</a> topic in the <i>Amazon Simple Storage Service
      *         Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImageDetail withImportManifestUrl(String importManifestUrl) {

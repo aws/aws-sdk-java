@@ -58,7 +58,7 @@ public class PortRange implements Serializable {
      *
      * @param from The first port in the range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PortRange withFrom(Integer from) {
@@ -91,7 +91,7 @@ public class PortRange implements Serializable {
      *
      * @param to The last port in the range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PortRange withTo(Integer to) {

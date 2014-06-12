@@ -87,7 +87,7 @@ public class ListQueuesRequest extends AmazonWebServiceRequest implements Serial
      * @param queueNamePrefix A string to use for filtering the list results. Only those queues
      *         whose name begins with the specified string are returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListQueuesRequest withQueueNamePrefix(String queueNamePrefix) {

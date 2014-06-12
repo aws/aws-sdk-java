@@ -88,7 +88,7 @@ public class DocumentSuggesterOptions implements Serializable {
      *
      * @param sourceField The name of the index field you want to use for suggestions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DocumentSuggesterOptions withSourceField(String sourceField) {
@@ -164,7 +164,7 @@ public class DocumentSuggesterOptions implements Serializable {
      *         character. With high, suggestions can differ by up to two characters.
      *         The default is none.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SuggesterFuzzyMatching
@@ -218,7 +218,7 @@ public class DocumentSuggesterOptions implements Serializable {
      *         character. With high, suggestions can differ by up to two characters.
      *         The default is none.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SuggesterFuzzyMatching
@@ -259,7 +259,7 @@ public class DocumentSuggesterOptions implements Serializable {
      * @param sortExpression An expression that computes a score for each suggestion to control how
      *         they are sorted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DocumentSuggesterOptions withSortExpression(String sortExpression) {

@@ -143,7 +143,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withNetworkInterfaceId(String networkInterfaceId) {
@@ -176,7 +176,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param subnetId The ID of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withSubnetId(String subnetId) {
@@ -209,7 +209,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withVpcId(String vpcId) {
@@ -242,7 +242,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param availabilityZone The Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withAvailabilityZone(String availabilityZone) {
@@ -275,7 +275,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param description A description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withDescription(String description) {
@@ -308,7 +308,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param ownerId The AWS account ID of the owner of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withOwnerId(String ownerId) {
@@ -347,7 +347,7 @@ public class NetworkInterface implements Serializable {
      * @param requesterId The ID of the entity that launched the instance on your behalf (for
      *         example, AWS Management Console or Auto Scaling).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withRequesterId(String requesterId) {
@@ -380,7 +380,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param requesterManaged Indicates whether the network interface is being managed by AWS.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withRequesterManaged(Boolean requesterManaged) {
@@ -435,7 +435,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param status The status of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see NetworkInterfaceStatus
@@ -469,7 +469,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param status The status of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see NetworkInterfaceStatus
@@ -504,7 +504,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param macAddress The MAC address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withMacAddress(String macAddress) {
@@ -537,7 +537,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param privateIpAddress The IP address of the network interface within the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withPrivateIpAddress(String privateIpAddress) {
@@ -570,7 +570,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param privateDnsName The private DNS name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withPrivateDnsName(String privateDnsName) {
@@ -603,7 +603,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param sourceDestCheck Indicates whether traffic to or from the instance is validated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withSourceDestCheck(Boolean sourceDestCheck) {
@@ -655,7 +655,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param groups Any security groups for the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withGroups(GroupIdentifier... groups) {
@@ -673,7 +673,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param groups Any security groups for the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withGroups(java.util.Collection<GroupIdentifier> groups) {
@@ -713,7 +713,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param attachment The network interface attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withAttachment(NetworkInterfaceAttachment attachment) {
@@ -752,7 +752,7 @@ public class NetworkInterface implements Serializable {
      * @param association The association information for an Elastic IP associated with the
      *         network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withAssociation(NetworkInterfaceAssociation association) {
@@ -795,7 +795,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param tagSet Any tags assigned to the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withTagSet(Tag... tagSet) {
@@ -813,7 +813,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param tagSet Any tags assigned to the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withTagSet(java.util.Collection<Tag> tagSet) {
@@ -863,7 +863,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param privateIpAddresses The private IP addresses associated with the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withPrivateIpAddresses(NetworkInterfacePrivateIpAddress... privateIpAddresses) {
@@ -881,7 +881,7 @@ public class NetworkInterface implements Serializable {
      *
      * @param privateIpAddresses The private IP addresses associated with the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterface withPrivateIpAddresses(java.util.Collection<NetworkInterfacePrivateIpAddress> privateIpAddresses) {

@@ -81,7 +81,7 @@ public class ExportTask implements Serializable {
      *
      * @param exportTaskId The ID of the export task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportTask withExportTaskId(String exportTaskId) {
@@ -114,7 +114,7 @@ public class ExportTask implements Serializable {
      *
      * @param description A description of the resource being exported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportTask withDescription(String description) {
@@ -160,7 +160,7 @@ public class ExportTask implements Serializable {
      *
      * @param state The state of the conversion task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ExportTaskState
@@ -194,7 +194,7 @@ public class ExportTask implements Serializable {
      *
      * @param state The state of the conversion task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ExportTaskState
@@ -229,7 +229,7 @@ public class ExportTask implements Serializable {
      *
      * @param statusMessage The status message related to the export task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportTask withStatusMessage(String statusMessage) {
@@ -262,7 +262,7 @@ public class ExportTask implements Serializable {
      *
      * @param instanceExportDetails The instance being exported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportTask withInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
@@ -295,7 +295,7 @@ public class ExportTask implements Serializable {
      *
      * @param exportToS3Task 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExportTask withExportToS3Task(ExportToS3Task exportToS3Task) {

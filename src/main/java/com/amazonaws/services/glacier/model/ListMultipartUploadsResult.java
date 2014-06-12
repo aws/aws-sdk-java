@@ -71,7 +71,7 @@ public class ListMultipartUploadsResult implements Serializable {
      *
      * @param uploadsList A list of in-progress multipart uploads.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMultipartUploadsResult withUploadsList(UploadListElement... uploadsList) {
@@ -89,7 +89,7 @@ public class ListMultipartUploadsResult implements Serializable {
      *
      * @param uploadsList A list of in-progress multipart uploads.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMultipartUploadsResult withUploadsList(java.util.Collection<UploadListElement> uploadsList) {
@@ -147,7 +147,7 @@ public class ListMultipartUploadsResult implements Serializable {
      *         obtain more uploads in the list. If there are no more uploads, this
      *         value is <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMultipartUploadsResult withMarker(String marker) {

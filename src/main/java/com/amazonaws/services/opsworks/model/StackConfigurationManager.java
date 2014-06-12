@@ -59,7 +59,7 @@ public class StackConfigurationManager implements Serializable {
      *
      * @param name The name. This parameter must be set to "Chef".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackConfigurationManager withName(String name) {
@@ -98,7 +98,7 @@ public class StackConfigurationManager implements Serializable {
      * @param version The Chef version. This parameter must be set to 0.9, 11.4, or 11.10.
      *         The default value is 11.4.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackConfigurationManager withVersion(String version) {

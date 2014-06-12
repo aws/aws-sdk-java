@@ -132,7 +132,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         characters are any Unicode code points that are legal in an XML 1.0
      *         document. The UTF-8 encoding of the value must be less than 128 bytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHealthCheckRequest withCallerReference(String callerReference) {
@@ -165,7 +165,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      *
      * @param healthCheckConfig A complex type that contains health check configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateHealthCheckRequest withHealthCheckConfig(HealthCheckConfig healthCheckConfig) {

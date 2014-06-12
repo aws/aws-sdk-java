@@ -80,7 +80,7 @@ public class HealthCheck implements Serializable {
      *
      * @param id The ID of the specified health check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheck withId(String id) {
@@ -128,7 +128,7 @@ public class HealthCheck implements Serializable {
      * @param callerReference A unique string that identifies the request to create the health
      *         check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheck withCallerReference(String callerReference) {
@@ -161,7 +161,7 @@ public class HealthCheck implements Serializable {
      *
      * @param healthCheckConfig A complex type that contains the health check configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HealthCheck withHealthCheckConfig(HealthCheckConfig healthCheckConfig) {

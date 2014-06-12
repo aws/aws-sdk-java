@@ -55,7 +55,7 @@ public class DeleteDomainResult implements Serializable {
      *
      * @param domainStatus The current status of the search domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDomainResult withDomainStatus(DomainStatus domainStatus) {

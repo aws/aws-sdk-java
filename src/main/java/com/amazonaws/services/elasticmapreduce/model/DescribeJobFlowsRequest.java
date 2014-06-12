@@ -117,7 +117,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      *
      * @param createdAfter Return only job flows created after this date and time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsRequest withCreatedAfter(java.util.Date createdAfter) {
@@ -150,7 +150,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      *
      * @param createdBefore Return only job flows created before this date and time.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsRequest withCreatedBefore(java.util.Date createdBefore) {
@@ -193,7 +193,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      *
      * @param jobFlowIds Return only job flows whose job flow ID is contained in this list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
@@ -211,7 +211,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      *
      * @param jobFlowIds Return only job flows whose job flow ID is contained in this list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
@@ -261,7 +261,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      *
      * @param jobFlowStates Return only job flows whose state is contained in this list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsRequest withJobFlowStates(String... jobFlowStates) {
@@ -279,7 +279,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      *
      * @param jobFlowStates Return only job flows whose state is contained in this list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsRequest withJobFlowStates(java.util.Collection<String> jobFlowStates) {
@@ -301,7 +301,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      *
      * @param jobFlowStates Return only job flows whose state is contained in this list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsRequest withJobFlowStates(JobFlowExecutionState... jobFlowStates) {

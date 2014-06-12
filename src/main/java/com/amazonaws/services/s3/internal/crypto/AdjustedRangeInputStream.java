@@ -17,11 +17,12 @@ package com.amazonaws.services.s3.internal.crypto;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.amazonaws.internal.SdkInputStream;
+
 /**
  * Reads only a specific range of bytes from the underlying input stream.
  */
-public class AdjustedRangeInputStream extends InputStream {
-
+public class AdjustedRangeInputStream extends SdkInputStream {
     private InputStream decryptedContents;
     private long virtualAvailable;
     private boolean closed;
@@ -76,6 +77,7 @@ public class AdjustedRangeInputStream extends InputStream {
      */
     @Override
     public int read() throws IOException {
+        abortIfNeeded();
         int result = 0;
         // If there are no more available bytes, mark that we are at the end of the stream.
         if (this.virtualAvailable <= 0) {
@@ -101,6 +103,7 @@ public class AdjustedRangeInputStream extends InputStream {
      */
     @Override
     public int read(byte[] buffer, int offset, int length) throws IOException {
+        abortIfNeeded();
         int numBytesRead;
         // If no more bytes are available, do not read any bytes into the buffer
         if(this.virtualAvailable <= 0) {
@@ -132,6 +135,7 @@ public class AdjustedRangeInputStream extends InputStream {
      */
     @Override
     public int available() throws IOException {
+        abortIfNeeded();
         int available = this.decryptedContents.available();
         if(available < this.virtualAvailable) {
             return available;
@@ -152,5 +156,11 @@ public class AdjustedRangeInputStream extends InputStream {
             this.closed = true;
             this.decryptedContents.close();
         }
+        abortIfNeeded();
+    }
+
+    @Override
+    protected InputStream getWrappedInputStream() {
+        return decryptedContents;
     }
 }

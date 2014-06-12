@@ -493,11 +493,11 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * The AWS S3 Java client will attempt to calculate this field automatically
      * when uploading files to Amazon S3.
      * </p>
-     * 
+     *
      * @param md5Base64
      *            The base64 encoded MD5 hash of the content for the object
      *            associated with this metadata.
-     * 
+     *
      * @see ObjectMetadata#getContentMD5()
      */
     public void setContentMD5(String md5Base64) {
@@ -617,21 +617,77 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     }
 
     /**
-     * Returns the server-side encryption algorithm for the object, or null if
-     * none was used.
+     * Returns the server-side encryption algorithm when encrypting the object
+     * using AWS-managed keys .
      */
+    @Override
+    public String getSSEAlgorithm() {
+        return (String)metadata.get(Headers.SERVER_SIDE_ENCRYPTION);
+    }
+
+    /**
+     * @deprecated Replaced by {@link #getSSEAlgorithm()}
+     */
+    @Deprecated
     public String getServerSideEncryption() {
         return (String)metadata.get(Headers.SERVER_SIDE_ENCRYPTION);
     }
 
     /**
-     * Sets the server-side encryption algorithm for the object.
+     * Sets the server-side encryption algorithm when encrypting the object
+     * using AWS-managed keys.
      *
-     * @param serverSideEncryption
-     *            The server-side encryption algorithm for the object.
+     * @param algorithm
+     *            The server-side encryption algorithm when encrypting the
+     *            object using AWS-managed keys .
      */
-    public void setServerSideEncryption(String serverSideEncryption) {
-        metadata.put(Headers.SERVER_SIDE_ENCRYPTION, serverSideEncryption);
+    @Override
+    public void setSSEAlgorithm(String algorithm) {
+        metadata.put(Headers.SERVER_SIDE_ENCRYPTION, algorithm);
+    }
+
+
+    /**
+     * @deprecated Replaced by {@link #setSSEAlgorithm(String))}
+     */
+    @Deprecated
+    public void setServerSideEncryption(String algorithm) {
+        metadata.put(Headers.SERVER_SIDE_ENCRYPTION, algorithm);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getSSECustomerAlgorithm() {
+        return (String) metadata.get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM);
+    }
+
+    /**
+     * For internal use only. This method is only used to set the value in the
+     * object after receiving the value in a response from S3. When sending
+     * requests, use {@link SSECustomerKey} members in request objects.
+     */
+    @Override
+    public void setSSECustomerAlgorithm(String algorithm) {
+        metadata.put(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, algorithm);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getSSECustomerKeyMd5() {
+        return (String)metadata.get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5);
+    }
+
+    /**
+     * For internal use only. This method is only used to set the value in the
+     * object after receiving the value in a response from S3. When sending
+     * requests, use {@link SSECustomerKey} members in request objects.
+     */
+    public void setSSECustomerKeyMd5(String md5Digest) {
+        metadata.put(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, md5Digest);
     }
 
     /**
@@ -733,7 +789,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     public String getUserMetaDataOf(String key) {
         return userMetadata == null ? null : userMetadata.get(key);
     }
-    
+
     public ObjectMetadata() {
         userMetadata = new HashMap<String, String>();
         metadata = new HashMap<String, Object>();

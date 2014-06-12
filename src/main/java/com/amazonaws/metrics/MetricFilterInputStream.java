@@ -37,6 +37,7 @@ public class MetricFilterInputStream extends SdkFilterInputStream {
 
     @Override
     public int read(byte b[], int off, int len) throws IOException {
+        abortIfNeeded();
         long startNano = helper.startTiming();
         int bytesRead = in.read(b, off, len);
         if (bytesRead > 0) {
@@ -49,6 +50,7 @@ public class MetricFilterInputStream extends SdkFilterInputStream {
     public void close() throws IOException {
         helper.reportMetrics();
         in.close();
+        abortIfNeeded();
     }
 
     @Override

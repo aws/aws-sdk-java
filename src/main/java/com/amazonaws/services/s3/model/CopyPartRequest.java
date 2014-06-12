@@ -32,7 +32,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * All <code>CopyPartRequests</code> must specify an upload id, a source bucket
  * and key, along with a destination bucket and key. Beyond that, requests also
  * specify constraints controlling if the copy will be performed or not.</li>
- * 
+ *
  * @see AmazonS3Client#copyObject(com.amazonaws.services.s3.model.CopyPartRequest)
  * @see AmazonS3Client#initiateMultipartUpload(InitiateMultipartUploadRequest)
  * @see AmazonS3Client#uploadPart(UploadPartRequest)
@@ -42,14 +42,14 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
 
     /**
      * The upload id of the multipart upload into which to copy this part.
-     * 
+     *
      * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
      */
     private String uploadId;
 
     /**
      * The part number to copy into.
-     * 
+     *
      * @see AmazonS3#uploadPart(UploadPartRequest)
      */
     private int partNumber;
@@ -82,7 +82,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      */
     private String destinationKey;
 
-    
+
     /**
      * Optional list of ETag values that constrain the copy request to only be
      * executed if the source object's ETag matches one of the specified ETag
@@ -122,9 +122,22 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     private Long lastByte;
 
     /**
+     * The optional customer-provided server-side encryption key to use to
+     * decrypt the source object part being copied.
+     */
+    private SSECustomerKey sourceSSECustomerKey;
+
+    /**
+     * The optional customer-provided server-side encryption key to use to
+     * encrypt the source object part being copied.
+     */
+    private SSECustomerKey destinationSSECustomerKey;
+
+
+    /**
      * Returns the ID of the existing, initiated multipart upload with which
      * this new part will be associated.
-     * 
+     *
      * @return the ID of the existing, initiated multipart upload with which
      *         this new part will be associated.
      */
@@ -135,7 +148,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the ID of the existing, initiated multipart upload with which this
      * new part will be associated.
-     * 
+     *
      * @param uploadId
      *            the ID of the existing, initiated multipart upload with which
      *            this new part will be associated.
@@ -147,7 +160,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the ID of the existing, initiated multipart upload with which this
      * new part will be associated.
-     * 
+     *
      * @param uploadId
      *            the ID of the existing, initiated multipart upload with which
      *            this new part will be associated. * @return This
@@ -163,7 +176,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Returns the part number describing this part's position relative to the
      * other parts in the multipart upload. Part number must be between 1 and
      * 10,000 (inclusive).
-     * 
+     *
      * @return the part number describing this part's position relative to the
      *         other parts in the multipart upload. Part number must be between
      *         1 and 10,000 (inclusive).
@@ -176,7 +189,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Sets the part number describing this part's position relative to the
      * other parts in the multipart upload. Part number must be between 1 and
      * 10,000 (inclusive).
-     * 
+     *
      * @param partNumber
      *            the part number describing this part's position relative to
      *            the other parts in the multipart upload. Part number must be
@@ -190,7 +203,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Sets the part number describing this part's position relative to the
      * other parts in the multipart upload. Part number must be between 1 and
      * 10,000 (inclusive).
-     * 
+     *
      * @param partNumber
      *            the part number describing this part's position relative to
      *            the other parts in the multipart upload. Part number must be
@@ -205,7 +218,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
 
     /**
      * Gets the name of the bucket containing the source object to be copied.
-     * 
+     *
      * @return The name of the bucket containing the source object to be copied.
      * @see CopyPartRequest#setSourceBucketName(String sourceBucketName)
      */
@@ -215,7 +228,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the name of the bucket containing the source object to be copied.
-     * 
+     *
      * @param sourceBucketName
      *            The name of the bucket containing the source object to be
      *            copied.
@@ -227,7 +240,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the name of the bucket containing the source object to be copied.
-     * 
+     *
      * @param sourceBucketName
      *            The name of the bucket containing the source object to be
      *            copied.
@@ -243,7 +256,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Gets the source bucket key under which the source object to be copied is
      * stored.
-     * 
+     *
      * @return The source bucket key under which the source object to be copied
      *         is stored.
      * @see CopyPartRequest#setSourceKey(String sourceKey)
@@ -255,7 +268,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the source bucket key under which the source object to be copied is
      * stored.
-     * 
+     *
      * @param sourceKey
      *            The source bucket key under which the source object to be
      *            copied is stored.
@@ -268,7 +281,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the source bucket key under which the source object to be copied is
      * stored.
-     * 
+     *
      * @param sourceKey
      *            The source bucket key under which the source object to be
      *            copied is stored.
@@ -299,7 +312,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}
      * .
      * </p>
-     * 
+     *
      * @return The version ID specifying which version of the source object to
      *         copy.
      * @see Constants#NULL_VERSION_ID
@@ -327,7 +340,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}
      * .
      * </p>
-     * 
+     *
      * @param sourceVersionId
      *            The optional version ID specifying which version of the source
      *            object to copy.
@@ -354,7 +367,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}
      * .
      * </p>
-     * 
+     *
      * @param sourceVersionId
      *            The optional version ID specifying which version of the source
      *            object to copy.
@@ -365,15 +378,15 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
         this.sourceVersionId = sourceVersionId;
         return this;
     }
-    
+
     /**
      * Gets the destination bucket name which will contain the new,
      * copied object.
      *
      * @return The name of the destination bucket which will contain the new,
      *         copied object.
-     *         
-     * @see CopyPartRequest#setDestinationBucketName(String destinationBucketName)        
+     *
+     * @see CopyPartRequest#setDestinationBucketName(String destinationBucketName)
      */
     public String getDestinationBucketName() {
         return destinationBucketName;
@@ -386,8 +399,8 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * @param destinationBucketName
      *            The name of the destination bucket which will contain the new,
      *            copied object.
-     *            
-     * @see CopyPartRequest#getDestinationBucketName()     
+     *
+     * @see CopyPartRequest#getDestinationBucketName()
      */
     public void setDestinationBucketName(String destinationBucketName) {
         this.destinationBucketName = destinationBucketName;
@@ -413,11 +426,11 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Gets the destination bucket key under which the new, copied
      * object will be stored.
-     * 
+     *
      * @return The destination bucket key under which the new, copied
      *         object will be stored.
-     *         
-     * @see CopyPartRequest#setDestinationKey(String destinationKey)                   
+     *
+     * @see CopyPartRequest#setDestinationKey(String destinationKey)
      */
     public String getDestinationKey() {
         return destinationKey;
@@ -430,8 +443,8 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * @param destinationKey
      *            The destination bucket key under which the new, copied
      *            object will be stored.
-     *      
-     * @see CopyPartRequest#getDestinationKey()               
+     *
+     * @see CopyPartRequest#getDestinationKey()
      */
     public void setDestinationKey(String destinationKey) {
         this.destinationKey = destinationKey;
@@ -457,7 +470,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
 
     /**
      * Returns the optional start range to copy from the source object.
-     * 
+     *
      * @return the optional start range to copy from the source object.
      */
     public Long getFirstByte() {
@@ -467,7 +480,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the optional zero-based byte offset to begin copying the source
      * object.
-     * 
+     *
      * @param firstByte
      *            the optional zero-based byte offset to begin copying the
      *            source object.
@@ -479,7 +492,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the optional zero-based byte offset to begin copying the source
      * object.
-     * 
+     *
      * @param firstByte
      *            the optional zero-based byte offset to begin copying the
      *            source object.
@@ -493,7 +506,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
 
     /**
      * Returns the optional zero-based byte offset to stop copying the source.
-     * 
+     *
      * @return the optional zero-based byte offset to stop copying the source.
      */
     public Long getLastByte() {
@@ -509,7 +522,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the optional zero-based byte offset to stop copying the source.
-     * 
+     *
      * @return This <code>CopyPartRequest</code>, enabling additional method
      *         calls to be chained together.
      */
@@ -529,7 +542,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Matching ETag constraints may be used with the unmodified since
      * constraint, but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @return The optional list of ETag constraints that when present must
      *         include a match for the source object's current ETag in order for
      *         this request to be executed.
@@ -551,7 +564,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Matching ETag constraints may be used with the unmodified since
      * constraint, but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @param eTagList
      *            The optional list of ETag constraints that must include a
      *            match for the source object's current ETag in order for this
@@ -575,7 +588,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Matching ETag constraints may be used with the unmodified since
      * constraint, but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @param eTag
      *            The matching ETag constraint to add to this request.
      * @return This <code>CopyPartRequest</code>, enabling additional method
@@ -598,7 +611,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Non-matching ETag constraints may be used with the modified since
      * constraint, but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @return The optional list of ETag constraints that when present <b>must
      *         not</b> include a match for the source object's current ETag in
      *         order for this request to be executed.
@@ -619,7 +632,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Non-matching ETag constraints may be used with the modified since
      * constraint, but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @param eTagList
      *            The list of ETag constraints that, when present, <b>must
      *            not</b> include a match for the source object's current ETag
@@ -644,7 +657,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * Non-matching ETag constraints may be used with the modified since
      * constraint, but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @param eTag
      *            The non-matching ETag constraint to add to this request.
      * @return This <code>CopyPartRequest</code>, enabling additional method
@@ -665,7 +678,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * The unmodified since constraint may be used with matching ETag
      * constraints, but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @return The optional unmodified constraint that restricts this request to
      *         executing only if the source object has <b>not</b> been modified
      *         after the specified date.
@@ -687,7 +700,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * <p>
      * Note that Amazon S3 will ignore any dates occurring in the future.
      * </p>
-     * 
+     *
      * @param date
      *            The unmodified constraint that restricts this request to
      *            executing only if the source object has <b>not</b> been
@@ -711,7 +724,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * <p>
      * Note that Amazon S3 will ignore any dates occurring in the future.
      * </p>
-     * 
+     *
      * @param date
      *            The unmodified constraint that restricts this request to
      *            executing only if the source object has <b>not</b> been
@@ -734,7 +747,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * The modified constraint may be used with non-matching ETag constraints,
      * but not with any other type of constraint.
      * </p>
-     * 
+     *
      * @return The optional modified constraint that restricts this request to
      *         executing only if the source object <b>has</b> been modified
      *         after the specified date.
@@ -756,7 +769,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * <p>
      * Note that Amazon S3 will ignore any dates occurring in the future.
      * </p>
-     * 
+     *
      * @param date
      *            The modified constraint that restricts this request to
      *            executing only if the source object <b>has</b> been modified
@@ -780,7 +793,7 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
      * <p>
      * Note that Amazon S3 will ignore any dates occurring in the future.
      * </p>
-     * 
+     *
      * @param date
      *            The modified constraint that restricts this request to
      *            executing only if the source object <b>has</b> been modified
@@ -793,4 +806,83 @@ public class CopyPartRequest extends AmazonWebServiceRequest {
         return this;
     }
 
+    /**
+     * Returns the optional customer-provided server-side encryption key to use
+     * to decrypt the source object part being copied.
+     *
+     * @return The optional customer-provided server-side encryption key to use
+     *         to decrypt the source object part being copied.
+     */
+    public SSECustomerKey getSourceSSECustomerKey() {
+        return sourceSSECustomerKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * decrypt the source object part being copied.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to decrypt the source object part being copied.
+     */
+    public void setSourceSSECustomerKey(SSECustomerKey sseKey) {
+        this.sourceSSECustomerKey = sseKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * decrypt the source object part being copied, and returns the updated
+     * request object so that additional method calls can be chained together.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to decrypt the source object part being copied.
+     *
+     * @return This updated request object so that additional method calls can
+     *         be chained together.
+     */
+    public CopyPartRequest withSourceSSECustomerKey(SSECustomerKey sseKey) {
+        setSourceSSECustomerKey(sseKey);
+        return this;
+    }
+
+    /**
+     * Returns the optional customer-provided server-side encryption key to use
+     * to encrypt the source object part being copied.
+     *
+     * @return The optional customer-provided server-side encryption key to use
+     *         to encrypt the source object part being copied.
+     */
+    public SSECustomerKey getDestinationSSECustomerKey() {
+        return destinationSSECustomerKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the source object part being copied.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the source object part being copied.
+     */
+    public void setDestinationSSECustomerKey(SSECustomerKey sseKey) {
+        this.destinationSSECustomerKey = sseKey;
+    }
+
+    /**
+     * Returns the optional customer-provided server-side encryption key to use
+     * to encrypt the source object part being copied, and returns the updated
+     * request object so that additional method calls can be chained together.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the source object part being copied.
+     *
+     * @return This updated request object so that additional method calls can
+     *         be chained together.
+     */
+    public CopyPartRequest withDestinationSSECustomerKey(SSECustomerKey sseKey) {
+        setDestinationSSECustomerKey(sseKey);
+        return this;
+    }
 }

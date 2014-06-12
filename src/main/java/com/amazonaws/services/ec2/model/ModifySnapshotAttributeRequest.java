@@ -135,7 +135,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param snapshotId The ID of the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotAttributeRequest withSnapshotId(String snapshotId) {
@@ -181,7 +181,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param attribute The snapshot attribute to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SnapshotAttributeName
@@ -215,7 +215,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param attribute The snapshot attribute to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SnapshotAttributeName
@@ -250,7 +250,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param operationType The type of operation to perform to the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotAttributeRequest withOperationType(String operationType) {
@@ -293,7 +293,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param userIds The account ID to modify for the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotAttributeRequest withUserIds(String... userIds) {
@@ -311,7 +311,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param userIds The account ID to modify for the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotAttributeRequest withUserIds(java.util.Collection<String> userIds) {
@@ -361,7 +361,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param groupNames The group to modify for the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotAttributeRequest withGroupNames(String... groupNames) {
@@ -379,7 +379,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param groupNames The group to modify for the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotAttributeRequest withGroupNames(java.util.Collection<String> groupNames) {
@@ -419,7 +419,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *
      * @param createVolumePermission A JSON representation of the snapshot attribute modification.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifySnapshotAttributeRequest withCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {

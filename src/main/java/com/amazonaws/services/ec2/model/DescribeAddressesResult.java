@@ -61,7 +61,7 @@ public class DescribeAddressesResult implements Serializable {
      *
      * @param addresses Information about one or more Elastic IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesResult withAddresses(Address... addresses) {
@@ -79,7 +79,7 @@ public class DescribeAddressesResult implements Serializable {
      *
      * @param addresses Information about one or more Elastic IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesResult withAddresses(java.util.Collection<Address> addresses) {

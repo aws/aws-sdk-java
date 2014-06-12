@@ -59,7 +59,7 @@ public class DescribeReplicationGroupsResult implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReplicationGroupsResult withMarker(String marker) {
@@ -108,7 +108,7 @@ public class DescribeReplicationGroupsResult implements Serializable {
      * @param replicationGroups A list of replication groups. Each item in the list contains detailed
      *         information about one replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReplicationGroupsResult withReplicationGroups(ReplicationGroup... replicationGroups) {
@@ -128,7 +128,7 @@ public class DescribeReplicationGroupsResult implements Serializable {
      * @param replicationGroups A list of replication groups. Each item in the list contains detailed
      *         information about one replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReplicationGroupsResult withReplicationGroups(java.util.Collection<ReplicationGroup> replicationGroups) {

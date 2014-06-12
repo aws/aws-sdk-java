@@ -63,7 +63,7 @@ public class SpotInstanceStatus implements Serializable {
      *
      * @param code The status code of the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceStatus withCode(String code) {
@@ -96,7 +96,7 @@ public class SpotInstanceStatus implements Serializable {
      *
      * @param updateTime The time of the most recent status update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceStatus withUpdateTime(java.util.Date updateTime) {
@@ -129,7 +129,7 @@ public class SpotInstanceStatus implements Serializable {
      *
      * @param message The description for the status code for the Spot request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceStatus withMessage(String message) {

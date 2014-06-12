@@ -83,7 +83,7 @@ public class VgwTelemetry implements Serializable {
      * @param outsideIpAddress The Internet-routable IP address of the virtual private gateway's
      *         outside interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VgwTelemetry withOutsideIpAddress(String outsideIpAddress) {
@@ -129,7 +129,7 @@ public class VgwTelemetry implements Serializable {
      *
      * @param status The status of the VPN tunnel.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see TelemetryStatus
@@ -163,7 +163,7 @@ public class VgwTelemetry implements Serializable {
      *
      * @param status The status of the VPN tunnel.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see TelemetryStatus
@@ -198,7 +198,7 @@ public class VgwTelemetry implements Serializable {
      *
      * @param lastStatusChange The date and time of the last change in status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VgwTelemetry withLastStatusChange(java.util.Date lastStatusChange) {
@@ -231,7 +231,7 @@ public class VgwTelemetry implements Serializable {
      *
      * @param statusMessage If an error occurs, a description of the error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VgwTelemetry withStatusMessage(String statusMessage) {
@@ -264,7 +264,7 @@ public class VgwTelemetry implements Serializable {
      *
      * @param acceptedRouteCount The number of accepted routes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VgwTelemetry withAcceptedRouteCount(Integer acceptedRouteCount) {

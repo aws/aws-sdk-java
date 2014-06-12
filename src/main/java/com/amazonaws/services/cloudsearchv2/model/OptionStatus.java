@@ -88,7 +88,7 @@ public class OptionStatus implements Serializable {
      *
      * @param creationDate A timestamp for when this option was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionStatus withCreationDate(java.util.Date creationDate) {
@@ -121,7 +121,7 @@ public class OptionStatus implements Serializable {
      *
      * @param updateDate A timestamp for when this option was last updated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionStatus withUpdateDate(java.util.Date updateDate) {
@@ -163,7 +163,7 @@ public class OptionStatus implements Serializable {
      *
      * @param updateVersion A unique integer that indicates when this option was last updated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionStatus withUpdateVersion(Integer updateVersion) {
@@ -263,7 +263,7 @@ public class OptionStatus implements Serializable {
      *         data. You must either modify the option value or update or remove the
      *         incompatible documents.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OptionState
@@ -333,7 +333,7 @@ public class OptionStatus implements Serializable {
      *         data. You must either modify the option value or update or remove the
      *         incompatible documents.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OptionState
@@ -368,7 +368,7 @@ public class OptionStatus implements Serializable {
      *
      * @param pendingDeletion Indicates that the option will be deleted once processing is complete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OptionStatus withPendingDeletion(Boolean pendingDeletion) {

@@ -92,7 +92,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param sourceRegion The name of the region that contains the AMI to copy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withSourceRegion(String sourceRegion) {
@@ -125,7 +125,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param sourceImageId The ID of the AMI to copy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withSourceImageId(String sourceImageId) {
@@ -158,7 +158,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param name The name of the new AMI in the destination region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withName(String name) {
@@ -191,7 +191,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param description A description for the new AMI in the destination region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withDescription(String description) {
@@ -248,7 +248,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withClientToken(String clientToken) {

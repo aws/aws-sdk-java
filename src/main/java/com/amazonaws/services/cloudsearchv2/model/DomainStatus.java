@@ -147,7 +147,7 @@ public class DomainStatus implements Serializable {
      *
      * @param domainId An internally generated unique identifier for a domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withDomainId(String domainId) {
@@ -210,7 +210,7 @@ public class DomainStatus implements Serializable {
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withDomainName(String domainName) {
@@ -261,7 +261,7 @@ public class DomainStatus implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i> for more information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withARN(String aRN) {
@@ -312,7 +312,7 @@ public class DomainStatus implements Serializable {
      *         search domains are returned from <a>DescribeDomains</a> with a false
      *         value for Created until domain creation is complete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withCreated(Boolean created) {
@@ -384,7 +384,7 @@ public class DomainStatus implements Serializable {
      *         <a>DescribeDomains</a> with a true value for IsDeleted for several
      *         minutes until resource cleanup is complete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withDeleted(Boolean deleted) {
@@ -434,7 +434,7 @@ public class DomainStatus implements Serializable {
      *
      * @param docService The service endpoint for updating documents in a search domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withDocService(ServiceEndpoint docService) {
@@ -473,7 +473,7 @@ public class DomainStatus implements Serializable {
      * @param searchService The service endpoint for requesting search results from a search
      *         domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withSearchService(ServiceEndpoint searchService) {
@@ -512,7 +512,7 @@ public class DomainStatus implements Serializable {
      * @param requiresIndexDocuments True if <a>IndexDocuments</a> needs to be called to activate the
      *         current domain configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withRequiresIndexDocuments(Boolean requiresIndexDocuments) {
@@ -562,7 +562,7 @@ public class DomainStatus implements Serializable {
      * @param processing True if processing is being done to activate the current domain
      *         configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withProcessing(Boolean processing) {
@@ -606,7 +606,7 @@ public class DomainStatus implements Serializable {
      *
      * @param searchInstanceType The instance type that is being used to process search requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withSearchInstanceType(String searchInstanceType) {
@@ -648,7 +648,7 @@ public class DomainStatus implements Serializable {
      *
      * @param searchPartitionCount The number of partitions across which the search index is spread.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withSearchPartitionCount(Integer searchPartitionCount) {
@@ -696,7 +696,7 @@ public class DomainStatus implements Serializable {
      * @param searchInstanceCount The number of search instances that are available to process search
      *         requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainStatus withSearchInstanceCount(Integer searchInstanceCount) {

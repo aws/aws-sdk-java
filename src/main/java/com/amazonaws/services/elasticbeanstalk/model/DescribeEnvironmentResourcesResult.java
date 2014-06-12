@@ -53,7 +53,7 @@ public class DescribeEnvironmentResourcesResult implements Serializable {
      *
      * @param environmentResources A list of <a>EnvironmentResourceDescription</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentResourcesResult withEnvironmentResources(EnvironmentResourceDescription environmentResources) {

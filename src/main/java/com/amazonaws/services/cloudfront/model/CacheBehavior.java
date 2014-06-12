@@ -191,7 +191,7 @@ public class CacheBehavior implements Serializable {
      *         for any cache behaviors, CloudFront applies the behavior in the
      *         default cache behavior.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheBehavior withPathPattern(String pathPattern) {
@@ -236,7 +236,7 @@ public class CacheBehavior implements Serializable {
      *         requests to when a request matches the path pattern either for a cache
      *         behavior or for the default cache behavior.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheBehavior withTargetOriginId(String targetOriginId) {
@@ -275,7 +275,7 @@ public class CacheBehavior implements Serializable {
      * @param forwardedValues A complex type that specifies how CloudFront handles query strings and
      *         cookies.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheBehavior withForwardedValues(ForwardedValues forwardedValues) {
@@ -380,7 +380,7 @@ public class CacheBehavior implements Serializable {
      *         the trusted signers that you want to include in the updated
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheBehavior withTrustedSigners(TrustedSigners trustedSigners) {
@@ -468,7 +468,7 @@ public class CacheBehavior implements Serializable {
      *         301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
      *         The viewer then resubmits the request using the HTTPS URL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ViewerProtocolPolicy
@@ -530,7 +530,7 @@ public class CacheBehavior implements Serializable {
      *         301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
      *         The viewer then resubmits the request using the HTTPS URL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ViewerProtocolPolicy
@@ -583,7 +583,7 @@ public class CacheBehavior implements Serializable {
      *         has been updated.You can specify a value from 0 to 3,153,600,000
      *         seconds (100 years).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheBehavior withMinTTL(Long minTTL) {
@@ -664,7 +664,7 @@ public class CacheBehavior implements Serializable {
      *         may not want users to have permission to delete objects from your
      *         origin.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheBehavior withAllowedMethods(AllowedMethods allowedMethods) {
@@ -709,7 +709,7 @@ public class CacheBehavior implements Serializable {
      *         Smooth Streaming format using the origin that is associated with this
      *         cache behavior. If so, specify true; if not, specify false.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheBehavior withSmoothStreaming(Boolean smoothStreaming) {

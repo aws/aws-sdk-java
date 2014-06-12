@@ -80,7 +80,7 @@ public class DescribeResizeRequest extends AmazonWebServiceRequest implements Se
      *         requesting. This parameter isn't case-sensitive. <p>By default, resize
      *         operations for all clusters defined for an AWS account are returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeResizeRequest withClusterIdentifier(String clusterIdentifier) {

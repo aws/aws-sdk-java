@@ -76,7 +76,7 @@ public class LaunchPermissionModifications implements Serializable {
      * @param add The AWS account ID to add to the list of launch permissions for the
      *         AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchPermissionModifications withAdd(LaunchPermission... add) {
@@ -96,7 +96,7 @@ public class LaunchPermissionModifications implements Serializable {
      * @param add The AWS account ID to add to the list of launch permissions for the
      *         AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchPermissionModifications withAdd(java.util.Collection<LaunchPermission> add) {
@@ -152,7 +152,7 @@ public class LaunchPermissionModifications implements Serializable {
      * @param remove The AWS account ID to remove from the list of launch permissions for
      *         the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchPermissionModifications withRemove(LaunchPermission... remove) {
@@ -172,7 +172,7 @@ public class LaunchPermissionModifications implements Serializable {
      * @param remove The AWS account ID to remove from the list of launch permissions for
      *         the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LaunchPermissionModifications withRemove(java.util.Collection<LaunchPermission> remove) {

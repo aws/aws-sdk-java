@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest) ListEndpointsByPlatformApplication operation}.
  * <p>
- * The <code>ListEndpointsByPlatformApplication</code> action lists the
- * endpoints and endpoint attributes for devices in a supported push
- * notification service, such as GCM and APNS. The results for
+ * Lists the endpoints and endpoint attributes for devices in a supported
+ * push notification service, such as GCM and APNS. The results for
  * <code>ListEndpointsByPlatformApplication</code> are paginated and
  * return a limited list of endpoints, up to 100. If additional records
  * are available after the first page results, then a NextToken string
@@ -84,7 +83,7 @@ public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceR
      * @param platformApplicationArn PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
      *         action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListEndpointsByPlatformApplicationRequest withPlatformApplicationArn(String platformApplicationArn) {
@@ -129,7 +128,7 @@ public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceR
      *         ListEndpointsByPlatformApplication action to retrieve additional
      *         records that are available after the first page results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListEndpointsByPlatformApplicationRequest withNextToken(String nextToken) {

@@ -74,7 +74,7 @@ public class ListPipelinesResult implements Serializable {
      *
      * @param pipelines An array of <code>Pipeline</code> objects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesResult withPipelines(Pipeline... pipelines) {
@@ -92,7 +92,7 @@ public class ListPipelinesResult implements Serializable {
      *
      * @param pipelines An array of <code>Pipeline</code> objects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesResult withPipelines(java.util.Collection<Pipeline> pipelines) {
@@ -159,7 +159,7 @@ public class ListPipelinesResult implements Serializable {
      *         reached the last page of results, the value of
      *         <code>NextPageToken</code> is <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesResult withNextPageToken(String nextPageToken) {

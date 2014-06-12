@@ -53,7 +53,7 @@ public class CreatePlatformEndpointResult implements Serializable {
      *
      * @param endpointArn EndpointArn returned from CreateEndpoint action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformEndpointResult withEndpointArn(String endpointArn) {

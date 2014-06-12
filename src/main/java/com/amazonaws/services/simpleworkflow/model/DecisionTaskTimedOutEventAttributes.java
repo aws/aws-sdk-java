@@ -92,7 +92,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
      * @param timeoutType The type of timeout that expired before the decision task could be
      *         completed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DecisionTaskTimeoutType
@@ -130,7 +130,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
      * @param timeoutType The type of timeout that expired before the decision task could be
      *         completed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see DecisionTaskTimeoutType
@@ -183,7 +183,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecisionTaskTimedOutEventAttributes withScheduledEventId(Long scheduledEventId) {
@@ -234,7 +234,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DecisionTaskTimedOutEventAttributes withStartedEventId(Long startedEventId) {

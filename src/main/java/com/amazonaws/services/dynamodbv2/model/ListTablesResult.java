@@ -108,7 +108,7 @@ public class ListTablesResult implements Serializable {
      *         subsequent <i>ListTables</i> request and obtain the next page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTablesResult withTableNames(String... tableNames) {
@@ -136,7 +136,7 @@ public class ListTablesResult implements Serializable {
      *         subsequent <i>ListTables</i> request and obtain the next page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTablesResult withTableNames(java.util.Collection<String> tableNames) {
@@ -218,7 +218,7 @@ public class ListTablesResult implements Serializable {
      *         response, this means that there are no more table names to be
      *         retrieved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListTablesResult withLastEvaluatedTableName(String lastEvaluatedTableName) {
