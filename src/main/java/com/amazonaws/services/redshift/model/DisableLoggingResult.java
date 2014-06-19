@@ -85,7 +85,7 @@ public class DisableLoggingResult implements Serializable {
      * @param loggingEnabled <code>true</code> if logging is on, <code>false</code> if logging is
      *         off.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableLoggingResult withLoggingEnabled(Boolean loggingEnabled) {
@@ -129,7 +129,7 @@ public class DisableLoggingResult implements Serializable {
      *
      * @param bucketName The name of the S3 bucket where the log files are stored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableLoggingResult withBucketName(String bucketName) {
@@ -162,7 +162,7 @@ public class DisableLoggingResult implements Serializable {
      *
      * @param s3KeyPrefix The prefix applied to the log file names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableLoggingResult withS3KeyPrefix(String s3KeyPrefix) {
@@ -195,7 +195,7 @@ public class DisableLoggingResult implements Serializable {
      *
      * @param lastSuccessfulDeliveryTime The last time when logs were delivered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableLoggingResult withLastSuccessfulDeliveryTime(java.util.Date lastSuccessfulDeliveryTime) {
@@ -228,7 +228,7 @@ public class DisableLoggingResult implements Serializable {
      *
      * @param lastFailureTime The last time when logs failed to be delivered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableLoggingResult withLastFailureTime(java.util.Date lastFailureTime) {
@@ -261,7 +261,7 @@ public class DisableLoggingResult implements Serializable {
      *
      * @param lastFailureMessage The message indicating that logs failed to be delivered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableLoggingResult withLastFailureMessage(String lastFailureMessage) {

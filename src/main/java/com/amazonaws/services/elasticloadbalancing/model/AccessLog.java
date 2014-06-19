@@ -71,7 +71,7 @@ public class AccessLog implements Serializable {
      *
      * @param enabled Specifies whether access log is enabled for the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessLog withEnabled(Boolean enabled) {
@@ -113,7 +113,7 @@ public class AccessLog implements Serializable {
      *
      * @param s3BucketName The name of the Amazon S3 bucket where the access logs are stored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessLog withS3BucketName(String s3BucketName) {
@@ -152,7 +152,7 @@ public class AccessLog implements Serializable {
      * @param emitInterval The interval for publishing the access logs. You can specify an
      *         interval of either 5 minutes or 60 minutes. <p>Default: 60 minutes
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessLog withEmitInterval(Integer emitInterval) {
@@ -197,7 +197,7 @@ public class AccessLog implements Serializable {
      *         example <code>my-bucket-prefix/prod</code>. If the prefix is not
      *         provided, the log is placed at the root level of the bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccessLog withS3BucketPrefix(String s3BucketPrefix) {

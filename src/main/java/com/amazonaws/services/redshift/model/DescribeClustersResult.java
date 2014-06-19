@@ -94,7 +94,7 @@ public class DescribeClustersResult implements Serializable {
      *         command. If the <code>Marker</code> field is empty, all response
      *         records have been retrieved for the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClustersResult withMarker(String marker) {
@@ -143,7 +143,7 @@ public class DescribeClustersResult implements Serializable {
      * @param clusters A list of <a>Cluster</a> objects, where each object describes one
      *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClustersResult withClusters(Cluster... clusters) {
@@ -163,7 +163,7 @@ public class DescribeClustersResult implements Serializable {
      * @param clusters A list of <a>Cluster</a> objects, where each object describes one
      *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClustersResult withClusters(java.util.Collection<Cluster> clusters) {

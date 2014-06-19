@@ -117,7 +117,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      *
      * @param groupId The ID of the security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withGroupId(String groupId) {
@@ -156,7 +156,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
      *         can't specify a source security group and a CIDR IP address range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withSourceSecurityGroupName(String sourceSecurityGroupName) {
@@ -195,7 +195,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
      *         security group and a CIDR IP address range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
@@ -246,7 +246,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      *         Numbers</a>). Use <code>-1</code> to specify all.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withIpProtocol(String ipProtocol) {
@@ -291,7 +291,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      *         number. For the ICMP type number, use <code>-1</code> to specify all
      *         ICMP types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withFromPort(Integer fromPort) {
@@ -336,7 +336,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      *         number. For the ICMP code number, use <code>-1</code> to specify all
      *         ICMP codes for the ICMP type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withToPort(Integer toPort) {
@@ -375,7 +375,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      * @param cidrIp The CIDR IP address range. You can't specify this parameter when
      *         specifying a source security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withCidrIp(String cidrIp) {
@@ -418,7 +418,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      *
      * @param ipPermissions <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withIpPermissions(IpPermission... ipPermissions) {
@@ -436,7 +436,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
      *
      * @param ipPermissions <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeSecurityGroupEgressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {

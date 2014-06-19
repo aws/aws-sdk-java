@@ -90,7 +90,7 @@ public class LBCookieStickinessPolicy implements Serializable {
      * @param policyName The name for the policy being created. The name must be unique within
      *         the set of policies for this load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LBCookieStickinessPolicy withPolicyName(String policyName) {
@@ -135,7 +135,7 @@ public class LBCookieStickinessPolicy implements Serializable {
      *         stale. Not specifying this parameter indicates that the stickiness
      *         session will last for the duration of the browser session.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LBCookieStickinessPolicy withCookieExpirationPeriod(Long cookieExpirationPeriod) {

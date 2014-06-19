@@ -89,7 +89,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
      * @param clusterSubnetGroupName The name of the cluster subnet group for which information is
      *         requested.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSubnetGroupsRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
@@ -152,7 +152,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSubnetGroupsRequest withMaxRecords(Integer maxRecords) {
@@ -221,7 +221,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeClusterSubnetGroupsRequest withMarker(String marker) {

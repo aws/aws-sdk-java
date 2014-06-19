@@ -89,7 +89,7 @@ public class ActivityTaskFailedEventAttributes implements Serializable {
      *
      * @param reason The reason provided for the failure (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskFailedEventAttributes withReason(String reason) {
@@ -131,7 +131,7 @@ public class ActivityTaskFailedEventAttributes implements Serializable {
      *
      * @param details The details of the failure (if any).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskFailedEventAttributes withDetails(String details) {
@@ -182,7 +182,7 @@ public class ActivityTaskFailedEventAttributes implements Serializable {
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskFailedEventAttributes withScheduledEventId(Long scheduledEventId) {
@@ -233,7 +233,7 @@ public class ActivityTaskFailedEventAttributes implements Serializable {
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskFailedEventAttributes withStartedEventId(Long startedEventId) {

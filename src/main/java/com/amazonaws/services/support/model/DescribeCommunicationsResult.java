@@ -69,7 +69,7 @@ public class DescribeCommunicationsResult implements Serializable {
      *
      * @param communications The communications for the case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsResult withCommunications(Communication... communications) {
@@ -87,7 +87,7 @@ public class DescribeCommunicationsResult implements Serializable {
      *
      * @param communications The communications for the case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsResult withCommunications(java.util.Collection<Communication> communications) {
@@ -127,7 +127,7 @@ public class DescribeCommunicationsResult implements Serializable {
      *
      * @param nextToken A resumption point for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommunicationsResult withNextToken(String nextToken) {

@@ -255,8 +255,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("autoscaling.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/autoscaling/request.handlers"));
@@ -364,15 +366,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Enables monitoring of group metrics for the Auto Scaling group
-     * specified in <code>AutoScalingGroupName</code> .
-     * You can specify the list of enabled metrics with the
-     * <code>Metrics</code> parameter.
+     * specified in <code>AutoScalingGroupName</code> . You can specify the
+     * list of enabled metrics with the <code>Metrics</code> parameter.
      * </p>
      * <p>
      * Auto Scaling metrics collection can be turned on only if the
      * <code>InstanceMonitoring</code> flag, in the Auto Scaling group's
      * launch configuration, is set to <code>True</code> .
-     * 
      * </p>
      *
      * @param enableMetricsCollectionRequest Container for the necessary
@@ -942,8 +942,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * 
      * </p>
      * <p>
-     * A new <code>PutNotificationConfiguration</code> overwrites an existing
-     * configuration.
+     * A new <code>PutNotificationConfiguration</code> overwrites an
+     * existing configuration.
      * </p>
      *
      * @param putNotificationConfigurationRequest Container for the necessary
@@ -1162,10 +1162,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Creates new tags or updates existing tags for an Auto Scaling group.
      * </p>
      * <p>
-     * <b>NOTE:</b> A tag's definition is composed of a resource ID, resource
-     * type, key and value, and the propagate flag. Value and the propagate
-     * flag are optional parameters. See the Request Parameters for more
-     * information.
+     * <b>NOTE:</b> A tag's definition is composed of a resource ID,
+     * resource type, key and value, and the propagate flag. Value and the
+     * propagate flag are optional parameters. See the Request Parameters for
+     * more information.
      * </p>
      * <p>
      * For information on creating tags for your Auto Scaling group, see
@@ -1384,9 +1384,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Disables monitoring of group metrics for the Auto Scaling group
-     * specified in <code>AutoScalingGroupName</code> .
-     * You can specify the list of affected metrics with the
-     * <code>Metrics</code> parameter.
+     * specified in <code>AutoScalingGroupName</code> . You can specify the
+     * list of affected metrics with the <code>Metrics</code> parameter.
      * </p>
      *
      * @param disableMetricsCollectionRequest Container for the necessary

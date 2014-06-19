@@ -51,7 +51,7 @@ public class CreateInternetGatewayResult implements Serializable {
      *
      * @param internetGateway Information about the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInternetGatewayResult withInternetGateway(InternetGateway internetGateway) {

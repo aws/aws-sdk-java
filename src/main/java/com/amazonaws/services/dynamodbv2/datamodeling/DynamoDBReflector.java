@@ -474,7 +474,7 @@ public class DynamoDBReflector {
                     public Object unmarshall(AttributeValue value) throws ParseException {
                         Set<Date> argument = new HashSet<Date>();
                         for ( String s : value.getSS() ) {
-                            argument.add(new DateUtils().parseIso8601Date(s));
+                            argument.add(DateUtils.parseISO8601Date(s));
                         }
                         return argument;
                     }
@@ -484,7 +484,7 @@ public class DynamoDBReflector {
 
                     @Override
                     public Object unmarshall(AttributeValue value) throws ParseException {
-                        return new DateUtils().parseIso8601Date(value.getS());
+                        return DateUtils.parseISO8601Date(value.getS());
                     }
                 };
             }
@@ -497,7 +497,7 @@ public class DynamoDBReflector {
                         Set<Calendar> argument = new HashSet<Calendar>();
                         for ( String s : value.getSS() ) {
                             Calendar cal = GregorianCalendar.getInstance();
-                            cal.setTime(new DateUtils().parseIso8601Date(s));
+                            cal.setTime(DateUtils.parseISO8601Date(s));
                             argument.add(cal);
                         }
                         return argument;
@@ -509,7 +509,7 @@ public class DynamoDBReflector {
                     @Override
                     public Object unmarshall(AttributeValue value) throws ParseException {
                         Calendar cal = GregorianCalendar.getInstance();
-                        cal.setTime(new DateUtils().parseIso8601Date(value.getS()));
+                        cal.setTime(DateUtils.parseISO8601Date(value.getS()));
                         return cal;
                     }
                 };
@@ -729,7 +729,7 @@ public class DynamoDBReflector {
                     public AttributeValue marshall(Object obj) {
                         List<String> timestamps = new LinkedList<String>();
                         for ( Object o : (Set<?>) obj ) {
-                            timestamps.add(new DateUtils().formatIso8601Date((Date) o));
+                            timestamps.add(DateUtils.formatISO8601Date((Date) o));
                         }
                         return new AttributeValue().withSS(timestamps);
                     }
@@ -741,7 +741,7 @@ public class DynamoDBReflector {
                     public AttributeValue marshall(Object obj) {
                         List<String> timestamps = new LinkedList<String>();
                         for ( Object o : (Set<?>) obj ) {
-                            timestamps.add(new DateUtils().formatIso8601Date(((Calendar) o).getTime()));
+                            timestamps.add(DateUtils.formatISO8601Date(((Calendar) o).getTime()));
                         }
                         return new AttributeValue().withSS(timestamps);
                     }
@@ -813,7 +813,7 @@ public class DynamoDBReflector {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
-                        return new AttributeValue().withS(new DateUtils().formatIso8601Date((Date) obj));
+                        return new AttributeValue().withS(DateUtils.formatISO8601Date((Date) obj));
                     }
                 };
             } else if ( Calendar.class.isAssignableFrom(returnType) ) {
@@ -821,8 +821,8 @@ public class DynamoDBReflector {
 
                     @Override
                     public AttributeValue marshall(Object obj) {
-                        return new AttributeValue().withS(new DateUtils()
-                                .formatIso8601Date(((Calendar) obj).getTime()));
+                        return new AttributeValue().withS(DateUtils
+                                .formatISO8601Date(((Calendar) obj).getTime()));
                     }
                 };
             } else if ( boolean.class.isAssignableFrom(returnType)

@@ -63,7 +63,7 @@ public class ExecutionTimeFilter implements Serializable {
      *
      * @param oldestDate Specifies the oldest start or close date and time to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExecutionTimeFilter withOldestDate(java.util.Date oldestDate) {
@@ -96,7 +96,7 @@ public class ExecutionTimeFilter implements Serializable {
      *
      * @param latestDate Specifies the latest start or close date and time to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ExecutionTimeFilter withLatestDate(java.util.Date latestDate) {

@@ -98,7 +98,7 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends AmazonWebServic
      *         set the Marker to the value of the NextMarker from the current page's
      *         response (which is also the ID of the last identity on that page).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListCloudFrontOriginAccessIdentitiesRequest withMarker(String marker) {
@@ -137,7 +137,7 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends AmazonWebServic
      * @param maxItems The maximum number of origin access identities you want in the
      *         response body.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListCloudFrontOriginAccessIdentitiesRequest withMaxItems(String maxItems) {

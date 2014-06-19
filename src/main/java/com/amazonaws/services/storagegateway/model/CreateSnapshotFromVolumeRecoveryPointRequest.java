@@ -89,7 +89,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotFromVolumeRecoveryPointRequest withVolumeARN(String volumeARN) {
@@ -131,7 +131,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
      *
      * @param snapshotDescription The new value for the SnapshotDescription property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateSnapshotFromVolumeRecoveryPointRequest withSnapshotDescription(String snapshotDescription) {

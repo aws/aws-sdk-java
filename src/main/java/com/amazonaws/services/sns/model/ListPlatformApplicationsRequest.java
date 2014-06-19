@@ -21,12 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listPlatformApplications(ListPlatformApplicationsRequest) ListPlatformApplications operation}.
  * <p>
- * The <code>ListPlatformApplications</code> action lists the platform
- * application objects for the supported push notification services, such
- * as APNS and GCM. The results for <code>ListPlatformApplications</code>
- * are paginated and return a limited list of applications, up to 100. If
- * additional records are available after the first page results, then a
- * NextToken string will be returned. To receive the next page, you call
+ * Lists the platform application objects for the supported push
+ * notification services, such as APNS and GCM. The results for
+ * <code>ListPlatformApplications</code> are paginated and return a
+ * limited list of applications, up to 100. If additional records are
+ * available after the first page results, then a NextToken string will
+ * be returned. To receive the next page, you call
  * <code>ListPlatformApplications</code> using the NextToken string
  * received from the previous call. When there are no more records to
  * return, NextToken will be null. For more information, see
@@ -82,7 +82,7 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest imp
      *         to retrieve additional records that are available after the first page
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPlatformApplicationsRequest withNextToken(String nextToken) {

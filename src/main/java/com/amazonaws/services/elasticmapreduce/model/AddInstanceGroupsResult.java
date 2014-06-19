@@ -74,7 +74,7 @@ public class AddInstanceGroupsResult implements Serializable {
      *
      * @param jobFlowId The job flow ID in which the instance groups are added.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddInstanceGroupsResult withJobFlowId(String jobFlowId) {
@@ -117,7 +117,7 @@ public class AddInstanceGroupsResult implements Serializable {
      *
      * @param instanceGroupIds Instance group IDs of the newly created instance groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddInstanceGroupsResult withInstanceGroupIds(String... instanceGroupIds) {
@@ -135,7 +135,7 @@ public class AddInstanceGroupsResult implements Serializable {
      *
      * @param instanceGroupIds Instance group IDs of the newly created instance groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddInstanceGroupsResult withInstanceGroupIds(java.util.Collection<String> instanceGroupIds) {

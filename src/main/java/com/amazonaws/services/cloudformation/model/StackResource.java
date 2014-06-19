@@ -100,7 +100,7 @@ public class StackResource implements Serializable {
      *
      * @param stackName The name associated with the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withStackName(String stackName) {
@@ -133,7 +133,7 @@ public class StackResource implements Serializable {
      *
      * @param stackId Unique identifier of the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withStackId(String stackId) {
@@ -166,7 +166,7 @@ public class StackResource implements Serializable {
      *
      * @param logicalResourceId The logical name of the resource specified in the template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withLogicalResourceId(String logicalResourceId) {
@@ -205,7 +205,7 @@ public class StackResource implements Serializable {
      * @param physicalResourceId The name or unique identifier that corresponds to a physical instance
      *         ID of a resource supported by AWS CloudFormation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withPhysicalResourceId(String physicalResourceId) {
@@ -256,7 +256,7 @@ public class StackResource implements Serializable {
      *         AWS Resource Types Reference</a> in the AWS CloudFormation User
      *         Guide.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withResourceType(String resourceType) {
@@ -289,7 +289,7 @@ public class StackResource implements Serializable {
      *
      * @param timestamp Time the status was updated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withTimestamp(java.util.Date timestamp) {
@@ -335,7 +335,7 @@ public class StackResource implements Serializable {
      *
      * @param resourceStatus Current status of the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ResourceStatus
@@ -369,7 +369,7 @@ public class StackResource implements Serializable {
      *
      * @param resourceStatus Current status of the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ResourceStatus
@@ -404,7 +404,7 @@ public class StackResource implements Serializable {
      *
      * @param resourceStatusReason Success/failure message associated with the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withResourceStatusReason(String resourceStatusReason) {
@@ -437,7 +437,7 @@ public class StackResource implements Serializable {
      *
      * @param description User defined description associated with the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackResource withDescription(String description) {

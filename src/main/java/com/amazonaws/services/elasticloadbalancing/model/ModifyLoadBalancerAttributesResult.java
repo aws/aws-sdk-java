@@ -58,7 +58,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable {
      *
      * @param loadBalancerName The name of the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyLoadBalancerAttributesResult withLoadBalancerName(String loadBalancerName) {
@@ -91,7 +91,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable {
      *
      * @param loadBalancerAttributes The <code>LoadBalancerAttributes</code> data type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyLoadBalancerAttributesResult withLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {

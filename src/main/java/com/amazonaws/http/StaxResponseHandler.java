@@ -100,6 +100,13 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             awsResponse.setResult(result);
 
             Map<String, String> metadata = unmarshallerContext.getMetadata();
+            Map<String, String> responseHeaders = response.getHeaders();
+            if (responseHeaders != null) {
+                if (responseHeaders.get("x-amzn-RequestId") != null) {
+                    metadata.put(ResponseMetadata.AWS_REQUEST_ID,
+                            responseHeaders.get("x-amzn-RequestId"));
+                }
+            }
             awsResponse.setResponseMetadata(new ResponseMetadata(metadata));
 
             log.trace("Done parsing service response");

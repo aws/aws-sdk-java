@@ -70,7 +70,7 @@ public class SolutionStackDescription implements Serializable {
      *
      * @param solutionStackName The name of the solution stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SolutionStackDescription withSolutionStackName(String solutionStackName) {
@@ -113,7 +113,7 @@ public class SolutionStackDescription implements Serializable {
      *
      * @param permittedFileTypes The permitted file types allowed for a solution stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SolutionStackDescription withPermittedFileTypes(String... permittedFileTypes) {
@@ -131,7 +131,7 @@ public class SolutionStackDescription implements Serializable {
      *
      * @param permittedFileTypes The permitted file types allowed for a solution stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SolutionStackDescription withPermittedFileTypes(java.util.Collection<String> permittedFileTypes) {

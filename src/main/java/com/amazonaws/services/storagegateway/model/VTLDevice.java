@@ -84,7 +84,7 @@ public class VTLDevice implements Serializable {
      * @param vTLDeviceARN Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
      *         Library device (tape drive or media changer).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VTLDevice withVTLDeviceARN(String vTLDeviceARN) {
@@ -117,7 +117,7 @@ public class VTLDevice implements Serializable {
      *
      * @param vTLDeviceType The new value for the VTLDeviceType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VTLDevice withVTLDeviceType(String vTLDeviceType) {
@@ -150,7 +150,7 @@ public class VTLDevice implements Serializable {
      *
      * @param vTLDeviceVendor The new value for the VTLDeviceVendor property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VTLDevice withVTLDeviceVendor(String vTLDeviceVendor) {
@@ -188,7 +188,7 @@ public class VTLDevice implements Serializable {
      * @param vTLDeviceProductIdentifier The new value for the VTLDeviceProductIdentifier property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VTLDevice withVTLDeviceProductIdentifier(String vTLDeviceProductIdentifier) {
@@ -221,7 +221,7 @@ public class VTLDevice implements Serializable {
      *
      * @param deviceiSCSIAttributes A list of iSCSI information about a VTL device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VTLDevice withDeviceiSCSIAttributes(DeviceiSCSIAttributes deviceiSCSIAttributes) {

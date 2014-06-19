@@ -104,7 +104,7 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         a default DB parameter group</li> <li>Cannot be associated with any DB
      *         instances</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {

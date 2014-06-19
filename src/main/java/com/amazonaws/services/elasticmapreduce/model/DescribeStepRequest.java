@@ -63,7 +63,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param clusterId The identifier of the cluster with steps to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStepRequest withClusterId(String clusterId) {
@@ -96,7 +96,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param stepId The identifier of the step to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStepRequest withStepId(String stepId) {

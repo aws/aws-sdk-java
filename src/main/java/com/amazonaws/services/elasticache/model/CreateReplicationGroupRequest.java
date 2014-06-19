@@ -108,7 +108,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReplicationGroupRequest withReplicationGroupId(String replicationGroupId) {
@@ -153,7 +153,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         this replication group. This cache cluster must already exist and have
      *         a status of <i>available</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReplicationGroupRequest withPrimaryClusterId(String primaryClusterId) {
@@ -186,7 +186,7 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param replicationGroupDescription A user-specified description for the replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateReplicationGroupRequest withReplicationGroupDescription(String replicationGroupDescription) {

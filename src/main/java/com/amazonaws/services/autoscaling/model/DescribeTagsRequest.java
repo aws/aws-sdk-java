@@ -121,7 +121,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         applied to instances launched after the tag is created
      *         (PropagateAtLaunch).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withFilters(Filter... filters) {
@@ -147,7 +147,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         applied to instances launched after the tag is created
      *         (PropagateAtLaunch).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withFilters(java.util.Collection<Filter> filters) {
@@ -196,7 +196,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withNextToken(String nextToken) {
@@ -229,7 +229,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param maxRecords The maximum number of records to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTagsRequest withMaxRecords(Integer maxRecords) {

@@ -72,7 +72,7 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest i
      *
      * @param volumeARNs The new value for the VolumeARNs property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCachediSCSIVolumesRequest withVolumeARNs(String... volumeARNs) {
@@ -90,7 +90,7 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest i
      *
      * @param volumeARNs The new value for the VolumeARNs property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCachediSCSIVolumesRequest withVolumeARNs(java.util.Collection<String> volumeARNs) {

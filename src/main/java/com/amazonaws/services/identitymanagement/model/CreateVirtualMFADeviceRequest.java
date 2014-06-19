@@ -135,7 +135,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVirtualMFADeviceRequest withPath(String path) {
@@ -186,7 +186,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
      * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
      *         a virtual MFA device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(String virtualMFADeviceName) {

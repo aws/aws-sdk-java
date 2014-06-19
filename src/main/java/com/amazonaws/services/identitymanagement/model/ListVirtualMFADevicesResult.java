@@ -80,7 +80,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
      *
      * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(VirtualMFADevice... virtualMFADevices) {
@@ -98,7 +98,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
      *
      * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
@@ -156,7 +156,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
      *         using the <code>Marker</code> request parameter to retrieve more items
      *         the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVirtualMFADevicesResult withIsTruncated(Boolean isTruncated) {
@@ -228,7 +228,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVirtualMFADevicesResult withMarker(String marker) {

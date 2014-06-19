@@ -91,7 +91,7 @@ public class DistributionList implements Serializable {
      *
      * @param marker The value you provided for the Marker request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionList withMarker(String marker) {
@@ -136,7 +136,7 @@ public class DistributionList implements Serializable {
      *         you can use for the Marker request parameter to continue listing your
      *         distributions where they left off.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionList withNextMarker(String nextMarker) {
@@ -169,7 +169,7 @@ public class DistributionList implements Serializable {
      *
      * @param maxItems The value you provided for the MaxItems request parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionList withMaxItems(Integer maxItems) {
@@ -220,7 +220,7 @@ public class DistributionList implements Serializable {
      *         request using the Marker request parameter to retrieve more
      *         distributions in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionList withIsTruncated(Boolean isTruncated) {
@@ -274,7 +274,7 @@ public class DistributionList implements Serializable {
      * @param quantity The number of distributions that were created by the current AWS
      *         account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionList withQuantity(Integer quantity) {
@@ -323,7 +323,7 @@ public class DistributionList implements Serializable {
      * @param items A complex type that contains one DistributionSummary element for each
      *         distribution that was created by the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionList withItems(DistributionSummary... items) {
@@ -343,7 +343,7 @@ public class DistributionList implements Serializable {
      * @param items A complex type that contains one DistributionSummary element for each
      *         distribution that was created by the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DistributionList withItems(java.util.Collection<DistributionSummary> items) {

@@ -76,7 +76,7 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
      * @param associationId The ID of the current association between the original network ACL and
      *         the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclAssociationRequest withAssociationId(String associationId) {
@@ -109,7 +109,7 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
      *
      * @param networkAclId The ID of the new ACL to associate with the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReplaceNetworkAclAssociationRequest withNetworkAclId(String networkAclId) {

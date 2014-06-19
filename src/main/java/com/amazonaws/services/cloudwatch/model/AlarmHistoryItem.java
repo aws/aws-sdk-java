@@ -97,7 +97,7 @@ public class AlarmHistoryItem implements Serializable {
      *
      * @param alarmName The descriptive name for the alarm.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AlarmHistoryItem withAlarmName(String alarmName) {
@@ -130,7 +130,7 @@ public class AlarmHistoryItem implements Serializable {
      *
      * @param timestamp The time stamp for the alarm history item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AlarmHistoryItem withTimestamp(java.util.Date timestamp) {
@@ -176,7 +176,7 @@ public class AlarmHistoryItem implements Serializable {
      *
      * @param historyItemType The type of alarm history item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HistoryItemType
@@ -210,7 +210,7 @@ public class AlarmHistoryItem implements Serializable {
      *
      * @param historyItemType The type of alarm history item.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see HistoryItemType
@@ -254,7 +254,7 @@ public class AlarmHistoryItem implements Serializable {
      *
      * @param historySummary A human-readable summary of the alarm history.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AlarmHistoryItem withHistorySummary(String historySummary) {
@@ -296,7 +296,7 @@ public class AlarmHistoryItem implements Serializable {
      *
      * @param historyData Machine-readable data about the alarm in JSON format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AlarmHistoryItem withHistoryData(String historyData) {

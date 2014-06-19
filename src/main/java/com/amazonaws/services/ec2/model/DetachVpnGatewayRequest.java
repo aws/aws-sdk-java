@@ -93,7 +93,7 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
      *
      * @param vpnGatewayId The ID of the virtual private gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachVpnGatewayRequest withVpnGatewayId(String vpnGatewayId) {
@@ -126,7 +126,7 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachVpnGatewayRequest withVpcId(String vpcId) {

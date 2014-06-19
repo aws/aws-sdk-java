@@ -289,7 +289,7 @@ public class InitiateJobRequest extends AmazonWebServiceRequest implements Seria
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InitiateJobRequest withAccountId(String accountId) {
@@ -322,7 +322,7 @@ public class InitiateJobRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InitiateJobRequest withVaultName(String vaultName) {
@@ -355,7 +355,7 @@ public class InitiateJobRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param jobParameters Provides options for specifying job information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InitiateJobRequest withJobParameters(JobParameters jobParameters) {

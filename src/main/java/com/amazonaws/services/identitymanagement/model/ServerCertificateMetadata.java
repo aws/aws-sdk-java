@@ -179,7 +179,7 @@ public class ServerCertificateMetadata implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificateMetadata withPath(String path) {
@@ -224,7 +224,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param serverCertificateName The name that identifies the server certificate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificateMetadata withServerCertificateName(String serverCertificateName) {
@@ -293,7 +293,7 @@ public class ServerCertificateMetadata implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificateMetadata withServerCertificateId(String serverCertificateId) {
@@ -359,7 +359,7 @@ public class ServerCertificateMetadata implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificateMetadata withArn(String arn) {
@@ -392,7 +392,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param uploadDate The date when the server certificate was uploaded.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ServerCertificateMetadata withUploadDate(java.util.Date uploadDate) {

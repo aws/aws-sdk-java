@@ -83,7 +83,7 @@ public class DescribeUploadBufferResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeUploadBufferResult withGatewayARN(String gatewayARN) {
@@ -126,7 +126,7 @@ public class DescribeUploadBufferResult implements Serializable {
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeUploadBufferResult withDiskIds(String... diskIds) {
@@ -144,7 +144,7 @@ public class DescribeUploadBufferResult implements Serializable {
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeUploadBufferResult withDiskIds(java.util.Collection<String> diskIds) {
@@ -189,7 +189,7 @@ public class DescribeUploadBufferResult implements Serializable {
      * @param uploadBufferUsedInBytes The new value for the UploadBufferUsedInBytes property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeUploadBufferResult withUploadBufferUsedInBytes(Long uploadBufferUsedInBytes) {
@@ -228,7 +228,7 @@ public class DescribeUploadBufferResult implements Serializable {
      * @param uploadBufferAllocatedInBytes The new value for the UploadBufferAllocatedInBytes property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeUploadBufferResult withUploadBufferAllocatedInBytes(Long uploadBufferAllocatedInBytes) {

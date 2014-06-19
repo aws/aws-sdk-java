@@ -84,7 +84,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
      *
      * @param workflowExecution The child workflow execution that was canceled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCanceledEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
@@ -117,7 +117,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
      *
      * @param workflowType The type of the child workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCanceledEventAttributes withWorkflowType(WorkflowType workflowType) {
@@ -159,7 +159,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
      *
      * @param details Details of the cancellation (if provided).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCanceledEventAttributes withDetails(String details) {
@@ -216,7 +216,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCanceledEventAttributes withInitiatedEventId(Long initiatedEventId) {
@@ -267,7 +267,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionCanceledEventAttributes withStartedEventId(Long startedEventId) {

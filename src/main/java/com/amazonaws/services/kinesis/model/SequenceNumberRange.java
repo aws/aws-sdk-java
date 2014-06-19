@@ -74,7 +74,7 @@ public class SequenceNumberRange implements Serializable {
      *
      * @param startingSequenceNumber The starting sequence number for the range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SequenceNumberRange withStartingSequenceNumber(String startingSequenceNumber) {
@@ -122,7 +122,7 @@ public class SequenceNumberRange implements Serializable {
      * @param endingSequenceNumber The ending sequence number for the range. Shards that are in the OPEN
      *         state have an ending sequence number of <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SequenceNumberRange withEndingSequenceNumber(String endingSequenceNumber) {

@@ -142,7 +142,7 @@ public class JobAlbumArt implements Serializable {
      *         artwork, Elastic Transcoder will use the specified album art
      *         file.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobAlbumArt withMergePolicy(String mergePolicy) {
@@ -197,7 +197,7 @@ public class JobAlbumArt implements Serializable {
      *         associated with an audio file, to a maximum of 20. Valid formats are
      *         <code>.jpg</code> and <code>.png</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobAlbumArt withArtwork(Artwork... artwork) {
@@ -219,7 +219,7 @@ public class JobAlbumArt implements Serializable {
      *         associated with an audio file, to a maximum of 20. Valid formats are
      *         <code>.jpg</code> and <code>.png</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobAlbumArt withArtwork(java.util.Collection<Artwork> artwork) {

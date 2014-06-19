@@ -37,7 +37,8 @@ public class PendingModifiedValues implements Serializable {
     private String nodeType;
 
     /**
-     * The pending or in-progress change of the number nodes in the cluster.
+     * The pending or in-progress change of the number of nodes in the
+     * cluster.
      */
     private Integer numberOfNodes;
 
@@ -56,6 +57,12 @@ public class PendingModifiedValues implements Serializable {
      * period.
      */
     private Integer automatedSnapshotRetentionPeriod;
+
+    /**
+     * The pending or in-progress change of the new identifier for the
+     * cluster.
+     */
+    private String clusterIdentifier;
 
     /**
      * The pending or in-progress change of the master user password for the
@@ -88,7 +95,7 @@ public class PendingModifiedValues implements Serializable {
      * @param masterUserPassword The pending or in-progress change of the master user password for the
      *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withMasterUserPassword(String masterUserPassword) {
@@ -121,7 +128,7 @@ public class PendingModifiedValues implements Serializable {
      *
      * @param nodeType The pending or in-progress change of the cluster's node type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withNodeType(String nodeType) {
@@ -130,31 +137,37 @@ public class PendingModifiedValues implements Serializable {
     }
 
     /**
-     * The pending or in-progress change of the number nodes in the cluster.
+     * The pending or in-progress change of the number of nodes in the
+     * cluster.
      *
-     * @return The pending or in-progress change of the number nodes in the cluster.
+     * @return The pending or in-progress change of the number of nodes in the
+     *         cluster.
      */
     public Integer getNumberOfNodes() {
         return numberOfNodes;
     }
     
     /**
-     * The pending or in-progress change of the number nodes in the cluster.
+     * The pending or in-progress change of the number of nodes in the
+     * cluster.
      *
-     * @param numberOfNodes The pending or in-progress change of the number nodes in the cluster.
+     * @param numberOfNodes The pending or in-progress change of the number of nodes in the
+     *         cluster.
      */
     public void setNumberOfNodes(Integer numberOfNodes) {
         this.numberOfNodes = numberOfNodes;
     }
     
     /**
-     * The pending or in-progress change of the number nodes in the cluster.
+     * The pending or in-progress change of the number of nodes in the
+     * cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numberOfNodes The pending or in-progress change of the number nodes in the cluster.
+     * @param numberOfNodes The pending or in-progress change of the number of nodes in the
+     *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withNumberOfNodes(Integer numberOfNodes) {
@@ -187,7 +200,7 @@ public class PendingModifiedValues implements Serializable {
      *
      * @param clusterType The pending or in-progress change of the cluster type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withClusterType(String clusterType) {
@@ -220,7 +233,7 @@ public class PendingModifiedValues implements Serializable {
      *
      * @param clusterVersion The pending or in-progress change of the service version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withClusterVersion(String clusterVersion) {
@@ -259,11 +272,50 @@ public class PendingModifiedValues implements Serializable {
      * @param automatedSnapshotRetentionPeriod The pending or in-progress change of the automated snapshot retention
      *         period.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PendingModifiedValues withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
         this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
+        return this;
+    }
+
+    /**
+     * The pending or in-progress change of the new identifier for the
+     * cluster.
+     *
+     * @return The pending or in-progress change of the new identifier for the
+     *         cluster.
+     */
+    public String getClusterIdentifier() {
+        return clusterIdentifier;
+    }
+    
+    /**
+     * The pending or in-progress change of the new identifier for the
+     * cluster.
+     *
+     * @param clusterIdentifier The pending or in-progress change of the new identifier for the
+     *         cluster.
+     */
+    public void setClusterIdentifier(String clusterIdentifier) {
+        this.clusterIdentifier = clusterIdentifier;
+    }
+    
+    /**
+     * The pending or in-progress change of the new identifier for the
+     * cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clusterIdentifier The pending or in-progress change of the new identifier for the
+     *         cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PendingModifiedValues withClusterIdentifier(String clusterIdentifier) {
+        this.clusterIdentifier = clusterIdentifier;
         return this;
     }
 
@@ -284,7 +336,8 @@ public class PendingModifiedValues implements Serializable {
         if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
         if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");
         if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
-        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() );
+        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
+        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -300,6 +353,7 @@ public class PendingModifiedValues implements Serializable {
         hashCode = prime * hashCode + ((getClusterType() == null) ? 0 : getClusterType().hashCode()); 
         hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode()); 
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -323,6 +377,8 @@ public class PendingModifiedValues implements Serializable {
         if (other.getClusterVersion() != null && other.getClusterVersion().equals(this.getClusterVersion()) == false) return false; 
         if (other.getAutomatedSnapshotRetentionPeriod() == null ^ this.getAutomatedSnapshotRetentionPeriod() == null) return false;
         if (other.getAutomatedSnapshotRetentionPeriod() != null && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false) return false; 
+        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null) return false;
+        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false) return false; 
         return true;
     }
     

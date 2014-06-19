@@ -101,7 +101,7 @@ public class ProvisionedThroughputDescription implements Serializable {
      * @param lastIncreaseDateTime The date and time of the last provisioned throughput increase for this
      *         table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProvisionedThroughputDescription withLastIncreaseDateTime(java.util.Date lastIncreaseDateTime) {
@@ -140,7 +140,7 @@ public class ProvisionedThroughputDescription implements Serializable {
      * @param lastDecreaseDateTime The date and time of the last provisioned throughput decrease for this
      *         table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProvisionedThroughputDescription withLastDecreaseDateTime(java.util.Date lastDecreaseDateTime) {
@@ -206,7 +206,7 @@ public class ProvisionedThroughputDescription implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProvisionedThroughputDescription withNumberOfDecreasesToday(Long numberOfDecreasesToday) {
@@ -272,7 +272,7 @@ public class ProvisionedThroughputDescription implements Serializable {
      *         so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100
      *         eventually consistent <i>ReadCapacityUnits</i> per second.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProvisionedThroughputDescription withReadCapacityUnits(Long readCapacityUnits) {
@@ -320,7 +320,7 @@ public class ProvisionedThroughputDescription implements Serializable {
      * @param writeCapacityUnits The maximum number of writes consumed per second before DynamoDB
      *         returns a <i>ThrottlingException</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ProvisionedThroughputDescription withWriteCapacityUnits(Long writeCapacityUnits) {

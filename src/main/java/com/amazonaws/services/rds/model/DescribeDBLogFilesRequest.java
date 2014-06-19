@@ -119,7 +119,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -158,7 +158,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
      * @param filenameContains Filters the available log files for log file names that contain the
      *         specified string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesRequest withFilenameContains(String filenameContains) {
@@ -197,7 +197,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
      * @param fileLastWritten Filters the available log files for files written since the specified
      *         date, in POSIX timestamp format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesRequest withFileLastWritten(Long fileLastWritten) {
@@ -236,7 +236,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
      * @param fileSize Filters the available log files for files larger than the specified
      *         size.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesRequest withFileSize(Long fileSize) {
@@ -287,7 +287,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
      *         called a marker is included in the response so that the remaining
      *         results can be retrieved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesRequest withMaxRecords(Integer maxRecords) {
@@ -332,7 +332,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
      *         parameter is specified the response includes only records beyond the
      *         marker, up to MaxRecords.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesRequest withMarker(String marker) {

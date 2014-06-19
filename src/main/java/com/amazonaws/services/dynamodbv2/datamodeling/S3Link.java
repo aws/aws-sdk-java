@@ -353,9 +353,7 @@ public class S3Link {
                 output.write(buffer, 0, bytesRead);
             }
         } catch (IOException ioe) {
-            try {
-                objectContent.abort();
-            } catch (IOException e) {}
+            objectContent.abort();
             throw new AmazonClientException("Unable to transfer content from Amazon S3 to the output stream", ioe);
         } finally {
             try { objectContent.close(); } catch (IOException ioe) {}

@@ -61,7 +61,7 @@ public class DescribeRouteTablesResult implements Serializable {
      *
      * @param routeTables Information about one or more route tables.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRouteTablesResult withRouteTables(RouteTable... routeTables) {
@@ -79,7 +79,7 @@ public class DescribeRouteTablesResult implements Serializable {
      *
      * @param routeTables Information about one or more route tables.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeRouteTablesResult withRouteTables(java.util.Collection<RouteTable> routeTables) {

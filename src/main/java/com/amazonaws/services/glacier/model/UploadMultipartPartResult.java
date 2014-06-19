@@ -60,7 +60,7 @@ public class UploadMultipartPartResult implements Serializable {
      * @param checksum The SHA256 tree hash that Amazon Glacier computed for the uploaded
      *         part.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UploadMultipartPartResult withChecksum(String checksum) {

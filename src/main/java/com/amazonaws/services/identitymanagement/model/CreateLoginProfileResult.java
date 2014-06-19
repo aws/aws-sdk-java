@@ -54,7 +54,7 @@ public class CreateLoginProfileResult implements Serializable {
      *
      * @param loginProfile The user name and password create date.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoginProfileResult withLoginProfile(LoginProfile loginProfile) {

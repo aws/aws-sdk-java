@@ -111,7 +111,7 @@ public class PutRequest implements Serializable {
      *         in the item which are part of an index key schema for the table, their
      *         types must match the index key schema.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutRequest withItem(java.util.Map<String,AttributeValue> item) {

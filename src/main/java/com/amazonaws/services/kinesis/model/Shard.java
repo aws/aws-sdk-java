@@ -99,7 +99,7 @@ public class Shard implements Serializable {
      *
      * @param shardId The unique identifier of the shard within the Amazon Kinesis stream.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Shard withShardId(String shardId) {
@@ -144,7 +144,7 @@ public class Shard implements Serializable {
      *
      * @param parentShardId The shard Id of the shard's parent.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Shard withParentShardId(String parentShardId) {
@@ -189,7 +189,7 @@ public class Shard implements Serializable {
      *
      * @param adjacentParentShardId The shard Id of the shard adjacent to the shard's parent.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Shard withAdjacentParentShardId(String adjacentParentShardId) {
@@ -228,7 +228,7 @@ public class Shard implements Serializable {
      * @param hashKeyRange The range of possible hash key values for the shard, which is a set of
      *         ordered contiguous positive integers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Shard withHashKeyRange(HashKeyRange hashKeyRange) {
@@ -261,7 +261,7 @@ public class Shard implements Serializable {
      *
      * @param sequenceNumberRange The range of possible sequence numbers for the shard.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Shard withSequenceNumberRange(SequenceNumberRange sequenceNumberRange) {

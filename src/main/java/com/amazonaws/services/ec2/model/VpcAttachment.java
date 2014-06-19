@@ -61,7 +61,7 @@ public class VpcAttachment implements Serializable {
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcAttachment withVpcId(String vpcId) {
@@ -107,7 +107,7 @@ public class VpcAttachment implements Serializable {
      *
      * @param state The current state of the attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttachmentStatus
@@ -141,7 +141,7 @@ public class VpcAttachment implements Serializable {
      *
      * @param state The current state of the attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AttachmentStatus

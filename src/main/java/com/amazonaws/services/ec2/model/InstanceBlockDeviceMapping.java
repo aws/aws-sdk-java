@@ -66,7 +66,7 @@ public class InstanceBlockDeviceMapping implements Serializable {
      * @param deviceName The device name exposed to the instance (for example,
      *         <filename>/dev/sdh</filename>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceBlockDeviceMapping withDeviceName(String deviceName) {
@@ -105,7 +105,7 @@ public class InstanceBlockDeviceMapping implements Serializable {
      * @param ebs Parameters used to automatically set up Amazon EBS volumes when the
      *         instance is launched.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceBlockDeviceMapping withEbs(EbsInstanceBlockDevice ebs) {

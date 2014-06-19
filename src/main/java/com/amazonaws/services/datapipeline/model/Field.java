@@ -90,7 +90,7 @@ public class Field implements Serializable {
      *
      * @param key The field identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Field withKey(String key) {
@@ -135,7 +135,7 @@ public class Field implements Serializable {
      *
      * @param stringValue The field value, expressed as a String.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Field withStringValue(String stringValue) {
@@ -180,7 +180,7 @@ public class Field implements Serializable {
      *
      * @param refValue The field value, expressed as the identifier of another object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Field withRefValue(String refValue) {

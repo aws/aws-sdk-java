@@ -80,7 +80,7 @@ public class TimerCanceledEventAttributes implements Serializable {
      *
      * @param timerId The unique Id of the timer that was canceled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerCanceledEventAttributes withTimerId(String timerId) {
@@ -125,7 +125,7 @@ public class TimerCanceledEventAttributes implements Serializable {
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerCanceledEventAttributes withStartedEventId(Long startedEventId) {
@@ -176,7 +176,7 @@ public class TimerCanceledEventAttributes implements Serializable {
      *         decision to cancel this timer. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerCanceledEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

@@ -212,7 +212,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      * @param alarmName The descriptive name for the alarm. This name must be unique within
      *         the user's AWS account
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withAlarmName(String alarmName) {
@@ -254,7 +254,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param alarmDescription The description for the alarm.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withAlarmDescription(String alarmDescription) {
@@ -293,7 +293,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      * @param actionsEnabled Indicates whether or not actions should be executed during any changes
      *         to the alarm's state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withActionsEnabled(Boolean actionsEnabled) {
@@ -380,7 +380,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         supported is publishing to an Amazon SNS topic or an Amazon Auto
      *         Scaling policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withOKActions(String... oKActions) {
@@ -409,7 +409,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         supported is publishing to an Amazon SNS topic or an Amazon Auto
      *         Scaling policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withOKActions(java.util.Collection<String> oKActions) {
@@ -492,7 +492,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         action supported is publishing to an Amazon SNS topic or an Amazon
      *         Auto Scaling policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withAlarmActions(String... alarmActions) {
@@ -521,7 +521,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         action supported is publishing to an Amazon SNS topic or an Amazon
      *         Auto Scaling policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withAlarmActions(java.util.Collection<String> alarmActions) {
@@ -604,7 +604,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         action supported is publishing to an Amazon SNS topic or an Amazon
      *         Auto Scaling policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withInsufficientDataActions(String... insufficientDataActions) {
@@ -633,7 +633,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         action supported is publishing to an Amazon SNS topic or an Amazon
      *         Auto Scaling policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
@@ -682,7 +682,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param metricName The name for the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withMetricName(String metricName) {
@@ -727,7 +727,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param namespace The namespace for the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withNamespace(String namespace) {
@@ -773,7 +773,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param statistic The statistic to apply to the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Statistic
@@ -807,7 +807,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param statistic The statistic to apply to the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Statistic
@@ -861,7 +861,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param dimensions The dimensions for the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withDimensions(Dimension... dimensions) {
@@ -882,7 +882,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param dimensions The dimensions for the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withDimensions(java.util.Collection<Dimension> dimensions) {
@@ -931,7 +931,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param period The period in seconds over which the specified statistic is applied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withPeriod(Integer period) {
@@ -977,7 +977,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param unit The unit for the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StandardUnit
@@ -1011,7 +1011,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param unit The unit for the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StandardUnit
@@ -1061,7 +1061,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      * @param evaluationPeriods The number of periods over which data is compared to the specified
      *         threshold.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withEvaluationPeriods(Integer evaluationPeriods) {
@@ -1094,7 +1094,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *
      * @param threshold The value against which the specified statistic is compared.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutMetricAlarmRequest withThreshold(Double threshold) {
@@ -1152,7 +1152,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         <code>Statistic</code> and <code>Threshold</code>. The specified
      *         <code>Statistic</code> value is used as the first operand.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ComparisonOperator
@@ -1194,7 +1194,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         <code>Statistic</code> and <code>Threshold</code>. The specified
      *         <code>Statistic</code> value is used as the first operand.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ComparisonOperator

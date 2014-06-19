@@ -142,7 +142,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      * @param instanceId The ID of the instance. The operation fails if you specify an instance
      *         ID unless exactly one network interface is attached.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateAddressRequest withInstanceId(String instanceId) {
@@ -175,7 +175,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      *
      * @param publicIp The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateAddressRequest withPublicIp(String publicIp) {
@@ -208,7 +208,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      *
      * @param allocationId [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateAddressRequest withAllocationId(String allocationId) {
@@ -247,7 +247,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      * @param networkInterfaceId [EC2-VPC] The ID of the network interface. If the instance has more
      *         than one network interface, you must specify a network interface ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateAddressRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -298,7 +298,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      *         the Elastic IP address is associated with the primary private IP
      *         address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateAddressRequest withPrivateIpAddress(String privateIpAddress) {
@@ -349,7 +349,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      *         specified instance or network interface. Otherwise, the operation
      *         fails. <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssociateAddressRequest withAllowReassociation(Boolean allowReassociation) {

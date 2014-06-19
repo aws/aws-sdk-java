@@ -62,7 +62,7 @@ public class Origins implements Serializable {
      *
      * @param quantity The number of origins for this distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Origins withQuantity(Integer quantity) {
@@ -114,7 +114,7 @@ public class Origins implements Serializable {
      *
      * @param items A complex type that contains origins for this distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Origins withItems(Origin... items) {
@@ -135,7 +135,7 @@ public class Origins implements Serializable {
      *
      * @param items A complex type that contains origins for this distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Origins withItems(java.util.Collection<Origin> items) {

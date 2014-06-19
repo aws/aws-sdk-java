@@ -119,7 +119,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      *         hyphens</li> <li>Must not be "Default"</li> <li>May not contain
      *         spaces</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteDBSecurityGroupRequest withDBSecurityGroupName(String dBSecurityGroupName) {

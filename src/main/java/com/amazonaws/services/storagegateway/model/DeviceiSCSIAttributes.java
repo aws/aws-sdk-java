@@ -90,7 +90,7 @@ public class DeviceiSCSIAttributes implements Serializable {
      * @param targetARN Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
      *         qualified name(iqn) of a tape drive or media changer target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeviceiSCSIAttributes withTargetARN(String targetARN) {
@@ -132,7 +132,7 @@ public class DeviceiSCSIAttributes implements Serializable {
      *
      * @param networkInterfaceId The network interface identifier of the VTL device.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeviceiSCSIAttributes withNetworkInterfaceId(String networkInterfaceId) {
@@ -165,7 +165,7 @@ public class DeviceiSCSIAttributes implements Serializable {
      *
      * @param networkInterfacePort The port used to communicate with iSCSI VTL device targets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeviceiSCSIAttributes withNetworkInterfacePort(Integer networkInterfacePort) {
@@ -198,7 +198,7 @@ public class DeviceiSCSIAttributes implements Serializable {
      *
      * @param chapEnabled Indicates whether mutual CHAP is enabled for the iSCSI target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeviceiSCSIAttributes withChapEnabled(Boolean chapEnabled) {

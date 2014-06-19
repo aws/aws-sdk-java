@@ -78,7 +78,7 @@ public class VpcPeeringConnection implements Serializable {
      *
      * @param accepterVpcInfo The information of the peer VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnection withAccepterVpcInfo(VpcPeeringConnectionVpcInfo accepterVpcInfo) {
@@ -111,7 +111,7 @@ public class VpcPeeringConnection implements Serializable {
      *
      * @param expirationTime The time that an unaccepted VPC peering connection will expire.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnection withExpirationTime(java.util.Date expirationTime) {
@@ -144,7 +144,7 @@ public class VpcPeeringConnection implements Serializable {
      *
      * @param requesterVpcInfo The information of the requester VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnection withRequesterVpcInfo(VpcPeeringConnectionVpcInfo requesterVpcInfo) {
@@ -177,7 +177,7 @@ public class VpcPeeringConnection implements Serializable {
      *
      * @param status The status of the VPC peering connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnection withStatus(VpcPeeringConnectionStateReason status) {
@@ -220,7 +220,7 @@ public class VpcPeeringConnection implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnection withTags(Tag... tags) {
@@ -238,7 +238,7 @@ public class VpcPeeringConnection implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnection withTags(java.util.Collection<Tag> tags) {
@@ -278,7 +278,7 @@ public class VpcPeeringConnection implements Serializable {
      *
      * @param vpcPeeringConnectionId The ID of the VPC peering connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpcPeeringConnection withVpcPeeringConnectionId(String vpcPeeringConnectionId) {

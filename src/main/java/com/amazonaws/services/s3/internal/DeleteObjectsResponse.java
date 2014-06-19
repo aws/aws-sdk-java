@@ -27,12 +27,19 @@ import com.amazonaws.services.s3.model.MultiObjectDeleteException.DeleteError;
  * Service response for deleteObjects API call. Not exposed to clients directly,
  * but broken up into two classes to differentiate normal and exceptional
  * completion of the API.
- * 
+ *
  * @see DeleteObjectsResult
  * @see MultiObjectDeleteException
  * @see AmazonS3Client#deleteObjects(com.amazonaws.services.s3.model.DeleteObjectsRequest)
  */
 public class DeleteObjectsResponse {
+
+    private List<DeletedObject> deletedObjects;
+    private List<DeleteError> errors;
+
+    public DeleteObjectsResponse() {
+        this(new ArrayList<DeletedObject>(), new ArrayList<DeleteError>());
+    }
 
     public DeleteObjectsResponse(List<DeletedObject> deletedObjects, List<DeleteError> errors) {
         this.deletedObjects = deletedObjects;
@@ -54,7 +61,4 @@ public class DeleteObjectsResponse {
     public void setErrors(List<DeleteError> errors) {
         this.errors = errors;
     }
-
-    private List<DeletedObject> deletedObjects = new ArrayList<DeletedObject>();
-    private List<DeleteError> errors = new ArrayList<DeleteError>();
 }

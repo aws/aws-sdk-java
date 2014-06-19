@@ -51,7 +51,7 @@ public class BundleInstanceResult implements Serializable {
      *
      * @param bundleTask Information about the bundle task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BundleInstanceResult withBundleTask(BundleTask bundleTask) {

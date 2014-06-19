@@ -134,7 +134,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      *         the <a>TaskObject</a> that is returned by the <a>PollForTask</a>
      *         action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTaskStatusRequest withTaskId(String taskId) {
@@ -192,7 +192,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      *         <code>FAILED</code> the task ended unsuccessfully. The
      *         <code>FALSE</code> value is used by preconditions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see TaskStatus
@@ -234,7 +234,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      *         <code>FAILED</code> the task ended unsuccessfully. The
      *         <code>FALSE</code> value is used by preconditions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see TaskStatus
@@ -299,7 +299,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      *         object. It is used to display error information to the user. It should
      *         not start with string "Service_" which is reserved by the system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTaskStatusRequest withErrorId(String errorId) {
@@ -350,7 +350,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      *         object. It is used to display error information to the user. The web
      *         service does not parse this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTaskStatusRequest withErrorMessage(String errorMessage) {
@@ -413,7 +413,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
      *         attempt object. It is used to display error information to the user.
      *         The web service does not parse this value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTaskStatusRequest withErrorStackTrace(String errorStackTrace) {

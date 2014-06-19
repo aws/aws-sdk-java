@@ -65,7 +65,7 @@ public class UpdateTrailResult implements Serializable {
      *
      * @param name The new value for the Name property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTrailResult withName(String name) {
@@ -98,7 +98,7 @@ public class UpdateTrailResult implements Serializable {
      *
      * @param s3BucketName The new value for the S3BucketName property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTrailResult withS3BucketName(String s3BucketName) {
@@ -131,7 +131,7 @@ public class UpdateTrailResult implements Serializable {
      *
      * @param s3KeyPrefix The new value for the S3KeyPrefix property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTrailResult withS3KeyPrefix(String s3KeyPrefix) {
@@ -164,7 +164,7 @@ public class UpdateTrailResult implements Serializable {
      *
      * @param snsTopicName The new value for the SnsTopicName property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTrailResult withSnsTopicName(String snsTopicName) {
@@ -202,7 +202,7 @@ public class UpdateTrailResult implements Serializable {
      * @param includeGlobalServiceEvents The new value for the IncludeGlobalServiceEvents property for this
      *         object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTrailResult withIncludeGlobalServiceEvents(Boolean includeGlobalServiceEvents) {
@@ -251,7 +251,7 @@ public class UpdateTrailResult implements Serializable {
      * @param trail Represents the CloudTrail settings that were updated by calling
      *         <a>UpdateTrail</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateTrailResult withTrail(Trail trail) {

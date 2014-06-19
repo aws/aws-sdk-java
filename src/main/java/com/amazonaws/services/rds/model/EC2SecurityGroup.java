@@ -90,7 +90,7 @@ public class EC2SecurityGroup implements Serializable {
      * @param status Provides the status of the EC2 security group. Status can be
      *         "authorizing", "authorized", "revoking", and "revoked".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EC2SecurityGroup withStatus(String status) {
@@ -123,7 +123,7 @@ public class EC2SecurityGroup implements Serializable {
      *
      * @param eC2SecurityGroupName Specifies the name of the EC2 security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EC2SecurityGroup withEC2SecurityGroupName(String eC2SecurityGroupName) {
@@ -156,7 +156,7 @@ public class EC2SecurityGroup implements Serializable {
      *
      * @param eC2SecurityGroupId Specifies the id of the EC2 security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EC2SecurityGroup withEC2SecurityGroupId(String eC2SecurityGroupId) {
@@ -195,7 +195,7 @@ public class EC2SecurityGroup implements Serializable {
      * @param eC2SecurityGroupOwnerId Specifies the AWS ID of the owner of the EC2 security group specified
      *         in the <code>EC2SecurityGroupName</code> field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EC2SecurityGroup withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {

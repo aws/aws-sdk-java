@@ -107,7 +107,7 @@ public class TimeSpan implements Serializable {
      *         you don't specify a value, Elastic Transcoder starts at the beginning
      *         of the input file.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimeSpan withStartTime(String startTime) {
@@ -185,7 +185,7 @@ public class TimeSpan implements Serializable {
      *         input file , Elastic Transcoder transcodes the file and returns a
      *         warning message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimeSpan withDuration(String duration) {

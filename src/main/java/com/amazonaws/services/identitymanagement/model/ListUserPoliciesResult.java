@@ -83,7 +83,7 @@ public class ListUserPoliciesResult implements Serializable {
      *
      * @param policyNames A list of policy names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUserPoliciesResult withPolicyNames(String... policyNames) {
@@ -101,7 +101,7 @@ public class ListUserPoliciesResult implements Serializable {
      *
      * @param policyNames A list of policy names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUserPoliciesResult withPolicyNames(java.util.Collection<String> policyNames) {
@@ -159,7 +159,7 @@ public class ListUserPoliciesResult implements Serializable {
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more policy names in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUserPoliciesResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListUserPoliciesResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUserPoliciesResult withMarker(String marker) {

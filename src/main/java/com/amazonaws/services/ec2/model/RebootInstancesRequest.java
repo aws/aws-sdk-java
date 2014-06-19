@@ -32,6 +32,11 @@ import com.amazonaws.services.ec2.model.transform.RebootInstancesRequestMarshall
  * If a Linux/Unix instance does not cleanly shut down within four
  * minutes, Amazon EC2 performs a hard reboot.
  * </p>
+ * <p>
+ * For more information about troubleshooting, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html"> Getting Console Output and Rebooting Instances </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest)
  */
@@ -94,7 +99,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootInstancesRequest withInstanceIds(String... instanceIds) {
@@ -112,7 +117,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {

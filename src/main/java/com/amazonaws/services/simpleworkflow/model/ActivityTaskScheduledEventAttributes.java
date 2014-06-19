@@ -129,7 +129,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      *
      * @param activityType The type of the activity task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withActivityType(ActivityType activityType) {
@@ -171,7 +171,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      *
      * @param activityId The unique id of the activity task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withActivityId(String activityId) {
@@ -213,7 +213,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      *
      * @param input The input provided to the activity task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withInput(String input) {
@@ -261,7 +261,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks. This data is not sent to the activity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withControl(String control) {
@@ -309,7 +309,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      * @param scheduleToStartTimeout The maximum amount of time the activity task can wait to be assigned
      *         to a worker.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withScheduleToStartTimeout(String scheduleToStartTimeout) {
@@ -351,7 +351,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      *
      * @param scheduleToCloseTimeout The maximum amount of time for this activity task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withScheduleToCloseTimeout(String scheduleToCloseTimeout) {
@@ -399,7 +399,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      * @param startToCloseTimeout The maximum amount of time a worker may take to process the activity
      *         task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withStartToCloseTimeout(String startToCloseTimeout) {
@@ -432,7 +432,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      *
      * @param taskList The task list in which the activity task has been scheduled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withTaskList(TaskList taskList) {
@@ -483,7 +483,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -549,7 +549,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable {
      *         the worker subsequently attempts to record a heartbeat or return a
      *         result, it will be ignored.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskScheduledEventAttributes withHeartbeatTimeout(String heartbeatTimeout) {

@@ -165,7 +165,7 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest implements Ser
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteArchiveRequest withAccountId(String accountId) {
@@ -198,7 +198,7 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteArchiveRequest withVaultName(String vaultName) {
@@ -231,7 +231,7 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param archiveId The ID of the archive to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteArchiveRequest withArchiveId(String archiveId) {

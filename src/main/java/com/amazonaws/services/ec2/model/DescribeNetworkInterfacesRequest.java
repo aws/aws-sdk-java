@@ -55,6 +55,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -156,7 +158,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * @param networkInterfaceIds One or more network interface IDs. <p>Default: Describes all your
      *         network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(String... networkInterfaceIds) {
@@ -176,7 +178,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * @param networkInterfaceIds One or more network interface IDs. <p>Default: Describes all your
      *         network interfaces.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
@@ -210,6 +212,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -286,6 +290,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>
@@ -371,6 +377,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -447,6 +455,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>
@@ -534,6 +544,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -612,6 +624,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>
@@ -670,7 +684,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withFilters(Filter... filters) {
@@ -700,6 +714,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * address associated with the network interface. </li> <li>
      * <p><code>association.public-ip</code> - The address of the Elastic IP
      * address bound to the network interface. </li> <li>
+     * <p><code>association.public-dns-name</code> - The public DNS name for
+     * the network interface. </li> <li>
      * <p><code>attachment.attachment-id</code> - The ID of the interface
      * attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      * of the instance to which the network interface is attached. </li> <li>
@@ -778,6 +794,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         address associated with the network interface. </li> <li>
      *         <p><code>association.public-ip</code> - The address of the Elastic IP
      *         address bound to the network interface. </li> <li>
+     *         <p><code>association.public-dns-name</code> - The public DNS name for
+     *         the network interface. </li> <li>
      *         <p><code>attachment.attachment-id</code> - The ID of the interface
      *         attachment. </li> <li> <p><code>attachment.instance-id</code> - The ID
      *         of the instance to which the network interface is attached. </li> <li>
@@ -836,7 +854,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         network interface. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkInterfacesRequest withFilters(java.util.Collection<Filter> filters) {

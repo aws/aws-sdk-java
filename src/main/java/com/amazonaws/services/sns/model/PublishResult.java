@@ -60,7 +60,7 @@ public class PublishResult implements Serializable {
      * @param messageId Unique identifier assigned to the published message. <p>Length
      *         Constraint: Maximum 100 characters
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PublishResult withMessageId(String messageId) {

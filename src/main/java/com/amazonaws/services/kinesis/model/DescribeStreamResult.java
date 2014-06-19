@@ -67,7 +67,7 @@ public class DescribeStreamResult implements Serializable {
      *         shard objects that comprise the stream, and states whether there are
      *         more shards available.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStreamResult withStreamDescription(StreamDescription streamDescription) {

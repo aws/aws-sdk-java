@@ -29,7 +29,7 @@ public abstract class AbstractProfilesConfigFileScanner {
     /**
      * Action to be performed when an empty or comment line is detected
      */
-    protected abstract void onEmptyOrCommentLine(String line);
+    protected abstract void onEmptyOrCommentLine(String profileName, String line);
 
     /**
      * Action to be performed when the starting line of a new profile is detected
@@ -55,7 +55,7 @@ public abstract class AbstractProfilesConfigFileScanner {
      *
      * @param profileName
      *            The name of the profile where this property is declared.
-     * @param propertyKey
+     * @param propertyName
      *            The name of the property.
      * @param propertyValue
      *            The value of the property.
@@ -87,7 +87,7 @@ public abstract class AbstractProfilesConfigFileScanner {
 
                 // Empty or comment lines
                 if (line.isEmpty() || line.startsWith("#")) {
-                    onEmptyOrCommentLine(line);
+                    onEmptyOrCommentLine(currentProfileName, line);
                     continue;
                 }
 

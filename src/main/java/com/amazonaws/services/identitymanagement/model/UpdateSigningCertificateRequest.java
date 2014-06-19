@@ -145,7 +145,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
      *
      * @param userName Name of the user the signing certificate belongs to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSigningCertificateRequest withUserName(String userName) {
@@ -190,7 +190,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
      *
      * @param certificateId The ID of the signing certificate you want to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateSigningCertificateRequest withCertificateId(String certificateId) {
@@ -248,7 +248,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
      *         means the certificate can be used for API calls to AWS, while
      *         <code>Inactive</code> means the certificate cannot be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType
@@ -290,7 +290,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
      *         means the certificate can be used for API calls to AWS, while
      *         <code>Inactive</code> means the certificate cannot be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType

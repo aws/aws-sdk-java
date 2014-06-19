@@ -400,7 +400,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *
      * @param tableName The name of the table containing the requested items.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withTableName(String tableName) {
@@ -451,7 +451,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      * @param indexName The name of an index to query. This can be any local secondary index
      *         or global secondary index on the table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withIndexName(String indexName) {
@@ -707,7 +707,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Select
@@ -881,7 +881,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Select
@@ -1045,7 +1045,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         attributes that are projected into the index. Global secondary index
      *         queries cannot fetch attributes from the parent table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withAttributesToGet(String... attributesToGet) {
@@ -1104,7 +1104,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         attributes that are projected into the index. Global secondary index
      *         queries cannot fetch attributes from the parent table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -1219,7 +1219,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withLimit(Integer limit) {
@@ -1282,7 +1282,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <i>ConsistentRead</i> set to <code>true</code>, you will receive an
      *         error message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withConsistentRead(Boolean consistentRead) {
@@ -1851,7 +1851,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#ConditionalExpressions">Conditional
      *         Expressions</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withKeyConditions(java.util.Map<String,Condition> keyConditions) {
@@ -2181,7 +2181,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>.
      *         </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withQueryFilter(java.util.Map<String,Condition> queryFilter) {
@@ -2329,7 +2329,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <code>AND</code> is the default. <p>The operation will succeed only if
      *         the entire map evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -2391,7 +2391,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <code>AND</code> is the default. <p>The operation will succeed only if
      *         the entire map evaluates to true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConditionalOperator
@@ -2468,7 +2468,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <p>If <i>ScanIndexForward</i> is not specified, the results are
      *         returned in ascending order.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withScanIndexForward(Boolean scanIndexForward) {
@@ -2543,7 +2543,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryRequest withExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
@@ -2690,7 +2690,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity
@@ -2740,7 +2740,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         for indexes. If set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReturnConsumedCapacity

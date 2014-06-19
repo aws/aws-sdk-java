@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest) SetTopicAttributes operation}.
  * <p>
- * The <code>SetTopicAttributes</code> action allows a topic owner to set
- * an attribute of the topic to a new value.
+ * Allows a topic owner to set an attribute of the topic to a new value.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest)
@@ -95,7 +94,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param topicArn The ARN of the topic to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTopicAttributesRequest withTopicArn(String topicArn) {
@@ -140,7 +139,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest implement
      *         topic's attributes are mutable. <p>Valid values: <code>Policy</code> |
      *         <code>DisplayName</code> | <code>DeliveryPolicy</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTopicAttributesRequest withAttributeName(String attributeName) {
@@ -173,7 +172,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest implement
      *
      * @param attributeValue The new value for the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetTopicAttributesRequest withAttributeValue(String attributeValue) {

@@ -84,7 +84,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
      *
      * @param loadBalancerName The mnemonic name associated with the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteLoadBalancerPolicyRequest withLoadBalancerName(String loadBalancerName) {
@@ -117,7 +117,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
      *
      * @param policyName The mnemonic name for the policy being deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteLoadBalancerPolicyRequest withPolicyName(String policyName) {

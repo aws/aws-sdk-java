@@ -113,7 +113,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateBandwidthRateLimitRequest withGatewayARN(String gatewayARN) {
@@ -155,7 +155,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
      *
      * @param averageUploadRateLimitInBitsPerSec The average upload bandwidth rate limit in bits per second.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateBandwidthRateLimitRequest withAverageUploadRateLimitInBitsPerSec(Long averageUploadRateLimitInBitsPerSec) {
@@ -197,7 +197,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
      *
      * @param averageDownloadRateLimitInBitsPerSec The average download bandwidth rate limit in bits per second.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateBandwidthRateLimitRequest withAverageDownloadRateLimitInBitsPerSec(Long averageDownloadRateLimitInBitsPerSec) {

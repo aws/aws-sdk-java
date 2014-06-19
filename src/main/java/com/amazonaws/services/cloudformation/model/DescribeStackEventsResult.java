@@ -72,7 +72,7 @@ public class DescribeStackEventsResult implements Serializable {
      *
      * @param stackEvents A list of <code>StackEvents</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackEventsResult withStackEvents(StackEvent... stackEvents) {
@@ -90,7 +90,7 @@ public class DescribeStackEventsResult implements Serializable {
      *
      * @param stackEvents A list of <code>StackEvents</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackEventsResult withStackEvents(java.util.Collection<StackEvent> stackEvents) {
@@ -145,7 +145,7 @@ public class DescribeStackEventsResult implements Serializable {
      * @param nextToken String that identifies the start of the next list of events, if there
      *         is one.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStackEventsResult withNextToken(String nextToken) {

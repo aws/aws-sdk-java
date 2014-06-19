@@ -216,8 +216,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("cloudsearch.us-east-1.amazonaws.com/");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudsearchv2/request.handlers"));
@@ -376,7 +378,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * the <code>Deployed</code> option to <code>true</code> to show the
      * active configuration and exclude pending changes. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html"> Getting Domain Information </a>
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"> Getting Domain Information </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      *
@@ -418,8 +420,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * Configures an <code> Expression </code> for the search domain. Used to
-     * create new expressions and modify existing ones. If the expression
+     * Configures an <code> Expression </code> for the search domain. Used
+     * to create new expressions and modify existing ones. If the expression
      * exists, the new configuration replaces the old one. For more
      * information, see
      * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"> Configuring Expressions </a>
@@ -516,7 +518,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * When you configure a suggester, you must specify the name of the text
      * field you want to search for possible matches and a unique name for
      * the suggester. For more information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html"> Getting Search Suggestions </a>
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"> Getting Search Suggestions </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      *
@@ -560,7 +562,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Deletes an analysis scheme. For more information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html.html"> Configuring Analysis Schemes </a>
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"> Configuring Analysis Schemes </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      *
@@ -652,7 +654,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * the <code>Deployed</code> option to <code>true</code> to show the
      * active configuration and exclude pending changes. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html"> Getting Search Suggestions </a>
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"> Getting Search Suggestions </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      *
@@ -783,14 +785,14 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * Configures an <code> IndexField </code> for the search domain. Used to
-     * create new fields and modify existing ones. You must specify the name
-     * of the domain you are configuring and an index field configuration.
-     * The index field configuration specifies a unique name, the index field
-     * type, and the options you want to configure for the field. The options
-     * you can specify depend on the <code> IndexFieldType </code> . If the
-     * field exists, the new configuration replaces the old one. For more
-     * information, see
+     * Configures an <code> IndexField </code> for the search domain. Used
+     * to create new fields and modify existing ones. You must specify the
+     * name of the domain you are configuring and an index field
+     * configuration. The index field configuration specifies a unique name,
+     * the index field type, and the options you want to configure for the
+     * field. The options you can specify depend on the <code> IndexFieldType
+     * </code> . If the field exists, the new configuration replaces the old
+     * one. For more information, see
      * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"> Configuring Index Fields </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
@@ -877,7 +879,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Deletes a suggester. For more information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html"> Getting Search Suggestions </a>
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"> Getting Search Suggestions </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      *
@@ -1012,9 +1014,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * Configures an analysis scheme for a domain. An analysis scheme defines
-     * language-specific text processing options for a <code>text</code>
-     * field. For more information, see
+     * Configures an analysis scheme for a domain. An analysis scheme
+     * defines language-specific text processing options for a
+     * <code>text</code> field. For more information, see
      * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"> Configuring Analysis Schemes </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
@@ -1146,8 +1148,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * Permanently deletes a search domain and all of its data. Once a domain
-     * has been deleted, it cannot be recovered. For more information, see
+     * Permanently deletes a search domain and all of its data. Once a
+     * domain has been deleted, it cannot be recovered. For more information,
+     * see
      * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html"> Deleting a Search Domain </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
@@ -1236,10 +1239,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets information about the search domains owned by this account. Can
-     * be limited to specific domains. Shows all domains by default. For more
+     * be limited to specific domains. Shows all domains by default. To get
+     * the number of searchable documents in a domain, use the console or
+     * submit a <code>matchall</code> request to your domain's search
+     * endpoint: <code>q=matchall&q.parser=structured&size=0</code>. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html"> Getting Information about a Search Domain </a>
-     * in the <i>Amazon CloudSearch Developer Guide</i> .
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a>
+     * in the <i>Amazon CloudSearch Developer Guide</i>.
      * </p>
      *
      * @param describeDomainsRequest Container for the necessary parameters
@@ -1346,10 +1352,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets information about the search domains owned by this account. Can
-     * be limited to specific domains. Shows all domains by default. For more
+     * be limited to specific domains. Shows all domains by default. To get
+     * the number of searchable documents in a domain, use the console or
+     * submit a <code>matchall</code> request to your domain's search
+     * endpoint: <code>q=matchall&q.parser=structured&size=0</code>. For more
      * information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html"> Getting Information about a Search Domain </a>
-     * in the <i>Amazon CloudSearch Developer Guide</i> .
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a>
+     * in the <i>Amazon CloudSearch Developer Guide</i>.
      * </p>
      * 
      * @return The response from the DescribeDomains service method, as

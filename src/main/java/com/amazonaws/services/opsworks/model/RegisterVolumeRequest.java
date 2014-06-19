@@ -76,7 +76,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements Se
      *
      * @param ec2VolumeId The Amazon EBS volume ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterVolumeRequest withEc2VolumeId(String ec2VolumeId) {
@@ -109,7 +109,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements Se
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RegisterVolumeRequest withStackId(String stackId) {

@@ -85,7 +85,7 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
      *
      * @param parameterGroupFamily The name of the cluster parameter group family.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDefaultClusterParametersRequest withParameterGroupFamily(String parameterGroupFamily) {
@@ -148,7 +148,7 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDefaultClusterParametersRequest withMaxRecords(Integer maxRecords) {
@@ -217,7 +217,7 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDefaultClusterParametersRequest withMarker(String marker) {

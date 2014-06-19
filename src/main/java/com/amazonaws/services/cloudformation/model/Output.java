@@ -63,7 +63,7 @@ public class Output implements Serializable {
      *
      * @param outputKey The key associated with the output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Output withOutputKey(String outputKey) {
@@ -96,7 +96,7 @@ public class Output implements Serializable {
      *
      * @param outputValue The value associated with the output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Output withOutputValue(String outputValue) {
@@ -129,7 +129,7 @@ public class Output implements Serializable {
      *
      * @param description User defined description associated with the output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Output withDescription(String description) {

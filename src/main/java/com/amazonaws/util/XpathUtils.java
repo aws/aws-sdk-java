@@ -13,14 +13,11 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.util;
-import static com.amazonaws.util.StringUtils.UTF8;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
-import java.text.ParseException;
 import java.util.Date;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -30,7 +27,6 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
@@ -47,9 +43,6 @@ public class XpathUtils {
     private static XPathFactory xpathFactory = XPathFactory.newInstance();
 
     private static XPath xpath = xpathFactory.newXPath();
-
-    /** Shared DateUtils object for parsing and formatting dates */
-    private static DateUtils dateUtils = new DateUtils();
 
     /** Shared logger */
     private static Log log = LogFactory.getLog(XpathUtils.class);
@@ -244,8 +237,8 @@ public class XpathUtils {
         if (isEmptyString(dateString)) return null;
 
         try {
-            return dateUtils.parseIso8601Date(dateString);
-        } catch (ParseException e) {
+            return DateUtils.parseISO8601Date(dateString);
+        } catch (Exception e) {
             log.warn("Unable to parse date '" + dateString + "':  " + e.getMessage(), e);
             return null;
         }
@@ -272,9 +265,7 @@ public class XpathUtils {
         if (isEmptyString(base64EncodedString)) return null;
 
         if (!isEmpty(node)) {
-            byte[] base64EncodedBytes = base64EncodedString
-                    .getBytes(UTF8);
-            byte[] decodedBytes = Base64.decodeBase64(base64EncodedBytes);
+            byte[] decodedBytes = Base64.decode(base64EncodedString);
             return ByteBuffer.wrap(decodedBytes);
         }
         return null;

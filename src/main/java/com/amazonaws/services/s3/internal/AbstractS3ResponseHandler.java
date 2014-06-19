@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.text.ParseException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -115,7 +113,7 @@ public abstract class AbstractS3ResponseHandler<T>
             } else if (key.equals(Headers.LAST_MODIFIED)) {
                 try {
                     metadata.setHeader(key, ServiceUtils.parseRfc822Date(header.getValue()));
-                } catch (ParseException pe) {
+                } catch (Exception pe) {
                     log.warn("Unable to parse last modified date: " + header.getValue(), pe);
                 }
             } else if (key.equals(Headers.CONTENT_LENGTH)) {
@@ -128,8 +126,8 @@ public abstract class AbstractS3ResponseHandler<T>
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
             } else if (key.equals(Headers.EXPIRES)) {
                 try {
-                    metadata.setHttpExpiresDate(new DateUtils().parseRfc822Date(header.getValue()));
-                } catch (ParseException pe) {
+                    metadata.setHttpExpiresDate(DateUtils.parseRFC822Date(header.getValue()));
+                } catch (Exception pe) {
                     log.warn("Unable to parse http expiration date: " + header.getValue(), pe);
                 }
             } else if (key.equals(Headers.EXPIRATION)) {

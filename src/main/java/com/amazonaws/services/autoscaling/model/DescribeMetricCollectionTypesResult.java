@@ -103,7 +103,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMetricCollectionTypesResult withMetrics(MetricCollectionType... metrics) {
@@ -131,7 +131,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMetricCollectionTypesResult withMetrics(java.util.Collection<MetricCollectionType> metrics) {
@@ -181,7 +181,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
      *
      * @param granularities A list of granularities for the listed Metrics.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMetricCollectionTypesResult withGranularities(MetricGranularityType... granularities) {
@@ -199,7 +199,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
      *
      * @param granularities A list of granularities for the listed Metrics.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMetricCollectionTypesResult withGranularities(java.util.Collection<MetricGranularityType> granularities) {

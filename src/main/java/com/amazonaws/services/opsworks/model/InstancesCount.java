@@ -118,7 +118,7 @@ public class InstancesCount implements Serializable {
      *
      * @param booting The number of instances with <code>booting</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withBooting(Integer booting) {
@@ -151,7 +151,7 @@ public class InstancesCount implements Serializable {
      *
      * @param connectionLost The number of instances with <code>connection_lost</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withConnectionLost(Integer connectionLost) {
@@ -184,7 +184,7 @@ public class InstancesCount implements Serializable {
      *
      * @param online The number of instances with <code>online</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withOnline(Integer online) {
@@ -217,7 +217,7 @@ public class InstancesCount implements Serializable {
      *
      * @param pending The number of instances with <code>pending</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withPending(Integer pending) {
@@ -250,7 +250,7 @@ public class InstancesCount implements Serializable {
      *
      * @param rebooting The number of instances with <code>rebooting</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withRebooting(Integer rebooting) {
@@ -283,7 +283,7 @@ public class InstancesCount implements Serializable {
      *
      * @param requested The number of instances with <code>requested</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withRequested(Integer requested) {
@@ -316,7 +316,7 @@ public class InstancesCount implements Serializable {
      *
      * @param runningSetup The number of instances with <code>running_setup</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withRunningSetup(Integer runningSetup) {
@@ -349,7 +349,7 @@ public class InstancesCount implements Serializable {
      *
      * @param setupFailed The number of instances with <code>setup_failed</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withSetupFailed(Integer setupFailed) {
@@ -382,7 +382,7 @@ public class InstancesCount implements Serializable {
      *
      * @param shuttingDown The number of instances with <code>shutting_down</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withShuttingDown(Integer shuttingDown) {
@@ -415,7 +415,7 @@ public class InstancesCount implements Serializable {
      *
      * @param startFailed The number of instances with <code>start_failed</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withStartFailed(Integer startFailed) {
@@ -448,7 +448,7 @@ public class InstancesCount implements Serializable {
      *
      * @param stopped The number of instances with <code>stopped</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withStopped(Integer stopped) {
@@ -481,7 +481,7 @@ public class InstancesCount implements Serializable {
      *
      * @param stopping The number of instances with <code>stopping</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withStopping(Integer stopping) {
@@ -514,7 +514,7 @@ public class InstancesCount implements Serializable {
      *
      * @param terminated The number of instances with <code>terminated</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withTerminated(Integer terminated) {
@@ -547,7 +547,7 @@ public class InstancesCount implements Serializable {
      *
      * @param terminating The number of instances with <code>terminating</code> status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstancesCount withTerminating(Integer terminating) {

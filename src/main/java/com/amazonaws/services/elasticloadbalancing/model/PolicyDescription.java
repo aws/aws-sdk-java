@@ -63,7 +63,7 @@ public class PolicyDescription implements Serializable {
      *
      * @param policyName The name of the policy associated with the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyDescription withPolicyName(String policyName) {
@@ -96,7 +96,7 @@ public class PolicyDescription implements Serializable {
      *
      * @param policyTypeName The name of the policy type associated with the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyDescription withPolicyTypeName(String policyTypeName) {
@@ -139,7 +139,7 @@ public class PolicyDescription implements Serializable {
      *
      * @param policyAttributeDescriptions A list of policy attribute description structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyDescription withPolicyAttributeDescriptions(PolicyAttributeDescription... policyAttributeDescriptions) {
@@ -157,7 +157,7 @@ public class PolicyDescription implements Serializable {
      *
      * @param policyAttributeDescriptions A list of policy attribute description structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyDescription withPolicyAttributeDescriptions(java.util.Collection<PolicyAttributeDescription> policyAttributeDescriptions) {

@@ -110,7 +110,7 @@ public class GetTrailStatusResult implements Serializable {
      *
      * @param isLogging Whether the CloudTrail is currently logging AWS API calls.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withIsLogging(Boolean isLogging) {
@@ -158,7 +158,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param latestDeliveryError Information about the most recent error CloudTrail encountered when
      *         attempting to deliver log files to the account's Amazon S3 bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestDeliveryError(String latestDeliveryError) {
@@ -197,7 +197,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param latestNotificationError Information about the most recent error CloudTrail encountered when
      *         attempting to send an Amazon SNS notification.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestNotificationError(String latestNotificationError) {
@@ -230,7 +230,7 @@ public class GetTrailStatusResult implements Serializable {
      *
      * @param latestDeliveryTime The new value for the LatestDeliveryTime property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestDeliveryTime(java.util.Date latestDeliveryTime) {
@@ -264,7 +264,7 @@ public class GetTrailStatusResult implements Serializable {
      *
      * @param latestNotificationTime The new value for the LatestNotificationTime property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestNotificationTime(java.util.Date latestNotificationTime) {
@@ -297,7 +297,7 @@ public class GetTrailStatusResult implements Serializable {
      *
      * @param startLoggingTime The new value for the StartLoggingTime property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withStartLoggingTime(java.util.Date startLoggingTime) {
@@ -330,7 +330,7 @@ public class GetTrailStatusResult implements Serializable {
      *
      * @param stopLoggingTime The new value for the StopLoggingTime property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withStopLoggingTime(java.util.Date stopLoggingTime) {
@@ -369,7 +369,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param latestDeliveryAttemptTime The last time CloudTrail attempted to deliver a file to an account's
      *         Amazon S3 bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestDeliveryAttemptTime(String latestDeliveryAttemptTime) {
@@ -408,7 +408,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param latestNotificationAttemptTime The last time CloudTrail attempted to notify an account's owner of a
      *         log delivery to the account's Amazon S3 bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestNotificationAttemptTime(String latestNotificationAttemptTime) {
@@ -447,7 +447,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param latestNotificationAttemptSucceeded The last time CloudTrail successfully notified an account's owner of a
      *         log delivery to the account's Amazon S3 bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestNotificationAttemptSucceeded(String latestNotificationAttemptSucceeded) {
@@ -486,7 +486,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param latestDeliveryAttemptSucceeded The last time CloudTrail successfully delivered a log file to an
      *         account's Amazon S3 bucket.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withLatestDeliveryAttemptSucceeded(String latestDeliveryAttemptSucceeded) {
@@ -525,7 +525,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param timeLoggingStarted The time at which CloudTrail started logging AWS API calls for an
      *         account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withTimeLoggingStarted(String timeLoggingStarted) {
@@ -564,7 +564,7 @@ public class GetTrailStatusResult implements Serializable {
      * @param timeLoggingStopped The time at which CloudTrail stopped logging AWS API calls for an
      *         account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTrailStatusResult withTimeLoggingStopped(String timeLoggingStopped) {

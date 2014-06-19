@@ -90,7 +90,7 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *         alphanumeric characters or hyphens. <p>Example:
      *         <code>mysubnetgroup</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -123,7 +123,7 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param cacheSubnetGroupDescription A description for the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheSubnetGroupRequest withCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
@@ -166,7 +166,7 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param subnetIds The EC2 subnet IDs for the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheSubnetGroupRequest withSubnetIds(String... subnetIds) {
@@ -184,7 +184,7 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param subnetIds The EC2 subnet IDs for the cache subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {

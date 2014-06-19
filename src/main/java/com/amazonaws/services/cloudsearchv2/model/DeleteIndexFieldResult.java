@@ -53,7 +53,7 @@ public class DeleteIndexFieldResult implements Serializable {
      *
      * @param indexField The status of the index field being deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteIndexFieldResult withIndexField(IndexFieldStatus indexField) {

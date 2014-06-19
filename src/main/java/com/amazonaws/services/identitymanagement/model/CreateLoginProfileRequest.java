@@ -106,7 +106,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
      *
      * @param userName Name of the user to create a password for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoginProfileRequest withUserName(String userName) {
@@ -151,7 +151,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
      *
      * @param password The new password for the user name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoginProfileRequest withPassword(String password) {

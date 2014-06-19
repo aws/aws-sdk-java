@@ -15,18 +15,17 @@
 package com.amazonaws.services.s3.model;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
 
 /**
- * <p>
  * Provides options for deleting multiple objects in a specified bucket. Once
  * deleted, the object(s) can only be restored if versioning was enabled when
- * the object(s) was deleted.
- * </p>
+ * the object(s) was deleted.You may specify up to <a href=
+ * "http://docs.aws.amazon.com/AmazonS3/latest/API/multiobjectdeleteapi.html"
+ * >1000 keys</a>. </p>
  * 
  * @see AmazonS3#deleteObjects(DeleteObjectsRequest)
  */
@@ -56,7 +55,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest {
     /**
      * List of keys to delete, with optional versions.
      */
-    private List<KeyVersion> keys = new ArrayList<DeleteObjectsRequest.KeyVersion>();
+    private final List<KeyVersion> keys = new ArrayList<KeyVersion>();
 
     /**
      * Constructs a new {@link DeleteObjectsRequest}, specifying the objects'
@@ -249,7 +248,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest {
      * @see DeleteObjectsRequest#withKeys(List)
      */
     public DeleteObjectsRequest withKeys(String... keys) {
-        List<KeyVersion> keyVersions = new LinkedList<KeyVersion>();
+        List<KeyVersion> keyVersions = new ArrayList<KeyVersion>(keys.length);
         for (String key : keys) {
             keyVersions.add(new KeyVersion(key));
         }

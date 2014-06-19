@@ -83,7 +83,7 @@ public class TapeRecoveryPointInfo implements Serializable {
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeRecoveryPointInfo withTapeARN(String tapeARN) {
@@ -134,7 +134,7 @@ public class TapeRecoveryPointInfo implements Serializable {
      *         recovery point time is in the ISO8601 extended
      *         YYYY-MM-DD'T'HH:MM:SS'Z' format.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeRecoveryPointInfo withTapeRecoveryPointTime(java.util.Date tapeRecoveryPointTime) {
@@ -176,7 +176,7 @@ public class TapeRecoveryPointInfo implements Serializable {
      *
      * @param tapeSizeInBytes The size, in bytes, of the virtual tapes to recover.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeRecoveryPointInfo withTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -209,7 +209,7 @@ public class TapeRecoveryPointInfo implements Serializable {
      *
      * @param tapeStatus The new value for the TapeStatus property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TapeRecoveryPointInfo withTapeStatus(String tapeStatus) {

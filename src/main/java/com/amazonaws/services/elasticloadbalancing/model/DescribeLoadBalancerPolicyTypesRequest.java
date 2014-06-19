@@ -86,7 +86,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      *         returns the description of all the policy types defined by Elastic
      *         Load Balancing service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(String... policyTypeNames) {
@@ -108,7 +108,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      *         returns the description of all the policy types defined by Elastic
      *         Load Balancing service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(java.util.Collection<String> policyTypeNames) {

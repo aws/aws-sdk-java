@@ -185,7 +185,7 @@ public class User implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public User withPath(String path) {
@@ -230,7 +230,7 @@ public class User implements Serializable {
      *
      * @param userName The name identifying the user.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public User withUserName(String userName) {
@@ -299,7 +299,7 @@ public class User implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public User withUserId(String userId) {
@@ -365,7 +365,7 @@ public class User implements Serializable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public User withArn(String arn) {
@@ -398,7 +398,7 @@ public class User implements Serializable {
      *
      * @param createDate The date when the user was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public User withCreateDate(java.util.Date createDate) {

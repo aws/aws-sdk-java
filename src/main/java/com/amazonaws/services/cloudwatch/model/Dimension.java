@@ -74,7 +74,7 @@ public class Dimension implements Serializable {
      *
      * @param name The name of the dimension.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Dimension withName(String name) {
@@ -116,7 +116,7 @@ public class Dimension implements Serializable {
      *
      * @param value The value representing the dimension measurement
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Dimension withValue(String value) {

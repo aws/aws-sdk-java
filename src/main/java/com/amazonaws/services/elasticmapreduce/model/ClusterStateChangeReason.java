@@ -74,7 +74,7 @@ public class ClusterStateChangeReason implements Serializable {
      *
      * @param code The programmatic code for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ClusterStateChangeReasonCode
@@ -108,7 +108,7 @@ public class ClusterStateChangeReason implements Serializable {
      *
      * @param code The programmatic code for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ClusterStateChangeReasonCode
@@ -143,7 +143,7 @@ public class ClusterStateChangeReason implements Serializable {
      *
      * @param message The descriptive message for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterStateChangeReason withMessage(String message) {

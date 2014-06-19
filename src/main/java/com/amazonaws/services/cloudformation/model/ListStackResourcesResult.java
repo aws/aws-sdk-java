@@ -29,8 +29,8 @@ public class ListStackResourcesResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<StackResourceSummary> stackResourceSummaries;
 
     /**
-     * String that identifies the start of the next list of events, if there
-     * is one.
+     * String that identifies the start of the next list of stack resources,
+     * if there is one.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -72,7 +72,7 @@ public class ListStackResourcesResult implements Serializable {
      *
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesResult withStackResourceSummaries(StackResourceSummary... stackResourceSummaries) {
@@ -90,7 +90,7 @@ public class ListStackResourcesResult implements Serializable {
      *
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesResult withStackResourceSummaries(java.util.Collection<StackResourceSummary> stackResourceSummaries) {
@@ -106,46 +106,46 @@ public class ListStackResourcesResult implements Serializable {
     }
 
     /**
-     * String that identifies the start of the next list of events, if there
-     * is one.
+     * String that identifies the start of the next list of stack resources,
+     * if there is one.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @return String that identifies the start of the next list of events, if there
-     *         is one.
+     * @return String that identifies the start of the next list of stack resources,
+     *         if there is one.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * String that identifies the start of the next list of events, if there
-     * is one.
+     * String that identifies the start of the next list of stack resources,
+     * if there is one.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken String that identifies the start of the next list of events, if there
-     *         is one.
+     * @param nextToken String that identifies the start of the next list of stack resources,
+     *         if there is one.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * String that identifies the start of the next list of events, if there
-     * is one.
+     * String that identifies the start of the next list of stack resources,
+     * if there is one.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken String that identifies the start of the next list of events, if there
-     *         is one.
+     * @param nextToken String that identifies the start of the next list of stack resources,
+     *         if there is one.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStackResourcesResult withNextToken(String nextToken) {

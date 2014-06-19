@@ -81,7 +81,7 @@ public class Content implements Serializable {
      *
      * @param data The textual data of the content.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Content withData(String data) {
@@ -114,7 +114,7 @@ public class Content implements Serializable {
      *
      * @param charset The character set of the content.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Content withCharset(String charset) {

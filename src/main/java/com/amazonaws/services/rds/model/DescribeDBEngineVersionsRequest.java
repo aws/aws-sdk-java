@@ -106,7 +106,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
      *
      * @param engine The database engine to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBEngineVersionsRequest withEngine(String engine) {
@@ -139,7 +139,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
      *
      * @param engineVersion The database engine version to return. <p>Example: <code>5.1.49</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBEngineVersionsRequest withEngineVersion(String engineVersion) {
@@ -190,7 +190,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
      *         characters</li> <li>First character must be a letter</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBEngineVersionsRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -247,7 +247,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
      *         results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
      *         maximum 100
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBEngineVersionsRequest withMaxRecords(Integer maxRecords) {
@@ -292,7 +292,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBEngineVersionsRequest withMarker(String marker) {
@@ -331,7 +331,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
      * @param defaultOnly Indicates that only the default version of the specified engine or
      *         engine and major version combination is returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBEngineVersionsRequest withDefaultOnly(Boolean defaultOnly) {
@@ -387,7 +387,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
      *         the CharacterSetName parameter for CreateDBInstance, the response
      *         includes a list of supported character sets for each engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBEngineVersionsRequest withListSupportedCharacterSets(Boolean listSupportedCharacterSets) {

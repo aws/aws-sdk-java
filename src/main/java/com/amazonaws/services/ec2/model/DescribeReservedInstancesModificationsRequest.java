@@ -107,7 +107,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *
      * @param reservedInstancesModificationIds IDs for the submitted modification request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(String... reservedInstancesModificationIds) {
@@ -125,7 +125,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *
      * @param reservedInstancesModificationIds IDs for the submitted modification request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
@@ -165,7 +165,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *
      * @param nextToken The token for the next page of data.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsRequest withNextToken(String nextToken) {
@@ -364,7 +364,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *         reason for the status. </li> <li> <p><code>update-date</code> - The
      *         time when the modification request was last updated. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsRequest withFilters(Filter... filters) {
@@ -434,7 +434,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *         reason for the status. </li> <li> <p><code>update-date</code> - The
      *         time when the modification request was last updated. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsRequest withFilters(java.util.Collection<Filter> filters) {

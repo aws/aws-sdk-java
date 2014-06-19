@@ -64,7 +64,7 @@ public class ClusterParameterGroup implements Serializable {
      *
      * @param parameterGroupName The name of the cluster parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterParameterGroup withParameterGroupName(String parameterGroupName) {
@@ -103,7 +103,7 @@ public class ClusterParameterGroup implements Serializable {
      * @param parameterGroupFamily The name of the cluster parameter group family that this cluster
      *         parameter group is compatible with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterParameterGroup withParameterGroupFamily(String parameterGroupFamily) {
@@ -136,7 +136,7 @@ public class ClusterParameterGroup implements Serializable {
      *
      * @param description The description of the parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterParameterGroup withDescription(String description) {

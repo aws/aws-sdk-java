@@ -74,7 +74,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
      *
      * @param conversionTaskId The ID of the conversion task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelConversionTaskRequest withConversionTaskId(String conversionTaskId) {
@@ -107,7 +107,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
      *
      * @param reasonMessage 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelConversionTaskRequest withReasonMessage(String reasonMessage) {

@@ -99,6 +99,9 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
         if (modifyClusterRequest.getHsmConfigurationIdentifier() != null) {
             request.addParameter("HsmConfigurationIdentifier", StringUtils.fromString(modifyClusterRequest.getHsmConfigurationIdentifier()));
         }
+        if (modifyClusterRequest.getNewClusterIdentifier() != null) {
+            request.addParameter("NewClusterIdentifier", StringUtils.fromString(modifyClusterRequest.getNewClusterIdentifier()));
+        }
 
         return request;
     }

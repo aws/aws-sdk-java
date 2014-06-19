@@ -71,7 +71,7 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements Se
      *
      * @param healthCheckId The ID of the health check to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetHealthCheckRequest withHealthCheckId(String healthCheckId) {

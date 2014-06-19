@@ -54,7 +54,7 @@ public class EnvironmentResourcesDescription implements Serializable {
      *
      * @param loadBalancer Describes the LoadBalancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourcesDescription withLoadBalancer(LoadBalancerDescription loadBalancer) {

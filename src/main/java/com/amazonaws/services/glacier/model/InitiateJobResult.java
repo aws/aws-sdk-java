@@ -58,7 +58,7 @@ public class InitiateJobResult implements Serializable {
      *
      * @param location The relative URI path of the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InitiateJobResult withLocation(String location) {
@@ -91,7 +91,7 @@ public class InitiateJobResult implements Serializable {
      *
      * @param jobId The ID of the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InitiateJobResult withJobId(String jobId) {

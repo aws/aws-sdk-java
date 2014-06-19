@@ -97,7 +97,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      *         Marker to the value of the NextMarker from the current page's response
      *         (which is also the ID of the last distribution on that page).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDistributionsRequest withMarker(String marker) {
@@ -130,7 +130,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      *
      * @param maxItems The maximum number of distributions you want in the response body.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDistributionsRequest withMaxItems(String maxItems) {

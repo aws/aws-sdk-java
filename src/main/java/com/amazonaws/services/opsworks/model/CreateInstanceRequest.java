@@ -119,6 +119,12 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     private String availabilityZone;
 
     /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     */
+    private String virtualizationType;
+
+    /**
      * The ID of the instance's subnet. If the stack is running in a VPC, you
      * can use this parameter to override the stack's default subnet ID value
      * and direct AWS OpsWorks to launch the instance in a different subnet.
@@ -191,7 +197,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withStackId(String stackId) {
@@ -234,7 +240,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param layerIds An array that contains the instance layer IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withLayerIds(String... layerIds) {
@@ -252,7 +258,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param layerIds An array that contains the instance layer IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withLayerIds(java.util.Collection<String> layerIds) {
@@ -328,7 +334,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         the various types are in the API Name column of the Available Instance
      *         Types table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withInstanceType(String instanceType) {
@@ -428,7 +434,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         for the instance layer and configure the thresholds by calling
      *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AutoScalingType
@@ -498,7 +504,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         for the instance layer and configure the thresholds by calling
      *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AutoScalingType
@@ -533,7 +539,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param hostname The instance host name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withHostname(String hostname) {
@@ -638,7 +644,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withOs(String os) {
@@ -689,7 +695,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         12.04 LTS. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withAmiId(String amiId) {
@@ -722,7 +728,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param sshKeyName The instance SSH key name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withSshKeyName(String sshKeyName) {
@@ -767,11 +773,50 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     *
+     * @return The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     */
+    public String getVirtualizationType() {
+        return virtualizationType;
+    }
+    
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     *
+     * @param virtualizationType The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     */
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+    
+    /**
+     * The instance's virtualization type, <code>paravirtual</code> or
+     * <code>hvm</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param virtualizationType The instance's virtualization type, <code>paravirtual</code> or
+     *         <code>hvm</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateInstanceRequest withVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
         return this;
     }
 
@@ -812,7 +857,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         can use this parameter to override the stack's default subnet ID value
      *         and direct AWS OpsWorks to launch the instance in a different subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withSubnetId(String subnetId) {
@@ -888,7 +933,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Architecture
@@ -942,7 +987,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Architecture
@@ -1002,7 +1047,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RootDeviceType
@@ -1044,7 +1089,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RootDeviceType
@@ -1127,7 +1172,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         recommend using the default value of <code>true</code> to ensure that
      *         your instances have the latest security updates. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
@@ -1185,7 +1230,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param ebsOptimized Whether to create an Amazon EBS-optimized instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateInstanceRequest withEbsOptimized(Boolean ebsOptimized) {
@@ -1223,6 +1268,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (getAmiId() != null) sb.append("AmiId: " + getAmiId() + ",");
         if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");
         if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
@@ -1246,6 +1292,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode()); 
         hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode()); 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
@@ -1280,6 +1327,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (other.getSshKeyName() != null && other.getSshKeyName().equals(this.getSshKeyName()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null) return false;
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false) return false; 
         if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
         if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;

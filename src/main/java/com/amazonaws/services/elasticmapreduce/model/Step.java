@@ -77,7 +77,7 @@ public class Step implements Serializable {
      *
      * @param id The identifier of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Step withId(String id) {
@@ -110,7 +110,7 @@ public class Step implements Serializable {
      *
      * @param name The name of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Step withName(String name) {
@@ -143,7 +143,7 @@ public class Step implements Serializable {
      *
      * @param config The Hadoop job configuration of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Step withConfig(HadoopStepConfig config) {
@@ -195,7 +195,7 @@ public class Step implements Serializable {
      * @param actionOnFailure This specifies what action to take when the cluster step fails.
      *         TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActionOnFailure
@@ -233,7 +233,7 @@ public class Step implements Serializable {
      * @param actionOnFailure This specifies what action to take when the cluster step fails.
      *         TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActionOnFailure
@@ -268,7 +268,7 @@ public class Step implements Serializable {
      *
      * @param status The current execution status details of the cluster step.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Step withStatus(StepStatus status) {

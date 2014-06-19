@@ -54,7 +54,7 @@ public class DefineIndexFieldResult implements Serializable {
      *
      * @param indexField The value of an <code>IndexField</code> and its current status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineIndexFieldResult withIndexField(IndexFieldStatus indexField) {

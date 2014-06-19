@@ -220,8 +220,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new TooManyEnvironmentsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new S3SubscriptionRequiredExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationVersionsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyApplicationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyApplicationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientPrivilegesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceBundleDeletionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new S3LocationNotInServiceRegionExceptionUnmarshaller());
@@ -229,8 +229,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new TooManyBucketsExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("elasticbeanstalk.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/elasticbeanstalk/request.handlers"));
@@ -669,9 +671,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * properties.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not provided,
-     * the value remains unchanged. To clear properties, specify an empty
-     * string.
+     * <b>NOTE:</b> If a property (for example, description) is not
+     * provided, the value remains unchanged. To clear properties, specify an
+     * empty string.
      * </p>
      *
      * @param updateApplicationVersionRequest Container for the necessary
@@ -924,9 +926,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * Updates the specified application to have the specified properties.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not provided,
-     * the value remains unchanged. To clear these properties, specify an
-     * empty string.
+     * <b>NOTE:</b> If a property (for example, description) is not
+     * provided, the value remains unchanged. To clear these properties,
+     * specify an empty string.
      * </p>
      *
      * @param updateApplicationRequest Container for the necessary parameters
@@ -1442,8 +1444,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * weeks.
      * </p>
      * <p>
-     * <b>NOTE:</b> This action returns the most recent 1,000 events from the
-     * specified NextToken.
+     * <b>NOTE:</b> This action returns the most recent 1,000 events from
+     * the specified NextToken.
      * </p>
      *
      * @param describeEventsRequest Container for the necessary parameters to
@@ -1614,8 +1616,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * weeks.
      * </p>
      * <p>
-     * <b>NOTE:</b> This action returns the most recent 1,000 events from the
-     * specified NextToken.
+     * <b>NOTE:</b> This action returns the most recent 1,000 events from
+     * the specified NextToken.
      * </p>
      * 
      * @return The response from the DescribeEvents service method, as

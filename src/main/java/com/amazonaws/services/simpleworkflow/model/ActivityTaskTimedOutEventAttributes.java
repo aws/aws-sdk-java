@@ -95,7 +95,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
      *
      * @param timeoutType The type of the timeout that caused this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActivityTaskTimeoutType
@@ -129,7 +129,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
      *
      * @param timeoutType The type of the timeout that caused this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ActivityTaskTimeoutType
@@ -182,7 +182,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskTimedOutEventAttributes withScheduledEventId(Long scheduledEventId) {
@@ -233,7 +233,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskTimedOutEventAttributes withStartedEventId(Long startedEventId) {
@@ -287,7 +287,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
      *         last call made by the activity to
      *         <code>RecordActivityTaskHeartbeat</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTaskTimedOutEventAttributes withDetails(String details) {

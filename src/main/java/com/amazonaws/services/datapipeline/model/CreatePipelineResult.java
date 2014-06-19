@@ -76,7 +76,7 @@ public class CreatePipelineResult implements Serializable {
      * @param pipelineId The ID that AWS Data Pipeline assigns the newly created pipeline. The
      *         ID is a string of the form: df-06372391ZG65EXAMPLE.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePipelineResult withPipelineId(String pipelineId) {

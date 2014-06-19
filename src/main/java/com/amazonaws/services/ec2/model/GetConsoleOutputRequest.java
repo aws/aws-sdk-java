@@ -100,7 +100,7 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements 
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetConsoleOutputRequest withInstanceId(String instanceId) {

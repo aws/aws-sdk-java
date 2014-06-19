@@ -121,7 +121,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateImageRequest withInstanceId(String instanceId) {
@@ -166,7 +166,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      *         characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
      *         underscores(_)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateImageRequest withName(String name) {
@@ -199,7 +199,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param description A description for the new image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateImageRequest withDescription(String description) {
@@ -262,7 +262,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      *         creating the image. When this option is used, file system integrity on
      *         the created image can't be guaranteed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateImageRequest withNoReboot(Boolean noReboot) {
@@ -324,7 +324,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param blockDeviceMappings Information about one or more block device mappings.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateImageRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
@@ -342,7 +342,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param blockDeviceMappings Information about one or more block device mappings.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateImageRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {

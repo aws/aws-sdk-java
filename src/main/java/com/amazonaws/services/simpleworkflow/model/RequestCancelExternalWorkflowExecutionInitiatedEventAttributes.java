@@ -100,7 +100,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      * @param workflowId The <code>workflowId</code> of the external workflow execution to be
      *         canceled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withWorkflowId(String workflowId) {
@@ -148,7 +148,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      * @param runId The <code>runId</code> of the external workflow execution to be
      *         canceled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withRunId(String runId) {
@@ -205,7 +205,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      *         cancellation request. This information can be useful for diagnosing
      *         problems by tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -253,7 +253,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withControl(String control) {

@@ -61,7 +61,7 @@ public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest impleme
      *
      * @param domain The domain to be verified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VerifyDomainIdentityRequest withDomain(String domain) {

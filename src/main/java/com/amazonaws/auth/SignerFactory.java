@@ -26,6 +26,7 @@ public final class SignerFactory {
     private static final String QUERY_STRING_SIGNER = "QueryStringSignerType";
     private static final String VERSION_THREE_SIGNER = "AWS3SignerType";
     private static final String VERSION_FOUR_SIGNER = "AWS4SignerType";
+    private static final String NO_OP_SIGNER = "NoOpSignerType";
 
     private static final Map<String, Class<? extends Signer>> SIGNERS
         = new ConcurrentHashMap<String, Class<? extends Signer>>();
@@ -35,6 +36,7 @@ public final class SignerFactory {
         SIGNERS.put(QUERY_STRING_SIGNER, QueryStringSigner.class);
         SIGNERS.put(VERSION_THREE_SIGNER, AWS3Signer.class);
         SIGNERS.put(VERSION_FOUR_SIGNER, AWS4Signer.class);
+        SIGNERS.put(NO_OP_SIGNER, NoOpSigner.class);
     }
 
     /**
@@ -67,7 +69,7 @@ public final class SignerFactory {
      * Returns a non-null signer for the specified service and region according
      * to the internal configuration which provides a basic default algorithm
      * used for signer determination.
-     * 
+     *
      * @param serviceName
      *            The name of the service to talk to.
      * @param regionName
@@ -81,7 +83,7 @@ public final class SignerFactory {
     /**
      * Returns an instance of the given signer type and configures it with the
      * given service name (if applicable).
-     * 
+     *
      * @param signerType
      *            The type of signer to create.
      * @param serviceName

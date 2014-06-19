@@ -105,7 +105,7 @@ public class Connection implements Serializable {
      *
      * @param ownerAccount The new value for the OwnerAccount property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withOwnerAccount(String ownerAccount) {
@@ -138,7 +138,7 @@ public class Connection implements Serializable {
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withConnectionId(String connectionId) {
@@ -177,7 +177,7 @@ public class Connection implements Serializable {
      * @param connectionName The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      *         <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withConnectionName(String connectionName) {
@@ -295,7 +295,7 @@ public class Connection implements Serializable {
      *         connection in the 'Ordering' state will enter the 'Rejected' state if
      *         it is deleted by the end customer.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConnectionState
@@ -377,7 +377,7 @@ public class Connection implements Serializable {
      *         connection in the 'Ordering' state will enter the 'Rejected' state if
      *         it is deleted by the end customer.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ConnectionState
@@ -418,7 +418,7 @@ public class Connection implements Serializable {
      * @param region The AWS region where the connection is located. <p>Example: us-east-1
      *         <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withRegion(String region) {
@@ -451,7 +451,7 @@ public class Connection implements Serializable {
      *
      * @param location Where the connection is located. <p>Example: EqSV5 <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withLocation(String location) {
@@ -484,7 +484,7 @@ public class Connection implements Serializable {
      *
      * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withBandwidth(String bandwidth) {
@@ -517,7 +517,7 @@ public class Connection implements Serializable {
      *
      * @param vlan The VLAN ID. <p>Example: 101
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withVlan(Integer vlan) {
@@ -550,7 +550,7 @@ public class Connection implements Serializable {
      *
      * @param partnerName The new value for the PartnerName property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Connection withPartnerName(String partnerName) {

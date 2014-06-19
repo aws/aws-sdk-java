@@ -223,7 +223,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -280,7 +280,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
@@ -325,7 +325,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBInstanceClass(String dBInstanceClass) {
@@ -370,7 +370,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         The same port as the original DB instance <p>Constraints: Value must
      *         be <code>1150-65535</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withPort(Integer port) {
@@ -427,7 +427,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         the MultiAZ parameter is set to <code>true</code>. <p>Example:
      *         <code>us-east-1a</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withAvailabilityZone(String availabilityZone) {
@@ -460,7 +460,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *
      * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBSubnetGroupName(String dBSubnetGroupName) {
@@ -505,7 +505,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         You cannot specify the AvailabilityZone parameter if the MultiAZ
      *         parameter is set to <code>true</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withMultiAZ(Boolean multiAZ) {
@@ -623,7 +623,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withPubliclyAccessible(Boolean publiclyAccessible) {
@@ -695,7 +695,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
      *         the DB instance during the maintenance window.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -757,7 +757,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withLicenseModel(String licenseModel) {
@@ -796,7 +796,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * @param dBName The database name for the restored DB instance. <note> <p>This
      *         parameter doesn't apply to the MySQL engine. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBName(String dBName) {
@@ -841,7 +841,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         as source <p>Constraint: Must be compatible with the engine of the
      *         source <p>Example: <code>oracle-ee</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withEngine(String engine) {
@@ -910,7 +910,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         instance will be available for connections before the conversion
      *         starts. <p> Constraints: Must be an integer greater than 1000.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withIops(Integer iops) {
@@ -967,7 +967,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         group cannot be removed from a DB instance once it is associated with
      *         a DB instance
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withOptionGroupName(String optionGroupName) {
@@ -1010,7 +1010,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withTags(Tag... tags) {
@@ -1028,7 +1028,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withTags(java.util.Collection<Tag> tags) {

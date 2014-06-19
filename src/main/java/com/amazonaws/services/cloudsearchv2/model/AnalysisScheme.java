@@ -47,7 +47,7 @@ public class AnalysisScheme implements Serializable {
      * RFC 4646</a> language code or <code>mul</code> for multiple languages.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
+     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
      */
     private String analysisSchemeLanguage;
 
@@ -117,7 +117,7 @@ public class AnalysisScheme implements Serializable {
      *         cannot be used as a field name. To reference a document's ID, you can
      *         use the name <code>_id</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisScheme withAnalysisSchemeName(String analysisSchemeName) {
@@ -130,7 +130,7 @@ public class AnalysisScheme implements Serializable {
      * RFC 4646</a> language code or <code>mul</code> for multiple languages.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
+     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
      *
      * @return An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF
      *         RFC 4646</a> language code or <code>mul</code> for multiple languages.
@@ -146,7 +146,7 @@ public class AnalysisScheme implements Serializable {
      * RFC 4646</a> language code or <code>mul</code> for multiple languages.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
+     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
      *
      * @param analysisSchemeLanguage An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF
      *         RFC 4646</a> language code or <code>mul</code> for multiple languages.
@@ -164,12 +164,12 @@ public class AnalysisScheme implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
+     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
      *
      * @param analysisSchemeLanguage An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF
      *         RFC 4646</a> language code or <code>mul</code> for multiple languages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AnalysisSchemeLanguage
@@ -184,7 +184,7 @@ public class AnalysisScheme implements Serializable {
      * RFC 4646</a> language code or <code>mul</code> for multiple languages.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
+     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
      *
      * @param analysisSchemeLanguage An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF
      *         RFC 4646</a> language code or <code>mul</code> for multiple languages.
@@ -202,12 +202,12 @@ public class AnalysisScheme implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
+     * <b>Allowed Values: </b>ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, zh-Hans, zh-Hant
      *
      * @param analysisSchemeLanguage An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF
      *         RFC 4646</a> language code or <code>mul</code> for multiple languages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AnalysisSchemeLanguage
@@ -242,7 +242,7 @@ public class AnalysisScheme implements Serializable {
      *
      * @param analysisOptions Synonyms, stopwords, and stemming options for an analysis scheme.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisScheme withAnalysisOptions(AnalysisOptions analysisOptions) {

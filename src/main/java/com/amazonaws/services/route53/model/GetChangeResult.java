@@ -67,7 +67,7 @@ public class GetChangeResult implements Serializable {
      *         batch, including the change batch ID, the status of the change, and
      *         the date and time of the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetChangeResult withChangeInfo(ChangeInfo changeInfo) {

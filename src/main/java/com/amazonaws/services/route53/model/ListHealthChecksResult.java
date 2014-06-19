@@ -113,7 +113,7 @@ public class ListHealthChecksResult implements Serializable {
      * @param healthChecks A complex type that contains information about the health checks
      *         associated with the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHealthChecksResult withHealthChecks(HealthCheck... healthChecks) {
@@ -133,7 +133,7 @@ public class ListHealthChecksResult implements Serializable {
      * @param healthChecks A complex type that contains information about the health checks
      *         associated with the current AWS account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHealthChecksResult withHealthChecks(java.util.Collection<HealthCheck> healthChecks) {
@@ -200,7 +200,7 @@ public class ListHealthChecksResult implements Serializable {
      *         response in the <code>marker</code> parameter to get the next page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHealthChecksResult withMarker(String marker) {
@@ -251,7 +251,7 @@ public class ListHealthChecksResult implements Serializable {
      *         the next page of results by using the <code>Marker</code> element.
      *         <p>Valid Values: <code>true</code> | <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHealthChecksResult withIsTruncated(Boolean isTruncated) {
@@ -332,7 +332,7 @@ public class ListHealthChecksResult implements Serializable {
      *         of the <code>NextMarker</code> element in the <code>Marker</code>
      *         element to get the next page of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHealthChecksResult withNextMarker(String nextMarker) {
@@ -407,7 +407,7 @@ public class ListHealthChecksResult implements Serializable {
      *         <a>ListHostedZonesRequest$Marker</a> element to get the next page of
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListHealthChecksResult withMaxItems(String maxItems) {

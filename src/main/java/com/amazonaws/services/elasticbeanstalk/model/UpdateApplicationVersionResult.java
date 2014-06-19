@@ -54,7 +54,7 @@ public class UpdateApplicationVersionResult implements Serializable {
      *
      * @param applicationVersion The <a>ApplicationVersionDescription</a> of the application version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateApplicationVersionResult withApplicationVersion(ApplicationVersionDescription applicationVersion) {

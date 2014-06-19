@@ -76,7 +76,7 @@ public class CacheSecurityGroup implements Serializable {
      *
      * @param ownerId The AWS account ID of the cache security group owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSecurityGroup withOwnerId(String ownerId) {
@@ -109,7 +109,7 @@ public class CacheSecurityGroup implements Serializable {
      *
      * @param cacheSecurityGroupName The name of the cache security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSecurityGroup withCacheSecurityGroupName(String cacheSecurityGroupName) {
@@ -142,7 +142,7 @@ public class CacheSecurityGroup implements Serializable {
      *
      * @param description The description of the cache security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSecurityGroup withDescription(String description) {
@@ -191,7 +191,7 @@ public class CacheSecurityGroup implements Serializable {
      * @param eC2SecurityGroups A list of Amazon EC2 security groups that are associated with this
      *         cache security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSecurityGroup withEC2SecurityGroups(EC2SecurityGroup... eC2SecurityGroups) {
@@ -211,7 +211,7 @@ public class CacheSecurityGroup implements Serializable {
      * @param eC2SecurityGroups A list of Amazon EC2 security groups that are associated with this
      *         cache security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheSecurityGroup withEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {

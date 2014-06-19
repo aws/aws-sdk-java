@@ -119,7 +119,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
      *         specify the <code>SourceEnvironmentId</code>, you must specify the
      *         <code>DestinationEnvironmentId</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SwapEnvironmentCNAMEsRequest withSourceEnvironmentId(String sourceEnvironmentId) {
@@ -185,7 +185,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
      *         specify the <code>SourceEnvironmentName</code>, you must specify the
      *         <code>DestinationEnvironmentName</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SwapEnvironmentCNAMEsRequest withSourceEnvironmentName(String sourceEnvironmentName) {
@@ -242,7 +242,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
      *         You must specify the <code>SourceEnvironmentId</code> with the
      *         <code>DestinationEnvironmentId</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentId(String destinationEnvironmentId) {
@@ -308,7 +308,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
      *         You must specify the <code>SourceEnvironmentName</code> with the
      *         <code>DestinationEnvironmentName</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentName(String destinationEnvironmentName) {

@@ -87,7 +87,7 @@ public class DescribeServiceAccessPoliciesRequest extends AmazonWebServiceReques
      *
      * @param domainName The name of the domain you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceAccessPoliciesRequest withDomainName(String domainName) {
@@ -132,7 +132,7 @@ public class DescribeServiceAccessPoliciesRequest extends AmazonWebServiceReques
      *         include any pending changes (<code>false</code>). Defaults to
      *         <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServiceAccessPoliciesRequest withDeployed(Boolean deployed) {

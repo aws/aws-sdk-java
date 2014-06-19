@@ -68,7 +68,7 @@ public class SelectResult implements Serializable {
      *
      * @param items A list of items that match the select expression.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelectResult withItems(Item... items) {
@@ -86,7 +86,7 @@ public class SelectResult implements Serializable {
      *
      * @param items A list of items that match the select expression.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelectResult withItems(java.util.Collection<Item> items) {
@@ -138,7 +138,7 @@ public class SelectResult implements Serializable {
      *         <code>MaxNumberOfItems</code> were matched, the response size exceeded
      *         1 megabyte, or the execution time exceeded 5 seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SelectResult withNextToken(String nextToken) {

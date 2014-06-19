@@ -62,7 +62,7 @@ public class DescribeInterconnectsRequest extends AmazonWebServiceRequest implem
      *
      * @param interconnectId The ID of the interconnect. <p>Example: dxcon-abc123
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInterconnectsRequest withInterconnectId(String interconnectId) {

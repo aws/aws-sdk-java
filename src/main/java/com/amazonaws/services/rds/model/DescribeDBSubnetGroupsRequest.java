@@ -87,7 +87,7 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest imple
      *
      * @param dBSubnetGroupName The name of the DB subnet group to return details for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsRequest withDBSubnetGroupName(String dBSubnetGroupName) {
@@ -130,7 +130,7 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest imple
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsRequest withFilters(Filter... filters) {
@@ -148,7 +148,7 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest imple
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsRequest withFilters(java.util.Collection<Filter> filters) {
@@ -212,7 +212,7 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest imple
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsRequest withMaxRecords(Integer maxRecords) {
@@ -263,7 +263,7 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest imple
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsRequest withMarker(String marker) {

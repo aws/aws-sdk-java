@@ -47,30 +47,10 @@ public class DescribeCachediSCSIVolumesRequestMarshaller implements Marshaller<R
         Request<DescribeCachediSCSIVolumesRequest> request = new DefaultRequest<DescribeCachediSCSIVolumesRequest>(describeCachediSCSIVolumesRequest, "AWSStorageGateway");
         String target = "StorageGateway_20130630.DescribeCachediSCSIVolumes";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
         request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = ""; 
-
-        uriResourcePath = uriResourcePath.replaceAll("//", "/");
-
-        if (uriResourcePath.contains("?")) {
-            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-
-            for (String s : queryString.split("[;&]")) {
-                String[] nameValuePair = s.split("=");
-                if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
-                }
-            }
-        }
-
-        request.setResourcePath(uriResourcePath);
-
+        request.setResourcePath("");
+        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
@@ -97,6 +77,7 @@ public class DescribeCachediSCSIVolumesRequestMarshaller implements Marshaller<R
           byte[] content = snippet.getBytes(UTF8);
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
+          request.addHeader("Content-Type", "application/x-amz-json-1.1");
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

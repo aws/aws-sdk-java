@@ -104,7 +104,7 @@ public class StreamDescription implements Serializable {
      *
      * @param streamName The name of the stream being described.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamDescription withStreamName(String streamName) {
@@ -137,7 +137,7 @@ public class StreamDescription implements Serializable {
      *
      * @param streamARN The Amazon Resource Name (ARN) for the stream being described.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamDescription withStreamARN(String streamARN) {
@@ -249,7 +249,7 @@ public class StreamDescription implements Serializable {
      *         merged or split. Read and write operations continue to work while the
      *         stream is in the UPDATING state.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StreamStatus
@@ -327,7 +327,7 @@ public class StreamDescription implements Serializable {
      *         merged or split. Read and write operations continue to work while the
      *         stream is in the UPDATING state.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StreamStatus
@@ -372,7 +372,7 @@ public class StreamDescription implements Serializable {
      *
      * @param shards The shards that comprise the stream.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamDescription withShards(Shard... shards) {
@@ -390,7 +390,7 @@ public class StreamDescription implements Serializable {
      *
      * @param shards The shards that comprise the stream.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamDescription withShards(java.util.Collection<Shard> shards) {
@@ -436,7 +436,7 @@ public class StreamDescription implements Serializable {
      * @param hasMoreShards If set to <code>true</code> there are more shards in the stream
      *         available to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamDescription withHasMoreShards(Boolean hasMoreShards) {

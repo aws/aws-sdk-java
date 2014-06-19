@@ -346,7 +346,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html"> List Vaults </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param listVaultsRequest Container for the necessary parameters to
@@ -401,7 +400,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html"> List Vaults </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param listVaultsRequest Container for the necessary parameters to
@@ -472,7 +470,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For information about the underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working with Archives in Amazon Glacier </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param describeJobRequest Container for the necessary parameters to
@@ -529,7 +526,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For information about the underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working with Archives in Amazon Glacier </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param describeJobRequest Container for the necessary parameters to
@@ -584,12 +580,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * operation returns up to 1,000 uploaded parts in the response. You
      * should always check the response for a <code>marker</code> at which to
      * continue the list; if there are no more items the <code>marker</code>
-     * is <code>null</code> .
-     * To return a list of parts that begins at a specific part, set the
-     * <code>marker</code> request parameter to the value you obtained from a
-     * previous List Parts request. You can also limit the number of parts
-     * returned in the response by specifying the <code>limit</code>
-     * parameter in the request.
+     * is <code>null</code> . To return a list of parts that begins at a
+     * specific part, set the <code>marker</code> request parameter to the
+     * value you obtained from a previous List Parts request. You can also
+     * limit the number of parts returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
@@ -643,12 +638,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * operation returns up to 1,000 uploaded parts in the response. You
      * should always check the response for a <code>marker</code> at which to
      * continue the list; if there are no more items the <code>marker</code>
-     * is <code>null</code> .
-     * To return a list of parts that begins at a specific part, set the
-     * <code>marker</code> request parameter to the value you obtained from a
-     * previous List Parts request. You can also limit the number of parts
-     * returned in the response by specifying the <code>limit</code>
-     * parameter in the request.
+     * is <code>null</code> . To return a list of parts that begins at a
+     * specific part, set the <code>marker</code> request parameter to the
+     * value you obtained from a previous List Parts request. You can also
+     * limit the number of parts returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
@@ -708,10 +702,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * subresource of the specified vault.
      * </p>
      * <p>
-     * For information about setting a notification configuration on a vault,
-     * see SetVaultNotifications. If a notification configuration for a vault
-     * is not set, the operation returns a <code>404 Not Found</code> error.
-     * For more information about vault notifications, see
+     * For information about setting a notification configuration on a
+     * vault, see SetVaultNotifications. If a notification configuration for
+     * a vault is not set, the operation returns a <code>404 Not Found</code>
+     * error. For more information about vault notifications, see
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a>
      * .
      * </p>
@@ -727,7 +721,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html"> Get Vault Notification Configuration </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param getVaultNotificationsRequest Container for the necessary
@@ -761,10 +754,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * subresource of the specified vault.
      * </p>
      * <p>
-     * For information about setting a notification configuration on a vault,
-     * see SetVaultNotifications. If a notification configuration for a vault
-     * is not set, the operation returns a <code>404 Not Found</code> error.
-     * For more information about vault notifications, see
+     * For information about setting a notification configuration on a
+     * vault, see SetVaultNotifications. If a notification configuration for
+     * a vault is not set, the operation returns a <code>404 Not Found</code>
+     * error. For more information about vault notifications, see
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a>
      * .
      * </p>
@@ -780,7 +773,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html"> Get Vault Notification Configuration </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param getVaultNotificationsRequest Container for the necessary
@@ -852,12 +844,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * operation returns up to 1,000 jobs in the response. You should always
      * check the response for a <code>marker</code> at which to continue the
      * list; if there are no more items the <code>marker</code> is
-     * <code>null</code> .
-     * To return a list of jobs that begins at a specific job, set
-     * the <code>marker</code> request parameter to the value you obtained
-     * from a previous List Jobs request. You can also limit the number of
-     * jobs returned in the response by specifying the <code>limit</code>
-     * parameter in the request.
+     * <code>null</code> . To return a list of jobs that begins at a specific
+     * job, set the <code>marker</code> request parameter to the value you
+     * obtained from a previous List Jobs request. You can also limit the
+     * number of jobs returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * <p>
      * Additionally, you can filter the jobs list returned by specifying an
@@ -936,12 +927,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * operation returns up to 1,000 jobs in the response. You should always
      * check the response for a <code>marker</code> at which to continue the
      * list; if there are no more items the <code>marker</code> is
-     * <code>null</code> .
-     * To return a list of jobs that begins at a specific job, set
-     * the <code>marker</code> request parameter to the value you obtained
-     * from a previous List Jobs request. You can also limit the number of
-     * jobs returned in the response by specifying the <code>limit</code>
-     * parameter in the request.
+     * <code>null</code> . To return a list of jobs that begins at a specific
+     * job, set the <code>marker</code> request parameter to the value you
+     * obtained from a previous List Jobs request. You can also limit the
+     * number of jobs returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * <p>
      * Additionally, you can filter the jobs list returned by specifying an
@@ -1045,7 +1035,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html"> Creating a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param createVaultRequest Container for the necessary parameters to
@@ -1113,7 +1102,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html"> Creating a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html"> Create Vault </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param createVaultRequest Container for the necessary parameters to
@@ -1339,7 +1327,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html"> Abort Multipart Upload </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param abortMultipartUploadRequest Container for the necessary
@@ -1395,7 +1382,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html"> Abort Multipart Upload </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param abortMultipartUploadRequest Container for the necessary
@@ -1438,8 +1424,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
     
     /**
      * <p>
-     * This operation deletes an archive from a vault. Subsequent requests to
-     * initiate a retrieval of this archive will fail. Archive retrievals
+     * This operation deletes an archive from a vault. Subsequent requests
+     * to initiate a retrieval of this archive will fail. Archive retrievals
      * that are in progress for this archive ID may or may not succeed
      * according to the following scenarios:
      * </p>
@@ -1469,7 +1455,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html"> Deleting an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param deleteArchiveRequest Container for the necessary parameters to
@@ -1499,8 +1484,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
 
     /**
      * <p>
-     * This operation deletes an archive from a vault. Subsequent requests to
-     * initiate a retrieval of this archive will fail. Archive retrievals
+     * This operation deletes an archive from a vault. Subsequent requests
+     * to initiate a retrieval of this archive will fail. Archive retrievals
      * that are in progress for this archive ID may or may not succeed
      * according to the following scenarios:
      * </p>
@@ -1530,7 +1515,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html"> Deleting an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html"> Delete Archive </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param deleteArchiveRequest Container for the necessary parameters to
@@ -1758,9 +1742,9 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
     
     /**
      * <p>
-     * This operation initiates a job of the specified type. In this release,
-     * you can initiate a job to retrieve either an archive or a vault
-     * inventory (a list of archives in a vault).
+     * This operation initiates a job of the specified type. In this
+     * release, you can initiate a job to retrieve either an archive or a
+     * vault inventory (a list of archives in a vault).
      * </p>
      * <p>
      * Retrieving data from Amazon Glacier is a two-step process:
@@ -1781,8 +1765,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * job output, see GetJobOutput operation.
      * </p>
      * <p>
-     * The job must complete before you can get its output. To determine when
-     * a job is complete, you have the following options:
+     * The job must complete before you can get its output. To determine
+     * when a job is complete, you have the following options:
      * </p>
      * 
      * <ul>
@@ -1807,8 +1791,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * 
      * </ul>
      * <p>
-     * <b>NOTE:</b> The information you get via notification is same that you
-     * get by calling DescribeJob.
+     * <b>NOTE:</b> The information you get via notification is same that
+     * you get by calling DescribeJob.
      * </p>
      * <p>
      * If for a specific event, you add both the notification configuration
@@ -1942,9 +1926,9 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
 
     /**
      * <p>
-     * This operation initiates a job of the specified type. In this release,
-     * you can initiate a job to retrieve either an archive or a vault
-     * inventory (a list of archives in a vault).
+     * This operation initiates a job of the specified type. In this
+     * release, you can initiate a job to retrieve either an archive or a
+     * vault inventory (a list of archives in a vault).
      * </p>
      * <p>
      * Retrieving data from Amazon Glacier is a two-step process:
@@ -1965,8 +1949,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * job output, see GetJobOutput operation.
      * </p>
      * <p>
-     * The job must complete before you can get its output. To determine when
-     * a job is complete, you have the following options:
+     * The job must complete before you can get its output. To determine
+     * when a job is complete, you have the following options:
      * </p>
      * 
      * <ul>
@@ -1991,8 +1975,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * 
      * </ul>
      * <p>
-     * <b>NOTE:</b> The information you get via notification is same that you
-     * get by calling DescribeJob.
+     * <b>NOTE:</b> The information you get via notification is same that
+     * you get by calling DescribeJob.
      * </p>
      * <p>
      * If for a specific event, you add both the notification configuration
@@ -2157,8 +2141,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * archive IDs in a vault. For more information, see InitiateJob.
      * </p>
      * <p>
-     * You must provide a SHA256 tree hash of the data you are uploading. For
-     * information about computing a SHA256 tree hash, see
+     * You must provide a SHA256 tree hash of the data you are uploading.
+     * For information about computing a SHA256 tree hash, see
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
      * .
      * </p>
@@ -2187,7 +2171,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html"> Uploading an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param uploadArchiveRequest Container for the necessary parameters to
@@ -2233,8 +2216,8 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * archive IDs in a vault. For more information, see InitiateJob.
      * </p>
      * <p>
-     * You must provide a SHA256 tree hash of the data you are uploading. For
-     * information about computing a SHA256 tree hash, see
+     * You must provide a SHA256 tree hash of the data you are uploading.
+     * For information about computing a SHA256 tree hash, see
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"> Computing Checksums </a>
      * .
      * </p>
@@ -2263,7 +2246,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html"> Uploading an Archive in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html"> Upload Archive </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param uploadArchiveRequest Container for the necessary parameters to
@@ -2348,7 +2330,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"> Set Vault Notification Configuration </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param setVaultNotificationsRequest Container for the necessary
@@ -2421,7 +2402,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html"> Configuring Vault Notifications in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html"> Set Vault Notification Configuration </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param setVaultNotificationsRequest Container for the necessary
@@ -2493,13 +2473,13 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * found, Amazon Glacier returns an error and the operation fails.
      * </p>
      * <p>
-     * Complete Multipart Upload is an idempotent operation. After your first
-     * successful complete multipart upload, if you call the operation again
-     * within a short period, the operation will succeed and return the same
-     * archive ID. This is useful in the event you experience a network issue
-     * that causes an aborted connection or receive a 500 server error, in
-     * which case you can repeat your Complete Multipart Upload request and
-     * get the same archive ID without creating duplicate archives. Note,
+     * Complete Multipart Upload is an idempotent operation. After your
+     * first successful complete multipart upload, if you call the operation
+     * again within a short period, the operation will succeed and return the
+     * same archive ID. This is useful in the event you experience a network
+     * issue that causes an aborted connection or receive a 500 server error,
+     * in which case you can repeat your Complete Multipart Upload request
+     * and get the same archive ID without creating duplicate archives. Note,
      * however, that after the multipart upload completes, you cannot call
      * the List Parts operation and the multipart upload will not appear in
      * List Multipart Uploads response, even if idempotent complete is
@@ -2517,7 +2497,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html"> Complete Multipart Upload </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param completeMultipartUploadRequest Container for the necessary
@@ -2576,13 +2555,13 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * found, Amazon Glacier returns an error and the operation fails.
      * </p>
      * <p>
-     * Complete Multipart Upload is an idempotent operation. After your first
-     * successful complete multipart upload, if you call the operation again
-     * within a short period, the operation will succeed and return the same
-     * archive ID. This is useful in the event you experience a network issue
-     * that causes an aborted connection or receive a 500 server error, in
-     * which case you can repeat your Complete Multipart Upload request and
-     * get the same archive ID without creating duplicate archives. Note,
+     * Complete Multipart Upload is an idempotent operation. After your
+     * first successful complete multipart upload, if you call the operation
+     * again within a short period, the operation will succeed and return the
+     * same archive ID. This is useful in the event you experience a network
+     * issue that causes an aborted connection or receive a 500 server error,
+     * in which case you can repeat your Complete Multipart Upload request
+     * and get the same archive ID without creating duplicate archives. Note,
      * however, that after the multipart upload completes, you cannot call
      * the List Parts operation and the multipart upload will not appear in
      * List Multipart Uploads response, even if idempotent complete is
@@ -2600,7 +2579,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"> Uploading Large Archives in Parts (Multipart Upload) </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html"> Complete Multipart Upload </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param completeMultipartUploadRequest Container for the necessary
@@ -2861,7 +2839,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param describeVaultRequest Container for the necessary parameters to
@@ -2915,7 +2892,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html"> Retrieving Vault Metadata in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html"> Describe Vault </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param describeVaultRequest Container for the necessary parameters to
@@ -2958,11 +2934,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
     
     /**
      * <p>
-     * This operation deletes the notification configuration set for a vault.
-     * The operation is eventually consistent;that is, it might take some
-     * time for Amazon Glacier to completely disable the notifications and
-     * you might still receive some notifications for a short time after you
-     * send the delete request.
+     * This operation deletes the notification configuration set for a
+     * vault. The operation is eventually consistent;that is, it might take
+     * some time for Amazon Glacier to completely disable the notifications
+     * and you might still receive some notifications for a short time after
+     * you send the delete request.
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
@@ -3006,11 +2982,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
 
     /**
      * <p>
-     * This operation deletes the notification configuration set for a vault.
-     * The operation is eventually consistent;that is, it might take some
-     * time for Amazon Glacier to completely disable the notifications and
-     * you might still receive some notifications for a short time after you
-     * send the delete request.
+     * This operation deletes the notification configuration set for a
+     * vault. The operation is eventually consistent;that is, it might take
+     * some time for Amazon Glacier to completely disable the notifications
+     * and you might still receive some notifications for a short time after
+     * you send the delete request.
      * </p>
      * <p>
      * An AWS account has full permission to perform all operations
@@ -3077,11 +3053,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * this operation returns up to 1,000 multipart uploads in the response.
      * You should always check the response for a <code>marker</code> at
      * which to continue the list; if there are no more items the
-     * <code>marker</code> is <code>null</code> .
-     * To return a list of multipart uploads that begins at a specific
-     * upload, set the <code>marker</code> request parameter to the value you
-     * obtained from a previous List Multipart Upload request. You can also
-     * limit the number of uploads returned in the response by specifying the
+     * <code>marker</code> is <code>null</code> . To return a list of
+     * multipart uploads that begins at a specific upload, set the
+     * <code>marker</code> request parameter to the value you obtained from a
+     * previous List Multipart Upload request. You can also limit the number
+     * of uploads returned in the response by specifying the
      * <code>limit</code> parameter in the request.
      * </p>
      * <p>
@@ -3143,11 +3119,11 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * this operation returns up to 1,000 multipart uploads in the response.
      * You should always check the response for a <code>marker</code> at
      * which to continue the list; if there are no more items the
-     * <code>marker</code> is <code>null</code> .
-     * To return a list of multipart uploads that begins at a specific
-     * upload, set the <code>marker</code> request parameter to the value you
-     * obtained from a previous List Multipart Upload request. You can also
-     * limit the number of uploads returned in the response by specifying the
+     * <code>marker</code> is <code>null</code> . To return a list of
+     * multipart uploads that begins at a specific upload, set the
+     * <code>marker</code> request parameter to the value you obtained from a
+     * previous List Multipart Upload request. You can also limit the number
+     * of uploads returned in the response by specifying the
      * <code>limit</code> parameter in the request.
      * </p>
      * <p>
@@ -3237,7 +3213,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html"> Deleting a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"> Delete Vault </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param deleteVaultRequest Container for the necessary parameters to
@@ -3292,7 +3267,6 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * For conceptual information and underlying REST API, go to
      * <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html"> Deleting a Vault in Amazon Glacier </a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html"> Delete Vault </a>
      * in the <i>Amazon Glacier Developer Guide</i> .
-     * 
      * </p>
      *
      * @param deleteVaultRequest Container for the necessary parameters to

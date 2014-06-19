@@ -89,7 +89,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -122,7 +122,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *
      * @param description A description for the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyNetworkInterfaceAttributeRequest withDescription(String description) {
@@ -185,7 +185,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      *         Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyNetworkInterfaceAttributeRequest withSourceDestCheck(Boolean sourceDestCheck) {
@@ -265,7 +265,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *         one group, even if it's just the default security group in the VPC.
      *         You must specify the ID of the security group, not the name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyNetworkInterfaceAttributeRequest withGroups(String... groups) {
@@ -289,7 +289,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *         one group, even if it's just the default security group in the VPC.
      *         You must specify the ID of the security group, not the name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyNetworkInterfaceAttributeRequest withGroups(java.util.Collection<String> groups) {
@@ -329,7 +329,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *
      * @param attachment The ID of the interface attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyNetworkInterfaceAttributeRequest withAttachment(NetworkInterfaceAttachmentChanges attachment) {

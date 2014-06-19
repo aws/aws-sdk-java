@@ -63,6 +63,10 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
                     ebsBlockDevice.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("encrypted", targetDepth)) {
+                    ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ebsBlockDevice;

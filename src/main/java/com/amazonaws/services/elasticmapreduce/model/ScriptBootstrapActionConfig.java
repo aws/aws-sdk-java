@@ -103,7 +103,7 @@ public class ScriptBootstrapActionConfig implements Serializable {
      * @param path Location of the script to run during a bootstrap action. Can be either
      *         a location in Amazon S3 or on a local file system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScriptBootstrapActionConfig withPath(String path) {
@@ -152,7 +152,7 @@ public class ScriptBootstrapActionConfig implements Serializable {
      * @param args A list of command line arguments to pass to the bootstrap action
      *         script.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScriptBootstrapActionConfig withArgs(String... args) {
@@ -172,7 +172,7 @@ public class ScriptBootstrapActionConfig implements Serializable {
      * @param args A list of command line arguments to pass to the bootstrap action
      *         script.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ScriptBootstrapActionConfig withArgs(java.util.Collection<String> args) {

@@ -65,7 +65,7 @@ public class DisableGatewayResult implements Serializable {
      *
      * @param gatewayARN The unique Amazon Resource Name of the disabled gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisableGatewayResult withGatewayARN(String gatewayARN) {

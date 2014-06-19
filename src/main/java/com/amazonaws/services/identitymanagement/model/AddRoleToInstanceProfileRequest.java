@@ -86,7 +86,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
      *
      * @param instanceProfileName Name of the instance profile to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddRoleToInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
@@ -131,7 +131,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
      *
      * @param roleName Name of the role to add.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddRoleToInstanceProfileRequest withRoleName(String roleName) {

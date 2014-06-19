@@ -77,7 +77,7 @@ public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements 
      *
      * @param domain The name of the domain to be verified for Easy DKIM signing.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VerifyDomainDkimRequest withDomain(String domain) {

@@ -63,7 +63,7 @@ public class DescribeConnectionsResult implements Serializable {
      *
      * @param connections A list of connections.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConnectionsResult withConnections(Connection... connections) {
@@ -81,7 +81,7 @@ public class DescribeConnectionsResult implements Serializable {
      *
      * @param connections A list of connections.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConnectionsResult withConnections(java.util.Collection<Connection> connections) {

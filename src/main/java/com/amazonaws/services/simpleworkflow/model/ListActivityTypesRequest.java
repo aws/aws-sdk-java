@@ -155,7 +155,7 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
      * @param domain The name of the domain in which the activity types have been
      *         registered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListActivityTypesRequest withDomain(String domain) {
@@ -197,7 +197,7 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
      *
      * @param name If specified, only lists the activity types that have this name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListActivityTypesRequest withName(String name) {
@@ -243,7 +243,7 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
      *
      * @param registrationStatus Specifies the registration status of the activity types to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -277,7 +277,7 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
      *
      * @param registrationStatus Specifies the registration status of the activity types to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -339,7 +339,7 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
      *         page of results, repeat the call with the <code>nextPageToken</code>
      *         and keep all other arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListActivityTypesRequest withNextPageToken(String nextPageToken) {
@@ -411,7 +411,7 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListActivityTypesRequest withMaximumPageSize(Integer maximumPageSize) {
@@ -456,7 +456,7 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest implements
      *         By default the results are returned in ascending alphabetical order of
      *         the <code>name</code> of the activity types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListActivityTypesRequest withReverseOrder(Boolean reverseOrder) {

@@ -66,7 +66,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UnassignPrivateIpAddressesRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -121,7 +121,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
      *         interface. You can specify this option multiple times to unassign more
      *         than one IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UnassignPrivateIpAddressesRequest withPrivateIpAddresses(String... privateIpAddresses) {
@@ -143,7 +143,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
      *         interface. You can specify this option multiple times to unassign more
      *         than one IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UnassignPrivateIpAddressesRequest withPrivateIpAddresses(java.util.Collection<String> privateIpAddresses) {

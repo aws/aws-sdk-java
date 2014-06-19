@@ -73,7 +73,7 @@ public class DescribeDBSubnetGroupsResult implements Serializable {
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsResult withMarker(String marker) {
@@ -116,7 +116,7 @@ public class DescribeDBSubnetGroupsResult implements Serializable {
      *
      * @param dBSubnetGroups A list of <a>DBSubnetGroup</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsResult withDBSubnetGroups(DBSubnetGroup... dBSubnetGroups) {
@@ -134,7 +134,7 @@ public class DescribeDBSubnetGroupsResult implements Serializable {
      *
      * @param dBSubnetGroups A list of <a>DBSubnetGroup</a> instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBSubnetGroupsResult withDBSubnetGroups(java.util.Collection<DBSubnetGroup> dBSubnetGroups) {

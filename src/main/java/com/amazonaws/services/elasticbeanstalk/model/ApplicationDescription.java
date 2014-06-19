@@ -100,7 +100,7 @@ public class ApplicationDescription implements Serializable {
      *
      * @param applicationName The name of the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withApplicationName(String applicationName) {
@@ -142,7 +142,7 @@ public class ApplicationDescription implements Serializable {
      *
      * @param description User-defined description of the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withDescription(String description) {
@@ -175,7 +175,7 @@ public class ApplicationDescription implements Serializable {
      *
      * @param dateCreated The date when the application was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withDateCreated(java.util.Date dateCreated) {
@@ -208,7 +208,7 @@ public class ApplicationDescription implements Serializable {
      *
      * @param dateUpdated The date when the application was last modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withDateUpdated(java.util.Date dateUpdated) {
@@ -251,7 +251,7 @@ public class ApplicationDescription implements Serializable {
      *
      * @param versions The names of the versions for this application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withVersions(String... versions) {
@@ -269,7 +269,7 @@ public class ApplicationDescription implements Serializable {
      *
      * @param versions The names of the versions for this application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withVersions(java.util.Collection<String> versions) {
@@ -325,7 +325,7 @@ public class ApplicationDescription implements Serializable {
      * @param configurationTemplates The names of the configuration templates associated with this
      *         application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withConfigurationTemplates(String... configurationTemplates) {
@@ -345,7 +345,7 @@ public class ApplicationDescription implements Serializable {
      * @param configurationTemplates The names of the configuration templates associated with this
      *         application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ApplicationDescription withConfigurationTemplates(java.util.Collection<String> configurationTemplates) {

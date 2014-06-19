@@ -63,7 +63,7 @@ public class Command implements Serializable {
      *
      * @param name The name of the command.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withName(String name) {
@@ -96,7 +96,7 @@ public class Command implements Serializable {
      *
      * @param scriptPath The Amazon S3 location of the command script.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withScriptPath(String scriptPath) {
@@ -139,7 +139,7 @@ public class Command implements Serializable {
      *
      * @param args Arguments for Amazon EMR to pass to the command for execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withArgs(String... args) {
@@ -157,7 +157,7 @@ public class Command implements Serializable {
      *
      * @param args Arguments for Amazon EMR to pass to the command for execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Command withArgs(java.util.Collection<String> args) {

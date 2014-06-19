@@ -58,7 +58,7 @@ public class IPRange implements Serializable {
      *
      * @param status The status of the IP range, for example, "authorized".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IPRange withStatus(String status) {
@@ -91,7 +91,7 @@ public class IPRange implements Serializable {
      *
      * @param cIDRIP The IP range in Classless Inter-Domain Routing (CIDR) notation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IPRange withCIDRIP(String cIDRIP) {

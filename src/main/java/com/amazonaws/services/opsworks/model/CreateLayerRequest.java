@@ -184,7 +184,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param stackId The layer stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withStackId(String stackId) {
@@ -278,7 +278,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         App Server layer</li> <li>php-app: A PHP App Server layer</li>
      *         <li>web: A Static Web Server layer</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see LayerType
@@ -344,7 +344,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         App Server layer</li> <li>php-app: A PHP App Server layer</li>
      *         <li>web: A Static Web Server layer</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see LayerType
@@ -379,7 +379,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param name The layer name, which is used by the console.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withName(String name) {
@@ -436,7 +436,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         200 characters, which are limited to the alphanumeric characters, '-',
      *         '_', and '.'.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withShortname(String shortname) {
@@ -479,7 +479,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withAttributes(java.util.Map<String,String> attributes) {
@@ -561,7 +561,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withCustomInstanceProfileArn(String customInstanceProfileArn) {
@@ -604,7 +604,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param customSecurityGroupIds An array containing the layer custom security group IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withCustomSecurityGroupIds(String... customSecurityGroupIds) {
@@ -622,7 +622,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param customSecurityGroupIds An array containing the layer custom security group IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withCustomSecurityGroupIds(java.util.Collection<String> customSecurityGroupIds) {
@@ -678,7 +678,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param packages An array of <code>Package</code> objects that describe the layer
      *         packages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withPackages(String... packages) {
@@ -698,7 +698,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param packages An array of <code>Package</code> objects that describe the layer
      *         packages.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withPackages(java.util.Collection<String> packages) {
@@ -754,7 +754,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withVolumeConfigurations(VolumeConfiguration... volumeConfigurations) {
@@ -774,7 +774,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
@@ -814,7 +814,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param enableAutoHealing Whether to disable auto healing for the layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withEnableAutoHealing(Boolean enableAutoHealing) {
@@ -880,7 +880,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      *         to Edit a Layer</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withAutoAssignElasticIps(Boolean autoAssignElasticIps) {
@@ -954,7 +954,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      *         to Edit a Layer</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withAutoAssignPublicIps(Boolean autoAssignPublicIps) {
@@ -1010,7 +1010,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      * @param customRecipes A <code>LayerCustomRecipes</code> object that specifies the layer
      *         custom recipes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withCustomRecipes(Recipes customRecipes) {
@@ -1091,7 +1091,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         recommend using the default value of <code>true</code>, to ensure that
      *         your instances have the latest security updates. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
@@ -1149,7 +1149,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param useEbsOptimizedInstances Whether to use Amazon EBS-optimized instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLayerRequest withUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {

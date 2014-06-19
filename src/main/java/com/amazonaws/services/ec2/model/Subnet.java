@@ -99,7 +99,7 @@ public class Subnet implements Serializable {
      *
      * @param subnetId The ID of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withSubnetId(String subnetId) {
@@ -145,7 +145,7 @@ public class Subnet implements Serializable {
      *
      * @param state The current state of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SubnetState
@@ -179,7 +179,7 @@ public class Subnet implements Serializable {
      *
      * @param state The current state of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SubnetState
@@ -214,7 +214,7 @@ public class Subnet implements Serializable {
      *
      * @param vpcId The ID of the VPC the subnet is in.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withVpcId(String vpcId) {
@@ -247,7 +247,7 @@ public class Subnet implements Serializable {
      *
      * @param cidrBlock The CIDR block assigned to the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withCidrBlock(String cidrBlock) {
@@ -286,7 +286,7 @@ public class Subnet implements Serializable {
      * @param availableIpAddressCount The number of unused IP addresses in the subnet. Note that the IP
      *         addresses for any stopped instances are considered unavailable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withAvailableIpAddressCount(Integer availableIpAddressCount) {
@@ -319,7 +319,7 @@ public class Subnet implements Serializable {
      *
      * @param availabilityZone The Availability Zone of the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withAvailabilityZone(String availabilityZone) {
@@ -358,7 +358,7 @@ public class Subnet implements Serializable {
      * @param defaultForAz Indicates whether this is the default subnet for the Availability
      *         Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withDefaultForAz(Boolean defaultForAz) {
@@ -408,7 +408,7 @@ public class Subnet implements Serializable {
      * @param mapPublicIpOnLaunch Indicates whether instances launched in this subnet receive a public
      *         IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
@@ -462,7 +462,7 @@ public class Subnet implements Serializable {
      *
      * @param tags Any tags assigned to the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withTags(Tag... tags) {
@@ -480,7 +480,7 @@ public class Subnet implements Serializable {
      *
      * @param tags Any tags assigned to the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subnet withTags(java.util.Collection<Tag> tags) {

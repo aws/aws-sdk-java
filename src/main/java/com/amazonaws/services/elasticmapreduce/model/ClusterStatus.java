@@ -80,7 +80,7 @@ public class ClusterStatus implements Serializable {
      *
      * @param state The current state of the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ClusterState
@@ -114,7 +114,7 @@ public class ClusterStatus implements Serializable {
      *
      * @param state The current state of the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ClusterState
@@ -149,7 +149,7 @@ public class ClusterStatus implements Serializable {
      *
      * @param stateChangeReason The reason for the cluster status change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterStatus withStateChangeReason(ClusterStateChangeReason stateChangeReason) {
@@ -188,7 +188,7 @@ public class ClusterStatus implements Serializable {
      * @param timeline A timeline that represents the status of a cluster over the lifetime
      *         of the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterStatus withTimeline(ClusterTimeline timeline) {

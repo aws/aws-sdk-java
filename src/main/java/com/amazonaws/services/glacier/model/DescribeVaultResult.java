@@ -85,7 +85,7 @@ public class DescribeVaultResult implements Serializable {
      *
      * @param vaultARN The Amazon Resource Name (ARN) of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVaultResult withVaultARN(String vaultARN) {
@@ -118,7 +118,7 @@ public class DescribeVaultResult implements Serializable {
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVaultResult withVaultName(String vaultName) {
@@ -157,7 +157,7 @@ public class DescribeVaultResult implements Serializable {
      * @param creationDate The UTC date when the vault was created. A string representation of
      *         ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVaultResult withCreationDate(String creationDate) {
@@ -202,7 +202,7 @@ public class DescribeVaultResult implements Serializable {
      *         string representation of ISO 8601 date format, for example,
      *         "2012-03-20T17:03:43.221Z".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVaultResult withLastInventoryDate(String lastInventoryDate) {
@@ -247,7 +247,7 @@ public class DescribeVaultResult implements Serializable {
      *         This field will return <code>null</code> if an inventory has not yet
      *         run on the vault, for example, if you just created the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVaultResult withNumberOfArchives(Long numberOfArchives) {
@@ -292,7 +292,7 @@ public class DescribeVaultResult implements Serializable {
      *         inventory date. This field will return null if an inventory has not
      *         yet run on the vault, for example, if you just created the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVaultResult withSizeInBytes(Long sizeInBytes) {

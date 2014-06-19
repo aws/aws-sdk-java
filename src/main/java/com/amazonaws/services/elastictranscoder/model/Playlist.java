@@ -146,7 +146,7 @@ public class Playlist implements Serializable {
      *         the file name. If you include .m3u8 in <code>Name</code>, it will
      *         appear twice in the file name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Playlist withName(String name) {
@@ -188,7 +188,7 @@ public class Playlist implements Serializable {
      *
      * @param format This value must currently be <code>HLSv3</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Playlist withFormat(String format) {
@@ -258,7 +258,7 @@ public class Playlist implements Serializable {
      *         than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Playlist withOutputKeys(String... outputKeys) {
@@ -285,7 +285,7 @@ public class Playlist implements Serializable {
      *         than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Playlist withOutputKeys(java.util.Collection<String> outputKeys) {
@@ -334,7 +334,7 @@ public class Playlist implements Serializable {
      *
      * @param status The status of the job with which the playlist is associated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Playlist withStatus(String status) {
@@ -376,7 +376,7 @@ public class Playlist implements Serializable {
      *
      * @param statusDetail Information that further explains the status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Playlist withStatusDetail(String statusDetail) {

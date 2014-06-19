@@ -123,7 +123,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * @param networkAclIds One or more network ACL IDs. <p>Default: Describes all your network
      *         ACLs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkAclsRequest withNetworkAclIds(String... networkAclIds) {
@@ -143,7 +143,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * @param networkAclIds One or more network ACL IDs. <p>Default: Describes all your network
      *         ACLs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkAclsRequest withNetworkAclIds(java.util.Collection<String> networkAclIds) {
@@ -409,7 +409,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         network ACL. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkAclsRequest withFilters(Filter... filters) {
@@ -499,7 +499,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         filter. </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the
      *         network ACL. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeNetworkAclsRequest withFilters(java.util.Collection<Filter> filters) {

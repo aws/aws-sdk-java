@@ -53,7 +53,7 @@ public class Storage implements Serializable {
      *
      * @param s3 An Amazon S3 storage location.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Storage withS3(S3Storage s3) {

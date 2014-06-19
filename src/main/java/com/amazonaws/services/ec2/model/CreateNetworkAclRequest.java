@@ -67,7 +67,7 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkAclRequest withVpcId(String vpcId) {

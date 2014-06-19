@@ -53,7 +53,7 @@ public class ConfigureHealthCheckResult implements Serializable {
      *
      * @param healthCheck The updated healthcheck for the instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfigureHealthCheckResult withHealthCheck(HealthCheck healthCheck) {

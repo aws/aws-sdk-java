@@ -63,7 +63,7 @@ public class DescribeAppsResult implements Serializable {
      *
      * @param apps An array of <code>App</code> objects that describe the specified apps.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAppsResult withApps(App... apps) {
@@ -81,7 +81,7 @@ public class DescribeAppsResult implements Serializable {
      *
      * @param apps An array of <code>App</code> objects that describe the specified apps.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAppsResult withApps(java.util.Collection<App> apps) {

@@ -27,7 +27,7 @@ import com.amazonaws.services.ec2.model.transform.DeleteVolumeRequestMarshaller;
  * <code>available</code> state (not attached to an instance).
  * </p>
  * <p>
- * <b>NOTE:</b> The volume remains in the deleting state for several
+ * <b>NOTE:</b> The volume may remain in the deleting state for several
  * minutes.
  * </p>
  * <p>
@@ -87,7 +87,7 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVolumeRequest withVolumeId(String volumeId) {

@@ -148,7 +148,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param reservedInstancesId The ID of the Reserved Instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withReservedInstancesId(String reservedInstancesId) {
@@ -194,7 +194,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -228,7 +228,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -263,7 +263,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param availabilityZone The Availability Zone in which the Reserved Instance can be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withAvailabilityZone(String availabilityZone) {
@@ -296,7 +296,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param start The date and time the Reserved Instance started.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withStart(java.util.Date start) {
@@ -329,7 +329,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param end The time when the Reserved Instance expires.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withEnd(java.util.Date end) {
@@ -362,7 +362,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param duration The duration of the Reserved Instance, in seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withDuration(Long duration) {
@@ -395,7 +395,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param usagePrice The usage price of the Reserved Instance, per hour.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withUsagePrice(Float usagePrice) {
@@ -428,7 +428,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param fixedPrice The purchase price of the Reserved Instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withFixedPrice(Float fixedPrice) {
@@ -461,7 +461,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param instanceCount The number of Reserved Instances purchased.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withInstanceCount(Integer instanceCount) {
@@ -507,7 +507,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param productDescription The Reserved Instance description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -541,7 +541,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param productDescription The Reserved Instance description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -589,7 +589,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param state The state of the Reserved Instance purchase.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReservedInstanceState
@@ -623,7 +623,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param state The state of the Reserved Instance purchase.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ReservedInstanceState
@@ -668,7 +668,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withTags(Tag... tags) {
@@ -686,7 +686,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withTags(java.util.Collection<Tag> tags) {
@@ -739,7 +739,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param instanceTenancy The tenancy of the reserved instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -773,7 +773,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param instanceTenancy The tenancy of the reserved instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Tenancy
@@ -833,7 +833,7 @@ public class ReservedInstances implements Serializable {
      *         standard currency codes. At this time, the only supported currency is
      *         <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues
@@ -875,7 +875,7 @@ public class ReservedInstances implements Serializable {
      *         standard currency codes. At this time, the only supported currency is
      *         <code>USD</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CurrencyCodeValues
@@ -923,7 +923,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param offeringType The Reserved Instance offering type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OfferingTypeValues
@@ -957,7 +957,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param offeringType The Reserved Instance offering type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OfferingTypeValues
@@ -1002,7 +1002,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param recurringCharges The recurring charge tag assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withRecurringCharges(RecurringCharge... recurringCharges) {
@@ -1020,7 +1020,7 @@ public class ReservedInstances implements Serializable {
      *
      * @param recurringCharges The recurring charge tag assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedInstances withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {

@@ -74,7 +74,7 @@ public class StepStateChangeReason implements Serializable {
      *
      * @param code The programmable code for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StepStateChangeReasonCode
@@ -108,7 +108,7 @@ public class StepStateChangeReason implements Serializable {
      *
      * @param code The programmable code for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StepStateChangeReasonCode
@@ -143,7 +143,7 @@ public class StepStateChangeReason implements Serializable {
      *
      * @param message The descriptive message for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StepStateChangeReason withMessage(String message) {

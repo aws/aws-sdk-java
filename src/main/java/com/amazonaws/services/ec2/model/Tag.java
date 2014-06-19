@@ -108,7 +108,7 @@ public class Tag implements Serializable {
      *         accept a maximum of 127 Unicode characters. May not begin with
      *         <code>aws:</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withKey(String key) {
@@ -147,7 +147,7 @@ public class Tag implements Serializable {
      * @param value The value of the tag. <p>Constraints: Tag values are case-sensitive
      *         and accept a maximum of 255 Unicode characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Tag withValue(String value) {

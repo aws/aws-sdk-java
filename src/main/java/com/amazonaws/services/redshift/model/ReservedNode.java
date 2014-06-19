@@ -115,7 +115,7 @@ public class ReservedNode implements Serializable {
      *
      * @param reservedNodeId The unique identifier for the reservation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withReservedNodeId(String reservedNodeId) {
@@ -148,7 +148,7 @@ public class ReservedNode implements Serializable {
      *
      * @param reservedNodeOfferingId The identifier for the reserved node offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withReservedNodeOfferingId(String reservedNodeOfferingId) {
@@ -181,7 +181,7 @@ public class ReservedNode implements Serializable {
      *
      * @param nodeType The node type of the reserved node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withNodeType(String nodeType) {
@@ -220,7 +220,7 @@ public class ReservedNode implements Serializable {
      * @param startTime The time the reservation started. You purchase a reserved node
      *         offering for a duration. This is the start time of that duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withStartTime(java.util.Date startTime) {
@@ -253,7 +253,7 @@ public class ReservedNode implements Serializable {
      *
      * @param duration The duration of the node reservation in seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withDuration(Integer duration) {
@@ -286,7 +286,7 @@ public class ReservedNode implements Serializable {
      *
      * @param fixedPrice The fixed cost Amazon Redshift charged you for this reserved node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withFixedPrice(Double fixedPrice) {
@@ -319,7 +319,7 @@ public class ReservedNode implements Serializable {
      *
      * @param usagePrice The hourly rate Amazon Redshift charge you for this reserved node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withUsagePrice(Double usagePrice) {
@@ -352,7 +352,7 @@ public class ReservedNode implements Serializable {
      *
      * @param currencyCode The currency code for the reserved cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withCurrencyCode(String currencyCode) {
@@ -385,7 +385,7 @@ public class ReservedNode implements Serializable {
      *
      * @param nodeCount The number of reserved compute nodes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withNodeCount(Integer nodeCount) {
@@ -448,7 +448,7 @@ public class ReservedNode implements Serializable {
      *         and is available for use.</li> <li>payment-failed-Payment failed for
      *         the purchase attempt.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withState(String state) {
@@ -487,7 +487,7 @@ public class ReservedNode implements Serializable {
      * @param offeringType The anticipated utilization of the reserved node, as defined in the
      *         reserved node offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withOfferingType(String offeringType) {
@@ -530,7 +530,7 @@ public class ReservedNode implements Serializable {
      *
      * @param recurringCharges The recurring charges for the reserved node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withRecurringCharges(RecurringCharge... recurringCharges) {
@@ -548,7 +548,7 @@ public class ReservedNode implements Serializable {
      *
      * @param recurringCharges The recurring charges for the reserved node.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ReservedNode withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {

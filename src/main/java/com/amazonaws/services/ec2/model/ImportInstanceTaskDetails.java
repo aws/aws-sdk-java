@@ -79,7 +79,7 @@ public class ImportInstanceTaskDetails implements Serializable {
      *
      * @param volumes 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceTaskDetails withVolumes(ImportInstanceVolumeDetailItem... volumes) {
@@ -97,7 +97,7 @@ public class ImportInstanceTaskDetails implements Serializable {
      *
      * @param volumes 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceTaskDetails withVolumes(java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
@@ -137,7 +137,7 @@ public class ImportInstanceTaskDetails implements Serializable {
      *
      * @param instanceId 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceTaskDetails withInstanceId(String instanceId) {
@@ -183,7 +183,7 @@ public class ImportInstanceTaskDetails implements Serializable {
      *
      * @param platform The instance operating system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues
@@ -217,7 +217,7 @@ public class ImportInstanceTaskDetails implements Serializable {
      *
      * @param platform The instance operating system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues
@@ -252,7 +252,7 @@ public class ImportInstanceTaskDetails implements Serializable {
      *
      * @param description 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceTaskDetails withDescription(String description) {

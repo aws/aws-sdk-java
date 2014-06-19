@@ -27,8 +27,6 @@ import com.amazonaws.util.DateUtils;
  */
 public class DateCondition extends Condition {
 
-    private final DateUtils dateUtils = new DateUtils();
-
     /**
      * Enumeration of the supported ways a date comparison can be evaluated.
      */
@@ -56,7 +54,7 @@ public class DateCondition extends Condition {
     public DateCondition(DateComparisonType type, Date date) {
         super.type = type.toString();
         super.conditionKey = ConditionFactory.CURRENT_TIME_CONDITION_KEY;
-        super.values = Arrays.asList(new String[] {dateUtils.formatIso8601Date(date)});
+        super.values = Arrays.asList(new String[] {DateUtils.formatISO8601Date(date)});
     }
 
 }

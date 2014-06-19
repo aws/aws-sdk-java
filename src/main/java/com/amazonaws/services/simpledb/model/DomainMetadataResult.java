@@ -82,7 +82,7 @@ public class DomainMetadataResult implements Serializable {
      *
      * @param itemCount The number of all items in the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataResult withItemCount(Integer itemCount) {
@@ -115,7 +115,7 @@ public class DomainMetadataResult implements Serializable {
      *
      * @param itemNamesSizeBytes The total size of all item names in the domain, in bytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataResult withItemNamesSizeBytes(Long itemNamesSizeBytes) {
@@ -148,7 +148,7 @@ public class DomainMetadataResult implements Serializable {
      *
      * @param attributeNameCount The number of unique attribute names in the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataResult withAttributeNameCount(Integer attributeNameCount) {
@@ -181,7 +181,7 @@ public class DomainMetadataResult implements Serializable {
      *
      * @param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataResult withAttributeNamesSizeBytes(Long attributeNamesSizeBytes) {
@@ -214,7 +214,7 @@ public class DomainMetadataResult implements Serializable {
      *
      * @param attributeValueCount The number of all attribute name/value pairs in the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataResult withAttributeValueCount(Integer attributeValueCount) {
@@ -247,7 +247,7 @@ public class DomainMetadataResult implements Serializable {
      *
      * @param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataResult withAttributeValuesSizeBytes(Long attributeValuesSizeBytes) {
@@ -286,7 +286,7 @@ public class DomainMetadataResult implements Serializable {
      * @param timestamp The data and time when metadata was calculated, in Epoch (UNIX)
      *         seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataResult withTimestamp(Integer timestamp) {

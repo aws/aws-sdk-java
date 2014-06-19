@@ -18,7 +18,7 @@ import java.util.Date;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
-import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+import com.amazonaws.services.s3.internal.SSEResultBase;
 
 /**
  * Contains the data returned by Amazon S3 from the <code>putObject</code>
@@ -30,7 +30,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * @see AmazonS3#putObject(String, String, java.io.InputStream, S3ObjectMetadata)
  * @see AmazonS3#putObject(PutObjectRequest)
  */
-public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpirationResult {
+public class PutObjectResult extends SSEResultBase implements ObjectExpirationResult {
 
     /**
      * The version ID of the new, uploaded object. This field will only be
@@ -41,9 +41,6 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
 
     /** The ETag value of the new object */
     private String eTag;
-
-    /** The server side encryption algorithm of the new object */
-    private String serverSideEncryption;
 
     /** The time this object expires, or null if it has no expiration */
     private Date expirationTime;
@@ -102,24 +99,6 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
-    }
-
-    /**
-     * Returns the server-side encryption algorithm for the newly created
-     * object, or null if none was used.
-     */
-    public String getServerSideEncryption() {
-        return serverSideEncryption;
-    }
-
-    /**
-     * Sets the server-side encryption algorithm for the newly created object.
-     *
-     * @param serverSideEncryption
-     *            The server-side encryption algorithm for the new object.
-     */
-    public void setServerSideEncryption(String serverSideEncryption) {
-        this.serverSideEncryption = serverSideEncryption;
     }
 
     /**

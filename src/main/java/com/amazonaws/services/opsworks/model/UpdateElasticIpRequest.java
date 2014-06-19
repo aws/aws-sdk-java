@@ -74,7 +74,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements S
      *
      * @param elasticIp The address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateElasticIpRequest withElasticIp(String elasticIp) {
@@ -107,7 +107,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements S
      *
      * @param name The new name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateElasticIpRequest withName(String name) {

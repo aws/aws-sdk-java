@@ -58,7 +58,7 @@ public class RejectVpcPeeringConnectionResult implements Serializable {
      * @param returnValue Returns <code>true</code> if the request succeeds; otherwise, it
      *         returns an error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RejectVpcPeeringConnectionResult withReturn(Boolean returnValue) {

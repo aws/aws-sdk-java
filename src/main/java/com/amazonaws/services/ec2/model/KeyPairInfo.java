@@ -61,7 +61,7 @@ public class KeyPairInfo implements Serializable {
      *
      * @param keyName The name of the key pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeyPairInfo withKeyName(String keyName) {
@@ -112,7 +112,7 @@ public class KeyPairInfo implements Serializable {
      *         <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5
      *         public key fingerprint as specified in section 4 of RFC4716.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeyPairInfo withKeyFingerprint(String keyFingerprint) {

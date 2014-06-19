@@ -88,7 +88,7 @@ public class ListPartsResult implements Serializable {
      *
      * @param multipartUploadId The ID of the upload to which the parts are associated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withMultipartUploadId(String multipartUploadId) {
@@ -127,7 +127,7 @@ public class ListPartsResult implements Serializable {
      * @param vaultARN The Amazon Resource Name (ARN) of the vault to which the multipart
      *         upload was initiated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withVaultARN(String vaultARN) {
@@ -166,7 +166,7 @@ public class ListPartsResult implements Serializable {
      * @param archiveDescription The description of the archive that was specified in the Initiate
      *         Multipart Upload request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withArchiveDescription(String archiveDescription) {
@@ -199,7 +199,7 @@ public class ListPartsResult implements Serializable {
      *
      * @param partSizeInBytes The part size in bytes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withPartSizeInBytes(Long partSizeInBytes) {
@@ -232,7 +232,7 @@ public class ListPartsResult implements Serializable {
      *
      * @param creationDate The UTC time at which the multipart upload was initiated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withCreationDate(String creationDate) {
@@ -275,7 +275,7 @@ public class ListPartsResult implements Serializable {
      *
      * @param parts A list of the part sizes of the multipart upload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withParts(PartListElement... parts) {
@@ -293,7 +293,7 @@ public class ListPartsResult implements Serializable {
      *
      * @param parts A list of the part sizes of the multipart upload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withParts(java.util.Collection<PartListElement> parts) {
@@ -351,7 +351,7 @@ public class ListPartsResult implements Serializable {
      *         jobs in the list. If there are no more parts, this value is
      *         <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsResult withMarker(String marker) {

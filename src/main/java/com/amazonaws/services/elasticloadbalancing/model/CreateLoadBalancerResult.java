@@ -53,7 +53,7 @@ public class CreateLoadBalancerResult implements Serializable {
      *
      * @param dNSName The DNS name for the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateLoadBalancerResult withDNSName(String dNSName) {

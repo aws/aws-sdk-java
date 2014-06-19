@@ -119,7 +119,7 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest implements
      *
      * @param userName The name of the user to list groups for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupsForUserRequest withUserName(String userName) {
@@ -182,7 +182,7 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest implements
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupsForUserRequest withMarker(String marker) {
@@ -248,7 +248,7 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest implements
      *         element is <code>true</code>. This parameter is optional. If you do
      *         not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupsForUserRequest withMaxItems(Integer maxItems) {

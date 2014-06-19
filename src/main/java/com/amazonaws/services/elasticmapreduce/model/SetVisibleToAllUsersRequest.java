@@ -84,7 +84,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
      *
      * @param jobFlowIds Identifiers of the job flows to receive the new visibility setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetVisibleToAllUsersRequest withJobFlowIds(String... jobFlowIds) {
@@ -102,7 +102,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
      *
      * @param jobFlowIds Identifiers of the job flows to receive the new visibility setting.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetVisibleToAllUsersRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
@@ -172,7 +172,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
      *         to False, only the IAM user that created a job flow can view and
      *         manage it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetVisibleToAllUsersRequest withVisibleToAllUsers(Boolean visibleToAllUsers) {

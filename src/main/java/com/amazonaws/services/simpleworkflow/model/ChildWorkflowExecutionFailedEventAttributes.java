@@ -92,7 +92,7 @@ public class ChildWorkflowExecutionFailedEventAttributes implements Serializable
      *
      * @param workflowExecution The child workflow execution that failed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionFailedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
@@ -125,7 +125,7 @@ public class ChildWorkflowExecutionFailedEventAttributes implements Serializable
      *
      * @param workflowType The type of the child workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionFailedEventAttributes withWorkflowType(WorkflowType workflowType) {
@@ -167,7 +167,7 @@ public class ChildWorkflowExecutionFailedEventAttributes implements Serializable
      *
      * @param reason The reason for the failure (if provided).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionFailedEventAttributes withReason(String reason) {
@@ -209,7 +209,7 @@ public class ChildWorkflowExecutionFailedEventAttributes implements Serializable
      *
      * @param details The details of the failure (if provided).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionFailedEventAttributes withDetails(String details) {
@@ -266,7 +266,7 @@ public class ChildWorkflowExecutionFailedEventAttributes implements Serializable
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionFailedEventAttributes withInitiatedEventId(Long initiatedEventId) {
@@ -317,7 +317,7 @@ public class ChildWorkflowExecutionFailedEventAttributes implements Serializable
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionFailedEventAttributes withStartedEventId(Long startedEventId) {

@@ -163,7 +163,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable {
      *         is different from the original request, CloudFront returns a
      *         CloudFrontOriginAccessIdentityAlreadyExists error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityConfig withCallerReference(String callerReference) {
@@ -196,7 +196,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable {
      *
      * @param comment Any comments you want to include about the origin access identity.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CloudFrontOriginAccessIdentityConfig withComment(String comment) {

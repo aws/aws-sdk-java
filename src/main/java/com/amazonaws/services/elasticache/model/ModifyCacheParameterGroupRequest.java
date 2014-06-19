@@ -91,7 +91,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
      *
      * @param cacheParameterGroupName The name of the cache parameter group to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheParameterGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -152,7 +152,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
      *         arguments are optional. A maximum of 20 parameters may be modified per
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheParameterGroupRequest withParameterNameValues(ParameterNameValue... parameterNameValues) {
@@ -176,7 +176,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
      *         arguments are optional. A maximum of 20 parameters may be modified per
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyCacheParameterGroupRequest withParameterNameValues(java.util.Collection<ParameterNameValue> parameterNameValues) {

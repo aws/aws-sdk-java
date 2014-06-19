@@ -106,7 +106,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
      * @param resourceId The Amazon EMR resource identifier from which tags will be removed.
      *         This value must be a cluster identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemoveTagsRequest withResourceId(String resourceId) {
@@ -149,7 +149,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param tagKeys A list of tag keys to remove from a resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemoveTagsRequest withTagKeys(String... tagKeys) {
@@ -167,7 +167,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param tagKeys A list of tag keys to remove from a resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemoveTagsRequest withTagKeys(java.util.Collection<String> tagKeys) {

@@ -97,7 +97,7 @@ public class KeyValue implements Serializable {
      *
      * @param key The unique identifier of a key value pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeyValue withKey(String key) {
@@ -142,7 +142,7 @@ public class KeyValue implements Serializable {
      *
      * @param value The value part of the identified key.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public KeyValue withValue(String value) {

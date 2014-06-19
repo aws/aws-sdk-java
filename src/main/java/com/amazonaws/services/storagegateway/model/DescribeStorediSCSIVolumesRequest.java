@@ -92,7 +92,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest i
      *         must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs
      *         for a gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStorediSCSIVolumesRequest withVolumeARNs(String... volumeARNs) {
@@ -116,7 +116,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest i
      *         must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs
      *         for a gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStorediSCSIVolumesRequest withVolumeARNs(java.util.Collection<String> volumeARNs) {

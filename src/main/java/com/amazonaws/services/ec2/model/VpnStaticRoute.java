@@ -76,7 +76,7 @@ public class VpnStaticRoute implements Serializable {
      * @param destinationCidrBlock The CIDR block associated with the local subnet of the customer data
      *         center.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VpnStaticRoute withDestinationCidrBlock(String destinationCidrBlock) {
@@ -122,7 +122,7 @@ public class VpnStaticRoute implements Serializable {
      *
      * @param source Indicates how the routes were provided.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpnStaticRouteSource
@@ -156,7 +156,7 @@ public class VpnStaticRoute implements Serializable {
      *
      * @param source Indicates how the routes were provided.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpnStaticRouteSource
@@ -204,7 +204,7 @@ public class VpnStaticRoute implements Serializable {
      *
      * @param state The current state of the static route.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpnState
@@ -238,7 +238,7 @@ public class VpnStaticRoute implements Serializable {
      *
      * @param state The current state of the static route.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VpnState

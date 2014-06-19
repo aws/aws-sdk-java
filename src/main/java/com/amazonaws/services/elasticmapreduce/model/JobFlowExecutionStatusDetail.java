@@ -131,7 +131,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      *
      * @param state The state of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobFlowExecutionState
@@ -165,7 +165,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      *
      * @param state The state of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobFlowExecutionState
@@ -200,7 +200,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      *
      * @param creationDateTime The creation date and time of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowExecutionStatusDetail withCreationDateTime(java.util.Date creationDateTime) {
@@ -233,7 +233,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      *
      * @param startDateTime The start date and time of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowExecutionStatusDetail withStartDateTime(java.util.Date startDateTime) {
@@ -272,7 +272,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      * @param readyDateTime The date and time when the job flow was ready to start running
      *         bootstrap actions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowExecutionStatusDetail withReadyDateTime(java.util.Date readyDateTime) {
@@ -305,7 +305,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      *
      * @param endDateTime The completion date and time of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowExecutionStatusDetail withEndDateTime(java.util.Date endDateTime) {
@@ -350,7 +350,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      *
      * @param lastStateChangeReason Description of the job flow last changed state.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobFlowExecutionStatusDetail withLastStateChangeReason(String lastStateChangeReason) {

@@ -88,7 +88,7 @@ public class Signer implements Serializable {
      *         distribution can created signed URLs, or an AWS account number. Omit
      *         the dashes in the account number.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Signer withAwsAccountNumber(String awsAccountNumber) {
@@ -127,7 +127,7 @@ public class Signer implements Serializable {
      * @param keyPairIds A complex type that lists the active CloudFront key pairs, if any,
      *         that are associated with AwsAccountNumber.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Signer withKeyPairIds(KeyPairIds keyPairIds) {

@@ -118,7 +118,7 @@ public class Volume implements Serializable {
      *
      * @param volumeId The volume ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withVolumeId(String volumeId) {
@@ -151,7 +151,7 @@ public class Volume implements Serializable {
      *
      * @param ec2VolumeId The Amazon EC2 volume ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withEc2VolumeId(String ec2VolumeId) {
@@ -184,7 +184,7 @@ public class Volume implements Serializable {
      *
      * @param name The volume name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withName(String name) {
@@ -217,7 +217,7 @@ public class Volume implements Serializable {
      *
      * @param raidArrayId The RAID array ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withRaidArrayId(String raidArrayId) {
@@ -250,7 +250,7 @@ public class Volume implements Serializable {
      *
      * @param instanceId The instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withInstanceId(String instanceId) {
@@ -289,7 +289,7 @@ public class Volume implements Serializable {
      * @param status The value returned by <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withStatus(String status) {
@@ -322,7 +322,7 @@ public class Volume implements Serializable {
      *
      * @param size The volume size.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withSize(Integer size) {
@@ -355,7 +355,7 @@ public class Volume implements Serializable {
      *
      * @param device The device name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withDevice(String device) {
@@ -388,7 +388,7 @@ public class Volume implements Serializable {
      *
      * @param mountPoint The volume mount point. For example "/dev/sdh".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withMountPoint(String mountPoint) {
@@ -433,7 +433,7 @@ public class Volume implements Serializable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withRegion(String region) {
@@ -478,7 +478,7 @@ public class Volume implements Serializable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withAvailabilityZone(String availabilityZone) {
@@ -511,7 +511,7 @@ public class Volume implements Serializable {
      *
      * @param volumeType The volume type, standard or PIOPS.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withVolumeType(String volumeType) {
@@ -544,7 +544,7 @@ public class Volume implements Serializable {
      *
      * @param iops For PIOPS volumes, the IOPS per disk.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Volume withIops(Integer iops) {

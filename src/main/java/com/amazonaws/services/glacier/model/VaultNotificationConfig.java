@@ -87,7 +87,7 @@ public class VaultNotificationConfig implements Serializable {
      * @param sNSTopic The Amazon Simple Notification Service (Amazon SNS) topic Amazon
      *         Resource Name (ARN).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VaultNotificationConfig withSNSTopic(String sNSTopic) {
@@ -136,7 +136,7 @@ public class VaultNotificationConfig implements Serializable {
      * @param events A list of one or more events for which Amazon Glacier will send a
      *         notification to the specified Amazon SNS topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VaultNotificationConfig withEvents(String... events) {
@@ -156,7 +156,7 @@ public class VaultNotificationConfig implements Serializable {
      * @param events A list of one or more events for which Amazon Glacier will send a
      *         notification to the specified Amazon SNS topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public VaultNotificationConfig withEvents(java.util.Collection<String> events) {

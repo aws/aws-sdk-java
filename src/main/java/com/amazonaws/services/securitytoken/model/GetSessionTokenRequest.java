@@ -21,16 +21,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest) GetSessionToken operation}.
  * <p>
- * Returns a set of temporary credentials for an AWS account or IAM
- * user. The credentials consist of an access key ID, a secret access
- * key, and a security token. Typically, you use
- * <code>GetSessionToken</code> if you want use MFA to protect
- * programmatic calls to specific AWS APIs like Amazon EC2
- * <code>StopInstances</code> . MFA-enabled IAM users would need to call
- * <code>GetSessionToken</code> and submit an MFA code that is associated
- * with their MFA device. Using the temporary security credentials that
- * are returned from the call, IAM users can then make programmatic calls
- * to APIs that require MFA authentication.
+ * Returns a set of temporary credentials for an AWS account or IAM user.
+ * The credentials consist of an access key ID, a secret access key, and
+ * a security token. Typically, you use <code>GetSessionToken</code> if
+ * you want to use MFA to protect programmatic calls to specific AWS APIs
+ * like Amazon EC2 <code>StopInstances</code> . MFA-enabled IAM users
+ * would need to call <code>GetSessionToken</code> and submit an MFA code
+ * that is associated with their MFA device. Using the temporary security
+ * credentials that are returned from the call, IAM users can then make
+ * programmatic calls to APIs that require MFA authentication.
  * </p>
  * <p>
  * The <code>GetSessionToken</code> action must be called by using the
@@ -39,6 +38,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * that you specify, between 900 seconds (15 minutes) and 129600 seconds
  * (36 hours); credentials that are created by using account credentials
  * have a maximum duration of 3600 seconds (1 hour).
+ * </p>
+ * <p>
+ * <b>NOTE:</b> We recommend that you do not call GetSessionToken with
+ * root account credentials. Instead, follow our best practices by
+ * creating one or more IAM users, giving them the necessary permissions,
+ * and using IAM users for everyday interaction with AWS.
  * </p>
  * <p>
  * The permissions associated with the temporary security credentials
@@ -54,8 +59,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * For more information about using <code>GetSessionToken</code> to
  * create temporary credentials, go to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users </a>
- * in <i>Using IAM</i> .
- * 
+ * in <i>Using Temporary Security Credentials</i> .
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest)
@@ -176,7 +180,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
      *         maximum of 3600 seconds (one hour). If the duration is longer than one
      *         hour, the session for AWS account owners defaults to one hour.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSessionTokenRequest withDurationSeconds(Integer durationSeconds) {
@@ -269,7 +273,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
      *         device for an IAM user by going to the AWS Management Console and
      *         viewing the user's security credentials.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSessionTokenRequest withSerialNumber(String serialNumber) {
@@ -344,7 +348,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
      *         credentials, the user will receive an "access denied" response when
      *         requesting resources that require MFA authentication.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetSessionTokenRequest withTokenCode(String tokenCode) {

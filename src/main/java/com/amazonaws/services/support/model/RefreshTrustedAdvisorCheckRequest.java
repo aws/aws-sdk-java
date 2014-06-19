@@ -73,7 +73,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest i
      *
      * @param checkId The unique identifier for the Trusted Advisor check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RefreshTrustedAdvisorCheckRequest withCheckId(String checkId) {

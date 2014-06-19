@@ -231,7 +231,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      *         </DescribeAutoScalingNotificationTypesResponse></queryresponse>
      *         </examples>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(String... autoScalingNotificationTypes) {
@@ -297,7 +297,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      *         </DescribeAutoScalingNotificationTypesResponse></queryresponse>
      *         </examples>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(java.util.Collection<String> autoScalingNotificationTypes) {

@@ -76,7 +76,7 @@ public class DimensionFilter implements Serializable {
      *
      * @param name The dimension name to be matched.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DimensionFilter withName(String name) {
@@ -130,7 +130,7 @@ public class DimensionFilter implements Serializable {
      *         <code>Name</code> without specifying a <code>Value</code> returns all
      *         values associated with that <code>Name</code>. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DimensionFilter withValue(String value) {

@@ -79,7 +79,7 @@ public class Reservation implements Serializable {
      *
      * @param reservationId The ID of the reservation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withReservationId(String reservationId) {
@@ -112,7 +112,7 @@ public class Reservation implements Serializable {
      *
      * @param ownerId The ID of the AWS account that owns the reservation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withOwnerId(String ownerId) {
@@ -151,7 +151,7 @@ public class Reservation implements Serializable {
      * @param requesterId The ID of the requester that launched the instances on your behalf
      *         (for example, AWS Management Console or Auto Scaling).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withRequesterId(String requesterId) {
@@ -194,7 +194,7 @@ public class Reservation implements Serializable {
      *
      * @param groups One or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withGroups(GroupIdentifier... groups) {
@@ -212,7 +212,7 @@ public class Reservation implements Serializable {
      *
      * @param groups One or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withGroups(java.util.Collection<GroupIdentifier> groups) {
@@ -262,7 +262,7 @@ public class Reservation implements Serializable {
      *
      * @param groupNames One or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withGroupNames(String... groupNames) {
@@ -280,7 +280,7 @@ public class Reservation implements Serializable {
      *
      * @param groupNames One or more security groups.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withGroupNames(java.util.Collection<String> groupNames) {
@@ -330,7 +330,7 @@ public class Reservation implements Serializable {
      *
      * @param instances One or more instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withInstances(Instance... instances) {
@@ -348,7 +348,7 @@ public class Reservation implements Serializable {
      *
      * @param instances One or more instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Reservation withInstances(java.util.Collection<Instance> instances) {

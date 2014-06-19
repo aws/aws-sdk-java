@@ -47,10 +47,8 @@ public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPi
         Request<ListPipelinesRequest> request = new DefaultRequest<ListPipelinesRequest>(listPipelinesRequest, "AmazonElasticTranscoder");
         String target = "EtsCustomerService.ListPipelines";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.GET);
-
         String uriResourcePath = "2012-09-25/pipelines?Ascending={Ascending};PageToken={PageToken}"; 
         uriResourcePath = uriResourcePath.replace("{Ascending}", (listPipelinesRequest.getAscending() == null) ? "" : StringUtils.fromString(listPipelinesRequest.getAscending())); 
         uriResourcePath = uriResourcePath.replace("{PageToken}", (listPipelinesRequest.getPageToken() == null) ? "" : StringUtils.fromString(listPipelinesRequest.getPageToken())); 
@@ -64,15 +62,13 @@ public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPi
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

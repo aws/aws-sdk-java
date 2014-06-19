@@ -54,7 +54,7 @@ public class DefineSuggesterResult implements Serializable {
      *
      * @param suggester The value of a <code>Suggester</code> and its current status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineSuggesterResult withSuggester(SuggesterStatus suggester) {

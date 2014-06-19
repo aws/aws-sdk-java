@@ -167,7 +167,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param namespace The namespace of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withNamespace(String namespace) {
@@ -209,7 +209,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param metricName The name of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withMetricName(String metricName) {
@@ -261,7 +261,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param dimensions A list of dimensions describing qualities of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withDimensions(Dimension... dimensions) {
@@ -282,7 +282,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param dimensions A list of dimensions describing qualities of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withDimensions(java.util.Collection<Dimension> dimensions) {
@@ -358,7 +358,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *         weeks in the past will not return datapoints for metrics that are
      *         older than two weeks. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withStartTime(java.util.Date startTime) {
@@ -403,7 +403,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *         The value specified is exclusive; results will include datapoints up
      *         to the time stamp specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withEndTime(java.util.Date endTime) {
@@ -457,7 +457,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *         <code>Period</code> must be at least 60 seconds and must be a multiple
      *         of 60. The default value is 60.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withPeriod(Integer period) {
@@ -509,7 +509,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param statistics The metric statistics to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withStatistics(String... statistics) {
@@ -530,7 +530,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param statistics The metric statistics to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withStatistics(java.util.Collection<String> statistics) {
@@ -555,7 +555,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param statistics The metric statistics to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetMetricStatisticsRequest withStatistics(Statistic... statistics) {
@@ -609,7 +609,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param unit The unit for the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StandardUnit
@@ -643,7 +643,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      *
      * @param unit The unit for the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StandardUnit

@@ -89,7 +89,7 @@ public class DescribeCacheResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withGatewayARN(String gatewayARN) {
@@ -132,7 +132,7 @@ public class DescribeCacheResult implements Serializable {
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withDiskIds(String... diskIds) {
@@ -150,7 +150,7 @@ public class DescribeCacheResult implements Serializable {
      *
      * @param diskIds The new value for the DiskIds property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withDiskIds(java.util.Collection<String> diskIds) {
@@ -191,7 +191,7 @@ public class DescribeCacheResult implements Serializable {
      *
      * @param cacheAllocatedInBytes The new value for the CacheAllocatedInBytes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withCacheAllocatedInBytes(Long cacheAllocatedInBytes) {
@@ -224,7 +224,7 @@ public class DescribeCacheResult implements Serializable {
      *
      * @param cacheUsedPercentage The new value for the CacheUsedPercentage property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withCacheUsedPercentage(Double cacheUsedPercentage) {
@@ -258,7 +258,7 @@ public class DescribeCacheResult implements Serializable {
      *
      * @param cacheDirtyPercentage The new value for the CacheDirtyPercentage property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withCacheDirtyPercentage(Double cacheDirtyPercentage) {
@@ -291,7 +291,7 @@ public class DescribeCacheResult implements Serializable {
      *
      * @param cacheHitPercentage The new value for the CacheHitPercentage property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withCacheHitPercentage(Double cacheHitPercentage) {
@@ -324,7 +324,7 @@ public class DescribeCacheResult implements Serializable {
      *
      * @param cacheMissPercentage The new value for the CacheMissPercentage property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheResult withCacheMissPercentage(Double cacheMissPercentage) {

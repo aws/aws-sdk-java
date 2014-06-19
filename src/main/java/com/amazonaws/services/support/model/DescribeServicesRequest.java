@@ -102,7 +102,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
      *
      * @param serviceCodeList A JSON-formatted list of service codes available for AWS services.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServicesRequest withServiceCodeList(String... serviceCodeList) {
@@ -123,7 +123,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
      *
      * @param serviceCodeList A JSON-formatted list of service codes available for AWS services.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServicesRequest withServiceCodeList(java.util.Collection<String> serviceCodeList) {
@@ -181,7 +181,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
      *         Language parameters must be passed explicitly for operations that take
      *         them.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeServicesRequest withLanguage(String language) {

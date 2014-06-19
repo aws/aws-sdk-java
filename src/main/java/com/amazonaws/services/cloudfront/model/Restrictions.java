@@ -112,7 +112,7 @@ public class Restrictions implements Serializable {
      *         databases. For information about the accuracy of these databases, see
      *         How accurate are your GeoIP databases? on the MaxMind website.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Restrictions withGeoRestriction(GeoRestriction geoRestriction) {

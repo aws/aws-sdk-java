@@ -56,7 +56,7 @@ public class DiskImageVolumeDescription implements Serializable {
      *
      * @param size The size of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImageVolumeDescription withSize(Long size) {
@@ -89,7 +89,7 @@ public class DiskImageVolumeDescription implements Serializable {
      *
      * @param id The volume identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImageVolumeDescription withId(String id) {

@@ -61,7 +61,7 @@ public class DescribeSubnetsResult implements Serializable {
      *
      * @param subnets Information about one or more subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSubnetsResult withSubnets(Subnet... subnets) {
@@ -79,7 +79,7 @@ public class DescribeSubnetsResult implements Serializable {
      *
      * @param subnets Information about one or more subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSubnetsResult withSubnets(java.util.Collection<Subnet> subnets) {

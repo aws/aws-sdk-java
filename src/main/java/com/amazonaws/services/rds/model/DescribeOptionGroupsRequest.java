@@ -100,7 +100,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
      * @param optionGroupName The name of the option group to describe. Cannot be supplied together
      *         with EngineName or MajorEngineVersion.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupsRequest withOptionGroupName(String optionGroupName) {
@@ -143,7 +143,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupsRequest withFilters(Filter... filters) {
@@ -161,7 +161,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
      *
      * @param filters This parameter is not currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupsRequest withFilters(java.util.Collection<Filter> filters) {
@@ -219,7 +219,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupsRequest withMarker(String marker) {
@@ -276,7 +276,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
      *         the remaining results can be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupsRequest withMaxRecords(Integer maxRecords) {
@@ -315,7 +315,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
      * @param engineName Filters the list of option groups to only include groups associated
      *         with a specific database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupsRequest withEngineName(String engineName) {
@@ -360,7 +360,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
      *         with a specific database engine version. If specified, then EngineName
      *         must also be specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeOptionGroupsRequest withMajorEngineVersion(String majorEngineVersion) {

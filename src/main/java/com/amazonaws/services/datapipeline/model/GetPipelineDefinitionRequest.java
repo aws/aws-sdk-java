@@ -89,7 +89,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest implem
      *
      * @param pipelineId The identifier of the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetPipelineDefinitionRequest withPipelineId(String pipelineId) {
@@ -158,7 +158,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest implem
      *         definition saved to the pipeline and <code>active</code> indicates the
      *         last definition of the pipeline that was activated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetPipelineDefinitionRequest withVersion(String version) {

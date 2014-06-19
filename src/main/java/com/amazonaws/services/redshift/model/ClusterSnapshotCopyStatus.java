@@ -67,7 +67,7 @@ public class ClusterSnapshotCopyStatus implements Serializable {
      * @param destinationRegion The destination region that snapshots are automatically copied to when
      *         cross-region snapshot copy is enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterSnapshotCopyStatus withDestinationRegion(String destinationRegion) {
@@ -106,7 +106,7 @@ public class ClusterSnapshotCopyStatus implements Serializable {
      * @param retentionPeriod The number of days that automated snapshots are retained in the
      *         destination region after they are copied from a source region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ClusterSnapshotCopyStatus withRetentionPeriod(Long retentionPeriod) {

@@ -39,7 +39,7 @@ public class DescribeVolumeAttributeRequestMarshaller implements Marshaller<Requ
 
         Request<DescribeVolumeAttributeRequest> request = new DefaultRequest<DescribeVolumeAttributeRequest>(describeVolumeAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVolumeAttribute");
-        request.addParameter("Version", "2014-02-01");
+        request.addParameter("Version", "2014-05-01");
 
         if (describeVolumeAttributeRequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(describeVolumeAttributeRequest.getVolumeId()));

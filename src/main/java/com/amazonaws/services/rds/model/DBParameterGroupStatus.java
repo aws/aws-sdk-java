@@ -77,7 +77,7 @@ public class DBParameterGroupStatus implements Serializable {
      *
      * @param dBParameterGroupName The name of the DP parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBParameterGroupStatus withDBParameterGroupName(String dBParameterGroupName) {
@@ -110,7 +110,7 @@ public class DBParameterGroupStatus implements Serializable {
      *
      * @param parameterApplyStatus The status of parameter updates.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBParameterGroupStatus withParameterApplyStatus(String parameterApplyStatus) {

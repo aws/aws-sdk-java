@@ -47,30 +47,10 @@ public class CreateAppRequestMarshaller implements Marshaller<Request<CreateAppR
         Request<CreateAppRequest> request = new DefaultRequest<CreateAppRequest>(createAppRequest, "AWSOpsWorks");
         String target = "OpsWorks_20130218.CreateApp";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
         request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = ""; 
-
-        uriResourcePath = uriResourcePath.replaceAll("//", "/");
-
-        if (uriResourcePath.contains("?")) {
-            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-
-            for (String s : queryString.split("[;&]")) {
-                String[] nameValuePair = s.split("=");
-                if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
-                }
-            }
-        }
-
-        request.setResourcePath(uriResourcePath);
-
+        request.setResourcePath("");
+        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
@@ -88,6 +68,30 @@ public class CreateAppRequestMarshaller implements Marshaller<Request<CreateAppR
             }
             if (createAppRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(createAppRequest.getDescription());
+            }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<DataSource> dataSourcesList = (com.amazonaws.internal.ListWithAutoConstructFlag<DataSource>)(createAppRequest.getDataSources());
+            if (dataSourcesList != null && !(dataSourcesList.isAutoConstruct() && dataSourcesList.isEmpty())) {
+
+                jsonWriter.key("DataSources");
+                jsonWriter.array();
+
+                for (DataSource dataSourcesListValue : dataSourcesList) {
+                    if (dataSourcesListValue != null) {
+                        jsonWriter.object();
+                        if (dataSourcesListValue.getType() != null) {
+                            jsonWriter.key("Type").value(dataSourcesListValue.getType());
+                        }
+                        if (dataSourcesListValue.getArn() != null) {
+                            jsonWriter.key("Arn").value(dataSourcesListValue.getArn());
+                        }
+                        if (dataSourcesListValue.getDatabaseName() != null) {
+                            jsonWriter.key("DatabaseName").value(dataSourcesListValue.getDatabaseName());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
             }
             if (createAppRequest.getType() != null) {
                 jsonWriter.key("Type").value(createAppRequest.getType());
@@ -171,6 +175,7 @@ public class CreateAppRequestMarshaller implements Marshaller<Request<CreateAppR
           byte[] content = snippet.getBytes(UTF8);
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
+          request.addHeader("Content-Type", "application/x-amz-json-1.1");
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

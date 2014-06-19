@@ -51,7 +51,7 @@ public class AttachNetworkInterfaceResult implements Serializable {
      *
      * @param attachmentId The ID of the network interface attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachNetworkInterfaceResult withAttachmentId(String attachmentId) {

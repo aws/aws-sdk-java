@@ -109,7 +109,7 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest implem
      *
      * @param domainName The name of the domain in which the attributes are being deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchDeleteAttributesRequest withDomainName(String domainName) {
@@ -152,7 +152,7 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest implem
      *
      * @param items A list of items on which to perform the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchDeleteAttributesRequest withItems(DeletableItem... items) {
@@ -170,7 +170,7 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest implem
      *
      * @param items A list of items on which to perform the operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchDeleteAttributesRequest withItems(java.util.Collection<DeletableItem> items) {

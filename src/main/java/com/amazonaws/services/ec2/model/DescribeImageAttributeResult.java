@@ -51,7 +51,7 @@ public class DescribeImageAttributeResult implements Serializable {
      *
      * @param imageAttribute Information about the image attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeImageAttributeResult withImageAttribute(ImageAttribute imageAttribute) {

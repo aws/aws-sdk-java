@@ -131,7 +131,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
      *
      * @param domain The name of the domain that contains the task lists being polled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForActivityTaskRequest withDomain(String domain) {
@@ -188,7 +188,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForActivityTaskRequest withTaskList(TaskList taskList) {
@@ -248,7 +248,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
      *         enables diagnostic tracing when problems arise. The form of this
      *         identity is user defined.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PollForActivityTaskRequest withIdentity(String identity) {

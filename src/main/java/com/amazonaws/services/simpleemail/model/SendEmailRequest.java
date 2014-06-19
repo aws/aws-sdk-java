@@ -171,7 +171,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendEmailRequest withSource(String source) {
@@ -204,7 +204,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param destination The destination for this email, composed of To:, CC:, and BCC: fields.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendEmailRequest withDestination(Destination destination) {
@@ -237,7 +237,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param message The message to be sent.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendEmailRequest withMessage(Message message) {
@@ -286,7 +286,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * @param replyToAddresses The reply-to email address(es) for the message. If the recipient
      *         replies to the message, each reply-to address will receive the reply.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendEmailRequest withReplyToAddresses(String... replyToAddresses) {
@@ -306,7 +306,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      * @param replyToAddresses The reply-to email address(es) for the message. If the recipient
      *         replies to the message, each reply-to address will receive the reply.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendEmailRequest withReplyToAddresses(java.util.Collection<String> replyToAddresses) {
@@ -370,7 +370,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
      *         then be forwarded to the email address specified by the
      *         <code>ReturnPath</code> parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendEmailRequest withReturnPath(String returnPath) {

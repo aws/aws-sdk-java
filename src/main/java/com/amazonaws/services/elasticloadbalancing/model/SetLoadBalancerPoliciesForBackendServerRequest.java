@@ -92,7 +92,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      * @param loadBalancerName The mnemonic name associated with the load balancer. This name must be
      *         unique within the set of your load balancers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withLoadBalancerName(String loadBalancerName) {
@@ -125,7 +125,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      *
      * @param instancePort The port number associated with the back-end server.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withInstancePort(Integer instancePort) {
@@ -174,7 +174,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      * @param policyNames List of policy names to be set. If the list is empty, then all current
      *         polices are removed from the back-end server.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(String... policyNames) {
@@ -194,7 +194,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      * @param policyNames List of policy names to be set. If the list is empty, then all current
      *         polices are removed from the back-end server.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(java.util.Collection<String> policyNames) {

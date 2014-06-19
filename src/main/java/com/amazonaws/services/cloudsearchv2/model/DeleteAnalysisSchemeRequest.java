@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#deleteAnalysisScheme(DeleteAnalysisSchemeRequest) DeleteAnalysisScheme operation}.
  * <p>
  * Deletes an analysis scheme. For more information, see
- * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html.html"> Configuring Analysis Schemes </a>
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"> Configuring Analysis Schemes </a>
  * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *
@@ -106,7 +106,7 @@ public class DeleteAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAnalysisSchemeRequest withDomainName(String domainName) {
@@ -151,7 +151,7 @@ public class DeleteAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      *
      * @param analysisSchemeName The name of the analysis scheme you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteAnalysisSchemeRequest withAnalysisSchemeName(String analysisSchemeName) {

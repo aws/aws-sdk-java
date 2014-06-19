@@ -20,17 +20,12 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Date;
 
-import org.apache.commons.codec.binary.Base64;
-
 /**
  * Utilities for converting objects to strings.
  */
 public class StringUtils {
 
     private static final String DEFAULT_ENCODING = "UTF-8";
-
-    /** Shared date utils for converting dates to strings */
-    private static final DateUtils dateUtils = new DateUtils();
 
     public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
 
@@ -93,7 +88,7 @@ public class StringUtils {
      * @return An ISO 8601 timestamp string created from the specified date.
      */
     public static String fromDate(Date value) {
-        return dateUtils.formatIso8601Date(value);
+        return DateUtils.formatISO8601Date(value);
     }
 
     /**
@@ -130,15 +125,11 @@ public class StringUtils {
      * @return The base64 encoded contents of the specified byte buffer.
      */
     public static String fromByteBuffer(ByteBuffer byteBuffer) {
-        byte[] encodedBytes = null;
-        if (byteBuffer.hasArray()) {
-            encodedBytes = Base64.encodeBase64(byteBuffer.array());
-        } else {
-            byte[] binaryData = new byte[byteBuffer.limit()];
-            byteBuffer.get(binaryData);
-            encodedBytes = Base64.encodeBase64(binaryData);
-        }
-        return new String(encodedBytes);
+        if (byteBuffer.hasArray())
+            return Base64.encodeAsString(byteBuffer.array());
+        byte[] binaryData = new byte[byteBuffer.limit()];
+        byteBuffer.get(binaryData);
+        return Base64.encodeAsString(binaryData);
     }
 
     public static String replace( String originalString, String partToMatch, String replacement ) {

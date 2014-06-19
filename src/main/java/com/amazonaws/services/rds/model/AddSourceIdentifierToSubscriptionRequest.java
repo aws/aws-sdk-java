@@ -81,7 +81,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRe
      * @param subscriptionName The name of the RDS event notification subscription you want to add a
      *         source identifier to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddSourceIdentifierToSubscriptionRequest withSubscriptionName(String subscriptionName) {
@@ -174,7 +174,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRe
      *         source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must
      *         be supplied.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddSourceIdentifierToSubscriptionRequest withSourceIdentifier(String sourceIdentifier) {

@@ -187,7 +187,7 @@ public class WorkflowTypeConfiguration implements Serializable {
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeConfiguration withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
@@ -271,7 +271,7 @@ public class WorkflowTypeConfiguration implements Serializable {
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeConfiguration withDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
@@ -328,7 +328,7 @@ public class WorkflowTypeConfiguration implements Serializable {
      *         execution using the <a>StartWorkflowExecution</a> action or the
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeConfiguration withDefaultTaskList(TaskList defaultTaskList) {
@@ -452,7 +452,7 @@ public class WorkflowTypeConfiguration implements Serializable {
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -538,7 +538,7 @@ public class WorkflowTypeConfiguration implements Serializable {
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy

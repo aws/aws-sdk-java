@@ -60,7 +60,7 @@ public class DescribeMyUserProfileResult implements Serializable {
      * @param userProfile A <code>UserProfile</code> object that describes the user's SSH
      *         information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeMyUserProfileResult withUserProfile(SelfUserProfile userProfile) {

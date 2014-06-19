@@ -79,7 +79,7 @@ public class StackSummary implements Serializable {
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withStackId(String stackId) {
@@ -112,7 +112,7 @@ public class StackSummary implements Serializable {
      *
      * @param name The stack name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withName(String name) {
@@ -145,7 +145,7 @@ public class StackSummary implements Serializable {
      *
      * @param arn The stack's ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withArn(String arn) {
@@ -178,7 +178,7 @@ public class StackSummary implements Serializable {
      *
      * @param layersCount The number of layers.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withLayersCount(Integer layersCount) {
@@ -211,7 +211,7 @@ public class StackSummary implements Serializable {
      *
      * @param appsCount The number of apps.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withAppsCount(Integer appsCount) {
@@ -250,7 +250,7 @@ public class StackSummary implements Serializable {
      * @param instancesCount An <code>InstancesCount</code> object with the number of instances in
      *         each status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withInstancesCount(InstancesCount instancesCount) {

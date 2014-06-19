@@ -58,7 +58,7 @@ public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      *
      * @param clusterSubnetGroupName The name of the cluster subnet group name to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteClusterSubnetGroupRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {

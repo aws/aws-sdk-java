@@ -76,7 +76,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLayersRequest withStackId(String stackId) {
@@ -131,7 +131,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
      *         omit this parameter, <code>DescribeLayers</code> returns a description
      *         of every layer in the specified stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLayersRequest withLayerIds(String... layerIds) {
@@ -153,7 +153,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
      *         omit this parameter, <code>DescribeLayers</code> returns a description
      *         of every layer in the specified stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLayersRequest withLayerIds(java.util.Collection<String> layerIds) {

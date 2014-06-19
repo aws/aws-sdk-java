@@ -91,7 +91,7 @@ public class WriteRequest implements Serializable {
      *
      * @param putRequest A request to perform a <i>PutItem</i> operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WriteRequest withPutRequest(PutRequest putRequest) {
@@ -124,7 +124,7 @@ public class WriteRequest implements Serializable {
      *
      * @param deleteRequest A request to perform a <i>DeleteItem</i> operation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WriteRequest withDeleteRequest(DeleteRequest deleteRequest) {

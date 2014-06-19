@@ -78,7 +78,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
      *
      * @param volumeId The ID of the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyVolumeAttributeRequest withVolumeId(String volumeId) {
@@ -117,7 +117,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
      * @param autoEnableIO Indicates whether the volume should be auto-enabled for I/O
      *         operations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyVolumeAttributeRequest withAutoEnableIO(Boolean autoEnableIO) {

@@ -112,7 +112,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      *         created by your AWS account.</li> </ul> <p>Example:
      *         <code>examplesubnetgroup</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterSubnetGroupRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
@@ -145,7 +145,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      *
      * @param description A description for the subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterSubnetGroupRequest withDescription(String description) {
@@ -194,7 +194,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterSubnetGroupRequest withSubnetIds(String... subnetIds) {
@@ -214,7 +214,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateClusterSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {

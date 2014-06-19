@@ -83,7 +83,7 @@ public class ListRolesResult implements Serializable {
      *
      * @param roles A list of roles.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolesResult withRoles(Role... roles) {
@@ -101,7 +101,7 @@ public class ListRolesResult implements Serializable {
      *
      * @param roles A list of roles.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolesResult withRoles(java.util.Collection<Role> roles) {
@@ -159,7 +159,7 @@ public class ListRolesResult implements Serializable {
      *         using the <code>Marker</code> request parameter to retrieve more roles
      *         in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolesResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListRolesResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListRolesResult withMarker(String marker) {

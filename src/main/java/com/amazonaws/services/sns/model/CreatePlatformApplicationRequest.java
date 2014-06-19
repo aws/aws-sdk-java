@@ -21,21 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createPlatformApplication(CreatePlatformApplicationRequest) CreatePlatformApplication operation}.
  * <p>
- * The <code>CreatePlatformApplication</code> action creates a platform
- * application object for one of the supported push notification
- * services, such as APNS and GCM, to which devices and mobile apps may
- * register. You must specify PlatformPrincipal and PlatformCredential
- * attributes when using the <code>CreatePlatformApplication</code>
- * action. The PlatformPrincipal is received from the notification
- * service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL
- * certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
- * PlatformPrincipal is "client id". The PlatformCredential is also
- * received from the notification service. For APNS/APNS_SANDBOX,
- * PlatformCredential is "private key". For GCM, PlatformCredential is
- * "API key". For ADM, PlatformCredential is "client secret". The
- * PlatformApplicationArn that is returned when using
- * <code>CreatePlatformApplication</code> is then used as an attribute
- * for the <code>CreatePlatformEndpoint</code> action. For more
+ * Creates a platform application object for one of the supported push
+ * notification services, such as APNS and GCM, to which devices and
+ * mobile apps may register. You must specify PlatformPrincipal and
+ * PlatformCredential attributes when using the
+ * <code>CreatePlatformApplication</code> action. The PlatformPrincipal
+ * is received from the notification service. For APNS/APNS_SANDBOX,
+ * PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is
+ * not applicable. For ADM, PlatformPrincipal is "client id". The
+ * PlatformCredential is also received from the notification service. For
+ * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
+ * PlatformCredential is "API key". For ADM, PlatformCredential is
+ * "client secret". The PlatformApplicationArn that is returned when
+ * using <code>CreatePlatformApplication</code> is then used as an
+ * attribute for the <code>CreatePlatformEndpoint</code> action. For more
  * information, see
  * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
  * .
@@ -102,7 +101,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest im
      *         ASCII letters, numbers, underscores, hyphens, and periods, and must be
      *         between 1 and 256 characters long.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformApplicationRequest withName(String name) {
@@ -147,7 +146,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest im
      *         APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google
      *         Cloud Messaging).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformApplicationRequest withPlatform(String platform) {
@@ -190,7 +189,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest im
      * @param attributes For a list of attributes, see <a
      *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformApplicationRequest withAttributes(java.util.Map<String,String> attributes) {

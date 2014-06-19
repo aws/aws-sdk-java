@@ -89,7 +89,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
      *
      * @param autoScalingGroupNames A list of Auto Scaling group names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
@@ -107,7 +107,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
      *
      * @param autoScalingGroupNames A list of Auto Scaling group names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
@@ -156,7 +156,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingGroupsRequest withNextToken(String nextToken) {
@@ -189,7 +189,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest im
      *
      * @param maxRecords The maximum number of records to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAutoScalingGroupsRequest withMaxRecords(Integer maxRecords) {

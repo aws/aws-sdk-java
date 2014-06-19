@@ -59,6 +59,11 @@ import com.amazonaws.services.ec2.model.transform.StopInstancesRequestMarshaller
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
+ * <p>
+ * For more information about troubleshooting, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html"> Troubleshooting Stopping Your Instance </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest)
  */
@@ -130,7 +135,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesRequest withInstanceIds(String... instanceIds) {
@@ -148,7 +153,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
@@ -212,7 +217,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
      *         option is not recommended for Windows instances. <p>Default:
      *         <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstancesRequest withForce(Boolean force) {

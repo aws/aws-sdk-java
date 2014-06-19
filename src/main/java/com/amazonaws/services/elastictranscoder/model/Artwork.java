@@ -207,7 +207,7 @@ public class Artwork implements Serializable {
      *         file isn't in the specified bucket, Elastic Transcoder returns an
      *         error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Artwork withInputKey(String inputKey) {
@@ -267,7 +267,7 @@ public class Artwork implements Serializable {
      *         If you specify a numeric value, enter an even integer between 32 and
      *         4096, inclusive.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Artwork withMaxWidth(String maxWidth) {
@@ -327,7 +327,7 @@ public class Artwork implements Serializable {
      *         If you specify a numeric value, enter an even integer between 32 and
      *         3072, inclusive.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Artwork withMaxHeight(String maxHeight) {
@@ -531,7 +531,7 @@ public class Artwork implements Serializable {
      *         specify this option, Elastic Transcoder does not scale the art
      *         up.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Artwork withSizingPolicy(String sizingPolicy) {
@@ -597,7 +597,7 @@ public class Artwork implements Serializable {
      *         output art match the values that you specified for
      *         <code>MaxWidth</code> and <code>MaxHeight</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Artwork withPaddingPolicy(String paddingPolicy) {
@@ -645,7 +645,7 @@ public class Artwork implements Serializable {
      * @param albumArtFormat The format of album art, if any. Valid formats are <code>.jpg</code>
      *         and <code>.png</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Artwork withAlbumArtFormat(String albumArtFormat) {

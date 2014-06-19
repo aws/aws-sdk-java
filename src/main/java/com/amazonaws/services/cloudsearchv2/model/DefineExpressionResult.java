@@ -54,7 +54,7 @@ public class DefineExpressionResult implements Serializable {
      *
      * @param expression The value of an <code>Expression</code> and its current status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DefineExpressionResult withExpression(ExpressionStatus expression) {

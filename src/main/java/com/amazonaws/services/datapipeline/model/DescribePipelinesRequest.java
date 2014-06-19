@@ -92,7 +92,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      *         identifiers in a single call to <a>DescribePipelines</a>. You can
      *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePipelinesRequest withPipelineIds(String... pipelineIds) {
@@ -114,7 +114,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      *         identifiers in a single call to <a>DescribePipelines</a>. You can
      *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribePipelinesRequest withPipelineIds(java.util.Collection<String> pipelineIds) {

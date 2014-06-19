@@ -103,7 +103,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      *
      * @param groupName Name of the group the policy is associated with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteGroupPolicyRequest withGroupName(String groupName) {
@@ -148,7 +148,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      *
      * @param policyName Name of the policy document to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteGroupPolicyRequest withPolicyName(String policyName) {

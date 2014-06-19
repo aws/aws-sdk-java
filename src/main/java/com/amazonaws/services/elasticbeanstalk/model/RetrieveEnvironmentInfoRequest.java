@@ -143,7 +143,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      *         not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveEnvironmentInfoRequest withEnvironmentId(String environmentId) {
@@ -209,7 +209,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      *         If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveEnvironmentInfoRequest withEnvironmentName(String environmentName) {
@@ -255,7 +255,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      *
      * @param infoType The type of information to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentInfoType
@@ -289,7 +289,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      *
      * @param infoType The type of information to retrieve.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see EnvironmentInfoType

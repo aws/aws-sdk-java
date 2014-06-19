@@ -78,7 +78,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param keyName The name of the key pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteKeyPairRequest withKeyName(String keyName) {

@@ -60,7 +60,7 @@ public class Category implements Serializable {
      *
      * @param code The category code for the support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Category withCode(String code) {
@@ -93,7 +93,7 @@ public class Category implements Serializable {
      *
      * @param name The category name for the support case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Category withName(String name) {

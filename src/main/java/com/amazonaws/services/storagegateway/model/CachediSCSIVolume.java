@@ -74,7 +74,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param volumeARN The new value for the VolumeARN property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withVolumeARN(String volumeARN) {
@@ -116,7 +116,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param volumeId The new value for the VolumeId property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withVolumeId(String volumeId) {
@@ -158,7 +158,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param volumeType The new value for the VolumeType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withVolumeType(String volumeType) {
@@ -200,7 +200,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param volumeStatus The new value for the VolumeStatus property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withVolumeStatus(String volumeStatus) {
@@ -233,7 +233,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param volumeSizeInBytes The new value for the VolumeSizeInBytes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -266,7 +266,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param volumeProgress The new value for the VolumeProgress property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withVolumeProgress(Double volumeProgress) {
@@ -308,7 +308,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param sourceSnapshotId The new value for the SourceSnapshotId property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
@@ -341,7 +341,7 @@ public class CachediSCSIVolume implements Serializable {
      *
      * @param volumeiSCSIAttributes Lists iSCSI information about a volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CachediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {

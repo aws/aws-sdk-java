@@ -64,7 +64,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param sourceSnapshotName The name of an existing snapshot from which to copy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotRequest withSourceSnapshotName(String sourceSnapshotName) {
@@ -97,7 +97,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param targetSnapshotName A name for the copied snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopySnapshotRequest withTargetSnapshotName(String targetSnapshotName) {

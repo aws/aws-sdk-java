@@ -68,7 +68,7 @@ public class DescribeDBLogFilesResult implements Serializable {
      *
      * @param describeDBLogFiles The DB log files returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesResult withDescribeDBLogFiles(DescribeDBLogFilesDetails... describeDBLogFiles) {
@@ -86,7 +86,7 @@ public class DescribeDBLogFilesResult implements Serializable {
      *
      * @param describeDBLogFiles The DB log files returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesResult withDescribeDBLogFiles(java.util.Collection<DescribeDBLogFilesDetails> describeDBLogFiles) {
@@ -126,7 +126,7 @@ public class DescribeDBLogFilesResult implements Serializable {
      *
      * @param marker An optional paging token.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDBLogFilesResult withMarker(String marker) {

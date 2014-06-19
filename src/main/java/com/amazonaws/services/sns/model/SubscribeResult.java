@@ -67,7 +67,7 @@ public class SubscribeResult implements Serializable {
      *         subscription immediately (without requiring endpoint owner
      *         confirmation).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SubscribeResult withSubscriptionArn(String subscriptionArn) {

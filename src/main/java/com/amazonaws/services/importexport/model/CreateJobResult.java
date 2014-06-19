@@ -85,7 +85,7 @@ public class CreateJobResult implements Serializable {
      *
      * @param jobId A unique identifier which refers to a particular job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobResult withJobId(String jobId) {
@@ -131,7 +131,7 @@ public class CreateJobResult implements Serializable {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType
@@ -165,7 +165,7 @@ public class CreateJobResult implements Serializable {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see JobType
@@ -200,7 +200,7 @@ public class CreateJobResult implements Serializable {
      *
      * @param awsShippingAddress Address you ship your storage device to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobResult withAwsShippingAddress(String awsShippingAddress) {
@@ -251,7 +251,7 @@ public class CreateJobResult implements Serializable {
      *         want to create the signature file yourself. Generally you should use
      *         the SignatureFileContents value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobResult withSignature(String signature) {
@@ -284,7 +284,7 @@ public class CreateJobResult implements Serializable {
      *
      * @param signatureFileContents The actual text of the SIGNATURE file to be written to disk.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobResult withSignatureFileContents(String signatureFileContents) {
@@ -323,7 +323,7 @@ public class CreateJobResult implements Serializable {
      * @param warningMessage An optional message notifying you of non-fatal issues with the job,
      *         such as use of an incompatible Amazon S3 bucket name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobResult withWarningMessage(String warningMessage) {

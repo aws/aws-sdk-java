@@ -88,7 +88,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param imageId The ID of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withImageId(String imageId) {
@@ -131,7 +131,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param launchPermissions One or more launch permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withLaunchPermissions(LaunchPermission... launchPermissions) {
@@ -149,7 +149,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param launchPermissions One or more launch permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
@@ -199,7 +199,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param productCodes One or more product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withProductCodes(ProductCode... productCodes) {
@@ -217,7 +217,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param productCodes One or more product codes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -257,7 +257,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param kernelId The kernel ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withKernelId(String kernelId) {
@@ -290,7 +290,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param ramdiskId The RAM disk ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withRamdiskId(String ramdiskId) {
@@ -323,7 +323,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param description A description for the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withDescription(String description) {
@@ -356,7 +356,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param sriovNetSupport 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withSriovNetSupport(String sriovNetSupport) {
@@ -399,7 +399,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param blockDeviceMappings One or more block device mapping entries.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
@@ -417,7 +417,7 @@ public class ImageAttribute implements Serializable {
      *
      * @param blockDeviceMappings One or more block device mapping entries.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImageAttribute withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {

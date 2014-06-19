@@ -84,7 +84,7 @@ public class Filter implements Serializable {
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
      *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withName(String name) {
@@ -127,7 +127,7 @@ public class Filter implements Serializable {
      *
      * @param values The value of the filter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withValues(String... values) {
@@ -145,7 +145,7 @@ public class Filter implements Serializable {
      *
      * @param values The value of the filter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Filter withValues(java.util.Collection<String> values) {

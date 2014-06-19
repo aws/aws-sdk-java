@@ -78,7 +78,7 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest implements Se
      *
      * @param domainName The name of the domain for which to display the metadata of.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainMetadataRequest withDomainName(String domainName) {

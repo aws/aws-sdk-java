@@ -111,7 +111,7 @@ public class DeleteTableRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param tableName The name of the table to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTableRequest withTableName(String tableName) {

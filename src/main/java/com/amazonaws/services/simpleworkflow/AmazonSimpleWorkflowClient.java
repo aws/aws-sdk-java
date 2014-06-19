@@ -514,8 +514,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         jsonErrorUnmarshallers.add(new TypeAlreadyExistsExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("swf.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/simpleworkflow/request.handlers"));
@@ -554,8 +556,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -635,8 +637,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -700,17 +702,17 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * RegisterDomain action.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> If the type already exists, then a TypeAlreadyExists
-     * fault is returned. You cannot change the configuration settings of a
-     * workflow type once it is registered and it must be registered as a new
-     * version.
+     * <b>IMPORTANT:</b> If the type already exists, then a
+     * TypeAlreadyExists fault is returned. You cannot change the
+     * configuration settings of a workflow type once it is registered and it
+     * must be registered as a new version.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -786,8 +788,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -847,7 +849,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -865,8 +867,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -950,7 +952,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -977,8 +979,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1046,8 +1048,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1107,7 +1109,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1129,16 +1131,16 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * the domain.
      * </p>
      * <p>
-     * <b>NOTE:</b> Because this action allows the workflow to properly clean
-     * up and gracefully close, it should be used instead of
+     * <b>NOTE:</b> Because this action allows the workflow to properly
+     * clean up and gracefully close, it should be used instead of
      * TerminateWorkflowExecution when possible.
      * </p>
      * <p>
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1202,8 +1204,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1271,7 +1273,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1279,10 +1281,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Deprecates the specified <i>activity type</i> .
-     * After an activity type has been deprecated, you cannot create
-     * new tasks of that activity type. Tasks of this type that were
-     * scheduled before the type was deprecated will continue to run.
+     * Deprecates the specified <i>activity type</i> . After an activity
+     * type has been deprecated, you cannot create new tasks of that activity
+     * type. Tasks of this type that were scheduled before the type was
+     * deprecated will continue to run.
      * </p>
      * <p>
      * <b>NOTE:</b> This operation is eventually consistent. The results are
@@ -1292,8 +1294,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1369,8 +1371,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1440,7 +1442,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1457,8 +1459,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1519,7 +1521,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1554,8 +1556,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1695,8 +1697,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1753,15 +1755,14 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Used by workers to get an ActivityTask from the specified activity
-     * <code>taskList</code> .
-     * This initiates a long poll, where the service holds the HTTP
-     * connection open and responds as soon as a task becomes available. The
-     * maximum time the service holds on to the request before responding is
-     * 60 seconds. If no task is available within 60 seconds, the poll will
-     * return an empty result. An empty result, in this context, means that
-     * an ActivityTask is returned, but that the value of taskToken is an
-     * empty string. If a task is returned, the worker should use its type to
-     * identify and process it correctly.
+     * <code>taskList</code> . This initiates a long poll, where the service
+     * holds the HTTP connection open and responds as soon as a task becomes
+     * available. The maximum time the service holds on to the request before
+     * responding is 60 seconds. If no task is available within 60 seconds,
+     * the poll will return an empty result. An empty result, in this
+     * context, means that an ActivityTask is returned, but that the value of
+     * taskToken is an empty string. If a task is returned, the worker should
+     * use its type to identify and process it correctly.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Workers should set their client side socket timeout
@@ -1772,8 +1773,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1835,7 +1836,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1854,8 +1855,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -1925,7 +1926,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1941,8 +1942,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2010,7 +2011,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2031,8 +2032,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2102,7 +2103,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2123,8 +2124,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2184,7 +2185,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2198,8 +2199,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2222,6 +2223,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * .
      * </p>
      * <p>
+     * 
      * </p>
      *
      * @param registerDomainRequest Container for the necessary parameters to
@@ -2271,8 +2273,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2353,8 +2355,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2424,7 +2426,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2441,7 +2443,6 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * the activity task. If a cancellation is being attempted for the
      * specified task, then the boolean <code>cancelRequested</code> flag
      * returned by the service is set to <code>true</code> .
-     * 
      * </p>
      * <p>
      * This action resets the <code>taskHeartbeatTimeout</code> clock. The
@@ -2476,8 +2477,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2537,7 +2538,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2546,12 +2547,11 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Used by deciders to get a DecisionTask from the specified decision
-     * <code>taskList</code> .
-     * A decision task may be returned for any open workflow execution
-     * that is using the specified task list. The task includes a paginated
-     * view of the history of the workflow execution. The decider should use
-     * the workflow type and the history to determine how to properly handle
-     * the task.
+     * <code>taskList</code> . A decision task may be returned for any open
+     * workflow execution that is using the specified task list. The task
+     * includes a paginated view of the history of the workflow execution.
+     * The decider should use the workflow type and the history to determine
+     * how to properly handle the task.
      * </p>
      * <p>
      * This action initiates a long poll, where the service holds the HTTP
@@ -2562,8 +2562,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * that the value of taskToken is an empty string.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Deciders should set their client side socket timeout
-     * to at least 70 seconds (10 seconds higher than the timeout).
+     * <b>IMPORTANT:</b> Deciders should set their client side socket
+     * timeout to at least 70 seconds (10 seconds higher than the timeout).
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Because the number of workflow history events for a
@@ -2578,8 +2578,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2641,7 +2641,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2660,8 +2660,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2721,7 +2721,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2736,8 +2736,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2796,7 +2796,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2823,8 +2823,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2889,8 +2889,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -2951,7 +2951,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -2983,8 +2983,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -3051,8 +3051,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * <b>Access Control</b>
      * </p>
      * <p>
-     * You can use IAM policies to control this action's access to Amazon SWF
-     * resources as follows:
+     * You can use IAM policies to control this action's access to Amazon
+     * SWF resources as follows:
      * </p>
      * 
      * <ul>
@@ -3112,14 +3112,14 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

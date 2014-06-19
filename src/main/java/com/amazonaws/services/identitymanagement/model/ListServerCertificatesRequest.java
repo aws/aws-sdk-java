@@ -138,7 +138,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      *         <p>This parameter is optional. If it is not included, it defaults to a
      *         slash (/), listing all server certificates.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListServerCertificatesRequest withPathPrefix(String pathPrefix) {
@@ -201,7 +201,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListServerCertificatesRequest withMarker(String marker) {
@@ -273,7 +273,7 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      *         <code>true</code>. This parameter is optional. If you do not include
      *         it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListServerCertificatesRequest withMaxItems(Integer maxItems) {

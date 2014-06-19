@@ -126,7 +126,7 @@ public class CreateJobPlaylist implements Serializable {
      *         name. If you include .m3u8 in <code>Name</code>, it will appear twice
      *         in the file name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobPlaylist withName(String name) {
@@ -168,7 +168,7 @@ public class CreateJobPlaylist implements Serializable {
      *
      * @param format This value must currently be HLSv3.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobPlaylist withFormat(String format) {
@@ -238,7 +238,7 @@ public class CreateJobPlaylist implements Serializable {
      *         include more than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobPlaylist withOutputKeys(String... outputKeys) {
@@ -265,7 +265,7 @@ public class CreateJobPlaylist implements Serializable {
      *         include more than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobPlaylist withOutputKeys(java.util.Collection<String> outputKeys) {

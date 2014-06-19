@@ -86,7 +86,7 @@ public class DescribeAvailabilityOptionsRequest extends AmazonWebServiceRequest 
      *
      * @param domainName The name of the domain you want to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityOptionsRequest withDomainName(String domainName) {
@@ -131,7 +131,7 @@ public class DescribeAvailabilityOptionsRequest extends AmazonWebServiceRequest 
      *         include any pending changes (<code>false</code>). Defaults to
      *         <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityOptionsRequest withDeployed(Boolean deployed) {

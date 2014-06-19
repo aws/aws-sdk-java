@@ -93,7 +93,7 @@ public class DBEngineVersion implements Serializable {
      *
      * @param engine The name of the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withEngine(String engine) {
@@ -126,7 +126,7 @@ public class DBEngineVersion implements Serializable {
      *
      * @param engineVersion The version number of the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withEngineVersion(String engineVersion) {
@@ -159,7 +159,7 @@ public class DBEngineVersion implements Serializable {
      *
      * @param dBParameterGroupFamily The name of the DB parameter group family for the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -192,7 +192,7 @@ public class DBEngineVersion implements Serializable {
      *
      * @param dBEngineDescription The description of the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withDBEngineDescription(String dBEngineDescription) {
@@ -225,7 +225,7 @@ public class DBEngineVersion implements Serializable {
      *
      * @param dBEngineVersionDescription The description of the database engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withDBEngineVersionDescription(String dBEngineVersionDescription) {
@@ -270,7 +270,7 @@ public class DBEngineVersion implements Serializable {
      *         the <code>CharacterSetName</code> parameter of the CreateDBInstance
      *         API is not specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withDefaultCharacterSet(CharacterSet defaultCharacterSet) {
@@ -319,7 +319,7 @@ public class DBEngineVersion implements Serializable {
      * @param supportedCharacterSets A list of the character sets supported by this engine for the
      *         <code>CharacterSetName</code> parameter of the CreateDBInstance API.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withSupportedCharacterSets(CharacterSet... supportedCharacterSets) {
@@ -339,7 +339,7 @@ public class DBEngineVersion implements Serializable {
      * @param supportedCharacterSets A list of the character sets supported by this engine for the
      *         <code>CharacterSetName</code> parameter of the CreateDBInstance API.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DBEngineVersion withSupportedCharacterSets(java.util.Collection<CharacterSet> supportedCharacterSets) {

@@ -73,7 +73,7 @@ public class DescribeReservedDBInstancesResult implements Serializable {
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesResult withMarker(String marker) {
@@ -116,7 +116,7 @@ public class DescribeReservedDBInstancesResult implements Serializable {
      *
      * @param reservedDBInstances A list of reserved DB instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesResult withReservedDBInstances(ReservedDBInstance... reservedDBInstances) {
@@ -134,7 +134,7 @@ public class DescribeReservedDBInstancesResult implements Serializable {
      *
      * @param reservedDBInstances A list of reserved DB instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedDBInstancesResult withReservedDBInstances(java.util.Collection<ReservedDBInstance> reservedDBInstances) {

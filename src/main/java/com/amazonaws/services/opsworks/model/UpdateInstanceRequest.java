@@ -132,6 +132,11 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     private Boolean installUpdatesOnBoot;
 
     /**
+     * Whether this is an Amazon EBS-optimized instance.
+     */
+    private Boolean ebsOptimized;
+
+    /**
      * The instance ID.
      *
      * @return The instance ID.
@@ -156,7 +161,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param instanceId The instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withInstanceId(String instanceId) {
@@ -199,7 +204,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param layerIds The instance's layer IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withLayerIds(String... layerIds) {
@@ -217,7 +222,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param layerIds The instance's layer IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withLayerIds(java.util.Collection<String> layerIds) {
@@ -293,7 +298,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         the various types are in the API Name column of the Available Instance
      *         Types table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withInstanceType(String instanceType) {
@@ -375,7 +380,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         auto scaling instance, which is started and stopped based on load
      *         metrics.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AutoScalingType
@@ -433,7 +438,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         auto scaling instance, which is started and stopped based on load
      *         metrics.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see AutoScalingType
@@ -468,7 +473,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param hostname The instance host name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withHostname(String hostname) {
@@ -573,7 +578,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withOs(String os) {
@@ -624,7 +629,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         12.04 LTS. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withAmiId(String amiId) {
@@ -657,7 +662,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param sshKeyName The instance SSH key name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withSshKeyName(String sshKeyName) {
@@ -727,7 +732,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Architecture
@@ -777,7 +782,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see Architecture
@@ -860,7 +865,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
      *         recommend using the default value of <code>true</code>, to ensure that
      *         your instances have the latest security updates. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateInstanceRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
@@ -894,6 +899,48 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return Whether this is an Amazon EBS-optimized instance.
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @param ebsOptimized Whether this is an Amazon EBS-optimized instance.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateInstanceRequest withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+
+    /**
+     * Whether this is an Amazon EBS-optimized instance.
+     *
+     * @return Whether this is an Amazon EBS-optimized instance.
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -914,7 +961,8 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (getAmiId() != null) sb.append("AmiId: " + getAmiId() + ",");
         if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
-        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() + ",");
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();
     }
@@ -934,6 +982,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -965,6 +1014,8 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
         if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
         if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

@@ -75,7 +75,7 @@ public class ListStreamsResult implements Serializable {
      * @param streamNames The names of the streams that are associated with the AWS account
      *         making the <code>ListStreams</code> request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStreamsResult withStreamNames(String... streamNames) {
@@ -95,7 +95,7 @@ public class ListStreamsResult implements Serializable {
      * @param streamNames The names of the streams that are associated with the AWS account
      *         making the <code>ListStreams</code> request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStreamsResult withStreamNames(java.util.Collection<String> streamNames) {
@@ -135,7 +135,7 @@ public class ListStreamsResult implements Serializable {
      *
      * @param hasMoreStreams If set to <code>true</code>, there are more streams available to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStreamsResult withHasMoreStreams(Boolean hasMoreStreams) {

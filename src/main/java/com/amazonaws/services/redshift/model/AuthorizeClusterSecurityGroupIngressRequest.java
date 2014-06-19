@@ -97,7 +97,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      *
      * @param clusterSecurityGroupName The name of the security group to which the ingress rule is added.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withClusterSecurityGroupName(String clusterSecurityGroupName) {
@@ -130,7 +130,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      *
      * @param cIDRIP The IP range to be added the Amazon Redshift security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withCIDRIP(String cIDRIP) {
@@ -163,7 +163,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      *
      * @param eC2SecurityGroupName The EC2 security group to be added the Amazon Redshift security group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
@@ -208,7 +208,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
      *         not an acceptable value. <p> Example: <code>111122223333</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {

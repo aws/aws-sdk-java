@@ -71,11 +71,13 @@ public abstract class AbstractRepeatableCipherInputStream<T>
 
     @Override
     public boolean markSupported() {
+        abortIfNeeded();
     	return unencryptedDataStream.markSupported();
     }
     
     @Override
     public void mark(final int readlimit) {
+        abortIfNeeded();
         if (hasBeenAccessed) {
             throw new UnsupportedOperationException(
                     "Marking is only supported before your first call to "
@@ -87,6 +89,7 @@ public abstract class AbstractRepeatableCipherInputStream<T>
 
     @Override
     public void reset() throws IOException {
+        abortIfNeeded();
         unencryptedDataStream.reset();
         in = createCipherInputStream(unencryptedDataStream, cipherFactory);
         hasBeenAccessed = false;

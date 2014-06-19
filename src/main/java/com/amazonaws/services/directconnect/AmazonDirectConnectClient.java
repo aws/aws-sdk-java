@@ -235,8 +235,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         jsonErrorUnmarshallers.add(new DirectConnectClientExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("directconnect.us-east-1.amazonaws.com/");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/directconnect/request.handlers"));
@@ -295,7 +297,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -350,7 +352,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -402,7 +404,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -451,7 +453,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -503,7 +505,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -570,7 +572,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -578,21 +580,22 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces
-     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
-     * called are also returned. If a connection ID is included then only
-     * virtual interfaces associated with this connection will be returned.
-     * If a virtual interface ID is included then only a single virtual
-     * interface will be returned.
+     * Displays all virtual interfaces for an AWS account. Virtual
+     * interfaces deleted fewer than 15 minutes before
+     * DescribeVirtualInterfaces is called are also returned. If a
+     * connection ID is included then only virtual interfaces associated with
+     * this connection will be returned. If a virtual interface ID is
+     * included then only a single virtual interface will be returned.
      * </p>
      * <p>
      * A virtual interface (VLAN) transmits the traffic between the AWS
      * Direct Connect location and the customer.
      * </p>
      * <p>
-     * If a connection ID is provided, only virtual interfaces provisioned on
-     * the specified connection will be returned. If a virtual interface ID
-     * is provided, only this particular virtual interface will be returned.
+     * If a connection ID is provided, only virtual interfaces provisioned
+     * on the specified connection will be returned. If a virtual interface
+     * ID is provided, only this particular virtual interface will be
+     * returned.
      * </p>
      *
      * @param describeVirtualInterfacesRequest Container for the necessary
@@ -633,7 +636,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -687,7 +690,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -698,8 +701,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Returns a list of interconnects owned by the AWS account.
      * </p>
      * <p>
-     * If an interconnect ID is provided, it will only return this particular
-     * interconnect.
+     * If an interconnect ID is provided, it will only return this
+     * particular interconnect.
      * </p>
      *
      * @param describeInterconnectsRequest Container for the necessary
@@ -740,7 +743,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -797,7 +800,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -852,7 +855,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -905,7 +908,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -965,7 +968,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1025,7 +1028,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1079,7 +1082,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1129,7 +1132,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1140,8 +1143,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Creates a hosted connection on an interconnect.
      * </p>
      * <p>
-     * Allocates a VLAN number and a specified amount of bandwidth for use by
-     * a hosted connection on the given interconnect.
+     * Allocates a VLAN number and a specified amount of bandwidth for use
+     * by a hosted connection on the given interconnect.
      * </p>
      *
      * @param allocateConnectionOnInterconnectRequest Container for the
@@ -1182,7 +1185,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1241,7 +1244,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1290,7 +1293,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1323,21 +1326,22 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces
-     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
-     * called are also returned. If a connection ID is included then only
-     * virtual interfaces associated with this connection will be returned.
-     * If a virtual interface ID is included then only a single virtual
-     * interface will be returned.
+     * Displays all virtual interfaces for an AWS account. Virtual
+     * interfaces deleted fewer than 15 minutes before
+     * DescribeVirtualInterfaces is called are also returned. If a
+     * connection ID is included then only virtual interfaces associated with
+     * this connection will be returned. If a virtual interface ID is
+     * included then only a single virtual interface will be returned.
      * </p>
      * <p>
      * A virtual interface (VLAN) transmits the traffic between the AWS
      * Direct Connect location and the customer.
      * </p>
      * <p>
-     * If a connection ID is provided, only virtual interfaces provisioned on
-     * the specified connection will be returned. If a virtual interface ID
-     * is provided, only this particular virtual interface will be returned.
+     * If a connection ID is provided, only virtual interfaces provisioned
+     * on the specified connection will be returned. If a virtual interface
+     * ID is provided, only this particular virtual interface will be
+     * returned.
      * </p>
      * 
      * @return The response from the DescribeVirtualInterfaces service
@@ -1363,8 +1367,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Returns a list of interconnects owned by the AWS account.
      * </p>
      * <p>
-     * If an interconnect ID is provided, it will only return this particular
-     * interconnect.
+     * If an interconnect ID is provided, it will only return this
+     * particular interconnect.
      * </p>
      * 
      * @return The response from the DescribeInterconnects service method, as
@@ -1443,8 +1447,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         return describeConnections(new DescribeConnectionsRequest());
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

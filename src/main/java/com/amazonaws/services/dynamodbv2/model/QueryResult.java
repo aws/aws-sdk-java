@@ -119,7 +119,7 @@ public class QueryResult implements Serializable {
      *         element in this array consists of an attribute name and the value for
      *         that attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryResult withItems(java.util.Map<String,AttributeValue>... items) {
@@ -141,7 +141,7 @@ public class QueryResult implements Serializable {
      *         element in this array consists of an attribute name and the value for
      *         that attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryResult withItems(java.util.Collection<java.util.Map<String,AttributeValue>> items) {
@@ -211,7 +211,7 @@ public class QueryResult implements Serializable {
      *         filter was applied. <p>If you did not use a filter in the request,
      *         then <i>Count</i> and <i>ScannedCount</i> are the same.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryResult withCount(Integer count) {
@@ -286,7 +286,7 @@ public class QueryResult implements Serializable {
      *         did not use a filter in the request, then <i>ScannedCount</i> is the
      *         same as <i>Count</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryResult withScannedCount(Integer scannedCount) {
@@ -368,7 +368,7 @@ public class QueryResult implements Serializable {
      *         reached the end of the result set is when <i>LastEvaluatedKey</i> is
      *         null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryResult withLastEvaluatedKey(java.util.Map<String,AttributeValue> lastEvaluatedKey) {
@@ -475,7 +475,7 @@ public class QueryResult implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public QueryResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {

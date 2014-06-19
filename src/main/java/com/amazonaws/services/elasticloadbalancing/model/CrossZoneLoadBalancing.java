@@ -60,7 +60,7 @@ public class CrossZoneLoadBalancing implements Serializable {
      * @param enabled Specifies whether cross-zone load balancing is enabled for the load
      *         balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CrossZoneLoadBalancing withEnabled(Boolean enabled) {

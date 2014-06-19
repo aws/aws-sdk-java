@@ -101,7 +101,7 @@ public class PasswordPolicy implements Serializable {
      *
      * @param minimumPasswordLength Minimum length to require for IAM user passwords.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withMinimumPasswordLength(Integer minimumPasswordLength) {
@@ -134,7 +134,7 @@ public class PasswordPolicy implements Serializable {
      *
      * @param requireSymbols Specifies whether to require symbols for IAM user passwords.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withRequireSymbols(Boolean requireSymbols) {
@@ -176,7 +176,7 @@ public class PasswordPolicy implements Serializable {
      *
      * @param requireNumbers Specifies whether to require numbers for IAM user passwords.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withRequireNumbers(Boolean requireNumbers) {
@@ -224,7 +224,7 @@ public class PasswordPolicy implements Serializable {
      * @param requireUppercaseCharacters Specifies whether to require uppercase characters for IAM user
      *         passwords.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
@@ -274,7 +274,7 @@ public class PasswordPolicy implements Serializable {
      * @param requireLowercaseCharacters Specifies whether to require lowercase characters for IAM user
      *         passwords.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
@@ -318,7 +318,7 @@ public class PasswordPolicy implements Serializable {
      *
      * @param allowUsersToChangePassword Specifies whether to allow IAM users to change their own password.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
@@ -360,7 +360,7 @@ public class PasswordPolicy implements Serializable {
      *
      * @param expirePasswords The new value for the ExpirePasswords property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withExpirePasswords(Boolean expirePasswords) {
@@ -402,7 +402,7 @@ public class PasswordPolicy implements Serializable {
      *
      * @param maxPasswordAge The new value for the MaxPasswordAge property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PasswordPolicy withMaxPasswordAge(Integer maxPasswordAge) {

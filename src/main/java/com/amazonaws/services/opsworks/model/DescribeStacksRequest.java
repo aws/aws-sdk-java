@@ -90,7 +90,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
      *         omit this parameter, <code>DescribeStacks</code> returns a description
      *         of every stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksRequest withStackIds(String... stackIds) {
@@ -112,7 +112,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
      *         omit this parameter, <code>DescribeStacks</code> returns a description
      *         of every stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeStacksRequest withStackIds(java.util.Collection<String> stackIds) {

@@ -99,7 +99,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest im
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape for which you want
      *         to retrieve the recovery point.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveTapeRecoveryPointRequest withTapeARN(String tapeARN) {
@@ -153,7 +153,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest im
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RetrieveTapeRecoveryPointRequest withGatewayARN(String gatewayARN) {

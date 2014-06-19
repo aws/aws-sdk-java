@@ -136,7 +136,7 @@ public class Preset implements Serializable {
      * @param id Identifier for the new preset. You use this value to get settings for
      *         the preset or to delete it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withId(String id) {
@@ -169,7 +169,7 @@ public class Preset implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) for the preset.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withArn(String arn) {
@@ -211,7 +211,7 @@ public class Preset implements Serializable {
      *
      * @param name The name of the preset.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withName(String name) {
@@ -253,7 +253,7 @@ public class Preset implements Serializable {
      *
      * @param description A description of the preset.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withDescription(String description) {
@@ -307,7 +307,7 @@ public class Preset implements Serializable {
      *         <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
      *         and <code>webm</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withContainer(String container) {
@@ -346,7 +346,7 @@ public class Preset implements Serializable {
      * @param audio A section of the response body that provides information about the
      *         audio preset values.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withAudio(AudioParameters audio) {
@@ -385,7 +385,7 @@ public class Preset implements Serializable {
      * @param video A section of the response body that provides information about the
      *         video preset values.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withVideo(VideoParameters video) {
@@ -424,7 +424,7 @@ public class Preset implements Serializable {
      * @param thumbnails A section of the response body that provides information about the
      *         thumbnail preset values, if any.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withThumbnails(Thumbnails thumbnails) {
@@ -478,7 +478,7 @@ public class Preset implements Serializable {
      *         (<code>System</code>) or a preset that you have defined
      *         (<code>Custom</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Preset withType(String type) {

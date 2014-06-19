@@ -69,7 +69,7 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -120,7 +120,7 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
      *         means checking is disabled. This value must be <code>false</code> for
      *         a NAT instance to perform NAT.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetNetworkInterfaceAttributeRequest withSourceDestCheck(String sourceDestCheck) {

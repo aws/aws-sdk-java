@@ -63,7 +63,7 @@ public class DescribeJobFlowsResult implements Serializable {
      *
      * @param jobFlows A list of job flows matching the parameters supplied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsResult withJobFlows(JobFlowDetail... jobFlows) {
@@ -81,7 +81,7 @@ public class DescribeJobFlowsResult implements Serializable {
      *
      * @param jobFlows A list of job flows matching the parameters supplied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeJobFlowsResult withJobFlows(java.util.Collection<JobFlowDetail> jobFlows) {

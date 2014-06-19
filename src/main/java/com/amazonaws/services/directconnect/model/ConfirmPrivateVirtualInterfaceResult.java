@@ -195,7 +195,7 @@ public class ConfirmPrivateVirtualInterfaceResult implements Serializable {
      *         in the 'Confirming' state is deleted by the virtual interface owner,
      *         the virtual interface will enter the 'Rejected' state.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VirtualInterfaceState
@@ -301,7 +301,7 @@ public class ConfirmPrivateVirtualInterfaceResult implements Serializable {
      *         in the 'Confirming' state is deleted by the virtual interface owner,
      *         the virtual interface will enter the 'Rejected' state.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VirtualInterfaceState

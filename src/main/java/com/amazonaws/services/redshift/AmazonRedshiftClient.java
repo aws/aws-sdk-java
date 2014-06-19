@@ -269,6 +269,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AccessToSnapshotDeniedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnknownSnapshotCopyRegionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotQuotaExceededExceptionUnmarshaller());
@@ -297,8 +298,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("redshift.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/redshift/request.handlers"));
@@ -491,8 +494,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
-     * 
      * </p>
      *
      * @param purchaseReservedNodeOfferingRequest Container for the necessary
@@ -576,7 +577,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * security or parameter group, update the preferred maintenance window,
      * or change the master user password. Resetting a cluster password or
      * modifying the security groups associated with a cluster do not need a
-     * reboot. However, modifying parameter group requires a reboot for
+     * reboot. However, modifying a parameter group requires a reboot for
      * parameters to take effect. For more information about managing
      * clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
@@ -606,6 +607,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnsupportedOptionException
      * @throws ClusterSecurityGroupNotFoundException
      * @throws HsmClientCertificateNotFoundException
+     * @throws ClusterAlreadyExistsException
      * @throws ClusterParameterGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -790,7 +792,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * For information about subnet groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon Redshift Cluster Subnet Groups </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      *
      * @param createClusterSubnetGroupRequest Container for the necessary
@@ -962,7 +963,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      *
      * @param deleteClusterRequest Container for the necessary parameters to
@@ -1004,7 +1004,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the "available" state.
+     * be in the <code>available</code> state.
      * </p>
      * <p>
      * For more information about working with snapshots, go to
@@ -1059,7 +1059,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      *
      * @param createClusterRequest Container for the necessary parameters to
@@ -1259,8 +1258,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * Deletes an Amazon Redshift security group.
      * </p>
      * <p>
-     * <b>NOTE:</b>You cannot delete a security group that is associated with
-     * any clusters. You cannot delete the default security group.
+     * <b>NOTE:</b>You cannot delete a security group that is associated
+     * with any clusters. You cannot delete the default security group.
      * </p>
      * <p>
      * For information about managing security groups, go to
@@ -1395,6 +1394,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         as returned by AmazonRedshift.
      * 
      * @throws SubscriptionCategoryNotFoundException
+     * @throws InvalidSubscriptionStateException
      * @throws SubscriptionEventIdNotFoundException
      * @throws SubscriptionSeverityNotFoundException
      * @throws SourceNotFoundException
@@ -1437,7 +1437,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * For information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      *
      * @param createClusterSecurityGroupRequest Container for the necessary
@@ -1576,10 +1575,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * with the restored cluster.
      * </p>
      * <p>
-     * If a snapshot is taken of a cluster in VPC, you can restore it only
-     * in VPC. In this case, you must provide a cluster subnet group where
-     * you want the cluster restored. If snapshot is taken of a cluster
-     * outside VPC, then you can restore it only outside VPC.
+     * If you restore a cluster into a VPC, you must provide a cluster
+     * subnet group where you want the cluster restored.
      * </p>
      * <p>
      * For more information about working with snapshots, go to
@@ -1601,6 +1598,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidClusterSubnetGroupStateException
      * @throws ClusterAlreadyExistsException
      * @throws InvalidVPCNetworkStateException
+     * @throws ClusterParameterGroupNotFoundException
      * @throws InvalidClusterSnapshotStateException
      * @throws AccessToSnapshotDeniedException
      * @throws InvalidRestoreException
@@ -1611,6 +1609,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotNotFoundException
      * @throws ClusterQuotaExceededException
      * @throws HsmClientCertificateNotFoundException
+     * @throws ClusterSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1684,9 +1683,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
-     * Displays a list of event categories for all event source types, or for
-     * a specified source type. For a list of the event categories and source
-     * types, go to
+     * Displays a list of event categories for all event source types, or
+     * for a specified source type. For a list of the event categories and
+     * source types, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html"> Amazon Redshift Event Notifications </a>
      * .
      * </p>
@@ -1857,8 +1856,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Deletes the specified manual snapshot. The snapshot must be in the
-     * "available" state, with no other users authorized to access the
-     * snapshot.
+     * <code>available</code> state, with no other users authorized to access
+     * the snapshot.
      * </p>
      * <p>
      * Unlike automated snapshots, manual snapshots are retained even after
@@ -1946,8 +1945,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
-     * Disables the automatic copying of snapshots from one region to another
-     * region for a specified cluster.
+     * Disables the automatic copying of snapshots from one region to
+     * another region for a specified cluster.
      * </p>
      *
      * @param disableSnapshotCopyRequest Container for the necessary
@@ -2211,8 +2210,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
-     * 
      * </p>
      *
      * @param describeReservedNodeOfferingsRequest Container for the
@@ -2340,6 +2337,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *           AmazonRedshift.
      * 
      * 
+     * @throws InvalidSubscriptionStateException
      * @throws SubscriptionNotFoundException
      *
      * @throws AmazonClientException
@@ -2367,9 +2365,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
-     * Creates an HSM client certificate that an Amazon Redshift cluster will
-     * use to connect to the client's HSM in order to store and retrieve the
-     * keys used to encrypt the cluster databases.
+     * Creates an HSM client certificate that an Amazon Redshift cluster
+     * will use to connect to the client's HSM in order to store and retrieve
+     * the keys used to encrypt the cluster databases.
      * </p>
      * <p>
      * The command returns a public key, which you must store in the HSM. In
@@ -2424,7 +2422,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * information about managing security groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html"> Amazon Redshift Cluster Security Groups </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      *
      * @param revokeClusterSecurityGroupIngressRequest Container for the
@@ -2559,9 +2556,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
-     * Creates an HSM configuration that contains the information required by
-     * an Amazon Redshift cluster to store and use database encryption keys
-     * in a Hardware Security Module (HSM). After creating the HSM
+     * Creates an HSM configuration that contains the information required
+     * by an Amazon Redshift cluster to store and use database encryption
+     * keys in a Hardware Security Module (HSM). After creating the HSM
      * configuration, you can specify it as a parameter when creating a
      * cluster. The cluster will then store its encryption keys in the HSM.
      * </p>
@@ -2616,7 +2613,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      *
      * @param describeClustersRequest Container for the necessary parameters
@@ -2700,8 +2696,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * Creates an Amazon Redshift parameter group.
      * </p>
      * <p>
-     * Creating parameter groups is independent of creating clusters. You can
-     * associate a cluster with a parameter group when you create the
+     * Creating parameter groups is independent of creating clusters. You
+     * can associate a cluster with a parameter group when you create the
      * cluster. You can also associate an existing cluster with a parameter
      * group after the cluster is created by using ModifyCluster.
      * </p>
@@ -2711,7 +2707,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html"> Amazon Redshift Parameter Groups </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      *
      * @param createClusterParameterGroupRequest Container for the necessary
@@ -2903,9 +2898,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
-     * Displays a list of event categories for all event source types, or for
-     * a specified source type. For a list of the event categories and source
-     * types, go to
+     * Displays a list of event categories for all event source types, or
+     * for a specified source type. For a list of the event categories and
+     * source types, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html"> Amazon Redshift Event Notifications </a>
      * .
      * </p>
@@ -3019,8 +3014,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * For more information about managing parameter groups, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html"> Purchasing Reserved Nodes </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
-     * 
      * </p>
      * 
      * @return The response from the DescribeReservedNodeOfferings service
@@ -3097,7 +3090,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
      * in the <i>Amazon Redshift Management Guide</i> .
-     * 
      * </p>
      * 
      * @return The response from the DescribeClusters service method, as

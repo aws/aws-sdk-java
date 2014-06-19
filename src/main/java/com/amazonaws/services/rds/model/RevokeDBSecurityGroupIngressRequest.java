@@ -116,7 +116,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *
      * @param dBSecurityGroupName The name of the DB security group to revoke ingress from.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeDBSecurityGroupIngressRequest withDBSecurityGroupName(String dBSecurityGroupName) {
@@ -167,7 +167,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         <code>EC2SecurityGroupId</code> and
      *         <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeDBSecurityGroupIngressRequest withCIDRIP(String cIDRIP) {
@@ -224,7 +224,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeDBSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
@@ -281,7 +281,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
      *         must be provided.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeDBSecurityGroupIngressRequest withEC2SecurityGroupId(String eC2SecurityGroupId) {
@@ -344,7 +344,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      *         or <code>EC2SecurityGroupId</code> must be provided.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RevokeDBSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {

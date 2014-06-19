@@ -69,7 +69,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest implem
      *
      * @param internetGatewayId The ID of the Internet gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachInternetGatewayRequest withInternetGatewayId(String internetGatewayId) {
@@ -102,7 +102,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest implem
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachInternetGatewayRequest withVpcId(String vpcId) {

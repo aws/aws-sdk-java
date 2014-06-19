@@ -75,7 +75,7 @@ public class SpotPlacement implements Serializable {
      *
      * @param availabilityZone The Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotPlacement withAvailabilityZone(String availabilityZone) {
@@ -108,7 +108,7 @@ public class SpotPlacement implements Serializable {
      *
      * @param groupName The Availability Zone group name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotPlacement withGroupName(String groupName) {

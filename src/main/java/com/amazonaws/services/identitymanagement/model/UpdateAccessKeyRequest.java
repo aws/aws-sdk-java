@@ -145,7 +145,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      *
      * @param userName Name of the user whose key you want to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccessKeyRequest withUserName(String userName) {
@@ -190,7 +190,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      *
      * @param accessKeyId The access key ID of the secret access key you want to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateAccessKeyRequest withAccessKeyId(String accessKeyId) {
@@ -248,7 +248,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType
@@ -290,7 +290,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StatusType

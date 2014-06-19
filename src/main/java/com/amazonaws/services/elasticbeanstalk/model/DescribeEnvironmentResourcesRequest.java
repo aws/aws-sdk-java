@@ -96,7 +96,7 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentResourcesRequest withEnvironmentId(String environmentId) {
@@ -156,7 +156,7 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
      *         If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEnvironmentResourcesRequest withEnvironmentName(String environmentName) {

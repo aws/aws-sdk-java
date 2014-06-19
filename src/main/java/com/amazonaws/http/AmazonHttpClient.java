@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.security.NoSuchAlgorithmException;
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -64,6 +63,7 @@ import com.amazonaws.ResponseMetadata;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
+import com.amazonaws.handlers.CredentialsRequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.metrics.AwsSdkMetrics;
@@ -155,10 +155,22 @@ public class AmazonHttpClient {
      *            is none.
      */
     public AmazonHttpClient(ClientConfiguration config, RequestMetricCollector requestMetricCollector) {
+        this(config, httpClientFactory.createHttpClient(config), requestMetricCollector);
+    }
+
+    /**
+     * Package-protected constructor for unit test purposes.
+     */
+    AmazonHttpClient(
+            ClientConfiguration config,
+            HttpClient httpClient,
+            RequestMetricCollector requestMetricCollector) {
+
         this.config = config;
-        this.httpClient = httpClientFactory.createHttpClient(config);
+        this.httpClient = httpClient;
         this.requestMetricCollector = requestMetricCollector;
     }
+
     /**
      * Returns additional response metadata for an executed request. Response
      * metadata isn't considered part of the standard results returned by an
@@ -266,6 +278,11 @@ public class AmazonHttpClient {
         // Apply any additional service specific request handlers that need
         // to be run
         for (RequestHandler2 requestHandler2 : requestHandler2s) {
+            // If the request handler is a type of CredentialsRequestHandler,
+            // then set the credentials in the request handler.
+            if (requestHandler2 instanceof CredentialsRequestHandler)
+                ((CredentialsRequestHandler) requestHandler2)
+                        .setCredentials(executionContext.getCredentials());
             requestHandler2.beforeRequest(request);
         }
         return requestHandler2s;
@@ -338,7 +355,7 @@ public class AmazonHttpClient {
                     requestLog.debug("Sending Request: " + request.toString());
                  }
 
-                httpRequest = httpRequestFactory.createHttpRequest(request, config, entity, executionContext);
+                httpRequest = httpRequestFactory.createHttpRequest(request, config, executionContext);
 
                 if (httpRequest instanceof HttpEntityEnclosingRequest) {
                     entity = ((HttpEntityEnclosingRequest)httpRequest).getEntity();
@@ -733,6 +750,8 @@ public class AmazonHttpClient {
             return awsResponse.getResult();
         } catch (CRC32MismatchException e) {
             throw e;
+        } catch (IOException e) {
+            throw e;
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + "). Response Code: " +
                         httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText();
@@ -787,6 +806,8 @@ public class AmazonHttpClient {
                 exception.setStatusCode(503);
                 exception.setErrorType(ErrorType.Service);
                 exception.setErrorCode("Service unavailable");
+            } else if (e instanceof IOException) {
+                throw (IOException) e;
             } else {
                 String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + "). Response Code: " +
                         status + ", Response Text: " + apacheHttpResponse.getStatusLine().getReasonPhrase();
@@ -895,7 +916,6 @@ public class AmazonHttpClient {
     }
 
     private int parseClockSkewOffset(org.apache.http.HttpResponse response, AmazonServiceException exception) {
-        DateUtils dateUtils = new DateUtils();
         Date deviceDate = new Date();
         Date serverDate = null;
         String serverDateStr = null;
@@ -906,17 +926,11 @@ public class AmazonHttpClient {
             if(responseDateHeader.length == 0) {
                 // SQS doesn't return Date header
                 serverDateStr = getServerDateFromException(exception.getMessage());
-                serverDate = dateUtils.parseCompressedIso8601Date(serverDateStr);
+                serverDate = DateUtils.parseCompressedISO8601Date(serverDateStr);
             } else {
                 serverDateStr = responseDateHeader[0].getValue();
-                serverDate = dateUtils.parseRfc822Date(serverDateStr);
+                serverDate = DateUtils.parseRFC822Date(serverDateStr);
             }
-
-        } catch (ParseException e) {
-            log.warn("Unable to parse clock skew offset from response: "
-                     + serverDateStr,
-                     e);
-            return 0;
         } catch (RuntimeException e) {
             log.warn("Unable to parse clock skew offset from response: "
                      + serverDateStr,

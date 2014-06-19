@@ -54,7 +54,7 @@ public class DescribeTrustedAdvisorCheckResultResult implements Serializable {
      *
      * @param result The detailed results of the Trusted Advisor check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckResultResult withResult(TrustedAdvisorCheckResult result) {

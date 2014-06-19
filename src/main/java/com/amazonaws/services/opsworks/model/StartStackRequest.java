@@ -66,7 +66,7 @@ public class StartStackRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param stackId The stack ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StartStackRequest withStackId(String stackId) {

@@ -91,7 +91,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *
      * @param zoneNames The names of one or more Availability Zones.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityZonesRequest withZoneNames(String... zoneNames) {
@@ -109,7 +109,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *
      * @param zoneNames The names of one or more Availability Zones.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityZonesRequest withZoneNames(java.util.Collection<String> zoneNames) {
@@ -201,7 +201,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         <p><code>zone-name</code> - The name of the Availability Zone (for
      *         example, <code>us-east-1a</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityZonesRequest withFilters(Filter... filters) {
@@ -233,7 +233,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         <p><code>zone-name</code> - The name of the Availability Zone (for
      *         example, <code>us-east-1a</code>). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityZonesRequest withFilters(java.util.Collection<Filter> filters) {

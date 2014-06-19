@@ -109,7 +109,7 @@ public class UpdateScalingParametersRequest extends AmazonWebServiceRequest impl
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateScalingParametersRequest withDomainName(String domainName) {
@@ -148,7 +148,7 @@ public class UpdateScalingParametersRequest extends AmazonWebServiceRequest impl
      * @param scalingParameters The desired instance type and desired number of replicas of each index
      *         partition.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateScalingParametersRequest withScalingParameters(ScalingParameters scalingParameters) {

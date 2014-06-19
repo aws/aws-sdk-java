@@ -155,7 +155,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param spotInstanceRequestId The ID of the Spot Instance request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withSpotInstanceRequestId(String spotInstanceRequestId) {
@@ -194,7 +194,7 @@ public class SpotInstanceRequest implements Serializable {
      * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withSpotPrice(String spotPrice) {
@@ -240,7 +240,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param type The Spot Instance request type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SpotInstanceType
@@ -274,7 +274,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param type The Spot Instance request type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SpotInstanceType
@@ -352,7 +352,7 @@ public class SpotInstanceRequest implements Serializable {
      *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
      *         Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SpotInstanceState
@@ -406,7 +406,7 @@ public class SpotInstanceRequest implements Serializable {
      *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
      *         Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see SpotInstanceState
@@ -441,7 +441,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param fault The fault codes for the Spot Instance request, if any.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withFault(SpotInstanceStateFault fault) {
@@ -480,7 +480,7 @@ public class SpotInstanceRequest implements Serializable {
      * @param status The status code and status message describing the Spot Instance
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withStatus(SpotInstanceStatus status) {
@@ -537,7 +537,7 @@ public class SpotInstanceRequest implements Serializable {
      *         If the request is persistent, the request becomes active at this date
      *         and time and remains active until it expires or is canceled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withValidFrom(java.util.Date validFrom) {
@@ -588,7 +588,7 @@ public class SpotInstanceRequest implements Serializable {
      *         canceled, or this date is reached. If the request is persistent, it
      *         remains active until it is canceled or this date is reached.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withValidUntil(java.util.Date validUntil) {
@@ -627,7 +627,7 @@ public class SpotInstanceRequest implements Serializable {
      * @param launchGroup The instance launch group. Launch groups are Spot Instances that
      *         launch together and terminate together.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withLaunchGroup(String launchGroup) {
@@ -672,7 +672,7 @@ public class SpotInstanceRequest implements Serializable {
      *         group for all Spot Instance requests, all Spot Instances are launched
      *         in the same Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
@@ -705,7 +705,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param launchSpecification Additional information for launching instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withLaunchSpecification(LaunchSpecification launchSpecification) {
@@ -744,7 +744,7 @@ public class SpotInstanceRequest implements Serializable {
      * @param instanceId The instance ID, if an instance has been launched to fulfill the Spot
      *         Instance request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withInstanceId(String instanceId) {
@@ -777,7 +777,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param createTime The time stamp when the Spot Instance request was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withCreateTime(java.util.Date createTime) {
@@ -823,7 +823,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param productDescription The product description associated with the Spot Instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -857,7 +857,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param productDescription The product description associated with the Spot Instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RIProductDescription
@@ -902,7 +902,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withTags(Tag... tags) {
@@ -920,7 +920,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param tags Any tags assigned to the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withTags(java.util.Collection<Tag> tags) {
@@ -960,7 +960,7 @@ public class SpotInstanceRequest implements Serializable {
      *
      * @param launchedAvailabilityZone The Availability Zone in which the bid is launched.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SpotInstanceRequest withLaunchedAvailabilityZone(String launchedAvailabilityZone) {

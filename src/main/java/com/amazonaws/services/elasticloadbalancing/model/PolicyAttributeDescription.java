@@ -60,7 +60,7 @@ public class PolicyAttributeDescription implements Serializable {
      *
      * @param attributeName The name of the attribute associated with the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyAttributeDescription withAttributeName(String attributeName) {
@@ -93,7 +93,7 @@ public class PolicyAttributeDescription implements Serializable {
      *
      * @param attributeValue The value of the attribute associated with the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PolicyAttributeDescription withAttributeValue(String attributeValue) {

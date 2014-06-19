@@ -123,7 +123,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
      *         identifier. <p>Example:
      *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesOfferingsRequest withReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
@@ -162,7 +162,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
      * @param cacheNodeType The cache node type filter value. Use this parameter to show only the
      *         available offerings matching the specified cache node type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesOfferingsRequest withCacheNodeType(String cacheNodeType) {
@@ -207,7 +207,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
      *         parameter to show only reservations for a given duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesOfferingsRequest withDuration(String duration) {
@@ -246,7 +246,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
      * @param productDescription The product description filter value. Use this parameter to show only
      *         the available offerings matching the specified product description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesOfferingsRequest withProductDescription(String productDescription) {
@@ -297,7 +297,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
      *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesOfferingsRequest withOfferingType(String offeringType) {
@@ -348,7 +348,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
      *         marker is included in the response so that the remaining results can
      *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesOfferingsRequest withMaxRecords(Integer maxRecords) {
@@ -399,7 +399,7 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedCacheNodesOfferingsRequest withMarker(String marker) {

@@ -51,7 +51,7 @@ public class CreateNetworkInterfaceResult implements Serializable {
      *
      * @param networkInterface Information about the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateNetworkInterfaceResult withNetworkInterface(NetworkInterface networkInterface) {

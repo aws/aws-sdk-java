@@ -97,7 +97,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
      *
      * @param pipelineId The identifier of the pipeline to be configured.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutPipelineDefinitionRequest withPipelineId(String pipelineId) {
@@ -146,7 +146,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
      * @param pipelineObjects The objects that define the pipeline. These will overwrite the
      *         existing pipeline definition.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutPipelineDefinitionRequest withPipelineObjects(PipelineObject... pipelineObjects) {
@@ -166,7 +166,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implem
      * @param pipelineObjects The objects that define the pipeline. These will overwrite the
      *         existing pipeline definition.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutPipelineDefinitionRequest withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {

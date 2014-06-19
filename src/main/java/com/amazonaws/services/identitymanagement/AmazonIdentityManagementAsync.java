@@ -285,8 +285,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Deletes a virtual MFA device.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must deactivate a user's virtual MFA device before you
-     * can delete it. For information about deactivating MFA devices, see
+     * <b>NOTE:</b>You must deactivate a user's virtual MFA device before
+     * you can delete it. For information about deactivating MFA devices, see
      * DeactivateMFADevice.
      * </p>
      *
@@ -315,8 +315,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Deletes a virtual MFA device.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must deactivate a user's virtual MFA device before you
-     * can delete it. For information about deactivating MFA devices, see
+     * <b>NOTE:</b>You must deactivate a user's virtual MFA device before
+     * you can delete it. For information about deactivating MFA devices, see
      * DeactivateMFADevice.
      * </p>
      *
@@ -412,8 +412,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutUserPolicy. For information about
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutUserPolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
      * about using the Query API with IAM, go to Making Query Requests in
@@ -452,8 +452,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutUserPolicy. For information about
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutUserPolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
      * about using the Query API with IAM, go to Making Query Requests in
@@ -673,9 +673,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the name and/or the path of the specified server certificate.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing a
-     * server certificate's path or name. For more information, see Managing
-     * Server Certificates in Using AWS Identity and Access Management.
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a server certificate's path or name. For more information, see
+     * Managing Server Certificates in Using AWS Identity and Access
+     * Management.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a server certificate name the requester must
@@ -711,9 +712,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the name and/or the path of the specified server certificate.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing a
-     * server certificate's path or name. For more information, see Managing
-     * Server Certificates in Using AWS Identity and Access Management.
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a server certificate's path or name. For more information, see
+     * Managing Server Certificates in Using AWS Identity and Access
+     * Management.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a server certificate name the requester must
@@ -754,8 +756,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the name and/or the path of the specified user.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing a
-     * user's path or name. For more information, see Renaming Users and
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a user's path or name. For more information, see Renaming Users and
      * Groups in Using AWS Identity and Access Management.
      * </p>
      * <p>
@@ -789,8 +791,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the name and/or the path of the specified user.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing a
-     * user's path or name. For more information, see Renaming Users and
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a user's path or name. For more information, see Renaming Users and
      * Groups in Using AWS Identity and Access Management.
      * </p>
      * <p>
@@ -838,8 +840,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutRolePolicy. For information about
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutRolePolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
      * about using the Query API with IAM, go to Making Query Requests in
@@ -878,8 +880,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutRolePolicy. For information about
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutRolePolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
      * about using the Query API with IAM, go to Making Query Requests in
@@ -911,9 +913,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Changes the status of the specified signing certificate from active to
-     * disabled, or vice versa. This action can be used to disable a user's
-     * signing certificate as part of a certificate rotation work flow.
+     * Changes the status of the specified signing certificate from active
+     * to disabled, or vice versa. This action can be used to disable a
+     * user's signing certificate as part of a certificate rotation work
+     * flow.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the UserName is
@@ -950,9 +953,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Changes the status of the specified signing certificate from active to
-     * disabled, or vice versa. This action can be used to disable a user's
-     * signing certificate as part of a certificate rotation work flow.
+     * Changes the status of the specified signing certificate from active
+     * to disabled, or vice versa. This action can be used to disable a
+     * user's signing certificate as part of a certificate rotation work
+     * flow.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the UserName is
@@ -1115,17 +1119,17 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the name and/or the path of the specified group.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing a
-     * group's path or name. For more information, see Renaming Users and
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a group's path or name. For more information, see Renaming Users and
      * Groups in Using AWS Identity and Access Management.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a group name the requester must have appropriate
-     * permissions on both the source object and the target object. For
-     * example, to change Managers to MGRs, the entity making the request
-     * must have permission on Managers and MGRs, or must have permission on
-     * all (*). For more information about permissions, see Permissions and
-     * Policies.
+     * <b>NOTE:</b>To change a group name the requester must have
+     * appropriate permissions on both the source object and the target
+     * object. For example, to change Managers to MGRs, the entity making the
+     * request must have permission on Managers and MGRs, or must have
+     * permission on all (*). For more information about permissions, see
+     * Permissions and Policies.
      * </p>
      *
      * @param updateGroupRequest Container for the necessary parameters to
@@ -1151,17 +1155,17 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the name and/or the path of the specified group.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You should understand the implications of changing a
-     * group's path or name. For more information, see Renaming Users and
+     * <b>IMPORTANT:</b> You should understand the implications of changing
+     * a group's path or name. For more information, see Renaming Users and
      * Groups in Using AWS Identity and Access Management.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a group name the requester must have appropriate
-     * permissions on both the source object and the target object. For
-     * example, to change Managers to MGRs, the entity making the request
-     * must have permission on Managers and MGRs, or must have permission on
-     * all (*). For more information about permissions, see Permissions and
-     * Policies.
+     * <b>NOTE:</b>To change a group name the requester must have
+     * appropriate permissions on both the source object and the target
+     * object. For example, to change Managers to MGRs, the entity making the
+     * request must have permission on Managers and MGRs, or must have
+     * permission on all (*). For more information about permissions, see
+     * Permissions and Policies.
      * </p>
      *
      * @param updateGroupRequest Container for the necessary parameters to
@@ -2091,7 +2095,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * associated users.
      * </p>
      * <p>
-     * For information about limits on the number of keys you can create, see
+     * For information about limits on the number of keys you can create,
+     * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
@@ -2136,7 +2141,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * associated users.
      * </p>
      * <p>
-     * For information about limits on the number of keys you can create, see
+     * For information about limits on the number of keys you can create,
+     * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
@@ -2367,8 +2373,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>The seed information contained in the QR code and the
-     * Base32 string should be treated like any other secret access
+     * <b>IMPORTANT:</b>The seed information contained in the QR code and
+     * the Base32 string should be treated like any other secret access
      * information, such as your AWS access keys or your passwords. After you
      * provision your virtual device, you should ensure that the information
      * is destroyed following secure procedures.
@@ -2408,8 +2414,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>The seed information contained in the QR code and the
-     * Base32 string should be treated like any other secret access
+     * <b>IMPORTANT:</b>The seed information contained in the QR code and
+     * the Base32 string should be treated like any other secret access
      * information, such as your AWS access keys or your passwords. After you
      * provision your virtual device, you should ensure that the information
      * is destroyed following secure procedures.
@@ -2702,8 +2708,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the account aliases associated with the account. For information
-     * about using an AWS account alias, see
+     * Lists the account aliases associated with the account. For
+     * information about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
@@ -2734,8 +2740,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the account aliases associated with the account. For information
-     * about using an AWS account alias, see
+     * Lists the account aliases associated with the account. For
+     * information about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
@@ -2897,8 +2903,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the names of the policies associated with the specified role. If
-     * there are none, the action returns an empty list.
+     * Lists the names of the policies associated with the specified role.
+     * If there are none, the action returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -2926,8 +2932,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the names of the policies associated with the specified role. If
-     * there are none, the action returns an empty list.
+     * Lists the names of the policies associated with the specified role.
+     * If there are none, the action returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -2960,8 +2966,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Returns information about the signing certificates associated with the
-     * specified user. If there are none, the action returns an empty list.
+     * Returns information about the signing certificates associated with
+     * the specified user. If there are none, the action returns an empty
+     * list.
      * </p>
      * <p>
      * Although each user is limited to a small number of signing
@@ -2998,8 +3005,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Returns information about the signing certificates associated with the
-     * specified user. If there are none, the action returns an empty list.
+     * Returns information about the signing certificates associated with
+     * the specified user. If there are none, the action returns an empty
+     * list.
      * </p>
      * <p>
      * Although each user is limited to a small number of signing
@@ -3603,12 +3611,12 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutGroupPolicy. For information about
-     * setting up signatures and authorization through the API, go to Signing
-     * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in
-     * Using IAM.
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutGroupPolicy. For information
+     * about setting up signatures and authorization through the API, go to
+     * Signing AWS API Requests in the AWS General Reference. For general
+     * information about using the Query API with IAM, go to Making Query
+     * Requests in Using IAM.
      * </p>
      *
      * @param putGroupPolicyRequest Container for the necessary parameters to
@@ -3644,12 +3652,12 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutGroupPolicy. For information about
-     * setting up signatures and authorization through the API, go to Signing
-     * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in
-     * Using IAM.
+     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * POST rather than GET when calling PutGroupPolicy. For information
+     * about setting up signatures and authorization through the API, go to
+     * Signing AWS API Requests in the AWS General Reference. For general
+     * information about using the Query API with IAM, go to Making Query
+     * Requests in Using IAM.
      * </p>
      *
      * @param putGroupPolicyRequest Container for the necessary parameters to
@@ -3749,8 +3757,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the names of the policies associated with the specified user. If
-     * there are none, the action returns an empty list.
+     * Lists the names of the policies associated with the specified user.
+     * If there are none, the action returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -3778,8 +3786,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the names of the policies associated with the specified user. If
-     * there are none, the action returns an empty list.
+     * Lists the names of the policies associated with the specified user.
+     * If there are none, the action returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -3816,8 +3824,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * specified user. If there are none, the action returns an empty list.
      * </p>
      * <p>
-     * Although each user is limited to a small number of keys, you can still
-     * paginate the results using the <code>MaxItems</code> and
+     * Although each user is limited to a small number of keys, you can
+     * still paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
      * </p>
      * <p>
@@ -3857,8 +3865,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * specified user. If there are none, the action returns an empty list.
      * </p>
      * <p>
-     * Although each user is limited to a small number of keys, you can still
-     * paginate the results using the <code>MaxItems</code> and
+     * Although each user is limited to a small number of keys, you can
+     * still paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
      * </p>
      * <p>
@@ -4227,8 +4235,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Lists the virtual MFA devices under the AWS account by assignment
      * status. If you do not specify an assignment status, the action returns
      * a list of all virtual MFA devices. Assignment status can be
-     * <code>Assigned</code> ,
-     * <code>Unassigned</code> , or <code>Any</code> .
+     * <code>Assigned</code> , <code>Unassigned</code> , or <code>Any</code>
+     * .
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -4260,8 +4268,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Lists the virtual MFA devices under the AWS account by assignment
      * status. If you do not specify an assignment status, the action returns
      * a list of all virtual MFA devices. Assignment status can be
-     * <code>Assigned</code> ,
-     * <code>Unassigned</code> , or <code>Any</code> .
+     * <code>Assigned</code> , <code>Unassigned</code> , or <code>Any</code>
+     * .
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -4486,9 +4494,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Creates a password for the specified user, giving the user the ability
-     * to access AWS services through the AWS Management Console. For more
-     * information about managing passwords, see
+     * Creates a password for the specified user, giving the user the
+     * ability to access AWS services through the AWS Management Console. For
+     * more information about managing passwords, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html"> Managing Passwords </a>
      * in <i>Using IAM</i> .
      * </p>
@@ -4515,9 +4523,9 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Creates a password for the specified user, giving the user the ability
-     * to access AWS services through the AWS Management Console. For more
-     * information about managing passwords, see
+     * Creates a password for the specified user, giving the user the
+     * ability to access AWS services through the AWS Management Console. For
+     * more information about managing passwords, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html"> Managing Passwords </a>
      * in <i>Using IAM</i> .
      * </p>
@@ -4894,8 +4902,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Retrieves account level information about account entity usage and IAM
-     * quotas.
+     * Retrieves account level information about account entity usage and
+     * IAM quotas.
      * </p>
      * <p>
      * For information about limitations on IAM entities, see
@@ -4925,8 +4933,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Retrieves account level information about account entity usage and IAM
-     * quotas.
+     * Retrieves account level information about account entity usage and
+     * IAM quotas.
      * </p>
      * <p>
      * For information about limitations on IAM entities, see
@@ -4965,8 +4973,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * supports SAML 2.0.
      * </p>
      * <p>
-     * The SAML provider that you create with this operation can be used as a
-     * principal in a role's trust policy to establish a trust relationship
+     * The SAML provider that you create with this operation can be used as
+     * a principal in a role's trust policy to establish a trust relationship
      * between AWS and a SAML identity provider. You can create an IAM role
      * that supports Web-based single sign-on (SSO) to the AWS Management
      * Console or one that supports API access to AWS.
@@ -5014,8 +5022,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * supports SAML 2.0.
      * </p>
      * <p>
-     * The SAML provider that you create with this operation can be used as a
-     * principal in a role's trust policy to establish a trust relationship
+     * The SAML provider that you create with this operation can be used as
+     * a principal in a role's trust policy to establish a trust relationship
      * between AWS and a SAML identity provider. You can create an IAM role
      * that supports Web-based single sign-on (SSO) to the AWS Management
      * Console or one that supports API access to AWS.

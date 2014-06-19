@@ -61,7 +61,7 @@ public class HsmClientCertificate implements Serializable {
      *
      * @param hsmClientCertificateIdentifier The identifier of the HSM client certificate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HsmClientCertificate withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
@@ -100,7 +100,7 @@ public class HsmClientCertificate implements Serializable {
      * @param hsmClientCertificatePublicKey The public key that the Amazon Redshift cluster will use to connect to
      *         the HSM. You must register the public key in the HSM.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public HsmClientCertificate withHsmClientCertificatePublicKey(String hsmClientCertificatePublicKey) {

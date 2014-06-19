@@ -82,7 +82,7 @@ public class AssumeRoleResult implements Serializable {
      * @param credentials The temporary security credentials, which include an access key ID, a
      *         secret access key, and a security (or session) token.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleResult withCredentials(Credentials credentials) {
@@ -145,7 +145,7 @@ public class AssumeRoleResult implements Serializable {
      *         role ID. The ARN and ID include the <code>RoleSessionName</code> that
      *         you specified when you called <code>AssumeRole</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleResult withAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
@@ -199,7 +199,7 @@ public class AssumeRoleResult implements Serializable {
      *         form. The service rejects any policy with a packed size greater than
      *         100 percent, which means the policy exceeded the allowed space.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AssumeRoleResult withPackedPolicySize(Integer packedPolicySize) {

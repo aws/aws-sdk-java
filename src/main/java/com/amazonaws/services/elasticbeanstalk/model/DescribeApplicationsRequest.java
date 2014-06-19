@@ -81,7 +81,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest impleme
      * @param applicationNames If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to only include those with the specified names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationsRequest withApplicationNames(String... applicationNames) {
@@ -101,7 +101,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest impleme
      * @param applicationNames If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to only include those with the specified names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationsRequest withApplicationNames(java.util.Collection<String> applicationNames) {

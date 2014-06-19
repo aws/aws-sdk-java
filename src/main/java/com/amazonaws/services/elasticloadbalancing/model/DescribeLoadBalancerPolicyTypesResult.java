@@ -77,7 +77,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable {
      *         type. If no policy type names are specified, returns the description
      *         of all the policy types defined by Elastic Load Balancing service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(PolicyTypeDescription... policyTypeDescriptions) {
@@ -99,7 +99,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable {
      *         type. If no policy type names are specified, returns the description
      *         of all the policy types defined by Elastic Load Balancing service.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {

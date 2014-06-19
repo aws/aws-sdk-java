@@ -54,7 +54,7 @@ public class DescribeLoadBalancerAttributesResult implements Serializable {
      *
      * @param loadBalancerAttributes The load balancer attributes structure.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerAttributesResult withLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {

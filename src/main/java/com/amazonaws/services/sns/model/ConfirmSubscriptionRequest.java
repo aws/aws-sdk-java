@@ -21,12 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest) ConfirmSubscription operation}.
  * <p>
- * The <code>ConfirmSubscription</code> action verifies an endpoint
- * owner's intent to receive messages by validating the token sent to the
- * endpoint by an earlier <code>Subscribe</code> action. If the token is
- * valid, the action creates a new subscription and returns its Amazon
- * Resource Name (ARN). This call requires an AWS signature only when the
- * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".
+ * Verifies an endpoint owner's intent to receive messages by validating
+ * the token sent to the endpoint by an earlier <code>Subscribe</code>
+ * action. If the token is valid, the action creates a new subscription
+ * and returns its Amazon Resource Name (ARN). This call requires an AWS
+ * signature only when the <code>AuthenticateOnUnsubscribe</code> flag is
+ * set to "true".
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest)
@@ -120,7 +120,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest implemen
      *
      * @param topicArn The ARN of the topic for which you wish to confirm a subscription.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfirmSubscriptionRequest withTopicArn(String topicArn) {
@@ -159,7 +159,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest implemen
      * @param token Short-lived token sent to an endpoint during the
      *         <code>Subscribe</code> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfirmSubscriptionRequest withToken(String token) {
@@ -216,7 +216,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest implemen
      *         can unsubscribe the endpoint. The unsubscribe action requires AWS
      *         authentication.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ConfirmSubscriptionRequest withAuthenticateOnUnsubscribe(String authenticateOnUnsubscribe) {

@@ -77,7 +77,7 @@ public class SendMessageBatchResultEntry implements Serializable {
      *
      * @param id An identifier for the message in this batch.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResultEntry withId(String id) {
@@ -110,7 +110,7 @@ public class SendMessageBatchResultEntry implements Serializable {
      *
      * @param messageId An identifier for the message.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResultEntry withMessageId(String messageId) {
@@ -167,7 +167,7 @@ public class SendMessageBatchResultEntry implements Serializable {
      *         information about MD5, go to <a
      *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResultEntry withMD5OfMessageBody(String mD5OfMessageBody) {
@@ -224,7 +224,7 @@ public class SendMessageBatchResultEntry implements Serializable {
      *         the MD5 digest. For information about MD5, go to <a
      *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SendMessageBatchResultEntry withMD5OfMessageAttributes(String mD5OfMessageAttributes) {

@@ -92,7 +92,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements Serial
      *         tape to delete is associated with. Use the <a>ListGateways</a>
      *         operation to return a list of gateways for your account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTapeRequest withGatewayARN(String gatewayARN) {
@@ -134,7 +134,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTapeRequest withTapeARN(String tapeARN) {

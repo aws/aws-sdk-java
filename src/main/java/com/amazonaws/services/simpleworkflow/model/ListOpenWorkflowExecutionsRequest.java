@@ -176,7 +176,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *
      * @param domain The name of the domain that contains the workflow executions to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withDomain(String domain) {
@@ -221,7 +221,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *         whether their start times are within the range specified by this
      *         filter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
@@ -272,7 +272,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *         and <code>tagFilter</code> are mutually exclusive. You can specify at
      *         most one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -323,7 +323,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withTagFilter(TagFilter tagFilter) {
@@ -383,7 +383,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *         results, repeat the call with the returned token and all other
      *         arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withNextPageToken(String nextPageToken) {
@@ -455,7 +455,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *         the maxiumum page size, in which case, the returned page will have
      *         fewer results than the maximumPageSize specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withMaximumPageSize(Integer maximumPageSize) {
@@ -500,7 +500,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *         By default the results are returned in descending order of the start
      *         time of the executions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withReverseOrder(Boolean reverseOrder) {
@@ -570,7 +570,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListOpenWorkflowExecutionsRequest withExecutionFilter(WorkflowExecutionFilter executionFilter) {

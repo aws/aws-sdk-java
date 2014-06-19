@@ -126,7 +126,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @param reservedInstancesIds One or more Reserved Instance IDs. <p>Default: Describes all your
      *         Reserved Instances, or only those otherwise specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesRequest withReservedInstancesIds(String... reservedInstancesIds) {
@@ -146,7 +146,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @param reservedInstancesIds One or more Reserved Instance IDs. <p>Default: Describes all your
      *         Reserved Instances, or only those otherwise specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesRequest withReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
@@ -382,7 +382,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *         filter. </li> <li> <p><code>usage-price</code> - The usage price of
      *         the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesRequest withFilters(Filter... filters) {
@@ -462,7 +462,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *         filter. </li> <li> <p><code>usage-price</code> - The usage price of
      *         the Reserved Instance, per hour (for example, 0.84). </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesRequest withFilters(java.util.Collection<Filter> filters) {
@@ -515,7 +515,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *
      * @param offeringType The Reserved Instance offering type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OfferingTypeValues
@@ -549,7 +549,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *
      * @param offeringType The Reserved Instance offering type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see OfferingTypeValues

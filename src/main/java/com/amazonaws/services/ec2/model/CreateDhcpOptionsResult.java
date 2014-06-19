@@ -51,7 +51,7 @@ public class CreateDhcpOptionsResult implements Serializable {
      *
      * @param dhcpOptions A set of DHCP options.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDhcpOptionsResult withDhcpOptions(DhcpOptions dhcpOptions) {

@@ -61,7 +61,7 @@ public class DescribeKeyPairsResult implements Serializable {
      *
      * @param keyPairs Information about one or more key pairs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeKeyPairsResult withKeyPairs(KeyPairInfo... keyPairs) {
@@ -79,7 +79,7 @@ public class DescribeKeyPairsResult implements Serializable {
      *
      * @param keyPairs Information about one or more key pairs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeKeyPairsResult withKeyPairs(java.util.Collection<KeyPairInfo> keyPairs) {

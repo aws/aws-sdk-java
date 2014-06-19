@@ -84,7 +84,7 @@ public class ListAccountAliasesResult implements Serializable {
      *
      * @param accountAliases A list of aliases associated with the account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccountAliasesResult withAccountAliases(String... accountAliases) {
@@ -102,7 +102,7 @@ public class ListAccountAliasesResult implements Serializable {
      *
      * @param accountAliases A list of aliases associated with the account.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccountAliasesResult withAccountAliases(java.util.Collection<String> accountAliases) {
@@ -160,7 +160,7 @@ public class ListAccountAliasesResult implements Serializable {
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more account aliases in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccountAliasesResult withIsTruncated(Boolean isTruncated) {
@@ -238,7 +238,7 @@ public class ListAccountAliasesResult implements Serializable {
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccountAliasesResult withMarker(String marker) {

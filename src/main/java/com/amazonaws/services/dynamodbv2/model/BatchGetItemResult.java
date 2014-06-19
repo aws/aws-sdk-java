@@ -98,7 +98,7 @@ public class BatchGetItemResult implements Serializable {
      *         <i>Responses</i> consists of a table name, along with a map of
      *         attribute data consisting of the data type and attribute value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchGetItemResult withResponses(java.util.Map<String,java.util.List<java.util.Map<String,AttributeValue>>> responses) {
@@ -257,7 +257,7 @@ public class BatchGetItemResult implements Serializable {
      *         </ul> <p>If there are no unprocessed keys remaining, the response
      *         contains an empty <i>UnprocessedKeys</i> map.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchGetItemResult withUnprocessedKeys(java.util.Map<String,KeysAndAttributes> unprocessedKeys) {
@@ -361,7 +361,7 @@ public class BatchGetItemResult implements Serializable {
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchGetItemResult withConsumedCapacity(ConsumedCapacity... consumedCapacity) {
@@ -385,7 +385,7 @@ public class BatchGetItemResult implements Serializable {
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchGetItemResult withConsumedCapacity(java.util.Collection<ConsumedCapacity> consumedCapacity) {

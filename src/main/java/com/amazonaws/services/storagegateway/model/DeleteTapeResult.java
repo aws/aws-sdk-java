@@ -65,7 +65,7 @@ public class DeleteTapeResult implements Serializable {
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the deleted virtual tape.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTapeResult withTapeARN(String tapeARN) {

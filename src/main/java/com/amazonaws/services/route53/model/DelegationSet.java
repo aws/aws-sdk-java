@@ -116,7 +116,7 @@ public class DelegationSet implements Serializable {
      *         an NS record to your domain for each <code>NameServer</code> that is
      *         assigned to your hosted zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DelegationSet withNameServers(String... nameServers) {
@@ -143,7 +143,7 @@ public class DelegationSet implements Serializable {
      *         an NS record to your domain for each <code>NameServer</code> that is
      *         assigned to your hosted zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DelegationSet withNameServers(java.util.Collection<String> nameServers) {

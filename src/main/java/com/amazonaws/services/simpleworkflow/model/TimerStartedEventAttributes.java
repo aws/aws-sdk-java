@@ -92,7 +92,7 @@ public class TimerStartedEventAttributes implements Serializable {
      *
      * @param timerId The unique Id of the timer that was started.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerStartedEventAttributes withTimerId(String timerId) {
@@ -140,7 +140,7 @@ public class TimerStartedEventAttributes implements Serializable {
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerStartedEventAttributes withControl(String control) {
@@ -194,7 +194,7 @@ public class TimerStartedEventAttributes implements Serializable {
      *         is specified in seconds. The valid values are integers greater than or
      *         equal to 0.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerStartedEventAttributes withStartToFireTimeout(String startToFireTimeout) {
@@ -245,7 +245,7 @@ public class TimerStartedEventAttributes implements Serializable {
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TimerStartedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

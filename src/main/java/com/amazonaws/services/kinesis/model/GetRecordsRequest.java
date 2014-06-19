@@ -129,7 +129,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
      * @param shardIterator The position in the shard from which you want to start sequentially
      *         reading data records.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetRecordsRequest withShardIterator(String shardIterator) {
@@ -177,7 +177,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
      * @param limit The maximum number of records to return, which can be set to a value
      *         of up to 10,000.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetRecordsRequest withLimit(Integer limit) {

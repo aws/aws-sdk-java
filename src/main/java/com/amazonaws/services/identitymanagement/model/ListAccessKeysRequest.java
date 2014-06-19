@@ -121,7 +121,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
      *
      * @param userName Name of the user.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccessKeysRequest withUserName(String userName) {
@@ -184,7 +184,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccessKeysRequest withMarker(String marker) {
@@ -250,7 +250,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListAccessKeysRequest withMaxItems(Integer maxItems) {

@@ -69,7 +69,7 @@ public class RunJobFlowResult implements Serializable {
      *
      * @param jobFlowId An unique identifier for the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunJobFlowResult withJobFlowId(String jobFlowId) {

@@ -58,7 +58,7 @@ public class PlatformApplication implements Serializable {
      *
      * @param platformApplicationArn PlatformApplicationArn for platform application object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PlatformApplication withPlatformApplicationArn(String platformApplicationArn) {
@@ -95,7 +95,7 @@ public class PlatformApplication implements Serializable {
      *
      * @param attributes Attributes for platform application object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PlatformApplication withAttributes(java.util.Map<String,String> attributes) {

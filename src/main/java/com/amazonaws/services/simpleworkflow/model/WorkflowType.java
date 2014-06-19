@@ -89,7 +89,7 @@ public class WorkflowType implements Serializable {
      *         combination of workflow type name and version must be unique with in a
      *         domain.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowType withName(String name) {
@@ -143,7 +143,7 @@ public class WorkflowType implements Serializable {
      *         combination of workflow type name and version must be unique with in a
      *         domain.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowType withVersion(String version) {

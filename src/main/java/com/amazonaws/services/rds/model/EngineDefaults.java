@@ -74,7 +74,7 @@ public class EngineDefaults implements Serializable {
      * @param dBParameterGroupFamily Specifies the name of the DB parameter group family which the engine
      *         default parameters apply to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -125,7 +125,7 @@ public class EngineDefaults implements Serializable {
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withMarker(String marker) {
@@ -168,7 +168,7 @@ public class EngineDefaults implements Serializable {
      *
      * @param parameters Contains a list of engine default parameters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withParameters(Parameter... parameters) {
@@ -186,7 +186,7 @@ public class EngineDefaults implements Serializable {
      *
      * @param parameters Contains a list of engine default parameters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withParameters(java.util.Collection<Parameter> parameters) {

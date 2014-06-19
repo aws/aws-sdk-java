@@ -72,7 +72,7 @@ public class IndexFieldStatus implements Serializable {
      *         name, type, and options. The supported options depend on the
      *         <code><a>IndexFieldType</a></code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexFieldStatus withOptions(IndexField options) {
@@ -105,7 +105,7 @@ public class IndexFieldStatus implements Serializable {
      *
      * @param status The status of domain configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public IndexFieldStatus withStatus(OptionStatus status) {

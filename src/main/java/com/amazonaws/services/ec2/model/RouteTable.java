@@ -78,7 +78,7 @@ public class RouteTable implements Serializable {
      *
      * @param routeTableId The ID of the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withRouteTableId(String routeTableId) {
@@ -111,7 +111,7 @@ public class RouteTable implements Serializable {
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withVpcId(String vpcId) {
@@ -154,7 +154,7 @@ public class RouteTable implements Serializable {
      *
      * @param routes The routes in the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withRoutes(Route... routes) {
@@ -172,7 +172,7 @@ public class RouteTable implements Serializable {
      *
      * @param routes The routes in the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withRoutes(java.util.Collection<Route> routes) {
@@ -222,7 +222,7 @@ public class RouteTable implements Serializable {
      *
      * @param associations The associations between the route table and one or more subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withAssociations(RouteTableAssociation... associations) {
@@ -240,7 +240,7 @@ public class RouteTable implements Serializable {
      *
      * @param associations The associations between the route table and one or more subnets.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withAssociations(java.util.Collection<RouteTableAssociation> associations) {
@@ -290,7 +290,7 @@ public class RouteTable implements Serializable {
      *
      * @param tags Any tags assigned to the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withTags(Tag... tags) {
@@ -308,7 +308,7 @@ public class RouteTable implements Serializable {
      *
      * @param tags Any tags assigned to the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withTags(java.util.Collection<Tag> tags) {
@@ -358,7 +358,7 @@ public class RouteTable implements Serializable {
      *
      * @param propagatingVgws Any virtual private gateway (VGW) propagating routes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withPropagatingVgws(PropagatingVgw... propagatingVgws) {
@@ -376,7 +376,7 @@ public class RouteTable implements Serializable {
      *
      * @param propagatingVgws Any virtual private gateway (VGW) propagating routes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RouteTable withPropagatingVgws(java.util.Collection<PropagatingVgw> propagatingVgws) {

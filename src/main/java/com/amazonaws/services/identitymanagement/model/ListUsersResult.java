@@ -83,7 +83,7 @@ public class ListUsersResult implements Serializable {
      *
      * @param users A list of users.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUsersResult withUsers(User... users) {
@@ -101,7 +101,7 @@ public class ListUsersResult implements Serializable {
      *
      * @param users A list of users.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUsersResult withUsers(java.util.Collection<User> users) {
@@ -159,7 +159,7 @@ public class ListUsersResult implements Serializable {
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more users in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUsersResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListUsersResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListUsersResult withMarker(String marker) {

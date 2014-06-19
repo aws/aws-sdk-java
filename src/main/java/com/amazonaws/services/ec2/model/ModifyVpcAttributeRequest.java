@@ -78,7 +78,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyVpcAttributeRequest withVpcId(String vpcId) {
@@ -147,7 +147,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      *         IP address at the base of the VPC network range "plus two" will
      *         succeed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyVpcAttributeRequest withEnableDnsSupport(Boolean enableDnsSupport) {
@@ -225,7 +225,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      *         <code>enableDnsHostnames</code> to <code>true</code> if you also set
      *         the <code>EnableDnsSupport</code> attribute to <code>true</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyVpcAttributeRequest withEnableDnsHostnames(Boolean enableDnsHostnames) {

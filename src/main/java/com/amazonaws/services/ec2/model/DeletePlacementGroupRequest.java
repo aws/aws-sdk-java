@@ -82,7 +82,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest impleme
      *
      * @param groupName The name of the placement group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeletePlacementGroupRequest withGroupName(String groupName) {

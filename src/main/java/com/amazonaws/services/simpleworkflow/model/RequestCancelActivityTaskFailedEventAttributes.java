@@ -96,7 +96,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      * @param activityId The activityId provided in the <code>RequestCancelActivityTask</code>
      *         decision that failed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelActivityTaskFailedEventAttributes withActivityId(String activityId) {
@@ -178,7 +178,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RequestCancelActivityTaskFailedCause
@@ -236,7 +236,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RequestCancelActivityTaskFailedCause
@@ -295,7 +295,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelActivityTaskFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {

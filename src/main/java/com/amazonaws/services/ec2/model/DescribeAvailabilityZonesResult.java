@@ -61,7 +61,7 @@ public class DescribeAvailabilityZonesResult implements Serializable {
      *
      * @param availabilityZones Information about one or more Availability Zones.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityZonesResult withAvailabilityZones(AvailabilityZone... availabilityZones) {
@@ -79,7 +79,7 @@ public class DescribeAvailabilityZonesResult implements Serializable {
      *
      * @param availabilityZones Information about one or more Availability Zones.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAvailabilityZonesResult withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {

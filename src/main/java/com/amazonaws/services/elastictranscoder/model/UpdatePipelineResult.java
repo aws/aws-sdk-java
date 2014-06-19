@@ -54,7 +54,7 @@ public class UpdatePipelineResult implements Serializable {
      *
      * @param pipeline The pipeline (queue) that is used to manage jobs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdatePipelineResult withPipeline(Pipeline pipeline) {

@@ -66,7 +66,7 @@ public class DescribeInstanceStatusResult implements Serializable {
      *
      * @param instanceStatuses One or more instance status descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusResult withInstanceStatuses(InstanceStatus... instanceStatuses) {
@@ -84,7 +84,7 @@ public class DescribeInstanceStatusResult implements Serializable {
      *
      * @param instanceStatuses One or more instance status descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusResult withInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
@@ -124,7 +124,7 @@ public class DescribeInstanceStatusResult implements Serializable {
      *
      * @param nextToken The next paginated set of results to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeInstanceStatusResult withNextToken(String nextToken) {

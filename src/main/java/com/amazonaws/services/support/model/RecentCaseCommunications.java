@@ -68,7 +68,7 @@ public class RecentCaseCommunications implements Serializable {
      *
      * @param communications The five most recent communications associated with the case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RecentCaseCommunications withCommunications(Communication... communications) {
@@ -86,7 +86,7 @@ public class RecentCaseCommunications implements Serializable {
      *
      * @param communications The five most recent communications associated with the case.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RecentCaseCommunications withCommunications(java.util.Collection<Communication> communications) {
@@ -126,7 +126,7 @@ public class RecentCaseCommunications implements Serializable {
      *
      * @param nextToken A resumption point for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RecentCaseCommunications withNextToken(String nextToken) {

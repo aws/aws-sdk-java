@@ -134,7 +134,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateUserRequest withPath(String path) {
@@ -179,7 +179,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param userName Name of the user to create.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateUserRequest withUserName(String userName) {

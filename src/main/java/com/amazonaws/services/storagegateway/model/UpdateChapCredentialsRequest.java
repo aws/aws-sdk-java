@@ -119,7 +119,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
      *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
      *         TargetARN for specified VolumeARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateChapCredentialsRequest withTargetARN(String targetARN) {
@@ -167,7 +167,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
      * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
      *         to participate in mutual CHAP with the target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateChapCredentialsRequest withSecretToAuthenticateInitiator(String secretToAuthenticateInitiator) {
@@ -212,7 +212,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
      *
      * @param initiatorName The iSCSI initiator that connects to the target.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateChapCredentialsRequest withInitiatorName(String initiatorName) {
@@ -260,7 +260,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
      *         CHAP with the initiator (e.g. Windows client).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateChapCredentialsRequest withSecretToAuthenticateTarget(String secretToAuthenticateTarget) {

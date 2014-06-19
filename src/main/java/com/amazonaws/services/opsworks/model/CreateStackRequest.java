@@ -254,7 +254,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param name The stack name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withName(String name) {
@@ -305,7 +305,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withRegion(String region) {
@@ -464,7 +464,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         Platforms</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withVpcId(String vpcId) {
@@ -507,7 +507,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withAttributes(java.util.Map<String,String> attributes) {
@@ -601,7 +601,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withServiceRoleArn(String serviceRoleArn) {
@@ -652,7 +652,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
@@ -697,7 +697,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
      *         default option is <code>Amazon Linux</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withDefaultOs(String defaultOs) {
@@ -814,7 +814,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         name, call <code>GetHostNameSuggestion</code>, which returns a host
      *         name based on the current theme.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withHostnameTheme(String hostnameTheme) {
@@ -877,7 +877,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
      *         more information, see the <code>VpcId</code> parameter description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
@@ -940,7 +940,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         when this parameter is required, see the <code>VpcId</code> parameter
      *         description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withDefaultSubnetId(String defaultSubnetId) {
@@ -1009,7 +1009,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withCustomJson(String customJson) {
@@ -1054,7 +1054,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         you use the configuration manager to specify the Chef version, 0.9,
      *         11.4, or 11.10. The default value is currently 11.4.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withConfigurationManager(StackConfigurationManager configurationManager) {
@@ -1111,7 +1111,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withChefConfiguration(ChefConfiguration chefConfiguration) {
@@ -1144,7 +1144,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param useCustomCookbooks Whether the stack uses custom cookbooks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
@@ -1288,7 +1288,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      *         a New Stack</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
@@ -1394,7 +1394,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withCustomCookbooksSource(Source customCookbooksSource) {
@@ -1433,7 +1433,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param defaultSshKeyName A default SSH key for the stack instances. You can override this value
      *         when you create or update an instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
@@ -1509,7 +1509,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RootDeviceType
@@ -1563,7 +1563,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RootDeviceType

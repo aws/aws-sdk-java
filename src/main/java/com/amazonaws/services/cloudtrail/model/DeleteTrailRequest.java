@@ -58,7 +58,7 @@ public class DeleteTrailRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param name The name of a trail to be deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTrailRequest withName(String name) {

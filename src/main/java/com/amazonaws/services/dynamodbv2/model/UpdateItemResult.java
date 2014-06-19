@@ -94,7 +94,7 @@ public class UpdateItemResult implements Serializable {
      *         specified as something other than <code>NONE</code> in the request.
      *         Each element represents one attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateItemResult withAttributes(java.util.Map<String,AttributeValue> attributes) {
@@ -196,7 +196,7 @@ public class UpdateItemResult implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
@@ -247,7 +247,7 @@ public class UpdateItemResult implements Serializable {
      *         asked for in the request. If the table does not have any local
      *         secondary indexes, this information is not returned in the response.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public UpdateItemResult withItemCollectionMetrics(ItemCollectionMetrics itemCollectionMetrics) {

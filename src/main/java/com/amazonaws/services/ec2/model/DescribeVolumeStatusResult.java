@@ -66,7 +66,7 @@ public class DescribeVolumeStatusResult implements Serializable {
      *
      * @param volumeStatuses A list of volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusResult withVolumeStatuses(VolumeStatusItem... volumeStatuses) {
@@ -84,7 +84,7 @@ public class DescribeVolumeStatusResult implements Serializable {
      *
      * @param volumeStatuses A list of volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusResult withVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
@@ -124,7 +124,7 @@ public class DescribeVolumeStatusResult implements Serializable {
      *
      * @param nextToken The next paginated set of results to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVolumeStatusResult withNextToken(String nextToken) {

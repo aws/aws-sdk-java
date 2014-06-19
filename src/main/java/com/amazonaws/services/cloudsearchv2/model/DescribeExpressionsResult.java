@@ -64,7 +64,7 @@ public class DescribeExpressionsResult implements Serializable {
      *
      * @param expressions The expressions configured for the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExpressionsResult withExpressions(ExpressionStatus... expressions) {
@@ -82,7 +82,7 @@ public class DescribeExpressionsResult implements Serializable {
      *
      * @param expressions The expressions configured for the domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeExpressionsResult withExpressions(java.util.Collection<ExpressionStatus> expressions) {

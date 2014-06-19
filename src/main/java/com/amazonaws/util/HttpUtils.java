@@ -33,7 +33,6 @@ import org.apache.http.NameValuePair;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.conn.params.ConnRoutePNames;
@@ -47,7 +46,6 @@ import org.apache.http.params.HttpProtocolParams;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.internal.SdkFilterInputStream;
 
 public class HttpUtils {
 
@@ -272,37 +270,6 @@ public class HttpUtils {
         return new HttpClientWrappingInputStream(
                 httpclient,
                 response.getEntity().getContent());
-    }
-
-    /**
-     * An {@code InputStream} that closes the associated {@code HttpClient}
-     * when the stream is closed.
-     */
-    private static class HttpClientWrappingInputStream
-            extends SdkFilterInputStream {
-
-        private final HttpClient client;
-
-        /**
-         * @param client the {@code HttpClient} to wrap
-         * @param stream the {@code InputStream} to wrap
-         */
-        public HttpClientWrappingInputStream(
-                final HttpClient client,
-                final InputStream stream) {
-
-            super(stream);
-            this.client = client;
-        }
-
-        @Override
-        public void close() throws IOException {
-            try {
-                super.close();
-            } finally {
-                client.getConnectionManager().shutdown();
-            }
-        }
     }
 
     private static String getUserAgent(final ClientConfiguration config) {

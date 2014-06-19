@@ -144,7 +144,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
      * @param hostedZoneId The ID of the hosted zone that contains the resource record sets that
      *         you want to change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeResourceRecordSetsRequest withHostedZoneId(String hostedZoneId) {
@@ -183,7 +183,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
      * @param changeBatch A complex type that contains an optional comment and the
      *         <code>Changes</code> element.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChangeResourceRecordSetsRequest withChangeBatch(ChangeBatch changeBatch) {

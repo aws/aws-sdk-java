@@ -66,7 +66,7 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
      *
      * @param reservedInstancesModifications The Reserved Instance modification information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsResult withReservedInstancesModifications(ReservedInstancesModification... reservedInstancesModifications) {
@@ -84,7 +84,7 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
      *
      * @param reservedInstancesModifications The Reserved Instance modification information.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsResult withReservedInstancesModifications(java.util.Collection<ReservedInstancesModification> reservedInstancesModifications) {
@@ -124,7 +124,7 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
      *
      * @param nextToken The token for the next page of data.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedInstancesModificationsResult withNextToken(String nextToken) {

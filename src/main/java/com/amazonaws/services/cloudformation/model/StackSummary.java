@@ -92,7 +92,7 @@ public class StackSummary implements Serializable {
      *
      * @param stackId Unique stack identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withStackId(String stackId) {
@@ -125,7 +125,7 @@ public class StackSummary implements Serializable {
      *
      * @param stackName The name associated with the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withStackName(String stackName) {
@@ -158,7 +158,7 @@ public class StackSummary implements Serializable {
      *
      * @param templateDescription The template description of the template used to create the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withTemplateDescription(String templateDescription) {
@@ -191,7 +191,7 @@ public class StackSummary implements Serializable {
      *
      * @param creationTime The time the stack was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withCreationTime(java.util.Date creationTime) {
@@ -230,7 +230,7 @@ public class StackSummary implements Serializable {
      * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
      *         if the stack has been updated at least once.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -263,7 +263,7 @@ public class StackSummary implements Serializable {
      *
      * @param deletionTime The time the stack was deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withDeletionTime(java.util.Date deletionTime) {
@@ -309,7 +309,7 @@ public class StackSummary implements Serializable {
      *
      * @param stackStatus The current status of the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StackStatus
@@ -343,7 +343,7 @@ public class StackSummary implements Serializable {
      *
      * @param stackStatus The current status of the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see StackStatus
@@ -378,7 +378,7 @@ public class StackSummary implements Serializable {
      *
      * @param stackStatusReason Success/Failure message associated with the stack status.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StackSummary withStackStatusReason(String stackStatusReason) {

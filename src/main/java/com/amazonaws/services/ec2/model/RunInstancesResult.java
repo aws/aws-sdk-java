@@ -53,7 +53,7 @@ public class RunInstancesResult implements Serializable {
      *
      * @param reservation One or more reservations.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RunInstancesResult withReservation(Reservation reservation) {

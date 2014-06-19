@@ -66,7 +66,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param routeTableId The ID of the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteRouteRequest withRouteTableId(String routeTableId) {
@@ -105,7 +105,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
      * @param destinationCidrBlock The CIDR range for the route. The value you specify must match the
      *         CIDR for the route exactly.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {

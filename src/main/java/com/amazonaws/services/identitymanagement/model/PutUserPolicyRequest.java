@@ -130,7 +130,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param userName Name of the user to associate the policy with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutUserPolicyRequest withUserName(String userName) {
@@ -175,7 +175,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param policyName Name of the policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutUserPolicyRequest withPolicyName(String policyName) {
@@ -220,7 +220,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param policyDocument The policy document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PutUserPolicyRequest withPolicyDocument(String policyDocument) {

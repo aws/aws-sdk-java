@@ -149,6 +149,13 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
     private String redirectLocation;
 
     /**
+     * The optional customer-provided server-side encryption key to use to
+     * encrypt the uploaded object.
+     */
+    private SSECustomerKey sseCustomerKey;
+
+
+    /**
      * Constructs a new
      * {@link PutObjectRequest} object to upload a file to the
      * specified bucket and key. After constructing the request,
@@ -761,12 +768,52 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
     }
 
     /**
+     * Returns the optional customer-provided server-side encryption key to use
+     * to encrypt the uploaded object.
+     *
+     * @return The optional customer-provided server-side encryption key to use
+     *         to encrypt the uploaded object.
+     */
+    public SSECustomerKey getSSECustomerKey() {
+        return sseCustomerKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the uploaded object.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the uploaded object.
+     */
+    public void setSSECustomerKey(SSECustomerKey sseKey) {
+        this.sseCustomerKey = sseKey;
+    }
+
+    /**
+     * Sets the optional customer-provided server-side encryption key to use to
+     * encrypt the uploaded object, and returns the updated request object so
+     * that additional method calls can be chained together.
+     *
+     * @param sseKey
+     *            The optional customer-provided server-side encryption key to
+     *            use to encrypt the uploaded object.
+     *
+     * @return This updated request object so that additional method calls can
+     *         be chained together.
+     */
+    public PutObjectRequest withSSECustomerKey(SSECustomerKey sseKey) {
+        setSSECustomerKey(sseKey);
+        return this;
+    }
+
+    /**
      * Sets the optional progress listener for receiving updates for object
      * upload status.
      *
      * @param progressListener
      *            The legacy progress listener that is used exclusively for Amazon S3 client.
-     * 
+     *
      * @deprecated use {@link #setGeneralProgressListener(ProgressListener)} instead.
      */
     @Deprecated
@@ -780,7 +827,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      *
      * @return the optional progress listener for receiving updates about object
      *         upload status.
-     * 
+     *
      * @deprecated use {@link #getGeneralProgressListener()} instead.
      */
     @Deprecated
@@ -801,7 +848,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      *            The legacy progress listener that is used exclusively for Amazon S3 client.
      *
      * @return This updated PutObjectRequest object.
-     * 
+     *
      * @deprecated use {@link #withGeneralProgressListener(ProgressListener)} instead.
      */
     @Deprecated

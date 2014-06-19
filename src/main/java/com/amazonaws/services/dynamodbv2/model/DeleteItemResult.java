@@ -113,7 +113,7 @@ public class DeleteItemResult implements Serializable {
      *         <i>ReturnValues</i> was specified as <code>ALL_OLD</code> in the
      *         request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteItemResult withAttributes(java.util.Map<String,AttributeValue> attributes) {
@@ -216,7 +216,7 @@ public class DeleteItemResult implements Serializable {
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
@@ -339,7 +339,7 @@ public class DeleteItemResult implements Serializable {
      *         time; therefore, do not rely on the precision or accuracy of the
      *         estimate. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteItemResult withItemCollectionMetrics(ItemCollectionMetrics itemCollectionMetrics) {

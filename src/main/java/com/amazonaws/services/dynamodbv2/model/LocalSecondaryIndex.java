@@ -93,7 +93,7 @@ public class LocalSecondaryIndex implements Serializable {
      * @param indexName The name of the local secondary index. The name must be unique among
      *         all other indexes on this table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndex withIndexName(String indexName) {
@@ -153,7 +153,7 @@ public class LocalSecondaryIndex implements Serializable {
      *         one or more pairs of attribute names and key types (<code>HASH</code>
      *         or <code>RANGE</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndex withKeySchema(KeySchemaElement... keySchema) {
@@ -178,7 +178,7 @@ public class LocalSecondaryIndex implements Serializable {
      *         one or more pairs of attribute names and key types (<code>HASH</code>
      *         or <code>RANGE</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndex withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -230,7 +230,7 @@ public class LocalSecondaryIndex implements Serializable {
      *         an index. These are in addition to the primary key attributes and
      *         index key attributes, which are automatically projected.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public LocalSecondaryIndex withProjection(Projection projection) {

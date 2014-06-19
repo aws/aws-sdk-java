@@ -66,7 +66,7 @@ public class DescribeVpcAttributeResult implements Serializable {
      *
      * @param vpcId The ID of the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcAttributeResult withVpcId(String vpcId) {
@@ -117,7 +117,7 @@ public class DescribeVpcAttributeResult implements Serializable {
      *         hostnames for your instances to their corresponding IP addresses;
      *         otherwise, it does not.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcAttributeResult withEnableDnsSupport(Boolean enableDnsSupport) {
@@ -177,7 +177,7 @@ public class DescribeVpcAttributeResult implements Serializable {
      *         If this attribute is <code>true</code>, instances in the VPC get DNS
      *         hostnames; otherwise, they do not.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeVpcAttributeResult withEnableDnsHostnames(Boolean enableDnsHostnames) {

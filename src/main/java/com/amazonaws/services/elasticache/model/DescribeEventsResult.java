@@ -59,7 +59,7 @@ public class DescribeEventsResult implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsResult withMarker(String marker) {
@@ -108,7 +108,7 @@ public class DescribeEventsResult implements Serializable {
      * @param events A list of events. Each element in the list contains detailed
      *         information about one event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsResult withEvents(Event... events) {
@@ -128,7 +128,7 @@ public class DescribeEventsResult implements Serializable {
      * @param events A list of events. Each element in the list contains detailed
      *         information about one event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeEventsResult withEvents(java.util.Collection<Event> events) {

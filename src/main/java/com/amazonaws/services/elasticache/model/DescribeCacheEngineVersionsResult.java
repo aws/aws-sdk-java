@@ -59,7 +59,7 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheEngineVersionsResult withMarker(String marker) {
@@ -108,7 +108,7 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
      * @param cacheEngineVersions A list of cache engine version details. Each element in the list
      *         contains detailed information about once cache engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheEngineVersionsResult withCacheEngineVersions(CacheEngineVersion... cacheEngineVersions) {
@@ -128,7 +128,7 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
      * @param cacheEngineVersions A list of cache engine version details. Each element in the list
      *         contains detailed information about once cache engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheEngineVersionsResult withCacheEngineVersions(java.util.Collection<CacheEngineVersion> cacheEngineVersions) {

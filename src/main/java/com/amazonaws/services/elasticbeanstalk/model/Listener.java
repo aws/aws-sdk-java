@@ -58,7 +58,7 @@ public class Listener implements Serializable {
      *
      * @param protocol The protocol that is used by the Listener.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Listener withProtocol(String protocol) {
@@ -91,7 +91,7 @@ public class Listener implements Serializable {
      *
      * @param port The port that is used by the Listener.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Listener withPort(Integer port) {

@@ -212,8 +212,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("elastictranscoder.us-east-1.amazonaws.com/");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/elastictranscoder/request.handlers"));
@@ -282,7 +284,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -340,7 +342,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -391,7 +393,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -445,7 +447,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -496,7 +498,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -504,8 +506,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * The CreatePipeline operation creates a pipeline with settings that you
-     * specify.
+     * The CreatePipeline operation creates a pipeline with settings that
+     * you specify.
      * </p>
      *
      * @param createPipelineRequest Container for the necessary parameters to
@@ -549,7 +551,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -607,7 +609,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -666,7 +668,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -718,7 +720,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -776,7 +778,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -784,7 +786,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * The TestRole operation tests the IAM role used to create the pipeline.
+     * The TestRole operation tests the IAM role used to create the
+     * pipeline.
      * </p>
      * <p>
      * The <code>TestRole</code> action lets you determine whether the IAM
@@ -835,7 +838,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -886,7 +889,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -894,7 +897,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * The ReadPipeline operation gets detailed information about a pipeline.
+     * The ReadPipeline operation gets detailed information about a
+     * pipeline.
      * </p>
      *
      * @param readPipelineRequest Container for the necessary parameters to
@@ -937,7 +941,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1008,7 +1012,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1064,7 +1068,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1077,10 +1081,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * that is created.
      * </p>
      * <p>
-     * If you have specified more than one output for your jobs (for example,
-     * one output for the Kindle Fire and another output for the Apple iPhone
-     * 4s), you currently must use the Elastic Transcoder API to list the
-     * jobs (as opposed to the AWS Console).
+     * If you have specified more than one output for your jobs (for
+     * example, one output for the Kindle Fire and another output for the
+     * Apple iPhone 4s), you currently must use the Elastic Transcoder API to
+     * list the jobs (as opposed to the AWS Console).
      * </p>
      *
      * @param createJobRequest Container for the necessary parameters to
@@ -1124,7 +1128,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1182,7 +1186,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1241,8 +1245,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         return listPipelines(new ListPipelinesRequest());
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

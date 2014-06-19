@@ -63,7 +63,7 @@ public class DiskImage implements Serializable {
      *
      * @param image 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImage withImage(DiskImageDetail image) {
@@ -96,7 +96,7 @@ public class DiskImage implements Serializable {
      *
      * @param description 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImage withDescription(String description) {
@@ -129,7 +129,7 @@ public class DiskImage implements Serializable {
      *
      * @param volume 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DiskImage withVolume(VolumeDetail volume) {

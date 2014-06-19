@@ -79,7 +79,7 @@ public class GetShardIteratorResult implements Serializable {
      *         sequentially. A shard iterator specifies this position using the
      *         sequence number of a data record in a shard.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetShardIteratorResult withShardIterator(String shardIterator) {

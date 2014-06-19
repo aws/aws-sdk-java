@@ -82,7 +82,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
      *
      * @param stackName The name or stack ID that you want to associate a policy with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetStackPolicyRequest withStackName(String stackName) {
@@ -154,7 +154,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
      *         Guide. You can specify either the <code>StackPolicyBody</code> or the
      *         <code>StackPolicyURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetStackPolicyRequest withStackPolicyBody(String stackPolicyBody) {
@@ -214,7 +214,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements Se
      *         as the stack. You can specify either the <code>StackPolicyBody</code>
      *         or the <code>StackPolicyURL</code> parameter, but not both.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetStackPolicyRequest withStackPolicyURL(String stackPolicyURL) {

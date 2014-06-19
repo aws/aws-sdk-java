@@ -121,7 +121,7 @@ public class StreamingDistributionSummary implements Serializable {
      *
      * @param id The identifier for the distribution. For example: EDFDVBD632BHDS5.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withId(String id) {
@@ -166,7 +166,7 @@ public class StreamingDistributionSummary implements Serializable {
      *         Deployed, the distribution's information is fully propagated
      *         throughout the Amazon CloudFront system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withStatus(String status) {
@@ -199,7 +199,7 @@ public class StreamingDistributionSummary implements Serializable {
      *
      * @param lastModifiedTime The date and time the distribution was last modified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -238,7 +238,7 @@ public class StreamingDistributionSummary implements Serializable {
      * @param domainName The domain name corresponding to the distribution. For example:
      *         d604721fxaaqy9.cloudfront.net.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withDomainName(String domainName) {
@@ -283,7 +283,7 @@ public class StreamingDistributionSummary implements Serializable {
      *         from which you want CloudFront to get your media files for
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withS3Origin(S3Origin s3Origin) {
@@ -322,7 +322,7 @@ public class StreamingDistributionSummary implements Serializable {
      * @param aliases A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this streaming distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withAliases(Aliases aliases) {
@@ -427,7 +427,7 @@ public class StreamingDistributionSummary implements Serializable {
      *         the trusted signers that you want to include in the updated
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withTrustedSigners(TrustedSigners trustedSigners) {
@@ -460,7 +460,7 @@ public class StreamingDistributionSummary implements Serializable {
      *
      * @param comment The comment originally specified when this distribution was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withComment(String comment) {
@@ -506,7 +506,7 @@ public class StreamingDistributionSummary implements Serializable {
      *
      * @param priceClass The new value for the PriceClass property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PriceClass
@@ -540,7 +540,7 @@ public class StreamingDistributionSummary implements Serializable {
      *
      * @param priceClass The new value for the PriceClass property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PriceClass
@@ -581,7 +581,7 @@ public class StreamingDistributionSummary implements Serializable {
      * @param enabled Whether the distribution is enabled to accept end user requests for
      *         content.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StreamingDistributionSummary withEnabled(Boolean enabled) {

@@ -111,7 +111,7 @@ public class TextOptions implements Serializable {
      * @param defaultValue A value to use for the field if the field isn't specified for a
      *         document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextOptions withDefaultValue(String defaultValue) {
@@ -180,7 +180,7 @@ public class TextOptions implements Serializable {
      *         cannot be used as a field name. To reference a document's ID, you can
      *         use the name <code>_id</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextOptions withSourceField(String sourceField) {
@@ -219,7 +219,7 @@ public class TextOptions implements Serializable {
      * @param returnEnabled Whether the contents of the field can be returned in the search
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextOptions withReturnEnabled(Boolean returnEnabled) {
@@ -263,7 +263,7 @@ public class TextOptions implements Serializable {
      *
      * @param sortEnabled Whether the field can be used to sort the search results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextOptions withSortEnabled(Boolean sortEnabled) {
@@ -305,7 +305,7 @@ public class TextOptions implements Serializable {
      *
      * @param highlightEnabled Whether highlights can be returned for the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextOptions withHighlightEnabled(Boolean highlightEnabled) {
@@ -356,7 +356,7 @@ public class TextOptions implements Serializable {
      *
      * @param analysisScheme The name of an analysis scheme for a <code>text</code> field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TextOptions withAnalysisScheme(String analysisScheme) {

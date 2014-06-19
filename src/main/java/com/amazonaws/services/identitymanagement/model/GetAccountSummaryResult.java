@@ -296,7 +296,7 @@ public class GetAccountSummaryResult implements Serializable {
      *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      *         account</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAccountSummaryResult withSummaryMap(java.util.Map<String,Integer> summaryMap) {

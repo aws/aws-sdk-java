@@ -103,7 +103,7 @@ public class Route implements Serializable {
      *
      * @param destinationCidrBlock The CIDR block used for the destination match.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Route withDestinationCidrBlock(String destinationCidrBlock) {
@@ -136,7 +136,7 @@ public class Route implements Serializable {
      *
      * @param gatewayId The ID of a gateway attached to your VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Route withGatewayId(String gatewayId) {
@@ -169,7 +169,7 @@ public class Route implements Serializable {
      *
      * @param instanceId The ID of a NAT instance in your VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Route withInstanceId(String instanceId) {
@@ -202,7 +202,7 @@ public class Route implements Serializable {
      *
      * @param instanceOwnerId The AWS account ID of the owner of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Route withInstanceOwnerId(String instanceOwnerId) {
@@ -235,7 +235,7 @@ public class Route implements Serializable {
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Route withNetworkInterfaceId(String networkInterfaceId) {
@@ -268,7 +268,7 @@ public class Route implements Serializable {
      *
      * @param vpcPeeringConnectionId The ID of the VPC peering connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Route withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
@@ -332,7 +332,7 @@ public class Route implements Serializable {
      *         gateway isn't attached to the VPC, or the specified NAT instance has
      *         been terminated).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RouteState
@@ -378,7 +378,7 @@ public class Route implements Serializable {
      *         gateway isn't attached to the VPC, or the specified NAT instance has
      *         been terminated).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RouteState
@@ -462,7 +462,7 @@ public class Route implements Serializable {
      *         <li><code>EnableVgwRoutePropagation</code> indicates that the route
      *         was propagated by route propagation.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RouteOrigin
@@ -520,7 +520,7 @@ public class Route implements Serializable {
      *         <li><code>EnableVgwRoutePropagation</code> indicates that the route
      *         was propagated by route propagation.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RouteOrigin

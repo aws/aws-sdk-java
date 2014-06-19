@@ -129,7 +129,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param imageId The ID of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withImageId(String imageId) {
@@ -162,7 +162,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param attribute The name of the attribute to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withAttribute(String attribute) {
@@ -195,7 +195,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param operationType The operation type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withOperationType(String operationType) {
@@ -244,7 +244,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @param userIds One or more AWS account IDs. This is only valid when modifying the
      *         <code>launchPermission</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withUserIds(String... userIds) {
@@ -264,7 +264,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @param userIds One or more AWS account IDs. This is only valid when modifying the
      *         <code>launchPermission</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withUserIds(java.util.Collection<String> userIds) {
@@ -320,7 +320,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @param userGroups One or more user groups. This is only valid when modifying the
      *         <code>launchPermission</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withUserGroups(String... userGroups) {
@@ -340,7 +340,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @param userGroups One or more user groups. This is only valid when modifying the
      *         <code>launchPermission</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withUserGroups(java.util.Collection<String> userGroups) {
@@ -402,7 +402,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *         can't be removed. This is only valid when modifying the
      *         <code>productCodes</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withProductCodes(String... productCodes) {
@@ -424,7 +424,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *         can't be removed. This is only valid when modifying the
      *         <code>productCodes</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withProductCodes(java.util.Collection<String> productCodes) {
@@ -470,7 +470,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @param value The value of the attribute being modified. This is only valid when
      *         modifying the <code>description</code> attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withValue(String value) {
@@ -503,7 +503,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param launchPermission <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withLaunchPermission(LaunchPermissionModifications launchPermission) {
@@ -536,7 +536,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *
      * @param description A description for the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyImageAttributeRequest withDescription(String description) {

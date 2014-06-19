@@ -63,7 +63,7 @@ public class DetachLoadBalancerFromSubnetsResult implements Serializable {
      *
      * @param subnets A list of subnet IDs the load balancer is now attached to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachLoadBalancerFromSubnetsResult withSubnets(String... subnets) {
@@ -81,7 +81,7 @@ public class DetachLoadBalancerFromSubnetsResult implements Serializable {
      *
      * @param subnets A list of subnet IDs the load balancer is now attached to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DetachLoadBalancerFromSubnetsResult withSubnets(java.util.Collection<String> subnets) {

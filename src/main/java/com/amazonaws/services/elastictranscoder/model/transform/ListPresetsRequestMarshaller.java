@@ -47,10 +47,8 @@ public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPres
         Request<ListPresetsRequest> request = new DefaultRequest<ListPresetsRequest>(listPresetsRequest, "AmazonElasticTranscoder");
         String target = "EtsCustomerService.ListPresets";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.GET);
-
         String uriResourcePath = "2012-09-25/presets?Ascending={Ascending};PageToken={PageToken}"; 
         uriResourcePath = uriResourcePath.replace("{Ascending}", (listPresetsRequest.getAscending() == null) ? "" : StringUtils.fromString(listPresetsRequest.getAscending())); 
         uriResourcePath = uriResourcePath.replace("{PageToken}", (listPresetsRequest.getPageToken() == null) ? "" : StringUtils.fromString(listPresetsRequest.getPageToken())); 
@@ -64,15 +62,13 @@ public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPres
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

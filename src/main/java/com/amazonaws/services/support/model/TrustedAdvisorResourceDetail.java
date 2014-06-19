@@ -85,7 +85,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      * @param status The status code for the resource identified in the Trusted Advisor
      *         check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourceDetail withStatus(String status) {
@@ -118,7 +118,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      *
      * @param region The AWS region in which the identified resource is located.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourceDetail withRegion(String region) {
@@ -151,7 +151,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      *
      * @param resourceId The unique identifier for the identified resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourceDetail withResourceId(String resourceId) {
@@ -190,7 +190,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      * @param isSuppressed Specifies whether the AWS resource was ignored by Trusted Advisor
      *         because it was marked as suppressed by the user.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourceDetail withIsSuppressed(Boolean isSuppressed) {
@@ -262,7 +262,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      *         <a>DescribeTrustedAdvisorChecks</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourceDetail withMetadata(String... metadata) {
@@ -286,7 +286,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      *         <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      *         <a>DescribeTrustedAdvisorChecks</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorResourceDetail withMetadata(java.util.Collection<String> metadata) {

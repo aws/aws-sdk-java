@@ -162,7 +162,7 @@ public class GetTopicAttributesResult implements Serializable {
      *         -- the JSON serialization of the effective delivery policy that takes
      *         into account system defaults</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetTopicAttributesResult withAttributes(java.util.Map<String,String> attributes) {

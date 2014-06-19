@@ -124,7 +124,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param startTime The start date and time of the Spot Price history data.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withStartTime(java.util.Date startTime) {
@@ -157,7 +157,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param endTime The end date and time of the Spot Price history data.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withEndTime(java.util.Date endTime) {
@@ -200,7 +200,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param instanceTypes One or more instance types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(String... instanceTypes) {
@@ -218,7 +218,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param instanceTypes One or more instance types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -240,7 +240,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param instanceTypes One or more instance types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(InstanceType... instanceTypes) {
@@ -291,7 +291,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param productDescriptions One or more basic product descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withProductDescriptions(String... productDescriptions) {
@@ -309,7 +309,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param productDescriptions One or more basic product descriptions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withProductDescriptions(java.util.Collection<String> productDescriptions) {
@@ -437,7 +437,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *         can use wildcards (* and ?). Greater than or less than comparison is
      *         not supported. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withFilters(Filter... filters) {
@@ -481,7 +481,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *         can use wildcards (* and ?). Greater than or less than comparison is
      *         not supported. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withFilters(java.util.Collection<Filter> filters) {
@@ -521,7 +521,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param availabilityZone The Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withAvailabilityZone(String availabilityZone) {
@@ -554,7 +554,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param maxResults The number of rows to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withMaxResults(Integer maxResults) {
@@ -587,7 +587,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *
      * @param nextToken The next set of rows to return.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryRequest withNextToken(String nextToken) {

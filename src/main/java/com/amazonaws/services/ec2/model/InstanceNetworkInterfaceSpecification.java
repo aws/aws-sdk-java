@@ -104,7 +104,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withNetworkInterfaceId(String networkInterfaceId) {
@@ -143,7 +143,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      * @param deviceIndex The index of the device on the instance for the network interface
      *         attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withDeviceIndex(Integer deviceIndex) {
@@ -176,7 +176,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param subnetId The ID of the subnet associated with the network string.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withSubnetId(String subnetId) {
@@ -209,7 +209,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param description The description of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withDescription(String description) {
@@ -242,7 +242,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param privateIpAddress The private IP address of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withPrivateIpAddress(String privateIpAddress) {
@@ -285,7 +285,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param groups The IDs of the security groups for the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withGroups(String... groups) {
@@ -303,7 +303,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param groups The IDs of the security groups for the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withGroups(java.util.Collection<String> groups) {
@@ -349,7 +349,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      * @param deleteOnTermination If set to <code>true</code>, the interface is deleted when the
      *         instance is terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withDeleteOnTermination(Boolean deleteOnTermination) {
@@ -403,7 +403,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param privateIpAddresses One or more private IP addresses to assign to the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withPrivateIpAddresses(PrivateIpAddressSpecification... privateIpAddresses) {
@@ -421,7 +421,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param privateIpAddresses One or more private IP addresses to assign to the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
@@ -461,7 +461,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *
      * @param secondaryPrivateIpAddressCount The number of secondary private IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
@@ -518,7 +518,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *         network interface instead of using an existing network interface for
      *         eth0, and you must not specify more than one network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceNetworkInterfaceSpecification withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {

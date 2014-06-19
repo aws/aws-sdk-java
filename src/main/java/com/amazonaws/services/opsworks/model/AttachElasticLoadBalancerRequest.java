@@ -80,7 +80,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest im
      *
      * @param elasticLoadBalancerName The Elastic Load Balancing instance's name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachElasticLoadBalancerRequest withElasticLoadBalancerName(String elasticLoadBalancerName) {
@@ -119,7 +119,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest im
      * @param layerId The ID of the layer that the Elastic Load Balancing instance is to be
      *         attached to.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachElasticLoadBalancerRequest withLayerId(String layerId) {

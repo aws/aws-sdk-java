@@ -86,7 +86,7 @@ public class PlacementGroup implements Serializable {
      *
      * @param groupName The name of the placement group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public PlacementGroup withGroupName(String groupName) {
@@ -132,7 +132,7 @@ public class PlacementGroup implements Serializable {
      *
      * @param strategy The placement strategy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlacementStrategy
@@ -166,7 +166,7 @@ public class PlacementGroup implements Serializable {
      *
      * @param strategy The placement strategy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlacementStrategy
@@ -214,7 +214,7 @@ public class PlacementGroup implements Serializable {
      *
      * @param state The state of the placement group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlacementGroupState
@@ -248,7 +248,7 @@ public class PlacementGroup implements Serializable {
      *
      * @param state The state of the placement group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlacementGroupState

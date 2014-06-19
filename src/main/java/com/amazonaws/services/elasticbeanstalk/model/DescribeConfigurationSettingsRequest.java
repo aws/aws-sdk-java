@@ -131,7 +131,7 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
      *
      * @param applicationName The application for the environment or configuration template.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationSettingsRequest withApplicationName(String applicationName) {
@@ -203,7 +203,7 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
      *         either, AWS Elastic Beanstalk returns a
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationSettingsRequest withTemplateName(String templateName) {
@@ -275,7 +275,7 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
      *         either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeConfigurationSettingsRequest withEnvironmentName(String environmentName) {

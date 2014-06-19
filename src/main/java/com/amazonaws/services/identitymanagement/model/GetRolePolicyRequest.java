@@ -92,7 +92,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param roleName Name of the role associated with the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetRolePolicyRequest withRoleName(String roleName) {
@@ -137,7 +137,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param policyName Name of the policy document to get.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetRolePolicyRequest withPolicyName(String policyName) {

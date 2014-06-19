@@ -97,7 +97,7 @@ public class DescribeDomainRequest extends AmazonWebServiceRequest implements Se
      *
      * @param name The name of the domain to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeDomainRequest withName(String name) {

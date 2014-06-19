@@ -63,6 +63,9 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
                 if (parameterMember.getParameterValue() != null) {
                     request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.fromString(parameterMember.getParameterValue()));
                 }
+                if (parameterMember.isUsePreviousValue() != null) {
+                    request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue", StringUtils.fromBoolean(parameterMember.isUsePreviousValue()));
+                }
             }
 
             parametersListIndex++;

@@ -142,7 +142,7 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVaultNotificationsRequest withAccountId(String accountId) {
@@ -175,7 +175,7 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVaultNotificationsRequest withVaultName(String vaultName) {

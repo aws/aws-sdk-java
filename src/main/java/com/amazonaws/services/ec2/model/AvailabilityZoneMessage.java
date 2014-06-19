@@ -53,7 +53,7 @@ public class AvailabilityZoneMessage implements Serializable {
      *
      * @param message The message about the Availability Zone.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AvailabilityZoneMessage withMessage(String message) {

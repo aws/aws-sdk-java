@@ -150,7 +150,7 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest implements Seria
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVaultRequest withAccountId(String accountId) {
@@ -183,7 +183,7 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVaultRequest withVaultName(String vaultName) {

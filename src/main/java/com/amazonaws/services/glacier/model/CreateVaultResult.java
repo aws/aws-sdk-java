@@ -53,7 +53,7 @@ public class CreateVaultResult implements Serializable {
      *
      * @param location The URI of the vault that was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVaultResult withLocation(String location) {

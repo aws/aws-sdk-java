@@ -63,7 +63,7 @@ public class DescribeApplicationVersionsResult implements Serializable {
      *
      * @param applicationVersions A list of <a>ApplicationVersionDescription</a> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationVersionsResult withApplicationVersions(ApplicationVersionDescription... applicationVersions) {
@@ -81,7 +81,7 @@ public class DescribeApplicationVersionsResult implements Serializable {
      *
      * @param applicationVersions A list of <a>ApplicationVersionDescription</a> .
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeApplicationVersionsResult withApplicationVersions(java.util.Collection<ApplicationVersionDescription> applicationVersions) {

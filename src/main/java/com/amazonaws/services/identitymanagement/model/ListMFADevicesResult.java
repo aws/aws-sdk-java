@@ -83,7 +83,7 @@ public class ListMFADevicesResult implements Serializable {
      *
      * @param mFADevices A list of MFA devices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMFADevicesResult withMFADevices(MFADevice... mFADevices) {
@@ -101,7 +101,7 @@ public class ListMFADevicesResult implements Serializable {
      *
      * @param mFADevices A list of MFA devices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMFADevicesResult withMFADevices(java.util.Collection<MFADevice> mFADevices) {
@@ -159,7 +159,7 @@ public class ListMFADevicesResult implements Serializable {
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more MFA devices in the list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMFADevicesResult withIsTruncated(Boolean isTruncated) {
@@ -231,7 +231,7 @@ public class ListMFADevicesResult implements Serializable {
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMFADevicesResult withMarker(String marker) {

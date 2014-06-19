@@ -22,6 +22,7 @@ import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.NoncurrentVersionTransition;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
@@ -209,6 +210,13 @@ public class BucketConfigurationXmlFactory {
                <Expiration>
                    <Days>365</Days>
                </Expiration>
+               <NoncurrentVersionTransition>
+                   <NoncurrentDays>7</NoncurrentDays>
+                   <StorageClass>GLACIER</StorageClass>
+               </NoncurrentVersionTransition>
+               <NoncurrentVersionExpiration>
+                   <NoncurrentDays>14</NoncurrentDays>
+               </NoncurrentVersionExpiration>
            </Rule>
            <Rule>
                <ID>image-rule</ID>
@@ -297,10 +305,35 @@ public class BucketConfigurationXmlFactory {
             xml.end(); // </Transition>
         }
 
+        NoncurrentVersionTransition ncvTransition =
+            rule.getNoncurrentVersionTransition();
+        if (ncvTransition != null) {
+            xml.start("NoncurrentVersionTransition");
+            if (ncvTransition.getDays() != -1) {
+                xml.start("NoncurrentDays");
+                xml.value(Integer.toString(ncvTransition.getDays()));
+                xml.end();
+            }
+
+            xml.start("StorageClass");
+            xml.value(ncvTransition.getStorageClass().toString());
+            xml.end();  // </StorageClass>
+            xml.end();  // </NoncurrentVersionTransition>
+        }
+
         if (rule.getExpirationInDays() != -1) {
             xml.start("Expiration");
             xml.start("Days").value("" + rule.getExpirationInDays()).end();
             xml.end(); // </Expiration>
+        }
+
+        if (rule.getNoncurrentVersionExpirationInDays() != -1) {
+            xml.start("NoncurrentVersionExpiration");
+            xml.start("NoncurrentDays")
+                .value(Integer.toString(
+                    rule.getNoncurrentVersionExpirationInDays()))
+                .end();
+            xml.end(); // </NoncurrentVersionExpiration>
         }
 
         if (rule.getExpirationDate() != null) {

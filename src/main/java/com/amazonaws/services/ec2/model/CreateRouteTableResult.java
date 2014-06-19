@@ -51,7 +51,7 @@ public class CreateRouteTableResult implements Serializable {
      *
      * @param routeTable Information about the route table.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRouteTableResult withRouteTable(RouteTable routeTable) {

@@ -47,6 +47,11 @@ import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarsh
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"> Instance Lifecycle </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
  * </p>
+ * <p>
+ * For more information about troubleshooting, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html"> Troubleshooting Terminating Your Instance </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest)
  */
@@ -109,7 +114,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateInstancesRequest withInstanceIds(String... instanceIds) {
@@ -127,7 +132,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      *
      * @param instanceIds One or more instance IDs.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {

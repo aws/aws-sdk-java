@@ -25,6 +25,9 @@ public class GetJobOutputResult implements Serializable {
 
     /**
      * The job data, either archive data or inventory data.
+     *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
      */
     private java.io.InputStream body;
 
@@ -83,6 +86,9 @@ public class GetJobOutputResult implements Serializable {
     /**
      * The job data, either archive data or inventory data.
      *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
+     *
      * @return The job data, either archive data or inventory data.
      */
     public java.io.InputStream getBody() {
@@ -92,6 +98,9 @@ public class GetJobOutputResult implements Serializable {
     /**
      * The job data, either archive data or inventory data.
      *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
+     *
      * @param body The job data, either archive data or inventory data.
      */
     public void setBody(java.io.InputStream body) {
@@ -100,12 +109,15 @@ public class GetJobOutputResult implements Serializable {
     
     /**
      * The job data, either archive data or inventory data.
+     *
+     * This stream must implement mark/reset in order for signature calculation to be performed
+     * before this data is read for the request payload.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param body The job data, either archive data or inventory data.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputResult withBody(java.io.InputStream body) {
@@ -210,7 +222,7 @@ public class GetJobOutputResult implements Serializable {
      *         3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is
      *         returned as a response header.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputResult withChecksum(String checksum) {
@@ -249,7 +261,7 @@ public class GetJobOutputResult implements Serializable {
      * @param status The HTTP response code for a job output request. The value depends on
      *         whether a range was specified in the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputResult withStatus(Integer status) {
@@ -300,7 +312,7 @@ public class GetJobOutputResult implements Serializable {
      *         returned. For example, bytes 0-1048575/8388608 returns the first 1 MB
      *         from 8 MB.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputResult withContentRange(String contentRange) {
@@ -339,7 +351,7 @@ public class GetJobOutputResult implements Serializable {
      * @param acceptRanges Indicates the range units accepted. For more information, go to <a
      *         href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputResult withAcceptRanges(String acceptRanges) {
@@ -402,7 +414,7 @@ public class GetJobOutputResult implements Serializable {
      *         Otherwise, by default, vault inventory is returned as JSON, and the
      *         Content-Type is application/json.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputResult withContentType(String contentType) {
@@ -435,7 +447,7 @@ public class GetJobOutputResult implements Serializable {
      *
      * @param archiveDescription The description of an archive.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetJobOutputResult withArchiveDescription(String archiveDescription) {

@@ -61,7 +61,7 @@ public class AddCommunicationToCaseResult implements Serializable {
      * @param result True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
      *         error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddCommunicationToCaseResult withResult(Boolean result) {

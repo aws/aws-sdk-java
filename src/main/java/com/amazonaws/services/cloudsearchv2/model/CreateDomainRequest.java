@@ -97,7 +97,7 @@ public class CreateDomainRequest extends AmazonWebServiceRequest implements Seri
      *         with a letter or number and be at least 3 and no more than 28
      *         characters long.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDomainRequest withDomainName(String domainName) {

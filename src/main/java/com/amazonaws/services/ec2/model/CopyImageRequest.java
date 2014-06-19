@@ -24,7 +24,9 @@ import com.amazonaws.services.ec2.model.transform.CopyImageRequestMarshaller;
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#copyImage(CopyImageRequest) CopyImage operation}.
  * <p>
  * Initiates the copy of an AMI from the specified source region to the
- * region in which the request was made.
+ * region in which the request was made. You specify the destination
+ * region by using its endpoint when making the request. AMIs that use
+ * encrypted Amazon EBS snapshots cannot be copied with this method.
  * </p>
  * <p>
  * For more information, see
@@ -90,7 +92,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param sourceRegion The name of the region that contains the AMI to copy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withSourceRegion(String sourceRegion) {
@@ -123,7 +125,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param sourceImageId The ID of the AMI to copy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withSourceImageId(String sourceImageId) {
@@ -156,7 +158,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param name The name of the new AMI in the destination region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withName(String name) {
@@ -189,7 +191,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param description A description for the new AMI in the destination region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withDescription(String description) {
@@ -246,7 +248,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *         to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CopyImageRequest withClientToken(String clientToken) {

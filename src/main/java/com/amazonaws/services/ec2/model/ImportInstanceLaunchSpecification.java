@@ -124,7 +124,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param architecture The architecture of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ArchitectureValues
@@ -158,7 +158,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param architecture The architecture of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ArchitectureValues
@@ -203,7 +203,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param groupNames One or more security group names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withGroupNames(String... groupNames) {
@@ -221,7 +221,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param groupNames One or more security group names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withGroupNames(java.util.Collection<String> groupNames) {
@@ -261,7 +261,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param additionalInfo 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withAdditionalInfo(String additionalInfo) {
@@ -294,7 +294,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param userData User data to be made available to the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withUserData(String userData) {
@@ -352,7 +352,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -394,7 +394,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceType
@@ -429,7 +429,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param placement 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withPlacement(Placement placement) {
@@ -462,7 +462,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param monitoring 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withMonitoring(Boolean monitoring) {
@@ -504,7 +504,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *
      * @param subnetId [EC2-VPC] The ID of the subnet to launch the instance into.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withSubnetId(String subnetId) {
@@ -562,7 +562,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *         shutdown from the instance (using the operating system command for
      *         system shutdown).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ShutdownBehavior
@@ -604,7 +604,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *         shutdown from the instance (using the operating system command for
      *         system shutdown).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ShutdownBehavior
@@ -651,7 +651,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      *         instance a specific available IP address from the IP address range of
      *         the subnet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceLaunchSpecification withPrivateIpAddress(String privateIpAddress) {

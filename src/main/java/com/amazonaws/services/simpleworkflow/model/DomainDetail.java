@@ -58,7 +58,7 @@ public class DomainDetail implements Serializable {
      *
      * @param domainInfo Contains general information about a domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainDetail withDomainInfo(DomainInfo domainInfo) {
@@ -91,7 +91,7 @@ public class DomainDetail implements Serializable {
      *
      * @param configuration Contains the configuration settings of a domain.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DomainDetail withConfiguration(DomainConfiguration configuration) {

@@ -401,7 +401,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
      *         <p>Not applicable. Must be null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withDBName(String dBName) {
@@ -464,7 +464,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
      *         <code>mydbinstance</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -533,7 +533,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      *         Edition)
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withAllocatedStorage(Integer allocatedStorage) {
@@ -578,7 +578,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withDBInstanceClass(String dBInstanceClass) {
@@ -635,7 +635,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withEngine(String engine) {
@@ -728,7 +728,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         letter.</li> <li>Cannot be a reserved word for the chosen database
      *         engine.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withMasterUsername(String masterUsername) {
@@ -785,7 +785,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <p> Constraints: Must contain from 8 to 30 characters. <p><b>SQL
      *         Server</b> <p> Constraints: Must contain from 8 to 128 characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withMasterUserPassword(String masterUserPassword) {
@@ -834,7 +834,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param dBSecurityGroups A list of DB security groups to associate with this DB instance. <p>
      *         Default: The default DB security group for the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withDBSecurityGroups(String... dBSecurityGroups) {
@@ -854,7 +854,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param dBSecurityGroups A list of DB security groups to associate with this DB instance. <p>
      *         Default: The default DB security group for the database engine.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withDBSecurityGroups(java.util.Collection<String> dBSecurityGroups) {
@@ -916,7 +916,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <p> Default: The default EC2 VPC security group for the DB subnet
      *         group's VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
@@ -938,7 +938,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <p> Default: The default EC2 VPC security group for the DB subnet
      *         group's VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -1008,7 +1008,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         MultiAZ parameter is set to <code>true</code>. The specified
      *         Availability Zone must be in the same region as the current endpoint.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withAvailabilityZone(String availabilityZone) {
@@ -1047,7 +1047,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param dBSubnetGroupName A DB subnet group to associate with this DB instance. <p> If there is
      *         no DB subnet group, then it is a non-VPC DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withDBSubnetGroupName(String dBSubnetGroupName) {
@@ -1128,7 +1128,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
      *         <p>Constraints: Minimum 30-minute window.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1191,7 +1191,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withDBParameterGroupName(String dBParameterGroupName) {
@@ -1248,7 +1248,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <p>Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot
      *         be set to 0 if the DB instance is a source to read replicas</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -1329,7 +1329,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Universal Time Coordinated (UTC). Must not conflict with the preferred
      *         maintenance window. Must be at least 30 minutes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withPreferredBackupWindow(String preferredBackupWindow) {
@@ -1398,7 +1398,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>1150-65535</code> except for <code>1434</code> and
      *         <code>3389</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withPort(Integer port) {
@@ -1443,7 +1443,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         the AvailabilityZone parameter if the MultiAZ parameter is set to
      *         true.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withMultiAZ(Boolean multiAZ) {
@@ -1507,7 +1507,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withEngineVersion(String engineVersion) {
@@ -1552,7 +1552,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         the DB instance during the maintenance window. <p>Default:
      *         <code>true</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1610,7 +1610,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>license-included</code> | <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withLicenseModel(String licenseModel) {
@@ -1655,7 +1655,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         be initially allocated for the DB instance. <p> Constraints: Must be
      *         an integer greater than 1000.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withIops(Integer iops) {
@@ -1712,7 +1712,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         that option group cannot be removed from a DB instance once it is
      *         associated with a DB instance
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withOptionGroupName(String optionGroupName) {
@@ -1751,7 +1751,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param characterSetName For supported engines, indicates that the DB instance should be
      *         associated with the specified CharacterSet.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withCharacterSetName(String characterSetName) {
@@ -1856,7 +1856,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1932,7 +1932,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withTags(Tag... tags) {
@@ -1950,7 +1950,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceRequest withTags(java.util.Collection<Tag> tags) {

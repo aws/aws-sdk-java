@@ -87,7 +87,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
      *
      * @param publicIp [EC2-Classic] The Elastic IP address.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisassociateAddressRequest withPublicIp(String publicIp) {
@@ -120,7 +120,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
      *
      * @param associationId [EC2-VPC] The association ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DisassociateAddressRequest withAssociationId(String associationId) {

@@ -396,9 +396,9 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * item. The client may specify new attributes using a combination of the
      * <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code>
      * parameters. The client specifies the first attribute by the parameters
-     * <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code> ,
-     * the second attribute by the parameters <code>Attribute.1.Name</code>
-     * and <code>Attribute.1.Value</code> , and so on.
+     * <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code> , the
+     * second attribute by the parameters <code>Attribute.1.Name</code> and
+     * <code>Attribute.1.Value</code> , and so on.
      * </p>
      * <p>
      * Attributes are uniquely identified in an item by their name/value
@@ -413,14 +413,13 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * parameter for each individual attribute. Setting this value to
      * <code>true</code> causes the new attribute value to replace the
      * existing attribute value(s). For example, if an item has the
-     * attributes <code>{ 'a', '1' }</code> ,
-     * 
-     * <code>{ 'b', '2'}</code> and <code>{ 'b', '3'
-     * }</code> and the requestor calls <code>PutAttributes</code> using the
-     * attributes <code>{ 'b', '4' }</code> with the <code>Replace</code>
-     * parameter set to true, the final attributes of the item are changed to
-     * <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code> , which
-     * replaces the previous values of the 'b' attribute with the new value.
+     * attributes <code>{ 'a', '1' }</code> , <code>{ 'b', '2'}</code> and
+     * <code>{ 'b', '3' }</code> and the requestor calls
+     * <code>PutAttributes</code> using the attributes <code>{ 'b', '4'
+     * }</code> with the <code>Replace</code> parameter set to true, the
+     * final attributes of the item are changed to <code>{ 'a', '1' }</code>
+     * and <code>{ 'b', '4' }</code> , which replaces the previous values of
+     * the 'b' attribute with the new value.
      * </p>
      * <p>
      * <b>NOTE:</b> Using PutAttributes to replace attribute values that do
@@ -477,9 +476,9 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * item. The client may specify new attributes using a combination of the
      * <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code>
      * parameters. The client specifies the first attribute by the parameters
-     * <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code> ,
-     * the second attribute by the parameters <code>Attribute.1.Name</code>
-     * and <code>Attribute.1.Value</code> , and so on.
+     * <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code> , the
+     * second attribute by the parameters <code>Attribute.1.Name</code> and
+     * <code>Attribute.1.Value</code> , and so on.
      * </p>
      * <p>
      * Attributes are uniquely identified in an item by their name/value
@@ -494,14 +493,13 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * parameter for each individual attribute. Setting this value to
      * <code>true</code> causes the new attribute value to replace the
      * existing attribute value(s). For example, if an item has the
-     * attributes <code>{ 'a', '1' }</code> ,
-     * 
-     * <code>{ 'b', '2'}</code> and <code>{ 'b', '3'
-     * }</code> and the requestor calls <code>PutAttributes</code> using the
-     * attributes <code>{ 'b', '4' }</code> with the <code>Replace</code>
-     * parameter set to true, the final attributes of the item are changed to
-     * <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code> , which
-     * replaces the previous values of the 'b' attribute with the new value.
+     * attributes <code>{ 'a', '1' }</code> , <code>{ 'b', '2'}</code> and
+     * <code>{ 'b', '3' }</code> and the requestor calls
+     * <code>PutAttributes</code> using the attributes <code>{ 'b', '4'
+     * }</code> with the <code>Replace</code> parameter set to true, the
+     * final attributes of the item are changed to <code>{ 'a', '1' }</code>
+     * and <code>{ 'b', '4' }</code> , which replaces the previous values of
+     * the 'b' attribute with the new value.
      * </p>
      * <p>
      * <b>NOTE:</b> Using PutAttributes to replace attribute values that do
@@ -1189,19 +1187,17 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * <code>Item.X.Attribute.Y.Value</code> parameters. The client may
      * specify the first attribute for the first item using the parameters
      * <code>Item.0.Attribute.0.Name</code> and
-     * <code>Item.0.Attribute.0.Value</code> ,
-     * and for the second attribute for the first item by the parameters
+     * <code>Item.0.Attribute.0.Value</code> , and for the second attribute
+     * for the first item by the parameters
      * <code>Item.0.Attribute.1.Name</code> and
-     * <code>Item.0.Attribute.1.Value</code> ,
-     * and so on.
+     * <code>Item.0.Attribute.1.Value</code> , and so on.
      * </p>
      * <p>
      * Attributes are uniquely identified within an item by their name/value
      * combination. For example, a single item can have the attributes
      * <code>{ "first_name", "first_value" }</code> and <code>{ "first_name",
-     * "second_value" }</code> .
-     * However, it cannot have two attribute instances where both the
-     * <code>Item.X.Attribute.Y.Name</code> and
+     * "second_value" }</code> . However, it cannot have two attribute
+     * instances where both the <code>Item.X.Attribute.Y.Name</code> and
      * <code>Item.X.Attribute.Y.Value</code> are the same.
      * </p>
      * <p>
@@ -1213,9 +1209,8 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * '3' }</code> and the requester does a BatchPutAttributes of
      * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true,
      * the final attributes of the item will be <code>{ 'a', '1' }</code> and
-     * <code>{ 'b', '4' }</code> ,
-     * replacing the previous values of the 'b' attribute with the new
-     * value.
+     * <code>{ 'b', '4' }</code> , replacing the previous values of the 'b'
+     * attribute with the new value.
      * </p>
      * <p>
      * <b>NOTE:</b> You cannot specify an empty string as an item or as an
@@ -1290,19 +1285,17 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * <code>Item.X.Attribute.Y.Value</code> parameters. The client may
      * specify the first attribute for the first item using the parameters
      * <code>Item.0.Attribute.0.Name</code> and
-     * <code>Item.0.Attribute.0.Value</code> ,
-     * and for the second attribute for the first item by the parameters
+     * <code>Item.0.Attribute.0.Value</code> , and for the second attribute
+     * for the first item by the parameters
      * <code>Item.0.Attribute.1.Name</code> and
-     * <code>Item.0.Attribute.1.Value</code> ,
-     * and so on.
+     * <code>Item.0.Attribute.1.Value</code> , and so on.
      * </p>
      * <p>
      * Attributes are uniquely identified within an item by their name/value
      * combination. For example, a single item can have the attributes
      * <code>{ "first_name", "first_value" }</code> and <code>{ "first_name",
-     * "second_value" }</code> .
-     * However, it cannot have two attribute instances where both the
-     * <code>Item.X.Attribute.Y.Name</code> and
+     * "second_value" }</code> . However, it cannot have two attribute
+     * instances where both the <code>Item.X.Attribute.Y.Name</code> and
      * <code>Item.X.Attribute.Y.Value</code> are the same.
      * </p>
      * <p>
@@ -1314,9 +1307,8 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
      * '3' }</code> and the requester does a BatchPutAttributes of
      * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true,
      * the final attributes of the item will be <code>{ 'a', '1' }</code> and
-     * <code>{ 'b', '4' }</code> ,
-     * replacing the previous values of the 'b' attribute with the new
-     * value.
+     * <code>{ 'b', '4' }</code> , replacing the previous values of the 'b'
+     * attribute with the new value.
      * </p>
      * <p>
      * <b>NOTE:</b> You cannot specify an empty string as an item or as an

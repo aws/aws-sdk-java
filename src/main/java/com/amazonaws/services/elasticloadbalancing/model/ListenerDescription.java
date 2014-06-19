@@ -65,7 +65,7 @@ public class ListenerDescription implements Serializable {
      *
      * @param listener The Listener data type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListenerDescription withListener(Listener listener) {
@@ -114,7 +114,7 @@ public class ListenerDescription implements Serializable {
      * @param policyNames A list of policies enabled for this listener. An empty list indicates
      *         that no policies are enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListenerDescription withPolicyNames(String... policyNames) {
@@ -134,7 +134,7 @@ public class ListenerDescription implements Serializable {
      * @param policyNames A list of policies enabled for this listener. An empty list indicates
      *         that no policies are enabled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListenerDescription withPolicyNames(java.util.Collection<String> policyNames) {

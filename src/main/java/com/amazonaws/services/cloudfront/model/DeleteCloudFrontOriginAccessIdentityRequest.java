@@ -84,7 +84,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      *
      * @param id The origin access identity's id.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest withId(String id) {
@@ -123,7 +123,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      * @param ifMatch The value of the ETag header you received from a previous GET or PUT
      *         request. For example: E2QWRUHAPOMQZL.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest withIfMatch(String ifMatch) {

@@ -163,7 +163,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param queueUrl The URL of the Amazon SQS queue to take action on.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withQueueUrl(String queueUrl) {
@@ -208,7 +208,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
      *         alphanumeric characters, hyphens (-), and underscores (_) are allowed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withLabel(String label) {
@@ -287,7 +287,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
      *         AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
@@ -317,7 +317,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
      *         AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
@@ -433,7 +433,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         <code>DeleteMessageBatch</code>, and
      *         <code>ChangeMessageVisibilityBatch</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withActions(String... actions) {
@@ -473,7 +473,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         <code>DeleteMessageBatch</code>, and
      *         <code>ChangeMessageVisibilityBatch</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AddPermissionRequest withActions(java.util.Collection<String> actions) {

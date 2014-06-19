@@ -37,7 +37,10 @@ public class S3Storage implements Serializable {
     private String prefix;
 
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      */
     private String aWSAccessKeyId;
 
@@ -95,7 +98,7 @@ public class S3Storage implements Serializable {
      *         behalf. If you specify a bucket that belongs to someone else, Amazon
      *         EC2 returns an error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3Storage withBucket(String bucket) {
@@ -128,7 +131,7 @@ public class S3Storage implements Serializable {
      *
      * @param prefix The beginning of the file name of the AMI.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3Storage withPrefix(String prefix) {
@@ -137,31 +140,49 @@ public class S3Storage implements Serializable {
     }
 
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      *
-     * @return The access key ID of the owner of the bucket.
+     * @return The access key ID of the owner of the bucket. Before you specify a
+     *         value for your access key ID, review and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     *         Practices for Managing AWS Access Keys</a>.
      */
     public String getAWSAccessKeyId() {
         return aWSAccessKeyId;
     }
     
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      *
-     * @param aWSAccessKeyId The access key ID of the owner of the bucket.
+     * @param aWSAccessKeyId The access key ID of the owner of the bucket. Before you specify a
+     *         value for your access key ID, review and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     *         Practices for Managing AWS Access Keys</a>.
      */
     public void setAWSAccessKeyId(String aWSAccessKeyId) {
         this.aWSAccessKeyId = aWSAccessKeyId;
     }
     
     /**
-     * The access key ID of the owner of the bucket.
+     * The access key ID of the owner of the bucket. Before you specify a
+     * value for your access key ID, review and follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param aWSAccessKeyId The access key ID of the owner of the bucket.
+     * @param aWSAccessKeyId The access key ID of the owner of the bucket. Before you specify a
+     *         value for your access key ID, review and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     *         Practices for Managing AWS Access Keys</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3Storage withAWSAccessKeyId(String aWSAccessKeyId) {
@@ -200,7 +221,7 @@ public class S3Storage implements Serializable {
      * @param uploadPolicy A Base64-encoded Amazon S3 upload policy that gives Amazon EC2
      *         permission to upload items into Amazon S3 on your behalf.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3Storage withUploadPolicy(String uploadPolicy) {
@@ -233,7 +254,7 @@ public class S3Storage implements Serializable {
      *
      * @param uploadPolicySignature The signature of the Base64 encoded JSON document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public S3Storage withUploadPolicySignature(String uploadPolicySignature) {

@@ -108,7 +108,7 @@ public class WorkflowTypeDetail implements Serializable {
      *         workers supporting this type running. You cannot create new workflow
      *         executions of this type. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeDetail withTypeInfo(WorkflowTypeInfo typeInfo) {
@@ -147,7 +147,7 @@ public class WorkflowTypeDetail implements Serializable {
      * @param configuration Configuration settings of the workflow type registered through
      *         <a>RegisterWorkflowType</a>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowTypeDetail withConfiguration(WorkflowTypeConfiguration configuration) {

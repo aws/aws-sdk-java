@@ -99,7 +99,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      *
      * @param applicationName The name of the application to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteApplicationRequest withApplicationName(String applicationName) {
@@ -138,7 +138,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      * @param terminateEnvByForce When set to true, running environments will be terminated before
      *         deleting the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteApplicationRequest withTerminateEnvByForce(Boolean terminateEnvByForce) {

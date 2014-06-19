@@ -153,7 +153,7 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest im
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondActivityTaskFailedRequest withTaskToken(String taskToken) {
@@ -195,7 +195,7 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest im
      *
      * @param reason Description of the error that may assist in diagnostics.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondActivityTaskFailedRequest withReason(String reason) {
@@ -237,7 +237,7 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest im
      *
      * @param details Optional detailed information about the failure.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RespondActivityTaskFailedRequest withDetails(String details) {

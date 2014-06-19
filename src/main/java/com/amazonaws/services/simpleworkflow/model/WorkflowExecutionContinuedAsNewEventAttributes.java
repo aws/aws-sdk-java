@@ -142,7 +142,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *
      * @param input The input provided to the new workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withInput(String input) {
@@ -199,7 +199,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *         execution. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -241,7 +241,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *
      * @param newExecutionRunId The <code>runId</code> of the new workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withNewExecutionRunId(String newExecutionRunId) {
@@ -301,7 +301,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
@@ -334,7 +334,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *
      * @param taskList Represents a task list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTaskList(TaskList taskList) {
@@ -400,7 +400,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
@@ -506,7 +506,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -580,7 +580,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -634,7 +634,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *
      * @param tagList The list of tags associated with the new workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTagList(String... tagList) {
@@ -655,7 +655,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *
      * @param tagList The list of tags associated with the new workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTagList(java.util.Collection<String> tagList) {
@@ -695,7 +695,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *
      * @param workflowType Represents a workflow type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withWorkflowType(WorkflowType workflowType) {

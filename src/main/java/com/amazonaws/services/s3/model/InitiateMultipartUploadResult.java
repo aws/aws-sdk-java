@@ -15,7 +15,7 @@
 package com.amazonaws.services.s3.model;
 
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+import com.amazonaws.services.s3.internal.SSEResultBase;
 
 /**
  * Contains the results of initiating a multipart upload, particularly the
@@ -23,7 +23,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  *
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
-public class InitiateMultipartUploadResult implements ServerSideEncryptionResult {
+public class InitiateMultipartUploadResult extends SSEResultBase {
 
     /** The name of the bucket in which the new multipart upload was initiated */
     private String bucketName;
@@ -34,9 +34,6 @@ public class InitiateMultipartUploadResult implements ServerSideEncryptionResult
     /** The unique ID of the new multipart upload */
     private String uploadId;
 
-    /** The server side encryption algorithm of the new object */
-    private String serverSideEncryption;
-    
     /**
      * Returns the name of the bucket in which the new multipart upload was
      * initiated.
@@ -96,23 +93,5 @@ public class InitiateMultipartUploadResult implements ServerSideEncryptionResult
      */
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
-    }
-    
-    /**
-     * Returns the server-side encryption algorithm for the newly created
-     * object, or null if none was used.
-     */
-    public String getServerSideEncryption() {
-        return serverSideEncryption;
-    }
-
-    /**
-     * Sets the server-side encryption algorithm for the newly created object.
-     * 
-     * @param serverSideEncryption
-     *            The server-side encryption algorithm for the new object.
-     */
-    public void setServerSideEncryption(String serverSideEncryption) {
-        this.serverSideEncryption = serverSideEncryption;
     }
 }

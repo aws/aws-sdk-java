@@ -188,7 +188,7 @@ public class CreateJobOutput implements Serializable {
      *         the pipeline ID. If a file with the specified name already exists in
      *         the output bucket, the job fails.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withKey(String key) {
@@ -392,7 +392,7 @@ public class CreateJobOutput implements Serializable {
      *         value of <code>CreateJobOutput</code>. Elastic Transcoder also appends
      *         the applicable file name extension.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withThumbnailPattern(String thumbnailPattern) {
@@ -464,7 +464,7 @@ public class CreateJobOutput implements Serializable {
      *         generally works only if the file that you're transcoding contains
      *         rotation metadata.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withRotate(String rotate) {
@@ -518,7 +518,7 @@ public class CreateJobOutput implements Serializable {
      *         determines the audio, video, and thumbnail settings that Elastic
      *         Transcoder uses for transcoding.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withPresetId(String presetId) {
@@ -578,7 +578,7 @@ public class CreateJobOutput implements Serializable {
      *         duration of each .ts file in seconds. The range of valid values is 1
      *         to 60 seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withSegmentDuration(String segmentDuration) {
@@ -639,7 +639,7 @@ public class CreateJobOutput implements Serializable {
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset for the current output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withWatermarks(JobWatermark... watermarks) {
@@ -663,7 +663,7 @@ public class CreateJobOutput implements Serializable {
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset for the current output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withWatermarks(java.util.Collection<JobWatermark> watermarks) {
@@ -721,7 +721,7 @@ public class CreateJobOutput implements Serializable {
      *         artworks for each output. Settings for each artwork must be defined in
      *         the job for the current output.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withAlbumArt(JobAlbumArt albumArt) {
@@ -794,7 +794,7 @@ public class CreateJobOutput implements Serializable {
      *         you can only specify settings for a single clip per output file. The
      *         Composition object cannot be null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withComposition(Clip... composition) {
@@ -822,7 +822,7 @@ public class CreateJobOutput implements Serializable {
      *         you can only specify settings for a single clip per output file. The
      *         Composition object cannot be null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateJobOutput withComposition(java.util.Collection<Clip> composition) {

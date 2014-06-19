@@ -79,7 +79,7 @@ public class ListLocalDisksResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListLocalDisksResult withGatewayARN(String gatewayARN) {
@@ -122,7 +122,7 @@ public class ListLocalDisksResult implements Serializable {
      *
      * @param disks The new value for the Disks property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListLocalDisksResult withDisks(Disk... disks) {
@@ -140,7 +140,7 @@ public class ListLocalDisksResult implements Serializable {
      *
      * @param disks The new value for the Disks property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListLocalDisksResult withDisks(java.util.Collection<Disk> disks) {

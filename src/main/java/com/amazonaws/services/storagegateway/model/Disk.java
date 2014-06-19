@@ -67,7 +67,7 @@ public class Disk implements Serializable {
      *
      * @param diskId The new value for the DiskId property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Disk withDiskId(String diskId) {
@@ -100,7 +100,7 @@ public class Disk implements Serializable {
      *
      * @param diskPath The new value for the DiskPath property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Disk withDiskPath(String diskPath) {
@@ -133,7 +133,7 @@ public class Disk implements Serializable {
      *
      * @param diskNode The new value for the DiskNode property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Disk withDiskNode(String diskNode) {
@@ -166,7 +166,7 @@ public class Disk implements Serializable {
      *
      * @param diskSizeInBytes The new value for the DiskSizeInBytes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Disk withDiskSizeInBytes(Long diskSizeInBytes) {
@@ -208,7 +208,7 @@ public class Disk implements Serializable {
      *
      * @param diskAllocationType The new value for the DiskAllocationType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Disk withDiskAllocationType(String diskAllocationType) {
@@ -242,7 +242,7 @@ public class Disk implements Serializable {
      *
      * @param diskAllocationResource The new value for the DiskAllocationResource property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Disk withDiskAllocationResource(String diskAllocationResource) {

@@ -239,8 +239,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         jsonErrorUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("cloudtrail.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudtrail/request.handlers"));
@@ -299,7 +301,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -347,7 +349,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -422,7 +424,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -485,7 +487,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -532,7 +534,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -583,7 +585,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -632,7 +634,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -660,8 +662,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         return describeTrails(new DescribeTrailsRequest());
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

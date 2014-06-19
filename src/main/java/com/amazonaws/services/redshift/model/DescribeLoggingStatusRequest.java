@@ -66,7 +66,7 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest implem
      * @param clusterIdentifier The identifier of the cluster to get the logging status from.
      *         <p>Example: <code>examplecluster</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoggingStatusRequest withClusterIdentifier(String clusterIdentifier) {

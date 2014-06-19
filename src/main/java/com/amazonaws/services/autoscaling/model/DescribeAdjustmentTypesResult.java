@@ -63,7 +63,7 @@ public class DescribeAdjustmentTypesResult implements Serializable {
      *
      * @param adjustmentTypes A list of specific policy adjustment types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAdjustmentTypesResult withAdjustmentTypes(AdjustmentType... adjustmentTypes) {
@@ -81,7 +81,7 @@ public class DescribeAdjustmentTypesResult implements Serializable {
      *
      * @param adjustmentTypes A list of specific policy adjustment types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAdjustmentTypesResult withAdjustmentTypes(java.util.Collection<AdjustmentType> adjustmentTypes) {

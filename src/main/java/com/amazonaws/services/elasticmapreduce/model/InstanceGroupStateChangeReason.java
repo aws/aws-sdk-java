@@ -74,7 +74,7 @@ public class InstanceGroupStateChangeReason implements Serializable {
      *
      * @param code The programmable code for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceGroupStateChangeReasonCode
@@ -108,7 +108,7 @@ public class InstanceGroupStateChangeReason implements Serializable {
      *
      * @param code The programmable code for the state change reason.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see InstanceGroupStateChangeReasonCode
@@ -143,7 +143,7 @@ public class InstanceGroupStateChangeReason implements Serializable {
      *
      * @param message The status change reason description.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceGroupStateChangeReason withMessage(String message) {

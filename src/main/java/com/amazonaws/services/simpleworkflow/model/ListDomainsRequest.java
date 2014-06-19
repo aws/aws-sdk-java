@@ -153,7 +153,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
      *         results, repeat the call with the returned token and all other
      *         arguments unchanged.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDomainsRequest withNextPageToken(String nextPageToken) {
@@ -199,7 +199,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param registrationStatus Specifies the registration status of the domains to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -233,7 +233,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param registrationStatus Specifies the registration status of the domains to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see RegistrationStatus
@@ -307,7 +307,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDomainsRequest withMaximumPageSize(Integer maximumPageSize) {
@@ -352,7 +352,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements Seria
      *         By default the results are returned in ascending alphabetical order of
      *         the <code>name</code> of the domains.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListDomainsRequest withReverseOrder(Boolean reverseOrder) {

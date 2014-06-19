@@ -77,7 +77,7 @@ public class EngineDefaults implements Serializable {
      * @param cacheParameterGroupFamily Specifies the name of the cache parameter group family to which the
      *         engine default parameters apply.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -110,7 +110,7 @@ public class EngineDefaults implements Serializable {
      *
      * @param marker Provides an identifier to allow retrieval of paginated results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withMarker(String marker) {
@@ -153,7 +153,7 @@ public class EngineDefaults implements Serializable {
      *
      * @param parameters Contains a list of engine default parameters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withParameters(Parameter... parameters) {
@@ -171,7 +171,7 @@ public class EngineDefaults implements Serializable {
      *
      * @param parameters Contains a list of engine default parameters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withParameters(java.util.Collection<Parameter> parameters) {
@@ -227,7 +227,7 @@ public class EngineDefaults implements Serializable {
      * @param cacheNodeTypeSpecificParameters A list of parameters specific to a particular cache node type. Each
      *         element in the list contains detailed information about one parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter... cacheNodeTypeSpecificParameters) {
@@ -247,7 +247,7 @@ public class EngineDefaults implements Serializable {
      * @param cacheNodeTypeSpecificParameters A list of parameters specific to a particular cache node type. Each
      *         element in the list contains detailed information about one parameter.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EngineDefaults withCacheNodeTypeSpecificParameters(java.util.Collection<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters) {

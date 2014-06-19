@@ -90,7 +90,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements Seriali
      *         the jobs (including their <code>jobId</code>) that have a status of
      *         <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelJobRequest withId(String id) {

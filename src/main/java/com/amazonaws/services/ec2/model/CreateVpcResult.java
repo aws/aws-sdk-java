@@ -51,7 +51,7 @@ public class CreateVpcResult implements Serializable {
      *
      * @param vpc Information about the VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVpcResult withVpc(Vpc vpc) {

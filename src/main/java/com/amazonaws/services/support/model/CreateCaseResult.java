@@ -68,7 +68,7 @@ public class CreateCaseResult implements Serializable {
      *         is an alphanumeric string formatted as shown in this example:
      *         case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCaseResult withCaseId(String caseId) {

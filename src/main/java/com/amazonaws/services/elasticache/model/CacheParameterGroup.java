@@ -64,7 +64,7 @@ public class CacheParameterGroup implements Serializable {
      *
      * @param cacheParameterGroupName The name of the cache parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheParameterGroup withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -103,7 +103,7 @@ public class CacheParameterGroup implements Serializable {
      * @param cacheParameterGroupFamily The name of the cache parameter group family that this cache parameter
      *         group is compatible with.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheParameterGroup withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -136,7 +136,7 @@ public class CacheParameterGroup implements Serializable {
      *
      * @param description The description for this cache parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CacheParameterGroup withDescription(String description) {

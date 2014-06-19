@@ -99,7 +99,7 @@ public class DoubleOptions implements Serializable {
      *         document. This can be important if you are using the field in an
      *         expression and that field is not present in every document.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleOptions withDefaultValue(Double defaultValue) {
@@ -144,7 +144,7 @@ public class DoubleOptions implements Serializable {
      *
      * @param sourceField The name of the source field to map to the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleOptions withSourceField(String sourceField) {
@@ -177,7 +177,7 @@ public class DoubleOptions implements Serializable {
      *
      * @param facetEnabled Whether facet information can be returned for the field.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleOptions withFacetEnabled(Boolean facetEnabled) {
@@ -219,7 +219,7 @@ public class DoubleOptions implements Serializable {
      *
      * @param searchEnabled Whether the contents of the field are searchable.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleOptions withSearchEnabled(Boolean searchEnabled) {
@@ -267,7 +267,7 @@ public class DoubleOptions implements Serializable {
      * @param returnEnabled Whether the contents of the field can be returned in the search
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleOptions withReturnEnabled(Boolean returnEnabled) {
@@ -311,7 +311,7 @@ public class DoubleOptions implements Serializable {
      *
      * @param sortEnabled Whether the field can be used to sort the search results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DoubleOptions withSortEnabled(Boolean sortEnabled) {

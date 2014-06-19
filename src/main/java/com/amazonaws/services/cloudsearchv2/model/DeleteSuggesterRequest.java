@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#deleteSuggester(DeleteSuggesterRequest) DeleteSuggester operation}.
  * <p>
  * Deletes a suggester. For more information, see
- * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html"> Getting Search Suggestions </a>
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"> Getting Search Suggestions </a>
  * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *
@@ -106,7 +106,7 @@ public class DeleteSuggesterRequest extends AmazonWebServiceRequest implements S
      *         names start with a letter or number and can contain the following
      *         characters: a-z (lowercase), 0-9, and - (hyphen).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSuggesterRequest withDomainName(String domainName) {
@@ -151,7 +151,7 @@ public class DeleteSuggesterRequest extends AmazonWebServiceRequest implements S
      *
      * @param suggesterName Specifies the name of the suggester you want to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSuggesterRequest withSuggesterName(String suggesterName) {

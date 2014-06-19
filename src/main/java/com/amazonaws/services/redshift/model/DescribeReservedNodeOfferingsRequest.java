@@ -92,7 +92,7 @@ public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceReques
      *
      * @param reservedNodeOfferingId The unique identifier for the offering.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodeOfferingsRequest withReservedNodeOfferingId(String reservedNodeOfferingId) {
@@ -155,7 +155,7 @@ public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceReques
      *         set of records by retrying the command with the returned marker value.
      *         <p>Default: <code>100</code> <p>Constraints: minimum 20, maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodeOfferingsRequest withMaxRecords(Integer maxRecords) {
@@ -224,7 +224,7 @@ public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceReques
      *         set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeReservedNodeOfferingsRequest withMarker(String marker) {

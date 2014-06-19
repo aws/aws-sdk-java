@@ -70,7 +70,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param networkInterfaceId The ID of the network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachNetworkInterfaceRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -103,7 +103,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param instanceId The ID of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachNetworkInterfaceRequest withInstanceId(String instanceId) {
@@ -136,7 +136,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param deviceIndex The index of the device for the network interface attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttachNetworkInterfaceRequest withDeviceIndex(Integer deviceIndex) {

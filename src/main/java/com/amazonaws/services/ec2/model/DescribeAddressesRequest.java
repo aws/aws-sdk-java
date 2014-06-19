@@ -106,7 +106,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @param publicIps [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
      *         all your Elastic IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesRequest withPublicIps(String... publicIps) {
@@ -126,7 +126,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @param publicIps [EC2-Classic] One or more Elastic IP addresses. <p>Default: Describes
      *         all your Elastic IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesRequest withPublicIps(java.util.Collection<String> publicIps) {
@@ -248,7 +248,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         private IP address associated with the Elastic IP address. </li> <li>
      *         <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesRequest withFilters(Filter... filters) {
@@ -290,7 +290,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         private IP address associated with the Elastic IP address. </li> <li>
      *         <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesRequest withFilters(java.util.Collection<Filter> filters) {
@@ -346,7 +346,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @param allocationIds [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
      *         Elastic IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesRequest withAllocationIds(String... allocationIds) {
@@ -366,7 +366,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @param allocationIds [EC2-VPC] One or more allocation IDs. <p>Default: Describes all your
      *         Elastic IP addresses.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeAddressesRequest withAllocationIds(java.util.Collection<String> allocationIds) {

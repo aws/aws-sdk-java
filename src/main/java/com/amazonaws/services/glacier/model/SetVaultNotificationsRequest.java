@@ -178,7 +178,7 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetVaultNotificationsRequest withAccountId(String accountId) {
@@ -211,7 +211,7 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetVaultNotificationsRequest withVaultName(String vaultName) {
@@ -244,7 +244,7 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
      *
      * @param vaultNotificationConfig Provides options for specifying notification configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetVaultNotificationsRequest withVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig) {

@@ -61,7 +61,7 @@ public class InstanceExportDetails implements Serializable {
      *
      * @param instanceId The ID of the resource being exported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public InstanceExportDetails withInstanceId(String instanceId) {
@@ -107,7 +107,7 @@ public class InstanceExportDetails implements Serializable {
      *
      * @param targetEnvironment The target virtualization environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ExportEnvironment
@@ -141,7 +141,7 @@ public class InstanceExportDetails implements Serializable {
      *
      * @param targetEnvironment The target virtualization environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ExportEnvironment

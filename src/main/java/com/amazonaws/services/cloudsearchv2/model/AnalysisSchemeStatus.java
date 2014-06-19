@@ -86,7 +86,7 @@ public class AnalysisSchemeStatus implements Serializable {
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
      *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisSchemeStatus withOptions(AnalysisScheme options) {
@@ -119,7 +119,7 @@ public class AnalysisSchemeStatus implements Serializable {
      *
      * @param status The status of domain configuration option.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AnalysisSchemeStatus withStatus(OptionStatus status) {

@@ -69,7 +69,7 @@ public class DescribeCasesResult implements Serializable {
      *
      * @param cases The details for the cases that match the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesResult withCases(CaseDetails... cases) {
@@ -87,7 +87,7 @@ public class DescribeCasesResult implements Serializable {
      *
      * @param cases The details for the cases that match the request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesResult withCases(java.util.Collection<CaseDetails> cases) {
@@ -127,7 +127,7 @@ public class DescribeCasesResult implements Serializable {
      *
      * @param nextToken A resumption point for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCasesResult withNextToken(String nextToken) {

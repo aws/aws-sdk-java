@@ -68,7 +68,7 @@ public class GetAccountPasswordPolicyResult implements Serializable {
      *         password policy. <p> This data type is used as a response element in
      *         the action <a>GetAccountPasswordPolicy</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public GetAccountPasswordPolicyResult withPasswordPolicy(PasswordPolicy passwordPolicy) {

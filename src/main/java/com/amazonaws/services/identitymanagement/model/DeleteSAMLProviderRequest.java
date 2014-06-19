@@ -79,7 +79,7 @@ public class DeleteSAMLProviderRequest extends AmazonWebServiceRequest implement
      *
      * @param sAMLProviderArn The Amazon Resource Name (ARN) of the SAML provider to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteSAMLProviderRequest withSAMLProviderArn(String sAMLProviderArn) {

@@ -77,7 +77,7 @@ public class ListPlatformApplicationsResult implements Serializable {
      * @param platformApplications Platform applications returned when calling ListPlatformApplications
      *         action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPlatformApplicationsResult withPlatformApplications(PlatformApplication... platformApplications) {
@@ -97,7 +97,7 @@ public class ListPlatformApplicationsResult implements Serializable {
      * @param platformApplications Platform applications returned when calling ListPlatformApplications
      *         action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPlatformApplicationsResult withPlatformApplications(java.util.Collection<PlatformApplication> platformApplications) {
@@ -149,7 +149,7 @@ public class ListPlatformApplicationsResult implements Serializable {
      *         action if additional records are available after the first page
      *         results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPlatformApplicationsResult withNextToken(String nextToken) {

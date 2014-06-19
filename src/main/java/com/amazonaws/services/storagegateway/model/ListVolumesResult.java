@@ -81,7 +81,7 @@ public class ListVolumesResult implements Serializable {
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVolumesResult withGatewayARN(String gatewayARN) {
@@ -123,7 +123,7 @@ public class ListVolumesResult implements Serializable {
      *
      * @param marker The new value for the Marker property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVolumesResult withMarker(String marker) {
@@ -166,7 +166,7 @@ public class ListVolumesResult implements Serializable {
      *
      * @param volumeInfos The new value for the VolumeInfos property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVolumesResult withVolumeInfos(VolumeInfo... volumeInfos) {
@@ -184,7 +184,7 @@ public class ListVolumesResult implements Serializable {
      *
      * @param volumeInfos The new value for the VolumeInfos property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListVolumesResult withVolumeInfos(java.util.Collection<VolumeInfo> volumeInfos) {

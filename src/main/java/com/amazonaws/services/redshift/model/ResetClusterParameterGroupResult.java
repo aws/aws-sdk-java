@@ -62,7 +62,7 @@ public class ResetClusterParameterGroupResult implements Serializable {
      *
      * @param parameterGroupName The name of the cluster parameter group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetClusterParameterGroupResult withParameterGroupName(String parameterGroupName) {
@@ -107,7 +107,7 @@ public class ResetClusterParameterGroupResult implements Serializable {
      *         to a parameter group name-value pair, then the change could be pending
      *         a reboot of an associated cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ResetClusterParameterGroupResult withParameterGroupStatus(String parameterGroupStatus) {

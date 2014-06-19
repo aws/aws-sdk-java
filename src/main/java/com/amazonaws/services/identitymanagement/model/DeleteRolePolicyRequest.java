@@ -83,7 +83,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
      *
      * @param roleName Name of the role the associated with the policy.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteRolePolicyRequest withRoleName(String roleName) {
@@ -128,7 +128,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
      *
      * @param policyName Name of the policy document to delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteRolePolicyRequest withPolicyName(String policyName) {

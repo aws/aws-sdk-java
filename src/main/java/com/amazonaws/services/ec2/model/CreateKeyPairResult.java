@@ -51,7 +51,7 @@ public class CreateKeyPairResult implements Serializable {
      *
      * @param keyPair Information about the key pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateKeyPairResult withKeyPair(KeyPair keyPair) {

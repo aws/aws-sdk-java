@@ -143,7 +143,7 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest impl
      *
      * @param domain The name of the domain containing the workflow execution to signal.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalWorkflowExecutionRequest withDomain(String domain) {
@@ -185,7 +185,7 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest impl
      *
      * @param workflowId The workflowId of the workflow execution to signal.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalWorkflowExecutionRequest withWorkflowId(String workflowId) {
@@ -227,7 +227,7 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest impl
      *
      * @param runId The runId of the workflow execution to signal.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalWorkflowExecutionRequest withRunId(String runId) {
@@ -275,7 +275,7 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest impl
      * @param signalName The name of the signal. This name must be meaningful to the target
      *         workflow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalWorkflowExecutionRequest withSignalName(String signalName) {
@@ -323,7 +323,7 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest impl
      * @param input Data to attach to the <code>WorkflowExecutionSignaled</code> event in
      *         the target workflow execution's history.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SignalWorkflowExecutionRequest withInput(String input) {

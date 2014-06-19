@@ -87,7 +87,7 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest impleme
      *
      * @param cNAMEPrefix The prefix used when this CNAME is reserved.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CheckDNSAvailabilityRequest withCNAMEPrefix(String cNAMEPrefix) {

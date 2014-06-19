@@ -67,7 +67,7 @@ public class CreateVolumePermission implements Serializable {
      * @param userId The specific AWS account ID that is to be added or removed from a
      *         volume's list of create volume permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateVolumePermission withUserId(String userId) {
@@ -119,7 +119,7 @@ public class CreateVolumePermission implements Serializable {
      * @param group The specific group that is to be added or removed from a volume's list
      *         of create volume permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PermissionGroup
@@ -157,7 +157,7 @@ public class CreateVolumePermission implements Serializable {
      * @param group The specific group that is to be added or removed from a volume's list
      *         of create volume permissions.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PermissionGroup

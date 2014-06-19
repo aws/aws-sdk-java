@@ -166,8 +166,8 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have the
-     * specified check IDs. Check IDs can be obtained by calling
+     * Returns the refresh status of the Trusted Advisor checks that have
+     * the specified check IDs. Check IDs can be obtained by calling
      * DescribeTrustedAdvisorChecks.
      * </p>
      *
@@ -193,8 +193,8 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have the
-     * specified check IDs. Check IDs can be obtained by calling
+     * Returns the refresh status of the Trusted Advisor checks that have
+     * the specified check IDs. Check IDs can be obtained by calling
      * DescribeTrustedAdvisorChecks.
      * </p>
      *
@@ -355,8 +355,8 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Adds additional customer communication to an AWS Support case. You use
-     * the <code>CaseId</code> value to identify the case to add
+     * Adds additional customer communication to an AWS Support case. You
+     * use the <code>CaseId</code> value to identify the case to add
      * communication to. You can list a set of email addresses to copy on the
      * communication using the <code>CcEmailAddresses</code> value. The
      * <code>CommunicationBody</code> value contains the text of the
@@ -392,8 +392,8 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Adds additional customer communication to an AWS Support case. You use
-     * the <code>CaseId</code> value to identify the case to add
+     * Adds additional customer communication to an AWS Support case. You
+     * use the <code>CaseId</code> value to identify the case to add
      * communication to. You can list a set of email addresses to copy on the
      * communication using the <code>CcEmailAddresses</code> value. The
      * <code>CommunicationBody</code> value contains the text of the
@@ -790,13 +790,13 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Requests a refresh of the Trusted Advisor check that has the specified
-     * check ID. Check IDs can be obtained by calling
+     * Requests a refresh of the Trusted Advisor check that has the
+     * specified check ID. Check IDs can be obtained by calling
      * DescribeTrustedAdvisorChecks.
      * </p>
      * <p>
-     * The response contains a RefreshTrustedAdvisorCheckResult object, which
-     * contains these fields:
+     * The response contains a RefreshTrustedAdvisorCheckResult object,
+     * which contains these fields:
      * </p>
      * 
      * <ul>
@@ -829,13 +829,13 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Requests a refresh of the Trusted Advisor check that has the specified
-     * check ID. Check IDs can be obtained by calling
+     * Requests a refresh of the Trusted Advisor check that has the
+     * specified check ID. Check IDs can be obtained by calling
      * DescribeTrustedAdvisorChecks.
      * </p>
      * <p>
-     * The response contains a RefreshTrustedAdvisorCheckResult object, which
-     * contains these fields:
+     * The response contains a RefreshTrustedAdvisorCheckResult object,
+     * which contains these fields:
      * </p>
      * 
      * <ul>
@@ -879,9 +879,9 @@ public interface AWSSupportAsync extends AWSSupport {
      * set of categories.
      * </p>
      * <p>
-     * The service codes and category codes correspond to the values that are
-     * displayed in the <b>Service</b> and <b>Category</b> drop-down lists on
-     * the AWS Support Center
+     * The service codes and category codes correspond to the values that
+     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
+     * lists on the AWS Support Center
      * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
      * page. The values in those fields, however, do not necessarily match
      * the service codes and categories returned by the
@@ -916,9 +916,9 @@ public interface AWSSupportAsync extends AWSSupport {
      * set of categories.
      * </p>
      * <p>
-     * The service codes and category codes correspond to the values that are
-     * displayed in the <b>Service</b> and <b>Category</b> drop-down lists on
-     * the AWS Support Center
+     * The service codes and category codes correspond to the values that
+     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
+     * lists on the AWS Support Center
      * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
      * page. The values in those fields, however, do not necessarily match
      * the service codes and categories returned by the

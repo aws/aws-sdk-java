@@ -91,7 +91,7 @@ public class CancelWorkflowExecutionDecisionAttributes implements Serializable {
      *
      * @param details Optional details of the cancellation.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CancelWorkflowExecutionDecisionAttributes withDetails(String details) {

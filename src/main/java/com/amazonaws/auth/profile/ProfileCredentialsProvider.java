@@ -63,7 +63,22 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
      *            The name of a local configuration profile.
      */
     public ProfileCredentialsProvider(String profileName) {
-        this(null, profileName);
+        this((ProfilesConfigFile)null, profileName);
+    }
+
+    /**
+     * Creates a new profile credentials provider that returns the AWS security
+     * credentials for the specified profiles configuration file and profile
+     * name.
+     *
+     * @param profilesConfigFilePath
+     *            The file path where the profile configuration file is located.
+     * @param profileName
+     *            The name of a configuration profile in the specified
+     *            configuration file.
+     */
+    public ProfileCredentialsProvider(String profilesConfigFilePath, String profileName) {
+        this(new ProfilesConfigFile(profilesConfigFilePath), profileName);
     }
 
     /**

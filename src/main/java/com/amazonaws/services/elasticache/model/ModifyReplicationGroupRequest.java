@@ -171,7 +171,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param replicationGroupId The identifier of the replication group to modify.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withReplicationGroupId(String replicationGroupId) {
@@ -210,7 +210,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * @param replicationGroupDescription A description for the replication group. Maximum length is 255
      *         characters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withReplicationGroupDescription(String replicationGroupDescription) {
@@ -283,7 +283,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         Private Cloud (VPC). <p>Constraints: Must contain no more than 255
      *         alphanumeric characters. Must not be "Default".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withCacheSecurityGroupNames(String... cacheSecurityGroupNames) {
@@ -311,7 +311,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         Private Cloud (VPC). <p>Constraints: Must contain no more than 255
      *         alphanumeric characters. Must not be "Default".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
@@ -379,7 +379,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         replication groups containing cache clusters running in an Amazon
      *         Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withSecurityGroupIds(String... securityGroupIds) {
@@ -403,7 +403,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         replication groups containing cache clusters running in an Amazon
      *         Virtual Private Cloud (VPC).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -473,7 +473,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         current time and end of the window to ensure that pending changes are
      *         applied.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -518,7 +518,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         will be sent. <note> The SNS topic owner must be same as the
      *         replication group owner. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withNotificationTopicArn(String notificationTopicArn) {
@@ -569,7 +569,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         as soon as possible for parameters when the <i>ApplyImmediately</i>
      *         parameter is specified as <i>true</i> for this request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -614,7 +614,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         group. Notifications are sent only if the status is <i>active</i>.
      *         <p>Valid values: <code>active</code> | <code>inactive</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withNotificationTopicStatus(String notificationTopicStatus) {
@@ -689,7 +689,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         reboot, whichever occurs first. <p>Valid values: <code>true</code> |
      *         <code>false</code> <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withApplyImmediately(Boolean applyImmediately) {
@@ -751,7 +751,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * @param engineVersion The upgraded version of the cache engine to be run on the nodes in the
      *         replication group..
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withEngineVersion(String engineVersion) {
@@ -802,7 +802,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         maintenance window. A value of <code>true</code> allows these upgrades
      *         to occur; <code>false</code> disables automatic upgrades.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -862,7 +862,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         nodes in the specified cache cluster to the primary role. The nodes of
      *         all other clusters in the replication group will be read replicas.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withPrimaryClusterId(String primaryClusterId) {
@@ -913,7 +913,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -970,7 +970,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         <p>If you do not specify this parameter, then ElastiCache will
      *         automatically choose an appropriate time range.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withSnapshotWindow(String snapshotWindow) {
@@ -1009,7 +1009,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * @param snapshottingClusterId The cache cluster ID that will be used as the daily snapshot source
      *         for the replication group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyReplicationGroupRequest withSnapshottingClusterId(String snapshottingClusterId) {

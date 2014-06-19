@@ -122,7 +122,7 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      *
      * @param userName Name of the user whose MFA devices you want to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMFADevicesRequest withUserName(String userName) {
@@ -185,7 +185,7 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMFADevicesRequest withMarker(String marker) {
@@ -251,7 +251,7 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      *         response element is <code>true</code>. This parameter is optional. If
      *         you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListMFADevicesRequest withMaxItems(Integer maxItems) {

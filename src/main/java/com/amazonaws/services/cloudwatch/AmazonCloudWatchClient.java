@@ -245,8 +245,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("monitoring.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudwatch/request.handlers"));
@@ -316,11 +318,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * requests and 40 KB for HTTP POST requests.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Although the Value parameter accepts numbers of type
-     * Double, Amazon CloudWatch truncates values with very large exponents.
-     * Values with base-10 exponents greater than 126 (1 x 10^126) are
-     * truncated. Likewise, values with base-10 exponents less than -130 (1 x
-     * 10^-130) are also truncated.
+     * <b>IMPORTANT:</b> Although the Value parameter accepts numbers of
+     * type Double, Amazon CloudWatch truncates values with very large
+     * exponents. Values with base-10 exponents greater than 126 (1 x 10^126)
+     * are truncated. Likewise, values with base-10 exponents less than -130
+     * (1 x 10^-130) are also truncated.
      * </p>
      *
      * @param putMetricDataRequest Container for the necessary parameters to
@@ -604,8 +606,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * CloudWatch returns histories for all of the owner's alarms.
      * </p>
      * <p>
-     * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for two
-     * weeks, whether or not you delete the alarm.
+     * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for
+     * two weeks, whether or not you delete the alarm.
      * </p>
      *
      * @param describeAlarmHistoryRequest Container for the necessary
@@ -817,8 +819,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * CloudWatch returns histories for all of the owner's alarms.
      * </p>
      * <p>
-     * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for two
-     * weeks, whether or not you delete the alarm.
+     * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for
+     * two weeks, whether or not you delete the alarm.
      * </p>
      * 
      * @return The response from the DescribeAlarmHistory service method, as

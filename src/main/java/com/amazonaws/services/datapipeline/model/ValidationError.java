@@ -77,7 +77,7 @@ public class ValidationError implements Serializable {
      *
      * @param id The identifier of the object that contains the validation error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationError withId(String id) {
@@ -120,7 +120,7 @@ public class ValidationError implements Serializable {
      *
      * @param errors A description of the validation error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationError withErrors(String... errors) {
@@ -138,7 +138,7 @@ public class ValidationError implements Serializable {
      *
      * @param errors A description of the validation error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidationError withErrors(java.util.Collection<String> errors) {

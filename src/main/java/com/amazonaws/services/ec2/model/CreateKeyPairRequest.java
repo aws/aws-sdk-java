@@ -89,7 +89,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param keyName A unique name for the key pair.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateKeyPairRequest withKeyName(String keyName) {

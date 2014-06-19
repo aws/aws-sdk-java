@@ -102,7 +102,7 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param groupName Name of the group to update.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemoveUserFromGroupRequest withGroupName(String groupName) {
@@ -147,7 +147,7 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param userName Name of the user to remove.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RemoveUserFromGroupRequest withUserName(String userName) {

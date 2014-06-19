@@ -25,7 +25,7 @@ import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshalle
  * <p>
  * Creates an import instance task using metadata from the specified disk
  * image. After importing the image, you then upload it using the
- * ec2-upload-disk-image command in the EC2 command line tools. For more
+ * ec2-import-volume command in the EC2 command line tools. For more
  * information, see Using the Command Line Tools to Import Your Virtual
  * Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.
  * </p>
@@ -82,7 +82,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param description A description for the instance being imported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withDescription(String description) {
@@ -115,7 +115,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param launchSpecification <p/>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
@@ -158,7 +158,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param diskImages 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withDiskImages(DiskImage... diskImages) {
@@ -176,7 +176,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param diskImages 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceRequest withDiskImages(java.util.Collection<DiskImage> diskImages) {
@@ -229,7 +229,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param platform The instance operating system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues
@@ -263,7 +263,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param platform The instance operating system.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see PlatformValues

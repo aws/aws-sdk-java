@@ -60,7 +60,7 @@ public class RefreshTrustedAdvisorCheckResult implements Serializable {
      * @param status The current refresh status for a check, including the amount of time
      *         until the check is eligible for refresh.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RefreshTrustedAdvisorCheckResult withStatus(TrustedAdvisorCheckRefreshStatus status) {

@@ -116,7 +116,7 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
      * @param workflowId The <code>workflowId</code> of the external workflow execution to
      *         cancel. This field is required.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelExternalWorkflowExecutionDecisionAttributes withWorkflowId(String workflowId) {
@@ -158,7 +158,7 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
      *
      * @param runId The <code>runId</code> of the external workflow execution to cancel.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelExternalWorkflowExecutionDecisionAttributes withRunId(String runId) {
@@ -206,7 +206,7 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelExternalWorkflowExecutionDecisionAttributes withControl(String control) {

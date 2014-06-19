@@ -14,13 +14,13 @@
  */
 package com.amazonaws.services.s3.model;
 
-import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+import com.amazonaws.services.s3.internal.SSEResultBase;
 
 /**
  * Contains the details returned from Amazon S3 after calling the UploadPart
  * operation.
  */
-public class UploadPartResult implements ServerSideEncryptionResult {
+public class UploadPartResult extends SSEResultBase {
 
     /** The part number of the newly uploaded part */
     private int partNumber;
@@ -28,9 +28,6 @@ public class UploadPartResult implements ServerSideEncryptionResult {
     /** The entity tag generated from the content of the upload part */
     private String eTag;
 
-    /** The server side encryption algorithm of the new object */
-    private String serverSideEncryption;
-    
     /**
      * Returns the part number of the newly uploaded part.
      *
@@ -74,29 +71,11 @@ public class UploadPartResult implements ServerSideEncryptionResult {
      * Returns an identifier which identifies the upload part by its part number
      * and the entity tag computed from the part's data. This information is
      * later needed to complete a multipart upload.
-     * 
+     *
      * @return An identifier which identifies the upload part by its part number
      *         and the entity tag computed from the part's data.
      */
     public PartETag getPartETag() {
         return new PartETag(partNumber, eTag);
-    }
-    
-    /**
-     * Returns the server-side encryption algorithm for the newly created
-     * object, or null if none was used.
-     */
-    public String getServerSideEncryption() {
-        return serverSideEncryption;
-    }
-
-    /**
-     * Sets the server-side encryption algorithm for the newly created object.
-     * 
-     * @param serverSideEncryption
-     *            The server-side encryption algorithm for the new object.
-     */
-    public void setServerSideEncryption(String serverSideEncryption) {
-        this.serverSideEncryption = serverSideEncryption;
     }
 }

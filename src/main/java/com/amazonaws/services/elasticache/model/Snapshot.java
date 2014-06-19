@@ -184,7 +184,7 @@ public class Snapshot implements Serializable {
      *         system-generated; for a manual snapshot, this is the user-provided
      *         name.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotName(String snapshotName) {
@@ -217,7 +217,7 @@ public class Snapshot implements Serializable {
      *
      * @param cacheClusterId The user-supplied identifier of the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withCacheClusterId(String cacheClusterId) {
@@ -262,7 +262,7 @@ public class Snapshot implements Serializable {
      *         <code>available</code> | <code>restoring</code> |
      *         <code>deleting</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotStatus(String snapshotStatus) {
@@ -307,7 +307,7 @@ public class Snapshot implements Serializable {
      *         (<code>automated</code>) or was created manually
      *         (<code>manual</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotSource(String snapshotSource) {
@@ -346,7 +346,7 @@ public class Snapshot implements Serializable {
      * @param cacheNodeType The name of the compute and memory capacity node type for the source
      *         cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withCacheNodeType(String cacheNodeType) {
@@ -385,7 +385,7 @@ public class Snapshot implements Serializable {
      * @param engine The name of the cache engine (<i>memcached</i> or <i>redis</i>) used
      *         by the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withEngine(String engine) {
@@ -424,7 +424,7 @@ public class Snapshot implements Serializable {
      * @param engineVersion The version of the cache engine version that is used by the source
      *         cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withEngineVersion(String engineVersion) {
@@ -457,7 +457,7 @@ public class Snapshot implements Serializable {
      *
      * @param numCacheNodes The number of cache nodes in the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withNumCacheNodes(Integer numCacheNodes) {
@@ -496,7 +496,7 @@ public class Snapshot implements Serializable {
      * @param preferredAvailabilityZone The name of the Availability Zone in which the source cache cluster is
      *         located.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withPreferredAvailabilityZone(String preferredAvailabilityZone) {
@@ -529,7 +529,7 @@ public class Snapshot implements Serializable {
      *
      * @param cacheClusterCreateTime The date and time when the source cache cluster was created.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withCacheClusterCreateTime(java.util.Date cacheClusterCreateTime) {
@@ -568,7 +568,7 @@ public class Snapshot implements Serializable {
      * @param preferredMaintenanceWindow The time range (in UTC) during which weekly system maintenance can
      *         occur on the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -607,7 +607,7 @@ public class Snapshot implements Serializable {
      * @param topicArn The Amazon Resource Name (ARN) for the topic used by the source cache
      *         cluster for publishing notifications.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withTopicArn(String topicArn) {
@@ -640,7 +640,7 @@ public class Snapshot implements Serializable {
      *
      * @param port The port number used by each cache nodes in the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withPort(Integer port) {
@@ -679,7 +679,7 @@ public class Snapshot implements Serializable {
      * @param cacheParameterGroupName The cache parameter group that is associated with the source cache
      *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -718,7 +718,7 @@ public class Snapshot implements Serializable {
      * @param cacheSubnetGroupName The name of the cache subnet group associated with the source cache
      *         cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -757,7 +757,7 @@ public class Snapshot implements Serializable {
      * @param vpcId The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
      *         subnet group for the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withVpcId(String vpcId) {
@@ -802,7 +802,7 @@ public class Snapshot implements Serializable {
      *         are applied automatically (<code>true</code>) or not
      *         (<code>false</code>).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -878,7 +878,7 @@ public class Snapshot implements Serializable {
      *         ignored: Manual snapshots do not expire, and can only be deleted using
      *         the <i>DeleteSnapshot</i> action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -917,7 +917,7 @@ public class Snapshot implements Serializable {
      * @param snapshotWindow The daily time range during which ElastiCache takes daily snapshots of
      *         the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withSnapshotWindow(String snapshotWindow) {
@@ -960,7 +960,7 @@ public class Snapshot implements Serializable {
      *
      * @param nodeSnapshots A list of the cache cluster nodes in the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withNodeSnapshots(NodeSnapshot... nodeSnapshots) {
@@ -978,7 +978,7 @@ public class Snapshot implements Serializable {
      *
      * @param nodeSnapshots A list of the cache cluster nodes in the source cache cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Snapshot withNodeSnapshots(java.util.Collection<NodeSnapshot> nodeSnapshots) {

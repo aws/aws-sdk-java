@@ -170,7 +170,7 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RecordActivityTaskHeartbeatRequest withTaskToken(String taskToken) {
@@ -212,7 +212,7 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
      *
      * @param details If specified, contains details about the progress of the task.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RecordActivityTaskHeartbeatRequest withDetails(String details) {

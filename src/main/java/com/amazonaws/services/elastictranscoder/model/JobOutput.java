@@ -246,7 +246,7 @@ public class JobOutput implements Serializable {
      *         the outputs from the current job. In the Output syntax, this value is
      *         always 1.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withId(String id) {
@@ -306,7 +306,7 @@ public class JobOutput implements Serializable {
      *         <code>OutputBucket</code> object in the pipeline that is specified by
      *         the pipeline ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withKey(String key) {
@@ -510,7 +510,7 @@ public class JobOutput implements Serializable {
      *         value of <code>CreateJobOutput</code>. Elastic Transcoder also appends
      *         the applicable file name extension.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withThumbnailPattern(String thumbnailPattern) {
@@ -582,7 +582,7 @@ public class JobOutput implements Serializable {
      *         generally works only if the file that you're transcoding contains
      *         rotation metadata.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withRotate(String rotate) {
@@ -660,7 +660,7 @@ public class JobOutput implements Serializable {
      *         can also use the Elastic Transcoder system presets, which you can get
      *         with <code>ListPresets</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withPresetId(String presetId) {
@@ -762,7 +762,7 @@ public class JobOutput implements Serializable {
      *         OutputKeys. To add an output to the master playlist for this job,
      *         include it in <code>OutputKeys</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withSegmentDuration(String segmentDuration) {
@@ -918,7 +918,7 @@ public class JobOutput implements Serializable {
      *         <code>Submitted</code>, <code>Progressing</code>,
      *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withStatus(String status) {
@@ -960,7 +960,7 @@ public class JobOutput implements Serializable {
      *
      * @param statusDetail Information that further explains <code>Status</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withStatusDetail(String statusDetail) {
@@ -993,7 +993,7 @@ public class JobOutput implements Serializable {
      *
      * @param duration Duration of the output file, in seconds.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withDuration(Long duration) {
@@ -1026,7 +1026,7 @@ public class JobOutput implements Serializable {
      *
      * @param width Specifies the width of the output file in pixels.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withWidth(Integer width) {
@@ -1059,7 +1059,7 @@ public class JobOutput implements Serializable {
      *
      * @param height Height of the output file, in pixels.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withHeight(Integer height) {
@@ -1168,7 +1168,7 @@ public class JobOutput implements Serializable {
      *         first one, the third one will cover the second, and the fourth one
      *         will cover the third.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withWatermarks(JobWatermark... watermarks) {
@@ -1208,7 +1208,7 @@ public class JobOutput implements Serializable {
      *         first one, the third one will cover the second, and the fourth one
      *         will cover the third.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withWatermarks(java.util.Collection<JobWatermark> watermarks) {
@@ -1248,7 +1248,7 @@ public class JobOutput implements Serializable {
      *
      * @param albumArt The album art to be associated with the output file, if any.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withAlbumArt(JobAlbumArt albumArt) {
@@ -1321,7 +1321,7 @@ public class JobOutput implements Serializable {
      *         you can only specify settings for a single clip per output file. The
      *         Composition object cannot be null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withComposition(Clip... composition) {
@@ -1349,7 +1349,7 @@ public class JobOutput implements Serializable {
      *         you can only specify settings for a single clip per output file. The
      *         Composition object cannot be null.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public JobOutput withComposition(java.util.Collection<Clip> composition) {

@@ -106,7 +106,7 @@ public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest im
      *
      * @param domain The name of the domain containing the workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeWorkflowExecutionRequest withDomain(String domain) {
@@ -139,7 +139,7 @@ public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest im
      *
      * @param execution The workflow execution to describe.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeWorkflowExecutionRequest withExecution(WorkflowExecution execution) {

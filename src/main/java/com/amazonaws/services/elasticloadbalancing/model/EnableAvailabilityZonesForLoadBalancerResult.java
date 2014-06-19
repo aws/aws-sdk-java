@@ -63,7 +63,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements Serializabl
      *
      * @param availabilityZones An updated list of Availability Zones for the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(String... availabilityZones) {
@@ -81,7 +81,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements Serializabl
      *
      * @param availabilityZones An updated list of Availability Zones for the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(java.util.Collection<String> availabilityZones) {

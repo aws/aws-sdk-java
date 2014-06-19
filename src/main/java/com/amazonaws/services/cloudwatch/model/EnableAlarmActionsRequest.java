@@ -80,7 +80,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest implement
      *
      * @param alarmNames The names of the alarms to enable actions for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableAlarmActionsRequest withAlarmNames(String... alarmNames) {
@@ -101,7 +101,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest implement
      *
      * @param alarmNames The names of the alarms to enable actions for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableAlarmActionsRequest withAlarmNames(java.util.Collection<String> alarmNames) {

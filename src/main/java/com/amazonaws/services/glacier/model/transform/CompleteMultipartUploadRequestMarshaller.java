@@ -47,7 +47,6 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
         Request<CompleteMultipartUploadRequest> request = new DefaultRequest<CompleteMultipartUploadRequest>(completeMultipartUploadRequest, "AmazonGlacier");
         String target = "Glacier.CompleteMultipartUpload";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.POST);
         if (completeMultipartUploadRequest.getArchiveSize() != null)
@@ -55,7 +54,7 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
         
         if (completeMultipartUploadRequest.getChecksum() != null)
           request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(completeMultipartUploadRequest.getChecksum()));
-
+        
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", (completeMultipartUploadRequest.getAccountId() == null) ? "" : StringUtils.fromString(completeMultipartUploadRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", (completeMultipartUploadRequest.getVaultName() == null) ? "" : StringUtils.fromString(completeMultipartUploadRequest.getVaultName())); 
@@ -70,15 +69,13 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         request.setContent(new ByteArrayInputStream(new byte[0]));
 
         return request;

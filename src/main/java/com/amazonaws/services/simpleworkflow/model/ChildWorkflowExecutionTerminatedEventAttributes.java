@@ -76,7 +76,7 @@ public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializ
      *
      * @param workflowExecution The child workflow execution that was terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
@@ -109,7 +109,7 @@ public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializ
      *
      * @param workflowType The type of the child workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withWorkflowType(WorkflowType workflowType) {
@@ -166,7 +166,7 @@ public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializ
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withInitiatedEventId(Long initiatedEventId) {
@@ -217,7 +217,7 @@ public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializ
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withStartedEventId(Long startedEventId) {

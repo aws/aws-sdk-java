@@ -77,7 +77,7 @@ public class CloseStatusFilter implements Serializable {
      * @param status The close status that must match the close status of an execution for
      *         it to meet the criteria of this filter. This field is required.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CloseStatus
@@ -115,7 +115,7 @@ public class CloseStatusFilter implements Serializable {
      * @param status The close status that must match the close status of an execution for
      *         it to meet the criteria of this filter. This field is required.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see CloseStatus

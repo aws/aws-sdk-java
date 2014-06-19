@@ -71,7 +71,7 @@ public class ListStepsResult implements Serializable {
      *
      * @param steps The filtered list of steps for the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsResult withSteps(StepSummary... steps) {
@@ -89,7 +89,7 @@ public class ListStepsResult implements Serializable {
      *
      * @param steps The filtered list of steps for the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsResult withSteps(java.util.Collection<StepSummary> steps) {
@@ -147,7 +147,7 @@ public class ListStepsResult implements Serializable {
      *         retrieve the next page of results. When the value is null, all results
      *         have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListStepsResult withMarker(String marker) {

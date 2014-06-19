@@ -74,7 +74,7 @@ public class ListPresetsResult implements Serializable {
      *
      * @param presets An array of <code>Preset</code> objects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPresetsResult withPresets(Preset... presets) {
@@ -92,7 +92,7 @@ public class ListPresetsResult implements Serializable {
      *
      * @param presets An array of <code>Preset</code> objects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPresetsResult withPresets(java.util.Collection<Preset> presets) {
@@ -159,7 +159,7 @@ public class ListPresetsResult implements Serializable {
      *         reached the last page of results, the value of
      *         <code>NextPageToken</code> is <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPresetsResult withNextPageToken(String nextPageToken) {

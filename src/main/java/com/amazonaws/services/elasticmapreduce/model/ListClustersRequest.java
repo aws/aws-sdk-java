@@ -88,7 +88,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
      * @param createdAfter The creation date and time beginning value filter for listing
      *         clusters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersRequest withCreatedAfter(java.util.Date createdAfter) {
@@ -121,7 +121,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param createdBefore The creation date and time end value filter for listing clusters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersRequest withCreatedBefore(java.util.Date createdBefore) {
@@ -164,7 +164,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param clusterStates The cluster state filters to apply when listing clusters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersRequest withClusterStates(String... clusterStates) {
@@ -182,7 +182,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param clusterStates The cluster state filters to apply when listing clusters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersRequest withClusterStates(java.util.Collection<String> clusterStates) {
@@ -204,7 +204,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param clusterStates The cluster state filters to apply when listing clusters.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersRequest withClusterStates(ClusterState... clusterStates) {
@@ -263,7 +263,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
      *         calls to retrieve the next page of results. When the value is null,
      *         all results have been returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListClustersRequest withMarker(String marker) {

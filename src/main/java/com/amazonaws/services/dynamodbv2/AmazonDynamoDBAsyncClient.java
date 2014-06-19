@@ -440,11 +440,12 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * return fewer items, you can provide a <i>ScanFilter</i> .
      * </p>
      * <p>
-     * If the total number of scanned items exceeds the maximum data set size
-     * limit of 1 MB, the scan stops and results are returned to the user
-     * with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent
-     * operation. The results also include the number of items exceeding the
-     * limit. A scan can result in no table data meeting the filter criteria.
+     * If the total number of scanned items exceeds the maximum data set
+     * size limit of 1 MB, the scan stops and results are returned to the
+     * user with a <i>LastEvaluatedKey</i> to continue the scan in a
+     * subsequent operation. The results also include the number of items
+     * exceeding the limit. A scan can result in no table data meeting the
+     * filter criteria.
      * </p>
      * <p>
      * The result set is eventually consistent.
@@ -489,11 +490,12 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * return fewer items, you can provide a <i>ScanFilter</i> .
      * </p>
      * <p>
-     * If the total number of scanned items exceeds the maximum data set size
-     * limit of 1 MB, the scan stops and results are returned to the user
-     * with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent
-     * operation. The results also include the number of items exceeding the
-     * limit. A scan can result in no table data meeting the filter criteria.
+     * If the total number of scanned items exceeds the maximum data set
+     * size limit of 1 MB, the scan stops and results are returned to the
+     * user with a <i>LastEvaluatedKey</i> to continue the scan in a
+     * subsequent operation. The results also include the number of items
+     * exceeding the limit. A scan can result in no table data meeting the
+     * filter criteria.
      * </p>
      * <p>
      * The result set is eventually consistent.
@@ -663,14 +665,13 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
     
     /**
      * <p>
-     * The <i>DeleteTable</i> operation deletes a table and all of its items.
-     * After a <i>DeleteTable</i> request, the specified table is in the
-     * <code>DELETING</code> state until DynamoDB completes the deletion. If
-     * the table is in the <code>ACTIVE</code> state, you can delete it. If a
-     * table is in <code>CREATING</code> or <code>UPDATING</code> states,
-     * then DynamoDB returns a
-     * <i>ResourceInUseException</i> . If the specified
-     * table does not exist, DynamoDB returns a
+     * The <i>DeleteTable</i> operation deletes a table and all of its
+     * items. After a <i>DeleteTable</i> request, the specified table is in
+     * the <code>DELETING</code> state until DynamoDB completes the deletion.
+     * If the table is in the <code>ACTIVE</code> state, you can delete it.
+     * If a table is in <code>CREATING</code> or <code>UPDATING</code>
+     * states, then DynamoDB returns a <i>ResourceInUseException</i> . If the
+     * specified table does not exist, DynamoDB returns a
      * <i>ResourceNotFoundException</i> . If table is already in the
      * <code>DELETING</code> state, no error is returned.
      * </p>
@@ -712,14 +713,13 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
 
     /**
      * <p>
-     * The <i>DeleteTable</i> operation deletes a table and all of its items.
-     * After a <i>DeleteTable</i> request, the specified table is in the
-     * <code>DELETING</code> state until DynamoDB completes the deletion. If
-     * the table is in the <code>ACTIVE</code> state, you can delete it. If a
-     * table is in <code>CREATING</code> or <code>UPDATING</code> states,
-     * then DynamoDB returns a
-     * <i>ResourceInUseException</i> . If the specified
-     * table does not exist, DynamoDB returns a
+     * The <i>DeleteTable</i> operation deletes a table and all of its
+     * items. After a <i>DeleteTable</i> request, the specified table is in
+     * the <code>DELETING</code> state until DynamoDB completes the deletion.
+     * If the table is in the <code>ACTIVE</code> state, you can delete it.
+     * If a table is in <code>CREATING</code> or <code>UPDATING</code>
+     * states, then DynamoDB returns a <i>ResourceInUseException</i> . If the
+     * specified table does not exist, DynamoDB returns a
      * <i>ResourceNotFoundException</i> . If table is already in the
      * <code>DELETING</code> state, no error is returned.
      * </p>
@@ -803,13 +803,13 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * <i>ProvisionedThroughputExceededException</i> .
      * </p>
      * <p>
-     * To write one item, you can use the <i>PutItem</i> operation; to delete
-     * one item, you can use the <i>DeleteItem</i> operation.
+     * To write one item, you can use the <i>PutItem</i> operation; to
+     * delete one item, you can use the <i>DeleteItem</i> operation.
      * </p>
      * <p>
-     * With <i>BatchWriteItem</i> , you can efficiently write or delete large
-     * amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy
-     * data from another database into DynamoDB. In order to improve
+     * With <i>BatchWriteItem</i> , you can efficiently write or delete
+     * large amounts of data, such as from Amazon Elastic MapReduce (EMR), or
+     * copy data from another database into DynamoDB. In order to improve
      * performance with these large-scale operations, <i>BatchWriteItem</i>
      * does not behave in the same way as individual <i>PutItem</i> and
      * <i>DeleteItem</i> calls would For example, you cannot specify
@@ -828,10 +828,10 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * complexity into your application.
      * </p>
      * <p>
-     * Parallel processing reduces latency, but each specified put and delete
-     * request consumes the same number of write capacity units whether it is
-     * processed in parallel or not. Delete operations on nonexistent items
-     * consume one write capacity unit.
+     * Parallel processing reduces latency, but each specified put and
+     * delete request consumes the same number of write capacity units
+     * whether it is processed in parallel or not. Delete operations on
+     * nonexistent items consume one write capacity unit.
      * </p>
      * <p>
      * If one or more of the following is true, DynamoDB rejects the entire
@@ -840,8 +840,8 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * <ul>
      * <li> <p>
-     * One or more tables specified in the <i>BatchWriteItem</i> request does
-     * not exist.
+     * One or more tables specified in the <i>BatchWriteItem</i> request
+     * does not exist.
      * </p>
      * </li>
      * <li> <p>
@@ -920,13 +920,13 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * <i>ProvisionedThroughputExceededException</i> .
      * </p>
      * <p>
-     * To write one item, you can use the <i>PutItem</i> operation; to delete
-     * one item, you can use the <i>DeleteItem</i> operation.
+     * To write one item, you can use the <i>PutItem</i> operation; to
+     * delete one item, you can use the <i>DeleteItem</i> operation.
      * </p>
      * <p>
-     * With <i>BatchWriteItem</i> , you can efficiently write or delete large
-     * amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy
-     * data from another database into DynamoDB. In order to improve
+     * With <i>BatchWriteItem</i> , you can efficiently write or delete
+     * large amounts of data, such as from Amazon Elastic MapReduce (EMR), or
+     * copy data from another database into DynamoDB. In order to improve
      * performance with these large-scale operations, <i>BatchWriteItem</i>
      * does not behave in the same way as individual <i>PutItem</i> and
      * <i>DeleteItem</i> calls would For example, you cannot specify
@@ -945,10 +945,10 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * complexity into your application.
      * </p>
      * <p>
-     * Parallel processing reduces latency, but each specified put and delete
-     * request consumes the same number of write capacity units whether it is
-     * processed in parallel or not. Delete operations on nonexistent items
-     * consume one write capacity unit.
+     * Parallel processing reduces latency, but each specified put and
+     * delete request consumes the same number of write capacity units
+     * whether it is processed in parallel or not. Delete operations on
+     * nonexistent items consume one write capacity unit.
      * </p>
      * <p>
      * If one or more of the following is true, DynamoDB rejects the entire
@@ -957,8 +957,8 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * 
      * <ul>
      * <li> <p>
-     * One or more tables specified in the <i>BatchWriteItem</i> request does
-     * not exist.
+     * One or more tables specified in the <i>BatchWriteItem</i> request
+     * does not exist.
      * </p>
      * </li>
      * <li> <p>
@@ -1422,9 +1422,8 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * returned to the user with a <i>LastEvaluatedKey</i> to continue the
      * query in a subsequent operation. Unlike a <i>Scan</i> operation, a
      * <i>Query</i> operation never returns an empty result set <i>and</i> a
-     * <i>LastEvaluatedKey</i> . The
-     * <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB,
-     * or if you have used <i>Limit</i> .
+     * <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided
+     * if the results exceed 1 MB, or if you have used <i>Limit</i> .
      * </p>
      * <p>
      * You can query a table, a local secondary index, or a global secondary
@@ -1478,9 +1477,8 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * returned to the user with a <i>LastEvaluatedKey</i> to continue the
      * query in a subsequent operation. Unlike a <i>Scan</i> operation, a
      * <i>Query</i> operation never returns an empty result set <i>and</i> a
-     * <i>LastEvaluatedKey</i> . The
-     * <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB,
-     * or if you have used <i>Limit</i> .
+     * <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided
+     * if the results exceed 1 MB, or if you have used <i>Limit</i> .
      * </p>
      * <p>
      * You can query a table, a local secondary index, or a global secondary

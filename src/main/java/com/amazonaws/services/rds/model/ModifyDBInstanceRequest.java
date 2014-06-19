@@ -361,7 +361,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -556,7 +556,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         creating a read replica for the instance, and creating a DB snapshot
      *         of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withAllocatedStorage(Integer allocatedStorage) {
@@ -643,7 +643,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge |
      *         db.m2.4xlarge</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withDBInstanceClass(String dBInstanceClass) {
@@ -716,7 +716,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         must be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withDBSecurityGroups(String... dBSecurityGroups) {
@@ -744,7 +744,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         must be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withDBSecurityGroups(java.util.Collection<String> dBSecurityGroups) {
@@ -818,7 +818,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
@@ -844,7 +844,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -926,7 +926,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         next failure reboot, whichever occurs first. See each parameter to
      *         determine when a change is applied. <p>Default: <code>false</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withApplyImmediately(Boolean applyImmediately) {
@@ -1048,7 +1048,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         action provides a way to regain access to a master instance user if
      *         the password is lost. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withMasterUserPassword(String masterUserPassword) {
@@ -1117,7 +1117,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         The DB parameter group must be in the same DB parameter group family
      *         as this DB instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withDBParameterGroupName(String dBParameterGroupName) {
@@ -1222,7 +1222,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source
      *         to read replicas</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withBackupRetentionPeriod(Integer backupRetentionPeriod) {
@@ -1297,7 +1297,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         (UTC)</li> <li>Must not conflict with the preferred maintenance
      *         window</li> <li>Must be at least 30 minutes</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withPreferredBackupWindow(String preferredBackupWindow) {
@@ -1396,7 +1396,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints: Must be at least
      *         30 minutes
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1459,7 +1459,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         for this request. <p>Constraints: Cannot be specified if the DB
      *         instance is a read replica.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withMultiAZ(Boolean multiAZ) {
@@ -1559,7 +1559,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         be the default for that DB parameter group family. <p>Example:
      *         <code>5.1.42</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withEngineVersion(String engineVersion) {
@@ -1622,7 +1622,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         EngineVersion parameter that is a different major version than the DB
      *         instance's current version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
@@ -1710,7 +1710,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         maintenance window, and a newer minor version is available, and RDS
      *         has enabled auto patching for that engine version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1896,7 +1896,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         a read replica for the instance, and creating a DB snapshot of the
      *         instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withIops(Integer iops) {
@@ -1989,7 +1989,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         removed from an option group, and that option group cannot be removed
      *         from a DB instance once it is associated with a DB instance
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withOptionGroupName(String optionGroupName) {
@@ -2046,7 +2046,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyDBInstanceRequest withNewDBInstanceIdentifier(String newDBInstanceIdentifier) {

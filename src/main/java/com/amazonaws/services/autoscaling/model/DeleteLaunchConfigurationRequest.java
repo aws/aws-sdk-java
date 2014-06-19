@@ -79,7 +79,7 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param launchConfigurationName The name of the launch configuration.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteLaunchConfigurationRequest withLaunchConfigurationName(String launchConfigurationName) {

@@ -70,7 +70,7 @@ public class StatisticSet implements Serializable {
      *
      * @param sampleCount The number of samples used for the statistic set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StatisticSet withSampleCount(Double sampleCount) {
@@ -103,7 +103,7 @@ public class StatisticSet implements Serializable {
      *
      * @param sum The sum of values for the sample set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StatisticSet withSum(Double sum) {
@@ -136,7 +136,7 @@ public class StatisticSet implements Serializable {
      *
      * @param minimum The minimum value of the sample set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StatisticSet withMinimum(Double minimum) {
@@ -169,7 +169,7 @@ public class StatisticSet implements Serializable {
      *
      * @param maximum The maximum value of the sample set.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StatisticSet withMaximum(Double maximum) {

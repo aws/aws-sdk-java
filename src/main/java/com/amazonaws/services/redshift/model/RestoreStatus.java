@@ -90,7 +90,7 @@ public class RestoreStatus implements Serializable {
      * @param status The status of the restore action. Returns starting, restoring,
      *         completed, or failed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreStatus withStatus(String status) {
@@ -129,7 +129,7 @@ public class RestoreStatus implements Serializable {
      * @param currentRestoreRateInMegaBytesPerSecond The number of megabytes per second being transferred from the backup
      *         storage. Returns the average rate for a completed backup.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreStatus withCurrentRestoreRateInMegaBytesPerSecond(Double currentRestoreRateInMegaBytesPerSecond) {
@@ -162,7 +162,7 @@ public class RestoreStatus implements Serializable {
      *
      * @param snapshotSizeInMegaBytes The size of the set of snapshot data used to restore the cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreStatus withSnapshotSizeInMegaBytes(Long snapshotSizeInMegaBytes) {
@@ -201,7 +201,7 @@ public class RestoreStatus implements Serializable {
      * @param progressInMegaBytes The number of megabytes that have been transferred from snapshot
      *         storage.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreStatus withProgressInMegaBytes(Long progressInMegaBytes) {
@@ -240,7 +240,7 @@ public class RestoreStatus implements Serializable {
      * @param elapsedTimeInSeconds The amount of time an in-progress restore has been running, or the
      *         amount of time it took a completed restore to finish.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreStatus withElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
@@ -279,7 +279,7 @@ public class RestoreStatus implements Serializable {
      * @param estimatedTimeToCompletionInSeconds The estimate of the time remaining before the restore will complete.
      *         Returns 0 for a completed restore.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RestoreStatus withEstimatedTimeToCompletionInSeconds(Long estimatedTimeToCompletionInSeconds) {

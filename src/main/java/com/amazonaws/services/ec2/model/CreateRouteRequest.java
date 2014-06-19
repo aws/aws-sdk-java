@@ -121,7 +121,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param routeTableId The ID of the route table for the route.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRouteRequest withRouteTableId(String routeTableId) {
@@ -160,7 +160,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      * @param destinationCidrBlock The CIDR address block used for the destination match. Routing
      *         decisions are based on the most specific match.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {
@@ -193,7 +193,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param gatewayId The ID of an Internet gateway attached to your VPC.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRouteRequest withGatewayId(String gatewayId) {
@@ -238,7 +238,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      *         specify an instance ID unless exactly one network interface is
      *         attached.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRouteRequest withInstanceId(String instanceId) {
@@ -271,7 +271,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param networkInterfaceId The ID of a network interface.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
@@ -304,7 +304,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param vpcPeeringConnectionId The ID of a VPC peering connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateRouteRequest withVpcPeeringConnectionId(String vpcPeeringConnectionId) {

@@ -82,7 +82,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implemen
      *
      * @param vpnConnectionId The ID of the VPN connection.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteVpnConnectionRequest withVpnConnectionId(String vpnConnectionId) {

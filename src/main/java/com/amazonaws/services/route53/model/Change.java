@@ -118,7 +118,7 @@ public class Change implements Serializable {
      * @param action The action to perform. <p>Valid values: <code>CREATE</code> |
      *         <code>DELETE</code> | <code>UPSERT</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChangeAction
@@ -156,7 +156,7 @@ public class Change implements Serializable {
      * @param action The action to perform. <p>Valid values: <code>CREATE</code> |
      *         <code>DELETE</code> | <code>UPSERT</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChangeAction
@@ -191,7 +191,7 @@ public class Change implements Serializable {
      *
      * @param resourceRecordSet Information about the resource record set to create or delete.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Change withResourceRecordSet(ResourceRecordSet resourceRecordSet) {

@@ -35,7 +35,6 @@ public class ProfilesConfigFileLoader {
 
     private static final Log LOG = LogFactory.getLog(ProfilesConfigFileLoader.class);
 
-
     public static Map<String, Profile> loadProfiles(File file) {
         if (file == null) {
             throw new IllegalArgumentException(
@@ -59,7 +58,6 @@ public class ProfilesConfigFileLoader {
             if (fis != null) try {fis.close();} catch (IOException ioe) {}
         }
     }
-
 
     /**
      * Loads the credential profiles from the given input stream.
@@ -90,12 +88,16 @@ public class ProfilesConfigFileLoader {
 
             assertParameterNotEmpty(profileName,
                                   "Unable to load credentials into profile: ProfileName is empty.");
-            assertParameterNotEmpty(accessKey,
-                    String.format("Unable to load credentials into profile [%s]: AWS Access Key ID is empty.",
-                                  profileName));
-            assertParameterNotEmpty(secretKey,
-                    String.format("Unable to load credentials into profile [%s]: AWS Secret Access Key is empty.",
-                            profileName));
+            if (accessKey == null) {
+                throw new AmazonClientException(
+                        String.format("Unable to load credentials into profile [%s]: AWS Access Key ID is not specified.",
+                                      profileName));
+            }
+            if (secretKey == null) {
+                throw new AmazonClientException(
+                        String.format("Unable to load credentials into profile [%s]: AWS Secret Access Key is not specified.",
+                                profileName));
+            }
 
             if (sessionToken == null) {
                 profilesByName.put(
@@ -159,7 +161,7 @@ public class ProfilesConfigFileLoader {
         }
 
         @Override
-        protected void onEmptyOrCommentLine(String line) {
+        protected void onEmptyOrCommentLine(String profileName, String line) {
             // Ignore empty or comment line
         }
 

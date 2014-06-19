@@ -117,7 +117,7 @@ public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest implem
      *
      * @param domain The name of the domain in which the workflow type is registered.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeprecateWorkflowTypeRequest withDomain(String domain) {
@@ -150,7 +150,7 @@ public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest implem
      *
      * @param workflowType The workflow type to deprecate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeprecateWorkflowTypeRequest withWorkflowType(WorkflowType workflowType) {

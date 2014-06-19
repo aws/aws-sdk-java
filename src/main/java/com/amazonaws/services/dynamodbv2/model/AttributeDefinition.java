@@ -106,7 +106,7 @@ public class AttributeDefinition implements Serializable {
      *
      * @param attributeName A name for the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AttributeDefinition withAttributeName(String attributeName) {
@@ -152,7 +152,7 @@ public class AttributeDefinition implements Serializable {
      *
      * @param attributeType The data type for the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ScalarAttributeType
@@ -186,7 +186,7 @@ public class AttributeDefinition implements Serializable {
      *
      * @param attributeType The data type for the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ScalarAttributeType

@@ -83,7 +83,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
      *
      * @param bytesConverted The number of bytes converted so far.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceVolumeDetailItem withBytesConverted(Long bytesConverted) {
@@ -116,7 +116,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
      *
      * @param availabilityZone The Availability Zone where the resulting instance will reside.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceVolumeDetailItem withAvailabilityZone(String availabilityZone) {
@@ -149,7 +149,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
      *
      * @param image The image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceVolumeDetailItem withImage(DiskImageDescription image) {
@@ -182,7 +182,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
      *
      * @param volume The volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceVolumeDetailItem withVolume(DiskImageVolumeDescription volume) {
@@ -215,7 +215,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
      *
      * @param status The status of the import of this particular disk image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceVolumeDetailItem withStatus(String status) {
@@ -248,7 +248,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
      *
      * @param statusMessage The status information or errors related to the disk image.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceVolumeDetailItem withStatusMessage(String statusMessage) {
@@ -281,7 +281,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable {
      *
      * @param description 
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ImportInstanceVolumeDetailItem withDescription(String description) {

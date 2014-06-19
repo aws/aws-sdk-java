@@ -99,7 +99,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      *
      * @param loadBalancerName The name associated with the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
@@ -148,7 +148,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      * @param availabilityZones A list of new Availability Zones for the load balancer. Each
      *         Availability Zone must be in the same region as the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
@@ -168,7 +168,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      * @param availabilityZones A list of new Availability Zones for the load balancer. Each
      *         Availability Zone must be in the same region as the load balancer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {

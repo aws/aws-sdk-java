@@ -82,7 +82,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
      *
      * @param checkId The unique identifier for the Trusted Advisor check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckResult withCheckId(String checkId) {
@@ -115,7 +115,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
      *
      * @param timestamp The time of the last refresh of the check.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckResult withTimestamp(String timestamp) {
@@ -154,7 +154,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
      * @param status The alert status of the check: "ok" (green), "warning" (yellow),
      *         "error" (red), or "not_available".
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckResult withStatus(String status) {
@@ -193,7 +193,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
      * @param resourcesSummary Details about AWS resources that were analyzed in a call to Trusted
      *         Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckResult withResourcesSummary(TrustedAdvisorResourcesSummary resourcesSummary) {
@@ -232,7 +232,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
      * @param categorySpecificSummary Summary information that relates to the category of the check. Cost
      *         Optimizing is the only category that is currently supported.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckResult withCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary categorySpecificSummary) {
@@ -275,7 +275,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
      *
      * @param flaggedResources The details about each resource listed in the check result.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckResult withFlaggedResources(TrustedAdvisorResourceDetail... flaggedResources) {
@@ -293,7 +293,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
      *
      * @param flaggedResources The details about each resource listed in the check result.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TrustedAdvisorCheckResult withFlaggedResources(java.util.Collection<TrustedAdvisorResourceDetail> flaggedResources) {

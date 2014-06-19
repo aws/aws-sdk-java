@@ -92,7 +92,7 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
      *         sample policies pre-defined by Elastic Load Balancing or the specified
      *         sample polices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPoliciesRequest withLoadBalancerName(String loadBalancerName) {
@@ -141,7 +141,7 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
      * @param policyNames The names of load balancer policies you've created or Elastic Load
      *         Balancing sample policy names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPoliciesRequest withPolicyNames(String... policyNames) {
@@ -161,7 +161,7 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
      * @param policyNames The names of load balancer policies you've created or Elastic Load
      *         Balancing sample policy names.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeLoadBalancerPoliciesRequest withPolicyNames(java.util.Collection<String> policyNames) {

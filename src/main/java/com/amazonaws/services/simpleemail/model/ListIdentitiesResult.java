@@ -68,7 +68,7 @@ public class ListIdentitiesResult implements Serializable {
      *
      * @param identities A list of identities.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListIdentitiesResult withIdentities(String... identities) {
@@ -86,7 +86,7 @@ public class ListIdentitiesResult implements Serializable {
      *
      * @param identities A list of identities.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListIdentitiesResult withIdentities(java.util.Collection<String> identities) {
@@ -126,7 +126,7 @@ public class ListIdentitiesResult implements Serializable {
      *
      * @param nextToken The token used for pagination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListIdentitiesResult withNextToken(String nextToken) {

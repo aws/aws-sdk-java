@@ -68,7 +68,7 @@ public class OrderableClusterOption implements Serializable {
      *
      * @param clusterVersion The version of the orderable cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OrderableClusterOption withClusterVersion(String clusterVersion) {
@@ -101,7 +101,7 @@ public class OrderableClusterOption implements Serializable {
      *
      * @param clusterType The cluster type, for example <code>multi-node</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OrderableClusterOption withClusterType(String clusterType) {
@@ -134,7 +134,7 @@ public class OrderableClusterOption implements Serializable {
      *
      * @param nodeType The node type for the orderable cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OrderableClusterOption withNodeType(String nodeType) {
@@ -177,7 +177,7 @@ public class OrderableClusterOption implements Serializable {
      *
      * @param availabilityZones A list of availability zones for the orderable cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OrderableClusterOption withAvailabilityZones(AvailabilityZone... availabilityZones) {
@@ -195,7 +195,7 @@ public class OrderableClusterOption implements Serializable {
      *
      * @param availabilityZones A list of availability zones for the orderable cluster.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public OrderableClusterOption withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {

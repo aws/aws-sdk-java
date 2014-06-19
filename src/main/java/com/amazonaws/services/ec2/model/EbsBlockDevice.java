@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describe an Amazon EBS block device.
+ * Describes an Amazon EBS block device.
  * </p>
  */
 public class EbsBlockDevice implements Serializable {
@@ -59,6 +59,11 @@ public class EbsBlockDevice implements Serializable {
     private Integer iops;
 
     /**
+     * Indicates whether the Amazon EBS volume is encrypted.
+     */
+    private Boolean encrypted;
+
+    /**
      * The ID of the snapshot.
      *
      * @return The ID of the snapshot.
@@ -83,7 +88,7 @@ public class EbsBlockDevice implements Serializable {
      *
      * @param snapshotId The ID of the snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withSnapshotId(String snapshotId) {
@@ -134,7 +139,7 @@ public class EbsBlockDevice implements Serializable {
      *         <p>Default: If you're creating the volume from a snapshot and don't
      *         specify a volume size, the default is the snapshot size.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withVolumeSize(Integer volumeSize) {
@@ -173,7 +178,7 @@ public class EbsBlockDevice implements Serializable {
      * @param deleteOnTermination Indicates whether the Amazon EBS volume is deleted on instance
      *         termination.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withDeleteOnTermination(Boolean deleteOnTermination) {
@@ -230,7 +235,7 @@ public class EbsBlockDevice implements Serializable {
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -264,7 +269,7 @@ public class EbsBlockDevice implements Serializable {
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see VolumeType
@@ -317,12 +322,54 @@ public class EbsBlockDevice implements Serializable {
      *         when the volume type is <code>io1</code>; not used with
      *         <code>standard</code> volumes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EbsBlockDevice withIops(Integer iops) {
         this.iops = iops;
         return this;
+    }
+
+    /**
+     * Indicates whether the Amazon EBS volume is encrypted.
+     *
+     * @return Indicates whether the Amazon EBS volume is encrypted.
+     */
+    public Boolean isEncrypted() {
+        return encrypted;
+    }
+    
+    /**
+     * Indicates whether the Amazon EBS volume is encrypted.
+     *
+     * @param encrypted Indicates whether the Amazon EBS volume is encrypted.
+     */
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+    
+    /**
+     * Indicates whether the Amazon EBS volume is encrypted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param encrypted Indicates whether the Amazon EBS volume is encrypted.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public EbsBlockDevice withEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    /**
+     * Indicates whether the Amazon EBS volume is encrypted.
+     *
+     * @return Indicates whether the Amazon EBS volume is encrypted.
+     */
+    public Boolean getEncrypted() {
+        return encrypted;
     }
 
     /**
@@ -341,7 +388,8 @@ public class EbsBlockDevice implements Serializable {
         if (getVolumeSize() != null) sb.append("VolumeSize: " + getVolumeSize() + ",");
         if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ",");
         if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
-        if (getIops() != null) sb.append("Iops: " + getIops() );
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
         sb.append("}");
         return sb.toString();
     }
@@ -356,6 +404,7 @@ public class EbsBlockDevice implements Serializable {
         hashCode = prime * hashCode + ((isDeleteOnTermination() == null) ? 0 : isDeleteOnTermination().hashCode()); 
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
+        hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
         return hashCode;
     }
     
@@ -377,6 +426,8 @@ public class EbsBlockDevice implements Serializable {
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false) return false; 
         if (other.getIops() == null ^ this.getIops() == null) return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
+        if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
+        if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
         return true;
     }
     

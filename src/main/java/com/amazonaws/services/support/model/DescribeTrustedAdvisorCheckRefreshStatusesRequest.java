@@ -70,7 +70,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
      *
      * @param checkIds The IDs of the Trusted Advisor checks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(String... checkIds) {
@@ -88,7 +88,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
      *
      * @param checkIds The IDs of the Trusted Advisor checks.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(java.util.Collection<String> checkIds) {

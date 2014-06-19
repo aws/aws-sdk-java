@@ -95,7 +95,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      *         characters or hyphens. Must not be "Default". <p>Example:
      *         <code>mySubnetgroup</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBSubnetGroupRequest withDBSubnetGroupName(String dBSubnetGroupName) {
@@ -128,7 +128,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param dBSubnetGroupDescription The description for the DB subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBSubnetGroupRequest withDBSubnetGroupDescription(String dBSubnetGroupDescription) {
@@ -171,7 +171,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param subnetIds The EC2 Subnet IDs for the DB subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBSubnetGroupRequest withSubnetIds(String... subnetIds) {
@@ -189,7 +189,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param subnetIds The EC2 Subnet IDs for the DB subnet group.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
@@ -239,7 +239,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBSubnetGroupRequest withTags(Tag... tags) {
@@ -257,7 +257,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      *
      * @param tags A list of tags.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBSubnetGroupRequest withTags(java.util.Collection<Tag> tags) {

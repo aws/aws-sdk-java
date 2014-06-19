@@ -84,7 +84,7 @@ public class EnableLoggingRequest extends AmazonWebServiceRequest implements Ser
      * @param clusterIdentifier The identifier of the cluster on which logging is to be started.
      *         <p>Example: <code>examplecluster</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableLoggingRequest withClusterIdentifier(String clusterIdentifier) {
@@ -135,7 +135,7 @@ public class EnableLoggingRequest extends AmazonWebServiceRequest implements Ser
      *         cluster</li> <li>The cluster must have read bucket and put object
      *         permissions</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableLoggingRequest withBucketName(String bucketName) {
@@ -198,7 +198,7 @@ public class EnableLoggingRequest extends AmazonWebServiceRequest implements Ser
      *         <li>x00 to x20</li> <li>x22</li> <li>x27</li> <li>x5c</li> <li>x7f or
      *         larger</li> </ul> </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnableLoggingRequest withS3KeyPrefix(String s3KeyPrefix) {

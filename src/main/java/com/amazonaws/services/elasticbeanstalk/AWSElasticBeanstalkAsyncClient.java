@@ -1141,9 +1141,9 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * properties.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not provided,
-     * the value remains unchanged. To clear properties, specify an empty
-     * string.
+     * <b>NOTE:</b> If a property (for example, description) is not
+     * provided, the value remains unchanged. To clear properties, specify an
+     * empty string.
      * </p>
      *
      * @param updateApplicationVersionRequest Container for the necessary
@@ -1178,9 +1178,9 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * properties.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not provided,
-     * the value remains unchanged. To clear properties, specify an empty
-     * string.
+     * <b>NOTE:</b> If a property (for example, description) is not
+     * provided, the value remains unchanged. To clear properties, specify an
+     * empty string.
      * </p>
      *
      * @param updateApplicationVersionRequest Container for the necessary
@@ -1652,9 +1652,9 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * Updates the specified application to have the specified properties.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not provided,
-     * the value remains unchanged. To clear these properties, specify an
-     * empty string.
+     * <b>NOTE:</b> If a property (for example, description) is not
+     * provided, the value remains unchanged. To clear these properties,
+     * specify an empty string.
      * </p>
      *
      * @param updateApplicationRequest Container for the necessary parameters
@@ -1686,9 +1686,9 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * Updates the specified application to have the specified properties.
      * </p>
      * <p>
-     * <b>NOTE:</b> If a property (for example, description) is not provided,
-     * the value remains unchanged. To clear these properties, specify an
-     * empty string.
+     * <b>NOTE:</b> If a property (for example, description) is not
+     * provided, the value remains unchanged. To clear these properties,
+     * specify an empty string.
      * </p>
      *
      * @param updateApplicationRequest Container for the necessary parameters
@@ -2685,8 +2685,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * weeks.
      * </p>
      * <p>
-     * <b>NOTE:</b> This action returns the most recent 1,000 events from the
-     * specified NextToken.
+     * <b>NOTE:</b> This action returns the most recent 1,000 events from
+     * the specified NextToken.
      * </p>
      *
      * @param describeEventsRequest Container for the necessary parameters to
@@ -2719,8 +2719,8 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * weeks.
      * </p>
      * <p>
-     * <b>NOTE:</b> This action returns the most recent 1,000 events from the
-     * specified NextToken.
+     * <b>NOTE:</b> This action returns the most recent 1,000 events from
+     * the specified NextToken.
      * </p>
      *
      * @param describeEventsRequest Container for the necessary parameters to

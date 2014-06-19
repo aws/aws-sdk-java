@@ -61,7 +61,7 @@ public class MonitorInstancesResult implements Serializable {
      *
      * @param instanceMonitorings Monitoring information for one or more instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MonitorInstancesResult withInstanceMonitorings(InstanceMonitoring... instanceMonitorings) {
@@ -79,7 +79,7 @@ public class MonitorInstancesResult implements Serializable {
      *
      * @param instanceMonitorings Monitoring information for one or more instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public MonitorInstancesResult withInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {

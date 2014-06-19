@@ -95,7 +95,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements Ser
      *         they were created, enter <code>true</code>. To list pipelines in
      *         reverse chronological order, enter <code>false</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesRequest withAscending(String ascending) {
@@ -149,7 +149,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements Ser
      *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
      *         each successive page of results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPipelinesRequest withPageToken(String pageToken) {

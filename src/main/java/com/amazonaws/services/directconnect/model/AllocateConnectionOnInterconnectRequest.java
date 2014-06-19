@@ -86,7 +86,7 @@ public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceReq
      *
      * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocateConnectionOnInterconnectRequest withBandwidth(String bandwidth) {
@@ -125,7 +125,7 @@ public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceReq
      * @param connectionName Name of the provisioned connection. <p>Example: "<i>500M Connection to
      *         AWS</i>" <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocateConnectionOnInterconnectRequest withConnectionName(String connectionName) {
@@ -164,7 +164,7 @@ public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceReq
      * @param ownerAccount Numeric account Id of the customer for whom the connection will be
      *         provisioned. <p>Example: 123443215678 <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocateConnectionOnInterconnectRequest withOwnerAccount(String ownerAccount) {
@@ -203,7 +203,7 @@ public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceReq
      * @param interconnectId ID of the interconnect on which the connection will be provisioned.
      *         <p>Example: dxcon-456abc78 <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocateConnectionOnInterconnectRequest withInterconnectId(String interconnectId) {
@@ -242,7 +242,7 @@ public class AllocateConnectionOnInterconnectRequest extends AmazonWebServiceReq
      * @param vlan The dedicated VLAN provisioned to the connection. <p>Example: 101
      *         <p>Default: None
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AllocateConnectionOnInterconnectRequest withVlan(Integer vlan) {

@@ -251,8 +251,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         jsonErrorUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
+        
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("datapipeline.us-east-1.amazonaws.com");
+        
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/datapipeline/request.handlers"));
@@ -317,7 +319,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -367,7 +369,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -432,7 +434,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -484,7 +486,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -549,7 +551,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -557,8 +559,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
     /**
      * <p>
-     * Queries a pipeline for the names of objects that match a specified set
-     * of conditions.
+     * Queries a pipeline for the names of objects that match a specified
+     * set of conditions.
      * </p>
      * <p>
      * The objects returned by QueryObjects are paginated and then filtered
@@ -608,7 +610,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -748,7 +750,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -803,7 +805,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -811,8 +813,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
     /**
      * <p>
-     * Evaluates a string in the context of a specified object. A task runner
-     * can use this action to evaluate SQL queries stored in Amazon S3.
+     * Evaluates a string in the context of a specified object. A task
+     * runner can use this action to evaluate SQL queries stored in Amazon
+     * S3.
      * </p>
      *
      * @param evaluateExpressionRequest Container for the necessary
@@ -856,7 +859,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -916,7 +919,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -965,7 +968,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1017,7 +1020,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1070,7 +1073,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1138,7 +1141,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
             response = invoke(request, responseHandler, executionContext);
             
-            return response.getAwsResponse();
+        return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
@@ -1169,8 +1172,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         return listPipelines(new ListPipelinesRequest());
     }
 
-    @Override
-    public void setEndpoint(String endpoint) {
+  @Override
+  public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

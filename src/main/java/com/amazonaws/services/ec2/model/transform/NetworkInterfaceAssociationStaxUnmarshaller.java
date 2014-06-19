@@ -47,6 +47,10 @@ public class NetworkInterfaceAssociationStaxUnmarshaller implements Unmarshaller
                     networkInterfaceAssociation.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("publicDnsName", targetDepth)) {
+                    networkInterfaceAssociation.setPublicDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("ipOwnerId", targetDepth)) {
                     networkInterfaceAssociation.setIpOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

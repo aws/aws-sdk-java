@@ -271,7 +271,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
      *         indexes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withAttributeDefinitions(AttributeDefinition... attributeDefinitions) {
@@ -291,7 +291,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
      *         indexes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
@@ -343,7 +343,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *
      * @param tableName The name of the table to create.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withTableName(String tableName) {
@@ -493,7 +493,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withKeySchema(KeySchemaElement... keySchema) {
@@ -548,7 +548,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -744,7 +744,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withLocalSecondaryIndexes(LocalSecondaryIndex... localSecondaryIndexes) {
@@ -812,7 +812,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withLocalSecondaryIndexes(java.util.Collection<LocalSecondaryIndex> localSecondaryIndexes) {
@@ -1002,7 +1002,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         for the global secondary index, consisting of read and write capacity
      *         units. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withGlobalSecondaryIndexes(GlobalSecondaryIndex... globalSecondaryIndexes) {
@@ -1068,7 +1068,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         for the global secondary index, consisting of read and write capacity
      *         units. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withGlobalSecondaryIndexes(java.util.Collection<GlobalSecondaryIndex> globalSecondaryIndexes) {
@@ -1138,7 +1138,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTableRequest withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {

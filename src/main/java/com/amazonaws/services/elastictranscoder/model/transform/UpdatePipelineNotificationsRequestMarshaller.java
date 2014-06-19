@@ -47,10 +47,8 @@ public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<
         Request<UpdatePipelineNotificationsRequest> request = new DefaultRequest<UpdatePipelineNotificationsRequest>(updatePipelineNotificationsRequest, "AmazonElasticTranscoder");
         String target = "EtsCustomerService.UpdatePipelineNotifications";
         request.addHeader("X-Amz-Target", target);
-        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         request.setHttpMethod(HttpMethodName.POST);
-
         String uriResourcePath = "2012-09-25/pipelines/{Id}/notifications"; 
         uriResourcePath = uriResourcePath.replace("{Id}", (updatePipelineNotificationsRequest.getId() == null) ? "" : StringUtils.fromString(updatePipelineNotificationsRequest.getId())); 
 
@@ -63,15 +61,13 @@ public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<
             for (String s : queryString.split("[;&]")) {
                 String[] nameValuePair = s.split("=");
                 if (nameValuePair.length == 2) {
-                    request.addParameter(nameValuePair[0], nameValuePair[1]);
-                } else {
-                    request.addParameter(s, null);
+                    if(!(nameValuePair[1].isEmpty()))
+                        request.addParameter(nameValuePair[0], nameValuePair[1]);
                 }
             }
         }
-
         request.setResourcePath(uriResourcePath);
-
+        
         try {
           StringWriter stringWriter = new StringWriter();
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
@@ -105,6 +101,7 @@ public class UpdatePipelineNotificationsRequestMarshaller implements Marshaller<
           byte[] content = snippet.getBytes(UTF8);
           request.setContent(new StringInputStream(snippet));
           request.addHeader("Content-Length", Integer.toString(content.length));
+          request.addHeader("Content-Type", "application/x-amz-json-1.0");
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

@@ -86,7 +86,7 @@ public class Application implements Serializable {
      *
      * @param name The name of the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Application withName(String name) {
@@ -119,7 +119,7 @@ public class Application implements Serializable {
      *
      * @param version The version of the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Application withVersion(String version) {
@@ -162,7 +162,7 @@ public class Application implements Serializable {
      *
      * @param args Arguments for Amazon EMR to pass to the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Application withArgs(String... args) {
@@ -180,7 +180,7 @@ public class Application implements Serializable {
      *
      * @param args Arguments for Amazon EMR to pass to the application.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Application withArgs(java.util.Collection<String> args) {
@@ -236,7 +236,7 @@ public class Application implements Serializable {
      *         third-party applications that third-party vendors use for testing
      *         purposes.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Application withAdditionalInfo(java.util.Map<String,String> additionalInfo) {

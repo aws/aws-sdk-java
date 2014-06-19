@@ -88,7 +88,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest impleme
      *
      * @param instanceGroups Instance groups to change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceGroupsRequest withInstanceGroups(InstanceGroupModifyConfig... instanceGroups) {
@@ -106,7 +106,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest impleme
      *
      * @param instanceGroups Instance groups to change.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ModifyInstanceGroupsRequest withInstanceGroups(java.util.Collection<InstanceGroupModifyConfig> instanceGroups) {

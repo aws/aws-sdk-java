@@ -86,7 +86,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
      *
      * @param instanceId The ID of the Amazon EC2 instance to be terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateInstanceInAutoScalingGroupRequest withInstanceId(String instanceId) {
@@ -131,7 +131,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
      *         instance should also decrement the size of the
      *         <a>AutoScalingGroup</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateInstanceInAutoScalingGroupRequest withShouldDecrementDesiredCapacity(Boolean shouldDecrementDesiredCapacity) {

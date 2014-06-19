@@ -92,7 +92,7 @@ public class RequestCancelActivityTaskDecisionAttributes implements Serializable
      *
      * @param activityId The <code>activityId</code> of the activity task to be canceled.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RequestCancelActivityTaskDecisionAttributes withActivityId(String activityId) {

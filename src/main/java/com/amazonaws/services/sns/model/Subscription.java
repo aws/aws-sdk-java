@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A wrapper type for the attributes of an SNS subscription.
+ * A wrapper type for the attributes of an Amazon SNS subscription.
  * </p>
  */
 public class Subscription implements Serializable {
@@ -79,7 +79,7 @@ public class Subscription implements Serializable {
      *
      * @param subscriptionArn The subscription's ARN.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subscription withSubscriptionArn(String subscriptionArn) {
@@ -112,7 +112,7 @@ public class Subscription implements Serializable {
      *
      * @param owner The subscription's owner.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subscription withOwner(String owner) {
@@ -145,7 +145,7 @@ public class Subscription implements Serializable {
      *
      * @param protocol The subscription's protocol.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subscription withProtocol(String protocol) {
@@ -178,7 +178,7 @@ public class Subscription implements Serializable {
      *
      * @param endpoint The subscription's endpoint (format depends on the protocol).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subscription withEndpoint(String endpoint) {
@@ -211,7 +211,7 @@ public class Subscription implements Serializable {
      *
      * @param topicArn The ARN of the subscription's topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public Subscription withTopicArn(String topicArn) {

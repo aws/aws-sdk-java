@@ -70,7 +70,7 @@ public class DescribeCommandsResult implements Serializable {
      * @param commands An array of <code>Command</code> objects that describe each of the
      *         specified commands.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommandsResult withCommands(Command... commands) {
@@ -90,7 +90,7 @@ public class DescribeCommandsResult implements Serializable {
      * @param commands An array of <code>Command</code> objects that describe each of the
      *         specified commands.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCommandsResult withCommands(java.util.Collection<Command> commands) {

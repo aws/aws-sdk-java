@@ -59,7 +59,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable {
      *
      * @param attachmentId The ID of the network interface attachment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachmentChanges withAttachmentId(String attachmentId) {
@@ -98,7 +98,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable {
      * @param deleteOnTermination Indicates whether the network interface is deleted when the instance
      *         is terminated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public NetworkInterfaceAttachmentChanges withDeleteOnTermination(Boolean deleteOnTermination) {

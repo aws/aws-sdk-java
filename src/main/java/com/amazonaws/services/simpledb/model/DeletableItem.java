@@ -69,7 +69,7 @@ public class DeletableItem implements Serializable {
      *
      * @param name The new value for the Name property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeletableItem withName(String name) {
@@ -112,7 +112,7 @@ public class DeletableItem implements Serializable {
      *
      * @param attributes The new value for the Attributes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeletableItem withAttributes(Attribute... attributes) {
@@ -130,7 +130,7 @@ public class DeletableItem implements Serializable {
      *
      * @param attributes The new value for the Attributes property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeletableItem withAttributes(java.util.Collection<Attribute> attributes) {

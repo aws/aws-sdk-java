@@ -77,7 +77,7 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape to delete from the
      *         Virtual Tape Shelf (VTS).
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteTapeArchiveRequest withTapeARN(String tapeARN) {

@@ -65,7 +65,7 @@ public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest impl
      * @param subscriptionName The name of the Amazon Redshift event notification subscription to be
      *         deleted.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DeleteEventSubscriptionRequest withSubscriptionName(String subscriptionName) {

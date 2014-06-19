@@ -96,7 +96,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
      *
      * @param layerId The layer ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBasedAutoScalingRequest withLayerId(String layerId) {
@@ -129,7 +129,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
      *
      * @param enable Enables load-based auto scaling for the layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBasedAutoScalingRequest withEnable(Boolean enable) {
@@ -189,7 +189,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
      *         specified amount of time, AWS OpsWorks starts a specified number of
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBasedAutoScalingRequest withUpScaling(AutoScalingThresholds upScaling) {
@@ -240,7 +240,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
      *         a specified amount of time, AWS OpsWorks stops a specified number of
      *         instances.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetLoadBasedAutoScalingRequest withDownScaling(AutoScalingThresholds downScaling) {

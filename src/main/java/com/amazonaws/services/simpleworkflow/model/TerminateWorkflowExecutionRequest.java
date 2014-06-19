@@ -168,7 +168,7 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
      *
      * @param domain The domain of the workflow execution to terminate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateWorkflowExecutionRequest withDomain(String domain) {
@@ -210,7 +210,7 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
      *
      * @param workflowId The workflowId of the workflow execution to terminate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateWorkflowExecutionRequest withWorkflowId(String workflowId) {
@@ -252,7 +252,7 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
      *
      * @param runId The runId of the workflow execution to terminate.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateWorkflowExecutionRequest withRunId(String runId) {
@@ -294,7 +294,7 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
      *
      * @param reason An optional descriptive reason for terminating the workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateWorkflowExecutionRequest withReason(String reason) {
@@ -336,7 +336,7 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
      *
      * @param details Optional details for terminating the workflow execution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public TerminateWorkflowExecutionRequest withDetails(String details) {
@@ -466,7 +466,7 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time, a fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy
@@ -556,7 +556,7 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest i
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time, a fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      *
      * @see ChildPolicy

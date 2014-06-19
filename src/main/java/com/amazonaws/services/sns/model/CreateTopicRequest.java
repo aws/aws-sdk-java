@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest) CreateTopic operation}.
  * <p>
- * The <code>CreateTopic</code> action creates a topic to which
- * notifications can be published. Users can create at most 3000 topics.
- * For more information, see
+ * Creates a topic to which notifications can be published. Users can
+ * create at most 3000 topics. For more information, see
  * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a>
  * . This action is idempotent, so if the requester already owns a topic
  * with the specified name, that topic's ARN is returned without creating
@@ -105,7 +104,7 @@ public class CreateTopicRequest extends AmazonWebServiceRequest implements Seria
      *         numbers, underscores, and hyphens, and must be between 1 and 256
      *         characters long.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateTopicRequest withName(String name) {

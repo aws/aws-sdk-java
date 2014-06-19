@@ -81,7 +81,7 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
      *
      * @param pipelineId Identifies the pipeline whose definition is to be validated.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionRequest withPipelineId(String pipelineId) {
@@ -130,7 +130,7 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
      * @param pipelineObjects A list of objects that define the pipeline changes to validate against
      *         the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionRequest withPipelineObjects(PipelineObject... pipelineObjects) {
@@ -150,7 +150,7 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
      * @param pipelineObjects A list of objects that define the pipeline changes to validate against
      *         the pipeline.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ValidatePipelineDefinitionRequest withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {

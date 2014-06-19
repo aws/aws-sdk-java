@@ -120,7 +120,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      *
      * @param groupName The name of the group to list policies for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupPoliciesRequest withGroupName(String groupName) {
@@ -183,7 +183,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupPoliciesRequest withMarker(String marker) {
@@ -249,7 +249,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListGroupPoliciesRequest withMaxItems(Integer maxItems) {

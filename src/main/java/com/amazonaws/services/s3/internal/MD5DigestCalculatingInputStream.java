@@ -47,6 +47,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
      */
     @Override
     public synchronized void reset() throws IOException {
+        abortIfNeeded();
         try {
             digest = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
@@ -66,6 +67,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
      */
     @Override
     public int read() throws IOException {
+        abortIfNeeded();
         int ch = in.read();
         if (ch != -1) {
             digest.update((byte)ch);
@@ -78,11 +80,11 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
      */
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
+        abortIfNeeded();
         int result = in.read(b, off, len);
         if (result != -1) {
             digest.update(b, off, result);
         }
         return result;
     }
-
 }

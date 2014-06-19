@@ -53,7 +53,7 @@ public class CreatePlatformApplicationResult implements Serializable {
      *
      * @param platformApplicationArn PlatformApplicationArn is returned.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreatePlatformApplicationResult withPlatformApplicationArn(String platformApplicationArn) {

@@ -53,7 +53,7 @@ public class AccountAttributeValue implements Serializable {
      *
      * @param attributeValue The value.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public AccountAttributeValue withAttributeValue(String attributeValue) {

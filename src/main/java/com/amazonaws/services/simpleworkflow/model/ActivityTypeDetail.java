@@ -107,7 +107,7 @@ public class ActivityTypeDetail implements Serializable {
      *         workers supporting this type running. You cannot create new tasks of
      *         this type. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeDetail withTypeInfo(ActivityTypeInfo typeInfo) {
@@ -140,7 +140,7 @@ public class ActivityTypeDetail implements Serializable {
      *
      * @param configuration The configuration settings registered with the activity type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ActivityTypeDetail withConfiguration(ActivityTypeConfiguration configuration) {

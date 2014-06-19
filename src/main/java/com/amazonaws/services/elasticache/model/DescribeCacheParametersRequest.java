@@ -99,7 +99,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
      *
      * @param cacheParameterGroupName The name of a specific cache parameter group to return details for.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersRequest withCacheParameterGroupName(String cacheParameterGroupName) {
@@ -138,7 +138,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
      * @param source The parameter types to return. <p>Valid values: <code>user</code> |
      *         <code>system</code> | <code>engine-default</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersRequest withSource(String source) {
@@ -189,7 +189,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
      *         marker is included in the response so that the remaining results can
      *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersRequest withMaxRecords(Integer maxRecords) {
@@ -240,7 +240,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <i>MaxRecords</i>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeCacheParametersRequest withMarker(String marker) {

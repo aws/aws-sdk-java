@@ -180,7 +180,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsRequest withAccountId(String accountId) {
@@ -213,7 +213,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param vaultName The name of the vault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsRequest withVaultName(String vaultName) {
@@ -246,7 +246,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param uploadId The upload ID of the multipart upload.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsRequest withUploadId(String uploadId) {
@@ -303,7 +303,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      *         marker if you are continuing the pagination of results started in a
      *         previous List Parts request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsRequest withMarker(String marker) {
@@ -348,7 +348,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      *         If this value is not specified, the List Parts operation returns up to
      *         1,000 uploads.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListPartsRequest withLimit(String limit) {

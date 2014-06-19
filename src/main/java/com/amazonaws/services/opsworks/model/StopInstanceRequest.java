@@ -71,7 +71,7 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param instanceId The instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public StopInstanceRequest withInstanceId(String instanceId) {

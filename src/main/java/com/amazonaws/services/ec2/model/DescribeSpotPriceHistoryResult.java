@@ -67,7 +67,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable {
      *
      * @param spotPriceHistory The historical Spot Prices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryResult withSpotPriceHistory(SpotPrice... spotPriceHistory) {
@@ -85,7 +85,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable {
      *
      * @param spotPriceHistory The historical Spot Prices.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryResult withSpotPriceHistory(java.util.Collection<SpotPrice> spotPriceHistory) {
@@ -131,7 +131,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable {
      * @param nextToken The string marking the next set of results. This is empty if there are
      *         no more results.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public DescribeSpotPriceHistoryResult withNextToken(String nextToken) {

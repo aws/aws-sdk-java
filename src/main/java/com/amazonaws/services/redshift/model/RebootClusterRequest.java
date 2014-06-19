@@ -65,7 +65,7 @@ public class RebootClusterRequest extends AmazonWebServiceRequest implements Ser
      *
      * @param clusterIdentifier The cluster identifier.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootClusterRequest withClusterIdentifier(String clusterIdentifier) {

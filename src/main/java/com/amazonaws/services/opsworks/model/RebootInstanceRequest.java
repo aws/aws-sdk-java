@@ -68,7 +68,7 @@ public class RebootInstanceRequest extends AmazonWebServiceRequest implements Se
      *
      * @param instanceId The instance ID.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public RebootInstanceRequest withInstanceId(String instanceId) {

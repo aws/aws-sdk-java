@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest) SetPlatformApplicationAttributes operation}.
  * <p>
- * The <code>SetPlatformApplicationAttributes</code> action sets the
- * attributes of the platform application object for the supported push
- * notification services, such as APNS and GCM. For more information, see
+ * Sets the attributes of the platform application object for the
+ * supported push notification services, such as APNS and GCM. For more
+ * information, see
  * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"> Using Amazon SNS Mobile Push Notifications </a>
  * .
  * </p>
@@ -85,7 +85,7 @@ public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceReq
      *
      * @param platformApplicationArn PlatformApplicationArn for SetPlatformApplicationAttributes action.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetPlatformApplicationAttributesRequest withPlatformApplicationArn(String platformApplicationArn) {
@@ -230,7 +230,7 @@ public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceReq
      *         delivery failure (permanent) to one of the application's
      *         endpoints.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetPlatformApplicationAttributesRequest withAttributes(java.util.Map<String,String> attributes) {

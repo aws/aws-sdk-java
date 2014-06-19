@@ -102,7 +102,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param environmentName The name of the environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withEnvironmentName(String environmentName) {
@@ -145,7 +145,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param autoScalingGroups The <code>AutoScalingGroups</code> used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
@@ -163,7 +163,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param autoScalingGroups The <code>AutoScalingGroups</code> used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
@@ -213,7 +213,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param instances The Amazon EC2 instances used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withInstances(Instance... instances) {
@@ -231,7 +231,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param instances The Amazon EC2 instances used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withInstances(java.util.Collection<Instance> instances) {
@@ -281,7 +281,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param launchConfigurations The Auto Scaling launch configurations in use by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withLaunchConfigurations(LaunchConfiguration... launchConfigurations) {
@@ -299,7 +299,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param launchConfigurations The Auto Scaling launch configurations in use by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
@@ -349,7 +349,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param loadBalancers The LoadBalancers in use by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withLoadBalancers(LoadBalancer... loadBalancers) {
@@ -367,7 +367,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param loadBalancers The LoadBalancers in use by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
@@ -417,7 +417,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param triggers The <code>AutoScaling</code> triggers in use by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withTriggers(Trigger... triggers) {
@@ -435,7 +435,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param triggers The <code>AutoScaling</code> triggers in use by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withTriggers(java.util.Collection<Trigger> triggers) {
@@ -485,7 +485,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param queues The queues used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withQueues(Queue... queues) {
@@ -503,7 +503,7 @@ public class EnvironmentResourceDescription implements Serializable {
      *
      * @param queues The queues used by this environment.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public EnvironmentResourceDescription withQueues(java.util.Collection<Queue> queues) {

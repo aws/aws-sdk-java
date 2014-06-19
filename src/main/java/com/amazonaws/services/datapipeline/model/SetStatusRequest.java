@@ -96,7 +96,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param pipelineId Identifies the pipeline that contains the objects.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetStatusRequest withPipelineId(String pipelineId) {
@@ -145,7 +145,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * @param objectIds Identifies an array of objects. The corresponding objects can be
      *         either physical or components, but not a mix of both types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetStatusRequest withObjectIds(String... objectIds) {
@@ -165,7 +165,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      * @param objectIds Identifies an array of objects. The corresponding objects can be
      *         either physical or components, but not a mix of both types.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetStatusRequest withObjectIds(java.util.Collection<String> objectIds) {
@@ -241,7 +241,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      *         either <code>CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public SetStatusRequest withStatus(String status) {

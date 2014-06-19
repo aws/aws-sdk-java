@@ -58,7 +58,7 @@ public class ChefConfiguration implements Serializable {
      *
      * @param manageBerkshelf Whether to enable Berkshelf.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChefConfiguration withManageBerkshelf(Boolean manageBerkshelf) {
@@ -100,7 +100,7 @@ public class ChefConfiguration implements Serializable {
      *
      * @param berkshelfVersion The Berkshelf version.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ChefConfiguration withBerkshelfVersion(String berkshelfVersion) {

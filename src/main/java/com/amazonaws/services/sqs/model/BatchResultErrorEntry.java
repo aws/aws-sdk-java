@@ -69,7 +69,7 @@ public class BatchResultErrorEntry implements Serializable {
      *
      * @param id The id of an entry in a batch request.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchResultErrorEntry withId(String id) {
@@ -102,7 +102,7 @@ public class BatchResultErrorEntry implements Serializable {
      *
      * @param senderFault Whether the error happened due to the sender's fault.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchResultErrorEntry withSenderFault(Boolean senderFault) {
@@ -144,7 +144,7 @@ public class BatchResultErrorEntry implements Serializable {
      *
      * @param code An error code representing why the action failed on this entry.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchResultErrorEntry withCode(String code) {
@@ -177,7 +177,7 @@ public class BatchResultErrorEntry implements Serializable {
      *
      * @param message A message explaining why the action failed on this entry.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public BatchResultErrorEntry withMessage(String message) {

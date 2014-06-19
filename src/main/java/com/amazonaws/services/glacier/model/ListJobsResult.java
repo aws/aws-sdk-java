@@ -78,7 +78,7 @@ public class ListJobsResult implements Serializable {
      * @param jobList A list of job objects. Each job object contains metadata describing
      *         the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsResult withJobList(GlacierJobDescription... jobList) {
@@ -98,7 +98,7 @@ public class ListJobsResult implements Serializable {
      * @param jobList A list of job objects. Each job object contains metadata describing
      *         the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsResult withJobList(java.util.Collection<GlacierJobDescription> jobList) {
@@ -156,7 +156,7 @@ public class ListJobsResult implements Serializable {
      *         jobs in the list. If there are no more jobs, this value is
      *         <code>null</code>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
+     * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public ListJobsResult withMarker(String marker) {
