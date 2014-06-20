@@ -21,6 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeJobFlows(DescribeJobFlowsRequest) DescribeJobFlows operation}.
  * <p>
+ * This API is deprecated and will eventually be removed. We recommend
+ * you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups
+ * and ListBootstrapActions instead.
+ * </p>
+ * <p>
  * DescribeJobFlows returns a list of job flows that match all of the
  * supplied parameters. The parameters can include a list of job flow
  * IDs, job flow states, and restrictions on job flow creation date and

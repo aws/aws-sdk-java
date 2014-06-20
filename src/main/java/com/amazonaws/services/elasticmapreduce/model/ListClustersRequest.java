@@ -34,13 +34,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListClustersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The creation date and time beginning value filter for listing
-     * clusters.
+     * The creation date and time beginning value filter for listing clusters
+     * .
      */
     private java.util.Date createdAfter;
 
     /**
-     * The creation date and time end value filter for listing clusters.
+     * The creation date and time end value filter for listing clusters .
      */
     private java.util.Date createdBefore;
 
@@ -50,43 +50,41 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterStates;
 
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Provide the pagination token from earlier API
-     * calls to retrieve the next page of results. When the value is null,
-     * all results have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      */
     private String marker;
 
     /**
-     * The creation date and time beginning value filter for listing
-     * clusters.
+     * The creation date and time beginning value filter for listing clusters
+     * .
      *
-     * @return The creation date and time beginning value filter for listing
-     *         clusters.
+     * @return The creation date and time beginning value filter for listing clusters
+     *         .
      */
     public java.util.Date getCreatedAfter() {
         return createdAfter;
     }
     
     /**
-     * The creation date and time beginning value filter for listing
-     * clusters.
+     * The creation date and time beginning value filter for listing clusters
+     * .
      *
-     * @param createdAfter The creation date and time beginning value filter for listing
-     *         clusters.
+     * @param createdAfter The creation date and time beginning value filter for listing clusters
+     *         .
      */
     public void setCreatedAfter(java.util.Date createdAfter) {
         this.createdAfter = createdAfter;
     }
     
     /**
-     * The creation date and time beginning value filter for listing
-     * clusters.
+     * The creation date and time beginning value filter for listing clusters
+     * .
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createdAfter The creation date and time beginning value filter for listing
-     *         clusters.
+     * @param createdAfter The creation date and time beginning value filter for listing clusters
+     *         .
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -97,29 +95,29 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The creation date and time end value filter for listing clusters.
+     * The creation date and time end value filter for listing clusters .
      *
-     * @return The creation date and time end value filter for listing clusters.
+     * @return The creation date and time end value filter for listing clusters .
      */
     public java.util.Date getCreatedBefore() {
         return createdBefore;
     }
     
     /**
-     * The creation date and time end value filter for listing clusters.
+     * The creation date and time end value filter for listing clusters .
      *
-     * @param createdBefore The creation date and time end value filter for listing clusters.
+     * @param createdBefore The creation date and time end value filter for listing clusters .
      */
     public void setCreatedBefore(java.util.Date createdBefore) {
         this.createdBefore = createdBefore;
     }
     
     /**
-     * The creation date and time end value filter for listing clusters.
+     * The creation date and time end value filter for listing clusters .
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createdBefore The creation date and time end value filter for listing clusters.
+     * @param createdBefore The creation date and time end value filter for listing clusters .
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -221,47 +219,35 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Provide the pagination token from earlier API
-     * calls to retrieve the next page of results. When the value is null,
-     * all results have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      *
-     * @return The pagination token is a random string indicating whether there are
-     *         more results to fetch. Provide the pagination token from earlier API
-     *         calls to retrieve the next page of results. When the value is null,
-     *         all results have been returned.
+     * @return The pagination token that indicates the next set of results to
+     *         retrieve.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Provide the pagination token from earlier API
-     * calls to retrieve the next page of results. When the value is null,
-     * all results have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      *
-     * @param marker The pagination token is a random string indicating whether there are
-     *         more results to fetch. Provide the pagination token from earlier API
-     *         calls to retrieve the next page of results. When the value is null,
-     *         all results have been returned.
+     * @param marker The pagination token that indicates the next set of results to
+     *         retrieve.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Provide the pagination token from earlier API
-     * calls to retrieve the next page of results. When the value is null,
-     * all results have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The pagination token is a random string indicating whether there are
-     *         more results to fetch. Provide the pagination token from earlier API
-     *         calls to retrieve the next page of results. When the value is null,
-     *         all results have been returned.
+     * @param marker The pagination token that indicates the next set of results to
+     *         retrieve.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

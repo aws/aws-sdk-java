@@ -40,7 +40,7 @@ public class Cluster implements Serializable {
 
     /**
      * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+     * category. For example, key name, subnet ID, IAM instance profile, and
      * so on.
      */
     private Ec2InstanceAttributes ec2InstanceAttributes;
@@ -96,6 +96,12 @@ public class Cluster implements Serializable {
      * A list of tags associated with a cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     */
+    private String serviceRole;
 
     /**
      * The unique identifier for the cluster.
@@ -198,11 +204,11 @@ public class Cluster implements Serializable {
 
     /**
      * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+     * category. For example, key name, subnet ID, IAM instance profile, and
      * so on.
      *
      * @return Provides information about the EC2 instances in a cluster grouped by
-     *         category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+     *         category. For example, key name, subnet ID, IAM instance profile, and
      *         so on.
      */
     public Ec2InstanceAttributes getEc2InstanceAttributes() {
@@ -211,11 +217,11 @@ public class Cluster implements Serializable {
     
     /**
      * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+     * category. For example, key name, subnet ID, IAM instance profile, and
      * so on.
      *
      * @param ec2InstanceAttributes Provides information about the EC2 instances in a cluster grouped by
-     *         category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+     *         category. For example, key name, subnet ID, IAM instance profile, and
      *         so on.
      */
     public void setEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
@@ -224,13 +230,13 @@ public class Cluster implements Serializable {
     
     /**
      * Provides information about the EC2 instances in a cluster grouped by
-     * category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+     * category. For example, key name, subnet ID, IAM instance profile, and
      * so on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ec2InstanceAttributes Provides information about the EC2 instances in a cluster grouped by
-     *         category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+     *         category. For example, key name, subnet ID, IAM instance profile, and
      *         so on.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -693,6 +699,45 @@ public class Cluster implements Serializable {
     }
 
     /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     *
+     * @return The IAM role that will be assumed by the Amazon EMR service to access
+     *         AWS resources on your behalf.
+     */
+    public String getServiceRole() {
+        return serviceRole;
+    }
+    
+    /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     *
+     * @param serviceRole The IAM role that will be assumed by the Amazon EMR service to access
+     *         AWS resources on your behalf.
+     */
+    public void setServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+    }
+    
+    /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param serviceRole The IAM role that will be assumed by the Amazon EMR service to access
+     *         AWS resources on your behalf.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -715,7 +760,8 @@ public class Cluster implements Serializable {
         if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
         if (getApplications() != null) sb.append("Applications: " + getApplications() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getServiceRole() != null) sb.append("ServiceRole: " + getServiceRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -737,6 +783,7 @@ public class Cluster implements Serializable {
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode()); 
         return hashCode;
     }
     
@@ -772,6 +819,8 @@ public class Cluster implements Serializable {
         if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getServiceRole() == null ^ this.getServiceRole() == null) return false;
+        if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false) return false; 
         return true;
     }
     

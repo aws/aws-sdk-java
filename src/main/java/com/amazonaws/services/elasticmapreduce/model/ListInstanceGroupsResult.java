@@ -29,10 +29,8 @@ public class ListInstanceGroupsResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroup> instanceGroups;
 
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      */
     private String marker;
 
@@ -105,47 +103,35 @@ public class ListInstanceGroupsResult implements Serializable {
     }
 
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      *
-     * @return The pagination token is a random string indicating whether there are
-     *         more results to fetch. Use the pagination token in later API calls to
-     *         retrieve the next page of results. When the value is null, all results
-     *         have been returned.
+     * @return The pagination token that indicates the next set of results to
+     *         retrieve.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      *
-     * @param marker The pagination token is a random string indicating whether there are
-     *         more results to fetch. Use the pagination token in later API calls to
-     *         retrieve the next page of results. When the value is null, all results
-     *         have been returned.
+     * @param marker The pagination token that indicates the next set of results to
+     *         retrieve.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The pagination token is a random string indicating whether there are
-     *         more results to fetch. Use the pagination token in later API calls to
-     *         retrieve the next page of results. When the value is null, all results
-     *         have been returned.
+     * @param marker The pagination token that indicates the next set of results to
+     *         retrieve.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

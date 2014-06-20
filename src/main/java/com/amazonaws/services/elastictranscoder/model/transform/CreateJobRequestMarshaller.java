@@ -217,6 +217,65 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                     }
                     jsonWriter.endArray();
                 }
+                Captions captions = output.getCaptions();
+                if (captions != null) {
+
+                    jsonWriter.key("Captions");
+                    jsonWriter.object();
+
+                    if (captions.getMergePolicy() != null) {
+                        jsonWriter.key("MergePolicy").value(captions.getMergePolicy());
+                    }
+
+                    com.amazonaws.internal.ListWithAutoConstructFlag<CaptionSource> captionSourcesList = (com.amazonaws.internal.ListWithAutoConstructFlag<CaptionSource>)(captions.getCaptionSources());
+                    if (captionSourcesList != null && !(captionSourcesList.isAutoConstruct() && captionSourcesList.isEmpty())) {
+
+                        jsonWriter.key("CaptionSources");
+                        jsonWriter.array();
+
+                        for (CaptionSource captionSourcesListValue : captionSourcesList) {
+                            if (captionSourcesListValue != null) {
+                                jsonWriter.object();
+                                if (captionSourcesListValue.getKey() != null) {
+                                    jsonWriter.key("Key").value(captionSourcesListValue.getKey());
+                                }
+                                if (captionSourcesListValue.getLanguage() != null) {
+                                    jsonWriter.key("Language").value(captionSourcesListValue.getLanguage());
+                                }
+                                if (captionSourcesListValue.getTimeOffset() != null) {
+                                    jsonWriter.key("TimeOffset").value(captionSourcesListValue.getTimeOffset());
+                                }
+                                if (captionSourcesListValue.getLabel() != null) {
+                                    jsonWriter.key("Label").value(captionSourcesListValue.getLabel());
+                                }
+                                jsonWriter.endObject();
+                            }
+                        }
+                        jsonWriter.endArray();
+                    }
+
+                    com.amazonaws.internal.ListWithAutoConstructFlag<CaptionFormat> captionFormatsList = (com.amazonaws.internal.ListWithAutoConstructFlag<CaptionFormat>)(captions.getCaptionFormats());
+                    if (captionFormatsList != null && !(captionFormatsList.isAutoConstruct() && captionFormatsList.isEmpty())) {
+
+                        jsonWriter.key("CaptionFormats");
+                        jsonWriter.array();
+
+                        for (CaptionFormat captionFormatsListValue : captionFormatsList) {
+                            if (captionFormatsListValue != null) {
+                                jsonWriter.object();
+                                if (captionFormatsListValue.getFormat() != null) {
+                                    jsonWriter.key("Format").value(captionFormatsListValue.getFormat());
+                                }
+                                if (captionFormatsListValue.getPattern() != null) {
+                                    jsonWriter.key("Pattern").value(captionFormatsListValue.getPattern());
+                                }
+                                jsonWriter.endObject();
+                            }
+                        }
+                        jsonWriter.endArray();
+                    }
+                    jsonWriter.endObject();
+                }
                 jsonWriter.endObject();
             }
 
@@ -337,6 +396,65 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                 }
                             }
                             jsonWriter.endArray();
+                        }
+                        Captions captions = outputsListValue.getCaptions();
+                        if (captions != null) {
+
+                            jsonWriter.key("Captions");
+                            jsonWriter.object();
+
+                            if (captions.getMergePolicy() != null) {
+                                jsonWriter.key("MergePolicy").value(captions.getMergePolicy());
+                            }
+
+                            com.amazonaws.internal.ListWithAutoConstructFlag<CaptionSource> captionSourcesList = (com.amazonaws.internal.ListWithAutoConstructFlag<CaptionSource>)(captions.getCaptionSources());
+                            if (captionSourcesList != null && !(captionSourcesList.isAutoConstruct() && captionSourcesList.isEmpty())) {
+
+                                jsonWriter.key("CaptionSources");
+                                jsonWriter.array();
+
+                                for (CaptionSource captionSourcesListValue : captionSourcesList) {
+                                    if (captionSourcesListValue != null) {
+                                        jsonWriter.object();
+                                        if (captionSourcesListValue.getKey() != null) {
+                                            jsonWriter.key("Key").value(captionSourcesListValue.getKey());
+                                        }
+                                        if (captionSourcesListValue.getLanguage() != null) {
+                                            jsonWriter.key("Language").value(captionSourcesListValue.getLanguage());
+                                        }
+                                        if (captionSourcesListValue.getTimeOffset() != null) {
+                                            jsonWriter.key("TimeOffset").value(captionSourcesListValue.getTimeOffset());
+                                        }
+                                        if (captionSourcesListValue.getLabel() != null) {
+                                            jsonWriter.key("Label").value(captionSourcesListValue.getLabel());
+                                        }
+                                        jsonWriter.endObject();
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+
+                            com.amazonaws.internal.ListWithAutoConstructFlag<CaptionFormat> captionFormatsList = (com.amazonaws.internal.ListWithAutoConstructFlag<CaptionFormat>)(captions.getCaptionFormats());
+                            if (captionFormatsList != null && !(captionFormatsList.isAutoConstruct() && captionFormatsList.isEmpty())) {
+
+                                jsonWriter.key("CaptionFormats");
+                                jsonWriter.array();
+
+                                for (CaptionFormat captionFormatsListValue : captionFormatsList) {
+                                    if (captionFormatsListValue != null) {
+                                        jsonWriter.object();
+                                        if (captionFormatsListValue.getFormat() != null) {
+                                            jsonWriter.key("Format").value(captionFormatsListValue.getFormat());
+                                        }
+                                        if (captionFormatsListValue.getPattern() != null) {
+                                            jsonWriter.key("Pattern").value(captionFormatsListValue.getPattern());
+                                        }
+                                        jsonWriter.endObject();
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+                            jsonWriter.endObject();
                         }
                         jsonWriter.endObject();
                     }

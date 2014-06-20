@@ -113,6 +113,16 @@ public class JobFlowDetail implements Serializable {
     private String jobFlowRole;
 
     /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     */
+    private String serviceRole;
+
+    /**
      * Default constructor for a new JobFlowDetail object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -774,6 +784,57 @@ public class JobFlowDetail implements Serializable {
     }
 
     /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @return The IAM role that will be assumed by the Amazon EMR service to access
+     *         AWS resources on your behalf.
+     */
+    public String getServiceRole() {
+        return serviceRole;
+    }
+    
+    /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param serviceRole The IAM role that will be assumed by the Amazon EMR service to access
+     *         AWS resources on your behalf.
+     */
+    public void setServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+    }
+    
+    /**
+     * The IAM role that will be assumed by the Amazon EMR service to access
+     * AWS resources on your behalf.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[&#92;u0020-&#92;uD7FF&#92;uE000-&#92;uFFFD&#92;uD800&#92;uDC00-&#92;uDBFF&#92;uDFFF\r\n\t]*<br/>
+     *
+     * @param serviceRole The IAM role that will be assumed by the Amazon EMR service to access
+     *         AWS resources on your behalf.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public JobFlowDetail withServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -795,7 +856,8 @@ public class JobFlowDetail implements Serializable {
         if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");
         if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
-        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() );
+        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() + ",");
+        if (getServiceRole() != null) sb.append("ServiceRole: " + getServiceRole() );
         sb.append("}");
         return sb.toString();
     }
@@ -816,6 +878,7 @@ public class JobFlowDetail implements Serializable {
         hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
         hashCode = prime * hashCode + ((getJobFlowRole() == null) ? 0 : getJobFlowRole().hashCode()); 
+        hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode()); 
         return hashCode;
     }
     
@@ -849,6 +912,8 @@ public class JobFlowDetail implements Serializable {
         if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
         if (other.getJobFlowRole() == null ^ this.getJobFlowRole() == null) return false;
         if (other.getJobFlowRole() != null && other.getJobFlowRole().equals(this.getJobFlowRole()) == false) return false; 
+        if (other.getServiceRole() == null ^ this.getServiceRole() == null) return false;
+        if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false) return false; 
         return true;
     }
     

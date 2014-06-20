@@ -69,11 +69,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>launch.group-id</code> - The security group for
-     * the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     * the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     * instance (for example, <code>m1.small</code>). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     * security group for the instance. </li> <li>
+     * <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for
+     * example, <code>m1.small</code>). </li> <li>
      * <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
@@ -220,11 +221,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>launch.group-id</code> - The security group for
-     * the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     * the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     * instance (for example, <code>m1.small</code>). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     * security group for the instance. </li> <li>
+     * <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for
+     * example, <code>m1.small</code>). </li> <li>
      * <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
@@ -300,11 +302,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.block-device-mapping.volume-size</code> - The size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>launch.group-id</code> - The security group for
-     *         the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     *         the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     *         instance (for example, <code>m1.small</code>). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     *         security group for the instance. </li> <li>
+     *         <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     *         <p><code>launch.instance-type</code> - The type of instance (for
+     *         example, <code>m1.small</code>). </li> <li>
      *         <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>
@@ -389,11 +392,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>launch.group-id</code> - The security group for
-     * the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     * the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     * instance (for example, <code>m1.small</code>). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     * security group for the instance. </li> <li>
+     * <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for
+     * example, <code>m1.small</code>). </li> <li>
      * <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
@@ -469,11 +473,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.block-device-mapping.volume-size</code> - The size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>launch.group-id</code> - The security group for
-     *         the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     *         the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     *         instance (for example, <code>m1.small</code>). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     *         security group for the instance. </li> <li>
+     *         <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     *         <p><code>launch.instance-type</code> - The type of instance (for
+     *         example, <code>m1.small</code>). </li> <li>
      *         <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>
@@ -560,11 +565,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>launch.group-id</code> - The security group for
-     * the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     * the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     * instance (for example, <code>m1.small</code>). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     * security group for the instance. </li> <li>
+     * <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for
+     * example, <code>m1.small</code>). </li> <li>
      * <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
@@ -642,11 +648,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.block-device-mapping.volume-size</code> - The size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>launch.group-id</code> - The security group for
-     *         the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     *         the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     *         instance (for example, <code>m1.small</code>). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     *         security group for the instance. </li> <li>
+     *         <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     *         <p><code>launch.instance-type</code> - The type of instance (for
+     *         example, <code>m1.small</code>). </li> <li>
      *         <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>
@@ -734,11 +741,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>launch.group-id</code> - The security group for
-     * the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     * the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     * instance (for example, <code>m1.small</code>). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     * security group for the instance. </li> <li>
+     * <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for
+     * example, <code>m1.small</code>). </li> <li>
      * <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      * <p><code>launch.key-name</code> - The name of the key pair the
      * instance launched with. </li> <li>
@@ -816,11 +824,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <p><code>launch.block-device-mapping.volume-size</code> - The size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>launch.block-device-mapping.volume-type</code> - The type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>launch.group-id</code> - The security group for
-     *         the instance. </li> <li> <p><code>launch.image-id</code> - The ID of
-     *         the AMI. </li> <li> <p><code>launch.instance-type</code> - The type of
-     *         instance (for example, <code>m1.small</code>). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>launch.group-id</code> - The
+     *         security group for the instance. </li> <li>
+     *         <p><code>launch.image-id</code> - The ID of the AMI. </li> <li>
+     *         <p><code>launch.instance-type</code> - The type of instance (for
+     *         example, <code>m1.small</code>). </li> <li>
      *         <p><code>launch.kernel-id</code> - The kernel ID. </li> <li>
      *         <p><code>launch.key-name</code> - The name of the key pair the
      *         instance launched with. </li> <li>

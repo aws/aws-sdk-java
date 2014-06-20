@@ -14,6 +14,11 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 
 import com.amazonaws.AmazonServiceException;
@@ -23,6 +28,7 @@ import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
+import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.XpathUtils;
 
 /**
@@ -37,65 +43,83 @@ import com.amazonaws.util.XpathUtils;
  */
 public class S3ErrorResponseHandler
         implements HttpResponseHandler<AmazonServiceException> {
+    private static final Log log = LogFactory.getLog(S3ErrorResponseHandler.class);
 
-    /**
-     * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
-     */
-    public AmazonServiceException handle(HttpResponse errorResponse)
-            throws Exception {
+    @Override
+    public AmazonServiceException handle(HttpResponse errorResponse) throws IOException {
         /*
          * We don't always get an error response body back from S3. When we send
          * a HEAD request, we don't receive a body, so we'll have to just return
          * what we can.
          */
-        if (errorResponse.getContent() == null
-                || errorResponse.getRequest().getHttpMethod() == HttpMethodName.HEAD) {
+        final InputStream is = errorResponse.getContent();
+        if (is == null
+        || errorResponse.getRequest().getHttpMethod() == HttpMethodName.HEAD) {
             String requestId = errorResponse.getHeaders().get(Headers.REQUEST_ID);
             String extendedRequestId = errorResponse.getHeaders().get(Headers.EXTENDED_REQUEST_ID);
             AmazonS3Exception ase = new AmazonS3Exception(errorResponse.getStatusText());
-            ase.setStatusCode(errorResponse.getStatusCode());
+            final int statusCode = errorResponse.getStatusCode(); 
+            ase.setStatusCode(statusCode);
             ase.setRequestId(requestId);
             ase.setExtendedRequestId(extendedRequestId);
-            fillInErrorType(ase, errorResponse);
+            ase.setErrorType(errorTypeOf(statusCode));
             return ase;
         }
+        // Try to read the error response
+        String content = "";
+        try {
+            content = IOUtils.toString(is);
+        } catch(IOException ex) {
+            if (log.isDebugEnabled())
+                log.debug("Failed in reading the error response", ex);
+            return newAmazonS3Exception(errorResponse.getStatusText(), errorResponse);
+        }
+        try { // try to parse the error response as XML
+            final Document document = XpathUtils.documentFrom(content);
+            final String message = XpathUtils.asString("Error/Message", document);
+            final String errorCode = XpathUtils.asString("Error/Code", document);
+            final String requestId = XpathUtils.asString("Error/RequestId", document);
+            final String extendedRequestId = XpathUtils.asString("Error/HostId", document);
+            final AmazonS3Exception ase = new AmazonS3Exception(message);
+            final int statusCode = errorResponse.getStatusCode(); 
+            ase.setStatusCode(statusCode);
+            ase.setErrorType(errorTypeOf(statusCode));
+            ase.setErrorCode(errorCode);
+            ase.setRequestId(requestId);
+            ase.setExtendedRequestId(extendedRequestId);
+            return ase;
+        } catch(Exception ex) {
+            if (log.isDebugEnabled())
+                log.debug("Failed in parsing the response as XML: " + content, ex);
+            return newAmazonS3Exception(content, errorResponse);
+        }
+    }
 
-        Document document = XpathUtils.documentFrom(errorResponse.getContent());
-        String message = XpathUtils.asString("Error/Message", document);
-        String errorCode = XpathUtils.asString("Error/Code", document);
-        String requestId = XpathUtils.asString("Error/RequestId", document);
-        String extendedRequestId = XpathUtils.asString("Error/HostId", document);
-
-        AmazonS3Exception ase = new AmazonS3Exception(message);
-        ase.setStatusCode(errorResponse.getStatusCode());
-        ase.setErrorCode(errorCode);
-        ase.setRequestId(requestId);
-        ase.setExtendedRequestId(extendedRequestId);
-        fillInErrorType(ase, errorResponse);
-
+    /**
+     * Used to create an {@link AmazonS3Exception} when we failed to read the
+     * error response or parsed the error response as XML.
+     */
+    private AmazonS3Exception newAmazonS3Exception(String errmsg, HttpResponse httpResponse) {
+        final AmazonS3Exception ase = new AmazonS3Exception(errmsg);
+        final int statusCode = httpResponse.getStatusCode(); 
+        ase.setErrorCode(statusCode + " " + httpResponse.getStatusText());
+        ase.setStatusCode(statusCode);
+        ase.setErrorType(errorTypeOf(statusCode));
         return ase;
     }
 
     /**
-     * Fills in the AWS error type information in the specified
-     * AmazonServiceException by looking at the HTTP status code in the error
-     * response. S3 error responses don't explicitly declare a sender or client
-     * fault like other AWS services, so we have to use the HTTP status code to
-     * infer this information.
-     *
-     * @param ase
-     *            The AmazonServiceException to populate with error type
-     *            information.
-     * @param errorResponse
+     * Returns the AWS error type information by looking at the HTTP status code
+     * in the error response. S3 error responses don't explicitly declare a
+     * sender or client fault like other AWS services, so we have to use the
+     * HTTP status code to infer this information.
+     * 
+     * @param httpResponse
      *            The HTTP error response to use to determine the right error
      *            type to set.
      */
-    private void fillInErrorType(AmazonServiceException ase, HttpResponse errorResponse) {
-        if (errorResponse.getStatusCode() >= 500) {
-            ase.setErrorType(ErrorType.Service);
-        } else {
-            ase.setErrorType(ErrorType.Client);
-        }
+    private ErrorType errorTypeOf(int statusCode) {
+        return statusCode >= 500 ? ErrorType.Service : ErrorType.Client;
     }
 
     /**
@@ -108,5 +132,4 @@ public class S3ErrorResponseHandler
     public boolean needsConnectionLeftOpen() {
         return false;
     }
-
 }

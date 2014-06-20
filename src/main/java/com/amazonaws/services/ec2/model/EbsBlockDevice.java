@@ -54,7 +54,7 @@ public class EbsBlockDevice implements Serializable {
      * The number of I/O operations per second (IOPS) that the volume
      * supports. <p>Constraint: Range is 100 to 4000. <p>Condition: Required
      * when the volume type is <code>io1</code>; not used with
-     * <code>standard</code> volumes.
+     * <code>standard</code> or <code>gp2</code> volumes.
      */
     private Integer iops;
 
@@ -283,12 +283,12 @@ public class EbsBlockDevice implements Serializable {
      * The number of I/O operations per second (IOPS) that the volume
      * supports. <p>Constraint: Range is 100 to 4000. <p>Condition: Required
      * when the volume type is <code>io1</code>; not used with
-     * <code>standard</code> volumes.
+     * <code>standard</code> or <code>gp2</code> volumes.
      *
      * @return The number of I/O operations per second (IOPS) that the volume
      *         supports. <p>Constraint: Range is 100 to 4000. <p>Condition: Required
      *         when the volume type is <code>io1</code>; not used with
-     *         <code>standard</code> volumes.
+     *         <code>standard</code> or <code>gp2</code> volumes.
      */
     public Integer getIops() {
         return iops;
@@ -298,12 +298,12 @@ public class EbsBlockDevice implements Serializable {
      * The number of I/O operations per second (IOPS) that the volume
      * supports. <p>Constraint: Range is 100 to 4000. <p>Condition: Required
      * when the volume type is <code>io1</code>; not used with
-     * <code>standard</code> volumes.
+     * <code>standard</code> or <code>gp2</code> volumes.
      *
      * @param iops The number of I/O operations per second (IOPS) that the volume
      *         supports. <p>Constraint: Range is 100 to 4000. <p>Condition: Required
      *         when the volume type is <code>io1</code>; not used with
-     *         <code>standard</code> volumes.
+     *         <code>standard</code> or <code>gp2</code> volumes.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -313,14 +313,14 @@ public class EbsBlockDevice implements Serializable {
      * The number of I/O operations per second (IOPS) that the volume
      * supports. <p>Constraint: Range is 100 to 4000. <p>Condition: Required
      * when the volume type is <code>io1</code>; not used with
-     * <code>standard</code> volumes.
+     * <code>standard</code> or <code>gp2</code> volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The number of I/O operations per second (IOPS) that the volume
      *         supports. <p>Constraint: Range is 100 to 4000. <p>Condition: Required
      *         when the volume type is <code>io1</code>; not used with
-     *         <code>standard</code> volumes.
+     *         <code>standard</code> or <code>gp2</code> volumes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

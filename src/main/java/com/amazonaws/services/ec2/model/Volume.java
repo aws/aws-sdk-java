@@ -67,8 +67,9 @@ public class Volume implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
@@ -470,14 +471,16 @@ public class Volume implements Serializable {
     }
 
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @return The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * @return The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes.
      *
      * @see VolumeType
      */
@@ -486,14 +489,16 @@ public class Volume implements Serializable {
     }
     
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes.
      *
      * @see VolumeType
      */
@@ -502,16 +507,18 @@ public class Volume implements Serializable {
     }
     
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -524,14 +531,16 @@ public class Volume implements Serializable {
     }
 
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes.
      *
      * @see VolumeType
      */
@@ -540,16 +549,18 @@ public class Volume implements Serializable {
     }
     
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes.
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

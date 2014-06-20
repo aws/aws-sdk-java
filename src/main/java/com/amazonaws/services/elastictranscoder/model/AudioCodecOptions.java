@@ -24,19 +24,20 @@ import java.io.Serializable;
 public class AudioCodecOptions implements Serializable {
 
     /**
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, choose
-     * the AAC profile for the output file. Elastic Transcoder supports the
-     * following profiles: <ul> <li><code>auto</code>: If you specify
-     * <code>auto</code>, Elastic Transcoder will select the profile based on
-     * the bit rate selected for the output file.</li>
-     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bitrates
-     * larger than 64 kbps.</li> <li><code>HE-AAC</code>: Not supported on
-     * some older players and devices. Use for bitrates between 40 and 80
-     * kbps.</li> <li><code>HE-AACv2</code>: Not supported on some players
-     * and devices. Use for bitrates less than 48 kbps.</li> </ul>
-     * <note><p>If you created any presets before AAC profiles were added,
-     * Elastic Transcoder automatically updated your presets to use AAC-LC.
-     * You can change the value as required.</note>
+     * You can only choose an audio profile when you specify AAC for the
+     * value of Audio:Codec. <p>Specify the AAC profile for the output file.
+     * Elastic Transcoder supports the following profiles: <ul>
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+     * Transcoder will select the profile based on the bit rate selected for
+     * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
+     * profile. Use for bitrates larger than 64 kbps.</li>
+     * <li><code>HE-AAC</code>: Not supported on some older players and
+     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices.
+     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
+     * any presets before AAC profiles were added, Elastic Transcoder
+     * automatically updated your presets to use AAC-LC. You can change the
+     * value as required.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)<br/>
@@ -44,110 +45,116 @@ public class AudioCodecOptions implements Serializable {
     private String profile;
 
     /**
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, choose
-     * the AAC profile for the output file. Elastic Transcoder supports the
-     * following profiles: <ul> <li><code>auto</code>: If you specify
-     * <code>auto</code>, Elastic Transcoder will select the profile based on
-     * the bit rate selected for the output file.</li>
-     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bitrates
-     * larger than 64 kbps.</li> <li><code>HE-AAC</code>: Not supported on
-     * some older players and devices. Use for bitrates between 40 and 80
-     * kbps.</li> <li><code>HE-AACv2</code>: Not supported on some players
-     * and devices. Use for bitrates less than 48 kbps.</li> </ul>
-     * <note><p>If you created any presets before AAC profiles were added,
-     * Elastic Transcoder automatically updated your presets to use AAC-LC.
-     * You can change the value as required.</note>
+     * You can only choose an audio profile when you specify AAC for the
+     * value of Audio:Codec. <p>Specify the AAC profile for the output file.
+     * Elastic Transcoder supports the following profiles: <ul>
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+     * Transcoder will select the profile based on the bit rate selected for
+     * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
+     * profile. Use for bitrates larger than 64 kbps.</li>
+     * <li><code>HE-AAC</code>: Not supported on some older players and
+     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices.
+     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
+     * any presets before AAC profiles were added, Elastic Transcoder
+     * automatically updated your presets to use AAC-LC. You can change the
+     * value as required.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)<br/>
      *
-     * @return If you specified <code>AAC</code> for <code>Audio:Codec</code>, choose
-     *         the AAC profile for the output file. Elastic Transcoder supports the
-     *         following profiles: <ul> <li><code>auto</code>: If you specify
-     *         <code>auto</code>, Elastic Transcoder will select the profile based on
-     *         the bit rate selected for the output file.</li>
-     *         <li><code>AAC-LC</code>: The most common AAC profile. Use for bitrates
-     *         larger than 64 kbps.</li> <li><code>HE-AAC</code>: Not supported on
-     *         some older players and devices. Use for bitrates between 40 and 80
-     *         kbps.</li> <li><code>HE-AACv2</code>: Not supported on some players
-     *         and devices. Use for bitrates less than 48 kbps.</li> </ul>
-     *         <note><p>If you created any presets before AAC profiles were added,
-     *         Elastic Transcoder automatically updated your presets to use AAC-LC.
-     *         You can change the value as required.</note>
+     * @return You can only choose an audio profile when you specify AAC for the
+     *         value of Audio:Codec. <p>Specify the AAC profile for the output file.
+     *         Elastic Transcoder supports the following profiles: <ul>
+     *         <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+     *         Transcoder will select the profile based on the bit rate selected for
+     *         the output file.</li> <li><code>AAC-LC</code>: The most common AAC
+     *         profile. Use for bitrates larger than 64 kbps.</li>
+     *         <li><code>HE-AAC</code>: Not supported on some older players and
+     *         devices. Use for bitrates between 40 and 80 kbps.</li>
+     *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
+     *         Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
+     *         any presets before AAC profiles were added, Elastic Transcoder
+     *         automatically updated your presets to use AAC-LC. You can change the
+     *         value as required.</note>
      */
     public String getProfile() {
         return profile;
     }
     
     /**
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, choose
-     * the AAC profile for the output file. Elastic Transcoder supports the
-     * following profiles: <ul> <li><code>auto</code>: If you specify
-     * <code>auto</code>, Elastic Transcoder will select the profile based on
-     * the bit rate selected for the output file.</li>
-     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bitrates
-     * larger than 64 kbps.</li> <li><code>HE-AAC</code>: Not supported on
-     * some older players and devices. Use for bitrates between 40 and 80
-     * kbps.</li> <li><code>HE-AACv2</code>: Not supported on some players
-     * and devices. Use for bitrates less than 48 kbps.</li> </ul>
-     * <note><p>If you created any presets before AAC profiles were added,
-     * Elastic Transcoder automatically updated your presets to use AAC-LC.
-     * You can change the value as required.</note>
+     * You can only choose an audio profile when you specify AAC for the
+     * value of Audio:Codec. <p>Specify the AAC profile for the output file.
+     * Elastic Transcoder supports the following profiles: <ul>
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+     * Transcoder will select the profile based on the bit rate selected for
+     * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
+     * profile. Use for bitrates larger than 64 kbps.</li>
+     * <li><code>HE-AAC</code>: Not supported on some older players and
+     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices.
+     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
+     * any presets before AAC profiles were added, Elastic Transcoder
+     * automatically updated your presets to use AAC-LC. You can change the
+     * value as required.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)<br/>
      *
-     * @param profile If you specified <code>AAC</code> for <code>Audio:Codec</code>, choose
-     *         the AAC profile for the output file. Elastic Transcoder supports the
-     *         following profiles: <ul> <li><code>auto</code>: If you specify
-     *         <code>auto</code>, Elastic Transcoder will select the profile based on
-     *         the bit rate selected for the output file.</li>
-     *         <li><code>AAC-LC</code>: The most common AAC profile. Use for bitrates
-     *         larger than 64 kbps.</li> <li><code>HE-AAC</code>: Not supported on
-     *         some older players and devices. Use for bitrates between 40 and 80
-     *         kbps.</li> <li><code>HE-AACv2</code>: Not supported on some players
-     *         and devices. Use for bitrates less than 48 kbps.</li> </ul>
-     *         <note><p>If you created any presets before AAC profiles were added,
-     *         Elastic Transcoder automatically updated your presets to use AAC-LC.
-     *         You can change the value as required.</note>
+     * @param profile You can only choose an audio profile when you specify AAC for the
+     *         value of Audio:Codec. <p>Specify the AAC profile for the output file.
+     *         Elastic Transcoder supports the following profiles: <ul>
+     *         <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+     *         Transcoder will select the profile based on the bit rate selected for
+     *         the output file.</li> <li><code>AAC-LC</code>: The most common AAC
+     *         profile. Use for bitrates larger than 64 kbps.</li>
+     *         <li><code>HE-AAC</code>: Not supported on some older players and
+     *         devices. Use for bitrates between 40 and 80 kbps.</li>
+     *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
+     *         Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
+     *         any presets before AAC profiles were added, Elastic Transcoder
+     *         automatically updated your presets to use AAC-LC. You can change the
+     *         value as required.</note>
      */
     public void setProfile(String profile) {
         this.profile = profile;
     }
     
     /**
-     * If you specified <code>AAC</code> for <code>Audio:Codec</code>, choose
-     * the AAC profile for the output file. Elastic Transcoder supports the
-     * following profiles: <ul> <li><code>auto</code>: If you specify
-     * <code>auto</code>, Elastic Transcoder will select the profile based on
-     * the bit rate selected for the output file.</li>
-     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bitrates
-     * larger than 64 kbps.</li> <li><code>HE-AAC</code>: Not supported on
-     * some older players and devices. Use for bitrates between 40 and 80
-     * kbps.</li> <li><code>HE-AACv2</code>: Not supported on some players
-     * and devices. Use for bitrates less than 48 kbps.</li> </ul>
-     * <note><p>If you created any presets before AAC profiles were added,
-     * Elastic Transcoder automatically updated your presets to use AAC-LC.
-     * You can change the value as required.</note>
+     * You can only choose an audio profile when you specify AAC for the
+     * value of Audio:Codec. <p>Specify the AAC profile for the output file.
+     * Elastic Transcoder supports the following profiles: <ul>
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+     * Transcoder will select the profile based on the bit rate selected for
+     * the output file.</li> <li><code>AAC-LC</code>: The most common AAC
+     * profile. Use for bitrates larger than 64 kbps.</li>
+     * <li><code>HE-AAC</code>: Not supported on some older players and
+     * devices. Use for bitrates between 40 and 80 kbps.</li>
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices.
+     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
+     * any presets before AAC profiles were added, Elastic Transcoder
+     * automatically updated your presets to use AAC-LC. You can change the
+     * value as required.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)<br/>
      *
-     * @param profile If you specified <code>AAC</code> for <code>Audio:Codec</code>, choose
-     *         the AAC profile for the output file. Elastic Transcoder supports the
-     *         following profiles: <ul> <li><code>auto</code>: If you specify
-     *         <code>auto</code>, Elastic Transcoder will select the profile based on
-     *         the bit rate selected for the output file.</li>
-     *         <li><code>AAC-LC</code>: The most common AAC profile. Use for bitrates
-     *         larger than 64 kbps.</li> <li><code>HE-AAC</code>: Not supported on
-     *         some older players and devices. Use for bitrates between 40 and 80
-     *         kbps.</li> <li><code>HE-AACv2</code>: Not supported on some players
-     *         and devices. Use for bitrates less than 48 kbps.</li> </ul>
-     *         <note><p>If you created any presets before AAC profiles were added,
-     *         Elastic Transcoder automatically updated your presets to use AAC-LC.
-     *         You can change the value as required.</note>
+     * @param profile You can only choose an audio profile when you specify AAC for the
+     *         value of Audio:Codec. <p>Specify the AAC profile for the output file.
+     *         Elastic Transcoder supports the following profiles: <ul>
+     *         <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+     *         Transcoder will select the profile based on the bit rate selected for
+     *         the output file.</li> <li><code>AAC-LC</code>: The most common AAC
+     *         profile. Use for bitrates larger than 64 kbps.</li>
+     *         <li><code>HE-AAC</code>: Not supported on some older players and
+     *         devices. Use for bitrates between 40 and 80 kbps.</li>
+     *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
+     *         Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
+     *         any presets before AAC profiles were added, Elastic Transcoder
+     *         automatically updated your presets to use AAC-LC. You can change the
+     *         value as required.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

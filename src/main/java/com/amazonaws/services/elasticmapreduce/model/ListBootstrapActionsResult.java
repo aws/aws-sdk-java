@@ -18,28 +18,26 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This output contains the bootstrap actions detail.
+ * This output contains the boostrap actions detail .
  * </p>
  */
 public class ListBootstrapActionsResult implements Serializable {
 
     /**
-     * The bootstrap actions associated with the cluster.
+     * The bootstrap actions associated with the cluster .
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Command> bootstrapActions;
 
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve .
      */
     private String marker;
 
     /**
-     * The bootstrap actions associated with the cluster.
+     * The bootstrap actions associated with the cluster .
      *
-     * @return The bootstrap actions associated with the cluster.
+     * @return The bootstrap actions associated with the cluster .
      */
     public java.util.List<Command> getBootstrapActions() {
         if (bootstrapActions == null) {
@@ -50,9 +48,9 @@ public class ListBootstrapActionsResult implements Serializable {
     }
     
     /**
-     * The bootstrap actions associated with the cluster.
+     * The bootstrap actions associated with the cluster .
      *
-     * @param bootstrapActions The bootstrap actions associated with the cluster.
+     * @param bootstrapActions The bootstrap actions associated with the cluster .
      */
     public void setBootstrapActions(java.util.Collection<Command> bootstrapActions) {
         if (bootstrapActions == null) {
@@ -65,11 +63,11 @@ public class ListBootstrapActionsResult implements Serializable {
     }
     
     /**
-     * The bootstrap actions associated with the cluster.
+     * The bootstrap actions associated with the cluster .
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bootstrapActions The bootstrap actions associated with the cluster.
+     * @param bootstrapActions The bootstrap actions associated with the cluster .
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -83,11 +81,11 @@ public class ListBootstrapActionsResult implements Serializable {
     }
     
     /**
-     * The bootstrap actions associated with the cluster.
+     * The bootstrap actions associated with the cluster .
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bootstrapActions The bootstrap actions associated with the cluster.
+     * @param bootstrapActions The bootstrap actions associated with the cluster .
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -105,47 +103,35 @@ public class ListBootstrapActionsResult implements Serializable {
     }
 
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve .
      *
-     * @return The pagination token is a random string indicating whether there are
-     *         more results to fetch. Use the pagination token in later API calls to
-     *         retrieve the next page of results. When the value is null, all results
-     *         have been returned.
+     * @return The pagination token that indicates the next set of results to
+     *         retrieve .
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve .
      *
-     * @param marker The pagination token is a random string indicating whether there are
-     *         more results to fetch. Use the pagination token in later API calls to
-     *         retrieve the next page of results. When the value is null, all results
-     *         have been returned.
+     * @param marker The pagination token that indicates the next set of results to
+     *         retrieve .
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The pagination token is a random string indicating whether there are
-     * more results to fetch. Use the pagination token in later API calls to
-     * retrieve the next page of results. When the value is null, all results
-     * have been returned.
+     * The pagination token that indicates the next set of results to
+     * retrieve .
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The pagination token is a random string indicating whether there are
-     *         more results to fetch. Use the pagination token in later API calls to
-     *         retrieve the next page of results. When the value is null, all results
-     *         have been returned.
+     * @param marker The pagination token that indicates the next set of results to
+     *         retrieve .
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

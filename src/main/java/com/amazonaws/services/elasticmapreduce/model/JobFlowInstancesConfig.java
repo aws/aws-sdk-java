@@ -18,7 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A description of the Amazon EC2 instance running the job flow.
+ * A description of the Amazon EC2 instance running the job flow. A valid
+ * JobFlowInstancesConfig must contain at least InstanceGroups, which is
+ * the recommended configuration. However, a valid alternative is to have
+ * MasterInstanceType, SlaveInstanceType, and InstanceCount (all three
+ * must be present).
  * </p>
  */
 public class JobFlowInstancesConfig implements Serializable {

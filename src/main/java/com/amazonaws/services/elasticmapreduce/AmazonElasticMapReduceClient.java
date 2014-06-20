@@ -611,6 +611,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
      * .
      * </p>
+     * <p>
+     * The following example removes the stack tag with value Prod from a
+     * cluster:
+     * </p>
      *
      * @param removeTagsRequest Container for the necessary parameters to
      *           execute the RemoveTags service method on AmazonElasticMapReduce.
@@ -951,6 +955,11 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     
     /**
      * <p>
+     * This API is deprecated and will eventually be removed. We recommend
+     * you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups
+     * and ListBootstrapActions instead.
+     * </p>
+     * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
      * supplied parameters. The parameters can include a list of job flow
      * IDs, job flow states, and restrictions on job flow creation date and
@@ -1151,103 +1160,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Provides information about the bootstrap actions associated with a
-     * cluster.
-     * </p>
-     * 
-     * @return The response from the ListBootstrapActions service method, as
-     *         returned by AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListBootstrapActionsResult listBootstrapActions() throws AmazonServiceException, AmazonClientException {
-        return listBootstrapActions(new ListBootstrapActionsRequest());
-    }
-    
-    /**
-     * <p>
-     * Adds tags to an Amazon EMR resource. Tags make it easier to associate
-     * clusters in various ways, such as grouping clusters to track your
-     * Amazon EMR resource allocation costs. For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
-     * .
-     * </p>
-     * 
-     * @return The response from the AddTags service method, as returned by
-     *         AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public AddTagsResult addTags() throws AmazonServiceException, AmazonClientException {
-        return addTags(new AddTagsRequest());
-    }
-    
-    /**
-     * <p>
-     * Provides a list of steps for the cluster.
-     * </p>
-     * 
-     * @return The response from the ListSteps service method, as returned by
-     *         AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListStepsResult listSteps() throws AmazonServiceException, AmazonClientException {
-        return listSteps(new ListStepsRequest());
-    }
-    
-    /**
-     * <p>
-     * Provides more detail about the cluster step.
-     * </p>
-     * 
-     * @return The response from the DescribeStep service method, as returned
-     *         by AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeStepResult describeStep() throws AmazonServiceException, AmazonClientException {
-        return describeStep(new DescribeStepRequest());
-    }
-    
-    /**
-     * <p>
      * Provides the status of all clusters visible to this AWS account.
      * Allows you to filter the list of clusters based on certain criteria;
      * for example, filtering by cluster creation date and time or by status.
@@ -1276,57 +1188,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     
     /**
      * <p>
-     * Removes tags from an Amazon EMR resource. Tags make it easier to
-     * associate clusters in various ways, such as grouping clusters to track
-     * your Amazon EMR resource allocation costs. For more information, see
-     * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
-     * .
-     * </p>
-     * 
-     * @return The response from the RemoveTags service method, as returned
-     *         by AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RemoveTagsResult removeTags() throws AmazonServiceException, AmazonClientException {
-        return removeTags(new RemoveTagsRequest());
-    }
-    
-    /**
-     * <p>
-     * Provides all available details about the instance groups in a
-     * cluster.
-     * </p>
-     * 
-     * @return The response from the ListInstanceGroups service method, as
-     *         returned by AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInstanceGroupsResult listInstanceGroups() throws AmazonServiceException, AmazonClientException {
-        return listInstanceGroups(new ListInstanceGroupsRequest());
-    }
-    
-    /**
-     * <p>
      * ModifyInstanceGroups modifies the number of nodes and configuration
      * settings of an instance group. The input parameters include the new
      * target instance count for the group and the instance group ID. The
@@ -1350,32 +1211,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     
     /**
      * <p>
-     * Provides information about the cluster instances that Amazon EMR
-     * provisions on behalf of a user when it creates the cluster. For
-     * example, this operation indicates when the EC2 instances reach the
-     * Ready state, when instances become available to Amazon EMR to use for
-     * jobs, and the IP addresses for cluster instances, etc.
+     * This API is deprecated and will eventually be removed. We recommend
+     * you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups
+     * and ListBootstrapActions instead.
      * </p>
-     * 
-     * @return The response from the ListInstances service method, as
-     *         returned by AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInstancesResult listInstances() throws AmazonServiceException, AmazonClientException {
-        return listInstances(new ListInstancesRequest());
-    }
-    
-    /**
      * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
      * supplied parameters. The parameters can include a list of job flow
@@ -1419,31 +1258,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     @Deprecated
     public DescribeJobFlowsResult describeJobFlows() throws AmazonServiceException, AmazonClientException {
         return describeJobFlows(new DescribeJobFlowsRequest());
-    }
-    
-    /**
-     * <p>
-     * Provides cluster-level details including status, hardware and
-     * software configuration, VPC settings, and so on. For information about
-     * the cluster steps, see ListSteps.
-     * </p>
-     * 
-     * @return The response from the DescribeCluster service method, as
-     *         returned by AmazonElasticMapReduce.
-     * 
-     * @throws InternalServerException
-     * @throws InvalidRequestException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeClusterResult describeCluster() throws AmazonServiceException, AmazonClientException {
-        return describeCluster(new DescribeClusterRequest());
     }
 
   @Override

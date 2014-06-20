@@ -29,17 +29,12 @@ public class StepTimeline implements Serializable {
     private java.util.Date creationDateTime;
 
     /**
-     * The date and time when the cluster step execution started. Due to
-     * delays in step status reporting, this can display a time which
-     * pre-dates a previous call to DescribeStep that indicated the step was
-     * not yet running.
+     * The date and time when the cluster step execution started.
      */
     private java.util.Date startDateTime;
 
     /**
      * The date and time when the cluster step execution completed or failed.
-     * This can display a time that pre-dates a call to DescribeStep that
-     * indicates the step is running, due to delays in step status reporting.
      */
     private java.util.Date endDateTime;
 
@@ -77,47 +72,29 @@ public class StepTimeline implements Serializable {
     }
 
     /**
-     * The date and time when the cluster step execution started. Due to
-     * delays in step status reporting, this can display a time which
-     * pre-dates a previous call to DescribeStep that indicated the step was
-     * not yet running.
+     * The date and time when the cluster step execution started.
      *
-     * @return The date and time when the cluster step execution started. Due to
-     *         delays in step status reporting, this can display a time which
-     *         pre-dates a previous call to DescribeStep that indicated the step was
-     *         not yet running.
+     * @return The date and time when the cluster step execution started.
      */
     public java.util.Date getStartDateTime() {
         return startDateTime;
     }
     
     /**
-     * The date and time when the cluster step execution started. Due to
-     * delays in step status reporting, this can display a time which
-     * pre-dates a previous call to DescribeStep that indicated the step was
-     * not yet running.
+     * The date and time when the cluster step execution started.
      *
-     * @param startDateTime The date and time when the cluster step execution started. Due to
-     *         delays in step status reporting, this can display a time which
-     *         pre-dates a previous call to DescribeStep that indicated the step was
-     *         not yet running.
+     * @param startDateTime The date and time when the cluster step execution started.
      */
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
     
     /**
-     * The date and time when the cluster step execution started. Due to
-     * delays in step status reporting, this can display a time which
-     * pre-dates a previous call to DescribeStep that indicated the step was
-     * not yet running.
+     * The date and time when the cluster step execution started.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startDateTime The date and time when the cluster step execution started. Due to
-     *         delays in step status reporting, this can display a time which
-     *         pre-dates a previous call to DescribeStep that indicated the step was
-     *         not yet running.
+     * @param startDateTime The date and time when the cluster step execution started.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -129,12 +106,8 @@ public class StepTimeline implements Serializable {
 
     /**
      * The date and time when the cluster step execution completed or failed.
-     * This can display a time that pre-dates a call to DescribeStep that
-     * indicates the step is running, due to delays in step status reporting.
      *
      * @return The date and time when the cluster step execution completed or failed.
-     *         This can display a time that pre-dates a call to DescribeStep that
-     *         indicates the step is running, due to delays in step status reporting.
      */
     public java.util.Date getEndDateTime() {
         return endDateTime;
@@ -142,12 +115,8 @@ public class StepTimeline implements Serializable {
     
     /**
      * The date and time when the cluster step execution completed or failed.
-     * This can display a time that pre-dates a call to DescribeStep that
-     * indicates the step is running, due to delays in step status reporting.
      *
      * @param endDateTime The date and time when the cluster step execution completed or failed.
-     *         This can display a time that pre-dates a call to DescribeStep that
-     *         indicates the step is running, due to delays in step status reporting.
      */
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
@@ -155,14 +124,10 @@ public class StepTimeline implements Serializable {
     
     /**
      * The date and time when the cluster step execution completed or failed.
-     * This can display a time that pre-dates a call to DescribeStep that
-     * indicates the step is running, due to delays in step status reporting.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endDateTime The date and time when the cluster step execution completed or failed.
-     *         This can display a time that pre-dates a call to DescribeStep that
-     *         indicates the step is running, due to delays in step status reporting.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

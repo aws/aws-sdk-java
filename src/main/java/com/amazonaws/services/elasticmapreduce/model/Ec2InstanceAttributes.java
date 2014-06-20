@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * <p>
  * Provides information about the EC2 instances in a cluster grouped by
- * category. For example, EC2 Key Name, Subnet Id, Instance Profile, and
+ * category. For example, key name, subnet ID, IAM instance profile, and
  * so on.
  * </p>
  */

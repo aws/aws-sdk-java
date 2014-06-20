@@ -26,62 +26,66 @@ import com.amazonaws.internal.SdkFilterInputStream;
  * they are read and calculates and MD5 digest.
  */
 public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
-    
     /** The MD5 message digest being calculated by this input stream */
     private MessageDigest digest;
-    
-    public MD5DigestCalculatingInputStream(InputStream in) throws NoSuchAlgorithmException {
+    /**
+     * The MD5 message digest as at the time when the last {@link #mark(int)}
+     * operation was called; always null if mark is not supported.
+     */
+    private MessageDigest digestLastMarked;
+
+    public MD5DigestCalculatingInputStream(InputStream in) {
         super(in);
-        
-        digest = MessageDigest.getInstance("MD5");
+        try {
+            digest = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) { // should never occur
+            throw new IllegalStateException("unexpected", e);
+        }
     }
 
     public byte[] getMd5Digest() {
         return digest.digest();
     }
 
-    /**
-     * Resets the wrapped input stream and the in progress message digest.
-     * 
-     * @see java.io.InputStream#reset()
-     */
     @Override
-    public synchronized void reset() throws IOException {
-        abortIfNeeded();
-        try {
-            digest = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException e) {
-            /*
-             * Not much to do here. We know the algorithm existed when we
-             * created the initial MessageDigest in the constructor, so we
-             * can be reasonably sure that it's still going to exist if the
-             * stream gets reset.
-             */
+    public void mark(int readlimit) {
+        super.mark(readlimit);
+        if (markSupported()) {
+            try {
+                digestLastMarked = (MessageDigest)digest.clone();
+            } catch (CloneNotSupportedException e) { // should never occur
+                throw new IllegalStateException("unexpected", e);
+            }
         }
-
-        in.reset();
     }
 
     /**
-     * @see java.io.InputStream#read()
+     * Resets the wrapped input stream and the in progress message digest.
      */
     @Override
+    public void reset() throws IOException {
+        super.reset();
+        if (digestLastMarked != null) {
+            try {
+                digest = (MessageDigest)digestLastMarked.clone();
+            } catch (CloneNotSupportedException e) { // should never occur
+                throw new IllegalStateException("unexpected", e);
+            }
+        }
+    }
+
+    @Override
     public int read() throws IOException {
-        abortIfNeeded();
-        int ch = in.read();
+        int ch = super.read();
         if (ch != -1) {
             digest.update((byte)ch);
         }
         return ch;
     }
 
-    /**
-     * @see java.io.InputStream#read(byte[], int, int)
-     */
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
-        abortIfNeeded();
-        int result = in.read(b, off, len);
+        int result = super.read(b, off, len);
         if (result != -1) {
             digest.update(b, off, result);
         }

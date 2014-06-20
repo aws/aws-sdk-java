@@ -26,6 +26,10 @@ public enum IOUtils {
     ;
     private static final int BUFFER_SIZE = 1024 * 4;
 
+    /**
+     * Reads and returns the rest of the given input stream as a byte array,
+     * closing the input stream afterwards.
+     */
     public static byte[] toByteArray(InputStream is) throws IOException {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         try {
@@ -38,5 +42,13 @@ public enum IOUtils {
         } finally {
             output.close();
         }
+    }
+
+    /**
+     * Reads and returns the rest of the given input stream as a string,
+     * closing the input stream afterwards.
+     */
+    public static String toString(InputStream is) throws IOException {
+        return new String(toByteArray(is), StringUtils.UTF8);
     }
 }
