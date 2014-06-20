@@ -355,6 +355,20 @@ public class AmazonHttpClient {
                     requestLog.debug("Sending Request: " + request.toString());
                  }
 
+                InputStream content = request.getContent();
+                if ( content != null ) {
+                    if ( requestCount > 1 ) {   // retry
+                        if ( content.markSupported() ) {
+                            content.reset();
+                            content.mark(-1);
+                        }
+                    } else {
+                        if ( content.markSupported() ) {
+                            content.mark(-1);
+                        }
+                    }
+                }
+
                 httpRequest = httpRequestFactory.createHttpRequest(request, config, executionContext);
 
                 if (httpRequest instanceof HttpEntityEnclosingRequest) {
@@ -374,20 +388,6 @@ public class AmazonHttpClient {
                                              config.getRetryPolicy());
                     } finally {
                         awsRequestMetrics.endEvent(Field.RetryPauseTime);
-                    }
-                }
-
-                if ( entity != null ) {
-                    InputStream content = entity.getContent();
-                    if ( requestCount > 1 ) {   // retry
-                        if ( content.markSupported() ) {
-                            content.reset();
-                            content.mark(-1);
-                        }
-                    } else {
-                        if ( content.markSupported() ) {
-                            content.mark(-1);
-                        }
                     }
                 }
 
