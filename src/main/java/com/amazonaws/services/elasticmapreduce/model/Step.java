@@ -40,7 +40,7 @@ public class Step implements Serializable {
 
     /**
      * This specifies what action to take when the cluster step fails.
-     * TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     * Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE
@@ -153,13 +153,13 @@ public class Step implements Serializable {
 
     /**
      * This specifies what action to take when the cluster step fails.
-     * TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     * Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE
      *
      * @return This specifies what action to take when the cluster step fails.
-     *         TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     *         Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      *
      * @see ActionOnFailure
      */
@@ -169,13 +169,13 @@ public class Step implements Serializable {
     
     /**
      * This specifies what action to take when the cluster step fails.
-     * TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     * Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE
      *
      * @param actionOnFailure This specifies what action to take when the cluster step fails.
-     *         TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     *         Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      *
      * @see ActionOnFailure
      */
@@ -185,7 +185,7 @@ public class Step implements Serializable {
     
     /**
      * This specifies what action to take when the cluster step fails.
-     * TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     * Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -193,7 +193,7 @@ public class Step implements Serializable {
      * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE
      *
      * @param actionOnFailure This specifies what action to take when the cluster step fails.
-     *         TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     *         Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -207,13 +207,13 @@ public class Step implements Serializable {
 
     /**
      * This specifies what action to take when the cluster step fails.
-     * TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     * Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE
      *
      * @param actionOnFailure This specifies what action to take when the cluster step fails.
-     *         TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     *         Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      *
      * @see ActionOnFailure
      */
@@ -223,7 +223,7 @@ public class Step implements Serializable {
     
     /**
      * This specifies what action to take when the cluster step fails.
-     * TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     * Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -231,7 +231,7 @@ public class Step implements Serializable {
      * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE
      *
      * @param actionOnFailure This specifies what action to take when the cluster step fails.
-     *         TERMINATE_JOB_FLOW is deprecated, use TERMINATE_CLUSTER instead.
+     *         Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -27,6 +27,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
  * .
  * </p>
+ * <p>
+ * The following example removes the stack tag with value Prod from a
+ * cluster:
+ * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#removeTags(RemoveTagsRequest)
  */

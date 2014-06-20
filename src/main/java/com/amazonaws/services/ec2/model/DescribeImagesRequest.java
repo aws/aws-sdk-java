@@ -71,9 +71,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <p><code>block-device-mapping.volume-size</code> - The volume size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>block-device-mapping.volume-type</code> - The volume type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>description</code> - The description of the image
-     * (provided during image creation). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>description</code> - The
+     * description of the image (provided during image creation). </li> <li>
      * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      * image. </li> <li> <p><code>image-type</code> - The image type
@@ -383,9 +383,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <p><code>block-device-mapping.volume-size</code> - The volume size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>block-device-mapping.volume-type</code> - The volume type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>description</code> - The description of the image
-     * (provided during image creation). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>description</code> - The
+     * description of the image (provided during image creation). </li> <li>
      * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      * image. </li> <li> <p><code>image-type</code> - The image type
@@ -440,9 +440,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <p><code>block-device-mapping.volume-size</code> - The volume size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>block-device-mapping.volume-type</code> - The volume type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>description</code> - The description of the image
-     *         (provided during image creation). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>description</code> - The
+     *         description of the image (provided during image creation). </li> <li>
      *         <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      *         image. </li> <li> <p><code>image-type</code> - The image type
@@ -506,9 +506,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <p><code>block-device-mapping.volume-size</code> - The volume size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>block-device-mapping.volume-type</code> - The volume type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>description</code> - The description of the image
-     * (provided during image creation). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>description</code> - The
+     * description of the image (provided during image creation). </li> <li>
      * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      * image. </li> <li> <p><code>image-type</code> - The image type
@@ -563,9 +563,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <p><code>block-device-mapping.volume-size</code> - The volume size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>block-device-mapping.volume-type</code> - The volume type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>description</code> - The description of the image
-     *         (provided during image creation). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>description</code> - The
+     *         description of the image (provided during image creation). </li> <li>
      *         <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      *         image. </li> <li> <p><code>image-type</code> - The image type
@@ -631,9 +631,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <p><code>block-device-mapping.volume-size</code> - The volume size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>block-device-mapping.volume-type</code> - The volume type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>description</code> - The description of the image
-     * (provided during image creation). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>description</code> - The
+     * description of the image (provided during image creation). </li> <li>
      * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      * image. </li> <li> <p><code>image-type</code> - The image type
@@ -690,9 +690,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <p><code>block-device-mapping.volume-size</code> - The volume size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>block-device-mapping.volume-type</code> - The volume type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>description</code> - The description of the image
-     *         (provided during image creation). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>description</code> - The
+     *         description of the image (provided during image creation). </li> <li>
      *         <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      *         image. </li> <li> <p><code>image-type</code> - The image type
@@ -759,9 +759,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <p><code>block-device-mapping.volume-size</code> - The volume size of
      * the Amazon EBS volume, in GiB. </li> <li>
      * <p><code>block-device-mapping.volume-type</code> - The volume type of
-     * the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     * </li> <li> <p><code>description</code> - The description of the image
-     * (provided during image creation). </li> <li>
+     * the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     * <code>io1</code>). </li> <li> <p><code>description</code> - The
+     * description of the image (provided during image creation). </li> <li>
      * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      * image. </li> <li> <p><code>image-type</code> - The image type
@@ -818,9 +818,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <p><code>block-device-mapping.volume-size</code> - The volume size of
      *         the Amazon EBS volume, in GiB. </li> <li>
      *         <p><code>block-device-mapping.volume-type</code> - The volume type of
-     *         the Amazon EBS volume (<code>standard</code> | <code>io1</code>).
-     *         </li> <li> <p><code>description</code> - The description of the image
-     *         (provided during image creation). </li> <li>
+     *         the Amazon EBS volume (<code>gp2</code> | <code>standard</code> |
+     *         <code>io1</code>). </li> <li> <p><code>description</code> - The
+     *         description of the image (provided during image creation). </li> <li>
      *         <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
      *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
      *         image. </li> <li> <p><code>image-type</code> - The image type

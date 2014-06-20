@@ -71,8 +71,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String availabilityZone;
 
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes. <p>Default:
      * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
@@ -82,8 +83,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The number of I/O operations per second (IOPS) that the volume
-     * supports. This parameter is not used with standard volumes, but is
-     * required when the volume type is <code>io1</code>.
+     * supports. This parameter is not used with Magnetic or General Purpose
+     * (SSD) volumes, but is required when the volume type is
+     * <code>io1</code>.
      */
     private Integer iops;
 
@@ -261,15 +263,17 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes. <p>Default:
      * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @return The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * @return The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
      *         <code>standard</code>
      *
      * @see VolumeType
@@ -279,15 +283,17 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes. <p>Default:
      * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
      *         <code>standard</code>
      *
      * @see VolumeType
@@ -297,8 +303,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes. <p>Default:
      * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -306,8 +313,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
      *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -321,15 +329,17 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes. <p>Default:
      * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
      *         <code>standard</code>
      *
      * @see VolumeType
@@ -339,8 +349,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * The volume type. This can be <code>standard</code> for standard EBS
-     * volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * The volume type. This can be <code>gp2</code> for General Purpose
+     * (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * <code>standard</code> for Magnetic volumes. <p>Default:
      * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -348,8 +359,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1
      *
-     * @param volumeType The volume type. This can be <code>standard</code> for standard EBS
-     *         volumes or <code>io1</code> for Provisioned IOPS volumes. <p>Default:
+     * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
+     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
      *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -364,12 +376,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * The number of I/O operations per second (IOPS) that the volume
-     * supports. This parameter is not used with standard volumes, but is
-     * required when the volume type is <code>io1</code>.
+     * supports. This parameter is not used with Magnetic or General Purpose
+     * (SSD) volumes, but is required when the volume type is
+     * <code>io1</code>.
      *
      * @return The number of I/O operations per second (IOPS) that the volume
-     *         supports. This parameter is not used with standard volumes, but is
-     *         required when the volume type is <code>io1</code>.
+     *         supports. This parameter is not used with Magnetic or General Purpose
+     *         (SSD) volumes, but is required when the volume type is
+     *         <code>io1</code>.
      */
     public Integer getIops() {
         return iops;
@@ -377,12 +391,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The number of I/O operations per second (IOPS) that the volume
-     * supports. This parameter is not used with standard volumes, but is
-     * required when the volume type is <code>io1</code>.
+     * supports. This parameter is not used with Magnetic or General Purpose
+     * (SSD) volumes, but is required when the volume type is
+     * <code>io1</code>.
      *
      * @param iops The number of I/O operations per second (IOPS) that the volume
-     *         supports. This parameter is not used with standard volumes, but is
-     *         required when the volume type is <code>io1</code>.
+     *         supports. This parameter is not used with Magnetic or General Purpose
+     *         (SSD) volumes, but is required when the volume type is
+     *         <code>io1</code>.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -390,14 +406,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * The number of I/O operations per second (IOPS) that the volume
-     * supports. This parameter is not used with standard volumes, but is
-     * required when the volume type is <code>io1</code>.
+     * supports. This parameter is not used with Magnetic or General Purpose
+     * (SSD) volumes, but is required when the volume type is
+     * <code>io1</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The number of I/O operations per second (IOPS) that the volume
-     *         supports. This parameter is not used with standard volumes, but is
-     *         required when the volume type is <code>io1</code>.
+     *         supports. This parameter is not used with Magnetic or General Purpose
+     *         (SSD) volumes, but is required when the volume type is
+     *         <code>io1</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

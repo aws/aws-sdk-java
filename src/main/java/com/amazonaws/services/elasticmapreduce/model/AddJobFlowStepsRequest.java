@@ -59,7 +59,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a>.
+     * <a>ListClusters</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -85,7 +85,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      * 
      * @param jobFlowId A string that uniquely identifies the job flow. This
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained
-     * from <a>DescribeJobFlows</a>.
+     * from <a>ListClusters</a>.
      */
     public AddJobFlowStepsRequest(String jobFlowId) {
         setJobFlowId(jobFlowId);
@@ -98,7 +98,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      * 
      * @param jobFlowId A string that uniquely identifies the job flow. This
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained
-     * from <a>DescribeJobFlows</a>.
+     * from <a>ListClusters</a>.
      * @param steps A list of <a>StepConfig</a> to be executed by the job
      * flow.
      */
@@ -110,7 +110,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a>.
+     * <a>ListClusters</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -118,7 +118,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      *
      * @return A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
-     *         <a>DescribeJobFlows</a>.
+     *         <a>ListClusters</a>.
      */
     public String getJobFlowId() {
         return jobFlowId;
@@ -127,7 +127,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a>.
+     * <a>ListClusters</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -135,7 +135,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      *
      * @param jobFlowId A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
-     *         <a>DescribeJobFlows</a>.
+     *         <a>ListClusters</a>.
      */
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
@@ -144,7 +144,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a>.
+     * <a>ListClusters</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -154,7 +154,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      *
      * @param jobFlowId A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
-     *         <a>DescribeJobFlows</a>.
+     *         <a>ListClusters</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -309,6 +309,9 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             if (runJobFlowRequest.getJobFlowRole() != null) {
                 jsonWriter.key("JobFlowRole").value(runJobFlowRequest.getJobFlowRole());
             }
+            if (runJobFlowRequest.getServiceRole() != null) {
+                jsonWriter.key("ServiceRole").value(runJobFlowRequest.getServiceRole());
+            }
 
             com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Tag>)(runJobFlowRequest.getTags());
             if (tagsList != null && !(tagsList.isAutoConstruct() && tagsList.isEmpty())) {

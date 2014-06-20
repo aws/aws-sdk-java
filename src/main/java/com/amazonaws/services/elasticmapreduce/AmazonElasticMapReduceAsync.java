@@ -500,6 +500,10 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
      * .
      * </p>
+     * <p>
+     * The following example removes the stack tag with value Prod from a
+     * cluster:
+     * </p>
      *
      * @param removeTagsRequest Container for the necessary parameters to
      *           execute the RemoveTags operation on AmazonElasticMapReduce.
@@ -526,6 +530,10 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * your Amazon EMR resource allocation costs. For more information, see
      * <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html"> Tagging Amazon EMR Resources </a>
      * .
+     * </p>
+     * <p>
+     * The following example removes the stack tag with value Prod from a
+     * cluster:
      * </p>
      *
      * @param removeTagsRequest Container for the necessary parameters to
@@ -957,6 +965,11 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * This API is deprecated and will eventually be removed. We recommend
+     * you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups
+     * and ListBootstrapActions instead.
+     * </p>
+     * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
      * supplied parameters. The parameters can include a list of job flow
      * IDs, job flow states, and restrictions on job flow creation date and
@@ -1004,6 +1017,11 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     * <p>
+     * This API is deprecated and will eventually be removed. We recommend
+     * you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups
+     * and ListBootstrapActions instead.
+     * </p>
      * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
      * supplied parameters. The parameters can include a list of job flow

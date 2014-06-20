@@ -1449,13 +1449,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * we can calculate it on the fly and validate it with the returned
              * ETag from the object upload.
              */
-            try {
-                md5DigestStream = new MD5DigestCalculatingInputStream(input);
-                input = md5DigestStream;
-            } catch (NoSuchAlgorithmException e) {
-                log.warn("No MD5 digest algorithm available.  Unable to calculate " +
-                         "checksum and verify data integrity.", e);
-            }
+            input = md5DigestStream = new MD5DigestCalculatingInputStream(input);
         }
 
         if (metadata.getContentType() == null) {
@@ -2791,13 +2785,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * we can calculate it on the fly and validate it with the returned
              * ETag from the object upload.
              */
-            try {
-                md5DigestStream = new MD5DigestCalculatingInputStream(inputStream);
-                inputStream = md5DigestStream;
-            } catch (NoSuchAlgorithmException e) {
-                log.warn("No MD5 digest algorithm available.  Unable to calculate " +
-                         "checksum and verify data integrity.", e);
-            }
+            inputStream = md5DigestStream = new MD5DigestCalculatingInputStream(inputStream);
         }
 
         /*
@@ -2819,8 +2807,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
 
             if (metadata != null && md5DigestStream != null) {
-                String contentMd5 = BinaryUtils.toBase64(md5DigestStream.getMd5Digest());
-                byte[] clientSideHash = BinaryUtils.fromBase64(contentMd5);
+                byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(metadata.getETag());
 
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {

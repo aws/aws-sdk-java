@@ -61,7 +61,7 @@ public class XpathUtils {
 
     public static Document documentFrom(String xml) throws SAXException,
             IOException, ParserConfigurationException {
-        return documentFrom(new ByteArrayInputStream(xml.getBytes()));
+        return documentFrom(new ByteArrayInputStream(xml.getBytes(StringUtils.UTF8)));
     }
 
     public static Document documentFrom(URL url) throws SAXException,

@@ -33,6 +33,8 @@ import org.joda.time.tz.FixedDateTimeZone;
 @ThreadSafe
 public class DateUtils {
     private static final DateTimeZone GMT = new FixedDateTimeZone("GMT", "GMT", 0, 0);
+    private static final long MILLI_SECONDS_OF_365_DAYS = 365L*24*60*60*1000;
+
     /** ISO 8601 format */
     protected static final DateTimeFormatter iso8601DateFormat =
         ISODateTimeFormat.dateTime().withZone(GMT);
@@ -79,14 +81,51 @@ public class DateUtils {
         }
     }
 
-    static Date doParseISO8601Date(String dateString) {
+    static Date doParseISO8601Date(final String dateStringOrig) {
+        // https://github.com/aws/aws-sdk-java/issues/233
+        final String temp = tempDateStringForJodaTime(dateStringOrig);
         try {
-            return new Date(iso8601DateFormat.parseMillis(dateString));
+            if (temp.equals(dateStringOrig)) {
+                // Normal case: nothing special here
+                return new Date(iso8601DateFormat.parseMillis(dateStringOrig));
+            }
+            // Handling edge case:
+            // Joda-time can only handle up to year 292278993 but we are given
+            // 292278994;  So we parse the date string by first adjusting 
+            // the year to 292278993. Then we add 1 year back afterwards.
+            final long milliLess365Days = iso8601DateFormat.parseMillis(temp);
+            final long milli = milliLess365Days + MILLI_SECONDS_OF_365_DAYS;
+            if (milli < 0) { // overflow!
+                // re-parse the original date string using JodaTime so as to
+                // throw  an exception with a consistent message
+                return new Date(iso8601DateFormat.parseMillis(dateStringOrig));
+            }
+            return new Date(milli);
         } catch (IllegalArgumentException e) {
-            return new Date(alternateIso8601DateFormat.parseMillis(dateString));
-            // If the first ISO 8601 parser didn't work, try the alternate
-            // version which doesn't include fractional seconds
+            try {
+                return new Date(alternateIso8601DateFormat.parseMillis(dateStringOrig));
+                // If the first ISO 8601 parser didn't work, try the alternate
+                // version which doesn't include fractional seconds
+            } catch(Exception oops) {
+                // no the alternative route doesn't work; let's bubble up the original exception
+                throw e;
+            }
         }
+    }
+
+    /**
+     * Returns a date string with the prefix temporarily substituted, if
+     * applicable, so that JodaTime can handle it.  Otherwise, if not applicable,
+     * the original date string is returned.
+     * <p>
+     * See https://github.com/aws/aws-sdk-java/issues/233
+     */
+    private static String tempDateStringForJodaTime(String dateString) {
+        final String fromPrefix = "292278994-";
+        final String toPrefix   = "292278993-";
+        return dateString.startsWith(fromPrefix) 
+             ? toPrefix + dateString.substring(fromPrefix.length())
+             : dateString;
     }
     
     /**

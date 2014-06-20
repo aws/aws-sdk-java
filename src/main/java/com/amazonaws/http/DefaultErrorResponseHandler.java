@@ -14,15 +14,18 @@
  */
 package com.amazonaws.http;
 
+import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-import org.xml.sax.SAXParseException;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.XpathUtils;
 
 /**
@@ -36,6 +39,7 @@ import com.amazonaws.util.XpathUtils;
  */
 public class DefaultErrorResponseHandler
         implements HttpResponseHandler<AmazonServiceException> {
+    private static final Log log = LogFactory.getLog(DefaultErrorResponseHandler.class);
 
     /**
      * The list of error response unmarshallers to try to apply to error
@@ -58,22 +62,26 @@ public class DefaultErrorResponseHandler
         this.unmarshallerList = unmarshallerList;
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
-     */
-    public AmazonServiceException handle(HttpResponse errorResponse)
-            throws Exception {
+    @Override
+    public AmazonServiceException handle(HttpResponse errorResponse) throws Exception {
+        // Try to read the error response
+        String content = "";
+        try {
+            content = IOUtils.toString(errorResponse.getContent());
+        } catch(IOException ex) {
+            if (log.isDebugEnabled())
+                log.debug("Failed in reading the error response", ex);
+            return newAmazonServiceException(
+                    "Unable to unmarshall error response", errorResponse, ex);
+        }
+        // Try to parse the error response as XML
         Document document;
         try {
-            document = XpathUtils.documentFrom(errorResponse.getContent());
-        } catch (SAXParseException e) {
-            AmazonServiceException exception =
-                new AmazonServiceException(String.format("Unable to unmarshall error response (%s)", e.getMessage()), e);
-            exception.setErrorCode(String.format("%s %s", errorResponse.getStatusCode(), errorResponse.getStatusText()));
-            exception.setErrorType(AmazonServiceException.ErrorType.Unknown);
-            exception.setStatusCode(errorResponse.getStatusCode());
-
-            return exception;
+            document = XpathUtils.documentFrom(content);
+        } catch (Exception e) {
+            return newAmazonServiceException(String.format(
+                    "Unable to unmarshall error response (%s)", content),
+                    errorResponse, e);
         }
 
         /*
@@ -94,6 +102,19 @@ public class DefaultErrorResponseHandler
         throw new AmazonClientException("Unable to unmarshall error response from service");
     }
 
+    /**
+     * Used to create an {@link newAmazonServiceException} when we failed to
+     * read the error response or parsed the error response as XML.
+     */
+    private AmazonServiceException newAmazonServiceException(String errmsg,
+            HttpResponse httpResponse, Exception readFailure) {
+        AmazonServiceException exception = new AmazonServiceException(errmsg, readFailure);
+            final int statusCode = httpResponse.getStatusCode();
+            exception.setErrorCode(statusCode + " " + httpResponse.getStatusText());
+            exception.setErrorType(AmazonServiceException.ErrorType.Unknown);
+            exception.setStatusCode(statusCode);
+            return exception;
+    }
     /**
      * Since this response handler completely consumes all the data from the
      * underlying HTTP connection during the handle method, we don't need to
