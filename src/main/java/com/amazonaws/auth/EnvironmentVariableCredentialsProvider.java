@@ -41,11 +41,11 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
 
         String sessionToken = System.getenv(AWS_SESSION_TOKEN_ENV_VAR);
 
-        if (accessKey == null || secretKey == null) {
+        if (accessKey == null || secretKey == null || accessKey.length() == 0 || secretKey.length() == 0) {
             throw new AmazonClientException(
                     "Unable to load AWS credentials from environment variables " +
-                    "(" + ACCESS_KEY_ENV_VAR + " (or " + ALTERNATE_ACCESS_KEY_ENV_VAR + ") and " +
-                    SECRET_KEY_ENV_VAR + " (or " + ALTERNATE_SECRET_KEY_ENV_VAR + "))");
+                            "(" + ACCESS_KEY_ENV_VAR + " (or " + ALTERNATE_ACCESS_KEY_ENV_VAR + ") and " +
+                            SECRET_KEY_ENV_VAR + " (or " + ALTERNATE_SECRET_KEY_ENV_VAR + "))");
         }
 
         return sessionToken == null ?

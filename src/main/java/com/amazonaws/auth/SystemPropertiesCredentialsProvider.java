@@ -26,11 +26,13 @@ import com.amazonaws.AmazonClientException;
 public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvider {
 
     public AWSCredentials getCredentials() {
-        if (System.getProperty(ACCESS_KEY_SYSTEM_PROPERTY) != null &&
-            System.getProperty(SECRET_KEY_SYSTEM_PROPERTY) != null) {
+        String accessKey = System.getProperty(ACCESS_KEY_SYSTEM_PROPERTY);
+        String secretKey = System.getProperty(SECRET_KEY_SYSTEM_PROPERTY);
+        if (accessKey != null &&
+                secretKey != null && accessKey.length() > 0 && secretKey.length() > 0) {
             return new BasicAWSCredentials(
-                    System.getProperty(ACCESS_KEY_SYSTEM_PROPERTY),
-                    System.getProperty(SECRET_KEY_SYSTEM_PROPERTY));
+                    accessKey,
+                    secretKey);
         }
 
         throw new AmazonClientException(
