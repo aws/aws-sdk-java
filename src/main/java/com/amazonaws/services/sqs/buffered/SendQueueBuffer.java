@@ -481,11 +481,14 @@ public class SendQueueBuffer {
 
             List<SendMessageBatchRequestEntry> entries = new ArrayList<SendMessageBatchRequestEntry>(
                     requests.size());
-            for (int i = 0, n = requests.size(); i < n; i++)
-                entries.add(new SendMessageBatchRequestEntry()
-                        .withId(Integer.toString(i))
-                        .withMessageBody(requests.get(i).getMessageBody())
-                        .withDelaySeconds(requests.get(i).getDelaySeconds()));
+            for (int i = 0, n = requests.size(); i < n; i++) {
+              entries.add(new SendMessageBatchRequestEntry()
+                      .withId(Integer.toString(i))
+                      .withMessageBody(requests.get(i).getMessageBody())
+                      .withDelaySeconds(requests.get(i).getDelaySeconds())
+                      .withMessageAttributes(requests.get(i).getMessageAttributes())
+                      );
+            }
             batchRequest.setEntries(entries);
 
             SendMessageBatchResult batchResult = sqsClient
