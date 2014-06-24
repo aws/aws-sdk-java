@@ -1352,7 +1352,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
             }
 
-            if (!skipContentMd5Check) {
+            if (metadata.getContentMD5() == null && !skipContentMd5Check) {
                 try {
                     String contentMd5_b64 = Md5Utils.md5AsBase64(file);
                     metadata.setContentMD5(contentMd5_b64);
@@ -3819,5 +3819,5 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // https://github.com/aws/aws-sdk-java/pull/215
         // http://aws.amazon.com/articles/1109#14
         req.addHeader(Headers.CONTENT_LENGTH, String.valueOf(0));
-    }
+   }
 }
