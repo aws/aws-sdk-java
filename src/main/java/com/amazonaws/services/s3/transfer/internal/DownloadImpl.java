@@ -14,35 +14,39 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import java.io.File;
 import java.io.IOException;
 
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListenerChain;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.Download;
+import com.amazonaws.services.s3.transfer.PersistableDownload;
 import com.amazonaws.services.s3.transfer.TransferProgress;
+import com.amazonaws.services.s3.transfer.exception.PauseException;
 
 public class DownloadImpl extends AbstractTransfer implements Download {
-    
+
     S3Object s3Object;
 
+    /**
+     * Information to resume if the download is paused.
+     */
+    private final PersistableDownload persistableDownload;
+
     public DownloadImpl(String description, TransferProgress transferProgress,
-            ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener) {
+            ProgressListenerChain progressListenerChain, S3Object s3Object,
+            TransferStateChangeListener listener,
+            GetObjectRequest getObjectRequest, File file) {
         super(description, transferProgress, progressListenerChain, listener);
         this.s3Object = s3Object;
+        this.persistableDownload = captureDownloadState(getObjectRequest, file);
+        S3ProgressPublisher.publishTransferPersistable(progressListenerChain,
+                persistableDownload);
     }
-    
-    /**
-     * @deprecated Replaced by {@link #DownloadImpl(String, TransferProgress, ProgressListenerChain, S3Object, TransferStateChangeListener)}
-     */
-    @Deprecated
-    public DownloadImpl(String description, TransferProgress transferProgress,
-            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener) {
-        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(), 
-                s3Object, listener);
-    }
-    
+
     /**
      * Returns the ObjectMetadata for the object being downloaded.
      *
@@ -76,40 +80,36 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      * @throws IOException
      */
     public synchronized void abort() throws IOException {
-        
+
         this.monitor.getFuture().cancel(true);
-        
+
         if ( s3Object != null ) {
               s3Object.getObjectContent().abort();
         }
         setState(TransferState.Canceled);
     }
-    
+
     /**
      * Cancels this download, but skip notifying the state change listeners.
-     * 
+     *
      * @throws IOException
      */
     public synchronized void abortWithoutNotifyingStateChangeListener() throws IOException {
-        
+
         this.monitor.getFuture().cancel(true);
-        
-        if ( s3Object != null ) {
-              s3Object.getObjectContent().abort();
-        }
-        
+
         synchronized (this) {
             this.state = TransferState.Canceled;
         }
     }
-    
+
     /**
      *  Set the S3 object to download.
      */
     public synchronized void setS3Object(S3Object s3Object) {
         this.s3Object = s3Object;
     }
-    
+
     /**
      * This method is also responsible for firing COMPLETED signal to the
      * listeners.
@@ -117,9 +117,44 @@ public class DownloadImpl extends AbstractTransfer implements Download {
     @Override
     public void setState(TransferState state) {
         super.setState(state);
-        
+
         if (state == TransferState.Completed) {
             fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
         }
+    }
+
+    /**
+     * Returns the captured state of the download; or null if it should not be
+     * captured (for security reason).
+     */
+    private PersistableDownload captureDownloadState(
+            final GetObjectRequest getObjectRequest, final File file) {
+        if (getObjectRequest.getSSECustomerKey() == null) {
+            return new PersistableDownload(
+                    getObjectRequest.getBucketName(),
+                    getObjectRequest.getKey(), getObjectRequest.getVersionId(),
+                    getObjectRequest.getRange(),
+                    getObjectRequest.getResponseHeaders(),
+                    getObjectRequest.isRequesterPays(), file.getAbsolutePath());
+        }
+        return null;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see com.amazonaws.services.s3.transfer.Download#pause()
+     */
+    @Override
+    public PersistableDownload pause() throws PauseException {
+        boolean forceCancel = true;
+        TransferState currentState = getState();
+        this.monitor.getFuture().cancel(true);
+
+        if (persistableDownload == null) {
+            throw new PauseException(TransferManagerUtils.determinePauseStatus(
+                    currentState, forceCancel));
+        }
+        return persistableDownload;
     }
 }

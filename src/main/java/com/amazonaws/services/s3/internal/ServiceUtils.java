@@ -51,6 +51,10 @@ import com.amazonaws.util.Md5Utils;
 public class ServiceUtils {
     private static final Log log = LogFactory.getLog(ServiceUtils.class);
 
+    public static final boolean APPEND_MODE = true;
+
+    public static final boolean OVERWRITE_MODE = false;
+
     @Deprecated
     protected static final DateUtils dateUtils = new DateUtils();
 
@@ -225,10 +229,14 @@ public class ServiceUtils {
      * @param destinationFile
      *            The file to store the object's data in.
      * @param performIntegrityCheck
-     *            Boolean valuable to indicate whether do the integrity check or not
+     *            Boolean valuable to indicate whether to perform integrity check
+     * @param appendData
+     *            appends the data to end of the file.
      *
      */
-    public static void downloadObjectToFile(S3Object s3Object, File destinationFile, boolean performIntegrityCheck) {
+    public static void downloadObjectToFile(S3Object s3Object,
+            File destinationFile, boolean performIntegrityCheck,
+            boolean appendData) {
 
         // attempt to create the parent if it doesn't exist
         File parentDirectory = destinationFile.getParentFile();
@@ -238,7 +246,8 @@ public class ServiceUtils {
 
         OutputStream outputStream = null;
         try {
-            outputStream = new BufferedOutputStream(new FileOutputStream(destinationFile));
+            outputStream = new BufferedOutputStream(new FileOutputStream(
+                    destinationFile, appendData));
             byte[] buffer = new byte[1024*10];
             int bytesRead;
             while ((bytesRead = s3Object.getObjectContent().read(buffer)) > -1) {
@@ -308,7 +317,8 @@ public class ServiceUtils {
      * 			The implementation of SafeS3DownloadTask interface which allows user to
      * 			get access to all the visible variables at the calling site of this method.
      */
-    public static S3Object retryableDownloadS3ObjectToFile (File file, RetryableS3DownloadTask retryableS3DownloadTask) {
+    public static S3Object retryableDownloadS3ObjectToFile(File file,
+            RetryableS3DownloadTask retryableS3DownloadTask, boolean appendData) {
         boolean hasRetried = false;
         boolean needRetry;
         S3Object s3Object;
@@ -319,7 +329,9 @@ public class ServiceUtils {
                 return null;
 
             try {
-                ServiceUtils.downloadObjectToFile(s3Object, file, retryableS3DownloadTask.needIntegrityCheck());
+                ServiceUtils.downloadObjectToFile(s3Object, file,
+                        retryableS3DownloadTask.needIntegrityCheck(),
+                        appendData);
             } catch (AmazonClientException ace) {
                 if (!ace.isRetryable())
                     throw ace;

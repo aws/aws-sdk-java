@@ -859,7 +859,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
 
     /**
      * Sets the optional progress listener for receiving updates about object
-     * download status.
+     * upload status.
      *
      * @param generalProgressListener
      *            The new progress listener.
@@ -870,10 +870,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
 
     /**
      * Returns the optional progress listener for receiving updates about object
-     * download status.
+     * upload status.
      *
      * @return the optional progress listener for receiving updates about object
-     *          download status.
+     *          upload status.
      */
     public ProgressListener getGeneralProgressListener() {
         return generalProgressListener;

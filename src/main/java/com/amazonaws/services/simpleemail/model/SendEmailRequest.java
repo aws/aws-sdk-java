@@ -81,11 +81,11 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> replyToAddresses;
 
     /**
-     * The email address to which bounce notifications are to be forwarded.
-     * If the message cannot be delivered to the recipient, then an error
-     * message will be returned from the recipient's ISP; this message will
-     * then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter.
+     * The email address to which bounces and complaints are to be forwarded
+     * when feedback forwarding is enabled. If the message cannot be
+     * delivered to the recipient, then an error message will be returned
+     * from the recipient's ISP; this message will then be forwarded to the
+     * email address specified by the <code>ReturnPath</code> parameter.
      */
     private String returnPath;
 
@@ -322,53 +322,53 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * The email address to which bounce notifications are to be forwarded.
-     * If the message cannot be delivered to the recipient, then an error
-     * message will be returned from the recipient's ISP; this message will
-     * then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter.
+     * The email address to which bounces and complaints are to be forwarded
+     * when feedback forwarding is enabled. If the message cannot be
+     * delivered to the recipient, then an error message will be returned
+     * from the recipient's ISP; this message will then be forwarded to the
+     * email address specified by the <code>ReturnPath</code> parameter.
      *
-     * @return The email address to which bounce notifications are to be forwarded.
-     *         If the message cannot be delivered to the recipient, then an error
-     *         message will be returned from the recipient's ISP; this message will
-     *         then be forwarded to the email address specified by the
-     *         <code>ReturnPath</code> parameter.
+     * @return The email address to which bounces and complaints are to be forwarded
+     *         when feedback forwarding is enabled. If the message cannot be
+     *         delivered to the recipient, then an error message will be returned
+     *         from the recipient's ISP; this message will then be forwarded to the
+     *         email address specified by the <code>ReturnPath</code> parameter.
      */
     public String getReturnPath() {
         return returnPath;
     }
     
     /**
-     * The email address to which bounce notifications are to be forwarded.
-     * If the message cannot be delivered to the recipient, then an error
-     * message will be returned from the recipient's ISP; this message will
-     * then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter.
+     * The email address to which bounces and complaints are to be forwarded
+     * when feedback forwarding is enabled. If the message cannot be
+     * delivered to the recipient, then an error message will be returned
+     * from the recipient's ISP; this message will then be forwarded to the
+     * email address specified by the <code>ReturnPath</code> parameter.
      *
-     * @param returnPath The email address to which bounce notifications are to be forwarded.
-     *         If the message cannot be delivered to the recipient, then an error
-     *         message will be returned from the recipient's ISP; this message will
-     *         then be forwarded to the email address specified by the
-     *         <code>ReturnPath</code> parameter.
+     * @param returnPath The email address to which bounces and complaints are to be forwarded
+     *         when feedback forwarding is enabled. If the message cannot be
+     *         delivered to the recipient, then an error message will be returned
+     *         from the recipient's ISP; this message will then be forwarded to the
+     *         email address specified by the <code>ReturnPath</code> parameter.
      */
     public void setReturnPath(String returnPath) {
         this.returnPath = returnPath;
     }
     
     /**
-     * The email address to which bounce notifications are to be forwarded.
-     * If the message cannot be delivered to the recipient, then an error
-     * message will be returned from the recipient's ISP; this message will
-     * then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter.
+     * The email address to which bounces and complaints are to be forwarded
+     * when feedback forwarding is enabled. If the message cannot be
+     * delivered to the recipient, then an error message will be returned
+     * from the recipient's ISP; this message will then be forwarded to the
+     * email address specified by the <code>ReturnPath</code> parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param returnPath The email address to which bounce notifications are to be forwarded.
-     *         If the message cannot be delivered to the recipient, then an error
-     *         message will be returned from the recipient's ISP; this message will
-     *         then be forwarded to the email address specified by the
-     *         <code>ReturnPath</code> parameter.
+     * @param returnPath The email address to which bounces and complaints are to be forwarded
+     *         when feedback forwarding is enabled. If the message cannot be
+     *         delivered to the recipient, then an error message will be returned
+     *         from the recipient's ISP; this message will then be forwarded to the
+     *         email address specified by the <code>ReturnPath</code> parameter.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

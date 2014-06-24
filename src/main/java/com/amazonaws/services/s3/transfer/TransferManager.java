@@ -14,6 +14,9 @@
  */
 package com.amazonaws.services.s3.transfer;
 
+import static com.amazonaws.services.s3.internal.ServiceUtils.APPEND_MODE;
+import static com.amazonaws.services.s3.internal.ServiceUtils.OVERWRITE_MODE;
+
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -73,6 +76,8 @@ import com.amazonaws.services.s3.transfer.internal.MultipleFileTransferMonitor;
 import com.amazonaws.services.s3.transfer.internal.MultipleFileUploadImpl;
 import com.amazonaws.services.s3.transfer.internal.TransferManagerUtils;
 import com.amazonaws.services.s3.transfer.internal.TransferProgressImpl;
+import com.amazonaws.services.s3.transfer.internal.S3ProgressListener;
+import com.amazonaws.services.s3.transfer.internal.S3ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.internal.TransferProgressUpdatingListener;
 import com.amazonaws.services.s3.transfer.internal.TransferStateChangeListener;
 import com.amazonaws.services.s3.transfer.internal.UploadCallable;
@@ -399,8 +404,48 @@ public class TransferManager {
      *             request.
      */
     public Upload upload(final PutObjectRequest putObjectRequest)
-        throws AmazonServiceException, AmazonClientException {
-        return upload(putObjectRequest, null);
+            throws AmazonServiceException, AmazonClientException {
+        return doUpload(putObjectRequest, null, null, null);
+    }
+
+    /**
+     * <p>
+     * Schedules a new transfer to upload data to Amazon S3. This method is
+     * non-blocking and returns immediately (i.e. before the upload has
+     * finished).
+     * </p>
+     * <p>
+     * Use the returned <code>Upload</code> object to query the progress of the
+     * transfer, add listeners for progress events, and wait for the upload to
+     * complete.
+     * </p>
+     * <p>
+     * If resources are available, the upload will begin immediately. Otherwise,
+     * the upload is scheduled and started as soon as resources become
+     * available.
+     * </p>
+     *
+     * @param putObjectRequest
+     *            The request containing all the parameters for the upload.
+     * @param progressListener
+     *            An optional callback listener to receive the progress of the
+     *            upload.
+     *
+     * @return A new <code>Upload</code> object to use to check the state of the
+     *         upload, listen for progress notifications, and otherwise manage
+     *         the upload.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Upload upload(final PutObjectRequest putObjectRequest,
+            final S3ProgressListener progressListener)
+            throws AmazonServiceException, AmazonClientException {
+        return doUpload(putObjectRequest, null, progressListener, null);
     }
 
     /**
@@ -424,6 +469,10 @@ public class TransferManager {
      *            The request containing all the parameters for the upload.
      * @param stateListener
      *            The transfer state change listener to monitor the upload.
+     * @param progressListener
+     *            An optional callback listener to receive the progress of the
+     *            upload.
+     *
      * @return A new <code>Upload</code> object to use to check the state of the
      *         upload, listen for progress notifications, and otherwise manage
      *         the upload.
@@ -435,45 +484,62 @@ public class TransferManager {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    private Upload upload(final PutObjectRequest putObjectRequest, final TransferStateChangeListener stateListener)
-            throws AmazonServiceException, AmazonClientException {
+    private Upload doUpload(final PutObjectRequest putObjectRequest,
+            final TransferStateChangeListener stateListener,
+            final S3ProgressListener progressListener,
+            final PersistableUpload persistableUpload) throws AmazonServiceException,
+            AmazonClientException {
 
-            appendUserAgent(putObjectRequest, USER_AGENT);
+        appendUserAgent(putObjectRequest, USER_AGENT);
 
-            if (putObjectRequest.getMetadata() == null)
-                putObjectRequest.setMetadata(new ObjectMetadata());
-            ObjectMetadata metadata = putObjectRequest.getMetadata();
+        String multipartUploadId = persistableUpload != null ? persistableUpload
+                .getMultipartUploadId() : null;
 
-            if ( TransferManagerUtils.getRequestFile(putObjectRequest) != null ) {
-                File file = TransferManagerUtils.getRequestFile(putObjectRequest);
+        if (putObjectRequest.getMetadata() == null)
+            putObjectRequest.setMetadata(new ObjectMetadata());
+        ObjectMetadata metadata = putObjectRequest.getMetadata();
 
-                // Always set the content length, even if it's already set
-                metadata.setContentLength(file.length());
+        File file = TransferManagerUtils.getRequestFile(putObjectRequest);
 
-                // Only set the content type if it hasn't already been set
-                if ( metadata.getContentType() == null ) {
-                    metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
-                }
+        if ( file != null ) {
+            // Always set the content length, even if it's already set
+            metadata.setContentLength(file.length());
+
+            // Only set the content type if it hasn't already been set
+            if ( metadata.getContentType() == null ) {
+                metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
             }
-
-            String description = "Uploading to " + putObjectRequest.getBucketName() + "/" + putObjectRequest.getKey();
-            TransferProgressImpl transferProgress = new TransferProgressImpl();
-            transferProgress.setTotalBytesToTransfer(TransferManagerUtils.getContentLength(putObjectRequest));
-
-            ProgressListenerChain listenerChain = new ProgressListenerChain(new TransferProgressUpdatingListener(
-                    transferProgress), putObjectRequest.getGeneralProgressListener());
-            putObjectRequest.setGeneralProgressListener(listenerChain);
-
-            UploadImpl upload = new UploadImpl(description, transferProgress, listenerChain, stateListener);
-
-            UploadCallable uploadCallable = new UploadCallable(this, threadPool, upload, putObjectRequest, listenerChain);
-            UploadMonitor watcher = new UploadMonitor(this, upload, threadPool, uploadCallable, putObjectRequest, listenerChain);
-            watcher.setTimedThreadPool(timedThreadPool);
-            upload.setMonitor(watcher);
-
-            return upload;
+        } else {
+            if (multipartUploadId != null) {
+                throw new IllegalArgumentException(
+                        "Unable to resume the upload. No file specified.");
+            }
         }
 
+        String description = "Uploading to " + putObjectRequest.getBucketName()
+                + "/" + putObjectRequest.getKey();
+        TransferProgressImpl transferProgress = new TransferProgressImpl();
+        transferProgress.setTotalBytesToTransfer(TransferManagerUtils
+                .getContentLength(putObjectRequest));
+
+        S3ProgressListenerChain listenerChain = new S3ProgressListenerChain(
+                new TransferProgressUpdatingListener(transferProgress),
+                putObjectRequest.getGeneralProgressListener(), progressListener);
+
+        putObjectRequest.setGeneralProgressListener(listenerChain);
+
+        UploadImpl upload = new UploadImpl(description, transferProgress,
+                listenerChain, stateListener);
+
+        UploadCallable uploadCallable = new UploadCallable(this, threadPool,
+                upload, putObjectRequest, listenerChain, multipartUploadId);
+        UploadMonitor watcher = new UploadMonitor(this, upload, threadPool,
+                uploadCallable, putObjectRequest, listenerChain);
+        watcher.setTimedThreadPool(timedThreadPool);
+        upload.setMonitor(watcher);
+
+        return upload;
+    }
 
     /**
      * Schedules a new transfer to download data from Amazon S3 and save it to
@@ -530,7 +596,40 @@ public class TransferManager {
      *             request.
      */
     public Download download(final GetObjectRequest getObjectRequest, final File file) {
-        return download(getObjectRequest, file, null);
+        return doDownload(getObjectRequest, file, null, null, OVERWRITE_MODE);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     *
+     * @param getObjectRequest
+     *            The request containing all the parameters for the download.
+     * @param file
+     *            The file to download the object data to.
+     * @param progressListener
+     *            An optional callback listener to get the progress of the
+     *            download.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(final GetObjectRequest getObjectRequest,
+            final File file, final S3ProgressListener progressListener) {
+        return doDownload(getObjectRequest, file, null, progressListener,
+                OVERWRITE_MODE);
     }
 
     /**
@@ -539,18 +638,20 @@ public class TransferManager {
      *
      * @see TransferManager#download(GetObjectRequest, File)
      */
-    private Download download(final GetObjectRequest getObjectRequest,
-                              final File file,
-                              final TransferStateChangeListener stateListener) {
+    private Download doDownload(final GetObjectRequest getObjectRequest,
+            final File file, final TransferStateChangeListener stateListener,
+            final S3ProgressListener s3progressListener,
+            final boolean resumeExistingDownload) {
 
         appendUserAgent(getObjectRequest, USER_AGENT);
 
         String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
 
         TransferProgressImpl transferProgress = new TransferProgressImpl();
-        ProgressListenerChain listenerChain = new ProgressListenerChain(
+        S3ProgressListenerChain listenerChain = new S3ProgressListenerChain(
                 new TransferProgressUpdatingListener(transferProgress),   // The listener for updating transfer progress
-                getObjectRequest.getGeneralProgressListener());           // Listeners included in the original request
+                getObjectRequest.getGeneralProgressListener(), 
+                s3progressListener);           // Listeners included in the original request
 
         // The listener chain used by the low-level GetObject request.
         // This listener chain ignores any COMPLETE event, so that we could
@@ -578,12 +679,31 @@ public class TransferManager {
 
         final StartDownloadLock startDownloadLock = new StartDownloadLock();
         // We still pass the unfiltered listener chain into DownloadImpl
-        final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null, stateListener);
+        final DownloadImpl download = new DownloadImpl(description,
+                transferProgress, listenerChain, null, stateListener,
+                getObjectRequest, file);
         long contentLength = objectMetadata.getContentLength();
-        if (getObjectRequest.getRange() != null && getObjectRequest.getRange().length == 2) {
-            long startingByte = getObjectRequest.getRange()[0];
-            long lastByte     = getObjectRequest.getRange()[1];
-            contentLength     = lastByte - startingByte;
+
+        long startingByte = 0;
+        long lastByte = contentLength;
+
+        if (getObjectRequest.getRange() != null
+                && getObjectRequest.getRange().length == 2) {
+            startingByte = getObjectRequest.getRange()[0];
+            lastByte = getObjectRequest.getRange()[1];
+        }
+        if (resumeExistingDownload) {
+            if (file.exists()) {
+                long numberOfBytesRead = file.length();
+                startingByte = startingByte + numberOfBytesRead;
+                getObjectRequest.setRange(startingByte, lastByte);
+            }
+        }
+        contentLength = lastByte - startingByte;
+
+        if (contentLength < 0) {
+            throw new IllegalArgumentException(
+                    "Unable to determine the range for download operation.");
         }
 
         transferProgress.setTotalBytesToTransfer(contentLength);
@@ -621,7 +741,7 @@ public class TransferManager {
                             if (s3 instanceof AmazonS3EncryptionClient) performIntegrityCheck = false;
                             return performIntegrityCheck;
                         }
-                    });
+                    }, resumeExistingDownload);
 
 
                     if (s3Object == null) {
@@ -742,13 +862,13 @@ public class TransferManager {
             // All the single-file downloads share the same
             // MultipleFileTransferProgressUpdatingListener and
             // MultipleFileTransferStateChangeListener
-            downloads.add((DownloadImpl) download(
+            downloads.add((DownloadImpl) doDownload(
                             new GetObjectRequest(summary.getBucketName(),
                                     summary.getKey())
                                     .withGeneralProgressListener(
                                             multipleFileTransferProgressListener),
                             f,
-                            multipleFileTransferStateChangeListener));
+                            multipleFileTransferStateChangeListener, null, false));
         }
 
         if ( downloads.isEmpty() ) {
@@ -1018,13 +1138,13 @@ public class TransferManager {
                 // All the single-file uploads share the same
                 // MultipleFileTransferProgressUpdatingListener and
                 // MultipleFileTransferStateChangeListener
-                uploads.add((UploadImpl) upload(
+                uploads.add((UploadImpl) doUpload(
                         new PutObjectRequest(bucketName,
                                 virtualDirectoryKeyPrefix + key, f)
                                 .withMetadata(metadata)
                                 .withGeneralProgressListener(
                                         multipleFileTransferProgressListener),
-                        multipleFileTransferStateChangeListener));
+                        multipleFileTransferStateChangeListener, null, null));
             }
         }
 
@@ -1325,6 +1445,72 @@ public class TransferManager {
         watcher.setTimedThreadPool(timedThreadPool);
         copy.setMonitor(watcher);
         return copy;
+    }
+
+    /**
+     * Resumes an upload operation. This upload operation uses the same
+     * configuration {@link TransferManagerConfiguration} as the original
+     * upload. Any data already uploaded will be skipped, and only the remaining
+     * will be uploaded to Amazon S3.
+     *
+     * @param persistableUpload
+     *            the upload to resume.
+     * @return A new <code>Upload</code> object to use to check the state of the
+     *         upload, listen for progress notifications, and otherwise manage
+     *         the upload.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Upload resumeUpload(PersistableUpload persistableUpload) {
+        assertParameterNotNull(persistableUpload,
+                "PauseUpload is mandatory to resume a upload.");
+        configuration.setMinimumUploadPartSize(persistableUpload.getPartSize());
+        configuration.setMultipartUploadThreshold(persistableUpload
+                .getMutlipartUploadThreshold());
+        return doUpload(new PutObjectRequest(persistableUpload.getBucketName(),
+                persistableUpload.getKey(), new File(persistableUpload.getFile())), null, null,
+                persistableUpload);
+    }
+
+    /**
+     * Resumes an download operation. This download operation uses the same
+     * configuration as the original download. Any data already fetched will be
+     * skipped, and only the remaining data is retrieved from Amazon S3.
+     *
+     * @param persistableDownload
+     *            the download to resume.
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download resumeDownload(PersistableDownload persistableDownload) {
+        assertParameterNotNull(persistableDownload,
+                "PausedDownload is mandatory to resume a download.");
+        GetObjectRequest request = new GetObjectRequest(
+                persistableDownload.getBucketName(), persistableDownload.getKey(),
+                persistableDownload.getVersionId());
+        if (persistableDownload.getRange() != null
+                && persistableDownload.getRange().length == 2) {
+            long[] range = persistableDownload.getRange();
+            request.setRange(range[0], range[1]);
+        }
+        request.setRequesterPays(persistableDownload.isRequesterPays());
+        request.setResponseHeaders(persistableDownload.getResponseHeaders());
+
+        return doDownload(request, new File(persistableDownload.getFile()), null, null,
+                APPEND_MODE);
     }
 
     /**

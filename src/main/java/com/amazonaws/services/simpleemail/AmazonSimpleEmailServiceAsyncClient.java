@@ -640,8 +640,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * For more information about using notifications with Amazon SES, see
+     * the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"> Amazon SES Developer Guide </a>
      * .
      * </p>
      *
@@ -680,8 +681,9 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * For more information about using notifications with Amazon SES, see
+     * the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"> Amazon SES Developer Guide </a>
      * .
      * </p>
      *
@@ -1087,6 +1089,11 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * Amazon SES repeatedly to send the message to each group.
      * </p>
      * <p>
+     * The To:, CC:, and BCC: headers in the raw message can contain a group
+     * list. Note that each recipient in a group list counts towards the
+     * 50-recipient limit.
+     * </p>
+     * <p>
      * For every message that you send, the total number of recipients (To:,
      * CC: and BCC:) is counted against your <i>sending quota</i> - the
      * maximum number of emails you can send in a 24-hour period. For
@@ -1143,6 +1150,11 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * 50. If you need to send an email message to a larger audience, you can
      * divide your recipient list into groups of 50 or fewer, and then call
      * Amazon SES repeatedly to send the message to each group.
+     * </p>
+     * <p>
+     * The To:, CC:, and BCC: headers in the raw message can contain a group
+     * list. Note that each recipient in a group list counts towards the
+     * 50-recipient limit.
      * </p>
      * <p>
      * For every message that you send, the total number of recipients (To:,
@@ -1566,16 +1578,23 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
     /**
      * <p>
      * Given an identity (email address or domain), enables or disables
-     * whether Amazon SES forwards feedback notifications as email. Feedback
-     * forwarding may only be disabled when both complaint and bounce topics
-     * are set.
+     * whether Amazon SES forwards bounce and complaint notifications as
+     * email. Feedback forwarding can only be disabled when Amazon Simple
+     * Notification Service (Amazon SNS) topics are specified for both
+     * bounces and complaints.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Feedback forwarding does not apply to delivery
+     * notifications. Delivery notifications are only available through
+     * Amazon SNS.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * For more information about using notifications with Amazon SES, see
+     * the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"> Amazon SES Developer Guide </a>
      * .
      * </p>
      *
@@ -1609,16 +1628,23 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
     /**
      * <p>
      * Given an identity (email address or domain), enables or disables
-     * whether Amazon SES forwards feedback notifications as email. Feedback
-     * forwarding may only be disabled when both complaint and bounce topics
-     * are set.
+     * whether Amazon SES forwards bounce and complaint notifications as
+     * email. Feedback forwarding can only be disabled when Amazon Simple
+     * Notification Service (Amazon SNS) topics are specified for both
+     * bounces and complaints.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Feedback forwarding does not apply to delivery
+     * notifications. Delivery notifications are only available through
+     * Amazon SNS.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * For more information about using notifications with Amazon SES, see
+     * the
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"> Amazon SES Developer Guide </a>
      * .
      * </p>
      *
@@ -1965,18 +1991,22 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
     
     /**
      * <p>
-     * Given an identity (email address or domain), sets the Amazon SNS
-     * topic to which Amazon SES will publish bounce and complaint
-     * notifications for emails sent with that identity as the
-     * <code>Source</code> . Publishing to topics may only be disabled when
-     * feedback forwarding is enabled.
+     * Given an identity (email address or domain), sets the Amazon Simple
+     * Notification Service (Amazon SNS) topic to which Amazon SES will
+     * publish bounce, complaint, and/or delivery notifications for emails
+     * sent with that identity as the <code>Source</code> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Unless feedback forwarding is enabled, you must specify
+     * Amazon SNS topics for bounce and complaint notifications. For more
+     * information, see SetIdentityFeedbackForwardingEnabled.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * <p>
      * For more information about feedback notification, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"> Amazon SES Developer Guide </a>
      * .
      * </p>
      *
@@ -2008,18 +2038,22 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Given an identity (email address or domain), sets the Amazon SNS
-     * topic to which Amazon SES will publish bounce and complaint
-     * notifications for emails sent with that identity as the
-     * <code>Source</code> . Publishing to topics may only be disabled when
-     * feedback forwarding is enabled.
+     * Given an identity (email address or domain), sets the Amazon Simple
+     * Notification Service (Amazon SNS) topic to which Amazon SES will
+     * publish bounce, complaint, and/or delivery notifications for emails
+     * sent with that identity as the <code>Source</code> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Unless feedback forwarding is enabled, you must specify
+     * Amazon SNS topics for bounce and complaint notifications. For more
+     * information, see SetIdentityFeedbackForwardingEnabled.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * <p>
      * For more information about feedback notification, see the
-     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"> Amazon SES Developer Guide </a>
      * .
      * </p>
      *

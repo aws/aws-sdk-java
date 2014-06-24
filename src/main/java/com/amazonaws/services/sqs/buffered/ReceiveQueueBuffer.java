@@ -13,8 +13,6 @@
  * permissions and limitations under the License.
  */
 
-
-
 package com.amazonaws.services.sqs.buffered;
 
 import java.util.ArrayList;
@@ -28,8 +26,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequest;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequestEntry;
@@ -43,7 +39,7 @@ import com.amazonaws.services.sqs.model.ReceiveMessageResult;
  * and keeps them in a buffer which it uses to satisfy incoming requests.  The number of requests
  * pre-fetched and kept in the buffer, as well as the maximum number of threads used to retrieve
  * the messages are configurable. <p>
- * 
+ *
  *  Synchronization strategy:
  *  - Threads must hold the TaskSpawnSyncPoint object monitor to spawn a new task or modify
  *    the number of inflight tasks
@@ -53,19 +49,19 @@ import com.amazonaws.services.sqs.model.ReceiveMessageResult;
  *    finishedTasks second
  * */
 public class ReceiveQueueBuffer {
-    
+
     private static Log log = LogFactory.getLog(ReceiveQueueBuffer.class);
-    
+
     private final QueueBufferConfig config;
-    
+
     private final String qUrl;
-    
+
     private final Executor executor;
-    
+
     private final AmazonSQS sqsClient;
-    
+
     private long bufferCounter = 0;
-    
+
     /**
      * This buffer's queue visibility timeout. Used to detect expired message
      * that should not be returned by the {@code receiveMessage} call.
@@ -79,34 +75,34 @@ public class ReceiveQueueBuffer {
      * Synchronized by {@code taskSpawnSyncPoint}.
      */
     private volatile int inflightReceiveMessageBatches;
-    
+
     /**
      * synchronize on this object to create new receive batches or modify
      * inflight message count
      */
     private final Object taskSpawnSyncPoint = new Object();
-    
-    
+
+
     /** shutdown buffer does not retrieve any more messages from sqs */
     volatile boolean shutDown = false;
-    
-    /** message delivery futures we gave out */ 
+
+    /** message delivery futures we gave out */
     private final LinkedList< ReceiveMessageFuture > futures = new LinkedList<ReceiveMessageFuture>();
-    
+
     /** finished batches are stored in this list. */
     private LinkedList<ReceiveMessageBatchTask> finishedTasks = new LinkedList<ReceiveMessageBatchTask>();
-        
+
     ReceiveQueueBuffer( AmazonSQS paramSQS, Executor paramExecutor, QueueBufferConfig paramConfig, String url ) {
         config = paramConfig;
         executor = paramExecutor;
         sqsClient = paramSQS;
         qUrl = url;
-        
+
     }
-    
+
     /**
      * Prevents spawning of new retrieval batches and waits for all in-flight
-     * retrieval batches to finish 
+     * retrieval batches to finish
      * */
     public void shutdown() {
         shutDown = true;
@@ -117,41 +113,41 @@ public class ReceiveQueueBuffer {
             Thread.currentThread().interrupt();
         }
     }
-    
+
     /**
      * Submits the request for retrieval of messages from the queue and returns
      * a future that will be signalled when the request is satisfied.  The future
      * may already be signalled by the time it is returned.
-     * 
+     *
      * @return never null
      * */
-    public QueueBufferFuture<ReceiveMessageRequest, ReceiveMessageResult > 
+    public QueueBufferFuture<ReceiveMessageRequest, ReceiveMessageResult >
         receiveMessageAsync( ReceiveMessageRequest rq, QueueBufferCallback<ReceiveMessageRequest, ReceiveMessageResult > callback ) {
-        
+
         if (shutDown) {
             throw new AmazonClientException("The client has been shut down.");
         }
-        
+
         //issue the future...
         int numMessages = 10;
         if ( rq.getMaxNumberOfMessages() != null ) {
             numMessages = rq.getMaxNumberOfMessages();
         }
         QueueBufferFuture<ReceiveMessageRequest,ReceiveMessageResult> toReturn = issueFuture(numMessages, callback);
-        
+
         //attempt to satisfy it right away...
         satisfyFuturesFromBuffer();
-        
+
         //spawn more receive tasks if we need them...
         spawnMoreReceiveTasks();
-        
+
         return toReturn;
     }
-    
+
     /**
      * Creates and returns a new future object. Sleeps if the list of
      * already-issued but as yet unsatisfied futures is over a throttle limit.
-     * 
+     *
      * @return never null
      */
     private ReceiveMessageFuture issueFuture( int size, QueueBufferCallback<ReceiveMessageRequest, ReceiveMessageResult> callback) {
@@ -161,7 +157,7 @@ public class ReceiveQueueBuffer {
             return theFuture;
         }
     }
-    
+
     /**
      * Attempts to satisfy some or all of the already-issued futures from the
      * local buffer. If the buffer is empty or there are no futures, this method
@@ -179,33 +175,31 @@ public class ReceiveQueueBuffer {
             }
         }
     }
-    
-    /** 
-     * Fills the future with whatever results were received by the full batch 
+
+    /**
+     * Fills the future with whatever results were received by the full batch
      * currently at the head of the completed batch queue.  Those results may be retrieved
-     * messages, or an exception.  
-     * 
-     * this method assumes that you are holding the finished tasks lock 
-     * locks when invoking it.  violate this assumption at 
+     * messages, or an exception.
+     *
+     * this method assumes that you are holding the finished tasks lock
+     * locks when invoking it.  violate this assumption at
      * your own peril */
     private void fillFuture( ReceiveMessageFuture f ){
         ReceiveMessageResult r = new ReceiveMessageResult();
         LinkedList<Message> messages = new LinkedList<Message>();
         r.setMessages(messages);
         Exception exception = null;
-        
+
         if ( !finishedTasks.isEmpty() ) {
             ReceiveMessageBatchTask t = finishedTasks.getFirst();
-            
+
             exception = t.getException();
             int retrieved = 0;
-            
             boolean batchDone = false;
-            while (  retrieved < f.getRequestedSize() )  
+            while (  retrieved < f.getRequestedSize() )
             {
                 Message m = t.removeMessage();
-                
-                // a non-empty batch can still give back a null 
+                // a non-empty batch can still give back a null
                 // message if the message expired.
                 if ( null != m) {
                     messages.add(m);
@@ -215,31 +209,27 @@ public class ReceiveQueueBuffer {
                     batchDone = true;
                     break;
                 }
-                
+
             }
-            
             //we may have just drained the batch.
             batchDone = batchDone || t.isEmpty() || ( exception != null );
-            
             if ( batchDone) {
                 finishedTasks.removeFirst();
             }
             r.setMessages(messages);
         }
-        
-        //if after the above runs the exception is not null, 
+
+        //if after the above runs the exception is not null,
         //the finished batch has encountered an error, and we will
         //report that in the Future.  Otherwise, we will fill
         //the future with the receive result
-        
         if ( exception != null )
             f.setFailure(exception);
         else
             f.setSuccess(r);
-        
-        //now, a bit of maintenance.  remove empty non-exception-bearing 
+
+        //now, a bit of maintenance.  remove empty non-exception-bearing
         //batches so we can get new ones.
-        
         while ( !finishedTasks.isEmpty() ) {
             ReceiveMessageBatchTask t = finishedTasks.getFirst();
             if ( (!t.isEmpty()) || (t.getException() != null) ) {
@@ -247,31 +237,30 @@ public class ReceiveQueueBuffer {
                 //our cleanup is done
                 break;
             }
-            
             //throw away the empty batch.
             finishedTasks.removeFirst();
         }
     }
-    
+
     /**
      * maybe create more receive tasks. extra receive tasks won't be created if
      * we are already at the maximum number of receive tasks, or if we are at
      * the maximum number of prefetched buffers
      */
     private void spawnMoreReceiveTasks() {
-        
+
         if( shutDown )
             return;
 
         int desiredBatches = config.getMaxDoneReceiveBatches();
         desiredBatches = desiredBatches < 1 ? 1 : desiredBatches;
-        
+
         synchronized( finishedTasks ) {
             if (  finishedTasks.size() >= desiredBatches )
                 return;
-            
-            //if we have some finished batches already, and 
-            //existing inflight batches will bring us to the limit, 
+
+            //if we have some finished batches already, and
+            //existing inflight batches will bring us to the limit,
             //don't spawn more. if our finished tasks cache is empty, we will
             //always spawn a thread.
             if ( finishedTasks.size() > 0 && ( finishedTasks.size() + inflightReceiveMessageBatches ) >= desiredBatches )
@@ -289,27 +278,27 @@ public class ReceiveQueueBuffer {
             }
 
             int max = config.getMaxInflightReceiveBatches();
-            //must allow at least one inflight receive task, or receive won't 
+            //must allow at least one inflight receive task, or receive won't
             //work at all.
-            max = max > 0 ? max : 1; 
+            max = max > 0 ? max : 1;
             int toSpawn =  max - inflightReceiveMessageBatches;
             if (toSpawn > 0) {
                 ReceiveMessageBatchTask task = new ReceiveMessageBatchTask(this );
                 ++inflightReceiveMessageBatches;
                 ++bufferCounter;
                 if (log.isTraceEnabled()) {
-                    log.trace("Spawned receive batch #" + bufferCounter + " (" + inflightReceiveMessageBatches 
+                    log.trace("Spawned receive batch #" + bufferCounter + " (" + inflightReceiveMessageBatches
                             + " of " + max + " inflight) for queue " + qUrl);
                 }
                 executor.execute(task);
             }
         }
     }
-    
+
     /**
      * This method is called by the batches after they have finished retrieving
      * the messages.
-     * 
+     *
      * */
     void reportBatchFinished( ReceiveMessageBatchTask batch )
     {
@@ -319,17 +308,14 @@ public class ReceiveQueueBuffer {
                 log.info("Queue " + qUrl + " now has " + finishedTasks.size() + " receive results cached ");
             }
         }
-        
         synchronized( taskSpawnSyncPoint )    {
             --inflightReceiveMessageBatches;
         }
-        
         satisfyFuturesFromBuffer();
-        
         spawnMoreReceiveTasks();
     }
 
-    
+
     /**
      * Clears and nacks any pre-fetched messages in this buffer.
      */
@@ -340,7 +326,7 @@ public class ReceiveQueueBuffer {
             synchronized (finishedTasks) {
                 currentBatch = finishedTasks.poll();
             }
-            
+
             if ( currentBatch != null ) {
                 currentBatch.clear();
             } else {
@@ -350,16 +336,15 @@ public class ReceiveQueueBuffer {
         }
     }
 
-    
     private class ReceiveMessageFuture extends QueueBufferFuture < ReceiveMessageRequest, ReceiveMessageResult >
     {
         /* how many messages did the request ask for*/
         private int requestedSize;
-        
+
         ReceiveMessageFuture( int paramSize ) {
             this(null,paramSize);
         }
-        
+
         ReceiveMessageFuture( QueueBufferCallback<ReceiveMessageRequest,ReceiveMessageResult> cb, int paramSize ) {
             super(cb);
             requestedSize = paramSize;
@@ -368,9 +353,9 @@ public class ReceiveQueueBuffer {
         public int getRequestedSize() {
             return requestedSize;
         }
-        
+
     }
-    
+
     /**
      * Task to receive messages from SQS.
      * <p>
@@ -384,12 +369,11 @@ public class ReceiveQueueBuffer {
         private long visibilityDeadlineNano;
         private boolean open = false;
         private ReceiveQueueBuffer parentBuffer;
-        
 
         /**
          * Constructs a receive task waiting the specified time before calling
          * SQS.
-         * 
+         *
          * @param waitTimeMs
          *            the time to wait before calling SQS
          */
@@ -397,13 +381,13 @@ public class ReceiveQueueBuffer {
             parentBuffer = paramParentBuffer;
             messages = Collections.emptyList();
         }
-        
+
         synchronized int getSize()    {
             if (!open)
                 throw new IllegalStateException("batch is not open");
 
             return messages.size();
-            
+
         }
 
         synchronized boolean isEmpty() {
@@ -412,22 +396,21 @@ public class ReceiveQueueBuffer {
 
             return messages.isEmpty();
         }
-        
+
         /** @return the exception that was thrown during execution, or null
-         * if there was no exception */ 
+         * if there was no exception */
         synchronized Exception getException() {
             if (!open)
                 throw new IllegalStateException("batch is not open");
-            
+
             return exception;
         }
-        
-        
+
         /**
          * Returns a message if one is available.
          * <p>
          * The call adjusts the message count.
-         * 
+         *
          * @return a message or {@code null} if none is available
          */
         synchronized Message removeMessage() {
@@ -435,11 +418,11 @@ public class ReceiveQueueBuffer {
                 throw new IllegalStateException("batch is not open");
 
             // our messages expired.
-            if ( System.nanoTime() > visibilityDeadlineNano ) { 
+            if ( System.nanoTime() > visibilityDeadlineNano ) {
                 messages.clear();
                 return null;
             }
-            
+
             if (messages.isEmpty())
                 return null;
             else
@@ -458,19 +441,19 @@ public class ReceiveQueueBuffer {
                 .withQueueUrl(qUrl);
                 ResultConverter.appendUserAgent(batchRequest, AmazonSQSBufferedAsyncClient.USER_AGENT);
 
-                List<ChangeMessageVisibilityBatchRequestEntry> entries = 
+                List<ChangeMessageVisibilityBatchRequestEntry> entries =
                     new ArrayList<ChangeMessageVisibilityBatchRequestEntry>(messages.size());
 
                 int i = 0;
                 for (Message m : messages) {
-                        
+
                     entries.add(new ChangeMessageVisibilityBatchRequestEntry()
                             .withId(Integer.toString(i))
                             .withReceiptHandle(m.getReceiptHandle())
                             .withVisibilityTimeout(0));
                     ++i;
                 }
-                
+
                 try {
                     batchRequest.setEntries(entries);
                     sqsClient.changeMessageVisibilityBatch(batchRequest);
@@ -484,20 +467,20 @@ public class ReceiveQueueBuffer {
 
         /**
          * Attempts to retrieve messages from SQS and upon completion (successful or
-         * unsuccessful) reports the batch as complete and open 
+         * unsuccessful) reports the batch as complete and open
          * */
         public void run() {
-            
+
             try {
                 visibilityDeadlineNano = System.nanoTime() + visibilityTimeoutNanos;
                 ReceiveMessageRequest request = new ReceiveMessageRequest(qUrl).withMaxNumberOfMessages(config.getMaxBatchSize());
                 ResultConverter.appendUserAgent(request, AmazonSQSBufferedAsyncClient.USER_AGENT);
-                
+
                 if ( config.getVisibilityTimeoutSeconds() > 0 ) {
                     request.setVisibilityTimeout(config.getVisibilityTimeoutSeconds());
                     visibilityDeadlineNano = System.nanoTime() + TimeUnit.NANOSECONDS.convert(config.getVisibilityTimeoutSeconds(), TimeUnit.SECONDS);
                 }
-                
+
                 if ( config.isLongPoll() ) {
                     request.withWaitTimeSeconds(config.getLongPollWaitTimeoutSeconds());
                 }
@@ -510,7 +493,7 @@ public class ReceiveQueueBuffer {
                 open = true;
                 parentBuffer.reportBatchFinished(this);
             }
-            
+
         }
     }
 }  //end of ReceiveQueueBuffer

@@ -45,6 +45,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Amazon SES repeatedly to send the message to each group.
  * </p>
  * <p>
+ * The To:, CC:, and BCC: headers in the raw message can contain a group
+ * list. Note that each recipient in a group list counts towards the
+ * 50-recipient limit.
+ * </p>
+ * <p>
  * For every message that you send, the total number of recipients (To:,
  * CC: and BCC:) is counted against your <i>sending quota</i> - the
  * maximum number of emails you can send in a 24-hour period. For
@@ -64,15 +69,17 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * <note>If you specify the <code>Source</code> parameter, then bounce
-     * notifications and complaints will be sent to this email address. This
-     * takes precedence over any <i>Return-Path</i> header that you might
-     * include in the raw text of the message. </note>
+     * <note>If you specify the <code>Source</code> parameter and have
+     * feedback forwarding enabled, then bounces and complaints will be sent
+     * to this email address. This takes precedence over any
+     * <i>Return-Path</i> header that you might include in the raw text of
+     * the message. </note>
      */
     private String source;
 
     /**
-     * A list of destinations for the message.
+     * A list of destinations for the message, consisting of To:, CC:, and
+     * BCC: addresses.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> destinations;
 
@@ -122,10 +129,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * <note>If you specify the <code>Source</code> parameter, then bounce
-     * notifications and complaints will be sent to this email address. This
-     * takes precedence over any <i>Return-Path</i> header that you might
-     * include in the raw text of the message. </note>
+     * <note>If you specify the <code>Source</code> parameter and have
+     * feedback forwarding enabled, then bounces and complaints will be sent
+     * to this email address. This takes precedence over any
+     * <i>Return-Path</i> header that you might include in the raw text of
+     * the message. </note>
      *
      * @return The identity's email address. <p> By default, the string must be 7-bit
      *         ASCII. If the text must contain any other characters, then you must
@@ -133,10 +141,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      *         MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     *         <note>If you specify the <code>Source</code> parameter, then bounce
-     *         notifications and complaints will be sent to this email address. This
-     *         takes precedence over any <i>Return-Path</i> header that you might
-     *         include in the raw text of the message. </note>
+     *         <note>If you specify the <code>Source</code> parameter and have
+     *         feedback forwarding enabled, then bounces and complaints will be sent
+     *         to this email address. This takes precedence over any
+     *         <i>Return-Path</i> header that you might include in the raw text of
+     *         the message. </note>
      */
     public String getSource() {
         return source;
@@ -149,10 +158,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * <note>If you specify the <code>Source</code> parameter, then bounce
-     * notifications and complaints will be sent to this email address. This
-     * takes precedence over any <i>Return-Path</i> header that you might
-     * include in the raw text of the message. </note>
+     * <note>If you specify the <code>Source</code> parameter and have
+     * feedback forwarding enabled, then bounces and complaints will be sent
+     * to this email address. This takes precedence over any
+     * <i>Return-Path</i> header that you might include in the raw text of
+     * the message. </note>
      *
      * @param source The identity's email address. <p> By default, the string must be 7-bit
      *         ASCII. If the text must contain any other characters, then you must
@@ -160,10 +170,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      *         MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     *         <note>If you specify the <code>Source</code> parameter, then bounce
-     *         notifications and complaints will be sent to this email address. This
-     *         takes precedence over any <i>Return-Path</i> header that you might
-     *         include in the raw text of the message. </note>
+     *         <note>If you specify the <code>Source</code> parameter and have
+     *         feedback forwarding enabled, then bounces and complaints will be sent
+     *         to this email address. This takes precedence over any
+     *         <i>Return-Path</i> header that you might include in the raw text of
+     *         the message. </note>
      */
     public void setSource(String source) {
         this.source = source;
@@ -176,10 +187,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      * MIME encoded-word syntax uses the following form:
      * <code>=?charset?encoding?encoded-text?=</code>. For more information,
      * see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     * <note>If you specify the <code>Source</code> parameter, then bounce
-     * notifications and complaints will be sent to this email address. This
-     * takes precedence over any <i>Return-Path</i> header that you might
-     * include in the raw text of the message. </note>
+     * <note>If you specify the <code>Source</code> parameter and have
+     * feedback forwarding enabled, then bounces and complaints will be sent
+     * to this email address. This takes precedence over any
+     * <i>Return-Path</i> header that you might include in the raw text of
+     * the message. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -189,10 +201,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      *         MIME encoded-word syntax uses the following form:
      *         <code>=?charset?encoding?encoded-text?=</code>. For more information,
      *         see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-     *         <note>If you specify the <code>Source</code> parameter, then bounce
-     *         notifications and complaints will be sent to this email address. This
-     *         takes precedence over any <i>Return-Path</i> header that you might
-     *         include in the raw text of the message. </note>
+     *         <note>If you specify the <code>Source</code> parameter and have
+     *         feedback forwarding enabled, then bounces and complaints will be sent
+     *         to this email address. This takes precedence over any
+     *         <i>Return-Path</i> header that you might include in the raw text of
+     *         the message. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -203,9 +216,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * A list of destinations for the message.
+     * A list of destinations for the message, consisting of To:, CC:, and
+     * BCC: addresses.
      *
-     * @return A list of destinations for the message.
+     * @return A list of destinations for the message, consisting of To:, CC:, and
+     *         BCC: addresses.
      */
     public java.util.List<String> getDestinations() {
         if (destinations == null) {
@@ -216,9 +231,11 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of destinations for the message.
+     * A list of destinations for the message, consisting of To:, CC:, and
+     * BCC: addresses.
      *
-     * @param destinations A list of destinations for the message.
+     * @param destinations A list of destinations for the message, consisting of To:, CC:, and
+     *         BCC: addresses.
      */
     public void setDestinations(java.util.Collection<String> destinations) {
         if (destinations == null) {
@@ -231,11 +248,13 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of destinations for the message.
+     * A list of destinations for the message, consisting of To:, CC:, and
+     * BCC: addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinations A list of destinations for the message.
+     * @param destinations A list of destinations for the message, consisting of To:, CC:, and
+     *         BCC: addresses.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -249,11 +268,13 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * A list of destinations for the message.
+     * A list of destinations for the message, consisting of To:, CC:, and
+     * BCC: addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destinations A list of destinations for the message.
+     * @param destinations A list of destinations for the message, consisting of To:, CC:, and
+     *         BCC: addresses.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

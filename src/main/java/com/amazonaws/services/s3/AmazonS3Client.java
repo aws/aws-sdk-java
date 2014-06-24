@@ -1236,7 +1236,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 return !skipContentMd5IntegrityCheck(getObjectRequest);
             }
 
-        });
+        }, ServiceUtils.OVERWRITE_MODE);
         // getObject can return null if constraints were specified but not met
         if (s3Object == null) return null;
 
@@ -1347,12 +1347,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // Always set the content length, even if it's already set
             metadata.setContentLength(file.length());
 
+            final boolean calculateMD5 = metadata.getContentMD5() == null;
+
             // Only set the content type if it hasn't already been set
             if (metadata.getContentType() == null) {
                 metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
             }
 
-            if (metadata.getContentMD5() == null && !skipContentMd5Check) {
+            if (calculateMD5 && !skipContentMd5Check) {
                 try {
                     String contentMd5_b64 = Md5Utils.md5AsBase64(file);
                     metadata.setContentMD5(contentMd5_b64);
@@ -3819,5 +3821,5 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // https://github.com/aws/aws-sdk-java/pull/215
         // http://aws.amazon.com/articles/1109#14
         req.addHeader(Headers.CONTENT_LENGTH, String.valueOf(0));
-   }
+    }
 }

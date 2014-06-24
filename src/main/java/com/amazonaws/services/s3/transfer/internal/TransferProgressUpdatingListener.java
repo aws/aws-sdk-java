@@ -23,7 +23,7 @@ public class TransferProgressUpdatingListener implements ProgressListener {
     public TransferProgressUpdatingListener(TransferProgressImpl transferProgress) {
         this.transferProgress = transferProgress;
     }
-        
+
     public void progressChanged(ProgressEvent progressEvent) {
         transferProgress.updateProgress(progressEvent.getBytesTransferred());
     }

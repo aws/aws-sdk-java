@@ -16,6 +16,7 @@ package com.amazonaws.event;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 
 /**
@@ -26,37 +27,57 @@ public class ProgressListenerCallbackExecutor {
 
     /** The wrapped ProgressListener **/
     private final ProgressListener listener;
-    
+
     /** A single thread pool for executing all ProgressListener callbacks. **/
-    private static ExecutorService executor;
-    
+    private static final ExecutorService executor = createNewExecutorService();
+
+    /**
+     * Used to submit a task to publish a progress event to the given listener.
+     * 
+     * @return the future of the submitted task; or null if there is no listener.
+     */
+    public static Future<?> progressChanged(final ProgressListener listener,
+            final ProgressEvent progressEvent) {
+        if (listener == null) return null;
+        return executor.submit(new Runnable() {
+            @Override
+            public void run() {
+                listener.progressChanged(progressEvent);
+            }
+        });
+    }
+
+    /////////////////////////
     public ProgressListenerCallbackExecutor(ProgressListener listener) {
         this.listener = listener;
     }
-    
+
+    public ProgressListenerCallbackExecutor() {
+        this.listener = null;
+    }
+
     public void progressChanged(final ProgressEvent progressEvent) {
         if (listener == null) return;
-        
-        synchronized (ProgressListenerCallbackExecutor.class) {
-            if (executor == null) {
-                executor = Executors.newSingleThreadExecutor(new ThreadFactory() {
-                    public Thread newThread(Runnable r) {
-                        Thread t = new Thread(r);
-                        t.setName("java-sdk-progress-listener-callback-thread");
-                        t.setDaemon(true);
-                        return t;
-                    }
-                });
+        executor.submit(new Runnable() {
+            @Override
+            public void run() {
+                listener.progressChanged(progressEvent);
             }
-            executor.submit(new Runnable() {
-                
-                @Override
-                public void run() {
-                    listener.progressChanged(progressEvent);
-                }
-            });
-        }
-        
+        });
+    }
+
+    /**
+     * Returns the listener associated with the callback executor.
+     */
+    protected ProgressListener getListener() {
+        return listener;
+    }
+
+    /**
+     * Returns the executor service used for performing the callbacks.
+     */
+    protected static ExecutorService getExecutorService() {
+        return executor;
     }
 
     /**
@@ -67,5 +88,20 @@ public class ProgressListenerCallbackExecutor {
     public static ProgressListenerCallbackExecutor wrapListener(ProgressListener listener) {
         return listener == null ?
                 null : new ProgressListenerCallbackExecutor(listener);
+    }
+
+    /**
+     * Creates a new single threaded executor service for performing the
+     * callbacks.
+     */
+    private static ExecutorService createNewExecutorService() {
+        return Executors.newSingleThreadExecutor(new ThreadFactory() {
+            public Thread newThread(Runnable r) {
+                Thread t = new Thread(r);
+                t.setName("java-sdk-progress-listener-callback-thread");
+                t.setDaemon(true);
+                return t;
+            }
+        });
     }
 }

@@ -35,9 +35,9 @@ import org.apache.commons.logging.LogFactory;
 public class ProgressListenerChain implements ProgressListener {
     private final List<ProgressListener> listeners = new CopyOnWriteArrayList<ProgressListener>();
     private final ProgressEventFilter progressEventFilter;
-    
+
     private static final Log log = LogFactory.getLog(ProgressListenerChain.class);
-    
+
     /**
      * Create a listener chain that directly passes all the progress events to
      * the specified listeners.
@@ -45,12 +45,17 @@ public class ProgressListenerChain implements ProgressListener {
     public ProgressListenerChain(ProgressListener... listeners) {
         this(null, listeners);
     }
-    
+
     /**
      * Create a listener chain with a ProgressEventFilter.
      */
     public ProgressListenerChain(ProgressEventFilter progressEventFilter, ProgressListener... listeners) {
-        for (ProgressListener listener : listeners) addProgressListener(listener);
+        if (listeners == null) {
+            throw new IllegalArgumentException(
+                    "Progress Listeners cannot be null.");
+        }
+        for (ProgressListener listener : listeners)
+            addProgressListener(listener);
         this.progressEventFilter = progressEventFilter;
     }
 
@@ -64,13 +69,20 @@ public class ProgressListenerChain implements ProgressListener {
         this.listeners.remove(listener);
     }
 
+    /**
+     * Returns the listeners associated with this listener chain.
+     */
+    protected List<ProgressListener> getListeners() {
+        return listeners;
+    }
+
     public void progressChanged(final ProgressEvent progressEvent) {
         ProgressEvent filteredEvent = progressEvent;
         if (progressEventFilter != null) {
             filteredEvent = progressEventFilter.filter(progressEvent);
             if (filteredEvent == null) return;
         }
-        
+
         for ( ProgressListener listener : listeners ) {
             try {
                 listener.progressChanged(filteredEvent);
@@ -79,13 +91,13 @@ public class ProgressListenerChain implements ProgressListener {
             }
         }
     }
-    
+
     /**
      * An interface that filters the incoming events before passing
      * them into the registered listeners.
      */
     public static interface ProgressEventFilter {
-        
+
         /**
          * Returns the filtered event object that will be actually passed into
          * the listeners. Returns null if the event should be completely blocked.

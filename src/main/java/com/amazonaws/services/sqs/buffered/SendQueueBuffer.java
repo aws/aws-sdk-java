@@ -12,9 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-
-
 package com.amazonaws.services.sqs.buffered;
 
 import java.util.ArrayList;
@@ -52,19 +49,17 @@ import com.amazonaws.services.sqs.model.SendMessageResult;
 /**
  * This class is responsible for buffering outgoing SQS requests, i.e. requests
  * to send a message, delete a message and change the visibility of the message. <br>
- * 
+ *
  * When a request arrives, the buffer adds the message to a message batch of an
  * appropriate type (creating such a batch if there currently isn't one
  * outstanding). When the outstanding batch becomes full, or when a configurable
  * timeout expires, the buffer makes a call to SQS to execute the current batch. <br>
- * 
+ *
  * Internally, the batch objects maintain a list of futures corresponding to the
  * requests added to them. When a batch completes, it loads the results into the
  * futures and marks the futures as complete.
  * */
 public class SendQueueBuffer {
-    
-    
     private static Log log = LogFactory.getLog(SendQueueBuffer.class);
 
     // Interface to support event notifications with a parameter.
@@ -74,7 +69,7 @@ public class SendQueueBuffer {
 
     /** Config settings for this buffer*/
     private final QueueBufferConfig config;
-    
+
     /** Url of our queue */
     private final String qUrl;
 
@@ -144,52 +139,51 @@ public class SendQueueBuffer {
         this.config = paramConfig;
         qUrl = url;
         int maxBatch = config.getMaxInflightOutboundBatches();
-        
+
         //must allow at least one outbound batch.
         maxBatch = maxBatch > 0 ? maxBatch : 1;
-
         this.inflightSendMessageBatches = new Semaphore( maxBatch);
         this.inflightDeleteMessageBatches = new Semaphore( maxBatch);
         this.inflightChangeMessageVisibilityBatches = new Semaphore( maxBatch);
     }
-    
-      public QueueBufferConfig getConfig()  {
-          return config;
-      }
+
+    public QueueBufferConfig getConfig() {
+        return config;
+    }
 
       /**
        * @return never null
        */
       public QueueBufferFuture< SendMessageRequest, SendMessageResult > sendMessage( SendMessageRequest request, QueueBufferCallback<SendMessageRequest, SendMessageResult> callback)
       {
-          QueueBufferFuture<SendMessageRequest, SendMessageResult>  result = 
+          QueueBufferFuture<SendMessageRequest, SendMessageResult>  result =
                   submitOutboundRequest(sendMessageLock, openSendMessageBatchTask, request, inflightSendMessageBatches, callback);
           return result;
       }
-      
+
       /**
        * @return never null
        */
       public QueueBufferFuture<DeleteMessageRequest, Void> deleteMessage(DeleteMessageRequest request, QueueBufferCallback<DeleteMessageRequest, Void > callback) {
-          return submitOutboundRequest(deleteMessageLock, 
+          return submitOutboundRequest(deleteMessageLock,
                   openDeleteMessageBatchTask,
-                  request, 
+                  request,
                   inflightDeleteMessageBatches,
                   callback);
       }
-      
+
       /**
        * @return never null
        */
       public QueueBufferFuture<ChangeMessageVisibilityRequest, Void> changeMessageVisibility(ChangeMessageVisibilityRequest request, QueueBufferCallback<ChangeMessageVisibilityRequest, Void> callback) {
           return submitOutboundRequest(
-                changeMessageVisibilityLock, 
+                changeMessageVisibilityLock,
                 openChangeMessageVisibilityBatchTask,
                 request,
                 inflightChangeMessageVisibilityBatches,
                 callback);
       }
-      
+
     /**
      * @return new {@code OutboundBatchTask} of appropriate type, never null
      */
@@ -244,7 +238,7 @@ public class SendQueueBuffer {
      * Submits an outbound request for delivery to the queue associated with
      * this buffer.
      * <p>
-     * 
+     *
      * @param operationLock
      *            the lock synchronizing calls for the call type (
      *            {@code sendMessage}, {@code deleteMessage},
@@ -261,10 +255,10 @@ public class SendQueueBuffer {
      */
     @SuppressWarnings("unchecked")
     <OBT extends OutboundBatchTask<R, Result>, R extends AmazonWebServiceRequest, Result> QueueBufferFuture<R, Result> submitOutboundRequest(
-            Object operationLock, 
-            OBT[] openOutboundBatchTask, 
+            Object operationLock,
+            OBT[] openOutboundBatchTask,
             R request,
-            final Semaphore inflightOperationBatches, 
+            final Semaphore inflightOperationBatches,
             QueueBufferCallback<R, Result> callback) {
         /*
          * Callers add requests to a single batch task (openOutboundBatchTask)
@@ -286,17 +280,17 @@ public class SendQueueBuffer {
                             inflightOperationBatches.release();
                         }
                     };
-                    
+
                     if ( log.isTraceEnabled() ) {
                         log.trace("Queue " + qUrl + " created new batch for " + request.getClass().toString()
-                                + " " + inflightOperationBatches.availablePermits() 
+                                + " " + inflightOperationBatches.availablePermits()
                                 + " free slots remain");
                     }
-                    
+
                     theFuture = openOutboundBatchTask[0].addRequest(request, callback);
                     executor.execute(openOutboundBatchTask[0]);
                     if ( null == theFuture ) {
-                        //this can happen only if the request itself is flawed, 
+                        //this can happen only if the request itself is flawed,
                         //so that it can't be added to any batch, even a brand
                         //new one
                         throw new AmazonClientException("Failed to schedule request "+ request + " for execution" );
@@ -324,7 +318,7 @@ public class SendQueueBuffer {
      * Specialized for each type of outbound request.
      * <p>
      * Instances of this class (and subclasses) are thread-safe.
-     * 
+     *
      * @param <R>
      *            the type of the SQS request to batch
      * @param <Result>
@@ -343,9 +337,9 @@ public class SendQueueBuffer {
 
         /**
          * Adds a request to the batch if it is still open and has capacity.
-         * 
-         * @return the future that can be used to get the results of the 
-         * execution, or null if the addition failed. 
+         *
+         * @return the future that can be used to get the results of the
+         * execution, or null if the addition failed.
          */
         synchronized QueueBufferFuture<R, Result> addRequest(R request, QueueBufferCallback<R, Result> callback) {
             if (!open.get())
@@ -369,7 +363,7 @@ public class SendQueueBuffer {
 
         /**
          * Adds the request to the batch if capacity allows it.
-         * 
+         *
          * @param request
          * @return the future that will be signaled when the request is
          *         completed and can be used to retrieve the result. Can be null
@@ -391,7 +385,7 @@ public class SendQueueBuffer {
         protected synchronized boolean isOkToAdd(R request) {
             return requests.size() < config.getMaxBatchSize();
         }
-        
+
         protected synchronized void onRequestAdded(R request) {
             // to be overridden by subclasses
         }
@@ -411,17 +405,17 @@ public class SendQueueBuffer {
         @Override
         public synchronized void run() {
             try {
-                long deadlineMs = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS ) + 
+                long deadlineMs = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS ) +
                         config.getMaxBatchOpenMs() +1;
                 long t = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS );
                 while (open.get()  && (t  < deadlineMs ) ) {
                     t = TimeUnit.MILLISECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS );
-                    
+
                     //zero means "wait forever", can't have that.
                     long toWait = Math.max(1, deadlineMs - t);
                     wait(toWait);
                 }
-                    
+
                 open.set(false);
                 process();
             } catch (InterruptedException e) {
@@ -441,7 +435,7 @@ public class SendQueueBuffer {
                     completionListener.invoke(this);
             }
         }
-        
+
         private void failAll( Exception e) {
             for( QueueBufferFuture<R, Result> f : futures ) {
                 f.setFailure(e);
@@ -455,8 +449,8 @@ public class SendQueueBuffer {
 
         @Override
         protected synchronized boolean isOkToAdd(SendMessageRequest request) {
-            return ( requests.size() < config.getMaxBatchSize() ) && 
-                    ((request.getMessageBody().getBytes().length + batchSizeBytes) < config.getMaxBatchSizeBytes()); 
+            return ( requests.size() < config.getMaxBatchSize() ) &&
+                    ((request.getMessageBody().getBytes().length + batchSizeBytes) < config.getMaxBatchSizeBytes());
         }
 
         @Override
@@ -466,7 +460,7 @@ public class SendQueueBuffer {
 
         @Override
         synchronized boolean isFull() {
-            return ( requests.size() >= config.getMaxBatchSize() ) || 
+            return ( requests.size() >= config.getMaxBatchSize() ) ||
                     ( batchSizeBytes >= config.getMaxBatchSizeBytes());
         }
 
@@ -481,14 +475,12 @@ public class SendQueueBuffer {
 
             List<SendMessageBatchRequestEntry> entries = new ArrayList<SendMessageBatchRequestEntry>(
                     requests.size());
-            for (int i = 0, n = requests.size(); i < n; i++) {
-              entries.add(new SendMessageBatchRequestEntry()
-                      .withId(Integer.toString(i))
-                      .withMessageBody(requests.get(i).getMessageBody())
-                      .withDelaySeconds(requests.get(i).getDelaySeconds())
-                      .withMessageAttributes(requests.get(i).getMessageAttributes())
-                      );
-            }
+            for (int i = 0, n = requests.size(); i < n; i++)
+                entries.add(new SendMessageBatchRequestEntry()
+                        .withId(Integer.toString(i))
+                        .withMessageBody(requests.get(i).getMessageBody())
+                        .withDelaySeconds(requests.get(i).getDelaySeconds())
+                        .withMessageAttributes(requests.get(i).getMessageAttributes()));
             batchRequest.setEntries(entries);
 
             SendMessageBatchResult batchResult = sqsClient

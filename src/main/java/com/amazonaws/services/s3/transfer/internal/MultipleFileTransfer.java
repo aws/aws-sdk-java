@@ -38,17 +38,6 @@ public abstract class MultipleFileTransfer<T extends Transfer> extends AbstractT
         this.subTransfers = subTransfers;
     }
 
-
-
-    /**
-     * @deprecated Replaced by {@link #MultipleFileTransfer(String, TransferProgress, ProgressListenerChain, Collection)}
-     */
-    @Deprecated
-    MultipleFileTransfer(String description, TransferProgress transferProgress,
-            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, Collection<? extends T> subTransfers) {
-        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(), subTransfers);
-    }
-
     /**
      * Set the state based on the states of all file downloads. Assumes all file
      * downloads are done.

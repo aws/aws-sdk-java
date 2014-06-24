@@ -24,7 +24,7 @@ import com.amazonaws.services.s3.AmazonS3;
 
 /**
  * <p>
- * Contains options to genearate a pre-signed URL for an Amazon S3 resource.
+ * Contains options to generate a pre-signed URL for an Amazon S3 resource.
  * </p>
  * <p>
  * Pre-signed URLs allow clients to form a URL for an Amazon S3 resource and

@@ -12,13 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-
-
 package com.amazonaws.services.sqs.buffered;
 
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -41,46 +37,45 @@ import com.amazonaws.services.sqs.model.SendMessageResult;
  * SendMessage}, {@code DeleteMessage}, {@code ChangeMessageVisibility})
  * requests to the queue and pre-fetches messages to receive.  In practice,
  * the buffer does almost no work itself, and delegates it to SendQueueBufer
- * and ReceiveQueueBuffer classes. 
+ * and ReceiveQueueBuffer classes.
  * <p>
  * Any errors encountered are passed through to the callers, either as the
- * appropriate Result objects or as exceptions.  
+ * appropriate Result objects or as exceptions.
  * <p>
  * When the buffer is not used, all internal processing associated with the
  * buffer stops when any outstanding request to SQS completes. In that idle
- * state, the buffer uses neither connections nor threads.  
+ * state, the buffer uses neither connections nor threads.
  * <p>
  * Instances of {@code QueueBuffer} are thread-safe.
  */
 
 class QueueBuffer {
-    
+
     private final SendQueueBuffer sendBuffer;
     private final ReceiveQueueBuffer receiveBuffer;
     private final AmazonSQSAsync realSqs;
     QueueBufferConfig config;
-    
-    /** This executor that will be shared among all queue buffers. Since a single JVM can 
-     * access hundreds of queues, it won't do to have hundreds of executors spinning up 
+
+    /** This executor that will be shared among all queue buffers. Since a single JVM can
+     * access hundreds of queues, it won't do to have hundreds of executors spinning up
      * hundreds of threads for each queue.
-     * 
-     *  The DaemonThreadFactory creates daemon threads, which means they won't block the JVM 
+     *
+     *  The DaemonThreadFactory creates daemon threads, which means they won't block the JVM
      *  from exiting if only they are still around.
      *  */
     static ExecutorService executor = Executors.newCachedThreadPool(new DaemonThreadFactory());;
-    
+
     QueueBuffer( QueueBufferConfig paramConfig, String url, AmazonSQSAsync sqs) {
         realSqs = sqs;
         config = paramConfig;
         sendBuffer = new SendQueueBuffer(sqs, executor, paramConfig, url);
         receiveBuffer =  new ReceiveQueueBuffer(sqs, executor, paramConfig, url);
-        
     }
 
 
     /**
      * asynchronously enqueues a message to SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is
      *         completed; never null
      */
@@ -93,10 +88,10 @@ class QueueBuffer {
         future.setBuffer(this);
         return future;
     }
-    
+
     /**
      * Sends a message to SQS and returns the SQS reply.
-     * 
+     *
      * @return never null
      */
     public SendMessageResult sendMessageSync(SendMessageRequest request) {
@@ -106,7 +101,7 @@ class QueueBuffer {
 
     /**
      * Asynchronously deletes a message from SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is
      *         completed; never null
      */
@@ -121,11 +116,11 @@ class QueueBuffer {
         future.setBuffer(this);
         return future;
     }
-    
+
     /**
      * Deletes a message from SQS. Does not return until a confirmation from SQS
      * has been received
-     * 
+     *
      * @return never null
      */
     public void deleteMessageSync(DeleteMessageRequest request) {
@@ -135,7 +130,7 @@ class QueueBuffer {
 
     /**
      * asynchronously adjust a message's visibility timeout to SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is
      *         completed; never null
      */
@@ -150,7 +145,7 @@ class QueueBuffer {
         future.setBuffer(this);
         return future;
     }
-    
+
     /**
      * Changes visibility of a message in SQS. Does not return until a
      * confirmation from SQS has been received.
@@ -159,19 +154,21 @@ class QueueBuffer {
         Future<Void> future = sendBuffer.changeMessageVisibility(request, null);
         waitForFuture(future);
     }
-    
+
     /**
      * Submits a request to receive some messages from SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is
-     *         completed; never null; 
+     *         completed; never null;
      */
 
     public Future<ReceiveMessageResult> receiveMessage(ReceiveMessageRequest rq, AsyncHandler<ReceiveMessageRequest, ReceiveMessageResult> handler) {
         //only handle simple requests, because these are the settings we pre-fetch with
-        boolean noAttributes = (rq.getAttributeNames() == null) || rq.getAttributeNames().isEmpty();   
+        boolean noAttributes = (rq.getAttributeNames() == null) || rq.getAttributeNames().isEmpty();
+        boolean noMessageAttributesToRetrieve = (rq.getMessageAttributeNames() == null)
+                || rq.getMessageAttributeNames().isEmpty();
         boolean bufferngEnabled = (config.getMaxInflightReceiveBatches() > 0) && (config.getMaxDoneReceiveBatches() > 0);
-        if (  noAttributes && bufferngEnabled && ( rq.getVisibilityTimeout() == null ) ) {
+        if (  noMessageAttributesToRetrieve && noAttributes && bufferngEnabled && ( rq.getVisibilityTimeout() == null ) ) {
             QueueBufferCallback<ReceiveMessageRequest,ReceiveMessageResult> callback = null;
             if ( handler != null ) {
                 callback = new QueueBufferCallback<ReceiveMessageRequest,ReceiveMessageResult> (handler, rq);
@@ -181,22 +178,22 @@ class QueueBuffer {
             future.setBuffer(this);
             return future;
         } else {
-            return realSqs.receiveMessageAsync(rq); 
+            return realSqs.receiveMessageAsync(rq);
         }
     }
-    
+
     /**
      * Retrieves messages from an SQS queue.
-     * 
+     *
      * @return never null
      */
     public ReceiveMessageResult receiveMessageSync( ReceiveMessageRequest rq ) {
         Future<ReceiveMessageResult> future = receiveMessage(rq, null);
         return waitForFuture(future);
     }
-    
+
     /**
-     * Shuts down the queue buffer.  Once this method has been called, the 
+     * Shuts down the queue buffer.  Once this method has been called, the
      * queue buffer is not operational and all subsequent calls to it may fail
      * */
     public void shutdown() {
@@ -204,7 +201,7 @@ class QueueBuffer {
         //shut down receive buffer
         receiveBuffer.shutdown();
     }
-    
+
     /**
      * this method carefully waits for futures. If waiting throws, it converts
      * the exceptions to the exceptions that SQS clients expect. This is what we
@@ -220,7 +217,7 @@ class QueueBuffer {
             ce.initCause(ie);
             throw ce;
         } catch (ExecutionException ee ) {
-            //if the cause of the execution exception is an SQS exception, extract it 
+            //if the cause of the execution exception is an SQS exception, extract it
             //and throw the extracted exception to the clients
             //otherwise, wrap ee in an SQS exception and throw that.
             Throwable cause = ee.getCause();
@@ -228,16 +225,16 @@ class QueueBuffer {
             if (cause instanceof AmazonClientException) {
                 throw ( AmazonClientException ) cause;
             }
-            
+
             AmazonClientException ce = new AmazonClientException("Caught an exception while waiting for request to complete...");
             ce.initCause(ee);
             throw ce;
         }
-        
+
         return toReturn;
-        
+
     }
-    
+
     /**
      * We need daemon threads in our executor so that we don't keep the process
      * running if our executor threads are the only ones left in the process.
@@ -251,7 +248,7 @@ class QueueBuffer {
             thread.setName("SQSQueueBufferWorkerThread-" + threadNumber );
             return thread;
         }
-        
+
     }
 }
 

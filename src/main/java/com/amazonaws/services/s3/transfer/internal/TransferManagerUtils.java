@@ -23,6 +23,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.transfer.PauseStatus;
+import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
 
 /**
@@ -160,6 +162,25 @@ public class TransferManagerUtils {
         optimalPartSize = Math.ceil(optimalPartSize);
         return (long) Math.max(optimalPartSize,
                 configuration.getMultipartCopyPartSize());
+    }
+
+    /**
+     * Determines the pause status based on the current state of transfer.
+     */
+    public static PauseStatus determinePauseStatus(TransferState transferState,
+            boolean forceCancel) {
+
+        if (forceCancel) {
+            if (transferState == TransferState.Waiting) {
+                return PauseStatus.CANCELLED_BEFORE_START;
+            } else if (transferState == TransferState.InProgress) {
+                return PauseStatus.CANCELLED;
+            }
+        }
+        if (transferState == TransferState.Waiting) {
+            return PauseStatus.NOT_STARTED;
+        }
+        return PauseStatus.NO_EFFECT;
     }
 
 }

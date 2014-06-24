@@ -20,7 +20,8 @@ package com.amazonaws.services.simpleemail.model;
 public enum NotificationType {
     
     Bounce("Bounce"),
-    Complaint("Complaint");
+    Complaint("Complaint"),
+    Delivery("Delivery");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum NotificationType {
             return NotificationType.Bounce;
         } else if ("Complaint".equals(value)) {
             return NotificationType.Complaint;
+        } else if ("Delivery".equals(value)) {
+            return NotificationType.Delivery;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

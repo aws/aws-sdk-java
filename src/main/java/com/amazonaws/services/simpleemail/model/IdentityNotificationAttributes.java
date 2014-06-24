@@ -19,70 +19,72 @@ import java.io.Serializable;
 /**
  * <p>
  * Represents the notification attributes of an identity, including
- * whether a bounce or complaint topic are set, and whether feedback
- * forwarding is enabled.
+ * whether an identity has Amazon Simple Notification Service (Amazon
+ * SNS) topics set for bounce, complaint, and/or delivery notifications,
+ * and whether feedback forwarding is enabled for bounce and complaint
+ * notifications.
  * </p>
  */
 public class IdentityNotificationAttributes implements Serializable {
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish bounce
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish bounce notifications.
      */
     private String bounceTopic;
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish complaint
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish complaint notifications.
      */
     private String complaintTopic;
 
     /**
-     * Describes whether Amazon SES will forward feedback as email.
-     * <code>true</code> indicates that Amazon SES will forward feedback as
-     * email, while <code>false</code> indicates that feedback will be
-     * published only to the specified Bounce and Complaint topics.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish delivery notifications.
+     */
+    private String deliveryTopic;
+
+    /**
+     * Describes whether Amazon SES will forward bounce and complaint
+     * notifications as email. <code>true</code> indicates that Amazon SES
+     * will forward bounce and complaint notifications as email, while
+     * <code>false</code> indicates that bounce and complaint notifications
+     * will be published only to the specified bounce and complaint Amazon
+     * SNS topics.
      */
     private Boolean forwardingEnabled;
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish bounce
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish bounce notifications.
      *
-     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) topic where Amazon SES will publish bounce
-     *         notifications.
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish bounce notifications.
      */
     public String getBounceTopic() {
         return bounceTopic;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish bounce
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish bounce notifications.
      *
-     * @param bounceTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) topic where Amazon SES will publish bounce
-     *         notifications.
+     * @param bounceTopic The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish bounce notifications.
      */
     public void setBounceTopic(String bounceTopic) {
         this.bounceTopic = bounceTopic;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish bounce
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish bounce notifications.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bounceTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) topic where Amazon SES will publish bounce
-     *         notifications.
+     * @param bounceTopic The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish bounce notifications.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -93,41 +95,35 @@ public class IdentityNotificationAttributes implements Serializable {
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish complaint
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish complaint notifications.
      *
-     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) topic where Amazon SES will publish complaint
-     *         notifications.
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish complaint notifications.
      */
     public String getComplaintTopic() {
         return complaintTopic;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish complaint
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish complaint notifications.
      *
-     * @param complaintTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) topic where Amazon SES will publish complaint
-     *         notifications.
+     * @param complaintTopic The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish complaint notifications.
      */
     public void setComplaintTopic(String complaintTopic) {
         this.complaintTopic = complaintTopic;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     * Service (SNS) topic where Amazon SES will publish complaint
-     * notifications.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish complaint notifications.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param complaintTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
-     *         Service (SNS) topic where Amazon SES will publish complaint
-     *         notifications.
+     * @param complaintTopic The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish complaint notifications.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -138,47 +134,98 @@ public class IdentityNotificationAttributes implements Serializable {
     }
 
     /**
-     * Describes whether Amazon SES will forward feedback as email.
-     * <code>true</code> indicates that Amazon SES will forward feedback as
-     * email, while <code>false</code> indicates that feedback will be
-     * published only to the specified Bounce and Complaint topics.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish delivery notifications.
      *
-     * @return Describes whether Amazon SES will forward feedback as email.
-     *         <code>true</code> indicates that Amazon SES will forward feedback as
-     *         email, while <code>false</code> indicates that feedback will be
-     *         published only to the specified Bounce and Complaint topics.
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish delivery notifications.
+     */
+    public String getDeliveryTopic() {
+        return deliveryTopic;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish delivery notifications.
+     *
+     * @param deliveryTopic The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish delivery notifications.
+     */
+    public void setDeliveryTopic(String deliveryTopic) {
+        this.deliveryTopic = deliveryTopic;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     * SES will publish delivery notifications.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param deliveryTopic The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon
+     *         SES will publish delivery notifications.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public IdentityNotificationAttributes withDeliveryTopic(String deliveryTopic) {
+        this.deliveryTopic = deliveryTopic;
+        return this;
+    }
+
+    /**
+     * Describes whether Amazon SES will forward bounce and complaint
+     * notifications as email. <code>true</code> indicates that Amazon SES
+     * will forward bounce and complaint notifications as email, while
+     * <code>false</code> indicates that bounce and complaint notifications
+     * will be published only to the specified bounce and complaint Amazon
+     * SNS topics.
+     *
+     * @return Describes whether Amazon SES will forward bounce and complaint
+     *         notifications as email. <code>true</code> indicates that Amazon SES
+     *         will forward bounce and complaint notifications as email, while
+     *         <code>false</code> indicates that bounce and complaint notifications
+     *         will be published only to the specified bounce and complaint Amazon
+     *         SNS topics.
      */
     public Boolean isForwardingEnabled() {
         return forwardingEnabled;
     }
     
     /**
-     * Describes whether Amazon SES will forward feedback as email.
-     * <code>true</code> indicates that Amazon SES will forward feedback as
-     * email, while <code>false</code> indicates that feedback will be
-     * published only to the specified Bounce and Complaint topics.
+     * Describes whether Amazon SES will forward bounce and complaint
+     * notifications as email. <code>true</code> indicates that Amazon SES
+     * will forward bounce and complaint notifications as email, while
+     * <code>false</code> indicates that bounce and complaint notifications
+     * will be published only to the specified bounce and complaint Amazon
+     * SNS topics.
      *
-     * @param forwardingEnabled Describes whether Amazon SES will forward feedback as email.
-     *         <code>true</code> indicates that Amazon SES will forward feedback as
-     *         email, while <code>false</code> indicates that feedback will be
-     *         published only to the specified Bounce and Complaint topics.
+     * @param forwardingEnabled Describes whether Amazon SES will forward bounce and complaint
+     *         notifications as email. <code>true</code> indicates that Amazon SES
+     *         will forward bounce and complaint notifications as email, while
+     *         <code>false</code> indicates that bounce and complaint notifications
+     *         will be published only to the specified bounce and complaint Amazon
+     *         SNS topics.
      */
     public void setForwardingEnabled(Boolean forwardingEnabled) {
         this.forwardingEnabled = forwardingEnabled;
     }
     
     /**
-     * Describes whether Amazon SES will forward feedback as email.
-     * <code>true</code> indicates that Amazon SES will forward feedback as
-     * email, while <code>false</code> indicates that feedback will be
-     * published only to the specified Bounce and Complaint topics.
+     * Describes whether Amazon SES will forward bounce and complaint
+     * notifications as email. <code>true</code> indicates that Amazon SES
+     * will forward bounce and complaint notifications as email, while
+     * <code>false</code> indicates that bounce and complaint notifications
+     * will be published only to the specified bounce and complaint Amazon
+     * SNS topics.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param forwardingEnabled Describes whether Amazon SES will forward feedback as email.
-     *         <code>true</code> indicates that Amazon SES will forward feedback as
-     *         email, while <code>false</code> indicates that feedback will be
-     *         published only to the specified Bounce and Complaint topics.
+     * @param forwardingEnabled Describes whether Amazon SES will forward bounce and complaint
+     *         notifications as email. <code>true</code> indicates that Amazon SES
+     *         will forward bounce and complaint notifications as email, while
+     *         <code>false</code> indicates that bounce and complaint notifications
+     *         will be published only to the specified bounce and complaint Amazon
+     *         SNS topics.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -189,15 +236,19 @@ public class IdentityNotificationAttributes implements Serializable {
     }
 
     /**
-     * Describes whether Amazon SES will forward feedback as email.
-     * <code>true</code> indicates that Amazon SES will forward feedback as
-     * email, while <code>false</code> indicates that feedback will be
-     * published only to the specified Bounce and Complaint topics.
+     * Describes whether Amazon SES will forward bounce and complaint
+     * notifications as email. <code>true</code> indicates that Amazon SES
+     * will forward bounce and complaint notifications as email, while
+     * <code>false</code> indicates that bounce and complaint notifications
+     * will be published only to the specified bounce and complaint Amazon
+     * SNS topics.
      *
-     * @return Describes whether Amazon SES will forward feedback as email.
-     *         <code>true</code> indicates that Amazon SES will forward feedback as
-     *         email, while <code>false</code> indicates that feedback will be
-     *         published only to the specified Bounce and Complaint topics.
+     * @return Describes whether Amazon SES will forward bounce and complaint
+     *         notifications as email. <code>true</code> indicates that Amazon SES
+     *         will forward bounce and complaint notifications as email, while
+     *         <code>false</code> indicates that bounce and complaint notifications
+     *         will be published only to the specified bounce and complaint Amazon
+     *         SNS topics.
      */
     public Boolean getForwardingEnabled() {
         return forwardingEnabled;
@@ -217,6 +268,7 @@ public class IdentityNotificationAttributes implements Serializable {
         sb.append("{");
         if (getBounceTopic() != null) sb.append("BounceTopic: " + getBounceTopic() + ",");
         if (getComplaintTopic() != null) sb.append("ComplaintTopic: " + getComplaintTopic() + ",");
+        if (getDeliveryTopic() != null) sb.append("DeliveryTopic: " + getDeliveryTopic() + ",");
         if (isForwardingEnabled() != null) sb.append("ForwardingEnabled: " + isForwardingEnabled() );
         sb.append("}");
         return sb.toString();
@@ -229,6 +281,7 @@ public class IdentityNotificationAttributes implements Serializable {
         
         hashCode = prime * hashCode + ((getBounceTopic() == null) ? 0 : getBounceTopic().hashCode()); 
         hashCode = prime * hashCode + ((getComplaintTopic() == null) ? 0 : getComplaintTopic().hashCode()); 
+        hashCode = prime * hashCode + ((getDeliveryTopic() == null) ? 0 : getDeliveryTopic().hashCode()); 
         hashCode = prime * hashCode + ((isForwardingEnabled() == null) ? 0 : isForwardingEnabled().hashCode()); 
         return hashCode;
     }
@@ -245,6 +298,8 @@ public class IdentityNotificationAttributes implements Serializable {
         if (other.getBounceTopic() != null && other.getBounceTopic().equals(this.getBounceTopic()) == false) return false; 
         if (other.getComplaintTopic() == null ^ this.getComplaintTopic() == null) return false;
         if (other.getComplaintTopic() != null && other.getComplaintTopic().equals(this.getComplaintTopic()) == false) return false; 
+        if (other.getDeliveryTopic() == null ^ this.getDeliveryTopic() == null) return false;
+        if (other.getDeliveryTopic() != null && other.getDeliveryTopic().equals(this.getDeliveryTopic()) == false) return false; 
         if (other.isForwardingEnabled() == null ^ this.isForwardingEnabled() == null) return false;
         if (other.isForwardingEnabled() != null && other.isForwardingEnabled().equals(this.isForwardingEnabled()) == false) return false; 
         return true;

@@ -27,7 +27,8 @@ public class RawMessage implements Serializable {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>The To:, CC:, and BCC: headers in the raw message can contain a
+     * group list. <p>For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.
      */
@@ -47,7 +48,8 @@ public class RawMessage implements Serializable {
      * @param data The raw data of the message. The client must ensure that
      * the message format complies with Internet email standards regarding
      * email header fields, MIME types, MIME encoding, and base64 encoding
-     * (if necessary). <p>For more information, go to the <a
+     * (if necessary). <p>The To:, CC:, and BCC: headers in the raw message
+     * can contain a group list. <p>For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.
      */
@@ -59,14 +61,16 @@ public class RawMessage implements Serializable {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>The To:, CC:, and BCC: headers in the raw message can contain a
+     * group list. <p>For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.
      *
      * @return The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     *         <p>For more information, go to the <a
+     *         <p>The To:, CC:, and BCC: headers in the raw message can contain a
+     *         group list. <p>For more information, go to the <a
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      *         SES Developer Guide</a>.
      */
@@ -78,14 +82,16 @@ public class RawMessage implements Serializable {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>The To:, CC:, and BCC: headers in the raw message can contain a
+     * group list. <p>For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.
      *
      * @param data The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     *         <p>For more information, go to the <a
+     *         <p>The To:, CC:, and BCC: headers in the raw message can contain a
+     *         group list. <p>For more information, go to the <a
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      *         SES Developer Guide</a>.
      */
@@ -97,7 +103,8 @@ public class RawMessage implements Serializable {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>The To:, CC:, and BCC: headers in the raw message can contain a
+     * group list. <p>For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.
      * <p>
@@ -106,7 +113,8 @@ public class RawMessage implements Serializable {
      * @param data The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     *         <p>For more information, go to the <a
+     *         <p>The To:, CC:, and BCC: headers in the raw message can contain a
+     *         group list. <p>For more information, go to the <a
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      *         SES Developer Guide</a>.
      *

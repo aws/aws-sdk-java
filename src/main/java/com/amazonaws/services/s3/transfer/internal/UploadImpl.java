@@ -20,23 +20,18 @@ import java.util.concurrent.Future;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.event.ProgressListenerChain;
+import com.amazonaws.services.s3.transfer.PauseResult;
+import com.amazonaws.services.s3.transfer.PauseStatus;
+import com.amazonaws.services.s3.transfer.PersistableUpload;
 import com.amazonaws.services.s3.transfer.Upload;
+import com.amazonaws.services.s3.transfer.exception.PauseException;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 public class UploadImpl extends AbstractTransfer implements Upload {
-    
+
     public UploadImpl(String description, TransferProgressImpl transferProgressInternalState,
             ProgressListenerChain progressListenerChain, TransferStateChangeListener listener) {
         super(description, transferProgressInternalState, progressListenerChain, listener);
-    }
-
-    /**
-     * @deprecated Replaced by {@link #UploadImpl(String, TransferProgressImpl, ProgressListenerChain, TransferStateChangeListener)}
-     */
-    @Deprecated
-    public UploadImpl(String description, TransferProgressImpl transferProgressInternalState,
-            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, TransferStateChangeListener listener) {
-        this(description, transferProgressInternalState, progressListenerChain.transformToGeneralProgressListenerChain(), listener);
     }
 
     /**
@@ -44,9 +39,9 @@ public class UploadImpl extends AbstractTransfer implements Upload {
      * upload. Be prepared to handle errors when calling this method. Any
      * errors that occurred during the asynchronous transfer will be re-thrown
      * through this method.
-     * 
+     *
      * @return The result of this transfer.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors were encountered in the client while making the
      *             request or handling the response.
@@ -57,7 +52,7 @@ public class UploadImpl extends AbstractTransfer implements Upload {
      *             If this thread is interrupted while waiting for the upload to
      *             complete.
      */
-    public UploadResult waitForUploadResult() 
+    public UploadResult waitForUploadResult()
             throws AmazonClientException, AmazonServiceException, InterruptedException {
         try {
             UploadResult result = null;
@@ -72,4 +67,48 @@ public class UploadImpl extends AbstractTransfer implements Upload {
         }
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see com.amazonaws.services.s3.transfer.Upload#pause()
+     */
+    @Override
+    public PersistableUpload pause() throws PauseException {
+        PauseResult<PersistableUpload> pauseResult = pause(true);
+        if (pauseResult.getPauseStatus() != PauseStatus.SUCCESS) {
+            throw new PauseException(pauseResult.getPauseStatus());
+        }
+        return pauseResult.getInfoToResume();
+    }
+
+    /**
+     * Tries to pause and return the information required to resume the upload
+     * operation.
+     */
+    private PauseResult<PersistableUpload> pause(
+            final boolean forceCancelTransfers) throws AmazonClientException {
+        UploadMonitor uploadMonitor = (UploadMonitor) monitor;
+        return uploadMonitor.pause(forceCancelTransfers);
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see com.amazonaws.services.s3.transfer.Upload#tryPause(boolean)
+     */
+    @Override
+    public PauseResult<PersistableUpload> tryPause(boolean forceCancelTransfers) {
+        return pause(forceCancelTransfers);
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see com.amazonaws.services.s3.transfer.Upload#abort()
+     */
+    @Override
+    public void abort() {
+        UploadMonitor uploadMonitor = (UploadMonitor) monitor;
+        uploadMonitor.performAbort();
+    }
 }

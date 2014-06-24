@@ -16,7 +16,9 @@ package com.amazonaws.services.s3.transfer;
 
 import java.io.IOException;
 
+import com.amazonaws.services.s3.model.CryptoMode;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.transfer.exception.PauseException;
 
 /**
  * Represents an asynchronous download from Amazon S3.
@@ -56,4 +58,21 @@ public interface Download extends Transfer {
      */
     public void abort() throws IOException;
 
+    /**
+     * Pause the current download operation and returns the information that can
+     * be used to resume the download at a later time.
+     *
+     * Resuming a download would not perform ETag check as range get is
+     * performed for downloading the object's remaining contents.
+     *
+     * Resuming a download for an object encrypted using
+     * {@link CryptoMode#StrictAuthenticatedEncryption} would result in
+     * AmazonClientException as authenticity cannot be guaranteed for a range
+     * get operation.
+     *
+     * @throws PauseException
+     *             If any errors were encountered while trying to pause the
+     *             download.
+     */
+    public PersistableDownload pause() throws PauseException;
 }

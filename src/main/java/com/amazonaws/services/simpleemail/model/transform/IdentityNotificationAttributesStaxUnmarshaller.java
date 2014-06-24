@@ -51,6 +51,10 @@ public class IdentityNotificationAttributesStaxUnmarshaller implements Unmarshal
                     identityNotificationAttributes.setComplaintTopic(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("DeliveryTopic", targetDepth)) {
+                    identityNotificationAttributes.setDeliveryTopic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("ForwardingEnabled", targetDepth)) {
                     identityNotificationAttributes.setForwardingEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

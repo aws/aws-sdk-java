@@ -42,16 +42,6 @@ public class MultipleFileDownloadImpl extends MultipleFileTransfer<Download> imp
     }
 
     /**
-     * @deprecated Replaced by {@link #MultipleFileDownloadImpl(String, TransferProgress, ProgressListenerChain, String, String, Collection)}
-     */
-    @Deprecated
-    public MultipleFileDownloadImpl(String description, TransferProgress transferProgress,
-            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, String keyPrefix, String bucketName, Collection<? extends Download> downloads) {
-        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(),
-                keyPrefix, bucketName, downloads);
-    }
-
-    /**
      * Returns the key prefix of the virtual directory being downloaded.
      */
     public String getKeyPrefix() {

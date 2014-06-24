@@ -28,8 +28,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This action is throttled at one request per second.
  * </p>
  * <p>
- * For more information about feedback notification, see the
- * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html"> Amazon SES Developer Guide </a>
+ * For more information about using notifications with Amazon SES, see
+ * the
+ * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"> Amazon SES Developer Guide </a>
  * .
  * </p>
  *

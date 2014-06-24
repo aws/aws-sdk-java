@@ -42,16 +42,6 @@ public class MultipleFileUploadImpl extends MultipleFileTransfer<Upload> impleme
     }
 
     /**
-     * @deprecated Replaced by {@link #MultipleFileUploadImpl(String, TransferProgress, ProgressListenerChain, String, String, Collection)}
-     */
-    @Deprecated
-    public MultipleFileUploadImpl(String description, TransferProgress transferProgress,
-            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, String keyPrefix, String bucketName, Collection<? extends Upload> subTransfers) {
-        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(),
-                keyPrefix, bucketName, subTransfers);
-    }
-
-    /**
      * Returns the key prefix of the virtual directory being uploaded to.
      */
     public String getKeyPrefix() {
