@@ -67,14 +67,6 @@ public class PasswordPolicyStaxUnmarshaller implements Unmarshaller<PasswordPoli
                     passwordPolicy.setAllowUsersToChangePassword(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("ExpirePasswords", targetDepth)) {
-                    passwordPolicy.setExpirePasswords(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("MaxPasswordAge", targetDepth)) {
-                    passwordPolicy.setMaxPasswordAge(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return passwordPolicy;

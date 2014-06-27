@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For information about the number of server certificates you can
  * upload, see
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
  * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  * <p>
@@ -48,10 +48,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * it is not included, it defaults to a slash (/). <note>If you are
+     * uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the
+     * <code>--path</code> option. The path must begin with
+     * <code>/cloudfront</code> and must include a trailing slash (for
+     * example, <code>/cloudfront/test/</code>). </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -124,10 +129,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * it is not included, it defaults to a slash (/). <note>If you are
+     * uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the
+     * <code>--path</code> option. The path must begin with
+     * <code>/cloudfront</code> and must include a trailing slash (for
+     * example, <code>/cloudfront/test/</code>). </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -135,10 +145,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @return The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         it is not included, it defaults to a slash (/). <note>If you are
+     *         uploading a server certificate specifically for use with Amazon
+     *         CloudFront distributions, you must specify a path using the
+     *         <code>--path</code> option. The path must begin with
+     *         <code>/cloudfront</code> and must include a trailing slash (for
+     *         example, <code>/cloudfront/test/</code>). </note>
      */
     public String getPath() {
         return path;
@@ -147,10 +162,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * it is not included, it defaults to a slash (/). <note>If you are
+     * uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the
+     * <code>--path</code> option. The path must begin with
+     * <code>/cloudfront</code> and must include a trailing slash (for
+     * example, <code>/cloudfront/test/</code>). </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -158,10 +178,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         it is not included, it defaults to a slash (/). <note>If you are
+     *         uploading a server certificate specifically for use with Amazon
+     *         CloudFront distributions, you must specify a path using the
+     *         <code>--path</code> option. The path must begin with
+     *         <code>/cloudfront</code> and must include a trailing slash (for
+     *         example, <code>/cloudfront/test/</code>). </note>
      */
     public void setPath(String path) {
         this.path = path;
@@ -170,10 +195,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * it is not included, it defaults to a slash (/). <note>If you are
+     * uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the
+     * <code>--path</code> option. The path must begin with
+     * <code>/cloudfront</code> and must include a trailing slash (for
+     * example, <code>/cloudfront/test/</code>). </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -183,10 +213,15 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         it is not included, it defaults to a slash (/). <note>If you are
+     *         uploading a server certificate specifically for use with Amazon
+     *         CloudFront distributions, you must specify a path using the
+     *         <code>--path</code> option. The path must begin with
+     *         <code>/cloudfront</code> and must include a trailing slash (for
+     *         example, <code>/cloudfront/test/</code>). </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

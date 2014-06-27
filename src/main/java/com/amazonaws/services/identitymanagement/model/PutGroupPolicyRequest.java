@@ -23,13 +23,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Adds (or updates) a policy document associated with the specified
  * group. For information about policies, refer to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html"> Overview of Policies </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
  * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  * <p>
  * For information about limits on the number of policies you can
  * associate with a group, see
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
  * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  * <p>

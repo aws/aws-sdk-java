@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -21,17 +21,21 @@ package com.amazonaws.internal.config;
  * marshaller/unmarshaller.
  */
 class InternalConfigJsonHelper {
+
     private SignerConfigJsonHelper defaultSigner;
+
     // Implementation note:
     // Internally use list instead of Map for ease of implementation to
-    // leverage on Jackson which supports recursive list of arbitrary pojos 
+    // leverage on Jackson which supports recursive list of arbitrary pojos
     // without the use of custom [un]marshallers.  This is not the case for
-    // Map, which Jackson only supports the use of strings 
+    // Map, which Jackson only supports the use of strings
     // without custom [un]marshaller.
     private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] serviceSigners;
     private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] regionSigners;
     private JsonIndex<SignerConfigJsonHelper, SignerConfig>[] serviceRegionSigners;
     private JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig>[] httpClients;
+
+    private String userAgentTemplate;
 
     SignerConfigJsonHelper getDefaultSigner() {
         return defaultSigner;
@@ -71,5 +75,13 @@ class InternalConfigJsonHelper {
 
     public void setHttpClients(JsonIndex<HttpClientConfigJsonHelper, HttpClientConfig> ... httpClients) {
         this.httpClients = httpClients;
+    }
+
+    public String getUserAgentTemplate() {
+        return userAgentTemplate;
+    }
+
+    void setUserAgentTemplate(String userAgentTemplate) {
+        this.userAgentTemplate = userAgentTemplate;
     }
 }

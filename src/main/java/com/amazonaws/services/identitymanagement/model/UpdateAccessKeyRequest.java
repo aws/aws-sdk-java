@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For information about rotating keys, see
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"> Managing Keys and Certificates </a>
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
  * in <i>Using AWS Identity and Access Management</i> .
  * </p>
  *

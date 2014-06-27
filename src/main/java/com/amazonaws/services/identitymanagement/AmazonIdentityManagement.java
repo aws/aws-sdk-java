@@ -29,7 +29,7 @@ import com.amazonaws.services.identitymanagement.model.*;
  * .
  * </p>
  * <p>
- * <b>NOTE:</b> AWS provides SDKs that consist of libraries and sample
+ * <b>NOTE:</b>AWS provides SDKs that consist of libraries and sample
  * code for various programming languages and platforms (Java, Ruby,
  * .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
  * programmatic access to IAM and AWS. For example, the SDKs take care of
@@ -43,17 +43,19 @@ import com.amazonaws.services.identitymanagement.model.*;
  * service. IAM supports GET and POST requests for all actions. That is,
  * the API does not require you to use GET for some actions and POST for
  * others. However, GET requests are subject to the limitation size of a
- * URL; although this limit is browser dependent, a typical limit is 2048
- * bytes. Therefore, for operations that require larger sizes, you must
- * use a POST request.
+ * URL. Therefore, for operations that require larger sizes, use a POST
+ * request.
  * </p>
  * <p>
- * <b>Signing Requests</b> Requests must be signed using an access key
- * ID and a secret access key. We strongly recommend that you do not use
- * your AWS account access key ID and secret access key for everyday work
- * with IAM. You can use the access key ID and secret access key for an
- * IAM user or you can use the AWS Security Token Service to generate
- * temporary security credentials and use those to sign requests.
+ * <b>Signing Requests</b>
+ * </p>
+ * <p>
+ * Requests must be signed using an access key ID and a secret access
+ * key. We strongly recommend that you do not use your AWS account access
+ * key ID and secret access key for everyday work with IAM. You can use
+ * the access key ID and secret access key for an IAM user or you can use
+ * the AWS Security Token Service to generate temporary security
+ * credentials and use those to sign requests.
  * </p>
  * <p>
  * To sign requests, we recommend that you use
@@ -64,7 +66,23 @@ import com.amazonaws.services.identitymanagement.model.*;
  * operations that require version 4 indicate this requirement.
  * </p>
  * <p>
- * <b>Additional Resources</b> For more information, see the following:
+ * <b>Recording API requests</b>
+ * </p>
+ * <p>
+ * IAM supports AWS CloudTrail, which is a service that records AWS
+ * calls for your AWS account and delivers log files to an Amazon S3
+ * bucket. By using information collected by CloudTrail, you can
+ * determine what requests were successfully made to IAM, who made the
+ * request, when it was made, and so on. To learn more about CloudTrail,
+ * including how to turn it on and find your log files, see the
+ * <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/whatisawscloudtrail.html"> AWS CloudTrail User Guide </a>
+ * .
+ * </p>
+ * <p>
+ * <b>Additional Resources</b>
+ * </p>
+ * <p>
+ * For more information, see the following:
  * </p>
  * 
  * <ul>
@@ -289,13 +307,13 @@ public interface AmazonIdentityManagement {
      * <p>
      * Adds (or updates) a policy document associated with the specified
      * user. For information about policies, refer to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html"> Overview of Policies </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
      * For information about limits on the number of policies you can
      * associate with a user, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
@@ -490,13 +508,13 @@ public interface AmazonIdentityManagement {
      * <p>
      * Adds (or updates) a policy document associated with the specified
      * role. For information about policies, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html"> Overview of Policies </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
      * For information about limits on the policies you can associate with a
      * role, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
@@ -543,7 +561,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * For information about rotating certificates, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"> Managing Keys and Certificates </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      *
@@ -663,7 +681,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * For information about limitations on the number of users you can
      * create, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      *
@@ -708,6 +726,8 @@ public interface AmazonIdentityManagement {
      * 
      * 
      * @throws InvalidInputException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -760,6 +780,7 @@ public interface AmazonIdentityManagement {
      * 
      * 
      * @throws NoSuchEntityException
+     * @throws LimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -838,7 +859,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * For information about the number of server certificates you can
      * upload, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
@@ -880,7 +901,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * For information about the number of groups you can create, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      *
@@ -1093,7 +1114,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * For information about limits on the number of keys you can create,
      * see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
@@ -1214,13 +1235,13 @@ public interface AmazonIdentityManagement {
      * <p>
      * Creates a new virtual MFA device for the AWS account. After creating
      * the virtual MFA, use
-     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
      * For information about limits on the number of MFA devices you can
      * create, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
@@ -1299,7 +1320,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * For information about rotating keys, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"> Managing Keys and Certificates </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      *
@@ -1430,10 +1451,9 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Retrieves information about the specified role, including the role's
-     * path, GUID, ARN, and the policy granting permission to EC2 to assume
-     * the role. For more information about ARNs, go to ARNs. For more
-     * information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
+     * path, GUID, ARN, and the policy granting permission to assume the
+     * role. For more information about ARNs, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs"> ARNs </a> . For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
      * .
      * </p>
      * <p>
@@ -1651,15 +1671,15 @@ public interface AmazonIdentityManagement {
      * <p>
      * Creates a new role for your AWS account. For more information about
      * roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
-     * The policy grants permission to an EC2 instance to assume the role.
-     * The policy is URL-encoded according to RFC 3986. For more information
-     * about RFC 3986, go to
+     * The example policy grants permission to an EC2 instance to assume the
+     * role. The policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to
      * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * . Currently, only EC2 instances can assume roles.
+     * .
      * </p>
      *
      * @param createRoleRequest Container for the necessary parameters to
@@ -1757,6 +1777,7 @@ public interface AmazonIdentityManagement {
      *           execute the ChangePassword service method on AmazonIdentityManagement.
      * 
      * 
+     * @throws PasswordPolicyViolationException
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
      * @throws LimitExceededException
@@ -1802,13 +1823,13 @@ public interface AmazonIdentityManagement {
      * <p>
      * Adds (or updates) a policy document associated with the specified
      * group. For information about policies, refer to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html"> Overview of Policies </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
      * For information about limits on the number of policies you can
      * associate with a group, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
@@ -2159,7 +2180,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * For information about the number of instance profiles you can create,
      * see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      *
@@ -2219,7 +2240,7 @@ public interface AmazonIdentityManagement {
      * Creates a password for the specified user, giving the user the
      * ability to access AWS services through the AWS Management Console. For
      * more information about managing passwords, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html"> Managing Passwords </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
      * in <i>Using IAM</i> .
      * </p>
      *
@@ -2313,8 +2334,7 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Updates the policy that grants an entity permission to assume a role.
-     * Currently, only an Amazon EC2 instance can assume a role. For more
-     * information about roles, go to
+     * For more information about roles, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
      * .
      * </p>
@@ -2412,7 +2432,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * For information about limitations on IAM entities, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      *
@@ -2460,7 +2480,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * For more information, see
-     * <a href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html"> Giving Console Access Using SAML </a> and <a href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for SAML Federation </a>
+     * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html"> Giving Console Access Using SAML </a> and <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html"> Creating Temporary Security Credentials for SAML Federation </a>
      * in the <i>Using Temporary Credentials</i> guide.
      * </p>
      *
@@ -2614,6 +2634,7 @@ public interface AmazonIdentityManagement {
      * 
      * 
      * @throws NoSuchEntityException
+     * @throws LimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2641,7 +2662,7 @@ public interface AmazonIdentityManagement {
      * <p>
      * For information about limits on the number of keys you can create,
      * see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * <p>
@@ -2911,7 +2932,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * For information about limitations on IAM entities, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
      * in <i>Using AWS Identity and Access Management</i> .
      * </p>
      * 
