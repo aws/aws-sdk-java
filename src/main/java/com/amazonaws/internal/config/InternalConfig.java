@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -35,7 +35,9 @@ import com.fasterxml.jackson.databind.JsonMappingException;
  */
 @Immutable
 public class InternalConfig {
+
     private static final Log log = LogFactory.getLog(InternalConfig.class);
+
     static final String DEFAULT_CONFIG_RESOURCE = "awssdk_config_default.json";
     static final String CONFIG_OVERRIDE_RESOURCE = "awssdk_config_override.json";
     private static final String SERVICE_REGION_DELIMITOR = "/";
@@ -46,27 +48,36 @@ public class InternalConfig {
     private final Map<String, SignerConfig> serviceSigners;
     private final Map<String, HttpClientConfig> httpClients;
 
+    private final String userAgentTemplate;
+
     /**
      * @param defaults default configuration
-     * @param override override configuration 
+     * @param override override configuration
      */
     InternalConfig(InternalConfigJsonHelper defaults, InternalConfigJsonHelper override) {
         SignerConfigJsonHelper scb = defaults.getDefaultSigner();
         this.defaultSignerConfig = scb == null ? null : scb.build();
+
         regionSigners = mergeSignerMap(defaults.getRegionSigners(),
             override.getRegionSigners(), "region");
         serviceSigners = mergeSignerMap(defaults.getServiceSigners(),
             override.getServiceSigners(), "service");
         serviceRegionSigners = mergeSignerMap(defaults.getServiceRegionSigners(),
-            override.getServiceRegionSigners(), 
+            override.getServiceRegionSigners(),
             "service" + SERVICE_REGION_DELIMITOR + "region");
         httpClients = merge(defaults.getHttpClients(), override.getHttpClients());
+
+        if (override.getUserAgentTemplate() != null) {
+            userAgentTemplate = override.getUserAgentTemplate();
+        } else {
+            userAgentTemplate = defaults.getUserAgentTemplate();
+        }
     }
 
     /**
      * Returns an immutable map by merging the override signer configuration
      * into the default signer configuration for the given theme.
-     * 
+     *
      * @param defaults
      *            default signer configuration
      * @param override
@@ -107,7 +118,7 @@ public class InternalConfig {
 
     /**
      * Builds and returns a signer configuration map.
-     * 
+     *
      * @param signerIndexes
      *            signer configuration entries loaded from JSON
      * @param theme
@@ -175,6 +186,13 @@ public class InternalConfig {
         return signerConfig == null ? defaultSignerConfig : signerConfig;
     }
 
+    /**
+     * @return the custom user agent template, if configured
+     */
+    public String getUserAgentTemplate() {
+        return userAgentTemplate;
+    }
+
     static InternalConfigJsonHelper loadfrom(URL url)
             throws JsonParseException, JsonMappingException, IOException {
         if (url == null)
@@ -213,14 +231,16 @@ public class InternalConfig {
         }
         return new InternalConfig(config, configOverride);
     }
-    
+
     // For debugging purposes
     void dump() {
         StringBuilder sb = new StringBuilder().append("defaultSignerConfig: ")
                 .append(defaultSignerConfig).append("\n")
                 .append("serviceRegionSigners: ").append(serviceRegionSigners)
                 .append("\n").append("regionSigners: ").append(regionSigners)
-                .append("\n").append("serviceSigners: ").append(serviceSigners);
+                .append("\n").append("serviceSigners: ").append(serviceSigners)
+                .append("\n").append("userAgentTemplate: ")
+                    .append(userAgentTemplate);
         log.debug(sb.toString());
     }
 

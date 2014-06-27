@@ -36,7 +36,7 @@ public class Group implements Serializable {
 
     /**
      * Path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -58,7 +58,7 @@ public class Group implements Serializable {
     /**
      * The stable and unique string identifying the group. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -71,7 +71,7 @@ public class Group implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
      * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -98,18 +98,18 @@ public class Group implements Serializable {
      * 
      * @param path Path to the group. For more information about paths, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * @param groupName The name that identifies the group.
      * @param groupId The stable and unique string identifying the group. For
      * more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * @param arn The Amazon Resource Name (ARN) specifying the group. For
      * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * @param createDate The date when the group was created.
@@ -124,7 +124,7 @@ public class Group implements Serializable {
 
     /**
      * Path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -133,7 +133,7 @@ public class Group implements Serializable {
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @return Path to the group. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -143,7 +143,7 @@ public class Group implements Serializable {
     
     /**
      * Path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -152,7 +152,7 @@ public class Group implements Serializable {
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path Path to the group. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -162,7 +162,7 @@ public class Group implements Serializable {
     
     /**
      * Path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -173,7 +173,7 @@ public class Group implements Serializable {
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path Path to the group. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
@@ -233,7 +233,7 @@ public class Group implements Serializable {
     /**
      * The stable and unique string identifying the group. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -243,7 +243,7 @@ public class Group implements Serializable {
      *
      * @return The stable and unique string identifying the group. For more
      *         information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -254,7 +254,7 @@ public class Group implements Serializable {
     /**
      * The stable and unique string identifying the group. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -264,7 +264,7 @@ public class Group implements Serializable {
      *
      * @param groupId The stable and unique string identifying the group. For more
      *         information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -275,7 +275,7 @@ public class Group implements Serializable {
     /**
      * The stable and unique string identifying the group. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -287,7 +287,7 @@ public class Group implements Serializable {
      *
      * @param groupId The stable and unique string identifying the group. For more
      *         information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
@@ -302,7 +302,7 @@ public class Group implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
      * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -311,7 +311,7 @@ public class Group implements Serializable {
      *
      * @return The Amazon Resource Name (ARN) specifying the group. For more
      *         information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -322,7 +322,7 @@ public class Group implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
      * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -331,7 +331,7 @@ public class Group implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) specifying the group. For more
      *         information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -342,7 +342,7 @@ public class Group implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
      * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -353,7 +353,7 @@ public class Group implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) specifying the group. For more
      *         information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *

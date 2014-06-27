@@ -22,7 +22,7 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
  * A hook allowing a custom transform/untransform of the raw attribute
  * values immediately before writing them into DynamoDB and immediately
  * after reading them out of DynamoDB, but with extra context about
- * the model class not available at the raw AmazonDymnamoDB level.
+ * the model class not available at the raw AmazonDynamoDB level.
  * <p>
  * This interface contains both a {@code transform} method and a corresponding
  * {@code untransform} method. These methods SHOULD be inverses, such that

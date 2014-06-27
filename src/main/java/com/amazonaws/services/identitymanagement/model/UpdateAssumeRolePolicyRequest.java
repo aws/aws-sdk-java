@@ -22,8 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest) UpdateAssumeRolePolicy operation}.
  * <p>
  * Updates the policy that grants an entity permission to assume a role.
- * Currently, only an Amazon EC2 instance can assume a role. For more
- * information about roles, go to
+ * For more information about roles, go to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
  * .
  * </p>

@@ -22,10 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRole(GetRoleRequest) GetRole operation}.
  * <p>
  * Retrieves information about the specified role, including the role's
- * path, GUID, ARN, and the policy granting permission to EC2 to assume
- * the role. For more information about ARNs, go to ARNs. For more
- * information about roles, go to
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
+ * path, GUID, ARN, and the policy granting permission to assume the
+ * role. For more information about ARNs, go to
+ * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs"> ARNs </a> . For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a>
  * .
  * </p>
  * <p>

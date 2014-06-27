@@ -94,5 +94,6 @@
     "config" : {
       "serviceName" : "sts"
     }
-  } ]
+  } ],
+  "userAgentTemplate": "aws-sdk-{platform}/{version} {os.name}/{os.version} {java.vm.name}/{java.vm.version}/{java.version}{language.and.region}"
 }

@@ -63,10 +63,6 @@ public class PasswordPolicy implements Serializable {
      */
     private Boolean allowUsersToChangePassword;
 
-    private Boolean expirePasswords;
-
-    private Integer maxPasswordAge;
-
     /**
      * Minimum length to require for IAM user passwords.
      * <p>
@@ -336,81 +332,6 @@ public class PasswordPolicy implements Serializable {
     }
 
     /**
-     * Returns the value of the ExpirePasswords property for this object.
-     *
-     * @return The value of the ExpirePasswords property for this object.
-     */
-    public Boolean isExpirePasswords() {
-        return expirePasswords;
-    }
-    
-    /**
-     * Sets the value of the ExpirePasswords property for this object.
-     *
-     * @param expirePasswords The new value for the ExpirePasswords property for this object.
-     */
-    public void setExpirePasswords(Boolean expirePasswords) {
-        this.expirePasswords = expirePasswords;
-    }
-    
-    /**
-     * Sets the value of the ExpirePasswords property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param expirePasswords The new value for the ExpirePasswords property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PasswordPolicy withExpirePasswords(Boolean expirePasswords) {
-        this.expirePasswords = expirePasswords;
-        return this;
-    }
-
-    /**
-     * Returns the value of the ExpirePasswords property for this object.
-     *
-     * @return The value of the ExpirePasswords property for this object.
-     */
-    public Boolean getExpirePasswords() {
-        return expirePasswords;
-    }
-
-    /**
-     * Returns the value of the MaxPasswordAge property for this object.
-     *
-     * @return The value of the MaxPasswordAge property for this object.
-     */
-    public Integer getMaxPasswordAge() {
-        return maxPasswordAge;
-    }
-    
-    /**
-     * Sets the value of the MaxPasswordAge property for this object.
-     *
-     * @param maxPasswordAge The new value for the MaxPasswordAge property for this object.
-     */
-    public void setMaxPasswordAge(Integer maxPasswordAge) {
-        this.maxPasswordAge = maxPasswordAge;
-    }
-    
-    /**
-     * Sets the value of the MaxPasswordAge property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxPasswordAge The new value for the MaxPasswordAge property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public PasswordPolicy withMaxPasswordAge(Integer maxPasswordAge) {
-        this.maxPasswordAge = maxPasswordAge;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -427,9 +348,7 @@ public class PasswordPolicy implements Serializable {
         if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ",");
         if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ",");
         if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ",");
-        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() + ",");
-        if (isExpirePasswords() != null) sb.append("ExpirePasswords: " + isExpirePasswords() + ",");
-        if (getMaxPasswordAge() != null) sb.append("MaxPasswordAge: " + getMaxPasswordAge() );
+        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() );
         sb.append("}");
         return sb.toString();
     }
@@ -445,8 +364,6 @@ public class PasswordPolicy implements Serializable {
         hashCode = prime * hashCode + ((isRequireUppercaseCharacters() == null) ? 0 : isRequireUppercaseCharacters().hashCode()); 
         hashCode = prime * hashCode + ((isRequireLowercaseCharacters() == null) ? 0 : isRequireLowercaseCharacters().hashCode()); 
         hashCode = prime * hashCode + ((isAllowUsersToChangePassword() == null) ? 0 : isAllowUsersToChangePassword().hashCode()); 
-        hashCode = prime * hashCode + ((isExpirePasswords() == null) ? 0 : isExpirePasswords().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxPasswordAge() == null) ? 0 : getMaxPasswordAge().hashCode()); 
         return hashCode;
     }
     
@@ -470,10 +387,6 @@ public class PasswordPolicy implements Serializable {
         if (other.isRequireLowercaseCharacters() != null && other.isRequireLowercaseCharacters().equals(this.isRequireLowercaseCharacters()) == false) return false; 
         if (other.isAllowUsersToChangePassword() == null ^ this.isAllowUsersToChangePassword() == null) return false;
         if (other.isAllowUsersToChangePassword() != null && other.isAllowUsersToChangePassword().equals(this.isAllowUsersToChangePassword()) == false) return false; 
-        if (other.isExpirePasswords() == null ^ this.isExpirePasswords() == null) return false;
-        if (other.isExpirePasswords() != null && other.isExpirePasswords().equals(this.isExpirePasswords()) == false) return false; 
-        if (other.getMaxPasswordAge() == null ^ this.getMaxPasswordAge() == null) return false;
-        if (other.getMaxPasswordAge() != null && other.getMaxPasswordAge().equals(this.getMaxPasswordAge()) == false) return false; 
         return true;
     }
     

@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -21,6 +21,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.ThreadSafe;
 
+import com.amazonaws.internal.config.InternalConfig;
+
 /**
  * Utility class for accessing AWS SDK versioning information.
  */
@@ -28,7 +30,7 @@ import org.apache.http.annotation.ThreadSafe;
 public class VersionInfoUtils {
     /** The AWS SDK version info file with SDK versioning info */
     static final String VERSION_INFO_FILE = "/com/amazonaws/sdk/versionInfo.properties";
-    
+
     /** SDK version info */
     private static volatile String version;
 
@@ -46,7 +48,7 @@ public class VersionInfoUtils {
      * running. Version information is obtained from from the
      * versionInfo.properties file which the AWS Java SDK build process
      * generates.
-     * 
+     *
      * @return The current version for the AWS SDK, if known, otherwise
      *         returns a string indicating that the version information is
      *         not available.
@@ -108,7 +110,7 @@ public class VersionInfoUtils {
         try {
             if (inputStream == null)
                 throw new Exception(VERSION_INFO_FILE + " not found on classpath");
-            
+
             versionInfoProperties.load(inputStream);
             version = versionInfoProperties.getProperty("version");
             platform = versionInfoProperties.getProperty("platform");
@@ -122,46 +124,45 @@ public class VersionInfoUtils {
             } catch (Exception e) {}
         }
     }
-			
+
     /**
-     * Loads the versionInfo.properties file from the AWS Java SDK and
-     * stores the information so that the file doesn't have to be read the
-     * next time the data is needed.
+     * Initializes the user agent string by loading a template from
+     * {@code InternalConfig} and filling in the detected version/platform
+     * info.
      */
     private static void initializeUserAgent() {
         userAgent = userAgent();
     }
 
     static String userAgent() {
-        StringBuilder buffer = new StringBuilder(128);
 
-        buffer.append("aws-sdk-");
-        buffer.append(VersionInfoUtils.getPlatform().toLowerCase());
-        buffer.append("/");
+        String ua = InternalConfig.Factory.getInternalConfig()
+                .getUserAgentTemplate();
 
-        buffer.append(VersionInfoUtils.getVersion());
-        buffer.append(" ");
-        buffer.append(replaceSpaces(System.getProperty("os.name")));
-        buffer.append("/");
-        buffer.append(replaceSpaces(System.getProperty("os.version")));
+        if (ua == null) {
+            return "aws-sdk-java";
+        }
 
-        buffer.append(" ");
-        buffer.append(replaceSpaces(System.getProperty("java.vm.name")));
-        buffer.append("/");
-        buffer.append(replaceSpaces(System.getProperty("java.vm.version")));
-        buffer.append("/");
-        buffer.append(replaceSpaces(System.getProperty("java.version")));
+        ua = ua
+            .replace("{platform}", getPlatform().toLowerCase())
+            .replace("{version}", getVersion())
+            .replace("{os.name}", replaceSpaces(System.getProperty("os.name")))
+            .replace("{os.version}", replaceSpaces(System.getProperty("os.version")))
+            .replace("{java.vm.name}", replaceSpaces(System.getProperty("java.vm.name")))
+            .replace("{java.vm.version}", replaceSpaces(System.getProperty("java.vm.version")))
+            .replace("{java.version}", replaceSpaces(System.getProperty("java.version")));
 
         String language = System.getProperty("user.language");
         String region = System.getProperty("user.region");
 
+        String languageAndRegion = "";
         if (language != null && region != null) {
-            buffer.append(" ");
-            buffer.append(replaceSpaces(language));
-            buffer.append("_");
-            buffer.append(replaceSpaces(region));
+            languageAndRegion =
+                    " " + replaceSpaces(language) + "_" + replaceSpaces(region);
         }
-        return buffer.toString();
+        ua = ua.replace("{language.and.region}", languageAndRegion);
+
+        return ua;
     }
 
     /**
