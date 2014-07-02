@@ -45,7 +45,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2014-01-31/distribution"; 
+        String uriResourcePath = "2014-05-31/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-01-31/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-05-31/");
 
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
@@ -212,6 +212,33 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                         xmlWriter.endElement();
                                     }
                                 }
+                                if (forwardedValuesForwardedValues != null) {
+                                    Headers headersHeaders = forwardedValuesForwardedValues.getHeaders();
+                                    if (headersHeaders != null) {
+                                        xmlWriter.startElement("Headers");
+                                        if (headersHeaders.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(headersHeaders.getQuantity()).endElement();
+                                        }
+
+                                        if (headersHeaders != null) {
+                                            java.util.List<String> headersHeadersitemsList = headersHeaders.getItems();
+                                            if (headersHeadersitemsList != null && headersHeadersitemsList.size() > 0) {
+                                                int headersHeadersitemsListIndex = 1;
+                                                xmlWriter.startElement("Items");
+                                                for (String headersHeadersitemsListValue : headersHeadersitemsList) {
+
+                                                xmlWriter.startElement("Name");
+                                                    xmlWriter.value(headersHeadersitemsListValue);
+                                                xmlWriter.endElement();
+
+                                                    headersHeadersitemsListIndex++;
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
                                 xmlWriter.endElement();
                             }
                         }
@@ -343,6 +370,33 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                                                     }
                                                                     xmlWriter.endElement();
                                                                 }
+                                                            }
+                                                            xmlWriter.endElement();
+                                                        }
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                            }
+                                            if (forwardedValuesForwardedValues != null) {
+                                                Headers headersHeaders = forwardedValuesForwardedValues.getHeaders();
+                                                if (headersHeaders != null) {
+                                                    xmlWriter.startElement("Headers");
+                                                    if (headersHeaders.getQuantity() != null) {
+                                                        xmlWriter.startElement("Quantity").value(headersHeaders.getQuantity()).endElement();
+                                                    }
+
+                                                    if (headersHeaders != null) {
+                                                        java.util.List<String> headersHeadersitemsList = headersHeaders.getItems();
+                                                        if (headersHeadersitemsList != null && headersHeadersitemsList.size() > 0) {
+                                                            int headersHeadersitemsListIndex = 1;
+                                                            xmlWriter.startElement("Items");
+                                                            for (String headersHeadersitemsListValue : headersHeadersitemsList) {
+
+                                                            xmlWriter.startElement("Name");
+                                                                xmlWriter.value(headersHeadersitemsListValue);
+                                                            xmlWriter.endElement();
+
+                                                                headersHeadersitemsListIndex++;
                                                             }
                                                             xmlWriter.endElement();
                                                         }

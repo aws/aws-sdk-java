@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3;
 
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 
@@ -65,10 +66,9 @@ import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.ProgressEventType;
+import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
-import com.amazonaws.event.ProgressListenerCallbackExecutor;
-import com.amazonaws.event.ProgressReportingInputStream;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
@@ -247,10 +247,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /** Responsible for handling error responses from all S3 service calls. */
-    private S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();
+    private final S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();
 
     /** Shared response handler for operations with no response.  */
-    private S3XmlResponseHandler<Void> voidResponseHandler = new S3XmlResponseHandler<Void>(null);
+    private final S3XmlResponseHandler<Void> voidResponseHandler = new S3XmlResponseHandler<Void>(null);
 
     /** Shared factory for converting configuration objects to XML */
     private static final BucketConfigurationXmlFactory bucketConfigurationXmlFactory = new BucketConfigurationXmlFactory();
@@ -1123,19 +1123,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         // Populate the SSE-CPK parameters to the request header
         populateSseCpkRequestParameters(request, getObjectRequest.getSSECustomerKey());
-
-        /*
-         * This is compatible with progress listener set by either the legacy
-         * method GetObjectRequest#setProgressListener or the new method
-         * GetObjectRequest#setGeneralProgressListener.
-         */
-        ProgressListener progressListener = getObjectRequest.getGeneralProgressListener();
-        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
-                .wrapListener(progressListener);
+        final ProgressListener listener = getObjectRequest.getGeneralProgressListener();
+        publishProgress(listener, ProgressEventType.TRANSFER_STARTED_EVENT);
 
         try {
-            S3Object s3Object = invoke(request, new S3ObjectResponseHandler(), getObjectRequest.getBucketName(), getObjectRequest.getKey());
-
+            S3Object s3Object = invoke(request, new S3ObjectResponseHandler(),
+                    getObjectRequest.getBucketName(), getObjectRequest.getKey());
             /*
              * TODO: For now, it's easiest to set there here in the client, but
              *       we could push this back into the response handler with a
@@ -1143,25 +1136,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              */
             s3Object.setBucketName(getObjectRequest.getBucketName());
             s3Object.setKey(getObjectRequest.getKey());
-
-            InputStream input = s3Object.getObjectContent();
+            InputStream is = s3Object.getObjectContent();
             HttpRequestBase httpRequest = s3Object.getObjectContent().getHttpRequest();
-
             // Hold a reference to this client while the InputStream is still
             // around - otherwise a finalizer in the HttpClient may reset the
             // underlying TCP connection out from under us.
-            input = new ServiceClientHolderInputStream(input, this);
-
-            // If someone is interested in progress updates, wrap the input
-            // stream in a filter that will trigger progress reports.
-            if (progressListenerCallbackExecutor != null) {
-                @SuppressWarnings("resource")
-                ProgressReportingInputStream progressReportingInputStream = new ProgressReportingInputStream(
-                        input, progressListenerCallbackExecutor);
-                progressReportingInputStream.setFireCompletedEvent(true);
-                input = progressReportingInputStream;
-                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
-            }
+            is = new ServiceClientHolderInputStream(is, this);
+            // used trigger a tranfer complete event when the stream is entirely consumed
+            ProgressInputStream progressInputStream =
+                new ProgressInputStream(is, listener) {
+                @Override protected void onEOF() {
+                    publishProgress(getListener(), ProgressEventType.TRANSFER_COMPLETED_EVENT);
+                }
+            };
+            is = progressInputStream;
 
             // The Etag header contains a server-side MD5 of the object. If
             // we're downloading the whole object, by default we wrap the
@@ -1177,7 +1165,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                         // MD5 check is enabled, since a correct MD5 check would
                         // imply a correct content length.
                         MessageDigest digest = MessageDigest.getInstance("MD5");
-                        input = new DigestValidationInputStream(input, digest, serverSideHash);
+                        is = new DigestValidationInputStream(is, digest, serverSideHash);
                     } catch (NoSuchAlgorithmException e) {
                         log.warn("No MD5 digest algorithm available.  Unable to calculate "
                                     + "checksum and verify data integrity.", e);
@@ -1186,7 +1174,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             } else {
                 // Ensures the data received from S3 has the same length as the
                 // expected content-length
-                input = new LengthCheckInputStream(input,
+                is = new LengthCheckInputStream(is,
                     s3Object.getObjectMetadata().getContentLength(), // expected length
                     INCLUDE_SKIPPED_BYTES); // bytes received from S3 are all included even if skipped
             }
@@ -1194,7 +1182,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // Re-wrap within an S3ObjectInputStream. Explicitly do not collect
             // metrics here because we know we're ultimately wrapping another
             // S3ObjectInputStream which will take care of that.
-            s3Object.setObjectContent(new S3ObjectInputStream(input, httpRequest, false));
+            s3Object.setObjectContent(new S3ObjectInputStream(is, httpRequest, false));
 
             return s3Object;
         } catch (AmazonS3Exception ase) {
@@ -1206,12 +1194,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * use constraints.
              */
             if (ase.getStatusCode() == 412 || ase.getStatusCode() == 304) {
-                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.CANCELED_EVENT_CODE);
+                publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
                 return null;
             }
-
-            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
-
+            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw ase;
         }
     }
@@ -1248,15 +1234,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * requested object content.
      */
     private static boolean skipContentMd5IntegrityCheck(AmazonWebServiceRequest request) {
-        if (System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") != null)
-            return true;
-
         if (request instanceof GetObjectRequest) {
+            if (System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") != null)
+                return true;
+
             GetObjectRequest getObjectRequest = (GetObjectRequest)request;
             // Skip MD5 check for range get
             if (getObjectRequest.getRange() != null)
                 return true;
-
             if (getObjectRequest.getSSECustomerKey() != null)
                 return true;
         } else if (request instanceof PutObjectRequest) {
@@ -1266,7 +1251,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             UploadPartRequest uploadPartRequest = (UploadPartRequest)request;
             return uploadPartRequest.getSSECustomerKey() != null;
         }
-
         return false;
     }
 
@@ -1318,26 +1302,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(putObjectRequest, "The PutObjectRequest parameter must be specified when uploading an object");
-
         String bucketName = putObjectRequest.getBucketName();
         String key = putObjectRequest.getKey();
         ObjectMetadata metadata = putObjectRequest.getMetadata();
         InputStream input = putObjectRequest.getInputStream();
-
-        /*
-         * This is compatible with progress listener set by either the legacy
-         * method PutObjectRequest#setProgressListener or the new method
-         * PutObjectRequest#setGeneralProgressListener.
-         */
-        ProgressListener progressListener = putObjectRequest.getGeneralProgressListener();
-        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
-                .wrapListener(progressListener);
-
-        if (metadata == null) metadata = new ObjectMetadata();
-
+        if (metadata == null)
+            metadata = new ObjectMetadata();
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when uploading an object");
         assertParameterNotNull(key, "The key parameter must be specified when uploading an object");
-
         final boolean skipContentMd5Check = skipContentMd5IntegrityCheck(putObjectRequest);
 
         // If a file is specified for upload, we need to pull some additional
@@ -1423,11 +1395,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        if (progressListenerCallbackExecutor != null) {
-            input = new ProgressReportingInputStream(input, progressListenerCallbackExecutor);
-            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
-        }
-
         if (!input.markSupported()) {
             int streamBufferSize = Constants.DEFAULT_STREAM_BUFFER_SIZE;
             String bufferSizeOverride = System.getProperty("com.amazonaws.sdk.s3.defaultStreamBufferSize");
@@ -1464,12 +1431,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         populateRequestMetadata(request, metadata);
         request.setContent(input);
-
+        final ProgressListener listener = putObjectRequest.getGeneralProgressListener();
+        publishProgress(listener, ProgressEventType.TRANSFER_STARTED_EVENT);
         ObjectMetadata returnedMetadata = null;
         try {
             returnedMetadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
         } catch (AmazonClientException ace) {
-            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
+            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw ace;
         } finally {
             try {
@@ -1490,16 +1458,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             byte[] serverSideHash = BinaryUtils.fromHex(returnedMetadata.getETag());
 
             if (!Arrays.equals(clientSideHash, serverSideHash)) {
-                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
-
+                publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
                 throw new AmazonClientException("Unable to verify integrity of data upload.  " +
                         "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
                         "You may need to delete the data stored in Amazon S3.");
             }
         }
-
-        fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.COMPLETED_EVENT_CODE);
-
+        publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         PutObjectResult result = new PutObjectResult();
         result.setETag(returnedMetadata.getETag());
         result.setVersionId(returnedMetadata.getVersionId());
@@ -1514,7 +1479,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
-     * Sets the acccess control headers for the request given.
+     * Sets the access control headers for the request given.
      */
     private static void addAclHeaders(Request<? extends AmazonWebServiceRequest> request, AccessControlList acl) {
         Set<Grant> grants = acl.getGrants();
@@ -2789,21 +2754,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              */
             inputStream = md5DigestStream = new MD5DigestCalculatingInputStream(inputStream);
         }
-
-        /*
-         * This is compatible with progress listener set by either the legacy
-         * method UploadPartRequest#setProgressListener or the new method
-         * UploadPartRequest#setGeneralProgressListener.
-         */
-        ProgressListener progressListener = uploadPartRequest.getGeneralProgressListener();
-        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
-                .wrapListener(progressListener);
-
-        if (progressListenerCallbackExecutor != null) {
-            inputStream = new ProgressReportingInputStream(inputStream, progressListenerCallbackExecutor);
-            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_STARTED_EVENT_CODE);
-        }
-
+        final ProgressListener listener = uploadPartRequest.getGeneralProgressListener();
+        publishProgress(listener, ProgressEventType.TRANSFER_PART_STARTED_EVENT);
         try {
             request.setContent(inputStream);
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
@@ -2818,9 +2770,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                             "You may need to delete the data stored in Amazon S3.");
                 }
             }
-
-            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_COMPLETED_EVENT_CODE);
-
+            publishProgress(listener, ProgressEventType.TRANSFER_PART_COMPLETED_EVENT);
             UploadPartResult result = new UploadPartResult();
             result.setETag(metadata.getETag());
             result.setPartNumber(partNumber);
@@ -2829,13 +2779,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             result.setSSECustomerKeyMd5(metadata.getSSECustomerKeyMd5());
             return result;
         } catch (AmazonClientException ace) {
-            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_FAILED_EVENT_CODE);
-
+            publishProgress(listener, ProgressEventType.TRANSFER_PART_FAILED_EVENT);
             // Leaving this here in case anyone is depending on it, but it's
             // inconsistent with other methods which only generate one of
             // COMPLETED_EVENT_CODE or FAILED_EVENT_CODE.
-            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_COMPLETED_EVENT_CODE);
-
+            publishProgress(listener, ProgressEventType.TRANSFER_PART_COMPLETED_EVENT);
             throw ace;
         } finally {
             if (inputStream != null) {
@@ -2867,7 +2815,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (expirationIndays == -1) {
             throw new IllegalArgumentException("The expiration in days parameter must be specified when copying a glacier object");
         }
-
 
         Request<RestoreObjectRequest> request = createRequest(bucketName, key, restoreObjectRequest, HttpMethodName.POST);
         request.addParameter("restore", null);
@@ -2917,23 +2864,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     private void assertParameterNotNull(Object parameterValue, String errorMessage) {
         if (parameterValue == null) throw new IllegalArgumentException(errorMessage);
-    }
-
-
-    /**
-     * Fires a progress event with the specified event type to the specified
-     * listener.
-     *
-     * @param progressListenerCallbackExecutor
-     *            The listener callback executor.
-     * @param eventType
-     *            The type of event to fire.
-     */
-    private void fireProgressEvent(final ProgressListenerCallbackExecutor progressListenerCallbackExecutor, final int eventType) {
-        if (progressListenerCallbackExecutor == null) return;
-        ProgressEvent event = new ProgressEvent(0);
-        event.setEventCode(eventType);
-        progressListenerCallbackExecutor.progressChanged(event);
     }
 
     /**

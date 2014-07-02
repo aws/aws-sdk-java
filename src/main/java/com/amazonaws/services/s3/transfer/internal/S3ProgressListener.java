@@ -24,13 +24,21 @@ public interface S3ProgressListener extends ProgressListener {
     /**
      * Called when the information to resume an upload/download operation is
      * available, The execution of the callback of this listener is managed by
-     * {@link S3ProgressPublisher} class, which maintains a
-     * single thread to sequentially execute all callbacks.
+     * {@link S3ProgressPublisher}.  Implementation of this interface
+     * should never block.
+     * <p>
+     * If the implementation follows the best practice and doesn't block, it
+     * should then extends from {@link S3SyncProgressListener}.
+     * <p>
+     * Note any exception thrown by the listener will get ignored.
+     * Should there be need to capture any such exception, you may consider
+     * wrapping the listener with {@link ExceptionReporter#wrap(ProgressListener)}.
      *
      * @param persistableTransfer
      *            A non null opaque token used to resume an upload or download.
      *
      * @see S3ProgressPublisher
+     * @see ExceptionReporter
      */
     public void onPersistableTransfer(final PersistableTransfer persistableTransfer);
 }

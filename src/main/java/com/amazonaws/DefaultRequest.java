@@ -85,7 +85,9 @@ public class DefaultRequest<T> implements Request<T> {
      */
     public DefaultRequest(AmazonWebServiceRequest originalRequest, String serviceName) {
         this.serviceName = serviceName;
-        this.originalRequest = originalRequest;
+        this.originalRequest = originalRequest == null 
+                ? AmazonWebServiceRequest.NOOP
+                : originalRequest;
     }
 
     /**

@@ -2204,11 +2204,17 @@ public interface AmazonS3 {
      * Copies a source object to a new destination in Amazon S3.
      * </p>
      * <p>
-     * By default, all object metadata for the source object are copied to
-     * the new destination object. The Amazon S3 <code>AcccessControlList</code> (ACL)
-     * is <b>not</b> copied to the new
-     * object; the new object will have the default Amazon S3 ACL,
-     * {@link CannedAccessControlList#Private}.
+     * By default, all object metadata for the source object except
+     * <b>server-side-encryption</b>, <b>storage-class</b> and
+     * <b>website-redirect-location</b> are copied to the new destination
+     * object, unless new object metadata in the specified
+     * {@link CopyObjectRequest} is provided.
+     * </p>
+     * <p>
+     * The Amazon S3 Acccess Control List (ACL) is <b>not</b> copied to the new
+     * object. The new object will have the default Amazon S3 ACL,
+     * {@link CannedAccessControlList#Private}, unless one is explicitly
+     * provided in the specified {@link CopyObjectRequest}.
      * </p>
      * <p>
      * To copy an object, the caller's account must have read access to the source object and
@@ -2254,35 +2260,33 @@ public interface AmazonS3 {
      * Copies a source object to a new destination in Amazon S3.
      * </p>
      * <p>
-     * By default, all object metadata for the source object are copied to
-     * the new destination object, unless new object metadata in the
-     * specified {@link CopyObjectRequest} is provided.
+     * By default, all object metadata for the source object except
+     * <b>server-side-encryption</b>, <b>storage-class</b> and
+     * <b>website-redirect-location</b> are copied to the new destination
+     * object, unless new object metadata in the specified
+     * {@link CopyObjectRequest} is provided.
      * </p>
      * <p>
-     * The Amazon S3 Acccess Control List (ACL)
-     * is <b>not</b> copied to the new object. The new object will have
-     * the default Amazon S3 ACL, {@link CannedAccessControlList#Private},
-     * unless one is explicitly provided in the specified
-     * {@link CopyObjectRequest}.
+     * The Amazon S3 Acccess Control List (ACL) is <b>not</b> copied to the new
+     * object. The new object will have the default Amazon S3 ACL,
+     * {@link CannedAccessControlList#Private}, unless one is explicitly
+     * provided in the specified {@link CopyObjectRequest}.
      * </p>
      * <p>
-     * To copy an object, the caller's account must have read access to the source object and
-     * write access to the destination bucket.
+     * To copy an object, the caller's account must have read access to the
+     * source object and write access to the destination bucket.
      * </p>
      * <p>
-     * If constraints are specified in the <code>CopyObjectRequest</code>
-     * (e.g.
-     * {@link CopyObjectRequest#setMatchingETagConstraints(List)})
-     * and are not satisfied when Amazon S3 receives the
-     * request, this method returns <code>null</code>.
-     * This method returns a non-null result under all other
+     * If constraints are specified in the <code>CopyObjectRequest</code> (e.g.
+     * {@link CopyObjectRequest#setMatchingETagConstraints(List)}) and are not
+     * satisfied when Amazon S3 receives the request, this method returns
+     * <code>null</code>. This method returns a non-null result under all other
      * circumstances.
      * </p>
      * <p>
      * This method exposes all the advanced options for copying an Amazon S3
      * object. For simple needs, use the
-     * {@link AmazonS3Client#copyObject(String, String, String, String)}
-     * method.
+     * {@link AmazonS3Client#copyObject(String, String, String, String)} method.
      * </p>
      *
      * @param copyObjectRequest
@@ -2290,9 +2294,9 @@ public interface AmazonS3 {
      *            Amazon S3 object.
      *
      * @return A {@link CopyObjectResult} object containing the information
-     *         returned by Amazon S3 about the newly created object, or <code>null</code> if
-     *         constraints were specified that weren't met when Amazon S3 attempted
-     *         to copy the object.
+     *         returned by Amazon S3 about the newly created object, or
+     *         <code>null</code> if constraints were specified that weren't met
+     *         when Amazon S3 attempted to copy the object.
      *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the

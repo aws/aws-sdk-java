@@ -14,6 +14,8 @@
  */
 package com.amazonaws.util;
 
+import javax.xml.bind.DatatypeConverter;
+
 /**
  * A Base 64 codec API.
  * 
@@ -31,7 +33,7 @@ public enum Base64 {
     public static String encodeAsString(byte ... bytes) {
         if (bytes == null)
             return null;
-        return bytes.length == 0 ? "" : CodecUtils.toStringDirect(codec.encode(bytes)); 
+        return DatatypeConverter.printBase64Binary(bytes);
     }
     
     /**

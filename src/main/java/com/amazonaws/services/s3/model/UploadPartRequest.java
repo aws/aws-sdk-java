@@ -79,12 +79,6 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
     private long fileOffset;
 
     /**
-     * The optional progress listener for receiving updates about object download
-     * status.
-     */
-    private ProgressListener generalProgressListener;
-
-    /**
      * Allows the caller to indicate if this is the last part being uploaded in
      * a multipart upload.
      */
@@ -469,7 +463,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      */
     @Deprecated
     public void setProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
-        this.generalProgressListener = new LegacyS3ProgressListener(progressListener);
+        setGeneralProgressListener(new LegacyS3ProgressListener(progressListener));
     }
 
     /**
@@ -483,6 +477,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      */
     @Deprecated
     public com.amazonaws.services.s3.model.ProgressListener getProgressListener() {
+        ProgressListener generalProgressListener = getGeneralProgressListener();
         if (generalProgressListener instanceof LegacyS3ProgressListener) {
             return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
         } else {
@@ -584,43 +579,6 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      */
     public UploadPartRequest withSSECustomerKey(SSECustomerKey sseKey) {
         setSSECustomerKey(sseKey);
-        return this;
-    }
-
-    /**
-     * Sets the optional progress listener for receiving updates about object
-     * download status.
-     *
-     * @param generalProgressListener
-     *            The new progress listener.
-     */
-    public void setGeneralProgressListener(ProgressListener generalProgressListener) {
-        this.generalProgressListener = generalProgressListener;
-    }
-
-    /**
-     * Returns the optional progress listener for receiving updates about object
-     * download status.
-     *
-     * @return the optional progress listener for receiving updates about object
-     *          download status.
-     */
-    public ProgressListener getGeneralProgressListener() {
-        return generalProgressListener;
-    }
-
-    /**
-     * Sets the optional progress listener for receiving updates about object
-     * upload status, and returns this updated object so that additional method
-     * calls can be chained together.
-     *
-     * @param generalProgressListener
-     *            The new progress listener.
-     *
-     * @return This updated UploadPartRequest object.
-     */
-    public UploadPartRequest withGeneralProgressListener(ProgressListener progressListener) {
-        setGeneralProgressListener(progressListener);
         return this;
     }
 }

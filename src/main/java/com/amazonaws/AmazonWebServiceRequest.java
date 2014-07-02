@@ -20,13 +20,20 @@ import java.util.Map;
 import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.metrics.RequestMetricCollector;;
+import com.amazonaws.event.ProgressListener;
+import com.amazonaws.metrics.RequestMetricCollector;
 
 /**
- * Base class for all user facing web service request objects.
+ * Base class for all user facing web service requests.
  */
 @NotThreadSafe
 public abstract class AmazonWebServiceRequest {
+    public static final AmazonWebServiceRequest NOOP = new AmazonWebServiceRequest() {};
+    /**
+     * The optional progress listener for receiving updates about the progress
+     * of the request.
+     */
+    private ProgressListener progressListener = ProgressListener.NOOP;
 
     /**
      * Arbitrary options storage for individual {@link AmazonWebServiceRequest}s. This
@@ -113,5 +120,45 @@ public abstract class AmazonWebServiceRequest {
         @SuppressWarnings("unchecked") T t = (T)this;
         return t;
     }
-}
 
+    /**
+     * Sets the optional progress listener for receiving updates about the
+     * progress of the request.
+     *
+     * @param progressListener
+     *            The new progress listener.
+     */
+    public void setGeneralProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener == null
+                              ? ProgressListener.NOOP
+                              : progressListener;
+    }
+
+    /**
+     * Returns the optional progress listener for receiving updates about the
+     * progress of the request.
+     *
+     * @return the optional progress listener for receiving updates about the
+     *         progress of the request.
+     */
+    public ProgressListener getGeneralProgressListener() {
+        return progressListener;
+    }
+
+    /**
+     * Sets the optional progress listener for receiving updates about the
+     * progress of the request, and returns a reference to this object so that
+     * method calls can be chained together.
+     *
+     * @param progressListener
+     *            The new progress listener.
+     *
+     * @return A reference to this updated object so that method calls can be
+     *         chained together.
+     */
+    public <T extends AmazonWebServiceRequest> T withGeneralProgressListener(ProgressListener progressListener) {
+        setGeneralProgressListener(progressListener);
+        @SuppressWarnings("unchecked") T t = (T)this;
+        return t;
+    }
+}

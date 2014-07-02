@@ -14,8 +14,13 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import static com.amazonaws.util.XpathUtils.asString;
+import static com.amazonaws.util.XpathUtils.xpath;
+
 import java.io.IOException;
 import java.io.InputStream;
+
+import javax.xml.xpath.XPath;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -76,10 +81,11 @@ public class S3ErrorResponseHandler
         }
         try { // try to parse the error response as XML
             final Document document = XpathUtils.documentFrom(content);
-            final String message = XpathUtils.asString("Error/Message", document);
-            final String errorCode = XpathUtils.asString("Error/Code", document);
-            final String requestId = XpathUtils.asString("Error/RequestId", document);
-            final String extendedRequestId = XpathUtils.asString("Error/HostId", document);
+            XPath xpath = xpath();
+            final String message = asString("Error/Message", document, xpath);
+            final String errorCode = asString("Error/Code", document, xpath);
+            final String requestId = asString("Error/RequestId", document, xpath);
+            final String extendedRequestId = asString("Error/HostId", document, xpath);
             final AmazonS3Exception ase = new AmazonS3Exception(message);
             final int statusCode = errorResponse.getStatusCode(); 
             ase.setStatusCode(statusCode);

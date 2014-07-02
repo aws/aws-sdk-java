@@ -14,17 +14,21 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
-import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.SyncProgressListener;
+import com.amazonaws.services.s3.transfer.TransferProgress;
 
-public class TransferProgressUpdatingListener implements ProgressListener {
-    private final TransferProgressImpl transferProgress;
+public class TransferProgressUpdatingListener extends SyncProgressListener {
+    private final TransferProgress transferProgress;
 
-    public TransferProgressUpdatingListener(TransferProgressImpl transferProgress) {
+    public TransferProgressUpdatingListener(TransferProgress transferProgress) {
         this.transferProgress = transferProgress;
     }
 
     public void progressChanged(ProgressEvent progressEvent) {
-        transferProgress.updateProgress(progressEvent.getBytesTransferred());
+        long bytes = progressEvent.getBytesTransferred();
+        if (bytes == 0)
+            return; // only interested in non-zero bytes
+        transferProgress.updateProgress(bytes);
     }
 }

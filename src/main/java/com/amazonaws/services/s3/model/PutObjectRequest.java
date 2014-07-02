@@ -139,12 +139,6 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      */
     private String storageClass;
 
-    /**
-     * The optional progress listener for receiving updates about object download
-     * status.
-     */
-    private ProgressListener generalProgressListener;
-
     /** The optional redirect location about an object */
     private String redirectLocation;
 
@@ -153,7 +147,6 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      * encrypt the uploaded object.
      */
     private SSECustomerKey sseCustomerKey;
-
 
     /**
      * Constructs a new
@@ -818,7 +811,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      */
     @Deprecated
     public void setProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
-        this.generalProgressListener = new LegacyS3ProgressListener(progressListener);
+        setGeneralProgressListener(new LegacyS3ProgressListener(progressListener));
     }
 
     /**
@@ -832,11 +825,12 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      */
     @Deprecated
     public com.amazonaws.services.s3.model.ProgressListener getProgressListener() {
-         if (generalProgressListener instanceof LegacyS3ProgressListener) {
-             return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
-         } else {
-              return null;
-         }
+        ProgressListener generalProgressListener = getGeneralProgressListener();
+        if (generalProgressListener instanceof LegacyS3ProgressListener) {
+            return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
+        } else {
+             return null;
+        }
     }
 
     /**
@@ -858,43 +852,6 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
     }
 
     /**
-     * Sets the optional progress listener for receiving updates about object
-     * upload status.
-     *
-     * @param generalProgressListener
-     *            The new progress listener.
-     */
-    public void setGeneralProgressListener(ProgressListener generalProgressListener) {
-        this.generalProgressListener = generalProgressListener;
-    }
-
-    /**
-     * Returns the optional progress listener for receiving updates about object
-     * upload status.
-     *
-     * @return the optional progress listener for receiving updates about object
-     *          upload status.
-     */
-    public ProgressListener getGeneralProgressListener() {
-        return generalProgressListener;
-    }
-
-    /**
-     * Sets the optional progress listener for receiving updates about object
-     * upload status, and returns this updated object so that additional method
-     * calls can be chained together.
-     *
-     * @param generalProgressListener
-     *            The new progress listener.
-     *
-     * @return This updated PutObjectRequest object.
-     */
-    public PutObjectRequest withGeneralProgressListener(ProgressListener generalProgressListener) {
-        setGeneralProgressListener(generalProgressListener);
-        return this;
-    }
-
-    /**
      * Returns a clone of this object so that the metadata can be further
      * modified without affecting the original.
      */
@@ -903,10 +860,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
              withAccessControlList(accessControlList)
             .withCannedAcl(cannedAcl)
             .withFile(file)
-            .withGeneralProgressListener(generalProgressListener)
             .withInputStream(inputStream)
             .withMetadata(metadata == null ? null : metadata.clone())
             .withStorageClass(storageClass)
+            .withGeneralProgressListener(getGeneralProgressListener())
             .withRequestMetricCollector(getRequestMetricCollector())
             ;
     }

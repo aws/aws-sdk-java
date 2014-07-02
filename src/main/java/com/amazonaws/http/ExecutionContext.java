@@ -44,9 +44,10 @@ public class ExecutionContext {
     public ExecutionContext() { this(null, false, null); }
 
     public ExecutionContext(List<RequestHandler2> requestHandler2s,
-            boolean isMetricEnabled, AmazonWebServiceClient awsClient) {
+                            boolean isMetricEnabled,
+                            AmazonWebServiceClient awsClient) {
         this.requestHandler2s = requestHandler2s;
-        awsRequestMetrics = isMetricEnabled 
+        awsRequestMetrics = isMetricEnabled
                           ? new AWSRequestMetricsFullSupport()
                           : new AWSRequestMetrics();
         this.awsClient = awsClient;
@@ -74,7 +75,7 @@ public class ExecutionContext {
      * the request.
      * The exception is S3 where the signer is currently determined only when
      * the S3 client is constructed.  Hence the need for this method.
-     * We may consider supporting a per request level signer determination 
+     * We may consider supporting a per request level signer determination
      * for S3 later on.
      */
     public void setSigner(Signer signer) {}

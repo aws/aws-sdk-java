@@ -149,14 +149,22 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             return null;
         try {
             return decipher(req, desiredRange, adjustedCryptoRange, retrieved);
-        } catch (AmazonClientException ace) {
-            // If we're unable to set up the decryption, make sure we close the HTTP connection
-            try {
-                retrieved.getObjectContent().close();
-            } catch (Exception e) {
-                log.debug("Safely ignoring", e);
-            }
-            throw ace;
+        } catch (RuntimeException rc) {
+            // If we're unable to set up the decryption, make sure we close the
+            // HTTP connection
+            closeStream(retrieved.getObjectContent());
+            throw rc;
+        } catch (Error error) {
+            closeStream(retrieved.getObjectContent());
+            throw error;
+        }
+    }
+
+    private void closeStream(InputStream stream){
+        try {
+            stream.close();
+        } catch (Exception e) {
+            log.debug("Safely ignoring", e);
         }
     }
 

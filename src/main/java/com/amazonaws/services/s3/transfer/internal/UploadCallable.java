@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,8 +29,7 @@ import java.util.concurrent.Future;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.event.ProgressEvent;
-import com.amazonaws.event.ProgressListenerCallbackExecutor;
+import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3EncryptionClient;
@@ -112,8 +113,8 @@ public class UploadCallable implements Callable<UploadResult> {
 
     public UploadResult call() throws Exception {
         upload.setState(TransferState.InProgress);
-        if (isMultipartUpload()) {
-            fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
+        if ( isMultipartUpload() ) {
+            publishProgress(listener, ProgressEventType.TRANSFER_STARTED_EVENT);
             return uploadInParts();
         } else {
             return uploadInOneChunk();
@@ -185,7 +186,7 @@ public class UploadCallable implements Callable<UploadResult> {
                 return uploadPartsInSeries(requestFactory);
             }
         } catch (Exception e) {
-            fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
+            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             performAbortMultipartUpload();
             throw e;
         } finally {
@@ -344,11 +345,5 @@ public class UploadCallable implements Callable<UploadResult> {
         log.debug("Initiated new multipart upload: " + uploadId);
 
         return uploadId;
-    }
-
-    private void fireProgressEvent(final int eventType) {
-        ProgressEvent event = new ProgressEvent(0);
-        event.setEventCode(eventType);
-        ProgressListenerCallbackExecutor.progressChanged(listener, event);
     }
 }

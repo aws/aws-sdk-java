@@ -15,6 +15,9 @@
 package com.amazonaws.http;
 import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
+import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,6 +66,9 @@ import com.amazonaws.ResponseMetadata;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
+import com.amazonaws.event.ProgressEventType;
+import com.amazonaws.event.ProgressInputStream;
+import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.CredentialsRequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.CRC32MismatchException;
@@ -238,17 +244,47 @@ public class AmazonHttpClient {
             ExecutionContext executionContext) throws AmazonClientException, AmazonServiceException {
         if (executionContext == null)
             throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
-        List<RequestHandler2> requestHandler2s = requestHandler2s(request, executionContext);
+
+        final List<RequestHandler2> requestHandler2s = requestHandler2s(request, executionContext);
+        AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+        ProgressListener listener = awsreq.getGeneralProgressListener();
         final AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Response<T> response = null;
+        beforeRequest(request);
         try {
-            response = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
+            publishProgress(listener, ProgressEventType.CLIENT_REQUEST_STARTED_EVENT);
+            response = executeHelper(request,
+                                     responseHandler,
+                                     errorResponseHandler,
+                                     executionContext);
+            publishProgress(listener, ProgressEventType.CLIENT_REQUEST_SUCCESS_EVENT);
+
             TimingInfo timingInfo = awsRequestMetrics.getTimingInfo().endTiming();
             afterResponse(request, requestHandler2s, response, timingInfo);
             return response;
         } catch (AmazonClientException e) {
+            publishProgress(listener, ProgressEventType.CLIENT_REQUEST_FAILED_EVENT);
             afterError(request, response, requestHandler2s, e);
             throw e;
+        }
+    }
+
+    private void beforeRequest(Request<?> request) {
+        final AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+        ProgressListener listener = awsreq.getGeneralProgressListener();
+        Map<String,String> headers = request.getHeaders();
+        String s = headers.get("Content-Length");
+        if (s != null) {
+            try {
+                long contentLength = Long.parseLong(s);
+                publishRequestContentLength(listener, contentLength);
+            } catch (NumberFormatException e) {
+                log.warn("Cannot parse the Content-Length header of the request.");
+            }
+        }
+        if (request.getContent() != null) {
+            request.setContent(ProgressInputStream
+                .inputStreamForRequest(request.getContent(), awsreq));
         }
     }
 
@@ -294,7 +330,7 @@ public class AmazonHttpClient {
      * @see AmazonHttpClient#execute(Request, HttpResponseHandler, HttpResponseHandler)
      * @see AmazonHttpClient#execute(Request, HttpResponseHandler, HttpResponseHandler, ExecutionContext)
      */
-    private <T> Response<T> executeHelper(Request<?> request,
+    private <T> Response<T> executeHelper(final Request<?> request,
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             ExecutionContext executionContext)
@@ -312,6 +348,7 @@ public class AmazonHttpClient {
         /* add the service endpoint to the logs. You can infer service name from service endpoint */
         awsRequestMetrics.addProperty(Field.ServiceName, request.getServiceName());
         awsRequestMetrics.addProperty(Field.ServiceEndpoint, request.getEndpoint());
+
         // Apply whatever request options we know how to handle, such as user-agent.
         setUserAgent(request);
         int requestCount = 0;
@@ -326,6 +363,8 @@ public class AmazonHttpClient {
         Map<String, String> originalHeaders = new HashMap<String, String>();
         originalHeaders.putAll(request.getHeaders());
         final AWSCredentials credentials = executionContext.getCredentials();
+        AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+        ProgressListener listener = awsreq.getGeneralProgressListener();
         Signer signer = null;
 
         while (true) {
@@ -366,6 +405,9 @@ public class AmazonHttpClient {
                 }
 
                 if (requestCount > 1) {   // retry
+                    // Notify the progress listener of the retry
+                    publishProgress(listener, ProgressEventType.CLIENT_REQUEST_RETRY_EVENT);
+
                     awsRequestMetrics.startEvent(Field.RetryPauseTime);
                     try {
                         pauseBeforeNextRetry(request.getOriginalRequest(),
@@ -397,12 +439,15 @@ public class AmazonHttpClient {
                         AWSRequestMetrics.class.getSimpleName(),
                         awsRequestMetrics);
                 retriedException = null;
+
+                publishProgress(listener, ProgressEventType.HTTP_REQUEST_STARTED_EVENT);
                 awsRequestMetrics.startEvent(Field.HttpRequestTime);
                 try {
                     apacheResponse = httpClient.execute(httpRequest, httpContext);
                 } finally {
                     awsRequestMetrics.endEvent(Field.HttpRequestTime);
                 }
+                publishProgress(listener, ProgressEventType.HTTP_REQUEST_COMPLETED_EVENT);
 
                 if (isRequestSuccessful(apacheResponse)) {
                     awsRequestMetrics.addProperty(Field.StatusCode, apacheResponse.getStatusLine().getStatusCode());
@@ -581,14 +626,12 @@ public class AmazonHttpClient {
             request.addHeader(HEADER_USER_AGENT, userAgent);
         }
         AmazonWebServiceRequest awsreq = request.getOriginalRequest();
-        if (awsreq != null) {
-            RequestClientOptions opts = awsreq.getRequestClientOptions();
-            if (opts != null) {
-                String userAgentMarker = opts.getClientMarker(Marker.USER_AGENT);
-                if (userAgentMarker != null) {
-                    request.addHeader(HEADER_USER_AGENT,
-                        createUserAgentString(userAgent, userAgentMarker));
-                }
+        RequestClientOptions opts = awsreq.getRequestClientOptions();
+        if (opts != null) {
+            String userAgentMarker = opts.getClientMarker(Marker.USER_AGENT);
+            if (userAgentMarker != null) {
+                request.addHeader(HEADER_USER_AGENT,
+                    createUserAgentString(userAgent, userAgentMarker));
             }
         }
     }
@@ -705,6 +748,7 @@ public class AmazonHttpClient {
      *             If any problems were encountered reading the response
      *             contents from the HTTP method object.
      */
+    @SuppressWarnings("deprecation")
     private <T> T handleResponse(Request<?> request,
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpRequestBase method, HttpResponse httpResponse,
@@ -715,22 +759,44 @@ public class AmazonHttpClient {
             HttpEntityEnclosingRequest httpEntityEnclosingRequest = (HttpEntityEnclosingRequest)method;
             httpResponse.setContent(new HttpMethodReleaseInputStream(httpEntityEnclosingRequest));
         }
-
+        AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+        ProgressListener listener = awsreq.getGeneralProgressListener();
         try {
+            /*
+             * Apply the byte counting stream wrapper if the legacy runtime profiling is enabled.
+             */
             CountingInputStream countingInputStream = null;
-            if (System.getProperty(PROFILING_SYSTEM_PROPERTY) != null) {
-                countingInputStream = new CountingInputStream(httpResponse.getContent());
-                httpResponse.setContent(countingInputStream);
+            InputStream is = httpResponse.getContent();
+            if (is != null) {
+                if (System.getProperty(PROFILING_SYSTEM_PROPERTY) != null) {
+                    is = countingInputStream = new CountingInputStream(is);
+                    httpResponse.setContent(is);
+                }
+                httpResponse.setContent(
+                    ProgressInputStream.inputStreamForResponse(is, awsreq));
+            }
+            Map<String,String> headers = httpResponse.getHeaders();
+            String s = headers.get("Content-Length");
+            if (s != null) {
+                try {
+                    long contentLength = Long.parseLong(s);
+                    publishResponseContentLength(listener, contentLength);
+                } catch (NumberFormatException e) {
+                    log.warn("Cannot parse the Content-Length header of the response.");
+                }
             }
 
             AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
             AmazonWebServiceResponse<? extends T> awsResponse;
             awsRequestMetrics.startEvent(Field.ResponseProcessingTime);
+            publishProgress(listener, ProgressEventType.HTTP_RESPONSE_STARTED_EVENT);
             try {
                 awsResponse = responseHandler.handle(httpResponse);
             } finally {
                 awsRequestMetrics.endEvent(Field.ResponseProcessingTime);
             }
+            publishProgress(listener, ProgressEventType.HTTP_RESPONSE_COMPLETED_EVENT);
+
             if (countingInputStream != null) {
                 awsRequestMetrics.setCounter(Field.BytesProcessed, countingInputStream.getByteCount());
             }

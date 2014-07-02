@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -23,24 +25,19 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.event.ProgressEvent;
-import com.amazonaws.event.ProgressListenerCallbackExecutor;
+import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.transfer.PauseStatus;
-import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.PauseResult;
+import com.amazonaws.services.s3.transfer.PauseStatus;
 import com.amazonaws.services.s3.transfer.PersistableUpload;
+import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
-import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 /**
@@ -58,9 +55,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     private final PutObjectRequest putObjectRequest;
     private ScheduledExecutorService timedThreadPool;
 
-    private static final Log log = LogFactory.getLog(UploadMonitor.class);
-    private final TransferManagerConfiguration configuration;
-    private final ProgressListenerCallbackExecutor progressListenerChainCallbackExecutor;
+    private final ProgressListenerChain listener;
     private final UploadCallable multipartUploadCallable;
     private final UploadImpl transfer;
 
@@ -120,15 +115,11 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
             ProgressListenerChain progressListenerChain) {
 
         this.s3 = manager.getAmazonS3Client();
-        this.configuration = manager.getConfiguration();
-
         this.multipartUploadCallable = multipartUploadCallable;
         this.threadPool = threadPool;
         this.putObjectRequest = putObjectRequest;
-        this.progressListenerChainCallbackExecutor = ProgressListenerCallbackExecutor
-                .wrapListener(progressListenerChain);
+        this.listener = progressListenerChain;
         this.transfer = transfer;
-
         setNextFuture(threadPool.submit(this));
     }
 
@@ -146,11 +137,11 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
             }
         } catch ( CancellationException e ) {
             transfer.setState(TransferState.Canceled);
-            fireProgressEvent(ProgressEvent.CANCELED_EVENT_CODE);
+            publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
             throw new AmazonClientException("Upload canceled");
         } catch ( Exception e ) {
             transfer.setState(TransferState.Failed);
-            fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
+            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
         }
     }
@@ -202,7 +193,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         // AmazonS3Client takes care of all the events for single part uploads,
         // so we only need to send a completed event for multipart uploads.
         if (multipartUploadCallable.isMultipartUpload()) {
-            fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
+            publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
     }
 
@@ -213,13 +204,6 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
                 return null;
             }
         }, pollInterval, TimeUnit.MILLISECONDS));
-    }
-
-    private void fireProgressEvent(final int eventType) {
-        if (progressListenerChainCallbackExecutor == null) return;
-        ProgressEvent event = new ProgressEvent(0);
-        event.setEventCode(eventType);
-        progressListenerChainCallbackExecutor.progressChanged(event);
     }
 
     /**

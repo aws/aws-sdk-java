@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -24,8 +26,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.event.ProgressEvent;
-import com.amazonaws.event.ProgressListenerCallbackExecutor;
+import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
@@ -62,7 +63,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
     /** Reference to the CopyCallable that is used for initiating copy requests. */
     private final CopyCallable multipartCopyCallable;
     private final CopyImpl transfer;
-    private final ProgressListenerCallbackExecutor progressListenerChainCallbackExecutor;
+    private final ProgressListenerChain progressListenerChain;
 
     /*
      * State for tracking the upload's progress
@@ -121,8 +122,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
         this.threadPool = threadPool;
         this.copyObjectRequest = copyObjectRequest;
         this.transfer = transfer;
-        this.progressListenerChainCallbackExecutor = ProgressListenerCallbackExecutor
-                .wrapListener(progressListenerChain);
+        this.progressListenerChain = progressListenerChain;
 
         setNextFuture(threadPool.submit(this));
     }
@@ -137,11 +137,11 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
             }
         } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
-            fireProgressEvent(ProgressEvent.CANCELED_EVENT_CODE);
+            publishProgress(progressListenerChain, ProgressEventType.TRANSFER_CANCELED_EVENT);
             throw new AmazonClientException("Upload canceled");
         } catch (Exception e) {
             transfer.setState(TransferState.Failed);
-            fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
+            publishProgress(progressListenerChain, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
         }
     }
@@ -171,21 +171,12 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
         return completeMultipartUpload();
     }
 
-    private void fireProgressEvent(final int eventType) {
-        if (progressListenerChainCallbackExecutor == null)
-            return;
-        ProgressEvent event = new ProgressEvent(0);
-        event.setEventCode(eventType);
-        progressListenerChainCallbackExecutor.progressChanged(event);
-    }
-
     /**
      * Initiates the copy operation and checks on the result. If it has
      * completed, returns the result; otherwise, reschedules to check back
      * later.
      */
     private CopyResult copy() throws Exception, InterruptedException {
-
         CopyResult result = multipartCopyCallable.call();
 
         if (result != null) {
@@ -201,13 +192,11 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
 
     private void copyComplete() {
         markAllDone();
-
         transfer.setState(TransferState.Completed);
-
         // AmazonS3Client takes care of all the events for single part uploads,
         // so we only need to send a completed event for multipart uploads.
         if (multipartCopyCallable.isMultipartCopy()) {
-            fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
+            publishProgress(progressListenerChain, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
     }
 

@@ -92,12 +92,6 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
     private ResponseHeaderOverrides responseHeaders;
 
     /**
-     * The optional progress listener for receiving updates about object download
-     * status.
-     */
-    private ProgressListener generalProgressListener;
-
-    /**
      * If enabled, the requester is charged for downloading the data from
      * Requester Pays Buckets.
      */
@@ -108,7 +102,6 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * decrypt this object.
      */
     private SSECustomerKey sseCustomerKey;
-
 
 
     /**
@@ -728,7 +721,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      */
     @Deprecated
     public void setProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
-        this.generalProgressListener = new LegacyS3ProgressListener(progressListener);
+        setGeneralProgressListener(new LegacyS3ProgressListener(progressListener));
     }
 
     /**
@@ -742,6 +735,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      */
     @Deprecated
     public com.amazonaws.services.s3.model.ProgressListener getProgressListener() {
+        ProgressListener generalProgressListener = getGeneralProgressListener();
         if (generalProgressListener instanceof LegacyS3ProgressListener) {
             return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
         } else {
@@ -765,43 +759,6 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
     @Deprecated
     public GetObjectRequest withProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
         setProgressListener(progressListener);
-        return this;
-    }
-
-    /**
-     * Sets the optional progress listener for receiving updates about object
-     * download status.
-     *
-     * @param generalProgressListener
-     *            The new progress listener.
-     */
-    public void setGeneralProgressListener(ProgressListener generalProgressListener) {
-        this.generalProgressListener = generalProgressListener;
-    }
-
-    /**
-     * Returns the optional progress listener for receiving updates about object
-     * download status.
-     *
-     * @return the optional progress listener for receiving updates about object
-     *          download status.
-     */
-    public ProgressListener getGeneralProgressListener() {
-        return generalProgressListener;
-    }
-
-    /**
-     * Sets the optional progress listener for receiving updates about object
-     * download status, and returns this updated object so that additional method
-     * calls can be chained together.
-     *
-     * @param generalProgressListener
-     *            The new progress listener.
-     *
-     * @return This updated GetObjectRequest object.
-     */
-    public GetObjectRequest withGeneralProgressListener(ProgressListener progressListener) {
-        setGeneralProgressListener(progressListener);
         return this;
     }
 

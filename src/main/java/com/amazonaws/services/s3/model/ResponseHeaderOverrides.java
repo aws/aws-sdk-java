@@ -43,8 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * @see GetObjectRequest#setResponseHeaders(ResponseHeaderOverrides)
  * @see GeneratePresignedUrlRequest#setResponseHeaders(ResponseHeaderOverrides)
  */
-public class ResponseHeaderOverrides extends AmazonWebServiceRequest {
-
+public class ResponseHeaderOverrides {
     private String contentType;
     private String contentLanguage;
     private String expires;

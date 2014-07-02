@@ -17,7 +17,7 @@ package com.amazonaws.services.s3.transfer.internal;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.Transfer;
 import com.amazonaws.services.s3.transfer.TransferProgress;
@@ -72,23 +72,23 @@ public abstract class MultipleFileTransfer<T extends Transfer> extends AbstractT
 
         switch (state) {
         case Waiting:
-            fireProgressEvent(ProgressEvent.PREPARING_EVENT_CODE);
+            fireProgressEvent(ProgressEventType.TRANSFER_PREPARING_EVENT);
             break;
         case InProgress:
             if ( subTransferStarted.compareAndSet(false, true) ) {
                 /* The first InProgress signal */
-                fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
+                fireProgressEvent(ProgressEventType.TRANSFER_STARTED_EVENT);
             }
             /* Don't need any event code update for subsequent InProgress signals */
             break;
         case Completed:
-            fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
+            fireProgressEvent(ProgressEventType.TRANSFER_COMPLETED_EVENT);
             break;
         case Canceled:
-            fireProgressEvent(ProgressEvent.CANCELED_EVENT_CODE);
+            fireProgressEvent(ProgressEventType.TRANSFER_CANCELED_EVENT);
             break;
         case Failed:
-            fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(ProgressEventType.TRANSFER_FAILED_EVENT);
             break;
         default:
             break;

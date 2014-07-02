@@ -18,7 +18,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that specifies how CloudFront handles query strings.
+ * A complex type that specifies how CloudFront handles query strings,
+ * cookies and headers.
  * </p>
  */
 public class ForwardedValues implements Serializable {
@@ -34,6 +35,12 @@ public class ForwardedValues implements Serializable {
      * A complex type that specifies how CloudFront handles cookies.
      */
     private CookiePreference cookies;
+
+    /**
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     */
+    private Headers headers;
 
     /**
      * Indicates whether you want CloudFront to forward query strings to the
@@ -127,6 +134,45 @@ public class ForwardedValues implements Serializable {
     }
 
     /**
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     *
+     * @return A complex type that specifies the Headers, if any, that you want
+     *         CloudFront to vary upon for this cache behavior.
+     */
+    public Headers getHeaders() {
+        return headers;
+    }
+    
+    /**
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     *
+     * @param headers A complex type that specifies the Headers, if any, that you want
+     *         CloudFront to vary upon for this cache behavior.
+     */
+    public void setHeaders(Headers headers) {
+        this.headers = headers;
+    }
+    
+    /**
+     * A complex type that specifies the Headers, if any, that you want
+     * CloudFront to vary upon for this cache behavior.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param headers A complex type that specifies the Headers, if any, that you want
+     *         CloudFront to vary upon for this cache behavior.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ForwardedValues withHeaders(Headers headers) {
+        this.headers = headers;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -139,7 +185,8 @@ public class ForwardedValues implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (isQueryString() != null) sb.append("QueryString: " + isQueryString() + ",");
-        if (getCookies() != null) sb.append("Cookies: " + getCookies() );
+        if (getCookies() != null) sb.append("Cookies: " + getCookies() + ",");
+        if (getHeaders() != null) sb.append("Headers: " + getHeaders() );
         sb.append("}");
         return sb.toString();
     }
@@ -151,6 +198,7 @@ public class ForwardedValues implements Serializable {
         
         hashCode = prime * hashCode + ((isQueryString() == null) ? 0 : isQueryString().hashCode()); 
         hashCode = prime * hashCode + ((getCookies() == null) ? 0 : getCookies().hashCode()); 
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode()); 
         return hashCode;
     }
     
@@ -166,6 +214,8 @@ public class ForwardedValues implements Serializable {
         if (other.isQueryString() != null && other.isQueryString().equals(this.isQueryString()) == false) return false; 
         if (other.getCookies() == null ^ this.getCookies() == null) return false;
         if (other.getCookies() != null && other.getCookies().equals(this.getCookies()) == false) return false; 
+        if (other.getHeaders() == null ^ this.getHeaders() == null) return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false) return false; 
         return true;
     }
     

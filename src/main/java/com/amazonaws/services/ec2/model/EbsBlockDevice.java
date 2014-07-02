@@ -46,7 +46,7 @@ public class EbsBlockDevice implements Serializable {
      * The volume type. <p>Default: <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      */
     private String volumeType;
 
@@ -201,7 +201,7 @@ public class EbsBlockDevice implements Serializable {
      * The volume type. <p>Default: <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @return The volume type. <p>Default: <code>standard</code>
      *
@@ -215,7 +215,7 @@ public class EbsBlockDevice implements Serializable {
      * The volume type. <p>Default: <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *
@@ -231,7 +231,7 @@ public class EbsBlockDevice implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *
@@ -249,7 +249,7 @@ public class EbsBlockDevice implements Serializable {
      * The volume type. <p>Default: <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *
@@ -265,7 +265,7 @@ public class EbsBlockDevice implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. <p>Default: <code>standard</code>
      *

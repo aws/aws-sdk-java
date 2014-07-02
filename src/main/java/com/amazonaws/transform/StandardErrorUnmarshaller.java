@@ -14,11 +14,15 @@
  */
 package com.amazonaws.transform;
 
+import static com.amazonaws.util.XpathUtils.asString;
+import static com.amazonaws.util.XpathUtils.xpath;
+
+import javax.xml.xpath.XPath;
+
 import org.w3c.dom.Node;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
-import com.amazonaws.util.XpathUtils;
 
 /**
  * Error unmarshaller that knows how to interpret a standard AWS error message
@@ -52,10 +56,11 @@ public class StandardErrorUnmarshaller extends AbstractErrorUnmarshaller<Node> {
      * @see com.amazonaws.transform.Unmarshaller#unmarshall(java.lang.Object)
      */
     public AmazonServiceException unmarshall(Node in) throws Exception {
-        String errorCode = parseErrorCode(in);
-        String errorType = XpathUtils.asString("ErrorResponse/Error/Type", in);
-        String requestId = XpathUtils.asString("ErrorResponse/RequestId", in);
-        String message = XpathUtils.asString("ErrorResponse/Error/Message", in);
+        XPath xpath = xpath();
+        String errorCode = parseErrorCode(in, xpath);
+        String errorType = asString("ErrorResponse/Error/Type", in, xpath);
+        String requestId = asString("ErrorResponse/RequestId", in, xpath);
+        String message = asString("ErrorResponse/Error/Message", in, xpath);
 
         AmazonServiceException ase = newException(message);
         ase.setErrorCode(errorCode);
@@ -85,7 +90,11 @@ public class StandardErrorUnmarshaller extends AbstractErrorUnmarshaller<Node> {
      *             code.
      */
     public String parseErrorCode(Node in) throws Exception {
-        return XpathUtils.asString("ErrorResponse/Error/Code", in);
+        return asString("ErrorResponse/Error/Code", in);
+    }
+
+    public String parseErrorCode(Node in, XPath xpath) throws Exception {
+        return asString("ErrorResponse/Error/Code", in, xpath);
     }
 
     /**

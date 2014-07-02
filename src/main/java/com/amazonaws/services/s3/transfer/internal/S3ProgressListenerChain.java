@@ -21,12 +21,14 @@ import com.amazonaws.services.s3.transfer.PersistableTransfer;
  * S3 specific progress listener chain.
  */
 public class S3ProgressListenerChain extends
-        com.amazonaws.event.ProgressListenerChain implements
-        S3ProgressListener {
-
+        com.amazonaws.event.ProgressListenerChain implements S3ProgressListener
+{
     /**
      * Create a listener chain that directly passes all the progress events to
      * the specified listeners.
+     * 
+     * @param listeners only listeners of type {@link S3ProgressListener}
+     * will be notified with the S3 transfer events. 
      */
     public S3ProgressListenerChain(ProgressListener... listeners) {
         super(listeners);
@@ -35,9 +37,10 @@ public class S3ProgressListenerChain extends
     @Override
     public void onPersistableTransfer(PersistableTransfer persistableTransfer) {
         for (ProgressListener listener : getListeners()) {
-            if (listener instanceof S3ProgressListener)
-                ((S3ProgressListener) listener)
-                        .onPersistableTransfer(persistableTransfer);
+            if (listener instanceof S3ProgressListener) {
+                S3ProgressListener s3listener = (S3ProgressListener)listener;
+                s3listener.onPersistableTransfer(persistableTransfer);
+            }
         }
     }
 }

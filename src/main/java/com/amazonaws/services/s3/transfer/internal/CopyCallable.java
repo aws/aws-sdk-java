@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
@@ -28,9 +28,7 @@ import java.util.concurrent.Future;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.Request;
-import com.amazonaws.event.ProgressEvent;
-import com.amazonaws.event.ProgressListenerCallbackExecutor;
+import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.Headers;
@@ -42,11 +40,10 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.StorageClass;
+import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
-import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.model.CopyResult;
-import com.amazonaws.util.DateUtils;
 
 /**
  * An implementation of the Callable interface that helps
@@ -95,7 +92,7 @@ public class CopyCallable implements Callable<CopyResult> {
      */
     private final List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();
 
-    private final ProgressListenerCallbackExecutor progressListenerChainCallbackExecutor;
+    private final ProgressListenerChain listenerChain;
 
     public CopyCallable(TransferManager transferManager,
             ExecutorService threadPool, CopyImpl copy,
@@ -106,8 +103,7 @@ public class CopyCallable implements Callable<CopyResult> {
         this.threadPool = threadPool;
         this.copyObjectRequest = copyObjectRequest;
         this.metadata = metadata;
-        this.progressListenerChainCallbackExecutor = ProgressListenerCallbackExecutor
-                .wrapListener(progressListenerChain);
+        this.listenerChain = progressListenerChain;
         this.copy = copy;
     }
 
@@ -132,7 +128,7 @@ public class CopyCallable implements Callable<CopyResult> {
     public CopyResult call() throws Exception {
         copy.setState(TransferState.InProgress);
         if (isMultipartCopy()) {
-            fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
+            publishProgress(listenerChain, ProgressEventType.TRANSFER_STARTED_EVENT);
             copyInParts();
             return null;
         } else {
@@ -184,7 +180,7 @@ public class CopyCallable implements Callable<CopyResult> {
                     metadata.getContentLength());
             copyPartsInParallel(requestFactory);
         } catch (Exception e) {
-            fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
+            publishProgress(listenerChain, ProgressEventType.TRANSFER_FAILED_EVENT);
             try {
                 s3.abortMultipartUpload(new AbortMultipartUploadRequest(
                         bucketName, key, multipartUploadId));
@@ -266,14 +262,6 @@ public class CopyCallable implements Callable<CopyResult> {
         log.debug("Initiated new multipart upload: " + uploadId);
 
         return uploadId;
-    }
-
-    private void fireProgressEvent(final int eventType) {
-        if (progressListenerChainCallbackExecutor == null)
-            return;
-        ProgressEvent event = new ProgressEvent(0);
-        event.setEventCode(eventType);
-        progressListenerChainCallbackExecutor.progressChanged(event);
     }
 
     private void populateMetadataWithEncryptionParams(ObjectMetadata source, ObjectMetadata destination) {

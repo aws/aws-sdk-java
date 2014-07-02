@@ -32,11 +32,18 @@ import org.apache.commons.logging.LogFactory;
  * deprecated in favor of this new class.
  * </p>
  */
-public class ProgressListenerChain implements ProgressListener {
+public class ProgressListenerChain implements ProgressListener, DeliveryMode {
+    private static final Log log = LogFactory.getLog(ProgressListenerChain.class);
+
     private final List<ProgressListener> listeners = new CopyOnWriteArrayList<ProgressListener>();
     private final ProgressEventFilter progressEventFilter;
-
-    private static final Log log = LogFactory.getLog(ProgressListenerChain.class);
+    /**
+     * True if synchronous callback to every listener in this chain is safe with
+     * no risk of incurring undue latency.
+     *
+     * @see SDKProgressPublisher
+     */
+    private volatile boolean syncCallSafe = true;
 
     /**
      * Create a listener chain that directly passes all the progress events to
@@ -60,7 +67,10 @@ public class ProgressListenerChain implements ProgressListener {
     }
 
     public synchronized void addProgressListener(ProgressListener listener) {
-        if (listener == null) return;
+        if (listener == null) 
+            return;
+        if (syncCallSafe)
+            syncCallSafe = DeliveryMode.Check.isSyncCallSafe(listener);
         this.listeners.add(listener);
     }
 
@@ -92,16 +102,5 @@ public class ProgressListenerChain implements ProgressListener {
         }
     }
 
-    /**
-     * An interface that filters the incoming events before passing
-     * them into the registered listeners.
-     */
-    public static interface ProgressEventFilter {
-
-        /**
-         * Returns the filtered event object that will be actually passed into
-         * the listeners. Returns null if the event should be completely blocked.
-         */
-        public ProgressEvent filter(ProgressEvent progressEvent);
-    }
+    @Override public boolean isSyncCallSafe() { return syncCallSafe; }
 }
