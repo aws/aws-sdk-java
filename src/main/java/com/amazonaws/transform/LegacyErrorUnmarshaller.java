@@ -14,13 +14,17 @@
  */
 package com.amazonaws.transform;
 
+import static com.amazonaws.util.XpathUtils.asString;
+import static com.amazonaws.util.XpathUtils.xpath;
+
 import java.lang.reflect.Constructor;
+
+import javax.xml.xpath.XPath;
 
 import org.w3c.dom.Node;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
-import com.amazonaws.util.XpathUtils;
 
 /**
  * Unmarshalls an AWS error response into an AmazonServiceException, or
@@ -55,14 +59,13 @@ public class LegacyErrorUnmarshaller implements Unmarshaller<AmazonServiceExcept
         this.exceptionClass = exceptionClass;
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.transform.Unmarshaller#unmarshall(java.lang.Object)
-     */
+    @Override
     public AmazonServiceException unmarshall(Node in) throws Exception {
-        String errorCode = parseErrorCode(in);
-        String message = XpathUtils.asString("Response/Errors/Error/Message", in);
-        String requestId = XpathUtils.asString("Response/RequestID", in);
-        String errorType = XpathUtils.asString("Response/Errors/Error/Type", in);
+        XPath xpath = xpath();
+        String errorCode = parseErrorCode(in, xpath);
+        String message = asString("Response/Errors/Error/Message", in, xpath);
+        String requestId = asString("Response/RequestID", in, xpath);
+        String errorType = asString("Response/Errors/Error/Type", in, xpath);
 
         Constructor<? extends AmazonServiceException> constructor = exceptionClass.getConstructor(String.class);
         AmazonServiceException ase = constructor.newInstance(message);
@@ -93,7 +96,11 @@ public class LegacyErrorUnmarshaller implements Unmarshaller<AmazonServiceExcept
      *             code.
      */
     public String parseErrorCode(Node in) throws Exception {
-        return XpathUtils.asString("Response/Errors/Error/Code", in);
+        return asString("Response/Errors/Error/Code", in);
+    }
+
+    public String parseErrorCode(Node in, XPath xpath) throws Exception {
+        return asString("Response/Errors/Error/Code", in, xpath);
     }
 
     /**

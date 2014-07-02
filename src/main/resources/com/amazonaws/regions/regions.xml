@@ -529,6 +529,12 @@
         <Hostname>redshift.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>kinesis</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>kinesis.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -554,6 +560,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>cloudsearch.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>monitoring</ServiceName>
@@ -721,6 +733,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>cloudsearch.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>monitoring</ServiceName>
@@ -1045,6 +1063,12 @@
         <Hostname>cloudsearch.sa-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.sa-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>monitoring</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1340,6 +1364,12 @@
         <Hostname>redshift.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>kinesis</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>kinesis.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1578,7 +1608,10 @@
       <RegionName>us-east-1</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
+      <RegionName>sa-east-1</RegionName>
       <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
@@ -1895,6 +1928,8 @@
       <Name>kinesis</Name>
       <FullName>Amazon Kinesis</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
       <Name>opsworks</Name>

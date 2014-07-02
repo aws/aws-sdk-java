@@ -63,6 +63,12 @@ public class ClientConfiguration {
      */
     public static final boolean DEFAULT_USE_REAPER = true;
 
+    /**
+     * The default expiration time (in milliseconds) for a connection in the
+     * connection pool.
+     */
+    public static final long DEFAULT_CONNECTION_TTL = -1;
+
     /** The HTTP user agent header passed with all HTTP requests. */
     private String userAgent = DEFAULT_USER_AGENT;
 
@@ -158,6 +164,12 @@ public class ClientConfiguration {
      */
     private String signerOverride;
 
+    /**
+     * Optional expiration time for a connection in the connection pool. When a
+     * connection is retrieved from the connection pool, this parameter is
+     * checked to see if the connection can be reused.
+     */
+    private long connectionTTL = DEFAULT_CONNECTION_TTL;
 
     public ClientConfiguration() {}
 
@@ -475,88 +487,88 @@ public class ClientConfiguration {
         return this;
     }
 
-	/**
-	 * Returns the optional Windows domain name for configuring an NTLM proxy.
-	 * If you aren't using a Windows NTLM proxy, you do not need to set this
-	 * field.
-	 *
-	 * @return The optional Windows domain name for configuring an NTLM proxy.
-	 */
+    /**
+     * Returns the optional Windows domain name for configuring an NTLM proxy.
+     * If you aren't using a Windows NTLM proxy, you do not need to set this
+     * field.
+     *
+     * @return The optional Windows domain name for configuring an NTLM proxy.
+     */
     public String getProxyDomain() {
-		return proxyDomain;
-	}
+        return proxyDomain;
+    }
 
-	/**
-	 * Sets the optional Windows domain name for configuration an NTLM proxy.
-	 * If you aren't using a Windows NTLM proxy, you do not need to set this
-	 * field.
-	 *
-	 * @param proxyDomain
-	 *            The optional Windows domain name for configuring an NTLM
-	 *            proxy.
-	 */
-	public void setProxyDomain(String proxyDomain) {
-		this.proxyDomain = proxyDomain;
-	}
+    /**
+     * Sets the optional Windows domain name for configuration an NTLM proxy.
+     * If you aren't using a Windows NTLM proxy, you do not need to set this
+     * field.
+     *
+     * @param proxyDomain
+     *            The optional Windows domain name for configuring an NTLM
+     *            proxy.
+     */
+    public void setProxyDomain(String proxyDomain) {
+        this.proxyDomain = proxyDomain;
+    }
 
-	/**
-	 * Sets the optional Windows domain name for configuration an NTLM proxy and
-	 * returns a reference to this updated ClientConfiguration object so that
-	 * additional method calls can be chained together. If you aren't using a
-	 * Windows NTLM proxy, you do not need to set this field.
-	 *
-	 * @param proxyDomain
-	 *            The optional Windows domain name for configuring an NTLM
-	 *            proxy.
-	 *
+    /**
+     * Sets the optional Windows domain name for configuration an NTLM proxy and
+     * returns a reference to this updated ClientConfiguration object so that
+     * additional method calls can be chained together. If you aren't using a
+     * Windows NTLM proxy, you do not need to set this field.
+     *
+     * @param proxyDomain
+     *            The optional Windows domain name for configuring an NTLM
+     *            proxy.
+     *
      * @return The updated ClientConfiguration object.
-	 */
-	public ClientConfiguration withProxyDomain(String proxyDomain) {
-		setProxyDomain(proxyDomain);
-		return this;
-	}
+     */
+    public ClientConfiguration withProxyDomain(String proxyDomain) {
+        setProxyDomain(proxyDomain);
+        return this;
+    }
 
-	/**
-	 * Returns the optional Windows workstation name for configuring NTLM proxy
-	 * support. If you aren't using a Windows NTLM proxy, you do not need to set
-	 * this field.
-	 *
-	 * @return The optional Windows workstation name for configuring NTLM proxy
-	 *         support.
-	 */
-	public String getProxyWorkstation() {
-		return proxyWorkstation;
-	}
+    /**
+     * Returns the optional Windows workstation name for configuring NTLM proxy
+     * support. If you aren't using a Windows NTLM proxy, you do not need to set
+     * this field.
+     *
+     * @return The optional Windows workstation name for configuring NTLM proxy
+     *         support.
+     */
+    public String getProxyWorkstation() {
+        return proxyWorkstation;
+    }
 
-	/**
-	 * Sets the optional Windows workstation name for configuring NTLM proxy
-	 * support. If you aren't using a Windows NTLM proxy, you do not need to set
-	 * this field.
-	 *
-	 * @param proxyWorkstation
-	 *            The optional Windows workstation name for configuring NTLM
-	 *            proxy support.
-	 */
-	public void setProxyWorkstation(String proxyWorkstation) {
-		this.proxyWorkstation = proxyWorkstation;
-	}
+    /**
+     * Sets the optional Windows workstation name for configuring NTLM proxy
+     * support. If you aren't using a Windows NTLM proxy, you do not need to set
+     * this field.
+     *
+     * @param proxyWorkstation
+     *            The optional Windows workstation name for configuring NTLM
+     *            proxy support.
+     */
+    public void setProxyWorkstation(String proxyWorkstation) {
+        this.proxyWorkstation = proxyWorkstation;
+    }
 
-	/**
-	 * Sets the optional Windows workstation name for configuring NTLM proxy
-	 * support, and returns the updated ClientConfiguration object so that
-	 * additional method calls can be chained together. If you aren't using a
-	 * Windows NTLM proxy, you do not need to set this field.
-	 *
-	 * @param proxyWorkstation
-	 *            The optional Windows workstation name for configuring NTLM
-	 *            proxy support.
-	 *
-	 * @return The updated ClientConfiguration object.
-	 */
-	public ClientConfiguration withProxyWorkstation(String proxyWorkstation) {
-		setProxyWorkstation(proxyWorkstation);
-		return this;
-	}
+    /**
+     * Sets the optional Windows workstation name for configuring NTLM proxy
+     * support, and returns the updated ClientConfiguration object so that
+     * additional method calls can be chained together. If you aren't using a
+     * Windows NTLM proxy, you do not need to set this field.
+     *
+     * @param proxyWorkstation
+     *            The optional Windows workstation name for configuring NTLM
+     *            proxy support.
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withProxyWorkstation(String proxyWorkstation) {
+        setProxyWorkstation(proxyWorkstation);
+        return this;
+    }
 
     /**
      * Returns the retry policy upon failed requests.
@@ -1001,7 +1013,7 @@ public class ClientConfiguration {
      *
      * @param preemptiveBasicProxyAuth
      *            Whether to authenticate preemptively against proxy server.
-     * @return The updated ClientConfiguration objectt=
+     * @return The updated ClientConfiguration object.
      *
      */
     public ClientConfiguration withPreemptiveBasicProxyAuth(boolean preemptiveBasicProxyAuth) {
@@ -1009,4 +1021,32 @@ public class ClientConfiguration {
         return this;
     }
 
+    /**
+     * Returns the expiration time(in milliseconds) for a connection in the
+     * connection pool.
+     */
+    public long getConnectionTTL() {
+        return connectionTTL;
+    }
+
+    /**
+     * Sets the expiration time(in milliseconds) for a connection in the
+     * connection pool. By default, it is set to -1 i.e., connections don't have
+     * an expiration time.
+     */
+    public void setConnectionTTL(long connectionTTL) {
+        this.connectionTTL = connectionTTL;
+    }
+
+    /**
+     * Sets the expiration time(in milliseconds) for a connection in the
+     * connection pool. By default, it is set to -1 i.e., connections don't have
+     * an expiration time.
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withConnectionTTL(long connectionTTL) {
+        setConnectionTTL(connectionTTL);
+        return this;
+    }
 }

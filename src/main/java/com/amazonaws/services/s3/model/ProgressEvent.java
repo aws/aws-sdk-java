@@ -14,11 +14,13 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.event.ProgressEventType;
+
 /**
  * Notification of a progress change on an Amazon S3 transfer. Typically this
  * means notice that another chunk of bytes was transferred, but it also signals
  * other types of progress events such as a transfer starting, or failing.
- * 
+ *
  * @deprecated Replaced by {@link com.amazonaws.event.ProgressEvent}
  */
 @Deprecated
@@ -28,16 +30,8 @@ public class ProgressEvent extends com.amazonaws.event.ProgressEvent {
         super(bytesTransferred);
     }
 
-    public ProgressEvent(int eventCode, long bytesTransferred) {
-        super(eventCode, bytesTransferred);
-    }
-
-    /**
-     * @deprecated Replaced by {@link #setBytesTransferred()}
-     */
-    @Deprecated
-    public void setBytesTransfered(int bytesTransferred) {
-        setBytesTransferred(bytesTransferred);
+    public ProgressEvent(ProgressEventType eventType) {
+        super(eventType);
     }
 
     /**
@@ -45,7 +39,7 @@ public class ProgressEvent extends com.amazonaws.event.ProgressEvent {
      */
     @Deprecated
     public int getBytesTransfered() {
-        return (int)getBytesTransferred();
+        return (int)getBytesTransfered();
     }
 
 }

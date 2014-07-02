@@ -23,13 +23,14 @@ import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.PauseResult;
 import com.amazonaws.services.s3.transfer.PauseStatus;
 import com.amazonaws.services.s3.transfer.PersistableUpload;
+import com.amazonaws.services.s3.transfer.TransferProgress;
 import com.amazonaws.services.s3.transfer.Upload;
 import com.amazonaws.services.s3.transfer.exception.PauseException;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 public class UploadImpl extends AbstractTransfer implements Upload {
 
-    public UploadImpl(String description, TransferProgressImpl transferProgressInternalState,
+    public UploadImpl(String description, TransferProgress transferProgressInternalState,
             ProgressListenerChain progressListenerChain, TransferStateChangeListener listener) {
         super(description, transferProgressInternalState, progressListenerChain, listener);
     }

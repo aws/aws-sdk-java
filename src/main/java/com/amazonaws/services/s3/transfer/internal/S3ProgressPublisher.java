@@ -16,21 +16,26 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import java.util.concurrent.Future;
 
+import org.apache.commons.logging.LogFactory;
+
+import com.amazonaws.event.DeliveryMode;
 import com.amazonaws.event.ProgressListener;
-import com.amazonaws.event.ProgressListenerCallbackExecutor;
+import com.amazonaws.event.SDKProgressPublisher;
 import com.amazonaws.services.s3.transfer.PersistableTransfer;
 
 /**
  * Used to publish transfer events.
  */
-public class S3ProgressPublisher extends
-        ProgressListenerCallbackExecutor {
-
+public class S3ProgressPublisher extends SDKProgressPublisher {
     /**
-     * Used to submit a task to publish the availability of a persistable
-     * transfer to the given listener.
+     * Used to deliver a persistable transfer to the given s3 listener.
      * 
-     * @return the future of the submitted task; or null if there is no listener.
+     * @param listener only listener of type {@link S3ProgressListener} will be
+     * notified.
+     * 
+     * @return the future of a submitted task; or null if the delivery is
+     * synchronous with no future task involved.  Note a listener should never
+     * block, and therefore returning null is the typical case.
      */
     public static Future<?> publishTransferPersistable(
             final ProgressListener listener,
@@ -39,11 +44,45 @@ public class S3ProgressPublisher extends
         || !(listener instanceof S3ProgressListener))
             return null;
         final S3ProgressListener s3listener = (S3ProgressListener)listener;
-        return getExecutorService().submit(new Runnable() {
-            @Override
-            public void run() {
-                s3listener.onPersistableTransfer(persistableTransfer);
+        return deliverEvent(s3listener, persistableTransfer);
+    }
+
+    private static Future<?> deliverEvent(final S3ProgressListener listener,
+            final PersistableTransfer persistableTransfer) {
+        if (SYNC) { // forces all callbacks to be made synchronously
+            return quietlyCallListener(listener, persistableTransfer);
+        }
+        if (!ASYNC) { // forces all callbacks to be made asynchronously
+            if (listener instanceof DeliveryMode) {
+                DeliveryMode mode = (DeliveryMode) listener;
+                if (mode.isSyncCallSafe()) {
+                    // Safe to call the listener directly
+                    return quietlyCallListener(listener, persistableTransfer);
+                }
             }
-        });
+        }
+        // Not safe to call the listener directly; so submit an async task.
+        // This is unfortunate as the listener should never block in the first
+        // place, but such task submission is necessary to remain backward
+        // compatible.
+        return setLatestFutureTask(getExecutorService().submit(new Runnable() {
+            @Override public void run() {
+                listener.onPersistableTransfer(persistableTransfer);
+            }
+        }));
+    }
+
+    private static Future<?> quietlyCallListener(
+            final S3ProgressListener listener,
+            final PersistableTransfer persistableTransfer) {
+        try {
+            listener.onPersistableTransfer(persistableTransfer);
+        } catch(Throwable t) {
+            // That's right, we need to suppress all errors so as to be on par
+            // with the async mode where all failures will be ignored.
+            LogFactory.getLog(S3ProgressPublisher.class)
+                .debug("Failure from the event listener", t);
+        }
+        return null;
     }
 }

@@ -17,9 +17,9 @@ package com.amazonaws.services.s3.transfer;
 /**
  * Describes the progress of a transfer.
  */
-public abstract class TransferProgress {
-    protected volatile long bytesTransferred = 0;
-    protected volatile long totalBytesToTransfer = -1;
+public final class TransferProgress {
+    private volatile long bytesTransferred = 0;
+    private volatile long totalBytesToTransfer = -1;
 
     /**
      * @deprecated Replaced by {@link #getBytesTransferred()}
@@ -68,5 +68,13 @@ public abstract class TransferProgress {
         if (getBytesTransferred() < 0) return 0;
 
         return ((double)getBytesTransferred() / (double)getTotalBytesToTransfer()) * (double)100;
+    }
+
+    public synchronized void updateProgress(long bytes) {
+        this.bytesTransferred += bytes;
+    }
+
+    public void setTotalBytesToTransfer(long totalBytesToTransfer) {
+        this.totalBytesToTransfer = totalBytesToTransfer;
     }
 }

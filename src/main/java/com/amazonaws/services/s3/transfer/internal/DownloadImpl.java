@@ -17,7 +17,7 @@ package com.amazonaws.services.s3.transfer.internal;
 import java.io.File;
 import java.io.IOException;
 
-import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -28,8 +28,7 @@ import com.amazonaws.services.s3.transfer.TransferProgress;
 import com.amazonaws.services.s3.transfer.exception.PauseException;
 
 public class DownloadImpl extends AbstractTransfer implements Download {
-
-    S3Object s3Object;
+    private S3Object s3Object;
 
     /**
      * Information to resume if the download is paused.
@@ -95,12 +94,8 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      * @throws IOException
      */
     public synchronized void abortWithoutNotifyingStateChangeListener() throws IOException {
-
         this.monitor.getFuture().cancel(true);
-
-        synchronized (this) {
-            this.state = TransferState.Canceled;
-        }
+        this.state = TransferState.Canceled;
     }
 
     /**
@@ -119,7 +114,7 @@ public class DownloadImpl extends AbstractTransfer implements Download {
         super.setState(state);
 
         if (state == TransferState.Completed) {
-            fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
+            fireProgressEvent(ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
     }
 

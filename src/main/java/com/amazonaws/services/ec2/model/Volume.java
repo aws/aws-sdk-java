@@ -72,7 +72,7 @@ public class Volume implements Serializable {
      * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      */
     private String volumeType;
 
@@ -476,7 +476,7 @@ public class Volume implements Serializable {
      * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @return The volume type. This can be <code>gp2</code> for General Purpose
      *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
@@ -494,7 +494,7 @@ public class Volume implements Serializable {
      * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
      *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
@@ -514,7 +514,7 @@ public class Volume implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
      *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
@@ -536,7 +536,7 @@ public class Volume implements Serializable {
      * <code>standard</code> for Magnetic volumes.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
      *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
@@ -556,7 +556,7 @@ public class Volume implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>standard, io1
+     * <b>Allowed Values: </b>standard, io1, gp2
      *
      * @param volumeType The volume type. This can be <code>gp2</code> for General Purpose
      *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or

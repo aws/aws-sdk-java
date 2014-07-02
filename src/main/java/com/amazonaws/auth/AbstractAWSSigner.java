@@ -34,10 +34,10 @@ import javax.crypto.spec.SecretKeySpec;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.internal.SdkDigestInputStream;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.HttpUtils;
-import com.amazonaws.util.StringInputStream;
 
 /**
  * Abstract base class for AWS signing protocol implementations. Provides
@@ -286,20 +286,27 @@ public abstract class AbstractAWSSigner implements Signer {
         return getBinaryRequestPayloadStreamWithoutQueryParams(request);
     }
 
+    @SuppressWarnings("resource")
     protected InputStream getBinaryRequestPayloadStreamWithoutQueryParams(Request<?> request) {
         try {
-            InputStream content = request.getContent();
-            if (content == null) return new ByteArrayInputStream(new byte[0]);
+            InputStream is = request.getContent();
 
-            if (content instanceof StringInputStream) {
-                return content;
+            if (is == null) {
+                return new ByteArrayInputStream(new byte[0]);
             }
 
-            if (!content.markSupported()) {
+            // We want to disable the progress reporting when the stream is
+            // consumed for signing purpose.
+            while (is instanceof ProgressInputStream) {
+                ProgressInputStream pris = (ProgressInputStream)is;
+                is = pris.getWrappedInputStream();
+            }
+
+            if (!is.markSupported()) {
                 throw new AmazonClientException("Unable to read request payload to sign request.");
             }
 
-            return request.getContent();
+            return is;
         } catch (Exception e) {
             throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
         }

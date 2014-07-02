@@ -20,7 +20,8 @@ package com.amazonaws.services.ec2.model;
 public enum VolumeType {
     
     Standard("standard"),
-    Io1("io1");
+    Io1("io1"),
+    Gp2("gp2");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum VolumeType {
             return VolumeType.Standard;
         } else if ("io1".equals(value)) {
             return VolumeType.Io1;
+        } else if ("gp2".equals(value)) {
+            return VolumeType.Gp2;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

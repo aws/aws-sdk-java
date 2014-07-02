@@ -14,7 +14,10 @@
  */
 package com.amazonaws.http;
 
+import java.util.concurrent.TimeUnit;
+
 import org.apache.http.impl.conn.PoolingClientConnectionManager;
+import org.apache.http.impl.conn.SchemeRegistryFactory;
 import org.apache.http.params.HttpParams;
 
 import com.amazonaws.ClientConfiguration;
@@ -23,7 +26,9 @@ import com.amazonaws.ClientConfiguration;
 class ConnectionManagerFactory {
 
     public static PoolingClientConnectionManager createPoolingClientConnManager( ClientConfiguration config, HttpParams httpClientParams ) {
-        PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager();
+        PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(
+                SchemeRegistryFactory.createDefault(),
+                config.getConnectionTTL(), TimeUnit.MILLISECONDS);
         connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
         connectionManager.setMaxTotal(config.getMaxConnections());
         if (config.useReaper()) {

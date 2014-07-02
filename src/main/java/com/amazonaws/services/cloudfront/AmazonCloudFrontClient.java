@@ -195,18 +195,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     private void init() {
         exceptionUnmarshallers.add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PreconditionFailedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CNAMEAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidViewerCertificateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrustedSignerDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StreamingDistributionNotDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRequiredProtocolExceptionUnmarshaller());
@@ -221,8 +223,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDefaultRootObjectExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidIfMatchVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRelativePathExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchInvalidationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StreamingDistributionAlreadyExistsExceptionUnmarshaller());
@@ -252,15 +254,93 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * List streaming distributions.
+     * Delete a streaming distribution.
      * </p>
      *
-     * @param listStreamingDistributionsRequest Container for the necessary
-     *           parameters to execute the ListStreamingDistributions service method on
+     * @param deleteStreamingDistributionRequest Container for the necessary
+     *           parameters to execute the DeleteStreamingDistribution service method
+     *           on AmazonCloudFront.
+     * 
+     * 
+     * @throws InvalidIfMatchVersionException
+     * @throws NoSuchStreamingDistributionException
+     * @throws StreamingDistributionNotDisabledException
+     * @throws PreconditionFailedException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteStreamingDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteStreamingDistributionRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteStreamingDistributionRequestMarshaller().marshall(deleteStreamingDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Get the information about a streaming distribution.
+     * </p>
+     *
+     * @param getStreamingDistributionRequest Container for the necessary
+     *           parameters to execute the GetStreamingDistribution service method on
      *           AmazonCloudFront.
      * 
-     * @return The response from the ListStreamingDistributions service
-     *         method, as returned by AmazonCloudFront.
+     * @return The response from the GetStreamingDistribution service method,
+     *         as returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchStreamingDistributionException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getStreamingDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetStreamingDistributionRequest> request = null;
+        Response<GetStreamingDistributionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetStreamingDistributionRequestMarshaller().marshall(getStreamingDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new GetStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * List distributions.
+     * </p>
+     *
+     * @param listDistributionsRequest Container for the necessary parameters
+     *           to execute the ListDistributions service method on AmazonCloudFront.
+     * 
+     * @return The response from the ListDistributions service method, as
+     *         returned by AmazonCloudFront.
      * 
      * @throws InvalidArgumentException
      *
@@ -272,17 +352,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listStreamingDistributionsRequest);
+    public ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDistributionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListStreamingDistributionsRequest> request = null;
-        Response<ListStreamingDistributionsResult> response = null;
+        Request<ListDistributionsRequest> request = null;
+        Response<ListDistributionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new ListStreamingDistributionsRequestMarshaller().marshall(listStreamingDistributionsRequest);
+            request = new ListDistributionsRequestMarshaller().marshall(listDistributionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListDistributionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -331,16 +411,16 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * Get the configuration information about a distribution.
+     * Get the information about an invalidation.
      * </p>
      *
-     * @param getDistributionConfigRequest Container for the necessary
-     *           parameters to execute the GetDistributionConfig service method on
-     *           AmazonCloudFront.
+     * @param getInvalidationRequest Container for the necessary parameters
+     *           to execute the GetInvalidation service method on AmazonCloudFront.
      * 
-     * @return The response from the GetDistributionConfig service method, as
+     * @return The response from the GetInvalidation service method, as
      *         returned by AmazonCloudFront.
      * 
+     * @throws NoSuchInvalidationException
      * @throws NoSuchDistributionException
      * @throws AccessDeniedException
      *
@@ -352,17 +432,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest) {
-        ExecutionContext executionContext = createExecutionContext(getDistributionConfigRequest);
+    public GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest) {
+        ExecutionContext executionContext = createExecutionContext(getInvalidationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<GetDistributionConfigRequest> request = null;
-        Response<GetDistributionConfigResult> response = null;
+        Request<GetInvalidationRequest> request = null;
+        Response<GetInvalidationResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new GetDistributionConfigRequestMarshaller().marshall(getDistributionConfigRequest);
+            request = new GetInvalidationRequestMarshaller().marshall(getInvalidationRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new GetDistributionConfigResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetInvalidationResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -371,41 +451,28 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * Create a new distribution.
+     * Update a streaming distribution.
      * </p>
      *
-     * @param createDistributionRequest Container for the necessary
-     *           parameters to execute the CreateDistribution service method on
-     *           AmazonCloudFront.
+     * @param updateStreamingDistributionRequest Container for the necessary
+     *           parameters to execute the UpdateStreamingDistribution service method
+     *           on AmazonCloudFront.
      * 
-     * @return The response from the CreateDistribution service method, as
-     *         returned by AmazonCloudFront.
+     * @return The response from the UpdateStreamingDistribution service
+     *         method, as returned by AmazonCloudFront.
      * 
-     * @throws TooManyCookieNamesInWhiteListException
-     * @throws InvalidGeoRestrictionParameterException
-     * @throws InvalidResponseCodeException
+     * @throws InvalidIfMatchVersionException
+     * @throws IllegalUpdateException
      * @throws MissingBodyException
-     * @throws InvalidLocationCodeException
-     * @throws TooManyDistributionCNAMEsException
-     * @throws TooManyDistributionsException
-     * @throws NoSuchOriginException
-     * @throws InconsistentQuantitiesException
-     * @throws InvalidArgumentException
+     * @throws PreconditionFailedException
      * @throws CNAMEAlreadyExistsException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
      * @throws InvalidOriginAccessIdentityException
-     * @throws TooManyCacheBehaviorsException
-     * @throws TooManyTrustedSignersException
-     * @throws InvalidViewerCertificateException
-     * @throws TooManyOriginsException
-     * @throws DistributionAlreadyExistsException
-     * @throws InvalidRequiredProtocolException
-     * @throws InvalidDefaultRootObjectException
-     * @throws InvalidForwardCookiesException
      * @throws TrustedSignerDoesNotExistException
-     * @throws InvalidOriginException
-     * @throws TooManyCertificatesException
-     * @throws InvalidRelativePathException
-     * @throws InvalidErrorCodeException
+     * @throws TooManyTrustedSignersException
+     * @throws NoSuchStreamingDistributionException
+     * @throws TooManyStreamingDistributionCNAMEsException
      * @throws AccessDeniedException
      *
      * @throws AmazonClientException
@@ -416,17 +483,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest) {
-        ExecutionContext executionContext = createExecutionContext(createDistributionRequest);
+    public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateDistributionRequest> request = null;
-        Response<CreateDistributionResult> response = null;
+        Request<UpdateStreamingDistributionRequest> request = null;
+        Response<UpdateStreamingDistributionResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new CreateDistributionRequestMarshaller().marshall(createDistributionRequest);
+            request = new UpdateStreamingDistributionRequestMarshaller().marshall(updateStreamingDistributionRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new CreateDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -474,108 +541,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * Get the configuration information about an origin access identity.
+     * Get the configuration information about a streaming distribution.
      * </p>
      *
-     * @param getCloudFrontOriginAccessIdentityConfigRequest Container for
-     *           the necessary parameters to execute the
-     *           GetCloudFrontOriginAccessIdentityConfig service method on
-     *           AmazonCloudFront.
+     * @param getStreamingDistributionConfigRequest Container for the
+     *           necessary parameters to execute the GetStreamingDistributionConfig
+     *           service method on AmazonCloudFront.
      * 
-     * @return The response from the GetCloudFrontOriginAccessIdentityConfig
-     *         service method, as returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchCloudFrontOriginAccessIdentityException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest) {
-        ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityConfigRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<GetCloudFrontOriginAccessIdentityConfigRequest> request = null;
-        Response<GetCloudFrontOriginAccessIdentityConfigResult> response = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityConfigRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new GetCloudFrontOriginAccessIdentityConfigResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Create a new streaming distribution.
-     * </p>
-     *
-     * @param createStreamingDistributionRequest Container for the necessary
-     *           parameters to execute the CreateStreamingDistribution service method
-     *           on AmazonCloudFront.
-     * 
-     * @return The response from the CreateStreamingDistribution service
+     * @return The response from the GetStreamingDistributionConfig service
      *         method, as returned by AmazonCloudFront.
      * 
-     * @throws TooManyTrustedSignersException
-     * @throws MissingBodyException
-     * @throws TooManyStreamingDistributionCNAMEsException
-     * @throws StreamingDistributionAlreadyExistsException
-     * @throws CNAMEAlreadyExistsException
-     * @throws AccessDeniedException
-     * @throws TooManyStreamingDistributionsException
-     * @throws InvalidArgumentException
-     * @throws InconsistentQuantitiesException
-     * @throws InvalidOriginAccessIdentityException
-     * @throws TrustedSignerDoesNotExistException
-     * @throws InvalidOriginException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest) {
-        ExecutionContext executionContext = createExecutionContext(createStreamingDistributionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateStreamingDistributionRequest> request = null;
-        Response<CreateStreamingDistributionResult> response = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new CreateStreamingDistributionRequestMarshaller().marshall(createStreamingDistributionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Get the information about an invalidation.
-     * </p>
-     *
-     * @param getInvalidationRequest Container for the necessary parameters
-     *           to execute the GetInvalidation service method on AmazonCloudFront.
-     * 
-     * @return The response from the GetInvalidation service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchInvalidationException
-     * @throws NoSuchDistributionException
+     * @throws NoSuchStreamingDistributionException
      * @throws AccessDeniedException
      *
      * @throws AmazonClientException
@@ -586,17 +562,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest) {
-        ExecutionContext executionContext = createExecutionContext(getInvalidationRequest);
+    public GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest) {
+        ExecutionContext executionContext = createExecutionContext(getStreamingDistributionConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<GetInvalidationRequest> request = null;
-        Response<GetInvalidationResult> response = null;
+        Request<GetStreamingDistributionConfigRequest> request = null;
+        Response<GetStreamingDistributionConfigResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new GetInvalidationRequestMarshaller().marshall(getInvalidationRequest);
+            request = new GetStreamingDistributionConfigRequestMarshaller().marshall(getStreamingDistributionConfigRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new GetInvalidationResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetStreamingDistributionConfigResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -605,64 +581,25 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * Create a new invalidation.
+     * Update an origin access identity.
      * </p>
      *
-     * @param createInvalidationRequest Container for the necessary
-     *           parameters to execute the CreateInvalidation service method on
+     * @param updateCloudFrontOriginAccessIdentityRequest Container for the
+     *           necessary parameters to execute the
+     *           UpdateCloudFrontOriginAccessIdentity service method on
      *           AmazonCloudFront.
      * 
-     * @return The response from the CreateInvalidation service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws TooManyInvalidationsInProgressException
-     * @throws MissingBodyException
-     * @throws NoSuchDistributionException
-     * @throws BatchTooLargeException
-     * @throws AccessDeniedException
-     * @throws InvalidArgumentException
-     * @throws InconsistentQuantitiesException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) {
-        ExecutionContext executionContext = createExecutionContext(createInvalidationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateInvalidationRequest> request = null;
-        Response<CreateInvalidationResult> response = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new CreateInvalidationRequestMarshaller().marshall(createInvalidationRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new CreateInvalidationResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Delete a distribution.
-     * </p>
-     *
-     * @param deleteDistributionRequest Container for the necessary
-     *           parameters to execute the DeleteDistribution service method on
-     *           AmazonCloudFront.
-     * 
+     * @return The response from the UpdateCloudFrontOriginAccessIdentity
+     *         service method, as returned by AmazonCloudFront.
      * 
      * @throws InvalidIfMatchVersionException
-     * @throws NoSuchDistributionException
-     * @throws DistributionNotDisabledException
+     * @throws IllegalUpdateException
+     * @throws MissingBodyException
+     * @throws NoSuchCloudFrontOriginAccessIdentityException
      * @throws PreconditionFailedException
      * @throws AccessDeniedException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -672,18 +609,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteDistributionRequest);
+    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteDistributionRequest> request = null;
+        Request<UpdateCloudFrontOriginAccessIdentityRequest> request = null;
+        Response<UpdateCloudFrontOriginAccessIdentityResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new DeleteDistributionRequestMarshaller().marshall(deleteDistributionRequest);
+            request = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(updateCloudFrontOriginAccessIdentityRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
+            response = invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
         } finally {
-            endClientExecution(awsRequestMetrics, request, null);
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
     
@@ -773,61 +712,15 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * Update an origin access identity.
+     * List streaming distributions.
      * </p>
      *
-     * @param updateCloudFrontOriginAccessIdentityRequest Container for the
-     *           necessary parameters to execute the
-     *           UpdateCloudFrontOriginAccessIdentity service method on
+     * @param listStreamingDistributionsRequest Container for the necessary
+     *           parameters to execute the ListStreamingDistributions service method on
      *           AmazonCloudFront.
      * 
-     * @return The response from the UpdateCloudFrontOriginAccessIdentity
-     *         service method, as returned by AmazonCloudFront.
-     * 
-     * @throws InvalidIfMatchVersionException
-     * @throws IllegalUpdateException
-     * @throws MissingBodyException
-     * @throws NoSuchCloudFrontOriginAccessIdentityException
-     * @throws PreconditionFailedException
-     * @throws AccessDeniedException
-     * @throws InvalidArgumentException
-     * @throws InconsistentQuantitiesException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateCloudFrontOriginAccessIdentityRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateCloudFrontOriginAccessIdentityRequest> request = null;
-        Response<UpdateCloudFrontOriginAccessIdentityResult> response = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(updateCloudFrontOriginAccessIdentityRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * List distributions.
-     * </p>
-     *
-     * @param listDistributionsRequest Container for the necessary parameters
-     *           to execute the ListDistributions service method on AmazonCloudFront.
-     * 
-     * @return The response from the ListDistributions service method, as
-     *         returned by AmazonCloudFront.
+     * @return The response from the ListStreamingDistributions service
+     *         method, as returned by AmazonCloudFront.
      * 
      * @throws InvalidArgumentException
      *
@@ -839,17 +732,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listDistributionsRequest);
+    public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listStreamingDistributionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListDistributionsRequest> request = null;
-        Response<ListDistributionsResult> response = null;
+        Request<ListStreamingDistributionsRequest> request = null;
+        Response<ListStreamingDistributionsResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new ListDistributionsRequestMarshaller().marshall(listDistributionsRequest);
+            request = new ListStreamingDistributionsRequestMarshaller().marshall(listStreamingDistributionsRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new ListDistributionsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -858,42 +751,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * Update a distribution.
+     * Get the configuration information about a distribution.
      * </p>
      *
-     * @param updateDistributionRequest Container for the necessary
-     *           parameters to execute the UpdateDistribution service method on
+     * @param getDistributionConfigRequest Container for the necessary
+     *           parameters to execute the GetDistributionConfig service method on
      *           AmazonCloudFront.
      * 
-     * @return The response from the UpdateDistribution service method, as
+     * @return The response from the GetDistributionConfig service method, as
      *         returned by AmazonCloudFront.
      * 
-     * @throws TooManyCookieNamesInWhiteListException
-     * @throws InvalidGeoRestrictionParameterException
-     * @throws InvalidResponseCodeException
-     * @throws MissingBodyException
-     * @throws TooManyDistributionCNAMEsException
-     * @throws InvalidLocationCodeException
-     * @throws NoSuchOriginException
-     * @throws PreconditionFailedException
-     * @throws InconsistentQuantitiesException
-     * @throws CNAMEAlreadyExistsException
-     * @throws InvalidArgumentException
-     * @throws InvalidOriginAccessIdentityException
-     * @throws TooManyCacheBehaviorsException
-     * @throws TooManyTrustedSignersException
      * @throws NoSuchDistributionException
-     * @throws InvalidViewerCertificateException
-     * @throws TooManyOriginsException
-     * @throws InvalidRequiredProtocolException
-     * @throws InvalidDefaultRootObjectException
-     * @throws InvalidIfMatchVersionException
-     * @throws IllegalUpdateException
-     * @throws InvalidForwardCookiesException
-     * @throws TrustedSignerDoesNotExistException
-     * @throws TooManyCertificatesException
-     * @throws InvalidRelativePathException
-     * @throws InvalidErrorCodeException
      * @throws AccessDeniedException
      *
      * @throws AmazonClientException
@@ -904,17 +772,101 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateDistributionRequest);
+    public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDistributionConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateDistributionRequest> request = null;
-        Response<UpdateDistributionResult> response = null;
+        Request<GetDistributionConfigRequest> request = null;
+        Response<GetDistributionConfigResult> response = null;
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         try {
-            request = new UpdateDistributionRequestMarshaller().marshall(updateDistributionRequest);
+            request = new GetDistributionConfigRequestMarshaller().marshall(getDistributionConfigRequest);
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new UpdateDistributionResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetDistributionConfigResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Delete a distribution.
+     * </p>
+     *
+     * @param deleteDistributionRequest Container for the necessary
+     *           parameters to execute the DeleteDistribution service method on
+     *           AmazonCloudFront.
+     * 
+     * 
+     * @throws InvalidIfMatchVersionException
+     * @throws NoSuchDistributionException
+     * @throws DistributionNotDisabledException
+     * @throws PreconditionFailedException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDistributionRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDistributionRequestMarshaller().marshall(deleteDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Create a new invalidation.
+     * </p>
+     *
+     * @param createInvalidationRequest Container for the necessary
+     *           parameters to execute the CreateInvalidation service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the CreateInvalidation service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws TooManyInvalidationsInProgressException
+     * @throws MissingBodyException
+     * @throws NoSuchDistributionException
+     * @throws BatchTooLargeException
+     * @throws AccessDeniedException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) {
+        ExecutionContext executionContext = createExecutionContext(createInvalidationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateInvalidationRequest> request = null;
+        Response<CreateInvalidationResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateInvalidationRequestMarshaller().marshall(createInvalidationRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new CreateInvalidationResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -963,6 +915,230 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
+     * Create a new streaming distribution.
+     * </p>
+     *
+     * @param createStreamingDistributionRequest Container for the necessary
+     *           parameters to execute the CreateStreamingDistribution service method
+     *           on AmazonCloudFront.
+     * 
+     * @return The response from the CreateStreamingDistribution service
+     *         method, as returned by AmazonCloudFront.
+     * 
+     * @throws TooManyTrustedSignersException
+     * @throws MissingBodyException
+     * @throws TooManyStreamingDistributionCNAMEsException
+     * @throws StreamingDistributionAlreadyExistsException
+     * @throws CNAMEAlreadyExistsException
+     * @throws AccessDeniedException
+     * @throws TooManyStreamingDistributionsException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     * @throws InvalidOriginAccessIdentityException
+     * @throws TrustedSignerDoesNotExistException
+     * @throws InvalidOriginException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createStreamingDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateStreamingDistributionRequest> request = null;
+        Response<CreateStreamingDistributionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateStreamingDistributionRequestMarshaller().marshall(createStreamingDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Get the configuration information about an origin access identity.
+     * </p>
+     *
+     * @param getCloudFrontOriginAccessIdentityConfigRequest Container for
+     *           the necessary parameters to execute the
+     *           GetCloudFrontOriginAccessIdentityConfig service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the GetCloudFrontOriginAccessIdentityConfig
+     *         service method, as returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchCloudFrontOriginAccessIdentityException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest) {
+        ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetCloudFrontOriginAccessIdentityConfigRequest> request = null;
+        Response<GetCloudFrontOriginAccessIdentityConfigResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityConfigRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new GetCloudFrontOriginAccessIdentityConfigResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Update a distribution.
+     * </p>
+     *
+     * @param updateDistributionRequest Container for the necessary
+     *           parameters to execute the UpdateDistribution service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the UpdateDistribution service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws TooManyCookieNamesInWhiteListException
+     * @throws InvalidGeoRestrictionParameterException
+     * @throws InvalidResponseCodeException
+     * @throws TooManyHeadersInForwardedValuesException
+     * @throws MissingBodyException
+     * @throws TooManyDistributionCNAMEsException
+     * @throws InvalidLocationCodeException
+     * @throws NoSuchOriginException
+     * @throws PreconditionFailedException
+     * @throws CNAMEAlreadyExistsException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     * @throws InvalidOriginAccessIdentityException
+     * @throws TooManyCacheBehaviorsException
+     * @throws TooManyTrustedSignersException
+     * @throws NoSuchDistributionException
+     * @throws InvalidViewerCertificateException
+     * @throws TooManyOriginsException
+     * @throws InvalidRequiredProtocolException
+     * @throws InvalidDefaultRootObjectException
+     * @throws InvalidIfMatchVersionException
+     * @throws IllegalUpdateException
+     * @throws InvalidForwardCookiesException
+     * @throws InvalidHeadersForS3OriginException
+     * @throws TrustedSignerDoesNotExistException
+     * @throws TooManyCertificatesException
+     * @throws InvalidRelativePathException
+     * @throws InvalidErrorCodeException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateDistributionRequest> request = null;
+        Response<UpdateDistributionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateDistributionRequestMarshaller().marshall(updateDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new UpdateDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Create a new distribution.
+     * </p>
+     *
+     * @param createDistributionRequest Container for the necessary
+     *           parameters to execute the CreateDistribution service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the CreateDistribution service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws TooManyCookieNamesInWhiteListException
+     * @throws InvalidGeoRestrictionParameterException
+     * @throws InvalidResponseCodeException
+     * @throws TooManyHeadersInForwardedValuesException
+     * @throws MissingBodyException
+     * @throws TooManyDistributionCNAMEsException
+     * @throws InvalidLocationCodeException
+     * @throws TooManyDistributionsException
+     * @throws NoSuchOriginException
+     * @throws InconsistentQuantitiesException
+     * @throws InvalidArgumentException
+     * @throws CNAMEAlreadyExistsException
+     * @throws InvalidOriginAccessIdentityException
+     * @throws TooManyCacheBehaviorsException
+     * @throws TooManyTrustedSignersException
+     * @throws InvalidViewerCertificateException
+     * @throws TooManyOriginsException
+     * @throws DistributionAlreadyExistsException
+     * @throws InvalidRequiredProtocolException
+     * @throws InvalidDefaultRootObjectException
+     * @throws InvalidForwardCookiesException
+     * @throws InvalidHeadersForS3OriginException
+     * @throws TrustedSignerDoesNotExistException
+     * @throws TooManyCertificatesException
+     * @throws InvalidOriginException
+     * @throws InvalidRelativePathException
+     * @throws InvalidErrorCodeException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDistributionRequest> request = null;
+        Response<CreateDistributionResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDistributionRequestMarshaller().marshall(createDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new CreateDistributionResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * List invalidation batches.
      * </p>
      *
@@ -995,176 +1171,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             response = invoke(request, new ListInvalidationsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Update a streaming distribution.
-     * </p>
-     *
-     * @param updateStreamingDistributionRequest Container for the necessary
-     *           parameters to execute the UpdateStreamingDistribution service method
-     *           on AmazonCloudFront.
-     * 
-     * @return The response from the UpdateStreamingDistribution service
-     *         method, as returned by AmazonCloudFront.
-     * 
-     * @throws InvalidIfMatchVersionException
-     * @throws IllegalUpdateException
-     * @throws MissingBodyException
-     * @throws PreconditionFailedException
-     * @throws CNAMEAlreadyExistsException
-     * @throws InvalidArgumentException
-     * @throws InconsistentQuantitiesException
-     * @throws InvalidOriginAccessIdentityException
-     * @throws TrustedSignerDoesNotExistException
-     * @throws TooManyTrustedSignersException
-     * @throws NoSuchStreamingDistributionException
-     * @throws TooManyStreamingDistributionCNAMEsException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateStreamingDistributionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateStreamingDistributionRequest> request = null;
-        Response<UpdateStreamingDistributionResult> response = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new UpdateStreamingDistributionRequestMarshaller().marshall(updateStreamingDistributionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Get the configuration information about a streaming distribution.
-     * </p>
-     *
-     * @param getStreamingDistributionConfigRequest Container for the
-     *           necessary parameters to execute the GetStreamingDistributionConfig
-     *           service method on AmazonCloudFront.
-     * 
-     * @return The response from the GetStreamingDistributionConfig service
-     *         method, as returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchStreamingDistributionException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest) {
-        ExecutionContext executionContext = createExecutionContext(getStreamingDistributionConfigRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<GetStreamingDistributionConfigRequest> request = null;
-        Response<GetStreamingDistributionConfigResult> response = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new GetStreamingDistributionConfigRequestMarshaller().marshall(getStreamingDistributionConfigRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new GetStreamingDistributionConfigResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Delete a streaming distribution.
-     * </p>
-     *
-     * @param deleteStreamingDistributionRequest Container for the necessary
-     *           parameters to execute the DeleteStreamingDistribution service method
-     *           on AmazonCloudFront.
-     * 
-     * 
-     * @throws InvalidIfMatchVersionException
-     * @throws NoSuchStreamingDistributionException
-     * @throws StreamingDistributionNotDisabledException
-     * @throws PreconditionFailedException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteStreamingDistributionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteStreamingDistributionRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteStreamingDistributionRequestMarshaller().marshall(deleteStreamingDistributionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * Get the information about a streaming distribution.
-     * </p>
-     *
-     * @param getStreamingDistributionRequest Container for the necessary
-     *           parameters to execute the GetStreamingDistribution service method on
-     *           AmazonCloudFront.
-     * 
-     * @return The response from the GetStreamingDistribution service method,
-     *         as returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchStreamingDistributionException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest) {
-        ExecutionContext executionContext = createExecutionContext(getStreamingDistributionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<GetStreamingDistributionRequest> request = null;
-        Response<GetStreamingDistributionResult> response = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new GetStreamingDistributionRequestMarshaller().marshall(getStreamingDistributionRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            response = invoke(request, new GetStreamingDistributionResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);

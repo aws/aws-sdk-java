@@ -18,6 +18,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.apache.commons.logging.Log;
+
 
 /**
  * Utilities for IO operations.
@@ -50,5 +52,21 @@ public enum IOUtils {
      */
     public static String toString(InputStream is) throws IOException {
         return new String(toByteArray(is), StringUtils.UTF8);
+    }
+
+    /**
+     * Closes the given input stream quietly.
+     * @param is the given input stream
+     * @param log logger used to log any failure should the close fail
+     */
+    public static void closeQuietly(InputStream is, Log log) {
+        if (is != null) {
+            try {
+                is.close();
+            } catch (IOException ex) {
+                if (log != null)
+                    log.debug("Ignore failure in closing the input stream", ex);
+            }
+        }
     }
 }

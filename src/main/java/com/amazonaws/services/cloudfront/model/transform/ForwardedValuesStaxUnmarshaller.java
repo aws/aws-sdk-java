@@ -50,6 +50,10 @@ public class ForwardedValuesStaxUnmarshaller implements Unmarshaller<ForwardedVa
                     forwardedValues.setCookies(CookiePreferenceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Headers", targetDepth)) {
+                    forwardedValues.setHeaders(HeadersStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return forwardedValues;

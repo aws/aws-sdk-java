@@ -14,37 +14,47 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.event.DeliveryMode;
+
 /**
  * A proxy class that wraps the deprecated S3 progress listener and implements
  * the new {@link com.amazonaws.event.ProgressListener} interface.
- * 
+ *
  * @see ProgressListener
  * @see com.amazonaws.event.ProgressListener
  */
-public class LegacyS3ProgressListener implements com.amazonaws.event.ProgressListener {
-
-    @SuppressWarnings("deprecation")
+@Deprecated
+public class LegacyS3ProgressListener implements
+        com.amazonaws.event.ProgressListener, DeliveryMode {
     private final ProgressListener listener;
+    private final boolean syncCallSafe;
 
-    @SuppressWarnings("deprecation")
     public LegacyS3ProgressListener(final ProgressListener listener) {
         this.listener = listener;
+        if (listener instanceof DeliveryMode) {
+            DeliveryMode mode = (DeliveryMode)listener;
+            syncCallSafe = mode.isSyncCallSafe();
+        } else
+            syncCallSafe = false;
     }
 
-    @SuppressWarnings("deprecation")
     public ProgressListener unwrap() {
         return listener;
     }
 
-    @SuppressWarnings("deprecation")
     public void progressChanged(com.amazonaws.event.ProgressEvent progressEvent) {
         if (listener == null) return;
-        listener.progressChanged(transform(progressEvent));
+        listener.progressChanged(adaptToLegacyEvent(progressEvent));
     }
 
-    @SuppressWarnings("deprecation")
-    private ProgressEvent transform(com.amazonaws.event.ProgressEvent event) {
-        return new ProgressEvent(event.getEventCode(), event.getBytesTransferred());
+    private ProgressEvent adaptToLegacyEvent(com.amazonaws.event.ProgressEvent event) {
+        long bytes = event.getBytesTransferred();
+        if (bytes != 0) {
+            return new ProgressEvent((int)bytes);
+        } else {
+            return new ProgressEvent(event.getEventType());
+        }
     }
 
+    @Override public boolean isSyncCallSafe() { return syncCallSafe; }
 }

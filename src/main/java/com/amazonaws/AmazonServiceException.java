@@ -101,7 +101,7 @@ public class AmazonServiceException extends AmazonClientException {
      *            An error message describing what went wrong.
      */
     public AmazonServiceException(String errorMessage) {
-        super(null);
+        super((String)null);
         this.errorMessage = errorMessage;
     }
 
