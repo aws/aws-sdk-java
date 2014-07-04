@@ -48,4 +48,6 @@ public final class ServiceAbbreviations {
     public static final String RedShift = "redshift";
     public static final String Opsworks = "opsworks";
     public static final String ElasticTranscoder = "elastictranscoder";
+    public static final String Kinesis = "kinesis";
+    public static final String CloudTrail = "cloudtrail";
 }
