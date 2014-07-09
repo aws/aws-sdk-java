@@ -128,7 +128,7 @@ public final class SampleKinesisApplication {
         LOG.info("Using credentials with access key id: " + credentialsProvider.getCredentials().getAWSAccessKeyId());
 
         kinesisClientLibConfiguration = new KinesisClientLibConfiguration(applicationName, streamName,
-                credentialsProvider, workerId).withInitialPositionInStream(initialPositionInStream);
+                credentialsProvider, workerId).withKinesisEndpoint(kinesisEndpoint).withInitialPositionInStream(initialPositionInStream);
     }
 
     /**
