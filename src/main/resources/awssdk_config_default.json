@@ -94,6 +94,16 @@
     "config" : {
       "serviceName" : "sts"
     }
+  }, {
+    "key" : "AmazonCognitoIdentityClient",
+    "config" : {
+      "serviceName" : "cognito-identity"
+    }
+  }, {
+    "key" : "AmazonCognitoSyncClient",
+    "config" : {
+      "serviceName" : "cognito-sync"
+    }
   } ],
   "userAgentTemplate": "aws-sdk-{platform}/{version} {os.name}/{os.version} {java.vm.name}/{java.vm.version}/{java.version}{language.and.region}"
 }

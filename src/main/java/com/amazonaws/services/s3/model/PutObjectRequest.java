@@ -162,8 +162,8 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      * @param file
      *            The path of the file to upload to Amazon S3.
      *
-     * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
-     * @See PutObjectRequest(String bucketName, String key, String redirectLocation)
+     * @see #PutObjectRequest(String, String, InputStream, ObjectMetadata)
+     * @see #PutObjectRequest(String, String, String)
      */
     public PutObjectRequest(String bucketName, String key, File file) {
         this.bucketName = bucketName;
@@ -218,8 +218,8 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      *            The object metadata. At minimum this specifies the
      *            content length for the stream of data being uploaded.
      *
-     * @see PutObjectRequest#PutObjectRequest(String, String, File)
-     * @see PutObjectRequest(String bucketName, String key, String redirectLocation)
+     * @see #PutObjectRequest(String, String, File)
+     * @see #PutObjectRequest(String, String, String)
      */
     public PutObjectRequest(String bucketName, String key, InputStream input, ObjectMetadata metadata) {
         this.bucketName = bucketName;
@@ -363,13 +363,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      * @param storageClass
      *         The storage class to use when storing the new object.
      *
-     * @return The Amazon S3 storage class to use when storing the newly copied
-     *         object.
-     *
-     * @see PutObjectRequest#getStorageClass()
-     * @see PutObjectRequest#setStorageClass(StorageClass
-     * @see PutObjectRequest#withStorageClass(StorageClass)
-     * @see PutObjectRequest#withStorageClass(String)
+     * @see #getStorageClass()
+     * @see #setStorageClass(String)
+     * @see #withStorageClass(StorageClass)
+     * @see #withStorageClass(String)
      */
     public void setStorageClass(String storageClass) {
         this.storageClass = storageClass;
@@ -413,11 +410,8 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
      * @param storageClass
      *         The storage class to use when storing the new object.
      *
-     * @return The Amazon S3 storage class to use when storing the newly copied
-     *         object.
-     *
-     * @see PutObjectRequest#getStorageClass()
-     * @see PutObjectRequest#setStorageClass(String)
+     * @see #getStorageClass()
+     * @see #setStorageClass(String)
      */
     public void setStorageClass(StorageClass storageClass) {
         this.storageClass = storageClass.toString();

@@ -34,7 +34,6 @@ public interface  MultipleFileUpload extends Transfer {
 
     /**
      * Returns a collection of sub transfers associated with the multi file upload.
-     * @return
      */
     public Collection<? extends Upload> getSubTransfers();
 

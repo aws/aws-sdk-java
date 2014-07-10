@@ -18,6 +18,7 @@
 package com.amazonaws.services.s3.model;
 
 import java.io.Serializable;
+import java.security.Permissions;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -121,7 +122,7 @@ public class AccessControlList implements Serializable {
      * Adds a set of grantee/permission pairs to the access control list (ACL), where each item in the
      * set is a {@link Grant} object.
      *
-     * @param grants
+     * @param grantsVarArg
      *            A collection of {@link Grant} objects
      */
     public void grantAllPermissions(Grant... grantsVarArg) {

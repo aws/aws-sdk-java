@@ -72,18 +72,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance. If the instance is in a nondefault VPC, you must use
      * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     * image used to launch the instance. </li> <li>
-     * <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     * Instance (<code>spot</code>). </li> <li>
-     * <p><code>instance-state-code</code> - The state of the instance, as a
-     * 16-bit unsigned integer. The high byte is an opaque internal value and
-     * should be ignored. The low byte is set based on the state represented.
-     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     * <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> |
+     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     * - The instance profile associated with the instance. Specified as an
+     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance,
+     * as a 16-bit unsigned integer. The high byte is an opaque internal
+     * value and should be ignored. The low byte is set based on the state
+     * represented. The valid values are: 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
@@ -158,12 +159,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     * VPC that the instance is running in. </li> <li>
-     * <p><code>network-interface.description</code> - The description of the
-     * network interface. </li> <li>
+     * filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     * instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the
+     * instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     * running in. </li> <li> <p><code>network-interface.description</code> -
+     * The description of the network interface. </li> <li>
      * <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -339,18 +341,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance. If the instance is in a nondefault VPC, you must use
      * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     * image used to launch the instance. </li> <li>
-     * <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     * Instance (<code>spot</code>). </li> <li>
-     * <p><code>instance-state-code</code> - The state of the instance, as a
-     * 16-bit unsigned integer. The high byte is an opaque internal value and
-     * should be ignored. The low byte is set based on the state represented.
-     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     * <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> |
+     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     * - The instance profile associated with the instance. Specified as an
+     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance,
+     * as a 16-bit unsigned integer. The high byte is an opaque internal
+     * value and should be ignored. The low byte is set based on the state
+     * represented. The valid values are: 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
@@ -425,12 +428,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     * VPC that the instance is running in. </li> <li>
-     * <p><code>network-interface.description</code> - The description of the
-     * network interface. </li> <li>
+     * filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     * instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the
+     * instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     * running in. </li> <li> <p><code>network-interface.description</code> -
+     * The description of the network interface. </li> <li>
      * <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -521,18 +525,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance. If the instance is in a nondefault VPC, you must use
      *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     *         image used to launch the instance. </li> <li>
-     *         <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     *         <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     *         Instance (<code>spot</code>). </li> <li>
-     *         <p><code>instance-state-code</code> - The state of the instance, as a
-     *         16-bit unsigned integer. The high byte is an opaque internal value and
-     *         should be ignored. The low byte is set based on the state represented.
-     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     *         <p><code>instance-state-name</code> - The state of the instance
-     *         (<code>pending</code> | <code>running</code> |
+     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     *         - The instance profile associated with the instance. Specified as an
+     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     *         <li> <p><code>instance-state-code</code> - The state of the instance,
+     *         as a 16-bit unsigned integer. The high byte is an opaque internal
+     *         value and should be ignored. The low byte is set based on the state
+     *         represented. The valid values are: 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
@@ -607,12 +612,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>virtualization-type</code> - The
-     *         virtualization type of the instance (<code>paravirtual</code> |
-     *         <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     *         VPC that the instance is running in. </li> <li>
-     *         <p><code>network-interface.description</code> - The description of the
-     *         network interface. </li> <li>
+     *         filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     *         instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     *         <p><code>virtualization-type</code> - The virtualization type of the
+     *         instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     *         <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     *         running in. </li> <li> <p><code>network-interface.description</code> -
+     *         The description of the network interface. </li> <li>
      *         <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -712,18 +718,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance. If the instance is in a nondefault VPC, you must use
      * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     * image used to launch the instance. </li> <li>
-     * <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     * Instance (<code>spot</code>). </li> <li>
-     * <p><code>instance-state-code</code> - The state of the instance, as a
-     * 16-bit unsigned integer. The high byte is an opaque internal value and
-     * should be ignored. The low byte is set based on the state represented.
-     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     * <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> |
+     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     * - The instance profile associated with the instance. Specified as an
+     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance,
+     * as a 16-bit unsigned integer. The high byte is an opaque internal
+     * value and should be ignored. The low byte is set based on the state
+     * represented. The valid values are: 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
@@ -798,12 +805,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     * VPC that the instance is running in. </li> <li>
-     * <p><code>network-interface.description</code> - The description of the
-     * network interface. </li> <li>
+     * filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     * instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the
+     * instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     * running in. </li> <li> <p><code>network-interface.description</code> -
+     * The description of the network interface. </li> <li>
      * <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -894,18 +902,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance. If the instance is in a nondefault VPC, you must use
      *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     *         image used to launch the instance. </li> <li>
-     *         <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     *         <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     *         Instance (<code>spot</code>). </li> <li>
-     *         <p><code>instance-state-code</code> - The state of the instance, as a
-     *         16-bit unsigned integer. The high byte is an opaque internal value and
-     *         should be ignored. The low byte is set based on the state represented.
-     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     *         <p><code>instance-state-name</code> - The state of the instance
-     *         (<code>pending</code> | <code>running</code> |
+     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     *         - The instance profile associated with the instance. Specified as an
+     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     *         <li> <p><code>instance-state-code</code> - The state of the instance,
+     *         as a 16-bit unsigned integer. The high byte is an opaque internal
+     *         value and should be ignored. The low byte is set based on the state
+     *         represented. The valid values are: 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
@@ -980,12 +989,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>virtualization-type</code> - The
-     *         virtualization type of the instance (<code>paravirtual</code> |
-     *         <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     *         VPC that the instance is running in. </li> <li>
-     *         <p><code>network-interface.description</code> - The description of the
-     *         network interface. </li> <li>
+     *         filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     *         instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     *         <p><code>virtualization-type</code> - The virtualization type of the
+     *         instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     *         <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     *         running in. </li> <li> <p><code>network-interface.description</code> -
+     *         The description of the network interface. </li> <li>
      *         <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -1087,18 +1097,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance. If the instance is in a nondefault VPC, you must use
      * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     * image used to launch the instance. </li> <li>
-     * <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     * Instance (<code>spot</code>). </li> <li>
-     * <p><code>instance-state-code</code> - The state of the instance, as a
-     * 16-bit unsigned integer. The high byte is an opaque internal value and
-     * should be ignored. The low byte is set based on the state represented.
-     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     * <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> |
+     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     * - The instance profile associated with the instance. Specified as an
+     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance,
+     * as a 16-bit unsigned integer. The high byte is an opaque internal
+     * value and should be ignored. The low byte is set based on the state
+     * represented. The valid values are: 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
@@ -1173,12 +1184,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     * VPC that the instance is running in. </li> <li>
-     * <p><code>network-interface.description</code> - The description of the
-     * network interface. </li> <li>
+     * filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     * instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the
+     * instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     * running in. </li> <li> <p><code>network-interface.description</code> -
+     * The description of the network interface. </li> <li>
      * <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -1271,18 +1283,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance. If the instance is in a nondefault VPC, you must use
      *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     *         image used to launch the instance. </li> <li>
-     *         <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     *         <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     *         Instance (<code>spot</code>). </li> <li>
-     *         <p><code>instance-state-code</code> - The state of the instance, as a
-     *         16-bit unsigned integer. The high byte is an opaque internal value and
-     *         should be ignored. The low byte is set based on the state represented.
-     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     *         <p><code>instance-state-name</code> - The state of the instance
-     *         (<code>pending</code> | <code>running</code> |
+     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     *         - The instance profile associated with the instance. Specified as an
+     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     *         <li> <p><code>instance-state-code</code> - The state of the instance,
+     *         as a 16-bit unsigned integer. The high byte is an opaque internal
+     *         value and should be ignored. The low byte is set based on the state
+     *         represented. The valid values are: 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
@@ -1357,12 +1370,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>virtualization-type</code> - The
-     *         virtualization type of the instance (<code>paravirtual</code> |
-     *         <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     *         VPC that the instance is running in. </li> <li>
-     *         <p><code>network-interface.description</code> - The description of the
-     *         network interface. </li> <li>
+     *         filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     *         instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     *         <p><code>virtualization-type</code> - The virtualization type of the
+     *         instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     *         <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     *         running in. </li> <li> <p><code>network-interface.description</code> -
+     *         The description of the network interface. </li> <li>
      *         <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -1465,18 +1479,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance. If the instance is in a nondefault VPC, you must use
      * <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      * The hypervisor type of the instance (<code>ovm</code> |
-     * <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     * image used to launch the instance. </li> <li>
-     * <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     * Instance (<code>spot</code>). </li> <li>
-     * <p><code>instance-state-code</code> - The state of the instance, as a
-     * 16-bit unsigned integer. The high byte is an opaque internal value and
-     * should be ignored. The low byte is set based on the state represented.
-     * The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     * 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     * <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> |
+     * <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     * - The instance profile associated with the instance. Specified as an
+     * ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     * launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     * of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance,
+     * as a 16-bit unsigned integer. The high byte is an opaque internal
+     * value and should be ignored. The low byte is set based on the state
+     * represented. The valid values are: 0 (pending), 16 (running), 32
+     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * </li> <li> <p><code>instance-state-name</code> - The state of the
+     * instance (<code>pending</code> | <code>running</code> |
      * <code>shutting-down</code> | <code>terminated</code> |
      * <code>stopping</code> | <code>stopped</code>). </li> <li>
      * <p><code>instance-type</code> - The type of instance (for example,
@@ -1551,12 +1566,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      * <p><code>tag-value</code> - The value of a tag assigned to the
      * resource. This filter is independent of the <code>tag-key</code>
-     * filter. </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     * VPC that the instance is running in. </li> <li>
-     * <p><code>network-interface.description</code> - The description of the
-     * network interface. </li> <li>
+     * filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     * instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the
+     * instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     * running in. </li> <li> <p><code>network-interface.description</code> -
+     * The description of the network interface. </li> <li>
      * <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      * the network interface. </li> <li>
      * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the
@@ -1649,18 +1665,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance. If the instance is in a nondefault VPC, you must use
      *         <code>group-id</code> instead. </li> <li> <p><code>hypervisor</code> -
      *         The hypervisor type of the instance (<code>ovm</code> |
-     *         <code>xen</code>). </li> <li> <p><code>image-id</code> - The ID of the
-     *         image used to launch the instance. </li> <li>
-     *         <p><code>instance-id</code> - The ID of the instance. </li> <li>
-     *         <p><code>instance-lifecycle</code> - Indicates whether this is a Spot
-     *         Instance (<code>spot</code>). </li> <li>
-     *         <p><code>instance-state-code</code> - The state of the instance, as a
-     *         16-bit unsigned integer. The high byte is an opaque internal value and
-     *         should be ignored. The low byte is set based on the state represented.
-     *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down),
-     *         48 (terminated), 64 (stopping), and 80 (stopped). </li> <li>
-     *         <p><code>instance-state-name</code> - The state of the instance
-     *         (<code>pending</code> | <code>running</code> |
+     *         <code>xen</code>). </li> <li> <p><code>iam-instance-profile.arn</code>
+     *         - The instance profile associated with the instance. Specified as an
+     *         ARN. </li> <li> <p><code>image-id</code> - The ID of the image used to
+     *         launch the instance. </li> <li> <p><code>instance-id</code> - The ID
+     *         of the instance. </li> <li> <p><code>instance-lifecycle</code> -
+     *         Indicates whether this is a Spot Instance (<code>spot</code>). </li>
+     *         <li> <p><code>instance-state-code</code> - The state of the instance,
+     *         as a 16-bit unsigned integer. The high byte is an opaque internal
+     *         value and should be ignored. The low byte is set based on the state
+     *         represented. The valid values are: 0 (pending), 16 (running), 32
+     *         (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     *         </li> <li> <p><code>instance-state-name</code> - The state of the
+     *         instance (<code>pending</code> | <code>running</code> |
      *         <code>shutting-down</code> | <code>terminated</code> |
      *         <code>stopping</code> | <code>stopped</code>). </li> <li>
      *         <p><code>instance-type</code> - The type of instance (for example,
@@ -1735,12 +1752,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>tag</code>:<i>key</i>=<i>value</i> filter. </li> <li>
      *         <p><code>tag-value</code> - The value of a tag assigned to the
      *         resource. This filter is independent of the <code>tag-key</code>
-     *         filter. </li> <li> <p><code>virtualization-type</code> - The
-     *         virtualization type of the instance (<code>paravirtual</code> |
-     *         <code>hvm</code>). </li> <li> <p><code>vpc-id</code> - The ID of the
-     *         VPC that the instance is running in. </li> <li>
-     *         <p><code>network-interface.description</code> - The description of the
-     *         network interface. </li> <li>
+     *         filter. </li> <li> <p><code>tenancy</code> - The tenancy of an
+     *         instance (<code>dedicated</code> | <code>default</code>). </li> <li>
+     *         <p><code>virtualization-type</code> - The virtualization type of the
+     *         instance (<code>paravirtual</code> | <code>hvm</code>). </li> <li>
+     *         <p><code>vpc-id</code> - The ID of the VPC that the instance is
+     *         running in. </li> <li> <p><code>network-interface.description</code> -
+     *         The description of the network interface. </li> <li>
      *         <p><code>network-interface.subnet-id</code> - The ID of the subnet for
      *         the network interface. </li> <li>
      *         <p><code>network-interface.vpc-id</code> - The ID of the VPC for the

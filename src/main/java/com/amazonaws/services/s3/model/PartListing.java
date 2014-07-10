@@ -188,7 +188,7 @@ public class PartListing {
     /**
      * Sets the user who initiated the associated multipart upload.
      *
-     * @param owner
+     * @param initiator
      *            the user who initiated the associated multipart upload.
      */
     public void setInitiator(Owner initiator) {

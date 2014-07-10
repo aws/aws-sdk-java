@@ -7795,6 +7795,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * has not subscribed, <code>RunInstances</code> fails.
      * </p>
      * <p>
+     * T2 instance types can only be launched into a VPC. If you do not have
+     * a default VPC, or if you do not specify a subnet ID in the request,
+     * <code>RunInstances</code> fails.
+     * </p>
+     * <p>
      * For more information about troubleshooting, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html"> What To Do If An Instance Immediately Terminates </a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"> Troubleshooting Connecting to Your Instance </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -7858,6 +7863,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * If any of the AMIs have a product code attached for which the user
      * has not subscribed, <code>RunInstances</code> fails.
+     * </p>
+     * <p>
+     * T2 instance types can only be launched into a VPC. If you do not have
+     * a default VPC, or if you do not specify a subnet ID in the request,
+     * <code>RunInstances</code> fails.
      * </p>
      * <p>
      * For more information about troubleshooting, see
@@ -13176,6 +13186,80 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             throw ex;
               }
               asyncHandler.onSuccess(deletePlacementGroupRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Modifies a subnet attribute.
+     * </p>
+     *
+     * @param modifySubnetAttributeRequest Container for the necessary
+     *           parameters to execute the ModifySubnetAttribute operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifySubnetAttribute service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> modifySubnetAttributeAsync(final ModifySubnetAttributeRequest modifySubnetAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                modifySubnetAttribute(modifySubnetAttributeRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Modifies a subnet attribute.
+     * </p>
+     *
+     * @param modifySubnetAttributeRequest Container for the necessary
+     *           parameters to execute the ModifySubnetAttribute operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifySubnetAttribute service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> modifySubnetAttributeAsync(
+            final ModifySubnetAttributeRequest modifySubnetAttributeRequest,
+            final AsyncHandler<ModifySubnetAttributeRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                modifySubnetAttribute(modifySubnetAttributeRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifySubnetAttributeRequest, null);
                  return null;
         }
     });

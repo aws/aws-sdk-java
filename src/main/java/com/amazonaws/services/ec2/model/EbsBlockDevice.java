@@ -43,7 +43,10 @@ public class EbsBlockDevice implements Serializable {
     private Boolean deleteOnTermination;
 
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     * <code>standard</code> for Magnetic volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1, gp2
@@ -198,12 +201,18 @@ public class EbsBlockDevice implements Serializable {
     }
 
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     * <code>standard</code> for Magnetic volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1, gp2
      *
-     * @return The volume type. <p>Default: <code>standard</code>
+     * @return The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     *         <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @see VolumeType
      */
@@ -212,12 +221,18 @@ public class EbsBlockDevice implements Serializable {
     }
     
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     * <code>standard</code> for Magnetic volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1, gp2
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     *         <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @see VolumeType
      */
@@ -226,14 +241,20 @@ public class EbsBlockDevice implements Serializable {
     }
     
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     * <code>standard</code> for Magnetic volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1, gp2
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     *         <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -246,12 +267,18 @@ public class EbsBlockDevice implements Serializable {
     }
 
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     * <code>standard</code> for Magnetic volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1, gp2
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     *         <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @see VolumeType
      */
@@ -260,14 +287,20 @@ public class EbsBlockDevice implements Serializable {
     }
     
     /**
-     * The volume type. <p>Default: <code>standard</code>
+     * The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     * <code>standard</code> for Magnetic volumes. <p>Default:
+     * <code>standard</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>standard, io1, gp2
      *
-     * @param volumeType The volume type. <p>Default: <code>standard</code>
+     * @param volumeType The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
+     *         <code>io1</code> for Provisioned IOPS (SSD) volumes, and
+     *         <code>standard</code> for Magnetic volumes. <p>Default:
+     *         <code>standard</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

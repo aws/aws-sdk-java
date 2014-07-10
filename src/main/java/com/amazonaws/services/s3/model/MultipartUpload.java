@@ -122,7 +122,7 @@ public class MultipartUpload {
     /**
      * Sets the user who initiated this multipart upload.
      *
-     * @param owner
+     * @param initiator
      *            The user who initiated this multipart upload.
      */
     public void setInitiator(Owner initiator) {

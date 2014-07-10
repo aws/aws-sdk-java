@@ -134,12 +134,9 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      */
     private SSECustomerKey destinationSSECustomerKey;
 
-
     /**
      * <p>
-     * Constructs a new
-     * {@link com.amazonaws.services.s3.model#CopyObjectRequest}
-     * with only basic options.
+     * Constructs with basic options.
      * </p>
      *
      * @param sourceBucketName
@@ -153,8 +150,6 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      * @param destinationKey
      *            The destination bucket key under which the new object
      *            will be copied.
-     *
-     * @see CopyObjectRequest#CopyObjectRequest(String, String, String, String, String)
      */
     public CopyObjectRequest(String sourceBucketName, String sourceKey,
                              String destinationBucketName, String destinationKey) {
@@ -255,7 +250,7 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      *            The source bucket key under which the source object to
      *            be copied is stored.
      *
-     * @see CopyObjectRequest#setSourceKey(String sourceKey)}
+     * @see CopyObjectRequest#setSourceKey(String)
      */
     public void setSourceKey(String sourceKey) {
         this.sourceKey = sourceKey;
@@ -488,9 +483,6 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      * see the {@link StorageClass} enumeration.
      * </p>
      *
-     * @return The Amazon S3 storage class to use when storing the newly copied
-     *         object.
-     *
      * @see CopyObjectRequest#getStorageClass()
      * @see CopyObjectRequest#setStorageClass(StorageClass)
      */
@@ -528,9 +520,6 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      * For more information on Amazon S3 storage classes and available values,
      * see the {@link StorageClass} enumeration.
      * </p>
-     *
-     * @return The Amazon S3 storage class to use when storing the newly copied
-     *         object.
      *
      * @see CopyObjectRequest#getStorageClass()
      * @see CopyObjectRequest#setStorageClass(String)

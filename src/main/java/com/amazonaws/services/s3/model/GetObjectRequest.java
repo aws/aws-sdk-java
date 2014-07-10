@@ -363,8 +363,8 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *         and the whole object is
      *         to be downloaded.
      *
-     * @see GetObjectMetadataRequest#setRange(long, long)
-     * @see GetObjectRequest#withRange(long, long)
+     * @see #setRange(long, long)
+     * @see #withRange(long, long)
      */
     public long[] getRange() {
         return range == null ? null : range.clone();
@@ -390,8 +390,8 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * @param end
      *            The end of the inclusive byte range to download.
      *
-     * @see GetObjectMetadataRequest#getRange()
-     * @see GetObjectRequest#withRange(long, long)
+     * @see #getRange()
+     * @see #withRange(long, long)
      */
     public void setRange(long start, long end) {
         range = new long[] {start, end};

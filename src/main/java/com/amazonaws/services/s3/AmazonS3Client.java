@@ -874,13 +874,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 .withRequestMetricCollector(requestMetricCollector));
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#getBucketAcl(java.lang.String)
+    /**
+     * {@inheritDoc}
+     * @see #getBucketAcl(String)
      */
+    @Override
     public AccessControlList getBucketAcl(String bucketName)
             throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when requesting a bucket's ACL");
-
+        assertParameterNotNull(bucketName,
+                "The bucket name parameter must be specified when requesting a bucket's ACL");
         return getAcl(bucketName, null, null, null);
     }
 
@@ -1508,9 +1510,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#copyObject(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
-     */
+    @Override
     public CopyObjectResult copyObject(String sourceBucketName, String sourceKey,
                                        String destinationBucketName, String destinationKey)
             throws AmazonClientException, AmazonServiceException {
@@ -1518,9 +1518,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                                 destinationBucketName, destinationKey));
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#copyObject(com.amazonaws.services.s3.model.CopyObjectRequest)
-     */
+    @Override
     public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(copyObjectRequest.getSourceBucketName(),
@@ -2837,14 +2835,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, key);
     }
 
-    /** (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#copyGlacierObject((java.lang.String, java.lang.String, int)
-     */
+    @Override
     public void restoreObject(String bucketName, String key, int expirationInDays)
             throws AmazonServiceException {
         restoreObject(new RestoreObjectRequest(bucketName, key, expirationInDays));
     }
-
 
     /*
      * Private Interface

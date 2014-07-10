@@ -39,7 +39,7 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
 
         Request<ImportInstanceRequest> request = new DefaultRequest<ImportInstanceRequest>(importInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ImportInstance");
-        request.addParameter("Version", "2014-05-01");
+        request.addParameter("Version", "2014-06-15");
 
         if (importInstanceRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importInstanceRequest.getDescription()));
@@ -82,7 +82,7 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                 }
             }
             if (importInstanceLaunchSpecificationLaunchSpecification.isMonitoring() != null) {
-                request.addParameter("LaunchSpecification.Monitoring", StringUtils.fromBoolean(importInstanceLaunchSpecificationLaunchSpecification.isMonitoring()));
+                request.addParameter("LaunchSpecification.Monitoring.Enabled", StringUtils.fromBoolean(importInstanceLaunchSpecificationLaunchSpecification.isMonitoring()));
             }
             if (importInstanceLaunchSpecificationLaunchSpecification.getSubnetId() != null) {
                 request.addParameter("LaunchSpecification.SubnetId", StringUtils.fromString(importInstanceLaunchSpecificationLaunchSpecification.getSubnetId()));

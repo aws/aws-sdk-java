@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.services.s3.AmazonS3Client;
 
 /**
  * <p>
@@ -27,8 +28,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * a success message, not an error message.
  * </p>
  *
- * @see deleteObject(String bucketName, String key)
- * @see deleteObject(DeleteObjectRequest deleteObjectRequest)
+ * @see AmazonS3Client#deleteObject(String, String)
+ * @see AmazonS3Client#deleteObject(DeleteObjectRequest)
  */
 public class DeleteObjectRequest extends AmazonWebServiceRequest {
 

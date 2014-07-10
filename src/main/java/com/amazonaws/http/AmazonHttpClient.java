@@ -126,8 +126,9 @@ public class AmazonHttpClient {
         // Customers have reported XML parsing issues with the following
         // JVM versions, which don't occur with more recent versions, so
         // if we detect any of these, give customers a heads up.
+        // https://bugs.openjdk.java.net/browse/JDK-8028111
         List<String> problematicJvmVersions = Arrays.asList(
-            "1.6.0_06", "1.6.0_13", "1.6.0_17");
+            "1.6.0_06", "1.6.0_13", "1.6.0_17", "1.6.0_65", "1.7.0_45");
         String jvmVersion = System.getProperty("java.version");
         if (problematicJvmVersions.contains(jvmVersion)) {
             log.warn("Detected a possible problem with the current JVM version (" + jvmVersion + ").  " +
@@ -818,6 +819,8 @@ public class AmazonHttpClient {
             throw e;
         } catch (IOException e) {
             throw e;
+        } catch (AmazonClientException e) {
+            throw e;    // simply rethrow rather than further wrapping it 
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + "). Response Code: " +
                         httpResponse.getStatusCode() + ", Response Text: " + httpResponse.getStatusText();

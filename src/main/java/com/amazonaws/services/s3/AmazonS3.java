@@ -860,7 +860,7 @@ public interface AmazonS3 {
      * list buckets that they did not create.
      * </p>
      *
-     * @param request
+     * @param listBucketsRequest
      *          The request containing all of the options related to the listing
      *          of buckets.
      *
@@ -2838,11 +2838,12 @@ public interface AmazonS3 {
     /**
      * Removes the tagging configuration for the bucket specified.
      *
-     * @param deleteBucketTaggingConfigurationRequests
+     * @param deleteBucketTaggingConfigurationRequest
      *            The request object containing all options for removing the
      *            bucket tagging configuration.
      */
-    public void deleteBucketTaggingConfiguration(DeleteBucketTaggingConfigurationRequest deleteBucketTaggingConfigurationRequest);
+    public void deleteBucketTaggingConfiguration(
+            DeleteBucketTaggingConfigurationRequest deleteBucketTaggingConfigurationRequest);
 
     /**
      * Gets the notification configuration for the specified bucket.
@@ -3725,7 +3726,7 @@ public interface AmazonS3 {
      * needs to have the new s3:RestoreObject permission to perform this
      * operation.
      *
-     * @param RestoreObjectRequest
+     * @param request
      *            The request object containing all the options for restoring an
      *            Amazon S3 object.
      *
@@ -3735,7 +3736,7 @@ public interface AmazonS3 {
      *
      * @see AmazonS3Client#restoreObject(String, String, int)
      */
-    public void restoreObject(RestoreObjectRequest copyGlacierObjectRequest)
+    public void restoreObject(RestoreObjectRequest request)
             throws AmazonServiceException;
 
     /**

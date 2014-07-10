@@ -57,6 +57,11 @@ import com.amazonaws.services.ec2.model.transform.RunInstancesRequestMarshaller;
  * not subscribed, <code>RunInstances</code> fails.
  * </p>
  * <p>
+ * T2 instance types can only be launched into a VPC. If you do not have
+ * a default VPC, or if you do not specify a subnet ID in the request,
+ * <code>RunInstances</code> fails.
+ * </p>
+ * <p>
  * For more information about troubleshooting, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html"> What To Do If An Instance Immediately Terminates </a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"> Troubleshooting Connecting to Your Instance </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
