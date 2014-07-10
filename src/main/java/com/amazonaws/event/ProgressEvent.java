@@ -84,8 +84,8 @@ public class ProgressEvent {
 
     /**
      * Convenient method to returns the number of bytes transferred in this
-     * event, or the number of bytes reset if negative. In particular, bytes of
-     * a content-length event is excluded.
+     * event, or the number of bytes reset (or discarded) if negative. In
+     * particular, bytes of a content-length event is excluded.
      */
     public long getBytesTransferred() {
         switch(eventType) {
@@ -94,6 +94,7 @@ public class ProgressEvent {
                 return bytes;
             case HTTP_RESPONSE_CONTENT_RESET_EVENT:
             case HTTP_REQUEST_CONTENT_RESET_EVENT:
+            case RESPONSE_BYTE_DISCARD_EVENT:
                 return 0 - bytes;
         default:
             return 0;

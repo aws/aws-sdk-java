@@ -103,7 +103,7 @@ public class BucketTaggingConfiguration {
      * @param tagSets
      *            A collection of TagSet objects.
      *            
-     * @see BucketTaggingConfiguration#withTopicConfigurations(TopicConfiguration)         
+     * @see BucketTaggingConfiguration#withTagSets(TagSet...)
      */
     public void setTagSets( Collection<TagSet> tagSets ) {
         this.tagSets.clear();

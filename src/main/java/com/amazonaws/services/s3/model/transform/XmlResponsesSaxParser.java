@@ -474,11 +474,9 @@ public class XmlResponsesSaxParser {
     // ////////////
 
     /**
-     * Handler for ListBucket response XML documents. The document is parsed
-     * into {@link S3Object}s available via the {@link #getObjects()} method.
+     * Handler for ListBucket response XML documents.
      */
     public static class ListBucketHandler extends AbstractHandler {
-
         private final ObjectListing objectListing = new ObjectListing();
 
         private S3ObjectSummary currentObject = null;

@@ -25,8 +25,9 @@ import com.amazonaws.services.s3.transfer.exception.PauseException;
  * <p>
  * See {@link TransferManager} for more information about creating transfers.
  * </p>
- *
- * @see TransferManager#download(com.amazonaws.services.s3.model.GetObjectRequest);
+ * 
+ * @see TransferManager#download(com.amazonaws.services.s3.model.GetObjectRequest,
+ *      java.io.File)
  */
 public interface Download extends Transfer {
 

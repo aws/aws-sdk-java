@@ -313,7 +313,7 @@ public class ServiceUtils {
      *
      * @param file
      * 			The file to store the object's data in.
-     * @param safeS3DownloadTask
+     * @param retryableS3DownloadTask
      * 			The implementation of SafeS3DownloadTask interface which allows user to
      * 			get access to all the visible variables at the calling site of this method.
      */

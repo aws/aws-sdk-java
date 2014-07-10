@@ -15,6 +15,7 @@
 package com.amazonaws.util;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -55,17 +56,17 @@ public enum IOUtils {
     }
 
     /**
-     * Closes the given input stream quietly.
-     * @param is the given input stream
+     * Closes the given Closeable quietly.
+     * @param is the given closeable
      * @param log logger used to log any failure should the close fail
      */
-    public static void closeQuietly(InputStream is, Log log) {
+    public static void closeQuietly(Closeable is, Log log) {
         if (is != null) {
             try {
                 is.close();
             } catch (IOException ex) {
                 if (log != null)
-                    log.debug("Ignore failure in closing the input stream", ex);
+                    log.debug("Ignore failure in closing the Closeable", ex);
             }
         }
     }

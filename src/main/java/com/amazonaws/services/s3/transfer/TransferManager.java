@@ -1130,7 +1130,7 @@ public class TransferManager {
      * transfers will not be allowed to finish. It also by default shuts down
      * the underlying Amazon S3 client.
      *
-     * @see shutdownNow(boolean)
+     * @see #shutdownNow(boolean)
      */
     public void shutdownNow() {
         shutdownNow(true);

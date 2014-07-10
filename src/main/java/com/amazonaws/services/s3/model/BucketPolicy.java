@@ -49,7 +49,7 @@ public class BucketPolicy {
      *         If no policy has been applied to the specified bucket, this method returns
      *         null policy text.
      *         
-     * @see BucketPolicy#setPolicyText()        
+     * @see BucketPolicy#setPolicyText(String)
      */
     public String getPolicyText() {
         return policyText;

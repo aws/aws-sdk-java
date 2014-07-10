@@ -49,6 +49,7 @@ public class ProgressTracker extends SyncProgressListener {
                 progress.addRequestBytesTransferred(0-bytes);
                 break;
             case HTTP_RESPONSE_CONTENT_RESET_EVENT: 
+            case RESPONSE_BYTE_DISCARD_EVENT: 
                 progress.addResponseBytesTransferred(0-bytes);
                 break;
             default:

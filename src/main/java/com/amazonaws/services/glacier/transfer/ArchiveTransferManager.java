@@ -15,8 +15,9 @@
 package com.amazonaws.services.glacier.transfer;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
-import static com.amazonaws.event.SDKProgressPublisher.publishRequestBytesTransferred;
-import static com.amazonaws.event.SDKProgressPublisher.publishResponseBytesTransferred;
+import static com.amazonaws.event.SDKProgressPublisher.publishResponseBytesDiscarded;
+import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.util.Throwables.failure;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -412,9 +413,10 @@ public class ArchiveTransferManager {
      *             client code in making requests or processing responses from
      *             AWS.
      */
-    public void download(final String accountId, final String vaultName, final String archiveId, final File file, ProgressListener progressListener)
-            throws AmazonServiceException, AmazonClientException {
-
+    public void download(final String accountId, final String vaultName,
+            final String archiveId, final File file,
+            ProgressListener progressListener) throws AmazonServiceException,
+            AmazonClientException {
         JobStatusMonitor jobStatusMonitor = null;
         String jobId = null;
         publishProgress(progressListener, ProgressEventType.TRANSFER_PREPARING_EVENT);
@@ -439,9 +441,9 @@ public class ArchiveTransferManager {
 
             jobStatusMonitor.waitForJobToComplete(jobId);
 
-        } catch (AmazonServiceException ace) {
+        } catch (Throwable t) {
             publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
-            throw ace;
+            throw failure(t);
         } finally {
             if (jobStatusMonitor != null) {
                 jobStatusMonitor.shutdown();
@@ -495,7 +497,8 @@ public class ArchiveTransferManager {
      *            The optional progress listener for receiving updates about the
      *            download status.
      */
-    public void downloadJobOutput(String accountId, String vaultName, String jobId, File file, ProgressListener progressListener) {
+    public void downloadJobOutput(String accountId, String vaultName,
+            String jobId, File file, ProgressListener progressListener) {
         long archiveSize = 0;
         long chunkSize = DEFAULT_DOWNLOAD_CHUNK_SIZE;
         long currentPosition = 0;
@@ -520,32 +523,34 @@ public class ArchiveTransferManager {
 
         try {
             output = new RandomAccessFile(file, "rw");
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
             publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw new AmazonClientException("Unable to open the output file " + file.getPath(), e);
         }
 
-        publishProgress(progressListener, ProgressEventType.TRANSFER_STARTED_EVENT);
-
-        while (currentPosition < archiveSize) {
-            if (currentPosition + chunkSize > archiveSize) {
-                endPosition = archiveSize - 1;
-            } else {
-                endPosition = currentPosition + chunkSize - 1;
+        try {
+            publishProgress(progressListener, ProgressEventType.TRANSFER_STARTED_EVENT);
+            while (currentPosition < archiveSize) {
+                if (currentPosition + chunkSize > archiveSize) {
+                    endPosition = archiveSize - 1;
+                } else {
+                    endPosition = currentPosition + chunkSize - 1;
+                }
+    
+                // Download the chunk
+                try {
+                    downloadOneChunk(accountId, vaultName, jobId, output,
+                            currentPosition, endPosition, progressListener);
+                } catch (Throwable t) {
+                    publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
+                    throw failure(t);
+                }
+                currentPosition += chunkSize;
             }
-
-            // Download the chunk
-            try {
-                downloadOneChunk(accountId, vaultName, jobId, output, currentPosition, endPosition);
-            } catch (AmazonServiceException ace) {
-                publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
-                throw ace;
-            }
-            publishResponseBytesTransferred(progressListener, endPosition-currentPosition+1);
-            currentPosition += chunkSize;
+            publishProgress(progressListener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
+        } finally {
+            closeQuietly(output, log);
         }
-        try { output.close();} catch (Exception e) {};
-        publishProgress(progressListener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
     }
 
     private void validateChunkSize(long chunkSize) {
@@ -560,51 +565,65 @@ public class ArchiveTransferManager {
     }
 
     /**
-     * Download one chunk from Amazon Glacier. It will do the retry if any errors are encountered while streaming the data from
-     * Amazon Glacier.
+     * Download one chunk from Amazon Glacier. It will do the retry if any
+     * errors are encountered while streaming the data from Amazon Glacier.
      */
     private void downloadOneChunk(String accountId, String vaultName,
             String jobId, RandomAccessFile output, long currentPosition,
-            long endPosition) {
-        TreeHashInputStream  input;
+            long endPosition, ProgressListener progressListener) {
+        final long chunkSize = endPosition - currentPosition + 1;
+        TreeHashInputStream input = null;
         int retries = 0;
         while (true) {
             try {
-                GetJobOutputResult  jobOutputResult = glacier.getJobOutput(new GetJobOutputRequest()
-                  .withAccountId(accountId)
-                  .withVaultName(vaultName)
-                  .withRange("bytes=" + Long.toString(currentPosition) + "-" + Long.toString(endPosition))
-                  .withJobId(jobId));
-
+                GetJobOutputRequest req = new GetJobOutputRequest()
+                    .withAccountId(accountId)
+                    .withVaultName(vaultName)
+                    .withRange("bytes=" + currentPosition + "-" + endPosition)
+                    .withJobId(jobId)
+                    .withGeneralProgressListener(progressListener)
+                    ;
+                GetJobOutputResult jobOutputResult = glacier.getJobOutput(req);
                 try {
                     input = new TreeHashInputStream(new BufferedInputStream(jobOutputResult.getBody()));
+                    appendToFile(output, input);
                 } catch (NoSuchAlgorithmException e) {
-                    throw new AmazonClientException("Unable to compute hash for data integrity: " + e.getMessage(), e);
+                    throw failure(e, "Unable to compute hash for data integrity");
+                } finally {
+                    closeQuietly(input, log);
                 }
-
-                appendToFile(output, input);
 
                 // Only do tree-hash check when the output checksum is returned from Glacier
                 if (null != jobOutputResult.getChecksum()) {
                     // Checksum does not match
                     if (!input.getTreeHash().equalsIgnoreCase(jobOutputResult.getChecksum())) {
+                        // Discard the chunk of bytes received 
+                        publishResponseBytesDiscarded(progressListener, chunkSize);
+                        if (log.isDebugEnabled())
+                            log.debug("reverting " + chunkSize);
                         throw new IOException("Client side computed hash doesn't match server side hash; possible data corruption");
                     }
                 } else {
                     log.warn("Cannot validate the downloaded output since no tree-hash checksum is returned from Glacier. "
                             + "Make sure the InitiateJob and GetJobOutput requests use tree-hash-aligned ranges.");
                 }
-
                 // Successfully download
                 return;
-
                 // We will retry IO exception
             } catch (IOException ioe) {
                 if (retries < DEFAULT_MAX_RETRIES) {
                     retries++;
+                    if (log.isDebugEnabled()) {
+                        log.debug(retries
+                                + " retry downloadOneChunk accountId="
+                                + accountId + ", vaultName=" + vaultName
+                                + ", jobId=" + jobId + ", currentPosition="
+                                + currentPosition + " endPosition="
+                                + endPosition);
+                    }
                     try {
                         output.seek(currentPosition);
-                    } catch (Exception e) {
+                    } catch (IOException e) {
                         throw new AmazonClientException("Unable to download the archive: " + ioe.getMessage(), e);
                     }
                 } else {
@@ -614,22 +633,21 @@ public class ArchiveTransferManager {
         }
     }
 
-    private void appendToFile(RandomAccessFile output, InputStream input) throws IOException {
+    /**
+     * Writes the data from the given input stream to the given output stream.
+     */
+    private void appendToFile(RandomAccessFile output, InputStream input)
+            throws IOException {
         byte[] buffer = new byte[1024 * 1024];
-        try {
-            int bytesRead = 0;
-            do {
-                bytesRead = input.read(buffer);
-                if (bytesRead < 0)
-                    break;
-                output.write(buffer, 0, bytesRead);
-            } while (bytesRead > 0);
-        } finally {
-            try {input.close();} catch (Exception e) {}
-        }
+        int bytesRead = 0;
+        do {
+            bytesRead = input.read(buffer);
+            if (bytesRead < 0)
+                break;
+            output.write(buffer, 0, bytesRead);
+        } while (bytesRead > 0);
+        return;
     }
-
-
 
     /**
      * Calculates the part size to use when uploading an archive of the
@@ -677,11 +695,10 @@ public class ArchiveTransferManager {
                 .withVaultName(vaultName)
                 .withPartSize(partSizeString));
             uploadId = initiateResult.getUploadId();
-        } catch (AmazonServiceException ace) {
+        } catch (Throwable t) {
             publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
-            throw ace;
+            throw failure(t);
         }
-
         publishProgress(progressListener, ProgressEventType.TRANSFER_STARTED_EVENT);
 
         try {
@@ -698,34 +715,34 @@ public class ArchiveTransferManager {
                 boolean completed = false;
                 int tries = 0;
 
-                while(!completed && tries<5){
+                while (!completed && tries < 5){
                     tries++;
                     InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
                     inputSubStream.mark(-1);
                     String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
                     byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
                     inputSubStream.reset();
+                    UploadMultipartPartRequest req = new UploadMultipartPartRequest()
+                        .withAccountId(accountId)
+                        .withChecksum(checksum)
+                        .withBody(inputSubStream)
+                        .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
+                        .withUploadId(uploadId)
+                        .withVaultName(vaultName)
+                        .withGeneralProgressListener(progressListener)
+                        ;
                     try {
-                        glacier.uploadMultipartPart(new UploadMultipartPartRequest()
-                                .withAccountId(accountId)
-                                .withChecksum(checksum)
-                                .withBody(inputSubStream)
-                                .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
-                                .withUploadId(uploadId)
-                                .withVaultName(vaultName));
+                        glacier.uploadMultipartPart(req);
                         completed = true;
                         binaryChecksums.add(binaryChecksum);
                     } catch (Exception e){
                         failedException = e;
                     } finally {
-                        try {inputSubStream.close();} catch (Exception e) {}
+                        closeQuietly(inputSubStream, log);
                     }
                 }
-                if(!completed && failedException!=null){
+                if (!completed && failedException!=null)
                     throw failedException;
-                }
-
-                publishRequestBytesTransferred(progressListener, length);
                 currentPosition += partSize;
             }
 
@@ -743,10 +760,10 @@ public class ArchiveTransferManager {
             String artifactId = completeMultipartUploadResult.getArchiveId();
             publishProgress(progressListener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
             return new UploadResult(artifactId);
-        } catch (Exception e) {
+        } catch (Throwable t) {
             publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
             glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
-            throw new AmazonClientException("Unable to finish the upload", e);
+            throw failure(t, "Unable to finish the upload");
         }
     }
 
@@ -757,25 +774,26 @@ public class ArchiveTransferManager {
         String checksum = TreeHashGenerator.calculateTreeHash(file);
         InputStream is = new RepeatableFileInputStream(file);
         publishProgress(progressListener, ProgressEventType.TRANSFER_STARTED_EVENT);
-
+        final UploadArchiveRequest req = new UploadArchiveRequest()
+            .withAccountId(accountId)
+            .withArchiveDescription(archiveDescription)
+            .withVaultName(vaultName)
+            .withChecksum(checksum)
+            .withBody(is)
+            .withContentLength(file.length())
+            // capture the bytes transferred
+            .withGeneralProgressListener(progressListener)
+            ;
         try {
-            UploadArchiveResult uploadArchiveResult =
-                glacier.uploadArchive(new UploadArchiveRequest()
-                    .withAccountId(accountId)
-                    .withArchiveDescription(archiveDescription)
-                    .withVaultName(vaultName)
-                    .withChecksum(checksum)
-                    .withBody(is)
-                    .withContentLength(file.length())
-                    );
+            UploadArchiveResult uploadArchiveResult = glacier.uploadArchive(req);
             String artifactId = uploadArchiveResult.getArchiveId();
             publishProgress(progressListener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
             return new UploadResult(artifactId);
-        } catch (AmazonClientException ace) {
+        } catch (Throwable t) {
             publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
-            throw ace;
+            throw failure(t);
         } finally {
-            try {is.close();} catch (Exception e) {}
+            closeQuietly(is, log);
         }
     }
 }

@@ -16,6 +16,8 @@ package com.amazonaws.util;
 
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonClientException;
+
 /**
  * Utility for use with errors or exceptions.
  */
@@ -43,5 +45,28 @@ public enum Throwables {
             "Possible circular reference detected on " + orig.getClass()
                     + ": [" + orig + "]");
         return orig;
+    }
+
+    /**
+     * Used to help perform common throw-up with minimal wrapping.
+     */
+    public static RuntimeException failure(Throwable t) {
+        if (t instanceof RuntimeException)
+            return (RuntimeException)t;
+        if (t instanceof Error)
+            throw (Error)t;
+        return new AmazonClientException(t);
+    }
+
+    /**
+     * Same as {@link #failure(Throwable)}, but the given errmsg will be used
+     * if it was wrapped as an {@link AmazonClientException}.
+     */
+    public static RuntimeException failure(Throwable t, String errmsg) {
+        if (t instanceof RuntimeException)
+            return (RuntimeException)t;
+        if (t instanceof Error)
+            throw (Error)t;
+        return new AmazonClientException(errmsg, t);
     }
 }

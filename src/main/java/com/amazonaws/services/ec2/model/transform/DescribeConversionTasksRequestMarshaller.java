@@ -39,7 +39,7 @@ public class DescribeConversionTasksRequestMarshaller implements Marshaller<Requ
 
         Request<DescribeConversionTasksRequest> request = new DefaultRequest<DescribeConversionTasksRequest>(describeConversionTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeConversionTasks");
-        request.addParameter("Version", "2014-05-01");
+        request.addParameter("Version", "2014-06-15");
 
         java.util.List<Filter> filtersList = describeConversionTasksRequest.getFilters();
         int filtersListIndex = 1;

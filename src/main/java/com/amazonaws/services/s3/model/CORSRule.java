@@ -64,8 +64,7 @@ public class CORSRule {
     }
     
     /**
-     * Convenience array style method for
-     * {@link BucketCrossOriginConfiguration#setAllowedMethods(List)}
+     * Convenience array style method for {@link #setAllowedMethods(List)}
      */
     public void setAllowedMethods(AllowedMethods... allowedMethods) {
     	this.allowedMethods = Arrays.asList(allowedMethods);  
@@ -97,8 +96,7 @@ public class CORSRule {
     }
     
     /**
-     * Convenience array style method for
-     * {@link BucketCrossOriginConfiguration#setAllowedOrigins(List)}
+     * Convenience array style method for {@link #setAllowedOrigins(List)}
      */
     public void setAllowedOrigins(String... allowedOrigins) {
         this.allowedOrigins = Arrays.asList(allowedOrigins);
@@ -159,8 +157,7 @@ public class CORSRule {
     }
     
     /**
-     * Convenience array style method for
-     * {@link BucketCrossOriginConfiguration#setExposeHeaders(List)}
+     * Convenience array style method for {@link #setExposedHeaders(List)}
      */
     public void setExposedHeaders(String... exposedHeaders) {
     	this.exposedHeaders = Arrays.asList(exposedHeaders);
@@ -179,7 +176,7 @@ public class CORSRule {
      * Sets the exposeHeaders of this rule and returns a reference to this object for
      * method chaining.
      * 
-     * @see CORSRule#setExposeHeaders(List)
+     * @see #setExposedHeaders(List)
      */
     public CORSRule withExposedHeaders(List<String> exposedHeaders) {
     	this.exposedHeaders = exposedHeaders;
@@ -194,8 +191,7 @@ public class CORSRule {
     }
     
     /**
-     * Convenience array style method for
-     * {@link BucketCrossOriginConfiguration#setAllowedHeaders(List)}
+     * Convenience array style method for {@link #setAllowedHeaders(List)}
      */
     public void setAllowedHeaders(String... allowedHeaders) {
     	this.allowedHeaders = Arrays.asList(allowedHeaders);

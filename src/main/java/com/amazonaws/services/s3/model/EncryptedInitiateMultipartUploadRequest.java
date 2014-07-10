@@ -18,20 +18,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** 
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3EncryptionClient;
+
+/**
  * <p>
- * This class is an extension of {@link InitiateMultipartUploadRequest} to allow additional 
- * encryption material description to be specified on a per-request basis.
- * In particular, {@link EncryptedInitiateMultipartUploadRequest} is only recognized by {@link AmazonS3EncryptionJavaClient}.
- * </p> 
+ * This class is an extension of {@link InitiateMultipartUploadRequest} to allow
+ * additional encryption material description to be specified on a per-request
+ * basis. In particular, {@link EncryptedInitiateMultipartUploadRequest} is only
+ * recognized by {@link AmazonS3EncryptionClient}.
+ * </p>
  * <p>
- * If {@link EncryptedInitiateMultipartUploadRequest} is used against the non-encrypting {@link AmazonS3JavaClient}, 
- * these additional attributes will be ignored.
+ * If {@link EncryptedInitiateMultipartUploadRequest} is used against the
+ * non-encrypting {@link AmazonS3Client}, these additional attributes will be
+ * ignored.
  * </p>
  */
-
-public class EncryptedInitiateMultipartUploadRequest extends InitiateMultipartUploadRequest implements MaterialsDescriptionProvider {
-
+public class EncryptedInitiateMultipartUploadRequest extends
+        InitiateMultipartUploadRequest implements MaterialsDescriptionProvider {
     /**
      * description of encryption materials to be used with this request.
      */

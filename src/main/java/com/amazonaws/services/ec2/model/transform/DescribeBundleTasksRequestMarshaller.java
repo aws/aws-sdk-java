@@ -39,7 +39,7 @@ public class DescribeBundleTasksRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeBundleTasksRequest> request = new DefaultRequest<DescribeBundleTasksRequest>(describeBundleTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeBundleTasks");
-        request.addParameter("Version", "2014-05-01");
+        request.addParameter("Version", "2014-06-15");
 
         java.util.List<String> bundleIdsList = describeBundleTasksRequest.getBundleIds();
         int bundleIdsListIndex = 1;

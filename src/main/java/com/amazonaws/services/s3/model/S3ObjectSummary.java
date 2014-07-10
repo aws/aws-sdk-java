@@ -129,7 +129,7 @@ public class S3ObjectSummary {
      * 
      * @return The size of this object in bytes.
      * 
-     * @see 3ObjectSummary#setSize(long)
+     * @see #setSize(long)
      */
     public long getSize() {
         return size;
@@ -141,7 +141,7 @@ public class S3ObjectSummary {
      * @param size
      *            The size of this object in bytes.
      *            
-     * @see S3ObjectSummary#getSize()           
+     * @see #getSize()           
      */
     public void setSize(long size) {
         this.size = size;

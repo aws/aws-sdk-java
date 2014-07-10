@@ -648,7 +648,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
 
 
     /**
-     * @deprecated Replaced by {@link #setSSEAlgorithm(String))}
+     * @deprecated Replaced by {@link #setSSEAlgorithm(String)}
      */
     @Deprecated
     public void setServerSideEncryption(String algorithm) {

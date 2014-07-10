@@ -37,7 +37,7 @@ public interface Grantee {
      * @param id
      *            The identifier for this grantee.
      *            
-     * @see Grantee#getIdentifier()        
+     * @see Grantee#getIdentifier()
      */
     public void setIdentifier(String id);
 
@@ -47,7 +47,7 @@ public interface Grantee {
      *
      * @return The identifier for this grantee.
      * 
-     * @see Grantee#setIdentifier() 
+     * @see Grantee#setIdentifier(String)
      */
     public String getIdentifier();
 

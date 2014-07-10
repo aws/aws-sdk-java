@@ -130,8 +130,6 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the ID of the upload to abort.
-     *
-     * @return the ID of the upload to abort.
      */
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;

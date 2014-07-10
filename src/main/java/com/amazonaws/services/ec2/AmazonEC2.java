@@ -2738,6 +2738,11 @@ public interface AmazonEC2 {
      * has not subscribed, <code>RunInstances</code> fails.
      * </p>
      * <p>
+     * T2 instance types can only be launched into a VPC. If you do not have
+     * a default VPC, or if you do not specify a subnet ID in the request,
+     * <code>RunInstances</code> fails.
+     * </p>
+     * <p>
      * For more information about troubleshooting, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html"> What To Do If An Instance Immediately Terminates </a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"> Troubleshooting Connecting to Your Instance </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -4611,6 +4616,28 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deletePlacementGroup(DeletePlacementGroupRequest deletePlacementGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Modifies a subnet attribute.
+     * </p>
+     *
+     * @param modifySubnetAttributeRequest Container for the necessary
+     *           parameters to execute the ModifySubnetAttribute service method on
+     *           AmazonEC2.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifySubnetAttribute(ModifySubnetAttributeRequest modifySubnetAttributeRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

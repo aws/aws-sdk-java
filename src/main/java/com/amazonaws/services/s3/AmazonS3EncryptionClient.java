@@ -350,7 +350,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      *            with this client.
      * @param encryptionMaterials
      *            The encryption materials to be used to encrypt and decrypt data.
-     * @param clientConfiguration
+     * @param clientConfig
      *            The client configuration options controlling how this client
      *            connects to Amazon S3 (ex: proxy settings, retry counts, etc).
      * @param cryptoConfig

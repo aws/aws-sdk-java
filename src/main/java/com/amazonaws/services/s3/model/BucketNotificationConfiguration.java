@@ -133,7 +133,7 @@ public class BucketNotificationConfiguration {
      * @param topicConfigurations
      *            A collection of topic configurations.
      *            
-     * @see BucketNotificationConfiguration#withTopicConfigurations(TopicConfiguration)         
+     * @see BucketNotificationConfiguration#withTopicConfigurations(TopicConfiguration...)
      */
     public void setTopicConfigurations( Collection<TopicConfiguration> topicConfigurations ) {
         this.topicConfigurations.clear();

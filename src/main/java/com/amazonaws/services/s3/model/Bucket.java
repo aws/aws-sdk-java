@@ -117,7 +117,7 @@ public class Bucket {
      * @param owner
      *          The bucket's owner.
      * 
-     * @see @link Bucket#getOwner()
+     * @see Bucket#getOwner()
      */
     public void setOwner(Owner owner) {
         this.owner = owner;

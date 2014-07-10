@@ -191,6 +191,16 @@ public class SDKProgressPublisher {
     }
 
     /**
+     * Convenient method to publish a response bytes discard event to the given listener.
+     */
+    public static Future<?> publishResponseBytesDiscarded(
+            final ProgressListener listener,
+            final long bytesDiscarded) {
+        return publishResetEvent(listener,
+                ProgressEventType.RESPONSE_BYTE_DISCARD_EVENT, bytesDiscarded);
+    }
+
+    /**
      * @param listener
      *            must not be null or else the publication will be skipped
      * @param bytesReset

@@ -28,11 +28,27 @@ public enum ProgressEventType {
      */
     @Deprecated
     BYTE_TRANSFER_EVENT,
+    /**
+     * Event of the content length to be sent in a request.
+     */
     REQUEST_CONTENT_LENGTH_EVENT,
+    /**
+     * Event of the content length received in a response.
+     */
     RESPONSE_CONTENT_LENGTH_EVENT,
 
+    /**
+     * Used to indicate the number of bytes to be sent to AWS.
+     */
     REQUEST_BYTE_TRANSFER_EVENT,
+    /**
+     * Used to indicate the number of bytes received from AWS.
+     */
     RESPONSE_BYTE_TRANSFER_EVENT,
+    /**
+     * Used to indicate the number of bytes discarded after being received from AWS.
+     */
+    RESPONSE_BYTE_DISCARD_EVENT,
 
     /* Generic request progress events */
 
@@ -150,8 +166,14 @@ public enum ProgressEventType {
     public boolean isByteCountEvent() {
         switch (this) {
             case BYTE_TRANSFER_EVENT:
+            case HTTP_REQUEST_CONTENT_RESET_EVENT:
+            case HTTP_RESPONSE_CONTENT_RESET_EVENT:
+
             case REQUEST_BYTE_TRANSFER_EVENT:
             case RESPONSE_BYTE_TRANSFER_EVENT:
+
+            case RESPONSE_BYTE_DISCARD_EVENT:
+
             case REQUEST_CONTENT_LENGTH_EVENT:
             case RESPONSE_CONTENT_LENGTH_EVENT:
                 return true;

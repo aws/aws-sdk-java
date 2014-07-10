@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.services.s3.AmazonS3Client;
 
 /**
  * <p>
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information about enabling versioning for a bucket, see
- * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}
+ * {@link AmazonS3Client#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}
  * .
  * </p>
  *

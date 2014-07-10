@@ -35,7 +35,6 @@ public class GenericBucketRequest extends AmazonWebServiceRequest {
 
     /**
      * @deprecated Use getBucketName() instead.
-     * @return
      */
     @Deprecated
     public String getBucket() {

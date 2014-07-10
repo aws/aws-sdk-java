@@ -20,19 +20,23 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3EncryptionClient;
+
 /**
  * <p>
- * This class is an extension of {@link PutObjectRequest} to allow additional encryption material description
- * to be specified on a per-request basis.In particular, {@link EncryptedPutObjectRequest} is only recognized 
- * by {@link AmazonS3EncryptionJavaClient}.
+ * This class is an extension of {@link PutObjectRequest} to allow additional
+ * encryption material description to be specified on a per-request basis.In
+ * particular, {@link EncryptedPutObjectRequest} is only recognized by
+ * {@link AmazonS3EncryptionClient}.
  * </p>
  * <p>
- * If {@link EncryptedPutObjectRequest} is used against the non-encrypting {@link AmazonS3JavaClient}, the additional 
- * attributes will be ignored.
+ * If {@link EncryptedPutObjectRequest} is used against the non-encrypting
+ * {@link AmazonS3Client}, the additional attributes will be ignored.
  * </p>
  */
-public class EncryptedPutObjectRequest extends PutObjectRequest implements MaterialsDescriptionProvider {
-    
+public class EncryptedPutObjectRequest extends PutObjectRequest implements
+        MaterialsDescriptionProvider {
     /**
      * description of encryption materials to be used with this request.
      */

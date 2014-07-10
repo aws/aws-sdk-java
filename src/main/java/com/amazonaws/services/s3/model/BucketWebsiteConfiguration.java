@@ -17,6 +17,8 @@ package com.amazonaws.services.s3.model;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.amazonaws.services.s3.AmazonS3Client;
+
 /**
  * Bucket configuration options for hosting static websites entirely out of
  * Amazon S3.
@@ -53,9 +55,9 @@ import java.util.List;
  * For more information on how to host a website on Amazon S3, see:
  * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
  *
- * @see AmazonS3#setBucketWebsiteConfiguration(String, BucketWebsiteConfiguration)
- * @see AmazonS3#getBucketWebsiteConfiguration(String)
- * @see AmazonS3#deleteBucketWebsiteConfiguration(String)
+ * @see AmazonS3Client#setBucketWebsiteConfiguration(String, BucketWebsiteConfiguration)
+ * @see AmazonS3Client#getBucketWebsiteConfiguration(String)
+ * @see AmazonS3Client#deleteBucketWebsiteConfiguration(String)
  */
 public class BucketWebsiteConfiguration {
 

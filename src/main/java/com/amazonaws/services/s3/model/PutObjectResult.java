@@ -16,7 +16,7 @@ package com.amazonaws.services.s3.model;
 
 import java.util.Date;
 
-import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.SSEResultBase;
 
@@ -26,9 +26,9 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  * Use this request to access information about the new object created from the
  * <code>putObject</code> request, such as its ETag and optional version ID.
  *
- * @see AmazonS3#putObject(String, String, java.io.File)
- * @see AmazonS3#putObject(String, String, java.io.InputStream, S3ObjectMetadata)
- * @see AmazonS3#putObject(PutObjectRequest)
+ * @see AmazonS3Client#putObject(String, String, java.io.File)
+ * @see AmazonS3Client#putObject(String, String, java.io.InputStream, ObjectMetadata)
+ * @see AmazonS3Client#putObject(PutObjectRequest)
  */
 public class PutObjectResult extends SSEResultBase implements ObjectExpirationResult {
 

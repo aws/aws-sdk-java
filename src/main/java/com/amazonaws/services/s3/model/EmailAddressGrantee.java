@@ -78,7 +78,7 @@ public class EmailAddressGrantee implements Grantee {
     /**
      * Gets the grantee's e-mail address.
      * 
-     * @see EmailAddressGrantee#setIdentifier(string)     
+     * @see #setIdentifier(String)
      */
     public String getIdentifier() {
         return emailAddress;
