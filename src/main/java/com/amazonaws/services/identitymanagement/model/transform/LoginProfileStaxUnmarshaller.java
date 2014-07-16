@@ -51,6 +51,10 @@ public class LoginProfileStaxUnmarshaller implements Unmarshaller<LoginProfile, 
                     loginProfile.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PasswordResetRequired", targetDepth)) {
+                    loginProfile.setPasswordResetRequired(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return loginProfile;

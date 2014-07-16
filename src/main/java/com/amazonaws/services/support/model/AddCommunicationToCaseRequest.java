@@ -65,6 +65,8 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddresses;
 
+    private String attachmentSetId;
+
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
      * is an alphanumeric string formatted as shown in this example:
@@ -241,6 +243,39 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * Returns the value of the AttachmentSetId property for this object.
+     *
+     * @return The value of the AttachmentSetId property for this object.
+     */
+    public String getAttachmentSetId() {
+        return attachmentSetId;
+    }
+    
+    /**
+     * Sets the value of the AttachmentSetId property for this object.
+     *
+     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     */
+    public void setAttachmentSetId(String attachmentSetId) {
+        this.attachmentSetId = attachmentSetId;
+    }
+    
+    /**
+     * Sets the value of the AttachmentSetId property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AddCommunicationToCaseRequest withAttachmentSetId(String attachmentSetId) {
+        this.attachmentSetId = attachmentSetId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -254,7 +289,8 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
         sb.append("{");
         if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");
         if (getCommunicationBody() != null) sb.append("CommunicationBody: " + getCommunicationBody() + ",");
-        if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() );
+        if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
+        if (getAttachmentSetId() != null) sb.append("AttachmentSetId: " + getAttachmentSetId() );
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +303,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getCaseId() == null) ? 0 : getCaseId().hashCode()); 
         hashCode = prime * hashCode + ((getCommunicationBody() == null) ? 0 : getCommunicationBody().hashCode()); 
         hashCode = prime * hashCode + ((getCcEmailAddresses() == null) ? 0 : getCcEmailAddresses().hashCode()); 
+        hashCode = prime * hashCode + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId().hashCode()); 
         return hashCode;
     }
     
@@ -284,6 +321,8 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
         if (other.getCommunicationBody() != null && other.getCommunicationBody().equals(this.getCommunicationBody()) == false) return false; 
         if (other.getCcEmailAddresses() == null ^ this.getCcEmailAddresses() == null) return false;
         if (other.getCcEmailAddresses() != null && other.getCcEmailAddresses().equals(this.getCcEmailAddresses()) == false) return false; 
+        if (other.getAttachmentSetId() == null ^ this.getAttachmentSetId() == null) return false;
+        if (other.getAttachmentSetId() != null && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false) return false; 
         return true;
     }
     

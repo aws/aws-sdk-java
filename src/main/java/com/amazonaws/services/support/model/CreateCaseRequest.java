@@ -130,6 +130,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
      */
     private String issueType;
 
+    private String attachmentSetId;
+
     /**
      * The title of the AWS Support case.
      *
@@ -534,6 +536,39 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
+     * Returns the value of the AttachmentSetId property for this object.
+     *
+     * @return The value of the AttachmentSetId property for this object.
+     */
+    public String getAttachmentSetId() {
+        return attachmentSetId;
+    }
+    
+    /**
+     * Sets the value of the AttachmentSetId property for this object.
+     *
+     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     */
+    public void setAttachmentSetId(String attachmentSetId) {
+        this.attachmentSetId = attachmentSetId;
+    }
+    
+    /**
+     * Sets the value of the AttachmentSetId property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachmentSetId The new value for the AttachmentSetId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateCaseRequest withAttachmentSetId(String attachmentSetId) {
+        this.attachmentSetId = attachmentSetId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -552,7 +587,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
         if (getCommunicationBody() != null) sb.append("CommunicationBody: " + getCommunicationBody() + ",");
         if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
         if (getLanguage() != null) sb.append("Language: " + getLanguage() + ",");
-        if (getIssueType() != null) sb.append("IssueType: " + getIssueType() );
+        if (getIssueType() != null) sb.append("IssueType: " + getIssueType() + ",");
+        if (getAttachmentSetId() != null) sb.append("AttachmentSetId: " + getAttachmentSetId() );
         sb.append("}");
         return sb.toString();
     }
@@ -570,6 +606,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
         hashCode = prime * hashCode + ((getCcEmailAddresses() == null) ? 0 : getCcEmailAddresses().hashCode()); 
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode()); 
         hashCode = prime * hashCode + ((getIssueType() == null) ? 0 : getIssueType().hashCode()); 
+        hashCode = prime * hashCode + ((getAttachmentSetId() == null) ? 0 : getAttachmentSetId().hashCode()); 
         return hashCode;
     }
     
@@ -597,6 +634,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements Serial
         if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false) return false; 
         if (other.getIssueType() == null ^ this.getIssueType() == null) return false;
         if (other.getIssueType() != null && other.getIssueType().equals(this.getIssueType()) == false) return false; 
+        if (other.getAttachmentSetId() == null ^ this.getAttachmentSetId() == null) return false;
+        if (other.getAttachmentSetId() != null && other.getAttachmentSetId().equals(this.getAttachmentSetId()) == false) return false; 
         return true;
     }
     

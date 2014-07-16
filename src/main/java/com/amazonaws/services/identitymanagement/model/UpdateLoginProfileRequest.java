@@ -38,13 +38,18 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
     private String userName;
 
     /**
-     * The new password for the user name.
+     * The new password for the specified user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      */
     private String password;
+
+    /**
+     * Require the specified user to set a new password on next sign-in.
+     */
+    private Boolean passwordResetRequired;
 
     /**
      * Default constructor for a new UpdateLoginProfileRequest object.  Callers should use the
@@ -109,33 +114,33 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The new password for the user name.
+     * The new password for the specified user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The new password for the user name.
+     * @return The new password for the specified user.
      */
     public String getPassword() {
         return password;
     }
     
     /**
-     * The new password for the user name.
+     * The new password for the specified user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param password The new password for the user name.
+     * @param password The new password for the specified user.
      */
     public void setPassword(String password) {
         this.password = password;
     }
     
     /**
-     * The new password for the user name.
+     * The new password for the specified user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -143,7 +148,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param password The new password for the user name.
+     * @param password The new password for the specified user.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -151,6 +156,48 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
     public UpdateLoginProfileRequest withPassword(String password) {
         this.password = password;
         return this;
+    }
+
+    /**
+     * Require the specified user to set a new password on next sign-in.
+     *
+     * @return Require the specified user to set a new password on next sign-in.
+     */
+    public Boolean isPasswordResetRequired() {
+        return passwordResetRequired;
+    }
+    
+    /**
+     * Require the specified user to set a new password on next sign-in.
+     *
+     * @param passwordResetRequired Require the specified user to set a new password on next sign-in.
+     */
+    public void setPasswordResetRequired(Boolean passwordResetRequired) {
+        this.passwordResetRequired = passwordResetRequired;
+    }
+    
+    /**
+     * Require the specified user to set a new password on next sign-in.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param passwordResetRequired Require the specified user to set a new password on next sign-in.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateLoginProfileRequest withPasswordResetRequired(Boolean passwordResetRequired) {
+        this.passwordResetRequired = passwordResetRequired;
+        return this;
+    }
+
+    /**
+     * Require the specified user to set a new password on next sign-in.
+     *
+     * @return Require the specified user to set a new password on next sign-in.
+     */
+    public Boolean getPasswordResetRequired() {
+        return passwordResetRequired;
     }
 
     /**
@@ -166,7 +213,8 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
-        if (getPassword() != null) sb.append("Password: " + getPassword() );
+        if (getPassword() != null) sb.append("Password: " + getPassword() + ",");
+        if (isPasswordResetRequired() != null) sb.append("PasswordResetRequired: " + isPasswordResetRequired() );
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +226,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
         
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode()); 
+        hashCode = prime * hashCode + ((isPasswordResetRequired() == null) ? 0 : isPasswordResetRequired().hashCode()); 
         return hashCode;
     }
     
@@ -193,6 +242,8 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest implement
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
         if (other.getPassword() == null ^ this.getPassword() == null) return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false) return false; 
+        if (other.isPasswordResetRequired() == null ^ this.isPasswordResetRequired() == null) return false;
+        if (other.isPasswordResetRequired() != null && other.isPasswordResetRequired().equals(this.isPasswordResetRequired()) == false) return false; 
         return true;
     }
     

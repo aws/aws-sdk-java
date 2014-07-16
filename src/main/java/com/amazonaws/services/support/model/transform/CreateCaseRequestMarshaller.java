@@ -92,6 +92,9 @@ public class CreateCaseRequestMarshaller implements Marshaller<Request<CreateCas
             if (createCaseRequest.getIssueType() != null) {
                 jsonWriter.key("issueType").value(createCaseRequest.getIssueType());
             }
+            if (createCaseRequest.getAttachmentSetId() != null) {
+                jsonWriter.key("attachmentSetId").value(createCaseRequest.getAttachmentSetId());
+            }
 
           jsonWriter.endObject();
 

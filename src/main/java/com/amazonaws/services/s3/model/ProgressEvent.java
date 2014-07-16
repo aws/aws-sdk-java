@@ -39,7 +39,7 @@ public class ProgressEvent extends com.amazonaws.event.ProgressEvent {
      */
     @Deprecated
     public int getBytesTransfered() {
-        return (int)getBytesTransfered();
+        return (int)getBytesTransferred();
     }
 
 }

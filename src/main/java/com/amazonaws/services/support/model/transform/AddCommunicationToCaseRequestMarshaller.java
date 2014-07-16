@@ -77,6 +77,9 @@ public class AddCommunicationToCaseRequestMarshaller implements Marshaller<Reque
                 }
                 jsonWriter.endArray();
             }
+            if (addCommunicationToCaseRequest.getAttachmentSetId() != null) {
+                jsonWriter.key("attachmentSetId").value(addCommunicationToCaseRequest.getAttachmentSetId());
+            }
 
           jsonWriter.endObject();
 

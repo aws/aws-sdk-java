@@ -80,8 +80,8 @@ import com.amazonaws.event.ProgressListener;
  * @see PutObjectRequest#PutObjectRequest(String, String, File)
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
  */
-public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneable {
-
+public class PutObjectRequest extends AmazonWebServiceRequest implements
+        Cloneable, SSECustomerKeyProvider {
     /**
      * The name of an existing bucket, to which this request will upload a new
      * object. You must have {@link Permission#Write} permission granted to you
@@ -754,13 +754,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements Cloneab
         return this;
     }
 
-    /**
-     * Returns the optional customer-provided server-side encryption key to use
-     * to encrypt the uploaded object.
-     *
-     * @return The optional customer-provided server-side encryption key to use
-     *         to encrypt the uploaded object.
-     */
+    @Override
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

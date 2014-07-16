@@ -146,6 +146,35 @@ public interface AWSSupport {
     
     /**
      * <p>
+     * Returns the refresh status of the Trusted Advisor checks that have
+     * the specified check IDs. Check IDs can be obtained by calling
+     * DescribeTrustedAdvisorChecks.
+     * </p>
+     *
+     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
+     *           the necessary parameters to execute the
+     *           DescribeTrustedAdvisorCheckRefreshStatuses service method on
+     *           AWSSupport.
+     * 
+     * @return The response from the
+     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
+     *         by AWSSupport.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a list of cases that you specify by passing one or more case
      * IDs. In addition, you can filter the cases by date by setting values
      * for the <code>AfterTime</code> and <code>BeforeTime</code> request
@@ -181,22 +210,19 @@ public interface AWSSupport {
             throws AmazonServiceException, AmazonClientException;
 
     /**
-     * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have
-     * the specified check IDs. Check IDs can be obtained by calling
-     * DescribeTrustedAdvisorChecks.
-     * </p>
      *
-     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
-     *           the necessary parameters to execute the
-     *           DescribeTrustedAdvisorCheckRefreshStatuses service method on
+     * @param addAttachmentsToSetRequest Container for the necessary
+     *           parameters to execute the AddAttachmentsToSet service method on
      *           AWSSupport.
      * 
-     * @return The response from the
-     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
-     *         by AWSSupport.
+     * @return The response from the AddAttachmentsToSet service method, as
+     *         returned by AWSSupport.
      * 
+     * @throws AttachmentSetIdNotFoundException
+     * @throws AttachmentLimitExceededException
+     * @throws AttachmentSetExpiredException
      * @throws InternalServerErrorException
+     * @throws AttachmentSetSizeLimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -206,7 +232,7 @@ public interface AWSSupport {
      *             If an error response is returned by AWSSupport indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) 
+    public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -273,6 +299,95 @@ public interface AWSSupport {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param describeAttachmentRequest Container for the necessary
+     *           parameters to execute the DescribeAttachment service method on
+     *           AWSSupport.
+     * 
+     * @return The response from the DescribeAttachment service method, as
+     *         returned by AWSSupport.
+     * 
+     * @throws DescribeAttachmentLimitExceededException
+     * @throws AttachmentIdNotFoundException
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAttachmentResult describeAttachment(DescribeAttachmentRequest describeAttachmentRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Takes a <code>CaseId</code> and returns the initial state of the case
+     * along with the state of the case after the call to ResolveCase
+     * completed.
+     * </p>
+     *
+     * @param resolveCaseRequest Container for the necessary parameters to
+     *           execute the ResolveCase service method on AWSSupport.
+     * 
+     * @return The response from the ResolveCase service method, as returned
+     *         by AWSSupport.
+     * 
+     * @throws InternalServerErrorException
+     * @throws CaseIdNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the current list of AWS services and a list of service
+     * categories that applies to each one. You then use service names and
+     * categories in your CreateCase requests. Each AWS service has its own
+     * set of categories.
+     * </p>
+     * <p>
+     * The service codes and category codes correspond to the values that
+     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
+     * lists on the AWS Support Center
+     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * page. The values in those fields, however, do not necessarily match
+     * the service codes and categories returned by the
+     * <code>DescribeServices</code> request. Always use the service codes
+     * and categories obtained programmatically. This practice ensures that
+     * you always have the most recent set of service and category codes.
+     * </p>
+     *
+     * @param describeServicesRequest Container for the necessary parameters
+     *           to execute the DescribeServices service method on AWSSupport.
+     * 
+     * @return The response from the DescribeServices service method, as
+     *         returned by AWSSupport.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * Adds additional customer communication to an AWS Support case. You
      * use the <code>CaseId</code> value to identify the case to add
@@ -297,6 +412,8 @@ public interface AWSSupport {
      * @return The response from the AddCommunicationToCase service method,
      *         as returned by AWSSupport.
      * 
+     * @throws AttachmentSetIdNotFoundException
+     * @throws AttachmentSetExpiredException
      * @throws InternalServerErrorException
      * @throws CaseIdNotFoundException
      *
@@ -363,6 +480,8 @@ public interface AWSSupport {
      * @return The response from the CreateCase service method, as returned
      *         by AWSSupport.
      * 
+     * @throws AttachmentSetIdNotFoundException
+     * @throws AttachmentSetExpiredException
      * @throws InternalServerErrorException
      * @throws CaseCreationLimitExceededException
      *
@@ -458,33 +577,6 @@ public interface AWSSupport {
 
     /**
      * <p>
-     * Takes a <code>CaseId</code> and returns the initial state of the case
-     * along with the state of the case after the call to ResolveCase
-     * completed.
-     * </p>
-     *
-     * @param resolveCaseRequest Container for the necessary parameters to
-     *           execute the ResolveCase service method on AWSSupport.
-     * 
-     * @return The response from the ResolveCase service method, as returned
-     *         by AWSSupport.
-     * 
-     * @throws InternalServerErrorException
-     * @throws CaseIdNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Requests a refresh of the Trusted Advisor check that has the
      * specified check ID. Check IDs can be obtained by calling
      * DescribeTrustedAdvisorChecks.
@@ -521,44 +613,6 @@ public interface AWSSupport {
      *             either a problem with the data in the request, or a server side issue.
      */
     public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns the current list of AWS services and a list of service
-     * categories that applies to each one. You then use service names and
-     * categories in your CreateCase requests. Each AWS service has its own
-     * set of categories.
-     * </p>
-     * <p>
-     * The service codes and category codes correspond to the values that
-     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
-     * lists on the AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
-     * page. The values in those fields, however, do not necessarily match
-     * the service codes and categories returned by the
-     * <code>DescribeServices</code> request. Always use the service codes
-     * and categories obtained programmatically. This practice ensures that
-     * you always have the most recent set of service and category codes.
-     * </p>
-     *
-     * @param describeServicesRequest Container for the necessary parameters
-     *           to execute the DescribeServices service method on AWSSupport.
-     * 
-     * @return The response from the DescribeServices service method, as
-     *         returned by AWSSupport.
-     * 
-     * @throws InternalServerErrorException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

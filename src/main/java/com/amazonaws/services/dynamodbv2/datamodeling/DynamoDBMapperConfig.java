@@ -280,8 +280,14 @@ public class DynamoDBMapperConfig {
      * <p>
      * Used internally to merge the {@link DynamoDBMapperConfig} provided at
      * construction with an overriding object for a particular operation.
+     *
+     * @param defaults
+     *            The default mapper configuration values.
+     * @param overrides
+     *            The overridden mapper configuration values. Any non-null
+     *            config settings will be applied to the returned object.
      */
-    DynamoDBMapperConfig(DynamoDBMapperConfig defaults, DynamoDBMapperConfig overrides) {
+    public DynamoDBMapperConfig(DynamoDBMapperConfig defaults, DynamoDBMapperConfig overrides) {
         if ( overrides == null ) {
             this.saveBehavior = defaults.getSaveBehavior();
             this.consistentReads = defaults.getConsistentReads();

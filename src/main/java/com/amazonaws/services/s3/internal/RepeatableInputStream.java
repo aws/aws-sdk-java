@@ -64,8 +64,8 @@ public class RepeatableInputStream extends SdkInputStream {
         this.buffer = new byte[this.bufferSize];
 
         if (log.isDebugEnabled()) {
-        	log.debug("Underlying input stream will be repeatable up to "
-        	        + this.buffer.length + " bytes");
+            log.debug("Underlying input stream will be repeatable up to "
+                    + this.buffer.length + " bytes");
         }
     }
 
@@ -80,9 +80,9 @@ public class RepeatableInputStream extends SdkInputStream {
     public void reset() throws IOException {
         abortIfNeeded();
         if (bytesReadPastMark <= bufferSize) {
-        	if (log.isDebugEnabled()) {
-        		log.debug("Reset after reading " + bytesReadPastMark + " bytes.");
-        	}
+            if (log.isDebugEnabled()) {
+                log.debug("Reset after reading " + bytesReadPastMark + " bytes.");
+            }
             bufferOffset = 0;
         } else {
             throw new IOException(
@@ -95,7 +95,7 @@ public class RepeatableInputStream extends SdkInputStream {
      * @see java.io.InputStream#markSupported()
      */
     public boolean markSupported() {
-    	return true;
+        return true;
     }
 
     /**
@@ -103,28 +103,28 @@ public class RepeatableInputStream extends SdkInputStream {
      * stream than fits into the buffer. The readLimit parameter is ignored
      * entirely.
      */
-    public synchronized void mark(int readlimit) {
+    public void mark(int readlimit) {
         abortIfNeeded();
-    	if (log.isDebugEnabled()) {
-    		log.debug("Input stream marked at " + bytesReadPastMark + " bytes");
-    	}
-    	if (bytesReadPastMark <= bufferSize && buffer != null) {
+        if (log.isDebugEnabled()) {
+            log.debug("Input stream marked at " + bytesReadPastMark + " bytes");
+        }
+        if (bytesReadPastMark <= bufferSize && buffer != null) {
             /*
              * Clear buffer of already-read data to make more space. It's safe
              * to cast bytesReadPastMark to an int because it is known to be
              * less than bufferSize, which is an int.
              */
             byte[] newBuffer = new byte[this.bufferSize];
-    		System.arraycopy(buffer, bufferOffset, newBuffer, 0, (int)(bytesReadPastMark - bufferOffset));
+            System.arraycopy(buffer, bufferOffset, newBuffer, 0, (int)(bytesReadPastMark - bufferOffset));
             this.buffer = newBuffer;
             this.bytesReadPastMark -= bufferOffset;
-    		this.bufferOffset = 0;
-    	} else {
+            this.bufferOffset = 0;
+        } else {
             // If mark is called after the buffer was already exceeded, create a new buffer.
-    		this.bufferOffset = 0;
+            this.bufferOffset = 0;
             this.bytesReadPastMark = 0;
             this.buffer = new byte[this.bufferSize];
-    	}
+        }
     }
 
     /**
@@ -175,14 +175,14 @@ public class RepeatableInputStream extends SdkInputStream {
             bufferOffset += count;
         } else {
             // We have exceeded the buffer capacity, after which point it is of no use. Free the memory.
-        	if (! hasWarnedBufferOverflow) {
-        		if (log.isDebugEnabled()) {
-        			log.debug("Buffer size " + bufferSize + " has been exceeded and the input stream "
-        	                + "will not be repeatable until the next mark. Freeing buffer memory");
-        		}
-        		hasWarnedBufferOverflow = true;
-        	}
-        		
+            if (! hasWarnedBufferOverflow) {
+                if (log.isDebugEnabled()) {
+                    log.debug("Buffer size " + bufferSize + " has been exceeded and the input stream "
+                            + "will not be repeatable until the next mark. Freeing buffer memory");
+                }
+                hasWarnedBufferOverflow = true;
+            }
+
             buffer = null;
         }
 

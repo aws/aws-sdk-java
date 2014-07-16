@@ -25,8 +25,8 @@ import com.amazonaws.event.ProgressListener;
  * <p>
  * Required Parameters: BucketName, Key, UploadId, PartNumber
  */
-public class UploadPartRequest extends AmazonWebServiceRequest {
-
+public class UploadPartRequest extends AmazonWebServiceRequest implements
+        SSECustomerKeyProvider {
     /**
      * The name of the bucket containing the initiated multipart upload with
      * which this new part will be associated.
@@ -542,13 +542,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
         return this;
     }
 
-    /**
-     * Returns the optional customer-provided server-side encryption key to use
-     * to encrypt the object part being uploaded.
-     *
-     * @return The optional customer-provided server-side encryption key to use
-     *         to encrypt the object part being uploaded.
-     */
+    @Override
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

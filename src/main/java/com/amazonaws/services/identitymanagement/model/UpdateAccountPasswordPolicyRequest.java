@@ -22,61 +22,113 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest) UpdateAccountPasswordPolicy operation}.
  * <p>
  * Updates the password policy settings for the account. For more
- * information about using a password policy, go to
+ * information about using a password policy, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a>
- * .
+ * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest)
  */
 public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The minimum number of characters allowed in an IAM user password.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>6 - 128<br/>
+     */
     private Integer minimumPasswordLength;
 
+    /**
+     * Specifies whether IAM user passwords must contain at least one of the
+     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     * { } | '
+     */
     private Boolean requireSymbols;
 
+    /**
+     * Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).
+     */
     private Boolean requireNumbers;
 
+    /**
+     * Specifies whether IAM user passwords must contain at least one
+     * uppercase character from the ISO basic Latin alphabet (A to Z).
+     */
     private Boolean requireUppercaseCharacters;
 
+    /**
+     * Specifies whether IAM user passwords must contain at least one
+     * lowercase character from the ISO basic Latin alphabet (a to z).
+     */
     private Boolean requireLowercaseCharacters;
 
+    /**
+     * Allows all IAM users in your account to use the AWS Management Console
+     * to change their own passwords. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     * guide.
+     */
     private Boolean allowUsersToChangePassword;
 
     /**
-     * Returns the value of the MinimumPasswordLength property for this
-     * object.
+     * The number of days that an IAM user password is valid.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1095<br/>
+     */
+    private Integer maxPasswordAge;
+
+    /**
+     * Specifies the number of previous passwords that IAM users are
+     * prevented from reusing.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 24<br/>
+     */
+    private Integer passwordReusePrevention;
+
+    /**
+     * Prevents IAM users from setting a new password after their password
+     * has expired.
+     */
+    private Boolean hardExpiry;
+
+    /**
+     * The minimum number of characters allowed in an IAM user password.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>6 - 128<br/>
      *
-     * @return The value of the MinimumPasswordLength property for this object.
+     * @return The minimum number of characters allowed in an IAM user password.
      */
     public Integer getMinimumPasswordLength() {
         return minimumPasswordLength;
     }
     
     /**
-     * Sets the value of the MinimumPasswordLength property for this object.
+     * The minimum number of characters allowed in an IAM user password.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>6 - 128<br/>
      *
-     * @param minimumPasswordLength The new value for the MinimumPasswordLength property for this object.
+     * @param minimumPasswordLength The minimum number of characters allowed in an IAM user password.
      */
     public void setMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
     }
     
     /**
-     * Sets the value of the MinimumPasswordLength property for this object.
+     * The minimum number of characters allowed in an IAM user password.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>6 - 128<br/>
      *
-     * @param minimumPasswordLength The new value for the MinimumPasswordLength property for this object.
+     * @param minimumPasswordLength The minimum number of characters allowed in an IAM user password.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -87,29 +139,41 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Returns the value of the RequireSymbols property for this object.
+     * Specifies whether IAM user passwords must contain at least one of the
+     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     * { } | '
      *
-     * @return The value of the RequireSymbols property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one of the
+     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     *         { } | '
      */
     public Boolean isRequireSymbols() {
         return requireSymbols;
     }
     
     /**
-     * Sets the value of the RequireSymbols property for this object.
+     * Specifies whether IAM user passwords must contain at least one of the
+     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     * { } | '
      *
-     * @param requireSymbols The new value for the RequireSymbols property for this object.
+     * @param requireSymbols Specifies whether IAM user passwords must contain at least one of the
+     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     *         { } | '
      */
     public void setRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
     }
     
     /**
-     * Sets the value of the RequireSymbols property for this object.
+     * Specifies whether IAM user passwords must contain at least one of the
+     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     * { } | '
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireSymbols The new value for the RequireSymbols property for this object.
+     * @param requireSymbols Specifies whether IAM user passwords must contain at least one of the
+     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     *         { } | '
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -120,38 +184,48 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Returns the value of the RequireSymbols property for this object.
+     * Specifies whether IAM user passwords must contain at least one of the
+     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     * { } | '
      *
-     * @return The value of the RequireSymbols property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one of the
+     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
+     *         { } | '
      */
     public Boolean getRequireSymbols() {
         return requireSymbols;
     }
 
     /**
-     * Returns the value of the RequireNumbers property for this object.
+     * Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).
      *
-     * @return The value of the RequireNumbers property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one numeric
+     *         character (0 to 9).
      */
     public Boolean isRequireNumbers() {
         return requireNumbers;
     }
     
     /**
-     * Sets the value of the RequireNumbers property for this object.
+     * Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).
      *
-     * @param requireNumbers The new value for the RequireNumbers property for this object.
+     * @param requireNumbers Specifies whether IAM user passwords must contain at least one numeric
+     *         character (0 to 9).
      */
     public void setRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
     }
     
     /**
-     * Sets the value of the RequireNumbers property for this object.
+     * Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireNumbers The new value for the RequireNumbers property for this object.
+     * @param requireNumbers Specifies whether IAM user passwords must contain at least one numeric
+     *         character (0 to 9).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -162,43 +236,46 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Returns the value of the RequireNumbers property for this object.
+     * Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).
      *
-     * @return The value of the RequireNumbers property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one numeric
+     *         character (0 to 9).
      */
     public Boolean getRequireNumbers() {
         return requireNumbers;
     }
 
     /**
-     * Returns the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * uppercase character from the ISO basic Latin alphabet (A to Z).
      *
-     * @return The value of the RequireUppercaseCharacters property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one
+     *         uppercase character from the ISO basic Latin alphabet (A to Z).
      */
     public Boolean isRequireUppercaseCharacters() {
         return requireUppercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * uppercase character from the ISO basic Latin alphabet (A to Z).
      *
-     * @param requireUppercaseCharacters The new value for the RequireUppercaseCharacters property for this
-     *         object.
+     * @param requireUppercaseCharacters Specifies whether IAM user passwords must contain at least one
+     *         uppercase character from the ISO basic Latin alphabet (A to Z).
      */
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * uppercase character from the ISO basic Latin alphabet (A to Z).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireUppercaseCharacters The new value for the RequireUppercaseCharacters property for this
-     *         object.
+     * @param requireUppercaseCharacters Specifies whether IAM user passwords must contain at least one
+     *         uppercase character from the ISO basic Latin alphabet (A to Z).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -209,44 +286,46 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Returns the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * uppercase character from the ISO basic Latin alphabet (A to Z).
      *
-     * @return The value of the RequireUppercaseCharacters property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one
+     *         uppercase character from the ISO basic Latin alphabet (A to Z).
      */
     public Boolean getRequireUppercaseCharacters() {
         return requireUppercaseCharacters;
     }
 
     /**
-     * Returns the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * lowercase character from the ISO basic Latin alphabet (a to z).
      *
-     * @return The value of the RequireLowercaseCharacters property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one
+     *         lowercase character from the ISO basic Latin alphabet (a to z).
      */
     public Boolean isRequireLowercaseCharacters() {
         return requireLowercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * lowercase character from the ISO basic Latin alphabet (a to z).
      *
-     * @param requireLowercaseCharacters The new value for the RequireLowercaseCharacters property for this
-     *         object.
+     * @param requireLowercaseCharacters Specifies whether IAM user passwords must contain at least one
+     *         lowercase character from the ISO basic Latin alphabet (a to z).
      */
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * lowercase character from the ISO basic Latin alphabet (a to z).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireLowercaseCharacters The new value for the RequireLowercaseCharacters property for this
-     *         object.
+     * @param requireLowercaseCharacters Specifies whether IAM user passwords must contain at least one
+     *         lowercase character from the ISO basic Latin alphabet (a to z).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -257,44 +336,64 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Returns the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether IAM user passwords must contain at least one
+     * lowercase character from the ISO basic Latin alphabet (a to z).
      *
-     * @return The value of the RequireLowercaseCharacters property for this object.
+     * @return Specifies whether IAM user passwords must contain at least one
+     *         lowercase character from the ISO basic Latin alphabet (a to z).
      */
     public Boolean getRequireLowercaseCharacters() {
         return requireLowercaseCharacters;
     }
 
     /**
-     * Returns the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Allows all IAM users in your account to use the AWS Management Console
+     * to change their own passwords. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     * guide.
      *
-     * @return The value of the AllowUsersToChangePassword property for this object.
+     * @return Allows all IAM users in your account to use the AWS Management Console
+     *         to change their own passwords. For more information, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     *         guide.
      */
     public Boolean isAllowUsersToChangePassword() {
         return allowUsersToChangePassword;
     }
     
     /**
-     * Sets the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Allows all IAM users in your account to use the AWS Management Console
+     * to change their own passwords. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     * guide.
      *
-     * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
-     *         object.
+     * @param allowUsersToChangePassword Allows all IAM users in your account to use the AWS Management Console
+     *         to change their own passwords. For more information, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     *         guide.
      */
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
     }
     
     /**
-     * Sets the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Allows all IAM users in your account to use the AWS Management Console
+     * to change their own passwords. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     * guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
-     *         object.
+     * @param allowUsersToChangePassword Allows all IAM users in your account to use the AWS Management Console
+     *         to change their own passwords. For more information, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     *         guide.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -305,13 +404,160 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Returns the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Allows all IAM users in your account to use the AWS Management Console
+     * to change their own passwords. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     * guide.
      *
-     * @return The value of the AllowUsersToChangePassword property for this object.
+     * @return Allows all IAM users in your account to use the AWS Management Console
+     *         to change their own passwords. For more information, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     *         IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i>
+     *         guide.
      */
     public Boolean getAllowUsersToChangePassword() {
         return allowUsersToChangePassword;
+    }
+
+    /**
+     * The number of days that an IAM user password is valid.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1095<br/>
+     *
+     * @return The number of days that an IAM user password is valid.
+     */
+    public Integer getMaxPasswordAge() {
+        return maxPasswordAge;
+    }
+    
+    /**
+     * The number of days that an IAM user password is valid.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1095<br/>
+     *
+     * @param maxPasswordAge The number of days that an IAM user password is valid.
+     */
+    public void setMaxPasswordAge(Integer maxPasswordAge) {
+        this.maxPasswordAge = maxPasswordAge;
+    }
+    
+    /**
+     * The number of days that an IAM user password is valid.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1095<br/>
+     *
+     * @param maxPasswordAge The number of days that an IAM user password is valid.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateAccountPasswordPolicyRequest withMaxPasswordAge(Integer maxPasswordAge) {
+        this.maxPasswordAge = maxPasswordAge;
+        return this;
+    }
+
+    /**
+     * Specifies the number of previous passwords that IAM users are
+     * prevented from reusing.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 24<br/>
+     *
+     * @return Specifies the number of previous passwords that IAM users are
+     *         prevented from reusing.
+     */
+    public Integer getPasswordReusePrevention() {
+        return passwordReusePrevention;
+    }
+    
+    /**
+     * Specifies the number of previous passwords that IAM users are
+     * prevented from reusing.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 24<br/>
+     *
+     * @param passwordReusePrevention Specifies the number of previous passwords that IAM users are
+     *         prevented from reusing.
+     */
+    public void setPasswordReusePrevention(Integer passwordReusePrevention) {
+        this.passwordReusePrevention = passwordReusePrevention;
+    }
+    
+    /**
+     * Specifies the number of previous passwords that IAM users are
+     * prevented from reusing.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 24<br/>
+     *
+     * @param passwordReusePrevention Specifies the number of previous passwords that IAM users are
+     *         prevented from reusing.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateAccountPasswordPolicyRequest withPasswordReusePrevention(Integer passwordReusePrevention) {
+        this.passwordReusePrevention = passwordReusePrevention;
+        return this;
+    }
+
+    /**
+     * Prevents IAM users from setting a new password after their password
+     * has expired.
+     *
+     * @return Prevents IAM users from setting a new password after their password
+     *         has expired.
+     */
+    public Boolean isHardExpiry() {
+        return hardExpiry;
+    }
+    
+    /**
+     * Prevents IAM users from setting a new password after their password
+     * has expired.
+     *
+     * @param hardExpiry Prevents IAM users from setting a new password after their password
+     *         has expired.
+     */
+    public void setHardExpiry(Boolean hardExpiry) {
+        this.hardExpiry = hardExpiry;
+    }
+    
+    /**
+     * Prevents IAM users from setting a new password after their password
+     * has expired.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hardExpiry Prevents IAM users from setting a new password after their password
+     *         has expired.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateAccountPasswordPolicyRequest withHardExpiry(Boolean hardExpiry) {
+        this.hardExpiry = hardExpiry;
+        return this;
+    }
+
+    /**
+     * Prevents IAM users from setting a new password after their password
+     * has expired.
+     *
+     * @return Prevents IAM users from setting a new password after their password
+     *         has expired.
+     */
+    public Boolean getHardExpiry() {
+        return hardExpiry;
     }
 
     /**
@@ -331,7 +577,10 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ",");
         if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ",");
         if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ",");
-        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() );
+        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() + ",");
+        if (getMaxPasswordAge() != null) sb.append("MaxPasswordAge: " + getMaxPasswordAge() + ",");
+        if (getPasswordReusePrevention() != null) sb.append("PasswordReusePrevention: " + getPasswordReusePrevention() + ",");
+        if (isHardExpiry() != null) sb.append("HardExpiry: " + isHardExpiry() );
         sb.append("}");
         return sb.toString();
     }
@@ -347,6 +596,9 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((isRequireUppercaseCharacters() == null) ? 0 : isRequireUppercaseCharacters().hashCode()); 
         hashCode = prime * hashCode + ((isRequireLowercaseCharacters() == null) ? 0 : isRequireLowercaseCharacters().hashCode()); 
         hashCode = prime * hashCode + ((isAllowUsersToChangePassword() == null) ? 0 : isAllowUsersToChangePassword().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxPasswordAge() == null) ? 0 : getMaxPasswordAge().hashCode()); 
+        hashCode = prime * hashCode + ((getPasswordReusePrevention() == null) ? 0 : getPasswordReusePrevention().hashCode()); 
+        hashCode = prime * hashCode + ((isHardExpiry() == null) ? 0 : isHardExpiry().hashCode()); 
         return hashCode;
     }
     
@@ -370,6 +622,12 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         if (other.isRequireLowercaseCharacters() != null && other.isRequireLowercaseCharacters().equals(this.isRequireLowercaseCharacters()) == false) return false; 
         if (other.isAllowUsersToChangePassword() == null ^ this.isAllowUsersToChangePassword() == null) return false;
         if (other.isAllowUsersToChangePassword() != null && other.isAllowUsersToChangePassword().equals(this.isAllowUsersToChangePassword()) == false) return false; 
+        if (other.getMaxPasswordAge() == null ^ this.getMaxPasswordAge() == null) return false;
+        if (other.getMaxPasswordAge() != null && other.getMaxPasswordAge().equals(this.getMaxPasswordAge()) == false) return false; 
+        if (other.getPasswordReusePrevention() == null ^ this.getPasswordReusePrevention() == null) return false;
+        if (other.getPasswordReusePrevention() != null && other.getPasswordReusePrevention().equals(this.getPasswordReusePrevention()) == false) return false; 
+        if (other.isHardExpiry() == null ^ this.isHardExpiry() == null) return false;
+        if (other.isHardExpiry() != null && other.isHardExpiry().equals(this.isHardExpiry()) == false) return false; 
         return true;
     }
     

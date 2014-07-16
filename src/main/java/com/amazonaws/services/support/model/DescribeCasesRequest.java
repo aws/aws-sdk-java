@@ -92,6 +92,8 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
      */
     private String language;
 
+    private Boolean includeCommunications;
+
     /**
      * A list of ID numbers of the support cases you want returned. The
      * maximum number of cases is 100.
@@ -468,6 +470,50 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * Returns the value of the IncludeCommunications property for this
+     * object.
+     *
+     * @return The value of the IncludeCommunications property for this object.
+     */
+    public Boolean isIncludeCommunications() {
+        return includeCommunications;
+    }
+    
+    /**
+     * Sets the value of the IncludeCommunications property for this object.
+     *
+     * @param includeCommunications The new value for the IncludeCommunications property for this object.
+     */
+    public void setIncludeCommunications(Boolean includeCommunications) {
+        this.includeCommunications = includeCommunications;
+    }
+    
+    /**
+     * Sets the value of the IncludeCommunications property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param includeCommunications The new value for the IncludeCommunications property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeCasesRequest withIncludeCommunications(Boolean includeCommunications) {
+        this.includeCommunications = includeCommunications;
+        return this;
+    }
+
+    /**
+     * Returns the value of the IncludeCommunications property for this
+     * object.
+     *
+     * @return The value of the IncludeCommunications property for this object.
+     */
+    public Boolean getIncludeCommunications() {
+        return includeCommunications;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -486,7 +532,8 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
         if (isIncludeResolvedCases() != null) sb.append("IncludeResolvedCases: " + isIncludeResolvedCases() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");
-        if (getLanguage() != null) sb.append("Language: " + getLanguage() );
+        if (getLanguage() != null) sb.append("Language: " + getLanguage() + ",");
+        if (isIncludeCommunications() != null) sb.append("IncludeCommunications: " + isIncludeCommunications() );
         sb.append("}");
         return sb.toString();
     }
@@ -504,6 +551,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode()); 
+        hashCode = prime * hashCode + ((isIncludeCommunications() == null) ? 0 : isIncludeCommunications().hashCode()); 
         return hashCode;
     }
     
@@ -531,6 +579,8 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements Ser
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
         if (other.getLanguage() == null ^ this.getLanguage() == null) return false;
         if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false) return false; 
+        if (other.isIncludeCommunications() == null ^ this.isIncludeCommunications() == null) return false;
+        if (other.isIncludeCommunications() != null && other.isIncludeCommunications().equals(this.isIncludeCommunications()) == false) return false; 
         return true;
     }
     

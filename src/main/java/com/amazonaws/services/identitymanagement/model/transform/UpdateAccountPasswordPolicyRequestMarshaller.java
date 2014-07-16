@@ -59,6 +59,15 @@ public class UpdateAccountPasswordPolicyRequestMarshaller implements Marshaller<
         if (updateAccountPasswordPolicyRequest.isAllowUsersToChangePassword() != null) {
             request.addParameter("AllowUsersToChangePassword", StringUtils.fromBoolean(updateAccountPasswordPolicyRequest.isAllowUsersToChangePassword()));
         }
+        if (updateAccountPasswordPolicyRequest.getMaxPasswordAge() != null) {
+            request.addParameter("MaxPasswordAge", StringUtils.fromInteger(updateAccountPasswordPolicyRequest.getMaxPasswordAge()));
+        }
+        if (updateAccountPasswordPolicyRequest.getPasswordReusePrevention() != null) {
+            request.addParameter("PasswordReusePrevention", StringUtils.fromInteger(updateAccountPasswordPolicyRequest.getPasswordReusePrevention()));
+        }
+        if (updateAccountPasswordPolicyRequest.isHardExpiry() != null) {
+            request.addParameter("HardExpiry", StringUtils.fromBoolean(updateAccountPasswordPolicyRequest.isHardExpiry()));
+        }
 
         return request;
     }

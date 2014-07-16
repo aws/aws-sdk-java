@@ -13,10 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.internal.crypto;
-
 import static com.amazonaws.services.s3.AmazonS3EncryptionClient.USER_AGENT;
 import static com.amazonaws.services.s3.internal.crypto.EncryptionUtils.createInstructionGetRequest;
 import static com.amazonaws.services.s3.internal.crypto.EncryptionUtils.getAdjustedCryptoRange;
+import static com.amazonaws.util.IOUtils.closeQuietly;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
@@ -152,19 +152,11 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         } catch (RuntimeException rc) {
             // If we're unable to set up the decryption, make sure we close the
             // HTTP connection
-            closeStream(retrieved.getObjectContent());
+            closeQuietly(retrieved.getObjectContent(), log);
             throw rc;
         } catch (Error error) {
-            closeStream(retrieved.getObjectContent());
+            closeQuietly(retrieved.getObjectContent(), log);
             throw error;
-        }
-    }
-
-    private void closeStream(InputStream stream){
-        try {
-            stream.close();
-        } catch (Exception e) {
-            log.debug("Safely ignoring", e);
         }
     }
 
@@ -191,10 +183,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             }
         }
         if (isStrict()) {
-            try {
-                wrapped.close();
-            } catch (IOException ignore) {
-            }
+            closeQuietly(wrapped, log);
             throw new SecurityException("S3 object with bucket name: "
                     + retrieved.getBucketName() + ", key: "
                     + retrieved.getKey() + " is not encrypted");
@@ -282,12 +271,9 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             range[1] = maxOffset;
             if (range[0] > range[1]) {
                 // Return empty content
-                try { // First let's close the existing input stream to
-                      // avoid resource leakage
-                    s3object.getObjectContent().close();
-                } catch (IOException ignore) {
-                    log.trace("", ignore);
-                }
+                // First let's close the existing input stream to avoid resource
+                // leakage
+                closeQuietly(s3object.getObjectContent(), log);
                 s3object.setObjectContent(new ByteArrayInputStream(new byte[0]));
                 return s3object;
             }
@@ -328,8 +314,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             throw new AmazonClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
-            try {outputStream.close();} catch (Exception e) { log.debug(e.getMessage());}
-            try {s3Object.getObjectContent().close();} catch (Exception e) {log.debug(e.getMessage());}
+            closeQuietly(outputStream, log);
+            closeQuietly(s3Object.getObjectContent(), log);
         }
 
         /*

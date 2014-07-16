@@ -15,9 +15,10 @@
 package com.amazonaws.services.s3;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+import static com.amazonaws.util.IOUtils.closeQuietly;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
-
+import static com.amazonaws.util.Throwables.failure;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,7 +43,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
 
-import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
@@ -52,6 +52,7 @@ import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.HttpMethod;
+import com.amazonaws.Protocol;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.SDKGlobalConfiguration;
@@ -171,6 +172,7 @@ import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.SSECustomerKey;
+import com.amazonaws.services.s3.model.SSECustomerKeyProvider;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -531,16 +533,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             return emptyListing;
         }
 
-        return listVersions(
-                new ListVersionsRequest(
-                        previousVersionListing.getBucketName(),
-                        previousVersionListing.getPrefix(),
-                        previousVersionListing.getNextKeyMarker(),
-                        previousVersionListing.getNextVersionIdMarker(),
-                        previousVersionListing.getDelimiter(),
-                        new Integer( previousVersionListing.getMaxKeys() ))
-                    .withEncodingType(previousVersionListing.getEncodingType())
-               );
+        return listVersions(new ListVersionsRequest(
+                previousVersionListing.getBucketName(),
+                previousVersionListing.getPrefix(),
+                previousVersionListing.getNextKeyMarker(),
+                previousVersionListing.getNextVersionIdMarker(),
+                previousVersionListing.getDelimiter(),
+                Integer.valueOf(previousVersionListing.getMaxKeys()))
+                .withEncodingType(previousVersionListing.getEncodingType()));
     }
 
     /* (non-Javadoc)
@@ -640,16 +640,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             return emptyListing;
         }
-
-        return listObjects(
-                new ListObjectsRequest(
-                        previousObjectListing.getBucketName(),
-                        previousObjectListing.getPrefix(),
-                        previousObjectListing.getNextMarker(),
-                        previousObjectListing.getDelimiter(),
-                        new Integer( previousObjectListing.getMaxKeys() ))
-                    .withEncodingType(previousObjectListing.getEncodingType())
-               );
+        return listObjects(new ListObjectsRequest(
+                previousObjectListing.getBucketName(),
+                previousObjectListing.getPrefix(),
+                previousObjectListing.getNextMarker(),
+                previousObjectListing.getDelimiter(),
+                Integer.valueOf(previousObjectListing.getMaxKeys()))
+                .withEncodingType(previousObjectListing.getEncodingType()));
     }
 
 
@@ -1297,10 +1294,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return putObject(new PutObjectRequest(bucketName, key, input, metadata));
     }
 
-
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#putObject(com.amazonaws.services.s3.model.PutObjectRequest)
-     */
+    @Override
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(putObjectRequest, "The PutObjectRequest parameter must be specified when uploading an object");
@@ -1435,19 +1429,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.setContent(input);
         final ProgressListener listener = putObjectRequest.getGeneralProgressListener();
         publishProgress(listener, ProgressEventType.TRANSFER_STARTED_EVENT);
-        ObjectMetadata returnedMetadata = null;
+        ObjectMetadata returnedMetadata;
         try {
             returnedMetadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
-        } catch (AmazonClientException ace) {
+        } catch (Throwable t) {
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
-            throw ace;
+            throw failure(t);
         } finally {
-            try {
-                input.close();
-            } catch (AbortedException ignore) {
-            } catch (Exception e) {
-                log.debug("Unable to cleanly close input stream: " + e.getMessage(), e);
-            }
+            closeQuietly(input, log);
         }
 
         String contentMd5 = metadata.getContentMD5();
@@ -1455,7 +1444,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             contentMd5 = BinaryUtils.toBase64(md5DigestStream.getMd5Digest());
         }
 
-        if (returnedMetadata != null && contentMd5 != null && !skipContentMd5Check) {
+        if (contentMd5 != null && !skipContentMd5Check) {
             byte[] clientSideHash = BinaryUtils.fromBase64(contentMd5);
             byte[] serverSideHash = BinaryUtils.fromHex(returnedMetadata.getETag());
 
@@ -2758,7 +2747,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.setContent(inputStream);
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
 
-            if (metadata != null && md5DigestStream != null) {
+            if (md5DigestStream != null) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(metadata.getETag());
 
@@ -2776,18 +2765,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             result.setSSECustomerAlgorithm(metadata.getSSECustomerAlgorithm());
             result.setSSECustomerKeyMd5(metadata.getSSECustomerKeyMd5());
             return result;
-        } catch (AmazonClientException ace) {
+        } catch (Throwable t) {
             publishProgress(listener, ProgressEventType.TRANSFER_PART_FAILED_EVENT);
             // Leaving this here in case anyone is depending on it, but it's
             // inconsistent with other methods which only generate one of
             // COMPLETED_EVENT_CODE or FAILED_EVENT_CODE.
             publishProgress(listener, ProgressEventType.TRANSFER_PART_COMPLETED_EVENT);
-            throw ace;
+            throw failure(t);
         } finally {
-            if (inputStream != null) {
-                try {inputStream.close();}
-                catch (Exception e) {}
-            }
+            closeQuietly(inputStream, log);
         }
     }
 
@@ -3599,6 +3585,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             String bucket, String key) {
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        checkHttps(originalRequest);
         ExecutionContext executionContext = createExecutionContext(originalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
@@ -3739,12 +3726,44 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return invoke(request,
                 new Unmarshallers.RequestPaymentConfigurationUnmarshaller(),
                 bucketName, null);
-
     }
 
     private void setZeroContentLength(Request<?> req) {
         // https://github.com/aws/aws-sdk-java/pull/215
         // http://aws.amazon.com/articles/1109#14
         req.addHeader(Headers.CONTENT_LENGTH, String.valueOf(0));
+    }
+
+    /**
+     * Throws {@link IllegalArgumentException} if SSE customer key is in use
+     * without https.
+     */
+    private void checkHttps(AmazonWebServiceRequest req) {
+        if (req instanceof SSECustomerKeyProvider) {
+            SSECustomerKeyProvider p = (SSECustomerKeyProvider) req;
+            if (p.getSSECustomerKey() != null)
+                assertHttps();
+        } else if (req instanceof CopyObjectRequest) {
+            CopyObjectRequest cor = (CopyObjectRequest) req;
+            if (cor.getSourceSSECustomerKey() != null
+            ||  cor.getDestinationSSECustomerKey() != null) {
+                assertHttps();
+            }
+        } else if (req instanceof CopyPartRequest) {
+            CopyPartRequest cpr = (CopyPartRequest) req;
+            if (cpr.getSourceSSECustomerKey() != null
+            ||  cpr.getDestinationSSECustomerKey() != null) {
+                assertHttps();
+            }
+        }
+    }
+
+    private void assertHttps() {
+        URI endpoint = this.endpoint;
+        String scheme = endpoint == null ? null : endpoint.getScheme();
+        if (!Protocol.HTTPS.toString().equalsIgnoreCase(scheme)) {
+            throw new IllegalArgumentException(
+                    "HTTPS must be used when sending customer encryption keys (SSE-C) to S3, in order to protect your encryption keys.");
+        }
     }
 }

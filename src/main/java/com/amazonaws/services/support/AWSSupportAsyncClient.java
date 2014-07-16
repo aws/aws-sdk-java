@@ -333,6 +333,86 @@ public class AWSSupportAsyncClient extends AWSSupportClient
             
     /**
      * <p>
+     * Returns the refresh status of the Trusted Advisor checks that have
+     * the specified check IDs. Check IDs can be obtained by calling
+     * DescribeTrustedAdvisorChecks.
+     * </p>
+     *
+     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
+     *           the necessary parameters to execute the
+     *           DescribeTrustedAdvisorCheckRefreshStatuses operation on AWSSupport.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
+     *         by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTrustedAdvisorCheckRefreshStatusesResult> describeTrustedAdvisorCheckRefreshStatusesAsync(final DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>() {
+            public DescribeTrustedAdvisorCheckRefreshStatusesResult call() throws Exception {
+                return describeTrustedAdvisorCheckRefreshStatuses(describeTrustedAdvisorCheckRefreshStatusesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the refresh status of the Trusted Advisor checks that have
+     * the specified check IDs. Check IDs can be obtained by calling
+     * DescribeTrustedAdvisorChecks.
+     * </p>
+     *
+     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
+     *           the necessary parameters to execute the
+     *           DescribeTrustedAdvisorCheckRefreshStatuses operation on AWSSupport.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
+     *         by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTrustedAdvisorCheckRefreshStatusesResult> describeTrustedAdvisorCheckRefreshStatusesAsync(
+            final DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest,
+            final AsyncHandler<DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>() {
+            public DescribeTrustedAdvisorCheckRefreshStatusesResult call() throws Exception {
+              DescribeTrustedAdvisorCheckRefreshStatusesResult result;
+                try {
+                result = describeTrustedAdvisorCheckRefreshStatuses(describeTrustedAdvisorCheckRefreshStatusesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeTrustedAdvisorCheckRefreshStatusesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns a list of cases that you specify by passing one or more case
      * IDs. In addition, you can filter the cases by date by setting values
      * for the <code>AfterTime</code> and <code>BeforeTime</code> request
@@ -426,19 +506,12 @@ public class AWSSupportAsyncClient extends AWSSupportClient
     }
     
     /**
-     * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have
-     * the specified check IDs. Check IDs can be obtained by calling
-     * DescribeTrustedAdvisorChecks.
-     * </p>
      *
-     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
-     *           the necessary parameters to execute the
-     *           DescribeTrustedAdvisorCheckRefreshStatuses operation on AWSSupport.
+     * @param addAttachmentsToSetRequest Container for the necessary
+     *           parameters to execute the AddAttachmentsToSet operation on AWSSupport.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
-     *         by AWSSupport.
+     *         AddAttachmentsToSet service method, as returned by AWSSupport.
      * 
      *
      * @throws AmazonClientException
@@ -449,33 +522,26 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      *             If an error response is returned by AWSSupport indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeTrustedAdvisorCheckRefreshStatusesResult> describeTrustedAdvisorCheckRefreshStatusesAsync(final DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) 
+    public Future<AddAttachmentsToSetResult> addAttachmentsToSetAsync(final AddAttachmentsToSetRequest addAttachmentsToSetRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>() {
-            public DescribeTrustedAdvisorCheckRefreshStatusesResult call() throws Exception {
-                return describeTrustedAdvisorCheckRefreshStatuses(describeTrustedAdvisorCheckRefreshStatusesRequest);
+        return executorService.submit(new Callable<AddAttachmentsToSetResult>() {
+            public AddAttachmentsToSetResult call() throws Exception {
+                return addAttachmentsToSet(addAttachmentsToSetRequest);
         }
     });
     }
 
     /**
-     * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have
-     * the specified check IDs. Check IDs can be obtained by calling
-     * DescribeTrustedAdvisorChecks.
-     * </p>
      *
-     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
-     *           the necessary parameters to execute the
-     *           DescribeTrustedAdvisorCheckRefreshStatuses operation on AWSSupport.
+     * @param addAttachmentsToSetRequest Container for the necessary
+     *           parameters to execute the AddAttachmentsToSet operation on AWSSupport.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
-     *         by AWSSupport.
+     *         AddAttachmentsToSet service method, as returned by AWSSupport.
      * 
      *
      * @throws AmazonClientException
@@ -486,20 +552,20 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      *             If an error response is returned by AWSSupport indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeTrustedAdvisorCheckRefreshStatusesResult> describeTrustedAdvisorCheckRefreshStatusesAsync(
-            final DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest,
-            final AsyncHandler<DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResult> asyncHandler)
+    public Future<AddAttachmentsToSetResult> addAttachmentsToSetAsync(
+            final AddAttachmentsToSetRequest addAttachmentsToSetRequest,
+            final AsyncHandler<AddAttachmentsToSetRequest, AddAttachmentsToSetResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>() {
-            public DescribeTrustedAdvisorCheckRefreshStatusesResult call() throws Exception {
-              DescribeTrustedAdvisorCheckRefreshStatusesResult result;
+        return executorService.submit(new Callable<AddAttachmentsToSetResult>() {
+            public AddAttachmentsToSetResult call() throws Exception {
+              AddAttachmentsToSetResult result;
                 try {
-                result = describeTrustedAdvisorCheckRefreshStatuses(describeTrustedAdvisorCheckRefreshStatusesRequest);
+                result = addAttachmentsToSet(addAttachmentsToSetRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(describeTrustedAdvisorCheckRefreshStatusesRequest, result);
+              asyncHandler.onSuccess(addAttachmentsToSetRequest, result);
                  return result;
         }
     });
@@ -672,6 +738,248 @@ public class AWSSupportAsyncClient extends AWSSupportClient
             throw ex;
               }
               asyncHandler.onSuccess(describeCommunicationsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     *
+     * @param describeAttachmentRequest Container for the necessary
+     *           parameters to execute the DescribeAttachment operation on AWSSupport.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAttachment service method, as returned by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAttachmentResult> describeAttachmentAsync(final DescribeAttachmentRequest describeAttachmentRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAttachmentResult>() {
+            public DescribeAttachmentResult call() throws Exception {
+                return describeAttachment(describeAttachmentRequest);
+        }
+    });
+    }
+
+    /**
+     *
+     * @param describeAttachmentRequest Container for the necessary
+     *           parameters to execute the DescribeAttachment operation on AWSSupport.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAttachment service method, as returned by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAttachmentResult> describeAttachmentAsync(
+            final DescribeAttachmentRequest describeAttachmentRequest,
+            final AsyncHandler<DescribeAttachmentRequest, DescribeAttachmentResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAttachmentResult>() {
+            public DescribeAttachmentResult call() throws Exception {
+              DescribeAttachmentResult result;
+                try {
+                result = describeAttachment(describeAttachmentRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeAttachmentRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Takes a <code>CaseId</code> and returns the initial state of the case
+     * along with the state of the case after the call to ResolveCase
+     * completed.
+     * </p>
+     *
+     * @param resolveCaseRequest Container for the necessary parameters to
+     *           execute the ResolveCase operation on AWSSupport.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResolveCase service method, as returned by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ResolveCaseResult> resolveCaseAsync(final ResolveCaseRequest resolveCaseRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ResolveCaseResult>() {
+            public ResolveCaseResult call() throws Exception {
+                return resolveCase(resolveCaseRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Takes a <code>CaseId</code> and returns the initial state of the case
+     * along with the state of the case after the call to ResolveCase
+     * completed.
+     * </p>
+     *
+     * @param resolveCaseRequest Container for the necessary parameters to
+     *           execute the ResolveCase operation on AWSSupport.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResolveCase service method, as returned by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ResolveCaseResult> resolveCaseAsync(
+            final ResolveCaseRequest resolveCaseRequest,
+            final AsyncHandler<ResolveCaseRequest, ResolveCaseResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ResolveCaseResult>() {
+            public ResolveCaseResult call() throws Exception {
+              ResolveCaseResult result;
+                try {
+                result = resolveCase(resolveCaseRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(resolveCaseRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns the current list of AWS services and a list of service
+     * categories that applies to each one. You then use service names and
+     * categories in your CreateCase requests. Each AWS service has its own
+     * set of categories.
+     * </p>
+     * <p>
+     * The service codes and category codes correspond to the values that
+     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
+     * lists on the AWS Support Center
+     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * page. The values in those fields, however, do not necessarily match
+     * the service codes and categories returned by the
+     * <code>DescribeServices</code> request. Always use the service codes
+     * and categories obtained programmatically. This practice ensures that
+     * you always have the most recent set of service and category codes.
+     * </p>
+     *
+     * @param describeServicesRequest Container for the necessary parameters
+     *           to execute the DescribeServices operation on AWSSupport.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeServices service method, as returned by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeServicesResult> describeServicesAsync(final DescribeServicesRequest describeServicesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeServicesResult>() {
+            public DescribeServicesResult call() throws Exception {
+                return describeServices(describeServicesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns the current list of AWS services and a list of service
+     * categories that applies to each one. You then use service names and
+     * categories in your CreateCase requests. Each AWS service has its own
+     * set of categories.
+     * </p>
+     * <p>
+     * The service codes and category codes correspond to the values that
+     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
+     * lists on the AWS Support Center
+     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * page. The values in those fields, however, do not necessarily match
+     * the service codes and categories returned by the
+     * <code>DescribeServices</code> request. Always use the service codes
+     * and categories obtained programmatically. This practice ensures that
+     * you always have the most recent set of service and category codes.
+     * </p>
+     *
+     * @param describeServicesRequest Container for the necessary parameters
+     *           to execute the DescribeServices operation on AWSSupport.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeServices service method, as returned by AWSSupport.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeServicesResult> describeServicesAsync(
+            final DescribeServicesRequest describeServicesRequest,
+            final AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeServicesResult>() {
+            public DescribeServicesResult call() throws Exception {
+              DescribeServicesResult result;
+                try {
+                result = describeServices(describeServicesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(describeServicesRequest, result);
                  return result;
         }
     });
@@ -1143,82 +1451,6 @@ public class AWSSupportAsyncClient extends AWSSupportClient
     
     /**
      * <p>
-     * Takes a <code>CaseId</code> and returns the initial state of the case
-     * along with the state of the case after the call to ResolveCase
-     * completed.
-     * </p>
-     *
-     * @param resolveCaseRequest Container for the necessary parameters to
-     *           execute the ResolveCase operation on AWSSupport.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ResolveCase service method, as returned by AWSSupport.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ResolveCaseResult> resolveCaseAsync(final ResolveCaseRequest resolveCaseRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ResolveCaseResult>() {
-            public ResolveCaseResult call() throws Exception {
-                return resolveCase(resolveCaseRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Takes a <code>CaseId</code> and returns the initial state of the case
-     * along with the state of the case after the call to ResolveCase
-     * completed.
-     * </p>
-     *
-     * @param resolveCaseRequest Container for the necessary parameters to
-     *           execute the ResolveCase operation on AWSSupport.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ResolveCase service method, as returned by AWSSupport.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ResolveCaseResult> resolveCaseAsync(
-            final ResolveCaseRequest resolveCaseRequest,
-            final AsyncHandler<ResolveCaseRequest, ResolveCaseResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ResolveCaseResult>() {
-            public ResolveCaseResult call() throws Exception {
-              ResolveCaseResult result;
-                try {
-                result = resolveCase(resolveCaseRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(resolveCaseRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Requests a refresh of the Trusted Advisor check that has the
      * specified check ID. Check IDs can be obtained by calling
      * DescribeTrustedAdvisorChecks.
@@ -1316,106 +1548,6 @@ public class AWSSupportAsyncClient extends AWSSupportClient
             throw ex;
               }
               asyncHandler.onSuccess(refreshTrustedAdvisorCheckRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Returns the current list of AWS services and a list of service
-     * categories that applies to each one. You then use service names and
-     * categories in your CreateCase requests. Each AWS service has its own
-     * set of categories.
-     * </p>
-     * <p>
-     * The service codes and category codes correspond to the values that
-     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
-     * lists on the AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
-     * page. The values in those fields, however, do not necessarily match
-     * the service codes and categories returned by the
-     * <code>DescribeServices</code> request. Always use the service codes
-     * and categories obtained programmatically. This practice ensures that
-     * you always have the most recent set of service and category codes.
-     * </p>
-     *
-     * @param describeServicesRequest Container for the necessary parameters
-     *           to execute the DescribeServices operation on AWSSupport.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeServices service method, as returned by AWSSupport.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeServicesResult> describeServicesAsync(final DescribeServicesRequest describeServicesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeServicesResult>() {
-            public DescribeServicesResult call() throws Exception {
-                return describeServices(describeServicesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns the current list of AWS services and a list of service
-     * categories that applies to each one. You then use service names and
-     * categories in your CreateCase requests. Each AWS service has its own
-     * set of categories.
-     * </p>
-     * <p>
-     * The service codes and category codes correspond to the values that
-     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
-     * lists on the AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
-     * page. The values in those fields, however, do not necessarily match
-     * the service codes and categories returned by the
-     * <code>DescribeServices</code> request. Always use the service codes
-     * and categories obtained programmatically. This practice ensures that
-     * you always have the most recent set of service and category codes.
-     * </p>
-     *
-     * @param describeServicesRequest Container for the necessary parameters
-     *           to execute the DescribeServices operation on AWSSupport.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeServices service method, as returned by AWSSupport.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeServicesResult> describeServicesAsync(
-            final DescribeServicesRequest describeServicesRequest,
-            final AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeServicesResult>() {
-            public DescribeServicesResult call() throws Exception {
-              DescribeServicesResult result;
-                try {
-                result = describeServices(describeServicesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(describeServicesRequest, result);
                  return result;
         }
     });

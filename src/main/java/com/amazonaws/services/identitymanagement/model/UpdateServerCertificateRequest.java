@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * <b>IMPORTANT:</b> You should understand the implications of changing a
  * server certificate's path or name. For more information, see Managing
- * Server Certificates in Using AWS Identity and Access Management.
+ * Server Certificates in the Using IAM guide.
  * </p>
  * <p>
  * <b>NOTE:</b>To change a server certificate name the requester must

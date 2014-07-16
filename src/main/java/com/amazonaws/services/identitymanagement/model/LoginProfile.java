@@ -29,7 +29,7 @@ import java.io.Serializable;
 public class LoginProfile implements Serializable {
 
     /**
-     * The name of the user, which can be used for signing into the AWS
+     * The name of the user, which can be used for signing in to the AWS
      * Management Console.
      * <p>
      * <b>Constraints:</b><br/>
@@ -44,6 +44,12 @@ public class LoginProfile implements Serializable {
     private java.util.Date createDate;
 
     /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     */
+    private Boolean passwordResetRequired;
+
+    /**
      * Default constructor for a new LoginProfile object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -54,8 +60,8 @@ public class LoginProfile implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName The name of the user, which can be used for signing
-     * into the AWS Management Console.
+     * @param userName The name of the user, which can be used for signing in
+     * to the AWS Management Console.
      * @param createDate The date when the password for the user was created.
      */
     public LoginProfile(String userName, java.util.Date createDate) {
@@ -64,14 +70,14 @@ public class LoginProfile implements Serializable {
     }
 
     /**
-     * The name of the user, which can be used for signing into the AWS
+     * The name of the user, which can be used for signing in to the AWS
      * Management Console.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the user, which can be used for signing into the AWS
+     * @return The name of the user, which can be used for signing in to the AWS
      *         Management Console.
      */
     public String getUserName() {
@@ -79,14 +85,14 @@ public class LoginProfile implements Serializable {
     }
     
     /**
-     * The name of the user, which can be used for signing into the AWS
+     * The name of the user, which can be used for signing in to the AWS
      * Management Console.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user, which can be used for signing into the AWS
+     * @param userName The name of the user, which can be used for signing in to the AWS
      *         Management Console.
      */
     public void setUserName(String userName) {
@@ -94,7 +100,7 @@ public class LoginProfile implements Serializable {
     }
     
     /**
-     * The name of the user, which can be used for signing into the AWS
+     * The name of the user, which can be used for signing in to the AWS
      * Management Console.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -103,7 +109,7 @@ public class LoginProfile implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user, which can be used for signing into the AWS
+     * @param userName The name of the user, which can be used for signing in to the AWS
      *         Management Console.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -148,6 +154,56 @@ public class LoginProfile implements Serializable {
     }
 
     /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     *
+     * @return Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     */
+    public Boolean isPasswordResetRequired() {
+        return passwordResetRequired;
+    }
+    
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     *
+     * @param passwordResetRequired Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     */
+    public void setPasswordResetRequired(Boolean passwordResetRequired) {
+        this.passwordResetRequired = passwordResetRequired;
+    }
+    
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param passwordResetRequired Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public LoginProfile withPasswordResetRequired(Boolean passwordResetRequired) {
+        this.passwordResetRequired = passwordResetRequired;
+        return this;
+    }
+
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     *
+     * @return Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     */
+    public Boolean getPasswordResetRequired() {
+        return passwordResetRequired;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -160,7 +216,8 @@ public class LoginProfile implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
+        if (isPasswordResetRequired() != null) sb.append("PasswordResetRequired: " + isPasswordResetRequired() );
         sb.append("}");
         return sb.toString();
     }
@@ -172,6 +229,7 @@ public class LoginProfile implements Serializable {
         
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
+        hashCode = prime * hashCode + ((isPasswordResetRequired() == null) ? 0 : isPasswordResetRequired().hashCode()); 
         return hashCode;
     }
     
@@ -187,6 +245,8 @@ public class LoginProfile implements Serializable {
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
         if (other.getCreateDate() == null ^ this.getCreateDate() == null) return false;
         if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
+        if (other.isPasswordResetRequired() == null ^ this.isPasswordResetRequired() == null) return false;
+        if (other.isPasswordResetRequired() != null && other.isPasswordResetRequired().equals(this.isPasswordResetRequired()) == false) return false; 
         return true;
     }
     
