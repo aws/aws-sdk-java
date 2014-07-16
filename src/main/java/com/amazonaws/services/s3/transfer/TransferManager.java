@@ -651,7 +651,7 @@ public class TransferManager {
         S3ProgressListenerChain listenerChain = new S3ProgressListenerChain(
             // The listener for updating transfer progress
             new TransferProgressUpdatingListener(transferProgress),
-            getObjectRequest.getGeneralProgressListener(), 
+            getObjectRequest.getGeneralProgressListener(),
             s3progressListener);           // Listeners included in the original request
 
         // The listener chain used by the low-level GetObject request.
@@ -663,7 +663,7 @@ public class TransferManager {
                     public ProgressEvent filter(ProgressEvent progressEvent) {
                         // Block COMPLETE events from the low-level GetObject operation,
                         // but we still want to keep the BytesTransferred
-                        return progressEvent.getEventType() == ProgressEventType.TRANSFER_COMPLETED_EVENT 
+                        return progressEvent.getEventType() == ProgressEventType.TRANSFER_COMPLETED_EVENT
                              ? null // discard this event
                              : progressEvent
                              ;
@@ -849,7 +849,7 @@ public class TransferManager {
         multipleFileDownload.setMonitor(new MultipleFileTransferMonitor(multipleFileDownload, downloads));
 
         final CountDownLatch latch = new CountDownLatch(1);
-        MultipleFileTransferStateChangeListener transferListener = 
+        MultipleFileTransferStateChangeListener transferListener =
                 new MultipleFileTransferStateChangeListener(latch, multipleFileDownload);
 
         for ( S3ObjectSummary summary : objectSummaries ) {
@@ -1019,50 +1019,54 @@ public class TransferManager {
         MultipleFileUploadImpl multipleFileUpload = new MultipleFileUploadImpl("Uploading etc", progress, additionalListeners, virtualDirectoryKeyPrefix, bucketName, uploads);
         multipleFileUpload.setMonitor(new MultipleFileTransferMonitor(multipleFileUpload, uploads));
         final CountDownLatch latch = new CountDownLatch(1);
-        MultipleFileTransferStateChangeListener transferListener = 
+        MultipleFileTransferStateChangeListener transferListener =
             new MultipleFileTransferStateChangeListener(latch, multipleFileUpload);
-        if ( files == null || files.isEmpty()) {
+        if (files == null || files.isEmpty()) {
             multipleFileUpload.setState(TransferState.Completed);
-        }
-        /*
-         * If the absolute path for the common/base directory does NOT end in a
-         * separator (which is the case for anything but root directories), then
-         * we know there's still a separator between the base directory and the
-         * rest of the file's path, so we increment the starting position by one.
-         */
-        int startingPosition = directory.getAbsolutePath().length();
-        if (!(directory.getAbsolutePath().endsWith(File.separator))) startingPosition++;
+        } else {
+            /*
+             * If the absolute path for the common/base directory does NOT end
+             * in a separator (which is the case for anything but root
+             * directories), then we know there's still a separator between the
+             * base directory and the rest of the file's path, so we increment
+             * the starting position by one.
+             */
+            int startingPosition = directory.getAbsolutePath().length();
+            if (!(directory.getAbsolutePath().endsWith(File.separator)))
+                startingPosition++;
 
-        long totalSize = 0;
-        for (File f : files) {
-            //Check, if file, since only files can be uploaded.
-            if (f.isFile()) {
-                totalSize += f.length();
+            long totalSize = 0;
+            for (File f : files) {
+                // Check, if file, since only files can be uploaded.
+                if (f.isFile()) {
+                    totalSize += f.length();
 
-                String key = f.getAbsolutePath().substring(startingPosition).replaceAll("\\\\", "/");
+                    String key = f.getAbsolutePath()
+                            .substring(startingPosition)
+                            .replaceAll("\\\\", "/");
 
-                ObjectMetadata metadata=new ObjectMetadata();
+                    ObjectMetadata metadata = new ObjectMetadata();
 
-                // Invoke the callback if it's present.
-                // The callback allows the user to customize the metadata for each file being uploaded.
-                if (metadataProvider != null) {
-                    metadataProvider.provideObjectMetadata(f, metadata);
+                    // Invoke the callback if it's present.
+                    // The callback allows the user to customize the metadata
+                    // for each file being uploaded.
+                    if (metadataProvider != null) {
+                        metadataProvider.provideObjectMetadata(f, metadata);
+                    }
+
+                    // All the single-file uploads share the same
+                    // MultipleFileTransferProgressUpdatingListener and
+                    // MultipleFileTransferStateChangeListener
+                    uploads.add((UploadImpl) doUpload(
+                            new PutObjectRequest(bucketName,
+                                    virtualDirectoryKeyPrefix + key, f)
+                                    .withMetadata(metadata)
+                                    .<PutObjectRequest> withGeneralProgressListener(
+                                            listener), transferListener, null, null));
                 }
-
-                // All the single-file uploads share the same
-                // MultipleFileTransferProgressUpdatingListener and
-                // MultipleFileTransferStateChangeListener
-                uploads.add((UploadImpl) doUpload(
-                        new PutObjectRequest(bucketName,
-                                virtualDirectoryKeyPrefix + key, f)
-                                .withMetadata(metadata)
-                                .<PutObjectRequest>withGeneralProgressListener(
-                                        listener),
-                        transferListener, null, null));
             }
+            progress.setTotalBytesToTransfer(totalSize);
         }
-
-        progress.setTotalBytesToTransfer(totalSize);
 
         // Notify all state changes waiting for the uploads to all be queued
         // to wake up and continue

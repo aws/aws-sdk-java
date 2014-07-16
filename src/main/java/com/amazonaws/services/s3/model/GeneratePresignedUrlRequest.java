@@ -36,8 +36,8 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#generatePresignedUrl(GeneratePresignedUrlRequest)
  */
-public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
-
+public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
+        implements SSECustomerKeyProvider {
     /** The HTTP method (GET, PUT, DELETE, HEAD) to be used in this request and when the pre-signed URL is used */
     private HttpMethod method;
 
@@ -410,13 +410,7 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
         return this;
     }
 
-    /**
-     * Returns the customer-provided server-side encryption key to use as part
-     * of the generated pre-signed URL.
-     *
-     * @return The customer-provided server-side encryption key to use as part
-     *         of the generated pre-signed URL.
-     */
+    @Override
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

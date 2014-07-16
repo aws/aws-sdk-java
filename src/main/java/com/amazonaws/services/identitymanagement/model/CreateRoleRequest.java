@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new role for your AWS account. For more information about
  * roles, go to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
- * in <i>Using AWS Identity and Access Management</i> .
+ * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
  * The example policy grants permission to an EC2 instance to assume the
@@ -40,10 +40,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -71,20 +70,18 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @return The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     *         is optional. If it is not included, it defaults to a slash (/).
      */
     public String getPath() {
         return path;
@@ -92,20 +89,18 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     *         is optional. If it is not included, it defaults to a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
@@ -113,10 +108,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -125,10 +119,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     *         is optional. If it is not included, it defaults to a slash (/).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

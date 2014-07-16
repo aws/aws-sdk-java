@@ -39,8 +39,8 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see GetObjectMetadataRequest#GetObjectMetadataRequest(String, String, String)
  * @see GetObjectRequest
  */
-public class GetObjectMetadataRequest extends AmazonWebServiceRequest {
-
+public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
+        SSECustomerKeyProvider {
     /**
      * The name of the bucket containing the object's whose metadata is being
      * retrieved.
@@ -252,13 +252,7 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest {
         return this;
     }
 
-    /**
-     * Returns the optional customer-provided server-side encryption key to use
-     * when retrieving the metadata of a server-side encrypted object.
-     *
-     * @return The optional customer-provided server-side encryption key to use
-     *         when retrieving the metadata of a server-side encrypted object.
-     */
+    @Override
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

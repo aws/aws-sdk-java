@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * <b>IMPORTANT:</b> You should understand the implications of changing a
  * user's path or name. For more information, see Renaming Users and
- * Groups in Using AWS Identity and Access Management.
+ * Groups in the Using IAM guide.
  * </p>
  * <p>
  * <b>NOTE:</b>To change a user name the requester must have appropriate

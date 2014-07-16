@@ -79,6 +79,10 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.nextFuture = nextFuture;
     }
 
+    private synchronized void cancelNextFuture() {
+        nextFuture.cancel(true);
+    }
+
     public synchronized boolean isDone() {
         return isUploadDone;
     }
@@ -268,7 +272,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      * Cancels the inflight transfers if they are not completed.
      */
     private void cancelFutures() {
-        nextFuture.cancel(true);
+        cancelNextFuture();
         for (Future<PartETag> f : futures) {
             f.cancel(true);
         }

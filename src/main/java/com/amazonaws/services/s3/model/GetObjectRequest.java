@@ -41,8 +41,8 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see GetObjectRequest#GetObjectRequest(String, String, String)
  * @see GetObjectMetadataRequest
  */
-public class GetObjectRequest extends AmazonWebServiceRequest {
-
+public class GetObjectRequest extends AmazonWebServiceRequest implements
+        SSECustomerKeyProvider {
     /** The name of the bucket containing the object to retrieve */
     private String bucketName;
 
@@ -802,13 +802,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
         this.isRequesterPays = isRequesterPays;
     }
 
-    /**
-     * Returns the optional customer-provided server-side encryption key to use
-     * to decrypt this object.
-     *
-     * @return The optional customer-provided server-side encryption key to
-     *         use to decrypt this object.
-     */
+    @Override
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

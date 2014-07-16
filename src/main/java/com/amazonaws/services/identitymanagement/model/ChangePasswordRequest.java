@@ -26,45 +26,60 @@ import com.amazonaws.AmazonWebServiceRequest;
  * affected by this action. For information about modifying passwords,
  * see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
- * .
+ * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest)
  */
 public class ChangePasswordRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The IAM users's current password.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     */
     private String oldPassword;
 
+    /**
+     * The new password. The new password must conform to the AWS account's
+     * password policy, if one exists.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
+     */
     private String newPassword;
 
     /**
-     * Returns the value of the OldPassword property for this object.
+     * The IAM users's current password.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The value of the OldPassword property for this object.
+     * @return The IAM users's current password.
      */
     public String getOldPassword() {
         return oldPassword;
     }
     
     /**
-     * Sets the value of the OldPassword property for this object.
+     * The IAM users's current password.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param oldPassword The new value for the OldPassword property for this object.
+     * @param oldPassword The IAM users's current password.
      */
     public void setOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
     }
     
     /**
-     * Sets the value of the OldPassword property for this object.
+     * The IAM users's current password.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -72,7 +87,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param oldPassword The new value for the OldPassword property for this object.
+     * @param oldPassword The IAM users's current password.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -83,33 +98,38 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Returns the value of the NewPassword property for this object.
+     * The new password. The new password must conform to the AWS account's
+     * password policy, if one exists.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The value of the NewPassword property for this object.
+     * @return The new password. The new password must conform to the AWS account's
+     *         password policy, if one exists.
      */
     public String getNewPassword() {
         return newPassword;
     }
     
     /**
-     * Sets the value of the NewPassword property for this object.
+     * The new password. The new password must conform to the AWS account's
+     * password policy, if one exists.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param newPassword The new value for the NewPassword property for this object.
+     * @param newPassword The new password. The new password must conform to the AWS account's
+     *         password policy, if one exists.
      */
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
     }
     
     /**
-     * Sets the value of the NewPassword property for this object.
+     * The new password. The new password must conform to the AWS account's
+     * password policy, if one exists.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -117,7 +137,8 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param newPassword The new value for the NewPassword property for this object.
+     * @param newPassword The new password. The new password must conform to the AWS account's
+     *         password policy, if one exists.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

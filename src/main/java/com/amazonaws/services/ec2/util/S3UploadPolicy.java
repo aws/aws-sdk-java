@@ -25,7 +25,7 @@ import java.util.SimpleTimeZone;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.commons.codec.binary.Base64;
+import com.amazonaws.util.Base64;
 
 /**
  * This class represents S3 upload policy. Policy string representation and
@@ -118,8 +118,8 @@ public class S3UploadPolicy {
         return base64Encode(mac.doFinal(base64EncodedPolicy.getBytes()));
     }
 
-    private String base64Encode(byte [] data) throws UnsupportedEncodingException {
-        return new String(Base64.encodeBase64(data), "UTF-8").replaceAll("\\s", "");
+    private String base64Encode(byte [] data) {
+        return Base64.encodeAsString(data).replaceAll("\\s", "");
     }
 
 }

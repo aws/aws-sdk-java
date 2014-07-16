@@ -25,8 +25,8 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
-public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
-
+public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
+        implements SSECustomerKeyProvider {
     /**
      * The name of the bucket in which to create the new multipart upload, and
      * hence, the eventual object created from the multipart upload.
@@ -400,13 +400,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
         return this;
     }
 
-    /**
-     * Returns the optional customer-provided server-side encryption key to use to
-     * encrypt the upload being started.
-     *
-     * @return The optional customer-provided server-side encryption key to use
-     *         to encrypt the upload being started.
-     */
+    @Override
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

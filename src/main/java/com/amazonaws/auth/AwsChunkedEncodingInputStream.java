@@ -195,7 +195,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
      * The readlimit parameter is ignored.
      */
     @Override
-    public synchronized void mark(int readlimit) {
+    public void mark(int readlimit) {
         abortIfNeeded();
         if ( !isAtStart )
             throw new UnsupportedOperationException("Chunk-encoded stream only supports mark() at the start of the stream.");
@@ -220,7 +220,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
      * buffer created by this class.
      */
     @Override
-    public synchronized void reset() throws IOException {
+    public void reset() throws IOException {
         abortIfNeeded();
         // Clear up any encoded data
         currentChunkIterator = null;

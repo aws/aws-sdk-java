@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.apache.commons.codec.binary.Base64;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.handlers.AbstractRequestHandler;
@@ -35,6 +33,7 @@ import com.amazonaws.services.ec2.model.Reservation;
 import com.amazonaws.services.ec2.model.RunInstancesRequest;
 import com.amazonaws.services.ec2.model.RunInstancesResult;
 import com.amazonaws.services.ec2.model.SpotInstanceRequest;
+import com.amazonaws.util.Base64;
 import com.amazonaws.util.TimingInfo;
 
 public class EC2RequestHandler extends AbstractRequestHandler {
@@ -44,7 +43,7 @@ public class EC2RequestHandler extends AbstractRequestHandler {
         if (originalRequest instanceof ImportKeyPairRequest) {
             ImportKeyPairRequest importKeyPairRequest = (ImportKeyPairRequest)originalRequest;
             String publicKeyMaterial = importKeyPairRequest.getPublicKeyMaterial();
-            String encodedKeyMaterial = new String(Base64.encodeBase64(publicKeyMaterial.getBytes()));
+            String encodedKeyMaterial = Base64.encodeAsString(publicKeyMaterial.getBytes());
             request.addParameter("PublicKeyMaterial", encodedKeyMaterial);
         }
 

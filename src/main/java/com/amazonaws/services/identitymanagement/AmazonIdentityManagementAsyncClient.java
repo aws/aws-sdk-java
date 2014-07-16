@@ -356,7 +356,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Deletes the specified AWS account alias. For information about using
      * an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param deleteAccountAliasRequest Container for the necessary
@@ -391,7 +391,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Deletes the specified AWS account alias. For information about using
      * an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param deleteAccountAliasRequest Container for the necessary
@@ -766,21 +766,21 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Adds (or updates) a policy document associated with the specified
      * user. For information about policies, refer to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the number of policies you can
      * associate with a user, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use
      * POST rather than GET when calling PutUserPolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in
-     * Using IAM.
+     * about using the Query API with IAM, go to Making Query Requests in the
+     * Using IAM guide.
      * </p>
      *
      * @param putUserPolicyRequest Container for the necessary parameters to
@@ -813,21 +813,21 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Adds (or updates) a policy document associated with the specified
      * user. For information about policies, refer to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the number of policies you can
      * associate with a user, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use
      * POST rather than GET when calling PutUserPolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in
-     * Using IAM.
+     * about using the Query API with IAM, go to Making Query Requests in the
+     * Using IAM guide.
      * </p>
      *
      * @param putUserPolicyRequest Container for the necessary parameters to
@@ -1122,8 +1122,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing
      * a server certificate's path or name. For more information, see
-     * Managing Server Certificates in Using AWS Identity and Access
-     * Management.
+     * Managing Server Certificates in the Using IAM guide.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a server certificate name the requester must
@@ -1168,8 +1167,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing
      * a server certificate's path or name. For more information, see
-     * Managing Server Certificates in Using AWS Identity and Access
-     * Management.
+     * Managing Server Certificates in the Using IAM guide.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a server certificate name the requester must
@@ -1226,7 +1224,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing
      * a user's path or name. For more information, see Renaming Users and
-     * Groups in Using AWS Identity and Access Management.
+     * Groups in the Using IAM guide.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a user name the requester must have appropriate
@@ -1268,7 +1266,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing
      * a user's path or name. For more information, see Renaming Users and
-     * Groups in Using AWS Identity and Access Management.
+     * Groups in the Using IAM guide.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a user name the requester must have appropriate
@@ -1320,21 +1318,21 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Adds (or updates) a policy document associated with the specified
      * role. For information about policies, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the policies you can associate with a
      * role, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use
      * POST rather than GET when calling PutRolePolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in
-     * Using IAM.
+     * about using the Query API with IAM, go to Making Query Requests in the
+     * Using IAM guide.
      * </p>
      *
      * @param putRolePolicyRequest Container for the necessary parameters to
@@ -1367,21 +1365,21 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Adds (or updates) a policy document associated with the specified
      * role. For information about policies, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the policies you can associate with a
      * role, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use
      * POST rather than GET when calling PutRolePolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
-     * about using the Query API with IAM, go to Making Query Requests in
-     * Using IAM.
+     * about using the Query API with IAM, go to Making Query Requests in the
+     * Using IAM guide.
      * </p>
      *
      * @param putRolePolicyRequest Container for the necessary parameters to
@@ -1438,7 +1436,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about rotating certificates, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateSigningCertificateRequest Container for the necessary
@@ -1485,7 +1483,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about rotating certificates, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateSigningCertificateRequest Container for the necessary
@@ -1694,7 +1692,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing
      * a group's path or name. For more information, see Renaming Users and
-     * Groups in Using AWS Identity and Access Management.
+     * Groups in the Using IAM guide.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a group name the requester must have
@@ -1737,7 +1735,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing
      * a group's path or name. For more information, see Renaming Users and
-     * Groups in Using AWS Identity and Access Management.
+     * Groups in the Using IAM guide.
      * </p>
      * <p>
      * <b>NOTE:</b>To change a group name the requester must have
@@ -1793,7 +1791,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about limitations on the number of users you can
      * create, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createUserRequest Container for the necessary parameters to
@@ -1828,7 +1826,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about limitations on the number of users you can
      * create, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createUserRequest Container for the necessary parameters to
@@ -1959,6 +1957,88 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
               }
               asyncHandler.onSuccess(deleteSAMLProviderRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Retrieves a credential report for the AWS account. For more
+     * information about the credential report, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param getCredentialReportRequest Container for the necessary
+     *           parameters to execute the GetCredentialReport operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCredentialReport service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCredentialReportResult> getCredentialReportAsync(final GetCredentialReportRequest getCredentialReportRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCredentialReportResult>() {
+            public GetCredentialReportResult call() throws Exception {
+                return getCredentialReport(getCredentialReportRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Retrieves a credential report for the AWS account. For more
+     * information about the credential report, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param getCredentialReportRequest Container for the necessary
+     *           parameters to execute the GetCredentialReport operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetCredentialReport service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetCredentialReportResult> getCredentialReportAsync(
+            final GetCredentialReportRequest getCredentialReportRequest,
+            final AsyncHandler<GetCredentialReportRequest, GetCredentialReportResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetCredentialReportResult>() {
+            public GetCredentialReportResult call() throws Exception {
+              GetCredentialReportResult result;
+                try {
+                result = getCredentialReport(getCredentialReportRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getCredentialReportRequest, result);
+                 return result;
         }
     });
     }
@@ -2287,7 +2367,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about the number of server certificates you can
      * upload, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because the body of the public key certificate, private
@@ -2296,7 +2376,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * about setting up signatures and authorization through the API, go to
      * Signing AWS API Requests in the AWS General Reference. For general
      * information about using the Query API with IAM, go to Making Query
-     * Requests in Using IAM.
+     * Requests in the Using IAM guide.
      * </p>
      *
      * @param uploadServerCertificateRequest Container for the necessary
@@ -2335,7 +2415,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about the number of server certificates you can
      * upload, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because the body of the public key certificate, private
@@ -2344,7 +2424,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * about setting up signatures and authorization through the API, go to
      * Signing AWS API Requests in the AWS General Reference. For general
      * information about using the Query API with IAM, go to Making Query
-     * Requests in Using IAM.
+     * Requests in the Using IAM guide.
      * </p>
      *
      * @param uploadServerCertificateRequest Container for the necessary
@@ -2394,7 +2474,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about the number of groups you can create, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createGroupRequest Container for the necessary parameters to
@@ -2428,7 +2508,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about the number of groups you can create, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createGroupRequest Container for the necessary parameters to
@@ -2474,7 +2554,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * This action creates an alias for your AWS account. For information
      * about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createAccountAliasRequest Container for the necessary
@@ -2509,7 +2589,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * This action creates an alias for your AWS account. For information
      * about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createAccountAliasRequest Container for the necessary
@@ -2699,6 +2779,88 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
               }
               asyncHandler.onSuccess(deactivateMFADeviceRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Generates a credential report for the AWS account. For more
+     * information about the credential report, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param generateCredentialReportRequest Container for the necessary
+     *           parameters to execute the GenerateCredentialReport operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GenerateCredentialReport service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GenerateCredentialReportResult> generateCredentialReportAsync(final GenerateCredentialReportRequest generateCredentialReportRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GenerateCredentialReportResult>() {
+            public GenerateCredentialReportResult call() throws Exception {
+                return generateCredentialReport(generateCredentialReportRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Generates a credential report for the AWS account. For more
+     * information about the credential report, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html"> Getting Credential Reports </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     *
+     * @param generateCredentialReportRequest Container for the necessary
+     *           parameters to execute the GenerateCredentialReport operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GenerateCredentialReport service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GenerateCredentialReportResult> generateCredentialReportAsync(
+            final GenerateCredentialReportRequest generateCredentialReportRequest,
+            final AsyncHandler<GenerateCredentialReportRequest, GenerateCredentialReportResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GenerateCredentialReportResult>() {
+            public GenerateCredentialReportResult call() throws Exception {
+              GenerateCredentialReportResult result;
+                try {
+                result = generateCredentialReport(generateCredentialReportRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(generateCredentialReportRequest, result);
+                 return result;
         }
     });
     }
@@ -2986,7 +3148,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about limits on the number of keys you can create,
      * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>To ensure the security of your AWS account, the
@@ -3038,7 +3200,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about limits on the number of keys you can create,
      * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>To ensure the security of your AWS account, the
@@ -3336,13 +3498,13 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Creates a new virtual MFA device for the AWS account. After creating
      * the virtual MFA, use
      * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the number of MFA devices you can
      * create, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>The seed information contained in the QR code and
@@ -3383,13 +3545,13 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Creates a new virtual MFA device for the AWS account. After creating
      * the virtual MFA, use
      * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the number of MFA devices you can
      * create, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>The seed information contained in the QR code and
@@ -3547,7 +3709,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about rotating keys, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM </i> guide.
      * </p>
      *
      * @param updateAccessKeyRequest Container for the necessary parameters
@@ -3592,7 +3754,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about rotating keys, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM </i> guide.
      * </p>
      *
      * @param updateAccessKeyRequest Container for the necessary parameters
@@ -3788,7 +3950,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Lists the account aliases associated with the account. For
      * information about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -3826,7 +3988,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Lists the account aliases associated with the account. For
      * information about using an AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -4248,7 +4410,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about setting up signatures and authorization through
      * the API, go to Signing AWS API Requests in the AWS General Reference.
      * For general information about using the Query API with IAM, go to
-     * Making Query Requests in Using IAM.
+     * Making Query Requests in the Using IAMguide.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -4298,7 +4460,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about setting up signatures and authorization through
      * the API, go to Signing AWS API Requests in the AWS General Reference.
      * For general information about using the Query API with IAM, go to
-     * Making Query Requests in Using IAM.
+     * Making Query Requests in the Using IAMguide.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -4443,6 +4605,98 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Creates a new role for your AWS account. For more information about
+     * roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * The example policy grants permission to an EC2 instance to assume the
+     * role. The policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to
+     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+     * .
+     * </p>
+     *
+     * @param createRoleRequest Container for the necessary parameters to
+     *           execute the CreateRole operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateRole service method, as returned by AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateRoleResult> createRoleAsync(final CreateRoleRequest createRoleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateRoleResult>() {
+            public CreateRoleResult call() throws Exception {
+                return createRole(createRoleRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates a new role for your AWS account. For more information about
+     * roles, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * The example policy grants permission to an EC2 instance to assume the
+     * role. The policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to
+     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
+     * .
+     * </p>
+     *
+     * @param createRoleRequest Container for the necessary parameters to
+     *           execute the CreateRole operation on AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateRole service method, as returned by AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateRoleResult> createRoleAsync(
+            final CreateRoleRequest createRoleRequest,
+            final AsyncHandler<CreateRoleRequest, CreateRoleResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateRoleResult>() {
+            public CreateRoleResult call() throws Exception {
+              CreateRoleResult result;
+                try {
+                result = createRole(createRoleRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createRoleRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Returns the SAML provider metadocument that was uploaded when the
      * provider was created or updated.
      * </p>
@@ -4518,98 +4772,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             throw ex;
               }
               asyncHandler.onSuccess(getSAMLProviderRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
-     * Creates a new role for your AWS account. For more information about
-     * roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
-     * </p>
-     * <p>
-     * The example policy grants permission to an EC2 instance to assume the
-     * role. The policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
-     * </p>
-     *
-     * @param createRoleRequest Container for the necessary parameters to
-     *           execute the CreateRole operation on AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateRole service method, as returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateRoleResult> createRoleAsync(final CreateRoleRequest createRoleRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateRoleResult>() {
-            public CreateRoleResult call() throws Exception {
-                return createRole(createRoleRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Creates a new role for your AWS account. For more information about
-     * roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Working with Roles </a> . For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
-     * </p>
-     * <p>
-     * The example policy grants permission to an EC2 instance to assume the
-     * role. The policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * <a href="http://www.faqs.org/rfcs/rfc3986.html"> http://www.faqs.org/rfcs/rfc3986.html </a>
-     * .
-     * </p>
-     *
-     * @param createRoleRequest Container for the necessary parameters to
-     *           execute the CreateRole operation on AmazonIdentityManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateRole service method, as returned by AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateRoleResult> createRoleAsync(
-            final CreateRoleRequest createRoleRequest,
-            final AsyncHandler<CreateRoleRequest, CreateRoleResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateRoleResult>() {
-            public CreateRoleResult call() throws Exception {
-              CreateRoleResult result;
-                try {
-                result = createRole(createRoleRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(createRoleRequest, result);
                  return result;
         }
     });
@@ -4792,7 +4954,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * affected by this action. For information about modifying passwords,
      * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
-     * .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param changePasswordRequest Container for the necessary parameters to
@@ -4828,7 +4990,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * affected by this action. For information about modifying passwords,
      * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
-     * .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param changePasswordRequest Container for the necessary parameters to
@@ -4950,13 +5112,13 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Adds (or updates) a policy document associated with the specified
      * group. For information about policies, refer to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the number of policies you can
      * associate with a group, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use
@@ -4964,7 +5126,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * about setting up signatures and authorization through the API, go to
      * Signing AWS API Requests in the AWS General Reference. For general
      * information about using the Query API with IAM, go to Making Query
-     * Requests in Using IAM.
+     * Requests in the Using IAM guide.
      * </p>
      *
      * @param putGroupPolicyRequest Container for the necessary parameters to
@@ -4998,13 +5160,13 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Adds (or updates) a policy document associated with the specified
      * group. For information about policies, refer to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * For information about limits on the number of policies you can
      * associate with a group, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use
@@ -5012,7 +5174,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * about setting up signatures and authorization through the API, go to
      * Signing AWS API Requests in the AWS General Reference. For general
      * information about using the Query API with IAM, go to Making Query
-     * Requests in Using IAM.
+     * Requests in the Using IAM guide.
      * </p>
      *
      * @param putGroupPolicyRequest Container for the necessary parameters to
@@ -5944,7 +6106,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about the number of instance profiles you can create,
      * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createInstanceProfileRequest Container for the necessary
@@ -5984,7 +6146,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * For information about the number of instance profiles you can create,
      * see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createInstanceProfileRequest Container for the necessary
@@ -6119,7 +6281,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * ability to access AWS services through the AWS Management Console. For
      * more information about managing passwords, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
-     * in <i>Using IAM</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createLoginProfileRequest Container for the necessary
@@ -6154,7 +6316,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * ability to access AWS services through the AWS Management Console. For
      * more information about managing passwords, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
-     * in <i>Using IAM</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param createLoginProfileRequest Container for the necessary
@@ -6300,9 +6462,9 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     /**
      * <p>
      * Updates the password policy settings for the account. For more
-     * information about using a password policy, go to
+     * information about using a password policy, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a>
-     * .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateAccountPasswordPolicyRequest Container for the necessary
@@ -6335,9 +6497,9 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     /**
      * <p>
      * Updates the password policy settings for the account. For more
-     * information about using a password policy, go to
+     * information about using a password policy, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a>
-     * .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateAccountPasswordPolicyRequest Container for the necessary
@@ -6653,7 +6815,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about limitations on IAM entities, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param getAccountSummaryRequest Container for the necessary parameters
@@ -6690,7 +6852,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * For information about limitations on IAM entities, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in <i>Using AWS Identity and Access Management</i> .
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param getAccountSummaryRequest Container for the necessary parameters

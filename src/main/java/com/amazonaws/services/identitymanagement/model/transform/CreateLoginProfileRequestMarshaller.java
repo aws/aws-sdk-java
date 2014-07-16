@@ -47,6 +47,9 @@ public class CreateLoginProfileRequestMarshaller implements Marshaller<Request<C
         if (createLoginProfileRequest.getPassword() != null) {
             request.addParameter("Password", StringUtils.fromString(createLoginProfileRequest.getPassword()));
         }
+        if (createLoginProfileRequest.isPasswordResetRequired() != null) {
+            request.addParameter("PasswordResetRequired", StringUtils.fromBoolean(createLoginProfileRequest.isPasswordResetRequired()));
+        }
 
         return request;
     }

@@ -35,9 +35,8 @@ public class VirtualMFADevice implements Serializable {
 
     /**
      * The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt"
-     * target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
-     * Base64-encoded.
+     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is Base64-encoded.
      */
     private java.nio.ByteBuffer base32StringSeed;
 
@@ -108,14 +107,12 @@ public class VirtualMFADevice implements Serializable {
 
     /**
      * The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt"
-     * target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
-     * Base64-encoded.
+     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is Base64-encoded.
      *
      * @return The Base32 seed defined as specified in <a
-     *         href="http://www.ietf.org/rfc/rfc3548.txt"
-     *         target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
-     *         Base64-encoded.
+     *         href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     *         <code>Base32StringSeed</code> is Base64-encoded.
      */
     public java.nio.ByteBuffer getBase32StringSeed() {
         return base32StringSeed;
@@ -123,14 +120,12 @@ public class VirtualMFADevice implements Serializable {
     
     /**
      * The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt"
-     * target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
-     * Base64-encoded.
+     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is Base64-encoded.
      *
      * @param base32StringSeed The Base32 seed defined as specified in <a
-     *         href="http://www.ietf.org/rfc/rfc3548.txt"
-     *         target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
-     *         Base64-encoded.
+     *         href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     *         <code>Base32StringSeed</code> is Base64-encoded.
      */
     public void setBase32StringSeed(java.nio.ByteBuffer base32StringSeed) {
         this.base32StringSeed = base32StringSeed;
@@ -138,16 +133,14 @@ public class VirtualMFADevice implements Serializable {
     
     /**
      * The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt"
-     * target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
-     * Base64-encoded.
+     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is Base64-encoded.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param base32StringSeed The Base32 seed defined as specified in <a
-     *         href="http://www.ietf.org/rfc/rfc3548.txt"
-     *         target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
-     *         Base64-encoded.
+     *         href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     *         <code>Base32StringSeed</code> is Base64-encoded.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

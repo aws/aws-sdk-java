@@ -91,6 +91,9 @@ public class DescribeCasesRequestMarshaller implements Marshaller<Request<Descri
             if (describeCasesRequest.getLanguage() != null) {
                 jsonWriter.key("language").value(describeCasesRequest.getLanguage());
             }
+            if (describeCasesRequest.isIncludeCommunications() != null) {
+                jsonWriter.key("includeCommunications").value(describeCasesRequest.isIncludeCommunications());
+            }
 
           jsonWriter.endObject();
 

@@ -45,6 +45,8 @@ public class Communication implements Serializable {
      */
     private String timeCreated;
 
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails> attachmentSet;
+
     /**
      * The AWS Support case ID requested or returned in the call. The case ID
      * is an alphanumeric string formatted as shown in this example:
@@ -190,6 +192,74 @@ public class Communication implements Serializable {
     }
 
     /**
+     * Returns the value of the AttachmentSet property for this object.
+     *
+     * @return The value of the AttachmentSet property for this object.
+     */
+    public java.util.List<AttachmentDetails> getAttachmentSet() {
+        if (attachmentSet == null) {
+              attachmentSet = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails>();
+              attachmentSet.setAutoConstruct(true);
+        }
+        return attachmentSet;
+    }
+    
+    /**
+     * Sets the value of the AttachmentSet property for this object.
+     *
+     * @param attachmentSet The new value for the AttachmentSet property for this object.
+     */
+    public void setAttachmentSet(java.util.Collection<AttachmentDetails> attachmentSet) {
+        if (attachmentSet == null) {
+            this.attachmentSet = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails> attachmentSetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails>(attachmentSet.size());
+        attachmentSetCopy.addAll(attachmentSet);
+        this.attachmentSet = attachmentSetCopy;
+    }
+    
+    /**
+     * Sets the value of the AttachmentSet property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachmentSet The new value for the AttachmentSet property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Communication withAttachmentSet(AttachmentDetails... attachmentSet) {
+        if (getAttachmentSet() == null) setAttachmentSet(new java.util.ArrayList<AttachmentDetails>(attachmentSet.length));
+        for (AttachmentDetails value : attachmentSet) {
+            getAttachmentSet().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the AttachmentSet property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attachmentSet The new value for the AttachmentSet property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Communication withAttachmentSet(java.util.Collection<AttachmentDetails> attachmentSet) {
+        if (attachmentSet == null) {
+            this.attachmentSet = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails> attachmentSetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttachmentDetails>(attachmentSet.size());
+            attachmentSetCopy.addAll(attachmentSet);
+            this.attachmentSet = attachmentSetCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -204,7 +274,8 @@ public class Communication implements Serializable {
         if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");
         if (getBody() != null) sb.append("Body: " + getBody() + ",");
         if (getSubmittedBy() != null) sb.append("SubmittedBy: " + getSubmittedBy() + ",");
-        if (getTimeCreated() != null) sb.append("TimeCreated: " + getTimeCreated() );
+        if (getTimeCreated() != null) sb.append("TimeCreated: " + getTimeCreated() + ",");
+        if (getAttachmentSet() != null) sb.append("AttachmentSet: " + getAttachmentSet() );
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +289,7 @@ public class Communication implements Serializable {
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode()); 
         hashCode = prime * hashCode + ((getSubmittedBy() == null) ? 0 : getSubmittedBy().hashCode()); 
         hashCode = prime * hashCode + ((getTimeCreated() == null) ? 0 : getTimeCreated().hashCode()); 
+        hashCode = prime * hashCode + ((getAttachmentSet() == null) ? 0 : getAttachmentSet().hashCode()); 
         return hashCode;
     }
     
@@ -237,6 +309,8 @@ public class Communication implements Serializable {
         if (other.getSubmittedBy() != null && other.getSubmittedBy().equals(this.getSubmittedBy()) == false) return false; 
         if (other.getTimeCreated() == null ^ this.getTimeCreated() == null) return false;
         if (other.getTimeCreated() != null && other.getTimeCreated().equals(this.getTimeCreated()) == false) return false; 
+        if (other.getAttachmentSet() == null ^ this.getAttachmentSet() == null) return false;
+        if (other.getAttachmentSet() != null && other.getAttachmentSet().equals(this.getAttachmentSet()) == false) return false; 
         return true;
     }
     

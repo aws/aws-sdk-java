@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to access AWS services through the AWS Management Console. For more
  * information about managing passwords, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
- * in <i>Using IAM</i> .
+ * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createLoginProfile(CreateLoginProfileRequest)
@@ -42,13 +42,19 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
     private String userName;
 
     /**
-     * The new password for the user name.
+     * The new password for the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      */
     private String password;
+
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     */
+    private Boolean passwordResetRequired;
 
     /**
      * Default constructor for a new CreateLoginProfileRequest object.  Callers should use the
@@ -62,7 +68,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param userName Name of the user to create a password for.
-     * @param password The new password for the user name.
+     * @param password The new password for the user.
      */
     public CreateLoginProfileRequest(String userName, String password) {
         setUserName(userName);
@@ -115,33 +121,33 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The new password for the user name.
+     * The new password for the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The new password for the user name.
+     * @return The new password for the user.
      */
     public String getPassword() {
         return password;
     }
     
     /**
-     * The new password for the user name.
+     * The new password for the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param password The new password for the user name.
+     * @param password The new password for the user.
      */
     public void setPassword(String password) {
         this.password = password;
     }
     
     /**
-     * The new password for the user name.
+     * The new password for the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -149,7 +155,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param password The new password for the user name.
+     * @param password The new password for the user.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -157,6 +163,56 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
     public CreateLoginProfileRequest withPassword(String password) {
         this.password = password;
         return this;
+    }
+
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     *
+     * @return Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     */
+    public Boolean isPasswordResetRequired() {
+        return passwordResetRequired;
+    }
+    
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     *
+     * @param passwordResetRequired Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     */
+    public void setPasswordResetRequired(Boolean passwordResetRequired) {
+        this.passwordResetRequired = passwordResetRequired;
+    }
+    
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param passwordResetRequired Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateLoginProfileRequest withPasswordResetRequired(Boolean passwordResetRequired) {
+        this.passwordResetRequired = passwordResetRequired;
+        return this;
+    }
+
+    /**
+     * Specifies whether the user is required to set a new password on next
+     * sign-in.
+     *
+     * @return Specifies whether the user is required to set a new password on next
+     *         sign-in.
+     */
+    public Boolean getPasswordResetRequired() {
+        return passwordResetRequired;
     }
 
     /**
@@ -172,7 +228,8 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
-        if (getPassword() != null) sb.append("Password: " + getPassword() );
+        if (getPassword() != null) sb.append("Password: " + getPassword() + ",");
+        if (isPasswordResetRequired() != null) sb.append("PasswordResetRequired: " + isPasswordResetRequired() );
         sb.append("}");
         return sb.toString();
     }
@@ -184,6 +241,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
         
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode()); 
+        hashCode = prime * hashCode + ((isPasswordResetRequired() == null) ? 0 : isPasswordResetRequired().hashCode()); 
         return hashCode;
     }
     
@@ -199,6 +257,8 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
         if (other.getPassword() == null ^ this.getPassword() == null) return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false) return false; 
+        if (other.isPasswordResetRequired() == null ^ this.isPasswordResetRequired() == null) return false;
+        if (other.isPasswordResetRequired() != null && other.isPasswordResetRequired().equals(this.isPasswordResetRequired()) == false) return false; 
         return true;
     }
     

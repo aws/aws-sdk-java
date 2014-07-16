@@ -47,6 +47,9 @@ public class UpdateLoginProfileRequestMarshaller implements Marshaller<Request<U
         if (updateLoginProfileRequest.getPassword() != null) {
             request.addParameter("Password", StringUtils.fromString(updateLoginProfileRequest.getPassword()));
         }
+        if (updateLoginProfileRequest.isPasswordResetRequired() != null) {
+            request.addParameter("PasswordResetRequired", StringUtils.fromBoolean(updateLoginProfileRequest.isPasswordResetRequired()));
+        }
 
         return request;
     }

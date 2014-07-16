@@ -5123,29 +5123,6 @@ public interface AmazonEC2 {
     
     /**
      * <p>
-     * Deletes a security group.
-     * </p>
-     * <p>
-     * If you attempt to delete a security group that is associated with an
-     * instance, or is referenced by another security group, the operation
-     * fails with <code>InvalidGroup.InUse</code> in EC2-Classic or
-     * <code>DependencyViolation</code> in EC2-VPC.
-     * </p>
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteSecurityGroup() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * Describes the Spot Price history. Spot Instances are instances that
      * Amazon EC2 starts on your behalf when the maximum price that you
      * specify exceeds the current Spot Price. Amazon EC2 periodically sets
@@ -5243,30 +5220,6 @@ public interface AmazonEC2 {
     
     /**
      * <p>
-     * Creates an import volume task using metadata from the specified disk
-     * image. After importing the image, you then upload it using the
-     * ec2-import-volume command in the Amazon EC2 command-line interface
-     * (CLI) tools. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
-     * </p>
-     * 
-     * @return The response from the ImportVolume service method, as returned
-     *         by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ImportVolumeResult importVolume() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * Describes one or more of your security groups.
      * </p>
      * <p>
@@ -5289,28 +5242,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeSecurityGroupsResult describeSecurityGroups() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Rejects a VPC peering connection request. The VPC peering connection
-     * must be in the <code>pending-acceptance</code> state. Use the
-     * <code>DescribeVpcPeeringConnections</code> request to view your
-     * outstanding VPC peering connection requests.
-     * </p>
-     * 
-     * @return The response from the RejectVpcPeeringConnection service
-     *         method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RejectVpcPeeringConnectionResult rejectVpcPeeringConnection() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -5586,28 +5517,6 @@ public interface AmazonEC2 {
     
     /**
      * <p>
-     * Submits feedback about the status of an instance. The instance must
-     * be in the <code>running</code> state. If your experience with the
-     * instance differs from the instance status returned by
-     * DescribeInstanceStatus, use ReportInstanceStatus to report your
-     * experience with the instance. Amazon EC2 collects this information to
-     * improve the accuracy of status checks.
-     * </p>
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void reportInstanceStatus() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * Describes one or more of your route tables.
      * </p>
      * <p>
@@ -5731,29 +5640,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void revokeSecurityGroupIngress() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Deletes a VPC peering connection. Either the owner of the requester
-     * VPC or the owner of the peer VPC can delete the VPC peering connection
-     * if it's in the <code>active</code> state. The owner of the requester
-     * VPC can delete a VPC peering connection in the
-     * <code>pending-acceptance</code> state.
-     * </p>
-     * 
-     * @return The response from the DeleteVpcPeeringConnection service
-     *         method, as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteVpcPeeringConnectionResult deleteVpcPeeringConnection() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -5923,46 +5809,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeImagesResult describeImages() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Adds one or more ingress rules to a security group.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per
-     * group. EC2-VPC: You can have up to 50 rules per group (covering both
-     * ingress and egress rules).
-     * </p>
-     * <p>
-     * Rule changes are propagated to instances within the security group as
-     * quickly as possible. However, a small delay might occur.
-     * </p>
-     * <p>
-     * [EC2-Classic] This action gives one or more CIDR IP address ranges
-     * permission to access a security group in your account, or gives one or
-     * more security groups (called the <i>source groups</i> ) permission to
-     * access a security group for your account. A source group can be for
-     * your own AWS account, or another.
-     * </p>
-     * <p>
-     * [EC2-VPC] This action gives one or more CIDR IP address ranges
-     * permission to access a security group in your VPC, or gives one or
-     * more other security groups (called the <i>source groups</i> )
-     * permission to access a security group for your VPC. The security
-     * groups must all be for the same VPC.
-     * </p>
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void authorizeSecurityGroupIngress() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -6298,28 +6144,6 @@ public interface AmazonEC2 {
     
     /**
      * <p>
-     * Disassociates an Elastic IP address from the instance or network
-     * interface it's associated with.
-     * </p>
-     * <p>
-     * This is an idempotent operation. If you perform the operation more
-     * than once, Amazon EC2 doesn't return an error.
-     * </p>
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void disassociateAddress() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * Acquires an Elastic IP address.
      * </p>
      * <p>
@@ -6342,42 +6166,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public AllocateAddressResult allocateAddress() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Releases the specified Elastic IP address.
-     * </p>
-     * <p>
-     * After releasing an Elastic IP address, it is released to the IP
-     * address pool and might be unavailable to you. Be sure to update your
-     * DNS records and any servers or devices that communicate with the
-     * address. If you attempt to release an Elastic IP address that you
-     * already released, you'll get an <code>AuthFailure</code> error if the
-     * address is already allocated to another AWS account.
-     * </p>
-     * <p>
-     * [EC2-Classic, default VPC] Releasing an Elastic IP address
-     * automatically disassociates it from any instance that it's associated
-     * with. To disassociate an Elastic IP address without releasing it, use
-     * DisassociateAddress.
-     * </p>
-     * <p>
-     * [Nondefault VPC] You must use the DisassociateAddress to disassociate
-     * the Elastic IP address before you try to release it. Otherwise, Amazon
-     * EC2 returns an error ( <code>InvalidIPAddress.InUse</code> ).
-     * </p>
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void releaseAddress() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -6446,51 +6234,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeSnapshotsResult describeSnapshots() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Registers an AMI. When you're creating an AMI, this is the final step
-     * you must complete before you can launch an instance from the AMI. For
-     * more information about creating AMIs, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"> Creating Your Own AMIs </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b> For Amazon EBS-backed instances, CreateImage creates and
-     * registers the AMI in a single request, so you don't have to register
-     * the AMI yourself.
-     * </p>
-     * <p>
-     * You can also use <code>RegisterImage</code> to create an Amazon
-     * EBS-backed AMI from a snapshot of a root device volume. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html"> Launching an Instance from a Snapshot </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
-     * </p>
-     * <p>
-     * If needed, you can deregister an AMI at any time. Any modifications
-     * you make to an AMI backed by an instance store volume invalidates its
-     * registration. If you make changes to an image, deregister the previous
-     * image and register the new image.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> You can't register an image where a secondary (non-root)
-     * snapshot has AWS Marketplace product codes.
-     * </p>
-     * 
-     * @return The response from the RegisterImage service method, as
-     *         returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public RegisterImageResult registerImage() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Checks whether you have the required permissions for the provided

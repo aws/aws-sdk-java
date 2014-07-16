@@ -26,13 +26,13 @@ import com.amazonaws.services.s3.AmazonS3Client;
 public class Constants {
 
     /** Default hostname for the S3 service endpoint */
-    public static String S3_HOSTNAME = "s3.amazonaws.com";
+    public static final String S3_HOSTNAME = "s3.amazonaws.com";
 
     /** Service name for Amazon S3 */
-    public static String S3_SERVICE_NAME = "Amazon S3";
+    public static final String S3_SERVICE_NAME = "Amazon S3";
 
     /** Default encoding used for text data */
-    public static String DEFAULT_ENCODING = "UTF-8";
+    public static final String DEFAULT_ENCODING = "UTF-8";
 
     /** HMAC/SHA1 Algorithm per RFC 2104, used when signing S3 requests */
     public static final String HMAC_SHA1_ALGORITHM = "HmacSHA1";
@@ -75,7 +75,7 @@ public class Constants {
      * otherwise returns the default value.
      */
     public static int getStreamBufferSize() {
-    	int streamBufferSize = DEFAULT_STREAM_BUFFER_SIZE;
+        int streamBufferSize = DEFAULT_STREAM_BUFFER_SIZE;
         String bufferSizeOverride =
             System.getProperty(SDKGlobalConfiguration
                                    .DEFAULT_S3_STREAM_BUFFER_SIZE);

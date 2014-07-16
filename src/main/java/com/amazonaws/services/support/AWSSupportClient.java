@@ -264,8 +264,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
+        jsonErrorUnmarshallers.add(new AttachmentSetIdNotFoundExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new CaseCreationLimitExceededExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new AttachmentSetExpiredExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new AttachmentSetSizeLimitExceededExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new AttachmentLimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InternalServerErrorExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new DescribeAttachmentLimitExceededExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new AttachmentIdNotFoundExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new CaseIdNotFoundExceptionUnmarshaller());
         
         jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
@@ -284,6 +290,58 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         ClientConfiguration config = orig;
         
         return config;
+    }
+
+    /**
+     * <p>
+     * Returns the refresh status of the Trusted Advisor checks that have
+     * the specified check IDs. Check IDs can be obtained by calling
+     * DescribeTrustedAdvisorChecks.
+     * </p>
+     *
+     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
+     *           the necessary parameters to execute the
+     *           DescribeTrustedAdvisorCheckRefreshStatuses service method on
+     *           AWSSupport.
+     * 
+     * @return The response from the
+     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
+     *         by AWSSupport.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckRefreshStatusesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrustedAdvisorCheckRefreshStatusesRequest> request = null;
+        Response<DescribeTrustedAdvisorCheckRefreshStatusesResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller().marshall(describeTrustedAdvisorCheckRefreshStatusesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeTrustedAdvisorCheckRefreshStatusesResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrustedAdvisorCheckRefreshStatusesResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+            
+        return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
     }
 
     /**
@@ -346,22 +404,19 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     }
 
     /**
-     * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have
-     * the specified check IDs. Check IDs can be obtained by calling
-     * DescribeTrustedAdvisorChecks.
-     * </p>
      *
-     * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
-     *           the necessary parameters to execute the
-     *           DescribeTrustedAdvisorCheckRefreshStatuses service method on
+     * @param addAttachmentsToSetRequest Container for the necessary
+     *           parameters to execute the AddAttachmentsToSet service method on
      *           AWSSupport.
      * 
-     * @return The response from the
-     *         DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned
-     *         by AWSSupport.
+     * @return The response from the AddAttachmentsToSet service method, as
+     *         returned by AWSSupport.
      * 
+     * @throws AttachmentSetIdNotFoundException
+     * @throws AttachmentLimitExceededException
+     * @throws AttachmentSetExpiredException
      * @throws InternalServerErrorException
+     * @throws AttachmentSetSizeLimitExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -371,23 +426,23 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *             If an error response is returned by AWSSupport indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckRefreshStatusesRequest);
+    public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(addAttachmentsToSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeTrustedAdvisorCheckRefreshStatusesRequest> request = null;
-        Response<DescribeTrustedAdvisorCheckRefreshStatusesResult> response = null;
+        Request<AddAttachmentsToSetRequest> request = null;
+        Response<AddAttachmentsToSetResult> response = null;
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller().marshall(describeTrustedAdvisorCheckRefreshStatusesRequest);
+                request = new AddAttachmentsToSetRequestMarshaller().marshall(addAttachmentsToSetRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeTrustedAdvisorCheckRefreshStatusesResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrustedAdvisorCheckRefreshStatusesResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult>(unmarshaller);
+            Unmarshaller<AddAttachmentsToSetResult, JsonUnmarshallerContext> unmarshaller = new AddAttachmentsToSetResultJsonUnmarshaller();
+            JsonResponseHandler<AddAttachmentsToSetResult> responseHandler = new JsonResponseHandler<AddAttachmentsToSetResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
             
@@ -507,6 +562,164 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     }
 
     /**
+     *
+     * @param describeAttachmentRequest Container for the necessary
+     *           parameters to execute the DescribeAttachment service method on
+     *           AWSSupport.
+     * 
+     * @return The response from the DescribeAttachment service method, as
+     *         returned by AWSSupport.
+     * 
+     * @throws DescribeAttachmentLimitExceededException
+     * @throws AttachmentIdNotFoundException
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAttachmentResult describeAttachment(DescribeAttachmentRequest describeAttachmentRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAttachmentRequest> request = null;
+        Response<DescribeAttachmentResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAttachmentRequestMarshaller().marshall(describeAttachmentRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeAttachmentResult, JsonUnmarshallerContext> unmarshaller = new DescribeAttachmentResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeAttachmentResult> responseHandler = new JsonResponseHandler<DescribeAttachmentResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+            
+        return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Takes a <code>CaseId</code> and returns the initial state of the case
+     * along with the state of the case after the call to ResolveCase
+     * completed.
+     * </p>
+     *
+     * @param resolveCaseRequest Container for the necessary parameters to
+     *           execute the ResolveCase service method on AWSSupport.
+     * 
+     * @return The response from the ResolveCase service method, as returned
+     *         by AWSSupport.
+     * 
+     * @throws InternalServerErrorException
+     * @throws CaseIdNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) {
+        ExecutionContext executionContext = createExecutionContext(resolveCaseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResolveCaseRequest> request = null;
+        Response<ResolveCaseResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResolveCaseRequestMarshaller().marshall(resolveCaseRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ResolveCaseResult, JsonUnmarshallerContext> unmarshaller = new ResolveCaseResultJsonUnmarshaller();
+            JsonResponseHandler<ResolveCaseResult> responseHandler = new JsonResponseHandler<ResolveCaseResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+            
+        return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the current list of AWS services and a list of service
+     * categories that applies to each one. You then use service names and
+     * categories in your CreateCase requests. Each AWS service has its own
+     * set of categories.
+     * </p>
+     * <p>
+     * The service codes and category codes correspond to the values that
+     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
+     * lists on the AWS Support Center
+     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
+     * page. The values in those fields, however, do not necessarily match
+     * the service codes and categories returned by the
+     * <code>DescribeServices</code> request. Always use the service codes
+     * and categories obtained programmatically. This practice ensures that
+     * you always have the most recent set of service and category codes.
+     * </p>
+     *
+     * @param describeServicesRequest Container for the necessary parameters
+     *           to execute the DescribeServices service method on AWSSupport.
+     * 
+     * @return The response from the DescribeServices service method, as
+     *         returned by AWSSupport.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSupport indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeServicesRequest> request = null;
+        Response<DescribeServicesResult> response = null;
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeServicesRequestMarshaller().marshall(describeServicesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeServicesResult, JsonUnmarshallerContext> unmarshaller = new DescribeServicesResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeServicesResult> responseHandler = new JsonResponseHandler<DescribeServicesResult>(unmarshaller);
+
+            response = invoke(request, responseHandler, executionContext);
+            
+        return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
      * <p>
      * Adds additional customer communication to an AWS Support case. You
      * use the <code>CaseId</code> value to identify the case to add
@@ -531,6 +744,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @return The response from the AddCommunicationToCase service method,
      *         as returned by AWSSupport.
      * 
+     * @throws AttachmentSetIdNotFoundException
+     * @throws AttachmentSetExpiredException
      * @throws InternalServerErrorException
      * @throws CaseIdNotFoundException
      *
@@ -620,6 +835,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @return The response from the CreateCase service method, as returned
      *         by AWSSupport.
      * 
+     * @throws AttachmentSetIdNotFoundException
+     * @throws AttachmentSetExpiredException
      * @throws InternalServerErrorException
      * @throws CaseCreationLimitExceededException
      *
@@ -784,56 +1001,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
     /**
      * <p>
-     * Takes a <code>CaseId</code> and returns the initial state of the case
-     * along with the state of the case after the call to ResolveCase
-     * completed.
-     * </p>
-     *
-     * @param resolveCaseRequest Container for the necessary parameters to
-     *           execute the ResolveCase service method on AWSSupport.
-     * 
-     * @return The response from the ResolveCase service method, as returned
-     *         by AWSSupport.
-     * 
-     * @throws InternalServerErrorException
-     * @throws CaseIdNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) {
-        ExecutionContext executionContext = createExecutionContext(resolveCaseRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ResolveCaseRequest> request = null;
-        Response<ResolveCaseResult> response = null;
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ResolveCaseRequestMarshaller().marshall(resolveCaseRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            Unmarshaller<ResolveCaseResult, JsonUnmarshallerContext> unmarshaller = new ResolveCaseResultJsonUnmarshaller();
-            JsonResponseHandler<ResolveCaseResult> responseHandler = new JsonResponseHandler<ResolveCaseResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-            
-        return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
      * Requests a refresh of the Trusted Advisor check that has the
      * specified check ID. Check IDs can be obtained by calling
      * DescribeTrustedAdvisorChecks.
@@ -886,67 +1053,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             }
             Unmarshaller<RefreshTrustedAdvisorCheckResult, JsonUnmarshallerContext> unmarshaller = new RefreshTrustedAdvisorCheckResultJsonUnmarshaller();
             JsonResponseHandler<RefreshTrustedAdvisorCheckResult> responseHandler = new JsonResponseHandler<RefreshTrustedAdvisorCheckResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-            
-        return response.getAwsResponse();
-        } finally {
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Returns the current list of AWS services and a list of service
-     * categories that applies to each one. You then use service names and
-     * categories in your CreateCase requests. Each AWS service has its own
-     * set of categories.
-     * </p>
-     * <p>
-     * The service codes and category codes correspond to the values that
-     * are displayed in the <b>Service</b> and <b>Category</b> drop-down
-     * lists on the AWS Support Center
-     * <a href="https://aws.amazon.com/support/createCase"> Open a new case </a>
-     * page. The values in those fields, however, do not necessarily match
-     * the service codes and categories returned by the
-     * <code>DescribeServices</code> request. Always use the service codes
-     * and categories obtained programmatically. This practice ensures that
-     * you always have the most recent set of service and category codes.
-     * </p>
-     *
-     * @param describeServicesRequest Container for the necessary parameters
-     *           to execute the DescribeServices service method on AWSSupport.
-     * 
-     * @return The response from the DescribeServices service method, as
-     *         returned by AWSSupport.
-     * 
-     * @throws InternalServerErrorException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSSupport indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeServicesRequest> request = null;
-        Response<DescribeServicesResult> response = null;
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeServicesRequestMarshaller().marshall(describeServicesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            Unmarshaller<DescribeServicesResult, JsonUnmarshallerContext> unmarshaller = new DescribeServicesResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeServicesResult> responseHandler = new JsonResponseHandler<DescribeServicesResult>(unmarshaller);
 
             response = invoke(request, responseHandler, executionContext);
             

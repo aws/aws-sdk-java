@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * For information about the number of instance profiles you can create,
  * see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
- * in <i>Using AWS Identity and Access Management</i> .
+ * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createInstanceProfile(CreateInstanceProfileRequest)
@@ -49,10 +49,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -108,10 +107,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -119,10 +117,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @return The path to the instance profile. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     *         is optional. If it is not included, it defaults to a slash (/).
      */
     public String getPath() {
         return path;
@@ -131,10 +128,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -142,10 +138,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @param path The path to the instance profile. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     *         is optional. If it is not included, it defaults to a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
@@ -154,10 +149,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i>. <p>This parameter is optional. If
-     * it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     * is optional. If it is not included, it defaults to a slash (/).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -167,10 +161,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @param path The path to the instance profile. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i>. <p>This parameter is optional. If
-     *         it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
+     *         is optional. If it is not included, it defaults to a slash (/).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

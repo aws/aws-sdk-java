@@ -70,8 +70,8 @@ public class CopyPartRequestFactory {
                         copyObjectRequest.getDestinationBucketName())
                 .withDestinationKey(copyObjectRequest.getDestinationKey())
                 .withSourceVersionId(copyObjectRequest.getSourceVersionId())
-                .withFirstByte(new Long(offset))
-                .withLastByte(new Long(offset + partSize - 1))
+                .withFirstByte(Long.valueOf(offset))
+                .withLastByte(Long.valueOf(offset + partSize - 1))
                 .withSourceSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey())
                 .withDestinationSSECustomerKey(copyObjectRequest.getDestinationSSECustomerKey());
 

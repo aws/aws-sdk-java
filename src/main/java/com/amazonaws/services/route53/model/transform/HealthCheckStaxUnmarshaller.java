@@ -54,6 +54,10 @@ public class HealthCheckStaxUnmarshaller implements Unmarshaller<HealthCheck, St
                     healthCheck.setHealthCheckConfig(HealthCheckConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("HealthCheckVersion", targetDepth)) {
+                    healthCheck.setHealthCheckVersion(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return healthCheck;

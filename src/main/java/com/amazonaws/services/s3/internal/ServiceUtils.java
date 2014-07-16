@@ -17,6 +17,7 @@
  */
 package com.amazonaws.services.s3.internal;
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.IOUtils.closeQuietly;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -30,6 +31,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.net.ssl.SSLProtocolException;
 
@@ -169,25 +171,31 @@ public class ServiceUtils {
         // consecutive "/"s between URL authority and path components.
         // So we escape "////..." into "/%2F%2F%2F...", in the same way as how
         // we treat consecutive "/"s in AmazonS3Client#presignRequest(...)
+
         String urlPath = "/" + resourcePath;
         urlPath = urlPath.replaceAll("(?<=/)/", "%2F");
-        String urlString =  request.getEndpoint() + urlPath;
+        StringBuilder url = new StringBuilder(request.getEndpoint().toString());
+        url.append(urlPath);
 
         boolean firstParam = true;
-        for (String param : request.getParameters().keySet()) {
+        Map<String, String> requestParams = request.getParameters();
+        for (Map.Entry<String, String> entry : requestParams.entrySet()) {
+            String param = entry.getKey();
+            String value = entry.getValue();
+
             if (firstParam) {
-                urlString += "?";
+                url.append("?");
                 firstParam = false;
             } else {
-                urlString += "&";
+                url.append("&");
             }
 
-            String value = request.getParameters().get(param);
-            urlString += param + "=" + HttpUtils.urlEncode(value, false);
+            url.append(param).append("=")
+                    .append(HttpUtils.urlEncode(value, false));
         }
 
         try {
-            return new URL(urlString);
+            return new URL(url.toString());
         } catch (MalformedURLException e) {
             throw new AmazonClientException(
                     "Unable to convert request to well formed URL: " + e.getMessage(), e);
@@ -205,17 +213,17 @@ public class ServiceUtils {
      *         specified list together, with a comma between strings.
      */
     public static String join(List<String> strings) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         boolean first = true;
         for (String s : strings) {
-            if (!first) result += ", ";
+            if (!first) result.append(", ");
 
-            result += s;
+            result.append(s);
             first = false;
         }
 
-        return result;
+        return result.toString();
     }
 
     /**
@@ -241,7 +249,11 @@ public class ServiceUtils {
         // attempt to create the parent if it doesn't exist
         File parentDirectory = destinationFile.getParentFile();
         if ( parentDirectory != null && !parentDirectory.exists() ) {
-            parentDirectory.mkdirs();
+            if (!(parentDirectory.mkdirs())) {
+                throw new AmazonClientException(
+                        "Unable to create directory in the path"
+                                + parentDirectory.getAbsolutePath());
+            }
         }
 
         OutputStream outputStream = null;
@@ -258,8 +270,8 @@ public class ServiceUtils {
             throw new AmazonClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
-            try {outputStream.close();} catch (Exception e) {}
-            try {s3Object.getObjectContent().close();} catch (Exception e) {}
+            closeQuietly(outputStream, log);
+            closeQuietly(s3Object.getObjectContent(), log);
         }
 
         byte[] clientSideHash = null;

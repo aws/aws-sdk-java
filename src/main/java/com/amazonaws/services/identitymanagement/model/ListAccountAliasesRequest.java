@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Lists the account aliases associated with the account. For information
  * about using an AWS account alias, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
- * in <i>Using AWS Identity and Access Management</i> .
+ * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and

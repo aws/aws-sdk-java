@@ -47,6 +47,16 @@ public class HealthCheck implements Serializable {
     private HealthCheckConfig healthCheckConfig;
 
     /**
+     * The version of the health check. You can optionally pass this value in
+     * a call to <code>UpdateHealthCheck</code> to prevent overwriting
+     * another change to the health check.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - <br/>
+     */
+    private Long healthCheckVersion;
+
+    /**
      * The ID of the specified health check.
      * <p>
      * <b>Constraints:</b><br/>
@@ -170,6 +180,60 @@ public class HealthCheck implements Serializable {
     }
 
     /**
+     * The version of the health check. You can optionally pass this value in
+     * a call to <code>UpdateHealthCheck</code> to prevent overwriting
+     * another change to the health check.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - <br/>
+     *
+     * @return The version of the health check. You can optionally pass this value in
+     *         a call to <code>UpdateHealthCheck</code> to prevent overwriting
+     *         another change to the health check.
+     */
+    public Long getHealthCheckVersion() {
+        return healthCheckVersion;
+    }
+    
+    /**
+     * The version of the health check. You can optionally pass this value in
+     * a call to <code>UpdateHealthCheck</code> to prevent overwriting
+     * another change to the health check.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - <br/>
+     *
+     * @param healthCheckVersion The version of the health check. You can optionally pass this value in
+     *         a call to <code>UpdateHealthCheck</code> to prevent overwriting
+     *         another change to the health check.
+     */
+    public void setHealthCheckVersion(Long healthCheckVersion) {
+        this.healthCheckVersion = healthCheckVersion;
+    }
+    
+    /**
+     * The version of the health check. You can optionally pass this value in
+     * a call to <code>UpdateHealthCheck</code> to prevent overwriting
+     * another change to the health check.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - <br/>
+     *
+     * @param healthCheckVersion The version of the health check. You can optionally pass this value in
+     *         a call to <code>UpdateHealthCheck</code> to prevent overwriting
+     *         another change to the health check.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HealthCheck withHealthCheckVersion(Long healthCheckVersion) {
+        this.healthCheckVersion = healthCheckVersion;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -183,7 +247,8 @@ public class HealthCheck implements Serializable {
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
-        if (getHealthCheckConfig() != null) sb.append("HealthCheckConfig: " + getHealthCheckConfig() );
+        if (getHealthCheckConfig() != null) sb.append("HealthCheckConfig: " + getHealthCheckConfig() + ",");
+        if (getHealthCheckVersion() != null) sb.append("HealthCheckVersion: " + getHealthCheckVersion() );
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +261,7 @@ public class HealthCheck implements Serializable {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode()); 
         hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode()); 
+        hashCode = prime * hashCode + ((getHealthCheckVersion() == null) ? 0 : getHealthCheckVersion().hashCode()); 
         return hashCode;
     }
     
@@ -213,6 +279,8 @@ public class HealthCheck implements Serializable {
         if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false) return false; 
         if (other.getHealthCheckConfig() == null ^ this.getHealthCheckConfig() == null) return false;
         if (other.getHealthCheckConfig() != null && other.getHealthCheckConfig().equals(this.getHealthCheckConfig()) == false) return false; 
+        if (other.getHealthCheckVersion() == null ^ this.getHealthCheckVersion() == null) return false;
+        if (other.getHealthCheckVersion() != null && other.getHealthCheckVersion().equals(this.getHealthCheckVersion()) == false) return false; 
         return true;
     }
     

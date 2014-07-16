@@ -24,21 +24,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Adds (or updates) a policy document associated with the specified
  * user. For information about policies, refer to
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
- * in <i>Using AWS Identity and Access Management</i> .
+ * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
  * For information about limits on the number of policies you can
  * associate with a user, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
- * in <i>Using AWS Identity and Access Management</i> .
+ * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
  * <b>NOTE:</b>Because policy documents can be large, you should use POST
  * rather than GET when calling PutUserPolicy. For information about
  * setting up signatures and authorization through the API, go to Signing
  * AWS API Requests in the AWS General Reference. For general information
- * about using the Query API with IAM, go to Making Query Requests in
- * Using IAM.
+ * about using the Query API with IAM, go to Making Query Requests in the
+ * Using IAM guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest)
