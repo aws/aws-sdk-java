@@ -63,11 +63,9 @@ public class SearchRequestMarshaller implements Marshaller<Request<SearchRequest
 			for (String s : queryString.split("[;&]")) {
 
 				String[] nameValuePair = s.split("=");
+				String key = nameValuePair[0];
 				if (nameValuePair.length >= 2) {
-					String key = nameValuePair[0], value = "";
-					for (int i = 1; i < nameValuePair.length; i++) {
-						value += nameValuePair[i];
-					}
+					String value = s.substring(s.indexOf("=") + 1);
 					if (!(value.isEmpty())) {
 						request.addParameter(key, value);
 					}
