@@ -71,7 +71,7 @@ public class SearchRequestMarshaller implements Marshaller<Request<SearchRequest
             uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
 
             for (String s : queryString.split("[;&]")) {
-                String[] nameValuePair = s.split("=");
+                String[] nameValuePair = s.split("=", 2);
                 if (nameValuePair.length == 2) {
                     if(!(nameValuePair[1].isEmpty()))
                         request.addParameter(nameValuePair[0], nameValuePair[1]);
