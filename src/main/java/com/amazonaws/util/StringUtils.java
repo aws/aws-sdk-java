@@ -27,6 +27,8 @@ public class StringUtils {
 
     private static final String DEFAULT_ENCODING = "UTF-8";
 
+    public static final String COMMA_SEPARATOR = ",";
+
     public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
 
     public static Integer toInteger(StringBuilder value) {

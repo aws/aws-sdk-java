@@ -76,6 +76,12 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements Marshaller
                     request.addParameter("LoadBalancerAttributes.ConnectionDraining.Timeout", StringUtils.fromInteger(connectionDrainingConnectionDraining.getTimeout()));
                 }
             }
+            ConnectionSettings connectionSettingsConnectionSettings = loadBalancerAttributesLoadBalancerAttributes.getConnectionSettings();
+            if (connectionSettingsConnectionSettings != null) {
+                if (connectionSettingsConnectionSettings.getIdleTimeout() != null) {
+                    request.addParameter("LoadBalancerAttributes.ConnectionSettings.IdleTimeout", StringUtils.fromInteger(connectionSettingsConnectionSettings.getIdleTimeout()));
+                }
+            }
         }
 
         return request;

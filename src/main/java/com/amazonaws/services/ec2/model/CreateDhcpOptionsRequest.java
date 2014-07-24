@@ -44,7 +44,8 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
  * AmazonProvidedDNS in another region, specify
  * <code>region.compute.internal</code> (for example,
  * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
- * domain name (for example, <code>MyCompany.com</code> ).</li>
+ * domain name (for example, <code>MyCompany.com</code> ). If specifying
+ * more than one domain name, separate them with spaces.</li>
  * <li> <code>ntp-servers</code> - The IP addresses of up to four
  * Network Time Protocol (NTP) servers.</li>
  * <li> <code>netbios-name-servers</code> - The IP addresses of up to

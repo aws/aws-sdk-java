@@ -15,13 +15,17 @@
 package com.amazonaws.services.logs.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class TestMetricFilterRequestMarshaller implements Marshaller<Request<TestMetricFilterRequest>, TestMetricFilterRequest> {
 
     public Request<TestMetricFilterRequest> marshall(TestMetricFilterRequest testMetricFilterRequest) {
-    if (testMetricFilterRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (testMetricFilterRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<TestMetricFilterRequest> request = new DefaultRequest<TestMetricFilterRequest>(testMetricFilterRequest, "AWSLogs");
         String target = "Logs_20140328.TestMetricFilter";

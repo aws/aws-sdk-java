@@ -417,15 +417,29 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * You can modify the load balancer attributes, such as
      * <code>AccessLogs</code> , <code>ConnectionDraining</code> , and
      * <code>CrossZoneLoadBalancing</code> by either enabling or disabling
-     * them.
+     * them. Or, you can modify the load balancer attribute
+     * <code>ConnectionSettings</code> , by specifying an idle connection
+     * timeout value for your load balancer.
      * </p>
      * <p>
-     * For information on cross-zone load balancing, see <b>Request
-     * Routing</b> and for information on connection draining, see
-     * <b>Connection Draining</b> in the
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html"> Concepts </a> section of the <i>Elastic Load Balancer Developer Guide</i> . For information on access logs, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"> Access Logs </a>
-     * .
+     * For more information, see the following:
      * </p>
+     * 
+     * <ul>
+     * <li>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll#request-routing"> Cross-Zone Load Balancing </a>
+     * </li>
+     * <li>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll##conn-drain"> Connection Draining </a>
+     * </li>
+     * <li>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"> Access Logs </a>
+     * .</li>
+     * <li>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout"> Connection Settings </a>
+     * .</li>
+     * 
+     * </ul>
      *
      * @param modifyLoadBalancerAttributesRequest Container for the necessary
      *           parameters to execute the ModifyLoadBalancerAttributes service method

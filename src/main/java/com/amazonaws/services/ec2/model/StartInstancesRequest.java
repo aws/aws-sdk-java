@@ -61,7 +61,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
-     * 
+     * Reserved.
      */
     private String additionalInfo;
 
@@ -151,29 +151,29 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * 
+     * Reserved.
      *
-     * @return 
+     * @return Reserved.
      */
     public String getAdditionalInfo() {
         return additionalInfo;
     }
     
     /**
-     * 
+     * Reserved.
      *
-     * @param additionalInfo 
+     * @param additionalInfo Reserved.
      */
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
     
     /**
-     * 
+     * Reserved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param additionalInfo 
+     * @param additionalInfo Reserved.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

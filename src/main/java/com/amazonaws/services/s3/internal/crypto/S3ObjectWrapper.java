@@ -25,6 +25,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectId;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 
 /**
@@ -32,11 +33,17 @@ import com.amazonaws.services.s3.model.S3ObjectInputStream;
  */
 class S3ObjectWrapper implements Closeable {
     private final S3Object s3obj;
+    private final S3ObjectId id;
     
-    S3ObjectWrapper(S3Object s3obj) {
+    S3ObjectWrapper(S3Object s3obj, S3ObjectId id) {
         if (s3obj == null)
             throw new IllegalArgumentException();
         this.s3obj = s3obj;
+        this.id = id;
+    }
+
+    public S3ObjectId getS3ObjectId() {
+        return id;
     }
 
     ObjectMetadata getObjectMetadata() {
@@ -126,18 +133,18 @@ class S3ObjectWrapper implements Closeable {
     private static String from(InputStream is) throws IOException {
         if (is == null)
             return "";
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(is));
             String line;
             while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line);
+                sb.append(line);
             }
         } finally {
             is.close();
         }
-        return stringBuilder.toString();
+        return sb.toString();
     }
 
     @Override

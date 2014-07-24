@@ -16,6 +16,8 @@ package com.amazonaws.services.s3.internal.crypto;
 
 import java.security.SecureRandom;
 
+import com.amazonaws.services.s3.model.CryptoMode;
+
 /**
  * S3 cryptographic scheme that includes the content crypto scheme and key
  * wrapping scheme (for the content-encrypting-key).
@@ -26,12 +28,14 @@ final class S3CryptoScheme {
     static final String AES = "AES"; 
     static final String RSA = "RSA"; 
     private static final SecureRandom srand = new SecureRandom();
-    private static final S3KeyWrapScheme kwScheme = new S3KeyWrapScheme();
+    private final S3KeyWrapScheme kwScheme;
 
     private final ContentCryptoScheme contentCryptoScheme;
 
-    S3CryptoScheme(ContentCryptoScheme contentCryptoScheme) {
+    private S3CryptoScheme(ContentCryptoScheme contentCryptoScheme,
+            S3KeyWrapScheme kwScheme) {
         this.contentCryptoScheme = contentCryptoScheme;
+        this.kwScheme = kwScheme;
     }
 
     SecureRandom getSecureRandom() { return srand; }
@@ -47,5 +51,19 @@ final class S3CryptoScheme {
      */
     static boolean isAesGcm(String cipherAlgorithm) {
         return ContentCryptoScheme.AES_GCM.getCipherAlgorithm().equals(cipherAlgorithm);
+    }
+
+    static S3CryptoScheme from(CryptoMode mode) {
+        switch (mode) {
+        case EncryptionOnly:
+            return new S3CryptoScheme(ContentCryptoScheme.AES_CBC,
+                    S3KeyWrapScheme.NONE);
+        case AuthenticatedEncryption:
+        case StrictAuthenticatedEncryption:
+            return new S3CryptoScheme(ContentCryptoScheme.AES_GCM,
+                    new S3KeyWrapScheme());
+        default:
+            throw new IllegalStateException();
+        }
     }
 }

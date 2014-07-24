@@ -15,13 +15,17 @@
 package com.amazonaws.services.directconnect.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class ConfirmPrivateVirtualInterfaceRequestMarshaller implements Marshaller<Request<ConfirmPrivateVirtualInterfaceRequest>, ConfirmPrivateVirtualInterfaceRequest> {
 
     public Request<ConfirmPrivateVirtualInterfaceRequest> marshall(ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest) {
-    if (confirmPrivateVirtualInterfaceRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (confirmPrivateVirtualInterfaceRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ConfirmPrivateVirtualInterfaceRequest> request = new DefaultRequest<ConfirmPrivateVirtualInterfaceRequest>(confirmPrivateVirtualInterfaceRequest, "AmazonDirectConnect");
         String target = "OvertureService.ConfirmPrivateVirtualInterface";

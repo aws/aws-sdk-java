@@ -34,10 +34,16 @@ public class InitiateMultipartUploadResultJsonUnmarshaller implements Unmarshall
         InitiateMultipartUploadResult initiateMultipartUploadResult = new InitiateMultipartUploadResult();
 
         if (context.isStartOfDocument()) {
-            if (context.getHeader("Location") != null)
-                initiateMultipartUploadResult.setLocation(context.getHeader("Location"));
-            if (context.getHeader("x-amz-multipart-upload-id") != null)
-                initiateMultipartUploadResult.setUploadId(context.getHeader("x-amz-multipart-upload-id"));
+            if (context.getHeader("Location") != null) {
+                context.setCurrentHeader("Location");
+                initiateMultipartUploadResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
+            if (context.getHeader("x-amz-multipart-upload-id") != null) {
+                context.setCurrentHeader("x-amz-multipart-upload-id");
+                initiateMultipartUploadResult.setUploadId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
         }
         
         return initiateMultipartUploadResult;

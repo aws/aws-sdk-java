@@ -15,13 +15,17 @@
 package com.amazonaws.services.opsworks.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class DescribeTimeBasedAutoScalingRequestMarshaller implements Marshaller<Request<DescribeTimeBasedAutoScalingRequest>, DescribeTimeBasedAutoScalingRequest> {
 
     public Request<DescribeTimeBasedAutoScalingRequest> marshall(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest) {
-    if (describeTimeBasedAutoScalingRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (describeTimeBasedAutoScalingRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeTimeBasedAutoScalingRequest> request = new DefaultRequest<DescribeTimeBasedAutoScalingRequest>(describeTimeBasedAutoScalingRequest, "AWSOpsWorks");
         String target = "OpsWorks_20130218.DescribeTimeBasedAutoScaling";

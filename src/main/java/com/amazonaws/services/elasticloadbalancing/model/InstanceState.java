@@ -30,7 +30,7 @@ public class InstanceState implements Serializable {
 
     /**
      * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>
+     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
      */
     private String state;
 
@@ -88,10 +88,10 @@ public class InstanceState implements Serializable {
 
     /**
      * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>
+     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
      *
      * @return Specifies the current state of the instance. <p>Valid value:
-     *         <code>InService</code>|<code>OutOfService</code>
+     *         <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
      */
     public String getState() {
         return state;
@@ -99,10 +99,10 @@ public class InstanceState implements Serializable {
     
     /**
      * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>
+     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
      *
      * @param state Specifies the current state of the instance. <p>Valid value:
-     *         <code>InService</code>|<code>OutOfService</code>
+     *         <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
      */
     public void setState(String state) {
         this.state = state;
@@ -110,12 +110,12 @@ public class InstanceState implements Serializable {
     
     /**
      * Specifies the current state of the instance. <p>Valid value:
-     * <code>InService</code>|<code>OutOfService</code>
+     * <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state Specifies the current state of the instance. <p>Valid value:
-     *         <code>InService</code>|<code>OutOfService</code>
+     *         <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

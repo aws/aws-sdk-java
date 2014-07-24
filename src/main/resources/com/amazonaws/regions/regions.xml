@@ -1509,6 +1509,12 @@
         <Hostname>storagegateway.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>support</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>support.cn-north-1.amazonaws.com.cn</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elasticloadbalancing</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1913,6 +1919,7 @@
       <Name>support</Name>
       <FullName>AWS Support</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>cn-north-1</RegionName>
     </Service>
     <Service>
       <Name>elasticloadbalancing</Name>

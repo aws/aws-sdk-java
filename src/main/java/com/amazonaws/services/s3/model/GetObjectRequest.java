@@ -43,20 +43,10 @@ import com.amazonaws.services.s3.internal.Constants;
  */
 public class GetObjectRequest extends AmazonWebServiceRequest implements
         SSECustomerKeyProvider {
-    /** The name of the bucket containing the object to retrieve */
-    private String bucketName;
-
-    /** The key under which the desired object is stored */
-    private String key;
-
     /**
-     * Optional version ID specifying which version of the object to download.
-     * If not specified, the most recent version will be downloaded.
-     * <p>
-     * For more information about enabling versioning for a bucket, see
-     * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
+     * Builder of an S3 object identifier.  This member field is never null.
      */
-    private String versionId;
+    private S3ObjectIdBuilder s3ObjectIdBuilder = new S3ObjectIdBuilder();
 
     /** Optional member indicating the byte range of data to retrieve */
     private long[] range;
@@ -139,7 +129,10 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
         setBucketName(bucketName);
         setKey(key);
         setVersionId(versionId);
-        setRequesterPays(false);
+    }
+
+    public GetObjectRequest(S3ObjectId s3ObjectId) {
+        this.s3ObjectIdBuilder = new S3ObjectIdBuilder(s3ObjectId);
     }
 
     /**
@@ -160,8 +153,10 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      */
     public GetObjectRequest(String bucketName, String key,
             boolean isRequesterPays) {
-        this.bucketName = bucketName;
-        this.key = key;
+        this.s3ObjectIdBuilder
+            .withBucket(bucketName)
+            .withKey(key)
+            ;
         this.isRequesterPays = isRequesterPays;
     }
 
@@ -174,7 +169,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#withBucketName(String)
      */
     public String getBucketName() {
-        return bucketName;
+        return s3ObjectIdBuilder.getBucket();
     }
 
     /**
@@ -187,7 +182,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#withBucketName(String)
      */
     public void setBucketName(String bucketName) {
-        this.bucketName = bucketName;
+        s3ObjectIdBuilder.setBucket(bucketName);
     }
 
     /**
@@ -218,7 +213,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#withKey(String)
      */
     public String getKey() {
-        return key;
+        return s3ObjectIdBuilder.getKey();
     }
 
     /**
@@ -231,7 +226,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#withKey(String)
      */
     public void setKey(String key) {
-        this.key = key;
+        s3ObjectIdBuilder.setKey(key);
     }
 
     /**
@@ -278,7 +273,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#withVersionId(String)
      */
     public String getVersionId() {
-        return versionId;
+        return s3ObjectIdBuilder.getVersionId();
     }
 
     /**
@@ -304,7 +299,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#withVersionId(String)
      */
     public void setVersionId(String versionId) {
-        this.versionId = versionId;
+        s3ObjectIdBuilder.setVersionId(versionId);
     }
 
     /**
@@ -833,6 +828,28 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      */
     public GetObjectRequest withSSECustomerKey(SSECustomerKey sseKey) {
         setSSECustomerKey(sseKey);
+        return this;
+    }
+
+    /**
+     * Returns an immutable S3 object id.
+     */
+    public S3ObjectId getS3ObjectId() {
+        return s3ObjectIdBuilder.build();
+    }
+
+    /**
+     * Sets the S3 object id for this request. 
+     */
+    public void setS3ObjectId(S3ObjectId s3ObjectId) {
+        this.s3ObjectIdBuilder = new S3ObjectIdBuilder(s3ObjectId);
+    }
+
+    /**
+     * Fluent API to set the S3 object id for this request. 
+     */
+    public GetObjectRequest withS3ObjectId(S3ObjectId s3ObjectId) {
+        setS3ObjectId(s3ObjectId);
         return this;
     }
 }

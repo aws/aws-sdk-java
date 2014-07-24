@@ -14,7 +14,8 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
-import com.amazonaws.ClientConfiguration;
+import static com.amazonaws.services.s3.model.CryptoMode.StrictAuthenticatedEncryption;
+
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
@@ -25,21 +26,17 @@ import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
  * encryption client.
  */
 class S3CryptoModuleAEStrict extends S3CryptoModuleAE {
+    /**
+     * @param cryptoConfig a read-only copy of the crypto configuration.
+     */
     S3CryptoModuleAEStrict(S3Direct s3,
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
-            ClientConfiguration clientConfig, CryptoConfiguration cryptoConfig) {
-        super(s3, credentialsProvider, encryptionMaterialsProvider,
-                clientConfig, cryptoConfig);
-    }
-
-    /**
-     * Used for testing purposes only.
-     */
-    S3CryptoModuleAEStrict(S3Direct s3,
-            EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
-        super(s3, encryptionMaterialsProvider, cryptoConfig);
+        super(s3, credentialsProvider, encryptionMaterialsProvider,
+                cryptoConfig);
+        if (cryptoConfig.getCryptoMode() != StrictAuthenticatedEncryption)
+            throw new IllegalArgumentException();
     }
 
     protected final boolean isStrict() {

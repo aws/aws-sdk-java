@@ -34,12 +34,21 @@ public class UploadArchiveResultJsonUnmarshaller implements Unmarshaller<UploadA
         UploadArchiveResult uploadArchiveResult = new UploadArchiveResult();
 
         if (context.isStartOfDocument()) {
-            if (context.getHeader("Location") != null)
-                uploadArchiveResult.setLocation(context.getHeader("Location"));
-            if (context.getHeader("x-amz-sha256-tree-hash") != null)
-                uploadArchiveResult.setChecksum(context.getHeader("x-amz-sha256-tree-hash"));
-            if (context.getHeader("x-amz-archive-id") != null)
-                uploadArchiveResult.setArchiveId(context.getHeader("x-amz-archive-id"));
+            if (context.getHeader("Location") != null) {
+                context.setCurrentHeader("Location");
+                uploadArchiveResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
+            if (context.getHeader("x-amz-sha256-tree-hash") != null) {
+                context.setCurrentHeader("x-amz-sha256-tree-hash");
+                uploadArchiveResult.setChecksum(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
+            if (context.getHeader("x-amz-archive-id") != null) {
+                context.setCurrentHeader("x-amz-archive-id");
+                uploadArchiveResult.setArchiveId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
         }
         
         return uploadArchiveResult;

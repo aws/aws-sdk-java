@@ -81,8 +81,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     private String loadBalancerName;
 
     /**
-     * A list of the following tuples: LoadBalancerPort, InstancePort, and
-     * Protocol.
+     * A list of the following tuples: Protocol, LoadBalancerPort,
+     * InstanceProtocol, InstancePort, and SSLCertificateId.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Listener> listeners;
 
@@ -146,8 +146,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * 
      * @param loadBalancerName The name associated with the load balancer.
      * The name must be unique within your set of load balancers.
-     * @param listeners A list of the following tuples: LoadBalancerPort,
-     * InstancePort, and Protocol.
+     * @param listeners A list of the following tuples: Protocol,
+     * LoadBalancerPort, InstanceProtocol, InstancePort, and
+     * SSLCertificateId.
      * @param availabilityZones A list of Availability Zones. <p> At least
      * one Availability Zone must be specified. Specified Availability Zones
      * must be in the same EC2 Region as the load balancer. Traffic will be
@@ -201,11 +202,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * A list of the following tuples: LoadBalancerPort, InstancePort, and
-     * Protocol.
+     * A list of the following tuples: Protocol, LoadBalancerPort,
+     * InstanceProtocol, InstancePort, and SSLCertificateId.
      *
-     * @return A list of the following tuples: LoadBalancerPort, InstancePort, and
-     *         Protocol.
+     * @return A list of the following tuples: Protocol, LoadBalancerPort,
+     *         InstanceProtocol, InstancePort, and SSLCertificateId.
      */
     public java.util.List<Listener> getListeners() {
         if (listeners == null) {
@@ -216,11 +217,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of the following tuples: LoadBalancerPort, InstancePort, and
-     * Protocol.
+     * A list of the following tuples: Protocol, LoadBalancerPort,
+     * InstanceProtocol, InstancePort, and SSLCertificateId.
      *
-     * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
-     *         Protocol.
+     * @param listeners A list of the following tuples: Protocol, LoadBalancerPort,
+     *         InstanceProtocol, InstancePort, and SSLCertificateId.
      */
     public void setListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {
@@ -233,13 +234,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of the following tuples: LoadBalancerPort, InstancePort, and
-     * Protocol.
+     * A list of the following tuples: Protocol, LoadBalancerPort,
+     * InstanceProtocol, InstancePort, and SSLCertificateId.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
-     *         Protocol.
+     * @param listeners A list of the following tuples: Protocol, LoadBalancerPort,
+     *         InstanceProtocol, InstancePort, and SSLCertificateId.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -253,13 +254,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of the following tuples: LoadBalancerPort, InstancePort, and
-     * Protocol.
+     * A list of the following tuples: Protocol, LoadBalancerPort,
+     * InstanceProtocol, InstancePort, and SSLCertificateId.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
-     *         Protocol.
+     * @param listeners A list of the following tuples: Protocol, LoadBalancerPort,
+     *         InstanceProtocol, InstancePort, and SSLCertificateId.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

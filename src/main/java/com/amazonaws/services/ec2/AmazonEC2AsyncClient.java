@@ -2375,7 +2375,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * using AmazonProvidedDNS in another region, specify
      * <code>region.compute.internal</code> (for example,
      * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code> ).</li>
+     * domain name (for example, <code>MyCompany.com</code> ). If specifying
+     * more than one domain name, separate them with spaces.</li>
      * <li> <code>ntp-servers</code> - The IP addresses of up to four
      * Network Time Protocol (NTP) servers.</li>
      * <li> <code>netbios-name-servers</code> - The IP addresses of up to
@@ -2440,7 +2441,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * using AmazonProvidedDNS in another region, specify
      * <code>region.compute.internal</code> (for example,
      * <code>ap-northeast-1.compute.internal</code> ). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code> ).</li>
+     * domain name (for example, <code>MyCompany.com</code> ). If specifying
+     * more than one domain name, separate them with spaces.</li>
      * <li> <code>ntp-servers</code> - The IP addresses of up to four
      * Network Time Protocol (NTP) servers.</li>
      * <li> <code>netbios-name-servers</code> - The IP addresses of up to
@@ -10603,7 +10605,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Adds or removes permission settings for the specified snapshot.
+     * Adds or removes permission settings for the specified snapshot. You
+     * may add or remove specified AWS account IDs from a snapshot's list of
+     * create volume permissions, but you cannot do both in a single API
+     * call. If you need to both add and remove account IDs for a snapshot,
+     * you must use multiple API calls.
      * </p>
      * <p>
      * For more information on modifying snapshot permissions, see
@@ -10643,7 +10649,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
 
     /**
      * <p>
-     * Adds or removes permission settings for the specified snapshot.
+     * Adds or removes permission settings for the specified snapshot. You
+     * may add or remove specified AWS account IDs from a snapshot's list of
+     * create volume permissions, but you cannot do both in a single API
+     * call. If you need to both add and remove account IDs for a snapshot,
+     * you must use multiple API calls.
      * </p>
      * <p>
      * For more information on modifying snapshot permissions, see

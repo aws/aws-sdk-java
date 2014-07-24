@@ -15,13 +15,17 @@
 package com.amazonaws.services.directconnect.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class AllocatePublicVirtualInterfaceRequestMarshaller implements Marshaller<Request<AllocatePublicVirtualInterfaceRequest>, AllocatePublicVirtualInterfaceRequest> {
 
     public Request<AllocatePublicVirtualInterfaceRequest> marshall(AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest) {
-    if (allocatePublicVirtualInterfaceRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (allocatePublicVirtualInterfaceRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<AllocatePublicVirtualInterfaceRequest> request = new DefaultRequest<AllocatePublicVirtualInterfaceRequest>(allocatePublicVirtualInterfaceRequest, "AmazonDirectConnect");
         String target = "OvertureService.AllocatePublicVirtualInterface";

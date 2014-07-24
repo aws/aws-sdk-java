@@ -15,13 +15,17 @@
 package com.amazonaws.services.glacier.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -39,10 +43,43 @@ import com.amazonaws.util.json.*;
  */
 public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<UploadMultipartPartRequest>, UploadMultipartPartRequest> {
 
-    public Request<UploadMultipartPartRequest> marshall(UploadMultipartPartRequest uploadMultipartPartRequest) {
-    if (uploadMultipartPartRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    private static final String RESOURCE_PATH_TEMPLATE;
+    private static final Map<String, String> STATIC_QUERY_PARAMS;
+    private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
+    static {
+        String path = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
+        Map<String, String> staticMap = new HashMap<String, String>();
+        Map<String, String> dynamicMap = new HashMap<String, String>();
+
+        int index = path.indexOf("?");
+        if (index != -1) {
+            String queryString = path.substring(index + 1);
+            path = path.substring(0, index);
+
+            for (String s : queryString.split("[;&]")) {
+                index = s.indexOf("=");
+                if (index != -1) {
+                    String name = s.substring(0, index);
+                    String value = s.substring(index + 1);
+
+                    if (value.startsWith("{") && value.endsWith("}")) {
+                        dynamicMap.put(value.substring(1, value.length() - 1), name);
+                    } else {
+                        staticMap.put(name, value);
+                    }
+                }
+            }
+        }
+
+        RESOURCE_PATH_TEMPLATE = path;
+        STATIC_QUERY_PARAMS = Collections.unmodifiableMap(staticMap);
+        DYNAMIC_QUERY_PARAMS = Collections.unmodifiableMap(dynamicMap);
     }
+
+    public Request<UploadMultipartPartRequest> marshall(UploadMultipartPartRequest uploadMultipartPartRequest) {
+        if (uploadMultipartPartRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UploadMultipartPartRequest> request = new DefaultRequest<UploadMultipartPartRequest>(uploadMultipartPartRequest, "AmazonGlacier");
         String target = "Glacier.UploadMultipartPart";
@@ -55,27 +92,47 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         if (uploadMultipartPartRequest.getRange() != null)
           request.addHeader("Content-Range", StringUtils.fromString(uploadMultipartPartRequest.getRange()));
         
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", (uploadMultipartPartRequest.getAccountId() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadMultipartPartRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{uploadId}", (uploadMultipartPartRequest.getUploadId() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getUploadId())); 
+        String uriResourcePath = RESOURCE_PATH_TEMPLATE;
 
-        uriResourcePath = uriResourcePath.replaceAll("//", "/");
+        if (DYNAMIC_QUERY_PARAMS.containsKey("accountId")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("accountId");
+            String value = (uploadMultipartPartRequest.getAccountId() == null) ? null : StringUtils.fromString(uploadMultipartPartRequest.getAccountId());
 
-        if (uriResourcePath.contains("?")) {
-            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-
-            for (String s : queryString.split("[;&]")) {
-                String[] nameValuePair = s.split("=");
-                if (nameValuePair.length == 2) {
-                    if(!(nameValuePair[1].isEmpty()))
-                        request.addParameter(nameValuePair[0], nameValuePair[1]);
-                }
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
             }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{accountId}", (uploadMultipartPartRequest.getAccountId() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getAccountId())); 
         }
-        request.setResourcePath(uriResourcePath);
         
+        if (DYNAMIC_QUERY_PARAMS.containsKey("vaultName")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("vaultName");
+            String value = (uploadMultipartPartRequest.getVaultName() == null) ? null : StringUtils.fromString(uploadMultipartPartRequest.getVaultName());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadMultipartPartRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getVaultName())); 
+        }
+        
+        if (DYNAMIC_QUERY_PARAMS.containsKey("uploadId")) {
+            String name = DYNAMIC_QUERY_PARAMS.get("uploadId");
+            String value = (uploadMultipartPartRequest.getUploadId() == null) ? null : StringUtils.fromString(uploadMultipartPartRequest.getUploadId());
+
+            if (!(value == null || value.isEmpty())) {
+                request.addParameter(name, value);
+            }
+        } else {
+            uriResourcePath = uriResourcePath.replace("{uploadId}", (uploadMultipartPartRequest.getUploadId() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getUploadId())); 
+        }
+
+        request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
+
+        for (Map.Entry<String, String> entry : STATIC_QUERY_PARAMS.entrySet()) {
+            request.addParameter(entry.getKey(), entry.getValue());
+        }
+
         request.setContent(uploadMultipartPartRequest.getBody());
         if (!request.getHeaders().containsKey("Content-Type")) {
             request.addHeader("Content-Type", "binary/octet-stream");

@@ -34,8 +34,11 @@ public class UploadMultipartPartResultJsonUnmarshaller implements Unmarshaller<U
         UploadMultipartPartResult uploadMultipartPartResult = new UploadMultipartPartResult();
 
         if (context.isStartOfDocument()) {
-            if (context.getHeader("x-amz-sha256-tree-hash") != null)
-                uploadMultipartPartResult.setChecksum(context.getHeader("x-amz-sha256-tree-hash"));
+            if (context.getHeader("x-amz-sha256-tree-hash") != null) {
+                context.setCurrentHeader("x-amz-sha256-tree-hash");
+                uploadMultipartPartResult.setChecksum(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
         }
         
         return uploadMultipartPartResult;

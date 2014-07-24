@@ -54,11 +54,11 @@
  * href="https://hc.apache.org/httpcomponents-core-ga/httpcore/apidocs/org/apache/http/pool/PoolStats.html"
  * >PoolStats</a>. before the connection of a request is obtained</li>
  * <li>HttpRequestTime - Number of milliseconds taken for a logical request/response 
- * round trip to AWS. Captured on a per request type level.< /li>
+ * round trip to AWS. Captured on a per request type level.</li>
  * <li>HttpClientSendRequestTime - Number of milliseconds taken for a physical request
- * to get sent to AWS. Captured on a per request type level.< /li>
+ * to get sent to AWS. Captured on a per request type level.</li>
  * <li>HttpClientReceiveResponseTime - Number of milliseconds taken for a physical response
- * to get received from AWS. Captured on a per request type level.< /li>
+ * to get received from AWS. Captured on a per request type level.</li>
  * <li>HttpClientRetryCount - Number of retries per physical request. Captured on a per service 
  * client type level. </li>
  * <li>RequestCount - Number of logical requests. Captured on a per service 

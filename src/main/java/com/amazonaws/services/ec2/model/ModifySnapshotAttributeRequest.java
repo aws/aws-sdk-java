@@ -23,7 +23,11 @@ import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequest
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest) ModifySnapshotAttribute operation}.
  * <p>
- * Adds or removes permission settings for the specified snapshot.
+ * Adds or removes permission settings for the specified snapshot. You
+ * may add or remove specified AWS account IDs from a snapshot's list of
+ * create volume permissions, but you cannot do both in a single API
+ * call. If you need to both add and remove account IDs for a snapshot,
+ * you must use multiple API calls.
  * </p>
  * <p>
  * For more information on modifying snapshot permissions, see

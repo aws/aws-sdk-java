@@ -198,6 +198,7 @@ import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjec
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.Base16;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
@@ -1298,8 +1299,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(putObjectRequest, "The PutObjectRequest parameter must be specified when uploading an object");
-        String bucketName = putObjectRequest.getBucketName();
-        String key = putObjectRequest.getKey();
+        final String bucketName = putObjectRequest.getBucketName();
+        final String key = putObjectRequest.getKey();
         ObjectMetadata metadata = putObjectRequest.getMetadata();
         InputStream input = putObjectRequest.getInputStream();
         if (metadata == null)
@@ -1444,20 +1445,30 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             contentMd5 = BinaryUtils.toBase64(md5DigestStream.getMd5Digest());
         }
 
+        final String etag = returnedMetadata.getETag();
         if (contentMd5 != null && !skipContentMd5Check) {
             byte[] clientSideHash = BinaryUtils.fromBase64(contentMd5);
-            byte[] serverSideHash = BinaryUtils.fromHex(returnedMetadata.getETag());
+            byte[] serverSideHash = BinaryUtils.fromHex(etag);
 
             if (!Arrays.equals(clientSideHash, serverSideHash)) {
                 publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
-                throw new AmazonClientException("Unable to verify integrity of data upload.  " +
-                        "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
-                        "You may need to delete the data stored in Amazon S3.");
+                throw new AmazonClientException(
+                     "Unable to verify integrity of data upload.  "
+                    + "Client calculated content hash (contentMD5: "
+                    + contentMd5
+                    + " in base 64) didn't match hash (etag: "
+                    + etag
+                    + " in hex) calculated by Amazon S3.  "
+                    + "You may need to delete the data stored in Amazon S3. (metadata.contentMD5: "
+                    + metadata.getContentMD5()
+                    + ", md5DigestStream: " + md5DigestStream
+                    + ", bucketName: " + bucketName + ", key: " + key
+                    + ")");
             }
         }
         publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         PutObjectResult result = new PutObjectResult();
-        result.setETag(returnedMetadata.getETag());
+        result.setETag(etag);
         result.setVersionId(returnedMetadata.getVersionId());
         result.setSSEAlgorithm(returnedMetadata.getSSEAlgorithm());
         result.setSSECustomerAlgorithm(returnedMetadata.getSSECustomerAlgorithm());
@@ -2689,12 +2700,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(uploadPartRequest,
             "The request parameter must be specified when uploading a part");
 
-        String bucketName = uploadPartRequest.getBucketName();
-        String key        = uploadPartRequest.getKey();
-        String uploadId   = uploadPartRequest.getUploadId();
-        int partNumber    = uploadPartRequest.getPartNumber();
-        long partSize     = uploadPartRequest.getPartSize();
-
+        final String bucketName = uploadPartRequest.getBucketName();
+        final String key        = uploadPartRequest.getKey();
+        final String uploadId   = uploadPartRequest.getUploadId();
+        final int partNumber    = uploadPartRequest.getPartNumber();
+        final long partSize     = uploadPartRequest.getPartSize();
         assertParameterNotNull(bucketName,
             "The bucket name parameter must be specified when uploading a part");
         assertParameterNotNull(key,
@@ -2746,20 +2756,32 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         try {
             request.setContent(inputStream);
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
+            final String etag = metadata.getETag();
 
             if (md5DigestStream != null) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
-                byte[] serverSideHash = BinaryUtils.fromHex(metadata.getETag());
+                byte[] serverSideHash = BinaryUtils.fromHex(etag);
+
 
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {
-                    throw new AmazonClientException("Unable to verify integrity of data upload.  " +
-                            "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
-                            "You may need to delete the data stored in Amazon S3.");
+                    final String info = "bucketName: " + bucketName + ", key: "
+                            + key + ", uploadId: " + uploadId
+                            + ", partNumber: " + partNumber + ", partSize: "
+                            + partSize;
+                    throw new AmazonClientException(
+                         "Unable to verify integrity of data upload.  "
+                        + "Client calculated content hash (contentMD5: "
+                        + Base16.encodeAsString(clientSideHash)
+                        + " in hex) didn't match hash (etag: "
+                        + etag
+                        + " in hex) calculated by Amazon S3.  "
+                        + "You may need to delete the data stored in Amazon S3. "
+                        + "(" + info + ")");
                 }
             }
             publishProgress(listener, ProgressEventType.TRANSFER_PART_COMPLETED_EVENT);
             UploadPartResult result = new UploadPartResult();
-            result.setETag(metadata.getETag());
+            result.setETag(etag);
             result.setPartNumber(partNumber);
             result.setSSEAlgorithm(metadata.getSSEAlgorithm());
             result.setSSECustomerAlgorithm(metadata.getSSECustomerAlgorithm());

@@ -15,13 +15,17 @@
 package com.amazonaws.services.storagegateway.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class ListLocalDisksRequestMarshaller implements Marshaller<Request<ListLocalDisksRequest>, ListLocalDisksRequest> {
 
     public Request<ListLocalDisksRequest> marshall(ListLocalDisksRequest listLocalDisksRequest) {
-    if (listLocalDisksRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (listLocalDisksRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListLocalDisksRequest> request = new DefaultRequest<ListLocalDisksRequest>(listLocalDisksRequest, "AWSStorageGateway");
         String target = "StorageGateway_20130630.ListLocalDisks";

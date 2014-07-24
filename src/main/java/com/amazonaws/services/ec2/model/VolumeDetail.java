@@ -24,34 +24,34 @@ import java.io.Serializable;
 public class VolumeDetail implements Serializable {
 
     /**
-     * The size of the volume.
+     * The size of the volume, in GiB.
      */
     private Long size;
 
     /**
-     * The size of the volume.
+     * The size of the volume, in GiB.
      *
-     * @return The size of the volume.
+     * @return The size of the volume, in GiB.
      */
     public Long getSize() {
         return size;
     }
     
     /**
-     * The size of the volume.
+     * The size of the volume, in GiB.
      *
-     * @param size The size of the volume.
+     * @param size The size of the volume, in GiB.
      */
     public void setSize(Long size) {
         this.size = size;
     }
     
     /**
-     * The size of the volume.
+     * The size of the volume, in GiB.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param size The size of the volume.
+     * @param size The size of the volume, in GiB.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

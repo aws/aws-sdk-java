@@ -13,9 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.internal.crypto;
+
 import static com.amazonaws.services.s3.AmazonS3EncryptionClient.USER_AGENT;
-import static com.amazonaws.services.s3.internal.crypto.EncryptionUtils.createInstructionGetRequest;
 import static com.amazonaws.services.s3.internal.crypto.EncryptionUtils.getAdjustedCryptoRange;
+import static com.amazonaws.services.s3.model.CryptoMode.AuthenticatedEncryption;
+import static com.amazonaws.services.s3.model.CryptoMode.StrictAuthenticatedEncryption;
+import static com.amazonaws.services.s3.model.CryptoStorageMode.InstructionFile;
+import static com.amazonaws.services.s3.model.CryptoStorageMode.ObjectMetadata;
+import static com.amazonaws.services.s3.model.ExtraMaterialsDescription.NONE;
+import static com.amazonaws.services.s3.model.InstructionFileId.DEFAULT_INSTURCTION_FILE_SUFFIX;
+import static com.amazonaws.services.s3.model.InstructionFileId.DOT;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 
 import java.io.BufferedOutputStream;
@@ -29,8 +36,6 @@ import java.util.Collections;
 import java.util.Map;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.services.s3.internal.InputSubstream;
@@ -38,11 +43,11 @@ import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
-import com.amazonaws.services.s3.model.CopyPartRequest;
-import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
-import com.amazonaws.services.s3.model.CryptoStorageMode;
+import com.amazonaws.services.s3.model.CryptoMode;
+import com.amazonaws.services.s3.model.EncryptedGetObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
+import com.amazonaws.services.s3.model.ExtraMaterialsDescription;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
@@ -50,6 +55,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectId;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
@@ -65,14 +71,20 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     }
     private static final boolean IS_MULTI_PART = true;
 
+    /**
+     * @param cryptoConfig a read-only copy of the crypto configuration.
+     */
     S3CryptoModuleAE(S3Direct s3,
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
-            ClientConfiguration clientConfig,
             CryptoConfiguration cryptoConfig) {
         super(s3, credentialsProvider, encryptionMaterialsProvider,
-                clientConfig, cryptoConfig, 
-                new S3CryptoScheme(ContentCryptoScheme.AES_GCM));
+                cryptoConfig);
+        CryptoMode mode = cryptoConfig.getCryptoMode();
+        if (mode != StrictAuthenticatedEncryption
+        &&  mode != AuthenticatedEncryption) {
+            throw new IllegalArgumentException();
+        }
     }
 
     /**
@@ -82,8 +94,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
         this(s3, new DefaultAWSCredentialsProviderChain(),
-                encryptionMaterialsProvider, new ClientConfiguration(),
-                cryptoConfig);
+                encryptionMaterialsProvider, cryptoConfig);
     }
 
     /**
@@ -94,30 +105,19 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         return false;
     }
 
-    /**
-     * @throws SecurityException
-     *             if the crypto scheme used in the given content crypto
-     *             material is not allowed in this crypto module.
-     */
-    protected void securityCheck(ContentCryptoMaterial cekMaterial,
-            S3ObjectWrapper retrieved) {
-        // default is no-op. Sublcass may override.
-    }
-
     @Override
     public PutObjectResult putObjectSecurely(PutObjectRequest putObjectRequest)
-            throws AmazonClientException, AmazonServiceException {
+    {
         appendUserAgent(putObjectRequest, USER_AGENT);
 
-        if (this.cryptoConfig.getStorageMode() == CryptoStorageMode.InstructionFile) {
+        if (cryptoConfig.getStorageMode() == InstructionFile) {
             return putObjectUsingInstructionFile(putObjectRequest);
         } else {
             return putObjectUsingMetadata(putObjectRequest);
         }
     }
 
-    private PutObjectResult putObjectUsingMetadata(PutObjectRequest req)
-            throws AmazonClientException, AmazonServiceException {
+    private PutObjectResult putObjectUsingMetadata(PutObjectRequest req) {
         ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(req);
         // Wraps the object data with a cipher input stream
         PutObjectRequest wrappedReq = wrapWithCipher(req, cekMaterial);
@@ -130,8 +130,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     }
 
     @Override
-    public S3Object getObjectSecurely(GetObjectRequest req)
-            throws AmazonClientException, AmazonServiceException {
+    public S3Object getObjectSecurely(GetObjectRequest req) {
         appendUserAgent(req, USER_AGENT);
         // Adjust the crypto range to retrieve all of the cipher blocks needed to contain the user's desired
         // range of bytes.
@@ -147,15 +146,25 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         // would return null, so we simply return null as well.
         if (retrieved == null)
             return null;
+        String suffix = null;
+        if (req instanceof EncryptedGetObjectRequest) {
+            EncryptedGetObjectRequest ereq = (EncryptedGetObjectRequest)req;
+            suffix = ereq.getInstructionFileSuffix();
+        }
         try {
-            return decipher(req, desiredRange, adjustedCryptoRange, retrieved);
-        } catch (RuntimeException rc) {
+            return suffix == null || suffix.trim().isEmpty()
+             ? decipher(req, desiredRange, adjustedCryptoRange, retrieved)
+             : decipherWithInstFileSuffix(req,
+                     desiredRange, adjustedCryptoRange, retrieved,
+                     suffix)
+             ;
+        } catch (RuntimeException ex) {
             // If we're unable to set up the decryption, make sure we close the
             // HTTP connection
-            closeQuietly(retrieved.getObjectContent(), log);
-            throw rc;
+            closeQuietly(retrieved, log);
+            throw ex;
         } catch (Error error) {
-            closeQuietly(retrieved.getObjectContent(), log);
+            closeQuietly(retrieved, log);
             throw error;
         }
     }
@@ -163,23 +172,20 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     private S3Object decipher(GetObjectRequest req,
             long[] desiredRange, long[] cryptoRange,
             S3Object retrieved) {
-        S3ObjectWrapper wrapped = new S3ObjectWrapper(retrieved);
+        S3ObjectWrapper wrapped = new S3ObjectWrapper(retrieved, req.getS3ObjectId());
         // Check if encryption info is in object metadata
         if (wrapped.hasEncryptionInfo())
-            return decipherWithMetadata(desiredRange, cryptoRange, wrapped);
+            return decipherWithMetadata(req, desiredRange, cryptoRange, wrapped);
         // Check if encrypted info is in an instruction file
-        S3ObjectWrapper instructionFile = fetchInstructionFile(req);
-        if (instructionFile != null) {
+        S3ObjectWrapper ifile = fetchInstructionFile(req.getS3ObjectId(), null);
+        if (ifile != null) {
             try {
-                if (instructionFile.isInstructionFile()) {
-                    return decipherWithInstructionFile(desiredRange, cryptoRange,
-                            wrapped, instructionFile);
+                if (ifile.isInstructionFile()) {
+                    return decipherWithInstructionFile(req, desiredRange,
+                            cryptoRange, wrapped, ifile);
                 }
             } finally {
-                try {
-                    instructionFile.getObjectContent().close();
-                } catch (Exception ignore) {
-                }
+                closeQuietly(ifile, log);
             }
         }
         if (isStrict()) {
@@ -200,36 +206,87 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         return adjusted.getS3Object();
     }
 
-    private S3Object decipherWithInstructionFile(long[] desiredRange,
-            long[] cryptoRange, S3ObjectWrapper retrieved,
+    /**
+     * Same as {@link #decipher(GetObjectRequest, long[], long[], S3Object)}
+     * but makes use of an instruction file with the specified suffix.
+     * @param instFileSuffix never null or empty (which is assumed to have been
+     * sanitized upstream.)
+     */
+    private S3Object decipherWithInstFileSuffix(GetObjectRequest req,
+            long[] desiredRange, long[] cryptoRange, S3Object retrieved,
+            String instFileSuffix) {
+        final S3ObjectId id = req.getS3ObjectId();
+        // Check if encrypted info is in an instruction file
+        final S3ObjectWrapper ifile = fetchInstructionFile(id, instFileSuffix);
+        if (ifile == null) {
+            throw new AmazonClientException("Instruction file with suffix "
+                    + instFileSuffix + " is not found for " + retrieved);
+        }
+        try {
+            if (ifile.isInstructionFile()) {
+                return decipherWithInstructionFile(req, desiredRange,
+                        cryptoRange, new S3ObjectWrapper(retrieved, id), ifile);
+            } else {
+                throw new AmazonClientException(
+                        "Invalid Instruction file with suffix "
+                                + instFileSuffix + " detected for " + retrieved);
+            }
+        } finally {
+            closeQuietly(ifile, log);
+        }
+    }
+
+    private S3Object decipherWithInstructionFile(GetObjectRequest req,
+            long[] desiredRange, long[] cryptoRange, S3ObjectWrapper retrieved,
             S3ObjectWrapper instructionFile) {
+        ExtraMaterialsDescription extraMatDesc = NONE;
+        boolean keyWrapExpected = isStrict();
+        if (req instanceof EncryptedGetObjectRequest) {
+            EncryptedGetObjectRequest ereq = (EncryptedGetObjectRequest)req;
+            extraMatDesc = ereq.getExtraMaterialDescription();
+            if (!keyWrapExpected)
+                keyWrapExpected = ereq.isKeyWrapExpected();
+        }
         String json = instructionFile.toJsonString();
         @SuppressWarnings("unchecked")
-        Map<String, String> instruction = Collections.unmodifiableMap(
-                Jackson.fromJsonString(json, Map.class));
+        Map<String, String> matdesc =
+            Collections.unmodifiableMap(Jackson.fromJsonString(json, Map.class));
         ContentCryptoMaterial cekMaterial =
                 ContentCryptoMaterial.fromInstructionFile(
-                    instruction,
+                    matdesc,
                     kekMaterialsProvider,
                     cryptoConfig.getCryptoProvider(), 
-                    cryptoRange   // range is sometimes necessary to compute the adjusted IV
+                    cryptoRange,   // range is sometimes necessary to compute the adjusted IV
+                    extraMatDesc,
+                    keyWrapExpected
             );
         securityCheck(cekMaterial, retrieved);
         S3ObjectWrapper decrypted = decrypt(retrieved, cekMaterial, cryptoRange);
         // Adjust the output to the desired range of bytes.
         S3ObjectWrapper adjusted = adjustToDesiredRange(
-                decrypted, desiredRange, instruction);
+                decrypted, desiredRange, matdesc);
         return adjusted.getS3Object();
     }
 
-    private S3Object decipherWithMetadata(long[] desiredRange,
+    private S3Object decipherWithMetadata(GetObjectRequest req,
+            long[] desiredRange,
             long[] cryptoRange, S3ObjectWrapper retrieved) {
+        ExtraMaterialsDescription extraMatDesc = NONE;
+        boolean keyWrapExpected = isStrict();
+        if (req instanceof EncryptedGetObjectRequest) {
+            EncryptedGetObjectRequest ereq = (EncryptedGetObjectRequest)req;
+            extraMatDesc = ereq.getExtraMaterialDescription();
+            if (!keyWrapExpected)
+                keyWrapExpected = ereq.isKeyWrapExpected();
+        }
         ContentCryptoMaterial cekMaterial = ContentCryptoMaterial
             .fromObjectMetadata(retrieved.getObjectMetadata(),
                 kekMaterialsProvider,
                 cryptoConfig.getCryptoProvider(),
                 // range is sometimes necessary to compute the adjusted IV
-                cryptoRange
+                cryptoRange,
+                extraMatDesc,
+                keyWrapExpected
             );
         securityCheck(cekMaterial, retrieved);
         S3ObjectWrapper decrypted = decrypt(retrieved, cekMaterial, cryptoRange);
@@ -293,8 +350,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     }
     
     @Override
-    public ObjectMetadata getObjectSecurely(GetObjectRequest getObjectRequest, File destinationFile)
-            throws AmazonClientException, AmazonServiceException {
+    public ObjectMetadata getObjectSecurely(GetObjectRequest getObjectRequest,
+            File destinationFile) {
         assertParameterNotNull(destinationFile,
         "The destination file parameter must be specified when downloading an object directly to a file");
 
@@ -329,8 +386,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
 
     @Override
     public CompleteMultipartUploadResult completeMultipartUploadSecurely(
-            CompleteMultipartUploadRequest req) throws AmazonClientException,
-            AmazonServiceException {
+            CompleteMultipartUploadRequest req) {
         appendUserAgent(req, USER_AGENT);
         String uploadId = req.getUploadId();
         MultipartUploadCryptoContext uploadContext = multipartUploadContexts.get(uploadId);
@@ -344,7 +400,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
 
         // In InstructionFile mode, we want to write the instruction file only
         // after the whole upload has completed correctly.
-        if (cryptoConfig.getStorageMode() == CryptoStorageMode.InstructionFile) {
+        if (cryptoConfig.getStorageMode() == InstructionFile) {
             // Put the instruction file into S3
             s3.putObject(createInstructionPutRequest(
                     uploadContext.getBucketName(),
@@ -357,13 +413,12 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
 
     @Override
     public InitiateMultipartUploadResult initiateMultipartUploadSecurely(
-            InitiateMultipartUploadRequest req)
-            throws AmazonClientException, AmazonServiceException {
+            InitiateMultipartUploadRequest req) {
         appendUserAgent(req, USER_AGENT);
         // Generate a one-time use symmetric key and initialize a cipher to
         // encrypt object data
         ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(req);
-        if (cryptoConfig.getStorageMode() == CryptoStorageMode.ObjectMetadata) {
+        if (cryptoConfig.getStorageMode() == ObjectMetadata) {
             ObjectMetadata metadata = req.getObjectMetadata();
             if (metadata == null)
                 metadata = new ObjectMetadata();
@@ -389,8 +444,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
      * when encrypting the current part.
      */
     @Override
-    public UploadPartResult uploadPartSecurely(UploadPartRequest req)
-            throws AmazonClientException, AmazonServiceException {
+    public UploadPartResult uploadPartSecurely(UploadPartRequest req) {
         appendUserAgent(req, USER_AGENT);
         final int blockSize = contentCryptoScheme.getBlockSizeInBytes();
         final boolean isLastPart = req.isLastPart();
@@ -419,7 +473,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         req.setFile(null);
         req.setFileOffset(0);
         // The last part of the multipart upload will contain an extra 16-byte mac
-        if (req.isLastPart()) {
+        if (isLastPart) {
             // We only change the size of the last part
             req.setPartSize(partSize + (contentCryptoScheme.getTagLengthInBits()/8));
             if (uploadContext.hasFinalPartBeenSeen()) {
@@ -427,10 +481,11 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                     "This part was specified as the last part in a multipart upload, but a previous part was already marked as the last part.  "
                         + "Only the last part of the upload should be marked as the last part.");
             }
-            uploadContext.setHasFinalPartBeenSeen(true);
         }
 
         UploadPartResult result = s3.uploadPart(req);
+        if (isLastPart)
+            uploadContext.setHasFinalPartBeenSeen(true);
         return result;
     }
 
@@ -457,18 +512,6 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         }
     }
 
-    @Override
-    public CopyPartResult copyPartSecurely(CopyPartRequest copyPartRequest) {
-        String uploadId = copyPartRequest.getUploadId();
-        MultipartUploadCryptoContext uploadContext = multipartUploadContexts.get(uploadId);
-
-        if (!uploadContext.hasFinalPartBeenSeen()) {
-            uploadContext.setHasFinalPartBeenSeen(true);
-        }
-
-        return s3.copyPart(copyPartRequest);
-    }
-
     /*
      * Private helper methods
      */
@@ -483,16 +526,12 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
      * @return
      *      A {@link PutObjectResult} object containing the information
      *      returned by Amazon S3 for the new, created object.
-     * @throws AmazonClientException
-     *      If any errors are encountered on the client while making the
-     *      request or handling the response.
-     * @throws AmazonServiceException
-     *      If any errors occurred in Amazon S3 while processing the
-     *      request.
      */
-    private PutObjectResult putObjectUsingInstructionFile(PutObjectRequest putObjectRequest)
-            throws AmazonClientException, AmazonServiceException {
+    private PutObjectResult putObjectUsingInstructionFile(
+            PutObjectRequest putObjectRequest) {
         PutObjectRequest putInstFileRequest = putObjectRequest.clone();
+        putInstFileRequest.setKey(putInstFileRequest.getKey() + DOT
+                + DEFAULT_INSTURCTION_FILE_SUFFIX);
         // Create instruction
         ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(putObjectRequest);
         // Wraps the object data with a cipher input stream; note the metadata
@@ -501,7 +540,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         // Put the encrypted object into S3
         PutObjectResult result = s3.putObject(req);
         // Put the instruction file into S3
-        s3.putObject(upateInstructionPutRequest(putInstFileRequest, cekMaterial));
+        s3.putObject(updateInstructionPutRequest(putInstFileRequest, cekMaterial));
         // Return the result of the encrypted object PUT.
         return result;
     }
@@ -520,30 +559,11 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             ContentCryptoMaterial cekMaterial, long[] range) {
         S3ObjectInputStream objectContent = wrapper.getObjectContent();
         wrapper.setObjectContent(new S3ObjectInputStream(
-                new CipherLiteInputStream(objectContent, cekMaterial
-                        .getCipherLite(), DEFAULT_BUFFER_SIZE), objectContent
-                        .getHttpRequest()));
+                new CipherLiteInputStream(objectContent, 
+                    cekMaterial.getCipherLite(),
+                    DEFAULT_BUFFER_SIZE),
+                    objectContent.getHttpRequest()));
         return wrapper;
-    }
-
-    /**
-     * Retrieves an instruction file from S3.  If no instruction file is found, returns null.
-     *
-     * @param getObjectRequest
-     *      A GET request for an object in S3.  The parameters from this request will be used
-     *      to retrieve the corresponding instruction file.
-     * @return
-     *      An instruction file, or null if no instruction file was found.
-     */
-    private S3ObjectWrapper fetchInstructionFile(GetObjectRequest getObjectRequest) {
-        try {
-            S3Object o = s3.getObject(createInstructionGetRequest(getObjectRequest));
-            return o == null ? null : new S3ObjectWrapper(o);
-        } catch (AmazonServiceException e) {
-            // If no instruction file is found, log a debug message, and return null.
-            log.debug("Unable to retrieve instruction file : " + e.getMessage());
-            return null;
-        }
     }
 
     /**

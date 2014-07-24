@@ -17,8 +17,7 @@ package com.amazonaws.services.s3.model;
 import java.util.Map;
 
 /**
- * Interface for providing MaterialsDescription. 
- *
+ * Interface for providing MaterialsDescription.
  */
 public interface MaterialsDescriptionProvider {
     
