@@ -43,6 +43,7 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.PutInstructionFileRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
@@ -383,8 +384,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         assertParameterNotNull(cryptoConfig,
                 "CryptoConfiguration parameter must not be null.");
         this.crypto = new CryptoModuleDispatcher(new S3DirectImpl(),
-                credentialsProvider, kekMaterialsProvider,
-                clientConfig, cryptoConfig);
+                credentialsProvider, kekMaterialsProvider, cryptoConfig);
     }
 
     private void assertParameterNotNull(Object parameterValue,
@@ -472,6 +472,21 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     @Override
     public void abortMultipartUpload(AbortMultipartUploadRequest req) {
         crypto.abortMultipartUploadSecurely(req);
+    }
+
+    /**
+     * Creates a new crypto instruction file by re-encrypting the CEK of an
+     * existing encrypted S3 object with a new encryption material identifiable
+     * via a new set of material description.
+     *<p> 
+     * User of this method is responsible for explicitly deleting/updating the
+     * instruction file so created should the corresponding S3 object is
+     * deleted/created.
+     * 
+     * @return the result of the put (instruction file) operation.
+     */
+    public PutObjectResult putInstructionFile(PutInstructionFileRequest req) {
+        return crypto.putInstructionFileSecurely(req);
     }
 
     // /////////////////// Access to the methods in the super class //////////

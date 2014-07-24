@@ -16,12 +16,27 @@ package com.amazonaws.services.s3.internal.crypto;
 
 import java.security.Key;
 
-final class S3KeyWrapScheme {
+class S3KeyWrapScheme {
+    /**
+     * Used for backward compatibility where the encryption only mode has no
+     * explicit key wrapping scheme.
+     */
+    static final S3KeyWrapScheme NONE = new S3KeyWrapScheme() {
+        String getKeyWrapAlgorithm(Key key) {
+            return null;
+        }
+        @Override public String toString() { return "NONE"; }
+    };
     public static final String AESWrap = "AESWrap"; 
     public static final String RSA_ECB_OAEPWithSHA256AndMGF1Padding = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
 
-    String getKeyWrapAlgorithm(Key key) {
-        String algorithm = key.getAlgorithm();
+    /**
+     * @param kek
+     *            the key encrypting key, which is either an AES key or a public
+     *            key
+     */
+    String getKeyWrapAlgorithm(Key kek) {
+        String algorithm = kek.getAlgorithm();
         if (S3CryptoScheme.AES.equals(algorithm)) {
             return AESWrap;
         }
@@ -31,4 +46,6 @@ final class S3KeyWrapScheme {
         }
         return null;
     }
+
+    @Override public String toString() { return "S3KeyWrapScheme"; }
 }

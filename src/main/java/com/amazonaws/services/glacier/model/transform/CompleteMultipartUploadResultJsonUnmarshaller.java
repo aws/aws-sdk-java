@@ -34,12 +34,21 @@ public class CompleteMultipartUploadResultJsonUnmarshaller implements Unmarshall
         CompleteMultipartUploadResult completeMultipartUploadResult = new CompleteMultipartUploadResult();
 
         if (context.isStartOfDocument()) {
-            if (context.getHeader("Location") != null)
-                completeMultipartUploadResult.setLocation(context.getHeader("Location"));
-            if (context.getHeader("x-amz-sha256-tree-hash") != null)
-                completeMultipartUploadResult.setChecksum(context.getHeader("x-amz-sha256-tree-hash"));
-            if (context.getHeader("x-amz-archive-id") != null)
-                completeMultipartUploadResult.setArchiveId(context.getHeader("x-amz-archive-id"));
+            if (context.getHeader("Location") != null) {
+                context.setCurrentHeader("Location");
+                completeMultipartUploadResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
+            if (context.getHeader("x-amz-sha256-tree-hash") != null) {
+                context.setCurrentHeader("x-amz-sha256-tree-hash");
+                completeMultipartUploadResult.setChecksum(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
+            if (context.getHeader("x-amz-archive-id") != null) {
+                context.setCurrentHeader("x-amz-archive-id");
+                completeMultipartUploadResult.setArchiveId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
         }
         
         return completeMultipartUploadResult;

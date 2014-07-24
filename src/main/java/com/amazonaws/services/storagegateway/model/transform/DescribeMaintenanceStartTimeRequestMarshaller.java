@@ -15,13 +15,17 @@
 package com.amazonaws.services.storagegateway.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class DescribeMaintenanceStartTimeRequestMarshaller implements Marshaller<Request<DescribeMaintenanceStartTimeRequest>, DescribeMaintenanceStartTimeRequest> {
 
     public Request<DescribeMaintenanceStartTimeRequest> marshall(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest) {
-    if (describeMaintenanceStartTimeRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (describeMaintenanceStartTimeRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DescribeMaintenanceStartTimeRequest> request = new DefaultRequest<DescribeMaintenanceStartTimeRequest>(describeMaintenanceStartTimeRequest, "AWSStorageGateway");
         String target = "StorageGateway_20130630.DescribeMaintenanceStartTime";

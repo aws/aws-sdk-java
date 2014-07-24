@@ -15,13 +15,17 @@
 package com.amazonaws.services.directconnect.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class DeleteConnectionRequestMarshaller implements Marshaller<Request<DeleteConnectionRequest>, DeleteConnectionRequest> {
 
     public Request<DeleteConnectionRequest> marshall(DeleteConnectionRequest deleteConnectionRequest) {
-    if (deleteConnectionRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (deleteConnectionRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<DeleteConnectionRequest> request = new DefaultRequest<DeleteConnectionRequest>(deleteConnectionRequest, "AmazonDirectConnect");
         String target = "OvertureService.DeleteConnection";

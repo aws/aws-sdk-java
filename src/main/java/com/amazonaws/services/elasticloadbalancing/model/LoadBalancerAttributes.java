@@ -53,6 +53,19 @@ public class LoadBalancerAttributes implements Serializable {
     private ConnectionDraining connectionDraining;
 
     /**
+     * The name of the load balancer attribute. <p>By default, Elastic Load
+     * Balancing maintains a 60-second idle connection timeout for both
+     * front-end and back-end connections of your load balancer. If
+     * <code>ConnectionSettings</code> attribute is set, Elastic Load
+     * Balancing will allow the connections to remain idle (no data is sent
+     * over the connection) for the specified duration. <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+     * Idle Connection Timeout</a>.
+     */
+    private ConnectionSettings connectionSettings;
+
+    /**
      * The name of the load balancer attribute. If enabled, the load balancer
      * routes the request traffic evenly across all back-end instances
      * regardless of the Availability Zones. <p>For more information, see <a
@@ -236,6 +249,87 @@ public class LoadBalancerAttributes implements Serializable {
     }
 
     /**
+     * The name of the load balancer attribute. <p>By default, Elastic Load
+     * Balancing maintains a 60-second idle connection timeout for both
+     * front-end and back-end connections of your load balancer. If
+     * <code>ConnectionSettings</code> attribute is set, Elastic Load
+     * Balancing will allow the connections to remain idle (no data is sent
+     * over the connection) for the specified duration. <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+     * Idle Connection Timeout</a>.
+     *
+     * @return The name of the load balancer attribute. <p>By default, Elastic Load
+     *         Balancing maintains a 60-second idle connection timeout for both
+     *         front-end and back-end connections of your load balancer. If
+     *         <code>ConnectionSettings</code> attribute is set, Elastic Load
+     *         Balancing will allow the connections to remain idle (no data is sent
+     *         over the connection) for the specified duration. <p>For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+     *         Idle Connection Timeout</a>.
+     */
+    public ConnectionSettings getConnectionSettings() {
+        return connectionSettings;
+    }
+    
+    /**
+     * The name of the load balancer attribute. <p>By default, Elastic Load
+     * Balancing maintains a 60-second idle connection timeout for both
+     * front-end and back-end connections of your load balancer. If
+     * <code>ConnectionSettings</code> attribute is set, Elastic Load
+     * Balancing will allow the connections to remain idle (no data is sent
+     * over the connection) for the specified duration. <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+     * Idle Connection Timeout</a>.
+     *
+     * @param connectionSettings The name of the load balancer attribute. <p>By default, Elastic Load
+     *         Balancing maintains a 60-second idle connection timeout for both
+     *         front-end and back-end connections of your load balancer. If
+     *         <code>ConnectionSettings</code> attribute is set, Elastic Load
+     *         Balancing will allow the connections to remain idle (no data is sent
+     *         over the connection) for the specified duration. <p>For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+     *         Idle Connection Timeout</a>.
+     */
+    public void setConnectionSettings(ConnectionSettings connectionSettings) {
+        this.connectionSettings = connectionSettings;
+    }
+    
+    /**
+     * The name of the load balancer attribute. <p>By default, Elastic Load
+     * Balancing maintains a 60-second idle connection timeout for both
+     * front-end and back-end connections of your load balancer. If
+     * <code>ConnectionSettings</code> attribute is set, Elastic Load
+     * Balancing will allow the connections to remain idle (no data is sent
+     * over the connection) for the specified duration. <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+     * Idle Connection Timeout</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param connectionSettings The name of the load balancer attribute. <p>By default, Elastic Load
+     *         Balancing maintains a 60-second idle connection timeout for both
+     *         front-end and back-end connections of your load balancer. If
+     *         <code>ConnectionSettings</code> attribute is set, Elastic Load
+     *         Balancing will allow the connections to remain idle (no data is sent
+     *         over the connection) for the specified duration. <p>For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+     *         Idle Connection Timeout</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public LoadBalancerAttributes withConnectionSettings(ConnectionSettings connectionSettings) {
+        this.connectionSettings = connectionSettings;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -249,7 +343,8 @@ public class LoadBalancerAttributes implements Serializable {
         sb.append("{");
         if (getCrossZoneLoadBalancing() != null) sb.append("CrossZoneLoadBalancing: " + getCrossZoneLoadBalancing() + ",");
         if (getAccessLog() != null) sb.append("AccessLog: " + getAccessLog() + ",");
-        if (getConnectionDraining() != null) sb.append("ConnectionDraining: " + getConnectionDraining() );
+        if (getConnectionDraining() != null) sb.append("ConnectionDraining: " + getConnectionDraining() + ",");
+        if (getConnectionSettings() != null) sb.append("ConnectionSettings: " + getConnectionSettings() );
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +357,7 @@ public class LoadBalancerAttributes implements Serializable {
         hashCode = prime * hashCode + ((getCrossZoneLoadBalancing() == null) ? 0 : getCrossZoneLoadBalancing().hashCode()); 
         hashCode = prime * hashCode + ((getAccessLog() == null) ? 0 : getAccessLog().hashCode()); 
         hashCode = prime * hashCode + ((getConnectionDraining() == null) ? 0 : getConnectionDraining().hashCode()); 
+        hashCode = prime * hashCode + ((getConnectionSettings() == null) ? 0 : getConnectionSettings().hashCode()); 
         return hashCode;
     }
     
@@ -279,6 +375,8 @@ public class LoadBalancerAttributes implements Serializable {
         if (other.getAccessLog() != null && other.getAccessLog().equals(this.getAccessLog()) == false) return false; 
         if (other.getConnectionDraining() == null ^ this.getConnectionDraining() == null) return false;
         if (other.getConnectionDraining() != null && other.getConnectionDraining().equals(this.getConnectionDraining()) == false) return false; 
+        if (other.getConnectionSettings() == null ^ this.getConnectionSettings() == null) return false;
+        if (other.getConnectionSettings() != null && other.getConnectionSettings().equals(this.getConnectionSettings()) == false) return false; 
         return true;
     }
     

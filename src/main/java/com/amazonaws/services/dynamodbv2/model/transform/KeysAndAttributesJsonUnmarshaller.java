@@ -37,7 +37,7 @@ public class KeysAndAttributesJsonUnmarshaller implements Unmarshaller<KeysAndAt
         String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
-        JsonToken token = context.currentToken;
+        JsonToken token = context.getCurrentToken();
         if (token == null) token = context.nextToken();
         if (token == VALUE_NULL) return null;
 

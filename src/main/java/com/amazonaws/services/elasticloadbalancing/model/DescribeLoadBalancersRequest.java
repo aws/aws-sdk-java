@@ -47,6 +47,14 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     private String marker;
 
     /**
+     * The size of the page returned by this call.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 400<br/>
+     */
+    private Integer pageSize;
+
+    /**
      * Default constructor for a new DescribeLoadBalancersRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -166,6 +174,48 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * The size of the page returned by this call.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 400<br/>
+     *
+     * @return The size of the page returned by this call.
+     */
+    public Integer getPageSize() {
+        return pageSize;
+    }
+    
+    /**
+     * The size of the page returned by this call.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 400<br/>
+     *
+     * @param pageSize The size of the page returned by this call.
+     */
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+    
+    /**
+     * The size of the page returned by this call.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 400<br/>
+     *
+     * @param pageSize The size of the page returned by this call.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeLoadBalancersRequest withPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -178,7 +228,8 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getPageSize() != null) sb.append("PageSize: " + getPageSize() );
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +241,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
         
         hashCode = prime * hashCode + ((getLoadBalancerNames() == null) ? 0 : getLoadBalancerNames().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode()); 
         return hashCode;
     }
     
@@ -205,6 +257,8 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
         if (other.getLoadBalancerNames() != null && other.getLoadBalancerNames().equals(this.getLoadBalancerNames()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getPageSize() == null ^ this.getPageSize() == null) return false;
+        if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false) return false; 
         return true;
     }
     

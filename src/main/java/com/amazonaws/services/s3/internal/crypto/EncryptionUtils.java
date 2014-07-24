@@ -50,6 +50,7 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectId;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
@@ -145,7 +146,7 @@ public class EncryptionUtils {
         return buildInstruction(materialsProvider.getEncryptionMaterials(materialsDescription), cryptoProvider);
     }
 
-    private static EncryptionInstruction buildInstruction(EncryptionMaterials materials, Provider cryptoProvider) {
+    public static EncryptionInstruction buildInstruction(EncryptionMaterials materials, Provider cryptoProvider) {
         // Generate a one-time use symmetric key and initialize a cipher to
         // encrypt object data
         SecretKey envelopeSymmetricKey = generateOneTimeUseSymmetricKey();
@@ -414,15 +415,31 @@ public class EncryptionUtils {
     }
 
     /**
-     * Creates a get request to retrieve an instruction file from S3.
+     * Creates a get object request for an instruction file using
+     * the default instruction file suffix.
      *
-     * @param request
-     *      The get request for the original object to be retrieved from S3.
+     * @param id
+     *      an S3 object id (not the instruction file id)
      * @return
      *      A get request to retrieve an instruction file from S3.
      */
-    public static GetObjectRequest createInstructionGetRequest(GetObjectRequest request) {
-        return new GetObjectRequest(request.getBucketName(), request.getKey() + INSTRUCTION_SUFFIX, request.getVersionId());
+    public static GetObjectRequest createInstructionGetRequest(S3ObjectId id) {
+        return createInstructionGetRequest(id, null);
+    }
+
+    /**
+     * Creates and return a get object request for an instruction file.
+     * 
+     * @param s3objectId
+     *      an S3 object id (not the instruction file id)
+     * @param instFileSuffix
+     *            suffix of the specific instruction file to be used, or null if
+     *            the default instruction file is to be used.
+     */
+    public static GetObjectRequest createInstructionGetRequest(
+            S3ObjectId s3objectId, String instFileSuffix) {
+        return new GetObjectRequest(
+                s3objectId.instructionFileId(instFileSuffix));
     }
 
     /**

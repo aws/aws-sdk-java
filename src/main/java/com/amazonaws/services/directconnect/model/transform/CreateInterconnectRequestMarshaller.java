@@ -15,13 +15,17 @@
 package com.amazonaws.services.directconnect.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class CreateInterconnectRequestMarshaller implements Marshaller<Request<CreateInterconnectRequest>, CreateInterconnectRequest> {
 
     public Request<CreateInterconnectRequest> marshall(CreateInterconnectRequest createInterconnectRequest) {
-    if (createInterconnectRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (createInterconnectRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateInterconnectRequest> request = new DefaultRequest<CreateInterconnectRequest>(createInterconnectRequest, "AmazonDirectConnect");
         String target = "OvertureService.CreateInterconnect";

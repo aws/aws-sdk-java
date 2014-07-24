@@ -55,6 +55,10 @@ public class LoadBalancerAttributesStaxUnmarshaller implements Unmarshaller<Load
                     loadBalancerAttributes.setConnectionDraining(ConnectionDrainingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ConnectionSettings", targetDepth)) {
+                    loadBalancerAttributes.setConnectionSettings(ConnectionSettingsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return loadBalancerAttributes;

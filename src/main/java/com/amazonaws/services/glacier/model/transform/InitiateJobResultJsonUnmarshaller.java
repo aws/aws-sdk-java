@@ -34,10 +34,16 @@ public class InitiateJobResultJsonUnmarshaller implements Unmarshaller<InitiateJ
         InitiateJobResult initiateJobResult = new InitiateJobResult();
 
         if (context.isStartOfDocument()) {
-            if (context.getHeader("Location") != null)
-                initiateJobResult.setLocation(context.getHeader("Location"));
-            if (context.getHeader("x-amz-job-id") != null)
-                initiateJobResult.setJobId(context.getHeader("x-amz-job-id"));
+            if (context.getHeader("Location") != null) {
+                context.setCurrentHeader("Location");
+                initiateJobResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
+            if (context.getHeader("x-amz-job-id") != null) {
+                context.setCurrentHeader("x-amz-job-id");
+                initiateJobResult.setJobId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
         }
         
         return initiateJobResult;

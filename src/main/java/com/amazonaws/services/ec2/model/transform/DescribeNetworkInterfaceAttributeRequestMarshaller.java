@@ -44,17 +44,8 @@ public class DescribeNetworkInterfaceAttributeRequestMarshaller implements Marsh
         if (describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId()));
         }
-        if (describeNetworkInterfaceAttributeRequest.getDescription() != null) {
-            request.addParameter("Description", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getDescription()));
-        }
-        if (describeNetworkInterfaceAttributeRequest.getSourceDestCheck() != null) {
-            request.addParameter("SourceDestCheck", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getSourceDestCheck()));
-        }
-        if (describeNetworkInterfaceAttributeRequest.getGroups() != null) {
-            request.addParameter("GroupSet", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getGroups()));
-        }
-        if (describeNetworkInterfaceAttributeRequest.getAttachment() != null) {
-            request.addParameter("Attachment", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getAttachment()));
+        if (describeNetworkInterfaceAttributeRequest.getAttribute() != null) {
+            request.addParameter("Attribute", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getAttribute()));
         }
 
         return request;

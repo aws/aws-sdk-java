@@ -15,13 +15,17 @@
 package com.amazonaws.services.simpleworkflow.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class ListWorkflowTypesRequestMarshaller implements Marshaller<Request<ListWorkflowTypesRequest>, ListWorkflowTypesRequest> {
 
     public Request<ListWorkflowTypesRequest> marshall(ListWorkflowTypesRequest listWorkflowTypesRequest) {
-    if (listWorkflowTypesRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (listWorkflowTypesRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListWorkflowTypesRequest> request = new DefaultRequest<ListWorkflowTypesRequest>(listWorkflowTypesRequest, "AmazonSimpleWorkflow");
         String target = "SimpleWorkflowService.ListWorkflowTypes";

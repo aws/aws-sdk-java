@@ -28,6 +28,7 @@ import javax.crypto.SecretKey;
 public class EncryptionMaterials {
     private final KeyPair keyPair;
     private final SecretKey symmetricKey;
+    private Map<String, String> desc = new HashMap<String,String>();
 
     /**
      * Constructs a new EncryptionMaterials object, storing an asymmetric key pair.
@@ -79,13 +80,10 @@ public class EncryptionMaterials {
     }
 
     /**
-     * Returns an empty map since the EncryptionMaterials base class does not have extra materials information.
-     * Subclasses may override this method.
-     * 
-     * @return an empty <String, String> map
+     * Returns a snapshot of the current material description; never null.
      */
     public Map<String, String> getMaterialsDescription() {
-        return new HashMap<String, String>();
+        return new HashMap<String, String>(desc);
     }
 
     /**
@@ -96,5 +94,21 @@ public class EncryptionMaterials {
      */
     public EncryptionMaterialsAccessor getAccessor() {
         return null;
+    }
+
+    /**
+     * Fluent API to add material description.
+     */
+    public EncryptionMaterials addDescription(String name, String value) {
+        desc.put(name, value);
+        return this;
+    }
+
+    /**
+     * Fluent API to add all the given material descriptions.
+     */
+    public EncryptionMaterials addDescriptions(Map<String,String> descriptions) {
+        desc.putAll(descriptions);
+        return this;
     }
 }

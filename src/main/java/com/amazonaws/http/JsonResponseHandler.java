@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
 import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
@@ -98,7 +99,8 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
-            JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContext(jsonParser, response);
+            JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContextImpl(
+                    jsonParser, response);
             registerAdditionalMetadataExpressions(unmarshallerContext);
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);

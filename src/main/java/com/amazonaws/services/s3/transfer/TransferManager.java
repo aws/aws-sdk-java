@@ -113,13 +113,13 @@ import com.amazonaws.util.VersionInfoUtils;
  *
  * // You can poll your transfer's status to check its progress
  * if (myUpload.isDone() == false) {
- * 	System.out.println("Transfer: " + myUpload.getDescription());
- * 	System.out.println("  - State: " + myUpload.getState());
- * 	System.out.println("  - Progress: "
+ * 	System.out.println(&quot;Transfer: &quot; + myUpload.getDescription());
+ * 	System.out.println(&quot;  - State: &quot; + myUpload.getState());
+ * 	System.out.println(&quot;  - Progress: &quot;
  * 			+ myUpload.getProgress().getBytesTransferred());
  * }
  *
- * // Transfers also allow you to set a <code>ProgressListener</code> to receive
+ * // Transfers also allow you to set a &lt;code&gt;ProgressListener&lt;/code&gt; to receive
  * // asynchronous notifications about your transfer's progress.
  * myUpload.addProgressListener(myProgressListener);
  *
@@ -132,9 +132,13 @@ import com.amazonaws.util.VersionInfoUtils;
  * tx.shutdownNow();
  * </pre>
  * <p>
- * Note: Transfers are stored in memory. If the JVM is restarted, previous
- * transfers are no longer accessible. If needed, clean up any multipart uploads
- * that are incomplete.
+ * Transfers can be paused and resumed at a later time. It can also survive JVM
+ * crash, provided the information that is required to resume the transfer is
+ * given as input to the resume operation. For more information on pause and resume,
+ * @see Upload#pause()
+ * @see Download#pause()
+ * @see TransferManager#resumeUpload(PersistableUpload)
+ * @see TransferManager#resumeDownload(PersistableDownload)
  */
 public class TransferManager {
 

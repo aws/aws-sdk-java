@@ -15,13 +15,17 @@
 package com.amazonaws.services.cloudtrail.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTrailRequest>, CreateTrailRequest> {
 
     public Request<CreateTrailRequest> marshall(CreateTrailRequest createTrailRequest) {
-    if (createTrailRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (createTrailRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateTrailRequest> request = new DefaultRequest<CreateTrailRequest>(createTrailRequest, "AWSCloudTrail");
         String target = "CloudTrail_20131101.CreateTrail";

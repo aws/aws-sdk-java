@@ -54,6 +54,9 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
         if (describeLoadBalancersRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeLoadBalancersRequest.getMarker()));
         }
+        if (describeLoadBalancersRequest.getPageSize() != null) {
+            request.addParameter("PageSize", StringUtils.fromInteger(describeLoadBalancersRequest.getPageSize()));
+        }
 
         return request;
     }

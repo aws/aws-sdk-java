@@ -15,13 +15,17 @@
 package com.amazonaws.services.simpleworkflow.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -40,9 +44,9 @@ import com.amazonaws.util.json.*;
 public class RespondActivityTaskCompletedRequestMarshaller implements Marshaller<Request<RespondActivityTaskCompletedRequest>, RespondActivityTaskCompletedRequest> {
 
     public Request<RespondActivityTaskCompletedRequest> marshall(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest) {
-    if (respondActivityTaskCompletedRequest == null) {
-        throw new AmazonClientException("Invalid argument passed to marshall(...)");
-    }
+        if (respondActivityTaskCompletedRequest == null) {
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<RespondActivityTaskCompletedRequest> request = new DefaultRequest<RespondActivityTaskCompletedRequest>(respondActivityTaskCompletedRequest, "AmazonSimpleWorkflow");
         String target = "SimpleWorkflowService.RespondActivityTaskCompleted";

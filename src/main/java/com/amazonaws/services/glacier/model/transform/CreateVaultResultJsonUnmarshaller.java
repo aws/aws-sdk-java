@@ -34,8 +34,11 @@ public class CreateVaultResultJsonUnmarshaller implements Unmarshaller<CreateVau
         CreateVaultResult createVaultResult = new CreateVaultResult();
 
         if (context.isStartOfDocument()) {
-            if (context.getHeader("Location") != null)
-                createVaultResult.setLocation(context.getHeader("Location"));
+            if (context.getHeader("Location") != null) {
+                context.setCurrentHeader("Location");
+                createVaultResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+            }
+            
         }
         
         return createVaultResult;
