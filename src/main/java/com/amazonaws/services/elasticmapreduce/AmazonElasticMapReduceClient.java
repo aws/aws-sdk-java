@@ -14,26 +14,102 @@
  */
 package com.amazonaws.services.elasticmapreduce;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.elasticmapreduce.model.AddInstanceGroupsRequest;
+import com.amazonaws.services.elasticmapreduce.model.AddInstanceGroupsResult;
+import com.amazonaws.services.elasticmapreduce.model.AddJobFlowStepsRequest;
+import com.amazonaws.services.elasticmapreduce.model.AddJobFlowStepsResult;
+import com.amazonaws.services.elasticmapreduce.model.AddTagsRequest;
+import com.amazonaws.services.elasticmapreduce.model.AddTagsResult;
+import com.amazonaws.services.elasticmapreduce.model.DescribeClusterRequest;
+import com.amazonaws.services.elasticmapreduce.model.DescribeClusterResult;
+import com.amazonaws.services.elasticmapreduce.model.DescribeJobFlowsRequest;
+import com.amazonaws.services.elasticmapreduce.model.DescribeJobFlowsResult;
+import com.amazonaws.services.elasticmapreduce.model.DescribeStepRequest;
+import com.amazonaws.services.elasticmapreduce.model.DescribeStepResult;
+import com.amazonaws.services.elasticmapreduce.model.InternalServerErrorException;
+import com.amazonaws.services.elasticmapreduce.model.InternalServerException;
+import com.amazonaws.services.elasticmapreduce.model.InvalidRequestException;
+import com.amazonaws.services.elasticmapreduce.model.ListBootstrapActionsRequest;
+import com.amazonaws.services.elasticmapreduce.model.ListBootstrapActionsResult;
+import com.amazonaws.services.elasticmapreduce.model.ListClustersRequest;
+import com.amazonaws.services.elasticmapreduce.model.ListClustersResult;
+import com.amazonaws.services.elasticmapreduce.model.ListInstanceGroupsRequest;
+import com.amazonaws.services.elasticmapreduce.model.ListInstanceGroupsResult;
+import com.amazonaws.services.elasticmapreduce.model.ListInstancesRequest;
+import com.amazonaws.services.elasticmapreduce.model.ListInstancesResult;
+import com.amazonaws.services.elasticmapreduce.model.ListStepsRequest;
+import com.amazonaws.services.elasticmapreduce.model.ListStepsResult;
+import com.amazonaws.services.elasticmapreduce.model.ModifyInstanceGroupsRequest;
+import com.amazonaws.services.elasticmapreduce.model.RemoveTagsRequest;
+import com.amazonaws.services.elasticmapreduce.model.RemoveTagsResult;
+import com.amazonaws.services.elasticmapreduce.model.RunJobFlowRequest;
+import com.amazonaws.services.elasticmapreduce.model.RunJobFlowResult;
+import com.amazonaws.services.elasticmapreduce.model.SetTerminationProtectionRequest;
+import com.amazonaws.services.elasticmapreduce.model.SetVisibleToAllUsersRequest;
+import com.amazonaws.services.elasticmapreduce.model.TerminateJobFlowsRequest;
+import com.amazonaws.services.elasticmapreduce.model.transform.AddInstanceGroupsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.AddInstanceGroupsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.AddJobFlowStepsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.AddJobFlowStepsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.AddTagsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.AddTagsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.DescribeClusterRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.DescribeClusterResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.DescribeJobFlowsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.DescribeJobFlowsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.DescribeStepRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.DescribeStepResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.InternalServerErrorExceptionUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.InternalServerExceptionUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.InvalidRequestExceptionUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListBootstrapActionsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListBootstrapActionsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListClustersRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListClustersResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListInstanceGroupsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListInstanceGroupsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListInstancesRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListInstancesResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListStepsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ListStepsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.ModifyInstanceGroupsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.RemoveTagsRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.RemoveTagsResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.RunJobFlowRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.RunJobFlowResultJsonUnmarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.SetTerminationProtectionRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.SetVisibleToAllUsersRequestMarshaller;
+import com.amazonaws.services.elasticmapreduce.model.transform.TerminateJobFlowsRequestMarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.services.elasticmapreduce.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AmazonElasticMapReduce.  All service calls made
@@ -58,7 +134,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonElasticMapReduce.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonElasticMapReduce.class);
 
     /**
      * List of exception unmarshallers for all AmazonElasticMapReduce exceptions.

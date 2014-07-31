@@ -24,14 +24,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.flow.WorkerBase;
 import com.amazonaws.services.simpleworkflow.flow.common.FlowConstants;
 import com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException;
 import com.amazonaws.services.simpleworkflow.model.RegisterDomainRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class GenericWorker implements WorkerBase {
 
@@ -109,7 +109,7 @@ public abstract class GenericWorker implements WorkerBase {
         }
     }
 
-    private static final Log log = LogFactory.getLog(GenericWorker.class);
+    private static final Logger log = LoggerFactory.getLogger(GenericWorker.class);
 
     protected static final int MAX_IDENTITY_LENGTH = 256;
 

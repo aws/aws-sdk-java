@@ -14,26 +14,86 @@
  */
 package com.amazonaws.services.cloudtrail;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.cloudtrail.model.CreateTrailRequest;
+import com.amazonaws.services.cloudtrail.model.CreateTrailResult;
+import com.amazonaws.services.cloudtrail.model.DeleteTrailRequest;
+import com.amazonaws.services.cloudtrail.model.DeleteTrailResult;
+import com.amazonaws.services.cloudtrail.model.DescribeTrailsRequest;
+import com.amazonaws.services.cloudtrail.model.DescribeTrailsResult;
+import com.amazonaws.services.cloudtrail.model.GetTrailStatusRequest;
+import com.amazonaws.services.cloudtrail.model.GetTrailStatusResult;
+import com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException;
+import com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException;
+import com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException;
+import com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException;
+import com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException;
+import com.amazonaws.services.cloudtrail.model.InvalidTrailNameException;
+import com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException;
+import com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException;
+import com.amazonaws.services.cloudtrail.model.StartLoggingRequest;
+import com.amazonaws.services.cloudtrail.model.StartLoggingResult;
+import com.amazonaws.services.cloudtrail.model.StopLoggingRequest;
+import com.amazonaws.services.cloudtrail.model.StopLoggingResult;
+import com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException;
+import com.amazonaws.services.cloudtrail.model.TrailNotFoundException;
+import com.amazonaws.services.cloudtrail.model.TrailNotProvidedException;
+import com.amazonaws.services.cloudtrail.model.UpdateTrailRequest;
+import com.amazonaws.services.cloudtrail.model.UpdateTrailResult;
+import com.amazonaws.services.cloudtrail.model.transform.CreateTrailRequestMarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.CreateTrailResultJsonUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.DeleteTrailRequestMarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.DeleteTrailResultJsonUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.DescribeTrailsRequestMarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.DescribeTrailsResultJsonUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.GetTrailStatusRequestMarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.GetTrailStatusResultJsonUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.InsufficientS3BucketPolicyExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.InsufficientSnsTopicPolicyExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.InvalidS3BucketNameExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.InvalidS3PrefixExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.InvalidSnsTopicNameExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.InvalidTrailNameExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.MaximumNumberOfTrailsExceededExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.S3BucketDoesNotExistExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.StartLoggingRequestMarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.StartLoggingResultJsonUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.StopLoggingRequestMarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.StopLoggingResultJsonUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.TrailAlreadyExistsExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.TrailNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.TrailNotProvidedExceptionUnmarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.UpdateTrailRequestMarshaller;
+import com.amazonaws.services.cloudtrail.model.transform.UpdateTrailResultJsonUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.cloudtrail.model.*;
-import com.amazonaws.services.cloudtrail.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AWSCloudTrail.  All service calls made
@@ -72,7 +132,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AWSCloudTrail.class);
+    private static final Logger log = LoggerFactory.getLogger(AWSCloudTrail.class);
 
     /**
      * List of exception unmarshallers for all AWSCloudTrail exceptions.

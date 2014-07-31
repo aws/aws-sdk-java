@@ -19,8 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.NotThreadSafe;
+import org.slf4j.LoggerFactory;
 
 /**
  * In contrast to {@link TimingInfo}, which is intended to be a minimal support
@@ -63,7 +63,7 @@ class TimingInfoFullSupport extends TimingInfo {
         if (ti.isEndTimeKnown()) {
             timings.add(ti);
         } else {
-            LogFactory.getLog(getClass()).debug(
+            LoggerFactory.getLogger(getClass()).debug(
                 "Skip submeasurement timing info with no end time for "
                 + subMeasurementName);
         }

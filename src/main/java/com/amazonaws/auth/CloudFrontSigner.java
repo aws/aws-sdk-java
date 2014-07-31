@@ -16,12 +16,12 @@ package com.amazonaws.auth;
 
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.util.DateUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implementation of AbstractAWSSigner for Amazon CloudFront's authentication
@@ -30,7 +30,7 @@ import com.amazonaws.util.DateUtils;
 public class CloudFrontSigner extends AbstractAWSSigner {
 
     /** Shared log for signing debug output */
-    private static final Log log = LogFactory.getLog(CloudFrontSigner.class);
+    private static final Logger log = LoggerFactory.getLogger(CloudFrontSigner.class);
 
     @Override
     public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {

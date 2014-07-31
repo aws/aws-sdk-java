@@ -25,8 +25,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -36,6 +34,8 @@ import com.amazonaws.jmx.spi.SdkMBeanRegistry;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AWSServiceMetrics;
+
+import org.slf4j.LoggerFactory;
 
 /**
  * Used to control the default AWS SDK metric collection system.
@@ -282,10 +282,10 @@ public enum AwsSdkMetrics {
                             } else if (HOST_METRIC_NAME.equals(key)) {
                                 hostMetricName = value;
                             } else {
-                                LogFactory.getLog(AwsSdkMetrics.class).debug("Ignoring unrecognized parameter: " + part);
+                                LoggerFactory.getLogger(AwsSdkMetrics.class).debug("Ignoring unrecognized parameter: " + part);
                             }
                         } catch (Exception e) {
-                            LogFactory.getLog(AwsSdkMetrics.class).debug("Ignoring failure", e);
+                            LoggerFactory.getLogger(AwsSdkMetrics.class).debug("Ignoring failure", e);
                         }
                     }
                 }
@@ -307,7 +307,7 @@ public enum AwsSdkMetrics {
         try {
             registerMetricAdminMBean();
         } catch(Exception ex) {
-            LogFactory.getLog(AwsSdkMetrics.class).warn("", ex);
+            LoggerFactory.getLogger(AwsSdkMetrics.class).warn("", ex);
         }
     }
 
@@ -518,7 +518,7 @@ public enum AwsSdkMetrics {
                     return true;
                 }
             } catch (Exception e) {
-                LogFactory.getLog(AwsSdkMetrics.class)
+                LoggerFactory.getLogger(AwsSdkMetrics.class)
                     .warn("Failed to enable the default metrics", e);
             } finally {
                 dirtyEnabling = false;
@@ -595,7 +595,7 @@ public enum AwsSdkMetrics {
             }
         }
         SecurityException ex = new SecurityException();
-        LogFactory.getLog(AwsSdkMetrics.class).warn("Illegal attempt to access the credential provider", ex);
+        LoggerFactory.getLogger(AwsSdkMetrics.class).warn("Illegal attempt to access the credential provider", ex);
         throw ex;
     }
 

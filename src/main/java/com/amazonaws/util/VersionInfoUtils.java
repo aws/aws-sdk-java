@@ -17,11 +17,11 @@ package com.amazonaws.util;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-
 import com.amazonaws.internal.config.InternalConfig;
+
+import org.apache.http.annotation.ThreadSafe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility class for accessing AWS SDK versioning information.
@@ -41,7 +41,7 @@ public class VersionInfoUtils {
     private static volatile String userAgent;
 
     /** Shared logger for any issues while loading version information */
-    private static final Log log = LogFactory.getLog(VersionInfoUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(VersionInfoUtils.class);
 
     /**
      * Returns the current version for the AWS SDK in which this class is

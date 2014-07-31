@@ -27,17 +27,17 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
 import com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl;
 import com.sun.org.apache.xml.internal.dtm.DTMManager;
 import com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault;
 import com.sun.org.apache.xpath.internal.XPathContext;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  * Utility methods for extracting data from XML documents using Xpath
@@ -50,7 +50,7 @@ public class XpathUtils {
     /** The default property name to load the Xalan Document Builder Factory. */
     private static final String DOCUMENT_BUILDER_FACTORY_PROP_NAME =
       "javax.xml.parsers.DocumentBuilderFactory";
-    private static final Log log = LogFactory.getLog(XpathUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(XpathUtils.class);
 
     /**
      * Used to optimize performance by avoiding expensive file access every time

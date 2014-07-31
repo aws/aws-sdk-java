@@ -17,10 +17,10 @@ package com.amazonaws.auth;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * {@link AWSCredentialsProvider} implementation that chains together multiple
@@ -38,7 +38,7 @@ import com.amazonaws.AmazonClientException;
  */
 public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
 
-    private static final Log log = LogFactory.getLog(AWSCredentialsProviderChain.class);
+    private static final Logger log = LoggerFactory.getLogger(AWSCredentialsProviderChain.class);
 
     private List<AWSCredentialsProvider> credentialsProviders =
             new LinkedList<AWSCredentialsProvider>();

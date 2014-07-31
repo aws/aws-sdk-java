@@ -28,19 +28,19 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.UUID;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.profile.internal.AbstractProfilesConfigFileScanner;
 import com.amazonaws.auth.profile.internal.Profile;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The class for creating and modifying the credential profiles file.
  */
 public class ProfilesConfigFileWriter {
 
-    private static final Log LOG = LogFactory.getLog(ProfilesConfigFileWriter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProfilesConfigFileWriter.class);
 
     /**
      * Write all the credential profiles to a file. Note that this method will

@@ -18,10 +18,6 @@ import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.ByteThroughputProvider;
 import com.amazonaws.metrics.MetricType;
@@ -35,6 +31,10 @@ import com.amazonaws.services.cloudwatch.model.Dimension;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.StandardUnit;
 
+import org.apache.http.annotation.ThreadSafe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * This is the default implementation of an AWS SDK service metric collection
  * system.
@@ -45,7 +45,7 @@ import com.amazonaws.services.cloudwatch.model.StandardUnit;
 public class ServiceMetricCollectorSupport extends ServiceMetricCollector 
 {
     static final double NANO_PER_SEC = TimeUnit.SECONDS.toNanos(1);
-    protected final static Log log = LogFactory.getLog(ServiceMetricCollectorSupport.class);
+    protected final static Logger log = LoggerFactory.getLogger(ServiceMetricCollectorSupport.class);
     private final BlockingQueue<MetricDatum> queue;
 
     protected ServiceMetricCollectorSupport(BlockingQueue<MetricDatum> queue) {

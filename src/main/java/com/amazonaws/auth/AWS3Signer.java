@@ -26,13 +26,13 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.UUID;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Signer implementation that signs requests with the AWS3 signing protocol.
@@ -48,7 +48,7 @@ public class AWS3Signer extends AbstractAWSSigner {
 
     @Deprecated
     protected static final DateUtils dateUtils = new DateUtils();
-    private static final Log log = LogFactory.getLog(AWS3Signer.class);
+    private static final Logger log = LoggerFactory.getLogger(AWS3Signer.class);
 
 
     /**

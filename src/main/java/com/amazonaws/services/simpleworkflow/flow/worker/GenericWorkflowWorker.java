@@ -16,9 +16,6 @@ package com.amazonaws.services.simpleworkflow.flow.worker;
 
 import java.lang.management.ManagementFactory;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.flow.WorkflowTypeRegistrationOptions;
 import com.amazonaws.services.simpleworkflow.flow.common.FlowConstants;
@@ -30,9 +27,12 @@ import com.amazonaws.services.simpleworkflow.model.TaskList;
 import com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException;
 import com.amazonaws.services.simpleworkflow.model.WorkflowType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GenericWorkflowWorker extends GenericWorker {
 
-    private static final Log log = LogFactory.getLog(GenericWorkflowWorker.class);
+    private static final Logger log = LoggerFactory.getLogger(GenericWorkflowWorker.class);
 
     private static final String THREAD_NAME_PREFIX = "SWF Decider ";
 

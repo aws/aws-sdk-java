@@ -27,7 +27,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class is responsible for executing the callback method of
@@ -92,7 +92,7 @@ public class SDKProgressPublisher {
         } catch(Throwable t) {
             // That's right, we need to suppress all errors so as to be on par
             // with the async mode where all failures will be ignored.
-            LogFactory.getLog(SDKProgressPublisher.class)
+            LoggerFactory.getLogger(SDKProgressPublisher.class)
                 .debug("Failure from the event listener", t);
         }
         return null;

@@ -14,10 +14,10 @@
  */
 package com.amazonaws.metrics;
 
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
-
 import com.amazonaws.util.TimingInfo;
+
+import org.apache.http.annotation.NotThreadSafe;
+import org.slf4j.LoggerFactory;
 
 /**
  * Latency metric information provider.
@@ -46,7 +46,7 @@ public class ServiceLatencyProvider {
 
     public double getDurationMilli() {
         if (endNano == startNano) {
-            LogFactory.getLog(getClass()).debug(
+            LoggerFactory.getLogger(getClass()).debug(
                     "Likely to be a missing invocation of endTiming().");
         }
         return TimingInfo.durationMilliOf(startNano, endNano); 

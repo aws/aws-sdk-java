@@ -16,10 +16,6 @@ package com.amazonaws.metrics.internal.cloudwatch;
 
 import java.util.concurrent.BlockingQueue;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-
 import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.metrics.AwsSdkMetrics;
@@ -28,6 +24,10 @@ import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.metrics.RequestMetricType;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.util.AWSRequestMetrics;
+
+import org.apache.http.annotation.ThreadSafe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is the default implementation of an AWS SDK request metric collection
@@ -38,7 +38,7 @@ import com.amazonaws.util.AWSRequestMetrics;
 @ThreadSafe
 public class RequestMetricCollectorSupport extends RequestMetricCollector 
 {
-    protected final static Log log = LogFactory.getLog(RequestMetricCollectorSupport.class);
+    protected final static Logger log = LoggerFactory.getLogger(RequestMetricCollectorSupport.class);
     private final BlockingQueue<MetricDatum> queue;
     private final PredefinedMetricTransformer transformer = new PredefinedMetricTransformer();
 

@@ -22,9 +22,6 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequest;
@@ -33,6 +30,9 @@ import com.amazonaws.services.sqs.model.GetQueueAttributesRequest;
 import com.amazonaws.services.sqs.model.Message;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.amazonaws.services.sqs.model.ReceiveMessageResult;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * The ReceiveQueueBuffer class is responsible for dequeueing of messages from
  * a single SQS queue. It uses the provided executor to pre-fetch messages from the server
@@ -50,7 +50,7 @@ import com.amazonaws.services.sqs.model.ReceiveMessageResult;
  * */
 public class ReceiveQueueBuffer {
 
-    private static Log log = LogFactory.getLog(ReceiveQueueBuffer.class);
+    private static Logger log = LoggerFactory.getLogger(ReceiveQueueBuffer.class);
 
     private final QueueBufferConfig config;
 

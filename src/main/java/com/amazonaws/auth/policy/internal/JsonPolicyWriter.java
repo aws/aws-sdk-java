@@ -23,9 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
@@ -36,6 +33,9 @@ import com.amazonaws.auth.policy.Statement;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Serializes an AWS policy object to a JSON string, suitable for sending to an
@@ -50,7 +50,7 @@ public class JsonPolicyWriter {
     private Writer writer;
 
     /** Logger used to log exceptions that occurs while writing the Json policy.*/
-    private static final Log log = LogFactory.getLog("com.amazonaws.auth.policy");
+    private static final Logger log = LoggerFactory.getLogger("com.amazonaws.auth.policy");
 
     /**
      * Constructs a new instance of JSONPolicyWriter.

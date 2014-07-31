@@ -18,12 +18,12 @@ import static com.amazonaws.util.StringUtils.UTF8;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.internal.SdkInputStream;
 import com.amazonaws.util.BinaryUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A wrapper class of InputStream that implements chunked-encoding.
@@ -63,7 +63,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
     private boolean isAtStart = true;
     private boolean isTerminating = false;
 
-    private static final Log log = LogFactory.getLog(AwsChunkedEncodingInputStream.class);
+    private static final Logger log = LoggerFactory.getLogger(AwsChunkedEncodingInputStream.class);
 
     public AwsChunkedEncodingInputStream(InputStream in, byte[] kSigning,
             String datetime, String keyPath, String headerSignature,

@@ -22,16 +22,16 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.HttpUtils;
+
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Signer implementation that signs requests with the AWS4 signing protocol.
@@ -91,7 +91,7 @@ public class AWS4Signer extends AbstractAWSSigner
         this.doubleUrlEncode = doubleUrlEncoding;
     }
 
-    protected static final Log log = LogFactory.getLog(AWS4Signer.class);
+    protected static final Logger log = LoggerFactory.getLogger(AWS4Signer.class);
 
     @Override
     public void sign(Request<?> request, AWSCredentials credentials) {

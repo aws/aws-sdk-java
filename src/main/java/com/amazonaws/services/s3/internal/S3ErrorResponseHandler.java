@@ -22,10 +22,6 @@ import java.io.InputStream;
 
 import javax.xml.xpath.XPath;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.Document;
-
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.http.HttpMethodName;
@@ -35,6 +31,10 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.XpathUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
 
 /**
  * Response handler for S3 error responses. S3 error responses are different
@@ -48,7 +48,7 @@ import com.amazonaws.util.XpathUtils;
  */
 public class S3ErrorResponseHandler
         implements HttpResponseHandler<AmazonServiceException> {
-    private static final Log log = LogFactory.getLog(S3ErrorResponseHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(S3ErrorResponseHandler.class);
 
     @Override
     public AmazonServiceException handle(HttpResponse errorResponse) throws IOException {

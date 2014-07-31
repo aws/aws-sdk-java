@@ -14,11 +14,11 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.services.s3.AmazonS3Client;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Constants used by the AWS S3 Java client.
@@ -91,7 +91,7 @@ public class Constants {
     }
 
     /** Shared logger for client events */
-    private static Log log = LogFactory.getLog(AmazonS3Client.class);
+    private static Logger log = LoggerFactory.getLogger(AmazonS3Client.class);
 
     public static final int NO_SUCH_BUCKET_STATUS_CODE = 404;
 

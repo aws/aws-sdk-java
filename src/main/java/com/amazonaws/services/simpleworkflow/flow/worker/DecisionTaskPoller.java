@@ -18,9 +18,6 @@ import java.lang.management.ManagementFactory;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.flow.common.WorkflowExecutionUtils;
 import com.amazonaws.services.simpleworkflow.model.DecisionTask;
@@ -28,11 +25,14 @@ import com.amazonaws.services.simpleworkflow.model.PollForDecisionTaskRequest;
 import com.amazonaws.services.simpleworkflow.model.RespondDecisionTaskCompletedRequest;
 import com.amazonaws.services.simpleworkflow.model.TaskList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class DecisionTaskPoller implements TaskPoller {
 
-    private static final Log log = LogFactory.getLog(DecisionTaskPoller.class);
+    private static final Logger log = LoggerFactory.getLogger(DecisionTaskPoller.class);
 
-    private static final Log decisionsLog = LogFactory.getLog(DecisionTaskPoller.class.getName() + ".decisions");
+    private static final Logger decisionsLog = LoggerFactory.getLogger(DecisionTaskPoller.class.getName() + ".decisions");
 
     private class DecisionTaskIterator implements Iterator<DecisionTask> {
 

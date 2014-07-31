@@ -14,26 +14,52 @@
  */
 package com.amazonaws.services.cloudsearchdomain;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException;
+import com.amazonaws.services.cloudsearchdomain.model.SearchException;
+import com.amazonaws.services.cloudsearchdomain.model.SearchRequest;
+import com.amazonaws.services.cloudsearchdomain.model.SearchResult;
+import com.amazonaws.services.cloudsearchdomain.model.SuggestRequest;
+import com.amazonaws.services.cloudsearchdomain.model.SuggestResult;
+import com.amazonaws.services.cloudsearchdomain.model.UploadDocumentsRequest;
+import com.amazonaws.services.cloudsearchdomain.model.UploadDocumentsResult;
+import com.amazonaws.services.cloudsearchdomain.model.transform.DocumentServiceExceptionUnmarshaller;
+import com.amazonaws.services.cloudsearchdomain.model.transform.SearchExceptionUnmarshaller;
+import com.amazonaws.services.cloudsearchdomain.model.transform.SearchRequestMarshaller;
+import com.amazonaws.services.cloudsearchdomain.model.transform.SearchResultJsonUnmarshaller;
+import com.amazonaws.services.cloudsearchdomain.model.transform.SuggestRequestMarshaller;
+import com.amazonaws.services.cloudsearchdomain.model.transform.SuggestResultJsonUnmarshaller;
+import com.amazonaws.services.cloudsearchdomain.model.transform.UploadDocumentsRequestMarshaller;
+import com.amazonaws.services.cloudsearchdomain.model.transform.UploadDocumentsResultJsonUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.cloudsearchdomain.model.*;
-import com.amazonaws.services.cloudsearchdomain.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AmazonCloudSearchDomain.  All service calls made
@@ -64,7 +90,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonCloudSearchDomain.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonCloudSearchDomain.class);
 
     /**
      * List of exception unmarshallers for all AmazonCloudSearchDomain exceptions.

@@ -18,9 +18,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.simpleworkflow.flow.StartTimerFailedException;
 import com.amazonaws.services.simpleworkflow.flow.WorkflowClock;
 import com.amazonaws.services.simpleworkflow.flow.common.FlowHelpers;
@@ -34,9 +31,12 @@ import com.amazonaws.services.simpleworkflow.model.StartTimerFailedEventAttribut
 import com.amazonaws.services.simpleworkflow.model.TimerCanceledEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.TimerFiredEventAttributes;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 class WorkflowClockImpl implements WorkflowClock {
 
-    private static final Log log = LogFactory.getLog(WorkflowClockImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(WorkflowClockImpl.class);
 
     private final class TimerCancellationHandler implements ExternalTaskCancellationHandler {
 

@@ -26,7 +26,7 @@ import javax.management.MalformedObjectNameException;
 import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
 
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.LoggerFactory;
 
 /**
  * MBean related utilities.
@@ -55,7 +55,7 @@ public enum MBeans {
         } catch (NotCompliantMBeanException e) {
             throw new IllegalArgumentException(e);
         } catch (InstanceAlreadyExistsException e) {
-            LogFactory.getLog(MBeans.class).debug(
+            LoggerFactory.getLogger(MBeans.class).debug(
                 "Failed to register mbean " + objectName, e);
             return false;
         }
@@ -81,7 +81,7 @@ public enum MBeans {
         } catch (MalformedObjectNameException e) {
             throw new IllegalArgumentException(e);
         } catch (InstanceNotFoundException e) {
-            LogFactory.getLog(MBeans.class).debug(
+            LoggerFactory.getLogger(MBeans.class).debug(
                     "Failed to unregister mbean " + objectName, e);
             return false;
         }

@@ -14,26 +14,92 @@
  */
 package com.amazonaws.services.logs;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.logs.model.CreateLogGroupRequest;
+import com.amazonaws.services.logs.model.CreateLogStreamRequest;
+import com.amazonaws.services.logs.model.DataAlreadyAcceptedException;
+import com.amazonaws.services.logs.model.DeleteLogGroupRequest;
+import com.amazonaws.services.logs.model.DeleteLogStreamRequest;
+import com.amazonaws.services.logs.model.DeleteMetricFilterRequest;
+import com.amazonaws.services.logs.model.DeleteRetentionPolicyRequest;
+import com.amazonaws.services.logs.model.DescribeLogGroupsRequest;
+import com.amazonaws.services.logs.model.DescribeLogGroupsResult;
+import com.amazonaws.services.logs.model.DescribeLogStreamsRequest;
+import com.amazonaws.services.logs.model.DescribeLogStreamsResult;
+import com.amazonaws.services.logs.model.DescribeMetricFiltersRequest;
+import com.amazonaws.services.logs.model.DescribeMetricFiltersResult;
+import com.amazonaws.services.logs.model.GetLogEventsRequest;
+import com.amazonaws.services.logs.model.GetLogEventsResult;
+import com.amazonaws.services.logs.model.InvalidParameterException;
+import com.amazonaws.services.logs.model.InvalidSequenceTokenException;
+import com.amazonaws.services.logs.model.LimitExceededException;
+import com.amazonaws.services.logs.model.OperationAbortedException;
+import com.amazonaws.services.logs.model.PutLogEventsRequest;
+import com.amazonaws.services.logs.model.PutLogEventsResult;
+import com.amazonaws.services.logs.model.PutMetricFilterRequest;
+import com.amazonaws.services.logs.model.PutRetentionPolicyRequest;
+import com.amazonaws.services.logs.model.ResourceAlreadyExistsException;
+import com.amazonaws.services.logs.model.ResourceNotFoundException;
+import com.amazonaws.services.logs.model.ServiceUnavailableException;
+import com.amazonaws.services.logs.model.TestMetricFilterRequest;
+import com.amazonaws.services.logs.model.TestMetricFilterResult;
+import com.amazonaws.services.logs.model.transform.CreateLogGroupRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.CreateLogStreamRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DataAlreadyAcceptedExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.DeleteLogGroupRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DeleteLogStreamRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DeleteMetricFilterRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DeleteRetentionPolicyRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DescribeLogGroupsRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DescribeLogGroupsResultJsonUnmarshaller;
+import com.amazonaws.services.logs.model.transform.DescribeLogStreamsRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DescribeLogStreamsResultJsonUnmarshaller;
+import com.amazonaws.services.logs.model.transform.DescribeMetricFiltersRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.DescribeMetricFiltersResultJsonUnmarshaller;
+import com.amazonaws.services.logs.model.transform.GetLogEventsRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.GetLogEventsResultJsonUnmarshaller;
+import com.amazonaws.services.logs.model.transform.InvalidParameterExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.InvalidSequenceTokenExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.LimitExceededExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.OperationAbortedExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.PutLogEventsRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.PutLogEventsResultJsonUnmarshaller;
+import com.amazonaws.services.logs.model.transform.PutMetricFilterRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.PutRetentionPolicyRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.ResourceAlreadyExistsExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.ResourceNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.ServiceUnavailableExceptionUnmarshaller;
+import com.amazonaws.services.logs.model.transform.TestMetricFilterRequestMarshaller;
+import com.amazonaws.services.logs.model.transform.TestMetricFilterResultJsonUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.logs.model.*;
-import com.amazonaws.services.logs.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AWSLogs.  All service calls made
@@ -123,7 +189,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AWSLogs.class);
+    private static final Logger log = LoggerFactory.getLogger(AWSLogs.class);
 
     /**
      * List of exception unmarshallers for all AWSLogs exceptions.

@@ -21,13 +21,13 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.client.methods.AbortableHttpRequest;
-
 import com.amazonaws.HttpMethod;
 import com.amazonaws.internal.SdkInputStream;
+
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.client.methods.AbortableHttpRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility class to wrap InputStreams obtained from an HttpClient library's
@@ -45,7 +45,7 @@ import com.amazonaws.internal.SdkInputStream;
  * ensure the necessary cleanup operations can be performed.
  */
 public class HttpMethodReleaseInputStream extends SdkInputStream {
-    private static final Log log = LogFactory.getLog(HttpMethodReleaseInputStream.class);
+    private static final Logger log = LoggerFactory.getLogger(HttpMethodReleaseInputStream.class);
 
     private InputStream in;
     private HttpEntityEnclosingRequest httpRequest;

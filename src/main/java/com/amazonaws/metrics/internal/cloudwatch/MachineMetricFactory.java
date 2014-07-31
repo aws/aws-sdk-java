@@ -33,14 +33,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.jmx.spi.JmxInfoProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.services.cloudwatch.model.Dimension;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.StandardUnit;
+
+import org.slf4j.LoggerFactory;
 
 class MachineMetricFactory {
     private static final List<MachineMetric> memoryMetrics = Arrays.asList(
@@ -148,13 +148,13 @@ class MachineMetricFactory {
         try {
             addThreadMetrics(targetList, customSet);
         } catch (Throwable t) {
-            LogFactory.getLog(getClass()).debug("Ignoring thread metrics", t);
+            LoggerFactory.getLogger(getClass()).debug("Ignoring thread metrics", t);
         }
         // File descriptor usage
         try {
             addFileDescriptorMetrics(targetList, customSet);
         } catch (Throwable t) {
-            LogFactory.getLog(getClass()).debug("Ignoring file descriptor metrics", t);
+            LoggerFactory.getLogger(getClass()).debug("Ignoring file descriptor metrics", t);
         }
         return targetList;
     }

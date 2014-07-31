@@ -33,9 +33,6 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -83,6 +80,9 @@ import com.amazonaws.services.s3.transfer.internal.UploadCallable;
 import com.amazonaws.services.s3.transfer.internal.UploadImpl;
 import com.amazonaws.services.s3.transfer.internal.UploadMonitor;
 import com.amazonaws.util.VersionInfoUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * High level utility for managing transfers to Amazon S3.
@@ -153,7 +153,7 @@ public class TransferManager {
     /** Thread used for periodicially checking transfers and updating thier state. */
     private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1, daemonThreadFactory);
 
-    private static final Log log = LogFactory.getLog(TransferManager.class);
+    private static final Logger log = LoggerFactory.getLogger(TransferManager.class);
 
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using

@@ -20,9 +20,6 @@ import java.lang.management.ManagementFactory;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.flow.ActivityExecutionContext;
 import com.amazonaws.services.simpleworkflow.flow.ActivityFailureException;
@@ -38,9 +35,12 @@ import com.amazonaws.services.simpleworkflow.model.RespondActivityTaskFailedRequ
 import com.amazonaws.services.simpleworkflow.model.TaskList;
 import com.amazonaws.services.simpleworkflow.model.UnknownResourceException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SynchronousActivityTaskPoller implements TaskPoller {
 
-    private static final Log log = LogFactory.getLog(SynchronousActivityTaskPoller.class);
+    private static final Logger log = LoggerFactory.getLogger(SynchronousActivityTaskPoller.class);
 
     private AmazonSimpleWorkflow service;
 

@@ -16,8 +16,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.internal;
-import static com.amazonaws.util.StringUtils.UTF8;
 import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -35,9 +35,6 @@ import java.util.Map;
 
 import javax.net.ssl.SSLProtocolException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -47,11 +44,14 @@ import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.Md5Utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * General utility methods used throughout the AWS S3 Java client.
  */
 public class ServiceUtils {
-    private static final Log log = LogFactory.getLog(ServiceUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(ServiceUtils.class);
 
     public static final boolean APPEND_MODE = true;
 

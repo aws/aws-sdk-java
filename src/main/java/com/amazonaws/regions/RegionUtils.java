@@ -20,20 +20,16 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.LinkedList;
 import java.util.List;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.util.HttpUtils;
-import com.amazonaws.util.VersionInfoUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for working with regions.
@@ -50,7 +46,7 @@ public class RegionUtils {
         "/com/amazonaws/regions/override/regions.xml";
 
 
-    private static final Log log = LogFactory.getLog(RegionUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(RegionUtils.class);
 
 
     private static String source;

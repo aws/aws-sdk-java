@@ -18,9 +18,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -48,6 +45,9 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Utility for monitoring the status of an Amazon Glacier job, through Amazon
  * SNS/SQS.
@@ -58,7 +58,7 @@ public class JobStatusMonitor {
     private String queueUrl;
     private String topicArn;
 
-    private static final Log log = LogFactory.getLog(JobStatusMonitor.class);
+    private static final Logger log = LoggerFactory.getLogger(JobStatusMonitor.class);
 
     public JobStatusMonitor(AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
         sqs = new AmazonSQSClient(credentialsProvider, clientConfiguration);

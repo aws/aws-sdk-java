@@ -20,15 +20,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.Immutable;
-
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.ClassLoaderHelper;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+
+import org.apache.http.annotation.Immutable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Internal configuration for the AWS Java SDK.
@@ -36,7 +36,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 @Immutable
 public class InternalConfig {
 
-    private static final Log log = LogFactory.getLog(InternalConfig.class);
+    private static final Logger log = LoggerFactory.getLogger(InternalConfig.class);
 
     static final String DEFAULT_CONFIG_RESOURCE = "awssdk_config_default.json";
     static final String CONFIG_OVERRIDE_RESOURCE = "awssdk_config_override.json";

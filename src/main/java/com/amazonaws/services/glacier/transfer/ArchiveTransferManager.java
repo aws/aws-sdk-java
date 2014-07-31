@@ -29,9 +29,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
@@ -65,6 +62,9 @@ import com.amazonaws.services.sns.AmazonSNSClient;
 import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.util.BinaryUtils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Utilities for uploading and downloading data to and from AWS Glacier.
  */
@@ -96,7 +96,7 @@ public class ArchiveTransferManager {
 
     private final AmazonSNSClient sns;
 
-    private static final Log log = LogFactory.getLog(ArchiveTransferManager.class);
+    private static final Logger log = LoggerFactory.getLogger(ArchiveTransferManager.class);
 
     /**
      * Constructs a new ArchiveTransferManager, using the specified AWS

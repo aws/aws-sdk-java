@@ -18,11 +18,11 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.services.s3.Headers;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Header handler to pull the EXPIRATION header out of the response.
@@ -39,8 +39,8 @@ public class ObjectExpirationHeaderHandler<T extends ObjectExpirationResult>
     private static final Pattern rulePattern =
         Pattern.compile("rule-id=\"(.*?)\"");
 
-    private static final Log log =
-        LogFactory.getLog(ObjectExpirationHeaderHandler.class);
+    private static final Logger log =
+        LoggerFactory.getLogger(ObjectExpirationHeaderHandler.class);
 
     /*
      * (non-Javadoc)

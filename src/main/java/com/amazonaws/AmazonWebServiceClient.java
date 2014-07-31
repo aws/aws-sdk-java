@@ -22,9 +22,6 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
@@ -42,6 +39,9 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Abstract base class for Amazon Web Service Java clients.
  * <p>
@@ -53,8 +53,8 @@ public abstract class AmazonWebServiceClient {
     private static final String AWS = "AWS";
     public static final boolean LOGGING_AWS_REQUEST_METRIC = true;
 
-    private static final Log log =
-        LogFactory.getLog(AmazonWebServiceClient.class);
+    private static final Logger log =
+        LoggerFactory.getLogger(AmazonWebServiceClient.class);
 
     /**
      * The service endpoint to which this client will send requests.

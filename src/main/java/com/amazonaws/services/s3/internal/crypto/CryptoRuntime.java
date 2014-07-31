@@ -21,7 +21,7 @@ import java.security.Security;
 
 import javax.crypto.Cipher;
 
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.LoggerFactory;
 
 public class CryptoRuntime {
     static final String BOUNCY_CASTLE_PROVIDER = "BC";
@@ -38,7 +38,7 @@ public class CryptoRuntime {
             Provider provider = c.newInstance();
             Security.addProvider(provider);
         } catch (Exception e) {
-            LogFactory.getLog(CryptoRuntime.class).debug(
+            LoggerFactory.getLogger(CryptoRuntime.class).debug(
                     "Bouncy Castle not available", e);
         }
     }

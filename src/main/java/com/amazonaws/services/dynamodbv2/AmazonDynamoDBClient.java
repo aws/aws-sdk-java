@@ -14,26 +14,112 @@
  */
 package com.amazonaws.services.dynamodbv2;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.AwsSdkMetrics;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.AttributeValueUpdate;
+import com.amazonaws.services.dynamodbv2.model.BatchGetItemRequest;
+import com.amazonaws.services.dynamodbv2.model.BatchGetItemResult;
+import com.amazonaws.services.dynamodbv2.model.BatchWriteItemRequest;
+import com.amazonaws.services.dynamodbv2.model.BatchWriteItemResult;
+import com.amazonaws.services.dynamodbv2.model.Condition;
+import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.CreateTableResult;
+import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteItemResult;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableResult;
+import com.amazonaws.services.dynamodbv2.model.DescribeTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DescribeTableResult;
+import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
+import com.amazonaws.services.dynamodbv2.model.GetItemResult;
+import com.amazonaws.services.dynamodbv2.model.InternalServerErrorException;
+import com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException;
+import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
+import com.amazonaws.services.dynamodbv2.model.KeysAndAttributes;
+import com.amazonaws.services.dynamodbv2.model.LimitExceededException;
+import com.amazonaws.services.dynamodbv2.model.ListTablesRequest;
+import com.amazonaws.services.dynamodbv2.model.ListTablesResult;
+import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
+import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughputExceededException;
+import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
+import com.amazonaws.services.dynamodbv2.model.PutItemResult;
+import com.amazonaws.services.dynamodbv2.model.QueryRequest;
+import com.amazonaws.services.dynamodbv2.model.QueryResult;
+import com.amazonaws.services.dynamodbv2.model.ResourceInUseException;
+import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
+import com.amazonaws.services.dynamodbv2.model.ScanRequest;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
+import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
+import com.amazonaws.services.dynamodbv2.model.UpdateItemResult;
+import com.amazonaws.services.dynamodbv2.model.UpdateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.UpdateTableResult;
+import com.amazonaws.services.dynamodbv2.model.WriteRequest;
+import com.amazonaws.services.dynamodbv2.model.transform.BatchGetItemRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.BatchGetItemResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.BatchWriteItemRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.BatchWriteItemResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ConditionalCheckFailedExceptionUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.CreateTableRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.CreateTableResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.DeleteItemRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.DeleteItemResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.DeleteTableRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.DeleteTableResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.DescribeTableRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.DescribeTableResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.GetItemRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.GetItemResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ItemCollectionSizeLimitExceededExceptionUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.LimitExceededExceptionUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ListTablesRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ListTablesResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ProvisionedThroughputExceededExceptionUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.PutItemRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.PutItemResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.QueryRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.QueryResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ResourceInUseExceptionUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ResourceNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ScanRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.ScanResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.UpdateItemRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.UpdateItemResultJsonUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.UpdateTableRequestMarshaller;
+import com.amazonaws.services.dynamodbv2.model.transform.UpdateTableResultJsonUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.services.dynamodbv2.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AmazonDynamoDBv2.  All service calls made
@@ -217,7 +303,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonDynamoDB.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonDynamoDB.class);
 
     /**
      * List of exception unmarshallers for all AmazonDynamoDBv2 exceptions.

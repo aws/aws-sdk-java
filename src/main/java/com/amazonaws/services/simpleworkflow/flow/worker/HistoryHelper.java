@@ -17,17 +17,17 @@ package com.amazonaws.services.simpleworkflow.flow.worker;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.simpleworkflow.flow.common.WorkflowExecutionUtils;
 import com.amazonaws.services.simpleworkflow.model.DecisionTask;
 import com.amazonaws.services.simpleworkflow.model.EventType;
 import com.amazonaws.services.simpleworkflow.model.HistoryEvent;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 class HistoryHelper {
 
-    private static final Log historyLog = LogFactory.getLog(HistoryHelper.class.getName() + ".history");
+    private static final Logger historyLog = LoggerFactory.getLogger(HistoryHelper.class.getName() + ".history");
 
     class EventsIterator implements Iterator<HistoryEvent> {
 

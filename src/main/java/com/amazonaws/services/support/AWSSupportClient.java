@@ -17,8 +17,6 @@ package com.amazonaws.services.support;
 import java.net.*;
 import java.util.*;
 
-import org.apache.commons.logging.*;
-
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
@@ -31,9 +29,11 @@ import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
-
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.services.support.model.transform.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AWSSupport.  All service calls made
@@ -110,7 +110,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AWSSupport.class);
+    private static final Logger log = LoggerFactory.getLogger(AWSSupport.class);
 
     /**
      * List of exception unmarshallers for all AWSSupport exceptions.

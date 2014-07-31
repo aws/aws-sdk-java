@@ -31,9 +31,6 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -54,8 +51,8 @@ import com.amazonaws.services.dynamodbv2.model.BatchWriteItemResult;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
-import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteRequest;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
@@ -76,6 +73,9 @@ import com.amazonaws.services.dynamodbv2.model.UpdateItemResult;
 import com.amazonaws.services.dynamodbv2.model.WriteRequest;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.util.VersionInfoUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Object mapper for domain-object interaction with DynamoDB.
@@ -196,7 +196,7 @@ public class DynamoDBMapper {
 
     private static final String NO_RANGE_KEY = new String();
 
-    private static final Log log = LogFactory.getLog(DynamoDBMapper.class);
+    private static final Logger log = LoggerFactory.getLogger(DynamoDBMapper.class);
 
     /**
      * Constructs a new mapper with the service object given, using the default

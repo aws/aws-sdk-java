@@ -21,9 +21,6 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.sqs.AmazonSQS;
@@ -45,6 +42,9 @@ import com.amazonaws.services.sqs.model.SendMessageBatchResultEntry;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageResult;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * This class is responsible for buffering outgoing SQS requests, i.e. requests
@@ -60,7 +60,7 @@ import com.amazonaws.services.sqs.model.SendMessageResult;
  * futures and marks the futures as complete.
  * */
 public class SendQueueBuffer {
-    private static Log log = LogFactory.getLog(SendQueueBuffer.class);
+    private static Logger log = LoggerFactory.getLogger(SendQueueBuffer.class);
 
     // Interface to support event notifications with a parameter.
     private interface Listener<T> {

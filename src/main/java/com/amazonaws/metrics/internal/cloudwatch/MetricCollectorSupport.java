@@ -17,15 +17,15 @@ package com.amazonaws.metrics.internal.cloudwatch;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-
 import com.amazonaws.metrics.MetricCollector;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.metrics.ServiceMetricCollector;
 import com.amazonaws.services.cloudwatch.AmazonCloudWatchClient;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
+
+import org.apache.http.annotation.ThreadSafe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is the default implementation of an AWS SDK request metric collection
@@ -35,7 +35,7 @@ import com.amazonaws.services.cloudwatch.model.MetricDatum;
  */
 @ThreadSafe
 public class MetricCollectorSupport extends MetricCollector {
-    protected final static Log log = LogFactory.getLog(MetricCollectorSupport.class);
+    protected final static Logger log = LoggerFactory.getLogger(MetricCollectorSupport.class);
     private static volatile MetricCollectorSupport singleton;
     
     /** Returns the singleton instance; or null if there isn't one. */
