@@ -203,6 +203,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidChangeBatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchGeoLocationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckVersionMismatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HostedZoneAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHostedZonesExceptionUnmarshaller());
@@ -407,6 +408,48 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             // Binds the request metrics to the current request.
             request.setAWSRequestMetrics(awsRequestMetrics);
             response = invoke(request, new UpdateHealthCheckResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * To retrieve a single geo location, send a <code>GET</code> request to
+     * the <code>2013-04-01/geolocation</code> resource with one of these
+     * options: continentcode | countrycode | countrycode and
+     * subdivisioncode.
+     * </p>
+     *
+     * @param getGeoLocationRequest Container for the necessary parameters to
+     *           execute the GetGeoLocation service method on AmazonRoute53.
+     * 
+     * @return The response from the GetGeoLocation service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchGeoLocationException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetGeoLocationResult getGeoLocation(GetGeoLocationRequest getGeoLocationRequest) {
+        ExecutionContext executionContext = createExecutionContext(getGeoLocationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetGeoLocationRequest> request = null;
+        Response<GetGeoLocationResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetGeoLocationRequestMarshaller().marshall(getGeoLocationRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new GetGeoLocationResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
@@ -1023,6 +1066,61 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a list of supported geo locations, send a
+     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or
+     * multiple <code>GeoLocationDetails</code> child elements. The list is
+     * sorted by country code, and then subdivision code, followed by
+     * continents at the end of the list.
+     * </p>
+     * <p>
+     * By default, the list of geo locations is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. If the list is truncated,
+     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
+     * of <code>NextContinentCode, NextCountryCode,
+     * NextSubdivisionCode</code> will be populated. You can pass these as
+     * parameters to <code>StartContinentCode, StartCountryCode,
+     * StartSubdivisionCode</code> to control the geo location that the list
+     * begins with.
+     * </p>
+     *
+     * @param listGeoLocationsRequest Container for the necessary parameters
+     *           to execute the ListGeoLocations service method on AmazonRoute53.
+     * 
+     * @return The response from the ListGeoLocations service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listGeoLocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListGeoLocationsRequest> request = null;
+        Response<ListGeoLocationsResult> response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListGeoLocationsRequestMarshaller().marshall(listGeoLocationsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            response = invoke(request, new ListGeoLocationsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * To retrieve a count of all your health checks, send a
      * <code>GET</code> request to the
      * <code>2013-04-01/healthcheckcount</code> resource.
@@ -1136,6 +1234,32 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve a single geo location, send a <code>GET</code> request to
+     * the <code>2013-04-01/geolocation</code> resource with one of these
+     * options: continentcode | countrycode | countrycode and
+     * subdivisioncode.
+     * </p>
+     * 
+     * @return The response from the GetGeoLocation service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchGeoLocationException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetGeoLocationResult getGeoLocation() throws AmazonServiceException, AmazonClientException {
+        return getGeoLocation(new GetGeoLocationRequest());
+    }
+    
+    /**
+     * <p>
      * To retrieve a list of the IP ranges used by Amazon Route 53 health
      * checkers to check the health of your resources, send a
      * <code>GET</code> request to the
@@ -1193,6 +1317,45 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     public ListHealthChecksResult listHealthChecks() throws AmazonServiceException, AmazonClientException {
         return listHealthChecks(new ListHealthChecksRequest());
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of supported geo locations, send a
+     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or
+     * multiple <code>GeoLocationDetails</code> child elements. The list is
+     * sorted by country code, and then subdivision code, followed by
+     * continents at the end of the list.
+     * </p>
+     * <p>
+     * By default, the list of geo locations is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. If the list is truncated,
+     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
+     * of <code>NextContinentCode, NextCountryCode,
+     * NextSubdivisionCode</code> will be populated. You can pass these as
+     * parameters to <code>StartContinentCode, StartCountryCode,
+     * StartSubdivisionCode</code> to control the geo location that the list
+     * begins with.
+     * </p>
+     * 
+     * @return The response from the ListGeoLocations service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListGeoLocationsResult listGeoLocations() throws AmazonServiceException, AmazonClientException {
+        return listGeoLocations(new ListGeoLocationsRequest());
     }
     
     /**

@@ -45,9 +45,10 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     private String snapshotName;
 
     /**
-     * Indicates whether the snapshot is from an automatic backup
-     * (<code>automated</code>) or was created manually
-     * (<code>manual</code>).
+     * If set to <code>system</code>, the output shows snapshots that were
+     * automatically created by ElastiCache. If set to <code>user</code> the
+     * output shows snapshots that were manually created. If omitted, the
+     * output shows both automatically and manually created snapshots.
      */
     private String snapshotSource;
 
@@ -152,41 +153,47 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Indicates whether the snapshot is from an automatic backup
-     * (<code>automated</code>) or was created manually
-     * (<code>manual</code>).
+     * If set to <code>system</code>, the output shows snapshots that were
+     * automatically created by ElastiCache. If set to <code>user</code> the
+     * output shows snapshots that were manually created. If omitted, the
+     * output shows both automatically and manually created snapshots.
      *
-     * @return Indicates whether the snapshot is from an automatic backup
-     *         (<code>automated</code>) or was created manually
-     *         (<code>manual</code>).
+     * @return If set to <code>system</code>, the output shows snapshots that were
+     *         automatically created by ElastiCache. If set to <code>user</code> the
+     *         output shows snapshots that were manually created. If omitted, the
+     *         output shows both automatically and manually created snapshots.
      */
     public String getSnapshotSource() {
         return snapshotSource;
     }
     
     /**
-     * Indicates whether the snapshot is from an automatic backup
-     * (<code>automated</code>) or was created manually
-     * (<code>manual</code>).
+     * If set to <code>system</code>, the output shows snapshots that were
+     * automatically created by ElastiCache. If set to <code>user</code> the
+     * output shows snapshots that were manually created. If omitted, the
+     * output shows both automatically and manually created snapshots.
      *
-     * @param snapshotSource Indicates whether the snapshot is from an automatic backup
-     *         (<code>automated</code>) or was created manually
-     *         (<code>manual</code>).
+     * @param snapshotSource If set to <code>system</code>, the output shows snapshots that were
+     *         automatically created by ElastiCache. If set to <code>user</code> the
+     *         output shows snapshots that were manually created. If omitted, the
+     *         output shows both automatically and manually created snapshots.
      */
     public void setSnapshotSource(String snapshotSource) {
         this.snapshotSource = snapshotSource;
     }
     
     /**
-     * Indicates whether the snapshot is from an automatic backup
-     * (<code>automated</code>) or was created manually
-     * (<code>manual</code>).
+     * If set to <code>system</code>, the output shows snapshots that were
+     * automatically created by ElastiCache. If set to <code>user</code> the
+     * output shows snapshots that were manually created. If omitted, the
+     * output shows both automatically and manually created snapshots.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotSource Indicates whether the snapshot is from an automatic backup
-     *         (<code>automated</code>) or was created manually
-     *         (<code>manual</code>).
+     * @param snapshotSource If set to <code>system</code>, the output shows snapshots that were
+     *         automatically created by ElastiCache. If set to <code>user</code> the
+     *         output shows snapshots that were manually created. If omitted, the
+     *         output shows both automatically and manually created snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

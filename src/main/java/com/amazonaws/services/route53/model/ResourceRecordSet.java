@@ -41,8 +41,8 @@ public class ResourceRecordSet implements Serializable {
     private String type;
 
     /**
-     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
-     * identifier that differentiates among multiple resource record sets
+     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i>
+     * An identifier that differentiates among multiple resource record sets
      * that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
@@ -62,8 +62,8 @@ public class ResourceRecordSet implements Serializable {
     private Long weight;
 
     /**
-     * <i>Regional resource record sets only:</i> Among resource record sets
-     * that have the same combination of DNS name and type, a value that
+     * <i>Latency-based resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
      * specifies the AWS region for the current resource record set.
      * <p>
      * <b>Constraints:</b><br/>
@@ -71,6 +71,13 @@ public class ResourceRecordSet implements Serializable {
      * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      */
     private String region;
+
+    /**
+     * <i>Geo location resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
+     * specifies the geo location for the current resource record set.
+     */
+    private GeoLocation geoLocation;
 
     /**
      * <i>Failover resource record sets only:</i> Among resource record sets
@@ -285,15 +292,15 @@ public class ResourceRecordSet implements Serializable {
     }
 
     /**
-     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
-     * identifier that differentiates among multiple resource record sets
+     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i>
+     * An identifier that differentiates among multiple resource record sets
      * that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @return <i>Weighted, Regional, and Failover resource record sets only:</i> An
-     *         identifier that differentiates among multiple resource record sets
+     * @return <i>Weighted, Latency, Geo, and Failover resource record sets only:</i>
+     *         An identifier that differentiates among multiple resource record sets
      *         that have the same combination of DNS name and type.
      */
     public String getSetIdentifier() {
@@ -301,15 +308,15 @@ public class ResourceRecordSet implements Serializable {
     }
     
     /**
-     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
-     * identifier that differentiates among multiple resource record sets
+     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i>
+     * An identifier that differentiates among multiple resource record sets
      * that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param setIdentifier <i>Weighted, Regional, and Failover resource record sets only:</i> An
-     *         identifier that differentiates among multiple resource record sets
+     * @param setIdentifier <i>Weighted, Latency, Geo, and Failover resource record sets only:</i>
+     *         An identifier that differentiates among multiple resource record sets
      *         that have the same combination of DNS name and type.
      */
     public void setSetIdentifier(String setIdentifier) {
@@ -317,8 +324,8 @@ public class ResourceRecordSet implements Serializable {
     }
     
     /**
-     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
-     * identifier that differentiates among multiple resource record sets
+     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i>
+     * An identifier that differentiates among multiple resource record sets
      * that have the same combination of DNS name and type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -326,8 +333,8 @@ public class ResourceRecordSet implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param setIdentifier <i>Weighted, Regional, and Failover resource record sets only:</i> An
-     *         identifier that differentiates among multiple resource record sets
+     * @param setIdentifier <i>Weighted, Latency, Geo, and Failover resource record sets only:</i>
+     *         An identifier that differentiates among multiple resource record sets
      *         that have the same combination of DNS name and type.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -399,16 +406,16 @@ public class ResourceRecordSet implements Serializable {
     }
 
     /**
-     * <i>Regional resource record sets only:</i> Among resource record sets
-     * that have the same combination of DNS name and type, a value that
+     * <i>Latency-based resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
      * specifies the AWS region for the current resource record set.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
-     * @return <i>Regional resource record sets only:</i> Among resource record sets
-     *         that have the same combination of DNS name and type, a value that
+     * @return <i>Latency-based resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
      *         specifies the AWS region for the current resource record set.
      *
      * @see ResourceRecordSetRegion
@@ -418,16 +425,16 @@ public class ResourceRecordSet implements Serializable {
     }
     
     /**
-     * <i>Regional resource record sets only:</i> Among resource record sets
-     * that have the same combination of DNS name and type, a value that
+     * <i>Latency-based resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
      * specifies the AWS region for the current resource record set.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
-     * @param region <i>Regional resource record sets only:</i> Among resource record sets
-     *         that have the same combination of DNS name and type, a value that
+     * @param region <i>Latency-based resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
      *         specifies the AWS region for the current resource record set.
      *
      * @see ResourceRecordSetRegion
@@ -437,8 +444,8 @@ public class ResourceRecordSet implements Serializable {
     }
     
     /**
-     * <i>Regional resource record sets only:</i> Among resource record sets
-     * that have the same combination of DNS name and type, a value that
+     * <i>Latency-based resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
      * specifies the AWS region for the current resource record set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -447,8 +454,8 @@ public class ResourceRecordSet implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
-     * @param region <i>Regional resource record sets only:</i> Among resource record sets
-     *         that have the same combination of DNS name and type, a value that
+     * @param region <i>Latency-based resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
      *         specifies the AWS region for the current resource record set.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -462,16 +469,16 @@ public class ResourceRecordSet implements Serializable {
     }
 
     /**
-     * <i>Regional resource record sets only:</i> Among resource record sets
-     * that have the same combination of DNS name and type, a value that
+     * <i>Latency-based resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
      * specifies the AWS region for the current resource record set.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
-     * @param region <i>Regional resource record sets only:</i> Among resource record sets
-     *         that have the same combination of DNS name and type, a value that
+     * @param region <i>Latency-based resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
      *         specifies the AWS region for the current resource record set.
      *
      * @see ResourceRecordSetRegion
@@ -481,8 +488,8 @@ public class ResourceRecordSet implements Serializable {
     }
     
     /**
-     * <i>Regional resource record sets only:</i> Among resource record sets
-     * that have the same combination of DNS name and type, a value that
+     * <i>Latency-based resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
      * specifies the AWS region for the current resource record set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -491,8 +498,8 @@ public class ResourceRecordSet implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
-     * @param region <i>Regional resource record sets only:</i> Among resource record sets
-     *         that have the same combination of DNS name and type, a value that
+     * @param region <i>Latency-based resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
      *         specifies the AWS region for the current resource record set.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -502,6 +509,51 @@ public class ResourceRecordSet implements Serializable {
      */
     public ResourceRecordSet withRegion(ResourceRecordSetRegion region) {
         this.region = region.toString();
+        return this;
+    }
+
+    /**
+     * <i>Geo location resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
+     * specifies the geo location for the current resource record set.
+     *
+     * @return <i>Geo location resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
+     *         specifies the geo location for the current resource record set.
+     */
+    public GeoLocation getGeoLocation() {
+        return geoLocation;
+    }
+    
+    /**
+     * <i>Geo location resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
+     * specifies the geo location for the current resource record set.
+     *
+     * @param geoLocation <i>Geo location resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
+     *         specifies the geo location for the current resource record set.
+     */
+    public void setGeoLocation(GeoLocation geoLocation) {
+        this.geoLocation = geoLocation;
+    }
+    
+    /**
+     * <i>Geo location resource record sets only:</i> Among resource record
+     * sets that have the same combination of DNS name and type, a value that
+     * specifies the geo location for the current resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param geoLocation <i>Geo location resource record sets only:</i> Among resource record
+     *         sets that have the same combination of DNS name and type, a value that
+     *         specifies the geo location for the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ResourceRecordSet withGeoLocation(GeoLocation geoLocation) {
+        this.geoLocation = geoLocation;
         return this;
     }
 
@@ -977,6 +1029,7 @@ public class ResourceRecordSet implements Serializable {
         if (getSetIdentifier() != null) sb.append("SetIdentifier: " + getSetIdentifier() + ",");
         if (getWeight() != null) sb.append("Weight: " + getWeight() + ",");
         if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getGeoLocation() != null) sb.append("GeoLocation: " + getGeoLocation() + ",");
         if (getFailover() != null) sb.append("Failover: " + getFailover() + ",");
         if (getTTL() != null) sb.append("TTL: " + getTTL() + ",");
         if (getResourceRecords() != null) sb.append("ResourceRecords: " + getResourceRecords() + ",");
@@ -996,6 +1049,7 @@ public class ResourceRecordSet implements Serializable {
         hashCode = prime * hashCode + ((getSetIdentifier() == null) ? 0 : getSetIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getWeight() == null) ? 0 : getWeight().hashCode()); 
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getGeoLocation() == null) ? 0 : getGeoLocation().hashCode()); 
         hashCode = prime * hashCode + ((getFailover() == null) ? 0 : getFailover().hashCode()); 
         hashCode = prime * hashCode + ((getTTL() == null) ? 0 : getTTL().hashCode()); 
         hashCode = prime * hashCode + ((getResourceRecords() == null) ? 0 : getResourceRecords().hashCode()); 
@@ -1022,6 +1076,8 @@ public class ResourceRecordSet implements Serializable {
         if (other.getWeight() != null && other.getWeight().equals(this.getWeight()) == false) return false; 
         if (other.getRegion() == null ^ this.getRegion() == null) return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
+        if (other.getGeoLocation() == null ^ this.getGeoLocation() == null) return false;
+        if (other.getGeoLocation() != null && other.getGeoLocation().equals(this.getGeoLocation()) == false) return false; 
         if (other.getFailover() == null ^ this.getFailover() == null) return false;
         if (other.getFailover() != null && other.getFailover().equals(this.getFailover()) == false) return false; 
         if (other.getTTL() == null ^ this.getTTL() == null) return false;

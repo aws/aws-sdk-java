@@ -165,21 +165,26 @@ public enum Region {
 		this.regionIds = regionIds != null ? Arrays.asList(regionIds) : null;
 	}
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see java.lang.Enum#toString()
      */
     @Override
     public String toString() {
-		if (this.regionIds != null)
-			return this.regionIds.get(0);
-		return null;
+        return getFirstRegionId0();
     }
 
     /**
      * Returns the first region id or null for {@link #US_Standard}.
      */
     public String getFirstRegionId() {
-        return this.regionIds == null ? null : this.regionIds.get(0);
+        return getFirstRegionId0();
+    }
+
+    private String getFirstRegionId0() {
+        return this.regionIds == null || regionIds.size() == 0 
+             ? null : this.regionIds.get(0);
     }
 
     /**

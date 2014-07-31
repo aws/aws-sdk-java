@@ -27,8 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the authorization mechanism.
  * </p>
  * <p>
- * <b>NOTE:</b> You cannot authorize ingress from an Amazon EC2 security
- * group in one Region to an ElastiCache cluster in another Region.
+ * <b>NOTE:</b>You cannot authorize ingress from an Amazon EC2 security
+ * group in one region to an ElastiCache cluster in another region.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest)

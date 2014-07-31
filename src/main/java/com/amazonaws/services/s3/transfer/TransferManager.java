@@ -49,7 +49,7 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.AmazonS3EncryptionClient;
+import com.amazonaws.services.s3.AmazonS3Encryption;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
@@ -143,15 +143,15 @@ import com.amazonaws.util.VersionInfoUtils;
 public class TransferManager {
 
     /** The low level client we use to make the actual calls to Amazon S3. */
-    private AmazonS3 s3;
+    private final AmazonS3 s3;
 
     /** Configuration for how TransferManager processes requests. */
     private TransferManagerConfiguration configuration;
     /** The thread pool in which transfers are uploaded or downloaded. */
-    private ExecutorService threadPool;
+    private final ExecutorService threadPool;
 
     /** Thread used for periodicially checking transfers and updating thier state. */
-    private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1, daemonThreadFactory);
+    private final ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1, daemonThreadFactory);
 
     private static final Log log = LogFactory.getLog(TransferManager.class);
 
@@ -748,7 +748,7 @@ public class TransferManager {
                                 boolean performIntegrityCheck = true;
                                 if (getObjectRequest.getRange() != null)
                                     performIntegrityCheck = false;
-                                if (s3 instanceof AmazonS3EncryptionClient)
+                                if (s3 instanceof AmazonS3Encryption)
                                     performIntegrityCheck = false;
                                 return performIntegrityCheck;
                             }

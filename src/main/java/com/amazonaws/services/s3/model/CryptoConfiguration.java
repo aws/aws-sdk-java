@@ -144,11 +144,14 @@ public class CryptoConfiguration implements Cloneable {
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
-     *             specified crypto mode.
+     *             specified crypto mode. Note the crypto mode can and will
+     *             still (intentionally) be set in such case, and it's up to the
+     *             caller to decide what to do about it.
      */
-    public void setCryptoMode(CryptoMode cryptoMode) {
-        check(cryptoMode);
+    public void setCryptoMode(CryptoMode cryptoMode)
+            throws UnsupportedOperationException {
         this.cryptoMode = cryptoMode;
+        check(cryptoMode);
     }
 
     /**
@@ -158,11 +161,14 @@ public class CryptoConfiguration implements Cloneable {
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
-     *             specified crypto mode.
+     *             specified crypto mode.Note the crypto mode can and will still
+     *             (intentionally) be set in such case, and it's up to the
+     *             caller to decide what to do about it.
      */
-    public CryptoConfiguration withCryptoMode(CryptoMode cryptoMode) {
-        check(cryptoMode);
+    public CryptoConfiguration withCryptoMode(CryptoMode cryptoMode)
+            throws UnsupportedOperationException {
         this.cryptoMode = cryptoMode;
+        check(cryptoMode);
         return this;
     }
 

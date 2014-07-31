@@ -39,7 +39,7 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
 
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeEvents");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (describeEventsRequest.getSourceIdentifier() != null) {
             request.addParameter("SourceIdentifier", StringUtils.fromString(describeEventsRequest.getSourceIdentifier()));

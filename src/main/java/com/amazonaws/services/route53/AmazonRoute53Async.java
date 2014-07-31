@@ -299,6 +299,63 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
                     throws AmazonServiceException, AmazonClientException;
 
     /**
+     * <p>
+     * To retrieve a single geo location, send a <code>GET</code> request to
+     * the <code>2013-04-01/geolocation</code> resource with one of these
+     * options: continentcode | countrycode | countrycode and
+     * subdivisioncode.
+     * </p>
+     *
+     * @param getGeoLocationRequest Container for the necessary parameters to
+     *           execute the GetGeoLocation operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetGeoLocation service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetGeoLocationResult> getGeoLocationAsync(GetGeoLocationRequest getGeoLocationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To retrieve a single geo location, send a <code>GET</code> request to
+     * the <code>2013-04-01/geolocation</code> resource with one of these
+     * options: continentcode | countrycode | countrycode and
+     * subdivisioncode.
+     * </p>
+     *
+     * @param getGeoLocationRequest Container for the necessary parameters to
+     *           execute the GetGeoLocation operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetGeoLocation service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetGeoLocationResult> getGeoLocationAsync(GetGeoLocationRequest getGeoLocationRequest,
+            AsyncHandler<GetGeoLocationRequest, GetGeoLocationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
      *
      * @param listTagsForResourcesRequest Container for the necessary
      *           parameters to execute the ListTagsForResources operation on
@@ -1189,6 +1246,91 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     public Future<ChangeResourceRecordSetsResult> changeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest,
             AsyncHandler<ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To retrieve a list of supported geo locations, send a
+     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or
+     * multiple <code>GeoLocationDetails</code> child elements. The list is
+     * sorted by country code, and then subdivision code, followed by
+     * continents at the end of the list.
+     * </p>
+     * <p>
+     * By default, the list of geo locations is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. If the list is truncated,
+     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
+     * of <code>NextContinentCode, NextCountryCode,
+     * NextSubdivisionCode</code> will be populated. You can pass these as
+     * parameters to <code>StartContinentCode, StartCountryCode,
+     * StartSubdivisionCode</code> to control the geo location that the list
+     * begins with.
+     * </p>
+     *
+     * @param listGeoLocationsRequest Container for the necessary parameters
+     *           to execute the ListGeoLocations operation on AmazonRoute53.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListGeoLocations service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListGeoLocationsResult> listGeoLocationsAsync(ListGeoLocationsRequest listGeoLocationsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To retrieve a list of supported geo locations, send a
+     * <code>GET</code> request to the <code>2013-04-01/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or
+     * multiple <code>GeoLocationDetails</code> child elements. The list is
+     * sorted by country code, and then subdivision code, followed by
+     * continents at the end of the list.
+     * </p>
+     * <p>
+     * By default, the list of geo locations is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. If the list is truncated,
+     * <code>IsTruncated</code> will be set to <i>true</i> and a combination
+     * of <code>NextContinentCode, NextCountryCode,
+     * NextSubdivisionCode</code> will be populated. You can pass these as
+     * parameters to <code>StartContinentCode, StartCountryCode,
+     * StartSubdivisionCode</code> to control the geo location that the list
+     * begins with.
+     * </p>
+     *
+     * @param listGeoLocationsRequest Container for the necessary parameters
+     *           to execute the ListGeoLocations operation on AmazonRoute53.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListGeoLocations service method, as returned by AmazonRoute53.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListGeoLocationsResult> listGeoLocationsAsync(ListGeoLocationsRequest listGeoLocationsRequest,
+            AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

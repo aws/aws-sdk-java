@@ -15,10 +15,14 @@
 package com.amazonaws.services.s3.internal.crypto;
 
 import static com.amazonaws.services.s3.AmazonS3EncryptionClient.USER_AGENT;
-import static com.amazonaws.services.s3.internal.crypto.EncryptionUtils.createInstructionGetRequest;
+import static com.amazonaws.services.s3.model.CryptoStorageMode.InstructionFile;
+import static com.amazonaws.services.s3.model.CryptoStorageMode.ObjectMetadata;
+import static com.amazonaws.services.s3.model.InstructionFileId.DEFAULT_INSTRUCTION_FILE_SUFFIX;
+import static com.amazonaws.services.s3.model.InstructionFileId.DOT;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.StringUtils.UTF8;
+import static com.amazonaws.util.Throwables.failure;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -39,11 +43,15 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
+import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
+import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
@@ -52,6 +60,8 @@ import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsFactory;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.InstructionFileId;
 import com.amazonaws.services.s3.model.MaterialsDescriptionProvider;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -60,14 +70,17 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectId;
+import com.amazonaws.services.s3.model.UploadPartRequest;
+import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.json.Jackson;
 
 /**
  * Common implementation for different S3 cryptographic modules.
  */
-public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
+public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         extends S3CryptoModule<T> {
+    private static final boolean IS_MULTI_PART = true;
     protected static final int DEFAULT_BUFFER_SIZE = 1024*2;    // 2K
     protected final EncryptionMaterialsProvider kekMaterialsProvider;
     protected final Log log = LogFactory.getLog(getClass());
@@ -109,6 +122,57 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
 
     //////////////////////// Common Implementation ////////////////////////
     @Override
+    public PutObjectResult putObjectSecurely(PutObjectRequest putObjectRequest) {
+        appendUserAgent(putObjectRequest, USER_AGENT);
+
+        if (cryptoConfig.getStorageMode() == InstructionFile) {
+            return putObjectUsingInstructionFile(putObjectRequest);
+        } else {
+            return putObjectUsingMetadata(putObjectRequest);
+        }
+    }
+
+    private PutObjectResult putObjectUsingMetadata(PutObjectRequest req) {
+        ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(req);
+        // Wraps the object data with a cipher input stream
+        PutObjectRequest wrappedReq = wrapWithCipher(req, cekMaterial);
+        // Update the metadata
+        req.setMetadata(updateMetadataWithContentCryptoMaterial(
+                req.getMetadata(), req.getFile(), cekMaterial));
+        // Put the encrypted object into S3
+        return s3.putObject(wrappedReq);
+    }
+
+    /**
+     * Puts an encrypted object into S3, and puts an instruction file into S3.
+     * Encryption info is stored in the instruction file.
+     * 
+     * @param putObjectRequest
+     *            The request object containing all the parameters to upload a
+     *            new object to Amazon S3.
+     * @return A {@link PutObjectResult} object containing the information
+     *         returned by Amazon S3 for the new, created object.
+     */
+    private PutObjectResult putObjectUsingInstructionFile(
+            PutObjectRequest putObjectRequest) {
+        PutObjectRequest putInstFileRequest = putObjectRequest.clone();
+        putInstFileRequest.setKey(putInstFileRequest.getKey() + DOT
+                + DEFAULT_INSTRUCTION_FILE_SUFFIX);
+        // Create instruction
+        ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(putObjectRequest);
+        // Wraps the object data with a cipher input stream; note the metadata
+        // is mutated as a side effect.
+        PutObjectRequest req = wrapWithCipher(putObjectRequest, cekMaterial);
+        // Put the encrypted object into S3
+        PutObjectResult result = s3.putObject(req);
+        // Put the instruction file into S3
+        s3.putObject(updateInstructionPutRequest(putInstFileRequest,
+                cekMaterial));
+        // Return the result of the encrypted object PUT.
+        return result;
+    }
+
+    @Override
     public final void abortMultipartUploadSecurely(AbortMultipartUploadRequest req) {
         s3.abortMultipartUpload(req);
         multipartUploadContexts.remove(req.getUploadId());
@@ -123,6 +187,162 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
         if (!uploadContext.hasFinalPartBeenSeen()) {
             uploadContext.setHasFinalPartBeenSeen(true);
         }
+        return result;
+    }
+
+    abstract T newUploadContext(InitiateMultipartUploadRequest req,
+            ContentCryptoMaterial cekMaterial);
+
+    @Override
+    public InitiateMultipartUploadResult initiateMultipartUploadSecurely(
+            InitiateMultipartUploadRequest req) {
+        appendUserAgent(req, USER_AGENT);
+        // Generate a one-time use symmetric key and initialize a cipher to
+        // encrypt object data
+        ContentCryptoMaterial cekMaterial = createContentCryptoMaterial(req);
+        if (cryptoConfig.getStorageMode() == ObjectMetadata) {
+            ObjectMetadata metadata = req.getObjectMetadata();
+            if (metadata == null)
+                metadata = new ObjectMetadata();
+            // Store encryption info in metadata
+            req.setObjectMetadata(updateMetadataWithContentCryptoMaterial(
+                    metadata, null, cekMaterial));
+        }
+        InitiateMultipartUploadResult result = s3.initiateMultipartUpload(req);
+        T uploadContext = newUploadContext(req, cekMaterial);
+        if (req instanceof MaterialsDescriptionProvider) {
+            MaterialsDescriptionProvider p = (MaterialsDescriptionProvider) req;
+            uploadContext.setMaterialsDescription(p.getMaterialsDescription());
+        }
+        multipartUploadContexts.put(result.getUploadId(), uploadContext);
+        return result;
+    }
+
+    //// specific crypto module behavior for uploading parts.
+    abstract CipherLite cipherLiteForNextPart(T uploadContext);
+    abstract long computeLastPartSize(UploadPartRequest req);
+    abstract <I extends CipherLiteInputStream> SdkFilterInputStream wrapForMultipart(
+            I is, long partSize);
+    abstract void updateUploadContext(T uploadContext, SdkFilterInputStream is);
+    /**
+     * {@inheritDoc}
+     * 
+     * <p>
+     * <b>NOTE:</b> Because the encryption process requires context from
+     * previous blocks, parts uploaded with the AmazonS3EncryptionClient (as
+     * opposed to the normal AmazonS3Client) must be uploaded serially, and in
+     * order. Otherwise, the previous encryption context isn't available to use
+     * when encrypting the current part.
+     */
+    @Override
+    public UploadPartResult uploadPartSecurely(UploadPartRequest req) {
+        appendUserAgent(req, USER_AGENT);
+        final int blockSize = contentCryptoScheme.getBlockSizeInBytes();
+        final boolean isLastPart = req.isLastPart();
+        final String uploadId = req.getUploadId();
+        final long partSize = req.getPartSize();
+        final boolean partSizeMultipleOfCipherBlockSize = 0 == (partSize % blockSize);
+        if (!isLastPart && !partSizeMultipleOfCipherBlockSize) {
+            throw new AmazonClientException(
+                "Invalid part size: part sizes for encrypted multipart uploads must be multiples "
+                    + "of the cipher block size ("
+                    + blockSize
+                    + ") with the exception of the last part.");
+        }
+        final T uploadContext = multipartUploadContexts.get(uploadId);
+        if (uploadContext == null) {
+            throw new AmazonClientException(
+                "No client-side information available on upload ID " + uploadId);
+        }
+        final SdkFilterInputStream is;
+        final UploadPartResult result;
+        // Checks the parts are uploaded in series
+        uploadContext.beginPartUpload(req.getPartNumber());
+        try {
+            CipherLite cipherLite = cipherLiteForNextPart(uploadContext);
+            is = wrapForMultipart(
+                    newMultipartS3CipherInputStream(req, cipherLite), partSize);
+            req.setInputStream(is);
+            // Treat all encryption requests as input stream upload requests,
+            // not as file upload requests.
+            req.setFile(null);
+            req.setFileOffset(0);
+            // The last part of the multipart upload will contain an extra
+            // 16-byte mac
+            if (isLastPart) {
+                // We only change the size of the last part
+                long lastPartSize = computeLastPartSize(req);
+                if (lastPartSize > -1)
+                    req.setPartSize(lastPartSize);
+                if (uploadContext.hasFinalPartBeenSeen()) {
+                    throw new AmazonClientException(
+                            "This part was specified as the last part in a multipart upload, but a previous part was already marked as the last part.  "
+                                    + "Only the last part of the upload should be marked as the last part.");
+                }
+            }
+
+            result = s3.uploadPart(req);
+        } finally {
+            uploadContext.endPartUpload();
+        }
+        if (isLastPart)
+            uploadContext.setHasFinalPartBeenSeen(true);
+        updateUploadContext(uploadContext, is);
+        return result;
+    }
+
+    protected final CipherLiteInputStream newMultipartS3CipherInputStream(
+            UploadPartRequest req, CipherLite cipherLite) {
+        try {
+            InputStream is = req.getInputStream();
+            if (req.getFile() != null) {
+                is = new InputSubstream(
+                    new RepeatableFileInputStream(
+                        req.getFile()),
+                        req.getFileOffset(), 
+                        req.getPartSize(),
+                        req.isLastPart());
+            }
+            if (cipherLite.markSupported()) {
+                return new CipherLiteInputStream(is, cipherLite,
+                    DEFAULT_BUFFER_SIZE,
+                    IS_MULTI_PART
+                );
+            } else {
+                return new RenewableCipherLiteInputStream(is, cipherLite,
+                        DEFAULT_BUFFER_SIZE,
+                        IS_MULTI_PART
+                    );
+            }
+        } catch (Exception e) {
+            throw failure(e,"Unable to create cipher input stream: ");
+        }
+    }
+
+    @Override
+    public CompleteMultipartUploadResult completeMultipartUploadSecurely(
+            CompleteMultipartUploadRequest req) {
+        appendUserAgent(req, USER_AGENT);
+        String uploadId = req.getUploadId();
+        T uploadContext = multipartUploadContexts.get(uploadId);
+
+        if (uploadContext.hasFinalPartBeenSeen() == false) {
+            throw new AmazonClientException("Unable to complete an encrypted multipart upload without being told which part was the last.  " +
+                    "Without knowing which part was the last, the encrypted data in Amazon S3 is incomplete and corrupt.");
+        }
+
+        CompleteMultipartUploadResult result = s3.completeMultipartUpload(req);
+
+        // In InstructionFile mode, we want to write the instruction file only
+        // after the whole upload has completed correctly.
+        if (cryptoConfig.getStorageMode() == InstructionFile) {
+            // Put the instruction file into S3
+            s3.putObject(createInstructionPutRequest(
+                    uploadContext.getBucketName(),
+                    uploadContext.getKey(),
+                    uploadContext.getContentCryptoMaterial()));
+        }
+        multipartUploadContexts.remove(uploadId);
         return result;
     }
 
@@ -267,13 +487,17 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
                 is = new LengthCheckInputStream(is, plaintextLength,
                         EXCLUDE_SKIPPED_BYTES);
             }
-            return new CipherLiteInputStream(is,
-                    cekMaterial.getCipherLite(),
-                    DEFAULT_BUFFER_SIZE);
+            final CipherLite cipherLite = cekMaterial.getCipherLite();
+            
+            if (cipherLite.markSupported()) {
+                return new CipherLiteInputStream(is, cipherLite,
+                        DEFAULT_BUFFER_SIZE);
+            } else {
+                return new RenewableCipherLiteInputStream(is, cipherLite,
+                        DEFAULT_BUFFER_SIZE);
+            }
         } catch (Exception e) {
-            throw new AmazonClientException(
-                    "Unable to create cipher input stream: " + e.getMessage(),
-                    e);
+            throw failure(e, "Unable to create cipher input stream");
         }
     }
 
@@ -481,5 +705,64 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
             cryptoConfig.getCryptoProvider(),
             false   // existing CEK not necessarily key-wrapped
         );
+    }
+
+    /**
+     * Creates a get object request for an instruction file using
+     * the default instruction file suffix.
+     *
+     * @param id
+     *      an S3 object id (not the instruction file id)
+     * @return
+     *      A get request to retrieve an instruction file from S3.
+     */
+    final GetObjectRequest createInstructionGetRequest(S3ObjectId id) {
+        return createInstructionGetRequest(id, null);
+    }
+
+    /**
+     * Creates and return a get object request for an instruction file.
+     * 
+     * @param s3objectId
+     *      an S3 object id (not the instruction file id)
+     * @param instFileSuffix
+     *            suffix of the specific instruction file to be used, or null if
+     *            the default instruction file is to be used.
+     */
+    final GetObjectRequest createInstructionGetRequest(
+            S3ObjectId s3objectId, String instFileSuffix) {
+        return new GetObjectRequest(
+                s3objectId.instructionFileId(instFileSuffix));
+    }
+
+    final long[] getAdjustedCryptoRange(long[] range) {
+        // If range is invalid, then return null.
+        if (range == null || range[0] > range[1]) {
+            return null;
+        }
+        long[] adjustedCryptoRange = new long[2];
+        adjustedCryptoRange[0] = getCipherBlockLowerBound(range[0]);
+        adjustedCryptoRange[1] = getCipherBlockUpperBound(range[1]);
+        return adjustedCryptoRange;
+    }
+    private static long getCipherBlockLowerBound(long leftmostBytePosition) {
+        long cipherBlockSize = JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE;
+        long offset = leftmostBytePosition % cipherBlockSize;
+        long lowerBound = leftmostBytePosition - offset - cipherBlockSize;
+        if (lowerBound < 0) {
+            return 0;
+        } else {
+            return lowerBound;
+        }
+    }
+
+    /**
+     * Takes the position of the rightmost desired byte of a user specified range and returns the
+     * position of the end of the following cipher block.
+     */
+    private static long getCipherBlockUpperBound(long rightmostBytePosition) {
+        long cipherBlockSize = JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE;
+        long offset = cipherBlockSize - (rightmostBytePosition % cipherBlockSize);
+        return rightmostBytePosition + offset + cipherBlockSize;
     }
 }

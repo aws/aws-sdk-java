@@ -39,7 +39,7 @@ public class CreateCacheSecurityGroupRequestMarshaller implements Marshaller<Req
 
         Request<CreateCacheSecurityGroupRequest> request = new DefaultRequest<CreateCacheSecurityGroupRequest>(createCacheSecurityGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateCacheSecurityGroup");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (createCacheSecurityGroupRequest.getCacheSecurityGroupName() != null) {
             request.addParameter("CacheSecurityGroupName", StringUtils.fromString(createCacheSecurityGroupRequest.getCacheSecurityGroupName()));

@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.s3.model;
 
-import static com.amazonaws.services.s3.model.InstructionFileId.DEFAULT_INSTURCTION_FILE_SUFFIX;
+import static com.amazonaws.services.s3.model.InstructionFileId.DEFAULT_INSTRUCTION_FILE_SUFFIX;
 import static com.amazonaws.services.s3.model.InstructionFileId.DOT;
 
 import org.apache.http.annotation.Immutable;
@@ -94,7 +94,7 @@ public class S3ObjectId {
     public InstructionFileId instructionFileId(String suffix) {
         String ifileKey = key + DOT;
         ifileKey += (suffix == null || suffix.trim().length() == 0)
-                  ? DEFAULT_INSTURCTION_FILE_SUFFIX
+                  ? DEFAULT_INSTRUCTION_FILE_SUFFIX
                   : suffix
                   ;
          return new InstructionFileId(bucket, ifileKey, versionId);

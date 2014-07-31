@@ -62,6 +62,10 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                     resourceRecordSet.setRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("GeoLocation", targetDepth)) {
+                    resourceRecordSet.setGeoLocation(GeoLocationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Failover", targetDepth)) {
                     resourceRecordSet.setFailover(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

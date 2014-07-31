@@ -86,6 +86,7 @@ public class PredefinedMetricTransformer {
                 case HttpRequestTime:
                     return latencyMetricOf(predefined, request, response, INCLUDE_REQUEST_TYPE);
                 case Exception:
+                case ThrottleException:
                     return counterMetricOf(predefined, request, response, INCLUDE_REQUEST_TYPE);
                 default:
                     break;

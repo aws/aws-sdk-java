@@ -106,6 +106,22 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                     if (resourceRecordSetResourceRecordSet.getRegion() != null) {
                                         xmlWriter.startElement("Region").value(resourceRecordSetResourceRecordSet.getRegion()).endElement();
                                     }
+                                    if (resourceRecordSetResourceRecordSet != null) {
+                                        GeoLocation geoLocationGeoLocation = resourceRecordSetResourceRecordSet.getGeoLocation();
+                                        if (geoLocationGeoLocation != null) {
+                                            xmlWriter.startElement("GeoLocation");
+                                            if (geoLocationGeoLocation.getContinentCode() != null) {
+                                                xmlWriter.startElement("ContinentCode").value(geoLocationGeoLocation.getContinentCode()).endElement();
+                                            }
+                                            if (geoLocationGeoLocation.getCountryCode() != null) {
+                                                xmlWriter.startElement("CountryCode").value(geoLocationGeoLocation.getCountryCode()).endElement();
+                                            }
+                                            if (geoLocationGeoLocation.getSubdivisionCode() != null) {
+                                                xmlWriter.startElement("SubdivisionCode").value(geoLocationGeoLocation.getSubdivisionCode()).endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                    }
                                     if (resourceRecordSetResourceRecordSet.getFailover() != null) {
                                         xmlWriter.startElement("Failover").value(resourceRecordSetResourceRecordSet.getFailover()).endElement();
                                     }

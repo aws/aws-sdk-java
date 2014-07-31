@@ -22,9 +22,9 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.internal.crypto.CryptoModuleDispatcher;
-import com.amazonaws.services.s3.internal.crypto.EncryptionUtils;
 import com.amazonaws.services.s3.internal.crypto.S3CryptoModule;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
@@ -41,12 +41,14 @@ import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.InstructionFileId;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.PutInstructionFileRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectId;
 import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
@@ -60,7 +62,8 @@ import com.amazonaws.util.VersionInfoUtils;
  * The encryption materials specified in the constructor will be used to
  * protect the CEK which is then stored along side with the S3 object.
  */
-public class AmazonS3EncryptionClient extends AmazonS3Client {
+public class AmazonS3EncryptionClient extends AmazonS3Client implements
+        AmazonS3Encryption {
     public static final String USER_AGENT = AmazonS3EncryptionClient.class.getName()
             + "/" + VersionInfoUtils.getVersion();
     private final S3CryptoModule<?> crypto;
@@ -378,7 +381,19 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
             EncryptionMaterialsProvider kekMaterialsProvider,
             ClientConfiguration clientConfig,
             CryptoConfiguration cryptoConfig) {
-        super(credentialsProvider, clientConfig);
+        this(credentialsProvider, kekMaterialsProvider, clientConfig,
+                cryptoConfig,
+                null    // request metric collector
+        );
+    }
+
+    public AmazonS3EncryptionClient(
+            AWSCredentialsProvider credentialsProvider,
+            EncryptionMaterialsProvider kekMaterialsProvider,
+            ClientConfiguration clientConfig,
+            CryptoConfiguration cryptoConfig,
+            RequestMetricCollector requestMetricCollector) {
+        super(credentialsProvider, clientConfig, requestMetricCollector);
         assertParameterNotNull(kekMaterialsProvider,
                 "EncryptionMaterialsProvider parameter must not be null.");
         assertParameterNotNull(cryptoConfig,
@@ -423,8 +438,11 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         // Delete the object
         super.deleteObject(req);
         // If it exists, delete the instruction file.
-        DeleteObjectRequest instructionDeleteRequest = EncryptionUtils
-                .createInstructionDeleteObjectRequest(req);
+        InstructionFileId ifid =
+            new S3ObjectId(req.getBucketName(), req.getKey())
+            .instructionFileId();
+        DeleteObjectRequest instructionDeleteRequest =
+            new DeleteObjectRequest(ifid.getBucket(), ifid.getKey());
         super.deleteObject(instructionDeleteRequest);
     }
 

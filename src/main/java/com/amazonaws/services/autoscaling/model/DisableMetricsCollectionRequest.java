@@ -45,7 +45,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      * metrics are disabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      */
@@ -101,7 +101,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      * metrics are disabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      *
@@ -109,7 +109,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      *         metrics are disabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      */
@@ -126,7 +126,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      * metrics are disabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      *
@@ -134,7 +134,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      *         metrics are disabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      */
@@ -153,7 +153,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      * metrics are disabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      * <p>
@@ -163,7 +163,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      *         metrics are disabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      *
@@ -183,7 +183,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      * metrics are disabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      * <p>
@@ -193,7 +193,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest imp
      *         metrics are disabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
      *

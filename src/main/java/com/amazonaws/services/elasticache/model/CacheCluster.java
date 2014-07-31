@@ -72,7 +72,8 @@ public class CacheCluster implements Serializable {
 
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located.
+     * located or "Multiple" if the cache nodes are located in different
+     * Availability Zones.
      */
     private String preferredAvailabilityZone;
 
@@ -145,6 +146,8 @@ public class CacheCluster implements Serializable {
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      */
     private Integer snapshotRetentionLimit;
 
@@ -463,10 +466,12 @@ public class CacheCluster implements Serializable {
 
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located.
+     * located or "Multiple" if the cache nodes are located in different
+     * Availability Zones.
      *
      * @return The name of the Availability Zone in which the cache cluster is
-     *         located.
+     *         located or "Multiple" if the cache nodes are located in different
+     *         Availability Zones.
      */
     public String getPreferredAvailabilityZone() {
         return preferredAvailabilityZone;
@@ -474,10 +479,12 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located.
+     * located or "Multiple" if the cache nodes are located in different
+     * Availability Zones.
      *
      * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
-     *         located.
+     *         located or "Multiple" if the cache nodes are located in different
+     *         Availability Zones.
      */
     public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
         this.preferredAvailabilityZone = preferredAvailabilityZone;
@@ -485,12 +492,14 @@ public class CacheCluster implements Serializable {
     
     /**
      * The name of the Availability Zone in which the cache cluster is
-     * located.
+     * located or "Multiple" if the cache nodes are located in different
+     * Availability Zones.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
-     *         located.
+     *         located or "Multiple" if the cache nodes are located in different
+     *         Availability Zones.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1042,11 +1051,15 @@ public class CacheCluster implements Serializable {
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      *
      * @return The number of days for which ElastiCache will retain automatic cache
      *         cluster snapshots before deleting them. For example, if you set
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
+     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     *         to zero (0), backups are turned off.
      */
     public Integer getSnapshotRetentionLimit() {
         return snapshotRetentionLimit;
@@ -1057,11 +1070,15 @@ public class CacheCluster implements Serializable {
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      *
      * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
      *         cluster snapshots before deleting them. For example, if you set
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
+     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     *         to zero (0), backups are turned off.
      */
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
         this.snapshotRetentionLimit = snapshotRetentionLimit;
@@ -1072,6 +1089,8 @@ public class CacheCluster implements Serializable {
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1079,6 +1098,8 @@ public class CacheCluster implements Serializable {
      *         cluster snapshots before deleting them. For example, if you set
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
+     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     *         to zero (0), backups are turned off.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

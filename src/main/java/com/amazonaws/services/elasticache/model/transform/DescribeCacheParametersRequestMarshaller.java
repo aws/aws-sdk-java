@@ -39,7 +39,7 @@ public class DescribeCacheParametersRequestMarshaller implements Marshaller<Requ
 
         Request<DescribeCacheParametersRequest> request = new DefaultRequest<DescribeCacheParametersRequest>(describeCacheParametersRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheParameters");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (describeCacheParametersRequest.getCacheParameterGroupName() != null) {
             request.addParameter("CacheParameterGroupName", StringUtils.fromString(describeCacheParametersRequest.getCacheParameterGroupName()));

@@ -21,8 +21,11 @@ import javax.crypto.SecretKey;
 
 
 /**
+ * @deprecated this class is no longer used and will be removed in the future
+ * <p>
  * Contains information used to encrypt and decrypt objects in S3.
  */
+@Deprecated
 public class EncryptionInstruction {
 
     private final Map<String, String> materialsDescription;
