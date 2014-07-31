@@ -60,6 +60,11 @@ public class CacheNode implements Serializable {
     private String sourceCacheNodeId;
 
     /**
+     * The Availability Zone where this node was created and now resides.
+     */
+    private String customerAvailabilityZone;
+
+    /**
      * Default constructor for a new CacheNode object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -288,6 +293,39 @@ public class CacheNode implements Serializable {
     }
 
     /**
+     * The Availability Zone where this node was created and now resides.
+     *
+     * @return The Availability Zone where this node was created and now resides.
+     */
+    public String getCustomerAvailabilityZone() {
+        return customerAvailabilityZone;
+    }
+    
+    /**
+     * The Availability Zone where this node was created and now resides.
+     *
+     * @param customerAvailabilityZone The Availability Zone where this node was created and now resides.
+     */
+    public void setCustomerAvailabilityZone(String customerAvailabilityZone) {
+        this.customerAvailabilityZone = customerAvailabilityZone;
+    }
+    
+    /**
+     * The Availability Zone where this node was created and now resides.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param customerAvailabilityZone The Availability Zone where this node was created and now resides.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CacheNode withCustomerAvailabilityZone(String customerAvailabilityZone) {
+        this.customerAvailabilityZone = customerAvailabilityZone;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -304,7 +342,8 @@ public class CacheNode implements Serializable {
         if (getCacheNodeCreateTime() != null) sb.append("CacheNodeCreateTime: " + getCacheNodeCreateTime() + ",");
         if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");
         if (getParameterGroupStatus() != null) sb.append("ParameterGroupStatus: " + getParameterGroupStatus() + ",");
-        if (getSourceCacheNodeId() != null) sb.append("SourceCacheNodeId: " + getSourceCacheNodeId() );
+        if (getSourceCacheNodeId() != null) sb.append("SourceCacheNodeId: " + getSourceCacheNodeId() + ",");
+        if (getCustomerAvailabilityZone() != null) sb.append("CustomerAvailabilityZone: " + getCustomerAvailabilityZone() );
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +359,7 @@ public class CacheNode implements Serializable {
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode()); 
         hashCode = prime * hashCode + ((getParameterGroupStatus() == null) ? 0 : getParameterGroupStatus().hashCode()); 
         hashCode = prime * hashCode + ((getSourceCacheNodeId() == null) ? 0 : getSourceCacheNodeId().hashCode()); 
+        hashCode = prime * hashCode + ((getCustomerAvailabilityZone() == null) ? 0 : getCustomerAvailabilityZone().hashCode()); 
         return hashCode;
     }
     
@@ -343,6 +383,8 @@ public class CacheNode implements Serializable {
         if (other.getParameterGroupStatus() != null && other.getParameterGroupStatus().equals(this.getParameterGroupStatus()) == false) return false; 
         if (other.getSourceCacheNodeId() == null ^ this.getSourceCacheNodeId() == null) return false;
         if (other.getSourceCacheNodeId() != null && other.getSourceCacheNodeId().equals(this.getSourceCacheNodeId()) == false) return false; 
+        if (other.getCustomerAvailabilityZone() == null ^ this.getCustomerAvailabilityZone() == null) return false;
+        if (other.getCustomerAvailabilityZone() != null && other.getCustomerAvailabilityZone().equals(this.getCustomerAvailabilityZone()) == false) return false; 
         return true;
     }
     

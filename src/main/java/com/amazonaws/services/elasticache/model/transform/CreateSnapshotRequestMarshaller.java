@@ -39,7 +39,7 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
 
         Request<CreateSnapshotRequest> request = new DefaultRequest<CreateSnapshotRequest>(createSnapshotRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateSnapshot");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (createSnapshotRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(createSnapshotRequest.getCacheClusterId()));

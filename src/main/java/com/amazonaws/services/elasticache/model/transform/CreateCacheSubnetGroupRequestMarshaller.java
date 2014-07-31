@@ -39,7 +39,7 @@ public class CreateCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
 
         Request<CreateCacheSubnetGroupRequest> request = new DefaultRequest<CreateCacheSubnetGroupRequest>(createCacheSubnetGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateCacheSubnetGroup");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (createCacheSubnetGroupRequest.getCacheSubnetGroupName() != null) {
             request.addParameter("CacheSubnetGroupName", StringUtils.fromString(createCacheSubnetGroupRequest.getCacheSubnetGroupName()));

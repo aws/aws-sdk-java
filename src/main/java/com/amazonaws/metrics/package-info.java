@@ -65,6 +65,7 @@
  * client type level. </li>
  * <li>RetryCount - Number of retries per logical request. Captured on a per service 
  * client type level. </li>
+ * <li>ThrottleException - Number of times of a request has been throttled by the service.</li>
  * <li>DynamoDBConsumedCapacity - Number of Amazon DynamoDB capacity units consumed.
  * Captured on a per request type level, and is only available if the request
  * has been specified with the necessary "ReturnConsumedCapacity" parameter.

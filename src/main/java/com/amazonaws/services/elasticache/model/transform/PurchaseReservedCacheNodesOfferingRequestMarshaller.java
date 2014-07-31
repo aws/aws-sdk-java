@@ -39,7 +39,7 @@ public class PurchaseReservedCacheNodesOfferingRequestMarshaller implements Mars
 
         Request<PurchaseReservedCacheNodesOfferingRequest> request = new DefaultRequest<PurchaseReservedCacheNodesOfferingRequest>(purchaseReservedCacheNodesOfferingRequest, "AmazonElastiCache");
         request.addParameter("Action", "PurchaseReservedCacheNodesOffering");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (purchaseReservedCacheNodesOfferingRequest.getReservedCacheNodesOfferingId() != null) {
             request.addParameter("ReservedCacheNodesOfferingId", StringUtils.fromString(purchaseReservedCacheNodesOfferingRequest.getReservedCacheNodesOfferingId()));

@@ -28,10 +28,10 @@ import com.amazonaws.internal.SdkFilterInputStream;
  * @see CipherLite
  * @see GCMCipherLite
  */
-public final class CipherLiteInputStream extends SdkFilterInputStream {
+public class CipherLiteInputStream extends SdkFilterInputStream {
     private static final int MAX_RETRY = 1000;
     private static final int DEFAULT_IN_BUFFER_SIZE = 512;
-    private final CipherLite cipherLite;
+    private CipherLite cipherLite;
     /**
      * True if this input stream is currently involved in a multipart uploads;
      * false otherwise. For multipart uploads, the doFinal method if the
@@ -224,5 +224,9 @@ public final class CipherLiteInputStream extends SdkFilterInputStream {
         }
         curr_pos = 0;
         return max_pos = (bufout == null ? 0 : bufout.length);
+    }
+
+    void renewCipherLite() {
+        cipherLite = cipherLite.recreate();
     }
 }

@@ -38,8 +38,8 @@ public class Snapshot implements Serializable {
 
     /**
      * The status of the snapshot. Valid values: <code>creating</code> |
-     * <code>available</code> | <code>restoring</code> |
-     * <code>deleting</code>.
+     * <code>available</code> | <code>restoring</code> | <code>copying</code>
+     * | <code>deleting</code>.
      */
     private String snapshotStatus;
 
@@ -132,7 +132,8 @@ public class Snapshot implements Serializable {
      * this field reflects the <i>SnapshotRetentionLimit</i> for the source
      * cache cluster when the snapshot was created. This field is otherwise
      * ignored: Manual snapshots do not expire, and can only be deleted using
-     * the <i>DeleteSnapshot</i> action.
+     * the <i>DeleteSnapshot</i> action. <p><b>Important</b><br/>If the value
+     * of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      */
     private Integer snapshotRetentionLimit;
 
@@ -143,7 +144,7 @@ public class Snapshot implements Serializable {
     private String snapshotWindow;
 
     /**
-     * A list of the cache cluster nodes in the source cache cluster.
+     * A list of the cache nodes in the source cache cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<NodeSnapshot> nodeSnapshots;
 
@@ -227,12 +228,12 @@ public class Snapshot implements Serializable {
 
     /**
      * The status of the snapshot. Valid values: <code>creating</code> |
-     * <code>available</code> | <code>restoring</code> |
-     * <code>deleting</code>.
+     * <code>available</code> | <code>restoring</code> | <code>copying</code>
+     * | <code>deleting</code>.
      *
      * @return The status of the snapshot. Valid values: <code>creating</code> |
-     *         <code>available</code> | <code>restoring</code> |
-     *         <code>deleting</code>.
+     *         <code>available</code> | <code>restoring</code> | <code>copying</code>
+     *         | <code>deleting</code>.
      */
     public String getSnapshotStatus() {
         return snapshotStatus;
@@ -240,12 +241,12 @@ public class Snapshot implements Serializable {
     
     /**
      * The status of the snapshot. Valid values: <code>creating</code> |
-     * <code>available</code> | <code>restoring</code> |
-     * <code>deleting</code>.
+     * <code>available</code> | <code>restoring</code> | <code>copying</code>
+     * | <code>deleting</code>.
      *
      * @param snapshotStatus The status of the snapshot. Valid values: <code>creating</code> |
-     *         <code>available</code> | <code>restoring</code> |
-     *         <code>deleting</code>.
+     *         <code>available</code> | <code>restoring</code> | <code>copying</code>
+     *         | <code>deleting</code>.
      */
     public void setSnapshotStatus(String snapshotStatus) {
         this.snapshotStatus = snapshotStatus;
@@ -253,14 +254,14 @@ public class Snapshot implements Serializable {
     
     /**
      * The status of the snapshot. Valid values: <code>creating</code> |
-     * <code>available</code> | <code>restoring</code> |
-     * <code>deleting</code>.
+     * <code>available</code> | <code>restoring</code> | <code>copying</code>
+     * | <code>deleting</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotStatus The status of the snapshot. Valid values: <code>creating</code> |
-     *         <code>available</code> | <code>restoring</code> |
-     *         <code>deleting</code>.
+     *         <code>available</code> | <code>restoring</code> | <code>copying</code>
+     *         | <code>deleting</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -829,14 +830,16 @@ public class Snapshot implements Serializable {
      * this field reflects the <i>SnapshotRetentionLimit</i> for the source
      * cache cluster when the snapshot was created. This field is otherwise
      * ignored: Manual snapshots do not expire, and can only be deleted using
-     * the <i>DeleteSnapshot</i> action.
+     * the <i>DeleteSnapshot</i> action. <p><b>Important</b><br/>If the value
+     * of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *
      * @return For an automatic snapshot, the number of days for which ElastiCache
      *         will retain the snapshot before deleting it. <p>For manual snapshots,
      *         this field reflects the <i>SnapshotRetentionLimit</i> for the source
      *         cache cluster when the snapshot was created. This field is otherwise
      *         ignored: Manual snapshots do not expire, and can only be deleted using
-     *         the <i>DeleteSnapshot</i> action.
+     *         the <i>DeleteSnapshot</i> action. <p><b>Important</b><br/>If the value
+     *         of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      */
     public Integer getSnapshotRetentionLimit() {
         return snapshotRetentionLimit;
@@ -848,14 +851,16 @@ public class Snapshot implements Serializable {
      * this field reflects the <i>SnapshotRetentionLimit</i> for the source
      * cache cluster when the snapshot was created. This field is otherwise
      * ignored: Manual snapshots do not expire, and can only be deleted using
-     * the <i>DeleteSnapshot</i> action.
+     * the <i>DeleteSnapshot</i> action. <p><b>Important</b><br/>If the value
+     * of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *
      * @param snapshotRetentionLimit For an automatic snapshot, the number of days for which ElastiCache
      *         will retain the snapshot before deleting it. <p>For manual snapshots,
      *         this field reflects the <i>SnapshotRetentionLimit</i> for the source
      *         cache cluster when the snapshot was created. This field is otherwise
      *         ignored: Manual snapshots do not expire, and can only be deleted using
-     *         the <i>DeleteSnapshot</i> action.
+     *         the <i>DeleteSnapshot</i> action. <p><b>Important</b><br/>If the value
+     *         of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      */
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
         this.snapshotRetentionLimit = snapshotRetentionLimit;
@@ -867,7 +872,8 @@ public class Snapshot implements Serializable {
      * this field reflects the <i>SnapshotRetentionLimit</i> for the source
      * cache cluster when the snapshot was created. This field is otherwise
      * ignored: Manual snapshots do not expire, and can only be deleted using
-     * the <i>DeleteSnapshot</i> action.
+     * the <i>DeleteSnapshot</i> action. <p><b>Important</b><br/>If the value
+     * of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -876,7 +882,8 @@ public class Snapshot implements Serializable {
      *         this field reflects the <i>SnapshotRetentionLimit</i> for the source
      *         cache cluster when the snapshot was created. This field is otherwise
      *         ignored: Manual snapshots do not expire, and can only be deleted using
-     *         the <i>DeleteSnapshot</i> action.
+     *         the <i>DeleteSnapshot</i> action. <p><b>Important</b><br/>If the value
+     *         of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -926,9 +933,9 @@ public class Snapshot implements Serializable {
     }
 
     /**
-     * A list of the cache cluster nodes in the source cache cluster.
+     * A list of the cache nodes in the source cache cluster.
      *
-     * @return A list of the cache cluster nodes in the source cache cluster.
+     * @return A list of the cache nodes in the source cache cluster.
      */
     public java.util.List<NodeSnapshot> getNodeSnapshots() {
         if (nodeSnapshots == null) {
@@ -939,9 +946,9 @@ public class Snapshot implements Serializable {
     }
     
     /**
-     * A list of the cache cluster nodes in the source cache cluster.
+     * A list of the cache nodes in the source cache cluster.
      *
-     * @param nodeSnapshots A list of the cache cluster nodes in the source cache cluster.
+     * @param nodeSnapshots A list of the cache nodes in the source cache cluster.
      */
     public void setNodeSnapshots(java.util.Collection<NodeSnapshot> nodeSnapshots) {
         if (nodeSnapshots == null) {
@@ -954,11 +961,11 @@ public class Snapshot implements Serializable {
     }
     
     /**
-     * A list of the cache cluster nodes in the source cache cluster.
+     * A list of the cache nodes in the source cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nodeSnapshots A list of the cache cluster nodes in the source cache cluster.
+     * @param nodeSnapshots A list of the cache nodes in the source cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -972,11 +979,11 @@ public class Snapshot implements Serializable {
     }
     
     /**
-     * A list of the cache cluster nodes in the source cache cluster.
+     * A list of the cache nodes in the source cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nodeSnapshots A list of the cache cluster nodes in the source cache cluster.
+     * @param nodeSnapshots A list of the cache nodes in the source cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

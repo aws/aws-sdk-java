@@ -20,10 +20,18 @@ package com.amazonaws.services.autoscaling.model;
 public enum LifecycleState {
     
     Pending("Pending"),
+    PendingWait("Pending:Wait"),
+    PendingProceed("Pending:Proceed"),
     Quarantined("Quarantined"),
     InService("InService"),
     Terminating("Terminating"),
-    Terminated("Terminated");
+    TerminatingWait("Terminating:Wait"),
+    TerminatingProceed("Terminating:Proceed"),
+    Terminated("Terminated"),
+    Detaching("Detaching"),
+    Detached("Detached"),
+    EnteringStandby("EnteringStandby"),
+    Standby("Standby");
 
     private String value;
 
@@ -49,14 +57,30 @@ public enum LifecycleState {
         
         } else if ("Pending".equals(value)) {
             return LifecycleState.Pending;
+        } else if ("Pending:Wait".equals(value)) {
+            return LifecycleState.PendingWait;
+        } else if ("Pending:Proceed".equals(value)) {
+            return LifecycleState.PendingProceed;
         } else if ("Quarantined".equals(value)) {
             return LifecycleState.Quarantined;
         } else if ("InService".equals(value)) {
             return LifecycleState.InService;
         } else if ("Terminating".equals(value)) {
             return LifecycleState.Terminating;
+        } else if ("Terminating:Wait".equals(value)) {
+            return LifecycleState.TerminatingWait;
+        } else if ("Terminating:Proceed".equals(value)) {
+            return LifecycleState.TerminatingProceed;
         } else if ("Terminated".equals(value)) {
             return LifecycleState.Terminated;
+        } else if ("Detaching".equals(value)) {
+            return LifecycleState.Detaching;
+        } else if ("Detached".equals(value)) {
+            return LifecycleState.Detached;
+        } else if ("EnteringStandby".equals(value)) {
+            return LifecycleState.EnteringStandby;
+        } else if ("Standby".equals(value)) {
+            return LifecycleState.Standby;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

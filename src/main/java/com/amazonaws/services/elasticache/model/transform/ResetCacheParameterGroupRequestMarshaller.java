@@ -39,7 +39,7 @@ public class ResetCacheParameterGroupRequestMarshaller implements Marshaller<Req
 
         Request<ResetCacheParameterGroupRequest> request = new DefaultRequest<ResetCacheParameterGroupRequest>(resetCacheParameterGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "ResetCacheParameterGroup");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (resetCacheParameterGroupRequest.getCacheParameterGroupName() != null) {
             request.addParameter("CacheParameterGroupName", StringUtils.fromString(resetCacheParameterGroupRequest.getCacheParameterGroupName()));

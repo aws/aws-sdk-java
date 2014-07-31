@@ -39,7 +39,7 @@ public class DescribeEngineDefaultParametersRequestMarshaller implements Marshal
 
         Request<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeEngineDefaultParameters");
-        request.addParameter("Version", "2014-03-24");
+        request.addParameter("Version", "2014-07-15");
 
         if (describeEngineDefaultParametersRequest.getCacheParameterGroupFamily() != null) {
             request.addParameter("CacheParameterGroupFamily", StringUtils.fromString(describeEngineDefaultParametersRequest.getCacheParameterGroupFamily()));

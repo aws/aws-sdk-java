@@ -53,7 +53,7 @@ public class CryptoRuntime {
     }
     
     public static boolean isAesGcmAvailable() { return AesGcm.isAvailable; }
-    private static void recheckAesGcmAvailablility() { AesGcm.recheck(); }
+    public static void recheckAesGcmAvailablility() { AesGcm.recheck(); }
 
     static boolean isRsaKeyWrapAvailable() {
         return RsaEcbOaepWithSHA256AndMGF1Padding.isAvailable;

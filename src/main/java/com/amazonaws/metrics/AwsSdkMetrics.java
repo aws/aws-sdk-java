@@ -767,6 +767,7 @@ public enum AwsSdkMetrics {
         MetricRegistry() {
             metricTypes.add(Field.ClientExecuteTime);
             metricTypes.add(Field.Exception);
+            metricTypes.add(Field.ThrottleException);
             metricTypes.add(Field.HttpClientRetryCount);
             metricTypes.add(Field.HttpRequestTime);
             metricTypes.add(Field.RequestCount);

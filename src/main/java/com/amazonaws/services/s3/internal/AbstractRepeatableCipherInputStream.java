@@ -24,6 +24,9 @@ import java.io.InputStream;
 import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
+ * @deprecated this class is no longer used and will be removed in the future
+ * <p>
+ * 
  * Common base class used to wrap an InputStream with a cipher input stream to
  * encrypt it, and handles resets by attempting to reset on the original,
  * unencrypted data InputStream, and recreate an identical Cipher and identical
@@ -41,6 +44,7 @@ import com.amazonaws.internal.SdkFilterInputStream;
  * call {@code mark} after calling {@code read} or {@code skip}, it will throw
  * an {@code UnsupportedOperationException}.
  */
+@Deprecated
 public abstract class AbstractRepeatableCipherInputStream<T>
         extends SdkFilterInputStream {
     private final T cipherFactory;

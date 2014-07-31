@@ -51,9 +51,11 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      * metrics are enabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul>
+     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     * returned by default. You must explicitly request it when calling
+     * <a>EnableMetricsCollection</a>. </note>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> metrics;
 
@@ -117,17 +119,21 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      * metrics are enabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul>
+     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     * returned by default. You must explicitly request it when calling
+     * <a>EnableMetricsCollection</a>. </note>
      *
      * @return The list of metrics to collect. If no metrics are specified, all
      *         metrics are enabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul>
+     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     *         returned by default. You must explicitly request it when calling
+     *         <a>EnableMetricsCollection</a>. </note>
      */
     public java.util.List<String> getMetrics() {
         if (metrics == null) {
@@ -142,17 +148,21 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      * metrics are enabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul>
+     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     * returned by default. You must explicitly request it when calling
+     * <a>EnableMetricsCollection</a>. </note>
      *
      * @param metrics The list of metrics to collect. If no metrics are specified, all
      *         metrics are enabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul>
+     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     *         returned by default. You must explicitly request it when calling
+     *         <a>EnableMetricsCollection</a>. </note>
      */
     public void setMetrics(java.util.Collection<String> metrics) {
         if (metrics == null) {
@@ -169,9 +179,11 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      * metrics are enabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul>
+     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     * returned by default. You must explicitly request it when calling
+     * <a>EnableMetricsCollection</a>. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -179,9 +191,11 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      *         metrics are enabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul>
+     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     *         returned by default. You must explicitly request it when calling
+     *         <a>EnableMetricsCollection</a>. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -199,9 +213,11 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      * metrics are enabled. The following metrics are supported: <ul>
      * <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      * <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     * <li><p>GroupPendingInstances</li>
+     * <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     * </ul>
+     * </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     * returned by default. You must explicitly request it when calling
+     * <a>EnableMetricsCollection</a>. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -209,9 +225,11 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest impl
      *         metrics are enabled. The following metrics are supported: <ul>
      *         <li><p>GroupMinSize</li> <li><p>GroupMaxSize</li>
      *         <li><p>GroupDesiredCapacity</li> <li><p>GroupInServiceInstances</li>
-     *         <li><p>GroupPendingInstances</li>
+     *         <li><p>GroupPendingInstances</li> <li><p>GroupStandbyInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
-     *         </ul>
+     *         </ul> <note> <p>The <code>GroupStandbyInstances</code> metric is not
+     *         returned by default. You must explicitly request it when calling
+     *         <a>EnableMetricsCollection</a>. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

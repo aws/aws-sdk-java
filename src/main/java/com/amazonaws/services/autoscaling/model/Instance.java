@@ -47,7 +47,7 @@ public class Instance implements Serializable {
      * </note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      */
     private String lifecycleState;
 
@@ -165,7 +165,7 @@ public class Instance implements Serializable {
      * </note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
      * @return Contains a description of the current <i>lifecycle</i> state. <note>
      *         <p>The <code>Quarantined</code> lifecycle state is currently not used.
@@ -183,7 +183,7 @@ public class Instance implements Serializable {
      * </note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state. <note>
      *         <p>The <code>Quarantined</code> lifecycle state is currently not used.
@@ -203,7 +203,7 @@ public class Instance implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state. <note>
      *         <p>The <code>Quarantined</code> lifecycle state is currently not used.
@@ -225,7 +225,7 @@ public class Instance implements Serializable {
      * </note>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state. <note>
      *         <p>The <code>Quarantined</code> lifecycle state is currently not used.
@@ -245,7 +245,7 @@ public class Instance implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     * <b>Allowed Values: </b>Pending, Pending:Wait, Pending:Proceed, Quarantined, InService, Terminating, Terminating:Wait, Terminating:Proceed, Terminated, Detaching, Detached, EnteringStandby, Standby
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state. <note>
      *         <p>The <code>Quarantined</code> lifecycle state is currently not used.

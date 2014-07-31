@@ -56,7 +56,17 @@ public class AWSRequestMetrics {
          */
         ClientExecuteTime,
         CredentialsRequestTime,
+
         Exception,
+        /**
+         * Used to count and preserve the throttle related exceptions.
+         */
+        ThrottleException,
+        // Comment out for now. Ref: CR2662349
+//        /**
+//         * Used to preserve the transient exceptions that lead to the retries.
+//         */
+//        RetryCause,
         /**
          * Number of milliseconds taken for a request/response round trip to AWS.
          */
@@ -161,12 +171,46 @@ public class AWSRequestMetrics {
     public void startEvent(MetricType f) {}
     public void endEvent(String eventName) {}
     public void endEvent(MetricType f) {}
+
     public void incrementCounter(String event) {}
     public void incrementCounter(MetricType f) {}
+    /** Fluent API of {@link #incrementCounter(String)} */
+    public final AWSRequestMetrics incrementCounterWith(String event) {
+        incrementCounter(event);
+        return this;
+    }
+    /** Fluent API of {@link #incrementCounter(MetricType)} */
+    public final AWSRequestMetrics incrementCounterWith(MetricType f) {
+        incrementCounter(f);
+        return this;
+    }
+
     public void setCounter(String counterName, long count) {}
     public void setCounter(MetricType f, long count) {}
+    /** Fluent API of {@link #setCounter(String, long)} */
+    public final AWSRequestMetrics withCounter(String counterName, long count) {
+        setCounter(counterName, count);
+        return this;
+    }
+    /** Fluent API of {@link #setCounter(MetricType, long)} */
+    public final AWSRequestMetrics withCounter(MetricType f, long count) {
+        setCounter(f, count);
+        return this;
+    }
+
     public void addProperty(String propertyName, Object value) {}
     public void addProperty(MetricType f, Object value) {}
+    /** Fluent API of {@link #addProperty(String, Object)} */
+    public final AWSRequestMetrics addPropertyWith(String propertyName, Object value) {
+        addProperty(propertyName, value);
+        return this;
+    }
+    /** Fluent API of {@link #addProperty(MetricType, Object)} */
+    public final AWSRequestMetrics addPropertyWith(MetricType f, Object value) {
+        addProperty(f, value);
+        return this;
+    }
+
     public void log() {}
     public List<Object> getProperty(String propertyName){ return Collections.emptyList(); }
     public List<Object> getProperty(MetricType f) { return Collections.emptyList(); }

@@ -73,6 +73,8 @@ public class DynamoDBRequestMetricTransformer implements RequestMetricTransforme
         DynamoDBRequestMetric predefined = (DynamoDBRequestMetric) metricType;
         switch(predefined) {
             case DynamoDBConsumedCapacity:
+                if (response == null)
+                    return Collections.emptyList();
                 Object awsResponse = response.getAwsResponse();
                 Method method = awsResponse.getClass().getMethod("getConsumedCapacity");
                 Object value = method.invoke(awsResponse);

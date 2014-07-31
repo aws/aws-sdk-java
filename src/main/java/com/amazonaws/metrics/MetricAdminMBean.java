@@ -16,6 +16,7 @@ package com.amazonaws.metrics;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.InetAddress;
 
 /**
  * MBean interface for AwsSdkMetrics administration.
@@ -162,7 +163,7 @@ public interface MetricAdminMBean {
     /**
      * Returns the host name for metric purposes. If the returned value is
      * either null or blank, the host name will be automatically detected via
-     * {@link InetAddresss}.
+     * {@link InetAddress}.
      */
     public String getHostMetricName();
 
@@ -170,7 +171,7 @@ public interface MetricAdminMBean {
      * Sets the host name to enable per-host level metrics generation. If
      * the given value is either null or blank but the per-host metric is
      * enabled, the host name will be automatically detected via
-     * {@link InetAddresss}.
+     * {@link InetAddress}.
      */
     public void setHostMetricName(String hostMetricName);
 

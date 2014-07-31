@@ -82,11 +82,16 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
                 this.eo = new S3CryptoModuleEO(s3, credentialsProvider,
                         encryptionMaterialsProvider,
                         cryptoConfig);
+                CryptoConfiguration aeConfig = cryptoConfig.clone();
+                try {
+                    aeConfig.setCryptoMode(AuthenticatedEncryption);
+                } catch(UnsupportedOperationException ex) {
+                    // BC not available during runtime; but EO can still work.
+                    // Hence ignoring.
+                }
                 this.ae = new S3CryptoModuleAE(s3, credentialsProvider,
-                        encryptionMaterialsProvider,
-                        cryptoConfig.clone()
-                            .withCryptoMode(AuthenticatedEncryption)
-                            .readOnly());
+                    encryptionMaterialsProvider,
+                    aeConfig.readOnly());
                 break;
             default:
                 throw new IllegalStateException();

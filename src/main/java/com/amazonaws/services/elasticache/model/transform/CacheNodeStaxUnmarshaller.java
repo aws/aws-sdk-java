@@ -67,6 +67,10 @@ public class CacheNodeStaxUnmarshaller implements Unmarshaller<CacheNode, StaxUn
                     cacheNode.setSourceCacheNodeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("CustomerAvailabilityZone", targetDepth)) {
+                    cacheNode.setCustomerAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheNode;

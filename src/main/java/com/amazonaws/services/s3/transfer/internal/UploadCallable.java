@@ -32,7 +32,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3EncryptionClient;
+import com.amazonaws.services.s3.AmazonS3Encryption;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
@@ -167,7 +167,7 @@ public class UploadCallable implements Callable<UploadResult> {
      * as the multipart upload id.
      */
     private UploadResult uploadInParts() throws Exception {
-        boolean isUsingEncryption = s3 instanceof AmazonS3EncryptionClient;
+        boolean isUsingEncryption = s3 instanceof AmazonS3Encryption;
         long optimalPartSize = getOptimalPartSize(isUsingEncryption);
 
         if (multipartUploadId == null) {

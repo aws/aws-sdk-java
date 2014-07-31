@@ -222,23 +222,32 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * Used for Auto Scaling groups that launch instances into an Amazon
      * Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     * public IP address to each instance launched in a Amazon VPC. <note>
-     * <p>If you specify a value for this parameter, be sure to specify at
-     * least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your Auto Scaling group. </note> <p>Default: If the
-     * instance is launched into a default subnet in a default VPC, the
-     * default is <code>true</code>. If the instance is launched into a
-     * nondefault subnet in a VPC, the default is <code>false</code>. For
-     * information about the platforms supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     * Started with Auto Scaling Using the Command Line Interface</a>.
+     * public IP address to each instance launched in a Amazon VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     * Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     * a value for this parameter, be sure to specify at least one VPC subnet
+     * using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     * Scaling group. </note> <p>Default: If the instance is launched into a
+     * default subnet in a default VPC, the default is <code>true</code>. If
+     * the instance is launched into a nondefault subnet in a VPC, the
+     * default is <code>false</code>. For information about default VPC and
+     * VPC platforms, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     * Platforms</a>.
      */
     private Boolean associatePublicIpAddress;
 
     /**
      * The tenancy of the instance. An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware and can only be
-     * launched into a VPC. <p>For more information, see <a
+     * launched in a VPC. <p>You must set the value of this parameter to
+     * <code>dedicated</code> if want to launch Dedicated Instances in a
+     * shared tenancy VPC (VPC with instance placement tenancy attribute set
+     * to <code>default</code>). <p>If you specify a value for this
+     * parameter, be sure to specify at least one VPC subnet using the
+     * <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling
+     * group. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
      * Developer Guide</i>. <p>Valid values: <code>default</code> |
@@ -1427,29 +1436,35 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * Used for Auto Scaling groups that launch instances into an Amazon
      * Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     * public IP address to each instance launched in a Amazon VPC. <note>
-     * <p>If you specify a value for this parameter, be sure to specify at
-     * least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your Auto Scaling group. </note> <p>Default: If the
-     * instance is launched into a default subnet in a default VPC, the
-     * default is <code>true</code>. If the instance is launched into a
-     * nondefault subnet in a VPC, the default is <code>false</code>. For
-     * information about the platforms supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     * Started with Auto Scaling Using the Command Line Interface</a>.
+     * public IP address to each instance launched in a Amazon VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     * Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     * a value for this parameter, be sure to specify at least one VPC subnet
+     * using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     * Scaling group. </note> <p>Default: If the instance is launched into a
+     * default subnet in a default VPC, the default is <code>true</code>. If
+     * the instance is launched into a nondefault subnet in a VPC, the
+     * default is <code>false</code>. For information about default VPC and
+     * VPC platforms, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     * Platforms</a>.
      *
      * @return Used for Auto Scaling groups that launch instances into an Amazon
      *         Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     *         public IP address to each instance launched in a Amazon VPC. <note>
-     *         <p>If you specify a value for this parameter, be sure to specify at
-     *         least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *         you create your Auto Scaling group. </note> <p>Default: If the
-     *         instance is launched into a default subnet in a default VPC, the
-     *         default is <code>true</code>. If the instance is launched into a
-     *         nondefault subnet in a VPC, the default is <code>false</code>. For
-     *         information about the platforms supported by Auto Scaling, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     *         Started with Auto Scaling Using the Command Line Interface</a>.
+     *         public IP address to each instance launched in a Amazon VPC. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     *         Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     *         a value for this parameter, be sure to specify at least one VPC subnet
+     *         using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     *         Scaling group. </note> <p>Default: If the instance is launched into a
+     *         default subnet in a default VPC, the default is <code>true</code>. If
+     *         the instance is launched into a nondefault subnet in a VPC, the
+     *         default is <code>false</code>. For information about default VPC and
+     *         VPC platforms, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     *         Platforms</a>.
      */
     public Boolean isAssociatePublicIpAddress() {
         return associatePublicIpAddress;
@@ -1458,29 +1473,35 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * Used for Auto Scaling groups that launch instances into an Amazon
      * Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     * public IP address to each instance launched in a Amazon VPC. <note>
-     * <p>If you specify a value for this parameter, be sure to specify at
-     * least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your Auto Scaling group. </note> <p>Default: If the
-     * instance is launched into a default subnet in a default VPC, the
-     * default is <code>true</code>. If the instance is launched into a
-     * nondefault subnet in a VPC, the default is <code>false</code>. For
-     * information about the platforms supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     * Started with Auto Scaling Using the Command Line Interface</a>.
+     * public IP address to each instance launched in a Amazon VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     * Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     * a value for this parameter, be sure to specify at least one VPC subnet
+     * using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     * Scaling group. </note> <p>Default: If the instance is launched into a
+     * default subnet in a default VPC, the default is <code>true</code>. If
+     * the instance is launched into a nondefault subnet in a VPC, the
+     * default is <code>false</code>. For information about default VPC and
+     * VPC platforms, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     * Platforms</a>.
      *
      * @param associatePublicIpAddress Used for Auto Scaling groups that launch instances into an Amazon
      *         Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     *         public IP address to each instance launched in a Amazon VPC. <note>
-     *         <p>If you specify a value for this parameter, be sure to specify at
-     *         least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *         you create your Auto Scaling group. </note> <p>Default: If the
-     *         instance is launched into a default subnet in a default VPC, the
-     *         default is <code>true</code>. If the instance is launched into a
-     *         nondefault subnet in a VPC, the default is <code>false</code>. For
-     *         information about the platforms supported by Auto Scaling, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     *         Started with Auto Scaling Using the Command Line Interface</a>.
+     *         public IP address to each instance launched in a Amazon VPC. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     *         Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     *         a value for this parameter, be sure to specify at least one VPC subnet
+     *         using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     *         Scaling group. </note> <p>Default: If the instance is launched into a
+     *         default subnet in a default VPC, the default is <code>true</code>. If
+     *         the instance is launched into a nondefault subnet in a VPC, the
+     *         default is <code>false</code>. For information about default VPC and
+     *         VPC platforms, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     *         Platforms</a>.
      */
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
         this.associatePublicIpAddress = associatePublicIpAddress;
@@ -1489,31 +1510,37 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * Used for Auto Scaling groups that launch instances into an Amazon
      * Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     * public IP address to each instance launched in a Amazon VPC. <note>
-     * <p>If you specify a value for this parameter, be sure to specify at
-     * least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your Auto Scaling group. </note> <p>Default: If the
-     * instance is launched into a default subnet in a default VPC, the
-     * default is <code>true</code>. If the instance is launched into a
-     * nondefault subnet in a VPC, the default is <code>false</code>. For
-     * information about the platforms supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     * Started with Auto Scaling Using the Command Line Interface</a>.
+     * public IP address to each instance launched in a Amazon VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     * Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     * a value for this parameter, be sure to specify at least one VPC subnet
+     * using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     * Scaling group. </note> <p>Default: If the instance is launched into a
+     * default subnet in a default VPC, the default is <code>true</code>. If
+     * the instance is launched into a nondefault subnet in a VPC, the
+     * default is <code>false</code>. For information about default VPC and
+     * VPC platforms, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     * Platforms</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associatePublicIpAddress Used for Auto Scaling groups that launch instances into an Amazon
      *         Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     *         public IP address to each instance launched in a Amazon VPC. <note>
-     *         <p>If you specify a value for this parameter, be sure to specify at
-     *         least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *         you create your Auto Scaling group. </note> <p>Default: If the
-     *         instance is launched into a default subnet in a default VPC, the
-     *         default is <code>true</code>. If the instance is launched into a
-     *         nondefault subnet in a VPC, the default is <code>false</code>. For
-     *         information about the platforms supported by Auto Scaling, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     *         Started with Auto Scaling Using the Command Line Interface</a>.
+     *         public IP address to each instance launched in a Amazon VPC. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     *         Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     *         a value for this parameter, be sure to specify at least one VPC subnet
+     *         using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     *         Scaling group. </note> <p>Default: If the instance is launched into a
+     *         default subnet in a default VPC, the default is <code>true</code>. If
+     *         the instance is launched into a nondefault subnet in a VPC, the
+     *         default is <code>false</code>. For information about default VPC and
+     *         VPC platforms, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     *         Platforms</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1526,29 +1553,35 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * Used for Auto Scaling groups that launch instances into an Amazon
      * Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     * public IP address to each instance launched in a Amazon VPC. <note>
-     * <p>If you specify a value for this parameter, be sure to specify at
-     * least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your Auto Scaling group. </note> <p>Default: If the
-     * instance is launched into a default subnet in a default VPC, the
-     * default is <code>true</code>. If the instance is launched into a
-     * nondefault subnet in a VPC, the default is <code>false</code>. For
-     * information about the platforms supported by Auto Scaling, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     * Started with Auto Scaling Using the Command Line Interface</a>.
+     * public IP address to each instance launched in a Amazon VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     * Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     * a value for this parameter, be sure to specify at least one VPC subnet
+     * using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     * Scaling group. </note> <p>Default: If the instance is launched into a
+     * default subnet in a default VPC, the default is <code>true</code>. If
+     * the instance is launched into a nondefault subnet in a VPC, the
+     * default is <code>false</code>. For information about default VPC and
+     * VPC platforms, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     * Platforms</a>.
      *
      * @return Used for Auto Scaling groups that launch instances into an Amazon
      *         Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
-     *         public IP address to each instance launched in a Amazon VPC. <note>
-     *         <p>If you specify a value for this parameter, be sure to specify at
-     *         least one VPC subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *         you create your Auto Scaling group. </note> <p>Default: If the
-     *         instance is launched into a default subnet in a default VPC, the
-     *         default is <code>true</code>. If the instance is launched into a
-     *         nondefault subnet in a VPC, the default is <code>false</code>. For
-     *         information about the platforms supported by Auto Scaling, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get
-     *         Started with Auto Scaling Using the Command Line Interface</a>.
+     *         public IP address to each instance launched in a Amazon VPC. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
+     *         Scaling in Amazon Virtual Private Cloud</a>. <note> <p>If you specify
+     *         a value for this parameter, be sure to specify at least one VPC subnet
+     *         using the <i>VPCZoneIdentifier</i> parameter when you create your Auto
+     *         Scaling group. </note> <p>Default: If the instance is launched into a
+     *         default subnet in a default VPC, the default is <code>true</code>. If
+     *         the instance is launched into a nondefault subnet in a VPC, the
+     *         default is <code>false</code>. For information about default VPC and
+     *         VPC platforms, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide//as-supported-platforms.html">Supported
+     *         Platforms</a>.
      */
     public Boolean getAssociatePublicIpAddress() {
         return associatePublicIpAddress;
@@ -1557,7 +1590,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The tenancy of the instance. An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware and can only be
-     * launched into a VPC. <p>For more information, see <a
+     * launched in a VPC. <p>You must set the value of this parameter to
+     * <code>dedicated</code> if want to launch Dedicated Instances in a
+     * shared tenancy VPC (VPC with instance placement tenancy attribute set
+     * to <code>default</code>). <p>If you specify a value for this
+     * parameter, be sure to specify at least one VPC subnet using the
+     * <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling
+     * group. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
      * Developer Guide</i>. <p>Valid values: <code>default</code> |
@@ -1569,7 +1608,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @return The tenancy of the instance. An instance with a tenancy of
      *         <code>dedicated</code> runs on single-tenant hardware and can only be
-     *         launched into a VPC. <p>For more information, see <a
+     *         launched in a VPC. <p>You must set the value of this parameter to
+     *         <code>dedicated</code> if want to launch Dedicated Instances in a
+     *         shared tenancy VPC (VPC with instance placement tenancy attribute set
+     *         to <code>default</code>). <p>If you specify a value for this
+     *         parameter, be sure to specify at least one VPC subnet using the
+     *         <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling
+     *         group. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      *         Scaling in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
      *         Developer Guide</i>. <p>Valid values: <code>default</code> |
@@ -1582,7 +1627,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The tenancy of the instance. An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware and can only be
-     * launched into a VPC. <p>For more information, see <a
+     * launched in a VPC. <p>You must set the value of this parameter to
+     * <code>dedicated</code> if want to launch Dedicated Instances in a
+     * shared tenancy VPC (VPC with instance placement tenancy attribute set
+     * to <code>default</code>). <p>If you specify a value for this
+     * parameter, be sure to specify at least one VPC subnet using the
+     * <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling
+     * group. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
      * Developer Guide</i>. <p>Valid values: <code>default</code> |
@@ -1594,7 +1645,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param placementTenancy The tenancy of the instance. An instance with a tenancy of
      *         <code>dedicated</code> runs on single-tenant hardware and can only be
-     *         launched into a VPC. <p>For more information, see <a
+     *         launched in a VPC. <p>You must set the value of this parameter to
+     *         <code>dedicated</code> if want to launch Dedicated Instances in a
+     *         shared tenancy VPC (VPC with instance placement tenancy attribute set
+     *         to <code>default</code>). <p>If you specify a value for this
+     *         parameter, be sure to specify at least one VPC subnet using the
+     *         <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling
+     *         group. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      *         Scaling in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
      *         Developer Guide</i>. <p>Valid values: <code>default</code> |
@@ -1607,7 +1664,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     /**
      * The tenancy of the instance. An instance with a tenancy of
      * <code>dedicated</code> runs on single-tenant hardware and can only be
-     * launched into a VPC. <p>For more information, see <a
+     * launched in a VPC. <p>You must set the value of this parameter to
+     * <code>dedicated</code> if want to launch Dedicated Instances in a
+     * shared tenancy VPC (VPC with instance placement tenancy attribute set
+     * to <code>default</code>). <p>If you specify a value for this
+     * parameter, be sure to specify at least one VPC subnet using the
+     * <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling
+     * group. <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
      * Developer Guide</i>. <p>Valid values: <code>default</code> |
@@ -1621,7 +1684,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *
      * @param placementTenancy The tenancy of the instance. An instance with a tenancy of
      *         <code>dedicated</code> runs on single-tenant hardware and can only be
-     *         launched into a VPC. <p>For more information, see <a
+     *         launched in a VPC. <p>You must set the value of this parameter to
+     *         <code>dedicated</code> if want to launch Dedicated Instances in a
+     *         shared tenancy VPC (VPC with instance placement tenancy attribute set
+     *         to <code>default</code>). <p>If you specify a value for this
+     *         parameter, be sure to specify at least one VPC subnet using the
+     *         <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling
+     *         group. <p>For more information, see <a
      *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      *         Scaling in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
      *         Developer Guide</i>. <p>Valid values: <code>default</code> |

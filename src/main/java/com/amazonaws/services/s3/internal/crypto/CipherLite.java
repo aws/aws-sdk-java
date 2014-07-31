@@ -82,6 +82,23 @@ class CipherLite {
     }
 
     /**
+     * Recreates a new instance of CipherLite from the current one.
+     */
+    CipherLite recreate() {
+        return scheme.createCipherLite(secreteKey, cipher.getIV(),
+                this.cipherMode, cipher.getProvider());
+    }
+
+    /**
+     * Creates a new instance of CipherLite from the current one, but using
+     * the given IV.
+     */
+    CipherLite createUsingIV(byte[] iv) {
+        return scheme.createCipherLite(secreteKey, iv, this.cipherMode,
+                cipher.getProvider());
+    }
+
+    /**
      * Returns an auxiliary {@link CipherLite} for partial plaintext
      * re-encryption (or re-decryption) purposes.
      * 

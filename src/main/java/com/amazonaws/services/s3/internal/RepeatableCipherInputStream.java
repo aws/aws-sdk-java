@@ -25,6 +25,8 @@ import javax.crypto.CipherInputStream;
 import com.amazonaws.services.s3.internal.crypto.CipherFactory;
 
 /**
+ * @deprecated this class is no longer used and will be removed in the future
+ * <p>
  * Wraps an InputStream with a CipherInputStream to encrypt it, and handles
  * resets by attempting to reset on the original, unencrypted data InputStream,
  * and recreate an identical Cipher and identical CipherInputStream on the
@@ -42,6 +44,7 @@ import com.amazonaws.services.s3.internal.crypto.CipherFactory;
  * you call {@code mark} after calling {@code read} or {@code skip}, it will
  * throw an {@code UnsupportedOperationException}.
  */
+@Deprecated
 public class RepeatableCipherInputStream extends
         AbstractRepeatableCipherInputStream<CipherFactory> {
     /**

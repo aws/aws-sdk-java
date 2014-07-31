@@ -69,9 +69,9 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     private String preferredMaintenanceWindow;
 
     /**
-     * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the
-     * replication group owner. </note>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     * notifications will be sent. <note>The Amazon SNS topic owner must be
+     * same as the replication group owner. </note>
      */
     private String notificationTopicArn;
 
@@ -128,12 +128,14 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      */
     private Integer snapshotRetentionLimit;
 
     /**
-     * asdfasdf <p>The daily time range (in UTC) during which ElastiCache
-     * will begin taking a daily snapshot of the cache cluster specified by
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of the cache cluster specified by
      * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
      * <p>If you do not specify this parameter, then ElastiCache will
      * automatically choose an appropriate time range.
@@ -482,41 +484,41 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the
-     * replication group owner. </note>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     * notifications will be sent. <note>The Amazon SNS topic owner must be
+     * same as the replication group owner. </note>
      *
-     * @return The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     *         will be sent. <note> The SNS topic owner must be same as the
-     *         replication group owner. </note>
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *         notifications will be sent. <note>The Amazon SNS topic owner must be
+     *         same as the replication group owner. </note>
      */
     public String getNotificationTopicArn() {
         return notificationTopicArn;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the
-     * replication group owner. </note>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     * notifications will be sent. <note>The Amazon SNS topic owner must be
+     * same as the replication group owner. </note>
      *
-     * @param notificationTopicArn The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     *         will be sent. <note> The SNS topic owner must be same as the
-     *         replication group owner. </note>
+     * @param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *         notifications will be sent. <note>The Amazon SNS topic owner must be
+     *         same as the replication group owner. </note>
      */
     public void setNotificationTopicArn(String notificationTopicArn) {
         this.notificationTopicArn = notificationTopicArn;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the
-     * replication group owner. </note>
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     * notifications will be sent. <note>The Amazon SNS topic owner must be
+     * same as the replication group owner. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param notificationTopicArn The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     *         will be sent. <note> The SNS topic owner must be same as the
-     *         replication group owner. </note>
+     * @param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *         notifications will be sent. <note>The Amazon SNS topic owner must be
+     *         same as the replication group owner. </note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -875,11 +877,15 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      *
      * @return The number of days for which ElastiCache will retain automatic cache
      *         cluster snapshots before deleting them. For example, if you set
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
+     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     *         to zero (0), backups are turned off.
      */
     public Integer getSnapshotRetentionLimit() {
         return snapshotRetentionLimit;
@@ -890,11 +896,15 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      *
      * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
      *         cluster snapshots before deleting them. For example, if you set
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
+     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     *         to zero (0), backups are turned off.
      */
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
         this.snapshotRetentionLimit = snapshotRetentionLimit;
@@ -905,6 +915,8 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * cluster snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      * today will be retained for 5 days before being deleted.
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     * to zero (0), backups are turned off.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -912,6 +924,8 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      *         cluster snapshots before deleting them. For example, if you set
      *         <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken
      *         today will be retained for 5 days before being deleted.
+     *         <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set
+     *         to zero (0), backups are turned off.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -922,14 +936,14 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * asdfasdf <p>The daily time range (in UTC) during which ElastiCache
-     * will begin taking a daily snapshot of the cache cluster specified by
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of the cache cluster specified by
      * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
      * <p>If you do not specify this parameter, then ElastiCache will
      * automatically choose an appropriate time range.
      *
-     * @return asdfasdf <p>The daily time range (in UTC) during which ElastiCache
-     *         will begin taking a daily snapshot of the cache cluster specified by
+     * @return The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of the cache cluster specified by
      *         <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
      *         <p>If you do not specify this parameter, then ElastiCache will
      *         automatically choose an appropriate time range.
@@ -939,14 +953,14 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * asdfasdf <p>The daily time range (in UTC) during which ElastiCache
-     * will begin taking a daily snapshot of the cache cluster specified by
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of the cache cluster specified by
      * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
      * <p>If you do not specify this parameter, then ElastiCache will
      * automatically choose an appropriate time range.
      *
-     * @param snapshotWindow asdfasdf <p>The daily time range (in UTC) during which ElastiCache
-     *         will begin taking a daily snapshot of the cache cluster specified by
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of the cache cluster specified by
      *         <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
      *         <p>If you do not specify this parameter, then ElastiCache will
      *         automatically choose an appropriate time range.
@@ -956,16 +970,16 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * asdfasdf <p>The daily time range (in UTC) during which ElastiCache
-     * will begin taking a daily snapshot of the cache cluster specified by
+     * The daily time range (in UTC) during which ElastiCache will begin
+     * taking a daily snapshot of the cache cluster specified by
      * <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
      * <p>If you do not specify this parameter, then ElastiCache will
      * automatically choose an appropriate time range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotWindow asdfasdf <p>The daily time range (in UTC) during which ElastiCache
-     *         will begin taking a daily snapshot of the cache cluster specified by
+     * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
+     *         taking a daily snapshot of the cache cluster specified by
      *         <i>SnapshottingClusterId</i>. <p>Example: <code>05:00-09:00</code>
      *         <p>If you do not specify this parameter, then ElastiCache will
      *         automatically choose an appropriate time range.
