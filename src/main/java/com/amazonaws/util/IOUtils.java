@@ -19,7 +19,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 
 /**
@@ -60,7 +60,7 @@ public enum IOUtils {
      * @param is the given closeable
      * @param log logger used to log any failure should the close fail
      */
-    public static void closeQuietly(Closeable is, Log log) {
+    public static void closeQuietly(Closeable is, Logger log) {
         if (is != null) {
             try {
                 is.close();

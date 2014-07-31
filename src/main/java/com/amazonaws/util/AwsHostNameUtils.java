@@ -19,7 +19,7 @@ import java.net.URI;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.LoggerFactory;
 
 public class AwsHostNameUtils {
 
@@ -170,8 +170,8 @@ public class AwsHostNameUtils {
             InetAddress localhost = InetAddress.getLocalHost();
             return localhost.getHostName();
         } catch (Exception e) {
-            LogFactory
-                .getLog(AwsHostNameUtils.class)
+            LoggerFactory
+                .getLogger(AwsHostNameUtils.class)
                 .debug("Failed to determine the local hostname; fall back to "
                        + "use \"localhost\".", e);
             return "localhost";

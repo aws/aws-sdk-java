@@ -19,19 +19,19 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.DateUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Collection of StAX unmarshallers for simple data types.
  */
 public class SimpleTypeStaxUnmarshallers {
     /** Shared logger */
-    private static Log log = LogFactory.getLog(SimpleTypeStaxUnmarshallers.class);
+    private static Logger log = LoggerFactory.getLogger(SimpleTypeStaxUnmarshallers.class);
 
     /**
      * Unmarshaller for String values.

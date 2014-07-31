@@ -18,13 +18,13 @@ import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.internal.Profile;
 import com.amazonaws.auth.profile.internal.ProfilesConfigFileLoader;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Loads the local AWS credential profiles from the standard location
@@ -59,7 +59,7 @@ import com.amazonaws.auth.profile.internal.ProfilesConfigFileLoader;
  */
 public class ProfilesConfigFile {
 
-    private static final Log LOG = LogFactory.getLog(ProfilesConfigFile.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProfilesConfigFile.class);
 
     /** Environment variable specifying an alternate location for the AWS credential profiles file */
     @Deprecated

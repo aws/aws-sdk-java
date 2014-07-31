@@ -21,10 +21,10 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Simple client for accessing the Amazon EC2 Instance Metadata Service.
@@ -38,7 +38,7 @@ public class EC2MetadataClient {
     /** Default resource path for credentials in the Amazon EC2 Instance Metadata Service. */
     public static final String SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/security-credentials/";
 
-    private static final Log log = LogFactory.getLog(EC2MetadataClient.class);
+    private static final Logger log = LoggerFactory.getLogger(EC2MetadataClient.class);
 
     /**
      * Connects to the Amazon EC2 Instance Metadata Service to retrieve the

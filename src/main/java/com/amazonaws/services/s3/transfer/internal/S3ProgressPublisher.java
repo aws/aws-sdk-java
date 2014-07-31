@@ -16,12 +16,12 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import java.util.concurrent.Future;
 
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.event.DeliveryMode;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.SDKProgressPublisher;
 import com.amazonaws.services.s3.transfer.PersistableTransfer;
+
+import org.slf4j.LoggerFactory;
 
 /**
  * Used to publish transfer events.
@@ -80,7 +80,7 @@ public class S3ProgressPublisher extends SDKProgressPublisher {
         } catch(Throwable t) {
             // That's right, we need to suppress all errors so as to be on par
             // with the async mode where all failures will be ignored.
-            LogFactory.getLog(S3ProgressPublisher.class)
+            LoggerFactory.getLogger(S3ProgressPublisher.class)
                 .debug("Failure from the event listener", t);
         }
         return null;

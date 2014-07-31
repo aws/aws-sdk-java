@@ -19,9 +19,9 @@ import static com.amazonaws.util.SdkRuntime.shouldAbort;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AbortedException;
+
+import org.slf4j.LoggerFactory;
 
 /**
  * Base class for AWS Java SDK specific {@link InputStream}.
@@ -53,7 +53,7 @@ public abstract class SdkInputStream extends InputStream implements MetricAware 
             try {
                 abort();    // execute subclass specific abortion logic
             } catch (IOException e) {
-                LogFactory.getLog(getClass()).debug("FYI", e);
+                LoggerFactory.getLogger(getClass()).debug("FYI", e);
             }
             throw new AbortedException();
         }

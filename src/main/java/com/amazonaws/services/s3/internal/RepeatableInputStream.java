@@ -20,10 +20,10 @@ package com.amazonaws.services.s3.internal;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.internal.SdkInputStream;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A repeatable input stream wrapper for any input stream. This input stream
@@ -35,7 +35,7 @@ import com.amazonaws.internal.SdkInputStream;
  * input stream can be repeated without any limitations.
  */
 public class RepeatableInputStream extends SdkInputStream {
-    private static final Log log = LogFactory.getLog(RepeatableInputStream.class);
+    private static final Logger log = LoggerFactory.getLogger(RepeatableInputStream.class);
 
     private InputStream is;
     private int bufferSize;

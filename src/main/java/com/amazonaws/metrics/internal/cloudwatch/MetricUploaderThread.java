@@ -16,12 +16,12 @@ package com.amazonaws.metrics.internal.cloudwatch;
 
 import java.util.concurrent.BlockingQueue;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.cloudwatch.AmazonCloudWatchClient;
 import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.PutMetricDataRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A internal daemon thread used to upload request metrics to Amazon CloudWatch.
@@ -30,7 +30,7 @@ class MetricUploaderThread extends Thread {
     private static final String THREAD_NAME = "java-sdk-metric-uploader";
     private volatile boolean cancelled;
     private final AmazonCloudWatchClient cloudwatchClient;
-    private final Log log = LogFactory.getLog(getClass());
+    private final Logger log = LoggerFactory.getLogger(getClass());
     private final BlockingRequestBuilder qIterator;
 
     MetricUploaderThread(CloudWatchMetricConfig config,
@@ -65,7 +65,7 @@ class MetricUploaderThread extends Thread {
             try {
                 Iterable<PutMetricDataRequest> requests = qIterator.nextUploadUnits();
                 for (PutMetricDataRequest req: requests) {
-                    log.debug(req);
+                    log.debug(req.toString());
                     cloudwatchClient.putMetricData(req);
                     Thread.yield();
                 }

@@ -25,9 +25,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
@@ -44,6 +41,9 @@ import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
 import com.amazonaws.services.s3.transfer.model.CopyResult;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An implementation of the Callable interface that helps
@@ -80,7 +80,7 @@ public class CopyCallable implements Callable<CopyResult> {
     private final ObjectMetadata metadata;
     private final CopyImpl copy;
 
-    private static final Log log = LogFactory.getLog(CopyCallable.class);
+    private static final Logger log = LoggerFactory.getLogger(CopyCallable.class);
     /**
      * <code>TransferManager</code> configuration that provides details on when
      * to use multi-part copy, part size etc.,

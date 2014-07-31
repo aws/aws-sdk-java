@@ -19,16 +19,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.conn.ClientConnectionRequest;
-
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.ServiceLatencyProvider;
 import com.amazonaws.util.AWSServiceMetrics;
 
+import org.apache.http.conn.ClientConnectionRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 class ClientConnectionRequestFactory {
-    private static final Log log = LogFactory.getLog(ClientConnectionRequestFactory.class);
+    private static final Logger log = LoggerFactory.getLogger(ClientConnectionRequestFactory.class);
     private static final Class<?>[] interfaces = {
         ClientConnectionRequest.class,
         Wrapped.class

@@ -14,26 +14,118 @@
  */
 package com.amazonaws.services.elastictranscoder;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.elastictranscoder.model.AccessDeniedException;
+import com.amazonaws.services.elastictranscoder.model.CancelJobRequest;
+import com.amazonaws.services.elastictranscoder.model.CancelJobResult;
+import com.amazonaws.services.elastictranscoder.model.CreateJobRequest;
+import com.amazonaws.services.elastictranscoder.model.CreateJobResult;
+import com.amazonaws.services.elastictranscoder.model.CreatePipelineRequest;
+import com.amazonaws.services.elastictranscoder.model.CreatePipelineResult;
+import com.amazonaws.services.elastictranscoder.model.CreatePresetRequest;
+import com.amazonaws.services.elastictranscoder.model.CreatePresetResult;
+import com.amazonaws.services.elastictranscoder.model.DeletePipelineRequest;
+import com.amazonaws.services.elastictranscoder.model.DeletePipelineResult;
+import com.amazonaws.services.elastictranscoder.model.DeletePresetRequest;
+import com.amazonaws.services.elastictranscoder.model.DeletePresetResult;
+import com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException;
+import com.amazonaws.services.elastictranscoder.model.InternalServiceException;
+import com.amazonaws.services.elastictranscoder.model.LimitExceededException;
+import com.amazonaws.services.elastictranscoder.model.ListJobsByPipelineRequest;
+import com.amazonaws.services.elastictranscoder.model.ListJobsByPipelineResult;
+import com.amazonaws.services.elastictranscoder.model.ListJobsByStatusRequest;
+import com.amazonaws.services.elastictranscoder.model.ListJobsByStatusResult;
+import com.amazonaws.services.elastictranscoder.model.ListPipelinesRequest;
+import com.amazonaws.services.elastictranscoder.model.ListPipelinesResult;
+import com.amazonaws.services.elastictranscoder.model.ListPresetsRequest;
+import com.amazonaws.services.elastictranscoder.model.ListPresetsResult;
+import com.amazonaws.services.elastictranscoder.model.ReadJobRequest;
+import com.amazonaws.services.elastictranscoder.model.ReadJobResult;
+import com.amazonaws.services.elastictranscoder.model.ReadPipelineRequest;
+import com.amazonaws.services.elastictranscoder.model.ReadPipelineResult;
+import com.amazonaws.services.elastictranscoder.model.ReadPresetRequest;
+import com.amazonaws.services.elastictranscoder.model.ReadPresetResult;
+import com.amazonaws.services.elastictranscoder.model.ResourceInUseException;
+import com.amazonaws.services.elastictranscoder.model.ResourceNotFoundException;
+import com.amazonaws.services.elastictranscoder.model.TestRoleRequest;
+import com.amazonaws.services.elastictranscoder.model.TestRoleResult;
+import com.amazonaws.services.elastictranscoder.model.UpdatePipelineNotificationsRequest;
+import com.amazonaws.services.elastictranscoder.model.UpdatePipelineNotificationsResult;
+import com.amazonaws.services.elastictranscoder.model.UpdatePipelineRequest;
+import com.amazonaws.services.elastictranscoder.model.UpdatePipelineResult;
+import com.amazonaws.services.elastictranscoder.model.UpdatePipelineStatusRequest;
+import com.amazonaws.services.elastictranscoder.model.UpdatePipelineStatusResult;
+import com.amazonaws.services.elastictranscoder.model.ValidationException;
+import com.amazonaws.services.elastictranscoder.model.transform.AccessDeniedExceptionUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CancelJobRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CancelJobResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CreateJobRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CreateJobResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CreatePipelineRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CreatePipelineResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CreatePresetRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.CreatePresetResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.DeletePipelineRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.DeletePipelineResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.DeletePresetRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.DeletePresetResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.IncompatibleVersionExceptionUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.InternalServiceExceptionUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.LimitExceededExceptionUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListJobsByPipelineRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListJobsByPipelineResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListJobsByStatusRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListJobsByStatusResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListPipelinesRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListPipelinesResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListPresetsRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ListPresetsResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ReadJobRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ReadJobResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ReadPipelineRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ReadPipelineResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ReadPresetRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ReadPresetResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ResourceInUseExceptionUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ResourceNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.TestRoleRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.TestRoleResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.UpdatePipelineNotificationsRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.UpdatePipelineNotificationsResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.UpdatePipelineRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.UpdatePipelineResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.UpdatePipelineStatusRequestMarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.UpdatePipelineStatusResultJsonUnmarshaller;
+import com.amazonaws.services.elastictranscoder.model.transform.ValidationExceptionUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.services.elastictranscoder.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AmazonElasticTranscoder.  All service calls made
@@ -49,7 +141,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonElasticTranscoder.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonElasticTranscoder.class);
 
     /**
      * List of exception unmarshallers for all AmazonElasticTranscoder exceptions.

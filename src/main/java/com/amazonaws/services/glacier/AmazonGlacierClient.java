@@ -14,26 +14,115 @@
  */
 package com.amazonaws.services.glacier;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.glacier.model.AbortMultipartUploadRequest;
+import com.amazonaws.services.glacier.model.CompleteMultipartUploadRequest;
+import com.amazonaws.services.glacier.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.glacier.model.CreateVaultRequest;
+import com.amazonaws.services.glacier.model.CreateVaultResult;
+import com.amazonaws.services.glacier.model.DeleteArchiveRequest;
+import com.amazonaws.services.glacier.model.DeleteVaultNotificationsRequest;
+import com.amazonaws.services.glacier.model.DeleteVaultRequest;
+import com.amazonaws.services.glacier.model.DescribeJobRequest;
+import com.amazonaws.services.glacier.model.DescribeJobResult;
+import com.amazonaws.services.glacier.model.DescribeVaultRequest;
+import com.amazonaws.services.glacier.model.DescribeVaultResult;
+import com.amazonaws.services.glacier.model.GetJobOutputRequest;
+import com.amazonaws.services.glacier.model.GetJobOutputResult;
+import com.amazonaws.services.glacier.model.GetVaultNotificationsRequest;
+import com.amazonaws.services.glacier.model.GetVaultNotificationsResult;
+import com.amazonaws.services.glacier.model.InitiateJobRequest;
+import com.amazonaws.services.glacier.model.InitiateJobResult;
+import com.amazonaws.services.glacier.model.InitiateMultipartUploadRequest;
+import com.amazonaws.services.glacier.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.glacier.model.InvalidParameterValueException;
+import com.amazonaws.services.glacier.model.LimitExceededException;
+import com.amazonaws.services.glacier.model.ListJobsRequest;
+import com.amazonaws.services.glacier.model.ListJobsResult;
+import com.amazonaws.services.glacier.model.ListMultipartUploadsRequest;
+import com.amazonaws.services.glacier.model.ListMultipartUploadsResult;
+import com.amazonaws.services.glacier.model.ListPartsRequest;
+import com.amazonaws.services.glacier.model.ListPartsResult;
+import com.amazonaws.services.glacier.model.ListVaultsRequest;
+import com.amazonaws.services.glacier.model.ListVaultsResult;
+import com.amazonaws.services.glacier.model.MissingParameterValueException;
+import com.amazonaws.services.glacier.model.RequestTimeoutException;
+import com.amazonaws.services.glacier.model.ResourceNotFoundException;
+import com.amazonaws.services.glacier.model.ServiceUnavailableException;
+import com.amazonaws.services.glacier.model.SetVaultNotificationsRequest;
+import com.amazonaws.services.glacier.model.UploadArchiveRequest;
+import com.amazonaws.services.glacier.model.UploadArchiveResult;
+import com.amazonaws.services.glacier.model.UploadMultipartPartRequest;
+import com.amazonaws.services.glacier.model.UploadMultipartPartResult;
+import com.amazonaws.services.glacier.model.transform.AbortMultipartUploadRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.CompleteMultipartUploadRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.CompleteMultipartUploadResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.CreateVaultRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.CreateVaultResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.DeleteArchiveRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.DeleteVaultNotificationsRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.DeleteVaultRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.DescribeJobRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.DescribeJobResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.DescribeVaultRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.DescribeVaultResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.GetJobOutputRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.GetJobOutputResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.GetVaultNotificationsRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.GetVaultNotificationsResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.InitiateJobRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.InitiateJobResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.InitiateMultipartUploadRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.InitiateMultipartUploadResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.InvalidParameterValueExceptionUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.LimitExceededExceptionUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.ListJobsRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.ListJobsResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.ListMultipartUploadsRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.ListMultipartUploadsResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.ListPartsRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.ListPartsResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.ListVaultsRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.ListVaultsResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.MissingParameterValueExceptionUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.RequestTimeoutExceptionUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.ResourceNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.ServiceUnavailableExceptionUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.SetVaultNotificationsRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.UploadArchiveRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.UploadArchiveResultJsonUnmarshaller;
+import com.amazonaws.services.glacier.model.transform.UploadMultipartPartRequestMarshaller;
+import com.amazonaws.services.glacier.model.transform.UploadMultipartPartResultJsonUnmarshaller;
+import com.amazonaws.transform.GlacierErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.ServiceClientHolderInputStream;
 
-import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.services.glacier.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AmazonGlacier.  All service calls made
@@ -97,7 +186,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonGlacier.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonGlacier.class);
 
     /**
      * List of exception unmarshallers for all AmazonGlacier exceptions.

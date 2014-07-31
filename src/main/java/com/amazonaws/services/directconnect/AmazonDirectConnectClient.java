@@ -14,26 +14,116 @@
  */
 package com.amazonaws.services.directconnect;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.directconnect.model.AllocateConnectionOnInterconnectRequest;
+import com.amazonaws.services.directconnect.model.AllocateConnectionOnInterconnectResult;
+import com.amazonaws.services.directconnect.model.AllocatePrivateVirtualInterfaceRequest;
+import com.amazonaws.services.directconnect.model.AllocatePrivateVirtualInterfaceResult;
+import com.amazonaws.services.directconnect.model.AllocatePublicVirtualInterfaceRequest;
+import com.amazonaws.services.directconnect.model.AllocatePublicVirtualInterfaceResult;
+import com.amazonaws.services.directconnect.model.ConfirmConnectionRequest;
+import com.amazonaws.services.directconnect.model.ConfirmConnectionResult;
+import com.amazonaws.services.directconnect.model.ConfirmPrivateVirtualInterfaceRequest;
+import com.amazonaws.services.directconnect.model.ConfirmPrivateVirtualInterfaceResult;
+import com.amazonaws.services.directconnect.model.ConfirmPublicVirtualInterfaceRequest;
+import com.amazonaws.services.directconnect.model.ConfirmPublicVirtualInterfaceResult;
+import com.amazonaws.services.directconnect.model.CreateConnectionRequest;
+import com.amazonaws.services.directconnect.model.CreateConnectionResult;
+import com.amazonaws.services.directconnect.model.CreateInterconnectRequest;
+import com.amazonaws.services.directconnect.model.CreateInterconnectResult;
+import com.amazonaws.services.directconnect.model.CreatePrivateVirtualInterfaceRequest;
+import com.amazonaws.services.directconnect.model.CreatePrivateVirtualInterfaceResult;
+import com.amazonaws.services.directconnect.model.CreatePublicVirtualInterfaceRequest;
+import com.amazonaws.services.directconnect.model.CreatePublicVirtualInterfaceResult;
+import com.amazonaws.services.directconnect.model.DeleteConnectionRequest;
+import com.amazonaws.services.directconnect.model.DeleteConnectionResult;
+import com.amazonaws.services.directconnect.model.DeleteInterconnectRequest;
+import com.amazonaws.services.directconnect.model.DeleteInterconnectResult;
+import com.amazonaws.services.directconnect.model.DeleteVirtualInterfaceRequest;
+import com.amazonaws.services.directconnect.model.DeleteVirtualInterfaceResult;
+import com.amazonaws.services.directconnect.model.DescribeConnectionsOnInterconnectRequest;
+import com.amazonaws.services.directconnect.model.DescribeConnectionsOnInterconnectResult;
+import com.amazonaws.services.directconnect.model.DescribeConnectionsRequest;
+import com.amazonaws.services.directconnect.model.DescribeConnectionsResult;
+import com.amazonaws.services.directconnect.model.DescribeInterconnectsRequest;
+import com.amazonaws.services.directconnect.model.DescribeInterconnectsResult;
+import com.amazonaws.services.directconnect.model.DescribeLocationsRequest;
+import com.amazonaws.services.directconnect.model.DescribeLocationsResult;
+import com.amazonaws.services.directconnect.model.DescribeVirtualGatewaysRequest;
+import com.amazonaws.services.directconnect.model.DescribeVirtualGatewaysResult;
+import com.amazonaws.services.directconnect.model.DescribeVirtualInterfacesRequest;
+import com.amazonaws.services.directconnect.model.DescribeVirtualInterfacesResult;
+import com.amazonaws.services.directconnect.model.DirectConnectClientException;
+import com.amazonaws.services.directconnect.model.DirectConnectServerException;
+import com.amazonaws.services.directconnect.model.transform.AllocateConnectionOnInterconnectRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.AllocateConnectionOnInterconnectResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.AllocatePrivateVirtualInterfaceRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.AllocatePrivateVirtualInterfaceResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.AllocatePublicVirtualInterfaceRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.AllocatePublicVirtualInterfaceResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.ConfirmConnectionRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.ConfirmConnectionResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.ConfirmPrivateVirtualInterfaceRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.ConfirmPrivateVirtualInterfaceResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.ConfirmPublicVirtualInterfaceRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.ConfirmPublicVirtualInterfaceResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreateConnectionRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreateConnectionResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreateInterconnectRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreateInterconnectResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreatePrivateVirtualInterfaceRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreatePrivateVirtualInterfaceResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreatePublicVirtualInterfaceRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.CreatePublicVirtualInterfaceResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DeleteConnectionRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DeleteConnectionResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DeleteInterconnectRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DeleteInterconnectResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DeleteVirtualInterfaceRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DeleteVirtualInterfaceResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeConnectionsOnInterconnectRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeConnectionsOnInterconnectResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeConnectionsRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeConnectionsResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeInterconnectsRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeInterconnectsResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeLocationsRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeLocationsResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeVirtualGatewaysRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeVirtualGatewaysResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeVirtualInterfacesRequestMarshaller;
+import com.amazonaws.services.directconnect.model.transform.DescribeVirtualInterfacesResultJsonUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DirectConnectClientExceptionUnmarshaller;
+import com.amazonaws.services.directconnect.model.transform.DirectConnectServerExceptionUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.services.directconnect.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AmazonDirectConnect.  All service calls made
@@ -77,7 +167,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonDirectConnect.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonDirectConnect.class);
 
     /**
      * List of exception unmarshallers for all AmazonDirectConnect exceptions.

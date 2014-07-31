@@ -18,9 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.services.simpleworkflow.flow.DecisionContext;
@@ -41,6 +38,9 @@ import com.amazonaws.services.simpleworkflow.model.TimerFiredEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.TimerStartedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecutionSignaledEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecutionStartedEventAttributes;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class AsyncDecider {
 
@@ -125,7 +125,7 @@ class AsyncDecider {
 
     }
 
-    private static final Log log = LogFactory.getLog(AsyncDecider.class);
+    private static final Logger log = LoggerFactory.getLogger(AsyncDecider.class);
 
     private final WorkflowDefinitionFactory workflowDefinitionFactory;
 

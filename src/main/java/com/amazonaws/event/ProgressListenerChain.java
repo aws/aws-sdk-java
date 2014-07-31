@@ -17,8 +17,8 @@ package com.amazonaws.event;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An implementation of ProgressListener interface that delegates
@@ -33,7 +33,7 @@ import org.apache.commons.logging.LogFactory;
  * </p>
  */
 public class ProgressListenerChain implements ProgressListener, DeliveryMode {
-    private static final Log log = LogFactory.getLog(ProgressListenerChain.class);
+    private static final Logger log = LoggerFactory.getLogger(ProgressListenerChain.class);
 
     private final List<ProgressListener> listeners = new CopyOnWriteArrayList<ProgressListener>();
     private final ProgressEventFilter progressEventFilter;

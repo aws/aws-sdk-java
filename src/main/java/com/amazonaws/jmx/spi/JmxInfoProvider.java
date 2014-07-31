@@ -14,7 +14,7 @@
  */
 package com.amazonaws.jmx.spi;
 
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.LoggerFactory;
 
 /**
  * SPI used to retrieve JMX information and can survive the absence of JMX.
@@ -36,8 +36,8 @@ public interface JmxInfoProvider {
                 Class<?> c = Class.forName("com.amazonaws.jmx.JmxInfoProviderSupport");
                 p = (JmxInfoProvider)c.newInstance();
             } catch (Exception e) {
-                LogFactory
-                    .getLog(JmxInfoProvider.class)
+                LoggerFactory
+                    .getLogger(JmxInfoProvider.class)
                     .debug("Failed to load the JMX implementation module - JMX is disabled", e);
                 p = NONE;
             }

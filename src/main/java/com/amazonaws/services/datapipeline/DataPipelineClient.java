@@ -14,26 +14,106 @@
  */
 package com.amazonaws.services.datapipeline;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.datapipeline.model.ActivatePipelineRequest;
+import com.amazonaws.services.datapipeline.model.ActivatePipelineResult;
+import com.amazonaws.services.datapipeline.model.CreatePipelineRequest;
+import com.amazonaws.services.datapipeline.model.CreatePipelineResult;
+import com.amazonaws.services.datapipeline.model.DeletePipelineRequest;
+import com.amazonaws.services.datapipeline.model.DescribeObjectsRequest;
+import com.amazonaws.services.datapipeline.model.DescribeObjectsResult;
+import com.amazonaws.services.datapipeline.model.DescribePipelinesRequest;
+import com.amazonaws.services.datapipeline.model.DescribePipelinesResult;
+import com.amazonaws.services.datapipeline.model.EvaluateExpressionRequest;
+import com.amazonaws.services.datapipeline.model.EvaluateExpressionResult;
+import com.amazonaws.services.datapipeline.model.GetPipelineDefinitionRequest;
+import com.amazonaws.services.datapipeline.model.GetPipelineDefinitionResult;
+import com.amazonaws.services.datapipeline.model.InternalServiceErrorException;
+import com.amazonaws.services.datapipeline.model.InvalidRequestException;
+import com.amazonaws.services.datapipeline.model.ListPipelinesRequest;
+import com.amazonaws.services.datapipeline.model.ListPipelinesResult;
+import com.amazonaws.services.datapipeline.model.PipelineDeletedException;
+import com.amazonaws.services.datapipeline.model.PipelineNotFoundException;
+import com.amazonaws.services.datapipeline.model.PollForTaskRequest;
+import com.amazonaws.services.datapipeline.model.PollForTaskResult;
+import com.amazonaws.services.datapipeline.model.PutPipelineDefinitionRequest;
+import com.amazonaws.services.datapipeline.model.PutPipelineDefinitionResult;
+import com.amazonaws.services.datapipeline.model.QueryObjectsRequest;
+import com.amazonaws.services.datapipeline.model.QueryObjectsResult;
+import com.amazonaws.services.datapipeline.model.ReportTaskProgressRequest;
+import com.amazonaws.services.datapipeline.model.ReportTaskProgressResult;
+import com.amazonaws.services.datapipeline.model.ReportTaskRunnerHeartbeatRequest;
+import com.amazonaws.services.datapipeline.model.ReportTaskRunnerHeartbeatResult;
+import com.amazonaws.services.datapipeline.model.SetStatusRequest;
+import com.amazonaws.services.datapipeline.model.SetTaskStatusRequest;
+import com.amazonaws.services.datapipeline.model.SetTaskStatusResult;
+import com.amazonaws.services.datapipeline.model.TaskNotFoundException;
+import com.amazonaws.services.datapipeline.model.ValidatePipelineDefinitionRequest;
+import com.amazonaws.services.datapipeline.model.ValidatePipelineDefinitionResult;
+import com.amazonaws.services.datapipeline.model.transform.ActivatePipelineRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ActivatePipelineResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.CreatePipelineRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.CreatePipelineResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.DeletePipelineRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.DescribeObjectsRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.DescribeObjectsResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.DescribePipelinesRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.DescribePipelinesResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.EvaluateExpressionRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.EvaluateExpressionResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.GetPipelineDefinitionRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.GetPipelineDefinitionResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.InternalServiceErrorExceptionUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.InvalidRequestExceptionUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ListPipelinesRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ListPipelinesResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.PipelineDeletedExceptionUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.PipelineNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.PollForTaskRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.PollForTaskResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.PutPipelineDefinitionRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.PutPipelineDefinitionResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.QueryObjectsRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.QueryObjectsResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ReportTaskProgressRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ReportTaskProgressResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ReportTaskRunnerHeartbeatRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ReportTaskRunnerHeartbeatResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.SetStatusRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.SetTaskStatusRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.SetTaskStatusResultJsonUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.TaskNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ValidatePipelineDefinitionRequestMarshaller;
+import com.amazonaws.services.datapipeline.model.transform.ValidatePipelineDefinitionResultJsonUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.datapipeline.model.*;
-import com.amazonaws.services.datapipeline.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing DataPipeline.  All service calls made
@@ -90,7 +170,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(DataPipeline.class);
+    private static final Logger log = LoggerFactory.getLogger(DataPipeline.class);
 
     /**
      * List of exception unmarshallers for all DataPipeline exceptions.

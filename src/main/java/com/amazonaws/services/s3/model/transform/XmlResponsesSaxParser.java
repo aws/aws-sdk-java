@@ -32,15 +32,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.DefaultHandler;
-import org.xml.sax.helpers.XMLReaderFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
@@ -84,7 +75,6 @@ import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
-import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.S3VersionSummary;
 import com.amazonaws.services.s3.model.StorageClass;
@@ -92,12 +82,21 @@ import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.util.DateUtils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.xml.sax.Attributes;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.helpers.XMLReaderFactory;
+
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
  * converting these documents into objects.
  */
 public class XmlResponsesSaxParser {
-    private static final Log log = LogFactory.getLog(XmlResponsesSaxParser.class);
+    private static final Logger log = LoggerFactory.getLogger(XmlResponsesSaxParser.class);
 
     private XMLReader xr = null;
 

@@ -14,26 +14,82 @@
  */
 package com.amazonaws.services.cognitosync;
 
-import java.net.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.logging.*;
-
-import com.amazonaws.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.auth.*;
-import com.amazonaws.handlers.*;
-import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
-import com.amazonaws.internal.*;
-import com.amazonaws.metrics.*;
-import com.amazonaws.transform.*;
-import com.amazonaws.util.*;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.services.cognitosync.model.DeleteDatasetRequest;
+import com.amazonaws.services.cognitosync.model.DeleteDatasetResult;
+import com.amazonaws.services.cognitosync.model.DescribeDatasetRequest;
+import com.amazonaws.services.cognitosync.model.DescribeDatasetResult;
+import com.amazonaws.services.cognitosync.model.DescribeIdentityPoolUsageRequest;
+import com.amazonaws.services.cognitosync.model.DescribeIdentityPoolUsageResult;
+import com.amazonaws.services.cognitosync.model.DescribeIdentityUsageRequest;
+import com.amazonaws.services.cognitosync.model.DescribeIdentityUsageResult;
+import com.amazonaws.services.cognitosync.model.InternalErrorException;
+import com.amazonaws.services.cognitosync.model.InvalidParameterException;
+import com.amazonaws.services.cognitosync.model.LimitExceededException;
+import com.amazonaws.services.cognitosync.model.ListDatasetsRequest;
+import com.amazonaws.services.cognitosync.model.ListDatasetsResult;
+import com.amazonaws.services.cognitosync.model.ListIdentityPoolUsageRequest;
+import com.amazonaws.services.cognitosync.model.ListIdentityPoolUsageResult;
+import com.amazonaws.services.cognitosync.model.ListRecordsRequest;
+import com.amazonaws.services.cognitosync.model.ListRecordsResult;
+import com.amazonaws.services.cognitosync.model.NotAuthorizedException;
+import com.amazonaws.services.cognitosync.model.ResourceConflictException;
+import com.amazonaws.services.cognitosync.model.ResourceNotFoundException;
+import com.amazonaws.services.cognitosync.model.TooManyRequestsException;
+import com.amazonaws.services.cognitosync.model.UpdateRecordsRequest;
+import com.amazonaws.services.cognitosync.model.UpdateRecordsResult;
+import com.amazonaws.services.cognitosync.model.transform.DeleteDatasetRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.DeleteDatasetResultJsonUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.DescribeDatasetRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.DescribeDatasetResultJsonUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.DescribeIdentityPoolUsageRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.DescribeIdentityPoolUsageResultJsonUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.DescribeIdentityUsageRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.DescribeIdentityUsageResultJsonUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.InternalErrorExceptionUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.InvalidParameterExceptionUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.LimitExceededExceptionUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ListDatasetsRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ListDatasetsResultJsonUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ListIdentityPoolUsageRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ListIdentityPoolUsageResultJsonUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ListRecordsRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ListRecordsResultJsonUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.NotAuthorizedExceptionUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ResourceConflictExceptionUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.ResourceNotFoundExceptionUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.TooManyRequestsExceptionUnmarshaller;
+import com.amazonaws.services.cognitosync.model.transform.UpdateRecordsRequestMarshaller;
+import com.amazonaws.services.cognitosync.model.transform.UpdateRecordsResultJsonUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
 
-import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.services.cognitosync.model.transform.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client for accessing AmazonCognitoSync.  All service calls made
@@ -57,7 +113,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonCognitoSync.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonCognitoSync.class);
 
     /**
      * List of exception unmarshallers for all AmazonCognitoSync exceptions.

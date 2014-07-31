@@ -17,9 +17,6 @@ package com.amazonaws.auth;
 import java.io.IOException;
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.internal.EC2MetadataClient;
 import com.amazonaws.util.DateUtils;
@@ -27,13 +24,16 @@ import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Credentials provider implementation that loads credentials from the Amazon
  * EC2 Instance Metadata Service.
  */
 public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider {
 
-    private static final Log LOG = LogFactory.getLog(InstanceProfileCredentialsProvider.class);
+    private static final Logger LOG = LoggerFactory.getLogger(InstanceProfileCredentialsProvider.class);
 
     /**
      * The threshold after the last attempt to load credentials (in

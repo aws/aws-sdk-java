@@ -23,9 +23,9 @@ import java.util.jar.Attributes;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
-import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for accessing joda-time.
@@ -70,7 +70,7 @@ public enum JodaTime {
                     return version;
                 }
             } catch (Exception e) {
-                LogFactory.getLog(JodaTime.class).debug("FYI", e);
+                LoggerFactory.getLogger(JodaTime.class).debug("FYI", e);
             }
             return null;
         }

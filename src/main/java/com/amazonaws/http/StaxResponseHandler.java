@@ -22,14 +22,14 @@ import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidStaxUnmarshaller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful
@@ -45,7 +45,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     private Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller;
 
     /** Shared logger for profiling information */
-    private static final Log log = LogFactory.getLog("com.amazonaws.request");
+    private static final Logger log = LoggerFactory.getLogger("com.amazonaws.request");
 
     /** Shared factory for creating XML event readers */
     private static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();

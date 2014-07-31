@@ -19,6 +19,7 @@ import static com.amazonaws.util.IOUtils.closeQuietly;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.Throwables.failure;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,10 +39,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Matcher;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.client.methods.HttpRequestBase;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -207,6 +204,10 @@ import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.Md5Utils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 
+import org.apache.http.client.methods.HttpRequestBase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * <p>
  * Provides the client for accessing the Amazon S3 web service.
@@ -238,7 +239,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static final String S3_V4_SIGNER = "AWSS3V4SignerType";
 
     /** Shared logger for client events */
-    private static Log log = LogFactory.getLog(AmazonS3Client.class);
+    private static Logger log = LoggerFactory.getLogger(AmazonS3Client.class);
 
     static {
         // Enable S3 specific predefined request metrics.

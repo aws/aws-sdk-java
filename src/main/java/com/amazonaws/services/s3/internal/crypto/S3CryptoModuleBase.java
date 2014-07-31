@@ -32,9 +32,6 @@ import java.util.Map;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -63,6 +60,9 @@ import com.amazonaws.services.s3.model.S3ObjectId;
 import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.json.Jackson;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Common implementation for different S3 cryptographic modules.
  */
@@ -70,7 +70,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadContext>
         extends S3CryptoModule<T> {
     protected static final int DEFAULT_BUFFER_SIZE = 1024*2;    // 2K
     protected final EncryptionMaterialsProvider kekMaterialsProvider;
-    protected final Log log = LogFactory.getLog(getClass());
+    protected final Logger log = LoggerFactory.getLogger(getClass());
     protected final S3CryptoScheme cryptoScheme;
     protected final ContentCryptoScheme contentCryptoScheme;
     /** A read-only copy of the crypto configuration. */

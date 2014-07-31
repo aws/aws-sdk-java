@@ -21,9 +21,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-
 import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.metrics.MetricType;
@@ -35,6 +32,9 @@ import com.amazonaws.services.cloudwatch.model.MetricDatum;
 import com.amazonaws.services.cloudwatch.model.StandardUnit;
 import com.amazonaws.services.dynamodbv2.metrics.DynamoDBRequestMetric;
 import com.amazonaws.services.dynamodbv2.model.ConsumedCapacity;
+
+import org.apache.http.annotation.ThreadSafe;
+import org.slf4j.LoggerFactory;
 
 /**
  * An internal service provider implementation for an DyanmoDB specific request
@@ -56,9 +56,9 @@ public class DynamoDBRequestMetricTransformer implements RequestMetricTransforme
         } catch (NoSuchMethodException e) {
         } catch (IllegalAccessException e) {
         } catch (InvocationTargetException e) {
-            LogFactory.getLog(getClass()).debug("", e.getCause());
+            LoggerFactory.getLogger(getClass()).debug("", e.getCause());
         } catch (Exception e) {
-            LogFactory.getLog(getClass()).debug("", e);
+            LoggerFactory.getLogger(getClass()).debug("", e);
         }
         return null;
     }

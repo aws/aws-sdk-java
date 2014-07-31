@@ -21,15 +21,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.internal.EC2MetadataClient;
-
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility class for retrieving Amazon EC2 instance metadata.<br>
@@ -62,7 +61,7 @@ public class EC2MetadataUtils {
                 PropertyNamingStrategy.PASCAL_CASE_TO_CAMEL_CASE);
     }
 
-    private static final Log log = LogFactory.getLog(EC2MetadataUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(EC2MetadataUtils.class);
 
 	/**
 	 * Get the AMI ID used to launch the instance.

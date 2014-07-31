@@ -24,9 +24,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.handlers.AbstractRequestHandler;
@@ -43,6 +40,9 @@ import com.amazonaws.services.sqs.model.SendMessageResult;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.Md5Utils;
 import com.amazonaws.util.TimingInfo;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * SQS operations on sending and receiving messages will return the MD5 digest
@@ -70,7 +70,7 @@ public class MessageMD5ChecksumHandler extends AbstractRequestHandler {
     private static final String MESSAGE_BODY = "message body";
     private static final String MESSAGE_ATTRIBUTES = "message attributes";
 
-    private static final Log log = LogFactory.getLog(MessageMD5ChecksumHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(MessageMD5ChecksumHandler.class);
 
     @Override
     public void afterResponse(Request<?> request, Object response, TimingInfo timingInfo) {

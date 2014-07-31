@@ -22,10 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
@@ -39,6 +35,10 @@ import com.amazonaws.services.cloudwatch.model.StandardUnit;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.TimingInfo;
+
+import org.apache.http.annotation.ThreadSafe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * Used to transform the predefined metrics of the AWS SDK into instances of
  * {@link MetricDatum}.
@@ -53,7 +53,7 @@ import com.amazonaws.util.TimingInfo;
  */
 @ThreadSafe
 public class PredefinedMetricTransformer {
-    private static final Log log = LogFactory.getLog(PredefinedMetricTransformer.class);
+    private static final Logger log = LoggerFactory.getLogger(PredefinedMetricTransformer.class);
     static final boolean INCLUDE_REQUEST_TYPE = true;
     static final boolean EXCLUDE_REQUEST_TYPE = !INCLUDE_REQUEST_TYPE;
 
@@ -132,7 +132,7 @@ public class PredefinedMetricTransformer {
         }
         int requestCount = counter.intValue();
         if (requestCount < 1) {
-            LogFactory.getLog(getClass()).warn(
+            LoggerFactory.getLogger(getClass()).warn(
                 "request count must be at least one");
             return Collections.emptyList();
         }
@@ -280,7 +280,7 @@ public class PredefinedMetricTransformer {
         }
         int count = counter.intValue();
         if (count < 1) {
-            LogFactory.getLog(getClass()).warn("Count must be at least one");
+            LoggerFactory.getLogger(getClass()).warn("Count must be at least one");
             return Collections.emptyList();
         }
         final List<MetricDatum> result = new ArrayList<MetricDatum>();

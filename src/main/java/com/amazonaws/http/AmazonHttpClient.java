@@ -33,25 +33,6 @@ import java.util.Map;
 
 import javax.net.ssl.SSLContext;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.HttpStatus;
-import org.apache.http.annotation.ThreadSafe;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.scheme.SchemeRegistry;
-import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.http.pool.ConnPoolControl;
-import org.apache.http.pool.PoolStats;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
@@ -83,6 +64,25 @@ import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
 
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpStatus;
+import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.conn.ClientConnectionManager;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.pool.ConnPoolControl;
+import org.apache.http.pool.PoolStats;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @ThreadSafe
 public class AmazonHttpClient {
 
@@ -93,13 +93,13 @@ public class AmazonHttpClient {
      * enable this logger to get access to AWS request IDs for responses,
      * individual requests and parameters sent to AWS, etc.
      */
-    private static final Log requestLog = LogFactory.getLog("com.amazonaws.request");
+    private static final Logger requestLog = LoggerFactory.getLogger("com.amazonaws.request");
 
     /**
      * Logger for more detailed debugging information, that might not be as
      * useful for end users (ex: HTTP client configuration, etc).
      */
-    static final Log log = LogFactory.getLog(AmazonHttpClient.class);
+    static final Logger log = LoggerFactory.getLogger(AmazonHttpClient.class);
 
     /** Internal client for sending HTTP requests */
     private final HttpClient httpClient;

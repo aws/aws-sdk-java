@@ -21,13 +21,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.NotThreadSafe;
-
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.metrics.RequestMetricCollector;
+
+import org.apache.http.annotation.NotThreadSafe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * In contrast to {@link AWSRequestMetrics}, which is intended to be a minimal
@@ -46,7 +46,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
     /* A map to store events that are being profiled. */
     private final Map<String, TimingInfo> eventsBeingProfiled = new HashMap<String, TimingInfo>();
     /* Latency Logger */
-    private static final Log latencyLogger = LogFactory.getLog("com.amazonaws.latency");
+    private static final Logger latencyLogger = LoggerFactory.getLogger("com.amazonaws.latency");
     private static final Object KEY_VALUE_SEPARATOR = "=";
     private static final Object COMMA_SEPARATOR = ", ";
 
@@ -104,7 +104,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
         TimingInfo event = eventsBeingProfiled.get(eventName);
         /* Somebody tried to end an event that was not started. */
         if (event == null) {
-            LogFactory.getLog(getClass()).warn
+            LoggerFactory.getLogger(getClass()).warn
                 ("Trying to end an event which was never started: " + eventName);
             return;
         }

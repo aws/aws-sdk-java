@@ -24,16 +24,16 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.BasicSessionCredentials;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ProfilesConfigFileLoader {
 
-    private static final Log LOG = LogFactory.getLog(ProfilesConfigFileLoader.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProfilesConfigFileLoader.class);
 
     public static Map<String, Profile> loadProfiles(File file) {
         if (file == null) {

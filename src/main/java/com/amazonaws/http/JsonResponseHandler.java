@@ -17,11 +17,6 @@ package com.amazonaws.http;
 import java.io.IOException;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.internal.CRC32MismatchException;
@@ -30,6 +25,11 @@ import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
 import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful
@@ -45,7 +45,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     private Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller;
 
     /** Shared logger for profiling information */
-    private static final Log log = LogFactory.getLog("com.amazonaws.request");
+    private static final Logger log = LoggerFactory.getLogger("com.amazonaws.request");
 
     private static JsonFactory jsonFactory = new JsonFactory();
 
