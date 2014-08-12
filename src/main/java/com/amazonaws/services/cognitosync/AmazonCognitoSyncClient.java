@@ -29,6 +29,7 @@ import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import static com.amazonaws.util.IOUtils.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
@@ -271,7 +272,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateRecordsRequest> request = null;
         Response<UpdateRecordsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateRecordsRequestMarshaller().marshall(updateRecordsRequest);
@@ -280,13 +283,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdateRecordsResult, JsonUnmarshallerContext> unmarshaller = new UpdateRecordsResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateRecordsResult> responseHandler = new JsonResponseHandler<UpdateRecordsResult>(unmarshaller);
-
+            Unmarshaller<UpdateRecordsResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateRecordsResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateRecordsResult> responseHandler =
+                new JsonResponseHandler<UpdateRecordsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -323,7 +329,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeIdentityPoolUsageRequest> request = null;
         Response<DescribeIdentityPoolUsageResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeIdentityPoolUsageRequestMarshaller().marshall(describeIdentityPoolUsageRequest);
@@ -332,13 +340,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeIdentityPoolUsageResult, JsonUnmarshallerContext> unmarshaller = new DescribeIdentityPoolUsageResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeIdentityPoolUsageResult> responseHandler = new JsonResponseHandler<DescribeIdentityPoolUsageResult>(unmarshaller);
-
+            Unmarshaller<DescribeIdentityPoolUsageResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeIdentityPoolUsageResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeIdentityPoolUsageResult> responseHandler =
+                new JsonResponseHandler<DescribeIdentityPoolUsageResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -372,7 +383,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListDatasetsRequest> request = null;
         Response<ListDatasetsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListDatasetsRequestMarshaller().marshall(listDatasetsRequest);
@@ -381,13 +394,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListDatasetsResult, JsonUnmarshallerContext> unmarshaller = new ListDatasetsResultJsonUnmarshaller();
-            JsonResponseHandler<ListDatasetsResult> responseHandler = new JsonResponseHandler<ListDatasetsResult>(unmarshaller);
-
+            Unmarshaller<ListDatasetsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListDatasetsResultJsonUnmarshaller();
+            JsonResponseHandler<ListDatasetsResult> responseHandler =
+                new JsonResponseHandler<ListDatasetsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -422,7 +438,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListIdentityPoolUsageRequest> request = null;
         Response<ListIdentityPoolUsageResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListIdentityPoolUsageRequestMarshaller().marshall(listIdentityPoolUsageRequest);
@@ -431,13 +449,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListIdentityPoolUsageResult, JsonUnmarshallerContext> unmarshaller = new ListIdentityPoolUsageResultJsonUnmarshaller();
-            JsonResponseHandler<ListIdentityPoolUsageResult> responseHandler = new JsonResponseHandler<ListIdentityPoolUsageResult>(unmarshaller);
-
+            Unmarshaller<ListIdentityPoolUsageResult, JsonUnmarshallerContext> unmarshaller =
+                new ListIdentityPoolUsageResultJsonUnmarshaller();
+            JsonResponseHandler<ListIdentityPoolUsageResult> responseHandler =
+                new JsonResponseHandler<ListIdentityPoolUsageResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -473,7 +494,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListRecordsRequest> request = null;
         Response<ListRecordsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListRecordsRequestMarshaller().marshall(listRecordsRequest);
@@ -482,13 +505,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListRecordsResult, JsonUnmarshallerContext> unmarshaller = new ListRecordsResultJsonUnmarshaller();
-            JsonResponseHandler<ListRecordsResult> responseHandler = new JsonResponseHandler<ListRecordsResult>(unmarshaller);
-
+            Unmarshaller<ListRecordsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListRecordsResultJsonUnmarshaller();
+            JsonResponseHandler<ListRecordsResult> responseHandler =
+                new JsonResponseHandler<ListRecordsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -523,7 +549,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeDatasetRequest> request = null;
         Response<DescribeDatasetResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeDatasetRequestMarshaller().marshall(describeDatasetRequest);
@@ -532,13 +560,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeDatasetResult, JsonUnmarshallerContext> unmarshaller = new DescribeDatasetResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeDatasetResult> responseHandler = new JsonResponseHandler<DescribeDatasetResult>(unmarshaller);
-
+            Unmarshaller<DescribeDatasetResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeDatasetResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeDatasetResult> responseHandler =
+                new JsonResponseHandler<DescribeDatasetResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -577,7 +608,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDatasetRequest> request = null;
         Response<DeleteDatasetResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteDatasetRequestMarshaller().marshall(deleteDatasetRequest);
@@ -586,13 +619,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DeleteDatasetResult, JsonUnmarshallerContext> unmarshaller = new DeleteDatasetResultJsonUnmarshaller();
-            JsonResponseHandler<DeleteDatasetResult> responseHandler = new JsonResponseHandler<DeleteDatasetResult>(unmarshaller);
-
+            Unmarshaller<DeleteDatasetResult, JsonUnmarshallerContext> unmarshaller =
+                new DeleteDatasetResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteDatasetResult> responseHandler =
+                new JsonResponseHandler<DeleteDatasetResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -629,7 +665,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeIdentityUsageRequest> request = null;
         Response<DescribeIdentityUsageResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeIdentityUsageRequestMarshaller().marshall(describeIdentityUsageRequest);
@@ -638,19 +676,22 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeIdentityUsageResult, JsonUnmarshallerContext> unmarshaller = new DescribeIdentityUsageResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeIdentityUsageResult> responseHandler = new JsonResponseHandler<DescribeIdentityUsageResult>(unmarshaller);
-
+            Unmarshaller<DescribeIdentityUsageResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeIdentityUsageResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeIdentityUsageResult> responseHandler =
+                new JsonResponseHandler<DescribeIdentityUsageResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
 
-  @Override
-  public void setEndpoint(String endpoint) {
+    @Override
+    public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

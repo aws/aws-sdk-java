@@ -51,6 +51,7 @@ import com.amazonaws.services.s3.transfer.PersistableUpload;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
+import com.amazonaws.services.s3.transfer.TransferProgress;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 public class UploadCallable implements Callable<UploadResult> {
@@ -64,6 +65,7 @@ public class UploadCallable implements Callable<UploadResult> {
     private final TransferManagerConfiguration configuration;
     private final List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();
     private final ProgressListenerChain listener;
+    private final TransferProgress transferProgress;
 
     /**
      * ETags retrieved from Amazon S3 for a multi-part upload id. These parts
@@ -76,7 +78,8 @@ public class UploadCallable implements Callable<UploadResult> {
     public UploadCallable(TransferManager transferManager,
             ExecutorService threadPool, UploadImpl upload,
             PutObjectRequest putObjectRequest,
-            ProgressListenerChain progressListenerChain, String uploadId) {
+            ProgressListenerChain progressListenerChain, String uploadId,
+            TransferProgress transferProgress) {
         this.s3 = transferManager.getAmazonS3Client();
         this.configuration = transferManager.getConfiguration();
 
@@ -85,6 +88,7 @@ public class UploadCallable implements Callable<UploadResult> {
         this.listener = progressListenerChain;
         this.upload = upload;
         this.multipartUploadId = uploadId;
+        this.transferProgress = transferProgress;
     }
 
     List<Future<PartETag>> getFutures() {
@@ -279,6 +283,7 @@ public class UploadCallable implements Callable<UploadResult> {
                 PartSummary summary = partNumbers.get(request.getPartNumber());
                 eTagsToSkip.add(new PartETag(request.getPartNumber(), summary
                         .getETag()));
+                transferProgress.updateProgress(summary.getSize());
                 continue;
             }
             futures.add(threadPool.submit(new UploadPartCallable(s3, request)));

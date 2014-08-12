@@ -29,6 +29,7 @@ import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import static com.amazonaws.util.IOUtils.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
@@ -451,7 +452,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ScanRequest> request = null;
         Response<ScanResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ScanRequestMarshaller().marshall(scanRequest);
@@ -460,13 +463,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ScanResult, JsonUnmarshallerContext> unmarshaller = new ScanResultJsonUnmarshaller();
-            JsonResponseHandler<ScanResult> responseHandler = new JsonResponseHandler<ScanResult>(unmarshaller);
-
+            Unmarshaller<ScanResult, JsonUnmarshallerContext> unmarshaller =
+                new ScanResultJsonUnmarshaller();
+            JsonResponseHandler<ScanResult> responseHandler =
+                new JsonResponseHandler<ScanResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -523,7 +529,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateTableRequest> request = null;
         Response<UpdateTableResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateTableRequestMarshaller().marshall(updateTableRequest);
@@ -532,13 +540,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> unmarshaller = new UpdateTableResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateTableResult> responseHandler = new JsonResponseHandler<UpdateTableResult>(unmarshaller);
-
+            Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateTableResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateTableResult> responseHandler =
+                new JsonResponseHandler<UpdateTableResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -592,7 +603,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTableRequest> request = null;
         Response<DeleteTableResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteTableRequestMarshaller().marshall(deleteTableRequest);
@@ -601,13 +614,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> unmarshaller = new DeleteTableResultJsonUnmarshaller();
-            JsonResponseHandler<DeleteTableResult> responseHandler = new JsonResponseHandler<DeleteTableResult>(unmarshaller);
-
+            Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> unmarshaller =
+                new DeleteTableResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteTableResult> responseHandler =
+                new JsonResponseHandler<DeleteTableResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -730,7 +746,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<BatchWriteItemRequest> request = null;
         Response<BatchWriteItemResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new BatchWriteItemRequestMarshaller().marshall(batchWriteItemRequest);
@@ -739,13 +757,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<BatchWriteItemResult, JsonUnmarshallerContext> unmarshaller = new BatchWriteItemResultJsonUnmarshaller();
-            JsonResponseHandler<BatchWriteItemResult> responseHandler = new JsonResponseHandler<BatchWriteItemResult>(unmarshaller);
-
+            Unmarshaller<BatchWriteItemResult, JsonUnmarshallerContext> unmarshaller =
+                new BatchWriteItemResultJsonUnmarshaller();
+            JsonResponseHandler<BatchWriteItemResult> responseHandler =
+                new JsonResponseHandler<BatchWriteItemResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -780,7 +801,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeTableRequest> request = null;
         Response<DescribeTableResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTableRequestMarshaller().marshall(describeTableRequest);
@@ -789,13 +812,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> unmarshaller = new DescribeTableResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeTableResult> responseHandler = new JsonResponseHandler<DescribeTableResult>(unmarshaller);
-
+            Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeTableResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeTableResult> responseHandler =
+                new JsonResponseHandler<DescribeTableResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -838,7 +864,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetItemRequest> request = null;
         Response<GetItemResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetItemRequestMarshaller().marshall(getItemRequest);
@@ -847,13 +875,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<GetItemResult, JsonUnmarshallerContext> unmarshaller = new GetItemResultJsonUnmarshaller();
-            JsonResponseHandler<GetItemResult> responseHandler = new JsonResponseHandler<GetItemResult>(unmarshaller);
-
+            Unmarshaller<GetItemResult, JsonUnmarshallerContext> unmarshaller =
+                new GetItemResultJsonUnmarshaller();
+            JsonResponseHandler<GetItemResult> responseHandler =
+                new JsonResponseHandler<GetItemResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -906,7 +937,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteItemRequest> request = null;
         Response<DeleteItemResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteItemRequestMarshaller().marshall(deleteItemRequest);
@@ -915,13 +948,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> unmarshaller = new DeleteItemResultJsonUnmarshaller();
-            JsonResponseHandler<DeleteItemResult> responseHandler = new JsonResponseHandler<DeleteItemResult>(unmarshaller);
-
+            Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> unmarshaller =
+                new DeleteItemResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteItemResult> responseHandler =
+                new JsonResponseHandler<DeleteItemResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -974,7 +1010,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateTableRequest> request = null;
         Response<CreateTableResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateTableRequestMarshaller().marshall(createTableRequest);
@@ -983,13 +1021,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<CreateTableResult, JsonUnmarshallerContext> unmarshaller = new CreateTableResultJsonUnmarshaller();
-            JsonResponseHandler<CreateTableResult> responseHandler = new JsonResponseHandler<CreateTableResult>(unmarshaller);
-
+            Unmarshaller<CreateTableResult, JsonUnmarshallerContext> unmarshaller =
+                new CreateTableResultJsonUnmarshaller();
+            JsonResponseHandler<CreateTableResult> responseHandler =
+                new JsonResponseHandler<CreateTableResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1049,7 +1090,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<QueryRequest> request = null;
         Response<QueryResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new QueryRequestMarshaller().marshall(queryRequest);
@@ -1058,13 +1101,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<QueryResult, JsonUnmarshallerContext> unmarshaller = new QueryResultJsonUnmarshaller();
-            JsonResponseHandler<QueryResult> responseHandler = new JsonResponseHandler<QueryResult>(unmarshaller);
-
+            Unmarshaller<QueryResult, JsonUnmarshallerContext> unmarshaller =
+                new QueryResultJsonUnmarshaller();
+            JsonResponseHandler<QueryResult> responseHandler =
+                new JsonResponseHandler<QueryResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1132,7 +1178,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutItemRequest> request = null;
         Response<PutItemResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutItemRequestMarshaller().marshall(putItemRequest);
@@ -1141,13 +1189,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<PutItemResult, JsonUnmarshallerContext> unmarshaller = new PutItemResultJsonUnmarshaller();
-            JsonResponseHandler<PutItemResult> responseHandler = new JsonResponseHandler<PutItemResult>(unmarshaller);
-
+            Unmarshaller<PutItemResult, JsonUnmarshallerContext> unmarshaller =
+                new PutItemResultJsonUnmarshaller();
+            JsonResponseHandler<PutItemResult> responseHandler =
+                new JsonResponseHandler<PutItemResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1181,7 +1232,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListTablesRequest> request = null;
         Response<ListTablesResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListTablesRequestMarshaller().marshall(listTablesRequest);
@@ -1190,13 +1243,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListTablesResult, JsonUnmarshallerContext> unmarshaller = new ListTablesResultJsonUnmarshaller();
-            JsonResponseHandler<ListTablesResult> responseHandler = new JsonResponseHandler<ListTablesResult>(unmarshaller);
-
+            Unmarshaller<ListTablesResult, JsonUnmarshallerContext> unmarshaller =
+                new ListTablesResultJsonUnmarshaller();
+            JsonResponseHandler<ListTablesResult> responseHandler =
+                new JsonResponseHandler<ListTablesResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1241,7 +1297,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateItemRequest> request = null;
         Response<UpdateItemResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateItemRequestMarshaller().marshall(updateItemRequest);
@@ -1250,13 +1308,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> unmarshaller = new UpdateItemResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateItemResult> responseHandler = new JsonResponseHandler<UpdateItemResult>(unmarshaller);
-
+            Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateItemResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateItemResult> responseHandler =
+                new JsonResponseHandler<UpdateItemResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1340,7 +1401,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<BatchGetItemRequest> request = null;
         Response<BatchGetItemResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new BatchGetItemRequestMarshaller().marshall(batchGetItemRequest);
@@ -1349,13 +1412,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> unmarshaller = new BatchGetItemResultJsonUnmarshaller();
-            JsonResponseHandler<BatchGetItemResult> responseHandler = new JsonResponseHandler<BatchGetItemResult>(unmarshaller);
-
+            Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> unmarshaller =
+                new BatchGetItemResultJsonUnmarshaller();
+            JsonResponseHandler<BatchGetItemResult> responseHandler =
+                new JsonResponseHandler<BatchGetItemResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -2853,8 +2919,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         return batchGetItem(batchGetItemRequest);
     }
 
-  @Override
-  public void setEndpoint(String endpoint) {
+    @Override
+    public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

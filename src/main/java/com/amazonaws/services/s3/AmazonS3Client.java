@@ -15,13 +15,15 @@
 package com.amazonaws.services.s3;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
-import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.internal.ResettableInputStream.newResettableInputStream;
+import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSource;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.Throwables.failure;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -75,6 +77,8 @@ import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.internal.ReleasableInputStream;
+import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
@@ -88,7 +92,6 @@ import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.ObjectExpirationHeaderHandler;
-import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.internal.RepeatableInputStream;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
@@ -1298,26 +1301,24 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
+        final File file = putObjectRequest.getFile();
+        final InputStream isOrig = putObjectRequest.getInputStream();
         assertParameterNotNull(putObjectRequest, "The PutObjectRequest parameter must be specified when uploading an object");
         final String bucketName = putObjectRequest.getBucketName();
         final String key = putObjectRequest.getKey();
         ObjectMetadata metadata = putObjectRequest.getMetadata();
-        InputStream input = putObjectRequest.getInputStream();
+        InputStream input = isOrig;
         if (metadata == null)
             metadata = new ObjectMetadata();
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when uploading an object");
         assertParameterNotNull(key, "The key parameter must be specified when uploading an object");
         final boolean skipContentMd5Check = skipContentMd5IntegrityCheck(putObjectRequest);
-
         // If a file is specified for upload, we need to pull some additional
         // information from it to auto-configure a few options
-        if (putObjectRequest.getFile() != null) {
-            File file = putObjectRequest.getFile();
+        if (file != null) {
             // Always set the content length, even if it's already set
             metadata.setContentLength(file.length());
-
             final boolean calculateMD5 = metadata.getContentMD5() == null;
-
             // Only set the content type if it hasn't already been set
             if (metadata.getContentType() == null) {
                 metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
@@ -1332,117 +1333,113 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                             "Unable to calculate MD5 hash: " + e.getMessage(), e);
                 }
             }
-
-            try {
-                input = new RepeatableFileInputStream(file);
-            } catch (FileNotFoundException fnfe) {
-                throw new AmazonClientException("Unable to find file to upload", fnfe);
+            input = newResettableInputStream(file, "Unable to find file to upload")
+                    .disableClose();    // requires explicit release
+        }
+        final ProgressListener listener;
+        final ObjectMetadata returnedMetadata;
+        MD5DigestCalculatingInputStream md5DigestStream = null;
+        try {
+            Request<PutObjectRequest> request = createRequest(bucketName, key, putObjectRequest, HttpMethodName.PUT);
+    
+            if ( putObjectRequest.getAccessControlList() != null) {
+                addAclHeaders(request, putObjectRequest.getAccessControlList());
+            } else if ( putObjectRequest.getCannedAcl() != null ) {
+                request.addHeader(Headers.S3_CANNED_ACL, putObjectRequest.getCannedAcl().toString());
             }
-        }
-
-        Request<PutObjectRequest> request = createRequest(bucketName, key, putObjectRequest, HttpMethodName.PUT);
-
-        if ( putObjectRequest.getAccessControlList() != null) {
-            addAclHeaders(request, putObjectRequest.getAccessControlList());
-        } else if ( putObjectRequest.getCannedAcl() != null ) {
-            request.addHeader(Headers.S3_CANNED_ACL, putObjectRequest.getCannedAcl().toString());
-        }
-
-        if (putObjectRequest.getStorageClass() != null) {
-            request.addHeader(Headers.STORAGE_CLASS, putObjectRequest.getStorageClass());
-        }
-
-        if (putObjectRequest.getRedirectLocation() != null) {
-            request.addHeader(Headers.REDIRECT_LOCATION, putObjectRequest.getRedirectLocation());
-            if (input == null) {
-                input = new ByteArrayInputStream(new byte[0]);
+    
+            if (putObjectRequest.getStorageClass() != null) {
+                request.addHeader(Headers.STORAGE_CLASS, putObjectRequest.getStorageClass());
             }
-        }
-
-        // Populate the SSE-CPK parameters to the request header
-        populateSseCpkRequestParameters(request, putObjectRequest.getSSECustomerKey());
-
-        // Use internal interface to differentiate 0 from unset.
-        final Long contentLength = (Long)metadata.getRawMetadataValue(Headers.CONTENT_LENGTH);
-        if (contentLength == null) {
-            /*
-             * There's nothing we can do except for let the HTTP client buffer
-             * the input stream contents if the caller doesn't tell us how much
-             * data to expect in a stream since we have to explicitly tell
-             * Amazon S3 how much we're sending before we start sending any of
-             * it.
-             */
-            log.warn("No content length specified for stream data.  " +
-                     "Stream contents will be buffered in memory and could result in " +
-                     "out of memory errors.");
-        } else {
-            final long expectedLength = contentLength.longValue();
-            if (expectedLength >= 0) {
-                // Performs length check on the underlying data stream.
-                // For S3 encryption client, the underlying data stream here
-                // refers to the cipher-text data stream (ie not the underlying
-                // plain-text data stream which in turn may have been wrapped
-                // with it's own length check input stream.)
-                @SuppressWarnings("resource")
-                LengthCheckInputStream lcis = new LengthCheckInputStream(
-                    input,
-                    expectedLength, // expected data length to be uploaded
-                    EXCLUDE_SKIPPED_BYTES);
-                input = lcis;
-            }
-        }
-
-        if (!input.markSupported()) {
-            int streamBufferSize = Constants.DEFAULT_STREAM_BUFFER_SIZE;
-            String bufferSizeOverride = System.getProperty("com.amazonaws.sdk.s3.defaultStreamBufferSize");
-            if (bufferSizeOverride != null) {
-                try {
-                    streamBufferSize = Integer.parseInt(bufferSizeOverride);
-                } catch (Exception e) {
-                    log.warn("Unable to parse buffer size override from value: " + bufferSizeOverride);
+    
+            if (putObjectRequest.getRedirectLocation() != null) {
+                request.addHeader(Headers.REDIRECT_LOCATION, putObjectRequest.getRedirectLocation());
+                if (input == null) {
+                    input = new ByteArrayInputStream(new byte[0]);
                 }
             }
-
-            input = new RepeatableInputStream(input, streamBufferSize);
-        }
-
-        MD5DigestCalculatingInputStream md5DigestStream = null;
-        if (metadata.getContentMD5() == null
-                && !skipContentMd5Check ) {
-            /*
-             * If the user hasn't set the content MD5, then we don't want to
-             * buffer the whole stream in memory just to calculate it. Instead,
-             * we can calculate it on the fly and validate it with the returned
-             * ETag from the object upload.
-             */
-            input = md5DigestStream = new MD5DigestCalculatingInputStream(input);
-        }
-
-        if (metadata.getContentType() == null) {
-            /*
-             * Default to the "application/octet-stream" if the user hasn't
-             * specified a content type.
-             */
-            metadata.setContentType(Mimetypes.MIMETYPE_OCTET_STREAM);
-        }
-
-        populateRequestMetadata(request, metadata);
-        request.setContent(input);
-        final ProgressListener listener = putObjectRequest.getGeneralProgressListener();
-        publishProgress(listener, ProgressEventType.TRANSFER_STARTED_EVENT);
-        ObjectMetadata returnedMetadata;
-        try {
-            returnedMetadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
-        } catch (Throwable t) {
-            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
-            throw failure(t);
+    
+            // Populate the SSE-CPK parameters to the request header
+            populateSseCpkRequestParameters(request, putObjectRequest.getSSECustomerKey());
+    
+            // Use internal interface to differentiate 0 from unset.
+            final Long contentLength = (Long)metadata.getRawMetadataValue(Headers.CONTENT_LENGTH);
+            if (contentLength == null) {
+                /*
+                 * There's nothing we can do except for let the HTTP client buffer
+                 * the input stream contents if the caller doesn't tell us how much
+                 * data to expect in a stream since we have to explicitly tell
+                 * Amazon S3 how much we're sending before we start sending any of
+                 * it.
+                 */
+                log.warn("No content length specified for stream data.  " +
+                         "Stream contents will be buffered in memory and could result in " +
+                         "out of memory errors.");
+            } else {
+                final long expectedLength = contentLength.longValue();
+                if (expectedLength >= 0) {
+                    // Performs length check on the underlying data stream.
+                    // For S3 encryption client, the underlying data stream here
+                    // refers to the cipher-text data stream (ie not the underlying
+                    // plain-text data stream which in turn may have been wrapped
+                    // with it's own length check input stream.)
+                    @SuppressWarnings("resource")
+                    LengthCheckInputStream lcis = new LengthCheckInputStream(
+                        input,
+                        expectedLength, // expected data length to be uploaded
+                        EXCLUDE_SKIPPED_BYTES);
+                    input = lcis;
+                }
+            }
+    
+            if (!input.markSupported()) {
+                int streamBufferSize = Constants.DEFAULT_STREAM_BUFFER_SIZE;
+                String bufferSizeOverride = System.getProperty("com.amazonaws.sdk.s3.defaultStreamBufferSize");
+                if (bufferSizeOverride != null) {
+                    try {
+                        streamBufferSize = Integer.parseInt(bufferSizeOverride);
+                    } catch (Exception e) {
+                        log.warn("Unable to parse buffer size override from value: " + bufferSizeOverride);
+                    }
+                }
+                input = new RepeatableInputStream(input, streamBufferSize);
+            }
+    
+            if (metadata.getContentMD5() == null
+                    && !skipContentMd5Check ) {
+                /*
+                 * If the user hasn't set the content MD5, then we don't want to
+                 * buffer the whole stream in memory just to calculate it. Instead,
+                 * we can calculate it on the fly and validate it with the returned
+                 * ETag from the object upload.
+                 */
+                input = md5DigestStream = new MD5DigestCalculatingInputStream(input);
+            }
+    
+            if (metadata.getContentType() == null) {
+                /*
+                 * Default to the "application/octet-stream" if the user hasn't
+                 * specified a content type.
+                 */
+                metadata.setContentType(Mimetypes.MIMETYPE_OCTET_STREAM);
+            }
+    
+            populateRequestMetadata(request, metadata);
+            request.setContent(input);
+            listener = putObjectRequest.getGeneralProgressListener();
+            publishProgress(listener, ProgressEventType.TRANSFER_STARTED_EVENT);
+            try {
+                returnedMetadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
+            } catch (Throwable t) {
+                publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
+                throw failure(t);
+            }
         } finally {
-            closeQuietly(input, log);
+            cleanupDataSource(putObjectRequest, file, isOrig, input, log);
         }
-
         String contentMd5 = metadata.getContentMD5();
         if (md5DigestStream != null) {
-            contentMd5 = BinaryUtils.toBase64(md5DigestStream.getMd5Digest());
+            contentMd5 = Base64.encodeAsString(md5DigestStream.getMd5Digest());
         }
 
         final String etag = returnedMetadata.getETag();
@@ -1476,7 +1473,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         result.setExpirationTime(returnedMetadata.getExpirationTime());
         result.setExpirationTimeRuleId(returnedMetadata.getExpirationTimeRuleId());
         result.setContentMd5(contentMd5);
-
         return result;
     }
 
@@ -2692,14 +2688,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return invoke(request, new Unmarshallers.ListPartsResultUnmarshaller(), listPartsRequest.getBucketName(), listPartsRequest.getKey());
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#uploadPart(com.amazonaws.services.s3.model.UploadPartRequest)
-     */
+    @Override
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(uploadPartRequest,
             "The request parameter must be specified when uploading a part");
-
+        final File fileOrig = uploadPartRequest.getFile();
+        final InputStream isOrig = uploadPartRequest.getInputStream();
         final String bucketName = uploadPartRequest.getBucketName();
         final String key        = uploadPartRequest.getKey();
         final String uploadId   = uploadPartRequest.getUploadId();
@@ -2726,43 +2721,65 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // Populate the SSE-CPK parameters to the request header
         populateSseCpkRequestParameters(request, uploadPartRequest.getSSECustomerKey());
 
-        InputStream inputStream = null;
-        if (uploadPartRequest.getInputStream() != null) {
-            inputStream = uploadPartRequest.getInputStream();
-        } else if (uploadPartRequest.getFile() != null) {
-            try {
-                inputStream = new InputSubstream(new RepeatableFileInputStream(uploadPartRequest.getFile()),
-                        uploadPartRequest.getFileOffset(), partSize, true);
-            } catch (FileNotFoundException e) {
-                throw new IllegalArgumentException("The specified file doesn't exist", e);
+        InputStream isCurr = null;
+        try {
+            if (fileOrig == null) {
+                if (isOrig == null) {
+                    throw new IllegalArgumentException(
+                        "A File or InputStream must be specified when uploading part");
+                }
+                // Disable close method to avoid accidental closing the stream
+                // in the lower stack frames
+                isCurr = ReleasableInputStream.wrap(isOrig).disableClose();
+            } else {
+                try {
+                    // requires explicit release
+                    isCurr = new ResettableInputStream(fileOrig).disableClose();
+                } catch(IOException e) {
+                    throw new IllegalArgumentException("Failed to open file "
+                            + fileOrig, e);
+                }
             }
-        } else {
-            throw new IllegalArgumentException("A File or InputStream must be specified when uploading part");
+            isCurr = new InputSubstream(isCurr,
+                    uploadPartRequest.getFileOffset(),
+                    partSize,
+                    uploadPartRequest.isLastPart());
+            MD5DigestCalculatingInputStream md5DigestStream = null;
+            if (uploadPartRequest.getMd5Digest() == null
+             && !skipContentMd5IntegrityCheck(uploadPartRequest)) {
+                /*
+                 * If the user hasn't set the content MD5, then we don't want to
+                 * buffer the whole stream in memory just to calculate it. Instead,
+                 * we can calculate it on the fly and validate it with the returned
+                 * ETag from the object upload.
+                 */
+                isCurr = md5DigestStream = new MD5DigestCalculatingInputStream(isCurr);
+            }
+            final ProgressListener listener = uploadPartRequest.getGeneralProgressListener();
+            publishProgress(listener, ProgressEventType.TRANSFER_PART_STARTED_EVENT);
+            return doUploadPart(bucketName, key, uploadId, partNumber,
+                    partSize, request, isCurr, md5DigestStream, listener);
+        } finally {
+            cleanupDataSource(uploadPartRequest, fileOrig, isOrig, isCurr, log);
         }
+    }
 
-        MD5DigestCalculatingInputStream md5DigestStream = null;
-        if ( uploadPartRequest.getMd5Digest() == null
-                && !skipContentMd5IntegrityCheck(uploadPartRequest) ) {
-            /*
-             * If the user hasn't set the content MD5, then we don't want to
-             * buffer the whole stream in memory just to calculate it. Instead,
-             * we can calculate it on the fly and validate it with the returned
-             * ETag from the object upload.
-             */
-            inputStream = md5DigestStream = new MD5DigestCalculatingInputStream(inputStream);
-        }
-        final ProgressListener listener = uploadPartRequest.getGeneralProgressListener();
-        publishProgress(listener, ProgressEventType.TRANSFER_PART_STARTED_EVENT);
+    private UploadPartResult doUploadPart(final String bucketName,
+            final String key, final String uploadId, final int partNumber,
+            final long partSize, Request<UploadPartRequest> request,
+            InputStream inputStream,
+            MD5DigestCalculatingInputStream md5DigestStream,
+            final ProgressListener listener) {
         try {
             request.setContent(inputStream);
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
             final String etag = metadata.getETag();
-
+   
             if (md5DigestStream != null) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(etag);
-
-
+   
+   
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {
                     final String info = "bucketName: " + bucketName + ", key: "
                             + key + ", uploadId: " + uploadId
@@ -2794,8 +2811,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // COMPLETED_EVENT_CODE or FAILED_EVENT_CODE.
             publishProgress(listener, ProgressEventType.TRANSFER_PART_COMPLETED_EVENT);
             throw failure(t);
-        } finally {
-            closeQuietly(inputStream, log);
         }
     }
 

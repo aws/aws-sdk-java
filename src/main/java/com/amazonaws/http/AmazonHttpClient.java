@@ -628,17 +628,20 @@ public class AmazonHttpClient {
      *             If the request can't be reset.
      */
     private void resetRequestAfterError(Request<?> request, Exception cause) throws AmazonClientException {
-        if ( request.getContent() == null ) {
+        InputStream is = request.getContent();
+        if (is == null) {
             return; // no reset needed
         }
-        if ( ! request.getContent().markSupported() ) {
+        if (!is.markSupported()) {
             throw new AmazonClientException("Encountered an exception and stream is not resettable", cause);
         }
         try {
-            request.getContent().reset();
-        } catch ( IOException e ) {
+            is.reset();
+        } catch (IOException e) {
             // This exception comes from being unable to reset the input stream,
             // so throw the original, more meaningful exception
+            if (log.isDebugEnabled())
+                log.debug("Failed to reset the input stream", e);
             throw new AmazonClientException(
                     "Encountered an exception and couldn't reset the stream to retry", cause);
         }

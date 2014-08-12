@@ -139,6 +139,7 @@ public class ListDatasetsRequestMarshaller implements Marshaller<Request<ListDat
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));
+        request.addHeader("Content-Type", "application/x-amz-json-1.0");
 
         return request;
     }

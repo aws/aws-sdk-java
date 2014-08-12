@@ -14,6 +14,8 @@
  */
 package com.amazonaws.regions;
 
+import com.amazonaws.util.EC2MetadataUtils;
+
 /**
  * Enumeration of region names
  */
@@ -65,4 +67,16 @@ public enum Regions {
         throw new IllegalArgumentException("Cannot create enum from " + regionName + " value!");
     } 
     
+    /**
+     * Returns a Region object for the region this EC2 instance is running in.
+     * Note that this will only work properly if your application is running in
+     * an EC2 instance, otherwise the request will time out.
+     */
+    public static Region getCurrentRegion() {
+        EC2MetadataUtils.InstanceInfo instanceInfo = EC2MetadataUtils.getInstanceInfo();
+        if (instanceInfo == null || instanceInfo.getRegion() == null) {
+            return null;
+        }
+        return Region.getRegion(fromName(instanceInfo.getRegion()));
+    }
 }

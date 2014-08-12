@@ -42,12 +42,14 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNames;
 
     /**
-     * An optional parameter reserved for future use.
+     * An optional parameter used for pagination of results from this call.
+     * If specified, the response includes only records beyond the marker.
      */
     private String marker;
 
     /**
-     * The size of the page returned by this call.
+     * The number of results returned in each page. The default is 400. You
+     * cannot specify a page size greater than 400 or less than 1.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
@@ -141,29 +143,35 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * An optional parameter reserved for future use.
+     * An optional parameter used for pagination of results from this call.
+     * If specified, the response includes only records beyond the marker.
      *
-     * @return An optional parameter reserved for future use.
+     * @return An optional parameter used for pagination of results from this call.
+     *         If specified, the response includes only records beyond the marker.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional parameter reserved for future use.
+     * An optional parameter used for pagination of results from this call.
+     * If specified, the response includes only records beyond the marker.
      *
-     * @param marker An optional parameter reserved for future use.
+     * @param marker An optional parameter used for pagination of results from this call.
+     *         If specified, the response includes only records beyond the marker.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional parameter reserved for future use.
+     * An optional parameter used for pagination of results from this call.
+     * If specified, the response includes only records beyond the marker.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional parameter reserved for future use.
+     * @param marker An optional parameter used for pagination of results from this call.
+     *         If specified, the response includes only records beyond the marker.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -174,38 +182,44 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The size of the page returned by this call.
+     * The number of results returned in each page. The default is 400. You
+     * cannot specify a page size greater than 400 or less than 1.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
      *
-     * @return The size of the page returned by this call.
+     * @return The number of results returned in each page. The default is 400. You
+     *         cannot specify a page size greater than 400 or less than 1.
      */
     public Integer getPageSize() {
         return pageSize;
     }
     
     /**
-     * The size of the page returned by this call.
+     * The number of results returned in each page. The default is 400. You
+     * cannot specify a page size greater than 400 or less than 1.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
      *
-     * @param pageSize The size of the page returned by this call.
+     * @param pageSize The number of results returned in each page. The default is 400. You
+     *         cannot specify a page size greater than 400 or less than 1.
      */
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
     
     /**
-     * The size of the page returned by this call.
+     * The number of results returned in each page. The default is 400. You
+     * cannot specify a page size greater than 400 or less than 1.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 400<br/>
      *
-     * @param pageSize The size of the page returned by this call.
+     * @param pageSize The number of results returned in each page. The default is 400. You
+     *         cannot specify a page size greater than 400 or less than 1.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

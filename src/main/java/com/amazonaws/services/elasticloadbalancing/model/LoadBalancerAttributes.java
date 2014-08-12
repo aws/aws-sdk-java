@@ -35,7 +35,7 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. If enabled, the load balancer
      * captures detailed information of all the requests and delivers the
-     * information to the Amazon S3 bucket you specify. <p>For more
+     * information to the Amazon S3 bucket that you specify. <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      * Access Logs</a>.
@@ -55,7 +55,7 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. <p>By default, Elastic Load
      * Balancing maintains a 60-second idle connection timeout for both
-     * front-end and back-end connections of your load balancer. If
+     * front-end and back-end connections of your load balancer. If the
      * <code>ConnectionSettings</code> attribute is set, Elastic Load
      * Balancing will allow the connections to remain idle (no data is sent
      * over the connection) for the specified duration. <p>For more
@@ -125,14 +125,14 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. If enabled, the load balancer
      * captures detailed information of all the requests and delivers the
-     * information to the Amazon S3 bucket you specify. <p>For more
+     * information to the Amazon S3 bucket that you specify. <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      * Access Logs</a>.
      *
      * @return The name of the load balancer attribute. If enabled, the load balancer
      *         captures detailed information of all the requests and delivers the
-     *         information to the Amazon S3 bucket you specify. <p>For more
+     *         information to the Amazon S3 bucket that you specify. <p>For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      *         Access Logs</a>.
@@ -144,14 +144,14 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. If enabled, the load balancer
      * captures detailed information of all the requests and delivers the
-     * information to the Amazon S3 bucket you specify. <p>For more
+     * information to the Amazon S3 bucket that you specify. <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      * Access Logs</a>.
      *
      * @param accessLog The name of the load balancer attribute. If enabled, the load balancer
      *         captures detailed information of all the requests and delivers the
-     *         information to the Amazon S3 bucket you specify. <p>For more
+     *         information to the Amazon S3 bucket that you specify. <p>For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      *         Access Logs</a>.
@@ -163,7 +163,7 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. If enabled, the load balancer
      * captures detailed information of all the requests and delivers the
-     * information to the Amazon S3 bucket you specify. <p>For more
+     * information to the Amazon S3 bucket that you specify. <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      * Access Logs</a>.
@@ -172,7 +172,7 @@ public class LoadBalancerAttributes implements Serializable {
      *
      * @param accessLog The name of the load balancer attribute. If enabled, the load balancer
      *         captures detailed information of all the requests and delivers the
-     *         information to the Amazon S3 bucket you specify. <p>For more
+     *         information to the Amazon S3 bucket that you specify. <p>For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
      *         Access Logs</a>.
@@ -251,7 +251,7 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. <p>By default, Elastic Load
      * Balancing maintains a 60-second idle connection timeout for both
-     * front-end and back-end connections of your load balancer. If
+     * front-end and back-end connections of your load balancer. If the
      * <code>ConnectionSettings</code> attribute is set, Elastic Load
      * Balancing will allow the connections to remain idle (no data is sent
      * over the connection) for the specified duration. <p>For more
@@ -261,7 +261,7 @@ public class LoadBalancerAttributes implements Serializable {
      *
      * @return The name of the load balancer attribute. <p>By default, Elastic Load
      *         Balancing maintains a 60-second idle connection timeout for both
-     *         front-end and back-end connections of your load balancer. If
+     *         front-end and back-end connections of your load balancer. If the
      *         <code>ConnectionSettings</code> attribute is set, Elastic Load
      *         Balancing will allow the connections to remain idle (no data is sent
      *         over the connection) for the specified duration. <p>For more
@@ -276,7 +276,7 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. <p>By default, Elastic Load
      * Balancing maintains a 60-second idle connection timeout for both
-     * front-end and back-end connections of your load balancer. If
+     * front-end and back-end connections of your load balancer. If the
      * <code>ConnectionSettings</code> attribute is set, Elastic Load
      * Balancing will allow the connections to remain idle (no data is sent
      * over the connection) for the specified duration. <p>For more
@@ -286,7 +286,7 @@ public class LoadBalancerAttributes implements Serializable {
      *
      * @param connectionSettings The name of the load balancer attribute. <p>By default, Elastic Load
      *         Balancing maintains a 60-second idle connection timeout for both
-     *         front-end and back-end connections of your load balancer. If
+     *         front-end and back-end connections of your load balancer. If the
      *         <code>ConnectionSettings</code> attribute is set, Elastic Load
      *         Balancing will allow the connections to remain idle (no data is sent
      *         over the connection) for the specified duration. <p>For more
@@ -301,7 +301,7 @@ public class LoadBalancerAttributes implements Serializable {
     /**
      * The name of the load balancer attribute. <p>By default, Elastic Load
      * Balancing maintains a 60-second idle connection timeout for both
-     * front-end and back-end connections of your load balancer. If
+     * front-end and back-end connections of your load balancer. If the
      * <code>ConnectionSettings</code> attribute is set, Elastic Load
      * Balancing will allow the connections to remain idle (no data is sent
      * over the connection) for the specified duration. <p>For more
@@ -313,7 +313,7 @@ public class LoadBalancerAttributes implements Serializable {
      *
      * @param connectionSettings The name of the load balancer attribute. <p>By default, Elastic Load
      *         Balancing maintains a 60-second idle connection timeout for both
-     *         front-end and back-end connections of your load balancer. If
+     *         front-end and back-end connections of your load balancer. If the
      *         <code>ConnectionSettings</code> attribute is set, Elastic Load
      *         Balancing will allow the connections to remain idle (no data is sent
      *         over the connection) for the specified duration. <p>For more

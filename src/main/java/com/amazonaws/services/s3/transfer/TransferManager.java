@@ -535,7 +535,8 @@ public class TransferManager {
                 listenerChain, stateListener);
 
         UploadCallable uploadCallable = new UploadCallable(this, threadPool,
-                upload, putObjectRequest, listenerChain, multipartUploadId);
+                upload, putObjectRequest, listenerChain, multipartUploadId,
+                transferProgress);
         UploadMonitor watcher = new UploadMonitor(this, upload, threadPool,
                 uploadCallable, putObjectRequest, listenerChain);
         watcher.setTimedThreadPool(timedThreadPool);
@@ -685,30 +686,35 @@ public class TransferManager {
         final DownloadImpl download = new DownloadImpl(description,
                 transferProgress, listenerChain, null, stateListener,
                 getObjectRequest, file);
-        long contentLength = objectMetadata.getContentLength();
 
         long startingByte = 0;
-        long lastByte = contentLength;
+        long lastByte = objectMetadata.getContentLength();
 
         if (getObjectRequest.getRange() != null
                 && getObjectRequest.getRange().length == 2) {
             startingByte = getObjectRequest.getRange()[0];
             lastByte = getObjectRequest.getRange()[1];
         }
+
+        long totalBytesToDownload = lastByte - startingByte;
+        transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
+
         if (resumeExistingDownload) {
             if (file.exists()) {
                 long numberOfBytesRead = file.length();
                 startingByte = startingByte + numberOfBytesRead;
                 getObjectRequest.setRange(startingByte, lastByte);
+                transferProgress.updateProgress(Math.min(numberOfBytesRead,
+                        totalBytesToDownload));
+                totalBytesToDownload = lastByte - startingByte;
             }
         }
-        contentLength = lastByte - startingByte;
 
-        if (contentLength < 0) {
+        if (totalBytesToDownload < 0) {
             throw new IllegalArgumentException(
                     "Unable to determine the range for download operation.");
         }
-        transferProgress.setTotalBytesToTransfer(contentLength);
+
         final CountDownLatch latch = new CountDownLatch(1);
         Future<?> future = submitDownloadTask(getObjectRequest, file,
                 resumeExistingDownload, latch, download);

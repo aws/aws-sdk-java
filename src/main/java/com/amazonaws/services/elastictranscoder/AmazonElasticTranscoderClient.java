@@ -29,6 +29,7 @@ import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import static com.amazonaws.util.IOUtils.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
@@ -270,7 +271,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdatePipelineStatusRequest> request = null;
         Response<UpdatePipelineStatusResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdatePipelineStatusRequestMarshaller().marshall(updatePipelineStatusRequest);
@@ -279,13 +282,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdatePipelineStatusResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineStatusResultJsonUnmarshaller();
-            JsonResponseHandler<UpdatePipelineStatusResult> responseHandler = new JsonResponseHandler<UpdatePipelineStatusResult>(unmarshaller);
-
+            Unmarshaller<UpdatePipelineStatusResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdatePipelineStatusResultJsonUnmarshaller();
+            JsonResponseHandler<UpdatePipelineStatusResult> responseHandler =
+                new JsonResponseHandler<UpdatePipelineStatusResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -328,7 +334,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdatePipelineNotificationsRequest> request = null;
         Response<UpdatePipelineNotificationsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdatePipelineNotificationsRequestMarshaller().marshall(updatePipelineNotificationsRequest);
@@ -337,13 +345,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdatePipelineNotificationsResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineNotificationsResultJsonUnmarshaller();
-            JsonResponseHandler<UpdatePipelineNotificationsResult> responseHandler = new JsonResponseHandler<UpdatePipelineNotificationsResult>(unmarshaller);
-
+            Unmarshaller<UpdatePipelineNotificationsResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdatePipelineNotificationsResultJsonUnmarshaller();
+            JsonResponseHandler<UpdatePipelineNotificationsResult> responseHandler =
+                new JsonResponseHandler<UpdatePipelineNotificationsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -379,7 +390,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReadJobRequest> request = null;
         Response<ReadJobResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ReadJobRequestMarshaller().marshall(readJobRequest);
@@ -388,13 +401,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ReadJobResult, JsonUnmarshallerContext> unmarshaller = new ReadJobResultJsonUnmarshaller();
-            JsonResponseHandler<ReadJobResult> responseHandler = new JsonResponseHandler<ReadJobResult>(unmarshaller);
-
+            Unmarshaller<ReadJobResult, JsonUnmarshallerContext> unmarshaller =
+                new ReadJobResultJsonUnmarshaller();
+            JsonResponseHandler<ReadJobResult> responseHandler =
+                new JsonResponseHandler<ReadJobResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -433,7 +449,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListJobsByStatusRequest> request = null;
         Response<ListJobsByStatusResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListJobsByStatusRequestMarshaller().marshall(listJobsByStatusRequest);
@@ -442,13 +460,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListJobsByStatusResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByStatusResultJsonUnmarshaller();
-            JsonResponseHandler<ListJobsByStatusResult> responseHandler = new JsonResponseHandler<ListJobsByStatusResult>(unmarshaller);
-
+            Unmarshaller<ListJobsByStatusResult, JsonUnmarshallerContext> unmarshaller =
+                new ListJobsByStatusResultJsonUnmarshaller();
+            JsonResponseHandler<ListJobsByStatusResult> responseHandler =
+                new JsonResponseHandler<ListJobsByStatusResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -484,7 +505,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReadPresetRequest> request = null;
         Response<ReadPresetResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ReadPresetRequestMarshaller().marshall(readPresetRequest);
@@ -493,13 +516,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ReadPresetResult, JsonUnmarshallerContext> unmarshaller = new ReadPresetResultJsonUnmarshaller();
-            JsonResponseHandler<ReadPresetResult> responseHandler = new JsonResponseHandler<ReadPresetResult>(unmarshaller);
-
+            Unmarshaller<ReadPresetResult, JsonUnmarshallerContext> unmarshaller =
+                new ReadPresetResultJsonUnmarshaller();
+            JsonResponseHandler<ReadPresetResult> responseHandler =
+                new JsonResponseHandler<ReadPresetResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -537,7 +563,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreatePipelineRequest> request = null;
         Response<CreatePipelineResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
@@ -546,13 +574,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller = new CreatePipelineResultJsonUnmarshaller();
-            JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
-
+            Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller =
+                new CreatePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<CreatePipelineResult> responseHandler =
+                new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -595,7 +626,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CancelJobRequest> request = null;
         Response<CancelJobResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CancelJobRequestMarshaller().marshall(cancelJobRequest);
@@ -604,13 +637,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<CancelJobResult, JsonUnmarshallerContext> unmarshaller = new CancelJobResultJsonUnmarshaller();
-            JsonResponseHandler<CancelJobResult> responseHandler = new JsonResponseHandler<CancelJobResult>(unmarshaller);
-
+            Unmarshaller<CancelJobResult, JsonUnmarshallerContext> unmarshaller =
+                new CancelJobResultJsonUnmarshaller();
+            JsonResponseHandler<CancelJobResult> responseHandler =
+                new JsonResponseHandler<CancelJobResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -654,7 +690,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdatePipelineRequest> request = null;
         Response<UpdatePipelineResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdatePipelineRequestMarshaller().marshall(updatePipelineRequest);
@@ -663,13 +701,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdatePipelineResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineResultJsonUnmarshaller();
-            JsonResponseHandler<UpdatePipelineResult> responseHandler = new JsonResponseHandler<UpdatePipelineResult>(unmarshaller);
-
+            Unmarshaller<UpdatePipelineResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdatePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<UpdatePipelineResult> responseHandler =
+                new JsonResponseHandler<UpdatePipelineResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -706,7 +747,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListPresetsRequest> request = null;
         Response<ListPresetsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListPresetsRequestMarshaller().marshall(listPresetsRequest);
@@ -715,13 +758,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListPresetsResult, JsonUnmarshallerContext> unmarshaller = new ListPresetsResultJsonUnmarshaller();
-            JsonResponseHandler<ListPresetsResult> responseHandler = new JsonResponseHandler<ListPresetsResult>(unmarshaller);
-
+            Unmarshaller<ListPresetsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListPresetsResultJsonUnmarshaller();
+            JsonResponseHandler<ListPresetsResult> responseHandler =
+                new JsonResponseHandler<ListPresetsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -764,7 +810,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePipelineRequest> request = null;
         Response<DeletePipelineResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeletePipelineRequestMarshaller().marshall(deletePipelineRequest);
@@ -773,13 +821,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DeletePipelineResult, JsonUnmarshallerContext> unmarshaller = new DeletePipelineResultJsonUnmarshaller();
-            JsonResponseHandler<DeletePipelineResult> responseHandler = new JsonResponseHandler<DeletePipelineResult>(unmarshaller);
-
+            Unmarshaller<DeletePipelineResult, JsonUnmarshallerContext> unmarshaller =
+                new DeletePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<DeletePipelineResult> responseHandler =
+                new JsonResponseHandler<DeletePipelineResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -824,7 +875,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<TestRoleRequest> request = null;
         Response<TestRoleResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new TestRoleRequestMarshaller().marshall(testRoleRequest);
@@ -833,13 +886,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<TestRoleResult, JsonUnmarshallerContext> unmarshaller = new TestRoleResultJsonUnmarshaller();
-            JsonResponseHandler<TestRoleResult> responseHandler = new JsonResponseHandler<TestRoleResult>(unmarshaller);
-
+            Unmarshaller<TestRoleResult, JsonUnmarshallerContext> unmarshaller =
+                new TestRoleResultJsonUnmarshaller();
+            JsonResponseHandler<TestRoleResult> responseHandler =
+                new JsonResponseHandler<TestRoleResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -875,7 +931,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListPipelinesRequest> request = null;
         Response<ListPipelinesResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
@@ -884,13 +942,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller = new ListPipelinesResultJsonUnmarshaller();
-            JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
-
+            Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller =
+                new ListPipelinesResultJsonUnmarshaller();
+            JsonResponseHandler<ListPipelinesResult> responseHandler =
+                new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -927,7 +988,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ReadPipelineRequest> request = null;
         Response<ReadPipelineResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ReadPipelineRequestMarshaller().marshall(readPipelineRequest);
@@ -936,13 +999,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ReadPipelineResult, JsonUnmarshallerContext> unmarshaller = new ReadPipelineResultJsonUnmarshaller();
-            JsonResponseHandler<ReadPipelineResult> responseHandler = new JsonResponseHandler<ReadPipelineResult>(unmarshaller);
-
+            Unmarshaller<ReadPipelineResult, JsonUnmarshallerContext> unmarshaller =
+                new ReadPipelineResultJsonUnmarshaller();
+            JsonResponseHandler<ReadPipelineResult> responseHandler =
+                new JsonResponseHandler<ReadPipelineResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -998,7 +1064,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreatePresetRequest> request = null;
         Response<CreatePresetResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreatePresetRequestMarshaller().marshall(createPresetRequest);
@@ -1007,13 +1075,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<CreatePresetResult, JsonUnmarshallerContext> unmarshaller = new CreatePresetResultJsonUnmarshaller();
-            JsonResponseHandler<CreatePresetResult> responseHandler = new JsonResponseHandler<CreatePresetResult>(unmarshaller);
-
+            Unmarshaller<CreatePresetResult, JsonUnmarshallerContext> unmarshaller =
+                new CreatePresetResultJsonUnmarshaller();
+            JsonResponseHandler<CreatePresetResult> responseHandler =
+                new JsonResponseHandler<CreatePresetResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1054,7 +1125,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePresetRequest> request = null;
         Response<DeletePresetResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeletePresetRequestMarshaller().marshall(deletePresetRequest);
@@ -1063,13 +1136,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DeletePresetResult, JsonUnmarshallerContext> unmarshaller = new DeletePresetResultJsonUnmarshaller();
-            JsonResponseHandler<DeletePresetResult> responseHandler = new JsonResponseHandler<DeletePresetResult>(unmarshaller);
-
+            Unmarshaller<DeletePresetResult, JsonUnmarshallerContext> unmarshaller =
+                new DeletePresetResultJsonUnmarshaller();
+            JsonResponseHandler<DeletePresetResult> responseHandler =
+                new JsonResponseHandler<DeletePresetResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1114,7 +1190,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateJobRequest> request = null;
         Response<CreateJobResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateJobRequestMarshaller().marshall(createJobRequest);
@@ -1123,13 +1201,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<CreateJobResult, JsonUnmarshallerContext> unmarshaller = new CreateJobResultJsonUnmarshaller();
-            JsonResponseHandler<CreateJobResult> responseHandler = new JsonResponseHandler<CreateJobResult>(unmarshaller);
-
+            Unmarshaller<CreateJobResult, JsonUnmarshallerContext> unmarshaller =
+                new CreateJobResultJsonUnmarshaller();
+            JsonResponseHandler<CreateJobResult> responseHandler =
+                new JsonResponseHandler<CreateJobResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1172,7 +1253,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListJobsByPipelineRequest> request = null;
         Response<ListJobsByPipelineResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListJobsByPipelineRequestMarshaller().marshall(listJobsByPipelineRequest);
@@ -1181,13 +1264,16 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListJobsByPipelineResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByPipelineResultJsonUnmarshaller();
-            JsonResponseHandler<ListJobsByPipelineResult> responseHandler = new JsonResponseHandler<ListJobsByPipelineResult>(unmarshaller);
-
+            Unmarshaller<ListJobsByPipelineResult, JsonUnmarshallerContext> unmarshaller =
+                new ListJobsByPipelineResultJsonUnmarshaller();
+            JsonResponseHandler<ListJobsByPipelineResult> responseHandler =
+                new JsonResponseHandler<ListJobsByPipelineResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1245,8 +1331,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         return listPipelines(new ListPipelinesRequest());
     }
 
-  @Override
-  public void setEndpoint(String endpoint) {
+    @Override
+    public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

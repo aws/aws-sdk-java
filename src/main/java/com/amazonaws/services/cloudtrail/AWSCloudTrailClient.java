@@ -29,6 +29,7 @@ import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import static com.amazonaws.util.IOUtils.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
@@ -287,7 +288,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetTrailStatusRequest> request = null;
         Response<GetTrailStatusResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetTrailStatusRequestMarshaller().marshall(getTrailStatusRequest);
@@ -296,13 +299,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<GetTrailStatusResult, JsonUnmarshallerContext> unmarshaller = new GetTrailStatusResultJsonUnmarshaller();
-            JsonResponseHandler<GetTrailStatusResult> responseHandler = new JsonResponseHandler<GetTrailStatusResult>(unmarshaller);
-
+            Unmarshaller<GetTrailStatusResult, JsonUnmarshallerContext> unmarshaller =
+                new GetTrailStatusResultJsonUnmarshaller();
+            JsonResponseHandler<GetTrailStatusResult> responseHandler =
+                new JsonResponseHandler<GetTrailStatusResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -335,7 +341,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTrailRequest> request = null;
         Response<DeleteTrailResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DeleteTrailRequestMarshaller().marshall(deleteTrailRequest);
@@ -344,13 +352,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DeleteTrailResult, JsonUnmarshallerContext> unmarshaller = new DeleteTrailResultJsonUnmarshaller();
-            JsonResponseHandler<DeleteTrailResult> responseHandler = new JsonResponseHandler<DeleteTrailResult>(unmarshaller);
-
+            Unmarshaller<DeleteTrailResult, JsonUnmarshallerContext> unmarshaller =
+                new DeleteTrailResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteTrailResult> responseHandler =
+                new JsonResponseHandler<DeleteTrailResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -410,7 +421,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateTrailRequest> request = null;
         Response<CreateTrailResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CreateTrailRequestMarshaller().marshall(createTrailRequest);
@@ -419,13 +432,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<CreateTrailResult, JsonUnmarshallerContext> unmarshaller = new CreateTrailResultJsonUnmarshaller();
-            JsonResponseHandler<CreateTrailResult> responseHandler = new JsonResponseHandler<CreateTrailResult>(unmarshaller);
-
+            Unmarshaller<CreateTrailResult, JsonUnmarshallerContext> unmarshaller =
+                new CreateTrailResultJsonUnmarshaller();
+            JsonResponseHandler<CreateTrailResult> responseHandler =
+                new JsonResponseHandler<CreateTrailResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -473,7 +489,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateTrailRequest> request = null;
         Response<UpdateTrailResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateTrailRequestMarshaller().marshall(updateTrailRequest);
@@ -482,13 +500,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdateTrailResult, JsonUnmarshallerContext> unmarshaller = new UpdateTrailResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateTrailResult> responseHandler = new JsonResponseHandler<UpdateTrailResult>(unmarshaller);
-
+            Unmarshaller<UpdateTrailResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateTrailResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateTrailResult> responseHandler =
+                new JsonResponseHandler<UpdateTrailResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -520,7 +541,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeTrailsRequest> request = null;
         Response<DescribeTrailsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeTrailsRequestMarshaller().marshall(describeTrailsRequest);
@@ -529,13 +552,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeTrailsResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrailsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeTrailsResult> responseHandler = new JsonResponseHandler<DescribeTrailsResult>(unmarshaller);
-
+            Unmarshaller<DescribeTrailsResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeTrailsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeTrailsResult> responseHandler =
+                new JsonResponseHandler<DescribeTrailsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -571,7 +597,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StopLoggingRequest> request = null;
         Response<StopLoggingResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new StopLoggingRequestMarshaller().marshall(stopLoggingRequest);
@@ -580,13 +608,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<StopLoggingResult, JsonUnmarshallerContext> unmarshaller = new StopLoggingResultJsonUnmarshaller();
-            JsonResponseHandler<StopLoggingResult> responseHandler = new JsonResponseHandler<StopLoggingResult>(unmarshaller);
-
+            Unmarshaller<StopLoggingResult, JsonUnmarshallerContext> unmarshaller =
+                new StopLoggingResultJsonUnmarshaller();
+            JsonResponseHandler<StopLoggingResult> responseHandler =
+                new JsonResponseHandler<StopLoggingResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -620,7 +651,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<StartLoggingRequest> request = null;
         Response<StartLoggingResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new StartLoggingRequestMarshaller().marshall(startLoggingRequest);
@@ -629,13 +662,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<StartLoggingResult, JsonUnmarshallerContext> unmarshaller = new StartLoggingResultJsonUnmarshaller();
-            JsonResponseHandler<StartLoggingResult> responseHandler = new JsonResponseHandler<StartLoggingResult>(unmarshaller);
-
+            Unmarshaller<StartLoggingResult, JsonUnmarshallerContext> unmarshaller =
+                new StartLoggingResultJsonUnmarshaller();
+            JsonResponseHandler<StartLoggingResult> responseHandler =
+                new JsonResponseHandler<StartLoggingResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -662,8 +698,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         return describeTrails(new DescribeTrailsRequest());
     }
 
-  @Override
-  public void setEndpoint(String endpoint) {
+    @Override
+    public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

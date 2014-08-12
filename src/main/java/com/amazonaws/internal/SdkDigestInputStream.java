@@ -19,12 +19,14 @@ import java.io.InputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 
+import com.amazonaws.util.IOUtils;
+
 /**
  * Base class for AWS Java SDK specific {@link DigestInputStream}.
  */
-public class SdkDigestInputStream extends DigestInputStream implements MetricAware {
+public class SdkDigestInputStream extends DigestInputStream implements
+        MetricAware, Releasable {
     private static final int SKIP_BUF_SIZE = 2*1024;
-
     public SdkDigestInputStream(InputStream stream, MessageDigest digest) {
         super(stream, digest);
     }
@@ -77,5 +79,17 @@ public class SdkDigestInputStream extends DigestInputStream implements MetricAwa
         }
         assert (m == 0);
         return n;
+    }
+
+    @Override
+    public final void release() {
+        // Don't call IOUtils.release(in, null) or else could lead to infinite loop
+        IOUtils.closeQuietly(this, null);
+        if (in instanceof Releasable) {
+            // This allows any underlying stream that has the close operation
+            // disabled to be truly released
+            Releasable r = (Releasable)in;
+            r.release();
+        }
     }
 }

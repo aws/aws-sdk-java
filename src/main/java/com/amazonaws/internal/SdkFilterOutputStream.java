@@ -17,10 +17,13 @@ package com.amazonaws.internal;
 import java.io.FilterOutputStream;
 import java.io.OutputStream;
 
+import com.amazonaws.util.IOUtils;
+
 /**
  * Base class for AWS Java SDK specific {@link FilterOutputStream}.
  */
-public class SdkFilterOutputStream extends FilterOutputStream implements MetricAware {
+public class SdkFilterOutputStream extends FilterOutputStream implements
+        MetricAware, Releasable {
     public SdkFilterOutputStream(OutputStream out) {
         super(out);
     }
@@ -32,5 +35,17 @@ public class SdkFilterOutputStream extends FilterOutputStream implements MetricA
             return metricAware.isMetricActivated();
         }
         return false;
+    }
+
+    @Override
+    public final void release() {
+        // Don't call IOUtils.release(in, null) or else could lead to infinite loop
+        IOUtils.closeQuietly(this, null);
+        if (out instanceof Releasable) {
+            // This allows any underlying stream that has the close operation
+            // disabled to be truly released
+            Releasable r = (Releasable)out;
+            r.release();
+        }
     }
 }

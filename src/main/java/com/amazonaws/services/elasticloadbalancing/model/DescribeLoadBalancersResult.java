@@ -29,7 +29,8 @@ public class DescribeLoadBalancersResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancerDescription> loadBalancerDescriptions;
 
     /**
-     * An optional parameter reserved for future use.
+     * Specifies the value of next marker if the request returned more than
+     * one page of results.
      */
     private String nextMarker;
 
@@ -102,29 +103,35 @@ public class DescribeLoadBalancersResult implements Serializable {
     }
 
     /**
-     * An optional parameter reserved for future use.
+     * Specifies the value of next marker if the request returned more than
+     * one page of results.
      *
-     * @return An optional parameter reserved for future use.
+     * @return Specifies the value of next marker if the request returned more than
+     *         one page of results.
      */
     public String getNextMarker() {
         return nextMarker;
     }
     
     /**
-     * An optional parameter reserved for future use.
+     * Specifies the value of next marker if the request returned more than
+     * one page of results.
      *
-     * @param nextMarker An optional parameter reserved for future use.
+     * @param nextMarker Specifies the value of next marker if the request returned more than
+     *         one page of results.
      */
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
     
     /**
-     * An optional parameter reserved for future use.
+     * Specifies the value of next marker if the request returned more than
+     * one page of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextMarker An optional parameter reserved for future use.
+     * @param nextMarker Specifies the value of next marker if the request returned more than
+     *         one page of results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

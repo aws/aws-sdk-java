@@ -26,12 +26,18 @@ import java.io.InputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.SdkInputStream;
 
 /**
- * A repeatable input stream for files. This input stream can be repeated an
- * unlimited number of times, without any limitation on when a repeat can occur.
+ * @deprecated by {@link ResettableInputStream} and this class will be removed
+ *             in future releases.
+ *             <p>
+ *             A repeatable input stream for files. This input stream can be
+ *             repeated an unlimited number of times, without any limitation on
+ *             when a repeat can occur.
  */
+@Deprecated
 public class RepeatableFileInputStream extends SdkInputStream {
     private static final Log log = LogFactory.getLog(RepeatableFileInputStream.class);
 

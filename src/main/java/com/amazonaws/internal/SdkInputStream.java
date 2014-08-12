@@ -22,11 +22,13 @@ import java.io.InputStream;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AbortedException;
+import com.amazonaws.util.IOUtils;
 
 /**
  * Base class for AWS Java SDK specific {@link InputStream}.
  */
-public abstract class SdkInputStream extends InputStream implements MetricAware {
+public abstract class SdkInputStream extends InputStream implements
+        MetricAware, Releasable {
     /**
      * Returns the underlying input stream, if any, from the subclass; or null
      * if there is no underlying input stream.
@@ -65,5 +67,24 @@ public abstract class SdkInputStream extends InputStream implements MetricAware 
      */
     protected void abort() throws IOException {
         // no-op by default, but subclass such as S3ObjectInputStream may override
+    }
+
+    /**
+     * WARNING: Subclass that overrides this method must NOT call
+     * super.release() or else it would lead to infinite loop.
+     * <p>
+     * {@inheritDoc}
+     */
+    @Override
+    public void release() {
+        // Don't call IOUtils.release(in, null) or else could lead to infinite loop
+        IOUtils.closeQuietly(this, null);
+        InputStream in = getWrappedInputStream();
+        if (in instanceof Releasable) {
+            // This allows any underlying stream that has the close operation
+            // disabled to be truly released
+            Releasable r = (Releasable)in;
+            r.release();
+        }
     }
 }

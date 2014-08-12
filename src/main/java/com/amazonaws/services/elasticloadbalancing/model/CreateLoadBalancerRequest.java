@@ -33,9 +33,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * <ul>
  * <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia
- * Region) </li>
+ * region) </li>
  * <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California
- * Region) </li>
+ * region) </li>
  * 
  * </ul>
  * <p>
@@ -76,7 +76,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
     /**
      * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers.
+     * within your set of load balancers, must have a maximum of 32
+     * characters, and must only contain alphanumeric characters or hyphens.
      */
     private String loadBalancerName;
 
@@ -110,8 +111,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * The type of a load balancer. <p>By default, Elastic Load Balancing
      * creates an Internet-facing load balancer with a publicly resolvable
-     * DNS name, which resolves to public IP addresses. For more
-     * informationabout Internet-facing and Internal load balancers, see <a
+     * DNS name, which resolves to public IP addresses. For more information
+     * about Internet-facing and Internal load balancers, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
      * and Internal Load Balancers</a>. <p>Specify the value
      * <code>internal</code> for this option to create an internal load
@@ -120,6 +121,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * EC2-VPC. </note>
      */
     private String scheme;
+
+    /**
+     * A list of tags to assign to the load balancer. <p>For more information
+     * about setting tags for your load balancer, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Default constructor for a new CreateLoadBalancerRequest object.  Callers should use the
@@ -133,7 +144,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name associated with the load balancer.
-     * The name must be unique within your set of load balancers.
+     * The name must be unique within your set of load balancers, must have a
+     * maximum of 32 characters, and must only contain alphanumeric
+     * characters or hyphens.
      */
     public CreateLoadBalancerRequest(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -145,7 +158,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name associated with the load balancer.
-     * The name must be unique within your set of load balancers.
+     * The name must be unique within your set of load balancers, must have a
+     * maximum of 32 characters, and must only contain alphanumeric
+     * characters or hyphens.
      * @param listeners A list of the following tuples: Protocol,
      * LoadBalancerPort, InstanceProtocol, InstancePort, and
      * SSLCertificateId.
@@ -164,10 +179,12 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
     /**
      * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers.
+     * within your set of load balancers, must have a maximum of 32
+     * characters, and must only contain alphanumeric characters or hyphens.
      *
      * @return The name associated with the load balancer. The name must be unique
-     *         within your set of load balancers.
+     *         within your set of load balancers, must have a maximum of 32
+     *         characters, and must only contain alphanumeric characters or hyphens.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
@@ -175,10 +192,12 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers.
+     * within your set of load balancers, must have a maximum of 32
+     * characters, and must only contain alphanumeric characters or hyphens.
      *
      * @param loadBalancerName The name associated with the load balancer. The name must be unique
-     *         within your set of load balancers.
+     *         within your set of load balancers, must have a maximum of 32
+     *         characters, and must only contain alphanumeric characters or hyphens.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -186,12 +205,14 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers.
+     * within your set of load balancers, must have a maximum of 32
+     * characters, and must only contain alphanumeric characters or hyphens.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName The name associated with the load balancer. The name must be unique
-     *         within your set of load balancers.
+     *         within your set of load balancers, must have a maximum of 32
+     *         characters, and must only contain alphanumeric characters or hyphens.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -532,8 +553,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * The type of a load balancer. <p>By default, Elastic Load Balancing
      * creates an Internet-facing load balancer with a publicly resolvable
-     * DNS name, which resolves to public IP addresses. For more
-     * informationabout Internet-facing and Internal load balancers, see <a
+     * DNS name, which resolves to public IP addresses. For more information
+     * about Internet-facing and Internal load balancers, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
      * and Internal Load Balancers</a>. <p>Specify the value
      * <code>internal</code> for this option to create an internal load
@@ -543,8 +564,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *
      * @return The type of a load balancer. <p>By default, Elastic Load Balancing
      *         creates an Internet-facing load balancer with a publicly resolvable
-     *         DNS name, which resolves to public IP addresses. For more
-     *         informationabout Internet-facing and Internal load balancers, see <a
+     *         DNS name, which resolves to public IP addresses. For more information
+     *         about Internet-facing and Internal load balancers, see <a
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
      *         and Internal Load Balancers</a>. <p>Specify the value
      *         <code>internal</code> for this option to create an internal load
@@ -559,8 +580,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * The type of a load balancer. <p>By default, Elastic Load Balancing
      * creates an Internet-facing load balancer with a publicly resolvable
-     * DNS name, which resolves to public IP addresses. For more
-     * informationabout Internet-facing and Internal load balancers, see <a
+     * DNS name, which resolves to public IP addresses. For more information
+     * about Internet-facing and Internal load balancers, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
      * and Internal Load Balancers</a>. <p>Specify the value
      * <code>internal</code> for this option to create an internal load
@@ -570,8 +591,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *
      * @param scheme The type of a load balancer. <p>By default, Elastic Load Balancing
      *         creates an Internet-facing load balancer with a publicly resolvable
-     *         DNS name, which resolves to public IP addresses. For more
-     *         informationabout Internet-facing and Internal load balancers, see <a
+     *         DNS name, which resolves to public IP addresses. For more information
+     *         about Internet-facing and Internal load balancers, see <a
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
      *         and Internal Load Balancers</a>. <p>Specify the value
      *         <code>internal</code> for this option to create an internal load
@@ -586,8 +607,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * The type of a load balancer. <p>By default, Elastic Load Balancing
      * creates an Internet-facing load balancer with a publicly resolvable
-     * DNS name, which resolves to public IP addresses. For more
-     * informationabout Internet-facing and Internal load balancers, see <a
+     * DNS name, which resolves to public IP addresses. For more information
+     * about Internet-facing and Internal load balancers, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
      * and Internal Load Balancers</a>. <p>Specify the value
      * <code>internal</code> for this option to create an internal load
@@ -599,8 +620,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *
      * @param scheme The type of a load balancer. <p>By default, Elastic Load Balancing
      *         creates an Internet-facing load balancer with a publicly resolvable
-     *         DNS name, which resolves to public IP addresses. For more
-     *         informationabout Internet-facing and Internal load balancers, see <a
+     *         DNS name, which resolves to public IP addresses. For more information
+     *         about Internet-facing and Internal load balancers, see <a
      *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
      *         and Internal Load Balancers</a>. <p>Specify the value
      *         <code>internal</code> for this option to create an internal load
@@ -613,6 +634,102 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      */
     public CreateLoadBalancerRequest withScheme(String scheme) {
         this.scheme = scheme;
+        return this;
+    }
+
+    /**
+     * A list of tags to assign to the load balancer. <p>For more information
+     * about setting tags for your load balancer, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @return A list of tags to assign to the load balancer. <p>For more information
+     *         about setting tags for your load balancer, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags to assign to the load balancer. <p>For more information
+     * about setting tags for your load balancer, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param tags A list of tags to assign to the load balancer. <p>For more information
+     *         about setting tags for your load balancer, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags to assign to the load balancer. <p>For more information
+     * about setting tags for your load balancer, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param tags A list of tags to assign to the load balancer. <p>For more information
+     *         about setting tags for your load balancer, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateLoadBalancerRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags to assign to the load balancer. <p>For more information
+     * about setting tags for your load balancer, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param tags A list of tags to assign to the load balancer. <p>For more information
+     *         about setting tags for your load balancer, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateLoadBalancerRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
         return this;
     }
 
@@ -633,7 +750,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
         if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
         if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ",");
         if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
-        if (getScheme() != null) sb.append("Scheme: " + getScheme() );
+        if (getScheme() != null) sb.append("Scheme: " + getScheme() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }
@@ -649,6 +767,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -672,6 +791,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
         if (other.getScheme() == null ^ this.getScheme() == null) return false;
         if (other.getScheme() != null && other.getScheme().equals(this.getScheme()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     
