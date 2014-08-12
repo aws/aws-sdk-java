@@ -16,13 +16,11 @@ package com.amazonaws.transform;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
-import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.util.Date;
-import java.util.Locale;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.Base64;
+import com.amazonaws.util.DateUtils;
 
 public class SimpleTypeJsonUnmarshallers {
     /**
@@ -166,17 +164,10 @@ public class SimpleTypeJsonUnmarshallers {
      * Unmarshaller for Date values - JSON dates come in as epoch seconds.
      */
     public static class DateJsonUnmarshaller implements Unmarshaller<Date, JsonUnmarshallerContext> {
-        public Date unmarshall(JsonUnmarshallerContext unmarshallerContext) throws Exception {
-            String dateString = unmarshallerContext.readText();
-            if (dateString == null) return null;
-
-            try {
-                Number number = DecimalFormat.getInstance(new Locale("en")).parse(dateString);
-                return new Date(number.longValue() * 1000);
-            } catch (ParseException e) {
-                String errorMessage = "Unable to parse date '" + dateString + "':  " + e.getMessage();
-                throw new AmazonClientException(errorMessage, e);
-            }
+        public Date unmarshall(JsonUnmarshallerContext unmarshallerContext)
+                throws Exception {
+            return DateUtils.parseServiceSpecificDate(unmarshallerContext
+                    .readText());
         }
 
         private static final DateJsonUnmarshaller instance = new DateJsonUnmarshaller();

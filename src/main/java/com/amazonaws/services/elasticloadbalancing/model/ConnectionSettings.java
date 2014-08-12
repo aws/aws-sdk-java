@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class ConnectionSettings implements Serializable {
 
     /**
-     * Specifies the maximum time the connection is allowed to be idle (no
-     * data has been sent over the connection) before it is closed by the
+     * Specifies the time (in seconds) the connection is allowed to be idle
+     * (no data has been sent over the connection) before it is closed by the
      * load balancer.
      * <p>
      * <b>Constraints:</b><br/>
@@ -34,15 +34,15 @@ public class ConnectionSettings implements Serializable {
     private Integer idleTimeout;
 
     /**
-     * Specifies the maximum time the connection is allowed to be idle (no
-     * data has been sent over the connection) before it is closed by the
+     * Specifies the time (in seconds) the connection is allowed to be idle
+     * (no data has been sent over the connection) before it is closed by the
      * load balancer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 3600<br/>
      *
-     * @return Specifies the maximum time the connection is allowed to be idle (no
-     *         data has been sent over the connection) before it is closed by the
+     * @return Specifies the time (in seconds) the connection is allowed to be idle
+     *         (no data has been sent over the connection) before it is closed by the
      *         load balancer.
      */
     public Integer getIdleTimeout() {
@@ -50,15 +50,15 @@ public class ConnectionSettings implements Serializable {
     }
     
     /**
-     * Specifies the maximum time the connection is allowed to be idle (no
-     * data has been sent over the connection) before it is closed by the
+     * Specifies the time (in seconds) the connection is allowed to be idle
+     * (no data has been sent over the connection) before it is closed by the
      * load balancer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 3600<br/>
      *
-     * @param idleTimeout Specifies the maximum time the connection is allowed to be idle (no
-     *         data has been sent over the connection) before it is closed by the
+     * @param idleTimeout Specifies the time (in seconds) the connection is allowed to be idle
+     *         (no data has been sent over the connection) before it is closed by the
      *         load balancer.
      */
     public void setIdleTimeout(Integer idleTimeout) {
@@ -66,8 +66,8 @@ public class ConnectionSettings implements Serializable {
     }
     
     /**
-     * Specifies the maximum time the connection is allowed to be idle (no
-     * data has been sent over the connection) before it is closed by the
+     * Specifies the time (in seconds) the connection is allowed to be idle
+     * (no data has been sent over the connection) before it is closed by the
      * load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -75,8 +75,8 @@ public class ConnectionSettings implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 3600<br/>
      *
-     * @param idleTimeout Specifies the maximum time the connection is allowed to be idle (no
-     *         data has been sent over the connection) before it is closed by the
+     * @param idleTimeout Specifies the time (in seconds) the connection is allowed to be idle
+     *         (no data has been sent over the connection) before it is closed by the
      *         load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained

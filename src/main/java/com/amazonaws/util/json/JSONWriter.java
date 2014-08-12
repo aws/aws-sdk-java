@@ -29,6 +29,7 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 
 import com.amazonaws.util.BinaryUtils;
+import com.amazonaws.util.DateUtils;
 
 /**
  * JSONWriter provides a quick and convenient way of producing JSON text.
@@ -319,7 +320,7 @@ public class JSONWriter {
      * @throws JSONException
      */
     public JSONWriter value(Date date) throws JSONException {
-        return this.value(Long.valueOf(date.getTime() / 1000));
+        return this.value(DateUtils.formatServiceSpecificDate(date));
     }
 
     /**

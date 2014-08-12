@@ -23,6 +23,7 @@ import java.io.InputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.SdkInputStream;
 
 /**
@@ -30,7 +31,7 @@ import com.amazonaws.internal.SdkInputStream;
  * relies on buffered data to repeat, and can therefore only be repeated when
  * less data has been read than this buffer can hold.
  * <p>
- * <b>Note:</b> Always use a {@link RepeatableFileInputStream} instead of this
+ * <b>Note:</b> Always use a {@link ResettableInputStream} instead of this
  * class if you are sourcing data from a file, as the file-based repeatable
  * input stream can be repeated without any limitations.
  */

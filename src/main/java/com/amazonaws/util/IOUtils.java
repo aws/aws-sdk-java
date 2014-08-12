@@ -20,6 +20,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.amazonaws.internal.Releasable;
+import com.amazonaws.internal.ResettableInputStream;
 
 
 /**
@@ -28,6 +32,7 @@ import org.apache.commons.logging.Log;
 public enum IOUtils {
     ;
     private static final int BUFFER_SIZE = 1024 * 4;
+    private static final Log defaultLog = LogFactory.getLog(IOUtils.class);
 
     /**
      * Reads and returns the rest of the given input stream as a byte array,
@@ -65,9 +70,34 @@ public enum IOUtils {
             try {
                 is.close();
             } catch (IOException ex) {
-                if (log != null)
-                    log.debug("Ignore failure in closing the Closeable", ex);
+                Log logger = log == null ? defaultLog : log;
+                if (logger.isDebugEnabled())
+                    logger.debug("Ignore failure in closing the Closeable", ex);
             }
+        }
+    }
+
+    /**
+     * Releases the given {@link Closeable} especially if it was an instance of
+     * {@link Releasable}.
+     * <p>
+     * For example, the creation of a {@link ResettableInputStream} would entail
+     * physically opening a file. If the opened file is meant to be closed only
+     * (in a finally block) by the very same code block that created it, then it
+     * is necessary that the release method must not be called while the
+     * execution is made in other stack frames.
+     * 
+     * In such case, as other stack frames may inadvertently or indirectly call
+     * the close method of the stream, the creator of the stream would need to
+     * explicitly disable the accidental closing via
+     * {@link ResettableInputStream#disableClose()}, so that the release method
+     * becomes the only way to truly close the opened file.
+     */
+    public static void release(Closeable is, Log log) {
+        closeQuietly(is, log);
+        if (is instanceof Releasable) {
+            Releasable r = (Releasable) is;
+            r.release();
         }
     }
 }

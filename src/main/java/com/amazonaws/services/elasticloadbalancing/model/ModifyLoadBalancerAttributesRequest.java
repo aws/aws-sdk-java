@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>ConnectionDraining</code> , and
  * <code>CrossZoneLoadBalancing</code> by either enabling or disabling
  * them. Or, you can modify the load balancer attribute
- * <code>ConnectionSettings</code> , by specifying an idle connection
+ * <code>ConnectionSettings</code> by specifying an idle connection
  * timeout value for your load balancer.
  * </p>
  * <p>
@@ -38,17 +38,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * <ul>
  * <li>
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll#request-routing"> Cross-Zone Load Balancing </a>
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing"> Cross-Zone Load Balancing </a>
  * </li>
  * <li>
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll##conn-drain"> Connection Draining </a>
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"> Connection Draining </a>
  * </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"> Access Logs </a>
- * .</li>
+ * </li>
  * <li>
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout"> Connection Settings </a>
- * .</li>
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout"> Idle Connection Timeout </a>
+ * </li>
  * 
  * </ul>
  *

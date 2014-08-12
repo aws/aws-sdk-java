@@ -93,6 +93,8 @@ public class InstanceAttribute implements Serializable {
      */
     private Boolean sourceDestCheck;
 
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groups;
+
     /**
      * The ID of the instance.
      *
@@ -656,6 +658,74 @@ public class InstanceAttribute implements Serializable {
     }
 
     /**
+     * Returns the value of the Groups property for this object.
+     *
+     * @return The value of the Groups property for this object.
+     */
+    public java.util.List<GroupIdentifier> getGroups() {
+        if (groups == null) {
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
+              groups.setAutoConstruct(true);
+        }
+        return groups;
+    }
+    
+    /**
+     * Sets the value of the Groups property for this object.
+     *
+     * @param groups The new value for the Groups property for this object.
+     */
+    public void setGroups(java.util.Collection<GroupIdentifier> groups) {
+        if (groups == null) {
+            this.groups = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
+        groupsCopy.addAll(groups);
+        this.groups = groupsCopy;
+    }
+    
+    /**
+     * Sets the value of the Groups property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceAttribute withGroups(GroupIdentifier... groups) {
+        if (getGroups() == null) setGroups(new java.util.ArrayList<GroupIdentifier>(groups.length));
+        for (GroupIdentifier value : groups) {
+            getGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the Groups property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceAttribute withGroups(java.util.Collection<GroupIdentifier> groups) {
+        if (groups == null) {
+            this.groups = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
+            groupsCopy.addAll(groups);
+            this.groups = groupsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -679,7 +749,8 @@ public class InstanceAttribute implements Serializable {
         if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
         if (getSriovNetSupport() != null) sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
-        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() );
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() );
         sb.append("}");
         return sb.toString();
     }
@@ -702,6 +773,7 @@ public class InstanceAttribute implements Serializable {
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode()); 
         hashCode = prime * hashCode + ((isSourceDestCheck() == null) ? 0 : isSourceDestCheck().hashCode()); 
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode()); 
         return hashCode;
     }
     
@@ -739,6 +811,8 @@ public class InstanceAttribute implements Serializable {
         if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false) return false; 
         if (other.isSourceDestCheck() == null ^ this.isSourceDestCheck() == null) return false;
         if (other.isSourceDestCheck() != null && other.isSourceDestCheck().equals(this.isSourceDestCheck()) == false) return false; 
+        if (other.getGroups() == null ^ this.getGroups() == null) return false;
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false) return false; 
         return true;
     }
     

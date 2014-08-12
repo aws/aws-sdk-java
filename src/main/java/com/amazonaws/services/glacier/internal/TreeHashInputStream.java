@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.glacier.internal;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.DigestInputStream;
@@ -24,16 +23,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.amazonaws.internal.SdkDigestInputStream;
+import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.glacier.TreeHashGenerator;
 
 /**
  * Filter input stream that enables tree hash computation on the bytes that
  * it streams.
  */
-public class TreeHashInputStream extends FilterInputStream {
+public class TreeHashInputStream extends SdkFilterInputStream {
 
     public TreeHashInputStream(InputStream in) throws NoSuchAlgorithmException {
-        super(new DigestInputStream(in, MessageDigest.getInstance("SHA-256")));
+        super(new SdkDigestInputStream(in, MessageDigest.getInstance("SHA-256")));
         this.digestInputStream = (DigestInputStream) super.in;
     }
 

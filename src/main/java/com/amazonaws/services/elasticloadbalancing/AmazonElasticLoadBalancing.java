@@ -21,39 +21,32 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
 /**
  * Interface for accessing AmazonElasticLoadBalancing.
  * Elastic Load Balancing <p>
- * Elastic Load Balancing is a cost-effective and easy to use web
- * service to help you improve the availability and scalability of your
- * application running on Amazon Elastic Cloud Compute (Amazon EC2). It
- * makes it easy for you to distribute application loads between two or
- * more EC2 instances. Elastic Load Balancing supports the growth in
- * traffic of your application by enabling availability through
- * redundancy.
+ * Elastic Load Balancing is a way to automatically distribute incoming
+ * web traffic across applications that run on multiple Amazon Elastic
+ * Compute Cloud (Amazon EC2) instances.
  * </p>
  * <p>
- * This guide provides detailed information about Elastic Load Balancing
- * actions, data types, and parameters that can be used for sending a
- * query request. Query requests are HTTP or HTTPS requests that use the
- * HTTP verb GET or POST and a query parameter named Action or Operation.
- * Action is used throughout this documentation, although Operation is
- * supported for backward compatibility with other AWS Query APIs.
+ * You can create, access, and manage Elastic Load Balancing using the
+ * AWS Management Console or the Elastic Load Balancing API. For more
+ * information about Elastic Load Balancing interfaces, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html"> Accessing Elastic Load Balancing </a>
+ * .
  * </p>
  * <p>
- * For detailed information on constructing a query request using the
- * actions, data types, and parameters mentioned in this guide, go to
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html"> Using the Query API </a>
- * in the <i>Elastic Load Balancing Developer Guide</i> .
+ * This reference guide contains documentation for the Query API and the
+ * AWS command line interface commands, to manage Elastic Load Balancing.
  * </p>
  * <p>
  * For detailed information about Elastic Load Balancing features and
- * their associated actions, go to
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Using Elastic Load Balancing </a>
+ * their associated actions or commands, go to
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Managing Load Balancers </a>
  * in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  * <p>
  * This reference guide is based on the current WSDL, which is available
  * at:
  * <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"> </a>
- * 
+ * .
  * </p>
  * <p>
  * <b>Endpoints</b>
@@ -226,6 +219,44 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
+     * Adds one or more tags for the specified load balancer. Each load
+     * balancer can have a maximum of 10 tags. Each tag consists of a key and
+     * an optional value.
+     * </p>
+     * <p>
+     * Tag keys must be unique for each load balancer. If a tag with the
+     * same key is already associated with the load balancer, this action
+     * will update the value of the key.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"> Tagging </a>
+     * in the <i>Elastic Load Balancing Developer Guide</i> .
+     * </p>
+     *
+     * @param addTagsRequest Container for the necessary parameters to
+     *           execute the AddTags service method on AmazonElasticLoadBalancing.
+     * 
+     * @return The response from the AddTags service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     * 
+     * @throws TooManyTagsException
+     * @throws DuplicateTagKeysException
+     * @throws LoadBalancerNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddTagsResult addTags(AddTagsRequest addTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Modifies the attributes of a specified load balancer.
      * </p>
      * <p>
@@ -233,7 +264,7 @@ public interface AmazonElasticLoadBalancing {
      * <code>AccessLogs</code> , <code>ConnectionDraining</code> , and
      * <code>CrossZoneLoadBalancing</code> by either enabling or disabling
      * them. Or, you can modify the load balancer attribute
-     * <code>ConnectionSettings</code> , by specifying an idle connection
+     * <code>ConnectionSettings</code> by specifying an idle connection
      * timeout value for your load balancer.
      * </p>
      * <p>
@@ -242,17 +273,17 @@ public interface AmazonElasticLoadBalancing {
      * 
      * <ul>
      * <li>
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll#request-routing"> Cross-Zone Load Balancing </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing"> Cross-Zone Load Balancing </a>
      * </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll##conn-drain"> Connection Draining </a>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"> Connection Draining </a>
      * </li>
      * <li>
      * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"> Access Logs </a>
-     * .</li>
+     * </li>
      * <li>
-     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout"> Connection Settings </a>
-     * .</li>
+     * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout"> Idle Connection Timeout </a>
+     * </li>
      * 
      * </ul>
      *
@@ -588,6 +619,30 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
+     * Describes the tags associated with one or more load balancers.
+     * </p>
+     *
+     * @param describeTagsRequest Container for the necessary parameters to
+     *           execute the DescribeTags service method on AmazonElasticLoadBalancing.
+     * 
+     * @return The response from the DescribeTags service method, as returned
+     *         by AmazonElasticLoadBalancing.
+     * 
+     * @throws LoadBalancerNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates a new policy that contains the necessary attributes depending
      * on the policy type. Policies are settings that are saved for your load
      * balancer and that can be applied to the front-end listener, or the
@@ -616,6 +671,30 @@ public interface AmazonElasticLoadBalancing {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateLoadBalancerPolicyResult createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest createLoadBalancerPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified load balancer.
+     * </p>
+     *
+     * @param removeTagsRequest Container for the necessary parameters to
+     *           execute the RemoveTags service method on AmazonElasticLoadBalancing.
+     * 
+     * @return The response from the RemoveTags service method, as returned
+     *         by AmazonElasticLoadBalancing.
+     * 
+     * @throws LoadBalancerNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -710,9 +789,9 @@ public interface AmazonElasticLoadBalancing {
      * 
      * <ul>
      * <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia
-     * Region) </li>
+     * region) </li>
      * <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California
-     * Region) </li>
+     * region) </li>
      * 
      * </ul>
      * <p>
@@ -755,7 +834,9 @@ public interface AmazonElasticLoadBalancing {
      *         returned by AmazonElasticLoadBalancing.
      * 
      * @throws InvalidSubnetException
+     * @throws TooManyTagsException
      * @throws InvalidConfigurationRequestException
+     * @throws DuplicateTagKeysException
      * @throws InvalidSecurityGroupException
      * @throws CertificateNotFoundException
      * @throws InvalidSchemeException

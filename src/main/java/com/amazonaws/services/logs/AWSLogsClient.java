@@ -29,6 +29,7 @@ import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import static com.amazonaws.util.IOUtils.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
@@ -384,7 +385,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeMetricFiltersRequest> request = null;
         Response<DescribeMetricFiltersResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeMetricFiltersRequestMarshaller().marshall(describeMetricFiltersRequest);
@@ -393,13 +396,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeMetricFiltersResult, JsonUnmarshallerContext> unmarshaller = new DescribeMetricFiltersResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeMetricFiltersResult> responseHandler = new JsonResponseHandler<DescribeMetricFiltersResult>(unmarshaller);
-
+            Unmarshaller<DescribeMetricFiltersResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeMetricFiltersResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeMetricFiltersResult> responseHandler =
+                new JsonResponseHandler<DescribeMetricFiltersResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -443,7 +449,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeLogStreamsRequest> request = null;
         Response<DescribeLogStreamsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLogStreamsRequestMarshaller().marshall(describeLogStreamsRequest);
@@ -452,13 +460,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeLogStreamsResult, JsonUnmarshallerContext> unmarshaller = new DescribeLogStreamsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeLogStreamsResult> responseHandler = new JsonResponseHandler<DescribeLogStreamsResult>(unmarshaller);
-
+            Unmarshaller<DescribeLogStreamsResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeLogStreamsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeLogStreamsResult> responseHandler =
+                new JsonResponseHandler<DescribeLogStreamsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -664,7 +675,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<TestMetricFilterRequest> request = null;
         Response<TestMetricFilterResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new TestMetricFilterRequestMarshaller().marshall(testMetricFilterRequest);
@@ -673,13 +686,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<TestMetricFilterResult, JsonUnmarshallerContext> unmarshaller = new TestMetricFilterResultJsonUnmarshaller();
-            JsonResponseHandler<TestMetricFilterResult> responseHandler = new JsonResponseHandler<TestMetricFilterResult>(unmarshaller);
-
+            Unmarshaller<TestMetricFilterResult, JsonUnmarshallerContext> unmarshaller =
+                new TestMetricFilterResultJsonUnmarshaller();
+            JsonResponseHandler<TestMetricFilterResult> responseHandler =
+                new JsonResponseHandler<TestMetricFilterResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -739,7 +755,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutLogEventsRequest> request = null;
         Response<PutLogEventsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutLogEventsRequestMarshaller().marshall(putLogEventsRequest);
@@ -748,13 +766,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<PutLogEventsResult, JsonUnmarshallerContext> unmarshaller = new PutLogEventsResultJsonUnmarshaller();
-            JsonResponseHandler<PutLogEventsResult> responseHandler = new JsonResponseHandler<PutLogEventsResult>(unmarshaller);
-
+            Unmarshaller<PutLogEventsResult, JsonUnmarshallerContext> unmarshaller =
+                new PutLogEventsResultJsonUnmarshaller();
+            JsonResponseHandler<PutLogEventsResult> responseHandler =
+                new JsonResponseHandler<PutLogEventsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -841,7 +862,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetLogEventsRequest> request = null;
         Response<GetLogEventsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetLogEventsRequestMarshaller().marshall(getLogEventsRequest);
@@ -850,13 +873,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<GetLogEventsResult, JsonUnmarshallerContext> unmarshaller = new GetLogEventsResultJsonUnmarshaller();
-            JsonResponseHandler<GetLogEventsResult> responseHandler = new JsonResponseHandler<GetLogEventsResult>(unmarshaller);
-
+            Unmarshaller<GetLogEventsResult, JsonUnmarshallerContext> unmarshaller =
+                new GetLogEventsResultJsonUnmarshaller();
+            JsonResponseHandler<GetLogEventsResult> responseHandler =
+                new JsonResponseHandler<GetLogEventsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -986,7 +1012,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeLogGroupsRequest> request = null;
         Response<DescribeLogGroupsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeLogGroupsRequestMarshaller().marshall(describeLogGroupsRequest);
@@ -995,13 +1023,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeLogGroupsResult, JsonUnmarshallerContext> unmarshaller = new DescribeLogGroupsResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeLogGroupsResult> responseHandler = new JsonResponseHandler<DescribeLogGroupsResult>(unmarshaller);
-
+            Unmarshaller<DescribeLogGroupsResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeLogGroupsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeLogGroupsResult> responseHandler =
+                new JsonResponseHandler<DescribeLogGroupsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1038,8 +1069,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         return describeLogGroups(new DescribeLogGroupsRequest());
     }
 
-  @Override
-  public void setEndpoint(String endpoint) {
+    @Override
+    public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

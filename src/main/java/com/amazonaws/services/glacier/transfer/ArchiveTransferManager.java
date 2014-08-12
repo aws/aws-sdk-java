@@ -16,7 +16,9 @@ package com.amazonaws.services.glacier.transfer;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 import static com.amazonaws.event.SDKProgressPublisher.publishResponseBytesDiscarded;
+import static com.amazonaws.internal.ResettableInputStream.newResettableInputStream;
 import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.util.IOUtils.release;
 import static com.amazonaws.util.Throwables.failure;
 
 import java.io.BufferedInputStream;
@@ -39,6 +41,7 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListener;
+import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.services.glacier.AmazonGlacier;
 import com.amazonaws.services.glacier.AmazonGlacierClient;
@@ -60,7 +63,6 @@ import com.amazonaws.services.glacier.model.UploadArchiveRequest;
 import com.amazonaws.services.glacier.model.UploadArchiveResult;
 import com.amazonaws.services.glacier.model.UploadMultipartPartRequest;
 import com.amazonaws.services.s3.internal.InputSubstream;
-import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.sns.AmazonSNSClient;
 import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.util.BinaryUtils;
@@ -301,18 +303,19 @@ public class ArchiveTransferManager {
      *             If any problems were encountered inside the AWS SDK for Java
      *             client code in making requests or processing responses from
      *             AWS.
-     * @throws FileNotFoundException
-     *             If the specified file to upload doesn't exist.
      */
-    public UploadResult upload(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListener progressListener)
-            throws AmazonServiceException, AmazonClientException, FileNotFoundException {
+    public UploadResult upload(final String accountId, final String vaultName,
+            final String archiveDescription, final File file,
+            ProgressListener progressListener) throws AmazonServiceException,
+            AmazonClientException {
         if (file.length() > MULTIPART_UPLOAD_SIZE_THRESHOLD) {
-            return uploadInMultipleParts(accountId, vaultName, archiveDescription, file, progressListener);
+            return uploadInMultipleParts(accountId, vaultName,
+                    archiveDescription, file, progressListener);
         } else {
-            return uploadInSinglePart(accountId, vaultName, archiveDescription, file, progressListener);
+            return uploadInSinglePart(accountId, vaultName, archiveDescription,
+                    file, progressListener);
         }
     }
-
 
     /**
      * Downloads an archive from Amazon Glacier in the specified vault for the
@@ -671,19 +674,10 @@ public class ArchiveTransferManager {
         return partSize;
     }
 
-
-    private InputSubstream newInputSubstream(File file, long startingPosition, long length) {
-        try {
-            return new InputSubstream(new RepeatableFileInputStream(file), startingPosition, length, true);
-        } catch (FileNotFoundException e) {
-            throw new AmazonClientException("Unable to find file '" + file.getAbsolutePath() + "'", e);
-        }
-    }
-
     private UploadResult uploadInMultipleParts(final String accountId,
             final String vaultName, final String archiveDescription,
             final File file, ProgressListener progressListener) {
-        long partSize = calculatePartSize(file.length());
+        final long partSize = calculatePartSize(file.length());
         String partSizeString = Long.toString(partSize);
 
         publishProgress(progressListener, ProgressEventType.TRANSFER_PREPARING_EVENT);
@@ -700,7 +694,8 @@ public class ArchiveTransferManager {
             throw failure(t);
         }
         publishProgress(progressListener, ProgressEventType.TRANSFER_STARTED_EVENT);
-
+        final String fileNotFoundMsg = "Unable to find file '"
+                + file.getAbsolutePath() + "'";
         try {
             List<byte[]> binaryChecksums = new LinkedList<byte[]>();
 
@@ -714,37 +709,41 @@ public class ArchiveTransferManager {
                 Exception failedException = null;
                 boolean completed = false;
                 int tries = 0;
-
-                while (!completed && tries < 5){
-                    tries++;
-                    InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
-                    inputSubStream.mark(-1);
-                    String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
-                    byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
-                    inputSubStream.reset();
-                    UploadMultipartPartRequest req = new UploadMultipartPartRequest()
-                        .withAccountId(accountId)
-                        .withChecksum(checksum)
-                        .withBody(inputSubStream)
-                        .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
-                        .withUploadId(uploadId)
-                        .withVaultName(vaultName)
-                        .withGeneralProgressListener(progressListener)
-                        ;
-                    try {
-                        glacier.uploadMultipartPart(req);
-                        completed = true;
-                        binaryChecksums.add(binaryChecksum);
-                    } catch (Exception e){
-                        failedException = e;
-                    } finally {
-                        closeQuietly(inputSubStream, log);
-                    }
-                }
+                    while (!completed && tries < 5){
+                        tries++;
+                        InputSubstream inputSubStream = null;
+                        try {
+                            inputSubStream = new InputSubstream(
+                                    newResettableInputStream(file, fileNotFoundMsg)
+                                        .disableClose(), // requires explicit release
+                                    currentPosition, length, true);
+                                inputSubStream.mark(-1);
+                            String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
+                            byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
+                            inputSubStream.reset();
+                            UploadMultipartPartRequest req = new UploadMultipartPartRequest()
+                                .withAccountId(accountId)
+                                .withChecksum(checksum)
+                                .withBody(inputSubStream)
+                                .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
+                                .withUploadId(uploadId)
+                                .withVaultName(vaultName)
+                                .withGeneralProgressListener(progressListener)
+                                ;
+                            glacier.uploadMultipartPart(req);
+                            completed = true;
+                            binaryChecksums.add(binaryChecksum);
+                        } catch (Exception e){
+                            failedException = e;
+                        } finally {
+                            // We opened the file underneath; so need to release it
+                            release(inputSubStream, log);
+                        }
+                    } // end inner while
                 if (!completed && failedException!=null)
                     throw failedException;
                 currentPosition += partSize;
-            }
+            } // end outer while
 
             String checksum = TreeHashGenerator.calculateTreeHash(binaryChecksums);
 
@@ -769,22 +768,22 @@ public class ArchiveTransferManager {
 
     private UploadResult uploadInSinglePart(final String accountId,
             final String vaultName, final String archiveDescription,
-            final File file, ProgressListener progressListener)
-            throws AmazonServiceException, AmazonClientException, FileNotFoundException {
+            final File file, ProgressListener progressListener) {
         String checksum = TreeHashGenerator.calculateTreeHash(file);
-        InputStream is = new RepeatableFileInputStream(file);
-        publishProgress(progressListener, ProgressEventType.TRANSFER_STARTED_EVENT);
-        final UploadArchiveRequest req = new UploadArchiveRequest()
-            .withAccountId(accountId)
-            .withArchiveDescription(archiveDescription)
-            .withVaultName(vaultName)
-            .withChecksum(checksum)
-            .withBody(is)
-            .withContentLength(file.length())
-            // capture the bytes transferred
-            .withGeneralProgressListener(progressListener)
-            ;
+        ResettableInputStream is = newResettableInputStream(file)
+            .disableClose(); // requires explicit release
         try {
+            publishProgress(progressListener, ProgressEventType.TRANSFER_STARTED_EVENT);
+            final UploadArchiveRequest req = new UploadArchiveRequest()
+                .withAccountId(accountId)
+                .withArchiveDescription(archiveDescription)
+                .withVaultName(vaultName)
+                .withChecksum(checksum)
+                .withBody(is)
+                .withContentLength(file.length())
+                // capture the bytes transferred
+                .withGeneralProgressListener(progressListener)
+                ;
             UploadArchiveResult uploadArchiveResult = glacier.uploadArchive(req);
             String artifactId = uploadArchiveResult.getArchiveId();
             publishProgress(progressListener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
@@ -793,7 +792,7 @@ public class ArchiveTransferManager {
             publishProgress(progressListener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw failure(t);
         } finally {
-            closeQuietly(is, log);
+            is.release();
         }
     }
 }

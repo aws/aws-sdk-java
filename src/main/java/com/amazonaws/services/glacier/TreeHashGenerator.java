@@ -17,7 +17,6 @@ package com.amazonaws.services.glacier;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
@@ -26,8 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.services.glacier.internal.TreeHashInputStream;
-import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.util.BinaryUtils;
 
 /**
@@ -52,12 +51,19 @@ public class TreeHashGenerator {
 	 *             If any problems were encountered reading the data or
 	 *             computing the hash.
 	 */
-    public static String calculateTreeHash(File file) throws AmazonClientException {
-    	try {
-			return calculateTreeHash(new RepeatableFileInputStream(file));
-		} catch (FileNotFoundException e) {
-			throw new AmazonClientException("Unable to compute hash for file: " + file.getAbsolutePath(), e);
-		}
+    public static String calculateTreeHash(File file)
+            throws AmazonClientException {
+        ResettableInputStream is = null;
+        try {
+            is = new ResettableInputStream(file);
+            return calculateTreeHash(is);
+        } catch (IOException e) {
+            throw new AmazonClientException("Unable to compute hash for file: "
+                    + file.getAbsolutePath(), e);
+        } finally {
+            if (is != null)
+                is.release();
+        }
     }
 
 	/**
@@ -75,16 +81,19 @@ public class TreeHashGenerator {
 	 *             If problems were encountered reading the data or calculating
 	 *             the hash.
 	 */
-    public static String calculateTreeHash(InputStream input) throws AmazonClientException {
-		try {
-			TreeHashInputStream treeHashInputStream = new TreeHashInputStream(input);
+    public static String calculateTreeHash(InputStream input)
+            throws AmazonClientException {
+        try {
+            TreeHashInputStream treeHashInputStream =
+                new TreeHashInputStream(input);
             byte[] buffer = new byte[1024];
             while (treeHashInputStream.read(buffer, 0, buffer.length) != -1);
-			treeHashInputStream.close();
-			return calculateTreeHash(treeHashInputStream.getChecksums());
-		} catch (Exception e) {
-			throw new AmazonClientException("Unable to compute hash", e);
-		}
+            // closing is currently required to compute the checksum 
+            treeHashInputStream.close();
+            return calculateTreeHash(treeHashInputStream.getChecksums());
+        } catch (Exception e) {
+            throw new AmazonClientException("Unable to compute hash", e);
+        }
     }
 
 	/**

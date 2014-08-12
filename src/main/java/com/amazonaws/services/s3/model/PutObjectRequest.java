@@ -81,7 +81,7 @@ import com.amazonaws.event.ProgressListener;
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
  */
 public class PutObjectRequest extends AmazonWebServiceRequest implements
-        Cloneable, SSECustomerKeyProvider {
+        Cloneable, SSECustomerKeyProvider, S3DataSource {
     /**
      * The name of an existing bucket, to which this request will upload a new
      * object. You must have {@link Permission#Write} permission granted to you
@@ -457,6 +457,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      * @see PutObjectRequest#setInputStream(InputStream)
      * @see PutObjectRequest#withInputStream(InputStream)
      */
+    @Override
     public File getFile() {
         return file;
     }
@@ -476,6 +477,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      * @see PutObjectRequest#getInputStream()
      * @see PutObjectRequest#withInputStream(InputStream)
      */
+    @Override
     public void setFile(File file) {
         this.file = file;
     }
@@ -676,6 +678,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      * @see PutObjectRequest#setFile(File)
      * @see PutObjectRequest#withFile(File)
      */
+    @Override
     public InputStream getInputStream() {
         return inputStream;
     }
@@ -695,6 +698,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      * @see PutObjectRequest#getFile()
      * @see PutObjectRequest#withFile(File)
      */
+    @Override
     public void setInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
     }

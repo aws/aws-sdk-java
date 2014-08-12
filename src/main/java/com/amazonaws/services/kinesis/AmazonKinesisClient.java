@@ -29,6 +29,7 @@ import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import static com.amazonaws.util.IOUtils.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
@@ -286,7 +287,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DescribeStreamRequest> request = null;
         Response<DescribeStreamResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DescribeStreamRequestMarshaller().marshall(describeStreamRequest);
@@ -295,13 +298,16 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeStreamResult, JsonUnmarshallerContext> unmarshaller = new DescribeStreamResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeStreamResult> responseHandler = new JsonResponseHandler<DescribeStreamResult>(unmarshaller);
-
+            Unmarshaller<DescribeStreamResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeStreamResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeStreamResult> responseHandler =
+                new JsonResponseHandler<DescribeStreamResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -389,7 +395,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetShardIteratorRequest> request = null;
         Response<GetShardIteratorResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetShardIteratorRequestMarshaller().marshall(getShardIteratorRequest);
@@ -398,13 +406,16 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<GetShardIteratorResult, JsonUnmarshallerContext> unmarshaller = new GetShardIteratorResultJsonUnmarshaller();
-            JsonResponseHandler<GetShardIteratorResult> responseHandler = new JsonResponseHandler<GetShardIteratorResult>(unmarshaller);
-
+            Unmarshaller<GetShardIteratorResult, JsonUnmarshallerContext> unmarshaller =
+                new GetShardIteratorResultJsonUnmarshaller();
+            JsonResponseHandler<GetShardIteratorResult> responseHandler =
+                new JsonResponseHandler<GetShardIteratorResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -484,7 +495,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutRecordRequest> request = null;
         Response<PutRecordResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new PutRecordRequestMarshaller().marshall(putRecordRequest);
@@ -493,13 +506,16 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<PutRecordResult, JsonUnmarshallerContext> unmarshaller = new PutRecordResultJsonUnmarshaller();
-            JsonResponseHandler<PutRecordResult> responseHandler = new JsonResponseHandler<PutRecordResult>(unmarshaller);
-
+            Unmarshaller<PutRecordResult, JsonUnmarshallerContext> unmarshaller =
+                new PutRecordResultJsonUnmarshaller();
+            JsonResponseHandler<PutRecordResult> responseHandler =
+                new JsonResponseHandler<PutRecordResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -577,7 +593,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetRecordsRequest> request = null;
         Response<GetRecordsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetRecordsRequestMarshaller().marshall(getRecordsRequest);
@@ -586,13 +604,16 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<GetRecordsResult, JsonUnmarshallerContext> unmarshaller = new GetRecordsResultJsonUnmarshaller();
-            JsonResponseHandler<GetRecordsResult> responseHandler = new JsonResponseHandler<GetRecordsResult>(unmarshaller);
-
+            Unmarshaller<GetRecordsResult, JsonUnmarshallerContext> unmarshaller =
+                new GetRecordsResultJsonUnmarshaller();
+            JsonResponseHandler<GetRecordsResult> responseHandler =
+                new JsonResponseHandler<GetRecordsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -905,7 +926,9 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListStreamsRequest> request = null;
         Response<ListStreamsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListStreamsRequestMarshaller().marshall(listStreamsRequest);
@@ -914,13 +937,16 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListStreamsResult, JsonUnmarshallerContext> unmarshaller = new ListStreamsResultJsonUnmarshaller();
-            JsonResponseHandler<ListStreamsResult> responseHandler = new JsonResponseHandler<ListStreamsResult>(unmarshaller);
-
+            Unmarshaller<ListStreamsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListStreamsResultJsonUnmarshaller();
+            JsonResponseHandler<ListStreamsResult> responseHandler =
+                new JsonResponseHandler<ListStreamsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -2075,8 +2101,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
         mergeShards(mergeShardsRequest);
     }
 
-  @Override
-  public void setEndpoint(String endpoint) {
+    @Override
+    public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

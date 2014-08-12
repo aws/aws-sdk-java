@@ -26,7 +26,7 @@ import com.amazonaws.event.ProgressListener;
  * Required Parameters: BucketName, Key, UploadId, PartNumber
  */
 public class UploadPartRequest extends AmazonWebServiceRequest implements
-        SSECustomerKeyProvider {
+        SSECustomerKeyProvider, S3DataSource {
     /**
      * The name of the bucket containing the initiated multipart upload with
      * which this new part will be associated.
@@ -97,6 +97,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      * @param inputStream
      *            the stream containing the data to upload for the new part.
      */
+    @Override
     public void setInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
     }
@@ -106,6 +107,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      *
      * @return the stream containing the data to upload for the new part.
      */
+    @Override
     public InputStream getInputStream() {
         return inputStream;
     }
@@ -371,6 +373,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      * @return The file containing the data to upload. Exactly one File or
      *         InputStream must be specified as the input to this operation.
      */
+    @Override
     public File getFile() {
         return file;
     }
@@ -383,6 +386,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      *            The file containing the data to upload. Exactly one File or
      *            InputStream must be specified as the input to this operation.
      */
+    @Override
     public void setFile(File file) {
         this.file = file;
     }

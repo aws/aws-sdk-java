@@ -21,11 +21,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.amazonaws.AbortedException;
+import com.amazonaws.util.IOUtils;
 
 /**
  * Base class for AWS Java SDK specific {@link FilterInputStream}.
  */
-public class SdkFilterInputStream extends FilterInputStream implements MetricAware {
+public class SdkFilterInputStream extends FilterInputStream implements
+        MetricAware, Releasable {
     protected SdkFilterInputStream(InputStream in) {
         super(in);
     }
@@ -105,5 +107,17 @@ public class SdkFilterInputStream extends FilterInputStream implements MetricAwa
     public boolean markSupported() {
         abortIfNeeded();
         return in.markSupported();
+    }
+
+    @Override
+    public void release() {
+        // Don't call IOUtils.release(in, null) or else could lead to infinite loop
+        IOUtils.closeQuietly(this, null);
+        if (in instanceof Releasable) {
+            // This allows any underlying stream that has the close operation
+            // disabled to be truly released
+            Releasable r = (Releasable)in;
+            r.release();
+        }
     }
 }

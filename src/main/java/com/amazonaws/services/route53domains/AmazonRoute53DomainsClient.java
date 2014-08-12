@@ -29,6 +29,7 @@ import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import static com.amazonaws.util.IOUtils.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.json.*;
 
@@ -265,7 +266,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateDomainContactRequest> request = null;
         Response<UpdateDomainContactResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDomainContactRequestMarshaller().marshall(updateDomainContactRequest);
@@ -274,13 +277,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdateDomainContactResult, JsonUnmarshallerContext> unmarshaller = new UpdateDomainContactResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateDomainContactResult> responseHandler = new JsonResponseHandler<UpdateDomainContactResult>(unmarshaller);
-
+            Unmarshaller<UpdateDomainContactResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateDomainContactResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateDomainContactResult> responseHandler =
+                new JsonResponseHandler<UpdateDomainContactResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -317,7 +323,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CheckDomainAvailabilityRequest> request = null;
         Response<CheckDomainAvailabilityResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new CheckDomainAvailabilityRequestMarshaller().marshall(checkDomainAvailabilityRequest);
@@ -326,13 +334,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<CheckDomainAvailabilityResult, JsonUnmarshallerContext> unmarshaller = new CheckDomainAvailabilityResultJsonUnmarshaller();
-            JsonResponseHandler<CheckDomainAvailabilityResult> responseHandler = new JsonResponseHandler<CheckDomainAvailabilityResult>(unmarshaller);
-
+            Unmarshaller<CheckDomainAvailabilityResult, JsonUnmarshallerContext> unmarshaller =
+                new CheckDomainAvailabilityResultJsonUnmarshaller();
+            JsonResponseHandler<CheckDomainAvailabilityResult> responseHandler =
+                new JsonResponseHandler<CheckDomainAvailabilityResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -365,7 +376,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListOperationsRequest> request = null;
         Response<ListOperationsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListOperationsRequestMarshaller().marshall(listOperationsRequest);
@@ -374,13 +387,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListOperationsResult, JsonUnmarshallerContext> unmarshaller = new ListOperationsResultJsonUnmarshaller();
-            JsonResponseHandler<ListOperationsResult> responseHandler = new JsonResponseHandler<ListOperationsResult>(unmarshaller);
-
+            Unmarshaller<ListOperationsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListOperationsResultJsonUnmarshaller();
+            JsonResponseHandler<ListOperationsResult> responseHandler =
+                new JsonResponseHandler<ListOperationsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -413,7 +429,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ListDomainsRequest> request = null;
         Response<ListDomainsResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ListDomainsRequestMarshaller().marshall(listDomainsRequest);
@@ -422,13 +440,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<ListDomainsResult, JsonUnmarshallerContext> unmarshaller = new ListDomainsResultJsonUnmarshaller();
-            JsonResponseHandler<ListDomainsResult> responseHandler = new JsonResponseHandler<ListDomainsResult>(unmarshaller);
-
+            Unmarshaller<ListDomainsResult, JsonUnmarshallerContext> unmarshaller =
+                new ListDomainsResultJsonUnmarshaller();
+            JsonResponseHandler<ListDomainsResult> responseHandler =
+                new JsonResponseHandler<ListDomainsResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -462,7 +483,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetOperationDetailRequest> request = null;
         Response<GetOperationDetailResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetOperationDetailRequestMarshaller().marshall(getOperationDetailRequest);
@@ -471,13 +494,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<GetOperationDetailResult, JsonUnmarshallerContext> unmarshaller = new GetOperationDetailResultJsonUnmarshaller();
-            JsonResponseHandler<GetOperationDetailResult> responseHandler = new JsonResponseHandler<GetOperationDetailResult>(unmarshaller);
-
+            Unmarshaller<GetOperationDetailResult, JsonUnmarshallerContext> unmarshaller =
+                new GetOperationDetailResultJsonUnmarshaller();
+            JsonResponseHandler<GetOperationDetailResult> responseHandler =
+                new JsonResponseHandler<GetOperationDetailResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -519,7 +545,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableDomainTransferLockRequest> request = null;
         Response<DisableDomainTransferLockResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new DisableDomainTransferLockRequestMarshaller().marshall(disableDomainTransferLockRequest);
@@ -528,13 +556,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DisableDomainTransferLockResult, JsonUnmarshallerContext> unmarshaller = new DisableDomainTransferLockResultJsonUnmarshaller();
-            JsonResponseHandler<DisableDomainTransferLockResult> responseHandler = new JsonResponseHandler<DisableDomainTransferLockResult>(unmarshaller);
-
+            Unmarshaller<DisableDomainTransferLockResult, JsonUnmarshallerContext> unmarshaller =
+                new DisableDomainTransferLockResultJsonUnmarshaller();
+            JsonResponseHandler<DisableDomainTransferLockResult> responseHandler =
+                new JsonResponseHandler<DisableDomainTransferLockResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -579,7 +610,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateDomainNameserversRequest> request = null;
         Response<UpdateDomainNameserversResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDomainNameserversRequestMarshaller().marshall(updateDomainNameserversRequest);
@@ -588,13 +621,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdateDomainNameserversResult, JsonUnmarshallerContext> unmarshaller = new UpdateDomainNameserversResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateDomainNameserversResult> responseHandler = new JsonResponseHandler<UpdateDomainNameserversResult>(unmarshaller);
-
+            Unmarshaller<UpdateDomainNameserversResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateDomainNameserversResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateDomainNameserversResult> responseHandler =
+                new JsonResponseHandler<UpdateDomainNameserversResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -635,7 +671,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableDomainTransferLockRequest> request = null;
         Response<EnableDomainTransferLockResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new EnableDomainTransferLockRequestMarshaller().marshall(enableDomainTransferLockRequest);
@@ -644,13 +682,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<EnableDomainTransferLockResult, JsonUnmarshallerContext> unmarshaller = new EnableDomainTransferLockResultJsonUnmarshaller();
-            JsonResponseHandler<EnableDomainTransferLockResult> responseHandler = new JsonResponseHandler<EnableDomainTransferLockResult>(unmarshaller);
-
+            Unmarshaller<EnableDomainTransferLockResult, JsonUnmarshallerContext> unmarshaller =
+                new EnableDomainTransferLockResultJsonUnmarshaller();
+            JsonResponseHandler<EnableDomainTransferLockResult> responseHandler =
+                new JsonResponseHandler<EnableDomainTransferLockResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -714,7 +755,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RegisterDomainRequest> request = null;
         Response<RegisterDomainResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RegisterDomainRequestMarshaller().marshall(registerDomainRequest);
@@ -723,13 +766,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<RegisterDomainResult, JsonUnmarshallerContext> unmarshaller = new RegisterDomainResultJsonUnmarshaller();
-            JsonResponseHandler<RegisterDomainResult> responseHandler = new JsonResponseHandler<RegisterDomainResult>(unmarshaller);
-
+            Unmarshaller<RegisterDomainResult, JsonUnmarshallerContext> unmarshaller =
+                new RegisterDomainResultJsonUnmarshaller();
+            JsonResponseHandler<RegisterDomainResult> responseHandler =
+                new JsonResponseHandler<RegisterDomainResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -762,7 +808,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetDomainDetailRequest> request = null;
         Response<GetDomainDetailResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new GetDomainDetailRequestMarshaller().marshall(getDomainDetailRequest);
@@ -771,13 +819,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<GetDomainDetailResult, JsonUnmarshallerContext> unmarshaller = new GetDomainDetailResultJsonUnmarshaller();
-            JsonResponseHandler<GetDomainDetailResult> responseHandler = new JsonResponseHandler<GetDomainDetailResult>(unmarshaller);
-
+            Unmarshaller<GetDomainDetailResult, JsonUnmarshallerContext> unmarshaller =
+                new GetDomainDetailResultJsonUnmarshaller();
+            JsonResponseHandler<GetDomainDetailResult> responseHandler =
+                new JsonResponseHandler<GetDomainDetailResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -812,7 +863,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RetrieveDomainAuthCodeRequest> request = null;
         Response<RetrieveDomainAuthCodeResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new RetrieveDomainAuthCodeRequestMarshaller().marshall(retrieveDomainAuthCodeRequest);
@@ -821,13 +874,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<RetrieveDomainAuthCodeResult, JsonUnmarshallerContext> unmarshaller = new RetrieveDomainAuthCodeResultJsonUnmarshaller();
-            JsonResponseHandler<RetrieveDomainAuthCodeResult> responseHandler = new JsonResponseHandler<RetrieveDomainAuthCodeResult>(unmarshaller);
-
+            Unmarshaller<RetrieveDomainAuthCodeResult, JsonUnmarshallerContext> unmarshaller =
+                new RetrieveDomainAuthCodeResultJsonUnmarshaller();
+            JsonResponseHandler<RetrieveDomainAuthCodeResult> responseHandler =
+                new JsonResponseHandler<RetrieveDomainAuthCodeResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -900,7 +956,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<TransferDomainRequest> request = null;
         Response<TransferDomainResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new TransferDomainRequestMarshaller().marshall(transferDomainRequest);
@@ -909,13 +967,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<TransferDomainResult, JsonUnmarshallerContext> unmarshaller = new TransferDomainResultJsonUnmarshaller();
-            JsonResponseHandler<TransferDomainResult> responseHandler = new JsonResponseHandler<TransferDomainResult>(unmarshaller);
-
+            Unmarshaller<TransferDomainResult, JsonUnmarshallerContext> unmarshaller =
+                new TransferDomainResultJsonUnmarshaller();
+            JsonResponseHandler<TransferDomainResult> responseHandler =
+                new JsonResponseHandler<TransferDomainResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -964,7 +1025,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateDomainContactPrivacyRequest> request = null;
         Response<UpdateDomainContactPrivacyResult> response = null;
+        
         try {
+            
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new UpdateDomainContactPrivacyRequestMarshaller().marshall(updateDomainContactPrivacyRequest);
@@ -973,13 +1036,16 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<UpdateDomainContactPrivacyResult, JsonUnmarshallerContext> unmarshaller = new UpdateDomainContactPrivacyResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateDomainContactPrivacyResult> responseHandler = new JsonResponseHandler<UpdateDomainContactPrivacyResult>(unmarshaller);
-
+            Unmarshaller<UpdateDomainContactPrivacyResult, JsonUnmarshallerContext> unmarshaller =
+                new UpdateDomainContactPrivacyResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateDomainContactPrivacyResult> responseHandler =
+                new JsonResponseHandler<UpdateDomainContactPrivacyResult>(unmarshaller);
+            
             response = invoke(request, responseHandler, executionContext);
             
-        return response.getAwsResponse();
+            return response.getAwsResponse();
         } finally {
+            
             endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
         }
     }
@@ -1030,8 +1096,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         return listDomains(new ListDomainsRequest());
     }
 
-  @Override
-  public void setEndpoint(String endpoint) {
+    @Override
+    public void setEndpoint(String endpoint) {
         super.setEndpoint(endpoint);
     }
 

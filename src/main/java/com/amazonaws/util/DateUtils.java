@@ -17,6 +17,7 @@
  */
 package com.amazonaws.util;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Locale;
 
@@ -27,6 +28,8 @@ import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 import org.joda.time.tz.FixedDateTimeZone;
 
+import com.amazonaws.AmazonClientException;
+
 /**
  * Utilities for parsing and formatting dates.
  */
@@ -34,6 +37,8 @@ import org.joda.time.tz.FixedDateTimeZone;
 public class DateUtils {
     private static final DateTimeZone GMT = new FixedDateTimeZone("GMT", "GMT", 0, 0);
     private static final long MILLI_SECONDS_OF_365_DAYS = 365L*24*60*60*1000;
+
+    private static final int AWS_DATE_MILLI_SECOND_PRECISION = 3;
 
     /** ISO 8601 format */
     protected static final DateTimeFormatter iso8601DateFormat =
@@ -91,7 +96,7 @@ public class DateUtils {
             }
             // Handling edge case:
             // Joda-time can only handle up to year 292278993 but we are given
-            // 292278994;  So we parse the date string by first adjusting 
+            // 292278994;  So we parse the date string by first adjusting
             // the year to 292278993. Then we add 1 year back afterwards.
             final long milliLess365Days = iso8601DateFormat.parseMillis(temp);
             final long milli = milliLess365Days + MILLI_SECONDS_OF_365_DAYS;
@@ -123,15 +128,15 @@ public class DateUtils {
     private static String tempDateStringForJodaTime(String dateString) {
         final String fromPrefix = "292278994-";
         final String toPrefix   = "292278993-";
-        return dateString.startsWith(fromPrefix) 
+        return dateString.startsWith(fromPrefix)
              ? toPrefix + dateString.substring(fromPrefix.length())
              : dateString;
     }
-    
+
     /**
      * Returns the original runtime exception iff the joda-time being used
-     * at runtime behaves as expected. 
-     * 
+     * at runtime behaves as expected.
+     *
      * @throws IllegalStateException if the joda-time being used at runtime
      * doens't appear to be of the right version.
      */
@@ -238,4 +243,32 @@ public class DateUtils {
             throw handleException(ex);
         }
    }
+
+    /**
+     * Parses the given date string returned by the AWS service into a Date
+     * object.
+     */
+    public static Date parseServiceSpecificDate(String dateString) {
+        if (dateString == null)
+            return null;
+        try {
+            BigDecimal dateValue = new BigDecimal(dateString);
+            return new Date(dateValue.scaleByPowerOfTen(
+                    AWS_DATE_MILLI_SECOND_PRECISION).longValue());
+        } catch (NumberFormatException nfe) {
+            throw new AmazonClientException("Unable to parse date : "
+                    + dateString, nfe);
+        }
+    }
+
+    /**
+     * Formats the give date object into an AWS Service format.
+     */
+    public static String formatServiceSpecificDate(Date date) {
+        if (date == null)
+            return null;
+        BigDecimal dateValue = BigDecimal.valueOf(date.getTime());
+        return dateValue.scaleByPowerOfTen(0 - AWS_DATE_MILLI_SECOND_PRECISION)
+                .toPlainString();
+    }
 }

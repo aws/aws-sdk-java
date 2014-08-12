@@ -203,9 +203,9 @@ public class S3Object implements Closeable {
      */
     @Override
     public void close() throws IOException {
-        if(getObjectContent() != null){
-            getObjectContent().close();
-        }
+        InputStream is = getObjectContent();
+        if (is != null)
+            is.close();
     }
 
     /**
