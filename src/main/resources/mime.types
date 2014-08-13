@@ -581,7 +581,7 @@ video/mp4v-es
 video/mpv
 video/mpeg			mpeg mpg mpe
 video/nv
-video/ogv           ogv
+video/ogg           ogv
 video/parityfec
 video/pointer
 video/quicktime			qt mov
