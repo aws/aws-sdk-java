@@ -318,7 +318,7 @@ public class UploadCallable implements Callable<UploadResult> {
      * @param isUsingEncryption
      */
     private String initiateMultipartUpload(PutObjectRequest putObjectRequest, boolean isUsingEncryption) {
-
+    	
         InitiateMultipartUploadRequest initiateMultipartUploadRequest = null;
         if (isUsingEncryption && putObjectRequest instanceof EncryptedPutObjectRequest) {
             initiateMultipartUploadRequest = new EncryptedInitiateMultipartUploadRequest(
@@ -331,6 +331,8 @@ public class UploadCallable implements Callable<UploadResult> {
                 .withCannedACL(putObjectRequest.getCannedAcl())
                 .withObjectMetadata(putObjectRequest.getMetadata());
         }
+        
+        TransferManager.appendMultipartUserAgent(initiateMultipartUploadRequest);
 
         if (putObjectRequest.getStorageClass() != null) {
             initiateMultipartUploadRequest.setStorageClass(

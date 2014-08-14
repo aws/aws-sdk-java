@@ -20,6 +20,7 @@ import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.UploadPartRequest;
+import com.amazonaws.services.s3.transfer.TransferManager;
 
 /**
  * Factory for creating all the individual UploadPartRequest objects for a
@@ -60,7 +61,7 @@ public class UploadPartRequestFactory {
     public synchronized UploadPartRequest getNextUploadPartRequest() {
         long partSize = Math.min(optimalPartSize, remainingBytes);
         boolean isLastPart = (remainingBytes - partSize <= 0);
-
+        
         UploadPartRequest request = null;
         if (putObjectRequest.getInputStream() != null) {
             request = new UploadPartRequest()
@@ -80,6 +81,7 @@ public class UploadPartRequestFactory {
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         }
+        TransferManager.appendMultipartUserAgent(request);
 
         if (sseCustomerKey != null) request.setSSECustomerKey(sseCustomerKey);
 

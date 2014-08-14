@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class ExpressionStatus implements Serializable {
 
     /**
-     * The expression that is evaluated for sorting or filtering while
-     * processing a search request.
+     * The expression that is evaluated for sorting while processing a search
+     * request.
      */
     private Expression options;
 
@@ -35,35 +35,35 @@ public class ExpressionStatus implements Serializable {
     private OptionStatus status;
 
     /**
-     * The expression that is evaluated for sorting or filtering while
-     * processing a search request.
+     * The expression that is evaluated for sorting while processing a search
+     * request.
      *
-     * @return The expression that is evaluated for sorting or filtering while
-     *         processing a search request.
+     * @return The expression that is evaluated for sorting while processing a search
+     *         request.
      */
     public Expression getOptions() {
         return options;
     }
     
     /**
-     * The expression that is evaluated for sorting or filtering while
-     * processing a search request.
+     * The expression that is evaluated for sorting while processing a search
+     * request.
      *
-     * @param options The expression that is evaluated for sorting or filtering while
-     *         processing a search request.
+     * @param options The expression that is evaluated for sorting while processing a search
+     *         request.
      */
     public void setOptions(Expression options) {
         this.options = options;
     }
     
     /**
-     * The expression that is evaluated for sorting or filtering while
-     * processing a search request.
+     * The expression that is evaluated for sorting while processing a search
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param options The expression that is evaluated for sorting or filtering while
-     *         processing a search request.
+     * @param options The expression that is evaluated for sorting while processing a search
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -19,8 +19,8 @@ import java.io.Serializable;
 /**
  * <p>
  * A named expression that can be evaluated at search time. Can be used
- * for sorting and filtering search results and constructing other
- * expressions.
+ * to sort the search results, define other expressions, or return
+ * computed information in the search results.
  * </p>
  */
 public class Expression implements Serializable {

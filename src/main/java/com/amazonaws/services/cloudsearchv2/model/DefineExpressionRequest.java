@@ -47,8 +47,8 @@ public class DefineExpressionRequest extends AmazonWebServiceRequest implements 
 
     /**
      * A named expression that can be evaluated at search time. Can be used
-     * for sorting and filtering search results and constructing other
-     * expressions.
+     * to sort the search results, define other expressions, or return
+     * computed information in the search results.
      */
     private Expression expression;
 
@@ -117,12 +117,12 @@ public class DefineExpressionRequest extends AmazonWebServiceRequest implements 
 
     /**
      * A named expression that can be evaluated at search time. Can be used
-     * for sorting and filtering search results and constructing other
-     * expressions.
+     * to sort the search results, define other expressions, or return
+     * computed information in the search results.
      *
      * @return A named expression that can be evaluated at search time. Can be used
-     *         for sorting and filtering search results and constructing other
-     *         expressions.
+     *         to sort the search results, define other expressions, or return
+     *         computed information in the search results.
      */
     public Expression getExpression() {
         return expression;
@@ -130,12 +130,12 @@ public class DefineExpressionRequest extends AmazonWebServiceRequest implements 
     
     /**
      * A named expression that can be evaluated at search time. Can be used
-     * for sorting and filtering search results and constructing other
-     * expressions.
+     * to sort the search results, define other expressions, or return
+     * computed information in the search results.
      *
      * @param expression A named expression that can be evaluated at search time. Can be used
-     *         for sorting and filtering search results and constructing other
-     *         expressions.
+     *         to sort the search results, define other expressions, or return
+     *         computed information in the search results.
      */
     public void setExpression(Expression expression) {
         this.expression = expression;
@@ -143,14 +143,14 @@ public class DefineExpressionRequest extends AmazonWebServiceRequest implements 
     
     /**
      * A named expression that can be evaluated at search time. Can be used
-     * for sorting and filtering search results and constructing other
-     * expressions.
+     * to sort the search results, define other expressions, or return
+     * computed information in the search results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expression A named expression that can be evaluated at search time. Can be used
-     *         for sorting and filtering search results and constructing other
-     *         expressions.
+     *         to sort the search results, define other expressions, or return
+     *         computed information in the search results.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
