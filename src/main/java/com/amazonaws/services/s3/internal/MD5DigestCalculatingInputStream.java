@@ -72,6 +72,13 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
                 throw new IllegalStateException("unexpected", e);
             }
         }
+        else {
+            try {
+                digest = MessageDigest.getInstance("MD5");
+            } catch (NoSuchAlgorithmException e) { // should never occur
+                throw new IllegalStateException("unexpected", e);
+            }
+        }
     }
 
     @Override
