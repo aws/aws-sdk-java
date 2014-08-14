@@ -493,7 +493,7 @@ public class TransferManager {
             final PersistableUpload persistableUpload) throws AmazonServiceException,
             AmazonClientException {
 
-        appendUserAgent(putObjectRequest, USER_AGENT);
+        appendSingleObjectUserAgent(putObjectRequest);
 
         String multipartUploadId = persistableUpload != null ? persistableUpload
                 .getMultipartUploadId() : null;
@@ -647,7 +647,7 @@ public class TransferManager {
             final S3ProgressListener s3progressListener,
             final boolean resumeExistingDownload) {
 
-        appendUserAgent(getObjectRequest, USER_AGENT);
+        appendSingleObjectUserAgent(getObjectRequest);
 
         String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
 
@@ -1122,20 +1122,20 @@ public class TransferManager {
      */
     public void abortMultipartUploads(String bucketName, Date date)
             throws AmazonServiceException, AmazonClientException {
-        MultipartUploadListing uploadListing = s3.listMultipartUploads(appendUserAgent(
-                new ListMultipartUploadsRequest(bucketName), USER_AGENT));
+        MultipartUploadListing uploadListing = s3.listMultipartUploads(appendSingleObjectUserAgent(
+                new ListMultipartUploadsRequest(bucketName)));
         do {
             for (MultipartUpload upload : uploadListing.getMultipartUploads()) {
                 if (upload.getInitiated().compareTo(date) < 0) {
-                    s3.abortMultipartUpload(appendUserAgent(new AbortMultipartUploadRequest(
-                            bucketName, upload.getKey(), upload.getUploadId()), USER_AGENT));
+                    s3.abortMultipartUpload(appendSingleObjectUserAgent(new AbortMultipartUploadRequest(
+                            bucketName, upload.getKey(), upload.getUploadId())));
                 }
             }
 
             ListMultipartUploadsRequest request = new ListMultipartUploadsRequest(bucketName)
                 .withUploadIdMarker(uploadListing.getNextUploadIdMarker())
                 .withKeyMarker(uploadListing.getNextKeyMarker());
-            uploadListing = s3.listMultipartUploads(appendUserAgent(request, USER_AGENT));
+            uploadListing = s3.listMultipartUploads(appendSingleObjectUserAgent(request));
         } while (uploadListing.isTruncated());
     }
 
@@ -1180,12 +1180,18 @@ public class TransferManager {
         }
     }
 
-    public <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent) {
-        request.getRequestClientOptions().appendUserAgent(userAgent);
+    public static <X extends AmazonWebServiceRequest> X appendSingleObjectUserAgent(X request) {
+        request.getRequestClientOptions().appendUserAgent(USER_AGENT);
         return request;
     }
 
+    public static <X extends AmazonWebServiceRequest> X appendMultipartUserAgent(X request) {
+        request.getRequestClientOptions().appendUserAgent(USER_AGENT_MULTIPART);
+        return request;
+    }
     private static final String USER_AGENT = TransferManager.class.getName() + "/" + VersionInfoUtils.getVersion();
+    private static final String USER_AGENT_MULTIPART = TransferManager.class.getName() + "_multipart/" + VersionInfoUtils.getVersion();
+
 
     private static final String DEFAULT_DELIMITER = "/";
 
@@ -1328,7 +1334,7 @@ public class TransferManager {
             final TransferStateChangeListener stateChangeListener)
             throws AmazonServiceException, AmazonClientException {
 
-        appendUserAgent(copyObjectRequest, USER_AGENT);
+        appendSingleObjectUserAgent(copyObjectRequest);
 
         assertParameterNotNull(copyObjectRequest.getSourceBucketName(),
                 "The source bucket name must be specified when a copy request is initiated.");

@@ -47,7 +47,13 @@ public class DocumentSuggesterOptions implements Serializable {
 
     /**
      * An expression that computes a score for each suggestion to control how
-     * they are sorted.
+     * they are sorted. The scores are rounded to the nearest integer, with a
+     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     * not computed for suggestions, so sort expressions cannot reference the
+     * <code>_score</code> value. To sort suggestions using a numeric field
+     * or existing expression, simply specify the name of the field or
+     * expression. If no expression is configured for the suggester, the
+     * suggestions are sorted with the closest matches listed first.
      */
     private String sortExpression;
 
@@ -230,10 +236,22 @@ public class DocumentSuggesterOptions implements Serializable {
 
     /**
      * An expression that computes a score for each suggestion to control how
-     * they are sorted.
+     * they are sorted. The scores are rounded to the nearest integer, with a
+     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     * not computed for suggestions, so sort expressions cannot reference the
+     * <code>_score</code> value. To sort suggestions using a numeric field
+     * or existing expression, simply specify the name of the field or
+     * expression. If no expression is configured for the suggester, the
+     * suggestions are sorted with the closest matches listed first.
      *
      * @return An expression that computes a score for each suggestion to control how
-     *         they are sorted.
+     *         they are sorted. The scores are rounded to the nearest integer, with a
+     *         floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     *         not computed for suggestions, so sort expressions cannot reference the
+     *         <code>_score</code> value. To sort suggestions using a numeric field
+     *         or existing expression, simply specify the name of the field or
+     *         expression. If no expression is configured for the suggester, the
+     *         suggestions are sorted with the closest matches listed first.
      */
     public String getSortExpression() {
         return sortExpression;
@@ -241,10 +259,22 @@ public class DocumentSuggesterOptions implements Serializable {
     
     /**
      * An expression that computes a score for each suggestion to control how
-     * they are sorted.
+     * they are sorted. The scores are rounded to the nearest integer, with a
+     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     * not computed for suggestions, so sort expressions cannot reference the
+     * <code>_score</code> value. To sort suggestions using a numeric field
+     * or existing expression, simply specify the name of the field or
+     * expression. If no expression is configured for the suggester, the
+     * suggestions are sorted with the closest matches listed first.
      *
      * @param sortExpression An expression that computes a score for each suggestion to control how
-     *         they are sorted.
+     *         they are sorted. The scores are rounded to the nearest integer, with a
+     *         floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     *         not computed for suggestions, so sort expressions cannot reference the
+     *         <code>_score</code> value. To sort suggestions using a numeric field
+     *         or existing expression, simply specify the name of the field or
+     *         expression. If no expression is configured for the suggester, the
+     *         suggestions are sorted with the closest matches listed first.
      */
     public void setSortExpression(String sortExpression) {
         this.sortExpression = sortExpression;
@@ -252,12 +282,24 @@ public class DocumentSuggesterOptions implements Serializable {
     
     /**
      * An expression that computes a score for each suggestion to control how
-     * they are sorted.
+     * they are sorted. The scores are rounded to the nearest integer, with a
+     * floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     * not computed for suggestions, so sort expressions cannot reference the
+     * <code>_score</code> value. To sort suggestions using a numeric field
+     * or existing expression, simply specify the name of the field or
+     * expression. If no expression is configured for the suggester, the
+     * suggestions are sorted with the closest matches listed first.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sortExpression An expression that computes a score for each suggestion to control how
-     *         they are sorted.
+     *         they are sorted. The scores are rounded to the nearest integer, with a
+     *         floor of 0 and a ceiling of 2^31-1. A document's relevance score is
+     *         not computed for suggestions, so sort expressions cannot reference the
+     *         <code>_score</code> value. To sort suggestions using a numeric field
+     *         or existing expression, simply specify the name of the field or
+     *         expression. If no expression is configured for the suggester, the
+     *         suggestions are sorted with the closest matches listed first.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -31,25 +31,28 @@ public class AnalysisOptions implements Serializable {
      * of string:value pairs where the string specifies a term and the array
      * of values specifies each of the aliases for that term. An alias is
      * considered a synonym of the specified term, but the term is not
-     * considered a synonym of the alias.
+     * considered a synonym of the alias. For more information about
+     * specifying synonyms, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
+     * in the <i>Amazon CloudSearch Developer Guide</i>.
      */
     private String synonyms;
 
     /**
      * A JSON array of terms to ignore during indexing and searching. For
-     * example, ["a", "an", "the", "of"]. The stopwords dictionary must
-     * explicitly list each word you want to ignore. Wildcards and regular
-     * expressions are not supported.
+     * example, <code>["a", "an", "the", "of"]</code>. The stopwords
+     * dictionary must explicitly list each word you want to ignore.
+     * Wildcards and regular expressions are not supported.
      */
     private String stopwords;
 
     /**
      * A JSON object that contains a collection of string:value pairs that
-     * each map a term to its stem. For example, {"term1": "stem1", "term2":
-     * "stem2", "term3": "stem3"}. The stemming dictionary is applied in
-     * addition to any algorithmic stemming. This enables you to override the
-     * results of the algorithmic stemming to correct specific cases of
-     * overstemming or understemming. The maximum size of a stemming
+     * each map a term to its stem. For example, <code>{"term1": "stem1",
+     * "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is
+     * applied in addition to any algorithmic stemming. This enables you to
+     * override the results of the algorithmic stemming to correct specific
+     * cases of overstemming or understemming. The maximum size of a stemming
      * dictionary is 500 KB.
      */
     private String stemmingDictionary;
@@ -76,7 +79,10 @@ public class AnalysisOptions implements Serializable {
      * of string:value pairs where the string specifies a term and the array
      * of values specifies each of the aliases for that term. An alias is
      * considered a synonym of the specified term, but the term is not
-     * considered a synonym of the alias.
+     * considered a synonym of the alias. For more information about
+     * specifying synonyms, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
+     * in the <i>Amazon CloudSearch Developer Guide</i>.
      *
      * @return A JSON object that defines synonym groups and aliases. A synonym group
      *         is an array of arrays, where each sub-array is a group of terms where
@@ -85,7 +91,10 @@ public class AnalysisOptions implements Serializable {
      *         of string:value pairs where the string specifies a term and the array
      *         of values specifies each of the aliases for that term. An alias is
      *         considered a synonym of the specified term, but the term is not
-     *         considered a synonym of the alias.
+     *         considered a synonym of the alias. For more information about
+     *         specifying synonyms, see <a
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
+     *         in the <i>Amazon CloudSearch Developer Guide</i>.
      */
     public String getSynonyms() {
         return synonyms;
@@ -99,7 +108,10 @@ public class AnalysisOptions implements Serializable {
      * of string:value pairs where the string specifies a term and the array
      * of values specifies each of the aliases for that term. An alias is
      * considered a synonym of the specified term, but the term is not
-     * considered a synonym of the alias.
+     * considered a synonym of the alias. For more information about
+     * specifying synonyms, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
+     * in the <i>Amazon CloudSearch Developer Guide</i>.
      *
      * @param synonyms A JSON object that defines synonym groups and aliases. A synonym group
      *         is an array of arrays, where each sub-array is a group of terms where
@@ -108,7 +120,10 @@ public class AnalysisOptions implements Serializable {
      *         of string:value pairs where the string specifies a term and the array
      *         of values specifies each of the aliases for that term. An alias is
      *         considered a synonym of the specified term, but the term is not
-     *         considered a synonym of the alias.
+     *         considered a synonym of the alias. For more information about
+     *         specifying synonyms, see <a
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
+     *         in the <i>Amazon CloudSearch Developer Guide</i>.
      */
     public void setSynonyms(String synonyms) {
         this.synonyms = synonyms;
@@ -122,7 +137,10 @@ public class AnalysisOptions implements Serializable {
      * of string:value pairs where the string specifies a term and the array
      * of values specifies each of the aliases for that term. An alias is
      * considered a synonym of the specified term, but the term is not
-     * considered a synonym of the alias.
+     * considered a synonym of the alias. For more information about
+     * specifying synonyms, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
+     * in the <i>Amazon CloudSearch Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -133,7 +151,10 @@ public class AnalysisOptions implements Serializable {
      *         of string:value pairs where the string specifies a term and the array
      *         of values specifies each of the aliases for that term. An alias is
      *         considered a synonym of the specified term, but the term is not
-     *         considered a synonym of the alias.
+     *         considered a synonym of the alias. For more information about
+     *         specifying synonyms, see <a
+     *         href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
+     *         in the <i>Amazon CloudSearch Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -145,14 +166,14 @@ public class AnalysisOptions implements Serializable {
 
     /**
      * A JSON array of terms to ignore during indexing and searching. For
-     * example, ["a", "an", "the", "of"]. The stopwords dictionary must
-     * explicitly list each word you want to ignore. Wildcards and regular
-     * expressions are not supported.
+     * example, <code>["a", "an", "the", "of"]</code>. The stopwords
+     * dictionary must explicitly list each word you want to ignore.
+     * Wildcards and regular expressions are not supported.
      *
      * @return A JSON array of terms to ignore during indexing and searching. For
-     *         example, ["a", "an", "the", "of"]. The stopwords dictionary must
-     *         explicitly list each word you want to ignore. Wildcards and regular
-     *         expressions are not supported.
+     *         example, <code>["a", "an", "the", "of"]</code>. The stopwords
+     *         dictionary must explicitly list each word you want to ignore.
+     *         Wildcards and regular expressions are not supported.
      */
     public String getStopwords() {
         return stopwords;
@@ -160,14 +181,14 @@ public class AnalysisOptions implements Serializable {
     
     /**
      * A JSON array of terms to ignore during indexing and searching. For
-     * example, ["a", "an", "the", "of"]. The stopwords dictionary must
-     * explicitly list each word you want to ignore. Wildcards and regular
-     * expressions are not supported.
+     * example, <code>["a", "an", "the", "of"]</code>. The stopwords
+     * dictionary must explicitly list each word you want to ignore.
+     * Wildcards and regular expressions are not supported.
      *
      * @param stopwords A JSON array of terms to ignore during indexing and searching. For
-     *         example, ["a", "an", "the", "of"]. The stopwords dictionary must
-     *         explicitly list each word you want to ignore. Wildcards and regular
-     *         expressions are not supported.
+     *         example, <code>["a", "an", "the", "of"]</code>. The stopwords
+     *         dictionary must explicitly list each word you want to ignore.
+     *         Wildcards and regular expressions are not supported.
      */
     public void setStopwords(String stopwords) {
         this.stopwords = stopwords;
@@ -175,16 +196,16 @@ public class AnalysisOptions implements Serializable {
     
     /**
      * A JSON array of terms to ignore during indexing and searching. For
-     * example, ["a", "an", "the", "of"]. The stopwords dictionary must
-     * explicitly list each word you want to ignore. Wildcards and regular
-     * expressions are not supported.
+     * example, <code>["a", "an", "the", "of"]</code>. The stopwords
+     * dictionary must explicitly list each word you want to ignore.
+     * Wildcards and regular expressions are not supported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stopwords A JSON array of terms to ignore during indexing and searching. For
-     *         example, ["a", "an", "the", "of"]. The stopwords dictionary must
-     *         explicitly list each word you want to ignore. Wildcards and regular
-     *         expressions are not supported.
+     *         example, <code>["a", "an", "the", "of"]</code>. The stopwords
+     *         dictionary must explicitly list each word you want to ignore.
+     *         Wildcards and regular expressions are not supported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,19 +217,19 @@ public class AnalysisOptions implements Serializable {
 
     /**
      * A JSON object that contains a collection of string:value pairs that
-     * each map a term to its stem. For example, {"term1": "stem1", "term2":
-     * "stem2", "term3": "stem3"}. The stemming dictionary is applied in
-     * addition to any algorithmic stemming. This enables you to override the
-     * results of the algorithmic stemming to correct specific cases of
-     * overstemming or understemming. The maximum size of a stemming
+     * each map a term to its stem. For example, <code>{"term1": "stem1",
+     * "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is
+     * applied in addition to any algorithmic stemming. This enables you to
+     * override the results of the algorithmic stemming to correct specific
+     * cases of overstemming or understemming. The maximum size of a stemming
      * dictionary is 500 KB.
      *
      * @return A JSON object that contains a collection of string:value pairs that
-     *         each map a term to its stem. For example, {"term1": "stem1", "term2":
-     *         "stem2", "term3": "stem3"}. The stemming dictionary is applied in
-     *         addition to any algorithmic stemming. This enables you to override the
-     *         results of the algorithmic stemming to correct specific cases of
-     *         overstemming or understemming. The maximum size of a stemming
+     *         each map a term to its stem. For example, <code>{"term1": "stem1",
+     *         "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is
+     *         applied in addition to any algorithmic stemming. This enables you to
+     *         override the results of the algorithmic stemming to correct specific
+     *         cases of overstemming or understemming. The maximum size of a stemming
      *         dictionary is 500 KB.
      */
     public String getStemmingDictionary() {
@@ -217,19 +238,19 @@ public class AnalysisOptions implements Serializable {
     
     /**
      * A JSON object that contains a collection of string:value pairs that
-     * each map a term to its stem. For example, {"term1": "stem1", "term2":
-     * "stem2", "term3": "stem3"}. The stemming dictionary is applied in
-     * addition to any algorithmic stemming. This enables you to override the
-     * results of the algorithmic stemming to correct specific cases of
-     * overstemming or understemming. The maximum size of a stemming
+     * each map a term to its stem. For example, <code>{"term1": "stem1",
+     * "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is
+     * applied in addition to any algorithmic stemming. This enables you to
+     * override the results of the algorithmic stemming to correct specific
+     * cases of overstemming or understemming. The maximum size of a stemming
      * dictionary is 500 KB.
      *
      * @param stemmingDictionary A JSON object that contains a collection of string:value pairs that
-     *         each map a term to its stem. For example, {"term1": "stem1", "term2":
-     *         "stem2", "term3": "stem3"}. The stemming dictionary is applied in
-     *         addition to any algorithmic stemming. This enables you to override the
-     *         results of the algorithmic stemming to correct specific cases of
-     *         overstemming or understemming. The maximum size of a stemming
+     *         each map a term to its stem. For example, <code>{"term1": "stem1",
+     *         "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is
+     *         applied in addition to any algorithmic stemming. This enables you to
+     *         override the results of the algorithmic stemming to correct specific
+     *         cases of overstemming or understemming. The maximum size of a stemming
      *         dictionary is 500 KB.
      */
     public void setStemmingDictionary(String stemmingDictionary) {
@@ -238,21 +259,21 @@ public class AnalysisOptions implements Serializable {
     
     /**
      * A JSON object that contains a collection of string:value pairs that
-     * each map a term to its stem. For example, {"term1": "stem1", "term2":
-     * "stem2", "term3": "stem3"}. The stemming dictionary is applied in
-     * addition to any algorithmic stemming. This enables you to override the
-     * results of the algorithmic stemming to correct specific cases of
-     * overstemming or understemming. The maximum size of a stemming
+     * each map a term to its stem. For example, <code>{"term1": "stem1",
+     * "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is
+     * applied in addition to any algorithmic stemming. This enables you to
+     * override the results of the algorithmic stemming to correct specific
+     * cases of overstemming or understemming. The maximum size of a stemming
      * dictionary is 500 KB.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stemmingDictionary A JSON object that contains a collection of string:value pairs that
-     *         each map a term to its stem. For example, {"term1": "stem1", "term2":
-     *         "stem2", "term3": "stem3"}. The stemming dictionary is applied in
-     *         addition to any algorithmic stemming. This enables you to override the
-     *         results of the algorithmic stemming to correct specific cases of
-     *         overstemming or understemming. The maximum size of a stemming
+     *         each map a term to its stem. For example, <code>{"term1": "stem1",
+     *         "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is
+     *         applied in addition to any algorithmic stemming. This enables you to
+     *         override the results of the algorithmic stemming to correct specific
+     *         cases of overstemming or understemming. The maximum size of a stemming
      *         dictionary is 500 KB.
      *
      * @return A reference to this updated object so that method calls can be chained

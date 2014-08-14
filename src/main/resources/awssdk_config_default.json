@@ -35,11 +35,6 @@
     "config" : {
       "signerType" : "QueryStringSignerType"
     }
-  }, {
-    "key" : "cloudsearchdomain",
-    "config" : {
-      "signerType" : "NoOpSignerType"
-    }
   } ],
   "regionSigners" : [ {
     "key" : "cn-north-1",
@@ -103,6 +98,11 @@
     "key" : "AmazonCognitoSyncClient",
     "config" : {
       "serviceName" : "cognito-sync"
+    }
+  }, {
+    "key": "AmazonCloudSearchDomainClient",
+    "config" : {
+      "serviceName": "cloudsearch"
     }
   } ],
   "userAgentTemplate": "aws-sdk-{platform}/{version} {os.name}/{os.version} {java.vm.name}/{java.vm.version}/{java.version}{language.and.region}"

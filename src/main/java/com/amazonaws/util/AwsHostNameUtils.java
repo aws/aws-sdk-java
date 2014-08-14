@@ -26,6 +26,12 @@ public class AwsHostNameUtils {
     private static final Pattern S3_ENDPOINT_PATTERN =
         Pattern.compile("^(?:.+\\.)?s3[.-]([a-z0-9-]+)$");
 
+    private static final Pattern STANDARD_CLOUDSEARCH_ENDPOINT_PATTERN =
+        Pattern.compile("^(?:.+\\.)?([a-z0-9-]+)\\.cloudsearch$");
+
+    private static final Pattern EXTENDED_CLOUDSEARCH_ENDPOINT_PATTERN =
+        Pattern.compile("^(?:.+\\.)?([a-z0-9-]+)\\.cloudsearch\\..+");
+
     /**
      * @deprecated in favor of {@link #parseRegionName(String, String)}.
      */
@@ -53,6 +59,20 @@ public class AwsHostNameUtils {
         }
 
         if (serviceHint != null) {
+            if (serviceHint.equals("cloudsearch")
+                    && !host.startsWith("cloudsearch.")) {
+
+                // CloudSearch domains use the nonstandard domain format
+                // [domain].[region].cloudsearch.[suffix].
+
+                Matcher matcher = EXTENDED_CLOUDSEARCH_ENDPOINT_PATTERN
+                        .matcher(host);
+
+                if (matcher.matches()) {
+                    return matcher.group(1);
+                }
+            }
+
             // If we have a service hint, look for 'service.[region]' or
             // 'service-[region]' in the endpoint's hostname.
             Pattern pattern = Pattern.compile(
@@ -93,6 +113,12 @@ public class AwsHostNameUtils {
         Matcher matcher = S3_ENDPOINT_PATTERN.matcher(fragment);
         if (matcher.matches()) {
             // host was 'bucket.s3-[region].amazonaws.com'.
+            return matcher.group(1);
+        }
+
+        matcher = STANDARD_CLOUDSEARCH_ENDPOINT_PATTERN.matcher(fragment);
+        if (matcher.matches()) {
+            // host was 'domain.[region].cloudsearch.amazonaws.com'.
             return matcher.group(1);
         }
 

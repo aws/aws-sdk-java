@@ -14,6 +14,7 @@
  */
 package com.amazonaws.regions;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.EC2MetadataUtils;
 
 /**
@@ -68,15 +69,20 @@ public enum Regions {
     } 
     
     /**
-     * Returns a Region object for the region this EC2 instance is running in.
-     * Note that this will only work properly if your application is running in
-     * an EC2 instance, otherwise the request will time out.
+     * Returns a Region object representing the region the application is
+     * running in, when running in EC2. If this method is called from a non-EC2
+     * environment, it will return null.
      */
     public static Region getCurrentRegion() {
-        EC2MetadataUtils.InstanceInfo instanceInfo = EC2MetadataUtils.getInstanceInfo();
-        if (instanceInfo == null || instanceInfo.getRegion() == null) {
+        try {
+            EC2MetadataUtils.InstanceInfo instanceInfo = EC2MetadataUtils
+                    .getInstanceInfo();
+            if (instanceInfo == null || instanceInfo.getRegion() == null) {
+                return null;
+            }
+            return Region.getRegion(fromName(instanceInfo.getRegion()));
+        } catch (AmazonClientException e) {
             return null;
         }
-        return Region.getRegion(fromName(instanceInfo.getRegion()));
     }
 }

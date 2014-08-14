@@ -23,11 +23,16 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
 /**
  * Contains the data returned by Amazon S3 from the <code>putObject</code>
  * operation.
- * Use this request to access information about the new object created from the
+ * <p>
+ * Use this class to access information about the new object created from the
  * <code>putObject</code> request, such as its ETag and optional version ID.
+ * <p>
+ * This class also contains the MD5 hash of the object content calculated on the
+ * client-side.
  *
  * @see AmazonS3Client#putObject(String, String, java.io.File)
- * @see AmazonS3Client#putObject(String, String, java.io.InputStream, ObjectMetadata)
+ * @see AmazonS3Client#putObject(String, String, java.io.InputStream,
+ *      ObjectMetadata)
  * @see AmazonS3Client#putObject(PutObjectRequest)
  */
 public class PutObjectResult extends SSEResultBase implements ObjectExpirationResult {
@@ -78,9 +83,9 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
     }
 
     /**
-     * Gets the ETag value for the newly created object.
+     * Gets the server-side ETag value for the newly created object.
      *
-     * @return The ETag value for the new object.
+     * @return The server-side ETag value for the new object.
      *
      * @see PutObjectResult#setETag(String)
      */
@@ -138,7 +143,8 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
     }
 
     /**
-     * Sets the content MD5.
+     * Sets the Base64-encoded MD5 hash of the object content that was
+     * calculated on the client-side.
      *
      * @param contentMd5
      *            The content MD5
@@ -148,7 +154,10 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
     }
 
     /**
-     * Returns the content MD5.
+     * Returns the Base64-encoded MD5 hash of the object content that was
+     * calculated on the client-side. This method returns null if the MD5
+     * validation is disabled and the caller didn't provide the MD5 hash in the
+     * ObjectMetadata when sending the PutObjectRequest.
      */
     public String getContentMd5() {
         return contentMd5;

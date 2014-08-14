@@ -1696,9 +1696,9 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
     
     /**
      * <p>
-     * Configures an analysis scheme for a domain. An analysis scheme
-     * defines language-specific text processing options for a
-     * <code>text</code> field. For more information, see
+     * Configures an analysis scheme that can be applied to a
+     * <code>text</code> or <code>text-array</code> field to define
+     * language-specific text processing options. For more information, see
      * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"> Configuring Analysis Schemes </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
@@ -1731,9 +1731,9 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient
 
     /**
      * <p>
-     * Configures an analysis scheme for a domain. An analysis scheme
-     * defines language-specific text processing options for a
-     * <code>text</code> field. For more information, see
+     * Configures an analysis scheme that can be applied to a
+     * <code>text</code> or <code>text-array</code> field to define
+     * language-specific text processing options. For more information, see
      * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"> Configuring Analysis Schemes </a>
      * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
