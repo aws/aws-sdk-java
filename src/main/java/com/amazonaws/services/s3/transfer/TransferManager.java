@@ -36,6 +36,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -1180,6 +1181,16 @@ public class TransferManager {
         }
     }
 
+    /**
+     * Shutdown without interrupting the threads involved, so that, for example,
+     * any upload in progress can complete without throwing
+     * {@link AbortedException}.
+     */
+    private void shutdown() {
+        threadPool.shutdown();
+        timedThreadPool.shutdown();
+    }
+
     public static <X extends AmazonWebServiceRequest> X appendSingleObjectUserAgent(X request) {
         request.getRequestClientOptions().appendUserAgent(USER_AGENT);
         return request;
@@ -1465,6 +1476,6 @@ public class TransferManager {
      */
     @Override
     protected void finalize() throws Throwable {
-        shutdownNow(false);
+        shutdown();
     }
 }

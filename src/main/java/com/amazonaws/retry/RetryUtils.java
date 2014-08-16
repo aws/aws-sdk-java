@@ -14,6 +14,8 @@
  */
 package com.amazonaws.retry;
 
+import org.apache.http.HttpStatus;
+
 import com.amazonaws.AmazonServiceException;
 
 public class RetryUtils {
@@ -47,8 +49,8 @@ public class RetryUtils {
      *         error message from a service, otherwise false.
      */
     public static boolean isRequestEntityTooLargeException(AmazonServiceException ase) {
-        if (ase == null) return false;
-        return "Request entity too large".equals(ase.getErrorCode());
+        return ase != null 
+            && ase.getStatusCode() == HttpStatus.SC_REQUEST_TOO_LONG;
     }
     
     /**

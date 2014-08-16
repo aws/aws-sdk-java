@@ -73,30 +73,39 @@ public class Principal {
        provider = "Service";
     }
 
-    /**
-     * Constructs a new principal with the specified id and provider.
-     */
-    public Principal(String provider, String id) {
-        this.provider = provider;
-        if (provider.equals("AWS")) {
-            id = id.replaceAll("-", "");
-        }
-        this.id = id;
-    }
 
     /**
-     * Constructs a new principal with the specified AWS account ID.
+     * Constructs a new principal with the specified AWS account ID. This method
+     * automatically strips hyphen characters found in the account Id.
      *
      * @param accountId
      *            An AWS account ID.
      */
     public Principal(String accountId) {
+        this("AWS", accountId);
+
         if (accountId == null) {
             throw new IllegalArgumentException("Null AWS account ID specified");
         }
+    }
 
-        this.id = accountId.replaceAll("-", "");
-        provider = "AWS";
+    /**
+     * Constructs a new principal with the specified id and provider. This
+     * method automatically strips hyphen characters found in the account ID if
+     * the provider is "AWS".
+     */
+    public Principal(String provider, String id) {
+        this(provider, id, provider.equals("AWS"));
+    }
+
+    /**
+     * Constructs a new principal with the specified id and provider. This
+     * method optionally strips hyphen characters found in the account Id.
+     */
+    public Principal(String provider, String id, boolean stripHyphen) {
+        this.provider = provider;
+        this.id = stripHyphen ?
+                id.replace("-", "") : id;
     }
 
     /**

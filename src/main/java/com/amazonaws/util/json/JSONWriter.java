@@ -320,7 +320,7 @@ public class JSONWriter {
      * @throws JSONException
      */
     public JSONWriter value(Date date) throws JSONException {
-        return this.value(DateUtils.formatServiceSpecificDate(date));
+        return this.value(Long.valueOf(date.getTime() / 1000));
     }
 
     /**
