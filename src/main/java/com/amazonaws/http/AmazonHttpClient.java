@@ -437,20 +437,6 @@ public class AmazonHttpClient {
                     }
                 }
 
-                if ( entity != null ) {
-                    InputStream content = entity.getContent();
-                    if ( requestCount > 1 ) {   // retry
-                        if ( content.markSupported() ) {
-                            content.reset();
-                            content.mark(-1);
-                        }
-                    } else {
-                        if ( content.markSupported() ) {
-                            content.mark(-1);
-                        }
-                    }
-                }
-
                 captureConnectionPoolMetrics(httpClient.getConnectionManager(), awsRequestMetrics);
                 HttpContext httpContext = new BasicHttpContext();
                 httpContext.setAttribute(
