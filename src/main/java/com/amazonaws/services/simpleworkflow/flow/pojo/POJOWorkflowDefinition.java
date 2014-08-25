@@ -71,8 +71,8 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
                 // after new parameters were added to @Execute method
                 // It requires creation of parameters array of the correct size and
                 // populating the new parameter values with default values for each type
-                Object[] parameters = c.fromData(input, Object[].class);
                 Method method = workflowMethod.getMethod();
+                Object[] parameters = c.parseMethodArguments(input, method);
                 Object r = invokeMethod(method, parameters);
                 if (!method.getReturnType().equals(Void.TYPE)) {
                     methodResult.set((Promise) r);
@@ -108,7 +108,7 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
                 c = converter;
             }
             Method method = signalMethod.getMethod();
-            Object[] parameters = c.fromData(details, Object[].class);
+            Object[] parameters = c.parseMethodArguments(details, method);
             try {
                 invokeMethod(method, parameters);
             }

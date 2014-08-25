@@ -57,7 +57,7 @@ class POJOActivityImplementation extends ActivityImplementationBase {
         // after new parameters were added to activity method
         // It requires creation of inputParameters array of the correct size and
         // populating the new parameter values with default values for each type
-        Object[] inputParameters = converter.fromData(input, Object[].class);
+        Object[] inputParameters = converter.parseMethodArguments(input,activity);
         CurrentActivityExecutionContext.set(context);
         Object result = null;
         try {

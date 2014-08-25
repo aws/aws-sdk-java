@@ -15,6 +15,7 @@
 package com.amazonaws.services.simpleworkflow.flow;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -104,5 +105,14 @@ public class JsonDataConverter extends DataConverter {
         catch (IOException e) {
             throw new DataConverterException(e);
         }
+    }
+
+    /**
+     * This uses Object[] to de-serialize the arguments.
+     * @see com.amazonaws.services.simpleworkflow.flow.DataConverter#parseMethodArguments(String, java.lang.reflect.Method)
+     */
+    @Override
+    public Object[] parseMethodArguments(String serialized, Method method) throws DataConverterException {
+        return fromData(serialized, Object[].class);
     }
 }
