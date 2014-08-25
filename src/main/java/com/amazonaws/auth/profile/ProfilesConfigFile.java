@@ -61,6 +61,9 @@ public class ProfilesConfigFile {
 
     private static final Log LOG = LogFactory.getLog(ProfilesConfigFile.class);
 
+    /** Environment variable name for overriding the default AWS profile */
+    public static final String AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
+
     /** Environment variable specifying an alternate location for the AWS credential profiles file */
     @Deprecated
     private static final String LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE = "AWS_CONFIG_FILE";

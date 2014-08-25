@@ -16,6 +16,7 @@ package com.amazonaws.auth.profile;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Credentials provider based on AWS configuration profiles. This provider vends
@@ -50,7 +51,7 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
      * is called.
      */
     public ProfileCredentialsProvider() {
-        this(ProfilesConfigFile.DEFAULT_PROFILE_NAME);
+        this(null);
     }
 
     /**
@@ -95,7 +96,17 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
      */
     public ProfileCredentialsProvider(ProfilesConfigFile profilesConfigFile, String profileName) {
         this.profilesConfigFile = profilesConfigFile;
-        this.profileName = profileName;
+        if (profileName == null) {
+            String profileOverride = System.getenv(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            profileOverride = StringUtils.trim(profileOverride);
+            if (!StringUtils.isNullOrEmpty(profileOverride)) {
+                this.profileName = profileOverride;
+            } else {
+                this.profileName = ProfilesConfigFile.DEFAULT_PROFILE_NAME;
+            }
+        } else {
+            this.profileName = profileName;
+        }
     }
 
     @Override
