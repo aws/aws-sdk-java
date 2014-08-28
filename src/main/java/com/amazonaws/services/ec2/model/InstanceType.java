@@ -63,6 +63,17 @@ public enum InstanceType {
     private InstanceType(String value) {
         this.value = value;
     }
+    
+    /**
+	 * Resolve the instance family of this instance type.
+	 * 
+	 * @return The instance family of this instance type. It can be {@code null}
+	 *         .
+	 * @see InstanceFamilyType
+	 */
+    public InstanceFamily getInstanceFamily() {
+    	return InstanceFamilyType.valueOf(this);
+    }
 
     @Override
     public String toString() {
@@ -160,5 +171,6 @@ public enum InstanceType {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }
     }
+    
 }
     
