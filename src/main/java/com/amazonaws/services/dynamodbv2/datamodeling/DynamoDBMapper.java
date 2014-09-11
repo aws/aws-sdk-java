@@ -390,7 +390,7 @@ public class DynamoDBMapper {
 
         config = mergeConfig(config);
 
-        String tableName = getTableName(clazz, config);
+        String tableName = getTableName(clazz, keyObject, config);
 
         GetItemRequest rq = new GetItemRequest()
             .withRequestMetricCollector(config.getRequestMetricCollector());
@@ -540,8 +540,28 @@ public class DynamoDBMapper {
      */
     protected final String getTableName(final Class<?> clazz,
                                         final DynamoDBMapperConfig config) {
+        return getTableName(clazz, null, config);
+    }
 
-        return getTableName(clazz, config, reflector);
+    /**
+     * Returns the table name for the class or object given.
+     */
+    protected final String getTableName(final Class<?> clazz,
+                                        final Object object,
+                                        final DynamoDBMapperConfig config) {
+
+        // Resolve by object, if possible and desired
+        DynamoDBMapperConfig.ObjectTableNameResolver objectResolver = config.getObjectTableNameResolver();
+        if(object != null && objectResolver != null) {
+            return objectResolver.getTableName(object, config);
+        }
+
+        // Resolve by class
+        DynamoDBMapperConfig.TableNameResolver classResolver = config.getTableNameResolver();
+        if(classResolver == null) {
+            classResolver = DynamoDBMapperConfig.DefaultTableNameResolver.INSTANCE;
+        }
+        return classResolver.getTableName(clazz, config);
     }
 
     static String getTableName(final Class<?> clazz,
@@ -842,7 +862,7 @@ public class DynamoDBMapper {
 
         @SuppressWarnings("unchecked")
         Class<? extends T> clazz = (Class<? extends T>) object.getClass();
-        String tableName = getTableName(clazz, finalConfig);
+        String tableName = getTableName(clazz, object, finalConfig);
 
         /*
          * We force a putItem request instead of updateItem request either when
@@ -1324,7 +1344,7 @@ public class DynamoDBMapper {
         @SuppressWarnings("unchecked")
         Class<T> clazz = (Class<T>) object.getClass();
 
-        String tableName = getTableName(clazz, config);
+        String tableName = getTableName(clazz, object, config);
 
         Map<String, AttributeValue> key = getKey(object, clazz);
 
@@ -1475,7 +1495,7 @@ public class DynamoDBMapper {
         List<ValueUpdate> inMemoryUpdates = new LinkedList<ValueUpdate>();
         for ( Object toWrite : objectsToWrite ) {
             Class<?> clazz = toWrite.getClass();
-            String tableName = getTableName(clazz, config);
+            String tableName = getTableName(clazz, toWrite, config);
 
             Map<String, AttributeValue> attributeValues = new HashMap<String, AttributeValue>();
 
@@ -1513,7 +1533,7 @@ public class DynamoDBMapper {
         for ( Object toDelete : objectsToDelete ) {
             Class<?> clazz = toDelete.getClass();
 
-            String tableName = getTableName(clazz, config);
+            String tableName = getTableName(clazz, toDelete, config);
 
             Map<String, AttributeValue> key = getKey(toDelete);
 
@@ -1735,7 +1755,7 @@ public class DynamoDBMapper {
         for ( Object keyObject : itemsToGet ) {
             Class<?> clazz = keyObject.getClass();
 
-            String tableName = getTableName(clazz, config);
+            String tableName = getTableName(clazz, keyObject, config);
             classesByTableName.put(tableName, clazz);
 
             if ( !requestItems.containsKey(tableName) ) {
