@@ -1,0 +1,174 @@
+{ // AWS Java SDK internal configuration
+  "defaultSigner" : {
+    "signerType" : "AWS4SignerType"
+  },
+  // "regionSigners" configuration takes precedence over
+  // the "serviceSigners" configuration,
+  // but not the "serviceRegionSigners" configuration
+  "serviceSigners" : [ {
+    "key" : "importexport",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "route53",
+    "config" : {
+      "signerType" : "AWS3SignerType"
+    }
+  }, {
+    "key" : "s3",
+    "config" : {
+      "signerType" : "AWSS3V4SignerType"
+    }
+  } ],
+  "regionSigners" : [ ],
+  "serviceRegionSigners" : [ {
+    "key" : "s3/us-east-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/us-west-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/us-west-2",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/eu-west-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/ap-southeast-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/ap-southeast-2",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/ap-northeast-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/sa-east-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "s3/us-gov-west-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
+    "key" : "sdb/us-east-1",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/us-west-1",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/us-west-2",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/eu-west-1",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/ap-southeast-1",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/ap-southeast-2",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/ap-northeast-1",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/sa-east-1",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  }, {
+    "key" : "sdb/us-gov-west-1",
+    "config" : {
+      "signerType" : "QueryStringSignerType"
+    }
+  } ],
+  // AWS http client internal configuration.
+  // Currently, only those http client with class name not following the usual
+  // convention of (Amazon|AWS).*(JavaClient|Client)
+  // needs to be explicitly configured.  Otherwise, the service name of an
+  // http client not explicitly configured will be derived automatically from
+  // the class name by removing the prefix and suffix as necessary.
+  "httpClients" : [ {
+    "key" : "AmazonSimpleWorkflowClient",
+    "config" : {
+      "serviceName" : "swf"
+    }
+  }, {
+    "key" : "AmazonCloudWatchClient",
+    "config" : {
+      "serviceName" : "monitoring"
+    }
+  }, {
+    "key" : "DataPipelineClient",
+    "config" : {
+      "serviceName" : "datapipeline"
+    }
+  }, {
+    "key" : "AmazonIdentityManagementClient",
+    "config" : {
+      "serviceName" : "iam"
+    }
+  }, {
+    "key" : "AmazonSimpleDBClient",
+    "config" : {
+      "serviceName" : "sdb"
+    }
+  }, {
+    "key" : "AmazonSimpleEmailServiceClient",
+    "config" : {
+      "serviceName" : "email"
+    }
+  }, {
+    "key" : "AWSSecurityTokenServiceClient",
+    "config" : {
+      "serviceName" : "sts"
+    }
+  }, {
+    "key" : "AmazonCognitoIdentityClient",
+    "config" : {
+      "serviceName" : "cognito-identity"
+    }
+  }, {
+    "key" : "AmazonCognitoSyncClient",
+    "config" : {
+      "serviceName" : "cognito-sync"
+    }
+  }, {
+    "key": "AmazonCloudSearchDomainClient",
+    "config" : {
+      "serviceName": "cloudsearch"
+    }
+  } ],
+  "userAgentTemplate": "aws-sdk-{platform}/{version} {os.name}/{os.version} {java.vm.name}/{java.vm.version}/{java.version}{language.and.region}"
+}
