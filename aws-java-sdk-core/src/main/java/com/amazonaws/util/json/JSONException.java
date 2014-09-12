@@ -1,53 +1,52 @@
 /*
- * Copyright (c) 2002 JSON.org
+ * Copyright (C) 2010 The Android Open Source Project
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * The Software shall be used for Good, not Evil.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.amazonaws.util.json;
 
+// Note: this class was written without inspecting the non-free org.json sourcecode.
+
 /**
- * The JSONException is thrown by the JSON.org classes when things are amiss.
- * @version 2008-09-18
+ * Thrown to indicate a problem with the JSON API. Such problems include:
+ * <ul>
+ *   <li>Attempts to parse or construct malformed documents
+ *   <li>Use of null as a name
+ *   <li>Use of numeric types not available to JSON, such as {@link
+ *       Double#isNaN() NaNs} or {@link Double#isInfinite() infinities}.
+ *   <li>Lookups using an out of range index or nonexistent name
+ *   <li>Type mismatches on lookups
+ * </ul>
+ *
+ * <p>Although this is a checked exception, it is rarely recoverable. Most
+ * callers should simply wrap this exception in an unchecked exception and
+ * rethrow:
+ * <pre>  public JSONArray toJSONObject() {
+ *     try {
+ *         JSONObject result = new JSONObject();
+ *         ...
+ *     } catch (JSONException e) {
+ *         throw new RuntimeException(e);
+ *     }
+ * }</pre>
  */
 public class JSONException extends Exception {
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 0;
-	private Throwable cause;
 
-    /**
-     * Constructs a JSONException with an explanatory message.
-     * @param message Detail about the reason for the exception.
-     */
-    public JSONException(String message) {
-        super(message);
+    public JSONException(String s) {
+        super(s);
     }
-
-    public JSONException(Throwable t) {
-        super(t.getMessage());
-        this.cause = t;
-    }
-
-    public Throwable getCause() {
-        return this.cause;
+    public JSONException(Exception e) {
+        super(e);
     }
 }
