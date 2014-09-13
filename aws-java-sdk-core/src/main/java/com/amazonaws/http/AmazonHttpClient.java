@@ -409,6 +409,13 @@ public class AmazonHttpClient {
             new LinkedHashMap<String, String>(request.getParameters());
         final Map<String, String> originalHeaders =
             new HashMap<String, String>(request.getHeaders());
+        // Always mark the input stream before execution.
+        final InputStream requestInputStream = request.getContent();
+        if (requestInputStream != null && requestInputStream.markSupported()) {
+            AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+            final int readLimit = awsreq.getRequestClientOptions().getReadLimit();
+            requestInputStream.mark(readLimit);
+        }
         final ExecOneRequestParams p = new ExecOneRequestParams();
         while (true) {
             p.initPerRetry();
@@ -437,14 +444,18 @@ public class AmazonHttpClient {
                                 ace,
                                 p.requestCount,
                                 config.getRetryPolicy())) {
-                    throw ace;
+                    throw lastReset(ace, request);
                 }
                 // Cache the retryable exception
                 p.retriedException = ace;
             } catch(RuntimeException e) {
-                throw captureExceptionMetrics(e, awsRequestMetrics);
+                throw lastReset(
+                        captureExceptionMetrics(e, awsRequestMetrics),
+                        request);
             } catch(Error e) {
-                throw captureExceptionMetrics(e, awsRequestMetrics);
+                throw lastReset(
+                        captureExceptionMetrics(e, awsRequestMetrics),
+                        request);
             } finally {
                 /*
                  * Some response handlers need to manually manage the HTTP
@@ -467,6 +478,34 @@ public class AmazonHttpClient {
                 }
             }
         } /* end while (true) */
+    }
+
+    /**
+     * Used to perform a last reset on the content input stream (if
+     * mark-supported); this is so that, for backward compatibility reason, any
+     * "blind" retry (ie without calling reset) by user of this library with the
+     * same input stream (such as ByteArrayInputStream) could still succeed.
+     * 
+     * @param t
+     *            the failure
+     * @param apacheRequest
+     *            the request, if known; or null otherwise.
+     * @return the failure as given
+     */
+    private <T extends Throwable> T lastReset(final T t,
+            final Request<?> req) {
+        try {
+            InputStream content = req.getContent();
+            if (content != null) {
+                if (content.markSupported())
+                    content.reset();
+            }
+        } catch (Exception ex) {
+            log.debug(
+                "FYI: failed to reset content inputstream before throwing up",
+                 ex);
+        }
+        return t;
     }
 
     /**
@@ -549,6 +588,9 @@ public class AmazonHttpClient {
 
         if (requestLog.isDebugEnabled())
             requestLog.debug("Sending Request: " + request);
+        final InputStream apacheInputStream = contentFrom(p.apacheRequest);
+        // mark or reset the input streams
+        markOrResetStreams(p.requestCount, request, apacheInputStream);
         p.newApacheRequest(httpRequestFactory, request, config, execContext);
         final ProgressListener listener = awsreq.getGeneralProgressListener();
 
@@ -566,21 +608,6 @@ public class AmazonHttpClient {
                 }
             } finally {
                 awsRequestMetrics.endEvent(RetryPauseTime);
-            }
-        }
-        final InputStream content = contentFrom(p.apacheRequest);
-        if (content != null) {
-            if (content.markSupported()) {
-                if (p.requestCount > 1) // retry
-                    try {
-                        content.reset();
-                    } catch(IOException ex) {
-                        throw new ResetException("Failed to reset the input stream", ex);
-                    }
-                else  { // prepare for retry
-                    final int readLimit = awsreq.getRequestClientOptions().getReadLimit();
-                    content.mark(readLimit);
-                }
             }
         }
         captureConnectionPoolMetrics(httpClient.getConnectionManager(), awsRequestMetrics);
@@ -664,6 +691,39 @@ public class AmazonHttpClient {
             SDKGlobalConfiguration.setGlobalTimeOffset(timeOffset = clockSkew);
         }
         return null; // => retry
+    }
+
+    private void markOrResetStreams(final int requestCount,
+            final Request<?> req, final InputStream apacheInputStream) {
+        final AmazonWebServiceRequest awsreq = req.getOriginalRequest();
+        // Reset the request input stream
+        if (requestCount > 1) { // a retry
+            InputStream requestInputStream = req.getContent();
+            if (requestInputStream != null) {
+                if (requestInputStream.markSupported()) {
+                    try {
+                        requestInputStream.reset();
+                    } catch(IOException ex) {
+                        throw new ResetException("Failed to reset the request input stream", ex);
+                    }
+                }
+            }
+        }
+        // Reset the apache input stream
+        if (apacheInputStream != null) {
+            if (apacheInputStream.markSupported()) {
+                if (requestCount > 1) // retry
+                    try {
+                        apacheInputStream.reset();
+                    } catch(IOException ex) {
+                        throw new ResetException("Failed to reset the apache input stream", ex);
+                    }
+                else  { // first attempt => prepare for retry
+                    final int readLimit = awsreq.getRequestClientOptions().getReadLimit();
+                    apacheInputStream.mark(readLimit);
+                }
+            }
+        }
     }
     /**
      * Returns the content input stream (which can be a super set of the
