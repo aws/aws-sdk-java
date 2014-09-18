@@ -34,6 +34,7 @@ import org.apache.http.params.CoreProtocolPNames;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
+import com.amazonaws.util.FakeIOException;
 import com.amazonaws.util.HttpUtils;
 
 /** Responsible for creating Apache HttpClient 4 request objects. */
@@ -52,8 +53,11 @@ class HttpRequestFactory {
      *
      * @return The converted HttpClient method object with any parameters,
      *         headers, etc. from the original request set.
+     * @throws FakeIOException only for test simulation
      */
-    HttpRequestBase createHttpRequest(Request<?> request, ClientConfiguration clientConfiguration, ExecutionContext context) {
+    HttpRequestBase createHttpRequest(Request<?> request,
+            ClientConfiguration clientConfiguration, ExecutionContext context)
+            throws FakeIOException {
         URI endpoint = request.getEndpoint();
 
         /*
@@ -236,10 +240,13 @@ class HttpRequestFactory {
      *            The HTTP entity to wrap with a buffered HTTP entity.
      *
      * @return A new BufferedHttpEntity wrapping the specified entity.
+     * @throws FakeIOException only for test simulation
      */
-    private HttpEntity newBufferedHttpEntity(HttpEntity entity) {
+    private HttpEntity newBufferedHttpEntity(HttpEntity entity) throws FakeIOException {
         try {
             return new BufferedHttpEntity(entity);
+        } catch(FakeIOException e) {
+            throw e;
         } catch (IOException e) {
             throw new AmazonClientException("Unable to create HTTP entity: " + e.getMessage(), e);
         }

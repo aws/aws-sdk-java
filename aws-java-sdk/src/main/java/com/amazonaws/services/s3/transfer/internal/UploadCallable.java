@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
@@ -74,6 +75,8 @@ public class UploadCallable implements Callable<UploadResult> {
     private final List<PartETag> eTagsToSkip = new ArrayList<PartETag>();
 
     private PersistableUpload persistableUpload;
+
+    private CountDownLatch latch;
 
     public UploadCallable(TransferManager transferManager,
             ExecutorService threadPool, UploadImpl upload,
@@ -276,6 +279,8 @@ public class UploadCallable implements Callable<UploadResult> {
 
         Map<Integer,PartSummary> partNumbers = identifyExistingPartsForResume(uploadId);
 
+        latch = new CountDownLatch(requestFactory.getTotalNumberOfParts());
+
         while (requestFactory.hasMoreRequests()) {
             if (threadPool.isShutdown()) throw new CancellationException("TransferManager has been shutdown");
             UploadPartRequest request = requestFactory.getNextUploadPartRequest();
@@ -284,9 +289,11 @@ public class UploadCallable implements Callable<UploadResult> {
                 eTagsToSkip.add(new PartETag(request.getPartNumber(), summary
                         .getETag()));
                 transferProgress.updateProgress(summary.getSize());
+                latch.countDown();
                 continue;
             }
-            futures.add(threadPool.submit(new UploadPartCallable(s3, request)));
+            futures.add(threadPool.submit(new UploadPartCallable(s3, request,
+                    latch)));
         }
     }
 
@@ -318,7 +325,7 @@ public class UploadCallable implements Callable<UploadResult> {
      * @param isUsingEncryption
      */
     private String initiateMultipartUpload(PutObjectRequest putObjectRequest, boolean isUsingEncryption) {
-    	
+
         InitiateMultipartUploadRequest initiateMultipartUploadRequest = null;
         if (isUsingEncryption && putObjectRequest instanceof EncryptedPutObjectRequest) {
             initiateMultipartUploadRequest = new EncryptedInitiateMultipartUploadRequest(
@@ -331,7 +338,7 @@ public class UploadCallable implements Callable<UploadResult> {
                 .withCannedACL(putObjectRequest.getCannedAcl())
                 .withObjectMetadata(putObjectRequest.getMetadata());
         }
-        
+
         TransferManager.appendMultipartUserAgent(initiateMultipartUploadRequest);
 
         if (putObjectRequest.getStorageClass() != null) {
@@ -352,5 +359,9 @@ public class UploadCallable implements Callable<UploadResult> {
         log.debug("Initiated new multipart upload: " + uploadId);
 
         return uploadId;
+    }
+
+    CountDownLatch getLatch() {
+        return latch;
     }
 }

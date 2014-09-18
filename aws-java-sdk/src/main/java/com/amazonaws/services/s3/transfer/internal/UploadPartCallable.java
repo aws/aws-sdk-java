@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.transfer.internal;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.CountDownLatch;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.PartETag;
@@ -23,13 +24,18 @@ import com.amazonaws.services.s3.model.UploadPartRequest;
 public class UploadPartCallable implements Callable<PartETag> {
     private final AmazonS3 s3;
     private final UploadPartRequest request;
+    private final CountDownLatch latch;
 
-    public UploadPartCallable(AmazonS3 s3, UploadPartRequest request) {
+    public UploadPartCallable(AmazonS3 s3, UploadPartRequest request,
+            CountDownLatch latch) {
         this.s3 = s3;
         this.request = request;
+        this.latch = latch;
     }
 
     public PartETag call() throws Exception {
-        return s3.uploadPart(request).getPartETag();
+        PartETag partETag = s3.uploadPart(request).getPartETag();
+        latch.countDown();
+        return partETag;
     }
 }

@@ -103,4 +103,20 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     public HttpRequestBase getHttpRequest() {
         return httpRequest;
     }
+
+    /**
+     * Returns super.available() if the value is not zero or else always returns
+     * 1.  This is necessary to get around a GZIPInputStream bug which would
+     * mis-behave in some edge cases upon zero returned from available(),
+     * causing file truncation.
+     * <p>
+     * http://bugs.java.com/bugdatabase/view_bug.do?bug_id=7036144
+     * <p> 
+     * Reference TT: 0034867351
+     */
+    @Override
+    public int available() throws IOException {
+        int estimate = super.available();
+        return estimate == 0 ? 1 : estimate;
+    }
 }

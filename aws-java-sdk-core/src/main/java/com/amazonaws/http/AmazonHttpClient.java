@@ -101,6 +101,7 @@ import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.CountingInputStream;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.FakeIOException;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
 
@@ -549,11 +550,14 @@ public class AmazonHttpClient {
             return signer;
         }
 
+        /**
+         * @throws FakeIOException thrown only during test simulation
+         */
         HttpRequestBase newApacheRequest(
                 final HttpRequestFactory httpRequestFactory,
                 final Request<?> request,
                 final ClientConfiguration config,
-                final ExecutionContext execContext) {
+                final ExecutionContext execContext) throws FakeIOException {
             apacheRequest = httpRequestFactory.createHttpRequest(request, config, execContext);
             if (redirectedURI != null)
                 apacheRequest.setURI(redirectedURI);
@@ -571,6 +575,21 @@ public class AmazonHttpClient {
             final AWSRequestMetrics awsRequestMetrics,
             ExecOneRequestParams p)
             throws IOException {
+        // Reset the request input stream
+        if (p.requestCount > 1) { // a retry
+            InputStream requestInputStream = request.getContent();
+            if (requestInputStream != null) {
+                if (requestInputStream.markSupported()) {
+                    try {
+                        requestInputStream.reset();
+                    } catch(IOException ex) {
+                        throw new ResetException("Failed to reset the request input stream", ex);
+                    }
+                }
+            }
+        }
+        if (requestLog.isDebugEnabled())
+            requestLog.debug("Sending Request: " + request);
         final AWSCredentials credentials = execContext.getCredentials();
         final AmazonWebServiceRequest awsreq = request.getOriginalRequest();
         // Sign the request if a signer was provided
@@ -585,12 +604,6 @@ public class AmazonHttpClient {
                 awsRequestMetrics.endEvent(RequestSigningTime);
             }
         }
-
-        if (requestLog.isDebugEnabled())
-            requestLog.debug("Sending Request: " + request);
-        final InputStream apacheInputStream = contentFrom(p.apacheRequest);
-        // mark or reset the input streams
-        markOrResetStreams(p.requestCount, request, apacheInputStream);
         p.newApacheRequest(httpRequestFactory, request, config, execContext);
         final ProgressListener listener = awsreq.getGeneralProgressListener();
 
@@ -691,52 +704,6 @@ public class AmazonHttpClient {
             SDKGlobalConfiguration.setGlobalTimeOffset(timeOffset = clockSkew);
         }
         return null; // => retry
-    }
-
-    private void markOrResetStreams(final int requestCount,
-            final Request<?> req, final InputStream apacheInputStream) {
-        final AmazonWebServiceRequest awsreq = req.getOriginalRequest();
-        // Reset the request input stream
-        if (requestCount > 1) { // a retry
-            InputStream requestInputStream = req.getContent();
-            if (requestInputStream != null) {
-                if (requestInputStream.markSupported()) {
-                    try {
-                        requestInputStream.reset();
-                    } catch(IOException ex) {
-                        throw new ResetException("Failed to reset the request input stream", ex);
-                    }
-                }
-            }
-        }
-        // Reset the apache input stream
-        if (apacheInputStream != null) {
-            if (apacheInputStream.markSupported()) {
-                if (requestCount > 1) // retry
-                    try {
-                        apacheInputStream.reset();
-                    } catch(IOException ex) {
-                        throw new ResetException("Failed to reset the apache input stream", ex);
-                    }
-                else  { // first attempt => prepare for retry
-                    final int readLimit = awsreq.getRequestClientOptions().getReadLimit();
-                    apacheInputStream.mark(readLimit);
-                }
-            }
-        }
-    }
-    /**
-     * Returns the content input stream (which can be a super set of the
-     * original input stream in the request) to be used for the http request.
-     */
-    private InputStream contentFrom(HttpRequestBase hrb) throws IOException {
-        if (hrb instanceof HttpEntityEnclosingRequest) {
-            HttpEntityEnclosingRequest r = (HttpEntityEnclosingRequest)hrb;
-            HttpEntity entity = r.getEntity();
-            if (entity != null)
-                return entity.getContent();
-        }
-        return null;
     }
 
     /**
