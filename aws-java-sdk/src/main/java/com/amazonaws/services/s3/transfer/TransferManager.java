@@ -540,7 +540,6 @@ public class TransferManager {
                 transferProgress);
         UploadMonitor watcher = new UploadMonitor(this, upload, threadPool,
                 uploadCallable, putObjectRequest, listenerChain);
-        watcher.setTimedThreadPool(timedThreadPool);
         upload.setMonitor(watcher);
 
         return upload;

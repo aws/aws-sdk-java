@@ -42,6 +42,7 @@ public class UploadPartRequestFactory {
     private long offset = 0;
     private long remainingBytes;
     private SSECustomerKey sseCustomerKey;
+    private final int totalNumberOfParts;
 
     public UploadPartRequestFactory(PutObjectRequest putObjectRequest, String uploadId, long optimalPartSize) {
         this.putObjectRequest = putObjectRequest;
@@ -50,8 +51,11 @@ public class UploadPartRequestFactory {
         this.bucketName = putObjectRequest.getBucketName();
         this.key = putObjectRequest.getKey();
         this.file = TransferManagerUtils.getRequestFile(putObjectRequest);
-        this.remainingBytes = TransferManagerUtils.getContentLength(putObjectRequest);
+        this.remainingBytes = TransferManagerUtils
+                .getContentLength(putObjectRequest);
         this.sseCustomerKey = putObjectRequest.getSSECustomerKey();
+        this.totalNumberOfParts = (int) Math.ceil((double) this.remainingBytes
+                / this.optimalPartSize);
     }
 
     public synchronized boolean hasMoreRequests() {
@@ -61,7 +65,7 @@ public class UploadPartRequestFactory {
     public synchronized UploadPartRequest getNextUploadPartRequest() {
         long partSize = Math.min(optimalPartSize, remainingBytes);
         boolean isLastPart = (remainingBytes - partSize <= 0);
-        
+
         UploadPartRequest request = null;
         if (putObjectRequest.getInputStream() != null) {
             request = new UploadPartRequest()
@@ -93,4 +97,9 @@ public class UploadPartRequestFactory {
 
         return request;
     }
+
+    public int getTotalNumberOfParts() {
+        return totalNumberOfParts;
+    }
+
 }

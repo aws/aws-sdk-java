@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import com.amazonaws.AmazonClientException;
@@ -51,10 +51,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
 
     private final AmazonS3 s3;
-    private final ExecutorService threadPool;
     private final PutObjectRequest putObjectRequest;
-    private ScheduledExecutorService timedThreadPool;
-
     private final ProgressListenerChain listener;
     private final UploadCallable multipartUploadCallable;
     private final UploadImpl transfer;
@@ -69,18 +66,19 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      * State for clients wishing to poll for completion
      */
     private boolean isUploadDone = false;
-    private Future<UploadResult> nextFuture;
+    private Future<UploadResult> future;
+    private CountDownLatch latch;
 
-    public synchronized Future<UploadResult> getFuture() {
-        return nextFuture;
+    public Future<UploadResult> getFuture() {
+        return future;
     }
 
-    private synchronized void setNextFuture(Future<UploadResult> nextFuture) {
-        this.nextFuture = nextFuture;
+    private void setFuture(Future<UploadResult> future) {
+        this.future = future;
     }
 
-    private synchronized void cancelNextFuture() {
-        nextFuture.cancel(true);
+    private void cancelFuture() {
+        future.cancel(true);
     }
 
     public synchronized boolean isDone() {
@@ -91,9 +89,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         isUploadDone = true;
     }
 
-    // TODO: this could be configured in the configuration object (which we're
-    // not using right now)
-    private int pollInterval = 5000;
+    private int latchWaitTime = 5000;
 
     /**
      * Constructs a new upload watcher, which immediately submits itself to the
@@ -120,74 +116,35 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
         this.s3 = manager.getAmazonS3Client();
         this.multipartUploadCallable = multipartUploadCallable;
-        this.threadPool = threadPool;
         this.putObjectRequest = putObjectRequest;
         this.listener = progressListenerChain;
         this.transfer = transfer;
-        setNextFuture(threadPool.submit(this));
-    }
 
-    public void setTimedThreadPool(ScheduledExecutorService timedThreadPool) {
-        this.timedThreadPool = timedThreadPool;
+        setFuture(threadPool.submit(this));
     }
 
     @Override
     public UploadResult call() throws Exception {
         try {
-            if ( uploadId == null ) {
-                return upload();
-            } else {
-                return poll();
+            UploadResult result = multipartUploadCallable.call();
+
+            if (result == null) {
+                uploadId = multipartUploadCallable.getMultipartUploadId();
+                futures.addAll(multipartUploadCallable.getFutures());
+                latch = multipartUploadCallable.getLatch();
+                result = waitForUploadResult();
             }
-        } catch ( CancellationException e ) {
+            uploadComplete();
+            return result;
+        } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
             publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
             throw new AmazonClientException("Upload canceled");
-        } catch ( Exception e ) {
+        } catch (Exception e) {
             transfer.setState(TransferState.Failed);
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
         }
-    }
-
-    /**
-     * Polls for a result from a multipart upload and either returns it if
-     * complete, or reschedules to poll again later if not.
-     */
-    private UploadResult poll() throws InterruptedException {
-        for ( Future<PartETag> f : futures ) {
-            if ( !f.isDone() ) {
-                reschedule();
-                return null;
-            }
-        }
-
-        for ( Future<PartETag> f : futures ) {
-            if ( f.isCancelled() ) {
-                throw new CancellationException();
-            }
-        }
-
-        return completeMultipartUpload();
-    }
-
-    /**
-     * Initiates the upload and checks on the result. If it has completed,
-     * returns the result; otherwise, reschedules to check back later.
-     */
-    private UploadResult upload() throws Exception, InterruptedException {
-
-        UploadResult result = multipartUploadCallable.call();
-
-        if ( result != null ) {
-            uploadComplete();
-        } else {
-            uploadId = multipartUploadCallable.getMultipartUploadId();
-            futures.addAll(multipartUploadCallable.getFutures());
-            reschedule();
-        }
-
-        return result;
     }
 
     private void uploadComplete() {
@@ -201,13 +158,28 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         }
     }
 
-    private void reschedule()  {
-        setNextFuture(timedThreadPool.schedule(new Callable<UploadResult>() {
-            public UploadResult call() throws Exception {
-                setNextFuture(threadPool.submit(UploadMonitor.this));
-                return null;
+    private UploadResult waitForUploadResult() throws InterruptedException {
+
+        while (!(latch.await(latchWaitTime, TimeUnit.MILLISECONDS))) {
+
+            for ( Future<PartETag> f : futures ) {
+                if ( !f.isDone() ) {
+                    continue;
+                }
             }
-        }, pollInterval, TimeUnit.MILLISECONDS));
+
+            for ( Future<PartETag> f : futures ) {
+                if ( f.isCancelled() ) {
+                    throw new CancellationException();
+                }
+            }
+            break;
+        }
+
+        // Ideally we would want to move this complete multipart along with last
+        // part upload.
+        // This way the monitor need not run in a thread.
+        return completeMultipartUpload();
     }
 
     /**
@@ -272,7 +244,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      * Cancels the inflight transfers if they are not completed.
      */
     private void cancelFutures() {
-        cancelNextFuture();
+        cancelFuture();
         for (Future<PartETag> f : futures) {
             f.cancel(true);
         }
