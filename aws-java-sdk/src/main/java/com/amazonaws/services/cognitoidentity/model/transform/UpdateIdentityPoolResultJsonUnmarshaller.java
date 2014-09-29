@@ -61,6 +61,10 @@ public class UpdateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Up
                     context.nextToken();
                     updateIdentityPoolResult.setSupportedLoginProviders(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("DeveloperProviderName", targetDepth)) {
+                    context.nextToken();
+                    updateIdentityPoolResult.setDeveloperProviderName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

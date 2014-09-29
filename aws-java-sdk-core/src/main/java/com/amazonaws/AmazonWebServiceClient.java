@@ -636,19 +636,18 @@ public abstract class AmazonWebServiceClient {
      * the event for {@link Field#ClientExecuteTime} and call this method
      * in a try-finally block.
      *
-     * @param loggingAwsRequestMetrics true to log the awsRequestMetrics; false otherwise.
+     * @param loggingAwsRequestMetrics deprecated and ignored
      */
     protected final void endClientExecution(
             AWSRequestMetrics awsRequestMetrics, Request<?> request,
-            Response<?> response, boolean loggingAwsRequestMetrics) {
+            Response<?> response, @Deprecated boolean loggingAwsRequestMetrics) {
         if (request != null) {
             awsRequestMetrics.endEvent(Field.ClientExecuteTime);
             awsRequestMetrics.getTimingInfo().endTiming();
             RequestMetricCollector c = findRequestMetricCollector(request);
             c.collectMetrics(request, response);
-        }
-        if (loggingAwsRequestMetrics)
             awsRequestMetrics.log();
+        }
     }
 
     /**

@@ -39,17 +39,17 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Update Identity Pool Request Marshaller
+ * Unlink Developer Identity Request Marshaller
  */
-public class UpdateIdentityPoolRequestMarshaller implements Marshaller<Request<UpdateIdentityPoolRequest>, UpdateIdentityPoolRequest> {
+public class UnlinkDeveloperIdentityRequestMarshaller implements Marshaller<Request<UnlinkDeveloperIdentityRequest>, UnlinkDeveloperIdentityRequest> {
 
-    public Request<UpdateIdentityPoolRequest> marshall(UpdateIdentityPoolRequest updateIdentityPoolRequest) {
-        if (updateIdentityPoolRequest == null) {
+    public Request<UnlinkDeveloperIdentityRequest> marshall(UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) {
+        if (unlinkDeveloperIdentityRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateIdentityPoolRequest> request = new DefaultRequest<UpdateIdentityPoolRequest>(updateIdentityPoolRequest, "AmazonCognitoIdentity");
-        String target = "AWSCognitoIdentityService.UpdateIdentityPool";
+        Request<UnlinkDeveloperIdentityRequest> request = new DefaultRequest<UnlinkDeveloperIdentityRequest>(unlinkDeveloperIdentityRequest, "AmazonCognitoIdentity");
+        String target = "AWSCognitoIdentityService.UnlinkDeveloperIdentity";
         request.addHeader("X-Amz-Target", target);
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,29 +61,17 @@ public class UpdateIdentityPoolRequestMarshaller implements Marshaller<Request<U
 
           jsonWriter.object();
           
-            if (updateIdentityPoolRequest.getIdentityPoolId() != null) {
-                jsonWriter.key("IdentityPoolId").value(updateIdentityPoolRequest.getIdentityPoolId());
+            if (unlinkDeveloperIdentityRequest.getIdentityId() != null) {
+                jsonWriter.key("IdentityId").value(unlinkDeveloperIdentityRequest.getIdentityId());
             }
-            if (updateIdentityPoolRequest.getIdentityPoolName() != null) {
-                jsonWriter.key("IdentityPoolName").value(updateIdentityPoolRequest.getIdentityPoolName());
+            if (unlinkDeveloperIdentityRequest.getIdentityPoolId() != null) {
+                jsonWriter.key("IdentityPoolId").value(unlinkDeveloperIdentityRequest.getIdentityPoolId());
             }
-            if (updateIdentityPoolRequest.isAllowUnauthenticatedIdentities() != null) {
-                jsonWriter.key("AllowUnauthenticatedIdentities").value(updateIdentityPoolRequest.isAllowUnauthenticatedIdentities());
+            if (unlinkDeveloperIdentityRequest.getDeveloperProviderName() != null) {
+                jsonWriter.key("DeveloperProviderName").value(unlinkDeveloperIdentityRequest.getDeveloperProviderName());
             }
-            if (updateIdentityPoolRequest.getSupportedLoginProviders() != null) {
-                jsonWriter.key("SupportedLoginProviders");
-                jsonWriter.object();
-                for (Map.Entry<String, String> supportedLoginProvidersListValue : updateIdentityPoolRequest.getSupportedLoginProviders().entrySet()) {
-                    if (supportedLoginProvidersListValue.getValue() != null) {
-                        jsonWriter.key(supportedLoginProvidersListValue.getKey());
-
-                        jsonWriter.value(supportedLoginProvidersListValue.getValue());
-                    }
-                }
-                jsonWriter.endObject();
-            }
-            if (updateIdentityPoolRequest.getDeveloperProviderName() != null) {
-                jsonWriter.key("DeveloperProviderName").value(updateIdentityPoolRequest.getDeveloperProviderName());
+            if (unlinkDeveloperIdentityRequest.getDeveloperUserIdentifier() != null) {
+                jsonWriter.key("DeveloperUserIdentifier").value(unlinkDeveloperIdentityRequest.getDeveloperUserIdentifier());
             }
 
           jsonWriter.endObject();

@@ -18,10 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returned in response to a GetId request.
+ * Returned in response to a successful
+ * <code>GetOpenIdTokenForDeveloperIdentity</code> request.
  * </p>
  */
-public class GetIdResult implements Serializable {
+public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -31,6 +32,11 @@ public class GetIdResult implements Serializable {
      * <b>Pattern: </b>[\w-]+:[0-9a-f-]+<br/>
      */
     private String identityId;
+
+    /**
+     * An OpenID token.
+     */
+    private String token;
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -72,8 +78,41 @@ public class GetIdResult implements Serializable {
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public GetIdResult withIdentityId(String identityId) {
+    public GetOpenIdTokenForDeveloperIdentityResult withIdentityId(String identityId) {
         this.identityId = identityId;
+        return this;
+    }
+
+    /**
+     * An OpenID token.
+     *
+     * @return An OpenID token.
+     */
+    public String getToken() {
+        return token;
+    }
+    
+    /**
+     * An OpenID token.
+     *
+     * @param token An OpenID token.
+     */
+    public void setToken(String token) {
+        this.token = token;
+    }
+    
+    /**
+     * An OpenID token.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param token An OpenID token.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetOpenIdTokenForDeveloperIdentityResult withToken(String token) {
+        this.token = token;
         return this;
     }
 
@@ -89,7 +128,8 @@ public class GetIdResult implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIdentityId() != null) sb.append("IdentityId: " + getIdentityId() );
+        if (getIdentityId() != null) sb.append("IdentityId: " + getIdentityId() + ",");
+        if (getToken() != null) sb.append("Token: " + getToken() );
         sb.append("}");
         return sb.toString();
     }
@@ -100,6 +140,7 @@ public class GetIdResult implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode()); 
+        hashCode = prime * hashCode + ((getToken() == null) ? 0 : getToken().hashCode()); 
         return hashCode;
     }
     
@@ -108,11 +149,13 @@ public class GetIdResult implements Serializable {
         if (this == obj) return true;
         if (obj == null) return false;
 
-        if (obj instanceof GetIdResult == false) return false;
-        GetIdResult other = (GetIdResult)obj;
+        if (obj instanceof GetOpenIdTokenForDeveloperIdentityResult == false) return false;
+        GetOpenIdTokenForDeveloperIdentityResult other = (GetOpenIdTokenForDeveloperIdentityResult)obj;
         
         if (other.getIdentityId() == null ^ this.getIdentityId() == null) return false;
         if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false) return false; 
+        if (other.getToken() == null ^ this.getToken() == null) return false;
+        if (other.getToken() != null && other.getToken().equals(this.getToken()) == false) return false; 
         return true;
     }
     

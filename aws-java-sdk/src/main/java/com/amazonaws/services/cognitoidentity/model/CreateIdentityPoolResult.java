@@ -50,9 +50,18 @@ public class CreateIdentityPoolResult implements Serializable {
      * Optional key:value pairs mapping provider names to provider app IDs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      */
     private java.util.Map<String,String> supportedLoginProviders;
+
+    /**
+     * The "domain" by which Cognito will refer to your users.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     */
+    private String developerProviderName;
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -190,7 +199,7 @@ public class CreateIdentityPoolResult implements Serializable {
      * Optional key:value pairs mapping provider names to provider app IDs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @return Optional key:value pairs mapping provider names to provider app IDs.
      */
@@ -203,7 +212,7 @@ public class CreateIdentityPoolResult implements Serializable {
      * Optional key:value pairs mapping provider names to provider app IDs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.
      */
@@ -217,7 +226,7 @@ public class CreateIdentityPoolResult implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.
      *
@@ -237,7 +246,7 @@ public class CreateIdentityPoolResult implements Serializable {
      * can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param key The key of the entry to be added into SupportedLoginProviders.
      * @param value The corresponding value of the entry to be added into SupportedLoginProviders.
@@ -263,6 +272,51 @@ public class CreateIdentityPoolResult implements Serializable {
     }
     
     /**
+     * The "domain" by which Cognito will refer to your users.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     *
+     * @return The "domain" by which Cognito will refer to your users.
+     */
+    public String getDeveloperProviderName() {
+        return developerProviderName;
+    }
+    
+    /**
+     * The "domain" by which Cognito will refer to your users.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     *
+     * @param developerProviderName The "domain" by which Cognito will refer to your users.
+     */
+    public void setDeveloperProviderName(String developerProviderName) {
+        this.developerProviderName = developerProviderName;
+    }
+    
+    /**
+     * The "domain" by which Cognito will refer to your users.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     *
+     * @param developerProviderName The "domain" by which Cognito will refer to your users.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateIdentityPoolResult withDeveloperProviderName(String developerProviderName) {
+        this.developerProviderName = developerProviderName;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -277,7 +331,8 @@ public class CreateIdentityPoolResult implements Serializable {
         if (getIdentityPoolId() != null) sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
         if (getIdentityPoolName() != null) sb.append("IdentityPoolName: " + getIdentityPoolName() + ",");
         if (isAllowUnauthenticatedIdentities() != null) sb.append("AllowUnauthenticatedIdentities: " + isAllowUnauthenticatedIdentities() + ",");
-        if (getSupportedLoginProviders() != null) sb.append("SupportedLoginProviders: " + getSupportedLoginProviders() );
+        if (getSupportedLoginProviders() != null) sb.append("SupportedLoginProviders: " + getSupportedLoginProviders() + ",");
+        if (getDeveloperProviderName() != null) sb.append("DeveloperProviderName: " + getDeveloperProviderName() );
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +346,7 @@ public class CreateIdentityPoolResult implements Serializable {
         hashCode = prime * hashCode + ((getIdentityPoolName() == null) ? 0 : getIdentityPoolName().hashCode()); 
         hashCode = prime * hashCode + ((isAllowUnauthenticatedIdentities() == null) ? 0 : isAllowUnauthenticatedIdentities().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedLoginProviders() == null) ? 0 : getSupportedLoginProviders().hashCode()); 
+        hashCode = prime * hashCode + ((getDeveloperProviderName() == null) ? 0 : getDeveloperProviderName().hashCode()); 
         return hashCode;
     }
     
@@ -310,6 +366,8 @@ public class CreateIdentityPoolResult implements Serializable {
         if (other.isAllowUnauthenticatedIdentities() != null && other.isAllowUnauthenticatedIdentities().equals(this.isAllowUnauthenticatedIdentities()) == false) return false; 
         if (other.getSupportedLoginProviders() == null ^ this.getSupportedLoginProviders() == null) return false;
         if (other.getSupportedLoginProviders() != null && other.getSupportedLoginProviders().equals(this.getSupportedLoginProviders()) == false) return false; 
+        if (other.getDeveloperProviderName() == null ^ this.getDeveloperProviderName() == null) return false;
+        if (other.getDeveloperProviderName() != null && other.getDeveloperProviderName().equals(this.getDeveloperProviderName()) == false) return false; 
         return true;
     }
     

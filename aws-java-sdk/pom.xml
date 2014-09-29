@@ -6,7 +6,7 @@
   <artifactId>aws-java-sdk</artifactId>
   <packaging>jar</packaging>
   <name>AWS SDK for Java</name>
-  <version>1.8.10.2</version>
+  <version>1.8.11</version>
   <description>The Amazon Web Services SDK for Java provides Java APIs
     for building software on AWS' cost-effective, scalable, and reliable
     infrastructure products. The AWS Java SDK allows developers to code
@@ -22,7 +22,7 @@
   <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.8.10.2</version>
+        <version>1.8.11</version>
   </parent>
 
   <licenses>
@@ -43,7 +43,7 @@
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-core</artifactId>
-      <version>1.8.10.2</version>
+      <version>1.8.11</version>
     </dependency>
 
     <!-- JavaMail is only needed if you want to use the JavaMail provider for

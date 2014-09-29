@@ -79,6 +79,9 @@ public class CreateIdentityPoolRequestMarshaller implements Marshaller<Request<C
                 }
                 jsonWriter.endObject();
             }
+            if (createIdentityPoolRequest.getDeveloperProviderName() != null) {
+                jsonWriter.key("DeveloperProviderName").value(createIdentityPoolRequest.getDeveloperProviderName());
+            }
 
           jsonWriter.endObject();
 

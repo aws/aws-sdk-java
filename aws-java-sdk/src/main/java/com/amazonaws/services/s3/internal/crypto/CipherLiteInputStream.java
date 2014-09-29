@@ -174,15 +174,23 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         cipherLite.mark();
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Subclassing this method would need to take care in keeping all internal
+     * states consistent.  REF: TT0036173414, ISSUE-JAVA-547.
+     */
     @Override
     public void reset() throws IOException {
         abortIfNeeded();
         in.reset();
         cipherLite.reset();
-        if (markSupported()) {
-            curr_pos = max_pos = 0;
-            eof = false;
-        }
+        resetInternal();
+    }
+
+    final void resetInternal() {
+        curr_pos = max_pos = 0;
+        eof = false;
     }
 
     /**

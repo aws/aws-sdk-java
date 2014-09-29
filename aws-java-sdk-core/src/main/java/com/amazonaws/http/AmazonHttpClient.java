@@ -104,6 +104,7 @@ import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.FakeIOException;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
+import com.amazonaws.util.UnreliableFilterInputStream;
 
 @ThreadSafe
 public class AmazonHttpClient {
@@ -346,7 +347,18 @@ public class AmazonHttpClient {
         }
         if (!content.markSupported())
             content = new SdkBufferedInputStream(content);
-        return ProgressInputStream.inputStreamForRequest(content, awsreq);
+        final InputStream is = ProgressInputStream.inputStreamForRequest(content, awsreq);
+        if (AmazonHttpClient.unreliableTestConfig == null)
+            return is;
+        return new UnreliableFilterInputStream
+            (is, unreliableTestConfig.isFakeIOException())
+            .withBytesReadBeforeException(
+                unreliableTestConfig.getBytesReadBeforeException())
+            .withMaxNumErrors(
+                unreliableTestConfig.getMaxNumErrors())
+            .withResetIntervalBeforeException(
+                unreliableTestConfig.getResetIntervalBeforeException())
+            ;
     }
 
     private void afterError(Request<?> request, Response<?> response,
@@ -1166,5 +1178,22 @@ public class AmazonHttpClient {
     /** Returns the time difference in seconds between this client and AWS. */
     public int getTimeOffset() {
         return timeOffset;
+    }
+
+    /**
+     * Used for testing via failure injection. 
+     */
+    private static UnreliableTestConfig unreliableTestConfig;
+
+    /**
+     * Used to configure the test conditions for injecting intermittent failures
+     * to the content input stream.
+     * 
+     * @param config
+     *            unreliable test configuration for failure injection; or null
+     *            to disable such test.
+     */
+    static void configUnreliableTestConditions(UnreliableTestConfig config) {
+        unreliableTestConfig = config;
     }
 }

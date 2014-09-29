@@ -22,8 +22,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getOpenIdToken(GetOpenIdTokenRequest) GetOpenIdToken operation}.
  * <p>
  * Gets an OpenID token, using a known Cognito ID. This known Cognito ID
- * is returned from GetId. You can optionally add additional logins for
- * the identity. Supplying multiple logins creates an implicit link.
+ * is returned by GetId. You can optionally add additional logins for the
+ * identity. Supplying multiple logins creates an implicit link.
+ * </p>
+ * <p>
+ * The OpenId token is valid for 15 minutes.
  * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#getOpenIdToken(GetOpenIdTokenRequest)
@@ -40,11 +43,11 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
     private String identityId;
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      */
     private java.util.Map<String,String> logins;
 
@@ -94,13 +97,13 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @return A set of optional name/value pairs that map provider names to provider
+     * @return A set of optional name-value pairs that map provider names to provider
      *         tokens.
      */
     public java.util.Map<String,String> getLogins() {
@@ -109,13 +112,13 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @param logins A set of optional name/value pairs that map provider names to provider
+     * @param logins A set of optional name-value pairs that map provider names to provider
      *         tokens.
      */
     public void setLogins(java.util.Map<String,String> logins) {
@@ -123,15 +126,15 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @param logins A set of optional name/value pairs that map provider names to provider
+     * @param logins A set of optional name-value pairs that map provider names to provider
      *         tokens.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -143,7 +146,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
      * The method adds a new key-value pair into Logins parameter, and
@@ -151,7 +154,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements Se
      * together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param key The key of the entry to be added into Logins.
      * @param value The corresponding value of the entry to be added into Logins.

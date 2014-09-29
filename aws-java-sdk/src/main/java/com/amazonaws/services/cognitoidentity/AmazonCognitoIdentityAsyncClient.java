@@ -35,19 +35,34 @@ import com.amazonaws.services.cognitoidentity.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon Cognito <p>
- * Amazon Cognito is a web service that facilitates the delivery of
- * scoped, temporary credentials to mobile devices or other untrusted
- * environments. Amazon Cognito uniquely identifies a device or user and
- * supplies the user with a consistent identity throughout the lifetime
- * of an application.
+ * Amazon Cognito is a web service that delivers scoped temporary
+ * credentials to mobile devices and other untrusted environments. Amazon
+ * Cognito uniquely identifies a device and supplies the user with a
+ * consistent identity over the lifetime of an application.
  * </p>
  * <p>
- * Amazon Cognito lets users authenticate with third-party identity
- * providers (Facebook, Google, or Login with Amazon). As a developer,
- * you decide which identity providers to trust. You can also choose to
- * support unauthenticated access from your application. Your users are
- * provided with Cognito tokens that uniquely identify their device and
- * any information provided about third-party logins.
+ * Using Amazon Cognito, you can enable authentication with one or more
+ * third-party identity providers (Facebook, Google, or Login with
+ * Amazon), and you can also choose to support unauthenticated access
+ * from your app. Cognito delivers a unique identifier for each user and
+ * acts as an OpenID token provider trusted by AWS Security Token Service
+ * (STS) to access temporary, limited-privilege AWS credentials.
+ * </p>
+ * <p>
+ * To provide end-user credentials, first make an unsigned call to GetId.
+ * If the end user is authenticated with one of the supported identity
+ * providers, set the <code>Logins</code> map with the identity provider
+ * token. <code>GetId</code> returns a unique identifier for the user.
+ * </p>
+ * <p>
+ * Next, make an unsigned call to GetOpenIdToken, which returns the
+ * OpenID token necessary to call STS and retrieve AWS credentials. This
+ * call expects the same <code>Logins</code> map as the
+ * <code>GetId</code> call, as well as the <code>IdentityID</code>
+ * originally returned by <code>GetId</code> . The token returned by
+ * <code>GetOpenIdToken</code> can be passed to the STS operation
+ * <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html"> AssumeRoleWithWebIdentity </a>
+ * to retrieve AWS credentials.
  * </p>
  */
 public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClient
@@ -358,9 +373,106 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     
     /**
      * <p>
+     * Merges two users having different <code>IdentityId</code> s, existing
+     * in the same identity pool, and identified by the same developer
+     * provider. You can use this action to request that discrete users be
+     * merged and identified as a single user in the Cognito environment.
+     * Cognito associates the given source user (
+     * <code>SourceUserIdentifier</code> ) with the <code>IdentityId</code>
+     * of the <code>DestinationUserIdentifier</code> . Only
+     * developer-authenticated users can be merged. If the users to be merged
+     * are associated with the same public provider, but as two different
+     * users, an exception will be thrown.
+     * </p>
+     *
+     * @param mergeDeveloperIdentitiesRequest Container for the necessary
+     *           parameters to execute the MergeDeveloperIdentities operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         MergeDeveloperIdentities service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<MergeDeveloperIdentitiesResult> mergeDeveloperIdentitiesAsync(final MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<MergeDeveloperIdentitiesResult>() {
+            public MergeDeveloperIdentitiesResult call() throws Exception {
+                return mergeDeveloperIdentities(mergeDeveloperIdentitiesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Merges two users having different <code>IdentityId</code> s, existing
+     * in the same identity pool, and identified by the same developer
+     * provider. You can use this action to request that discrete users be
+     * merged and identified as a single user in the Cognito environment.
+     * Cognito associates the given source user (
+     * <code>SourceUserIdentifier</code> ) with the <code>IdentityId</code>
+     * of the <code>DestinationUserIdentifier</code> . Only
+     * developer-authenticated users can be merged. If the users to be merged
+     * are associated with the same public provider, but as two different
+     * users, an exception will be thrown.
+     * </p>
+     *
+     * @param mergeDeveloperIdentitiesRequest Container for the necessary
+     *           parameters to execute the MergeDeveloperIdentities operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         MergeDeveloperIdentities service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<MergeDeveloperIdentitiesResult> mergeDeveloperIdentitiesAsync(
+            final MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest,
+            final AsyncHandler<MergeDeveloperIdentitiesRequest, MergeDeveloperIdentitiesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<MergeDeveloperIdentitiesResult>() {
+            public MergeDeveloperIdentitiesResult call() throws Exception {
+              MergeDeveloperIdentitiesResult result;
+                try {
+                result = mergeDeveloperIdentities(mergeDeveloperIdentitiesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(mergeDeveloperIdentitiesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Gets an OpenID token, using a known Cognito ID. This known Cognito ID
-     * is returned from GetId. You can optionally add additional logins for
-     * the identity. Supplying multiple logins creates an implicit link.
+     * is returned by GetId. You can optionally add additional logins for the
+     * identity. Supplying multiple logins creates an implicit link.
+     * </p>
+     * <p>
+     * The OpenId token is valid for 15 minutes.
      * </p>
      *
      * @param getOpenIdTokenRequest Container for the necessary parameters to
@@ -390,8 +502,11 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     /**
      * <p>
      * Gets an OpenID token, using a known Cognito ID. This known Cognito ID
-     * is returned from GetId. You can optionally add additional logins for
-     * the identity. Supplying multiple logins creates an implicit link.
+     * is returned by GetId. You can optionally add additional logins for the
+     * identity. Supplying multiple logins creates an implicit link.
+     * </p>
+     * <p>
+     * The OpenId token is valid for 15 minutes.
      * </p>
      *
      * @param getOpenIdTokenRequest Container for the necessary parameters to
@@ -427,6 +542,188 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
             throw ex;
               }
               asyncHandler.onSuccess(getOpenIdTokenRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Unlinks a <code>DeveloperUserIdentifier</code> from an existing
+     * identity. Unlinked developer users will be considered new identities
+     * next time they are seen. If, for a given Cognito identity, you remove
+     * all federated identities as well as the developer user identifier, the
+     * Cognito identity becomes inaccessible.
+     * </p>
+     *
+     * @param unlinkDeveloperIdentityRequest Container for the necessary
+     *           parameters to execute the UnlinkDeveloperIdentity operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnlinkDeveloperIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> unlinkDeveloperIdentityAsync(final UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                unlinkDeveloperIdentity(unlinkDeveloperIdentityRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Unlinks a <code>DeveloperUserIdentifier</code> from an existing
+     * identity. Unlinked developer users will be considered new identities
+     * next time they are seen. If, for a given Cognito identity, you remove
+     * all federated identities as well as the developer user identifier, the
+     * Cognito identity becomes inaccessible.
+     * </p>
+     *
+     * @param unlinkDeveloperIdentityRequest Container for the necessary
+     *           parameters to execute the UnlinkDeveloperIdentity operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnlinkDeveloperIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> unlinkDeveloperIdentityAsync(
+            final UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest,
+            final AsyncHandler<UnlinkDeveloperIdentityRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                unlinkDeveloperIdentity(unlinkDeveloperIdentityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(unlinkDeveloperIdentityRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Retrieves the <code>IdentityID</code> associated with a
+     * <code>DeveloperUserIdentifier</code> or the list of
+     * <code>DeveloperUserIdentifier</code> s associated with an
+     * <code>IdentityId</code> for an existing identity. Either
+     * <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must
+     * not be null. If you supply only one of these values, the other value
+     * will be searched in the database and returned as a part of the
+     * response. If you supply both, <code>DeveloperUserIdentifier</code>
+     * will be matched against <code>IdentityID</code> . If the values are
+     * verified against the database, the response returns both values and is
+     * the same as the request. Otherwise a
+     * <code>ResourceConflictException</code> is thrown.
+     * </p>
+     *
+     * @param lookupDeveloperIdentityRequest Container for the necessary
+     *           parameters to execute the LookupDeveloperIdentity operation on
+     *           AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         LookupDeveloperIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<LookupDeveloperIdentityResult> lookupDeveloperIdentityAsync(final LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<LookupDeveloperIdentityResult>() {
+            public LookupDeveloperIdentityResult call() throws Exception {
+                return lookupDeveloperIdentity(lookupDeveloperIdentityRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Retrieves the <code>IdentityID</code> associated with a
+     * <code>DeveloperUserIdentifier</code> or the list of
+     * <code>DeveloperUserIdentifier</code> s associated with an
+     * <code>IdentityId</code> for an existing identity. Either
+     * <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must
+     * not be null. If you supply only one of these values, the other value
+     * will be searched in the database and returned as a part of the
+     * response. If you supply both, <code>DeveloperUserIdentifier</code>
+     * will be matched against <code>IdentityID</code> . If the values are
+     * verified against the database, the response returns both values and is
+     * the same as the request. Otherwise a
+     * <code>ResourceConflictException</code> is thrown.
+     * </p>
+     *
+     * @param lookupDeveloperIdentityRequest Container for the necessary
+     *           parameters to execute the LookupDeveloperIdentity operation on
+     *           AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         LookupDeveloperIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<LookupDeveloperIdentityResult> lookupDeveloperIdentityAsync(
+            final LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest,
+            final AsyncHandler<LookupDeveloperIdentityRequest, LookupDeveloperIdentityResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<LookupDeveloperIdentityResult>() {
+            public LookupDeveloperIdentityResult call() throws Exception {
+              LookupDeveloperIdentityResult result;
+                try {
+                result = lookupDeveloperIdentity(lookupDeveloperIdentityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(lookupDeveloperIdentityRequest, result);
                  return result;
         }
     });
@@ -588,15 +885,14 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     
     /**
      * <p>
-     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
-     * create an implicit linked account.
+     * Lists the identities in a pool.
      * </p>
      *
-     * @param getIdRequest Container for the necessary parameters to execute
-     *           the GetId operation on AmazonCognitoIdentity.
+     * @param listIdentitiesRequest Container for the necessary parameters to
+     *           execute the ListIdentities operation on AmazonCognitoIdentity.
      * 
-     * @return A Java Future object containing the response from the GetId
-     *         service method, as returned by AmazonCognitoIdentity.
+     * @return A Java Future object containing the response from the
+     *         ListIdentities service method, as returned by AmazonCognitoIdentity.
      * 
      *
      * @throws AmazonClientException
@@ -607,30 +903,29 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetIdResult> getIdAsync(final GetIdRequest getIdRequest) 
+    public Future<ListIdentitiesResult> listIdentitiesAsync(final ListIdentitiesRequest listIdentitiesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetIdResult>() {
-            public GetIdResult call() throws Exception {
-                return getId(getIdRequest);
+        return executorService.submit(new Callable<ListIdentitiesResult>() {
+            public ListIdentitiesResult call() throws Exception {
+                return listIdentities(listIdentitiesRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
-     * create an implicit linked account.
+     * Lists the identities in a pool.
      * </p>
      *
-     * @param getIdRequest Container for the necessary parameters to execute
-     *           the GetId operation on AmazonCognitoIdentity.
+     * @param listIdentitiesRequest Container for the necessary parameters to
+     *           execute the ListIdentities operation on AmazonCognitoIdentity.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the GetId
-     *         service method, as returned by AmazonCognitoIdentity.
+     * @return A Java Future object containing the response from the
+     *         ListIdentities service method, as returned by AmazonCognitoIdentity.
      * 
      *
      * @throws AmazonClientException
@@ -641,20 +936,20 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<GetIdResult> getIdAsync(
-            final GetIdRequest getIdRequest,
-            final AsyncHandler<GetIdRequest, GetIdResult> asyncHandler)
+    public Future<ListIdentitiesResult> listIdentitiesAsync(
+            final ListIdentitiesRequest listIdentitiesRequest,
+            final AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetIdResult>() {
-            public GetIdResult call() throws Exception {
-              GetIdResult result;
+        return executorService.submit(new Callable<ListIdentitiesResult>() {
+            public ListIdentitiesResult call() throws Exception {
+              ListIdentitiesResult result;
                 try {
-                result = getId(getIdRequest);
+                result = listIdentities(listIdentitiesRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(getIdRequest, result);
+              asyncHandler.onSuccess(listIdentitiesRequest, result);
                  return result;
         }
     });
@@ -740,14 +1035,15 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     
     /**
      * <p>
-     * Lists the identities in a pool.
+     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
+     * create an implicit linked account.
      * </p>
      *
-     * @param listIdentitiesRequest Container for the necessary parameters to
-     *           execute the ListIdentities operation on AmazonCognitoIdentity.
+     * @param getIdRequest Container for the necessary parameters to execute
+     *           the GetId operation on AmazonCognitoIdentity.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListIdentities service method, as returned by AmazonCognitoIdentity.
+     * @return A Java Future object containing the response from the GetId
+     *         service method, as returned by AmazonCognitoIdentity.
      * 
      *
      * @throws AmazonClientException
@@ -758,29 +1054,30 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListIdentitiesResult> listIdentitiesAsync(final ListIdentitiesRequest listIdentitiesRequest) 
+    public Future<GetIdResult> getIdAsync(final GetIdRequest getIdRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListIdentitiesResult>() {
-            public ListIdentitiesResult call() throws Exception {
-                return listIdentities(listIdentitiesRequest);
+        return executorService.submit(new Callable<GetIdResult>() {
+            public GetIdResult call() throws Exception {
+                return getId(getIdRequest);
         }
     });
     }
 
     /**
      * <p>
-     * Lists the identities in a pool.
+     * Generates (or retrieves) a Cognito ID. Supplying multiple logins will
+     * create an implicit linked account.
      * </p>
      *
-     * @param listIdentitiesRequest Container for the necessary parameters to
-     *           execute the ListIdentities operation on AmazonCognitoIdentity.
+     * @param getIdRequest Container for the necessary parameters to execute
+     *           the GetId operation on AmazonCognitoIdentity.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListIdentities service method, as returned by AmazonCognitoIdentity.
+     * @return A Java Future object containing the response from the GetId
+     *         service method, as returned by AmazonCognitoIdentity.
      * 
      *
      * @throws AmazonClientException
@@ -791,20 +1088,130 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
      *             If an error response is returned by AmazonCognitoIdentity indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListIdentitiesResult> listIdentitiesAsync(
-            final ListIdentitiesRequest listIdentitiesRequest,
-            final AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult> asyncHandler)
+    public Future<GetIdResult> getIdAsync(
+            final GetIdRequest getIdRequest,
+            final AsyncHandler<GetIdRequest, GetIdResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListIdentitiesResult>() {
-            public ListIdentitiesResult call() throws Exception {
-              ListIdentitiesResult result;
+        return executorService.submit(new Callable<GetIdResult>() {
+            public GetIdResult call() throws Exception {
+              GetIdResult result;
                 try {
-                result = listIdentities(listIdentitiesRequest);
+                result = getId(getIdRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(listIdentitiesRequest, result);
+              asyncHandler.onSuccess(getIdRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Registers (or retrieves) a Cognito <code>IdentityId</code> and an
+     * OpenID Connect token for a user authenticated by your backend
+     * authentication process. Supplying multiple logins will create an
+     * implicit linked account. You can only specify one developer provider
+     * as part of the <code>Logins</code> map, which is linked to the
+     * identity pool. The developer provider is the "domain" by which Cognito
+     * will refer to your users.
+     * </p>
+     * <p>
+     * You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create
+     * a new identity and to link new logins (that is, user credentials
+     * issued by a public provider or developer provider) to an existing
+     * identity. When you want to create a new identity, the
+     * <code>IdentityId</code> should be null. When you want to associate a
+     * new login with an existing authenticated/unauthenticated identity, you
+     * can do so by providing the existing <code>IdentityId</code> . This API
+     * will create the identity in the specified <code>IdentityPoolId</code>
+     * .
+     * </p>
+     *
+     * @param getOpenIdTokenForDeveloperIdentityRequest Container for the
+     *           necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity
+     *           operation on AmazonCognitoIdentity.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetOpenIdTokenForDeveloperIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetOpenIdTokenForDeveloperIdentityResult> getOpenIdTokenForDeveloperIdentityAsync(final GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetOpenIdTokenForDeveloperIdentityResult>() {
+            public GetOpenIdTokenForDeveloperIdentityResult call() throws Exception {
+                return getOpenIdTokenForDeveloperIdentity(getOpenIdTokenForDeveloperIdentityRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Registers (or retrieves) a Cognito <code>IdentityId</code> and an
+     * OpenID Connect token for a user authenticated by your backend
+     * authentication process. Supplying multiple logins will create an
+     * implicit linked account. You can only specify one developer provider
+     * as part of the <code>Logins</code> map, which is linked to the
+     * identity pool. The developer provider is the "domain" by which Cognito
+     * will refer to your users.
+     * </p>
+     * <p>
+     * You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create
+     * a new identity and to link new logins (that is, user credentials
+     * issued by a public provider or developer provider) to an existing
+     * identity. When you want to create a new identity, the
+     * <code>IdentityId</code> should be null. When you want to associate a
+     * new login with an existing authenticated/unauthenticated identity, you
+     * can do so by providing the existing <code>IdentityId</code> . This API
+     * will create the identity in the specified <code>IdentityPoolId</code>
+     * .
+     * </p>
+     *
+     * @param getOpenIdTokenForDeveloperIdentityRequest Container for the
+     *           necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity
+     *           operation on AmazonCognitoIdentity.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetOpenIdTokenForDeveloperIdentity service method, as returned by
+     *         AmazonCognitoIdentity.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoIdentity indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetOpenIdTokenForDeveloperIdentityResult> getOpenIdTokenForDeveloperIdentityAsync(
+            final GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest,
+            final AsyncHandler<GetOpenIdTokenForDeveloperIdentityRequest, GetOpenIdTokenForDeveloperIdentityResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetOpenIdTokenForDeveloperIdentityResult>() {
+            public GetOpenIdTokenForDeveloperIdentityResult call() throws Exception {
+              GetOpenIdTokenForDeveloperIdentityResult result;
+                try {
+                result = getOpenIdTokenForDeveloperIdentity(getOpenIdTokenForDeveloperIdentityRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getOpenIdTokenForDeveloperIdentityRequest, result);
                  return result;
         }
     });
@@ -889,7 +1296,8 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     /**
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
-     * identity information that is specific to your AWS account.
+     * identity information that is specific to your AWS account. The limit
+     * on identity pools is 60 per account.
      * </p>
      *
      * @param createIdentityPoolRequest Container for the necessary
@@ -921,7 +1329,8 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     /**
      * <p>
      * Creates a new identity pool. The identity pool is a store of user
-     * identity information that is specific to your AWS account.
+     * identity information that is specific to your AWS account. The limit
+     * on identity pools is 60 per account.
      * </p>
      *
      * @param createIdentityPoolRequest Container for the necessary

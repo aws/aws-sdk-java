@@ -48,11 +48,14 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
     private String identityPoolId;
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider
+     * tokens. <p>The available provider names for <code>Logins</code> are as
+     * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     * <code>www.amazon.com</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      */
     private java.util.Map<String,String> logins;
 
@@ -147,14 +150,20 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider
+     * tokens. <p>The available provider names for <code>Logins</code> are as
+     * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     * <code>www.amazon.com</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @return A set of optional name/value pairs that map provider names to provider
-     *         tokens.
+     * @return A set of optional name-value pairs that map provider names to provider
+     *         tokens. <p>The available provider names for <code>Logins</code> are as
+     *         follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     *         <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     *         <code>www.amazon.com</code></li> </ul>
      */
     public java.util.Map<String,String> getLogins() {
         
@@ -162,30 +171,42 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
     }
     
     /**
-     * A set of optional name/value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider
+     * tokens. <p>The available provider names for <code>Logins</code> are as
+     * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     * <code>www.amazon.com</code></li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @param logins A set of optional name/value pairs that map provider names to provider
-     *         tokens.
+     * @param logins A set of optional name-value pairs that map provider names to provider
+     *         tokens. <p>The available provider names for <code>Logins</code> are as
+     *         follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     *         <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     *         <code>www.amazon.com</code></li> </ul>
      */
     public void setLogins(java.util.Map<String,String> logins) {
         this.logins = logins;
     }
     
     /**
-     * A set of optional name/value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider
+     * tokens. <p>The available provider names for <code>Logins</code> are as
+     * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     * <code>www.amazon.com</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @param logins A set of optional name/value pairs that map provider names to provider
-     *         tokens.
+     * @param logins A set of optional name-value pairs that map provider names to provider
+     *         tokens. <p>The available provider names for <code>Logins</code> are as
+     *         follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     *         <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     *         <code>www.amazon.com</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,15 +217,18 @@ public class GetIdRequest extends AmazonWebServiceRequest implements Serializabl
     }
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
-     * tokens.
+     * A set of optional name-value pairs that map provider names to provider
+     * tokens. <p>The available provider names for <code>Logins</code> are as
+     * follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Google: <code>accounts.google.com</code></li> <li>Amazon:
+     * <code>www.amazon.com</code></li> </ul>
      * <p>
      * The method adds a new key-value pair into Logins parameter, and
      * returns a reference to this object so that method calls can be chained
      * together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param key The key of the entry to be added into Logins.
      * @param value The corresponding value of the entry to be added into Logins.

@@ -160,7 +160,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
     private String diagnosticInfo() {
         return new StringBuilder()
             .append("dataLength=").append(dataLength)
-            .append("; expectedLength").append(expectedLength)
+            .append("; expectedLength=").append(expectedLength)
             .append("; includeSkipped=").append(includeSkipped)
             .append("; in.getClass()=").append(in.getClass())
             .append("; markedSupported=").append(markSupported())
