@@ -34,7 +34,7 @@ public class GetOpenIdTokenResult implements Serializable {
     private String identityId;
 
     /**
-     * An OpenID token.
+     * An OpenID token, valid for 15 minutes.
      */
     private String token;
 
@@ -90,29 +90,29 @@ public class GetOpenIdTokenResult implements Serializable {
     }
 
     /**
-     * An OpenID token.
+     * An OpenID token, valid for 15 minutes.
      *
-     * @return An OpenID token.
+     * @return An OpenID token, valid for 15 minutes.
      */
     public String getToken() {
         return token;
     }
     
     /**
-     * An OpenID token.
+     * An OpenID token, valid for 15 minutes.
      *
-     * @param token An OpenID token.
+     * @param token An OpenID token, valid for 15 minutes.
      */
     public void setToken(String token) {
         this.token = token;
     }
     
     /**
-     * An OpenID token.
+     * An OpenID token, valid for 15 minutes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param token An OpenID token.
+     * @param token An OpenID token, valid for 15 minutes.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

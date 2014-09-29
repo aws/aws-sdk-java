@@ -33,7 +33,7 @@ public class IdentityDescription implements Serializable {
     private String identityId;
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> logins;
@@ -84,10 +84,10 @@ public class IdentityDescription implements Serializable {
     }
 
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      *
-     * @return A set of optional name/value pairs that map provider names to provider
+     * @return A set of optional name-value pairs that map provider names to provider
      *         tokens.
      */
     public java.util.List<String> getLogins() {
@@ -95,10 +95,10 @@ public class IdentityDescription implements Serializable {
     }
     
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      *
-     * @param logins A set of optional name/value pairs that map provider names to provider
+     * @param logins A set of optional name-value pairs that map provider names to provider
      *         tokens.
      */
     public void setLogins(java.util.Collection<String> logins) {
@@ -112,12 +112,12 @@ public class IdentityDescription implements Serializable {
     }
     
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param logins A set of optional name/value pairs that map provider names to provider
+     * @param logins A set of optional name-value pairs that map provider names to provider
      *         tokens.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -132,12 +132,12 @@ public class IdentityDescription implements Serializable {
     }
     
     /**
-     * A set of optional name/value pairs that map provider names to provider
+     * A set of optional name-value pairs that map provider names to provider
      * tokens.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param logins A set of optional name/value pairs that map provider names to provider
+     * @param logins A set of optional name-value pairs that map provider names to provider
      *         tokens.
      *
      * @return A reference to this updated object so that method calls can be chained

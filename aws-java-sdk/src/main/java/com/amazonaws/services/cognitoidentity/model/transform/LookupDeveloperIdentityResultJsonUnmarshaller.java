@@ -26,12 +26,12 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Create Identity Pool Result JSON Unmarshaller
+ * Lookup Developer Identity Result JSON Unmarshaller
  */
-public class CreateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<CreateIdentityPoolResult, JsonUnmarshallerContext> {
+public class LookupDeveloperIdentityResultJsonUnmarshaller implements Unmarshaller<LookupDeveloperIdentityResult, JsonUnmarshallerContext> {
 
-    public CreateIdentityPoolResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        CreateIdentityPoolResult createIdentityPoolResult = new CreateIdentityPoolResult();
+    public LookupDeveloperIdentityResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        LookupDeveloperIdentityResult lookupDeveloperIdentityResult = new LookupDeveloperIdentityResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -45,25 +45,17 @@ public class CreateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Cr
             if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("IdentityPoolId", targetDepth)) {
+                if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    createIdentityPoolResult.setIdentityPoolId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    lookupDeveloperIdentityResult.setIdentityId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("IdentityPoolName", targetDepth)) {
+                if (context.testExpression("DeveloperUserIdentifierList", targetDepth)) {
                     context.nextToken();
-                    createIdentityPoolResult.setIdentityPoolName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    lookupDeveloperIdentityResult.setDeveloperUserIdentifierList(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("AllowUnauthenticatedIdentities", targetDepth)) {
+                if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    createIdentityPoolResult.setAllowUnauthenticatedIdentities(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("SupportedLoginProviders", targetDepth)) {
-                    context.nextToken();
-                    createIdentityPoolResult.setSupportedLoginProviders(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
-                }
-                if (context.testExpression("DeveloperProviderName", targetDepth)) {
-                    context.nextToken();
-                    createIdentityPoolResult.setDeveloperProviderName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    lookupDeveloperIdentityResult.setNextToken(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -74,12 +66,12 @@ public class CreateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Cr
             token = context.nextToken();
         }
         
-        return createIdentityPoolResult;
+        return lookupDeveloperIdentityResult;
     }
 
-    private static CreateIdentityPoolResultJsonUnmarshaller instance;
-    public static CreateIdentityPoolResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new CreateIdentityPoolResultJsonUnmarshaller();
+    private static LookupDeveloperIdentityResultJsonUnmarshaller instance;
+    public static LookupDeveloperIdentityResultJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new LookupDeveloperIdentityResultJsonUnmarshaller();
         return instance;
     }
 }

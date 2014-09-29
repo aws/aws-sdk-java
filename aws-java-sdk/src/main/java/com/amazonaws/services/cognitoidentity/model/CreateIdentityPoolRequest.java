@@ -22,7 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#createIdentityPool(CreateIdentityPoolRequest) CreateIdentityPool operation}.
  * <p>
  * Creates a new identity pool. The identity pool is a store of user
- * identity information that is specific to your AWS account.
+ * identity information that is specific to your AWS account. The limit
+ * on identity pools is 60 per account.
  * </p>
  *
  * @see com.amazonaws.services.cognitoidentity.AmazonCognitoIdentity#createIdentityPool(CreateIdentityPoolRequest)
@@ -47,9 +48,24 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
      * Optional key:value pairs mapping provider names to provider app IDs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      */
     private java.util.Map<String,String> supportedLoginProviders;
+
+    /**
+     * The "domain" by which Cognito will refer to your users. This name acts
+     * as a placeholder that allows your backend and the Cognito service to
+     * communicate about the developer provider. For the
+     * <code>DeveloperProviderName</code>, you can use letters as well as
+     * period (<code>.</code>), underscore (<code>_</code>), and dash
+     * (<code>-</code>). <p>Once you have set a developer provider name, you
+     * cannot change it. Please take care in setting this parameter.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     */
+    private String developerProviderName;
 
     /**
      * A string that you provide.
@@ -142,7 +158,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
      * Optional key:value pairs mapping provider names to provider app IDs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @return Optional key:value pairs mapping provider names to provider app IDs.
      */
@@ -155,7 +171,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
      * Optional key:value pairs mapping provider names to provider app IDs.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.
      */
@@ -169,7 +185,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.
      *
@@ -189,7 +205,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
      * can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 3<br/>
+     * <b>Length: </b>0 - 10<br/>
      *
      * @param key The key of the entry to be added into SupportedLoginProviders.
      * @param value The corresponding value of the entry to be added into SupportedLoginProviders.
@@ -215,6 +231,87 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
     }
     
     /**
+     * The "domain" by which Cognito will refer to your users. This name acts
+     * as a placeholder that allows your backend and the Cognito service to
+     * communicate about the developer provider. For the
+     * <code>DeveloperProviderName</code>, you can use letters as well as
+     * period (<code>.</code>), underscore (<code>_</code>), and dash
+     * (<code>-</code>). <p>Once you have set a developer provider name, you
+     * cannot change it. Please take care in setting this parameter.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     *
+     * @return The "domain" by which Cognito will refer to your users. This name acts
+     *         as a placeholder that allows your backend and the Cognito service to
+     *         communicate about the developer provider. For the
+     *         <code>DeveloperProviderName</code>, you can use letters as well as
+     *         period (<code>.</code>), underscore (<code>_</code>), and dash
+     *         (<code>-</code>). <p>Once you have set a developer provider name, you
+     *         cannot change it. Please take care in setting this parameter.
+     */
+    public String getDeveloperProviderName() {
+        return developerProviderName;
+    }
+    
+    /**
+     * The "domain" by which Cognito will refer to your users. This name acts
+     * as a placeholder that allows your backend and the Cognito service to
+     * communicate about the developer provider. For the
+     * <code>DeveloperProviderName</code>, you can use letters as well as
+     * period (<code>.</code>), underscore (<code>_</code>), and dash
+     * (<code>-</code>). <p>Once you have set a developer provider name, you
+     * cannot change it. Please take care in setting this parameter.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     *
+     * @param developerProviderName The "domain" by which Cognito will refer to your users. This name acts
+     *         as a placeholder that allows your backend and the Cognito service to
+     *         communicate about the developer provider. For the
+     *         <code>DeveloperProviderName</code>, you can use letters as well as
+     *         period (<code>.</code>), underscore (<code>_</code>), and dash
+     *         (<code>-</code>). <p>Once you have set a developer provider name, you
+     *         cannot change it. Please take care in setting this parameter.
+     */
+    public void setDeveloperProviderName(String developerProviderName) {
+        this.developerProviderName = developerProviderName;
+    }
+    
+    /**
+     * The "domain" by which Cognito will refer to your users. This name acts
+     * as a placeholder that allows your backend and the Cognito service to
+     * communicate about the developer provider. For the
+     * <code>DeveloperProviderName</code>, you can use letters as well as
+     * period (<code>.</code>), underscore (<code>_</code>), and dash
+     * (<code>-</code>). <p>Once you have set a developer provider name, you
+     * cannot change it. Please take care in setting this parameter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w._-]+<br/>
+     *
+     * @param developerProviderName The "domain" by which Cognito will refer to your users. This name acts
+     *         as a placeholder that allows your backend and the Cognito service to
+     *         communicate about the developer provider. For the
+     *         <code>DeveloperProviderName</code>, you can use letters as well as
+     *         period (<code>.</code>), underscore (<code>_</code>), and dash
+     *         (<code>-</code>). <p>Once you have set a developer provider name, you
+     *         cannot change it. Please take care in setting this parameter.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateIdentityPoolRequest withDeveloperProviderName(String developerProviderName) {
+        this.developerProviderName = developerProviderName;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -228,7 +325,8 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
         sb.append("{");
         if (getIdentityPoolName() != null) sb.append("IdentityPoolName: " + getIdentityPoolName() + ",");
         if (isAllowUnauthenticatedIdentities() != null) sb.append("AllowUnauthenticatedIdentities: " + isAllowUnauthenticatedIdentities() + ",");
-        if (getSupportedLoginProviders() != null) sb.append("SupportedLoginProviders: " + getSupportedLoginProviders() );
+        if (getSupportedLoginProviders() != null) sb.append("SupportedLoginProviders: " + getSupportedLoginProviders() + ",");
+        if (getDeveloperProviderName() != null) sb.append("DeveloperProviderName: " + getDeveloperProviderName() );
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +339,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getIdentityPoolName() == null) ? 0 : getIdentityPoolName().hashCode()); 
         hashCode = prime * hashCode + ((isAllowUnauthenticatedIdentities() == null) ? 0 : isAllowUnauthenticatedIdentities().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedLoginProviders() == null) ? 0 : getSupportedLoginProviders().hashCode()); 
+        hashCode = prime * hashCode + ((getDeveloperProviderName() == null) ? 0 : getDeveloperProviderName().hashCode()); 
         return hashCode;
     }
     
@@ -258,6 +357,8 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest implement
         if (other.isAllowUnauthenticatedIdentities() != null && other.isAllowUnauthenticatedIdentities().equals(this.isAllowUnauthenticatedIdentities()) == false) return false; 
         if (other.getSupportedLoginProviders() == null ^ this.getSupportedLoginProviders() == null) return false;
         if (other.getSupportedLoginProviders() != null && other.getSupportedLoginProviders().equals(this.getSupportedLoginProviders()) == false) return false; 
+        if (other.getDeveloperProviderName() == null ^ this.getDeveloperProviderName() == null) return false;
+        if (other.getDeveloperProviderName() != null && other.getDeveloperProviderName().equals(this.getDeveloperProviderName()) == false) return false; 
         return true;
     }
     

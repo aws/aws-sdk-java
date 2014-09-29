@@ -186,12 +186,13 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      * Completes the multipart upload and returns the result.
      */
     private UploadResult completeMultipartUpload() {
-        CompleteMultipartUploadResult completeMultipartUploadResult = s3
-                .completeMultipartUpload(new CompleteMultipartUploadRequest(putObjectRequest.getBucketName(),
-                        putObjectRequest.getKey(), uploadId, collectPartETags()));
-
-        uploadComplete();
-
+        CompleteMultipartUploadResult completeMultipartUploadResult = 
+            s3.completeMultipartUpload(
+                new CompleteMultipartUploadRequest(
+                    putObjectRequest.getBucketName(),
+                    putObjectRequest.getKey(),
+                    uploadId,
+                    collectPartETags()));
         UploadResult uploadResult = new UploadResult();
         uploadResult.setBucketName(completeMultipartUploadResult.getBucketName());
         uploadResult.setKey(completeMultipartUploadResult.getKey());

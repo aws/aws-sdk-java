@@ -18,10 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returned in response to a GetId request.
+ * Returned in response to a successful
+ * <code>MergeDeveloperIdentities</code> action.
  * </p>
  */
-public class GetIdResult implements Serializable {
+public class MergeDeveloperIdentitiesResult implements Serializable {
 
     /**
      * A unique identifier in the format REGION:GUID.
@@ -72,7 +73,7 @@ public class GetIdResult implements Serializable {
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public GetIdResult withIdentityId(String identityId) {
+    public MergeDeveloperIdentitiesResult withIdentityId(String identityId) {
         this.identityId = identityId;
         return this;
     }
@@ -108,8 +109,8 @@ public class GetIdResult implements Serializable {
         if (this == obj) return true;
         if (obj == null) return false;
 
-        if (obj instanceof GetIdResult == false) return false;
-        GetIdResult other = (GetIdResult)obj;
+        if (obj instanceof MergeDeveloperIdentitiesResult == false) return false;
+        MergeDeveloperIdentitiesResult other = (MergeDeveloperIdentitiesResult)obj;
         
         if (other.getIdentityId() == null ^ this.getIdentityId() == null) return false;
         if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false) return false; 

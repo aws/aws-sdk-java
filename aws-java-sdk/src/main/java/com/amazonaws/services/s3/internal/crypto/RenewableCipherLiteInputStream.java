@@ -89,6 +89,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
         abortIfNeeded();
         in.reset();
         renewCipherLite();
+        resetInternal();
         hasBeenAccessed = false;
     }
 

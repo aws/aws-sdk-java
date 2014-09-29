@@ -39,17 +39,17 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Update Identity Pool Request Marshaller
+ * Get Open Id Token For Developer Identity Request Marshaller
  */
-public class UpdateIdentityPoolRequestMarshaller implements Marshaller<Request<UpdateIdentityPoolRequest>, UpdateIdentityPoolRequest> {
+public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller implements Marshaller<Request<GetOpenIdTokenForDeveloperIdentityRequest>, GetOpenIdTokenForDeveloperIdentityRequest> {
 
-    public Request<UpdateIdentityPoolRequest> marshall(UpdateIdentityPoolRequest updateIdentityPoolRequest) {
-        if (updateIdentityPoolRequest == null) {
+    public Request<GetOpenIdTokenForDeveloperIdentityRequest> marshall(GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest) {
+        if (getOpenIdTokenForDeveloperIdentityRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateIdentityPoolRequest> request = new DefaultRequest<UpdateIdentityPoolRequest>(updateIdentityPoolRequest, "AmazonCognitoIdentity");
-        String target = "AWSCognitoIdentityService.UpdateIdentityPool";
+        Request<GetOpenIdTokenForDeveloperIdentityRequest> request = new DefaultRequest<GetOpenIdTokenForDeveloperIdentityRequest>(getOpenIdTokenForDeveloperIdentityRequest, "AmazonCognitoIdentity");
+        String target = "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity";
         request.addHeader("X-Amz-Target", target);
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,29 +61,26 @@ public class UpdateIdentityPoolRequestMarshaller implements Marshaller<Request<U
 
           jsonWriter.object();
           
-            if (updateIdentityPoolRequest.getIdentityPoolId() != null) {
-                jsonWriter.key("IdentityPoolId").value(updateIdentityPoolRequest.getIdentityPoolId());
+            if (getOpenIdTokenForDeveloperIdentityRequest.getIdentityPoolId() != null) {
+                jsonWriter.key("IdentityPoolId").value(getOpenIdTokenForDeveloperIdentityRequest.getIdentityPoolId());
             }
-            if (updateIdentityPoolRequest.getIdentityPoolName() != null) {
-                jsonWriter.key("IdentityPoolName").value(updateIdentityPoolRequest.getIdentityPoolName());
+            if (getOpenIdTokenForDeveloperIdentityRequest.getIdentityId() != null) {
+                jsonWriter.key("IdentityId").value(getOpenIdTokenForDeveloperIdentityRequest.getIdentityId());
             }
-            if (updateIdentityPoolRequest.isAllowUnauthenticatedIdentities() != null) {
-                jsonWriter.key("AllowUnauthenticatedIdentities").value(updateIdentityPoolRequest.isAllowUnauthenticatedIdentities());
-            }
-            if (updateIdentityPoolRequest.getSupportedLoginProviders() != null) {
-                jsonWriter.key("SupportedLoginProviders");
+            if (getOpenIdTokenForDeveloperIdentityRequest.getLogins() != null) {
+                jsonWriter.key("Logins");
                 jsonWriter.object();
-                for (Map.Entry<String, String> supportedLoginProvidersListValue : updateIdentityPoolRequest.getSupportedLoginProviders().entrySet()) {
-                    if (supportedLoginProvidersListValue.getValue() != null) {
-                        jsonWriter.key(supportedLoginProvidersListValue.getKey());
+                for (Map.Entry<String, String> loginsListValue : getOpenIdTokenForDeveloperIdentityRequest.getLogins().entrySet()) {
+                    if (loginsListValue.getValue() != null) {
+                        jsonWriter.key(loginsListValue.getKey());
 
-                        jsonWriter.value(supportedLoginProvidersListValue.getValue());
+                        jsonWriter.value(loginsListValue.getValue());
                     }
                 }
                 jsonWriter.endObject();
             }
-            if (updateIdentityPoolRequest.getDeveloperProviderName() != null) {
-                jsonWriter.key("DeveloperProviderName").value(updateIdentityPoolRequest.getDeveloperProviderName());
+            if (getOpenIdTokenForDeveloperIdentityRequest.getTokenDuration() != null) {
+                jsonWriter.key("TokenDuration").value(getOpenIdTokenForDeveloperIdentityRequest.getTokenDuration());
             }
 
           jsonWriter.endObject();

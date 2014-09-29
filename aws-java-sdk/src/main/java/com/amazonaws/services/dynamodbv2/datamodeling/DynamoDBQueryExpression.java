@@ -22,7 +22,7 @@ import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 
 /**
- * A query expression
+ * A query expression.
  */
 public class DynamoDBQueryExpression <T> {
 
@@ -37,7 +37,7 @@ public class DynamoDBQueryExpression <T> {
     private String conditionalOperator;
 
     /**
-     * Returns whether this query uses consistent reads
+     * Returns whether this query uses consistent reads.
      */
     public boolean isConsistentRead() {
         return consistentRead;
@@ -106,22 +106,45 @@ public class DynamoDBQueryExpression <T> {
     }
 
     /**
-     * Returns the limit of items to return from this query.
+     * Returns the maximum number of items to retrieve in each service request
+     * to DynamoDB.
+     * <p>
+     * Note that when calling {@code DynamoDBMapper.query}, multiple requests
+     * are made to DynamoDB if needed to retrieve the entire result set. Setting
+     * this will limit the number of items retrieved by each request, NOT
+     * the total number of results that will be retrieved. Use
+     * {@code DynamoDBMapper.queryPage} to retrieve a single page of items from
+     * DynamoDB.
      */
     public Integer getLimit() {
         return limit;
     }
 
     /**
-     * Sets the limit of items to return from this query.
+     * Sets the maximum number of items to retrieve in each service request to
+     * DynamoDB.
+     * <p>
+     * Note that when calling {@code DynamoDBMapper.query}, multiple requests
+     * are made to DynamoDB if needed to retrieve the entire result set. Setting
+     * this will limit the number of items retrieved by each request, NOT
+     * the total number of results that will be retrieved. Use
+     * {@code DynamoDBMapper.queryPage} to retrieve a single page of items from
+     * DynamoDB.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
     /**
-     * Sets the limit of items to return from this query and returns a pointer to this
-     * object for method-chaining.
+     * Sets the maximum number of items to retrieve in each service request to
+     * DynamoDB and returns a pointer to this object for method-chaining.
+     * <p>
+     * Note that when calling {@code DynamoDBMapper.query}, multiple requests
+     * are made to DynamoDB if needed to retrieve the entire result set. Setting
+     * this will limit the number of items retrieved by each request, NOT
+     * the total number of results that will be retrieved. Use
+     * {@code DynamoDBMapper.queryPage} to retrieve a single page of items from
+     * DynamoDB.
      */
     public DynamoDBQueryExpression<T> withLimit(Integer limit) {
         this.limit = limit;
@@ -142,7 +165,8 @@ public class DynamoDBQueryExpression <T> {
      * the table must be specified with this key object.
      * 
      * Note 1: Currently the DynamoDBMapper supports only one value per hash key.
-     * Note 2: Currently the Amazon DynamoDB supports only one hash key per table.   
+     * Note 2: Currently the Amazon DynamoDB supports only one hash key per
+     *         table/index.
      */
     public void setHashKeyValues(T hashKeyValues) {
         this.hashKeyValues = hashKeyValues;
@@ -169,10 +193,10 @@ public class DynamoDBQueryExpression <T> {
      * Sets the range key condition for this query. All range key attributes for
      * the table must be specified by attribute name in the map.
      * 
-     * @param rangeKeyConditions
-     * 			NOTE: The current DynamoDB service only allows up to one range key condition per query.
-     * 			Providing more than one range key conditions  will result in an
-     * 			AmazonClientException
+     * @param rangeKeyConditions a map from key name to condition
+     * 	        NOTE: The current DynamoDB service only allows up to one
+     *          range key condition per query. Providing more than one
+     *          range key condition will result in an AmazonClientException.
      */
     public void setRangeKeyConditions(Map<String, Condition> rangeKeyConditions) {
         this.rangeKeyConditions = rangeKeyConditions;
@@ -182,10 +206,10 @@ public class DynamoDBQueryExpression <T> {
      * Sets the range key condition for this query. All range key attributes for
      * the table must be specified by attribute name in the map.
      * 
-     * @param rangeKeyConditions
-     * 			NOTE: The current DynamoDB service only allows up to one range key condition per query.
-     * 			Providing more than one range key conditions  will result in an
-     * 			AmazonClientException
+     * @param rangeKeyConditions a map from key name to condition
+     *         NOTE: The current DynamoDB service only allows up to one range
+     *         key condition per query. Providing more than one range key
+     *         condition will result in an AmazonClientException.
      */
     public DynamoDBQueryExpression<T> withRangeKeyConditions(Map<String, Condition> rangeKeyConditions) {
         setRangeKeyConditions(rangeKeyConditions);
@@ -197,21 +221,25 @@ public class DynamoDBQueryExpression <T> {
      * the range key. All range key attributes for the table must be specified
      * by using {@link DynamoDBRangeKey} or {@link DynamoDBIndexRangeKey} annotations
      * before executing the query.
-     * 		<dl>
-     * 			<dt>If the attribute is the primary range key</dt>
-     * 				<dd>users should NOT set any index name for this query.</dd>
-     * 			<dt>If the attribute is an index range key</dt> 
-     * 				<dd>{@link DynamoDBMapper} will automatically
-     * 				set the index name if the range key is annotated as only used by one local secondary index,
-     * 				otherwise users must set the index name manually
-     * 				by either {@link DynamoDBQueryExpression#setIndexName(String)} or 
-     * 				{@link DynamoDBQueryExpression#withIndexName(String)}.</dd>
-     * 		</dl>
+     * <dl>
+     *   <dt>If the attribute is the primary range key</dt>
+     *   <dd>users should NOT set any index name for this query.</dd>
+     *   <dt>If the attribute is an index range key</dt>
+     * 	 <dd>
+     *       {@link DynamoDBMapper} will automatically set the index name if the
+     *       range key is annotated as only used by one local secondary index,
+     *       otherwise users must set the index name manually by either
+     *       {@link DynamoDBQueryExpression#setIndexName(String)} or
+     *       {@link DynamoDBQueryExpression#withIndexName(String)}.
+     *   </dd>
+     * </dl>
+     *
      * @param rangeKeyAttributeName
-     * 			This could be either the primary range key of the table, or an index range key.
-     * 
+     * 	        This can be either the primary range key of the table or an
+     *          index range key.
+     *
      * @param rangeKeyCondition
-     * 			Condition specified on the given range key for this query.
+     * 	        Condition specified on the given range key for this query.
      */
     public DynamoDBQueryExpression<T> withRangeKeyCondition(String rangeKeyAttributeName, Condition rangeKeyCondition) {
         if ( rangeKeyConditions == null )
@@ -221,26 +249,31 @@ public class DynamoDBQueryExpression <T> {
     }
     
     /**
-     * Returns the name of the index used by this query.
+     * Returns the name of the index to be used by this query.
      */
     public String getIndexName() {
         return indexName;
     }
 
     /**
-     * Sets the name of the index to be used by this query. All index names must be specified by using
-     * {@link DynamoDBIndexRangeKey} annotation on the getter method of the corresponding index range key
-     * before executing the query.
+     * Sets the name of the index to be used by this query. The hash key
+     * and/or range key of the index must be specified by adding
+     * {@link DynamoDBIndexHashKey} or {@code DynamoDBIndexRangeKey}
+     * annotations to the appropriate getter methods of the mapped
+     * object.
      */
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
 
     /**
-     * Sets the name of the index to be used by this query. All index names must be specified by using
-     * {@link DynamoDBIndexRangeKey} annotation on the getter method of the corresponding index range key
-     * before executing the query.
-     * <p>Returns a pointer to this object for method-chaining.
+     * Sets the name of the index to be used by this query. The hash key
+     * and/or range key of the index must be specified by adding
+     * {@link DynamoDBIndexHashKey} or {@code DynamoDBIndexRangeKey}
+     * annotations to the appropriate getter methods of the mapped
+     * object.
+     * <p>
+     * Returns a pointer to this object for method-chaining.
      */
     public DynamoDBQueryExpression<T> withIndexName(String indexName) {
         setIndexName(indexName);

@@ -39,17 +39,17 @@ import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Update Identity Pool Request Marshaller
+ * Lookup Developer Identity Request Marshaller
  */
-public class UpdateIdentityPoolRequestMarshaller implements Marshaller<Request<UpdateIdentityPoolRequest>, UpdateIdentityPoolRequest> {
+public class LookupDeveloperIdentityRequestMarshaller implements Marshaller<Request<LookupDeveloperIdentityRequest>, LookupDeveloperIdentityRequest> {
 
-    public Request<UpdateIdentityPoolRequest> marshall(UpdateIdentityPoolRequest updateIdentityPoolRequest) {
-        if (updateIdentityPoolRequest == null) {
+    public Request<LookupDeveloperIdentityRequest> marshall(LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest) {
+        if (lookupDeveloperIdentityRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateIdentityPoolRequest> request = new DefaultRequest<UpdateIdentityPoolRequest>(updateIdentityPoolRequest, "AmazonCognitoIdentity");
-        String target = "AWSCognitoIdentityService.UpdateIdentityPool";
+        Request<LookupDeveloperIdentityRequest> request = new DefaultRequest<LookupDeveloperIdentityRequest>(lookupDeveloperIdentityRequest, "AmazonCognitoIdentity");
+        String target = "AWSCognitoIdentityService.LookupDeveloperIdentity";
         request.addHeader("X-Amz-Target", target);
 
         request.setHttpMethod(HttpMethodName.POST);
@@ -61,29 +61,20 @@ public class UpdateIdentityPoolRequestMarshaller implements Marshaller<Request<U
 
           jsonWriter.object();
           
-            if (updateIdentityPoolRequest.getIdentityPoolId() != null) {
-                jsonWriter.key("IdentityPoolId").value(updateIdentityPoolRequest.getIdentityPoolId());
+            if (lookupDeveloperIdentityRequest.getIdentityPoolId() != null) {
+                jsonWriter.key("IdentityPoolId").value(lookupDeveloperIdentityRequest.getIdentityPoolId());
             }
-            if (updateIdentityPoolRequest.getIdentityPoolName() != null) {
-                jsonWriter.key("IdentityPoolName").value(updateIdentityPoolRequest.getIdentityPoolName());
+            if (lookupDeveloperIdentityRequest.getIdentityId() != null) {
+                jsonWriter.key("IdentityId").value(lookupDeveloperIdentityRequest.getIdentityId());
             }
-            if (updateIdentityPoolRequest.isAllowUnauthenticatedIdentities() != null) {
-                jsonWriter.key("AllowUnauthenticatedIdentities").value(updateIdentityPoolRequest.isAllowUnauthenticatedIdentities());
+            if (lookupDeveloperIdentityRequest.getDeveloperUserIdentifier() != null) {
+                jsonWriter.key("DeveloperUserIdentifier").value(lookupDeveloperIdentityRequest.getDeveloperUserIdentifier());
             }
-            if (updateIdentityPoolRequest.getSupportedLoginProviders() != null) {
-                jsonWriter.key("SupportedLoginProviders");
-                jsonWriter.object();
-                for (Map.Entry<String, String> supportedLoginProvidersListValue : updateIdentityPoolRequest.getSupportedLoginProviders().entrySet()) {
-                    if (supportedLoginProvidersListValue.getValue() != null) {
-                        jsonWriter.key(supportedLoginProvidersListValue.getKey());
-
-                        jsonWriter.value(supportedLoginProvidersListValue.getValue());
-                    }
-                }
-                jsonWriter.endObject();
+            if (lookupDeveloperIdentityRequest.getMaxResults() != null) {
+                jsonWriter.key("MaxResults").value(lookupDeveloperIdentityRequest.getMaxResults());
             }
-            if (updateIdentityPoolRequest.getDeveloperProviderName() != null) {
-                jsonWriter.key("DeveloperProviderName").value(updateIdentityPoolRequest.getDeveloperProviderName());
+            if (lookupDeveloperIdentityRequest.getNextToken() != null) {
+                jsonWriter.key("NextToken").value(lookupDeveloperIdentityRequest.getNextToken());
             }
 
           jsonWriter.endObject();
