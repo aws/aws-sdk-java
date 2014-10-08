@@ -1,0 +1,55 @@
+/*
+ * Copyright 2014-2014 Amazon Technologies, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers;
+
+import java.nio.ByteBuffer;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+
+/**
+ * An unmarshaller that unmarshals BinarySet values as sets of Java
+ * {@code byte[]}s.
+ */
+public class ByteArraySetUnmarshaller extends BSUnmarshaller {
+
+    private static final ByteArraySetUnmarshaller INSTANCE =
+            new ByteArraySetUnmarshaller();
+
+    public static ByteArraySetUnmarshaller instance() {
+        return INSTANCE;
+    }
+
+    private ByteArraySetUnmarshaller() {
+    }
+
+    @Override
+    public Object unmarshall(AttributeValue value) {
+        Set<byte[]> result = new HashSet<byte[]>();
+
+        for (ByteBuffer buffer : value.getBS()) {
+            if (buffer.hasArray()) {
+                result.add(buffer.array());
+            } else {
+                byte[] array = new byte[buffer.remaining()];
+                buffer.get(array);
+                result.add(array);
+            }
+        }
+
+        return result;
+    }
+}

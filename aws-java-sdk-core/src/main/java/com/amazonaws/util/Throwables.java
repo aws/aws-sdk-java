@@ -16,6 +16,7 @@ package com.amazonaws.util;
 
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 
 /**
@@ -55,18 +56,23 @@ public enum Throwables {
             return (RuntimeException)t;
         if (t instanceof Error)
             throw (Error)t;
-        return new AmazonClientException(t);
+        return t instanceof InterruptedException
+             ? new AbortedException(t)
+             : new AmazonClientException(t);
     }
 
     /**
-     * Same as {@link #failure(Throwable)}, but the given errmsg will be used
-     * if it was wrapped as an {@link AmazonClientException}.
+     * Same as {@link #failure(Throwable)}, but the given errmsg will be used if
+     * it was wrapped as either an {@link AmazonClientException} or
+     * {@link AbortedException}.
      */
     public static RuntimeException failure(Throwable t, String errmsg) {
         if (t instanceof RuntimeException)
             return (RuntimeException)t;
         if (t instanceof Error)
             throw (Error)t;
-        return new AmazonClientException(errmsg, t);
+        return t instanceof InterruptedException 
+             ? new AbortedException(errmsg, t)
+             : new AmazonClientException(errmsg, t);
     }
 }

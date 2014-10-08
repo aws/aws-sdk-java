@@ -5,7 +5,7 @@
   <artifactId>aws-java-sdk-pom</artifactId>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
-  <version>1.8.12-SNAPSHOT</version>
+  <version>1.9.0</version>
   <description>The Amazon Web Services SDK for Java provides Java APIs
     for building software on AWS' cost-effective, scalable, and reliable
     infrastructure products. The AWS Java SDK allows developers to code
@@ -18,10 +18,49 @@
   <scm>
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
+
+  <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
-    <module>aws-java-sdk-core</module>
+    <module>aws-java-sdk-support</module>
+    <module>aws-java-sdk-simpledb</module>
+    <module>aws-java-sdk-simpleworkflow</module>
+    <module>aws-java-sdk-storagegateway</module>
+    <module>aws-java-sdk-route53</module>
+    <module>aws-java-sdk-s3</module>
+    <module>aws-java-sdk-importexport</module>
+    <module>aws-java-sdk-sts</module>
+    <module>aws-java-sdk-sqs</module>
+    <module>aws-java-sdk-rds</module>
+    <module>aws-java-sdk-redshift</module>
+    <module>aws-java-sdk-elasticbeanstalk</module>
+    <module>aws-java-sdk-glacier</module>
+    <module>aws-java-sdk-iam</module>
+    <module>aws-java-sdk-datapipeline</module>
+    <module>aws-java-sdk-elasticloadbalancing</module>
+    <module>aws-java-sdk-emr</module>
+    <module>aws-java-sdk-elasticache</module>
+    <module>aws-java-sdk-elastictranscoder</module>
+    <module>aws-java-sdk-ec2</module>
+    <module>aws-java-sdk-dynamodb</module>
+    <module>aws-java-sdk-sns</module>
+    <module>aws-java-sdk-cloudtrail</module>
+    <module>aws-java-sdk-cloudwatch</module>
+    <module>aws-java-sdk-logs</module>
+    <module>aws-java-sdk-cognitoidentity</module>
+    <module>aws-java-sdk-cognitosync</module>
+    <module>aws-java-sdk-directconnect</module>
+    <module>aws-java-sdk-cloudformation</module>
+    <module>aws-java-sdk-cloudfront</module>
+    <module>aws-java-sdk-kinesis</module>
+    <module>aws-java-sdk-opsworks</module>
+    <module>aws-java-sdk-ses</module>
+    <module>aws-java-sdk-autoscaling</module>
+    <module>aws-java-sdk-cloudsearch</module>
+    <module>aws-java-sdk-cloudwatchmetrics</module>
+    <module>aws-java-sdk-swf-libraries</module>
     <module>aws-java-sdk</module>
-  </modules>
+    <module>aws-java-sdk-core</module>
+</modules>
 
   <licenses>
     <license>
@@ -48,6 +87,7 @@
   </developers>
 
   <build>
+  <pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -57,6 +97,7 @@
           <source>1.6</source>
           <target>1.6</target>
           <encoding>UTF-8</encoding>
+          <forceJavacCompilerUse>true</forceJavacCompilerUse>
         </configuration>
       </plugin>
 
@@ -65,12 +106,13 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9.1</version>
         <configuration>
-          <excludePackageNames>*.internal:*.transform</excludePackageNames>
+          <excludePackageNames>*.transform</excludePackageNames>
           <minmemory>128m</minmemory>
           <maxmemory>1024m</maxmemory>
         </configuration>
       </plugin>
     </plugins>
+    </pluginManagement>
   </build>
 
   <profiles>

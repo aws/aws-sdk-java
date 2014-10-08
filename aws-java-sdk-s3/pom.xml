@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.amazonaws</groupId>
+  <artifactId>aws-java-sdk-s3</artifactId>
+  <packaging>jar</packaging>
+  <name>AWS Java SDK for Amazon S3</name>
+  <description>The AWS Java SDK for Amazon S3 module holds the client classes that is used for communicating with Amazon Simple Storage Service</description>
+  <url>https://aws.amazon.com/sdkforjava</url>
+
+  <scm>
+    <url>https://github.com/aws/aws-sdk-java.git</url>
+  </scm>
+  <parent>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-pom</artifactId>
+        <version>1.9.0</version>
+  </parent>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://aws.amazon.com/apache2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
+  <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-core</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>1.9.0</version>
+    </dependency>
+</dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
