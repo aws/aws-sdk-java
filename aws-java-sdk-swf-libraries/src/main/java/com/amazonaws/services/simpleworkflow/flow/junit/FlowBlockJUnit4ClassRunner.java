@@ -1,5 +1,6 @@
 package com.amazonaws.services.simpleworkflow.flow.junit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -40,8 +41,25 @@ public class FlowBlockJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 
     @Override
     protected List<MethodRule> rules(Object test) {
-        List<MethodRule> result = super.rules(test);
-        for (MethodRule methodRule : result) {
+        List<MethodRule> allRules = super.rules(test);
+        List<MethodRule> result = new ArrayList<MethodRule>();
+        for (MethodRule methodRule : allRules) {
+            // Filter out the SWF rules so that they can be applied separately
+            if (!WorkflowTestBase.class.isAssignableFrom(methodRule.getClass())) {
+                result.add(methodRule);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    protected Statement methodInvoker(FrameworkMethod method, Object test) {
+        Statement invoker = super.methodInvoker(method, test);
+
+        // Apply the workflow test rule here so that it only wraps the method
+        // under test, not @Before/@After
+        List<MethodRule> rules = super.rules(test);
+        for (MethodRule methodRule : rules) {
             if (WorkflowTestBase.class.isAssignableFrom(methodRule.getClass())) {
                 workflowTestRule = (WorkflowTestBase) methodRule;
                 workflowTestRule.setFlowTestRunner(true);
@@ -51,9 +69,10 @@ public class FlowBlockJUnit4ClassRunner extends BlockJUnit4ClassRunner {
                 if (expectedException != null) {
                     workflowTestRule.setExpectedException(expectedException);
                 }
+                return workflowTestRule.apply(invoker, method, test);
             }
         }
-        return result;
+        return invoker;
     }
 
     @Override
