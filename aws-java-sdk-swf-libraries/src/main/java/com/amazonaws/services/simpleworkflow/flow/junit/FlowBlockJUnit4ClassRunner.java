@@ -30,6 +30,16 @@ public class FlowBlockJUnit4ClassRunner extends BlockJUnit4ClassRunner {
     }
 
     @Override
+    protected Object createTest() throws Exception {
+        Object testInstance = super.createTest();
+        // Reset 
+        workflowTestRule = null;
+        timeout = 0;
+        expectedException = null;
+        return testInstance;
+    }
+
+    @Override
     protected Statement withPotentialTimeout(FrameworkMethod method, final Object test, Statement next) {
         Test annotation = method.getAnnotation(Test.class);
         timeout = annotation.timeout();

@@ -32,6 +32,15 @@ public class FlowSpringJUnit4ClassRunner extends SpringJUnit4ClassRunner {
     }
 
     @Override
+    protected Object createTest() throws Exception {
+        Object testInstance = super.createTest();
+        workflowTestRule = null;
+        timeout = 0;
+        expectedException = null;
+        return testInstance;
+    }
+
+    @Override
     protected Statement withPotentialTimeout(final FrameworkMethod method, final Object test, Statement next) {
         Test annotation = method.getAnnotation(Test.class);
         long timeout = annotation.timeout();
