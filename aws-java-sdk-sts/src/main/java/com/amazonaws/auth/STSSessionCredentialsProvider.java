@@ -108,15 +108,18 @@ public class STSSessionCredentialsProvider implements AWSCredentialsProvider {
     /**
      * Sets the AWS Security Token Service (STS) endpoint where session
      * credentials are retrieved from.
-     * <p>
+     * <p></p>
      * The default AWS Security Token Service (STS) endpoint
      * ("sts.amazonaws.com") works for all accounts that are not for
-     * China(Beijing) region. You only need to change the endpoint to
+     * China (Beijing) region or GovCloud. You only need to change the endpoint to
      * "sts.cn-north-1.amazonaws.com.cn" when you are requesting session
-     * credentials for services in China(Beijing) region.
+     * credentials for services in China(Beijing) region or "sts.us-gov-west-1.amazonaws.com" for GovCloud.
+     * <p></p>
+     * Setting this invalidates existing session credentials.
      */
     public void setSTSClientEndpoint(String endpoint) {
         securityTokenService.setEndpoint(endpoint);
+        sessionCredentials = null;
     }
 
     @Override

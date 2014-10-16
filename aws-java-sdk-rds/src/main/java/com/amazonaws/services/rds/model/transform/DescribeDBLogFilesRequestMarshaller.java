@@ -39,7 +39,7 @@ public class DescribeDBLogFilesRequestMarshaller implements Marshaller<Request<D
 
         Request<DescribeDBLogFilesRequest> request = new DefaultRequest<DescribeDBLogFilesRequest>(describeDBLogFilesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBLogFiles");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (describeDBLogFilesRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(describeDBLogFilesRequest.getDBInstanceIdentifier()));
@@ -52,6 +52,31 @@ public class DescribeDBLogFilesRequestMarshaller implements Marshaller<Request<D
         }
         if (describeDBLogFilesRequest.getFileSize() != null) {
             request.addParameter("FileSize", StringUtils.fromLong(describeDBLogFilesRequest.getFileSize()));
+        }
+
+        java.util.List<Filter> filtersList = describeDBLogFilesRequest.getFilters();
+        int filtersListIndex = 1;
+
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
+                }
+
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    }
+
+                    valuesListIndex++;
+                }
+            }
+
+            filtersListIndex++;
         }
         if (describeDBLogFilesRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBLogFilesRequest.getMaxRecords()));

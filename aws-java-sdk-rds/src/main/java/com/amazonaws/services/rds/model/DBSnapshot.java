@@ -129,6 +129,17 @@ public class DBSnapshot implements Serializable {
     private String sourceRegion;
 
     /**
+     * Specifies storage type associated with DB Snapshot.
+     */
+    private String storageType;
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     */
+    private String tdeCredentialArn;
+
+    /**
      * Specifies the identifier for the DB snapshot.
      *
      * @return Specifies the identifier for the DB snapshot.
@@ -747,6 +758,78 @@ public class DBSnapshot implements Serializable {
     }
 
     /**
+     * Specifies storage type associated with DB Snapshot.
+     *
+     * @return Specifies storage type associated with DB Snapshot.
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+    
+    /**
+     * Specifies storage type associated with DB Snapshot.
+     *
+     * @param storageType Specifies storage type associated with DB Snapshot.
+     */
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    /**
+     * Specifies storage type associated with DB Snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageType Specifies storage type associated with DB Snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBSnapshot withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @return The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public String getTdeCredentialArn() {
+        return tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public void setTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBSnapshot withTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -775,7 +858,9 @@ public class DBSnapshot implements Serializable {
         if (getIops() != null) sb.append("Iops: " + getIops() + ",");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (getPercentProgress() != null) sb.append("PercentProgress: " + getPercentProgress() + ",");
-        if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() );
+        if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -803,6 +888,8 @@ public class DBSnapshot implements Serializable {
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getPercentProgress() == null) ? 0 : getPercentProgress().hashCode()); 
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         return hashCode;
     }
     
@@ -850,6 +937,10 @@ public class DBSnapshot implements Serializable {
         if (other.getPercentProgress() != null && other.getPercentProgress().equals(this.getPercentProgress()) == false) return false; 
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null) return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false) return false; 
+        if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
+        if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
         return true;
     }
     

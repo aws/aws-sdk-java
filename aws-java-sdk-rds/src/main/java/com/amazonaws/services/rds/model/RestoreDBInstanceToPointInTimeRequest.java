@@ -71,7 +71,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      * <p>Default: The same DBInstanceClass as the original DB instance.
      */
     private String dBInstanceClass;
@@ -151,7 +154,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
+     * value for the SQL Server database engine is not supported.
      */
     private Integer iops;
 
@@ -168,6 +172,26 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * A list of tags.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+
+    /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     */
+    private String storageType;
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     */
+    private String tdeCredentialArn;
+
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     */
+    private String tdeCredentialPassword;
 
     /**
      * Default constructor for a new RestoreDBInstanceToPointInTimeRequest object.  Callers should use the
@@ -437,12 +461,18 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      * <p>Default: The same DBInstanceClass as the original DB instance.
      *
      * @return The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *         <p>Default: The same DBInstanceClass as the original DB instance.
      */
     public String getDBInstanceClass() {
@@ -452,12 +482,18 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      * <p>Default: The same DBInstanceClass as the original DB instance.
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *         <p>Default: The same DBInstanceClass as the original DB instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -467,14 +503,20 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      * <p>Default: The same DBInstanceClass as the original DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *         <p>Default: The same DBInstanceClass as the original DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -1004,11 +1046,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
+     * value for the SQL Server database engine is not supported.
      *
      * @return The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     *         an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
+     *         value for the SQL Server database engine is not supported.
      */
     public Integer getIops() {
         return iops;
@@ -1017,11 +1061,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
+     * value for the SQL Server database engine is not supported.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     *         an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
+     *         value for the SQL Server database engine is not supported.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -1030,13 +1076,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
+     * value for the SQL Server database engine is not supported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     *         an integer greater than 1000. <p><b>SQL Server</b> <p>Setting the IOPS
+     *         value for the SQL Server database engine is not supported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1172,6 +1220,135 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
 
     /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @return Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceToPointInTimeRequest withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @return The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public String getTdeCredentialArn() {
+        return tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public void setTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceToPointInTimeRequest withTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+        return this;
+    }
+
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     *
+     * @return The password for the given ARN from the Key Store in order to access
+     *         the device.
+     */
+    public String getTdeCredentialPassword() {
+        return tdeCredentialPassword;
+    }
+    
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     *
+     * @param tdeCredentialPassword The password for the given ARN from the Key Store in order to access
+     *         the device.
+     */
+    public void setTdeCredentialPassword(String tdeCredentialPassword) {
+        this.tdeCredentialPassword = tdeCredentialPassword;
+    }
+    
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialPassword The password for the given ARN from the Key Store in order to access
+     *         the device.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceToPointInTimeRequest withTdeCredentialPassword(String tdeCredentialPassword) {
+        this.tdeCredentialPassword = tdeCredentialPassword;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1199,7 +1376,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() + ",");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
+        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() );
         sb.append("}");
         return sb.toString();
     }
@@ -1226,6 +1406,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         return hashCode;
     }
     
@@ -1271,6 +1454,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
+        if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
+        if (other.getTdeCredentialPassword() == null ^ this.getTdeCredentialPassword() == null) return false;
+        if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
         return true;
     }
     

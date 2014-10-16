@@ -55,6 +55,10 @@ public class AnalysisOptionsStaxUnmarshaller implements Unmarshaller<AnalysisOpt
                     analysisOptions.setStemmingDictionary(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("JapaneseTokenizationDictionary", targetDepth)) {
+                    analysisOptions.setJapaneseTokenizationDictionary(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("AlgorithmicStemming", targetDepth)) {
                     analysisOptions.setAlgorithmicStemming(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

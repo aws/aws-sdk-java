@@ -19,6 +19,7 @@ import java.io.Serializable;
 /**
  * <p>
  * Synonyms, stopwords, and stemming options for an analysis scheme.
+ * Includes tokenization dictionary for Japanese.
  * </p>
  */
 public class AnalysisOptions implements Serializable {
@@ -56,6 +57,14 @@ public class AnalysisOptions implements Serializable {
      * dictionary is 500 KB.
      */
     private String stemmingDictionary;
+
+    /**
+     * A JSON array that contains a collection of terms, tokens, readings and
+     * part of speech for Japanese Tokenizaiton. The Japanese tokenization
+     * dictionary enables you to override the default tokenization for
+     * selected terms. This is only valid for Japanese language fields.
+     */
+    private String japaneseTokenizationDictionary;
 
     /**
      * The level of algorithmic stemming to perform: <code>none</code>,
@@ -285,6 +294,57 @@ public class AnalysisOptions implements Serializable {
     }
 
     /**
+     * A JSON array that contains a collection of terms, tokens, readings and
+     * part of speech for Japanese Tokenizaiton. The Japanese tokenization
+     * dictionary enables you to override the default tokenization for
+     * selected terms. This is only valid for Japanese language fields.
+     *
+     * @return A JSON array that contains a collection of terms, tokens, readings and
+     *         part of speech for Japanese Tokenizaiton. The Japanese tokenization
+     *         dictionary enables you to override the default tokenization for
+     *         selected terms. This is only valid for Japanese language fields.
+     */
+    public String getJapaneseTokenizationDictionary() {
+        return japaneseTokenizationDictionary;
+    }
+    
+    /**
+     * A JSON array that contains a collection of terms, tokens, readings and
+     * part of speech for Japanese Tokenizaiton. The Japanese tokenization
+     * dictionary enables you to override the default tokenization for
+     * selected terms. This is only valid for Japanese language fields.
+     *
+     * @param japaneseTokenizationDictionary A JSON array that contains a collection of terms, tokens, readings and
+     *         part of speech for Japanese Tokenizaiton. The Japanese tokenization
+     *         dictionary enables you to override the default tokenization for
+     *         selected terms. This is only valid for Japanese language fields.
+     */
+    public void setJapaneseTokenizationDictionary(String japaneseTokenizationDictionary) {
+        this.japaneseTokenizationDictionary = japaneseTokenizationDictionary;
+    }
+    
+    /**
+     * A JSON array that contains a collection of terms, tokens, readings and
+     * part of speech for Japanese Tokenizaiton. The Japanese tokenization
+     * dictionary enables you to override the default tokenization for
+     * selected terms. This is only valid for Japanese language fields.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param japaneseTokenizationDictionary A JSON array that contains a collection of terms, tokens, readings and
+     *         part of speech for Japanese Tokenizaiton. The Japanese tokenization
+     *         dictionary enables you to override the default tokenization for
+     *         selected terms. This is only valid for Japanese language fields.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AnalysisOptions withJapaneseTokenizationDictionary(String japaneseTokenizationDictionary) {
+        this.japaneseTokenizationDictionary = japaneseTokenizationDictionary;
+        return this;
+    }
+
+    /**
      * The level of algorithmic stemming to perform: <code>none</code>,
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The
      * available levels vary depending on the language. For more information,
@@ -441,6 +501,7 @@ public class AnalysisOptions implements Serializable {
         if (getSynonyms() != null) sb.append("Synonyms: " + getSynonyms() + ",");
         if (getStopwords() != null) sb.append("Stopwords: " + getStopwords() + ",");
         if (getStemmingDictionary() != null) sb.append("StemmingDictionary: " + getStemmingDictionary() + ",");
+        if (getJapaneseTokenizationDictionary() != null) sb.append("JapaneseTokenizationDictionary: " + getJapaneseTokenizationDictionary() + ",");
         if (getAlgorithmicStemming() != null) sb.append("AlgorithmicStemming: " + getAlgorithmicStemming() );
         sb.append("}");
         return sb.toString();
@@ -454,6 +515,7 @@ public class AnalysisOptions implements Serializable {
         hashCode = prime * hashCode + ((getSynonyms() == null) ? 0 : getSynonyms().hashCode()); 
         hashCode = prime * hashCode + ((getStopwords() == null) ? 0 : getStopwords().hashCode()); 
         hashCode = prime * hashCode + ((getStemmingDictionary() == null) ? 0 : getStemmingDictionary().hashCode()); 
+        hashCode = prime * hashCode + ((getJapaneseTokenizationDictionary() == null) ? 0 : getJapaneseTokenizationDictionary().hashCode()); 
         hashCode = prime * hashCode + ((getAlgorithmicStemming() == null) ? 0 : getAlgorithmicStemming().hashCode()); 
         return hashCode;
     }
@@ -472,6 +534,8 @@ public class AnalysisOptions implements Serializable {
         if (other.getStopwords() != null && other.getStopwords().equals(this.getStopwords()) == false) return false; 
         if (other.getStemmingDictionary() == null ^ this.getStemmingDictionary() == null) return false;
         if (other.getStemmingDictionary() != null && other.getStemmingDictionary().equals(this.getStemmingDictionary()) == false) return false; 
+        if (other.getJapaneseTokenizationDictionary() == null ^ this.getJapaneseTokenizationDictionary() == null) return false;
+        if (other.getJapaneseTokenizationDictionary() != null && other.getJapaneseTokenizationDictionary().equals(this.getJapaneseTokenizationDictionary()) == false) return false; 
         if (other.getAlgorithmicStemming() == null ^ this.getAlgorithmicStemming() == null) return false;
         if (other.getAlgorithmicStemming() != null && other.getAlgorithmicStemming().equals(this.getAlgorithmicStemming()) == false) return false; 
         return true;

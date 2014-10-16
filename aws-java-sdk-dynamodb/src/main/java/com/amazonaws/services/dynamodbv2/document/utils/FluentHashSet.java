@@ -15,12 +15,12 @@
 package com.amazonaws.services.dynamodbv2.document.utils;
 
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 /**
- * Utility subclass of {@link HashSet} that supports fluent API.
+ * Utility subclass of {@link LinkedHashSet} that supports fluent API.
  */
-public class FluentHashSet<E> extends HashSet<E> {
+public class FluentHashSet<E> extends LinkedHashSet<E> {
     private static final long serialVersionUID = -549868294257559427L;
 
     public FluentHashSet() {

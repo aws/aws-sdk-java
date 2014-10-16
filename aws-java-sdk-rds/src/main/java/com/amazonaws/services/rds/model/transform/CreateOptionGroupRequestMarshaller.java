@@ -39,7 +39,7 @@ public class CreateOptionGroupRequestMarshaller implements Marshaller<Request<Cr
 
         Request<CreateOptionGroupRequest> request = new DefaultRequest<CreateOptionGroupRequest>(createOptionGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateOptionGroup");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (createOptionGroupRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(createOptionGroupRequest.getOptionGroupName()));

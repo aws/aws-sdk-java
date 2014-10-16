@@ -63,6 +63,9 @@ public class DefineAnalysisSchemeRequestMarshaller implements Marshaller<Request
                 if (analysisOptionsAnalysisOptions.getStemmingDictionary() != null) {
                     request.addParameter("AnalysisScheme.AnalysisOptions.StemmingDictionary", StringUtils.fromString(analysisOptionsAnalysisOptions.getStemmingDictionary()));
                 }
+                if (analysisOptionsAnalysisOptions.getJapaneseTokenizationDictionary() != null) {
+                    request.addParameter("AnalysisScheme.AnalysisOptions.JapaneseTokenizationDictionary", StringUtils.fromString(analysisOptionsAnalysisOptions.getJapaneseTokenizationDictionary()));
+                }
                 if (analysisOptionsAnalysisOptions.getAlgorithmicStemming() != null) {
                     request.addParameter("AnalysisScheme.AnalysisOptions.AlgorithmicStemming", StringUtils.fromString(analysisOptionsAnalysisOptions.getAlgorithmicStemming()));
                 }

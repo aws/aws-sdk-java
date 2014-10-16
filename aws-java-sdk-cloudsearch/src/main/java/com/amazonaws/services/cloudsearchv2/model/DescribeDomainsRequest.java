@@ -25,10 +25,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * be limited to specific domains. Shows all domains by default. To get
  * the number of searchable documents in a domain, use the console or
  * submit a <code>matchall</code> request to your domain's search
- * endpoint: <code>q=matchall&q.parser=structured&size=0</code>. For more
- * information, see
- * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a>
- * in the <i>Amazon CloudSearch Developer Guide</i>.
+ * endpoint: <code>q=matchall&q.parser=structured&size=0</code> . For
+ * more information, see
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"> Getting Information about a Search Domain </a>
+ * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#describeDomains(DescribeDomainsRequest)

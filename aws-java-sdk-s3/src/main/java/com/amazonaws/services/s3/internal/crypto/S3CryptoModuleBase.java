@@ -388,7 +388,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             EncryptionMaterialsFactory f = (EncryptionMaterialsFactory)req;
             final EncryptionMaterials materials = f.getEncryptionMaterials();
             if (materials != null) {
-                buildContentCryptoMaterial(materials,
+                return buildContentCryptoMaterial(materials,
                         cryptoConfig.getCryptoProvider());
             }
         }

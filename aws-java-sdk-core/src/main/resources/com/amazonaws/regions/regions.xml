@@ -409,6 +409,12 @@
         <Hostname>monitoring.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>logs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>logs.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>dynamodb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1267,6 +1273,12 @@
         <Hostname>monitoring.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>logs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>logs.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>dynamodb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1507,6 +1519,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>storagegateway.cn-north-1.amazonaws.com.cn</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
       </Endpoint>
       <Endpoint>
         <ServiceName>support</ServiceName>
@@ -1525,6 +1538,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>swf.cn-north-1.amazonaws.com.cn</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
       </Endpoint>
       <Endpoint>
         <ServiceName>glacier</ServiceName>
@@ -1693,6 +1707,8 @@
       <Name>logs</Name>
       <FullName>Amazon CloudWatch Logs</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
       <Name>dynamodb</Name>

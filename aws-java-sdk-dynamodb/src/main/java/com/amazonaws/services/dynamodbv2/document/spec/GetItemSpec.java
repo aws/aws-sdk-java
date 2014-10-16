@@ -16,7 +16,7 @@ package com.amazonaws.services.dynamodbv2.document.spec;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -122,7 +122,7 @@ public class GetItemSpec extends AbstractSpecWithPrimaryKey<GetItemRequest> {
         if (nameMap == null)
             this.nameMap = null;
         else
-            this.nameMap = Collections.unmodifiableMap(new HashMap<String, String>(nameMap));
+            this.nameMap = Collections.unmodifiableMap(new LinkedHashMap<String, String>(nameMap));
         return this;
     }
 

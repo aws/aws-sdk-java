@@ -25,14 +25,15 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
 import com.amazonaws.services.dynamodbv2.document.internal.InternalUtils;
+import com.amazonaws.services.dynamodbv2.document.internal.ItemValueConformer;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.json.Jackson;
 /**
@@ -61,7 +62,8 @@ import com.amazonaws.util.json.Jackson;
  */
 public class Item {
     private static final String DUPLICATE_VALUES_FOUND_IN_INPUT = "Duplicate values found in input";
-    private final Map<String, Object> attributes = new HashMap<String, Object>();
+    private final Map<String, Object> attributes = new LinkedHashMap<String, Object>();
+    private static final ItemValueConformer valueConformer = new ItemValueConformer();
 
     /**
      * Returns true if the specified attribute exists with a null value; false
@@ -356,11 +358,11 @@ public class Item {
         Object val = attributes.get(attrName);
         if (val == null)
             return null;
-        Set<String> stringSet = new HashSet<String>();
+        Set<String> stringSet = new LinkedHashSet<String>();
         if (val instanceof Collection) {
             Collection<?> col = (Collection<?>) val;
             if (col.size() == 0)
-                return new HashSet<String>();
+                return stringSet;
             for (Object element: col) {
                 String s = element == null ? null : valToString(element);
                 if (!stringSet.add(s))
@@ -389,7 +391,7 @@ public class Item {
      */
     public Item withStringSet(String attrName, String ...val) {
         checkInvalidAttribute(attrName, val);
-        Set<String> strSet = new HashSet<String>(Arrays.asList(val));
+        Set<String> strSet = new LinkedHashSet<String>(Arrays.asList(val));
         if (strSet.size() != val.length)
             throw new IllegalArgumentException(DUPLICATE_VALUES_FOUND_IN_INPUT);
         attributes.put(attrName, strSet);
@@ -418,11 +420,11 @@ public class Item {
         Object val = attributes.get(attrName);
         if (val == null)
             return null;
-        Set<BigDecimal> numSet = new HashSet<BigDecimal>();
+        Set<BigDecimal> numSet = new LinkedHashSet<BigDecimal>();
         if (val instanceof Collection) {
             Collection<?> col = (Collection<?>) val;
             if (col.size() == 0)
-                return new HashSet<BigDecimal>();
+                return numSet;
             for (Object element: col) {
                 BigDecimal bd = toBigDecimal(element);
                 if (!numSet.add(bd))
@@ -454,7 +456,7 @@ public class Item {
      */
     public Item withBigDecimalSet(String attrName, BigDecimal ... vals) {
         checkInvalidAttribute(attrName, vals);
-        Set<BigDecimal> set = new HashSet<BigDecimal>(Arrays.asList(vals));
+        Set<BigDecimal> set = new LinkedHashSet<BigDecimal>(Arrays.asList(vals));
         if (set.size() != vals.length)
             throw new IllegalArgumentException(DUPLICATE_VALUES_FOUND_IN_INPUT);
         attributes.put(attrName, set);
@@ -503,11 +505,11 @@ public class Item {
         Object val = attributes.get(attrName);
         if (val == null)
             return null;
-        Set<byte[]> binarySet = new HashSet<byte[]>();
+        Set<byte[]> binarySet = new LinkedHashSet<byte[]>();
         if (val instanceof Collection) {
             Collection<?> col = (Collection<?>) val;
             if (col.size() == 0)
-                return new HashSet<byte[]>();
+                return binarySet;
             for (Object element: col) {
                 byte[] ba = toByteArray(element);
                 if (!binarySet.add(ba))
@@ -549,11 +551,11 @@ public class Item {
         Object val = attributes.get(attrName);
         if (val == null)
             return null;
-        Set<ByteBuffer> binarySet = new HashSet<ByteBuffer>();
+        Set<ByteBuffer> binarySet = new LinkedHashSet<ByteBuffer>();
         if (val instanceof Collection) {
             Collection<?> col = (Collection<?>) val;
             if (col.size() == 0)
-                return new HashSet<ByteBuffer>();
+                return binarySet;
             for (Object element: col) {
                 ByteBuffer ba = toByteBuffer(element);
                 if (!binarySet.add(ba))
@@ -593,7 +595,7 @@ public class Item {
     public Item withByteBufferSet(String attrName, Set<ByteBuffer> val) {
         checkInvalidAttribute(attrName, val);
         // convert ByteBuffer to bytes to keep Jackson happy
-        Set<byte[]> set = new HashSet<byte[]>(val.size());
+        Set<byte[]> set = new LinkedHashSet<byte[]>(val.size());
         for (ByteBuffer bb: val)
             set.add(toByteArray(bb));
         attributes.put(attrName, set);
@@ -606,7 +608,7 @@ public class Item {
      */
     public Item withBinarySet(String attrName, byte[] ... vals) {
         checkInvalidAttribute(attrName, vals);
-        Set<byte[]> set = new HashSet<byte[]>(Arrays.asList(vals));
+        Set<byte[]> set = new LinkedHashSet<byte[]>(Arrays.asList(vals));
         if (set.size() != vals.length)
             throw new IllegalArgumentException(DUPLICATE_VALUES_FOUND_IN_INPUT);
         attributes.put(attrName, set);
@@ -620,7 +622,7 @@ public class Item {
     public Item withBinarySet(String attrName, ByteBuffer ... vals) {
         checkInvalidAttribute(attrName, vals);
         // convert ByteBuffer to bytes to keep Jackson happy
-        Set<byte[]> set = new HashSet<byte[]>(vals.length);
+        Set<byte[]> set = new LinkedHashSet<byte[]>(vals.length);
         for (ByteBuffer bb: vals)
             set.add(toByteArray(bb));
         if (set.size() != vals.length)
@@ -674,7 +676,7 @@ public class Item {
      */
     public Item withList(String attrName, List<?> val) {
         checkInvalidAttribute(attrName, val);
-        attributes.put(attrName, new ArrayList<Object>(val));
+        attributes.put(attrName, valueConformer.transform(val));
         return this;
     }
 
@@ -684,7 +686,8 @@ public class Item {
      */
     public Item withList(String attrName, Object ... vals) {
         checkInvalidAttribute(attrName, vals);
-        attributes.put(attrName, new ArrayList<Object>(Arrays.asList(vals)));
+        List<Object> list_in = Arrays.asList(vals);
+        attributes.put(attrName, valueConformer.transform(list_in));
         return this;
     }
 
@@ -709,7 +712,7 @@ public class Item {
      */
     public Item withMap(String attrName, Map<String, ?> val) {
         checkInvalidAttribute(attrName, val);
-        attributes.put(attrName, val);
+        attributes.put(attrName, valueConformer.transform(val));
         return this;
     }
 
@@ -719,9 +722,8 @@ public class Item {
      */
     public Item withJSON(String attrName, String json) {
         checkInvalidAttribute(attrName, json);
-        @SuppressWarnings("unchecked")
-        Map<String,?> map = Jackson.fromJsonString(json, Map.class);
-        attributes.put(attrName, map);
+        attributes.put(attrName, 
+            valueConformer.transform(Jackson.fromJsonString(json, Map.class)));
         return this;
     }
 
@@ -832,7 +834,6 @@ public class Item {
      * </ul>
      */
     public Item with(String attrName, Object val) {
-        checkInvalidAttrName(attrName);
         if (val == null)
             return withNull(attrName);
         if (val instanceof String)
@@ -1000,14 +1001,14 @@ public class Item {
      * Returns all attributes of the current item.
      */
     public Iterable<Entry<String, Object>> attributes() {
-        return new HashMap<String, Object>(attributes).entrySet();
+        return new LinkedHashMap<String, Object>(attributes).entrySet();
     }
 
     /**
      * Returns all attributes of the current item as a map.
      */
     public Map<String, Object> asMap() {
-        return new HashMap<String, Object>(attributes);
+        return new LinkedHashMap<String,Object>(attributes);
     }
 
     /**
@@ -1044,7 +1045,8 @@ public class Item {
         if (json == null)
             return null;
         @SuppressWarnings("unchecked")
-        Map<String, Object> map = Jackson.fromJsonString(json, Map.class);
+        Map<String, Object> map = (Map<String, Object>)
+            valueConformer.transform(Jackson.fromJsonString(json, Map.class));
         return fromMap(map);
     }
 
@@ -1088,7 +1090,7 @@ public class Item {
                 withBinary(attrName, bytes);
             } else {
                 Set<String> b64s = getStringSet(attrName);
-                Set<byte[]> binarySet = new HashSet<byte[]>(b64s.size());
+                Set<byte[]> binarySet = new LinkedHashSet<byte[]>(b64s.size());
                 for (String b64: b64s)
                     binarySet.add(Base64.decode(b64));
                 withBinarySet(attrName, binarySet);

@@ -38,7 +38,7 @@ import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
 import com.amazonaws.services.dynamodbv2.model.WriteRequest;
 
 /**
- * DynamoDB Mid-level API. This class is the entry point to make use of this
+ * DynamoDB Document API. This class is the entry point to make use of this
  * library.
  */
 public class DynamoDB implements ListTablesApi, BatchGetItemApi,

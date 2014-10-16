@@ -17,7 +17,7 @@ package com.amazonaws.services.dynamodbv2.document.utils;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -98,7 +98,7 @@ public class ValueMap extends FluentHashMap<String, Object> {
      * given value.
      */
     public ValueMap withStringSet(String key, String ...val) {
-        super.put(key, new HashSet<String>(Arrays.asList(val)));
+        super.put(key, new LinkedHashSet<String>(Arrays.asList(val)));
         return this;
     }
 
@@ -117,7 +117,7 @@ public class ValueMap extends FluentHashMap<String, Object> {
      * given value.
      */
     public ValueMap withNumberSet(String key, BigDecimal ... val) {
-        super.put(key, new HashSet<BigDecimal>(Arrays.asList(val)));
+        super.put(key, new LinkedHashSet<BigDecimal>(Arrays.asList(val)));
         return this;
     }
 
@@ -144,7 +144,7 @@ public class ValueMap extends FluentHashMap<String, Object> {
      * given value.
      */
     public ValueMap withBinarySet(String key, byte[] ... val) {
-        super.put(key, new HashSet<byte[]>(Arrays.asList(val)));
+        super.put(key, new LinkedHashSet<byte[]>(Arrays.asList(val)));
         return this;
     }
 

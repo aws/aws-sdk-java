@@ -41,7 +41,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest impleme
     private String streamName;
 
     /**
-     * A list of tag keys. Each corresponding tag is deleted from the stream.
+     * A list of tag keys. Each corresponding tag is removed from the stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10<br/>
@@ -94,12 +94,12 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * A list of tag keys. Each corresponding tag is deleted from the stream.
+     * A list of tag keys. Each corresponding tag is removed from the stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10<br/>
      *
-     * @return A list of tag keys. Each corresponding tag is deleted from the stream.
+     * @return A list of tag keys. Each corresponding tag is removed from the stream.
      */
     public java.util.List<String> getTagKeys() {
         if (tagKeys == null) {
@@ -110,12 +110,12 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * A list of tag keys. Each corresponding tag is deleted from the stream.
+     * A list of tag keys. Each corresponding tag is removed from the stream.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10<br/>
      *
-     * @param tagKeys A list of tag keys. Each corresponding tag is deleted from the stream.
+     * @param tagKeys A list of tag keys. Each corresponding tag is removed from the stream.
      */
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
@@ -128,14 +128,14 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * A list of tag keys. Each corresponding tag is deleted from the stream.
+     * A list of tag keys. Each corresponding tag is removed from the stream.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10<br/>
      *
-     * @param tagKeys A list of tag keys. Each corresponding tag is deleted from the stream.
+     * @param tagKeys A list of tag keys. Each corresponding tag is removed from the stream.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -149,14 +149,14 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest impleme
     }
     
     /**
-     * A list of tag keys. Each corresponding tag is deleted from the stream.
+     * A list of tag keys. Each corresponding tag is removed from the stream.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 10<br/>
      *
-     * @param tagKeys A list of tag keys. Each corresponding tag is deleted from the stream.
+     * @param tagKeys A list of tag keys. Each corresponding tag is removed from the stream.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

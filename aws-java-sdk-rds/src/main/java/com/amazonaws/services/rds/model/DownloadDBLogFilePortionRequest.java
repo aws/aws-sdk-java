@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#downloadDBLogFilePortion(DownloadDBLogFilePortionRequest) DownloadDBLogFilePortion operation}.
  * <p>
- * Downloads the last line of the specified log file.
+ * Downloads all or a portion of the specified log file.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#downloadDBLogFilePortion(DownloadDBLogFilePortionRequest)
@@ -43,14 +43,28 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
     private String logFileName;
 
     /**
-     * The pagination token provided in the previous request. If this
-     * parameter is specified the response includes only records beyond the
-     * marker, up to MaxRecords.
+     * The pagination token provided in the previous request or "0". If the
+     * Marker parameter is specified the response includes only records
+     * beyond the marker until the end of the file or up to NumberOfLines.
      */
     private String marker;
 
     /**
-     * The number of lines remaining to be downloaded.
+     * The number of lines to download. <p>If the NumberOfLines parameter is
+     * specified, then the block of lines returned can be from the beginning
+     * or the end of the log file, depending on the value of the Marker
+     * parameter. <ul> <li><p>If neither Marker or NumberOfLines are
+     * specified, the entire log file is returned.</li> <li><p>If
+     * NumberOfLines is specified and Marker is not specified, then the most
+     * recent lines from the end of the log file are returned.</li> <li><p>If
+     * Marker is specified as "0", then the specified number of lines from
+     * the beginning of the log file are returned.</li> <li><p>You can
+     * download the log file in blocks of lines by specifying the size of the
+     * block using the NumberOfLines parameter, and by specifying a value of
+     * "0" for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li> </ul>
      */
     private Integer numberOfLines;
 
@@ -145,41 +159,41 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The pagination token provided in the previous request. If this
-     * parameter is specified the response includes only records beyond the
-     * marker, up to MaxRecords.
+     * The pagination token provided in the previous request or "0". If the
+     * Marker parameter is specified the response includes only records
+     * beyond the marker until the end of the file or up to NumberOfLines.
      *
-     * @return The pagination token provided in the previous request. If this
-     *         parameter is specified the response includes only records beyond the
-     *         marker, up to MaxRecords.
+     * @return The pagination token provided in the previous request or "0". If the
+     *         Marker parameter is specified the response includes only records
+     *         beyond the marker until the end of the file or up to NumberOfLines.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The pagination token provided in the previous request. If this
-     * parameter is specified the response includes only records beyond the
-     * marker, up to MaxRecords.
+     * The pagination token provided in the previous request or "0". If the
+     * Marker parameter is specified the response includes only records
+     * beyond the marker until the end of the file or up to NumberOfLines.
      *
-     * @param marker The pagination token provided in the previous request. If this
-     *         parameter is specified the response includes only records beyond the
-     *         marker, up to MaxRecords.
+     * @param marker The pagination token provided in the previous request or "0". If the
+     *         Marker parameter is specified the response includes only records
+     *         beyond the marker until the end of the file or up to NumberOfLines.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The pagination token provided in the previous request. If this
-     * parameter is specified the response includes only records beyond the
-     * marker, up to MaxRecords.
+     * The pagination token provided in the previous request or "0". If the
+     * Marker parameter is specified the response includes only records
+     * beyond the marker until the end of the file or up to NumberOfLines.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The pagination token provided in the previous request. If this
-     *         parameter is specified the response includes only records beyond the
-     *         marker, up to MaxRecords.
+     * @param marker The pagination token provided in the previous request or "0". If the
+     *         Marker parameter is specified the response includes only records
+     *         beyond the marker until the end of the file or up to NumberOfLines.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -190,29 +204,113 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The number of lines remaining to be downloaded.
+     * The number of lines to download. <p>If the NumberOfLines parameter is
+     * specified, then the block of lines returned can be from the beginning
+     * or the end of the log file, depending on the value of the Marker
+     * parameter. <ul> <li><p>If neither Marker or NumberOfLines are
+     * specified, the entire log file is returned.</li> <li><p>If
+     * NumberOfLines is specified and Marker is not specified, then the most
+     * recent lines from the end of the log file are returned.</li> <li><p>If
+     * Marker is specified as "0", then the specified number of lines from
+     * the beginning of the log file are returned.</li> <li><p>You can
+     * download the log file in blocks of lines by specifying the size of the
+     * block using the NumberOfLines parameter, and by specifying a value of
+     * "0" for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li> </ul>
      *
-     * @return The number of lines remaining to be downloaded.
+     * @return The number of lines to download. <p>If the NumberOfLines parameter is
+     *         specified, then the block of lines returned can be from the beginning
+     *         or the end of the log file, depending on the value of the Marker
+     *         parameter. <ul> <li><p>If neither Marker or NumberOfLines are
+     *         specified, the entire log file is returned.</li> <li><p>If
+     *         NumberOfLines is specified and Marker is not specified, then the most
+     *         recent lines from the end of the log file are returned.</li> <li><p>If
+     *         Marker is specified as "0", then the specified number of lines from
+     *         the beginning of the log file are returned.</li> <li><p>You can
+     *         download the log file in blocks of lines by specifying the size of the
+     *         block using the NumberOfLines parameter, and by specifying a value of
+     *         "0" for the Marker parameter in your first request. Include the Marker
+     *         value returned in the response as the Marker value for the next
+     *         request, continuing until the AdditionalDataPending response element
+     *         returns false.</li> </ul>
      */
     public Integer getNumberOfLines() {
         return numberOfLines;
     }
     
     /**
-     * The number of lines remaining to be downloaded.
+     * The number of lines to download. <p>If the NumberOfLines parameter is
+     * specified, then the block of lines returned can be from the beginning
+     * or the end of the log file, depending on the value of the Marker
+     * parameter. <ul> <li><p>If neither Marker or NumberOfLines are
+     * specified, the entire log file is returned.</li> <li><p>If
+     * NumberOfLines is specified and Marker is not specified, then the most
+     * recent lines from the end of the log file are returned.</li> <li><p>If
+     * Marker is specified as "0", then the specified number of lines from
+     * the beginning of the log file are returned.</li> <li><p>You can
+     * download the log file in blocks of lines by specifying the size of the
+     * block using the NumberOfLines parameter, and by specifying a value of
+     * "0" for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li> </ul>
      *
-     * @param numberOfLines The number of lines remaining to be downloaded.
+     * @param numberOfLines The number of lines to download. <p>If the NumberOfLines parameter is
+     *         specified, then the block of lines returned can be from the beginning
+     *         or the end of the log file, depending on the value of the Marker
+     *         parameter. <ul> <li><p>If neither Marker or NumberOfLines are
+     *         specified, the entire log file is returned.</li> <li><p>If
+     *         NumberOfLines is specified and Marker is not specified, then the most
+     *         recent lines from the end of the log file are returned.</li> <li><p>If
+     *         Marker is specified as "0", then the specified number of lines from
+     *         the beginning of the log file are returned.</li> <li><p>You can
+     *         download the log file in blocks of lines by specifying the size of the
+     *         block using the NumberOfLines parameter, and by specifying a value of
+     *         "0" for the Marker parameter in your first request. Include the Marker
+     *         value returned in the response as the Marker value for the next
+     *         request, continuing until the AdditionalDataPending response element
+     *         returns false.</li> </ul>
      */
     public void setNumberOfLines(Integer numberOfLines) {
         this.numberOfLines = numberOfLines;
     }
     
     /**
-     * The number of lines remaining to be downloaded.
+     * The number of lines to download. <p>If the NumberOfLines parameter is
+     * specified, then the block of lines returned can be from the beginning
+     * or the end of the log file, depending on the value of the Marker
+     * parameter. <ul> <li><p>If neither Marker or NumberOfLines are
+     * specified, the entire log file is returned.</li> <li><p>If
+     * NumberOfLines is specified and Marker is not specified, then the most
+     * recent lines from the end of the log file are returned.</li> <li><p>If
+     * Marker is specified as "0", then the specified number of lines from
+     * the beginning of the log file are returned.</li> <li><p>You can
+     * download the log file in blocks of lines by specifying the size of the
+     * block using the NumberOfLines parameter, and by specifying a value of
+     * "0" for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numberOfLines The number of lines remaining to be downloaded.
+     * @param numberOfLines The number of lines to download. <p>If the NumberOfLines parameter is
+     *         specified, then the block of lines returned can be from the beginning
+     *         or the end of the log file, depending on the value of the Marker
+     *         parameter. <ul> <li><p>If neither Marker or NumberOfLines are
+     *         specified, the entire log file is returned.</li> <li><p>If
+     *         NumberOfLines is specified and Marker is not specified, then the most
+     *         recent lines from the end of the log file are returned.</li> <li><p>If
+     *         Marker is specified as "0", then the specified number of lines from
+     *         the beginning of the log file are returned.</li> <li><p>You can
+     *         download the log file in blocks of lines by specifying the size of the
+     *         block using the NumberOfLines parameter, and by specifying a value of
+     *         "0" for the Marker parameter in your first request. Include the Marker
+     *         value returned in the response as the Marker value for the next
+     *         request, continuing until the AdditionalDataPending response element
+     *         returns false.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

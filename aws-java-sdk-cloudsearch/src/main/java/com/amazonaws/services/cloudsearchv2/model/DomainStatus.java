@@ -113,6 +113,8 @@ public class DomainStatus implements Serializable {
      */
     private Integer searchInstanceCount;
 
+    private Limits limits;
+
     /**
      * An internally generated unique identifier for a domain.
      * <p>
@@ -705,6 +707,39 @@ public class DomainStatus implements Serializable {
     }
 
     /**
+     * Returns the value of the Limits property for this object.
+     *
+     * @return The value of the Limits property for this object.
+     */
+    public Limits getLimits() {
+        return limits;
+    }
+    
+    /**
+     * Sets the value of the Limits property for this object.
+     *
+     * @param limits The new value for the Limits property for this object.
+     */
+    public void setLimits(Limits limits) {
+        this.limits = limits;
+    }
+    
+    /**
+     * Sets the value of the Limits property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param limits The new value for the Limits property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DomainStatus withLimits(Limits limits) {
+        this.limits = limits;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -727,7 +762,8 @@ public class DomainStatus implements Serializable {
         if (isProcessing() != null) sb.append("Processing: " + isProcessing() + ",");
         if (getSearchInstanceType() != null) sb.append("SearchInstanceType: " + getSearchInstanceType() + ",");
         if (getSearchPartitionCount() != null) sb.append("SearchPartitionCount: " + getSearchPartitionCount() + ",");
-        if (getSearchInstanceCount() != null) sb.append("SearchInstanceCount: " + getSearchInstanceCount() );
+        if (getSearchInstanceCount() != null) sb.append("SearchInstanceCount: " + getSearchInstanceCount() + ",");
+        if (getLimits() != null) sb.append("Limits: " + getLimits() );
         sb.append("}");
         return sb.toString();
     }
@@ -749,6 +785,7 @@ public class DomainStatus implements Serializable {
         hashCode = prime * hashCode + ((getSearchInstanceType() == null) ? 0 : getSearchInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getSearchPartitionCount() == null) ? 0 : getSearchPartitionCount().hashCode()); 
         hashCode = prime * hashCode + ((getSearchInstanceCount() == null) ? 0 : getSearchInstanceCount().hashCode()); 
+        hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode()); 
         return hashCode;
     }
     
@@ -784,6 +821,8 @@ public class DomainStatus implements Serializable {
         if (other.getSearchPartitionCount() != null && other.getSearchPartitionCount().equals(this.getSearchPartitionCount()) == false) return false; 
         if (other.getSearchInstanceCount() == null ^ this.getSearchInstanceCount() == null) return false;
         if (other.getSearchInstanceCount() != null && other.getSearchInstanceCount().equals(this.getSearchInstanceCount()) == false) return false; 
+        if (other.getLimits() == null ^ this.getLimits() == null) return false;
+        if (other.getLimits() != null && other.getLimits().equals(this.getLimits()) == false) return false; 
         return true;
     }
     

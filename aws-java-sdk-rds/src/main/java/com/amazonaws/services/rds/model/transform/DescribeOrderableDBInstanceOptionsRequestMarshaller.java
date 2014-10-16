@@ -39,7 +39,7 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
 
         Request<DescribeOrderableDBInstanceOptionsRequest> request = new DefaultRequest<DescribeOrderableDBInstanceOptionsRequest>(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOrderableDBInstanceOptions");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (describeOrderableDBInstanceOptionsRequest.getEngine() != null) {
             request.addParameter("Engine", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getEngine()));
@@ -55,6 +55,31 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
         }
         if (describeOrderableDBInstanceOptionsRequest.isVpc() != null) {
             request.addParameter("Vpc", StringUtils.fromBoolean(describeOrderableDBInstanceOptionsRequest.isVpc()));
+        }
+
+        java.util.List<Filter> filtersList = describeOrderableDBInstanceOptionsRequest.getFilters();
+        int filtersListIndex = 1;
+
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
+                }
+
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    }
+
+                    valuesListIndex++;
+                }
+            }
+
+            filtersListIndex++;
         }
         if (describeOrderableDBInstanceOptionsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeOrderableDBInstanceOptionsRequest.getMaxRecords()));

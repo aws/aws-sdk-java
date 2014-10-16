@@ -40,6 +40,11 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
     private String sourceType;
 
     /**
+     * This parameter is not currently supported.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
+
+    /**
      * The type of source that will be generating the events. <p>Valid
      * values: db-instance | db-parameter-group | db-security-group |
      * db-snapshot
@@ -85,6 +90,74 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * This parameter is not currently supported.
+     *
+     * @return This parameter is not currently supported.
+     */
+    public java.util.List<Filter> getFilters() {
+        if (filters == null) {
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
+        }
+        return filters;
+    }
+    
+    /**
+     * This parameter is not currently supported.
+     *
+     * @param filters This parameter is not currently supported.
+     */
+    public void setFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
+        filtersCopy.addAll(filters);
+        this.filters = filtersCopy;
+    }
+    
+    /**
+     * This parameter is not currently supported.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters This parameter is not currently supported.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeEventCategoriesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
+        for (Filter value : filters) {
+            getFilters().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * This parameter is not currently supported.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters This parameter is not currently supported.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeEventCategoriesRequest withFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
+            filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -96,7 +169,8 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() );
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +181,7 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
         return hashCode;
     }
     
@@ -120,6 +195,8 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
         
         if (other.getSourceType() == null ^ this.getSourceType() == null) return false;
         if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
         return true;
     }
     

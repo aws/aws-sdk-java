@@ -60,11 +60,11 @@ public class Preset implements Serializable {
 
     /**
      * The container type for the output file. Valid values include
-     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
-     * and <code>webm</code>.
+     * <code>fmp4</code>, <code>mp3</code>, <code>mp4</code>,
+     * <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)|(^fmp4$)<br/>
      */
     private String container;
 
@@ -263,15 +263,15 @@ public class Preset implements Serializable {
 
     /**
      * The container type for the output file. Valid values include
-     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
-     * and <code>webm</code>.
+     * <code>fmp4</code>, <code>mp3</code>, <code>mp4</code>,
+     * <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)|(^fmp4$)<br/>
      *
      * @return The container type for the output file. Valid values include
-     *         <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
-     *         and <code>webm</code>.
+     *         <code>fmp4</code>, <code>mp3</code>, <code>mp4</code>,
+     *         <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      */
     public String getContainer() {
         return container;
@@ -279,15 +279,15 @@ public class Preset implements Serializable {
     
     /**
      * The container type for the output file. Valid values include
-     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
-     * and <code>webm</code>.
+     * <code>fmp4</code>, <code>mp3</code>, <code>mp4</code>,
+     * <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)|(^fmp4$)<br/>
      *
      * @param container The container type for the output file. Valid values include
-     *         <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
-     *         and <code>webm</code>.
+     *         <code>fmp4</code>, <code>mp3</code>, <code>mp4</code>,
+     *         <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      */
     public void setContainer(String container) {
         this.container = container;
@@ -295,17 +295,17 @@ public class Preset implements Serializable {
     
     /**
      * The container type for the output file. Valid values include
-     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
-     * and <code>webm</code>.
+     * <code>fmp4</code>, <code>mp3</code>, <code>mp4</code>,
+     * <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)|(^fmp4$)<br/>
      *
      * @param container The container type for the output file. Valid values include
-     *         <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
-     *         and <code>webm</code>.
+     *         <code>fmp4</code>, <code>mp3</code>, <code>mp4</code>,
+     *         <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

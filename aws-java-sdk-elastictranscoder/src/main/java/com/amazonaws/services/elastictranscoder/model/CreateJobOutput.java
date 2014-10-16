@@ -94,10 +94,24 @@ public class CreateJobOutput implements Serializable {
     private String presetId;
 
     /**
-     * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
-     * duration of each .ts file in seconds. The range of valid values is 1
-     * to 60 seconds.
+     * <important>(Outputs in Fragmented MP4 or MPEG-TS format
+     * only.</important>If you specify a preset in <code>PresetId</code> for
+     * which the value of <code>Container</code> is <code>fmp4</code>
+     * (Fragmented MP4) or <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the target maximum duration of each
+     * segment in seconds. For <code>HLSv3</code> format playlists, each
+     * media segment is stored in a separate <code>.ts</code> file. For
+     * <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though
+     * individual segments might be shorter or longer. <p>The range of valid
+     * values is 1 to 60 seconds. If the duration of the video is not evenly
+     * divisible by <code>SegmentDuration</code>, the duration of the last
+     * segment is the remainder of total length/SegmentDuration. <p>Elastic
+     * Transcoder creates an output-specific playlist for each output
+     * <code>HLS</code> output that you specify in OutputKeys. To add an
+     * output to the master playlist for this job, include it in the
+     * <code>OutputKeys</code> of the associated playlist.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
@@ -566,56 +580,140 @@ public class CreateJobOutput implements Serializable {
     }
 
     /**
-     * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
-     * duration of each .ts file in seconds. The range of valid values is 1
-     * to 60 seconds.
+     * <important>(Outputs in Fragmented MP4 or MPEG-TS format
+     * only.</important>If you specify a preset in <code>PresetId</code> for
+     * which the value of <code>Container</code> is <code>fmp4</code>
+     * (Fragmented MP4) or <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the target maximum duration of each
+     * segment in seconds. For <code>HLSv3</code> format playlists, each
+     * media segment is stored in a separate <code>.ts</code> file. For
+     * <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though
+     * individual segments might be shorter or longer. <p>The range of valid
+     * values is 1 to 60 seconds. If the duration of the video is not evenly
+     * divisible by <code>SegmentDuration</code>, the duration of the last
+     * segment is the remainder of total length/SegmentDuration. <p>Elastic
+     * Transcoder creates an output-specific playlist for each output
+     * <code>HLS</code> output that you specify in OutputKeys. To add an
+     * output to the master playlist for this job, include it in the
+     * <code>OutputKeys</code> of the associated playlist.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
-     * @return If you specify a preset in <code>PresetId</code> for which the value
-     *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
-     *         duration of each .ts file in seconds. The range of valid values is 1
-     *         to 60 seconds.
+     * @return <important>(Outputs in Fragmented MP4 or MPEG-TS format
+     *         only.</important>If you specify a preset in <code>PresetId</code> for
+     *         which the value of <code>Container</code> is <code>fmp4</code>
+     *         (Fragmented MP4) or <code>ts</code> (MPEG-TS),
+     *         <code>SegmentDuration</code> is the target maximum duration of each
+     *         segment in seconds. For <code>HLSv3</code> format playlists, each
+     *         media segment is stored in a separate <code>.ts</code> file. For
+     *         <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     *         segments for an output are stored in a single file. Each segment is
+     *         approximately the length of the <code>SegmentDuration</code>, though
+     *         individual segments might be shorter or longer. <p>The range of valid
+     *         values is 1 to 60 seconds. If the duration of the video is not evenly
+     *         divisible by <code>SegmentDuration</code>, the duration of the last
+     *         segment is the remainder of total length/SegmentDuration. <p>Elastic
+     *         Transcoder creates an output-specific playlist for each output
+     *         <code>HLS</code> output that you specify in OutputKeys. To add an
+     *         output to the master playlist for this job, include it in the
+     *         <code>OutputKeys</code> of the associated playlist.
      */
     public String getSegmentDuration() {
         return segmentDuration;
     }
     
     /**
-     * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
-     * duration of each .ts file in seconds. The range of valid values is 1
-     * to 60 seconds.
+     * <important>(Outputs in Fragmented MP4 or MPEG-TS format
+     * only.</important>If you specify a preset in <code>PresetId</code> for
+     * which the value of <code>Container</code> is <code>fmp4</code>
+     * (Fragmented MP4) or <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the target maximum duration of each
+     * segment in seconds. For <code>HLSv3</code> format playlists, each
+     * media segment is stored in a separate <code>.ts</code> file. For
+     * <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though
+     * individual segments might be shorter or longer. <p>The range of valid
+     * values is 1 to 60 seconds. If the duration of the video is not evenly
+     * divisible by <code>SegmentDuration</code>, the duration of the last
+     * segment is the remainder of total length/SegmentDuration. <p>Elastic
+     * Transcoder creates an output-specific playlist for each output
+     * <code>HLS</code> output that you specify in OutputKeys. To add an
+     * output to the master playlist for this job, include it in the
+     * <code>OutputKeys</code> of the associated playlist.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
-     * @param segmentDuration If you specify a preset in <code>PresetId</code> for which the value
-     *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
-     *         duration of each .ts file in seconds. The range of valid values is 1
-     *         to 60 seconds.
+     * @param segmentDuration <important>(Outputs in Fragmented MP4 or MPEG-TS format
+     *         only.</important>If you specify a preset in <code>PresetId</code> for
+     *         which the value of <code>Container</code> is <code>fmp4</code>
+     *         (Fragmented MP4) or <code>ts</code> (MPEG-TS),
+     *         <code>SegmentDuration</code> is the target maximum duration of each
+     *         segment in seconds. For <code>HLSv3</code> format playlists, each
+     *         media segment is stored in a separate <code>.ts</code> file. For
+     *         <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     *         segments for an output are stored in a single file. Each segment is
+     *         approximately the length of the <code>SegmentDuration</code>, though
+     *         individual segments might be shorter or longer. <p>The range of valid
+     *         values is 1 to 60 seconds. If the duration of the video is not evenly
+     *         divisible by <code>SegmentDuration</code>, the duration of the last
+     *         segment is the remainder of total length/SegmentDuration. <p>Elastic
+     *         Transcoder creates an output-specific playlist for each output
+     *         <code>HLS</code> output that you specify in OutputKeys. To add an
+     *         output to the master playlist for this job, include it in the
+     *         <code>OutputKeys</code> of the associated playlist.
      */
     public void setSegmentDuration(String segmentDuration) {
         this.segmentDuration = segmentDuration;
     }
     
     /**
-     * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
-     * duration of each .ts file in seconds. The range of valid values is 1
-     * to 60 seconds.
+     * <important>(Outputs in Fragmented MP4 or MPEG-TS format
+     * only.</important>If you specify a preset in <code>PresetId</code> for
+     * which the value of <code>Container</code> is <code>fmp4</code>
+     * (Fragmented MP4) or <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the target maximum duration of each
+     * segment in seconds. For <code>HLSv3</code> format playlists, each
+     * media segment is stored in a separate <code>.ts</code> file. For
+     * <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though
+     * individual segments might be shorter or longer. <p>The range of valid
+     * values is 1 to 60 seconds. If the duration of the video is not evenly
+     * divisible by <code>SegmentDuration</code>, the duration of the last
+     * segment is the remainder of total length/SegmentDuration. <p>Elastic
+     * Transcoder creates an output-specific playlist for each output
+     * <code>HLS</code> output that you specify in OutputKeys. To add an
+     * output to the master playlist for this job, include it in the
+     * <code>OutputKeys</code> of the associated playlist.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,5}(\.\d{0,5})?$<br/>
      *
-     * @param segmentDuration If you specify a preset in <code>PresetId</code> for which the value
-     *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
-     *         duration of each .ts file in seconds. The range of valid values is 1
-     *         to 60 seconds.
+     * @param segmentDuration <important>(Outputs in Fragmented MP4 or MPEG-TS format
+     *         only.</important>If you specify a preset in <code>PresetId</code> for
+     *         which the value of <code>Container</code> is <code>fmp4</code>
+     *         (Fragmented MP4) or <code>ts</code> (MPEG-TS),
+     *         <code>SegmentDuration</code> is the target maximum duration of each
+     *         segment in seconds. For <code>HLSv3</code> format playlists, each
+     *         media segment is stored in a separate <code>.ts</code> file. For
+     *         <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     *         segments for an output are stored in a single file. Each segment is
+     *         approximately the length of the <code>SegmentDuration</code>, though
+     *         individual segments might be shorter or longer. <p>The range of valid
+     *         values is 1 to 60 seconds. If the duration of the video is not evenly
+     *         divisible by <code>SegmentDuration</code>, the duration of the last
+     *         segment is the remainder of total length/SegmentDuration. <p>Elastic
+     *         Transcoder creates an output-specific playlist for each output
+     *         <code>HLS</code> output that you specify in OutputKeys. To add an
+     *         output to the master playlist for this job, include it in the
+     *         <code>OutputKeys</code> of the associated playlist.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

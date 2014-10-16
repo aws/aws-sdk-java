@@ -39,7 +39,7 @@ public class DescribeDBEngineVersionsRequestMarshaller implements Marshaller<Req
 
         Request<DescribeDBEngineVersionsRequest> request = new DefaultRequest<DescribeDBEngineVersionsRequest>(describeDBEngineVersionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBEngineVersions");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (describeDBEngineVersionsRequest.getEngine() != null) {
             request.addParameter("Engine", StringUtils.fromString(describeDBEngineVersionsRequest.getEngine()));
@@ -49,6 +49,31 @@ public class DescribeDBEngineVersionsRequestMarshaller implements Marshaller<Req
         }
         if (describeDBEngineVersionsRequest.getDBParameterGroupFamily() != null) {
             request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeDBEngineVersionsRequest.getDBParameterGroupFamily()));
+        }
+
+        java.util.List<Filter> filtersList = describeDBEngineVersionsRequest.getFilters();
+        int filtersListIndex = 1;
+
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
+                }
+
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    }
+
+                    valuesListIndex++;
+                }
+            }
+
+            filtersListIndex++;
         }
         if (describeDBEngineVersionsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBEngineVersionsRequest.getMaxRecords()));

@@ -32,26 +32,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identifier for the DB snapshot to restore from. <p>Constraints:
-     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-     * with a hyphen or contain two consecutive hyphens</li> </ul>
-     */
-    private String dBInstanceIdentifier;
-
-    /**
      * Name of the DB instance to create from the DB snapshot. This parameter
      * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      * 255 alphanumeric characters or hyphens</li> <li>First character must
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      */
+    private String dBInstanceIdentifier;
+
+    /**
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
     private String dBSnapshotIdentifier;
 
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      */
     private String dBInstanceClass;
 
@@ -135,6 +138,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
      * starts. <p> Constraints: Must be an integer greater than 1000.
+     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * database engine is not supported.
      */
     private Integer iops;
 
@@ -153,6 +158,26 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     */
+    private String storageType;
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     */
+    private String tdeCredentialArn;
+
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     */
+    private String tdeCredentialPassword;
+
+    /**
      * Default constructor for a new RestoreDBInstanceFromDBSnapshotRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -163,72 +188,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBInstanceIdentifier The identifier for the DB snapshot to
-     * restore from. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
-     * @param dBSnapshotIdentifier Name of the DB instance to create from the
+     * @param dBInstanceIdentifier Name of the DB instance to create from the
      * DB snapshot. This parameter isn't case sensitive. <p>Constraints: <ul>
      * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul> <p>Example:
      * <code>my-snapshot-id</code>
+     * @param dBSnapshotIdentifier The identifier for the DB snapshot to
+     * restore from. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      */
     public RestoreDBInstanceFromDBSnapshotRequest(String dBInstanceIdentifier, String dBSnapshotIdentifier) {
         setDBInstanceIdentifier(dBInstanceIdentifier);
         setDBSnapshotIdentifier(dBSnapshotIdentifier);
-    }
-
-    /**
-     * The identifier for the DB snapshot to restore from. <p>Constraints:
-     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-     * with a hyphen or contain two consecutive hyphens</li> </ul>
-     *
-     * @return The identifier for the DB snapshot to restore from. <p>Constraints:
-     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-     *         with a hyphen or contain two consecutive hyphens</li> </ul>
-     */
-    public String getDBInstanceIdentifier() {
-        return dBInstanceIdentifier;
-    }
-    
-    /**
-     * The identifier for the DB snapshot to restore from. <p>Constraints:
-     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-     * with a hyphen or contain two consecutive hyphens</li> </ul>
-     *
-     * @param dBInstanceIdentifier The identifier for the DB snapshot to restore from. <p>Constraints:
-     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-     *         with a hyphen or contain two consecutive hyphens</li> </ul>
-     */
-    public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
-    }
-    
-    /**
-     * The identifier for the DB snapshot to restore from. <p>Constraints:
-     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-     * with a hyphen or contain two consecutive hyphens</li> </ul>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBInstanceIdentifier The identifier for the DB snapshot to restore from. <p>Constraints:
-     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
-     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-     *         with a hyphen or contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public RestoreDBInstanceFromDBSnapshotRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
-        return this;
     }
 
     /**
@@ -244,8 +218,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      */
-    public String getDBSnapshotIdentifier() {
-        return dBSnapshotIdentifier;
+    public String getDBInstanceIdentifier() {
+        return dBInstanceIdentifier;
     }
     
     /**
@@ -255,14 +229,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
-     * @param dBSnapshotIdentifier Name of the DB instance to create from the DB snapshot. This parameter
+     * @param dBInstanceIdentifier Name of the DB instance to create from the DB snapshot. This parameter
      *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      */
-    public void setDBSnapshotIdentifier(String dBSnapshotIdentifier) {
-        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
+    public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
     
     /**
@@ -274,11 +248,62 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSnapshotIdentifier Name of the DB instance to create from the DB snapshot. This parameter
+     * @param dBInstanceIdentifier Name of the DB instance to create from the DB snapshot. This parameter
      *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+        return this;
+    }
+
+    /**
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     *
+     * @return The identifier for the DB snapshot to restore from. <p>Constraints:
+     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
+    public String getDBSnapshotIdentifier() {
+        return dBSnapshotIdentifier;
+    }
+    
+    /**
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     *
+     * @param dBSnapshotIdentifier The identifier for the DB snapshot to restore from. <p>Constraints:
+     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
+     */
+    public void setDBSnapshotIdentifier(String dBSnapshotIdentifier) {
+        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
+    }
+    
+    /**
+     * The identifier for the DB snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBSnapshotIdentifier The identifier for the DB snapshot to restore from. <p>Constraints:
+     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -291,11 +316,17 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *
      * @return The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -304,11 +335,17 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -317,13 +354,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
-     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -857,6 +900,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
      * starts. <p> Constraints: Must be an integer greater than 1000.
+     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * database engine is not supported.
      *
      * @return Specifies the amount of provisioned IOPS for the DB instance,
      *         expressed in I/O operations per second. If this parameter is not
@@ -865,6 +910,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         non-PIOPS instance, which will take additional time, though your DB
      *         instance will be available for connections before the conversion
      *         starts. <p> Constraints: Must be an integer greater than 1000.
+     *         <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     *         database engine is not supported.
      */
     public Integer getIops() {
         return iops;
@@ -878,6 +925,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
      * starts. <p> Constraints: Must be an integer greater than 1000.
+     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * database engine is not supported.
      *
      * @param iops Specifies the amount of provisioned IOPS for the DB instance,
      *         expressed in I/O operations per second. If this parameter is not
@@ -886,6 +935,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         non-PIOPS instance, which will take additional time, though your DB
      *         instance will be available for connections before the conversion
      *         starts. <p> Constraints: Must be an integer greater than 1000.
+     *         <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     *         database engine is not supported.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -899,6 +950,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * non-PIOPS instance, which will take additional time, though your DB
      * instance will be available for connections before the conversion
      * starts. <p> Constraints: Must be an integer greater than 1000.
+     * <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     * database engine is not supported.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -909,6 +962,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         non-PIOPS instance, which will take additional time, though your DB
      *         instance will be available for connections before the conversion
      *         starts. <p> Constraints: Must be an integer greater than 1000.
+     *         <p><b>SQL Server</b> <p>Setting the IOPS value for the SQL Server
+     *         database engine is not supported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1044,6 +1099,135 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
 
     /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @return Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @return The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public String getTdeCredentialArn() {
+        return tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public void setTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+        return this;
+    }
+
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     *
+     * @return The password for the given ARN from the Key Store in order to access
+     *         the device.
+     */
+    public String getTdeCredentialPassword() {
+        return tdeCredentialPassword;
+    }
+    
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     *
+     * @param tdeCredentialPassword The password for the given ARN from the Key Store in order to access
+     *         the device.
+     */
+    public void setTdeCredentialPassword(String tdeCredentialPassword) {
+        this.tdeCredentialPassword = tdeCredentialPassword;
+    }
+    
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialPassword The password for the given ARN from the Key Store in order to access
+     *         the device.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withTdeCredentialPassword(String tdeCredentialPassword) {
+        this.tdeCredentialPassword = tdeCredentialPassword;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1069,7 +1253,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() + ",");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
+        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() );
         sb.append("}");
         return sb.toString();
     }
@@ -1094,6 +1281,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         return hashCode;
     }
     
@@ -1135,6 +1325,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
+        if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
+        if (other.getTdeCredentialPassword() == null ^ this.getTdeCredentialPassword() == null) return false;
+        if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
         return true;
     }
     

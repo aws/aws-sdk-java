@@ -81,10 +81,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     * information about the master playlists that you want Elastic
-     * Transcoder to create. <p>We recommend that you create only one master
-     * playlist. The maximum number of master playlists in a job is 30.
+     * of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     * Playlists contains information about the master playlists that you
+     * want Elastic Transcoder to create. <p>The maximum number of master
+     * playlists in a job is 30.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -381,19 +381,19 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     * information about the master playlists that you want Elastic
-     * Transcoder to create. <p>We recommend that you create only one master
-     * playlist. The maximum number of master playlists in a job is 30.
+     * of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     * Playlists contains information about the master playlists that you
+     * want Elastic Transcoder to create. <p>The maximum number of master
+     * playlists in a job is 30.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
      * @return If you specify a preset in <code>PresetId</code> for which the value
-     *         of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     *         information about the master playlists that you want Elastic
-     *         Transcoder to create. <p>We recommend that you create only one master
-     *         playlist. The maximum number of master playlists in a job is 30.
+     *         of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     *         Playlists contains information about the master playlists that you
+     *         want Elastic Transcoder to create. <p>The maximum number of master
+     *         playlists in a job is 30.
      */
     public java.util.List<CreateJobPlaylist> getPlaylists() {
         if (playlists == null) {
@@ -405,19 +405,19 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     * information about the master playlists that you want Elastic
-     * Transcoder to create. <p>We recommend that you create only one master
-     * playlist. The maximum number of master playlists in a job is 30.
+     * of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     * Playlists contains information about the master playlists that you
+     * want Elastic Transcoder to create. <p>The maximum number of master
+     * playlists in a job is 30.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
      * @param playlists If you specify a preset in <code>PresetId</code> for which the value
-     *         of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     *         information about the master playlists that you want Elastic
-     *         Transcoder to create. <p>We recommend that you create only one master
-     *         playlist. The maximum number of master playlists in a job is 30.
+     *         of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     *         Playlists contains information about the master playlists that you
+     *         want Elastic Transcoder to create. <p>The maximum number of master
+     *         playlists in a job is 30.
      */
     public void setPlaylists(java.util.Collection<CreateJobPlaylist> playlists) {
         if (playlists == null) {
@@ -431,10 +431,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     * information about the master playlists that you want Elastic
-     * Transcoder to create. <p>We recommend that you create only one master
-     * playlist. The maximum number of master playlists in a job is 30.
+     * of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     * Playlists contains information about the master playlists that you
+     * want Elastic Transcoder to create. <p>The maximum number of master
+     * playlists in a job is 30.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -442,10 +442,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Length: </b>0 - 30<br/>
      *
      * @param playlists If you specify a preset in <code>PresetId</code> for which the value
-     *         of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     *         information about the master playlists that you want Elastic
-     *         Transcoder to create. <p>We recommend that you create only one master
-     *         playlist. The maximum number of master playlists in a job is 30.
+     *         of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     *         Playlists contains information about the master playlists that you
+     *         want Elastic Transcoder to create. <p>The maximum number of master
+     *         playlists in a job is 30.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -460,10 +460,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * If you specify a preset in <code>PresetId</code> for which the value
-     * of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     * information about the master playlists that you want Elastic
-     * Transcoder to create. <p>We recommend that you create only one master
-     * playlist. The maximum number of master playlists in a job is 30.
+     * of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     * Playlists contains information about the master playlists that you
+     * want Elastic Transcoder to create. <p>The maximum number of master
+     * playlists in a job is 30.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -471,10 +471,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Length: </b>0 - 30<br/>
      *
      * @param playlists If you specify a preset in <code>PresetId</code> for which the value
-     *         of <code>Container</code> is ts (MPEG-TS), Playlists contains
-     *         information about the master playlists that you want Elastic
-     *         Transcoder to create. <p>We recommend that you create only one master
-     *         playlist. The maximum number of master playlists in a job is 30.
+     *         of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
+     *         Playlists contains information about the master playlists that you
+     *         want Elastic Transcoder to create. <p>The maximum number of master
+     *         playlists in a job is 30.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

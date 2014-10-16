@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Subnets in the DB subnet group should cover at least 2 Availability
- * Zones unless there is only 1 availablility zone.
+ * Subnets in the DB subnet group should cover at least two Availability
+ * Zones unless there is only one Availability Zone.
  * </p>
  */        
 public class DBSubnetGroupDoesNotCoverEnoughAZsException extends AmazonServiceException {

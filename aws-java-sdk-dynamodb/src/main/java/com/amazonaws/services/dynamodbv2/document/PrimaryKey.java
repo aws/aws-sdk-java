@@ -15,7 +15,7 @@
 package com.amazonaws.services.dynamodbv2.document;
 
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,7 +25,7 @@ import com.amazonaws.services.dynamodbv2.document.internal.InternalUtils;
  * Used to represent a primary key that has one or multiple key components.
  */
 public class PrimaryKey {
-    private final Map<String, KeyAttribute> components = new HashMap<String, KeyAttribute>();
+    private final Map<String, KeyAttribute> components = new LinkedHashMap<String, KeyAttribute>();
     
     public PrimaryKey() {}
 

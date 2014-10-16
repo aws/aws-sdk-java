@@ -39,7 +39,7 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
 
         Request<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceToPointInTime");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier() != null) {
             request.addParameter("SourceDBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier()));
@@ -105,6 +105,15 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
             }
 
             tagsListIndex++;
+        }
+        if (restoreDBInstanceToPointInTimeRequest.getStorageType() != null) {
+            request.addParameter("StorageType", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getStorageType()));
+        }
+        if (restoreDBInstanceToPointInTimeRequest.getTdeCredentialArn() != null) {
+            request.addParameter("TdeCredentialArn", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getTdeCredentialArn()));
+        }
+        if (restoreDBInstanceToPointInTimeRequest.getTdeCredentialPassword() != null) {
+            request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getTdeCredentialPassword()));
         }
 
         return request;

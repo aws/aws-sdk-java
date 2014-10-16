@@ -28,7 +28,9 @@ public class AnalysisSchemeStatus implements Serializable {
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      */
     private AnalysisScheme options;
 
@@ -42,13 +44,17 @@ public class AnalysisSchemeStatus implements Serializable {
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      *
      * @return Configuration information for an analysis scheme. Each analysis scheme
      *         has a unique name and specifies the language of the text to be
      *         processed. The following options can be configured for an analysis
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     *         <code>StemmingDictionary</code>,
+     *         <code>JapaneseTokenizationDictionary</code> and
+     *         <code>AlgorithmicStemming</code>.
      */
     public AnalysisScheme getOptions() {
         return options;
@@ -59,13 +65,17 @@ public class AnalysisSchemeStatus implements Serializable {
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      *
      * @param options Configuration information for an analysis scheme. Each analysis scheme
      *         has a unique name and specifies the language of the text to be
      *         processed. The following options can be configured for an analysis
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     *         <code>StemmingDictionary</code>,
+     *         <code>JapaneseTokenizationDictionary</code> and
+     *         <code>AlgorithmicStemming</code>.
      */
     public void setOptions(AnalysisScheme options) {
         this.options = options;
@@ -76,7 +86,9 @@ public class AnalysisSchemeStatus implements Serializable {
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -84,7 +96,9 @@ public class AnalysisSchemeStatus implements Serializable {
      *         has a unique name and specifies the language of the text to be
      *         processed. The following options can be configured for an analysis
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     *         <code>StemmingDictionary</code>,
+     *         <code>JapaneseTokenizationDictionary</code> and
+     *         <code>AlgorithmicStemming</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

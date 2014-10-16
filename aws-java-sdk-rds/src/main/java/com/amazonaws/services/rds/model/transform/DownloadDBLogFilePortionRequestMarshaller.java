@@ -39,7 +39,7 @@ public class DownloadDBLogFilePortionRequestMarshaller implements Marshaller<Req
 
         Request<DownloadDBLogFilePortionRequest> request = new DefaultRequest<DownloadDBLogFilePortionRequest>(downloadDBLogFilePortionRequest, "AmazonRDS");
         request.addParameter("Action", "DownloadDBLogFilePortion");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (downloadDBLogFilePortionRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(downloadDBLogFilePortionRequest.getDBInstanceIdentifier()));

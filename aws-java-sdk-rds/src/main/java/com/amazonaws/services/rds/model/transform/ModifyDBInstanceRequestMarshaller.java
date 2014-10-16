@@ -39,7 +39,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (modifyDBInstanceRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceIdentifier()));
@@ -110,6 +110,15 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         }
         if (modifyDBInstanceRequest.getNewDBInstanceIdentifier() != null) {
             request.addParameter("NewDBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getNewDBInstanceIdentifier()));
+        }
+        if (modifyDBInstanceRequest.getStorageType() != null) {
+            request.addParameter("StorageType", StringUtils.fromString(modifyDBInstanceRequest.getStorageType()));
+        }
+        if (modifyDBInstanceRequest.getTdeCredentialArn() != null) {
+            request.addParameter("TdeCredentialArn", StringUtils.fromString(modifyDBInstanceRequest.getTdeCredentialArn()));
+        }
+        if (modifyDBInstanceRequest.getTdeCredentialPassword() != null) {
+            request.addParameter("TdeCredentialPassword", StringUtils.fromString(modifyDBInstanceRequest.getTdeCredentialPassword()));
         }
 
         return request;

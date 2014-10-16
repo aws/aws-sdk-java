@@ -23,6 +23,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Promotes a read replica DB instance to a standalone DB instance.
  * </p>
+ * <p>
+ * <b>NOTE:</b> We recommend that you enable automated backups on your
+ * read replica before promoting the read replica. This ensures that no
+ * backup is taken during the promotion process. Once the instance is
+ * promoted to a primary instance, backups are taken based on your backup
+ * settings.
+ * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#promoteReadReplica(PromoteReadReplicaRequest)
  */

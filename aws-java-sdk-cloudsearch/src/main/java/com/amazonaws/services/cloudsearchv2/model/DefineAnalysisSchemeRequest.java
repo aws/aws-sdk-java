@@ -49,7 +49,9 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      */
     private AnalysisScheme analysisScheme;
 
@@ -121,13 +123,17 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      *
      * @return Configuration information for an analysis scheme. Each analysis scheme
      *         has a unique name and specifies the language of the text to be
      *         processed. The following options can be configured for an analysis
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     *         <code>StemmingDictionary</code>,
+     *         <code>JapaneseTokenizationDictionary</code> and
+     *         <code>AlgorithmicStemming</code>.
      */
     public AnalysisScheme getAnalysisScheme() {
         return analysisScheme;
@@ -138,13 +144,17 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      *
      * @param analysisScheme Configuration information for an analysis scheme. Each analysis scheme
      *         has a unique name and specifies the language of the text to be
      *         processed. The following options can be configured for an analysis
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     *         <code>StemmingDictionary</code>,
+     *         <code>JapaneseTokenizationDictionary</code> and
+     *         <code>AlgorithmicStemming</code>.
      */
     public void setAnalysisScheme(AnalysisScheme analysisScheme) {
         this.analysisScheme = analysisScheme;
@@ -155,7 +165,9 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      * has a unique name and specifies the language of the text to be
      * processed. The following options can be configured for an analysis
      * scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     * <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     * <code>StemmingDictionary</code>,
+     * <code>JapaneseTokenizationDictionary</code> and
+     * <code>AlgorithmicStemming</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -163,7 +175,9 @@ public class DefineAnalysisSchemeRequest extends AmazonWebServiceRequest impleme
      *         has a unique name and specifies the language of the text to be
      *         processed. The following options can be configured for an analysis
      *         scheme: <code>Synonyms</code>, <code>Stopwords</code>,
-     *         <code>StemmingDictionary</code>, and <code>AlgorithmicStemming</code>.
+     *         <code>StemmingDictionary</code>,
+     *         <code>JapaneseTokenizationDictionary</code> and
+     *         <code>AlgorithmicStemming</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

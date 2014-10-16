@@ -21,6 +21,10 @@ import com.amazonaws.AmazonServiceException;
  * Specified CIDRIP or EC2 security group is not authorized for the
  * specified DB security group.
  * </p>
+ * <p>
+ * RDS may not also be authorized via IAM to perform necessary actions on
+ * your behalf.
+ * </p>
  */        
 public class AuthorizationNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

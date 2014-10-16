@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -63,7 +63,7 @@ public enum InternalUtils {
         if (item == null)
             return null;
         // row with multiple attributes
-        Map<String, AttributeValue> result = new HashMap<String, AttributeValue>();
+        Map<String, AttributeValue> result = new LinkedHashMap<String, AttributeValue>();
         for (Map.Entry<String, Object> entry : item.attributes())
             result.put(entry.getKey(), toAttributeValue(entry.getValue()));
         return result;
@@ -78,7 +78,7 @@ public enum InternalUtils {
         if (map == null)
             return null;
         // row with multiple attributes
-        Map<String, AttributeValue> result = new HashMap<String, AttributeValue>();
+        Map<String, AttributeValue> result = new LinkedHashMap<String, AttributeValue>();
         for (Map.Entry<String, Object> entry : map.entrySet())
             result.put(entry.getKey(), toAttributeValue(entry.getValue()));
         return result;
@@ -93,7 +93,7 @@ public enum InternalUtils {
         if (attributesToUpdate == null)
             return null;
 
-        Map<String, AttributeValueUpdate> result = new HashMap<String, AttributeValueUpdate>();
+        Map<String, AttributeValueUpdate> result = new LinkedHashMap<String, AttributeValueUpdate>();
 
         for (AttributeUpdate attribute : attributesToUpdate) {
             AttributeValueUpdate attributeToUpdate = new AttributeValueUpdate()
@@ -160,7 +160,7 @@ public enum InternalUtils {
             @SuppressWarnings("unchecked")
             Set<Object> set = (Set<Object>) value;
             if (set.size() == 0) {
-                result.setSS(new HashSet<String>());
+                result.setSS(new LinkedHashSet<String>());
                 return result;
             }
             Object element = set.iterator().next();
@@ -209,7 +209,7 @@ public enum InternalUtils {
                     result.addMEntry(e.getKey(), toAttributeValue(e.getValue()));
                 }
             } else {    // empty map
-                result.setM(new HashMap<String,AttributeValue>());
+                result.setM(new LinkedHashMap<String,AttributeValue>());
             }
         } else {
             throw new UnsupportedOperationException("value type: "
@@ -291,7 +291,7 @@ public enum InternalUtils {
             return null;
         }
 
-        Map<String, T> result = new HashMap<String, T>(values.size());
+        Map<String, T> result = new LinkedHashMap<String, T>(values.size());
         for (Map.Entry<String, AttributeValue> entry : values.entrySet()) {
             T t = toSimpleValue(entry.getValue());
             result.put(entry.getKey(), t);
@@ -368,10 +368,10 @@ public enum InternalUtils {
             return t;
         } else if (value.getSS() != null) {
             @SuppressWarnings("unchecked")
-            T t = (T) new HashSet<String>(value.getSS());
+            T t = (T) new LinkedHashSet<String>(value.getSS());
             return t;
         } else if (value.getNS() != null) {
-            Set<BigDecimal> set = new HashSet<BigDecimal>(value.getNS().size());
+            Set<BigDecimal> set = new LinkedHashSet<BigDecimal>(value.getNS().size());
             for (String s : value.getNS()) {
                 set.add(new BigDecimal(s));
             }
@@ -379,7 +379,7 @@ public enum InternalUtils {
             T t = (T) set;
             return t;
         } else if (value.getBS() != null) {
-            Set<byte[]> set = new HashSet<byte[]>(value.getBS().size());
+            Set<byte[]> set = new LinkedHashSet<byte[]>(value.getBS().size());
             for (ByteBuffer bb : value.getBS()) {
                 set.add(toByteArray(bb));
             }
@@ -404,7 +404,7 @@ public enum InternalUtils {
      * Returns the byte array representation of the given
      * <code>ByteBuffer</code>.
      */
-    private static byte[] toByteArray(ByteBuffer bb) {
+    static byte[] toByteArray(ByteBuffer bb) {
         if (bb.hasArray())
             return bb.array().clone();
         bb.rewind();
@@ -438,7 +438,7 @@ public enum InternalUtils {
         if (expectedSet == null)
             return null;
         Map<String, ExpectedAttributeValue> expectedMap =
-                new HashMap<String, ExpectedAttributeValue>();
+                new LinkedHashMap<String, ExpectedAttributeValue>();
         for (Expected expected : expectedSet) {
             final String attr = expected.getAttribute();
             final Object[] values = expected.getValues();
@@ -472,7 +472,7 @@ public enum InternalUtils {
     public static Map<String, Condition> toAttributeConditionMap(Collection<? extends Filter<?>> filters) {
         if (filters == null)
             return null;
-        Map<String, Condition> conditionMap = new HashMap<String, Condition>();
+        Map<String, Condition> conditionMap = new LinkedHashMap<String, Condition>();
         for (Filter<?> filter : filters) {
             final String attr = filter.getAttribute();
             final Object[] values = filter.getValues();
@@ -537,7 +537,7 @@ public enum InternalUtils {
             Collection<KeyAttribute> primaryKey) {
         if (primaryKey == null)
             return null;
-        Map<String, AttributeValue> keys = new HashMap<String, AttributeValue>();
+        Map<String, AttributeValue> keys = new LinkedHashMap<String, AttributeValue>();
         for (KeyAttribute keyAttr : primaryKey)
             keys.put(keyAttr.getName(),
                     InternalUtils.toAttributeValue(keyAttr.getValue()));
@@ -574,14 +574,14 @@ public enum InternalUtils {
     }
 
     public static Set<BigDecimal> toBigDecimalSet(Number ... val) {
-        Set<BigDecimal> set = new HashSet<BigDecimal>(val.length);
+        Set<BigDecimal> set = new LinkedHashSet<BigDecimal>(val.length);
         for (Number n: val)
             set.add(InternalUtils.toBigDecimal(n));
         return set;
     }
 
     public static Set<BigDecimal> toBigDecimalSet(Set<Number> vals) {
-        Set<BigDecimal> set = new HashSet<BigDecimal>(vals.size());
+        Set<BigDecimal> set = new LinkedHashSet<BigDecimal>(vals.size());
         for (Number n: vals)
             set.add(InternalUtils.toBigDecimal(n));
         return set;

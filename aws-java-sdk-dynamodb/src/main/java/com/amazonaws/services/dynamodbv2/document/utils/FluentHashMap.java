@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.dynamodbv2.document.utils;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
- * Utility subclass of {@link HashMap} that supports fluent API.
+ * Utility subclass of {@link LinkedHashMap} that supports fluent API.
  */
-public class FluentHashMap<K, V> extends HashMap<K, V> {
+public class FluentHashMap<K, V> extends LinkedHashMap<K, V> {
     private static final long serialVersionUID = 4857340227048063855L;
 
     /**

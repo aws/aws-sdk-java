@@ -25,12 +25,17 @@ public class CreateJobPlaylist implements Serializable {
 
     /**
      * The name that you want Elastic Transcoder to assign to the master
-     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
-     * character. If you create more than one master playlist (not
-     * recommended), the values of all <code>Name</code> objects must be
-     * unique. Elastic Transcoder automatically appends .m3u8 to the file
-     * name. If you include .m3u8 in <code>Name</code>, it will appear twice
-     * in the file name.
+     * playlist, for example, nyc-vacation.m3u8. If the name includes a
+     * <code>/</code> character, the section of the name before the last
+     * <code>/</code> must be identical for all <code>Name</code> objects. If
+     * you create more than one master playlist, the values of all
+     * <code>Name</code> objects must be unique. <p><b>Note:</b> Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name (<code>.m3u8</code> for <code>HLSv3</code> and
+     * <code>HLSv4</code> playlists, and <code>.ism</code> and
+     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include
+     * a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -38,18 +43,44 @@ public class CreateJobPlaylist implements Serializable {
     private String name;
 
     /**
-     * This value must currently be HLSv3.
+     * The format of the output playlist. Valid formats include
+     * <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^HLSv3$)<br/>
+     * <b>Pattern: </b>(^HLSv3$)|(^HLSv4$)|(^Smooth$)<br/>
      */
     private String format;
 
     /**
      * For each output in this job that you want to include in a master
-     * playlist, the value of the <code>Outputs:Key</code> object. If you
-     * include more than one output in a playlist, the value of
-     * <code>SegmentDuration</code> for all of the outputs must be the same.
+     * playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     * <p>If your output is not <code>HLS</code> or does not have a segment
+     * duration set, the name of the output file is a concatenation of
+     * <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     * output is <code>HLSv3</code> and has a segment duration set, or is not
+     * included in a playlist, Elastic Transcoder creates an output playlist
+     * file with a file extension of <code>.m3u8</code>, and a series of
+     * <code>.ts</code> files that include a five-digit sequential counter
+     * beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     * your output is <code>HLSv4</code>, has a segment duration set, and is
+     * included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     * an output playlist file with a file extension of
+     * <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     * creates an output file with an extension of <code>_iframe.m3u8</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name. If you include a file extension in Output Key, the file
+     * name will have two extensions. <p>If you include more than one output
+     * in a playlist, any segment duration settings, clip settings, or
+     * caption settings must be the same for all outputs in the playlist. For
+     * <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     * <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     * <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     * outputs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -58,23 +89,33 @@ public class CreateJobPlaylist implements Serializable {
 
     /**
      * The name that you want Elastic Transcoder to assign to the master
-     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
-     * character. If you create more than one master playlist (not
-     * recommended), the values of all <code>Name</code> objects must be
-     * unique. Elastic Transcoder automatically appends .m3u8 to the file
-     * name. If you include .m3u8 in <code>Name</code>, it will appear twice
-     * in the file name.
+     * playlist, for example, nyc-vacation.m3u8. If the name includes a
+     * <code>/</code> character, the section of the name before the last
+     * <code>/</code> must be identical for all <code>Name</code> objects. If
+     * you create more than one master playlist, the values of all
+     * <code>Name</code> objects must be unique. <p><b>Note:</b> Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name (<code>.m3u8</code> for <code>HLSv3</code> and
+     * <code>HLSv4</code> playlists, and <code>.ism</code> and
+     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include
+     * a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @return The name that you want Elastic Transcoder to assign to the master
-     *         playlist, for example, nyc-vacation.m3u8. The name cannot include a /
-     *         character. If you create more than one master playlist (not
-     *         recommended), the values of all <code>Name</code> objects must be
-     *         unique. Elastic Transcoder automatically appends .m3u8 to the file
-     *         name. If you include .m3u8 in <code>Name</code>, it will appear twice
-     *         in the file name.
+     *         playlist, for example, nyc-vacation.m3u8. If the name includes a
+     *         <code>/</code> character, the section of the name before the last
+     *         <code>/</code> must be identical for all <code>Name</code> objects. If
+     *         you create more than one master playlist, the values of all
+     *         <code>Name</code> objects must be unique. <p><b>Note:</b> Elastic
+     *         Transcoder automatically appends the relevant file extension to the
+     *         file name (<code>.m3u8</code> for <code>HLSv3</code> and
+     *         <code>HLSv4</code> playlists, and <code>.ism</code> and
+     *         <code>.ismc</code> for <code>Smooth</code> playlists). If you include
+     *         a file extension in <code>Name</code>, the file name will have two
+     *         extensions.
      */
     public String getName() {
         return name;
@@ -82,23 +123,33 @@ public class CreateJobPlaylist implements Serializable {
     
     /**
      * The name that you want Elastic Transcoder to assign to the master
-     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
-     * character. If you create more than one master playlist (not
-     * recommended), the values of all <code>Name</code> objects must be
-     * unique. Elastic Transcoder automatically appends .m3u8 to the file
-     * name. If you include .m3u8 in <code>Name</code>, it will appear twice
-     * in the file name.
+     * playlist, for example, nyc-vacation.m3u8. If the name includes a
+     * <code>/</code> character, the section of the name before the last
+     * <code>/</code> must be identical for all <code>Name</code> objects. If
+     * you create more than one master playlist, the values of all
+     * <code>Name</code> objects must be unique. <p><b>Note:</b> Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name (<code>.m3u8</code> for <code>HLSv3</code> and
+     * <code>HLSv4</code> playlists, and <code>.ism</code> and
+     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include
+     * a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @param name The name that you want Elastic Transcoder to assign to the master
-     *         playlist, for example, nyc-vacation.m3u8. The name cannot include a /
-     *         character. If you create more than one master playlist (not
-     *         recommended), the values of all <code>Name</code> objects must be
-     *         unique. Elastic Transcoder automatically appends .m3u8 to the file
-     *         name. If you include .m3u8 in <code>Name</code>, it will appear twice
-     *         in the file name.
+     *         playlist, for example, nyc-vacation.m3u8. If the name includes a
+     *         <code>/</code> character, the section of the name before the last
+     *         <code>/</code> must be identical for all <code>Name</code> objects. If
+     *         you create more than one master playlist, the values of all
+     *         <code>Name</code> objects must be unique. <p><b>Note:</b> Elastic
+     *         Transcoder automatically appends the relevant file extension to the
+     *         file name (<code>.m3u8</code> for <code>HLSv3</code> and
+     *         <code>HLSv4</code> playlists, and <code>.ism</code> and
+     *         <code>.ismc</code> for <code>Smooth</code> playlists). If you include
+     *         a file extension in <code>Name</code>, the file name will have two
+     *         extensions.
      */
     public void setName(String name) {
         this.name = name;
@@ -106,12 +157,17 @@ public class CreateJobPlaylist implements Serializable {
     
     /**
      * The name that you want Elastic Transcoder to assign to the master
-     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
-     * character. If you create more than one master playlist (not
-     * recommended), the values of all <code>Name</code> objects must be
-     * unique. Elastic Transcoder automatically appends .m3u8 to the file
-     * name. If you include .m3u8 in <code>Name</code>, it will appear twice
-     * in the file name.
+     * playlist, for example, nyc-vacation.m3u8. If the name includes a
+     * <code>/</code> character, the section of the name before the last
+     * <code>/</code> must be identical for all <code>Name</code> objects. If
+     * you create more than one master playlist, the values of all
+     * <code>Name</code> objects must be unique. <p><b>Note:</b> Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name (<code>.m3u8</code> for <code>HLSv3</code> and
+     * <code>HLSv4</code> playlists, and <code>.ism</code> and
+     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include
+     * a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -119,12 +175,17 @@ public class CreateJobPlaylist implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param name The name that you want Elastic Transcoder to assign to the master
-     *         playlist, for example, nyc-vacation.m3u8. The name cannot include a /
-     *         character. If you create more than one master playlist (not
-     *         recommended), the values of all <code>Name</code> objects must be
-     *         unique. Elastic Transcoder automatically appends .m3u8 to the file
-     *         name. If you include .m3u8 in <code>Name</code>, it will appear twice
-     *         in the file name.
+     *         playlist, for example, nyc-vacation.m3u8. If the name includes a
+     *         <code>/</code> character, the section of the name before the last
+     *         <code>/</code> must be identical for all <code>Name</code> objects. If
+     *         you create more than one master playlist, the values of all
+     *         <code>Name</code> objects must be unique. <p><b>Note:</b> Elastic
+     *         Transcoder automatically appends the relevant file extension to the
+     *         file name (<code>.m3u8</code> for <code>HLSv3</code> and
+     *         <code>HLSv4</code> playlists, and <code>.ism</code> and
+     *         <code>.ismc</code> for <code>Smooth</code> playlists). If you include
+     *         a file extension in <code>Name</code>, the file name will have two
+     *         extensions.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -135,38 +196,44 @@ public class CreateJobPlaylist implements Serializable {
     }
 
     /**
-     * This value must currently be HLSv3.
+     * The format of the output playlist. Valid formats include
+     * <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^HLSv3$)<br/>
+     * <b>Pattern: </b>(^HLSv3$)|(^HLSv4$)|(^Smooth$)<br/>
      *
-     * @return This value must currently be HLSv3.
+     * @return The format of the output playlist. Valid formats include
+     *         <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      */
     public String getFormat() {
         return format;
     }
     
     /**
-     * This value must currently be HLSv3.
+     * The format of the output playlist. Valid formats include
+     * <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^HLSv3$)<br/>
+     * <b>Pattern: </b>(^HLSv3$)|(^HLSv4$)|(^Smooth$)<br/>
      *
-     * @param format This value must currently be HLSv3.
+     * @param format The format of the output playlist. Valid formats include
+     *         <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      */
     public void setFormat(String format) {
         this.format = format;
     }
     
     /**
-     * This value must currently be HLSv3.
+     * The format of the output playlist. Valid formats include
+     * <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^HLSv3$)<br/>
+     * <b>Pattern: </b>(^HLSv3$)|(^HLSv4$)|(^Smooth$)<br/>
      *
-     * @param format This value must currently be HLSv3.
+     * @param format The format of the output playlist. Valid formats include
+     *         <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -178,17 +245,67 @@ public class CreateJobPlaylist implements Serializable {
 
     /**
      * For each output in this job that you want to include in a master
-     * playlist, the value of the <code>Outputs:Key</code> object. If you
-     * include more than one output in a playlist, the value of
-     * <code>SegmentDuration</code> for all of the outputs must be the same.
+     * playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     * <p>If your output is not <code>HLS</code> or does not have a segment
+     * duration set, the name of the output file is a concatenation of
+     * <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     * output is <code>HLSv3</code> and has a segment duration set, or is not
+     * included in a playlist, Elastic Transcoder creates an output playlist
+     * file with a file extension of <code>.m3u8</code>, and a series of
+     * <code>.ts</code> files that include a five-digit sequential counter
+     * beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     * your output is <code>HLSv4</code>, has a segment duration set, and is
+     * included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     * an output playlist file with a file extension of
+     * <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     * creates an output file with an extension of <code>_iframe.m3u8</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name. If you include a file extension in Output Key, the file
+     * name will have two extensions. <p>If you include more than one output
+     * in a playlist, any segment duration settings, clip settings, or
+     * caption settings must be the same for all outputs in the playlist. For
+     * <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     * <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     * <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     * outputs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
      * @return For each output in this job that you want to include in a master
-     *         playlist, the value of the <code>Outputs:Key</code> object. If you
-     *         include more than one output in a playlist, the value of
-     *         <code>SegmentDuration</code> for all of the outputs must be the same.
+     *         playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     *         <p>If your output is not <code>HLS</code> or does not have a segment
+     *         duration set, the name of the output file is a concatenation of
+     *         <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     *         output is <code>HLSv3</code> and has a segment duration set, or is not
+     *         included in a playlist, Elastic Transcoder creates an output playlist
+     *         file with a file extension of <code>.m3u8</code>, and a series of
+     *         <code>.ts</code> files that include a five-digit sequential counter
+     *         beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     *         your output is <code>HLSv4</code>, has a segment duration set, and is
+     *         included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     *         an output playlist file with a file extension of
+     *         <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     *         creates an output file with an extension of <code>_iframe.m3u8</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     *         Transcoder automatically appends the relevant file extension to the
+     *         file name. If you include a file extension in Output Key, the file
+     *         name will have two extensions. <p>If you include more than one output
+     *         in a playlist, any segment duration settings, clip settings, or
+     *         caption settings must be the same for all outputs in the playlist. For
+     *         <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     *         <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     *         <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     *         outputs.
      */
     public java.util.List<String> getOutputKeys() {
         if (outputKeys == null) {
@@ -200,17 +317,67 @@ public class CreateJobPlaylist implements Serializable {
     
     /**
      * For each output in this job that you want to include in a master
-     * playlist, the value of the <code>Outputs:Key</code> object. If you
-     * include more than one output in a playlist, the value of
-     * <code>SegmentDuration</code> for all of the outputs must be the same.
+     * playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     * <p>If your output is not <code>HLS</code> or does not have a segment
+     * duration set, the name of the output file is a concatenation of
+     * <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     * output is <code>HLSv3</code> and has a segment duration set, or is not
+     * included in a playlist, Elastic Transcoder creates an output playlist
+     * file with a file extension of <code>.m3u8</code>, and a series of
+     * <code>.ts</code> files that include a five-digit sequential counter
+     * beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     * your output is <code>HLSv4</code>, has a segment duration set, and is
+     * included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     * an output playlist file with a file extension of
+     * <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     * creates an output file with an extension of <code>_iframe.m3u8</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name. If you include a file extension in Output Key, the file
+     * name will have two extensions. <p>If you include more than one output
+     * in a playlist, any segment duration settings, clip settings, or
+     * caption settings must be the same for all outputs in the playlist. For
+     * <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     * <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     * <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     * outputs.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
      * @param outputKeys For each output in this job that you want to include in a master
-     *         playlist, the value of the <code>Outputs:Key</code> object. If you
-     *         include more than one output in a playlist, the value of
-     *         <code>SegmentDuration</code> for all of the outputs must be the same.
+     *         playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     *         <p>If your output is not <code>HLS</code> or does not have a segment
+     *         duration set, the name of the output file is a concatenation of
+     *         <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     *         output is <code>HLSv3</code> and has a segment duration set, or is not
+     *         included in a playlist, Elastic Transcoder creates an output playlist
+     *         file with a file extension of <code>.m3u8</code>, and a series of
+     *         <code>.ts</code> files that include a five-digit sequential counter
+     *         beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     *         your output is <code>HLSv4</code>, has a segment duration set, and is
+     *         included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     *         an output playlist file with a file extension of
+     *         <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     *         creates an output file with an extension of <code>_iframe.m3u8</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     *         Transcoder automatically appends the relevant file extension to the
+     *         file name. If you include a file extension in Output Key, the file
+     *         name will have two extensions. <p>If you include more than one output
+     *         in a playlist, any segment duration settings, clip settings, or
+     *         caption settings must be the same for all outputs in the playlist. For
+     *         <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     *         <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     *         <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     *         outputs.
      */
     public void setOutputKeys(java.util.Collection<String> outputKeys) {
         if (outputKeys == null) {
@@ -224,9 +391,34 @@ public class CreateJobPlaylist implements Serializable {
     
     /**
      * For each output in this job that you want to include in a master
-     * playlist, the value of the <code>Outputs:Key</code> object. If you
-     * include more than one output in a playlist, the value of
-     * <code>SegmentDuration</code> for all of the outputs must be the same.
+     * playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     * <p>If your output is not <code>HLS</code> or does not have a segment
+     * duration set, the name of the output file is a concatenation of
+     * <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     * output is <code>HLSv3</code> and has a segment duration set, or is not
+     * included in a playlist, Elastic Transcoder creates an output playlist
+     * file with a file extension of <code>.m3u8</code>, and a series of
+     * <code>.ts</code> files that include a five-digit sequential counter
+     * beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     * your output is <code>HLSv4</code>, has a segment duration set, and is
+     * included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     * an output playlist file with a file extension of
+     * <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     * creates an output file with an extension of <code>_iframe.m3u8</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name. If you include a file extension in Output Key, the file
+     * name will have two extensions. <p>If you include more than one output
+     * in a playlist, any segment duration settings, clip settings, or
+     * caption settings must be the same for all outputs in the playlist. For
+     * <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     * <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     * <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     * outputs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -234,9 +426,34 @@ public class CreateJobPlaylist implements Serializable {
      * <b>Length: </b>0 - 30<br/>
      *
      * @param outputKeys For each output in this job that you want to include in a master
-     *         playlist, the value of the <code>Outputs:Key</code> object. If you
-     *         include more than one output in a playlist, the value of
-     *         <code>SegmentDuration</code> for all of the outputs must be the same.
+     *         playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     *         <p>If your output is not <code>HLS</code> or does not have a segment
+     *         duration set, the name of the output file is a concatenation of
+     *         <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     *         output is <code>HLSv3</code> and has a segment duration set, or is not
+     *         included in a playlist, Elastic Transcoder creates an output playlist
+     *         file with a file extension of <code>.m3u8</code>, and a series of
+     *         <code>.ts</code> files that include a five-digit sequential counter
+     *         beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     *         your output is <code>HLSv4</code>, has a segment duration set, and is
+     *         included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     *         an output playlist file with a file extension of
+     *         <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     *         creates an output file with an extension of <code>_iframe.m3u8</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     *         Transcoder automatically appends the relevant file extension to the
+     *         file name. If you include a file extension in Output Key, the file
+     *         name will have two extensions. <p>If you include more than one output
+     *         in a playlist, any segment duration settings, clip settings, or
+     *         caption settings must be the same for all outputs in the playlist. For
+     *         <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     *         <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     *         <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     *         outputs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -251,9 +468,34 @@ public class CreateJobPlaylist implements Serializable {
     
     /**
      * For each output in this job that you want to include in a master
-     * playlist, the value of the <code>Outputs:Key</code> object. If you
-     * include more than one output in a playlist, the value of
-     * <code>SegmentDuration</code> for all of the outputs must be the same.
+     * playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     * <p>If your output is not <code>HLS</code> or does not have a segment
+     * duration set, the name of the output file is a concatenation of
+     * <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     * output is <code>HLSv3</code> and has a segment duration set, or is not
+     * included in a playlist, Elastic Transcoder creates an output playlist
+     * file with a file extension of <code>.m3u8</code>, and a series of
+     * <code>.ts</code> files that include a five-digit sequential counter
+     * beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     * your output is <code>HLSv4</code>, has a segment duration set, and is
+     * included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     * an output playlist file with a file extension of
+     * <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     * creates an output file with an extension of <code>_iframe.m3u8</code>:
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     * <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the
+     * file name. If you include a file extension in Output Key, the file
+     * name will have two extensions. <p>If you include more than one output
+     * in a playlist, any segment duration settings, clip settings, or
+     * caption settings must be the same for all outputs in the playlist. For
+     * <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     * <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     * <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     * outputs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -261,9 +503,34 @@ public class CreateJobPlaylist implements Serializable {
      * <b>Length: </b>0 - 30<br/>
      *
      * @param outputKeys For each output in this job that you want to include in a master
-     *         playlist, the value of the <code>Outputs:Key</code> object. If you
-     *         include more than one output in a playlist, the value of
-     *         <code>SegmentDuration</code> for all of the outputs must be the same.
+     *         playlist, the value of the <code>Outputs:Key</code> object. <ul> <li>
+     *         <p>If your output is not <code>HLS</code> or does not have a segment
+     *         duration set, the name of the output file is a concatenation of
+     *         <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code> </li> <li> <p>If your
+     *         output is <code>HLSv3</code> and has a segment duration set, or is not
+     *         included in a playlist, Elastic Transcoder creates an output playlist
+     *         file with a file extension of <code>.m3u8</code>, and a series of
+     *         <code>.ts</code> files that include a five-digit sequential counter
+     *         beginning with 00000: <p>OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>00000.ts </li> <li> <p>If
+     *         your output is <code>HLSv4</code>, has a segment duration set, and is
+     *         included in an <code>HLSv4</code> playlist, Elastic Transcoder creates
+     *         an output playlist file with a file extension of
+     *         <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder also
+     *         creates an output file with an extension of <code>_iframe.m3u8</code>:
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+     *         <p>OutputKeyPrefix<code>Outputs:Key</code>.ts </li> </ul> <p>Elastic
+     *         Transcoder automatically appends the relevant file extension to the
+     *         file name. If you include a file extension in Output Key, the file
+     *         name will have two extensions. <p>If you include more than one output
+     *         in a playlist, any segment duration settings, clip settings, or
+     *         caption settings must be the same for all outputs in the playlist. For
+     *         <code>Smooth</code> playlists, the <code>Audio:Profile</code>,
+     *         <code>Video:Profile</code>, and <code>Video:FrameRate</code> to
+     *         <code>Video:KeyframesMaxDist</code> ratio must be the same for all
+     *         outputs.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.document.internal;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
@@ -38,7 +38,7 @@ class ScanCollection extends ItemCollection<ScanOutcome> {
         this.spec = spec;
         Map<String, AttributeValue> startKey = spec.getRequest()
                 .getExclusiveStartKey();
-        this.startKey = startKey == null ? null : new HashMap<String, AttributeValue>(startKey);
+        this.startKey = startKey == null ? null : new LinkedHashMap<String, AttributeValue>(startKey);
     }
 
     @Override

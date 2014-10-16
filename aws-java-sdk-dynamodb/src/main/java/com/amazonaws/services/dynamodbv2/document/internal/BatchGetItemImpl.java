@@ -16,7 +16,7 @@ package com.amazonaws.services.dynamodbv2.document.internal;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -71,7 +71,7 @@ public class BatchGetItemImpl implements BatchGetItemApi {
         Map<String, KeysAndAttributes> requestItems = spec.getUnprocessedKeys();
         if (requestItems == null || requestItems.size() == 0) {
             // handle new requests only if there is no unprocessed keys
-            requestItems = new HashMap<String, KeysAndAttributes>(tableKeysAndAttributesCol.size());
+            requestItems = new LinkedHashMap<String, KeysAndAttributes>(tableKeysAndAttributesCol.size());
         }
         for (TableKeysAndAttributes tableKeysAndAttributes: tableKeysAndAttributesCol) {
             // attributes against one table

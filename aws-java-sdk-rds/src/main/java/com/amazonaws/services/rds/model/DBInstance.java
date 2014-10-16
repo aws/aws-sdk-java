@@ -233,6 +233,17 @@ public class DBInstance implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo> statusInfos;
 
     /**
+     * Specifies storage type associated with DB Instance.
+     */
+    private String storageType;
+
+    /**
+     * The ARN from the Key Store with which the instance is associated for
+     * TDE encryption.
+     */
+    private String tdeCredentialArn;
+
+    /**
      * Contains a user-supplied database identifier. This is the unique key
      * that identifies a DB instance.
      *
@@ -1779,6 +1790,78 @@ public class DBInstance implements Serializable {
     }
 
     /**
+     * Specifies storage type associated with DB Instance.
+     *
+     * @return Specifies storage type associated with DB Instance.
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+    
+    /**
+     * Specifies storage type associated with DB Instance.
+     *
+     * @param storageType Specifies storage type associated with DB Instance.
+     */
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    /**
+     * Specifies storage type associated with DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageType Specifies storage type associated with DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * The ARN from the Key Store with which the instance is associated for
+     * TDE encryption.
+     *
+     * @return The ARN from the Key Store with which the instance is associated for
+     *         TDE encryption.
+     */
+    public String getTdeCredentialArn() {
+        return tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which the instance is associated for
+     * TDE encryption.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which the instance is associated for
+     *         TDE encryption.
+     */
+    public void setTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which the instance is associated for
+     * TDE encryption.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which the instance is associated for
+     *         TDE encryption.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1820,7 +1903,9 @@ public class DBInstance implements Serializable {
         if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");
         if (getSecondaryAvailabilityZone() != null) sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
-        if (getStatusInfos() != null) sb.append("StatusInfos: " + getStatusInfos() );
+        if (getStatusInfos() != null) sb.append("StatusInfos: " + getStatusInfos() + ",");
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -1861,6 +1946,8 @@ public class DBInstance implements Serializable {
         hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((getStatusInfos() == null) ? 0 : getStatusInfos().hashCode()); 
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         return hashCode;
     }
     
@@ -1934,6 +2021,10 @@ public class DBInstance implements Serializable {
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.getStatusInfos() == null ^ this.getStatusInfos() == null) return false;
         if (other.getStatusInfos() != null && other.getStatusInfos().equals(this.getStatusInfos()) == false) return false; 
+        if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
+        if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
         return true;
     }
     
