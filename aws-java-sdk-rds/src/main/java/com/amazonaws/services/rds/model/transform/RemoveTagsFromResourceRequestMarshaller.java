@@ -39,7 +39,7 @@ public class RemoveTagsFromResourceRequestMarshaller implements Marshaller<Reque
 
         Request<RemoveTagsFromResourceRequest> request = new DefaultRequest<RemoveTagsFromResourceRequest>(removeTagsFromResourceRequest, "AmazonRDS");
         request.addParameter("Action", "RemoveTagsFromResource");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (removeTagsFromResourceRequest.getResourceName() != null) {
             request.addParameter("ResourceName", StringUtils.fromString(removeTagsFromResourceRequest.getResourceName()));

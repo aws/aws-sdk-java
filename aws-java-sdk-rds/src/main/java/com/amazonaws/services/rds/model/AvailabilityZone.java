@@ -37,11 +37,6 @@ public class AvailabilityZone implements Serializable {
     private String name;
 
     /**
-     * True indicates the availability zone is capable of provisioned IOPs.
-     */
-    private Boolean provisionedIopsCapable;
-
-    /**
      * The name of the availability zone.
      *
      * @return The name of the availability zone.
@@ -75,48 +70,6 @@ public class AvailabilityZone implements Serializable {
     }
 
     /**
-     * True indicates the availability zone is capable of provisioned IOPs.
-     *
-     * @return True indicates the availability zone is capable of provisioned IOPs.
-     */
-    public Boolean isProvisionedIopsCapable() {
-        return provisionedIopsCapable;
-    }
-    
-    /**
-     * True indicates the availability zone is capable of provisioned IOPs.
-     *
-     * @param provisionedIopsCapable True indicates the availability zone is capable of provisioned IOPs.
-     */
-    public void setProvisionedIopsCapable(Boolean provisionedIopsCapable) {
-        this.provisionedIopsCapable = provisionedIopsCapable;
-    }
-    
-    /**
-     * True indicates the availability zone is capable of provisioned IOPs.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param provisionedIopsCapable True indicates the availability zone is capable of provisioned IOPs.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public AvailabilityZone withProvisionedIopsCapable(Boolean provisionedIopsCapable) {
-        this.provisionedIopsCapable = provisionedIopsCapable;
-        return this;
-    }
-
-    /**
-     * True indicates the availability zone is capable of provisioned IOPs.
-     *
-     * @return True indicates the availability zone is capable of provisioned IOPs.
-     */
-    public Boolean getProvisionedIopsCapable() {
-        return provisionedIopsCapable;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -128,8 +81,7 @@ public class AvailabilityZone implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ",");
-        if (isProvisionedIopsCapable() != null) sb.append("ProvisionedIopsCapable: " + isProvisionedIopsCapable() );
+        if (getName() != null) sb.append("Name: " + getName() );
         sb.append("}");
         return sb.toString();
     }
@@ -140,7 +92,6 @@ public class AvailabilityZone implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
-        hashCode = prime * hashCode + ((isProvisionedIopsCapable() == null) ? 0 : isProvisionedIopsCapable().hashCode()); 
         return hashCode;
     }
     
@@ -154,8 +105,6 @@ public class AvailabilityZone implements Serializable {
         
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
-        if (other.isProvisionedIopsCapable() == null ^ this.isProvisionedIopsCapable() == null) return false;
-        if (other.isProvisionedIopsCapable() != null && other.isProvisionedIopsCapable().equals(this.isProvisionedIopsCapable()) == false) return false; 
         return true;
     }
     

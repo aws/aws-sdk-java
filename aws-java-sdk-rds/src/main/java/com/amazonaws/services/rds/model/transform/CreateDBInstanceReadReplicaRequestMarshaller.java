@@ -39,7 +39,7 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
 
         Request<CreateDBInstanceReadReplicaRequest> request = new DefaultRequest<CreateDBInstanceReadReplicaRequest>(createDBInstanceReadReplicaRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstanceReadReplica");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (createDBInstanceReadReplicaRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBInstanceIdentifier()));
@@ -87,6 +87,9 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
         }
         if (createDBInstanceReadReplicaRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBSubnetGroupName()));
+        }
+        if (createDBInstanceReadReplicaRequest.getStorageType() != null) {
+            request.addParameter("StorageType", StringUtils.fromString(createDBInstanceReadReplicaRequest.getStorageType()));
         }
 
         return request;

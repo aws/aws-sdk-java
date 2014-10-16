@@ -68,6 +68,17 @@ public class OrderableDBInstanceOption implements Serializable {
     private Boolean vpc;
 
     /**
+     * The storage type for this orderable DB instance.
+     */
+    private String storageType;
+
+    /**
+     * Indicates whether this orderable DB instance supports provisioned
+     * IOPS.
+     */
+    private Boolean supportsIops;
+
+    /**
      * The engine type of the orderable DB instance.
      *
      * @return The engine type of the orderable DB instance.
@@ -394,6 +405,89 @@ public class OrderableDBInstanceOption implements Serializable {
     }
 
     /**
+     * The storage type for this orderable DB instance.
+     *
+     * @return The storage type for this orderable DB instance.
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+    
+    /**
+     * The storage type for this orderable DB instance.
+     *
+     * @param storageType The storage type for this orderable DB instance.
+     */
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    /**
+     * The storage type for this orderable DB instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageType The storage type for this orderable DB instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public OrderableDBInstanceOption withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * Indicates whether this orderable DB instance supports provisioned
+     * IOPS.
+     *
+     * @return Indicates whether this orderable DB instance supports provisioned
+     *         IOPS.
+     */
+    public Boolean isSupportsIops() {
+        return supportsIops;
+    }
+    
+    /**
+     * Indicates whether this orderable DB instance supports provisioned
+     * IOPS.
+     *
+     * @param supportsIops Indicates whether this orderable DB instance supports provisioned
+     *         IOPS.
+     */
+    public void setSupportsIops(Boolean supportsIops) {
+        this.supportsIops = supportsIops;
+    }
+    
+    /**
+     * Indicates whether this orderable DB instance supports provisioned
+     * IOPS.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param supportsIops Indicates whether this orderable DB instance supports provisioned
+     *         IOPS.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public OrderableDBInstanceOption withSupportsIops(Boolean supportsIops) {
+        this.supportsIops = supportsIops;
+        return this;
+    }
+
+    /**
+     * Indicates whether this orderable DB instance supports provisioned
+     * IOPS.
+     *
+     * @return Indicates whether this orderable DB instance supports provisioned
+     *         IOPS.
+     */
+    public Boolean getSupportsIops() {
+        return supportsIops;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -412,7 +506,9 @@ public class OrderableDBInstanceOption implements Serializable {
         if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
         if (isMultiAZCapable() != null) sb.append("MultiAZCapable: " + isMultiAZCapable() + ",");
         if (isReadReplicaCapable() != null) sb.append("ReadReplicaCapable: " + isReadReplicaCapable() + ",");
-        if (isVpc() != null) sb.append("Vpc: " + isVpc() );
+        if (isVpc() != null) sb.append("Vpc: " + isVpc() + ",");
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (isSupportsIops() != null) sb.append("SupportsIops: " + isSupportsIops() );
         sb.append("}");
         return sb.toString();
     }
@@ -430,6 +526,8 @@ public class OrderableDBInstanceOption implements Serializable {
         hashCode = prime * hashCode + ((isMultiAZCapable() == null) ? 0 : isMultiAZCapable().hashCode()); 
         hashCode = prime * hashCode + ((isReadReplicaCapable() == null) ? 0 : isReadReplicaCapable().hashCode()); 
         hashCode = prime * hashCode + ((isVpc() == null) ? 0 : isVpc().hashCode()); 
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((isSupportsIops() == null) ? 0 : isSupportsIops().hashCode()); 
         return hashCode;
     }
     
@@ -457,6 +555,10 @@ public class OrderableDBInstanceOption implements Serializable {
         if (other.isReadReplicaCapable() != null && other.isReadReplicaCapable().equals(this.isReadReplicaCapable()) == false) return false; 
         if (other.isVpc() == null ^ this.isVpc() == null) return false;
         if (other.isVpc() != null && other.isVpc().equals(this.isVpc()) == false) return false; 
+        if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.isSupportsIops() == null ^ this.isSupportsIops() == null) return false;
+        if (other.isSupportsIops() != null && other.isSupportsIops().equals(this.isSupportsIops()) == false) return false; 
         return true;
     }
     

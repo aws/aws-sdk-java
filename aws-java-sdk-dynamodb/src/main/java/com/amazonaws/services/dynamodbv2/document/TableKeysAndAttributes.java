@@ -17,8 +17,8 @@ package com.amazonaws.services.dynamodbv2.document;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -239,7 +239,7 @@ public class TableKeysAndAttributes {
             this.attributeNames = null;
         else
             this.attributeNames = Collections.unmodifiableSet(
-                new HashSet<String>(Arrays.asList(attributeNames)));
+                new LinkedHashSet<String>(Arrays.asList(attributeNames)));
         return this;
     }
 
@@ -248,7 +248,7 @@ public class TableKeysAndAttributes {
             this.attributeNames = null;
         else
             this.attributeNames = Collections.unmodifiableSet(
-                    new HashSet<String>(attributeNames));
+                    new LinkedHashSet<String>(attributeNames));
         return this;
     }
 
@@ -284,7 +284,7 @@ public class TableKeysAndAttributes {
 
     public TableKeysAndAttributes withNameMap(Map<String, String> nameMap) {
         this.nameMap = nameMap == null 
-            ? null : Collections.unmodifiableMap(new HashMap<String, String>(nameMap));
+            ? null : Collections.unmodifiableMap(new LinkedHashMap<String, String>(nameMap));
         return this;
     }
 }

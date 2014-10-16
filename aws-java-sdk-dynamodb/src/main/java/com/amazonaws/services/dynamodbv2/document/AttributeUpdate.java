@@ -16,7 +16,7 @@ package com.amazonaws.services.dynamodbv2.document;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import com.amazonaws.services.dynamodbv2.model.AttributeAction;
@@ -96,7 +96,7 @@ public class AttributeUpdate {
 
     public AttributeUpdate removeElements(Object... elementsToBeRemoved) {
         action = AttributeAction.DELETE;
-        this.attributeValues = Collections.unmodifiableSet(new HashSet<Object>(
+        this.attributeValues = Collections.unmodifiableSet(new LinkedHashSet<Object>(
                 Arrays.asList(elementsToBeRemoved)));
         return this;
     }
@@ -109,7 +109,7 @@ public class AttributeUpdate {
 
     public AttributeUpdate addElements(Object... newElements) {
         action = AttributeAction.ADD;
-        this.attributeValues = Collections.unmodifiableSet(new HashSet<Object>(
+        this.attributeValues = Collections.unmodifiableSet(new LinkedHashSet<Object>(
                 Arrays.asList(newElements)));
         return this;
     }

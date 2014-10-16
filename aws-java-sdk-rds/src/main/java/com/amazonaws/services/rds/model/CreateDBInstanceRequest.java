@@ -30,15 +30,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p>The name of the database to create when
-     * the DB instance is created. If this parameter is not specified, no
-     * database is created in the DB instance. <p>Constraints: <ul> <li>Must
-     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
-     * reserved by the specified database engine</li> </ul> <p>Type: String
-     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
-     * <p>Not applicable. Must be null.
+     * you use. <p>Type: String <p><b>MySQL</b> <p>The name of the database
+     * to create when the DB instance is created. If this parameter is not
+     * specified, no database is created in the DB instance. <p>Constraints:
+     * <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot
+     * be a word reserved by the specified database engine</li> </ul>
+     * <p><b>PostgreSQL</b> <p>The name of the database to create when the DB
+     * instance is created. If this parameter is not specified, no database
+     * is created in the DB instance. <p>Constraints: <ul> <li>Must contain 1
+     * to 63 alphanumeric characters</li> <li>Must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</li> <li>Cannot be a word reserved by the specified
+     * database engine</li> </ul> <p><b>Oracle</b> <p> The Oracle System ID
+     * (SID) of the created DB instance. <p>Default: <code>ORCL</code>
+     * <p>Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+     * <p><b>SQL Server</b> <p>Not applicable. Must be null.
      */
     private String dBName;
 
@@ -54,11 +60,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
-     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
-     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
-     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * database instance. <p> Type: Integer <p><b>MySQL</b> <p> Constraints:
+     * Must be an integer from 5 to 3072. <p><b>PostgreSQL</b> <p>
+     * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
+     * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
+     * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
+     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      * Edition)
      */
     private Integer allocatedStorage;
@@ -66,7 +73,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The compute and memory capacity of the DB instance. <p> Valid Values:
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      */
     private String dBInstanceClass;
 
@@ -75,7 +85,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      */
     private String engine;
 
@@ -180,11 +191,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code> and
-     * <code>3389</code>.
+     * <code>1150-65535</code> <p>Type: Integer <p><b>PostgreSQL</b> <p>
+     * Default: <code>5432</code> <p> Valid Values: <code>1150-65535</code>
+     * <p>Type: Integer <p><b>Oracle</b> <p> Default: <code>1521</code> <p>
+     * Valid Values: <code>1150-65535</code> <p><b>SQL Server</b> <p>
+     * Default: <code>1433</code> <p> Valid Values: <code>1150-65535</code>
+     * except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      */
     private Integer port;
 
@@ -197,7 +210,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
+     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
      * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      */
@@ -219,8 +233,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * be initially allocated for the DB instance. <p> Constraints: To use
+     * PIOPS, this value must be an integer greater than 1000.
      */
     private Integer iops;
 
@@ -262,6 +276,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     */
+    private String storageType;
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     */
+    private String tdeCredentialArn;
+
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     */
+    private String tdeCredentialPassword;
+
+    /**
      * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -279,22 +313,26 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * end with a hyphen or contain two consecutive hyphens.</li> </ul>
      * <p>Example: <code>mydbinstance</code>
      * @param allocatedStorage The amount of storage (in gigabytes) to be
-     * initially allocated for the database instance. <p><b>MySQL</b> <p>
-     * Constraints: Must be an integer from 5 to 1024. <p> Type: Integer
-     * <p><b>Oracle</b> <p> Constraints: Must be an integer from 10 to 1024.
-     * <p><b>SQL Server</b> <p> Constraints: Must be an integer from 200 to
-     * 1024 (Standard Edition and Enterprise Edition) or from 30 to 1024
-     * (Express Edition and Web Edition)
+     * initially allocated for the database instance. <p> Type: Integer
+     * <p><b>MySQL</b> <p> Constraints: Must be an integer from 5 to 3072.
+     * <p><b>PostgreSQL</b> <p> Constraints: Must be an integer from 5 to
+     * 3072. <p><b>Oracle</b> <p> Constraints: Must be an integer from 10 to
+     * 3072. <p><b>SQL Server</b> <p> Constraints: Must be an integer from
+     * 200 to 1024 (Standard Edition and Enterprise Edition) or from 30 to
+     * 1024 (Express Edition and Web Edition)
      * @param dBInstanceClass The compute and memory capacity of the DB
      * instance. <p> Valid Values: <code>db.t1.micro | db.m1.small |
      * db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code>
+     * |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large |
+     * db.m3.xlarge | db.m3.2xlarge | db.r3.large | db.r3.xlarge |
+     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium</code>
      * @param engine The name of the database engine to be used for this
      * instance. <p> Valid Values: <code>MySQL</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code>
+     * <code>sqlserver-web</code> | <code>postgres</code>
      * @param masterUsername The name of master user for the client DB
      * instance. <p><b>MySQL</b> <p>Constraints: <ul> <li>Must be 1 to 16
      * alphanumeric characters.</li> <li>First character must be a
@@ -324,26 +362,38 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p>The name of the database to create when
-     * the DB instance is created. If this parameter is not specified, no
-     * database is created in the DB instance. <p>Constraints: <ul> <li>Must
-     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
-     * reserved by the specified database engine</li> </ul> <p>Type: String
-     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
-     * <p>Not applicable. Must be null.
+     * you use. <p>Type: String <p><b>MySQL</b> <p>The name of the database
+     * to create when the DB instance is created. If this parameter is not
+     * specified, no database is created in the DB instance. <p>Constraints:
+     * <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot
+     * be a word reserved by the specified database engine</li> </ul>
+     * <p><b>PostgreSQL</b> <p>The name of the database to create when the DB
+     * instance is created. If this parameter is not specified, no database
+     * is created in the DB instance. <p>Constraints: <ul> <li>Must contain 1
+     * to 63 alphanumeric characters</li> <li>Must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</li> <li>Cannot be a word reserved by the specified
+     * database engine</li> </ul> <p><b>Oracle</b> <p> The Oracle System ID
+     * (SID) of the created DB instance. <p>Default: <code>ORCL</code>
+     * <p>Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+     * <p><b>SQL Server</b> <p>Not applicable. Must be null.
      *
      * @return The meaning of this parameter differs according to the database engine
-     *         you use. <p><b>MySQL</b> <p>The name of the database to create when
-     *         the DB instance is created. If this parameter is not specified, no
-     *         database is created in the DB instance. <p>Constraints: <ul> <li>Must
-     *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
-     *         reserved by the specified database engine</li> </ul> <p>Type: String
-     *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     *         instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
-     *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
-     *         <p>Not applicable. Must be null.
+     *         you use. <p>Type: String <p><b>MySQL</b> <p>The name of the database
+     *         to create when the DB instance is created. If this parameter is not
+     *         specified, no database is created in the DB instance. <p>Constraints:
+     *         <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot
+     *         be a word reserved by the specified database engine</li> </ul>
+     *         <p><b>PostgreSQL</b> <p>The name of the database to create when the DB
+     *         instance is created. If this parameter is not specified, no database
+     *         is created in the DB instance. <p>Constraints: <ul> <li>Must contain 1
+     *         to 63 alphanumeric characters</li> <li>Must begin with a letter or an
+     *         underscore. Subsequent characters can be letters, underscores, or
+     *         digits (0-9).</li> <li>Cannot be a word reserved by the specified
+     *         database engine</li> </ul> <p><b>Oracle</b> <p> The Oracle System ID
+     *         (SID) of the created DB instance. <p>Default: <code>ORCL</code>
+     *         <p>Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+     *         <p><b>SQL Server</b> <p>Not applicable. Must be null.
      */
     public String getDBName() {
         return dBName;
@@ -351,26 +401,38 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p>The name of the database to create when
-     * the DB instance is created. If this parameter is not specified, no
-     * database is created in the DB instance. <p>Constraints: <ul> <li>Must
-     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
-     * reserved by the specified database engine</li> </ul> <p>Type: String
-     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
-     * <p>Not applicable. Must be null.
+     * you use. <p>Type: String <p><b>MySQL</b> <p>The name of the database
+     * to create when the DB instance is created. If this parameter is not
+     * specified, no database is created in the DB instance. <p>Constraints:
+     * <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot
+     * be a word reserved by the specified database engine</li> </ul>
+     * <p><b>PostgreSQL</b> <p>The name of the database to create when the DB
+     * instance is created. If this parameter is not specified, no database
+     * is created in the DB instance. <p>Constraints: <ul> <li>Must contain 1
+     * to 63 alphanumeric characters</li> <li>Must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</li> <li>Cannot be a word reserved by the specified
+     * database engine</li> </ul> <p><b>Oracle</b> <p> The Oracle System ID
+     * (SID) of the created DB instance. <p>Default: <code>ORCL</code>
+     * <p>Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+     * <p><b>SQL Server</b> <p>Not applicable. Must be null.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. <p><b>MySQL</b> <p>The name of the database to create when
-     *         the DB instance is created. If this parameter is not specified, no
-     *         database is created in the DB instance. <p>Constraints: <ul> <li>Must
-     *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
-     *         reserved by the specified database engine</li> </ul> <p>Type: String
-     *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     *         instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
-     *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
-     *         <p>Not applicable. Must be null.
+     *         you use. <p>Type: String <p><b>MySQL</b> <p>The name of the database
+     *         to create when the DB instance is created. If this parameter is not
+     *         specified, no database is created in the DB instance. <p>Constraints:
+     *         <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot
+     *         be a word reserved by the specified database engine</li> </ul>
+     *         <p><b>PostgreSQL</b> <p>The name of the database to create when the DB
+     *         instance is created. If this parameter is not specified, no database
+     *         is created in the DB instance. <p>Constraints: <ul> <li>Must contain 1
+     *         to 63 alphanumeric characters</li> <li>Must begin with a letter or an
+     *         underscore. Subsequent characters can be letters, underscores, or
+     *         digits (0-9).</li> <li>Cannot be a word reserved by the specified
+     *         database engine</li> </ul> <p><b>Oracle</b> <p> The Oracle System ID
+     *         (SID) of the created DB instance. <p>Default: <code>ORCL</code>
+     *         <p>Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+     *         <p><b>SQL Server</b> <p>Not applicable. Must be null.
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
@@ -378,28 +440,40 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The meaning of this parameter differs according to the database engine
-     * you use. <p><b>MySQL</b> <p>The name of the database to create when
-     * the DB instance is created. If this parameter is not specified, no
-     * database is created in the DB instance. <p>Constraints: <ul> <li>Must
-     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
-     * reserved by the specified database engine</li> </ul> <p>Type: String
-     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
-     * <p>Not applicable. Must be null.
+     * you use. <p>Type: String <p><b>MySQL</b> <p>The name of the database
+     * to create when the DB instance is created. If this parameter is not
+     * specified, no database is created in the DB instance. <p>Constraints:
+     * <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot
+     * be a word reserved by the specified database engine</li> </ul>
+     * <p><b>PostgreSQL</b> <p>The name of the database to create when the DB
+     * instance is created. If this parameter is not specified, no database
+     * is created in the DB instance. <p>Constraints: <ul> <li>Must contain 1
+     * to 63 alphanumeric characters</li> <li>Must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</li> <li>Cannot be a word reserved by the specified
+     * database engine</li> </ul> <p><b>Oracle</b> <p> The Oracle System ID
+     * (SID) of the created DB instance. <p>Default: <code>ORCL</code>
+     * <p>Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+     * <p><b>SQL Server</b> <p>Not applicable. Must be null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
-     *         you use. <p><b>MySQL</b> <p>The name of the database to create when
-     *         the DB instance is created. If this parameter is not specified, no
-     *         database is created in the DB instance. <p>Constraints: <ul> <li>Must
-     *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
-     *         reserved by the specified database engine</li> </ul> <p>Type: String
-     *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     *         instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
-     *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
-     *         <p>Not applicable. Must be null.
+     *         you use. <p>Type: String <p><b>MySQL</b> <p>The name of the database
+     *         to create when the DB instance is created. If this parameter is not
+     *         specified, no database is created in the DB instance. <p>Constraints:
+     *         <ul> <li>Must contain 1 to 64 alphanumeric characters</li> <li>Cannot
+     *         be a word reserved by the specified database engine</li> </ul>
+     *         <p><b>PostgreSQL</b> <p>The name of the database to create when the DB
+     *         instance is created. If this parameter is not specified, no database
+     *         is created in the DB instance. <p>Constraints: <ul> <li>Must contain 1
+     *         to 63 alphanumeric characters</li> <li>Must begin with a letter or an
+     *         underscore. Subsequent characters can be letters, underscores, or
+     *         digits (0-9).</li> <li>Cannot be a word reserved by the specified
+     *         database engine</li> </ul> <p><b>Oracle</b> <p> The Oracle System ID
+     *         (SID) of the created DB instance. <p>Default: <code>ORCL</code>
+     *         <p>Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+     *         <p><b>SQL Server</b> <p>Not applicable. Must be null.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -474,19 +548,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
-     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
-     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
-     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * database instance. <p> Type: Integer <p><b>MySQL</b> <p> Constraints:
+     * Must be an integer from 5 to 3072. <p><b>PostgreSQL</b> <p>
+     * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
+     * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
+     * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
+     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      * Edition)
      *
      * @return The amount of storage (in gigabytes) to be initially allocated for the
-     *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
-     *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     *         Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
-     *         Constraints: Must be an integer from 200 to 1024 (Standard Edition and
-     *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         database instance. <p> Type: Integer <p><b>MySQL</b> <p> Constraints:
+     *         Must be an integer from 5 to 3072. <p><b>PostgreSQL</b> <p>
+     *         Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
+     *         Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
+     *         <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
+     *         and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      *         Edition)
      */
     public Integer getAllocatedStorage() {
@@ -495,19 +571,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
-     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
-     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
-     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * database instance. <p> Type: Integer <p><b>MySQL</b> <p> Constraints:
+     * Must be an integer from 5 to 3072. <p><b>PostgreSQL</b> <p>
+     * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
+     * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
+     * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
+     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      * Edition)
      *
      * @param allocatedStorage The amount of storage (in gigabytes) to be initially allocated for the
-     *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
-     *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     *         Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
-     *         Constraints: Must be an integer from 200 to 1024 (Standard Edition and
-     *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         database instance. <p> Type: Integer <p><b>MySQL</b> <p> Constraints:
+     *         Must be an integer from 5 to 3072. <p><b>PostgreSQL</b> <p>
+     *         Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
+     *         Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
+     *         <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
+     *         and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      *         Edition)
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -516,21 +594,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
-     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
-     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
-     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * database instance. <p> Type: Integer <p><b>MySQL</b> <p> Constraints:
+     * Must be an integer from 5 to 3072. <p><b>PostgreSQL</b> <p>
+     * Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
+     * Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
+     * <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
+     * and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      * Edition)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allocatedStorage The amount of storage (in gigabytes) to be initially allocated for the
-     *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
-     *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     *         Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
-     *         Constraints: Must be an integer from 200 to 1024 (Standard Edition and
-     *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         database instance. <p> Type: Integer <p><b>MySQL</b> <p> Constraints:
+     *         Must be an integer from 5 to 3072. <p><b>PostgreSQL</b> <p>
+     *         Constraints: Must be an integer from 5 to 3072. <p><b>Oracle</b> <p>
+     *         Constraints: Must be an integer from 10 to 3072. <p><b>SQL Server</b>
+     *         <p> Constraints: Must be an integer from 200 to 1024 (Standard Edition
+     *         and Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      *         Edition)
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -544,11 +624,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The compute and memory capacity of the DB instance. <p> Valid Values:
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *
      * @return The compute and memory capacity of the DB instance. <p> Valid Values:
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -557,11 +643,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The compute and memory capacity of the DB instance. <p> Valid Values:
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *
      * @param dBInstanceClass The compute and memory capacity of the DB instance. <p> Valid Values:
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -570,13 +662,19 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The compute and memory capacity of the DB instance. <p> Valid Values:
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     * db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     * db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the DB instance. <p> Valid Values:
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge |
+     *         db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge |
+     *         db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge |
+     *         db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -591,13 +689,15 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      *
      * @return The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      *         <code>oracle-se</code> | <code>oracle-ee</code> |
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      */
     public String getEngine() {
         return engine;
@@ -608,13 +708,15 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      *
      * @param engine The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      *         <code>oracle-se</code> | <code>oracle-ee</code> |
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -625,7 +727,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      * <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     * <code>postgres</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -633,7 +736,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
      *         <code>oracle-se</code> | <code>oracle-ee</code> |
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
+     *         <code>postgres</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1340,19 +1444,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code> and
-     * <code>3389</code>.
+     * <code>1150-65535</code> <p>Type: Integer <p><b>PostgreSQL</b> <p>
+     * Default: <code>5432</code> <p> Valid Values: <code>1150-65535</code>
+     * <p>Type: Integer <p><b>Oracle</b> <p> Default: <code>1521</code> <p>
+     * Valid Values: <code>1150-65535</code> <p><b>SQL Server</b> <p>
+     * Default: <code>1433</code> <p> Valid Values: <code>1150-65535</code>
+     * except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      *
      * @return The port number on which the database accepts connections.
      *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
-     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     *         <code>1150-65535</code> except for <code>1434</code> and
-     *         <code>3389</code>.
+     *         <code>1150-65535</code> <p>Type: Integer <p><b>PostgreSQL</b> <p>
+     *         Default: <code>5432</code> <p> Valid Values: <code>1150-65535</code>
+     *         <p>Type: Integer <p><b>Oracle</b> <p> Default: <code>1521</code> <p>
+     *         Valid Values: <code>1150-65535</code> <p><b>SQL Server</b> <p>
+     *         Default: <code>1433</code> <p> Valid Values: <code>1150-65535</code>
+     *         except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      */
     public Integer getPort() {
         return port;
@@ -1361,19 +1469,23 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code> and
-     * <code>3389</code>.
+     * <code>1150-65535</code> <p>Type: Integer <p><b>PostgreSQL</b> <p>
+     * Default: <code>5432</code> <p> Valid Values: <code>1150-65535</code>
+     * <p>Type: Integer <p><b>Oracle</b> <p> Default: <code>1521</code> <p>
+     * Valid Values: <code>1150-65535</code> <p><b>SQL Server</b> <p>
+     * Default: <code>1433</code> <p> Valid Values: <code>1150-65535</code>
+     * except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      *
      * @param port The port number on which the database accepts connections.
      *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
-     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     *         <code>1150-65535</code> except for <code>1434</code> and
-     *         <code>3389</code>.
+     *         <code>1150-65535</code> <p>Type: Integer <p><b>PostgreSQL</b> <p>
+     *         Default: <code>5432</code> <p> Valid Values: <code>1150-65535</code>
+     *         <p>Type: Integer <p><b>Oracle</b> <p> Default: <code>1521</code> <p>
+     *         Valid Values: <code>1150-65535</code> <p><b>SQL Server</b> <p>
+     *         Default: <code>1433</code> <p> Valid Values: <code>1150-65535</code>
+     *         except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      */
     public void setPort(Integer port) {
         this.port = port;
@@ -1382,21 +1494,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     /**
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
-     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code> and
-     * <code>3389</code>.
+     * <code>1150-65535</code> <p>Type: Integer <p><b>PostgreSQL</b> <p>
+     * Default: <code>5432</code> <p> Valid Values: <code>1150-65535</code>
+     * <p>Type: Integer <p><b>Oracle</b> <p> Default: <code>1521</code> <p>
+     * Valid Values: <code>1150-65535</code> <p><b>SQL Server</b> <p>
+     * Default: <code>1433</code> <p> Valid Values: <code>1150-65535</code>
+     * except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port The port number on which the database accepts connections.
      *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
-     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
-     *         <code>1150-65535</code> except for <code>1434</code> and
-     *         <code>3389</code>.
+     *         <code>1150-65535</code> <p>Type: Integer <p><b>PostgreSQL</b> <p>
+     *         Default: <code>5432</code> <p> Valid Values: <code>1150-65535</code>
+     *         <p>Type: Integer <p><b>Oracle</b> <p> Default: <code>1521</code> <p>
+     *         Valid Values: <code>1150-65535</code> <p><b>SQL Server</b> <p>
+     *         Default: <code>1433</code> <p> Valid Values: <code>1150-65535</code>
+     *         except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
+     *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1466,12 +1582,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
+     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
      * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      *
      * @return The version number of the database engine to use. <p><b>MySQL</b>
-     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
+     *         <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
      *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      */
@@ -1481,12 +1599,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
+     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
      * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      *
      * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
-     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
+     *         <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
      *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      */
@@ -1496,14 +1616,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
-     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
+     * <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
      * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
-     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>PostgreSQL</b>
+     *         <p>Example: <code>9.3</code> <p>Type: String <p><b>Oracle</b>
      *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      *
@@ -1620,12 +1742,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * be initially allocated for the DB instance. <p> Constraints: To use
+     * PIOPS, this value must be an integer greater than 1000.
      *
      * @return The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     *         be initially allocated for the DB instance. <p> Constraints: To use
+     *         PIOPS, this value must be an integer greater than 1000.
      */
     public Integer getIops() {
         return iops;
@@ -1633,12 +1755,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * be initially allocated for the DB instance. <p> Constraints: To use
+     * PIOPS, this value must be an integer greater than 1000.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     *         be initially allocated for the DB instance. <p> Constraints: To use
+     *         PIOPS, this value must be an integer greater than 1000.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -1646,14 +1768,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * be initially allocated for the DB instance. <p> Constraints: To use
+     * PIOPS, this value must be an integer greater than 1000.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     *         be initially allocated for the DB instance. <p> Constraints: To use
+     *         PIOPS, this value must be an integer greater than 1000.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1966,6 +2088,135 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @return Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance. <p>
+     * Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     * <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance. <p>
+     *         Valid values: <code>standard | gp2 | io1</code> <p> If you specify
+     *         <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @return The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public String getTdeCredentialArn() {
+        return tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     */
+    public void setTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+    }
+    
+    /**
+     * The ARN from the Key Store with which to associate the instance for
+     * TDE encryption.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialArn The ARN from the Key Store with which to associate the instance for
+     *         TDE encryption.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withTdeCredentialArn(String tdeCredentialArn) {
+        this.tdeCredentialArn = tdeCredentialArn;
+        return this;
+    }
+
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     *
+     * @return The password for the given ARN from the Key Store in order to access
+     *         the device.
+     */
+    public String getTdeCredentialPassword() {
+        return tdeCredentialPassword;
+    }
+    
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     *
+     * @param tdeCredentialPassword The password for the given ARN from the Key Store in order to access
+     *         the device.
+     */
+    public void setTdeCredentialPassword(String tdeCredentialPassword) {
+        this.tdeCredentialPassword = tdeCredentialPassword;
+    }
+    
+    /**
+     * The password for the given ARN from the Key Store in order to access
+     * the device.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tdeCredentialPassword The password for the given ARN from the Key Store in order to access
+     *         the device.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withTdeCredentialPassword(String tdeCredentialPassword) {
+        this.tdeCredentialPassword = tdeCredentialPassword;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2001,7 +2252,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
+        if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
+        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() );
         sb.append("}");
         return sb.toString();
     }
@@ -2036,6 +2290,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
+        hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         return hashCode;
     }
     
@@ -2097,6 +2354,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
+        if (other.getTdeCredentialArn() == null ^ this.getTdeCredentialArn() == null) return false;
+        if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
+        if (other.getTdeCredentialPassword() == null ^ this.getTdeCredentialPassword() == null) return false;
+        if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
         return true;
     }
     

@@ -205,8 +205,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Gets a shard iterator in <code>ShardIterator</code> . The shard
-     * iterator specifies the position in the shard from which you want to
+     * Gets a shard iterator. A shard iterator expires five minutes after it
+     * is returned to the requester.
+     * </p>
+     * <p>
+     * A shard iterator specifies the position in the shard from which to
      * start reading data records sequentially. A shard iterator specifies
      * this position using the sequence number of a data record in a shard. A
      * sequence number is the identifier associated with every record
@@ -219,18 +222,14 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * position denoted by a specific sequence number by using the
      * <code>AT_SEQUENCE_NUMBER</code> shard iterator type, or right after
      * the sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code>
-     * shard iterator type, using sequence numbers returned by earlier
-     * PutRecord, GetRecords or DescribeStream requests. You can specify the
-     * shard iterator type TRIM_HORIZON in the request to cause
+     * shard iterator type, using sequence numbers returned by earlier calls
+     * to PutRecord, GetRecords, or DescribeStream. You can specify the shard
+     * iterator type <code>TRIM_HORIZON</code> in the request to cause
      * <code>ShardIterator</code> to point to the last untrimmed record in
      * the shard in the system, which is the oldest data record in the shard.
      * Or you can point to just after the most recent record in the shard, by
-     * using the shard iterator type LATEST, so that you always read the most
-     * recent data in the shard.
-     * </p>
-     * <p>
-     * <b>Note:</b> Each shard iterator expires five minutes after it is
-     * returned to the requester.
+     * using the shard iterator type <code>LATEST</code> , so that you always
+     * read the most recent data in the shard.
      * </p>
      * <p>
      * When you repeatedly read from an Amazon Kinesis stream use a
@@ -245,16 +244,14 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * If a <code>GetShardIterator</code> request is made too often, you
-     * will receive a <code>ProvisionedThroughputExceededException</code> .
-     * For more information about throughput limits, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * receive a <code>ProvisionedThroughputExceededException</code> . For
+     * more information about throughput limits, see GetRecords.
      * </p>
      * <p>
-     * <code>GetShardIterator</code> can return <code>null</code> for its
-     * <code>ShardIterator</code> to indicate that the shard has been closed
-     * and that the requested iterator will return no more data. A shard can
-     * be closed by SplitShard or MergeShards.
+     * If the shard is closed, the iterator can't return more data, and
+     * <code>GetShardIterator</code> returns <code>null</code> for its
+     * <code>ShardIterator</code> . A shard can be closed using SplitShard or
+     * MergeShards.
      * </p>
      * <p>
      * <code>GetShardIterator</code> has a limit of 5 transactions per
@@ -281,8 +278,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Gets a shard iterator in <code>ShardIterator</code> . The shard
-     * iterator specifies the position in the shard from which you want to
+     * Gets a shard iterator. A shard iterator expires five minutes after it
+     * is returned to the requester.
+     * </p>
+     * <p>
+     * A shard iterator specifies the position in the shard from which to
      * start reading data records sequentially. A shard iterator specifies
      * this position using the sequence number of a data record in a shard. A
      * sequence number is the identifier associated with every record
@@ -295,18 +295,14 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * position denoted by a specific sequence number by using the
      * <code>AT_SEQUENCE_NUMBER</code> shard iterator type, or right after
      * the sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code>
-     * shard iterator type, using sequence numbers returned by earlier
-     * PutRecord, GetRecords or DescribeStream requests. You can specify the
-     * shard iterator type TRIM_HORIZON in the request to cause
+     * shard iterator type, using sequence numbers returned by earlier calls
+     * to PutRecord, GetRecords, or DescribeStream. You can specify the shard
+     * iterator type <code>TRIM_HORIZON</code> in the request to cause
      * <code>ShardIterator</code> to point to the last untrimmed record in
      * the shard in the system, which is the oldest data record in the shard.
      * Or you can point to just after the most recent record in the shard, by
-     * using the shard iterator type LATEST, so that you always read the most
-     * recent data in the shard.
-     * </p>
-     * <p>
-     * <b>Note:</b> Each shard iterator expires five minutes after it is
-     * returned to the requester.
+     * using the shard iterator type <code>LATEST</code> , so that you always
+     * read the most recent data in the shard.
      * </p>
      * <p>
      * When you repeatedly read from an Amazon Kinesis stream use a
@@ -321,16 +317,14 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * </p>
      * <p>
      * If a <code>GetShardIterator</code> request is made too often, you
-     * will receive a <code>ProvisionedThroughputExceededException</code> .
-     * For more information about throughput limits, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * receive a <code>ProvisionedThroughputExceededException</code> . For
+     * more information about throughput limits, see GetRecords.
      * </p>
      * <p>
-     * <code>GetShardIterator</code> can return <code>null</code> for its
-     * <code>ShardIterator</code> to indicate that the shard has been closed
-     * and that the requested iterator will return no more data. A shard can
-     * be closed by SplitShard or MergeShards.
+     * If the shard is closed, the iterator can't return more data, and
+     * <code>GetShardIterator</code> returns <code>null</code> for its
+     * <code>ShardIterator</code> . A shard can be closed using SplitShard or
+     * MergeShards.
      * </p>
      * <p>
      * <code>GetShardIterator</code> has a limit of 5 transactions per
@@ -384,9 +378,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * using the hash key ranges of the shards. You can override hashing the
      * partition key to determine the shard by explicitly specifying a hash
      * value using the <code>ExplicitHashKey</code> parameter. For more
-     * information, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key"> Partition Key </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * <code>PutRecord</code> returns the shard ID of where the data record
@@ -396,9 +390,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Sequence numbers generally increase over time. To guarantee strictly
      * increasing ordering, use the <code>SequenceNumberForOrdering</code>
-     * parameter. For more information, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-sequence-number"> Sequence Number </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * If a <code>PutRecord</code> request cannot be processed because of
@@ -453,9 +447,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * using the hash key ranges of the shards. You can override hashing the
      * partition key to determine the shard by explicitly specifying a hash
      * value using the <code>ExplicitHashKey</code> parameter. For more
-     * information, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * information, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key"> Partition Key </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * <code>PutRecord</code> returns the shard ID of where the data record
@@ -465,9 +459,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Sequence numbers generally increase over time. To guarantee strictly
      * increasing ordering, use the <code>SequenceNumberForOrdering</code>
-     * parameter. For more information, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * parameter. For more information, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-sequence-number"> Sequence Number </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * If a <code>PutRecord</code> request cannot be processed because of
@@ -559,46 +553,62 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Gets data records from a shard.
      * </p>
      * <p>
-     * You specify a shard iterator for the shard using the
-     * <code>ShardIterator</code> parameter. The shard iterator specifies the
-     * position in the shard from which you want to start reading data
-     * records sequentially. <code>GetRecords</code> returns a new shard
-     * iterator in <code>NextShardIterator</code> . If the shard has been
-     * closed, the shard iterator can't return more data and
-     * <code>GetRecords</code> returns <code>null</code> in
-     * <code>NextShardIterator</code> . To read from an Amazon Kinesis stream
-     * continually, use GetShardIterator to get the shard iterator to specify
-     * in the first <code>GetRecords</code> call, and then specify the shard
-     * iterator returned in <code>NextShardIterator</code> in subsequent
-     * calls.
+     * Specify a shard iterator using the <code>ShardIterator</code>
+     * parameter. The shard iterator specifies the position in the shard from
+     * which you want to start reading data records sequentially. If there
+     * are no records available in the portion of the shard that the iterator
+     * points to, <code>GetRecords</code> returns an empty list. Note that it
+     * might take multiple calls to get to a portion of the shard that
+     * contains records.
      * </p>
      * <p>
-     * If there are no records available, <code>GetRecords</code> returns an
-     * empty list.
+     * You can scale by provisioning multiple shards. Your application
+     * should have one thread per shard, each reading continuously from its
+     * stream. To read from a stream continually, call
+     * <code>GetRecords</code> in a loop. Use GetShardIterator to get the
+     * shard iterator to specify in the first <code>GetRecords</code> call.
+     * <code>GetRecords</code> returns a new shard iterator in
+     * <code>NextShardIterator</code> . Specify the shard iterator returned
+     * in <code>NextShardIterator</code> in subsequent calls to
+     * <code>GetRecords</code> . Note that if the shard has been closed, the
+     * shard iterator can't return more data and <code>GetRecords</code>
+     * returns <code>null</code> in <code>NextShardIterator</code> . You can
+     * terminate the loop when the shard is closed, or when the shard
+     * iterator reaches the record with the sequence number or other
+     * attribute that marks it as the last record to process.
      * </p>
      * <p>
-     * The size of the data returned by <code>GetRecords</code> will vary,
-     * but the maximum size is 10 MB. Each data record can be up to 50 KB in
-     * size, and each shard can read up to 2 MB per second. You can ensure
-     * that your calls don't exceed the maximum size or throughput by using
-     * the <code>Limit</code> parameter to specify the maximum number of
-     * records that <code>GetRecords</code> can return. Consider your average
-     * record size when specifying a limit. For example, if your average
-     * record size is 40 KB, you can limit the data returned to about 1 MB
-     * per call using a limit of 25.
+     * Each data record can be up to 50 KB in size, and each shard can read
+     * up to 2 MB per second. You can ensure that your calls don't exceed the
+     * maximum supported size or throughput by specifying the maximum number
+     * of records that <code>GetRecords</code> can return in the
+     * <code>Limit</code> parameter. Consider your average record size when
+     * determining this limit. For example, if your average record size is 40
+     * KB, you can limit the data returned to about 1 MB per call by
+     * specifying 25 as the limit.
      * </p>
      * <p>
-     * If there is insufficient provisioned throughput on the shard involved
-     * in the request, subsequent calls to <code>GetRecords</code> made
-     * within the next one second throw
-     * <code>ProvisionedThroughputExceededException</code> .
-     * <code>GetRecords</code> won't return data when it throws an exception,
-     * so wait one second before making another call or the application won't
-     * get any records. Also, you can scale by provisioning multiple shards.
+     * The size of the data returned by <code>GetRecords</code> will vary
+     * depending on the utilization of the shard. The maximum size of data
+     * that <code>GetRecords</code> can return is 10 MB. If a call returns 10
+     * MB of data, subsequent calls made within the next 5 seconds throw
+     * <code>ProvisionedThroughputExceededException</code> . If there is
+     * insufficient provisioned throughput on the shard, subsequent calls
+     * made within the next 1 second throw
+     * <code>ProvisionedThroughputExceededException</code> . Note that
+     * <code>GetRecords</code> won't return any data when it throws an
+     * exception. For this reason, we recommend that you wait one second
+     * between calls to <code>GetRecords</code> ; however, it's possible that
+     * the application will get exceptions for longer than 1 second.
      * </p>
      * <p>
-     * To detect whether you are falling behind in processing, add a
-     * timestamp to your records and note how long it takes to process them.
+     * To detect whether the application is falling behind in processing,
+     * add a timestamp to your records and note how long it takes to process
+     * them. You can also monitor how much data is in a stream using the
+     * CloudWatch metrics for <code>PutRecord</code> . For more information,
+     * see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html"> Monitoring Amazon Kinesis with Amazon CloudWatch </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      *
      * @param getRecordsRequest Container for the necessary parameters to
@@ -624,46 +634,62 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Gets data records from a shard.
      * </p>
      * <p>
-     * You specify a shard iterator for the shard using the
-     * <code>ShardIterator</code> parameter. The shard iterator specifies the
-     * position in the shard from which you want to start reading data
-     * records sequentially. <code>GetRecords</code> returns a new shard
-     * iterator in <code>NextShardIterator</code> . If the shard has been
-     * closed, the shard iterator can't return more data and
-     * <code>GetRecords</code> returns <code>null</code> in
-     * <code>NextShardIterator</code> . To read from an Amazon Kinesis stream
-     * continually, use GetShardIterator to get the shard iterator to specify
-     * in the first <code>GetRecords</code> call, and then specify the shard
-     * iterator returned in <code>NextShardIterator</code> in subsequent
-     * calls.
+     * Specify a shard iterator using the <code>ShardIterator</code>
+     * parameter. The shard iterator specifies the position in the shard from
+     * which you want to start reading data records sequentially. If there
+     * are no records available in the portion of the shard that the iterator
+     * points to, <code>GetRecords</code> returns an empty list. Note that it
+     * might take multiple calls to get to a portion of the shard that
+     * contains records.
      * </p>
      * <p>
-     * If there are no records available, <code>GetRecords</code> returns an
-     * empty list.
+     * You can scale by provisioning multiple shards. Your application
+     * should have one thread per shard, each reading continuously from its
+     * stream. To read from a stream continually, call
+     * <code>GetRecords</code> in a loop. Use GetShardIterator to get the
+     * shard iterator to specify in the first <code>GetRecords</code> call.
+     * <code>GetRecords</code> returns a new shard iterator in
+     * <code>NextShardIterator</code> . Specify the shard iterator returned
+     * in <code>NextShardIterator</code> in subsequent calls to
+     * <code>GetRecords</code> . Note that if the shard has been closed, the
+     * shard iterator can't return more data and <code>GetRecords</code>
+     * returns <code>null</code> in <code>NextShardIterator</code> . You can
+     * terminate the loop when the shard is closed, or when the shard
+     * iterator reaches the record with the sequence number or other
+     * attribute that marks it as the last record to process.
      * </p>
      * <p>
-     * The size of the data returned by <code>GetRecords</code> will vary,
-     * but the maximum size is 10 MB. Each data record can be up to 50 KB in
-     * size, and each shard can read up to 2 MB per second. You can ensure
-     * that your calls don't exceed the maximum size or throughput by using
-     * the <code>Limit</code> parameter to specify the maximum number of
-     * records that <code>GetRecords</code> can return. Consider your average
-     * record size when specifying a limit. For example, if your average
-     * record size is 40 KB, you can limit the data returned to about 1 MB
-     * per call using a limit of 25.
+     * Each data record can be up to 50 KB in size, and each shard can read
+     * up to 2 MB per second. You can ensure that your calls don't exceed the
+     * maximum supported size or throughput by specifying the maximum number
+     * of records that <code>GetRecords</code> can return in the
+     * <code>Limit</code> parameter. Consider your average record size when
+     * determining this limit. For example, if your average record size is 40
+     * KB, you can limit the data returned to about 1 MB per call by
+     * specifying 25 as the limit.
      * </p>
      * <p>
-     * If there is insufficient provisioned throughput on the shard involved
-     * in the request, subsequent calls to <code>GetRecords</code> made
-     * within the next one second throw
-     * <code>ProvisionedThroughputExceededException</code> .
-     * <code>GetRecords</code> won't return data when it throws an exception,
-     * so wait one second before making another call or the application won't
-     * get any records. Also, you can scale by provisioning multiple shards.
+     * The size of the data returned by <code>GetRecords</code> will vary
+     * depending on the utilization of the shard. The maximum size of data
+     * that <code>GetRecords</code> can return is 10 MB. If a call returns 10
+     * MB of data, subsequent calls made within the next 5 seconds throw
+     * <code>ProvisionedThroughputExceededException</code> . If there is
+     * insufficient provisioned throughput on the shard, subsequent calls
+     * made within the next 1 second throw
+     * <code>ProvisionedThroughputExceededException</code> . Note that
+     * <code>GetRecords</code> won't return any data when it throws an
+     * exception. For this reason, we recommend that you wait one second
+     * between calls to <code>GetRecords</code> ; however, it's possible that
+     * the application will get exceptions for longer than 1 second.
      * </p>
      * <p>
-     * To detect whether you are falling behind in processing, add a
-     * timestamp to your records and note how long it takes to process them.
+     * To detect whether the application is falling behind in processing,
+     * add a timestamp to your records and note how long it takes to process
+     * them. You can also monitor how much data is in a stream using the
+     * CloudWatch metrics for <code>PutRecord</code> . For more information,
+     * see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html"> Monitoring Amazon Kinesis with Amazon CloudWatch </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      *
      * @param getRecordsRequest Container for the necessary parameters to
@@ -712,9 +738,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * cases, the new hash key might simply be the average of the beginning
      * and ending hash key, but it can be any hash key value in the range
      * being mapped into the shard. For more information about splitting
-     * shards, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * shards, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-split"> Split a Shard </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * You can use DescribeStream to determine the shard ID and hash key
@@ -802,9 +828,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * cases, the new hash key might simply be the average of the beginning
      * and ending hash key, but it can be any hash key value in the range
      * being mapped into the shard. For more information about splitting
-     * shards, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * shards, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-split"> Split a Shard </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * You can use DescribeStream to determine the shard ID and hash key
@@ -1309,9 +1335,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <code>MergeShards</code> is called when there is a need to reduce the
      * overall capacity of a stream because of excess capacity that is not
      * being used. You must specify the shard to be merged and the adjacent
-     * shard for a stream. For more information about merging shards, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * shard for a stream. For more information about merging shards, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-merge"> Merge Two Shards </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * If the stream is in the <code>ACTIVE</code> state, you can call
@@ -1383,9 +1409,9 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <code>MergeShards</code> is called when there is a need to reduce the
      * overall capacity of a stream because of excess capacity that is not
      * being used. You must specify the shard to be merged and the adjacent
-     * shard for a stream. For more information about merging shards, see the
-     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
-     * .
+     * shard for a stream. For more information about merging shards, see
+     * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-java-resharding-merge"> Merge Two Shards </a>
+     * in the <i>Amazon Kinesis Developer Guide</i> .
      * </p>
      * <p>
      * If the stream is in the <code>ACTIVE</code> state, you can call

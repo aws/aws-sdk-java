@@ -23,7 +23,8 @@ import java.io.Serializable;
  * processed. The following options can be configured for an analysis
  * scheme: <code>Synonyms</code> ,
  * <code>Stopwords</code> ,
- * <code>StemmingDictionary</code> , and
+ * <code>StemmingDictionary</code> ,
+ * <code>JapaneseTokenizationDictionary</code> and
  * <code>AlgorithmicStemming</code> .
  * </p>
  */
@@ -53,6 +54,7 @@ public class AnalysisScheme implements Serializable {
 
     /**
      * Synonyms, stopwords, and stemming options for an analysis scheme.
+     * Includes tokenization dictionary for Japanese.
      */
     private AnalysisOptions analysisOptions;
 
@@ -219,8 +221,10 @@ public class AnalysisScheme implements Serializable {
 
     /**
      * Synonyms, stopwords, and stemming options for an analysis scheme.
+     * Includes tokenization dictionary for Japanese.
      *
      * @return Synonyms, stopwords, and stemming options for an analysis scheme.
+     *         Includes tokenization dictionary for Japanese.
      */
     public AnalysisOptions getAnalysisOptions() {
         return analysisOptions;
@@ -228,8 +232,10 @@ public class AnalysisScheme implements Serializable {
     
     /**
      * Synonyms, stopwords, and stemming options for an analysis scheme.
+     * Includes tokenization dictionary for Japanese.
      *
      * @param analysisOptions Synonyms, stopwords, and stemming options for an analysis scheme.
+     *         Includes tokenization dictionary for Japanese.
      */
     public void setAnalysisOptions(AnalysisOptions analysisOptions) {
         this.analysisOptions = analysisOptions;
@@ -237,10 +243,12 @@ public class AnalysisScheme implements Serializable {
     
     /**
      * Synonyms, stopwords, and stemming options for an analysis scheme.
+     * Includes tokenization dictionary for Japanese.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param analysisOptions Synonyms, stopwords, and stemming options for an analysis scheme.
+     *         Includes tokenization dictionary for Japanese.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

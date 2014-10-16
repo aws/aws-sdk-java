@@ -19,7 +19,7 @@ import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -73,7 +73,8 @@ public class BatchWriteItemImpl implements BatchWriteItemApi {
                 spec.getUnprocessedItems();
         if (requestItems == null || requestItems.size() == 0) {
             // handle new requests only if there is no unprocessed items
-            requestItems = new HashMap<String, List<WriteRequest>>(tableWriteItemsCol.size());
+            requestItems = new LinkedHashMap<String, List<WriteRequest>>
+                (tableWriteItemsCol.size());
         }
         for (TableWriteItems tableWriteItems: tableWriteItemsCol) {
             // items to be put to a single table

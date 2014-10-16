@@ -30,7 +30,7 @@ public class DownloadDBLogFilePortionResult implements Serializable {
     private String logFileData;
 
     /**
-     * An optional pagination token provided by a previous
+     * A pagination token that can be used in a subsequent
      * DownloadDBLogFilePortion request.
      */
     private String marker;
@@ -75,10 +75,10 @@ public class DownloadDBLogFilePortionResult implements Serializable {
     }
 
     /**
-     * An optional pagination token provided by a previous
+     * A pagination token that can be used in a subsequent
      * DownloadDBLogFilePortion request.
      *
-     * @return An optional pagination token provided by a previous
+     * @return A pagination token that can be used in a subsequent
      *         DownloadDBLogFilePortion request.
      */
     public String getMarker() {
@@ -86,10 +86,10 @@ public class DownloadDBLogFilePortionResult implements Serializable {
     }
     
     /**
-     * An optional pagination token provided by a previous
+     * A pagination token that can be used in a subsequent
      * DownloadDBLogFilePortion request.
      *
-     * @param marker An optional pagination token provided by a previous
+     * @param marker A pagination token that can be used in a subsequent
      *         DownloadDBLogFilePortion request.
      */
     public void setMarker(String marker) {
@@ -97,12 +97,12 @@ public class DownloadDBLogFilePortionResult implements Serializable {
     }
     
     /**
-     * An optional pagination token provided by a previous
+     * A pagination token that can be used in a subsequent
      * DownloadDBLogFilePortion request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional pagination token provided by a previous
+     * @param marker A pagination token that can be used in a subsequent
      *         DownloadDBLogFilePortion request.
      *
      * @return A reference to this updated object so that method calls can be chained

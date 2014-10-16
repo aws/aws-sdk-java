@@ -61,7 +61,7 @@ public class EventSubscription implements Serializable {
     private String sourceType;
 
     /**
-     * A list of source Ids for the RDS event notification subscription.
+     * A list of source IDs for the RDS event notification subscription.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIdsList;
 
@@ -312,9 +312,9 @@ public class EventSubscription implements Serializable {
     }
 
     /**
-     * A list of source Ids for the RDS event notification subscription.
+     * A list of source IDs for the RDS event notification subscription.
      *
-     * @return A list of source Ids for the RDS event notification subscription.
+     * @return A list of source IDs for the RDS event notification subscription.
      */
     public java.util.List<String> getSourceIdsList() {
         if (sourceIdsList == null) {
@@ -325,9 +325,9 @@ public class EventSubscription implements Serializable {
     }
     
     /**
-     * A list of source Ids for the RDS event notification subscription.
+     * A list of source IDs for the RDS event notification subscription.
      *
-     * @param sourceIdsList A list of source Ids for the RDS event notification subscription.
+     * @param sourceIdsList A list of source IDs for the RDS event notification subscription.
      */
     public void setSourceIdsList(java.util.Collection<String> sourceIdsList) {
         if (sourceIdsList == null) {
@@ -340,11 +340,11 @@ public class EventSubscription implements Serializable {
     }
     
     /**
-     * A list of source Ids for the RDS event notification subscription.
+     * A list of source IDs for the RDS event notification subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceIdsList A list of source Ids for the RDS event notification subscription.
+     * @param sourceIdsList A list of source IDs for the RDS event notification subscription.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -358,11 +358,11 @@ public class EventSubscription implements Serializable {
     }
     
     /**
-     * A list of source Ids for the RDS event notification subscription.
+     * A list of source IDs for the RDS event notification subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceIdsList A list of source Ids for the RDS event notification subscription.
+     * @param sourceIdsList A list of source IDs for the RDS event notification subscription.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

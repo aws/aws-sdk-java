@@ -68,11 +68,12 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using MPEG-TS for the container
-     * type of the output video. Specify an integer greater than 0. If you
-     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     * of <code>MaxBitRate</code>.
+     * standard segment duration when you're using FMP4 or MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -85,7 +86,18 @@ public class VideoParameters implements Serializable {
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
      * key frame) and 100000, inclusive. A higher value results in higher
-     * compression but may also discernibly decrease video quality.
+     * compression but may also discernibly decrease video quality. <p>For
+     * <code>Smooth</code> outputs, the <code>FrameRate</code> must have a
+     * constant ratio to the <code>KeyframesMaxDist</code>. This allows
+     * <code>Smooth</code> playlists to switch between different quality
+     * levels while the file is being played. <p>For example, an input file
+     * can have a <code>FrameRate</code> of 30 with a
+     * <code>KeyframesMaxDist</code> of 90. The output file then needs to
+     * have a ratio of 1:3. Valid outputs would have <code>FrameRate</code>
+     * of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and
+     * 30, respectively. <p>Alternately, this can be achieved by setting
+     * <code>FrameRate</code> to auto and having the same values for
+     * <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
@@ -99,7 +111,8 @@ public class VideoParameters implements Serializable {
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
      * <li><code>false</code>: The distance between key frames can vary.</li>
-     * </ul>
+     * </ul> <important><p><code>FixedGOP</code> must be set to
+     * <code>true</code> for <code>fmp4</code> containers.</important>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^true$)|(^false$)<br/>
@@ -411,11 +424,12 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using MPEG-TS for the container
-     * type of the output video. Specify an integer greater than 0. If you
-     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     * of <code>MaxBitRate</code>.
+     * standard segment duration when you're using FMP4 or MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -454,11 +468,12 @@ public class VideoParameters implements Serializable {
      *         reducing the maximum bit rate, but this also reduces the quality of
      *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you're using MPEG-TS for the container
-     *         type of the output video. Specify an integer greater than 0. If you
-     *         specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     *         Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     *         of <code>MaxBitRate</code>.
+     *         standard segment duration when you're using FMP4 or MPEG-TS for the
+     *         container type of the output video. Specify an integer greater than 0.
+     *         If you specify <code>MaxBitRate</code> and omit
+     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <code>BufferSize</code> to 10 times the value of
+     *         <code>MaxBitRate</code>.
      */
     public java.util.Map<String,String> getCodecOptions() {
         
@@ -503,11 +518,12 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using MPEG-TS for the container
-     * type of the output video. Specify an integer greater than 0. If you
-     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     * of <code>MaxBitRate</code>.
+     * standard segment duration when you're using FMP4 or MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -546,11 +562,12 @@ public class VideoParameters implements Serializable {
      *         reducing the maximum bit rate, but this also reduces the quality of
      *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you're using MPEG-TS for the container
-     *         type of the output video. Specify an integer greater than 0. If you
-     *         specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     *         Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     *         of <code>MaxBitRate</code>.
+     *         standard segment duration when you're using FMP4 or MPEG-TS for the
+     *         container type of the output video. Specify an integer greater than 0.
+     *         If you specify <code>MaxBitRate</code> and omit
+     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <code>BufferSize</code> to 10 times the value of
+     *         <code>MaxBitRate</code>.
      */
     public void setCodecOptions(java.util.Map<String,String> codecOptions) {
         this.codecOptions = codecOptions;
@@ -591,11 +608,12 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using MPEG-TS for the container
-     * type of the output video. Specify an integer greater than 0. If you
-     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     * of <code>MaxBitRate</code>.
+     * standard segment duration when you're using FMP4 or MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -636,11 +654,12 @@ public class VideoParameters implements Serializable {
      *         reducing the maximum bit rate, but this also reduces the quality of
      *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you're using MPEG-TS for the container
-     *         type of the output video. Specify an integer greater than 0. If you
-     *         specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     *         Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     *         of <code>MaxBitRate</code>.
+     *         standard segment duration when you're using FMP4 or MPEG-TS for the
+     *         container type of the output video. Specify an integer greater than 0.
+     *         If you specify <code>MaxBitRate</code> and omit
+     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <code>BufferSize</code> to 10 times the value of
+     *         <code>MaxBitRate</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -685,11 +704,12 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you're using MPEG-TS for the container
-     * type of the output video. Specify an integer greater than 0. If you
-     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
-     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
-     * of <code>MaxBitRate</code>.
+     * standard segment duration when you're using FMP4 or MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * The method adds a new key-value pair into CodecOptions parameter, and
      * returns a reference to this object so that method calls can be chained
@@ -727,7 +747,18 @@ public class VideoParameters implements Serializable {
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
      * key frame) and 100000, inclusive. A higher value results in higher
-     * compression but may also discernibly decrease video quality.
+     * compression but may also discernibly decrease video quality. <p>For
+     * <code>Smooth</code> outputs, the <code>FrameRate</code> must have a
+     * constant ratio to the <code>KeyframesMaxDist</code>. This allows
+     * <code>Smooth</code> playlists to switch between different quality
+     * levels while the file is being played. <p>For example, an input file
+     * can have a <code>FrameRate</code> of 30 with a
+     * <code>KeyframesMaxDist</code> of 90. The output file then needs to
+     * have a ratio of 1:3. Valid outputs would have <code>FrameRate</code>
+     * of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and
+     * 30, respectively. <p>Alternately, this can be achieved by setting
+     * <code>FrameRate</code> to auto and having the same values for
+     * <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
@@ -737,7 +768,18 @@ public class VideoParameters implements Serializable {
      *         part, on the content of the key frames. The value is an integer
      *         formatted as a string; valid values are between 1 (every frame is a
      *         key frame) and 100000, inclusive. A higher value results in higher
-     *         compression but may also discernibly decrease video quality.
+     *         compression but may also discernibly decrease video quality. <p>For
+     *         <code>Smooth</code> outputs, the <code>FrameRate</code> must have a
+     *         constant ratio to the <code>KeyframesMaxDist</code>. This allows
+     *         <code>Smooth</code> playlists to switch between different quality
+     *         levels while the file is being played. <p>For example, an input file
+     *         can have a <code>FrameRate</code> of 30 with a
+     *         <code>KeyframesMaxDist</code> of 90. The output file then needs to
+     *         have a ratio of 1:3. Valid outputs would have <code>FrameRate</code>
+     *         of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and
+     *         30, respectively. <p>Alternately, this can be achieved by setting
+     *         <code>FrameRate</code> to auto and having the same values for
+     *         <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      */
     public String getKeyframesMaxDist() {
         return keyframesMaxDist;
@@ -749,7 +791,18 @@ public class VideoParameters implements Serializable {
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
      * key frame) and 100000, inclusive. A higher value results in higher
-     * compression but may also discernibly decrease video quality.
+     * compression but may also discernibly decrease video quality. <p>For
+     * <code>Smooth</code> outputs, the <code>FrameRate</code> must have a
+     * constant ratio to the <code>KeyframesMaxDist</code>. This allows
+     * <code>Smooth</code> playlists to switch between different quality
+     * levels while the file is being played. <p>For example, an input file
+     * can have a <code>FrameRate</code> of 30 with a
+     * <code>KeyframesMaxDist</code> of 90. The output file then needs to
+     * have a ratio of 1:3. Valid outputs would have <code>FrameRate</code>
+     * of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and
+     * 30, respectively. <p>Alternately, this can be achieved by setting
+     * <code>FrameRate</code> to auto and having the same values for
+     * <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
@@ -759,7 +812,18 @@ public class VideoParameters implements Serializable {
      *         part, on the content of the key frames. The value is an integer
      *         formatted as a string; valid values are between 1 (every frame is a
      *         key frame) and 100000, inclusive. A higher value results in higher
-     *         compression but may also discernibly decrease video quality.
+     *         compression but may also discernibly decrease video quality. <p>For
+     *         <code>Smooth</code> outputs, the <code>FrameRate</code> must have a
+     *         constant ratio to the <code>KeyframesMaxDist</code>. This allows
+     *         <code>Smooth</code> playlists to switch between different quality
+     *         levels while the file is being played. <p>For example, an input file
+     *         can have a <code>FrameRate</code> of 30 with a
+     *         <code>KeyframesMaxDist</code> of 90. The output file then needs to
+     *         have a ratio of 1:3. Valid outputs would have <code>FrameRate</code>
+     *         of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and
+     *         30, respectively. <p>Alternately, this can be achieved by setting
+     *         <code>FrameRate</code> to auto and having the same values for
+     *         <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      */
     public void setKeyframesMaxDist(String keyframesMaxDist) {
         this.keyframesMaxDist = keyframesMaxDist;
@@ -771,7 +835,18 @@ public class VideoParameters implements Serializable {
      * part, on the content of the key frames. The value is an integer
      * formatted as a string; valid values are between 1 (every frame is a
      * key frame) and 100000, inclusive. A higher value results in higher
-     * compression but may also discernibly decrease video quality.
+     * compression but may also discernibly decrease video quality. <p>For
+     * <code>Smooth</code> outputs, the <code>FrameRate</code> must have a
+     * constant ratio to the <code>KeyframesMaxDist</code>. This allows
+     * <code>Smooth</code> playlists to switch between different quality
+     * levels while the file is being played. <p>For example, an input file
+     * can have a <code>FrameRate</code> of 30 with a
+     * <code>KeyframesMaxDist</code> of 90. The output file then needs to
+     * have a ratio of 1:3. Valid outputs would have <code>FrameRate</code>
+     * of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and
+     * 30, respectively. <p>Alternately, this can be achieved by setting
+     * <code>FrameRate</code> to auto and having the same values for
+     * <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -783,7 +858,18 @@ public class VideoParameters implements Serializable {
      *         part, on the content of the key frames. The value is an integer
      *         formatted as a string; valid values are between 1 (every frame is a
      *         key frame) and 100000, inclusive. A higher value results in higher
-     *         compression but may also discernibly decrease video quality.
+     *         compression but may also discernibly decrease video quality. <p>For
+     *         <code>Smooth</code> outputs, the <code>FrameRate</code> must have a
+     *         constant ratio to the <code>KeyframesMaxDist</code>. This allows
+     *         <code>Smooth</code> playlists to switch between different quality
+     *         levels while the file is being played. <p>For example, an input file
+     *         can have a <code>FrameRate</code> of 30 with a
+     *         <code>KeyframesMaxDist</code> of 90. The output file then needs to
+     *         have a ratio of 1:3. Valid outputs would have <code>FrameRate</code>
+     *         of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and
+     *         30, respectively. <p>Alternately, this can be achieved by setting
+     *         <code>FrameRate</code> to auto and having the same values for
+     *         <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -800,7 +886,8 @@ public class VideoParameters implements Serializable {
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
      * <li><code>false</code>: The distance between key frames can vary.</li>
-     * </ul>
+     * </ul> <important><p><code>FixedGOP</code> must be set to
+     * <code>true</code> for <code>fmp4</code> containers.</important>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^true$)|(^false$)<br/>
@@ -811,7 +898,8 @@ public class VideoParameters implements Serializable {
      *         <code>KeyframesMaxDist</code> for the distance between key frames (the
      *         number of frames in a group of pictures, or GOP).</li>
      *         <li><code>false</code>: The distance between key frames can vary.</li>
-     *         </ul>
+     *         </ul> <important><p><code>FixedGOP</code> must be set to
+     *         <code>true</code> for <code>fmp4</code> containers.</important>
      */
     public String getFixedGOP() {
         return fixedGOP;
@@ -824,7 +912,8 @@ public class VideoParameters implements Serializable {
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
      * <li><code>false</code>: The distance between key frames can vary.</li>
-     * </ul>
+     * </ul> <important><p><code>FixedGOP</code> must be set to
+     * <code>true</code> for <code>fmp4</code> containers.</important>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^true$)|(^false$)<br/>
@@ -835,7 +924,8 @@ public class VideoParameters implements Serializable {
      *         <code>KeyframesMaxDist</code> for the distance between key frames (the
      *         number of frames in a group of pictures, or GOP).</li>
      *         <li><code>false</code>: The distance between key frames can vary.</li>
-     *         </ul>
+     *         </ul> <important><p><code>FixedGOP</code> must be set to
+     *         <code>true</code> for <code>fmp4</code> containers.</important>
      */
     public void setFixedGOP(String fixedGOP) {
         this.fixedGOP = fixedGOP;
@@ -848,7 +938,8 @@ public class VideoParameters implements Serializable {
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
      * <li><code>false</code>: The distance between key frames can vary.</li>
-     * </ul>
+     * </ul> <important><p><code>FixedGOP</code> must be set to
+     * <code>true</code> for <code>fmp4</code> containers.</important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -861,7 +952,8 @@ public class VideoParameters implements Serializable {
      *         <code>KeyframesMaxDist</code> for the distance between key frames (the
      *         number of frames in a group of pictures, or GOP).</li>
      *         <li><code>false</code>: The distance between key frames can vary.</li>
-     *         </ul>
+     *         </ul> <important><p><code>FixedGOP</code> must be set to
+     *         <code>true</code> for <code>fmp4</code> containers.</important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

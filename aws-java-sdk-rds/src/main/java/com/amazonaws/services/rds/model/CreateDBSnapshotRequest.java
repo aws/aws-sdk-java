@@ -40,10 +40,10 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     * or contain two consecutive hyphens</li> </ul>
+     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      */
     private String dBInstanceIdentifier;
 
@@ -70,11 +70,10 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
      * or contain two consecutive hyphens</li> </ul> <p>Example:
      * <code>my-snapshot-id</code>
      * @param dBInstanceIdentifier The DB instance identifier. This is the
-     * unique key that identifies a DB instance. This parameter isn't case
-     * sensitive. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
+     * unique key that identifies a DB instance. <p>Constraints: <ul>
+     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul>
      */
     public CreateDBSnapshotRequest(String dBSnapshotIdentifier, String dBInstanceIdentifier) {
         setDBSnapshotIdentifier(dBSnapshotIdentifier);
@@ -140,16 +139,16 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
 
     /**
      * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     * or contain two consecutive hyphens</li> </ul>
+     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
      * @return The DB instance identifier. This is the unique key that identifies a
-     *         DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     *         or contain two consecutive hyphens</li> </ul>
+     *         DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -157,16 +156,16 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     * or contain two consecutive hyphens</li> </ul>
+     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
      * @param dBInstanceIdentifier The DB instance identifier. This is the unique key that identifies a
-     *         DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     *         or contain two consecutive hyphens</li> </ul>
+     *         DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -174,18 +173,18 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     
     /**
      * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     * or contain two consecutive hyphens</li> </ul>
+     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier The DB instance identifier. This is the unique key that identifies a
-     *         DB instance. This parameter isn't case sensitive. <p>Constraints: <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     *         or contain two consecutive hyphens</li> </ul>
+     *         DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

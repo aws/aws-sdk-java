@@ -17,8 +17,8 @@ package com.amazonaws.services.dynamodbv2.document.spec;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -49,7 +49,7 @@ public class BatchGetItemSpec extends AbstractSpec<BatchGetItemRequest> {
         if (tableKeyAndAttributes == null)
             this.tableKeyAndAttributes = null;
         else {
-            Set<String> names = new HashSet<String>();
+            Set<String> names = new LinkedHashSet<String>();
             for (TableKeysAndAttributes e: tableKeyAndAttributes)
                 names.add(e.getTableName());
             if (names.size() != tableKeyAndAttributes.length) {
@@ -92,7 +92,7 @@ public class BatchGetItemSpec extends AbstractSpec<BatchGetItemRequest> {
     public BatchGetItemSpec withUnprocessedKeys(
             Map<String, KeysAndAttributes> unprocessedKeys) {
         this.unprocessedKeys = Collections.unmodifiableMap(
-                new HashMap<String, KeysAndAttributes>(unprocessedKeys));
+                new LinkedHashMap<String, KeysAndAttributes>(unprocessedKeys));
         return this;
     }
 }

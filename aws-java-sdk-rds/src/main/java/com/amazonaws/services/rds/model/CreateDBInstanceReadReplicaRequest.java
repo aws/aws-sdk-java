@@ -53,15 +53,24 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * instance.</li> <li>Can specify a DB instance that is a read replica
      * only if the source is running MySQL 5.6.</li> <li>The specified DB
      * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> </ul>
+     * period must be greater than 0.</li> <li>If the source DB instance is
+     * in the same region as the read replica, specify a valid DB instance
+     * identifier.</li> <li>If the source DB instance is in a different
+     * region than the read replica, specify a valid DB instance ARN. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
     private String sourceDBInstanceIdentifier;
 
     /**
      * The compute and memory capacity of the read replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
-     * Inherits from the source DB instance.
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
+     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
+     * from the source DB instance.
      */
     private String dBInstanceClass;
 
@@ -121,13 +130,28 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * A DB Subnet Group to associate with this DB Instance in case of a
-     * cross region read replica. <p>If there is no DB Subnet Group, then it
-     * is a non-VPC DB instance. <p> Constraints: All the cross region read
-     * replicas that share the source instance should lie within the same
-     * VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance
+     * will be created in the VPC associated with the DB subnet group. If no
+     * DB subnet group is specified, then the new DB instance is not created
+     * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
+     * DB instance identifier specifies a DB instance in another region.</li>
+     * <li>The specified DB subnet group must be in the same region in which
+     * the operation is running.</li> <li> All read replicas in one region
+     * that are created from the same source DB instance must either: <ul>
+     * <li>Specify DB subnet groups from the same VPC. All these read
+     * replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these read replicas will be created outside of any
+     * VPC.</li> </ul> </li> </ul>
      */
     private String dBSubnetGroupName;
+
+    /**
+     * Specifies storage type to be associated with the DB Instance read
+     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
+     * you specify <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     */
+    private String storageType;
 
     /**
      * Default constructor for a new CreateDBInstanceReadReplicaRequest object.  Callers should use the
@@ -150,7 +174,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * instance that is a read replica only if the source is running MySQL
      * 5.6.</li> <li>The specified DB instance must have automatic backups
      * enabled, its backup retention period must be greater than 0.</li>
-     * </ul>
+     * <li>If the source DB instance is in the same region as the read
+     * replica, specify a valid DB instance identifier.</li> <li>If the
+     * source DB instance is in a different region than the read replica,
+     * specify a valid DB instance ARN. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
     public CreateDBInstanceReadReplicaRequest(String dBInstanceIdentifier, String sourceDBInstanceIdentifier) {
         setDBInstanceIdentifier(dBInstanceIdentifier);
@@ -209,7 +238,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * instance.</li> <li>Can specify a DB instance that is a read replica
      * only if the source is running MySQL 5.6.</li> <li>The specified DB
      * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> </ul>
+     * period must be greater than 0.</li> <li>If the source DB instance is
+     * in the same region as the read replica, specify a valid DB instance
+     * identifier.</li> <li>If the source DB instance is in a different
+     * region than the read replica, specify a valid DB instance ARN. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
      * @return The identifier of the DB instance that will act as the source for the
      *         read replica. Each DB instance can have up to five read replicas.
@@ -217,7 +252,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         instance.</li> <li>Can specify a DB instance that is a read replica
      *         only if the source is running MySQL 5.6.</li> <li>The specified DB
      *         instance must have automatic backups enabled, its backup retention
-     *         period must be greater than 0.</li> </ul>
+     *         period must be greater than 0.</li> <li>If the source DB instance is
+     *         in the same region as the read replica, specify a valid DB instance
+     *         identifier.</li> <li>If the source DB instance is in a different
+     *         region than the read replica, specify a valid DB instance ARN. For
+     *         more information, go to <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
     public String getSourceDBInstanceIdentifier() {
         return sourceDBInstanceIdentifier;
@@ -230,7 +271,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * instance.</li> <li>Can specify a DB instance that is a read replica
      * only if the source is running MySQL 5.6.</li> <li>The specified DB
      * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> </ul>
+     * period must be greater than 0.</li> <li>If the source DB instance is
+     * in the same region as the read replica, specify a valid DB instance
+     * identifier.</li> <li>If the source DB instance is in a different
+     * region than the read replica, specify a valid DB instance ARN. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
      * @param sourceDBInstanceIdentifier The identifier of the DB instance that will act as the source for the
      *         read replica. Each DB instance can have up to five read replicas.
@@ -238,7 +285,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         instance.</li> <li>Can specify a DB instance that is a read replica
      *         only if the source is running MySQL 5.6.</li> <li>The specified DB
      *         instance must have automatic backups enabled, its backup retention
-     *         period must be greater than 0.</li> </ul>
+     *         period must be greater than 0.</li> <li>If the source DB instance is
+     *         in the same region as the read replica, specify a valid DB instance
+     *         identifier.</li> <li>If the source DB instance is in a different
+     *         region than the read replica, specify a valid DB instance ARN. For
+     *         more information, go to <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      */
     public void setSourceDBInstanceIdentifier(String sourceDBInstanceIdentifier) {
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -251,7 +304,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * instance.</li> <li>Can specify a DB instance that is a read replica
      * only if the source is running MySQL 5.6.</li> <li>The specified DB
      * instance must have automatic backups enabled, its backup retention
-     * period must be greater than 0.</li> </ul>
+     * period must be greater than 0.</li> <li>If the source DB instance is
+     * in the same region as the read replica, specify a valid DB instance
+     * identifier.</li> <li>If the source DB instance is in a different
+     * region than the read replica, specify a valid DB instance ARN. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -261,7 +320,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         instance.</li> <li>Can specify a DB instance that is a read replica
      *         only if the source is running MySQL 5.6.</li> <li>The specified DB
      *         instance must have automatic backups enabled, its backup retention
-     *         period must be greater than 0.</li> </ul>
+     *         period must be greater than 0.</li> <li>If the source DB instance is
+     *         in the same region as the read replica, specify a valid DB instance
+     *         identifier.</li> <li>If the source DB instance is in a different
+     *         region than the read replica, specify a valid DB instance ARN. For
+     *         more information, go to <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -274,13 +339,19 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The compute and memory capacity of the read replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
-     * Inherits from the source DB instance.
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
+     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
+     * from the source DB instance.
      *
      * @return The compute and memory capacity of the read replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
-     *         Inherits from the source DB instance.
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
+     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
+     *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
+     *         db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
+     *         from the source DB instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -289,13 +360,19 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The compute and memory capacity of the read replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
-     * Inherits from the source DB instance.
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
+     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
+     * from the source DB instance.
      *
      * @param dBInstanceClass The compute and memory capacity of the read replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
-     *         Inherits from the source DB instance.
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
+     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
+     *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
+     *         db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
+     *         from the source DB instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -304,15 +381,21 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The compute and memory capacity of the read replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
-     * Inherits from the source DB instance.
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
+     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
+     * db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
+     * from the source DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the read replica. <p> Valid Values:
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
-     *         Inherits from the source DB instance.
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
+     *         db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.r3.large |
+     *         db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge |
+     *         db.t2.micro | db.t2.small | db.t2.medium</code> <p>Default: Inherits
+     *         from the source DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -755,59 +838,152 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * A DB Subnet Group to associate with this DB Instance in case of a
-     * cross region read replica. <p>If there is no DB Subnet Group, then it
-     * is a non-VPC DB instance. <p> Constraints: All the cross region read
-     * replicas that share the source instance should lie within the same
-     * VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance
+     * will be created in the VPC associated with the DB subnet group. If no
+     * DB subnet group is specified, then the new DB instance is not created
+     * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
+     * DB instance identifier specifies a DB instance in another region.</li>
+     * <li>The specified DB subnet group must be in the same region in which
+     * the operation is running.</li> <li> All read replicas in one region
+     * that are created from the same source DB instance must either: <ul>
+     * <li>Specify DB subnet groups from the same VPC. All these read
+     * replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these read replicas will be created outside of any
+     * VPC.</li> </ul> </li> </ul>
      *
-     * @return A DB Subnet Group to associate with this DB Instance in case of a
-     *         cross region read replica. <p>If there is no DB Subnet Group, then it
-     *         is a non-VPC DB instance. <p> Constraints: All the cross region read
-     *         replicas that share the source instance should lie within the same
-     *         VPC.
+     * @return Specifies a DB subnet group for the DB instance. The new DB instance
+     *         will be created in the VPC associated with the DB subnet group. If no
+     *         DB subnet group is specified, then the new DB instance is not created
+     *         in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
+     *         DB instance identifier specifies a DB instance in another region.</li>
+     *         <li>The specified DB subnet group must be in the same region in which
+     *         the operation is running.</li> <li> All read replicas in one region
+     *         that are created from the same source DB instance must either: <ul>
+     *         <li>Specify DB subnet groups from the same VPC. All these read
+     *         replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         subnet group. All these read replicas will be created outside of any
+     *         VPC.</li> </ul> </li> </ul>
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
     }
     
     /**
-     * A DB Subnet Group to associate with this DB Instance in case of a
-     * cross region read replica. <p>If there is no DB Subnet Group, then it
-     * is a non-VPC DB instance. <p> Constraints: All the cross region read
-     * replicas that share the source instance should lie within the same
-     * VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance
+     * will be created in the VPC associated with the DB subnet group. If no
+     * DB subnet group is specified, then the new DB instance is not created
+     * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
+     * DB instance identifier specifies a DB instance in another region.</li>
+     * <li>The specified DB subnet group must be in the same region in which
+     * the operation is running.</li> <li> All read replicas in one region
+     * that are created from the same source DB instance must either: <ul>
+     * <li>Specify DB subnet groups from the same VPC. All these read
+     * replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these read replicas will be created outside of any
+     * VPC.</li> </ul> </li> </ul>
      *
-     * @param dBSubnetGroupName A DB Subnet Group to associate with this DB Instance in case of a
-     *         cross region read replica. <p>If there is no DB Subnet Group, then it
-     *         is a non-VPC DB instance. <p> Constraints: All the cross region read
-     *         replicas that share the source instance should lie within the same
-     *         VPC.
+     * @param dBSubnetGroupName Specifies a DB subnet group for the DB instance. The new DB instance
+     *         will be created in the VPC associated with the DB subnet group. If no
+     *         DB subnet group is specified, then the new DB instance is not created
+     *         in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
+     *         DB instance identifier specifies a DB instance in another region.</li>
+     *         <li>The specified DB subnet group must be in the same region in which
+     *         the operation is running.</li> <li> All read replicas in one region
+     *         that are created from the same source DB instance must either: <ul>
+     *         <li>Specify DB subnet groups from the same VPC. All these read
+     *         replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         subnet group. All these read replicas will be created outside of any
+     *         VPC.</li> </ul> </li> </ul>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
     }
     
     /**
-     * A DB Subnet Group to associate with this DB Instance in case of a
-     * cross region read replica. <p>If there is no DB Subnet Group, then it
-     * is a non-VPC DB instance. <p> Constraints: All the cross region read
-     * replicas that share the source instance should lie within the same
-     * VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance
+     * will be created in the VPC associated with the DB subnet group. If no
+     * DB subnet group is specified, then the new DB instance is not created
+     * in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
+     * DB instance identifier specifies a DB instance in another region.</li>
+     * <li>The specified DB subnet group must be in the same region in which
+     * the operation is running.</li> <li> All read replicas in one region
+     * that are created from the same source DB instance must either: <ul>
+     * <li>Specify DB subnet groups from the same VPC. All these read
+     * replicas will be created in the same VPC.</li> <li>Not specify a DB
+     * subnet group. All these read replicas will be created outside of any
+     * VPC.</li> </ul> </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroupName A DB Subnet Group to associate with this DB Instance in case of a
-     *         cross region read replica. <p>If there is no DB Subnet Group, then it
-     *         is a non-VPC DB instance. <p> Constraints: All the cross region read
-     *         replicas that share the source instance should lie within the same
-     *         VPC.
+     * @param dBSubnetGroupName Specifies a DB subnet group for the DB instance. The new DB instance
+     *         will be created in the VPC associated with the DB subnet group. If no
+     *         DB subnet group is specified, then the new DB instance is not created
+     *         in a VPC. <p>Constraints: <ul> <li>Can only be specified if the source
+     *         DB instance identifier specifies a DB instance in another region.</li>
+     *         <li>The specified DB subnet group must be in the same region in which
+     *         the operation is running.</li> <li> All read replicas in one region
+     *         that are created from the same source DB instance must either: <ul>
+     *         <li>Specify DB subnet groups from the same VPC. All these read
+     *         replicas will be created in the same VPC.</li> <li>Not specify a DB
+     *         subnet group. All these read replicas will be created outside of any
+     *         VPC.</li> </ul> </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateDBInstanceReadReplicaRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
+        return this;
+    }
+
+    /**
+     * Specifies storage type to be associated with the DB Instance read
+     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
+     * you specify <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @return Specifies storage type to be associated with the DB Instance read
+     *         replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
+     *         you specify <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance read
+     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
+     * you specify <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance read
+     *         replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
+     *         you specify <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     */
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+    
+    /**
+     * Specifies storage type to be associated with the DB Instance read
+     * replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
+     * you specify <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param storageType Specifies storage type to be associated with the DB Instance read
+     *         replica. <p> Valid values: <code>standard | gp2 | io1</code> <p> If
+     *         you specify <code>io1</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceReadReplicaRequest withStorageType(String storageType) {
+        this.storageType = storageType;
         return this;
     }
 
@@ -833,7 +1009,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
-        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() );
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+        if (getStorageType() != null) sb.append("StorageType: " + getStorageType() );
         sb.append("}");
         return sb.toString();
     }
@@ -854,6 +1031,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         return hashCode;
     }
     
@@ -887,6 +1065,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getDBSubnetGroupName() == null ^ this.getDBSubnetGroupName() == null) return false;
         if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false) return false; 
+        if (other.getStorageType() == null ^ this.getStorageType() == null) return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false) return false; 
         return true;
     }
     

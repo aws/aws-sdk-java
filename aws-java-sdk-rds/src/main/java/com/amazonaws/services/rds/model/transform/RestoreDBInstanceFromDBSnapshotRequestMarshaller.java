@@ -39,7 +39,7 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
 
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier()));
@@ -99,6 +99,15 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
             }
 
             tagsListIndex++;
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest.getStorageType() != null) {
+            request.addParameter("StorageType", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getStorageType()));
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialArn() != null) {
+            request.addParameter("TdeCredentialArn", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialArn()));
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialPassword() != null) {
+            request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialPassword()));
         }
 
         return request;

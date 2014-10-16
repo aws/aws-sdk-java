@@ -39,7 +39,7 @@ public class RemoveSourceIdentifierFromSubscriptionRequestMarshaller implements 
 
         Request<RemoveSourceIdentifierFromSubscriptionRequest> request = new DefaultRequest<RemoveSourceIdentifierFromSubscriptionRequest>(removeSourceIdentifierFromSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "RemoveSourceIdentifierFromSubscription");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (removeSourceIdentifierFromSubscriptionRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(removeSourceIdentifierFromSubscriptionRequest.getSubscriptionName()));

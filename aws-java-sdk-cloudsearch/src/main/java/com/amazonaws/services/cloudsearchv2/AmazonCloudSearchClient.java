@@ -1187,7 +1187,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * Indexes the search suggestions.
+     * Indexes the search suggestions. For more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters"> Configuring Suggesters </a>
+     * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      *
      * @param buildSuggestersRequest Container for the necessary parameters
@@ -1396,10 +1398,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * be limited to specific domains. Shows all domains by default. To get
      * the number of searchable documents in a domain, use the console or
      * submit a <code>matchall</code> request to your domain's search
-     * endpoint: <code>q=matchall&q.parser=structured&size=0</code>. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a>
-     * in the <i>Amazon CloudSearch Developer Guide</i>.
+     * endpoint: <code>q=matchall&q.parser=structured&size=0</code> . For
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"> Getting Information about a Search Domain </a>
+     * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      *
      * @param describeDomainsRequest Container for the necessary parameters
@@ -1523,10 +1525,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * be limited to specific domains. Shows all domains by default. To get
      * the number of searchable documents in a domain, use the console or
      * submit a <code>matchall</code> request to your domain's search
-     * endpoint: <code>q=matchall&q.parser=structured&size=0</code>. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a>
-     * in the <i>Amazon CloudSearch Developer Guide</i>.
+     * endpoint: <code>q=matchall&q.parser=structured&size=0</code> . For
+     * more information, see
+     * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"> Getting Information about a Search Domain </a>
+     * in the <i>Amazon CloudSearch Developer Guide</i> .
      * </p>
      * 
      * @return The response from the DescribeDomains service method, as

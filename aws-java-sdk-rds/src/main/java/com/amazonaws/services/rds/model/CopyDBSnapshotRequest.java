@@ -34,7 +34,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <li>Must specify a valid system snapshot in the "available"
      * state.</li> <li>If the source snapshot is in the same region as the
      * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify valid DB
+     * snapshot is in a different region than the copy, specify a valid DB
      * snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
@@ -62,7 +62,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <li>Must specify a valid system snapshot in the "available"
      * state.</li> <li>If the source snapshot is in the same region as the
      * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify valid DB
+     * snapshot is in a different region than the copy, specify a valid DB
      * snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
@@ -73,7 +73,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      *         <li>Must specify a valid system snapshot in the "available"
      *         state.</li> <li>If the source snapshot is in the same region as the
      *         copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     *         snapshot is in a different region than the copy, specify valid DB
+     *         snapshot is in a different region than the copy, specify a valid DB
      *         snapshot ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      *         Copying a DB Snapshot</a>.</li> </ul> <p>Example:
@@ -89,7 +89,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <li>Must specify a valid system snapshot in the "available"
      * state.</li> <li>If the source snapshot is in the same region as the
      * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify valid DB
+     * snapshot is in a different region than the copy, specify a valid DB
      * snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
@@ -100,7 +100,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      *         <li>Must specify a valid system snapshot in the "available"
      *         state.</li> <li>If the source snapshot is in the same region as the
      *         copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     *         snapshot is in a different region than the copy, specify valid DB
+     *         snapshot is in a different region than the copy, specify a valid DB
      *         snapshot ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      *         Copying a DB Snapshot</a>.</li> </ul> <p>Example:
@@ -116,7 +116,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <li>Must specify a valid system snapshot in the "available"
      * state.</li> <li>If the source snapshot is in the same region as the
      * copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     * snapshot is in a different region than the copy, specify valid DB
+     * snapshot is in a different region than the copy, specify a valid DB
      * snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</li> </ul> <p>Example:
@@ -129,7 +129,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
      *         <li>Must specify a valid system snapshot in the "available"
      *         state.</li> <li>If the source snapshot is in the same region as the
      *         copy, specify a valid DB snapshot identifier.</li> <li>If the source
-     *         snapshot is in a different region than the copy, specify valid DB
+     *         snapshot is in a different region than the copy, specify a valid DB
      *         snapshot ARN. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      *         Copying a DB Snapshot</a>.</li> </ul> <p>Example:

@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.document;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -43,7 +43,7 @@ public class BatchGetItemOutcome {
     public Map<String, List<Item>> getTableItems() {
         Map<String, List<Map<String, AttributeValue>>> res = 
             result.getResponses();
-        Map<String, List<Item>> map = new HashMap<String, List<Item>>(res.size());
+        Map<String, List<Item>> map = new LinkedHashMap<String, List<Item>>(res.size());
         for (Map.Entry<String, List<Map<String, AttributeValue>>> e 
                 : res.entrySet()) {
             String tableName = e.getKey();

@@ -24,29 +24,29 @@ public class Filter implements Serializable {
     /**
      * This parameter is not currently supported.
      */
-    private String filterName;
+    private String name;
 
     /**
      * This parameter is not currently supported.
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> filterValue;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> values;
 
     /**
      * This parameter is not currently supported.
      *
      * @return This parameter is not currently supported.
      */
-    public String getFilterName() {
-        return filterName;
+    public String getName() {
+        return name;
     }
     
     /**
      * This parameter is not currently supported.
      *
-     * @param filterName This parameter is not currently supported.
+     * @param name This parameter is not currently supported.
      */
-    public void setFilterName(String filterName) {
-        this.filterName = filterName;
+    public void setName(String name) {
+        this.name = name;
     }
     
     /**
@@ -54,13 +54,13 @@ public class Filter implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filterName This parameter is not currently supported.
+     * @param name This parameter is not currently supported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public Filter withFilterName(String filterName) {
-        this.filterName = filterName;
+    public Filter withName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -69,27 +69,27 @@ public class Filter implements Serializable {
      *
      * @return This parameter is not currently supported.
      */
-    public java.util.List<String> getFilterValue() {
-        if (filterValue == null) {
-              filterValue = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              filterValue.setAutoConstruct(true);
+    public java.util.List<String> getValues() {
+        if (values == null) {
+              values = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              values.setAutoConstruct(true);
         }
-        return filterValue;
+        return values;
     }
     
     /**
      * This parameter is not currently supported.
      *
-     * @param filterValue This parameter is not currently supported.
+     * @param values This parameter is not currently supported.
      */
-    public void setFilterValue(java.util.Collection<String> filterValue) {
-        if (filterValue == null) {
-            this.filterValue = null;
+    public void setValues(java.util.Collection<String> values) {
+        if (values == null) {
+            this.values = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> filterValueCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(filterValue.size());
-        filterValueCopy.addAll(filterValue);
-        this.filterValue = filterValueCopy;
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> valuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(values.size());
+        valuesCopy.addAll(values);
+        this.values = valuesCopy;
     }
     
     /**
@@ -97,15 +97,15 @@ public class Filter implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filterValue This parameter is not currently supported.
+     * @param values This parameter is not currently supported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public Filter withFilterValue(String... filterValue) {
-        if (getFilterValue() == null) setFilterValue(new java.util.ArrayList<String>(filterValue.length));
-        for (String value : filterValue) {
-            getFilterValue().add(value);
+    public Filter withValues(String... values) {
+        if (getValues() == null) setValues(new java.util.ArrayList<String>(values.length));
+        for (String value : values) {
+            getValues().add(value);
         }
         return this;
     }
@@ -115,18 +115,18 @@ public class Filter implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filterValue This parameter is not currently supported.
+     * @param values This parameter is not currently supported.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public Filter withFilterValue(java.util.Collection<String> filterValue) {
-        if (filterValue == null) {
-            this.filterValue = null;
+    public Filter withValues(java.util.Collection<String> values) {
+        if (values == null) {
+            this.values = null;
         } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> filterValueCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(filterValue.size());
-            filterValueCopy.addAll(filterValue);
-            this.filterValue = filterValueCopy;
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> valuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(values.size());
+            valuesCopy.addAll(values);
+            this.values = valuesCopy;
         }
 
         return this;
@@ -144,8 +144,8 @@ public class Filter implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilterName() != null) sb.append("FilterName: " + getFilterName() + ",");
-        if (getFilterValue() != null) sb.append("FilterValue: " + getFilterValue() );
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getValues() != null) sb.append("Values: " + getValues() );
         sb.append("}");
         return sb.toString();
     }
@@ -155,8 +155,8 @@ public class Filter implements Serializable {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getFilterName() == null) ? 0 : getFilterName().hashCode()); 
-        hashCode = prime * hashCode + ((getFilterValue() == null) ? 0 : getFilterValue().hashCode()); 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode()); 
         return hashCode;
     }
     
@@ -168,10 +168,10 @@ public class Filter implements Serializable {
         if (obj instanceof Filter == false) return false;
         Filter other = (Filter)obj;
         
-        if (other.getFilterName() == null ^ this.getFilterName() == null) return false;
-        if (other.getFilterName() != null && other.getFilterName().equals(this.getFilterName()) == false) return false; 
-        if (other.getFilterValue() == null ^ this.getFilterValue() == null) return false;
-        if (other.getFilterValue() != null && other.getFilterValue().equals(this.getFilterValue()) == false) return false; 
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getValues() == null ^ this.getValues() == null) return false;
+        if (other.getValues() != null && other.getValues().equals(this.getValues()) == false) return false; 
         return true;
     }
     

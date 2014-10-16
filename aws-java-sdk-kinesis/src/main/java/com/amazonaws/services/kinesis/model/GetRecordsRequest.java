@@ -24,47 +24,64 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets data records from a shard.
  * </p>
  * <p>
- * You specify a shard iterator for the shard using the
- * <code>ShardIterator</code> parameter. The shard iterator specifies the
- * position in the shard from which you want to start reading data
- * records sequentially. <code>GetRecords</code> returns a new shard
- * iterator in <code>NextShardIterator</code> .
- * If the shard has been closed, the shard iterator can't
- * return more data and <code>GetRecords</code> returns <code>null</code>
- * in <code>NextShardIterator</code> .
- * To read from an Amazon Kinesis stream continually, use
- * GetShardIterator to get the shard iterator to specify in the first
- * <code>GetRecords</code> call, and then specify the shard iterator
- * returned in <code>NextShardIterator</code> in subsequent calls.
+ * Specify a shard iterator using the <code>ShardIterator</code>
+ * parameter. The shard iterator specifies the position in the shard from
+ * which you want to start reading data records sequentially. If there
+ * are no records available in the portion of the shard that the iterator
+ * points to, <code>GetRecords</code> returns an empty list. Note that it
+ * might take multiple calls to get to a portion of the shard that
+ * contains records.
  * </p>
  * <p>
- * If there are no records available, <code>GetRecords</code> returns an
- * empty list.
+ * You can scale by provisioning multiple shards. Your application should
+ * have one thread per shard, each reading continuously from its stream.
+ * To read from a stream continually, call <code>GetRecords</code> in a
+ * loop. Use GetShardIterator to get the shard iterator to specify in the
+ * first <code>GetRecords</code> call. <code>GetRecords</code> returns a
+ * new shard iterator in <code>NextShardIterator</code> .
+ * Specify the shard iterator returned in
+ * <code>NextShardIterator</code> in subsequent calls to
+ * <code>GetRecords</code> .
+ * Note that if the shard has been closed, the shard iterator
+ * can't return more data and <code>GetRecords</code> returns
+ * <code>null</code> in <code>NextShardIterator</code> .
+ * You can terminate the loop when the shard is closed, or
+ * when the shard iterator reaches the record with the sequence number or
+ * other attribute that marks it as the last record to process.
  * </p>
  * <p>
- * The size of the data returned by <code>GetRecords</code> will vary,
- * but the maximum size is 10 MB. Each data record can be up to 50 KB in
- * size, and each shard can read up to 2 MB per second. You can ensure
- * that your calls don't exceed the maximum size or throughput by using
- * the <code>Limit</code> parameter to specify the maximum number of
- * records that <code>GetRecords</code> can return. Consider your average
- * record size when specifying a limit. For example, if your average
- * record size is 40 KB, you can limit the data returned to about 1 MB
- * per call using a limit of 25.
+ * Each data record can be up to 50 KB in size, and each shard can read
+ * up to 2 MB per second. You can ensure that your calls don't exceed the
+ * maximum supported size or throughput by specifying the maximum number
+ * of records that <code>GetRecords</code> can return in the
+ * <code>Limit</code> parameter. Consider your average record size when
+ * determining this limit. For example, if your average record size is 40
+ * KB, you can limit the data returned to about 1 MB per call by
+ * specifying 25 as the limit.
  * </p>
  * <p>
- * If there is insufficient provisioned throughput on the shard involved
- * in the request, subsequent calls to <code>GetRecords</code> made
- * within the next one second throw
+ * The size of the data returned by <code>GetRecords</code> will vary
+ * depending on the utilization of the shard. The maximum size of data
+ * that <code>GetRecords</code> can return is 10 MB. If a call returns 10
+ * MB of data, subsequent calls made within the next 5 seconds throw
  * <code>ProvisionedThroughputExceededException</code> .
- * <code>GetRecords</code> won't return data when it
- * throws an exception, so wait one second before making another call or
- * the application won't get any records. Also, you can scale by
- * provisioning multiple shards.
+ * If there is insufficient provisioned throughput on the
+ * shard, subsequent calls made within the next 1 second throw
+ * <code>ProvisionedThroughputExceededException</code> .
+ * Note that <code>GetRecords</code> won't return any data
+ * when it throws an exception. For this reason, we recommend that you
+ * wait one second between calls to <code>GetRecords</code> ;
+ * however, it's possible that the application will get
+ * exceptions for longer than 1 second.
  * </p>
  * <p>
- * To detect whether you are falling behind in processing, add a
- * timestamp to your records and note how long it takes to process them.
+ * To detect whether the application is falling behind in processing, add
+ * a timestamp to your records and note how long it takes to process
+ * them. You can also monitor how much data is in a stream using the
+ * CloudWatch metrics for <code>PutRecord</code> . For more information,
+ * see
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html"> Monitoring Amazon Kinesis with Amazon CloudWatch </a>
+ * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.kinesis.AmazonKinesis#getRecords(GetRecordsRequest)
@@ -82,7 +99,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
     private String shardIterator;
 
     /**
-     * The maximum size of data to return, in MB. Specify a value of up to
+     * The maximum number of records to return. Specify a value of up to
      * 10,000. If you specify a value that is greater than 10,000,
      * <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
      * <p>
@@ -146,14 +163,14 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * The maximum size of data to return, in MB. Specify a value of up to
+     * The maximum number of records to return. Specify a value of up to
      * 10,000. If you specify a value that is greater than 10,000,
      * <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 10000<br/>
      *
-     * @return The maximum size of data to return, in MB. Specify a value of up to
+     * @return The maximum number of records to return. Specify a value of up to
      *         10,000. If you specify a value that is greater than 10,000,
      *         <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
      */
@@ -162,14 +179,14 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The maximum size of data to return, in MB. Specify a value of up to
+     * The maximum number of records to return. Specify a value of up to
      * 10,000. If you specify a value that is greater than 10,000,
      * <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 10000<br/>
      *
-     * @param limit The maximum size of data to return, in MB. Specify a value of up to
+     * @param limit The maximum number of records to return. Specify a value of up to
      *         10,000. If you specify a value that is greater than 10,000,
      *         <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
      */
@@ -178,7 +195,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * The maximum size of data to return, in MB. Specify a value of up to
+     * The maximum number of records to return. Specify a value of up to
      * 10,000. If you specify a value that is greater than 10,000,
      * <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
      * <p>
@@ -187,7 +204,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements Serial
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 10000<br/>
      *
-     * @param limit The maximum size of data to return, in MB. Specify a value of up to
+     * @param limit The maximum number of records to return. Specify a value of up to
      *         10,000. If you specify a value that is greater than 10,000,
      *         <code>GetRecords</code> throws <code>InvalidArgumentException</code>.
      *

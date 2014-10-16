@@ -39,7 +39,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (createDBInstanceRequest.getDBName() != null) {
             request.addParameter("DBName", StringUtils.fromString(createDBInstanceRequest.getDBName()));
@@ -145,6 +145,15 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             }
 
             tagsListIndex++;
+        }
+        if (createDBInstanceRequest.getStorageType() != null) {
+            request.addParameter("StorageType", StringUtils.fromString(createDBInstanceRequest.getStorageType()));
+        }
+        if (createDBInstanceRequest.getTdeCredentialArn() != null) {
+            request.addParameter("TdeCredentialArn", StringUtils.fromString(createDBInstanceRequest.getTdeCredentialArn()));
+        }
+        if (createDBInstanceRequest.getTdeCredentialPassword() != null) {
+            request.addParameter("TdeCredentialPassword", StringUtils.fromString(createDBInstanceRequest.getTdeCredentialPassword()));
         }
 
         return request;

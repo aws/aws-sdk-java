@@ -17,8 +17,8 @@ package com.amazonaws.services.dynamodbv2.document.spec;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -70,7 +70,7 @@ public class PutItemSpec extends AbstractSpec<PutItemRequest> {
             this.expected = null;
             return this;
         }
-        Set<String> names = new HashSet<String>();
+        Set<String> names = new LinkedHashSet<String>();
         for (Expected e: expected)
             names.add(e.getAttribute());
         if (names.size() != expected.size()) {
@@ -102,7 +102,7 @@ public class PutItemSpec extends AbstractSpec<PutItemRequest> {
         if (nameMap == null)
             this.nameMap = null;
         else
-            this.nameMap = Collections.unmodifiableMap(new HashMap<String, String>(nameMap));
+            this.nameMap = Collections.unmodifiableMap(new LinkedHashMap<String, String>(nameMap));
         return this;
     }
     public Map<String, Object> getValueMap() {
@@ -117,7 +117,7 @@ public class PutItemSpec extends AbstractSpec<PutItemRequest> {
         if (valueMap == null)
             this.valueMap = null;
         else
-            this.valueMap = Collections.unmodifiableMap(new HashMap<String, Object>(valueMap));
+            this.valueMap = Collections.unmodifiableMap(new LinkedHashMap<String, Object>(valueMap));
         return this;
     }
 

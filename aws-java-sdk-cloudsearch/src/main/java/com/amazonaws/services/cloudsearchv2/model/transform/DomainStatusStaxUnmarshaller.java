@@ -91,6 +91,10 @@ public class DomainStatusStaxUnmarshaller implements Unmarshaller<DomainStatus, 
                     domainStatus.setSearchInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Limits", targetDepth)) {
+                    domainStatus.setLimits(LimitsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return domainStatus;

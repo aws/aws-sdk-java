@@ -21,7 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#buildSuggesters(BuildSuggestersRequest) BuildSuggesters operation}.
  * <p>
- * Indexes the search suggestions.
+ * Indexes the search suggestions. For more information, see
+ * <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters"> Configuring Suggesters </a>
+ * in the <i>Amazon CloudSearch Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.cloudsearchv2.AmazonCloudSearch#buildSuggesters(BuildSuggestersRequest)

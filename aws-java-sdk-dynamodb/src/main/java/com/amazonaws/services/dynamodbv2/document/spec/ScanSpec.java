@@ -17,8 +17,8 @@ package com.amazonaws.services.dynamodbv2.document.spec;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -57,7 +57,7 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         if (scanFilters == null)
             this.scanFilters = null;
         else {
-            Set<String> names = new HashSet<String>();
+            Set<String> names = new LinkedHashSet<String>();
             for (ScanFilter e: scanFilters)
                 names.add(e.getAttribute());
             if (names.size() != scanFilters.length) {
@@ -129,7 +129,7 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         if (nameMap == null)
             this.nameMap = null;
         else
-            this.nameMap = Collections.unmodifiableMap(new HashMap<String, String>(nameMap));
+            this.nameMap = Collections.unmodifiableMap(new LinkedHashMap<String, String>(nameMap));
         return this;
     }
 
@@ -145,7 +145,7 @@ public class ScanSpec extends AbstractCollectionSpec<ScanRequest> {
         if (valueMap == null)
             this.valueMap = null;
         else
-            this.valueMap = Collections.unmodifiableMap(new HashMap<String, Object>(valueMap));
+            this.valueMap = Collections.unmodifiableMap(new LinkedHashMap<String, Object>(valueMap));
         return this;
     }
 

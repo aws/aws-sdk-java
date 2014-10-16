@@ -39,7 +39,7 @@ public class DescribeDBSubnetGroupsRequestMarshaller implements Marshaller<Reque
 
         Request<DescribeDBSubnetGroupsRequest> request = new DefaultRequest<DescribeDBSubnetGroupsRequest>(describeDBSubnetGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBSubnetGroups");
-        request.addParameter("Version", "2013-09-09");
+        request.addParameter("Version", "2014-09-01");
 
         if (describeDBSubnetGroupsRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(describeDBSubnetGroupsRequest.getDBSubnetGroupName()));
@@ -51,19 +51,19 @@ public class DescribeDBSubnetGroupsRequestMarshaller implements Marshaller<Reque
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
-                if (filterMember.getFilterName() != null) {
-                    request.addParameter("Filters.Filter." + filtersListIndex + ".FilterName", StringUtils.fromString(filterMember.getFilterName()));
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
                 }
 
-                java.util.List<String> filterValueList = filterMember.getFilterValue();
-                int filterValueListIndex = 1;
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
 
-                for (String filterValueListValue : filterValueList) {
-                    if (filterValueListValue != null) {
-                        request.addParameter("Filters.Filter." + filtersListIndex + ".FilterValue.Value." + filterValueListIndex, StringUtils.fromString(filterValueListValue));
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                     }
 
-                    filterValueListIndex++;
+                    valuesListIndex++;
                 }
             }
 

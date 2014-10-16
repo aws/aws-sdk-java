@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -110,7 +110,7 @@ public class ValueList extends FluentArrayList<Object> {
      * Appends the given values to this list as a string set.
      */
     public ValueList appendStringSet(String ...val) {
-        super.append(new HashSet<String>(Arrays.asList(val)));
+        super.append(new LinkedHashSet<String>(Arrays.asList(val)));
         return this;
     }
 
@@ -126,7 +126,7 @@ public class ValueList extends FluentArrayList<Object> {
      * Appends the given value to this list as a set of BigDecimals.
      */
     public ValueList appendNumberSet(BigDecimal ... val) {
-        super.append(new HashSet<BigDecimal>(Arrays.asList(val)));
+        super.append(new LinkedHashSet<BigDecimal>(Arrays.asList(val)));
         return this;
     }
 
@@ -150,7 +150,7 @@ public class ValueList extends FluentArrayList<Object> {
      * Appends the given values to this list as a set of byte arrays.
      */
     public ValueList appendBinarySet(byte[] ... val) {
-        super.append(new HashSet<byte[]>(Arrays.asList(val)));
+        super.append(new LinkedHashSet<byte[]>(Arrays.asList(val)));
         return this;
     }
 

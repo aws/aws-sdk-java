@@ -34,10 +34,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>HE-AAC</code>: Not supported on some older players and
      * devices. Use for bitrates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
-     * any presets before AAC profiles were added, Elastic Transcoder
-     * automatically updated your presets to use AAC-LC. You can change the
-     * value as required.</note>
+     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * <code>Smooth</code> playlist must have the same value for
+     * <code>Profile</code>. <note><p>If you created any presets before AAC
+     * profiles were added, Elastic Transcoder automatically updated your
+     * presets to use AAC-LC. You can change the value as required.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)<br/>
@@ -55,10 +56,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>HE-AAC</code>: Not supported on some older players and
      * devices. Use for bitrates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
-     * any presets before AAC profiles were added, Elastic Transcoder
-     * automatically updated your presets to use AAC-LC. You can change the
-     * value as required.</note>
+     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * <code>Smooth</code> playlist must have the same value for
+     * <code>Profile</code>. <note><p>If you created any presets before AAC
+     * profiles were added, Elastic Transcoder automatically updated your
+     * presets to use AAC-LC. You can change the value as required.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)<br/>
@@ -73,10 +75,11 @@ public class AudioCodecOptions implements Serializable {
      *         <li><code>HE-AAC</code>: Not supported on some older players and
      *         devices. Use for bitrates between 40 and 80 kbps.</li>
      *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     *         Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
-     *         any presets before AAC profiles were added, Elastic Transcoder
-     *         automatically updated your presets to use AAC-LC. You can change the
-     *         value as required.</note>
+     *         Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     *         <code>Smooth</code> playlist must have the same value for
+     *         <code>Profile</code>. <note><p>If you created any presets before AAC
+     *         profiles were added, Elastic Transcoder automatically updated your
+     *         presets to use AAC-LC. You can change the value as required.</note>
      */
     public String getProfile() {
         return profile;
@@ -93,10 +96,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>HE-AAC</code>: Not supported on some older players and
      * devices. Use for bitrates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
-     * any presets before AAC profiles were added, Elastic Transcoder
-     * automatically updated your presets to use AAC-LC. You can change the
-     * value as required.</note>
+     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * <code>Smooth</code> playlist must have the same value for
+     * <code>Profile</code>. <note><p>If you created any presets before AAC
+     * profiles were added, Elastic Transcoder automatically updated your
+     * presets to use AAC-LC. You can change the value as required.</note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)<br/>
@@ -111,10 +115,11 @@ public class AudioCodecOptions implements Serializable {
      *         <li><code>HE-AAC</code>: Not supported on some older players and
      *         devices. Use for bitrates between 40 and 80 kbps.</li>
      *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     *         Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
-     *         any presets before AAC profiles were added, Elastic Transcoder
-     *         automatically updated your presets to use AAC-LC. You can change the
-     *         value as required.</note>
+     *         Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     *         <code>Smooth</code> playlist must have the same value for
+     *         <code>Profile</code>. <note><p>If you created any presets before AAC
+     *         profiles were added, Elastic Transcoder automatically updated your
+     *         presets to use AAC-LC. You can change the value as required.</note>
      */
     public void setProfile(String profile) {
         this.profile = profile;
@@ -131,10 +136,11 @@ public class AudioCodecOptions implements Serializable {
      * <li><code>HE-AAC</code>: Not supported on some older players and
      * devices. Use for bitrates between 40 and 80 kbps.</li>
      * <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     * Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
-     * any presets before AAC profiles were added, Elastic Transcoder
-     * automatically updated your presets to use AAC-LC. You can change the
-     * value as required.</note>
+     * Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     * <code>Smooth</code> playlist must have the same value for
+     * <code>Profile</code>. <note><p>If you created any presets before AAC
+     * profiles were added, Elastic Transcoder automatically updated your
+     * presets to use AAC-LC. You can change the value as required.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -151,10 +157,11 @@ public class AudioCodecOptions implements Serializable {
      *         <li><code>HE-AAC</code>: Not supported on some older players and
      *         devices. Use for bitrates between 40 and 80 kbps.</li>
      *         <li><code>HE-AACv2</code>: Not supported on some players and devices.
-     *         Use for bitrates less than 48 kbps.</li> </ul> <note><p>If you created
-     *         any presets before AAC profiles were added, Elastic Transcoder
-     *         automatically updated your presets to use AAC-LC. You can change the
-     *         value as required.</note>
+     *         Use for bitrates less than 48 kbps.</li> </ul> <p>All outputs in a
+     *         <code>Smooth</code> playlist must have the same value for
+     *         <code>Profile</code>. <note><p>If you created any presets before AAC
+     *         profiles were added, Elastic Transcoder automatically updated your
+     *         presets to use AAC-LC. You can change the value as required.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

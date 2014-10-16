@@ -43,9 +43,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * hash key ranges of the shards. You can override hashing the partition
  * key to determine the shard by explicitly specifying a hash value using
  * the <code>ExplicitHashKey</code> parameter. For more information, see
- * the
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
- * .
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-partition-key"> Partition Key </a>
+ * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
  * <code>PutRecord</code> returns the shard ID of where the data record
@@ -55,9 +54,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Sequence numbers generally increase over time. To guarantee strictly
  * increasing ordering, use the <code>SequenceNumberForOrdering</code>
- * parameter. For more information, see the
- * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/"> Amazon Kinesis Developer Guide </a>
- * .
+ * parameter. For more information, see
+ * <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-api-java.html#kinesis-using-api-defn-sequence-number"> Sequence Number </a>
+ * in the <i>Amazon Kinesis Developer Guide</i> .
  * </p>
  * <p>
  * If a <code>PutRecord</code> request cannot be processed because of
@@ -86,7 +85,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The data blob to put into the record, which is Base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * after Base64-decoding) is 50 kilobytes (KB)
+     * before Base64-encoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
@@ -179,14 +178,14 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The data blob to put into the record, which is Base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * after Base64-decoding) is 50 kilobytes (KB)
+     * before Base64-encoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
      * @return The data blob to put into the record, which is Base64-encoded when the
      *         blob is serialized. The maximum size of the data blob (the payload
-     *         after Base64-decoding) is 50 kilobytes (KB)
+     *         before Base64-encoding) is 50 kilobytes (KB)
      */
     public java.nio.ByteBuffer getData() {
         return data;
@@ -195,14 +194,14 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The data blob to put into the record, which is Base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * after Base64-decoding) is 50 kilobytes (KB)
+     * before Base64-encoding) is 50 kilobytes (KB)
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 51200<br/>
      *
      * @param data The data blob to put into the record, which is Base64-encoded when the
      *         blob is serialized. The maximum size of the data blob (the payload
-     *         after Base64-decoding) is 50 kilobytes (KB)
+     *         before Base64-encoding) is 50 kilobytes (KB)
      */
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
@@ -211,7 +210,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * The data blob to put into the record, which is Base64-encoded when the
      * blob is serialized. The maximum size of the data blob (the payload
-     * after Base64-decoding) is 50 kilobytes (KB)
+     * before Base64-encoding) is 50 kilobytes (KB)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -220,7 +219,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements Seriali
      *
      * @param data The data blob to put into the record, which is Base64-encoded when the
      *         blob is serialized. The maximum size of the data blob (the payload
-     *         after Base64-decoding) is 50 kilobytes (KB)
+     *         before Base64-encoding) is 50 kilobytes (KB)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

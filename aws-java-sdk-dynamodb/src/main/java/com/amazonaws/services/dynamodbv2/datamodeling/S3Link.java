@@ -415,11 +415,7 @@ public class S3Link {
      * @see ID
      */
     private static class S3 {
-        /**
-         * The region id of {@link Region} where the S3 object is stored.
-         */
-        @JsonProperty("region")
-        private String regionId;
+
         /**
          * The name of the S3 bucket containing the object to retrieve.
          */
@@ -431,6 +427,12 @@ public class S3Link {
          */
         @JsonProperty("key")
         private String key;
+
+        /**
+         * The region id of {@link Region} where the S3 object is stored.
+         */
+        @JsonProperty("region")
+        private String regionId;
 
         @SuppressWarnings("unused")
         S3() {}  // used by Jackson to unmarshall

@@ -29,7 +29,8 @@ public class DescribeDBLogFilesResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<DescribeDBLogFilesDetails> describeDBLogFiles;
 
     /**
-     * An optional paging token.
+     * A pagination token that can be used in a subsequent DescribeDBLogFiles
+     * request.
      */
     private String marker;
 
@@ -102,29 +103,35 @@ public class DescribeDBLogFilesResult implements Serializable {
     }
 
     /**
-     * An optional paging token.
+     * A pagination token that can be used in a subsequent DescribeDBLogFiles
+     * request.
      *
-     * @return An optional paging token.
+     * @return A pagination token that can be used in a subsequent DescribeDBLogFiles
+     *         request.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional paging token.
+     * A pagination token that can be used in a subsequent DescribeDBLogFiles
+     * request.
      *
-     * @param marker An optional paging token.
+     * @param marker A pagination token that can be used in a subsequent DescribeDBLogFiles
+     *         request.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional paging token.
+     * A pagination token that can be used in a subsequent DescribeDBLogFiles
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional paging token.
+     * @param marker A pagination token that can be used in a subsequent DescribeDBLogFiles
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
