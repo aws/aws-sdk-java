@@ -42,6 +42,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.TableNameOverride;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableSchemaParser.TableIndexesInfo;
 import com.amazonaws.services.dynamodbv2.model.AttributeAction;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
@@ -580,15 +581,21 @@ public class DynamoDBMapper {
                                final DynamoDBMapperConfig config,
                                final DynamoDBReflector reflector) {
 
-        DynamoDBTable table = reflector.getTable(clazz);
-        String tableName = table.tableName();
-        if ( config.getTableNameOverride() != null ) {
-            if ( config.getTableNameOverride().getTableName() != null ) {
-                tableName = config.getTableNameOverride().getTableName();
-            } else {
-                tableName = config.getTableNameOverride().getTableNamePrefix()
-                            + tableName;
+        TableNameOverride tableNameOverride = config.getTableNameOverride();
+
+        String tableName;
+        if( tableNameOverride != null ) {
+            tableName = tableNameOverride.getTableName();
+            
+            if( tableName != null ) {
+                return tableName;
             }
+        }
+        
+        DynamoDBTable table = reflector.getTable(clazz);
+        tableName = table.tableName();
+        if ( tableNameOverride != null ) {
+            tableName = tableNameOverride.getTableNamePrefix() + tableName;
         }
 
         return tableName;
