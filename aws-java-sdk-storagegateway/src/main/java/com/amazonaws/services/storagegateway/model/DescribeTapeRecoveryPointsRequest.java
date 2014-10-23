@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest) DescribeTapeRecoveryPoints operation}.
  * <p>
  * Returns a list of virtual tape recovery points that are available for
- * the specified Gateway-Virtual Tape Library.
+ * the specified gateway-VTL.
  * </p>
  * <p>
  * A recovery point is a point in time view of a virtual tape at which

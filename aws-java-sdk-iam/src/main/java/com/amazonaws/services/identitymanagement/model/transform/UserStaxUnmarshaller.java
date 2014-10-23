@@ -63,6 +63,10 @@ public class UserStaxUnmarshaller implements Unmarshaller<User, StaxUnmarshaller
                     user.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PasswordLastUsed", targetDepth)) {
+                    user.setPasswordLastUsed(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return user;

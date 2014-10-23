@@ -14,27 +14,28 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import static com.amazonaws.util.XpathUtils.asString;
-import static com.amazonaws.util.XpathUtils.xpath;
+import static com.amazonaws.util.StringUtils.UTF8;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 
-import javax.xml.xpath.XPath;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.w3c.dom.Document;
 
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.util.IOUtils;
-import com.amazonaws.util.XpathUtils;
 
 /**
  * Response handler for S3 error responses. S3 error responses are different
@@ -46,86 +47,138 @@ import com.amazonaws.util.XpathUtils;
  * body (ex: error type/fault information) so it has to be inferred from other
  * parts of the error response.
  */
-public class S3ErrorResponseHandler
-        implements HttpResponseHandler<AmazonServiceException> {
-    private static final Log log = LogFactory.getLog(S3ErrorResponseHandler.class);
+public class S3ErrorResponseHandler implements
+        HttpResponseHandler<AmazonServiceException> {
+    /** Shared logger for profiling information */
+    private static final Log log = LogFactory
+            .getLog(S3ErrorResponseHandler.class);
+
+    /** Shared factory for creating XML event readers */
+    private static final XMLInputFactory xmlInputFactory = XMLInputFactory
+            .newInstance();
+
+    private static enum S3ErrorTags {
+        Error, Message, Code, RequestId, HostId
+    };
 
     @Override
-    public AmazonServiceException handle(HttpResponse errorResponse) throws IOException {
+    public AmazonServiceException handle(HttpResponse httpResponse)
+            throws XMLStreamException {
+
+        final InputStream is = httpResponse.getContent();
+        String xmlContent = null;
         /*
          * We don't always get an error response body back from S3. When we send
          * a HEAD request, we don't receive a body, so we'll have to just return
          * what we can.
          */
-        final InputStream is = errorResponse.getContent();
         if (is == null
-        || errorResponse.getRequest().getHttpMethod() == HttpMethodName.HEAD) {
-            String requestId = errorResponse.getHeaders().get(Headers.REQUEST_ID);
-            String extendedRequestId = errorResponse.getHeaders().get(Headers.EXTENDED_REQUEST_ID);
-            AmazonS3Exception ase = new AmazonS3Exception(errorResponse.getStatusText());
-            final int statusCode = errorResponse.getStatusCode(); 
-            ase.setStatusCode(statusCode);
-            ase.setRequestId(requestId);
-            ase.setExtendedRequestId(extendedRequestId);
-            ase.setErrorType(errorTypeOf(statusCode));
-            return ase;
+                || httpResponse.getRequest().getHttpMethod() == HttpMethodName.HEAD) {
+            return createExceptionFromHeaders(httpResponse, null);
         }
-        // Try to read the error response
-        String content = "";
+
+        String content = null;
         try {
             content = IOUtils.toString(is);
-        } catch(IOException ex) {
+        } catch (IOException ioe) {
             if (log.isDebugEnabled())
-                log.debug("Failed in reading the error response", ex);
-            return newAmazonS3Exception(errorResponse.getStatusText(), errorResponse);
+                log.debug("Failed in parsing the error response : ", ioe);
+            return createExceptionFromHeaders(httpResponse, null);
         }
-        try { // try to parse the error response as XML
-            final Document document = XpathUtils.documentFrom(content);
-            XPath xpath = xpath();
-            final String message = asString("Error/Message", document, xpath);
-            final String errorCode = asString("Error/Code", document, xpath);
-            final String requestId = asString("Error/RequestId", document, xpath);
-            final String extendedRequestId = asString("Error/HostId", document, xpath);
-            final AmazonS3Exception ase = new AmazonS3Exception(message);
-            final int statusCode = errorResponse.getStatusCode(); 
-            ase.setStatusCode(statusCode);
-            ase.setErrorType(errorTypeOf(statusCode));
-            ase.setErrorCode(errorCode);
-            ase.setRequestId(requestId);
-            ase.setExtendedRequestId(extendedRequestId);
-            return ase;
-        } catch(Exception ex) {
+
+        /*
+         * XMLInputFactory is not thread safe and hence it is synchronized.
+         * Reference :
+         * http://itdoc.hitachi.co.jp/manuals/3020/30203Y2210e/EY220140.HTM
+         */
+        XMLStreamReader reader;
+        synchronized (xmlInputFactory) {
+            reader = xmlInputFactory
+                    .createXMLStreamReader(new ByteArrayInputStream(content
+                            .getBytes(UTF8)));
+        }
+
+        try {
+            /*
+             * target depth is to determine if the XML Error response from the
+             * server has any element inside <Error> tag have child tags.
+             * Parsing such tags is not supported now. target depth is
+             * incremented for every start tag and decremented after every end
+             * tag is encountered.
+             */
+            int targetDepth = 0;
+            final AmazonS3ExceptionBuilder exceptionBuilder = new AmazonS3ExceptionBuilder();
+            exceptionBuilder.setErrorResponseXml(content);
+            exceptionBuilder.setStatusCode(httpResponse.getStatusCode());
+
+            boolean hasErrorTagVisited = false;
+            while (reader.hasNext()) {
+                int event = reader.next();
+
+                switch (event) {
+                case XMLStreamConstants.START_ELEMENT:
+                    targetDepth++;
+                    String tagName = reader.getLocalName();
+                    if (targetDepth == 1
+                            && !S3ErrorTags.Error.toString().equals(tagName))
+                        return createExceptionFromHeaders(httpResponse,
+                                "Unable to parse error response. Error XML Not in proper format."
+                                        + content);
+                    if (S3ErrorTags.Error.toString().equals(tagName)) {
+                        hasErrorTagVisited = true;
+                    }
+                    continue;
+                case XMLStreamConstants.CHARACTERS:
+                    xmlContent = reader.getText();
+                    if (xmlContent != null)
+                        xmlContent = xmlContent.trim();
+                    continue;
+                case XMLStreamConstants.END_ELEMENT:
+                    tagName = reader.getLocalName();
+                    targetDepth--;
+                    if (!(hasErrorTagVisited) || targetDepth > 1) {
+                        return createExceptionFromHeaders(httpResponse,
+                                "Unable to parse error response. Error XML Not in proper format."
+                                        + content);
+                    }
+                    if (S3ErrorTags.Message.toString().equals(tagName)) {
+                        exceptionBuilder.setErrorMessage(xmlContent);
+                    } else if (S3ErrorTags.Code.toString().equals(tagName)) {
+                        exceptionBuilder.setErrorCode(xmlContent);
+                    } else if (S3ErrorTags.RequestId.toString().equals(tagName)) {
+                        exceptionBuilder.setRequestId(xmlContent);
+                    } else if (S3ErrorTags.HostId.toString().equals(tagName)) {
+                        exceptionBuilder.setExtendedRequestId(xmlContent);
+                    } else {
+                        exceptionBuilder.addAdditionalDetail(tagName, xmlContent);
+                    }
+                    continue;
+                case XMLStreamConstants.END_DOCUMENT:
+                    return exceptionBuilder.build();
+                }
+            }
+        } catch (Exception e) {
             if (log.isDebugEnabled())
-                log.debug("Failed in parsing the response as XML: " + content, ex);
-            return newAmazonS3Exception(content, errorResponse);
+                log.debug("Failed in parsing the error response : " + content,
+                        e);
         }
+        return createExceptionFromHeaders(httpResponse, content);
     }
 
-    /**
-     * Used to create an {@link AmazonS3Exception} when we failed to read the
-     * error response or parsed the error response as XML.
-     */
-    private AmazonS3Exception newAmazonS3Exception(String errmsg, HttpResponse httpResponse) {
-        final AmazonS3Exception ase = new AmazonS3Exception(errmsg);
-        final int statusCode = httpResponse.getStatusCode(); 
-        ase.setErrorCode(statusCode + " " + httpResponse.getStatusText());
-        ase.setStatusCode(statusCode);
-        ase.setErrorType(errorTypeOf(statusCode));
-        return ase;
-    }
-
-    /**
-     * Returns the AWS error type information by looking at the HTTP status code
-     * in the error response. S3 error responses don't explicitly declare a
-     * sender or client fault like other AWS services, so we have to use the
-     * HTTP status code to infer this information.
-     * 
-     * @param httpResponse
-     *            The HTTP error response to use to determine the right error
-     *            type to set.
-     */
-    private ErrorType errorTypeOf(int statusCode) {
-        return statusCode >= 500 ? ErrorType.Service : ErrorType.Client;
+    private AmazonS3Exception createExceptionFromHeaders(
+            HttpResponse errorResponse, String errorResponseXml) {
+        final Map<String, String> headers = errorResponse.getHeaders();
+        final int statusCode = errorResponse.getStatusCode();
+        final AmazonS3ExceptionBuilder exceptionBuilder = new AmazonS3ExceptionBuilder();
+        exceptionBuilder.setErrorMessage(errorResponse.getStatusText());
+        exceptionBuilder.setErrorResponseXml(errorResponseXml);
+        exceptionBuilder.setStatusCode(statusCode);
+        exceptionBuilder
+                .setExtendedRequestId(headers.get(Headers.EXTENDED_REQUEST_ID));
+        exceptionBuilder.setRequestId(headers.get(Headers.REQUEST_ID));
+        exceptionBuilder
+                .setErrorCode(statusCode + " " + errorResponse.getStatusText());
+        return exceptionBuilder.build();
     }
 
     /**

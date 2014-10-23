@@ -133,8 +133,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <code>instance-stop</code>). </li> <li>
      * <p><code>event.description</code> - A description of the event. </li>
      * <li> <p><code>event.not-after</code> - The latest end time for the
-     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     * earliest start time for the scheduled event. </li> <li>
+     * scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the scheduled event, for example:
+     * <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>instance-state-code</code> - A code representing the state of
      * the instance, as a 16-bit unsigned integer. The high byte is an opaque
      * internal value and should be ignored. The low byte is set based on the
@@ -163,13 +165,16 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The next paginated set of results to return.
+     * The next paginated set of results to return. (You received this token
+     * from a prior call.)
      */
     private String nextToken;
 
     /**
-     * The maximum number of paginated instance items per response.
-     * <p>Default: 1000
+     * The maximum number of paginated instance items per response. The call
+     * also returns a token that you can specify in a subsequent call to get
+     * the next set of results. If the value is greater than 1000, we return
+     * only 1000 items. <p>Default: 1000
      */
     private Integer maxResults;
 
@@ -265,8 +270,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <code>instance-stop</code>). </li> <li>
      * <p><code>event.description</code> - A description of the event. </li>
      * <li> <p><code>event.not-after</code> - The latest end time for the
-     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     * earliest start time for the scheduled event. </li> <li>
+     * scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the scheduled event, for example:
+     * <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>instance-state-code</code> - A code representing the state of
      * the instance, as a 16-bit unsigned integer. The high byte is an opaque
      * internal value and should be ignored. The low byte is set based on the
@@ -300,8 +307,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         <code>instance-stop</code>). </li> <li>
      *         <p><code>event.description</code> - A description of the event. </li>
      *         <li> <p><code>event.not-after</code> - The latest end time for the
-     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     *         earliest start time for the scheduled event. </li> <li>
+     *         scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the scheduled event, for example:
+     *         <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>instance-state-code</code> - A code representing the state of
      *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
      *         internal value and should be ignored. The low byte is set based on the
@@ -344,8 +353,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <code>instance-stop</code>). </li> <li>
      * <p><code>event.description</code> - A description of the event. </li>
      * <li> <p><code>event.not-after</code> - The latest end time for the
-     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     * earliest start time for the scheduled event. </li> <li>
+     * scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the scheduled event, for example:
+     * <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>instance-state-code</code> - A code representing the state of
      * the instance, as a 16-bit unsigned integer. The high byte is an opaque
      * internal value and should be ignored. The low byte is set based on the
@@ -379,8 +390,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         <code>instance-stop</code>). </li> <li>
      *         <p><code>event.description</code> - A description of the event. </li>
      *         <li> <p><code>event.not-after</code> - The latest end time for the
-     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     *         earliest start time for the scheduled event. </li> <li>
+     *         scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the scheduled event, for example:
+     *         <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>instance-state-code</code> - A code representing the state of
      *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
      *         internal value and should be ignored. The low byte is set based on the
@@ -425,8 +438,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <code>instance-stop</code>). </li> <li>
      * <p><code>event.description</code> - A description of the event. </li>
      * <li> <p><code>event.not-after</code> - The latest end time for the
-     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     * earliest start time for the scheduled event. </li> <li>
+     * scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the scheduled event, for example:
+     * <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>instance-state-code</code> - A code representing the state of
      * the instance, as a 16-bit unsigned integer. The high byte is an opaque
      * internal value and should be ignored. The low byte is set based on the
@@ -462,8 +477,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         <code>instance-stop</code>). </li> <li>
      *         <p><code>event.description</code> - A description of the event. </li>
      *         <li> <p><code>event.not-after</code> - The latest end time for the
-     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     *         earliest start time for the scheduled event. </li> <li>
+     *         scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the scheduled event, for example:
+     *         <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>instance-state-code</code> - A code representing the state of
      *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
      *         internal value and should be ignored. The low byte is set based on the
@@ -509,8 +526,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * <code>instance-stop</code>). </li> <li>
      * <p><code>event.description</code> - A description of the event. </li>
      * <li> <p><code>event.not-after</code> - The latest end time for the
-     * scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     * earliest start time for the scheduled event. </li> <li>
+     * scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     * </li> <li> <p><code>event.not-before</code> - The earliest start time
+     * for the scheduled event, for example:
+     * <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      * <p><code>instance-state-code</code> - A code representing the state of
      * the instance, as a 16-bit unsigned integer. The high byte is an opaque
      * internal value and should be ignored. The low byte is set based on the
@@ -546,8 +565,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         <code>instance-stop</code>). </li> <li>
      *         <p><code>event.description</code> - A description of the event. </li>
      *         <li> <p><code>event.not-after</code> - The latest end time for the
-     *         scheduled event. </li> <li> <p><code>event.not-before</code> - The
-     *         earliest start time for the scheduled event. </li> <li>
+     *         scheduled event, for example: <code>2010-09-15T17:15:20.000Z</code>.
+     *         </li> <li> <p><code>event.not-before</code> - The earliest start time
+     *         for the scheduled event, for example:
+     *         <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
      *         <p><code>instance-state-code</code> - A code representing the state of
      *         the instance, as a 16-bit unsigned integer. The high byte is an opaque
      *         internal value and should be ignored. The low byte is set based on the
@@ -589,29 +610,35 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The next paginated set of results to return.
+     * The next paginated set of results to return. (You received this token
+     * from a prior call.)
      *
-     * @return The next paginated set of results to return.
+     * @return The next paginated set of results to return. (You received this token
+     *         from a prior call.)
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * The next paginated set of results to return.
+     * The next paginated set of results to return. (You received this token
+     * from a prior call.)
      *
-     * @param nextToken The next paginated set of results to return.
+     * @param nextToken The next paginated set of results to return. (You received this token
+     *         from a prior call.)
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * The next paginated set of results to return.
+     * The next paginated set of results to return. (You received this token
+     * from a prior call.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The next paginated set of results to return.
+     * @param nextToken The next paginated set of results to return. (You received this token
+     *         from a prior call.)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -622,35 +649,47 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The maximum number of paginated instance items per response.
-     * <p>Default: 1000
+     * The maximum number of paginated instance items per response. The call
+     * also returns a token that you can specify in a subsequent call to get
+     * the next set of results. If the value is greater than 1000, we return
+     * only 1000 items. <p>Default: 1000
      *
-     * @return The maximum number of paginated instance items per response.
-     *         <p>Default: 1000
+     * @return The maximum number of paginated instance items per response. The call
+     *         also returns a token that you can specify in a subsequent call to get
+     *         the next set of results. If the value is greater than 1000, we return
+     *         only 1000 items. <p>Default: 1000
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * The maximum number of paginated instance items per response.
-     * <p>Default: 1000
+     * The maximum number of paginated instance items per response. The call
+     * also returns a token that you can specify in a subsequent call to get
+     * the next set of results. If the value is greater than 1000, we return
+     * only 1000 items. <p>Default: 1000
      *
-     * @param maxResults The maximum number of paginated instance items per response.
-     *         <p>Default: 1000
+     * @param maxResults The maximum number of paginated instance items per response. The call
+     *         also returns a token that you can specify in a subsequent call to get
+     *         the next set of results. If the value is greater than 1000, we return
+     *         only 1000 items. <p>Default: 1000
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * The maximum number of paginated instance items per response.
-     * <p>Default: 1000
+     * The maximum number of paginated instance items per response. The call
+     * also returns a token that you can specify in a subsequent call to get
+     * the next set of results. If the value is greater than 1000, we return
+     * only 1000 items. <p>Default: 1000
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of paginated instance items per response.
-     *         <p>Default: 1000
+     * @param maxResults The maximum number of paginated instance items per response. The call
+     *         also returns a token that you can specify in a subsequent call to get
+     *         the next set of results. If the value is greater than 1000, we return
+     *         only 1000 items. <p>Default: 1000
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

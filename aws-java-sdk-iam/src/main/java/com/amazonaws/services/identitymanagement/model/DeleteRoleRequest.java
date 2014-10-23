@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * .
  * </p>
  * <p>
- * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+ * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
  * running with the role you are about to delete. Deleting a role or
  * instance profile that is associated with a running instance will break
  * any applications running on the instance.
@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteRoleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the role to delete.
+     * The name of the role to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -47,33 +47,33 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements Serial
     private String roleName;
 
     /**
-     * Name of the role to delete.
+     * The name of the role to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the role to delete.
+     * @return The name of the role to delete.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * Name of the role to delete.
+     * The name of the role to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to delete.
+     * @param roleName The name of the role to delete.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * Name of the role to delete.
+     * The name of the role to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -81,7 +81,7 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to delete.
+     * @param roleName The name of the role to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

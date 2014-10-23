@@ -17,6 +17,8 @@ package com.amazonaws.services.dynamodbv2.document;
 import java.util.Collection;
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.api.DeleteItemApi;
 import com.amazonaws.services.dynamodbv2.document.api.GetItemApi;
@@ -50,12 +52,13 @@ import com.amazonaws.services.dynamodbv2.model.UpdateTableResult;
  * A DynamoDB table. Instance of this class is typically obtained via
  * {@link DynamoDB#getTable(String)}.
  */
+@ThreadSafe
 public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
         UpdateItemApi, DeleteItemApi {
     private static final long SLEEP_TIME_MILLIS = 5000;
     private final String tableName;
     private final AmazonDynamoDB client;
-    private TableDescription tableDescription;
+    private volatile TableDescription tableDescription;
 
     private final PutItemImpl putItemDelegate;
     private final GetItemImpl getItemDelegate;

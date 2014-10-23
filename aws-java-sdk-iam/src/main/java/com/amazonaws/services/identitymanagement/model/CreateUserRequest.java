@@ -36,9 +36,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -47,7 +47,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
     private String path;
 
     /**
-     * Name of the user to create.
+     * The name of the user to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -66,7 +66,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user to create.
+     * @param userName The name of the user to create.
      */
     public CreateUserRequest(String userName) {
         setUserName(userName);
@@ -74,18 +74,18 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @return The path for the user name. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     *         is optional. If it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/).
      */
     public String getPath() {
         return path;
@@ -93,18 +93,18 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path for the user name. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     *         is optional. If it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
@@ -112,9 +112,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
     
     /**
      * The path for the user name. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -123,9 +123,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
      * @param path The path for the user name. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     *         is optional. If it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -136,33 +136,33 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * Name of the user to create.
+     * The name of the user to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to create.
+     * @return The name of the user to create.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to create.
+     * The name of the user to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create.
+     * @param userName The name of the user to create.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to create.
+     * The name of the user to create.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -170,7 +170,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create.
+     * @param userName The name of the user to create.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

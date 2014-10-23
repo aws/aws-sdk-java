@@ -18,18 +18,17 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The AccessKey data type contains information about an AWS access key,
- * without its secret key.
+ * Contains information about an AWS access key, without its secret key.
  * </p>
  * <p>
- * This data type is used as a response element in the action
- * ListAccessKeys.
+ * This data type is used as a response element in the ListAccessKeys
+ * action.
  * </p>
  */
 public class AccessKeyMetadata implements Serializable {
 
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the key is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -48,7 +47,7 @@ public class AccessKeyMetadata implements Serializable {
 
     /**
      * The status of the access key. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.
+     * valid for API calls; <code>Inactive</code> means it is not.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
@@ -67,33 +66,33 @@ public class AccessKeyMetadata implements Serializable {
     public AccessKeyMetadata() {}
     
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the key is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user the key is associated with.
+     * @return The name of the IAM user that the key is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the key is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the key is associated with.
+     * @param userName The name of the IAM user that the key is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the key is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -101,7 +100,7 @@ public class AccessKeyMetadata implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the key is associated with.
+     * @param userName The name of the IAM user that the key is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -158,13 +157,13 @@ public class AccessKeyMetadata implements Serializable {
 
     /**
      * The status of the access key. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.
+     * valid for API calls; <code>Inactive</code> means it is not.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
      * @return The status of the access key. <code>Active</code> means the key is
-     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *         valid for API calls; <code>Inactive</code> means it is not.
      *
      * @see StatusType
      */
@@ -174,13 +173,13 @@ public class AccessKeyMetadata implements Serializable {
     
     /**
      * The status of the access key. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.
+     * valid for API calls; <code>Inactive</code> means it is not.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
      * @param status The status of the access key. <code>Active</code> means the key is
-     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *         valid for API calls; <code>Inactive</code> means it is not.
      *
      * @see StatusType
      */
@@ -190,7 +189,7 @@ public class AccessKeyMetadata implements Serializable {
     
     /**
      * The status of the access key. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.
+     * valid for API calls; <code>Inactive</code> means it is not.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -198,7 +197,7 @@ public class AccessKeyMetadata implements Serializable {
      * <b>Allowed Values: </b>Active, Inactive
      *
      * @param status The status of the access key. <code>Active</code> means the key is
-     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *         valid for API calls; <code>Inactive</code> means it is not.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -212,13 +211,13 @@ public class AccessKeyMetadata implements Serializable {
 
     /**
      * The status of the access key. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.
+     * valid for API calls; <code>Inactive</code> means it is not.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
      * @param status The status of the access key. <code>Active</code> means the key is
-     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *         valid for API calls; <code>Inactive</code> means it is not.
      *
      * @see StatusType
      */
@@ -228,7 +227,7 @@ public class AccessKeyMetadata implements Serializable {
     
     /**
      * The status of the access key. <code>Active</code> means the key is
-     * valid for API calls, while <code>Inactive</code> means it is not.
+     * valid for API calls; <code>Inactive</code> means it is not.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -236,7 +235,7 @@ public class AccessKeyMetadata implements Serializable {
      * <b>Allowed Values: </b>Active, Inactive
      *
      * @param status The status of the access key. <code>Active</code> means the key is
-     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *         valid for API calls; <code>Inactive</code> means it is not.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

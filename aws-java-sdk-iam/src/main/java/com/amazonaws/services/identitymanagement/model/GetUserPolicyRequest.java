@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user who the policy is associated with.
+     * The name of the user who the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -42,7 +42,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
     private String userName;
 
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -61,8 +61,9 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user who the policy is associated with.
-     * @param policyName Name of the policy document to get.
+     * @param userName The name of the user who the policy is associated
+     * with.
+     * @param policyName The name of the policy document to get.
      */
     public GetUserPolicyRequest(String userName, String policyName) {
         setUserName(userName);
@@ -70,33 +71,33 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Name of the user who the policy is associated with.
+     * The name of the user who the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user who the policy is associated with.
+     * @return The name of the user who the policy is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user who the policy is associated with.
+     * The name of the user who the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user who the policy is associated with.
+     * @param userName The name of the user who the policy is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user who the policy is associated with.
+     * The name of the user who the policy is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -104,7 +105,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user who the policy is associated with.
+     * @param userName The name of the user who the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -115,33 +116,33 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the policy document to get.
+     * @return The name of the policy document to get.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to get.
+     * @param policyName The name of the policy document to get.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -149,7 +150,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to get.
+     * @param policyName The name of the policy document to get.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

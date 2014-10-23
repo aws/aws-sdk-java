@@ -18,17 +18,23 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The AccessKey data type contains information about an AWS access key.
+ * Contains information about an AWS access key.
  * </p>
  * <p>
- * This data type is used as a response element in the actions
- * CreateAccessKey and ListAccessKeys.
+ * This data type is used as a response element in the CreateAccessKey
+ * and ListAccessKeys actions.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>The SecretAccessKey value is returned only in response to
+ * CreateAccessKey. You can get a secret access key only when you first
+ * create an access key; you cannot recover the secret access key later.
+ * If you lose a secret access key, you must create a new access key.
  * </p>
  */
 public class AccessKey implements Serializable {
 
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the access key is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -75,7 +81,8 @@ public class AccessKey implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user the key is associated with.
+     * @param userName The name of the IAM user that the access key is
+     * associated with.
      * @param accessKeyId The ID for this access key.
      * @param status The status of the access key. <code>Active</code> means
      * the key is valid for API calls, while <code>Inactive</code> means it
@@ -94,7 +101,8 @@ public class AccessKey implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user the key is associated with.
+     * @param userName The name of the IAM user that the access key is
+     * associated with.
      * @param accessKeyId The ID for this access key.
      * @param status The status of the access key. <code>Active</code> means
      * the key is valid for API calls, while <code>Inactive</code> means it
@@ -109,33 +117,33 @@ public class AccessKey implements Serializable {
     }
 
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the access key is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user the key is associated with.
+     * @return The name of the IAM user that the access key is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the access key is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the key is associated with.
+     * @param userName The name of the IAM user that the access key is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user the key is associated with.
+     * The name of the IAM user that the access key is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -143,7 +151,7 @@ public class AccessKey implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the key is associated with.
+     * @param userName The name of the IAM user that the access key is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

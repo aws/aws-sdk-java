@@ -29,7 +29,7 @@ public class SpotPlacement implements Serializable {
     private String availabilityZone;
 
     /**
-     * The Availability Zone group name.
+     * The name of the placement group (for cluster instances).
      */
     private String groupName;
 
@@ -84,29 +84,29 @@ public class SpotPlacement implements Serializable {
     }
 
     /**
-     * The Availability Zone group name.
+     * The name of the placement group (for cluster instances).
      *
-     * @return The Availability Zone group name.
+     * @return The name of the placement group (for cluster instances).
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The Availability Zone group name.
+     * The name of the placement group (for cluster instances).
      *
-     * @param groupName The Availability Zone group name.
+     * @param groupName The name of the placement group (for cluster instances).
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The Availability Zone group name.
+     * The name of the placement group (for cluster instances).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The Availability Zone group name.
+     * @param groupName The name of the placement group (for cluster instances).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

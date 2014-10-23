@@ -33,9 +33,14 @@ import com.amazonaws.services.ec2.model.transform.CreateKeyPairRequestMarshaller
  * You can have up to five thousand key pairs per region.
  * </p>
  * <p>
+ * The key pair returned to you is available only in the region in which
+ * you create it. To create a key pair that is available in all regions,
+ * use ImportKeyPair.
+ * </p>
+ * <p>
  * For more information about key pairs, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest)
@@ -43,7 +48,8 @@ import com.amazonaws.services.ec2.model.transform.CreateKeyPairRequestMarshaller
 public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateKeyPairRequest> {
 
     /**
-     * A unique name for the key pair.
+     * A unique name for the key pair. <p>Constraints: Up to 255 ASCII
+     * characters
      */
     private String keyName;
 
@@ -58,36 +64,43 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements Ser
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param keyName A unique name for the key pair.
+     * @param keyName A unique name for the key pair. <p>Constraints: Up to
+     * 255 ASCII characters
      */
     public CreateKeyPairRequest(String keyName) {
         setKeyName(keyName);
     }
 
     /**
-     * A unique name for the key pair.
+     * A unique name for the key pair. <p>Constraints: Up to 255 ASCII
+     * characters
      *
-     * @return A unique name for the key pair.
+     * @return A unique name for the key pair. <p>Constraints: Up to 255 ASCII
+     *         characters
      */
     public String getKeyName() {
         return keyName;
     }
     
     /**
-     * A unique name for the key pair.
+     * A unique name for the key pair. <p>Constraints: Up to 255 ASCII
+     * characters
      *
-     * @param keyName A unique name for the key pair.
+     * @param keyName A unique name for the key pair. <p>Constraints: Up to 255 ASCII
+     *         characters
      */
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
     
     /**
-     * A unique name for the key pair.
+     * A unique name for the key pair. <p>Constraints: Up to 255 ASCII
+     * characters
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyName A unique name for the key pair.
+     * @param keyName A unique name for the key pair. <p>Constraints: Up to 255 ASCII
+     *         characters
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

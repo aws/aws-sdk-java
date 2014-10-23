@@ -162,6 +162,83 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
 
     /**
      * <p>
+     * This operation configures Amazon Route 53 to automatically renew the
+     * specified domain before the domain registration expires. The cost of
+     * renewing your domain registration is billed to your AWS account.
+     * </p>
+     * <p>
+     * The period during which you can renew a domain name varies by TLD.
+     * For a list of TLDs and their renewal policies, see "Renewal,
+     * restoration, and deletion times"
+     * iki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times)
+     * on the website for our registrar partner, Gandi. Route 53 requires
+     * that you renew before the end of the renewal period that is listed on
+     * the Gandi website so we can complete processing before the deadline.
+     * </p>
+     *
+     * @param enableDomainAutoRenewRequest Container for the necessary
+     *           parameters to execute the EnableDomainAutoRenew operation on
+     *           AmazonRoute53Domains.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EnableDomainAutoRenew service method, as returned by
+     *         AmazonRoute53Domains.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation configures Amazon Route 53 to automatically renew the
+     * specified domain before the domain registration expires. The cost of
+     * renewing your domain registration is billed to your AWS account.
+     * </p>
+     * <p>
+     * The period during which you can renew a domain name varies by TLD.
+     * For a list of TLDs and their renewal policies, see "Renewal,
+     * restoration, and deletion times"
+     * iki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times)
+     * on the website for our registrar partner, Gandi. Route 53 requires
+     * that you renew before the end of the renewal period that is listed on
+     * the Gandi website so we can complete processing before the deadline.
+     * </p>
+     *
+     * @param enableDomainAutoRenewRequest Container for the necessary
+     *           parameters to execute the EnableDomainAutoRenew operation on
+     *           AmazonRoute53Domains.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EnableDomainAutoRenew service method, as returned by
+     *         AmazonRoute53Domains.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest,
+            AsyncHandler<EnableDomainAutoRenewRequest, EnableDomainAutoRenewResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * This operation returns the operation IDs of operations that are not
      * yet complete.
      * </p>
@@ -526,6 +603,75 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      */
     public Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(EnableDomainTransferLockRequest enableDomainTransferLockRequest,
             AsyncHandler<EnableDomainTransferLockRequest, EnableDomainTransferLockResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation disables automatic renewal of domain registration for
+     * the specified domain.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Caution! Amazon Route 53 doesn't have a manual renewal
+     * process, so if you disable automatic renewal, registration for the
+     * domain will not be renewed when the expiration date passes, and you
+     * will lose control of the domain name.
+     * </p>
+     *
+     * @param disableDomainAutoRenewRequest Container for the necessary
+     *           parameters to execute the DisableDomainAutoRenew operation on
+     *           AmazonRoute53Domains.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableDomainAutoRenew service method, as returned by
+     *         AmazonRoute53Domains.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This operation disables automatic renewal of domain registration for
+     * the specified domain.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Caution! Amazon Route 53 doesn't have a manual renewal
+     * process, so if you disable automatic renewal, registration for the
+     * domain will not be renewed when the expiration date passes, and you
+     * will lose control of the domain name.
+     * </p>
+     *
+     * @param disableDomainAutoRenewRequest Container for the necessary
+     *           parameters to execute the DisableDomainAutoRenew operation on
+     *           AmazonRoute53Domains.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableDomainAutoRenew service method, as returned by
+     *         AmazonRoute53Domains.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53Domains indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest,
+            AsyncHandler<DisableDomainAutoRenewRequest, DisableDomainAutoRenewResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

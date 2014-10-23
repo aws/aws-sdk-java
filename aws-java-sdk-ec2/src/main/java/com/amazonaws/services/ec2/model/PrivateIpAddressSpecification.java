@@ -30,7 +30,7 @@ public class PrivateIpAddressSpecification implements Serializable {
 
     /**
      * Indicates whether the private IP address is the primary private IP
-     * address.
+     * address. Only one IP address can be designated as primary.
      */
     private Boolean primary;
 
@@ -69,10 +69,10 @@ public class PrivateIpAddressSpecification implements Serializable {
 
     /**
      * Indicates whether the private IP address is the primary private IP
-     * address.
+     * address. Only one IP address can be designated as primary.
      *
      * @return Indicates whether the private IP address is the primary private IP
-     *         address.
+     *         address. Only one IP address can be designated as primary.
      */
     public Boolean isPrimary() {
         return primary;
@@ -80,10 +80,10 @@ public class PrivateIpAddressSpecification implements Serializable {
     
     /**
      * Indicates whether the private IP address is the primary private IP
-     * address.
+     * address. Only one IP address can be designated as primary.
      *
      * @param primary Indicates whether the private IP address is the primary private IP
-     *         address.
+     *         address. Only one IP address can be designated as primary.
      */
     public void setPrimary(Boolean primary) {
         this.primary = primary;
@@ -91,12 +91,12 @@ public class PrivateIpAddressSpecification implements Serializable {
     
     /**
      * Indicates whether the private IP address is the primary private IP
-     * address.
+     * address. Only one IP address can be designated as primary.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param primary Indicates whether the private IP address is the primary private IP
-     *         address.
+     *         address. Only one IP address can be designated as primary.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -108,10 +108,10 @@ public class PrivateIpAddressSpecification implements Serializable {
 
     /**
      * Indicates whether the private IP address is the primary private IP
-     * address.
+     * address. Only one IP address can be designated as primary.
      *
      * @return Indicates whether the private IP address is the primary private IP
-     *         address.
+     *         address. Only one IP address can be designated as primary.
      */
     public Boolean getPrimary() {
         return primary;

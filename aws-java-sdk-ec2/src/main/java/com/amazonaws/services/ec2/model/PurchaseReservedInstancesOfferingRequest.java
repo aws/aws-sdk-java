@@ -30,9 +30,15 @@ import com.amazonaws.services.ec2.model.transform.PurchaseReservedInstancesOffer
  * you actually use the capacity reservation.
  * </p>
  * <p>
+ * Use DescribeReservedInstancesOfferings to get a list of Reserved
+ * Instance offerings that match your specifications. After you've
+ * purchased a Reserved Instance, you can check for your new Reserved
+ * Instance with DescribeReservedInstances.
+ * </p>
+ * <p>
  * For more information, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest)

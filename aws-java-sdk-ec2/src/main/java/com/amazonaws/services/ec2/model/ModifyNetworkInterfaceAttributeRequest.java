@@ -60,7 +60,9 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groups;
 
     /**
-     * The ID of the interface attachment.
+     * Information about the interface attachment. If modifying the 'delete
+     * on termination' attribute, you must specify the ID of the interface
+     * attachment.
      */
     private NetworkInterfaceAttachmentChanges attachment;
 
@@ -305,29 +307,41 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * The ID of the interface attachment.
+     * Information about the interface attachment. If modifying the 'delete
+     * on termination' attribute, you must specify the ID of the interface
+     * attachment.
      *
-     * @return The ID of the interface attachment.
+     * @return Information about the interface attachment. If modifying the 'delete
+     *         on termination' attribute, you must specify the ID of the interface
+     *         attachment.
      */
     public NetworkInterfaceAttachmentChanges getAttachment() {
         return attachment;
     }
     
     /**
-     * The ID of the interface attachment.
+     * Information about the interface attachment. If modifying the 'delete
+     * on termination' attribute, you must specify the ID of the interface
+     * attachment.
      *
-     * @param attachment The ID of the interface attachment.
+     * @param attachment Information about the interface attachment. If modifying the 'delete
+     *         on termination' attribute, you must specify the ID of the interface
+     *         attachment.
      */
     public void setAttachment(NetworkInterfaceAttachmentChanges attachment) {
         this.attachment = attachment;
     }
     
     /**
-     * The ID of the interface attachment.
+     * Information about the interface attachment. If modifying the 'delete
+     * on termination' attribute, you must specify the ID of the interface
+     * attachment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachment The ID of the interface attachment.
+     * @param attachment Information about the interface attachment. If modifying the 'delete
+     *         on termination' attribute, you must specify the ID of the interface
+     *         attachment.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

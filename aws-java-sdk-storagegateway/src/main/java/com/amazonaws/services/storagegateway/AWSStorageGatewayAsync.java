@@ -205,7 +205,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * This operation creates a volume on a specified gateway. This
-     * operation is supported only for the gateway-cached volume
+     * operation is supported only for the gateway-stored volume
      * architecture.
      * </p>
      * <p>
@@ -246,7 +246,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * This operation creates a volume on a specified gateway. This
-     * operation is supported only for the gateway-cached volume
+     * operation is supported only for the gateway-stored volume
      * architecture.
      * </p>
      * <p>
@@ -385,8 +385,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You
      * can take snapshots of your gateway volume on a scheduled or ad-hoc
      * basis. This API enables you to take ad-hoc snapshot. For more
-     * information, see Working With Snapshots in the AWS Storage Gateway
-     * Console.
+     * information, see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"> Working With Snapshots in the AWS Storage Gateway Console </a>
+     * .
      * </p>
      * <p>
      * In the CreateSnapshot request you identify the volume by providing
@@ -432,8 +433,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You
      * can take snapshots of your gateway volume on a scheduled or ad-hoc
      * basis. This API enables you to take ad-hoc snapshot. For more
-     * information, see Working With Snapshots in the AWS Storage Gateway
-     * Console.
+     * information, see
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"> Working With Snapshots in the AWS Storage Gateway Console </a>
+     * .
      * </p>
      * <p>
      * In the CreateSnapshot request you identify the volume by providing
@@ -477,7 +479,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation configures one or more gateway local disks as working
      * storage for a gateway. This operation is supported only for the
-     * gateway-stored volume architecture.
+     * gateway-stored volume architecture. This operation is deprecated
+     * method in cached-volumes API version (20120630). Use AddUploadBuffer
+     * instead.
      * </p>
      * <p>
      * <b>NOTE:</b> Working storage is also referred to as upload buffer.
@@ -512,7 +516,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation configures one or more gateway local disks as working
      * storage for a gateway. This operation is supported only for the
-     * gateway-stored volume architecture.
+     * gateway-stored volume architecture. This operation is deprecated
+     * method in cached-volumes API version (20120630). Use AddUploadBuffer
+     * instead.
      * </p>
      * <p>
      * <b>NOTE:</b> Working storage is also referred to as upload buffer.
@@ -550,9 +556,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Cancels retrieval of a virtual tape from the Virtual Tape Shelf (VTS)
+     * Cancels retrieval of a virtual tape from the virtual tape shelf (VTS)
      * to a gateway after the retrieval process is initiated. The virtual
-     * tape is returned to the Virtual Tape Shelf.
+     * tape is returned to the VTS.
      * </p>
      *
      * @param cancelRetrievalRequest Container for the necessary parameters
@@ -575,9 +581,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Cancels retrieval of a virtual tape from the Virtual Tape Shelf (VTS)
+     * Cancels retrieval of a virtual tape from the virtual tape shelf (VTS)
      * to a gateway after the retrieval process is initiated. The virtual
-     * tape is returned to the Virtual Tape Shelf.
+     * tape is returned to the VTS.
      * </p>
      *
      * @param cancelRetrievalRequest Container for the necessary parameters
@@ -746,8 +752,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway.
      * The retrieved tape is read-only. The virtual tape can be retrieved to
-     * only a Gateway-Virtual Tape Library. There is no charge for retrieving
-     * recovery points.
+     * only a gateway-VTL. There is no charge for retrieving recovery points.
      * </p>
      *
      * @param retrieveTapeRecoveryPointRequest Container for the necessary
@@ -783,8 +788,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway.
      * The retrieved tape is read-only. The virtual tape can be retrieved to
-     * only a Gateway-Virtual Tape Library. There is no charge for retrieving
-     * recovery points.
+     * only a gateway-VTL. There is no charge for retrieving recovery points.
      * </p>
      *
      * @param retrieveTapeRecoveryPointRequest Container for the necessary
@@ -1204,16 +1208,16 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation activates the gateway you previously deployed on your
      * host. For more information, see
-     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a>
-     * . In the activation process you specify information such as the
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html"> Activate the AWS Storage Gateway </a>
+     * . In the activation process, you specify information such as the
      * region you want to use for storing snapshots, the time zone for
-     * scheduled snapshots and the gateway schedule window, an activation
-     * key, and a name for your gateway. The activation process also
-     * associates your gateway with your account (see
-     * UpdateGatewayInformation).
+     * scheduled snapshots the gateway snapshot schedule window, an
+     * activation key, and a name for your gateway. The activation process
+     * also associates your gateway with your account; for more information,
+     * see UpdateGatewayInformation.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must power on the gateway VM before you can activate
+     * <b>NOTE:</b>You must turn on the gateway VM before you can activate
      * your gateway.
      * </p>
      *
@@ -1239,16 +1243,16 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation activates the gateway you previously deployed on your
      * host. For more information, see
-     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a>
-     * . In the activation process you specify information such as the
+     * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html"> Activate the AWS Storage Gateway </a>
+     * . In the activation process, you specify information such as the
      * region you want to use for storing snapshots, the time zone for
-     * scheduled snapshots and the gateway schedule window, an activation
-     * key, and a name for your gateway. The activation process also
-     * associates your gateway with your account (see
-     * UpdateGatewayInformation).
+     * scheduled snapshots the gateway snapshot schedule window, an
+     * activation key, and a name for your gateway. The activation process
+     * also associates your gateway with your account; for more information,
+     * see UpdateGatewayInformation.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must power on the gateway VM before you can activate
+     * <b>NOTE:</b>You must turn on the gateway VM before you can activate
      * your gateway.
      * </p>
      *
@@ -1277,13 +1281,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of specified virtual tapes in the Virtual Tape
-     * Shelf (VTS).
+     * Returns a description of specified virtual tapes in the virtual tape
+     * shelf (VTS).
      * </p>
      * <p>
      * If a specific <code>TapeARN</code> is not specified, AWS Storage
-     * Gateway returns a description all virtual tapes found in the Virtual
-     * Tape Shelf (VTS) associated with your account.
+     * Gateway returns a description of all virtual tapes found in the VTS
+     * associated with your account.
      * </p>
      *
      * @param describeTapeArchivesRequest Container for the necessary
@@ -1307,13 +1311,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of specified virtual tapes in the Virtual Tape
-     * Shelf (VTS).
+     * Returns a description of specified virtual tapes in the virtual tape
+     * shelf (VTS).
      * </p>
      * <p>
      * If a specific <code>TapeARN</code> is not specified, AWS Storage
-     * Gateway returns a description all virtual tapes found in the Virtual
-     * Tape Shelf (VTS) associated with your account.
+     * Gateway returns a description of all virtual tapes found in the VTS
+     * associated with your account.
      * </p>
      *
      * @param describeTapeArchivesRequest Container for the necessary
@@ -1464,7 +1468,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape from the Virtual Tape Shelf (VTS).
+     * Deletes the specified virtual tape from the virtual tape shelf (VTS).
      * </p>
      *
      * @param deleteTapeArchiveRequest Container for the necessary parameters
@@ -1487,7 +1491,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape from the Virtual Tape Shelf (VTS).
+     * Deletes the specified virtual tape from the virtual tape shelf (VTS).
      * </p>
      *
      * @param deleteTapeArchiveRequest Container for the necessary parameters
@@ -1660,12 +1664,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Disables a gateway when the gateway is no longer functioning. For
-     * examples, if your gateway VM is damaged, you can disable the gateway
-     * so you can recover virtual tapes.
+     * example, if your gateway VM is damaged, you can disable the gateway so
+     * you can recover virtual tapes.
      * </p>
      * <p>
-     * Use this operation for a Gateway-Virtual Tape Library that is not
-     * reachable or not functioning.
+     * Use this operation for a gateway-VTL that is not reachable or not
+     * functioning.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Once a gateway is disabled it cannot be enabled.
@@ -1692,12 +1696,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Disables a gateway when the gateway is no longer functioning. For
-     * examples, if your gateway VM is damaged, you can disable the gateway
-     * so you can recover virtual tapes.
+     * example, if your gateway VM is damaged, you can disable the gateway so
+     * you can recover virtual tapes.
      * </p>
      * <p>
-     * Use this operation for a Gateway-Virtual Tape Library that is not
-     * reachable or not functioning.
+     * Use this operation for a gateway-VTL that is not reachable or not
+     * functioning.
      * </p>
      * <p>
      * <b>IMPORTANT:</b>Once a gateway is disabled it cannot be enabled.
@@ -1730,7 +1734,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation returns information about the working storage of a
      * gateway. This operation is supported only for the gateway-stored
-     * volume architecture.
+     * volume architecture. This operation is deprecated in cached-volumes
+     * API version (20120630). Use DescribeUploadBuffer instead.
      * </p>
      * <p>
      * <b>NOTE:</b> Working storage is also referred to as upload buffer.
@@ -1767,7 +1772,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * This operation returns information about the working storage of a
      * gateway. This operation is supported only for the gateway-stored
-     * volume architecture.
+     * volume architecture. This operation is deprecated in cached-volumes
+     * API version (20120630). Use DescribeUploadBuffer instead.
      * </p>
      * <p>
      * <b>NOTE:</b> Working storage is also referred to as upload buffer.
@@ -2726,7 +2732,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Returns a list of virtual tape recovery points that are available for
-     * the specified Gateway-Virtual Tape Library.
+     * the specified gateway-VTL.
      * </p>
      * <p>
      * A recovery point is a point in time view of a virtual tape at which
@@ -2758,7 +2764,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Returns a list of virtual tape recovery points that are available for
-     * the specified Gateway-Virtual Tape Library.
+     * the specified gateway-VTL.
      * </p>
      * <p>
      * A recovery point is a point in time view of a virtual tape at which
@@ -3218,13 +3224,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of Virtual Tape Library (VTL) devices for the
-     * gateway specified in the request. In the response, AWS Storage Gateway
-     * returns Virtual Tape Library device information.
+     * Returns a description of virtual tape library (VTL) devices for the
+     * specified gateway. In the response, AWS Storage Gateway returns VTL
+     * device information.
      * </p>
      * <p>
-     * The list of Virtual Tape Library devices in the request must be from
-     * one gateway.
+     * The list of VTL devices must be from one gateway.
      * </p>
      *
      * @param describeVTLDevicesRequest Container for the necessary
@@ -3248,13 +3253,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of Virtual Tape Library (VTL) devices for the
-     * gateway specified in the request. In the response, AWS Storage Gateway
-     * returns Virtual Tape Library device information.
+     * Returns a description of virtual tape library (VTL) devices for the
+     * specified gateway. In the response, AWS Storage Gateway returns VTL
+     * device information.
      * </p>
      * <p>
-     * The list of Virtual Tape Library devices in the request must be from
-     * one gateway.
+     * The list of VTL devices must be from one gateway.
      * </p>
      *
      * @param describeVTLDevicesRequest Container for the necessary
@@ -3283,11 +3287,10 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Retrieves an archived virtual tape from the Virtual Tape Shelf (VTS)
-     * to a Gateway-Virtual Tape Library. Virtual tapes archived in the
-     * Virtual Tape Shelf (VTS) are not associated with any gateway. However
-     * after a tape is retrieved, it is associated with a gateway though it
-     * also listed in VTS.
+     * Retrieves an archived virtual tape from the virtual tape shelf (VTS)
+     * to a gateway-VTL. Virtual tapes archived in the VTS are not associated
+     * with any gateway. However after a tape is retrieved, it is associated
+     * with a gateway, even though it is also listed in the VTS.
      * </p>
      * <p>
      * Once a tape is successfully retrieved to a gateway, it cannot be
@@ -3316,11 +3319,10 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Retrieves an archived virtual tape from the Virtual Tape Shelf (VTS)
-     * to a Gateway-Virtual Tape Library. Virtual tapes archived in the
-     * Virtual Tape Shelf (VTS) are not associated with any gateway. However
-     * after a tape is retrieved, it is associated with a gateway though it
-     * also listed in VTS.
+     * Retrieves an archived virtual tape from the virtual tape shelf (VTS)
+     * to a gateway-VTL. Virtual tapes archived in the VTS are not associated
+     * with any gateway. However after a tape is retrieved, it is associated
+     * with a gateway, even though it is also listed in the VTS.
      * </p>
      * <p>
      * Once a tape is successfully retrieved to a gateway, it cannot be
@@ -3354,8 +3356,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Cancels archiving of a virtual tape to the Virtual Tape Shelf (VTS)
-     * after archiving process is initiated.
+     * Cancels archiving of a virtual tape to the virtual tape shelf (VTS)
+     * after the archiving process is initiated.
      * </p>
      *
      * @param cancelArchivalRequest Container for the necessary parameters to
@@ -3378,8 +3380,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Cancels archiving of a virtual tape to the Virtual Tape Shelf (VTS)
-     * after archiving process is initiated.
+     * Cancels archiving of a virtual tape to the virtual tape shelf (VTS)
+     * after the archiving process is initiated.
      * </p>
      *
      * @param cancelArchivalRequest Container for the necessary parameters to

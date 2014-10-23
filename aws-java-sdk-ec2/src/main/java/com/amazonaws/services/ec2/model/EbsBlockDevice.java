@@ -31,9 +31,11 @@ public class EbsBlockDevice implements Serializable {
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
      * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      */
     private Integer volumeSize;
 
@@ -73,7 +75,9 @@ public class EbsBlockDevice implements Serializable {
     private Integer iops;
 
     /**
-     * Indicates whether the Amazon EBS volume is encrypted.
+     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     * EBS volumes may only be attached to instances that support Amazon EBS
+     * encryption.
      */
     private Boolean encrypted;
 
@@ -113,15 +117,19 @@ public class EbsBlockDevice implements Serializable {
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
      * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      *
      * @return The size of the volume, in GiB. <p>Constraints: If the volume type is
      *         <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
-     *         <p>Default: If you're creating the volume from a snapshot and don't
-     *         specify a volume size, the default is the snapshot size.
+     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     *         specify a snapshot, the volume size must be equal to or larger than
+     *         the snapshot size. <p>Default: If you're creating the volume from a
+     *         snapshot and don't specify a volume size, the default is the snapshot
+     *         size.
      */
     public Integer getVolumeSize() {
         return volumeSize;
@@ -130,15 +138,19 @@ public class EbsBlockDevice implements Serializable {
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
      * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      *
      * @param volumeSize The size of the volume, in GiB. <p>Constraints: If the volume type is
      *         <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
-     *         <p>Default: If you're creating the volume from a snapshot and don't
-     *         specify a volume size, the default is the snapshot size.
+     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     *         specify a snapshot, the volume size must be equal to or larger than
+     *         the snapshot size. <p>Default: If you're creating the volume from a
+     *         snapshot and don't specify a volume size, the default is the snapshot
+     *         size.
      */
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
@@ -147,17 +159,21 @@ public class EbsBlockDevice implements Serializable {
     /**
      * The size of the volume, in GiB. <p>Constraints: If the volume type is
      * <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
-     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
-     * <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.
+     * the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     * specify a snapshot, the volume size must be equal to or larger than
+     * the snapshot size. <p>Default: If you're creating the volume from a
+     * snapshot and don't specify a volume size, the default is the snapshot
+     * size.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeSize The size of the volume, in GiB. <p>Constraints: If the volume type is
      *         <code>io1</code>, the minimum size of the volume is 10 GiB; otherwise,
-     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB.
-     *         <p>Default: If you're creating the volume from a snapshot and don't
-     *         specify a volume size, the default is the snapshot size.
+     *         the minimum size is 1 GiB. The maximum volume size is 1024 GiB. If you
+     *         specify a snapshot, the volume size must be equal to or larger than
+     *         the snapshot size. <p>Default: If you're creating the volume from a
+     *         snapshot and don't specify a volume size, the default is the snapshot
+     *         size.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -441,29 +457,41 @@ public class EbsBlockDevice implements Serializable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is encrypted.
+     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     * EBS volumes may only be attached to instances that support Amazon EBS
+     * encryption.
      *
-     * @return Indicates whether the Amazon EBS volume is encrypted.
+     * @return Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     *         EBS volumes may only be attached to instances that support Amazon EBS
+     *         encryption.
      */
     public Boolean isEncrypted() {
         return encrypted;
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is encrypted.
+     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     * EBS volumes may only be attached to instances that support Amazon EBS
+     * encryption.
      *
-     * @param encrypted Indicates whether the Amazon EBS volume is encrypted.
+     * @param encrypted Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     *         EBS volumes may only be attached to instances that support Amazon EBS
+     *         encryption.
      */
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
     
     /**
-     * Indicates whether the Amazon EBS volume is encrypted.
+     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     * EBS volumes may only be attached to instances that support Amazon EBS
+     * encryption.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param encrypted Indicates whether the Amazon EBS volume is encrypted.
+     * @param encrypted Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     *         EBS volumes may only be attached to instances that support Amazon EBS
+     *         encryption.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -474,9 +502,13 @@ public class EbsBlockDevice implements Serializable {
     }
 
     /**
-     * Indicates whether the Amazon EBS volume is encrypted.
+     * Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     * EBS volumes may only be attached to instances that support Amazon EBS
+     * encryption.
      *
-     * @return Indicates whether the Amazon EBS volume is encrypted.
+     * @return Indicates whether the Amazon EBS volume is encrypted. Encrypted Amazon
+     *         EBS volumes may only be attached to instances that support Amazon EBS
+     *         encryption.
      */
     public Boolean getEncrypted() {
         return encrypted;

@@ -3,15 +3,15 @@
  * Synchronous and asynchronous client classes for accessing AmazonIdentityManagement.
  *
  * AWS Identity and Access Management <p>
- * AWS Identity and Access Management (IAM) is a web service that you can
- * use to manage users and user permissions under your AWS account. This
- * guide provides descriptions of the IAM API. For general information
- * about IAM, see
+ * AWS Identity and Access Management (IAM) is a web service that you
+ * can use to manage users and user permissions under your AWS account.
+ * This guide provides descriptions of IAM actions that you can call
+ * programmatically. For general information about IAM, see
  * <a href="http://aws.amazon.com/iam/"> AWS Identity and Access Management (IAM) </a> . For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/"> Using IAM </a>
  * .
  * </p>
  * <p>
- * <b>NOTE:</b>AWS provides SDKs that consist of libraries and sample
+ * <b>NOTE:</b> AWS provides SDKs that consist of libraries and sample
  * code for various programming languages and platforms (Java, Ruby,
  * .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
  * programmatic access to IAM and AWS. For example, the SDKs take care of
@@ -75,19 +75,19 @@
  * <li>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"> AWS Security Credentials </a>
  * . This topic provides general information about the types of
- * credentials used for accessing AWS.</li>
+ * credentials used for accessing AWS. </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html"> IAM Best Practices </a>
  * . This topic presents a list of suggestions for using the IAM service
- * to help secure your AWS resources.</li>
+ * to help secure your AWS resources. </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/"> AWS Security Token Service </a>
  * . This guide describes how to create and use temporary security
- * credentials.</li>
+ * credentials. </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Signing AWS API Requests </a>
  * . This set of topics walk you through the process of signing a
- * request using an access key ID and secret access key.</li>
+ * request using an access key ID and secret access key. </li>
  * 
  * </ul>
  */

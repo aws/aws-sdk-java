@@ -63,8 +63,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * A name for your AMI. <p>Constraints: 3-128 alphanumeric characters,
-     * parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
-     * (_)
+     * parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or
+     * underscores(_)
      */
     private String name;
 
@@ -171,12 +172,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * A name for your AMI. <p>Constraints: 3-128 alphanumeric characters,
-     * parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
-     * (_)
+     * parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or
+     * underscores(_)
      *
      * @return A name for your AMI. <p>Constraints: 3-128 alphanumeric characters,
-     *         parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
-     *         (_)
+     *         parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     *         slashes (/), dashes (-), single quotes ('), at-signs (@), or
+     *         underscores(_)
      */
     public String getName() {
         return name;
@@ -184,12 +187,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * A name for your AMI. <p>Constraints: 3-128 alphanumeric characters,
-     * parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
-     * (_)
+     * parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or
+     * underscores(_)
      *
      * @param name A name for your AMI. <p>Constraints: 3-128 alphanumeric characters,
-     *         parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
-     *         (_)
+     *         parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     *         slashes (/), dashes (-), single quotes ('), at-signs (@), or
+     *         underscores(_)
      */
     public void setName(String name) {
         this.name = name;
@@ -197,14 +202,16 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * A name for your AMI. <p>Constraints: 3-128 alphanumeric characters,
-     * parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
-     * (_)
+     * parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or
+     * underscores(_)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name A name for your AMI. <p>Constraints: 3-128 alphanumeric characters,
-     *         parenthesis (()), commas (,), slashes (/), dashes (-), or underscores
-     *         (_)
+     *         parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     *         slashes (/), dashes (-), single quotes ('), at-signs (@), or
+     *         underscores(_)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

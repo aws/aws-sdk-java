@@ -21,10 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest) ChangePassword operation}.
  * <p>
- * Changes the password of the IAM user calling
- * <code>ChangePassword</code> . The root account password is not
- * affected by this action. For information about modifying passwords,
- * see
+ * Changes the password of the IAM user who is calling this action. The
+ * root account password is not affected by this action.
+ * </p>
+ * <p>
+ * To change the password for a different user, see UpdateLoginProfile.
+ * For more information about modifying passwords, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
  * in the <i>Using IAM</i> guide.
  * </p>
@@ -34,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ChangePasswordRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The IAM users's current password.
+     * The IAM user's current password.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -53,33 +55,33 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
     private String newPassword;
 
     /**
-     * The IAM users's current password.
+     * The IAM user's current password.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @return The IAM users's current password.
+     * @return The IAM user's current password.
      */
     public String getOldPassword() {
         return oldPassword;
     }
     
     /**
-     * The IAM users's current password.
+     * The IAM user's current password.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param oldPassword The IAM users's current password.
+     * @param oldPassword The IAM user's current password.
      */
     public void setOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
     }
     
     /**
-     * The IAM users's current password.
+     * The IAM user's current password.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -87,7 +89,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[&#92;u0009&#92;u000A&#92;u000D&#92;u0020-&#92;u00FF]+<br/>
      *
-     * @param oldPassword The IAM users's current password.
+     * @param oldPassword The IAM user's current password.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * <p>
  * Contains the result of a successful invocation of the
- * CreateInstanceProfile action.
+ * CreateInstanceProfileaction.
  * </p>
  */
 public class CreateInstanceProfileResult implements Serializable {

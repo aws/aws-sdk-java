@@ -24,10 +24,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates the password policy settings for the AWS account.
  * </p>
  * <p>
- * <b>NOTE:</b> This API does not support partial updates. No parameters
- * are required, but if you do not specify a parameter, that parameter's
- * value reverts to its default value. See the Request Parameters section
- * for each parameter's default value.
+ * <b>NOTE:</b> This action does not support partial updates. No
+ * parameters are required, but if you do not specify a parameter, that
+ * parameter's value reverts to its default value. See the Request
+ * Parameters section for each parameter's default value.
  * </p>
  * <p>
  * For more information about using a password policy, see
@@ -50,8 +50,8 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
 
     /**
      * Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     * { } | ' Default value: false
+     * following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     * [ ] { } | ' <p>Default value: false
      */
     private Boolean requireSymbols;
 
@@ -159,12 +159,12 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
 
     /**
      * Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     * { } | ' Default value: false
+     * following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     * [ ] { } | ' <p>Default value: false
      *
      * @return Specifies whether IAM user passwords must contain at least one of the
-     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     *         { } | ' Default value: false
+     *         following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     *         [ ] { } | ' <p>Default value: false
      */
     public Boolean isRequireSymbols() {
         return requireSymbols;
@@ -172,12 +172,12 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     
     /**
      * Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     * { } | ' Default value: false
+     * following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     * [ ] { } | ' <p>Default value: false
      *
      * @param requireSymbols Specifies whether IAM user passwords must contain at least one of the
-     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     *         { } | ' Default value: false
+     *         following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     *         [ ] { } | ' <p>Default value: false
      */
     public void setRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
@@ -185,14 +185,14 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     
     /**
      * Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     * { } | ' Default value: false
+     * following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     * [ ] { } | ' <p>Default value: false
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param requireSymbols Specifies whether IAM user passwords must contain at least one of the
-     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     *         { } | ' Default value: false
+     *         following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     *         [ ] { } | ' <p>Default value: false
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -204,12 +204,12 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
 
     /**
      * Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     * { } | ' Default value: false
+     * following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     * [ ] { } | ' <p>Default value: false
      *
      * @return Specifies whether IAM user passwords must contain at least one of the
-     *         following non-alphanumeric characters: ! @ # $ % ^ & * ( ) _ + - = [ ]
-     *         { } | ' Default value: false
+     *         following non-alphanumeric characters: <p>! @ # $ % ^ & * ( ) _ + - =
+     *         [ ] { } | ' <p>Default value: false
      */
     public Boolean getRequireSymbols() {
         return requireSymbols;

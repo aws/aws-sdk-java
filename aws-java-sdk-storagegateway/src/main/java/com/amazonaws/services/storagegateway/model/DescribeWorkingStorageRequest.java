@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * This operation returns information about the working storage of a
  * gateway. This operation is supported only for the gateway-stored
- * volume architecture.
+ * volume architecture. This operation is deprecated in cached-volumes
+ * API version (20120630). Use DescribeUploadBuffer instead.
  * </p>
  * <p>
  * <b>NOTE:</b> Working storage is also referred to as upload buffer. You

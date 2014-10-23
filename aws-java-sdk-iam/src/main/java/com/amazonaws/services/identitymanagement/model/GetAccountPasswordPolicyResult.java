@@ -25,48 +25,48 @@ import java.io.Serializable;
 public class GetAccountPasswordPolicyResult implements Serializable {
 
     /**
-     * The PasswordPolicy data type contains information about the account
-     * password policy. <p> This data type is used as a response element in
-     * the action <a>GetAccountPasswordPolicy</a>.
+     * Contains information about the account password policy. <p> This data
+     * type is used as a response element in the
+     * <a>GetAccountPasswordPolicy</a> action.
      */
     private PasswordPolicy passwordPolicy;
 
     /**
-     * The PasswordPolicy data type contains information about the account
-     * password policy. <p> This data type is used as a response element in
-     * the action <a>GetAccountPasswordPolicy</a>.
+     * Contains information about the account password policy. <p> This data
+     * type is used as a response element in the
+     * <a>GetAccountPasswordPolicy</a> action.
      *
-     * @return The PasswordPolicy data type contains information about the account
-     *         password policy. <p> This data type is used as a response element in
-     *         the action <a>GetAccountPasswordPolicy</a>.
+     * @return Contains information about the account password policy. <p> This data
+     *         type is used as a response element in the
+     *         <a>GetAccountPasswordPolicy</a> action.
      */
     public PasswordPolicy getPasswordPolicy() {
         return passwordPolicy;
     }
     
     /**
-     * The PasswordPolicy data type contains information about the account
-     * password policy. <p> This data type is used as a response element in
-     * the action <a>GetAccountPasswordPolicy</a>.
+     * Contains information about the account password policy. <p> This data
+     * type is used as a response element in the
+     * <a>GetAccountPasswordPolicy</a> action.
      *
-     * @param passwordPolicy The PasswordPolicy data type contains information about the account
-     *         password policy. <p> This data type is used as a response element in
-     *         the action <a>GetAccountPasswordPolicy</a>.
+     * @param passwordPolicy Contains information about the account password policy. <p> This data
+     *         type is used as a response element in the
+     *         <a>GetAccountPasswordPolicy</a> action.
      */
     public void setPasswordPolicy(PasswordPolicy passwordPolicy) {
         this.passwordPolicy = passwordPolicy;
     }
     
     /**
-     * The PasswordPolicy data type contains information about the account
-     * password policy. <p> This data type is used as a response element in
-     * the action <a>GetAccountPasswordPolicy</a>.
+     * Contains information about the account password policy. <p> This data
+     * type is used as a response element in the
+     * <a>GetAccountPasswordPolicy</a> action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param passwordPolicy The PasswordPolicy data type contains information about the account
-     *         password policy. <p> This data type is used as a response element in
-     *         the action <a>GetAccountPasswordPolicy</a>.
+     * @param passwordPolicy Contains information about the account password policy. <p> This data
+     *         type is used as a response element in the
+     *         <a>GetAccountPasswordPolicy</a> action.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

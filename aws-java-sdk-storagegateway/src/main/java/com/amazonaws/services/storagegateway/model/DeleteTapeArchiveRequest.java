@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#deleteTapeArchive(DeleteTapeArchiveRequest) DeleteTapeArchive operation}.
  * <p>
- * Deletes the specified virtual tape from the Virtual Tape Shelf (VTS).
+ * Deletes the specified virtual tape from the virtual tape shelf (VTS).
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteTapeArchive(DeleteTapeArchiveRequest)
@@ -30,7 +30,7 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape to delete from the
-     * Virtual Tape Shelf (VTS).
+     * virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -39,13 +39,13 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape to delete from the
-     * Virtual Tape Shelf (VTS).
+     * virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
      * @return The Amazon Resource Name (ARN) of the virtual tape to delete from the
-     *         Virtual Tape Shelf (VTS).
+     *         virtual tape shelf (VTS).
      */
     public String getTapeARN() {
         return tapeARN;
@@ -53,13 +53,13 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
     
     /**
      * The Amazon Resource Name (ARN) of the virtual tape to delete from the
-     * Virtual Tape Shelf (VTS).
+     * virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape to delete from the
-     *         Virtual Tape Shelf (VTS).
+     *         virtual tape shelf (VTS).
      */
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
@@ -67,7 +67,7 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
     
     /**
      * The Amazon Resource Name (ARN) of the virtual tape to delete from the
-     * Virtual Tape Shelf (VTS).
+     * virtual tape shelf (VTS).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -75,7 +75,7 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>50 - 500<br/>
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape to delete from the
-     *         Virtual Tape Shelf (VTS).
+     *         virtual tape shelf (VTS).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

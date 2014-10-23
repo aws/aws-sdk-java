@@ -19,6 +19,8 @@ import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.
 import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.rejectNullOrEmptyInput;
 import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.rejectNullValue;
 import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.valToString;
+import static com.amazonaws.util.BinaryUtils.copyAllBytesFrom;
+import static com.amazonaws.util.BinaryUtils.copyBytesFrom;
 
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
@@ -281,6 +283,10 @@ public class Item {
         return toByteBuffer(val);
     }
 
+    /**
+     * This method is assumed to be only called from a getter method, but NOT
+     * from a setter method.
+     */
     private byte[] toByteArray(Object val) {
         if (val == null)
             return null;
@@ -291,13 +297,7 @@ public class Item {
             // representation of binary should always be
             // byte[], not ByteBuffer. This allows Item to be converted into
             // a JSON string via Jackson without causing trouble.
-            ByteBuffer bb = (ByteBuffer) val;
-            if (bb.hasArray())
-                return bb.array();
-            int size = bb.rewind().remaining();
-            byte[] dst = new byte[size];
-            bb.get(dst);
-            return dst;
+            return copyAllBytesFrom((ByteBuffer)val);
         }
         throw new IncompatibleTypeException(val.getClass()
                 + " cannot be converted into a byte array");
@@ -336,7 +336,7 @@ public class Item {
     public Item withBinary(String attrName, ByteBuffer val) {
         checkInvalidAttribute(attrName, val);
         // convert ByteBuffer to bytes to keep Jackson happy
-        attributes.put(attrName, toByteArray(val));
+        attributes.put(attrName, copyBytesFrom(val));
         return this;
     }
 
@@ -526,7 +526,7 @@ public class Item {
             // byte[], not ByteBuffer. This allows Item to be converted into
             // a JSON string via Jackson without causing trouble.
             ByteBuffer bb = (ByteBuffer) val;
-            binarySet.add(bb.array());
+            binarySet.add(copyAllBytesFrom(bb));
             return binarySet;
         }
         throw new IncompatibleTypeException(val.getClass()
@@ -597,7 +597,7 @@ public class Item {
         // convert ByteBuffer to bytes to keep Jackson happy
         Set<byte[]> set = new LinkedHashSet<byte[]>(val.size());
         for (ByteBuffer bb: val)
-            set.add(toByteArray(bb));
+            set.add(copyBytesFrom(bb));
         attributes.put(attrName, set);
         return this;
     }
@@ -624,7 +624,7 @@ public class Item {
         // convert ByteBuffer to bytes to keep Jackson happy
         Set<byte[]> set = new LinkedHashSet<byte[]>(vals.length);
         for (ByteBuffer bb: vals)
-            set.add(toByteArray(bb));
+            set.add(copyBytesFrom(bb));
         if (set.size() != vals.length)
             throw new IllegalArgumentException(DUPLICATE_VALUES_FOUND_IN_INPUT);
         attributes.put(attrName, set);

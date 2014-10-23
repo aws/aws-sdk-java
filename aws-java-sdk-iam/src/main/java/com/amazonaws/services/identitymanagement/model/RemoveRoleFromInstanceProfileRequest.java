@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Removes the specified role from the specified instance profile.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+ * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
  * running with the role you are about to remove from the instance
  * profile. Removing a role from an instance profile that is associated
  * with a running instance will break any applications running on the
@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -50,7 +50,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     private String instanceProfileName;
 
     /**
-     * Name of the role to remove.
+     * The name of the role to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -59,33 +59,33 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     private String roleName;
 
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the instance profile to update.
+     * @return The name of the instance profile to update.
      */
     public String getInstanceProfileName() {
         return instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to update.
+     * @param instanceProfileName The name of the instance profile to update.
      */
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -93,7 +93,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to update.
+     * @param instanceProfileName The name of the instance profile to update.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -104,33 +104,33 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     }
 
     /**
-     * Name of the role to remove.
+     * The name of the role to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the role to remove.
+     * @return The name of the role to remove.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * Name of the role to remove.
+     * The name of the role to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to remove.
+     * @param roleName The name of the role to remove.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * Name of the role to remove.
+     * The name of the role to remove.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -138,7 +138,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to remove.
+     * @param roleName The name of the role to remove.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

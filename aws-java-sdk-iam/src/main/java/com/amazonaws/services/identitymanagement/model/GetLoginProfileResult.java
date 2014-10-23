@@ -25,34 +25,34 @@ import java.io.Serializable;
 public class GetLoginProfileResult implements Serializable {
 
     /**
-     * User name and password create date for the user.
+     * The user name and password create date for the user.
      */
     private LoginProfile loginProfile;
 
     /**
-     * User name and password create date for the user.
+     * The user name and password create date for the user.
      *
-     * @return User name and password create date for the user.
+     * @return The user name and password create date for the user.
      */
     public LoginProfile getLoginProfile() {
         return loginProfile;
     }
     
     /**
-     * User name and password create date for the user.
+     * The user name and password create date for the user.
      *
-     * @param loginProfile User name and password create date for the user.
+     * @param loginProfile The user name and password create date for the user.
      */
     public void setLoginProfile(LoginProfile loginProfile) {
         this.loginProfile = loginProfile;
     }
     
     /**
-     * User name and password create date for the user.
+     * The user name and password create date for the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loginProfile User name and password create date for the user.
+     * @param loginProfile The user name and password create date for the user.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

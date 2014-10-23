@@ -25,8 +25,8 @@ import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupEgressRe
  * <p>
  * Adds one or more egress rules to a security group for use with a VPC.
  * Specifically, this action permits instances to send traffic to one or
- * more CIDR IP address ranges, or to one or more security groups for the
- * same VPC.
+ * more destination CIDR IP address ranges, or to one or more destination
+ * security groups for the same VPC.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> You can have up to 50 rules per security group
@@ -61,14 +61,15 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     private String groupId;
 
     /**
-     * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * [EC2-Classic, default VPC] The name of the destination security group.
+     * You can't specify a destination security group and a CIDR IP address
+     * range.
      */
     private String sourceSecurityGroupName;
 
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the destination security group. You can't specify a
+     * destination security group and a CIDR IP address range.
      */
     private String sourceSecurityGroupOwnerId;
 
@@ -101,7 +102,8 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     private String cidrIp;
 
     /**
-     * <p/>
+     * A set of IP permissions. You can't specify a destination security
+     * group and a CIDR IP address range.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
@@ -139,35 +141,41 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * [EC2-Classic, default VPC] The name of the destination security group.
+     * You can't specify a destination security group and a CIDR IP address
+     * range.
      *
-     * @return [EC2-Classic, default VPC] The name of the source security group. You
-     *         can't specify a source security group and a CIDR IP address range.
+     * @return [EC2-Classic, default VPC] The name of the destination security group.
+     *         You can't specify a destination security group and a CIDR IP address
+     *         range.
      */
     public String getSourceSecurityGroupName() {
         return sourceSecurityGroupName;
     }
     
     /**
-     * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * [EC2-Classic, default VPC] The name of the destination security group.
+     * You can't specify a destination security group and a CIDR IP address
+     * range.
      *
-     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
-     *         can't specify a source security group and a CIDR IP address range.
+     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the destination security group.
+     *         You can't specify a destination security group and a CIDR IP address
+     *         range.
      */
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
     }
     
     /**
-     * [EC2-Classic, default VPC] The name of the source security group. You
-     * can't specify a source security group and a CIDR IP address range.
+     * [EC2-Classic, default VPC] The name of the destination security group.
+     * You can't specify a destination security group and a CIDR IP address
+     * range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the source security group. You
-     *         can't specify a source security group and a CIDR IP address range.
+     * @param sourceSecurityGroupName [EC2-Classic, default VPC] The name of the destination security group.
+     *         You can't specify a destination security group and a CIDR IP address
+     *         range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -178,35 +186,35 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the destination security group. You can't specify a
+     * destination security group and a CIDR IP address range.
      *
-     * @return The ID of the source security group. You can't specify a source
-     *         security group and a CIDR IP address range.
+     * @return The ID of the destination security group. You can't specify a
+     *         destination security group and a CIDR IP address range.
      */
     public String getSourceSecurityGroupOwnerId() {
         return sourceSecurityGroupOwnerId;
     }
     
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the destination security group. You can't specify a
+     * destination security group and a CIDR IP address range.
      *
-     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
-     *         security group and a CIDR IP address range.
+     * @param sourceSecurityGroupOwnerId The ID of the destination security group. You can't specify a
+     *         destination security group and a CIDR IP address range.
      */
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
     }
     
     /**
-     * The ID of the source security group. You can't specify a source
-     * security group and a CIDR IP address range.
+     * The ID of the destination security group. You can't specify a
+     * destination security group and a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceSecurityGroupOwnerId The ID of the source security group. You can't specify a source
-     *         security group and a CIDR IP address range.
+     * @param sourceSecurityGroupOwnerId The ID of the destination security group. You can't specify a
+     *         destination security group and a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -397,9 +405,11 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * A set of IP permissions. You can't specify a destination security
+     * group and a CIDR IP address range.
      *
-     * @return <p/>
+     * @return A set of IP permissions. You can't specify a destination security
+     *         group and a CIDR IP address range.
      */
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
@@ -410,9 +420,11 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * <p/>
+     * A set of IP permissions. You can't specify a destination security
+     * group and a CIDR IP address range.
      *
-     * @param ipPermissions <p/>
+     * @param ipPermissions A set of IP permissions. You can't specify a destination security
+     *         group and a CIDR IP address range.
      */
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -425,11 +437,13 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * <p/>
+     * A set of IP permissions. You can't specify a destination security
+     * group and a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions <p/>
+     * @param ipPermissions A set of IP permissions. You can't specify a destination security
+     *         group and a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -443,11 +457,13 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * <p/>
+     * A set of IP permissions. You can't specify a destination security
+     * group and a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipPermissions <p/>
+     * @param ipPermissions A set of IP permissions. You can't specify a destination security
+     *         group and a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

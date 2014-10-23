@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#cancelArchival(CancelArchivalRequest) CancelArchival operation}.
  * <p>
- * Cancels archiving of a virtual tape to the Virtual Tape Shelf (VTS)
- * after archiving process is initiated.
+ * Cancels archiving of a virtual tape to the virtual tape shelf (VTS)
+ * after the archiving process is initiated.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#cancelArchival(CancelArchivalRequest)

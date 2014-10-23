@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class DescribeTapeArchivesResult implements Serializable {
 
     /**
-     * An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name(ARN) of the virtual
      * tapes. The information returned includes the Amazon Resource Names
      * (ARNs) of the tapes, size of the tapes, status of the tapes, progress
@@ -35,8 +35,8 @@ public class DescribeTapeArchivesResult implements Serializable {
     /**
      * An opaque string that indicates the position at which the virtual
      * tapes that were fetched for description ended. Use this marker in your
-     * next request to fetch the next set of virtual tapes in the Virtual
-     * Tape Shelf (VTS). If there are no more virtual tapes to describe, this
+     * next request to fetch the next set of virtual tapes in the virtual
+     * tape shelf (VTS). If there are no more virtual tapes to describe, this
      * field does not appear in the response.
      * <p>
      * <b>Constraints:</b><br/>
@@ -45,13 +45,13 @@ public class DescribeTapeArchivesResult implements Serializable {
     private String marker;
 
     /**
-     * An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name(ARN) of the virtual
      * tapes. The information returned includes the Amazon Resource Names
      * (ARNs) of the tapes, size of the tapes, status of the tapes, progress
      * of the description and tape barcode.
      *
-     * @return An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * @return An array of virtual tape objects in the virtual tape shelf (VTS). The
      *         description includes of the Amazon Resource Name(ARN) of the virtual
      *         tapes. The information returned includes the Amazon Resource Names
      *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress
@@ -66,13 +66,13 @@ public class DescribeTapeArchivesResult implements Serializable {
     }
     
     /**
-     * An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name(ARN) of the virtual
      * tapes. The information returned includes the Amazon Resource Names
      * (ARNs) of the tapes, size of the tapes, status of the tapes, progress
      * of the description and tape barcode.
      *
-     * @param tapeArchives An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * @param tapeArchives An array of virtual tape objects in the virtual tape shelf (VTS). The
      *         description includes of the Amazon Resource Name(ARN) of the virtual
      *         tapes. The information returned includes the Amazon Resource Names
      *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress
@@ -89,7 +89,7 @@ public class DescribeTapeArchivesResult implements Serializable {
     }
     
     /**
-     * An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name(ARN) of the virtual
      * tapes. The information returned includes the Amazon Resource Names
      * (ARNs) of the tapes, size of the tapes, status of the tapes, progress
@@ -97,7 +97,7 @@ public class DescribeTapeArchivesResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tapeArchives An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * @param tapeArchives An array of virtual tape objects in the virtual tape shelf (VTS). The
      *         description includes of the Amazon Resource Name(ARN) of the virtual
      *         tapes. The information returned includes the Amazon Resource Names
      *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress
@@ -115,7 +115,7 @@ public class DescribeTapeArchivesResult implements Serializable {
     }
     
     /**
-     * An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name(ARN) of the virtual
      * tapes. The information returned includes the Amazon Resource Names
      * (ARNs) of the tapes, size of the tapes, status of the tapes, progress
@@ -123,7 +123,7 @@ public class DescribeTapeArchivesResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param tapeArchives An array of virtual tape objects in The Virtual Tape Shelf (VTS). The
+     * @param tapeArchives An array of virtual tape objects in the virtual tape shelf (VTS). The
      *         description includes of the Amazon Resource Name(ARN) of the virtual
      *         tapes. The information returned includes the Amazon Resource Names
      *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress
@@ -147,8 +147,8 @@ public class DescribeTapeArchivesResult implements Serializable {
     /**
      * An opaque string that indicates the position at which the virtual
      * tapes that were fetched for description ended. Use this marker in your
-     * next request to fetch the next set of virtual tapes in the Virtual
-     * Tape Shelf (VTS). If there are no more virtual tapes to describe, this
+     * next request to fetch the next set of virtual tapes in the virtual
+     * tape shelf (VTS). If there are no more virtual tapes to describe, this
      * field does not appear in the response.
      * <p>
      * <b>Constraints:</b><br/>
@@ -156,8 +156,8 @@ public class DescribeTapeArchivesResult implements Serializable {
      *
      * @return An opaque string that indicates the position at which the virtual
      *         tapes that were fetched for description ended. Use this marker in your
-     *         next request to fetch the next set of virtual tapes in the Virtual
-     *         Tape Shelf (VTS). If there are no more virtual tapes to describe, this
+     *         next request to fetch the next set of virtual tapes in the virtual
+     *         tape shelf (VTS). If there are no more virtual tapes to describe, this
      *         field does not appear in the response.
      */
     public String getMarker() {
@@ -167,8 +167,8 @@ public class DescribeTapeArchivesResult implements Serializable {
     /**
      * An opaque string that indicates the position at which the virtual
      * tapes that were fetched for description ended. Use this marker in your
-     * next request to fetch the next set of virtual tapes in the Virtual
-     * Tape Shelf (VTS). If there are no more virtual tapes to describe, this
+     * next request to fetch the next set of virtual tapes in the virtual
+     * tape shelf (VTS). If there are no more virtual tapes to describe, this
      * field does not appear in the response.
      * <p>
      * <b>Constraints:</b><br/>
@@ -176,8 +176,8 @@ public class DescribeTapeArchivesResult implements Serializable {
      *
      * @param marker An opaque string that indicates the position at which the virtual
      *         tapes that were fetched for description ended. Use this marker in your
-     *         next request to fetch the next set of virtual tapes in the Virtual
-     *         Tape Shelf (VTS). If there are no more virtual tapes to describe, this
+     *         next request to fetch the next set of virtual tapes in the virtual
+     *         tape shelf (VTS). If there are no more virtual tapes to describe, this
      *         field does not appear in the response.
      */
     public void setMarker(String marker) {
@@ -187,8 +187,8 @@ public class DescribeTapeArchivesResult implements Serializable {
     /**
      * An opaque string that indicates the position at which the virtual
      * tapes that were fetched for description ended. Use this marker in your
-     * next request to fetch the next set of virtual tapes in the Virtual
-     * Tape Shelf (VTS). If there are no more virtual tapes to describe, this
+     * next request to fetch the next set of virtual tapes in the virtual
+     * tape shelf (VTS). If there are no more virtual tapes to describe, this
      * field does not appear in the response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -198,8 +198,8 @@ public class DescribeTapeArchivesResult implements Serializable {
      *
      * @param marker An opaque string that indicates the position at which the virtual
      *         tapes that were fetched for description ended. Use this marker in your
-     *         next request to fetch the next set of virtual tapes in the Virtual
-     *         Tape Shelf (VTS). If there are no more virtual tapes to describe, this
+     *         next request to fetch the next set of virtual tapes in the virtual
+     *         tape shelf (VTS). If there are no more virtual tapes to describe, this
      *         field does not appear in the response.
      *
      * @return A reference to this updated object so that method calls can be chained

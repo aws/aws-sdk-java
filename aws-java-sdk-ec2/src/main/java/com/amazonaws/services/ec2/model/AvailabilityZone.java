@@ -29,7 +29,8 @@ public class AvailabilityZone implements Serializable {
     private String zoneName;
 
     /**
-     * The state of the Availability Zone.
+     * The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
@@ -80,12 +81,14 @@ public class AvailabilityZone implements Serializable {
     }
 
     /**
-     * The state of the Availability Zone.
+     * The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @return The state of the Availability Zone.
+     * @return The state of the Availability Zone (<code>available</code> |
+     *         <code>impaired</code> | <code>unavailable</code>).
      *
      * @see AvailabilityZoneState
      */
@@ -94,12 +97,14 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * The state of the Availability Zone.
+     * The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state The state of the Availability Zone.
+     * @param state The state of the Availability Zone (<code>available</code> |
+     *         <code>impaired</code> | <code>unavailable</code>).
      *
      * @see AvailabilityZoneState
      */
@@ -108,14 +113,16 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * The state of the Availability Zone.
+     * The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state The state of the Availability Zone.
+     * @param state The state of the Availability Zone (<code>available</code> |
+     *         <code>impaired</code> | <code>unavailable</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -128,12 +135,14 @@ public class AvailabilityZone implements Serializable {
     }
 
     /**
-     * The state of the Availability Zone.
+     * The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state The state of the Availability Zone.
+     * @param state The state of the Availability Zone (<code>available</code> |
+     *         <code>impaired</code> | <code>unavailable</code>).
      *
      * @see AvailabilityZoneState
      */
@@ -142,14 +151,16 @@ public class AvailabilityZone implements Serializable {
     }
     
     /**
-     * The state of the Availability Zone.
+     * The state of the Availability Zone (<code>available</code> |
+     * <code>impaired</code> | <code>unavailable</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>available
      *
-     * @param state The state of the Availability Zone.
+     * @param state The state of the Availability Zone (<code>available</code> |
+     *         <code>impaired</code> | <code>unavailable</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

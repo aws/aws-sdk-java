@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -41,7 +41,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
     private String instanceProfileName;
 
     /**
-     * Name of the role to add.
+     * The name of the role to add.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -50,33 +50,33 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
     private String roleName;
 
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the instance profile to update.
+     * @return The name of the instance profile to update.
      */
     public String getInstanceProfileName() {
         return instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to update.
+     * @param instanceProfileName The name of the instance profile to update.
      */
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to update.
+     * The name of the instance profile to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -84,7 +84,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to update.
+     * @param instanceProfileName The name of the instance profile to update.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,33 +95,33 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Name of the role to add.
+     * The name of the role to add.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the role to add.
+     * @return The name of the role to add.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * Name of the role to add.
+     * The name of the role to add.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to add.
+     * @param roleName The name of the role to add.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * Name of the role to add.
+     * The name of the role to add.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -129,7 +129,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to add.
+     * @param roleName The name of the role to add.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

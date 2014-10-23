@@ -37,10 +37,8 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
     private String networkInterfaceId;
 
     /**
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. This value must be <code>false</code> for
-     * a NAT instance to perform NAT.
+     * The source/destination checking attribute. Resets the value to
+     * <code>true</code>.
      */
     private String sourceDestCheck;
 
@@ -78,47 +76,35 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
     }
 
     /**
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. This value must be <code>false</code> for
-     * a NAT instance to perform NAT.
+     * The source/destination checking attribute. Resets the value to
+     * <code>true</code>.
      *
-     * @return Indicates whether source/destination checking is enabled. A value of
-     *         <code>true</code> means checking is enabled, and <code>false</code>
-     *         means checking is disabled. This value must be <code>false</code> for
-     *         a NAT instance to perform NAT.
+     * @return The source/destination checking attribute. Resets the value to
+     *         <code>true</code>.
      */
     public String getSourceDestCheck() {
         return sourceDestCheck;
     }
     
     /**
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. This value must be <code>false</code> for
-     * a NAT instance to perform NAT.
+     * The source/destination checking attribute. Resets the value to
+     * <code>true</code>.
      *
-     * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
-     *         <code>true</code> means checking is enabled, and <code>false</code>
-     *         means checking is disabled. This value must be <code>false</code> for
-     *         a NAT instance to perform NAT.
+     * @param sourceDestCheck The source/destination checking attribute. Resets the value to
+     *         <code>true</code>.
      */
     public void setSourceDestCheck(String sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
     
     /**
-     * Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means checking is enabled, and <code>false</code>
-     * means checking is disabled. This value must be <code>false</code> for
-     * a NAT instance to perform NAT.
+     * The source/destination checking attribute. Resets the value to
+     * <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
-     *         <code>true</code> means checking is enabled, and <code>false</code>
-     *         means checking is disabled. This value must be <code>false</code> for
-     *         a NAT instance to perform NAT.
+     * @param sourceDestCheck The source/destination checking attribute. Resets the value to
+     *         <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

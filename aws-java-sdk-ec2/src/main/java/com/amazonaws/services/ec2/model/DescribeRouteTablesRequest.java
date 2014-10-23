@@ -56,9 +56,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      * route in the table. </li> <li> <p><code>route.instance-id</code> - The
      * ID of an instance specified in a route in the table. </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created
-     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created.
+     * <code>CreateRouteTable</code> indicates that the route was
+     * automatically created when the route table was created;
+     * <code>CreateRoute</code> indicates that the route was manually added
+     * to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     * that the route was propagated by route propagation. </li> <li>
      * <p><code>route.state</code> - The state of a route in the route table
      * (<code>active</code> | <code>blackhole</code>). The blackhole state
      * indicates that the route's target isn't available (for example, the
@@ -174,9 +177,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      * route in the table. </li> <li> <p><code>route.instance-id</code> - The
      * ID of an instance specified in a route in the table. </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created
-     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created.
+     * <code>CreateRouteTable</code> indicates that the route was
+     * automatically created when the route table was created;
+     * <code>CreateRoute</code> indicates that the route was manually added
+     * to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     * that the route was propagated by route propagation. </li> <li>
      * <p><code>route.state</code> - The state of a route in the route table
      * (<code>active</code> | <code>blackhole</code>). The blackhole state
      * indicates that the route's target isn't available (for example, the
@@ -213,9 +219,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
      *         ID of an instance specified in a route in the table. </li> <li>
-     *         <p><code>route.origin</code> - Describes how the route was created
-     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created.
+     *         <code>CreateRouteTable</code> indicates that the route was
+     *         automatically created when the route table was created;
+     *         <code>CreateRoute</code> indicates that the route was manually added
+     *         to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     *         that the route was propagated by route propagation. </li> <li>
      *         <p><code>route.state</code> - The state of a route in the route table
      *         (<code>active</code> | <code>blackhole</code>). The blackhole state
      *         indicates that the route's target isn't available (for example, the
@@ -261,9 +270,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      * route in the table. </li> <li> <p><code>route.instance-id</code> - The
      * ID of an instance specified in a route in the table. </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created
-     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created.
+     * <code>CreateRouteTable</code> indicates that the route was
+     * automatically created when the route table was created;
+     * <code>CreateRoute</code> indicates that the route was manually added
+     * to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     * that the route was propagated by route propagation. </li> <li>
      * <p><code>route.state</code> - The state of a route in the route table
      * (<code>active</code> | <code>blackhole</code>). The blackhole state
      * indicates that the route's target isn't available (for example, the
@@ -300,9 +312,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
      *         ID of an instance specified in a route in the table. </li> <li>
-     *         <p><code>route.origin</code> - Describes how the route was created
-     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created.
+     *         <code>CreateRouteTable</code> indicates that the route was
+     *         automatically created when the route table was created;
+     *         <code>CreateRoute</code> indicates that the route was manually added
+     *         to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     *         that the route was propagated by route propagation. </li> <li>
      *         <p><code>route.state</code> - The state of a route in the route table
      *         (<code>active</code> | <code>blackhole</code>). The blackhole state
      *         indicates that the route's target isn't available (for example, the
@@ -350,9 +365,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      * route in the table. </li> <li> <p><code>route.instance-id</code> - The
      * ID of an instance specified in a route in the table. </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created
-     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created.
+     * <code>CreateRouteTable</code> indicates that the route was
+     * automatically created when the route table was created;
+     * <code>CreateRoute</code> indicates that the route was manually added
+     * to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     * that the route was propagated by route propagation. </li> <li>
      * <p><code>route.state</code> - The state of a route in the route table
      * (<code>active</code> | <code>blackhole</code>). The blackhole state
      * indicates that the route's target isn't available (for example, the
@@ -391,9 +409,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
      *         ID of an instance specified in a route in the table. </li> <li>
-     *         <p><code>route.origin</code> - Describes how the route was created
-     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created.
+     *         <code>CreateRouteTable</code> indicates that the route was
+     *         automatically created when the route table was created;
+     *         <code>CreateRoute</code> indicates that the route was manually added
+     *         to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     *         that the route was propagated by route propagation. </li> <li>
      *         <p><code>route.state</code> - The state of a route in the route table
      *         (<code>active</code> | <code>blackhole</code>). The blackhole state
      *         indicates that the route's target isn't available (for example, the
@@ -442,9 +463,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      * route in the table. </li> <li> <p><code>route.instance-id</code> - The
      * ID of an instance specified in a route in the table. </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created
-     * (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     * <code>EnableVgwRoutePropagation</code>). </li> <li>
+     * <p><code>route.origin</code> - Describes how the route was created.
+     * <code>CreateRouteTable</code> indicates that the route was
+     * automatically created when the route table was created;
+     * <code>CreateRoute</code> indicates that the route was manually added
+     * to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     * that the route was propagated by route propagation. </li> <li>
      * <p><code>route.state</code> - The state of a route in the route table
      * (<code>active</code> | <code>blackhole</code>). The blackhole state
      * indicates that the route's target isn't available (for example, the
@@ -483,9 +507,12 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         <p><code>route.gateway-id</code> - The ID of a gateway specified in a
      *         route in the table. </li> <li> <p><code>route.instance-id</code> - The
      *         ID of an instance specified in a route in the table. </li> <li>
-     *         <p><code>route.origin</code> - Describes how the route was created
-     *         (<code>CreateRouteTable</code> | <code>CreateRoute</code> |
-     *         <code>EnableVgwRoutePropagation</code>). </li> <li>
+     *         <p><code>route.origin</code> - Describes how the route was created.
+     *         <code>CreateRouteTable</code> indicates that the route was
+     *         automatically created when the route table was created;
+     *         <code>CreateRoute</code> indicates that the route was manually added
+     *         to the route table; <code>EnableVgwRoutePropagation</code> indicates
+     *         that the route was propagated by route propagation. </li> <li>
      *         <p><code>route.state</code> - The state of a route in the route table
      *         (<code>active</code> | <code>blackhole</code>). The blackhole state
      *         indicates that the route's target isn't available (for example, the

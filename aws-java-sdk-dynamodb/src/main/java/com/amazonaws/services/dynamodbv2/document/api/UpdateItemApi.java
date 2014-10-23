@@ -17,6 +17,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 import java.util.Collection;
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.AttributeUpdate;
 import com.amazonaws.services.dynamodbv2.document.Expected;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
@@ -26,6 +28,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
 /**
  * A Table-centric UpdateItem API.
  */
+@ThreadSafe
 public interface UpdateItemApi {
 
     /**

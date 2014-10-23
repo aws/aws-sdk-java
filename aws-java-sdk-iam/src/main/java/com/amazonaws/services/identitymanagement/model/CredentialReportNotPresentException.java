@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because the credential report does not exist.
- * To generate a credential report, use GenerateCredentialReport.
+ * The request was rejected because the credential report does not
+ * exist. To generate a credential report, use GenerateCredentialReport.
  * </p>
  */        
 public class CredentialReportNotPresentException extends AmazonServiceException {

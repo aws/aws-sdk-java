@@ -19,7 +19,7 @@ import org.apache.http.HttpStatus;
 import com.amazonaws.AmazonServiceException;
 
 public class RetryUtils {
-    
+
     /**
      * Returns true if the specified exception is a throttling error.
      *
@@ -31,13 +31,13 @@ public class RetryUtils {
      */
     public static boolean isThrottlingException(AmazonServiceException ase) {
         if (ase == null) return false;
-        
+
         String errorCode = ase.getErrorCode();
         return "Throttling".equals(errorCode)
             || "ThrottlingException".equals(errorCode)
             || "ProvisionedThroughputExceededException".equals(errorCode);
     }
-    
+
     /**
      * Returns true if the specified exception is a request entity too large
      * error.
@@ -49,10 +49,10 @@ public class RetryUtils {
      *         error message from a service, otherwise false.
      */
     public static boolean isRequestEntityTooLargeException(AmazonServiceException ase) {
-        return ase != null 
+        return ase != null
             && ase.getStatusCode() == HttpStatus.SC_REQUEST_TOO_LONG;
     }
-    
+
     /**
      * Returns true if the specified exception is a clock skew error.
      *

@@ -25,8 +25,10 @@ import com.amazonaws.services.ec2.model.transform.RejectVpcPeeringConnectionRequ
  * <p>
  * Rejects a VPC peering connection request. The VPC peering connection
  * must be in the <code>pending-acceptance</code> state. Use the
- * <code>DescribeVpcPeeringConnections</code> request to view your
- * outstanding VPC peering connection requests.
+ * DescribeVpcPeeringConnections request to view your outstanding VPC
+ * peering connection requests. To delete an active VPC peering
+ * connection, or to delete a VPC peering connection request that you
+ * initiated, use DeleteVpcPeeringConnection.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#rejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest)

@@ -88,11 +88,15 @@ public class InstanceAttribute implements Serializable {
 
     /**
      * Indicates whether source/destination checking is enabled. A value of
-     * true means checking is enabled, and false means checking is disabled.
-     * This value must be false for a NAT instance to perform NAT.
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      */
     private Boolean sourceDestCheck;
 
+    /**
+     * The security groups associated with the instance.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groups;
 
     /**
@@ -601,12 +605,14 @@ public class InstanceAttribute implements Serializable {
 
     /**
      * Indicates whether source/destination checking is enabled. A value of
-     * true means checking is enabled, and false means checking is disabled.
-     * This value must be false for a NAT instance to perform NAT.
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      *
      * @return Indicates whether source/destination checking is enabled. A value of
-     *         true means checking is enabled, and false means checking is disabled.
-     *         This value must be false for a NAT instance to perform NAT.
+     *         <code>true</code> means checking is enabled, and <code>false</code>
+     *         means checking is disabled. This value must be <code>false</code> for
+     *         a NAT instance to perform NAT.
      */
     public Boolean isSourceDestCheck() {
         return sourceDestCheck;
@@ -614,12 +620,14 @@ public class InstanceAttribute implements Serializable {
     
     /**
      * Indicates whether source/destination checking is enabled. A value of
-     * true means checking is enabled, and false means checking is disabled.
-     * This value must be false for a NAT instance to perform NAT.
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      *
      * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
-     *         true means checking is enabled, and false means checking is disabled.
-     *         This value must be false for a NAT instance to perform NAT.
+     *         <code>true</code> means checking is enabled, and <code>false</code>
+     *         means checking is disabled. This value must be <code>false</code> for
+     *         a NAT instance to perform NAT.
      */
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
@@ -627,14 +635,16 @@ public class InstanceAttribute implements Serializable {
     
     /**
      * Indicates whether source/destination checking is enabled. A value of
-     * true means checking is enabled, and false means checking is disabled.
-     * This value must be false for a NAT instance to perform NAT.
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck Indicates whether source/destination checking is enabled. A value of
-     *         true means checking is enabled, and false means checking is disabled.
-     *         This value must be false for a NAT instance to perform NAT.
+     *         <code>true</code> means checking is enabled, and <code>false</code>
+     *         means checking is disabled. This value must be <code>false</code> for
+     *         a NAT instance to perform NAT.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -646,21 +656,23 @@ public class InstanceAttribute implements Serializable {
 
     /**
      * Indicates whether source/destination checking is enabled. A value of
-     * true means checking is enabled, and false means checking is disabled.
-     * This value must be false for a NAT instance to perform NAT.
+     * <code>true</code> means checking is enabled, and <code>false</code>
+     * means checking is disabled. This value must be <code>false</code> for
+     * a NAT instance to perform NAT.
      *
      * @return Indicates whether source/destination checking is enabled. A value of
-     *         true means checking is enabled, and false means checking is disabled.
-     *         This value must be false for a NAT instance to perform NAT.
+     *         <code>true</code> means checking is enabled, and <code>false</code>
+     *         means checking is disabled. This value must be <code>false</code> for
+     *         a NAT instance to perform NAT.
      */
     public Boolean getSourceDestCheck() {
         return sourceDestCheck;
     }
 
     /**
-     * Returns the value of the Groups property for this object.
+     * The security groups associated with the instance.
      *
-     * @return The value of the Groups property for this object.
+     * @return The security groups associated with the instance.
      */
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
@@ -671,9 +683,9 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the Groups property for this object.
+     * The security groups associated with the instance.
      *
-     * @param groups The new value for the Groups property for this object.
+     * @param groups The security groups associated with the instance.
      */
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
@@ -686,11 +698,11 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the Groups property for this object.
+     * The security groups associated with the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groups The new value for the Groups property for this object.
+     * @param groups The security groups associated with the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -704,11 +716,11 @@ public class InstanceAttribute implements Serializable {
     }
     
     /**
-     * Sets the value of the Groups property for this object.
+     * The security groups associated with the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groups The new value for the Groups property for this object.
+     * @param groups The security groups associated with the instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

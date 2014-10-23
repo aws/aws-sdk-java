@@ -25,7 +25,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotDatafeedSubscripti
  * <p>
  * Describes the datafeed for Spot Instances. For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest)

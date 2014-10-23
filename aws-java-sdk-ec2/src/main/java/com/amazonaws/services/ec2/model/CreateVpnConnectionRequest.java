@@ -52,7 +52,7 @@ import com.amazonaws.services.ec2.model.transform.CreateVpnConnectionRequestMars
 public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVpnConnectionRequest> {
 
     /**
-     * The type of VPN connection.
+     * The type of VPN connection (<code>ipsec.1</code>).
      */
     private String type;
 
@@ -84,7 +84,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param type The type of VPN connection.
+     * @param type The type of VPN connection (<code>ipsec.1</code>).
      * @param customerGatewayId The ID of the customer gateway.
      * @param vpnGatewayId The ID of the virtual private gateway.
      */
@@ -95,29 +95,29 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The type of VPN connection.
+     * The type of VPN connection (<code>ipsec.1</code>).
      *
-     * @return The type of VPN connection.
+     * @return The type of VPN connection (<code>ipsec.1</code>).
      */
     public String getType() {
         return type;
     }
     
     /**
-     * The type of VPN connection.
+     * The type of VPN connection (<code>ipsec.1</code>).
      *
-     * @param type The type of VPN connection.
+     * @param type The type of VPN connection (<code>ipsec.1</code>).
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * The type of VPN connection.
+     * The type of VPN connection (<code>ipsec.1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The type of VPN connection.
+     * @param type The type of VPN connection (<code>ipsec.1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

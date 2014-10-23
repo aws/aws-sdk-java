@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Server Certificates in the Using IAM guide.
  * </p>
  * <p>
- * <b>NOTE:</b>To change a server certificate name the requester must
+ * <b>NOTE:</b> To change a server certificate name the requester must
  * have appropriate permissions on both the source object and the target
  * object. For example, to change the name from ProductionCert to
  * ProdCert, the entity making the request must have permission on

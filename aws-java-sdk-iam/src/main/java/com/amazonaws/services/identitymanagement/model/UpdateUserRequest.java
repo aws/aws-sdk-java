@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Groups in the Using IAM guide.
  * </p>
  * <p>
- * <b>NOTE:</b>To change a user name the requester must have appropriate
+ * <b>NOTE:</b> To change a user name the requester must have appropriate
  * permissions on both the source object and the target object. For
  * example, to change Bob to Robert, the entity making the request must
  * have permission on Bob and Robert, or must have permission on all (*).

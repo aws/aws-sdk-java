@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest) ListUsers operation}.
  * <p>
- * Lists the users that have the specified path prefix. If there are
- * none, the action returns an empty list.
+ * Lists the IAM users that have the specified path prefix. If no path
+ * prefix is specified, the action returns all users in the AWS account.
+ * If there are none, the action returns an empty list.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and
@@ -37,7 +38,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all user
      * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * <code>/division_abc/subdivision_xyz/</code>. <p> This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing
      * all user names.
      * <p>
@@ -81,7 +82,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all user
      * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * <code>/division_abc/subdivision_xyz/</code>. <p> This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing
      * all user names.
      * <p>
@@ -92,7 +93,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * @return The path prefix for filtering the results. For example:
      *         <code>/division_abc/subdivision_xyz/</code>, which would get all user
      *         names whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     *         <code>/division_abc/subdivision_xyz/</code>. <p> This parameter is
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all user names.
      */
@@ -104,7 +105,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all user
      * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * <code>/division_abc/subdivision_xyz/</code>. <p> This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing
      * all user names.
      * <p>
@@ -115,7 +116,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * @param pathPrefix The path prefix for filtering the results. For example:
      *         <code>/division_abc/subdivision_xyz/</code>, which would get all user
      *         names whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     *         <code>/division_abc/subdivision_xyz/</code>. <p> This parameter is
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all user names.
      */
@@ -127,7 +128,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all user
      * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * <code>/division_abc/subdivision_xyz/</code>. <p> This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing
      * all user names.
      * <p>
@@ -140,7 +141,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * @param pathPrefix The path prefix for filtering the results. For example:
      *         <code>/division_abc/subdivision_xyz/</code>, which would get all user
      *         names whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     *         <code>/division_abc/subdivision_xyz/</code>. <p> This parameter is
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all user names.
      *

@@ -21,8 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest) ListSigningCertificates operation}.
  * <p>
- * Returns information about the signing certificates associated with the
- * specified user. If there are none, the action returns an empty list.
+ * Returns information about the signing certificates associated with
+ * the specified user. If there are none, the action returns an empty
+ * list.
  * </p>
  * <p>
  * Although each user is limited to a small number of signing
@@ -33,8 +34,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If the <code>UserName</code> field is not specified, the user name is
  * determined implicitly based on the AWS access key ID used to sign the
  * request. Because this action works for access keys under the AWS
- * account, this API can be used to manage root credentials even if the
- * AWS account has no associated users.
+ * account, you can use this action to manage root credentials even if
+ * the AWS account has no associated users.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest)

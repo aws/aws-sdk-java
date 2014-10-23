@@ -25,19 +25,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * specified user. If there are none, the action returns an empty list.
  * </p>
  * <p>
- * Although each user is limited to a small number of keys, you can still
- * paginate the results using the <code>MaxItems</code> and
+ * Although each user is limited to a small number of keys, you can
+ * still paginate the results using the <code>MaxItems</code> and
  * <code>Marker</code> parameters.
  * </p>
  * <p>
  * If the <code>UserName</code> field is not specified, the UserName is
  * determined implicitly based on the AWS access key ID used to sign the
  * request. Because this action works for access keys under the AWS
- * account, this API can be used to manage root credentials even if the
- * AWS account has no associated users.
+ * account, you can use this action to manage root credentials even if
+ * the AWS account has no associated users.
  * </p>
  * <p>
- * <b>NOTE:</b>To ensure the security of your AWS account, the secret
+ * <b>NOTE:</b> To ensure the security of your AWS account, the secret
  * access key is accessible only during key and user creation.
  * </p>
  *
@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user.
+     * The name of the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -85,33 +85,33 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
     public ListAccessKeysRequest() {}
     
     /**
-     * Name of the user.
+     * The name of the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user.
+     * @return The name of the user.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user.
+     * The name of the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user.
+     * @param userName The name of the user.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user.
+     * The name of the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -119,7 +119,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user.
+     * @param userName The name of the user.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

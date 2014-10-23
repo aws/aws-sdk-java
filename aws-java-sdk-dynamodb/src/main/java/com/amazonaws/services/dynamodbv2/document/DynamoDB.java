@@ -17,6 +17,8 @@ package com.amazonaws.services.dynamodbv2.document;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.api.BatchGetItemApi;
 import com.amazonaws.services.dynamodbv2.document.api.BatchWriteItemApi;
@@ -41,6 +43,7 @@ import com.amazonaws.services.dynamodbv2.model.WriteRequest;
  * DynamoDB Document API. This class is the entry point to make use of this
  * library.
  */
+@ThreadSafe
 public class DynamoDB implements ListTablesApi, BatchGetItemApi,
         BatchWriteItemApi {
     private final AmazonDynamoDB client;

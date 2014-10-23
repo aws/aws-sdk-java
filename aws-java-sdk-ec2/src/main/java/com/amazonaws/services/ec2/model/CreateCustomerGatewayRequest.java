@@ -53,7 +53,8 @@ import com.amazonaws.services.ec2.model.transform.CreateCustomerGatewayRequestMa
 public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateCustomerGatewayRequest> {
 
     /**
-     * The type of VPN connection that this customer gateway supports.
+     * The type of VPN connection that this customer gateway supports
+     * (<code>ipsec.1</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
@@ -84,7 +85,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * initialize any additional object members.
      * 
      * @param type The type of VPN connection that this customer gateway
-     * supports.
+     * supports (<code>ipsec.1</code>).
      * @param publicIp The Internet-routable IP address for the customer
      * gateway's outside interface. The address must be static.
      * @param bgpAsn For devices that support BGP, the customer gateway's BGP
@@ -102,7 +103,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * initialize any additional object members.
      * 
      * @param type The type of VPN connection that this customer gateway
-     * supports.
+     * supports (<code>ipsec.1</code>).
      * @param publicIp The Internet-routable IP address for the customer
      * gateway's outside interface. The address must be static.
      * @param bgpAsn For devices that support BGP, the customer gateway's BGP
@@ -115,12 +116,14 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The type of VPN connection that this customer gateway supports.
+     * The type of VPN connection that this customer gateway supports
+     * (<code>ipsec.1</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @return The type of VPN connection that this customer gateway supports.
+     * @return The type of VPN connection that this customer gateway supports
+     *         (<code>ipsec.1</code>).
      *
      * @see GatewayType
      */
@@ -129,12 +132,14 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * The type of VPN connection that this customer gateway supports.
+     * The type of VPN connection that this customer gateway supports
+     * (<code>ipsec.1</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection that this customer gateway supports.
+     * @param type The type of VPN connection that this customer gateway supports
+     *         (<code>ipsec.1</code>).
      *
      * @see GatewayType
      */
@@ -143,14 +148,16 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * The type of VPN connection that this customer gateway supports.
+     * The type of VPN connection that this customer gateway supports
+     * (<code>ipsec.1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection that this customer gateway supports.
+     * @param type The type of VPN connection that this customer gateway supports
+     *         (<code>ipsec.1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -163,12 +170,14 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The type of VPN connection that this customer gateway supports.
+     * The type of VPN connection that this customer gateway supports
+     * (<code>ipsec.1</code>).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection that this customer gateway supports.
+     * @param type The type of VPN connection that this customer gateway supports
+     *         (<code>ipsec.1</code>).
      *
      * @see GatewayType
      */
@@ -177,14 +186,16 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * The type of VPN connection that this customer gateway supports.
+     * The type of VPN connection that this customer gateway supports
+     * (<code>ipsec.1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>ipsec.1
      *
-     * @param type The type of VPN connection that this customer gateway supports.
+     * @param type The type of VPN connection that this customer gateway supports
+     *         (<code>ipsec.1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -34,6 +34,8 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIds;
+
     /**
      * 
      */
@@ -231,6 +233,74 @@ public class ImportInstanceLaunchSpecification implements Serializable {
             com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
             groupNamesCopy.addAll(groupNames);
             this.groupNames = groupNamesCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * Returns the value of the GroupIds property for this object.
+     *
+     * @return The value of the GroupIds property for this object.
+     */
+    public java.util.List<String> getGroupIds() {
+        if (groupIds == null) {
+              groupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groupIds.setAutoConstruct(true);
+        }
+        return groupIds;
+    }
+    
+    /**
+     * Sets the value of the GroupIds property for this object.
+     *
+     * @param groupIds The new value for the GroupIds property for this object.
+     */
+    public void setGroupIds(java.util.Collection<String> groupIds) {
+        if (groupIds == null) {
+            this.groupIds = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupIds.size());
+        groupIdsCopy.addAll(groupIds);
+        this.groupIds = groupIdsCopy;
+    }
+    
+    /**
+     * Sets the value of the GroupIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groupIds The new value for the GroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ImportInstanceLaunchSpecification withGroupIds(String... groupIds) {
+        if (getGroupIds() == null) setGroupIds(new java.util.ArrayList<String>(groupIds.length));
+        for (String value : groupIds) {
+            getGroupIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the GroupIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groupIds The new value for the GroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ImportInstanceLaunchSpecification withGroupIds(java.util.Collection<String> groupIds) {
+        if (groupIds == null) {
+            this.groupIds = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupIds.size());
+            groupIdsCopy.addAll(groupIds);
+            this.groupIds = groupIdsCopy;
         }
 
         return this;
@@ -673,6 +743,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         sb.append("{");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");
+        if (getGroupIds() != null) sb.append("GroupIds: " + getGroupIds() + ",");
         if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
         if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
         if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
@@ -692,6 +763,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode()); 
+        hashCode = prime * hashCode + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
@@ -715,6 +787,8 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
         if (other.getGroupNames() == null ^ this.getGroupNames() == null) return false;
         if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false) return false; 
+        if (other.getGroupIds() == null ^ this.getGroupIds() == null) return false;
+        if (other.getGroupIds() != null && other.getGroupIds().equals(this.getGroupIds()) == false) return false; 
         if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
         if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
         if (other.getUserData() == null ^ this.getUserData() == null) return false;

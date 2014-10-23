@@ -34,8 +34,7 @@ import com.amazonaws.services.ec2.model.transform.ConfirmProductInstanceRequestM
 public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ConfirmProductInstanceRequest> {
 
     /**
-     * The product code. This must be an Amazon DevPay product code that you
-     * own.
+     * The product code. This must be a product code that you own.
      */
     private String productCode;
 
@@ -55,8 +54,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param productCode The product code. This must be an Amazon DevPay
-     * product code that you own.
+     * @param productCode The product code. This must be a product code that
+     * you own.
      * @param instanceId The ID of the instance.
      */
     public ConfirmProductInstanceRequest(String productCode, String instanceId) {
@@ -65,35 +64,29 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * The product code. This must be an Amazon DevPay product code that you
-     * own.
+     * The product code. This must be a product code that you own.
      *
-     * @return The product code. This must be an Amazon DevPay product code that you
-     *         own.
+     * @return The product code. This must be a product code that you own.
      */
     public String getProductCode() {
         return productCode;
     }
     
     /**
-     * The product code. This must be an Amazon DevPay product code that you
-     * own.
+     * The product code. This must be a product code that you own.
      *
-     * @param productCode The product code. This must be an Amazon DevPay product code that you
-     *         own.
+     * @param productCode The product code. This must be a product code that you own.
      */
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
     
     /**
-     * The product code. This must be an Amazon DevPay product code that you
-     * own.
+     * The product code. This must be a product code that you own.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productCode The product code. This must be an Amazon DevPay product code that you
-     *         own.
+     * @param productCode The product code. This must be a product code that you own.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

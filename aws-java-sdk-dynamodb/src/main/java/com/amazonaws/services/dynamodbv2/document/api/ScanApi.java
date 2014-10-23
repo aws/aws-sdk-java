@@ -16,6 +16,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.ItemCollection;
 import com.amazonaws.services.dynamodbv2.document.ScanFilter;
 import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
@@ -24,6 +26,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
 /**
  * A Table-centric Scan API.
  */
+@ThreadSafe
 public interface ScanApi {
     /**
      * Retrieves items by the specified list of scan filters.

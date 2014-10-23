@@ -24,8 +24,8 @@ import com.amazonaws.services.ec2.model.transform.ReplaceRouteRequestMarshaller;
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest) ReplaceRoute operation}.
  * <p>
  * Replaces an existing route within a route table in a VPC. You must
- * provide only one of the following: Internet gateway, NAT instance, VPC
- * peering connection, or network interface.
+ * provide only one of the following: Internet gateway or virtual private
+ * gateway, NAT instance, VPC peering connection, or network interface.
  * </p>
  * <p>
  * For more information about route tables, see
@@ -49,7 +49,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
     private String destinationCidrBlock;
 
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway.
      */
     private String gatewayId;
 
@@ -141,29 +141,29 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway.
      *
-     * @return The ID of an Internet gateway attached to your VPC.
+     * @return The ID of an Internet gateway or virtual private gateway.
      */
     public String getGatewayId() {
         return gatewayId;
     }
     
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway.
      *
-     * @param gatewayId The ID of an Internet gateway attached to your VPC.
+     * @param gatewayId The ID of an Internet gateway or virtual private gateway.
      */
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
     
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param gatewayId The ID of an Internet gateway attached to your VPC.
+     * @param gatewayId The ID of an Internet gateway or virtual private gateway.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

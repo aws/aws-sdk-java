@@ -22,11 +22,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest) GetUser operation}.
  * <p>
  * Retrieves information about the specified user, including the user's
- * path, unique ID, and ARN.
+ * creation date, path, unique ID, and ARN.
  * </p>
  * <p>
  * If you do not specify a user name, IAM determines the user name
- * implicitly based on the AWS access key ID signing the request.
+ * implicitly based on the AWS access key ID used to sign the request.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest)
@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetUserRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user to get information about. <p>This parameter is
+     * The name of the user to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the user making the
      * request.
      * <p>
@@ -51,7 +51,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
     public GetUserRequest() {}
     
     /**
-     * Name of the user to get information about. <p>This parameter is
+     * The name of the user to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the user making the
      * request.
      * <p>
@@ -59,7 +59,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to get information about. <p>This parameter is
+     * @return The name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the
      *         request.
      */
@@ -68,7 +68,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * Name of the user to get information about. <p>This parameter is
+     * The name of the user to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the user making the
      * request.
      * <p>
@@ -76,7 +76,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to get information about. <p>This parameter is
+     * @param userName The name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the
      *         request.
      */
@@ -85,7 +85,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
     }
     
     /**
-     * Name of the user to get information about. <p>This parameter is
+     * The name of the user to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the user making the
      * request.
      * <p>
@@ -95,7 +95,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to get information about. <p>This parameter is
+     * @param userName The name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the
      *         request.
      *

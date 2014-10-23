@@ -30,6 +30,10 @@ import com.amazonaws.services.ec2.model.transform.ReportInstanceStatusRequestMar
  * experience with the instance. Amazon EC2 collects this information to
  * improve the accuracy of status checks.
  * </p>
+ * <p>
+ * Use of this action does not change the value returned by
+ * DescribeInstanceStatus.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest)
  */

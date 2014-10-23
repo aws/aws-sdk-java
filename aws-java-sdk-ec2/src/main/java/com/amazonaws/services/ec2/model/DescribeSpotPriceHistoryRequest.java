@@ -29,7 +29,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotPriceHistoryReques
  * the Spot Price based on available Spot Instance capacity and current
  * Spot Instance requests. For more information about Spot Instances, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  * <p>
  * When you specify an Availability Zone, this operation describes the
@@ -40,6 +40,13 @@ import com.amazonaws.services.ec2.model.transform.DescribeSpotPriceHistoryReques
  * 2011-05-15, you get the lowest price across the region for the
  * specified time period. The prices returned are listed in chronological
  * order, from the oldest to the most recent.
+ * </p>
+ * <p>
+ * When you specify the start and end time options, this operation
+ * returns two pieces of data: the prices of the instance types within
+ * the time range that you specified and the time when the price changed.
+ * The price is valid within the time period that you specified; the
+ * response merely indicates the last time that the price changed.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotPriceHistory(DescribeSpotPriceHistoryRequest)

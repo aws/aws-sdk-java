@@ -18,12 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>MFADevice</code> data type contains information about an MFA
- * device.
+ * Contains information about an MFA device.
  * </p>
  * <p>
- * This data type is used as a response element in the action
- * ListMFADevices.
+ * This data type is used as a response element in the ListMFADevices
+ * action.
  * </p>
  */
 public class MFADevice implements Serializable {

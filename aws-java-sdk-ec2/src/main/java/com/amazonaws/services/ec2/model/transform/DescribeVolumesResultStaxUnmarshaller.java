@@ -47,6 +47,10 @@ public class DescribeVolumesResultStaxUnmarshaller implements Unmarshaller<Descr
                     describeVolumesResult.getVolumes().add(VolumeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeVolumesResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeVolumesResult;

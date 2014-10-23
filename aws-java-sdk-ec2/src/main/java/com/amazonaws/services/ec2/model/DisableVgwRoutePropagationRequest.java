@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#disableVgwRoutePropagation(DisableVgwRoutePropagationRequest) DisableVgwRoutePropagation operation}.
  * <p>
- * Disables a virtual private gateway (VGW) from propagating routes to
- * the routing tables of a VPC.
+ * Disables a virtual private gateway (VGW) from propagating routes to a
+ * specified route table of a VPC.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disableVgwRoutePropagation(DisableVgwRoutePropagationRequest)
@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The ID of the routing table.
+     * The ID of the route table.
      */
     private String routeTableId;
 
@@ -40,29 +40,29 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
     private String gatewayId;
 
     /**
-     * The ID of the routing table.
+     * The ID of the route table.
      *
-     * @return The ID of the routing table.
+     * @return The ID of the route table.
      */
     public String getRouteTableId() {
         return routeTableId;
     }
     
     /**
-     * The ID of the routing table.
+     * The ID of the route table.
      *
-     * @param routeTableId The ID of the routing table.
+     * @param routeTableId The ID of the route table.
      */
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
     
     /**
-     * The ID of the routing table.
+     * The ID of the route table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param routeTableId The ID of the routing table.
+     * @param routeTableId The ID of the route table.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -16,6 +16,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.GetItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.KeyAttribute;
@@ -29,6 +31,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
  * <code>GetItemApi</code> is the only exception due to the fact that the
  * web service API is indistinguishable from a Java getter method.
  */
+@ThreadSafe
 public interface GetItemApi {
 
     /**

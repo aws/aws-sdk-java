@@ -24,7 +24,8 @@ import java.io.Serializable;
 public class InstanceNetworkInterfaceAssociation implements Serializable {
 
     /**
-     * The address of the Elastic IP address bound to the network interface.
+     * The public IP address or Elastic IP address bound to the network
+     * interface.
      */
     private String publicIp;
 
@@ -39,29 +40,35 @@ public class InstanceNetworkInterfaceAssociation implements Serializable {
     private String ipOwnerId;
 
     /**
-     * The address of the Elastic IP address bound to the network interface.
+     * The public IP address or Elastic IP address bound to the network
+     * interface.
      *
-     * @return The address of the Elastic IP address bound to the network interface.
+     * @return The public IP address or Elastic IP address bound to the network
+     *         interface.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * The address of the Elastic IP address bound to the network interface.
+     * The public IP address or Elastic IP address bound to the network
+     * interface.
      *
-     * @param publicIp The address of the Elastic IP address bound to the network interface.
+     * @param publicIp The public IP address or Elastic IP address bound to the network
+     *         interface.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * The address of the Elastic IP address bound to the network interface.
+     * The public IP address or Elastic IP address bound to the network
+     * interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp The address of the Elastic IP address bound to the network interface.
+     * @param publicIp The public IP address or Elastic IP address bound to the network
+     *         interface.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

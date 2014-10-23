@@ -30,8 +30,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You
  * can take snapshots of your gateway volume on a scheduled or ad-hoc
  * basis. This API enables you to take ad-hoc snapshot. For more
- * information, see Working With Snapshots in the AWS Storage Gateway
- * Console.
+ * information, see
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"> Working With Snapshots in the AWS Storage Gateway Console </a>
+ * .
  * </p>
  * <p>
  * In the CreateSnapshot request you identify the volume by providing its

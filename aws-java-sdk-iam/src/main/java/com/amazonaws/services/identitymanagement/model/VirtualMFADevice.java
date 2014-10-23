@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>VirtualMFADevice</code> data type contains information about
- * a virtual MFA device.
+ * Contains information about a virtual MFA device.
  * </p>
  */
 public class VirtualMFADevice implements Serializable {
@@ -42,22 +41,26 @@ public class VirtualMFADevice implements Serializable {
 
     /**
      * A QR code PNG image that encodes
-     * <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-     * secret=$Base32String</i> where $virtualMFADeviceName is one of the
-     * create call arguments, AccountName is the user name if set (accountId
-     * otherwise), and Base32String is the seed in Base32 format. The
-     * <code>Base32String</code> is Base64-encoded.
+     * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     * where <code>$virtualMFADeviceName</code> is one of the create call
+     * arguments, <code>AccountName</code> is the user name if set
+     * (otherwise, the account ID otherwise), and <code>Base32String</code>
+     * is the seed in Base32 format. The <code>Base32String</code> value is
+     * Base64-encoded.
      */
     private java.nio.ByteBuffer qRCodePNG;
 
     /**
-     * The User data type contains information about a user. <p> This data
-     * type is used as a response element in the following actions: <ul>
+     * Contains information about an IAM user entity. <p> This data type is
+     * used as a response element in the following actions: <ul>
      * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      * <li><p><a>ListUsers</a></li> </ul>
      */
     private User user;
 
+    /**
+     * The date and time on which the virtual MFA device was enabled.
+     */
     private java.util.Date enableDate;
 
     /**
@@ -152,18 +155,20 @@ public class VirtualMFADevice implements Serializable {
 
     /**
      * A QR code PNG image that encodes
-     * <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-     * secret=$Base32String</i> where $virtualMFADeviceName is one of the
-     * create call arguments, AccountName is the user name if set (accountId
-     * otherwise), and Base32String is the seed in Base32 format. The
-     * <code>Base32String</code> is Base64-encoded.
+     * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     * where <code>$virtualMFADeviceName</code> is one of the create call
+     * arguments, <code>AccountName</code> is the user name if set
+     * (otherwise, the account ID otherwise), and <code>Base32String</code>
+     * is the seed in Base32 format. The <code>Base32String</code> value is
+     * Base64-encoded.
      *
      * @return A QR code PNG image that encodes
-     *         <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-     *         secret=$Base32String</i> where $virtualMFADeviceName is one of the
-     *         create call arguments, AccountName is the user name if set (accountId
-     *         otherwise), and Base32String is the seed in Base32 format. The
-     *         <code>Base32String</code> is Base64-encoded.
+     *         <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     *         where <code>$virtualMFADeviceName</code> is one of the create call
+     *         arguments, <code>AccountName</code> is the user name if set
+     *         (otherwise, the account ID otherwise), and <code>Base32String</code>
+     *         is the seed in Base32 format. The <code>Base32String</code> value is
+     *         Base64-encoded.
      */
     public java.nio.ByteBuffer getQRCodePNG() {
         return qRCodePNG;
@@ -171,18 +176,20 @@ public class VirtualMFADevice implements Serializable {
     
     /**
      * A QR code PNG image that encodes
-     * <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-     * secret=$Base32String</i> where $virtualMFADeviceName is one of the
-     * create call arguments, AccountName is the user name if set (accountId
-     * otherwise), and Base32String is the seed in Base32 format. The
-     * <code>Base32String</code> is Base64-encoded.
+     * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     * where <code>$virtualMFADeviceName</code> is one of the create call
+     * arguments, <code>AccountName</code> is the user name if set
+     * (otherwise, the account ID otherwise), and <code>Base32String</code>
+     * is the seed in Base32 format. The <code>Base32String</code> value is
+     * Base64-encoded.
      *
      * @param qRCodePNG A QR code PNG image that encodes
-     *         <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-     *         secret=$Base32String</i> where $virtualMFADeviceName is one of the
-     *         create call arguments, AccountName is the user name if set (accountId
-     *         otherwise), and Base32String is the seed in Base32 format. The
-     *         <code>Base32String</code> is Base64-encoded.
+     *         <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     *         where <code>$virtualMFADeviceName</code> is one of the create call
+     *         arguments, <code>AccountName</code> is the user name if set
+     *         (otherwise, the account ID otherwise), and <code>Base32String</code>
+     *         is the seed in Base32 format. The <code>Base32String</code> value is
+     *         Base64-encoded.
      */
     public void setQRCodePNG(java.nio.ByteBuffer qRCodePNG) {
         this.qRCodePNG = qRCodePNG;
@@ -190,20 +197,22 @@ public class VirtualMFADevice implements Serializable {
     
     /**
      * A QR code PNG image that encodes
-     * <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-     * secret=$Base32String</i> where $virtualMFADeviceName is one of the
-     * create call arguments, AccountName is the user name if set (accountId
-     * otherwise), and Base32String is the seed in Base32 format. The
-     * <code>Base32String</code> is Base64-encoded.
+     * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     * where <code>$virtualMFADeviceName</code> is one of the create call
+     * arguments, <code>AccountName</code> is the user name if set
+     * (otherwise, the account ID otherwise), and <code>Base32String</code>
+     * is the seed in Base32 format. The <code>Base32String</code> value is
+     * Base64-encoded.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param qRCodePNG A QR code PNG image that encodes
-     *         <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
-     *         secret=$Base32String</i> where $virtualMFADeviceName is one of the
-     *         create call arguments, AccountName is the user name if set (accountId
-     *         otherwise), and Base32String is the seed in Base32 format. The
-     *         <code>Base32String</code> is Base64-encoded.
+     *         <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     *         where <code>$virtualMFADeviceName</code> is one of the create call
+     *         arguments, <code>AccountName</code> is the user name if set
+     *         (otherwise, the account ID otherwise), and <code>Base32String</code>
+     *         is the seed in Base32 format. The <code>Base32String</code> value is
+     *         Base64-encoded.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -214,13 +223,13 @@ public class VirtualMFADevice implements Serializable {
     }
 
     /**
-     * The User data type contains information about a user. <p> This data
-     * type is used as a response element in the following actions: <ul>
+     * Contains information about an IAM user entity. <p> This data type is
+     * used as a response element in the following actions: <ul>
      * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      * <li><p><a>ListUsers</a></li> </ul>
      *
-     * @return The User data type contains information about a user. <p> This data
-     *         type is used as a response element in the following actions: <ul>
+     * @return Contains information about an IAM user entity. <p> This data type is
+     *         used as a response element in the following actions: <ul>
      *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      *         <li><p><a>ListUsers</a></li> </ul>
      */
@@ -229,13 +238,13 @@ public class VirtualMFADevice implements Serializable {
     }
     
     /**
-     * The User data type contains information about a user. <p> This data
-     * type is used as a response element in the following actions: <ul>
+     * Contains information about an IAM user entity. <p> This data type is
+     * used as a response element in the following actions: <ul>
      * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      * <li><p><a>ListUsers</a></li> </ul>
      *
-     * @param user The User data type contains information about a user. <p> This data
-     *         type is used as a response element in the following actions: <ul>
+     * @param user Contains information about an IAM user entity. <p> This data type is
+     *         used as a response element in the following actions: <ul>
      *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      *         <li><p><a>ListUsers</a></li> </ul>
      */
@@ -244,15 +253,15 @@ public class VirtualMFADevice implements Serializable {
     }
     
     /**
-     * The User data type contains information about a user. <p> This data
-     * type is used as a response element in the following actions: <ul>
+     * Contains information about an IAM user entity. <p> This data type is
+     * used as a response element in the following actions: <ul>
      * <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      * <li><p><a>ListUsers</a></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param user The User data type contains information about a user. <p> This data
-     *         type is used as a response element in the following actions: <ul>
+     * @param user Contains information about an IAM user entity. <p> This data type is
+     *         used as a response element in the following actions: <ul>
      *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      *         <li><p><a>ListUsers</a></li> </ul>
      *
@@ -265,29 +274,29 @@ public class VirtualMFADevice implements Serializable {
     }
 
     /**
-     * Returns the value of the EnableDate property for this object.
+     * The date and time on which the virtual MFA device was enabled.
      *
-     * @return The value of the EnableDate property for this object.
+     * @return The date and time on which the virtual MFA device was enabled.
      */
     public java.util.Date getEnableDate() {
         return enableDate;
     }
     
     /**
-     * Sets the value of the EnableDate property for this object.
+     * The date and time on which the virtual MFA device was enabled.
      *
-     * @param enableDate The new value for the EnableDate property for this object.
+     * @param enableDate The date and time on which the virtual MFA device was enabled.
      */
     public void setEnableDate(java.util.Date enableDate) {
         this.enableDate = enableDate;
     }
     
     /**
-     * Sets the value of the EnableDate property for this object.
+     * The date and time on which the virtual MFA device was enabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param enableDate The new value for the EnableDate property for this object.
+     * @param enableDate The date and time on which the virtual MFA device was enabled.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -18,12 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The PasswordPolicy data type contains information about the account
- * password policy.
+ * Contains information about the account password policy.
  * </p>
  * <p>
- * This data type is used as a response element in the action
- * GetAccountPasswordPolicy.
+ * This data type is used as a response element in the
+ * GetAccountPasswordPolicy action.
  * </p>
  */
 public class PasswordPolicy implements Serializable {

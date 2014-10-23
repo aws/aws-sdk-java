@@ -29,12 +29,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Groups in the Using IAM guide.
  * </p>
  * <p>
- * <b>NOTE:</b>To change a group name the requester must have appropriate
- * permissions on both the source object and the target object. For
- * example, to change Managers to MGRs, the entity making the request
- * must have permission on Managers and MGRs, or must have permission on
- * all (*). For more information about permissions, see Permissions and
- * Policies.
+ * <b>NOTE:</b> To change a group name the requester must have
+ * appropriate permissions on both the source object and the target
+ * object. For example, to change Managers to MGRs, the entity making the
+ * request must have permission on Managers and MGRs, or must have
+ * permission on all (*). For more information about permissions, see
+ * Permissions and Policies.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateGroup(UpdateGroupRequest)

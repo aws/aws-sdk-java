@@ -16,6 +16,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.BatchGetItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.TableKeysAndAttributes;
 import com.amazonaws.services.dynamodbv2.document.spec.BatchGetItemSpec;
@@ -27,6 +29,7 @@ import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
  * multiple tables in one request/response by specifying one or multiple primary
  * keys per table in the request.
  */
+@ThreadSafe
 public interface BatchGetItemApi {
     /**
      * Used to perform a batch get-item operation from DynamoDB.

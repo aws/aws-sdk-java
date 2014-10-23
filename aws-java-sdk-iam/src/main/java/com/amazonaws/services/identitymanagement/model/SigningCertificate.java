@@ -18,18 +18,17 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The SigningCertificate data type contains information about an X.509
- * signing certificate.
+ * Contains information about an X.509 signing certificate.
  * </p>
  * <p>
- * This data type is used as a response element in the actions
- * UploadSigningCertificate and ListSigningCertificates.
+ * This data type is used as a response element in the
+ * UploadSigningCertificate and ListSigningCertificates actions.
  * </p>
  */
 public class SigningCertificate implements Serializable {
 
     /**
-     * Name of the user the signing certificate is associated with.
+     * The name of the user the signing certificate is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -81,8 +80,8 @@ public class SigningCertificate implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user the signing certificate is associated
-     * with.
+     * @param userName The name of the user the signing certificate is
+     * associated with.
      * @param certificateId The ID for the signing certificate.
      * @param certificateBody The contents of the signing certificate.
      * @param status The status of the signing certificate.
@@ -101,8 +100,8 @@ public class SigningCertificate implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user the signing certificate is associated
-     * with.
+     * @param userName The name of the user the signing certificate is
+     * associated with.
      * @param certificateId The ID for the signing certificate.
      * @param certificateBody The contents of the signing certificate.
      * @param status The status of the signing certificate.
@@ -117,33 +116,33 @@ public class SigningCertificate implements Serializable {
     }
 
     /**
-     * Name of the user the signing certificate is associated with.
+     * The name of the user the signing certificate is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user the signing certificate is associated with.
+     * @return The name of the user the signing certificate is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user the signing certificate is associated with.
+     * The name of the user the signing certificate is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the signing certificate is associated with.
+     * @param userName The name of the user the signing certificate is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user the signing certificate is associated with.
+     * The name of the user the signing certificate is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -151,7 +150,7 @@ public class SigningCertificate implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the signing certificate is associated with.
+     * @param userName The name of the user the signing certificate is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

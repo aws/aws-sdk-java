@@ -38,18 +38,18 @@ public class DescribeResizeRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The unique identifier of a cluster whose resize progress you are
-     * requesting. This parameter isn't case-sensitive. <p>By default, resize
+     * requesting. This parameter is case-sensitive. <p>By default, resize
      * operations for all clusters defined for an AWS account are returned.
      */
     private String clusterIdentifier;
 
     /**
      * The unique identifier of a cluster whose resize progress you are
-     * requesting. This parameter isn't case-sensitive. <p>By default, resize
+     * requesting. This parameter is case-sensitive. <p>By default, resize
      * operations for all clusters defined for an AWS account are returned.
      *
      * @return The unique identifier of a cluster whose resize progress you are
-     *         requesting. This parameter isn't case-sensitive. <p>By default, resize
+     *         requesting. This parameter is case-sensitive. <p>By default, resize
      *         operations for all clusters defined for an AWS account are returned.
      */
     public String getClusterIdentifier() {
@@ -58,11 +58,11 @@ public class DescribeResizeRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The unique identifier of a cluster whose resize progress you are
-     * requesting. This parameter isn't case-sensitive. <p>By default, resize
+     * requesting. This parameter is case-sensitive. <p>By default, resize
      * operations for all clusters defined for an AWS account are returned.
      *
      * @param clusterIdentifier The unique identifier of a cluster whose resize progress you are
-     *         requesting. This parameter isn't case-sensitive. <p>By default, resize
+     *         requesting. This parameter is case-sensitive. <p>By default, resize
      *         operations for all clusters defined for an AWS account are returned.
      */
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -71,13 +71,13 @@ public class DescribeResizeRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The unique identifier of a cluster whose resize progress you are
-     * requesting. This parameter isn't case-sensitive. <p>By default, resize
+     * requesting. This parameter is case-sensitive. <p>By default, resize
      * operations for all clusters defined for an AWS account are returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterIdentifier The unique identifier of a cluster whose resize progress you are
-     *         requesting. This parameter isn't case-sensitive. <p>By default, resize
+     *         requesting. This parameter is case-sensitive. <p>By default, resize
      *         operations for all clusters defined for an AWS account are returned.
      *
      * @return A reference to this updated object so that method calls can be chained

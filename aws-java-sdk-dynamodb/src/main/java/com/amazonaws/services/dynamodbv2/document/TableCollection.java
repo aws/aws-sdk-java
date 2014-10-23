@@ -32,5 +32,4 @@ import com.amazonaws.services.dynamodbv2.document.internal.PageBasedCollection;
  * @param <R> low level result type
  */
 public abstract class TableCollection<R> extends PageBasedCollection<Table,R> {
-
 }

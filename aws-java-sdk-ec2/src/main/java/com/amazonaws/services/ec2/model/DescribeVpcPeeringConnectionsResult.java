@@ -22,14 +22,14 @@ import java.io.Serializable;
 public class DescribeVpcPeeringConnectionsResult implements Serializable {
 
     /**
-     * Information about the VPC peering connections
+     * Information about the VPC peering connections.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VpcPeeringConnection> vpcPeeringConnections;
 
     /**
-     * Information about the VPC peering connections
+     * Information about the VPC peering connections.
      *
-     * @return Information about the VPC peering connections
+     * @return Information about the VPC peering connections.
      */
     public java.util.List<VpcPeeringConnection> getVpcPeeringConnections() {
         if (vpcPeeringConnections == null) {
@@ -40,9 +40,9 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable {
     }
     
     /**
-     * Information about the VPC peering connections
+     * Information about the VPC peering connections.
      *
-     * @param vpcPeeringConnections Information about the VPC peering connections
+     * @param vpcPeeringConnections Information about the VPC peering connections.
      */
     public void setVpcPeeringConnections(java.util.Collection<VpcPeeringConnection> vpcPeeringConnections) {
         if (vpcPeeringConnections == null) {
@@ -55,11 +55,11 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable {
     }
     
     /**
-     * Information about the VPC peering connections
+     * Information about the VPC peering connections.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcPeeringConnections Information about the VPC peering connections
+     * @param vpcPeeringConnections Information about the VPC peering connections.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -73,11 +73,11 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable {
     }
     
     /**
-     * Information about the VPC peering connections
+     * Information about the VPC peering connections.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcPeeringConnections Information about the VPC peering connections
+     * @param vpcPeeringConnections Information about the VPC peering connections.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

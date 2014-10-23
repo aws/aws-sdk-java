@@ -26,8 +26,9 @@ import com.amazonaws.services.ec2.model.transform.CreateRouteRequestMarshaller;
  * Creates a route in a route table within a VPC.
  * </p>
  * <p>
- * You must specify one of the following targets: Internet gateway, NAT
- * instance, VPC peering connection, or network interface.
+ * You must specify one of the following targets: Internet gateway or
+ * virtual private gateway, NAT instance, VPC peering connection, or
+ * network interface.
  * </p>
  * <p>
  * When determining how to route traffic, we use the route with the most
@@ -75,7 +76,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String destinationCidrBlock;
 
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to
+     * your VPC.
      */
     private String gatewayId;
 
@@ -169,29 +171,35 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to
+     * your VPC.
      *
-     * @return The ID of an Internet gateway attached to your VPC.
+     * @return The ID of an Internet gateway or virtual private gateway attached to
+     *         your VPC.
      */
     public String getGatewayId() {
         return gatewayId;
     }
     
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to
+     * your VPC.
      *
-     * @param gatewayId The ID of an Internet gateway attached to your VPC.
+     * @param gatewayId The ID of an Internet gateway or virtual private gateway attached to
+     *         your VPC.
      */
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
     
     /**
-     * The ID of an Internet gateway attached to your VPC.
+     * The ID of an Internet gateway or virtual private gateway attached to
+     * your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param gatewayId The ID of an Internet gateway attached to your VPC.
+     * @param gatewayId The ID of an Internet gateway or virtual private gateway attached to
+     *         your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

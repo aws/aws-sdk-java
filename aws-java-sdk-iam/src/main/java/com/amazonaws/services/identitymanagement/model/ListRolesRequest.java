@@ -43,12 +43,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListRolesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/application_abc/component_xyz/</code>, which would get all
-     * roles whose path starts with
-     * <code>/application_abc/component_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all roles.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/application_abc/component_xyz/</code> gets all roles whose path
+     * starts with <code>/application_abc/component_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all roles.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -70,8 +69,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of roles you want in the response. If there are
+     * additional roles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -81,58 +80,53 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
     private Integer maxItems;
 
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/application_abc/component_xyz/</code>, which would get all
-     * roles whose path starts with
-     * <code>/application_abc/component_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all roles.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/application_abc/component_xyz/</code> gets all roles whose path
+     * starts with <code>/application_abc/component_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all roles.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
-     * @return The path prefix for filtering the results. For example:
-     *         <code>/application_abc/component_xyz/</code>, which would get all
-     *         roles whose path starts with
-     *         <code>/application_abc/component_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all roles.
+     * @return The path prefix for filtering the results. For example, the prefix
+     *         <code>/application_abc/component_xyz/</code> gets all roles whose path
+     *         starts with <code>/application_abc/component_xyz/</code>. <p> This
+     *         parameter is optional. If it is not included, it defaults to a slash
+     *         (/), listing all roles.
      */
     public String getPathPrefix() {
         return pathPrefix;
     }
     
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/application_abc/component_xyz/</code>, which would get all
-     * roles whose path starts with
-     * <code>/application_abc/component_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all roles.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/application_abc/component_xyz/</code> gets all roles whose path
+     * starts with <code>/application_abc/component_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all roles.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
-     * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/application_abc/component_xyz/</code>, which would get all
-     *         roles whose path starts with
-     *         <code>/application_abc/component_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all roles.
+     * @param pathPrefix The path prefix for filtering the results. For example, the prefix
+     *         <code>/application_abc/component_xyz/</code> gets all roles whose path
+     *         starts with <code>/application_abc/component_xyz/</code>. <p> This
+     *         parameter is optional. If it is not included, it defaults to a slash
+     *         (/), listing all roles.
      */
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
     
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/application_abc/component_xyz/</code>, which would get all
-     * roles whose path starts with
-     * <code>/application_abc/component_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all roles.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/application_abc/component_xyz/</code> gets all roles whose path
+     * starts with <code>/application_abc/component_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all roles.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -140,12 +134,11 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
-     * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/application_abc/component_xyz/</code>, which would get all
-     *         roles whose path starts with
-     *         <code>/application_abc/component_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all roles.
+     * @param pathPrefix The path prefix for filtering the results. For example, the prefix
+     *         <code>/application_abc/component_xyz/</code> gets all roles whose path
+     *         starts with <code>/application_abc/component_xyz/</code>. <p> This
+     *         parameter is optional. If it is not included, it defaults to a slash
+     *         (/), listing all roles.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -220,8 +213,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of roles you want in the response. If there are
+     * additional roles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -229,8 +222,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of roles you want in the response. If there are
+     *         additional roles beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -240,8 +233,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of roles you want in the response. If there are
+     * additional roles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -249,8 +242,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of roles you want in the response. If there are
+     *         additional roles beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -260,8 +253,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of roles you want in the response. If there are
+     * additional roles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -271,8 +264,8 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of roles you want in the response. If there are
+     *         additional roles beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *

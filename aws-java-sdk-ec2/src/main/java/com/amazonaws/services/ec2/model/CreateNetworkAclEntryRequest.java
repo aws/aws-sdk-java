@@ -52,7 +52,7 @@ import com.amazonaws.services.ec2.model.transform.CreateNetworkAclEntryRequestMa
 public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateNetworkAclEntryRequest> {
 
     /**
-     * The ID of the ACL.
+     * The ID of the network ACL.
      */
     private String networkAclId;
 
@@ -83,12 +83,14 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     private Boolean egress;
 
     /**
-     * The network range to allow or deny, in CIDR notation.
+     * The network range to allow or deny, in CIDR notation (for example
+     * <code>172.16.0.0/24</code>).
      */
     private String cidrBlock;
 
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying ICMP for
+     * the protocol.
      */
     private IcmpTypeCode icmpTypeCode;
 
@@ -98,29 +100,29 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     private PortRange portRange;
 
     /**
-     * The ID of the ACL.
+     * The ID of the network ACL.
      *
-     * @return The ID of the ACL.
+     * @return The ID of the network ACL.
      */
     public String getNetworkAclId() {
         return networkAclId;
     }
     
     /**
-     * The ID of the ACL.
+     * The ID of the network ACL.
      *
-     * @param networkAclId The ID of the ACL.
+     * @param networkAclId The ID of the network ACL.
      */
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
     
     /**
-     * The ID of the ACL.
+     * The ID of the network ACL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclId The ID of the ACL.
+     * @param networkAclId The ID of the network ACL.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -341,29 +343,35 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * The network range to allow or deny, in CIDR notation.
+     * The network range to allow or deny, in CIDR notation (for example
+     * <code>172.16.0.0/24</code>).
      *
-     * @return The network range to allow or deny, in CIDR notation.
+     * @return The network range to allow or deny, in CIDR notation (for example
+     *         <code>172.16.0.0/24</code>).
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * The network range to allow or deny, in CIDR notation.
+     * The network range to allow or deny, in CIDR notation (for example
+     * <code>172.16.0.0/24</code>).
      *
-     * @param cidrBlock The network range to allow or deny, in CIDR notation.
+     * @param cidrBlock The network range to allow or deny, in CIDR notation (for example
+     *         <code>172.16.0.0/24</code>).
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * The network range to allow or deny, in CIDR notation.
+     * The network range to allow or deny, in CIDR notation (for example
+     * <code>172.16.0.0/24</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The network range to allow or deny, in CIDR notation.
+     * @param cidrBlock The network range to allow or deny, in CIDR notation (for example
+     *         <code>172.16.0.0/24</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -374,29 +382,35 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying ICMP for
+     * the protocol.
      *
-     * @return ICMP protocol: The ICMP type and code.
+     * @return ICMP protocol: The ICMP type and code. Required if specifying ICMP for
+     *         the protocol.
      */
     public IcmpTypeCode getIcmpTypeCode() {
         return icmpTypeCode;
     }
     
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying ICMP for
+     * the protocol.
      *
-     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code. Required if specifying ICMP for
+     *         the protocol.
      */
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
     
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying ICMP for
+     * the protocol.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code. Required if specifying ICMP for
+     *         the protocol.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

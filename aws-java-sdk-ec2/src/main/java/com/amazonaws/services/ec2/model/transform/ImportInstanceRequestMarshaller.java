@@ -39,7 +39,7 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
 
         Request<ImportInstanceRequest> request = new DefaultRequest<ImportInstanceRequest>(importInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ImportInstance");
-        request.addParameter("Version", "2014-06-15");
+        request.addParameter("Version", "2014-09-01");
 
         if (importInstanceRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importInstanceRequest.getDescription()));
@@ -59,6 +59,17 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                 }
 
                 groupNamesListIndex++;
+            }
+
+            java.util.List<String> groupIdsList = importInstanceLaunchSpecificationLaunchSpecification.getGroupIds();
+            int groupIdsListIndex = 1;
+
+            for (String groupIdsListValue : groupIdsList) {
+                if (groupIdsListValue != null) {
+                    request.addParameter("LaunchSpecification.GroupId." + groupIdsListIndex, StringUtils.fromString(groupIdsListValue));
+                }
+
+                groupIdsListIndex++;
             }
             if (importInstanceLaunchSpecificationLaunchSpecification.getAdditionalInfo() != null) {
                 request.addParameter("LaunchSpecification.AdditionalInfo", StringUtils.fromString(importInstanceLaunchSpecificationLaunchSpecification.getAdditionalInfo()));

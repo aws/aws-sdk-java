@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * will fail.
  * </p>
  * <p>
- * <b>NOTE:</b>This operation requires Signature Version 4.
+ * <b>NOTE:</b> This operation requires Signature Version 4.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSAMLProvider(DeleteSAMLProviderRequest)

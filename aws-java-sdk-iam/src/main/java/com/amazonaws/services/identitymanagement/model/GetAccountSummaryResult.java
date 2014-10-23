@@ -32,12 +32,12 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      * MFA device assigned to it, 0 otherwise</li>
      * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes) </li>
+     * for assume role policy documents (in kilobytes)</li>
      * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     * user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      * groups allowed for the AWS account</li>
      * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -46,7 +46,7 @@ public class GetAccountSummaryResult implements Serializable {
      * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      * Number of MFA devices that have been assigned to an IAM user or to the
      * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes) </li>
+     * allowed size for role policy documents (in kilobytes)</li>
      * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      * account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -56,7 +56,7 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      * of X509 certificates allowed for a user</li>
      * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      * Number of users for the AWS account</li>
      * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      * account</li> </ul>
@@ -71,12 +71,12 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      * MFA device assigned to it, 0 otherwise</li>
      * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes) </li>
+     * for assume role policy documents (in kilobytes)</li>
      * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     * user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      * groups allowed for the AWS account</li>
      * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -85,7 +85,7 @@ public class GetAccountSummaryResult implements Serializable {
      * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      * Number of MFA devices that have been assigned to an IAM user or to the
      * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes) </li>
+     * allowed size for role policy documents (in kilobytes)</li>
      * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      * account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -95,7 +95,7 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      * of X509 certificates allowed for a user</li>
      * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      * Number of users for the AWS account</li>
      * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      * account</li> </ul>
@@ -107,12 +107,12 @@ public class GetAccountSummaryResult implements Serializable {
      *         <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      *         MFA device assigned to it, 0 otherwise</li>
      *         <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     *         for assume role policy documents (in kilobytes) </li>
+     *         for assume role policy documents (in kilobytes)</li>
      *         <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      *         Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      *         - Number of Groups for the AWS account</li>
-     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     *         user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     *         IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      *         groups allowed for the AWS account</li>
      *         <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      *         the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -121,7 +121,7 @@ public class GetAccountSummaryResult implements Serializable {
      *         assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      *         Number of MFA devices that have been assigned to an IAM user or to the
      *         root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     *         allowed size for role policy documents (in kilobytes) </li>
+     *         allowed size for role policy documents (in kilobytes)</li>
      *         <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      *         <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      *         account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -131,7 +131,7 @@ public class GetAccountSummaryResult implements Serializable {
      *         <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      *         of X509 certificates allowed for a user</li>
      *         <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     *         user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     *         user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      *         Number of users for the AWS account</li>
      *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      *         account</li> </ul>
@@ -152,12 +152,12 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      * MFA device assigned to it, 0 otherwise</li>
      * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes) </li>
+     * for assume role policy documents (in kilobytes)</li>
      * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     * user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      * groups allowed for the AWS account</li>
      * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -166,7 +166,7 @@ public class GetAccountSummaryResult implements Serializable {
      * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      * Number of MFA devices that have been assigned to an IAM user or to the
      * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes) </li>
+     * allowed size for role policy documents (in kilobytes)</li>
      * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      * account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -176,7 +176,7 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      * of X509 certificates allowed for a user</li>
      * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      * Number of users for the AWS account</li>
      * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      * account</li> </ul>
@@ -188,12 +188,12 @@ public class GetAccountSummaryResult implements Serializable {
      *         <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      *         MFA device assigned to it, 0 otherwise</li>
      *         <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     *         for assume role policy documents (in kilobytes) </li>
+     *         for assume role policy documents (in kilobytes)</li>
      *         <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      *         Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      *         - Number of Groups for the AWS account</li>
-     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     *         user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     *         IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      *         groups allowed for the AWS account</li>
      *         <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      *         the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -202,7 +202,7 @@ public class GetAccountSummaryResult implements Serializable {
      *         assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      *         Number of MFA devices that have been assigned to an IAM user or to the
      *         root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     *         allowed size for role policy documents (in kilobytes) </li>
+     *         allowed size for role policy documents (in kilobytes)</li>
      *         <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      *         <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      *         account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -212,7 +212,7 @@ public class GetAccountSummaryResult implements Serializable {
      *         <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      *         of X509 certificates allowed for a user</li>
      *         <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     *         user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     *         user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      *         Number of users for the AWS account</li>
      *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      *         account</li> </ul>
@@ -229,12 +229,12 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      * MFA device assigned to it, 0 otherwise</li>
      * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes) </li>
+     * for assume role policy documents (in kilobytes)</li>
      * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     * user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      * groups allowed for the AWS account</li>
      * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -243,7 +243,7 @@ public class GetAccountSummaryResult implements Serializable {
      * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      * Number of MFA devices that have been assigned to an IAM user or to the
      * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes) </li>
+     * allowed size for role policy documents (in kilobytes)</li>
      * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      * account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -253,7 +253,7 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      * of X509 certificates allowed for a user</li>
      * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      * Number of users for the AWS account</li>
      * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      * account</li> </ul>
@@ -267,12 +267,12 @@ public class GetAccountSummaryResult implements Serializable {
      *         <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      *         MFA device assigned to it, 0 otherwise</li>
      *         <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     *         for assume role policy documents (in kilobytes) </li>
+     *         for assume role policy documents (in kilobytes)</li>
      *         <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      *         Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      *         - Number of Groups for the AWS account</li>
-     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     *         user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     *         <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     *         IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      *         groups allowed for the AWS account</li>
      *         <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      *         the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -281,7 +281,7 @@ public class GetAccountSummaryResult implements Serializable {
      *         assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      *         Number of MFA devices that have been assigned to an IAM user or to the
      *         root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     *         allowed size for role policy documents (in kilobytes) </li>
+     *         allowed size for role policy documents (in kilobytes)</li>
      *         <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      *         <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      *         account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -291,7 +291,7 @@ public class GetAccountSummaryResult implements Serializable {
      *         <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      *         of X509 certificates allowed for a user</li>
      *         <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     *         user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     *         user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      *         Number of users for the AWS account</li>
      *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      *         account</li> </ul>
@@ -312,12 +312,12 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>AccountMFAEnabled</code> - 1 if the root account has an
      * MFA device assigned to it, 0 otherwise</li>
      * <li><p><code>AssumeRolePolicySizeQuota</code> - Maximum allowed size
-     * for assume role policy documents (in kilobytes) </li>
+     * for assume role policy documents (in kilobytes)</li>
      * <li><p><code>GroupPolicySizeQuota</code> - Maximum allowed size for
      * Group policy documents (in kilobytes)</li> <li><p><code>Groups</code>
      * - Number of Groups for the AWS account</li>
-     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups a
-     * user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
+     * <li><p><code>GroupsPerUserQuota</code> - Maximum number of groups an
+     * IAM user can belong to</li> <li><p><code>GroupsQuota</code> - Maximum
      * groups allowed for the AWS account</li>
      * <li><p><code>InstanceProfiles</code> - Number of instance profiles for
      * the AWS account</li> <li><p><code>InstanceProfilesQuota</code> -
@@ -326,7 +326,7 @@ public class GetAccountSummaryResult implements Serializable {
      * assigned or unassigned</li> <li><p><code>MFADevicesInUse</code> -
      * Number of MFA devices that have been assigned to an IAM user or to the
      * root account</li> <li><p><code>RolePolicySizeQuota</code> - Maximum
-     * allowed size for role policy documents (in kilobytes) </li>
+     * allowed size for role policy documents (in kilobytes)</li>
      * <li><p><code>Roles</code> - Number of roles for the AWS account</li>
      * <li><p><code>RolesQuota</code> - Maximum roles allowed for the AWS
      * account</li> <li><p><code>ServerCertificates</code> - Number of server
@@ -336,7 +336,7 @@ public class GetAccountSummaryResult implements Serializable {
      * <li><p><code>SigningCertificatesPerUserQuota</code> - Maximum number
      * of X509 certificates allowed for a user</li>
      * <li><p><code>UserPolicySizeQuota</code> - Maximum allowed size for
-     * user policy documents (in kilobytes) </li> <li><p><code>Users</code> -
+     * user policy documents (in kilobytes)</li> <li><p><code>Users</code> -
      * Number of users for the AWS account</li>
      * <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      * account</li> </ul>

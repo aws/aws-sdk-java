@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Lists the SAML providers in the account.
  * </p>
  * <p>
- * <b>NOTE:</b>This operation requires Signature Version 4.
+ * <b>NOTE:</b> This operation requires Signature Version 4.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSAMLProviders(ListSAMLProvidersRequest)

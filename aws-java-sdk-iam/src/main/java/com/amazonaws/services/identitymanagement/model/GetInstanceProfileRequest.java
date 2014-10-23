@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the instance profile to get information about.
+     * The name of the instance profile to get information about.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -42,33 +42,33 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest implement
     private String instanceProfileName;
 
     /**
-     * Name of the instance profile to get information about.
+     * The name of the instance profile to get information about.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the instance profile to get information about.
+     * @return The name of the instance profile to get information about.
      */
     public String getInstanceProfileName() {
         return instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to get information about.
+     * The name of the instance profile to get information about.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to get information about.
+     * @param instanceProfileName The name of the instance profile to get information about.
      */
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to get information about.
+     * The name of the instance profile to get information about.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -76,7 +76,7 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to get information about.
+     * @param instanceProfileName The name of the instance profile to get information about.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

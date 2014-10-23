@@ -56,7 +56,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * with any tenancy; a value of <code>dedicated</code> means all
      * instances launched into the VPC are launched as dedicated tenancy
      * instances regardless of the tenancy assigned to the instance at
-     * launch. Dedicated tenancy instances runs on single-tenant hardware.
+     * launch. Dedicated tenancy instances run on single-tenant hardware.
      * <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
@@ -127,7 +127,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * with any tenancy; a value of <code>dedicated</code> means all
      * instances launched into the VPC are launched as dedicated tenancy
      * instances regardless of the tenancy assigned to the instance at
-     * launch. Dedicated tenancy instances runs on single-tenant hardware.
+     * launch. Dedicated tenancy instances run on single-tenant hardware.
      * <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
@@ -138,7 +138,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *         with any tenancy; a value of <code>dedicated</code> means all
      *         instances launched into the VPC are launched as dedicated tenancy
      *         instances regardless of the tenancy assigned to the instance at
-     *         launch. Dedicated tenancy instances runs on single-tenant hardware.
+     *         launch. Dedicated tenancy instances run on single-tenant hardware.
      *         <p>Default: <code>default</code>
      *
      * @see Tenancy
@@ -153,7 +153,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * with any tenancy; a value of <code>dedicated</code> means all
      * instances launched into the VPC are launched as dedicated tenancy
      * instances regardless of the tenancy assigned to the instance at
-     * launch. Dedicated tenancy instances runs on single-tenant hardware.
+     * launch. Dedicated tenancy instances run on single-tenant hardware.
      * <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
@@ -164,7 +164,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *         with any tenancy; a value of <code>dedicated</code> means all
      *         instances launched into the VPC are launched as dedicated tenancy
      *         instances regardless of the tenancy assigned to the instance at
-     *         launch. Dedicated tenancy instances runs on single-tenant hardware.
+     *         launch. Dedicated tenancy instances run on single-tenant hardware.
      *         <p>Default: <code>default</code>
      *
      * @see Tenancy
@@ -179,7 +179,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * with any tenancy; a value of <code>dedicated</code> means all
      * instances launched into the VPC are launched as dedicated tenancy
      * instances regardless of the tenancy assigned to the instance at
-     * launch. Dedicated tenancy instances runs on single-tenant hardware.
+     * launch. Dedicated tenancy instances run on single-tenant hardware.
      * <p>Default: <code>default</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -192,7 +192,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *         with any tenancy; a value of <code>dedicated</code> means all
      *         instances launched into the VPC are launched as dedicated tenancy
      *         instances regardless of the tenancy assigned to the instance at
-     *         launch. Dedicated tenancy instances runs on single-tenant hardware.
+     *         launch. Dedicated tenancy instances run on single-tenant hardware.
      *         <p>Default: <code>default</code>
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -211,7 +211,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * with any tenancy; a value of <code>dedicated</code> means all
      * instances launched into the VPC are launched as dedicated tenancy
      * instances regardless of the tenancy assigned to the instance at
-     * launch. Dedicated tenancy instances runs on single-tenant hardware.
+     * launch. Dedicated tenancy instances run on single-tenant hardware.
      * <p>Default: <code>default</code>
      * <p>
      * <b>Constraints:</b><br/>
@@ -222,7 +222,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *         with any tenancy; a value of <code>dedicated</code> means all
      *         instances launched into the VPC are launched as dedicated tenancy
      *         instances regardless of the tenancy assigned to the instance at
-     *         launch. Dedicated tenancy instances runs on single-tenant hardware.
+     *         launch. Dedicated tenancy instances run on single-tenant hardware.
      *         <p>Default: <code>default</code>
      *
      * @see Tenancy
@@ -237,7 +237,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * with any tenancy; a value of <code>dedicated</code> means all
      * instances launched into the VPC are launched as dedicated tenancy
      * instances regardless of the tenancy assigned to the instance at
-     * launch. Dedicated tenancy instances runs on single-tenant hardware.
+     * launch. Dedicated tenancy instances run on single-tenant hardware.
      * <p>Default: <code>default</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -250,7 +250,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      *         with any tenancy; a value of <code>dedicated</code> means all
      *         instances launched into the VPC are launched as dedicated tenancy
      *         instances regardless of the tenancy assigned to the instance at
-     *         launch. Dedicated tenancy instances runs on single-tenant hardware.
+     *         launch. Dedicated tenancy instances run on single-tenant hardware.
      *         <p>Default: <code>default</code>
      *
      * @return A reference to this updated object so that method calls can be chained

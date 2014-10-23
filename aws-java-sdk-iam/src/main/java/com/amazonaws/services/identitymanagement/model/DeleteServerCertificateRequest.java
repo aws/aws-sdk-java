@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified server certificate.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>If you are using a server certificate with Elastic
+ * <b>IMPORTANT:</b> If you are using a server certificate with Elastic
  * Load Balancing, deleting the certificate could have implications for
  * your application. If Elastic Load Balancing doesn't detect the
  * deletion of bound certificates, it may continue to use the

@@ -25,7 +25,7 @@ public class DeleteTapeArchiveResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape that was deleted
-     * from the Virtual Tape Shelf (VTS).
+     * from the virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -34,13 +34,13 @@ public class DeleteTapeArchiveResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape that was deleted
-     * from the Virtual Tape Shelf (VTS).
+     * from the virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
      * @return The Amazon Resource Name (ARN) of the virtual tape that was deleted
-     *         from the Virtual Tape Shelf (VTS).
+     *         from the virtual tape shelf (VTS).
      */
     public String getTapeARN() {
         return tapeARN;
@@ -48,13 +48,13 @@ public class DeleteTapeArchiveResult implements Serializable {
     
     /**
      * The Amazon Resource Name (ARN) of the virtual tape that was deleted
-     * from the Virtual Tape Shelf (VTS).
+     * from the virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape that was deleted
-     *         from the Virtual Tape Shelf (VTS).
+     *         from the virtual tape shelf (VTS).
      */
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
@@ -62,7 +62,7 @@ public class DeleteTapeArchiveResult implements Serializable {
     
     /**
      * The Amazon Resource Name (ARN) of the virtual tape that was deleted
-     * from the Virtual Tape Shelf (VTS).
+     * from the virtual tape shelf (VTS).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -70,7 +70,7 @@ public class DeleteTapeArchiveResult implements Serializable {
      * <b>Length: </b>50 - 500<br/>
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape that was deleted
-     *         from the Virtual Tape Shelf (VTS).
+     *         from the virtual tape shelf (VTS).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -17,6 +17,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.BatchWriteItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.TableWriteItems;
 import com.amazonaws.services.dynamodbv2.document.spec.BatchWriteItemSpec;
@@ -27,6 +29,7 @@ import com.amazonaws.services.dynamodbv2.model.WriteRequest;
  * delete multiple items from multiple tables in a single request-response
  * to/from DynamoDB.
  */
+@ThreadSafe
 public interface BatchWriteItemApi {
 
     /**

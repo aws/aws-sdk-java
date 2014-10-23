@@ -25,8 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * supports SAML 2.0.
  * </p>
  * <p>
- * The SAML provider that you create with this operation can be used as a
- * principal in a role's trust policy to establish a trust relationship
+ * The SAML provider that you create with this operation can be used as
+ * a principal in a role's trust policy to establish a trust relationship
  * between AWS and a SAML identity provider. You can create an IAM role
  * that supports Web-based single sign-on (SSO) to the AWS Management
  * Console or one that supports API access to AWS.
@@ -40,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * management software that is used as your organization's IdP.
  * </p>
  * <p>
- * <b>NOTE:</b>This operation requires Signature Version 4.
+ * <b>NOTE:</b> This operation requires Signature Version 4.
  * </p>
  * <p>
  * For more information, see
@@ -58,7 +58,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * information, and keys that can be used to validate the SAML
      * authentication response (assertions) that are received from the IdP.
      * You must generate the metadata document using the identity management
-     * software that is used as your organization's IdP. <p>For more
+     * software that is used as your organization's IdP. <p> For more
      * information, see <a
      * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
      * Temporary Security Credentials for SAML Federation</a> in the <i>Using
@@ -84,7 +84,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * information, and keys that can be used to validate the SAML
      * authentication response (assertions) that are received from the IdP.
      * You must generate the metadata document using the identity management
-     * software that is used as your organization's IdP. <p>For more
+     * software that is used as your organization's IdP. <p> For more
      * information, see <a
      * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
      * Temporary Security Credentials for SAML Federation</a> in the <i>Using
@@ -98,7 +98,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         information, and keys that can be used to validate the SAML
      *         authentication response (assertions) that are received from the IdP.
      *         You must generate the metadata document using the identity management
-     *         software that is used as your organization's IdP. <p>For more
+     *         software that is used as your organization's IdP. <p> For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
      *         Temporary Security Credentials for SAML Federation</a> in the <i>Using
@@ -114,7 +114,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * information, and keys that can be used to validate the SAML
      * authentication response (assertions) that are received from the IdP.
      * You must generate the metadata document using the identity management
-     * software that is used as your organization's IdP. <p>For more
+     * software that is used as your organization's IdP. <p> For more
      * information, see <a
      * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
      * Temporary Security Credentials for SAML Federation</a> in the <i>Using
@@ -128,7 +128,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         information, and keys that can be used to validate the SAML
      *         authentication response (assertions) that are received from the IdP.
      *         You must generate the metadata document using the identity management
-     *         software that is used as your organization's IdP. <p>For more
+     *         software that is used as your organization's IdP. <p> For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
      *         Temporary Security Credentials for SAML Federation</a> in the <i>Using
@@ -144,7 +144,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      * information, and keys that can be used to validate the SAML
      * authentication response (assertions) that are received from the IdP.
      * You must generate the metadata document using the identity management
-     * software that is used as your organization's IdP. <p>For more
+     * software that is used as your organization's IdP. <p> For more
      * information, see <a
      * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
      * Temporary Security Credentials for SAML Federation</a> in the <i>Using
@@ -160,7 +160,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest implement
      *         information, and keys that can be used to validate the SAML
      *         authentication response (assertions) that are received from the IdP.
      *         You must generate the metadata document using the identity management
-     *         software that is used as your organization's IdP. <p>For more
+     *         software that is used as your organization's IdP. <p> For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
      *         Temporary Security Credentials for SAML Federation</a> in the <i>Using

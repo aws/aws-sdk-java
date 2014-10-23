@@ -42,6 +42,7 @@ public class ListIdentitiesResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      */
     private String nextToken;
 
@@ -159,6 +160,7 @@ public class ListIdentitiesResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      *
      * @return A pagination token.
      */
@@ -171,6 +173,7 @@ public class ListIdentitiesResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      *
      * @param nextToken A pagination token.
      */
@@ -185,6 +188,7 @@ public class ListIdentitiesResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      *
      * @param nextToken A pagination token.
      *

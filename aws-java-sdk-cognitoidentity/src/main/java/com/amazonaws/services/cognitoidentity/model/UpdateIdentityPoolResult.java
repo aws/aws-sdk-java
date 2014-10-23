@@ -64,6 +64,11 @@ public class UpdateIdentityPoolResult implements Serializable {
     private String developerProviderName;
 
     /**
+     * A list of OpendID Connect provider ARNs.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> openIdConnectProviderARNs;
+
+    /**
      * An identity pool ID in the format REGION:GUID.
      * <p>
      * <b>Constraints:</b><br/>
@@ -317,6 +322,70 @@ public class UpdateIdentityPoolResult implements Serializable {
     }
 
     /**
+     * A list of OpendID Connect provider ARNs.
+     *
+     * @return A list of OpendID Connect provider ARNs.
+     */
+    public java.util.List<String> getOpenIdConnectProviderARNs() {
+        return openIdConnectProviderARNs;
+    }
+    
+    /**
+     * A list of OpendID Connect provider ARNs.
+     *
+     * @param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.
+     */
+    public void setOpenIdConnectProviderARNs(java.util.Collection<String> openIdConnectProviderARNs) {
+        if (openIdConnectProviderARNs == null) {
+            this.openIdConnectProviderARNs = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> openIdConnectProviderARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(openIdConnectProviderARNs.size());
+        openIdConnectProviderARNsCopy.addAll(openIdConnectProviderARNs);
+        this.openIdConnectProviderARNs = openIdConnectProviderARNsCopy;
+    }
+    
+    /**
+     * A list of OpendID Connect provider ARNs.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateIdentityPoolResult withOpenIdConnectProviderARNs(String... openIdConnectProviderARNs) {
+        if (getOpenIdConnectProviderARNs() == null) setOpenIdConnectProviderARNs(new java.util.ArrayList<String>(openIdConnectProviderARNs.length));
+        for (String value : openIdConnectProviderARNs) {
+            getOpenIdConnectProviderARNs().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of OpendID Connect provider ARNs.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateIdentityPoolResult withOpenIdConnectProviderARNs(java.util.Collection<String> openIdConnectProviderARNs) {
+        if (openIdConnectProviderARNs == null) {
+            this.openIdConnectProviderARNs = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> openIdConnectProviderARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(openIdConnectProviderARNs.size());
+            openIdConnectProviderARNsCopy.addAll(openIdConnectProviderARNs);
+            this.openIdConnectProviderARNs = openIdConnectProviderARNsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -332,7 +401,8 @@ public class UpdateIdentityPoolResult implements Serializable {
         if (getIdentityPoolName() != null) sb.append("IdentityPoolName: " + getIdentityPoolName() + ",");
         if (isAllowUnauthenticatedIdentities() != null) sb.append("AllowUnauthenticatedIdentities: " + isAllowUnauthenticatedIdentities() + ",");
         if (getSupportedLoginProviders() != null) sb.append("SupportedLoginProviders: " + getSupportedLoginProviders() + ",");
-        if (getDeveloperProviderName() != null) sb.append("DeveloperProviderName: " + getDeveloperProviderName() );
+        if (getDeveloperProviderName() != null) sb.append("DeveloperProviderName: " + getDeveloperProviderName() + ",");
+        if (getOpenIdConnectProviderARNs() != null) sb.append("OpenIdConnectProviderARNs: " + getOpenIdConnectProviderARNs() );
         sb.append("}");
         return sb.toString();
     }
@@ -347,6 +417,7 @@ public class UpdateIdentityPoolResult implements Serializable {
         hashCode = prime * hashCode + ((isAllowUnauthenticatedIdentities() == null) ? 0 : isAllowUnauthenticatedIdentities().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedLoginProviders() == null) ? 0 : getSupportedLoginProviders().hashCode()); 
         hashCode = prime * hashCode + ((getDeveloperProviderName() == null) ? 0 : getDeveloperProviderName().hashCode()); 
+        hashCode = prime * hashCode + ((getOpenIdConnectProviderARNs() == null) ? 0 : getOpenIdConnectProviderARNs().hashCode()); 
         return hashCode;
     }
     
@@ -368,6 +439,8 @@ public class UpdateIdentityPoolResult implements Serializable {
         if (other.getSupportedLoginProviders() != null && other.getSupportedLoginProviders().equals(this.getSupportedLoginProviders()) == false) return false; 
         if (other.getDeveloperProviderName() == null ^ this.getDeveloperProviderName() == null) return false;
         if (other.getDeveloperProviderName() != null && other.getDeveloperProviderName().equals(this.getDeveloperProviderName()) == false) return false; 
+        if (other.getOpenIdConnectProviderARNs() == null ^ this.getOpenIdConnectProviderARNs() == null) return false;
+        if (other.getOpenIdConnectProviderARNs() != null && other.getOpenIdConnectProviderARNs().equals(this.getOpenIdConnectProviderARNs()) == false) return false; 
         return true;
     }
     

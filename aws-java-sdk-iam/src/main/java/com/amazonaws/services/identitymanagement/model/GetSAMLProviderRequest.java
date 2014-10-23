@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * provider was created or updated.
  * </p>
  * <p>
- * <b>NOTE:</b>This operation requires Signature Version 4.
+ * <b>NOTE:</b> This operation requires Signature Version 4.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getSAMLProvider(GetSAMLProviderRequest)

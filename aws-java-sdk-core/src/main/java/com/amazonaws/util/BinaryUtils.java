@@ -18,8 +18,8 @@
 package com.amazonaws.util;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 import java.util.Locale;
 
 /**
@@ -94,16 +94,78 @@ public class BinaryUtils {
     }
 
     /**
+     * @deprecated not used; to be removed in future releases.
+     * 
      * Wraps a ByteBuffer in an InputStream.
      *
      * @param byteBuffer The ByteBuffer to wrap.
      *
      * @return An InputStream wrapping the ByteBuffer content.
      */
-    public static InputStream toStream(ByteBuffer byteBuffer) {
-        byte[] bytes = new byte[byteBuffer.remaining()];
-        byteBuffer.get(bytes);
-        return new ByteArrayInputStream(bytes);
+    @Deprecated
+    public static ByteArrayInputStream toStream(ByteBuffer byteBuffer) {
+        return new ByteArrayInputStream(copyBytesFrom(byteBuffer));
     }
 
+    /**
+     * Returns a copy of all the bytes from the given <code>ByteBuffer</code>,
+     * from the beginning to the buffer's limit; or null if the input is null.
+     * <p>
+     * The internal states of the given byte buffer will be restored when this
+     * method completes execution.
+     * <p>
+     * When handling <code>ByteBuffer</code> from user's input, it's typical to
+     * call the {@link #copyBytesFrom(ByteBuffer)} instead of
+     * {@link #copyAllBytesFrom(ByteBuffer)} so as to account for the position
+     * of the input <code>ByteBuffer</code>. The opposite is typically true,
+     * however, when handling <code>ByteBuffer</code> from withint the
+     * unmarshallers of the low-level clients.
+     */
+    public static byte[] copyAllBytesFrom(ByteBuffer bb) {
+        if (bb == null)
+            return null;
+        if (bb.hasArray())
+            return Arrays.copyOf(bb.array(), bb.limit());
+        bb.mark();
+        // the default ByteBuffer#mark() and reset() won't work, as the
+        // rewind would discard the mark position
+        final int marked = bb.position();
+        try {
+            byte[] dst = new byte[bb.rewind().remaining()];
+            bb.get(dst);
+            return dst;
+        } finally {
+            bb.position(marked);
+        }
+    }
+
+    /**
+     * Returns a copy of the bytes from the given <code>ByteBuffer</code>,
+     * ranging from the the buffer's current position to the buffer's limit; or
+     * null if the input is null.
+     * <p> 
+     * The internal states of the given byte buffer will be restored when this
+     * method completes execution.
+     * <p>
+     * When handling <code>ByteBuffer</code> from user's input, it's typical to
+     * call the {@link #copyBytesFrom(ByteBuffer)} instead of
+     * {@link #copyAllBytesFrom(ByteBuffer)} so as to account for the position
+     * of the input <code>ByteBuffer</code>. The opposite is typically true,
+     * however, when handling <code>ByteBuffer</code> from withint the
+     * unmarshallers of the low-level clients.
+     */
+    public static byte[] copyBytesFrom(ByteBuffer bb) {
+        if (bb == null)
+            return null;
+        if (bb.hasArray())
+            return Arrays.copyOfRange(bb.array(), bb.position(), bb.limit());
+        bb.mark();
+        try {
+            byte[] dst = new byte[bb.remaining()];
+            bb.get(dst);
+            return dst;
+        } finally {
+            bb.reset();
+        }
+    }
 }

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The User data type contains information about a user.
+ * Contains information about an IAM user entity.
  * </p>
  * <p>
  * This data type is used as a response element in the following
@@ -44,9 +44,9 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     /**
-     * Path to the user. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -55,7 +55,7 @@ public class User implements Serializable {
     private String path;
 
     /**
-     * The name identifying the user.
+     * The friendly name identifying the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -66,8 +66,8 @@ public class User implements Serializable {
     /**
      * The stable and unique string identifying the user. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
@@ -76,10 +76,10 @@ public class User implements Serializable {
     private String userId;
 
     /**
-     * The Amazon Resource Name (ARN) specifying the user. For more
-     * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more
+     * information about ARNs and how to use ARNs in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -87,9 +87,26 @@ public class User implements Serializable {
     private String arn;
 
     /**
-     * The date when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user was created.
      */
     private java.util.Date createDate;
+
+    /**
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user's password was last used to
+     * sign in to an AWS website. For a list of AWS websites that capture a
+     * user's last sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
+     * more than once in a five-minute span, only the first use is returned
+     * in this field. When the user does not have a password, this field is
+     * null (not present). When a user's password exists but has never been
+     * used, or when there is no sign-in data associated with the user, this
+     * field is null (not present). <p>This value is returned only in the
+     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     */
+    private java.util.Date passwordLastUsed;
 
     /**
      * Default constructor for a new User object.  Callers should use the
@@ -102,19 +119,23 @@ public class User implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param path Path to the user. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
-     * @param userName The name identifying the user.
+     * @param path The path to the user. For more information about paths,
+     * see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * @param userName The friendly name identifying the user.
      * @param userId The stable and unique string identifying the user. For
      * more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
-     * @param arn The Amazon Resource Name (ARN) specifying the user. For
-     * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
-     * @param createDate The date when the user was created.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * @param arn The Amazon Resource Name (ARN) that identifies the user.
+     * For more information about ARNs and how to use ARNs in policies, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * @param createDate The date and time, in <a
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>,
+     * when the user was created.
      */
     public User(String path, String userName, String userId, String arn, java.util.Date createDate) {
         setPath(path);
@@ -125,43 +146,43 @@ public class User implements Serializable {
     }
 
     /**
-     * Path to the user. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
-     * @return Path to the user. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * @return The path to the user. For more information about paths, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public String getPath() {
         return path;
     }
     
     /**
-     * Path to the user. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
-     * @param path Path to the user. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * @param path The path to the user. For more information about paths, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public void setPath(String path) {
         this.path = path;
     }
     
     /**
-     * Path to the user. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -169,9 +190,9 @@ public class User implements Serializable {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(&#92;u002F)|(&#92;u002F[&#92;u0021-&#92;u007F]+&#92;u002F)<br/>
      *
-     * @param path Path to the user. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * @param path The path to the user. For more information about paths, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -182,33 +203,33 @@ public class User implements Serializable {
     }
 
     /**
-     * The name identifying the user.
+     * The friendly name identifying the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name identifying the user.
+     * @return The friendly name identifying the user.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name identifying the user.
+     * The friendly name identifying the user.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name identifying the user.
+     * @param userName The friendly name identifying the user.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name identifying the user.
+     * The friendly name identifying the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -216,7 +237,7 @@ public class User implements Serializable {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name identifying the user.
+     * @param userName The friendly name identifying the user.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -229,8 +250,8 @@ public class User implements Serializable {
     /**
      * The stable and unique string identifying the user. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
@@ -238,8 +259,8 @@ public class User implements Serializable {
      *
      * @return The stable and unique string identifying the user. For more
      *         information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public String getUserId() {
         return userId;
@@ -248,8 +269,8 @@ public class User implements Serializable {
     /**
      * The stable and unique string identifying the user. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
@@ -257,8 +278,8 @@ public class User implements Serializable {
      *
      * @param userId The stable and unique string identifying the user. For more
      *         information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public void setUserId(String userId) {
         this.userId = userId;
@@ -267,8 +288,8 @@ public class User implements Serializable {
     /**
      * The stable and unique string identifying the user. For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -278,8 +299,8 @@ public class User implements Serializable {
      *
      * @param userId The stable and unique string identifying the user. For more
      *         information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -290,56 +311,56 @@ public class User implements Serializable {
     }
 
     /**
-     * The Amazon Resource Name (ARN) specifying the user. For more
-     * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more
+     * information about ARNs and how to use ARNs in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @return The Amazon Resource Name (ARN) specifying the user. For more
-     *         information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * @return The Amazon Resource Name (ARN) that identifies the user. For more
+     *         information about ARNs and how to use ARNs in policies, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public String getArn() {
         return arn;
     }
     
     /**
-     * The Amazon Resource Name (ARN) specifying the user. For more
-     * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more
+     * information about ARNs and how to use ARNs in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param arn The Amazon Resource Name (ARN) specifying the user. For more
-     *         information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * @param arn The Amazon Resource Name (ARN) that identifies the user. For more
+     *         information about ARNs and how to use ARNs in policies, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
     
     /**
-     * The Amazon Resource Name (ARN) specifying the user. For more
-     * information about ARNs and how to use them in policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * The Amazon Resource Name (ARN) that identifies the user. For more
+     * information about ARNs and how to use ARNs in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param arn The Amazon Resource Name (ARN) specifying the user. For more
-     *         information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide.
+     * @param arn The Amazon Resource Name (ARN) that identifies the user. For more
+     *         information about ARNs and how to use ARNs in policies, see <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -350,35 +371,140 @@ public class User implements Serializable {
     }
 
     /**
-     * The date when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user was created.
      *
-     * @return The date when the user was created.
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the user was created.
      */
     public java.util.Date getCreateDate() {
         return createDate;
     }
     
     /**
-     * The date when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user was created.
      *
-     * @param createDate The date when the user was created.
+     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the user was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
     
     /**
-     * The date when the user was created.
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createDate The date when the user was created.
+     * @param createDate The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the user was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public User withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
+        return this;
+    }
+
+    /**
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user's password was last used to
+     * sign in to an AWS website. For a list of AWS websites that capture a
+     * user's last sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
+     * more than once in a five-minute span, only the first use is returned
+     * in this field. When the user does not have a password, this field is
+     * null (not present). When a user's password exists but has never been
+     * used, or when there is no sign-in data associated with the user, this
+     * field is null (not present). <p>This value is returned only in the
+     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     *
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the user's password was last used to
+     *         sign in to an AWS website. For a list of AWS websites that capture a
+     *         user's last sign-in time, see the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     *         Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
+     *         more than once in a five-minute span, only the first use is returned
+     *         in this field. When the user does not have a password, this field is
+     *         null (not present). When a user's password exists but has never been
+     *         used, or when there is no sign-in data associated with the user, this
+     *         field is null (not present). <p>This value is returned only in the
+     *         <a>GetUser</a> and <a>ListUsers</a> actions.
+     */
+    public java.util.Date getPasswordLastUsed() {
+        return passwordLastUsed;
+    }
+    
+    /**
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user's password was last used to
+     * sign in to an AWS website. For a list of AWS websites that capture a
+     * user's last sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
+     * more than once in a five-minute span, only the first use is returned
+     * in this field. When the user does not have a password, this field is
+     * null (not present). When a user's password exists but has never been
+     * used, or when there is no sign-in data associated with the user, this
+     * field is null (not present). <p>This value is returned only in the
+     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     *
+     * @param passwordLastUsed The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the user's password was last used to
+     *         sign in to an AWS website. For a list of AWS websites that capture a
+     *         user's last sign-in time, see the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     *         Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
+     *         more than once in a five-minute span, only the first use is returned
+     *         in this field. When the user does not have a password, this field is
+     *         null (not present). When a user's password exists but has never been
+     *         used, or when there is no sign-in data associated with the user, this
+     *         field is null (not present). <p>This value is returned only in the
+     *         <a>GetUser</a> and <a>ListUsers</a> actions.
+     */
+    public void setPasswordLastUsed(java.util.Date passwordLastUsed) {
+        this.passwordLastUsed = passwordLastUsed;
+    }
+    
+    /**
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     * 8601 date-time format</a>, when the user's password was last used to
+     * sign in to an AWS website. For a list of AWS websites that capture a
+     * user's last sign-in time, see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
+     * more than once in a five-minute span, only the first use is returned
+     * in this field. When the user does not have a password, this field is
+     * null (not present). When a user's password exists but has never been
+     * used, or when there is no sign-in data associated with the user, this
+     * field is null (not present). <p>This value is returned only in the
+     * <a>GetUser</a> and <a>ListUsers</a> actions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param passwordLastUsed The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
+     *         8601 date-time format</a>, when the user's password was last used to
+     *         sign in to an AWS website. For a list of AWS websites that capture a
+     *         user's last sign-in time, see the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     *         Reports</a> topic in the <i>Using IAM</i> guide. If a password is used
+     *         more than once in a five-minute span, only the first use is returned
+     *         in this field. When the user does not have a password, this field is
+     *         null (not present). When a user's password exists but has never been
+     *         used, or when there is no sign-in data associated with the user, this
+     *         field is null (not present). <p>This value is returned only in the
+     *         <a>GetUser</a> and <a>ListUsers</a> actions.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public User withPasswordLastUsed(java.util.Date passwordLastUsed) {
+        this.passwordLastUsed = passwordLastUsed;
         return this;
     }
 
@@ -398,7 +524,8 @@ public class User implements Serializable {
         if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getUserId() != null) sb.append("UserId: " + getUserId() + ",");
         if (getArn() != null) sb.append("Arn: " + getArn() + ",");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
+        if (getPasswordLastUsed() != null) sb.append("PasswordLastUsed: " + getPasswordLastUsed() );
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +540,7 @@ public class User implements Serializable {
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode()); 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
+        hashCode = prime * hashCode + ((getPasswordLastUsed() == null) ? 0 : getPasswordLastUsed().hashCode()); 
         return hashCode;
     }
     
@@ -434,6 +562,8 @@ public class User implements Serializable {
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false) return false; 
         if (other.getCreateDate() == null ^ this.getCreateDate() == null) return false;
         if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
+        if (other.getPasswordLastUsed() == null ^ this.getPasswordLastUsed() == null) return false;
+        if (other.getPasswordLastUsed() != null && other.getPasswordLastUsed().equals(this.getPasswordLastUsed()) == false) return false; 
         return true;
     }
     

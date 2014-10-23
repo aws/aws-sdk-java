@@ -135,8 +135,8 @@ public class Cluster implements Serializable {
     private String clusterVersion;
 
     /**
-     * If <code>true</code>, version upgrades will be applied automatically
-     * to the cluster during the maintenance window.
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
      */
     private Boolean allowVersionUpgrade;
 
@@ -1039,35 +1039,35 @@ public class Cluster implements Serializable {
     }
 
     /**
-     * If <code>true</code>, version upgrades will be applied automatically
-     * to the cluster during the maintenance window.
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
      *
-     * @return If <code>true</code>, version upgrades will be applied automatically
-     *         to the cluster during the maintenance window.
+     * @return If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
      */
     public Boolean isAllowVersionUpgrade() {
         return allowVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, version upgrades will be applied automatically
-     * to the cluster during the maintenance window.
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
      *
-     * @param allowVersionUpgrade If <code>true</code>, version upgrades will be applied automatically
-     *         to the cluster during the maintenance window.
+     * @param allowVersionUpgrade If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
      */
     public void setAllowVersionUpgrade(Boolean allowVersionUpgrade) {
         this.allowVersionUpgrade = allowVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, version upgrades will be applied automatically
-     * to the cluster during the maintenance window.
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allowVersionUpgrade If <code>true</code>, version upgrades will be applied automatically
-     *         to the cluster during the maintenance window.
+     * @param allowVersionUpgrade If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1078,11 +1078,11 @@ public class Cluster implements Serializable {
     }
 
     /**
-     * If <code>true</code>, version upgrades will be applied automatically
-     * to the cluster during the maintenance window.
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
      *
-     * @return If <code>true</code>, version upgrades will be applied automatically
-     *         to the cluster during the maintenance window.
+     * @return If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
      */
     public Boolean getAllowVersionUpgrade() {
         return allowVersionUpgrade;

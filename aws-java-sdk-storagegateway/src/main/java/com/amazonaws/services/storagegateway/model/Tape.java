@@ -54,7 +54,7 @@ public class Tape implements Serializable {
     private String tapeStatus;
 
     /**
-     * The Virtual Tape Library (VTL) device that the virtual tape is
+     * The virtual tape library (VTL) device that the virtual tape is
      * associated with.
      * <p>
      * <b>Constraints:</b><br/>
@@ -232,13 +232,13 @@ public class Tape implements Serializable {
     }
 
     /**
-     * The Virtual Tape Library (VTL) device that the virtual tape is
+     * The virtual tape library (VTL) device that the virtual tape is
      * associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Virtual Tape Library (VTL) device that the virtual tape is
+     * @return The virtual tape library (VTL) device that the virtual tape is
      *         associated with.
      */
     public String getVTLDevice() {
@@ -246,13 +246,13 @@ public class Tape implements Serializable {
     }
     
     /**
-     * The Virtual Tape Library (VTL) device that the virtual tape is
+     * The virtual tape library (VTL) device that the virtual tape is
      * associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param vTLDevice The Virtual Tape Library (VTL) device that the virtual tape is
+     * @param vTLDevice The virtual tape library (VTL) device that the virtual tape is
      *         associated with.
      */
     public void setVTLDevice(String vTLDevice) {
@@ -260,7 +260,7 @@ public class Tape implements Serializable {
     }
     
     /**
-     * The Virtual Tape Library (VTL) device that the virtual tape is
+     * The virtual tape library (VTL) device that the virtual tape is
      * associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -268,7 +268,7 @@ public class Tape implements Serializable {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param vTLDevice The Virtual Tape Library (VTL) device that the virtual tape is
+     * @param vTLDevice The virtual tape library (VTL) device that the virtual tape is
      *         associated with.
      *
      * @return A reference to this updated object so that method calls can be chained

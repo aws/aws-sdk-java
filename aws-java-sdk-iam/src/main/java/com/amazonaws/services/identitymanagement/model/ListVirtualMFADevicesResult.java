@@ -19,11 +19,15 @@ import java.io.Serializable;
 /**
  * <p>
  * Contains the result of a successful invocation of the
- * ListVirtualMFADevices action.
+ * ListVirtualMFADevicesaction.
  * </p>
  */
 public class ListVirtualMFADevicesResult implements Serializable {
 
+    /**
+     * The list of virtual MFA devices in the current account that match the
+     * <code>AssignmentStatus</code> value that was passed in the request.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevices;
 
     /**
@@ -46,9 +50,11 @@ public class ListVirtualMFADevicesResult implements Serializable {
     private String marker;
 
     /**
-     * Returns the value of the VirtualMFADevices property for this object.
+     * The list of virtual MFA devices in the current account that match the
+     * <code>AssignmentStatus</code> value that was passed in the request.
      *
-     * @return The value of the VirtualMFADevices property for this object.
+     * @return The list of virtual MFA devices in the current account that match the
+     *         <code>AssignmentStatus</code> value that was passed in the request.
      */
     public java.util.List<VirtualMFADevice> getVirtualMFADevices() {
         if (virtualMFADevices == null) {
@@ -59,9 +65,11 @@ public class ListVirtualMFADevicesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the VirtualMFADevices property for this object.
+     * The list of virtual MFA devices in the current account that match the
+     * <code>AssignmentStatus</code> value that was passed in the request.
      *
-     * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
+     * @param virtualMFADevices The list of virtual MFA devices in the current account that match the
+     *         <code>AssignmentStatus</code> value that was passed in the request.
      */
     public void setVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
         if (virtualMFADevices == null) {
@@ -74,11 +82,13 @@ public class ListVirtualMFADevicesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the VirtualMFADevices property for this object.
+     * The list of virtual MFA devices in the current account that match the
+     * <code>AssignmentStatus</code> value that was passed in the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
+     * @param virtualMFADevices The list of virtual MFA devices in the current account that match the
+     *         <code>AssignmentStatus</code> value that was passed in the request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -92,11 +102,13 @@ public class ListVirtualMFADevicesResult implements Serializable {
     }
     
     /**
-     * Sets the value of the VirtualMFADevices property for this object.
+     * The list of virtual MFA devices in the current account that match the
+     * <code>AssignmentStatus</code> value that was passed in the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
+     * @param virtualMFADevices The list of virtual MFA devices in the current account that match the
+     *         <code>AssignmentStatus</code> value that was passed in the request.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

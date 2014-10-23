@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -42,7 +42,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
     private String groupName;
 
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -61,8 +61,8 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName Name of the group the policy is associated with.
-     * @param policyName Name of the policy document to get.
+     * @param groupName The name of the group the policy is associated with.
+     * @param policyName The name of the policy document to get.
      */
     public GetGroupPolicyRequest(String groupName, String policyName) {
         setGroupName(groupName);
@@ -70,33 +70,33 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the group the policy is associated with.
+     * @return The name of the group the policy is associated with.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group the policy is associated with.
+     * @param groupName The name of the group the policy is associated with.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -104,7 +104,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group the policy is associated with.
+     * @param groupName The name of the group the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -115,33 +115,33 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the policy document to get.
+     * @return The name of the policy document to get.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to get.
+     * @param policyName The name of the policy document to get.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Name of the policy document to get.
+     * The name of the policy document to get.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -149,7 +149,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to get.
+     * @param policyName The name of the policy document to get.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

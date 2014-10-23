@@ -23,12 +23,30 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Creates a listing for Amazon EC2 Reserved Instances to be sold in the
  * Reserved Instance Marketplace. You can submit one Reserved Instance
- * listing at a time.
+ * listing at a time. To get a list of your Reserved Instances, you can
+ * use the DescribeReservedInstances operation.
+ * </p>
+ * <p>
+ * The Reserved Instance Marketplace matches sellers who want to resell
+ * Reserved Instance capacity that they no longer need with buyers who
+ * want to purchase additional capacity. Reserved Instances bought and
+ * sold through the Reserved Instance Marketplace work like any other
+ * Reserved Instances.
+ * </p>
+ * <p>
+ * To sell your Reserved Instances, you must first register as a Seller
+ * in the Reserved Instance Marketplace. After completing the
+ * registration process, you can create a Reserved Instance Marketplace
+ * listing of some or all of your Reserved Instances, and specify the
+ * upfront price to receive for them. Your Reserved Instance listings
+ * then become available for purchase. To view the details of your
+ * Reserved Instance listing, you can use the
+ * DescribeReservedInstancesListings operation.
  * </p>
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createReservedInstancesListing(CreateReservedInstancesListingRequest)
@@ -59,7 +77,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      */
     private String clientToken;
 
@@ -228,13 +247,15 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      *
      * @return Unique, case-sensitive identifier you provide to ensure idempotency of
      *         your listings. This helps avoid duplicate listings. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      */
     public String getClientToken() {
         return clientToken;
@@ -245,13 +266,15 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      *
      * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
      *         your listings. This helps avoid duplicate listings. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -262,7 +285,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * your listings. This helps avoid duplicate listings. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -270,7 +294,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      *         your listings. This helps avoid duplicate listings. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
