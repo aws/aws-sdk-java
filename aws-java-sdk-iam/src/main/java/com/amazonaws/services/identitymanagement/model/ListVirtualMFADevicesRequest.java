@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * a list of all virtual MFA devices. Assignment status can be
  * <code>Assigned</code> ,
  * <code>Unassigned</code> , or <code>Any</code> .
+ * 
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and
@@ -61,8 +62,8 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of MFA devices you want in the response. If there are
+     * additional MFA devices beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -248,8 +249,8 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of MFA devices you want in the response. If there are
+     * additional MFA devices beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -257,8 +258,8 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of MFA devices you want in the response. If there are
+     *         additional MFA devices beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -268,8 +269,8 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of MFA devices you want in the response. If there are
+     * additional MFA devices beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -277,8 +278,8 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of MFA devices you want in the response. If there are
+     *         additional MFA devices beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -288,8 +289,8 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of MFA devices you want in the response. If there are
+     * additional MFA devices beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -299,8 +300,8 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of MFA devices you want in the response. If there are
+     *         additional MFA devices beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *

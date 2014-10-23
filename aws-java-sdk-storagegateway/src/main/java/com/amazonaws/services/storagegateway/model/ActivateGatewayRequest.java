@@ -23,16 +23,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * This operation activates the gateway you previously deployed on your
  * host. For more information, see
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a>
- * . In the activation process you specify information such as the
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html"> Activate the AWS Storage Gateway </a>
+ * . In the activation process, you specify information such as the
  * region you want to use for storing snapshots, the time zone for
- * scheduled snapshots and the gateway schedule window, an activation
- * key, and a name for your gateway. The activation process also
- * associates your gateway with your account (see
- * UpdateGatewayInformation).
+ * scheduled snapshots the gateway snapshot schedule window, an
+ * activation key, and a name for your gateway. The activation process
+ * also associates your gateway with your account; for more information,
+ * see UpdateGatewayInformation.
  * </p>
  * <p>
- * <b>NOTE:</b>You must power on the gateway VM before you can activate
+ * <b>NOTE:</b>You must turn on the gateway VM before you can activate
  * your gateway.
  * </p>
  *
@@ -83,9 +83,10 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     * "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
@@ -103,8 +104,24 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      */
     private String gatewayType;
 
+    /**
+     * The value that indicates the type of tape drive to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "IBM-ULT3580-TD5"
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 50<br/>
+     */
     private String tapeDriveType;
 
+    /**
+     * The value that indicates the type of medium changer to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "STK-L700"
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 50<br/>
+     */
     private String mediumChangerType;
 
     /**
@@ -309,9 +326,10 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     * "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
@@ -322,9 +340,10 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      *         For more information about available regions and endpoints for AWS
      *         Storage Gateway, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     *         and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     *         "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
+     *         "ap-southeast-2", "sa-east-1"
      */
     public String getGatewayRegion() {
         return gatewayRegion;
@@ -337,9 +356,10 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     * "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
@@ -350,9 +370,10 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      *         For more information about available regions and endpoints for AWS
      *         Storage Gateway, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     *         and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     *         "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
+     *         "ap-southeast-2", "sa-east-1"
      */
     public void setGatewayRegion(String gatewayRegion) {
         this.gatewayRegion = gatewayRegion;
@@ -365,9 +386,10 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     * "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -380,9 +402,10 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
      *         For more information about available regions and endpoints for AWS
      *         Storage Gateway, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     *         and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     *         "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
+     *         "ap-southeast-2", "sa-east-1"
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -453,38 +476,50 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns the value of the TapeDriveType property for this object.
+     * The value that indicates the type of tape drive to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "IBM-ULT3580-TD5"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
-     * @return The value of the TapeDriveType property for this object.
+     * @return The value that indicates the type of tape drive to use for
+     *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     *         "IBM-ULT3580-TD5"
      */
     public String getTapeDriveType() {
         return tapeDriveType;
     }
     
     /**
-     * Sets the value of the TapeDriveType property for this object.
+     * The value that indicates the type of tape drive to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "IBM-ULT3580-TD5"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
-     * @param tapeDriveType The new value for the TapeDriveType property for this object.
+     * @param tapeDriveType The value that indicates the type of tape drive to use for
+     *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     *         "IBM-ULT3580-TD5"
      */
     public void setTapeDriveType(String tapeDriveType) {
         this.tapeDriveType = tapeDriveType;
     }
     
     /**
-     * Sets the value of the TapeDriveType property for this object.
+     * The value that indicates the type of tape drive to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "IBM-ULT3580-TD5"
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
-     * @param tapeDriveType The new value for the TapeDriveType property for this object.
+     * @param tapeDriveType The value that indicates the type of tape drive to use for
+     *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     *         "IBM-ULT3580-TD5"
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -495,38 +530,50 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns the value of the MediumChangerType property for this object.
+     * The value that indicates the type of medium changer to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "STK-L700"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
-     * @return The value of the MediumChangerType property for this object.
+     * @return The value that indicates the type of medium changer to use for
+     *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     *         "STK-L700"
      */
     public String getMediumChangerType() {
         return mediumChangerType;
     }
     
     /**
-     * Sets the value of the MediumChangerType property for this object.
+     * The value that indicates the type of medium changer to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "STK-L700"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
-     * @param mediumChangerType The new value for the MediumChangerType property for this object.
+     * @param mediumChangerType The value that indicates the type of medium changer to use for
+     *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     *         "STK-L700"
      */
     public void setMediumChangerType(String mediumChangerType) {
         this.mediumChangerType = mediumChangerType;
     }
     
     /**
-     * Sets the value of the MediumChangerType property for this object.
+     * The value that indicates the type of medium changer to use for
+     * gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     * "STK-L700"
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 50<br/>
      *
-     * @param mediumChangerType The new value for the MediumChangerType property for this object.
+     * @param mediumChangerType The value that indicates the type of medium changer to use for
+     *         gateway-VTL. This field is optional. <p><i>Valid Values</i>:
+     *         "STK-L700"
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

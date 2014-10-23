@@ -21,13 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeVTLDevices(DescribeVTLDevicesRequest) DescribeVTLDevices operation}.
  * <p>
- * Returns a description of Virtual Tape Library (VTL) devices for the
- * gateway specified in the request. In the response, AWS Storage Gateway
- * returns Virtual Tape Library device information.
+ * Returns a description of virtual tape library (VTL) devices for the
+ * specified gateway. In the response, AWS Storage Gateway returns VTL
+ * device information.
  * </p>
  * <p>
- * The list of Virtual Tape Library devices in the request must be from
- * one gateway.
+ * The list of VTL devices must be from one gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeVTLDevices(DescribeVTLDevicesRequest)
@@ -46,10 +45,9 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implement
 
     /**
      * An array of strings, where each string represents the Amazon Resource
-     * Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     * Library(VTL) devices must be from the same gateway. If no VTL devices
-     * are specified, the result will contain all devices on the specified
-     * gateway.</note>
+     * Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     * must be from the same gateway. If no VTL devices are specified, the
+     * result will contain all devices on the specified gateway.</note>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> vTLDeviceARNs;
 
@@ -127,16 +125,14 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implement
 
     /**
      * An array of strings, where each string represents the Amazon Resource
-     * Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     * Library(VTL) devices must be from the same gateway. If no VTL devices
-     * are specified, the result will contain all devices on the specified
-     * gateway.</note>
+     * Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     * must be from the same gateway. If no VTL devices are specified, the
+     * result will contain all devices on the specified gateway.</note>
      *
      * @return An array of strings, where each string represents the Amazon Resource
-     *         Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     *         Library(VTL) devices must be from the same gateway. If no VTL devices
-     *         are specified, the result will contain all devices on the specified
-     *         gateway.</note>
+     *         Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     *         must be from the same gateway. If no VTL devices are specified, the
+     *         result will contain all devices on the specified gateway.</note>
      */
     public java.util.List<String> getVTLDeviceARNs() {
         if (vTLDeviceARNs == null) {
@@ -148,16 +144,14 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implement
     
     /**
      * An array of strings, where each string represents the Amazon Resource
-     * Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     * Library(VTL) devices must be from the same gateway. If no VTL devices
-     * are specified, the result will contain all devices on the specified
-     * gateway.</note>
+     * Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     * must be from the same gateway. If no VTL devices are specified, the
+     * result will contain all devices on the specified gateway.</note>
      *
      * @param vTLDeviceARNs An array of strings, where each string represents the Amazon Resource
-     *         Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     *         Library(VTL) devices must be from the same gateway. If no VTL devices
-     *         are specified, the result will contain all devices on the specified
-     *         gateway.</note>
+     *         Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     *         must be from the same gateway. If no VTL devices are specified, the
+     *         result will contain all devices on the specified gateway.</note>
      */
     public void setVTLDeviceARNs(java.util.Collection<String> vTLDeviceARNs) {
         if (vTLDeviceARNs == null) {
@@ -171,18 +165,16 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implement
     
     /**
      * An array of strings, where each string represents the Amazon Resource
-     * Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     * Library(VTL) devices must be from the same gateway. If no VTL devices
-     * are specified, the result will contain all devices on the specified
-     * gateway.</note>
+     * Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     * must be from the same gateway. If no VTL devices are specified, the
+     * result will contain all devices on the specified gateway.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vTLDeviceARNs An array of strings, where each string represents the Amazon Resource
-     *         Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     *         Library(VTL) devices must be from the same gateway. If no VTL devices
-     *         are specified, the result will contain all devices on the specified
-     *         gateway.</note>
+     *         Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     *         must be from the same gateway. If no VTL devices are specified, the
+     *         result will contain all devices on the specified gateway.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -197,18 +189,16 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest implement
     
     /**
      * An array of strings, where each string represents the Amazon Resource
-     * Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     * Library(VTL) devices must be from the same gateway. If no VTL devices
-     * are specified, the result will contain all devices on the specified
-     * gateway.</note>
+     * Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     * must be from the same gateway. If no VTL devices are specified, the
+     * result will contain all devices on the specified gateway.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vTLDeviceARNs An array of strings, where each string represents the Amazon Resource
-     *         Name (ARN) of a VTL device. <note>All of the specified Virtual Tape
-     *         Library(VTL) devices must be from the same gateway. If no VTL devices
-     *         are specified, the result will contain all devices on the specified
-     *         gateway.</note>
+     *         Name (ARN) of a VTL device. <note>All of the specified VTL devices
+     *         must be from the same gateway. If no VTL devices are specified, the
+     *         result will contain all devices on the specified gateway.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

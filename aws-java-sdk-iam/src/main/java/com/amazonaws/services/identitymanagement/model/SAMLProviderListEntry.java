@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The list of SAML providers for this account.
+ * Contains the list of SAML providers for this account.
  * </p>
  */
 public class SAMLProviderListEntry implements Serializable {

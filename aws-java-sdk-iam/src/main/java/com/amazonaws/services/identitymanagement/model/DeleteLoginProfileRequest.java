@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Console.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user
+ * <b>IMPORTANT:</b> Deleting a user's password does not prevent a user
  * from accessing IAM through the command line interface or the API. To
  * prevent all user access you must also either make the access key
  * inactive or delete it. For more information about making keys inactive
@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user whose password you want to delete.
+     * The name of the user whose password you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -57,40 +57,41 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user whose password you want to delete.
+     * @param userName The name of the user whose password you want to
+     * delete.
      */
     public DeleteLoginProfileRequest(String userName) {
         setUserName(userName);
     }
 
     /**
-     * Name of the user whose password you want to delete.
+     * The name of the user whose password you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose password you want to delete.
+     * @return The name of the user whose password you want to delete.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose password you want to delete.
+     * The name of the user whose password you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose password you want to delete.
+     * @param userName The name of the user whose password you want to delete.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose password you want to delete.
+     * The name of the user whose password you want to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -98,7 +99,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose password you want to delete.
+     * @param userName The name of the user whose password you want to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

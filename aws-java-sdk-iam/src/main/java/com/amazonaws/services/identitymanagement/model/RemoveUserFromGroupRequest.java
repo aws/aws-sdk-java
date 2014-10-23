@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the group to update.
+     * The name of the group to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -38,7 +38,7 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
     private String groupName;
 
     /**
-     * Name of the user to remove.
+     * The name of the user to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -57,8 +57,8 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName Name of the group to update.
-     * @param userName Name of the user to remove.
+     * @param groupName The name of the group to update.
+     * @param userName The name of the user to remove.
      */
     public RemoveUserFromGroupRequest(String groupName, String userName) {
         setGroupName(groupName);
@@ -66,33 +66,33 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Name of the group to update.
+     * The name of the group to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the group to update.
+     * @return The name of the group to update.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the group to update.
+     * The name of the group to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group to update.
+     * @param groupName The name of the group to update.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the group to update.
+     * The name of the group to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -100,7 +100,7 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group to update.
+     * @param groupName The name of the group to update.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,33 +111,33 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Name of the user to remove.
+     * The name of the user to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to remove.
+     * @return The name of the user to remove.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to remove.
+     * The name of the user to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to remove.
+     * @param userName The name of the user to remove.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to remove.
+     * The name of the user to remove.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -145,7 +145,7 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implemen
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to remove.
+     * @param userName The name of the user to remove.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

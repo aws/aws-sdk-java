@@ -36,8 +36,8 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
     /**
      * The path prefix for filtering the results. For example:
      * <code>/company/servercerts</code> would get all server certificates
-     * for which the path starts with <code>/company/servercerts</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to a
+     * for which the path starts with <code>/company/servercerts</code>. <p>
+     * This parameter is optional. If it is not included, it defaults to a
      * slash (/), listing all server certificates.
      * <p>
      * <b>Constraints:</b><br/>
@@ -80,8 +80,8 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
     /**
      * The path prefix for filtering the results. For example:
      * <code>/company/servercerts</code> would get all server certificates
-     * for which the path starts with <code>/company/servercerts</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to a
+     * for which the path starts with <code>/company/servercerts</code>. <p>
+     * This parameter is optional. If it is not included, it defaults to a
      * slash (/), listing all server certificates.
      * <p>
      * <b>Constraints:</b><br/>
@@ -90,8 +90,8 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      *
      * @return The path prefix for filtering the results. For example:
      *         <code>/company/servercerts</code> would get all server certificates
-     *         for which the path starts with <code>/company/servercerts</code>.
-     *         <p>This parameter is optional. If it is not included, it defaults to a
+     *         for which the path starts with <code>/company/servercerts</code>. <p>
+     *         This parameter is optional. If it is not included, it defaults to a
      *         slash (/), listing all server certificates.
      */
     public String getPathPrefix() {
@@ -101,8 +101,8 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
     /**
      * The path prefix for filtering the results. For example:
      * <code>/company/servercerts</code> would get all server certificates
-     * for which the path starts with <code>/company/servercerts</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to a
+     * for which the path starts with <code>/company/servercerts</code>. <p>
+     * This parameter is optional. If it is not included, it defaults to a
      * slash (/), listing all server certificates.
      * <p>
      * <b>Constraints:</b><br/>
@@ -111,8 +111,8 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      *
      * @param pathPrefix The path prefix for filtering the results. For example:
      *         <code>/company/servercerts</code> would get all server certificates
-     *         for which the path starts with <code>/company/servercerts</code>.
-     *         <p>This parameter is optional. If it is not included, it defaults to a
+     *         for which the path starts with <code>/company/servercerts</code>. <p>
+     *         This parameter is optional. If it is not included, it defaults to a
      *         slash (/), listing all server certificates.
      */
     public void setPathPrefix(String pathPrefix) {
@@ -122,8 +122,8 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
     /**
      * The path prefix for filtering the results. For example:
      * <code>/company/servercerts</code> would get all server certificates
-     * for which the path starts with <code>/company/servercerts</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to a
+     * for which the path starts with <code>/company/servercerts</code>. <p>
+     * This parameter is optional. If it is not included, it defaults to a
      * slash (/), listing all server certificates.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -134,8 +134,8 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest imple
      *
      * @param pathPrefix The path prefix for filtering the results. For example:
      *         <code>/company/servercerts</code> would get all server certificates
-     *         for which the path starts with <code>/company/servercerts</code>.
-     *         <p>This parameter is optional. If it is not included, it defaults to a
+     *         for which the path starts with <code>/company/servercerts</code>. <p>
+     *         This parameter is optional. If it is not included, it defaults to a
      *         slash (/), listing all server certificates.
      *
      * @return A reference to this updated object so that method calls can be chained

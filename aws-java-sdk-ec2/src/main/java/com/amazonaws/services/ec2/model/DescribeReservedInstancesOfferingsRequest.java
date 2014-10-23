@@ -32,7 +32,7 @@ import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesOffer
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest)
@@ -48,7 +48,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
@@ -74,10 +75,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used. </li> <li>
      * <p><code>duration</code> - The duration of the Reserved Instance (for
-     * example, one year or three years), in seconds. </li> <li>
-     * <p><code>fixed-price</code> - The purchase price of the Reserved
-     * Instance (for example, 9800.0). </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the
+     * example, one year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
+     * <li> <p><code>instance-type</code> - The instance type on which the
      * Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      * - Set to <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
@@ -104,7 +105,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private String instanceTenancy;
 
     /**
-     * The Reserved Instance offering type.
+     * The Reserved Instance offering type. If you are using tools that
+     * predate the 2011-11-01 API version, you only have access to the
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
@@ -117,7 +120,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private String nextToken;
 
     /**
-     * The maximum number of offerings to return.
+     * The maximum number of offerings to return. The maximum is 100.
+     * <p>Default: 100
      */
     private Integer maxResults;
 
@@ -128,19 +132,19 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * The minimum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 2592000 (1 month)
      */
     private Long minDuration;
 
     /**
      * The maximum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 94608000 (3 years)
      */
     private Long maxDuration;
 
     /**
      * The maximum number of instances to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 20
      */
     private Integer maxInstanceCount;
 
@@ -216,7 +220,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
@@ -224,7 +229,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @return The instance type on which the Reserved Instance can be used. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @see InstanceType
      */
@@ -236,7 +242,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
@@ -244,7 +251,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param instanceType The instance type on which the Reserved Instance can be used. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @see InstanceType
      */
@@ -256,7 +264,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -266,7 +275,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param instanceType The instance type on which the Reserved Instance can be used. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -282,7 +292,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
@@ -290,7 +301,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param instanceType The instance type on which the Reserved Instance can be used. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @see InstanceType
      */
@@ -302,7 +314,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     * Linux</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -312,7 +325,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param instanceType The instance type on which the Reserved Instance can be used. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide for
+     *         Linux</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -463,10 +477,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used. </li> <li>
      * <p><code>duration</code> - The duration of the Reserved Instance (for
-     * example, one year or three years), in seconds. </li> <li>
-     * <p><code>fixed-price</code> - The purchase price of the Reserved
-     * Instance (for example, 9800.0). </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the
+     * example, one year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
+     * <li> <p><code>instance-type</code> - The instance type on which the
      * Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      * - Set to <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
@@ -483,10 +497,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @return One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      *         Availability Zone where the Reserved Instance can be used. </li> <li>
      *         <p><code>duration</code> - The duration of the Reserved Instance (for
-     *         example, one year or three years), in seconds. </li> <li>
-     *         <p><code>fixed-price</code> - The purchase price of the Reserved
-     *         Instance (for example, 9800.0). </li> <li>
-     *         <p><code>instance-type</code> - The instance type on which the
+     *         example, one year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
+     *         <li> <p><code>instance-type</code> - The instance type on which the
      *         Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      *         - Set to <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
@@ -512,10 +526,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used. </li> <li>
      * <p><code>duration</code> - The duration of the Reserved Instance (for
-     * example, one year or three years), in seconds. </li> <li>
-     * <p><code>fixed-price</code> - The purchase price of the Reserved
-     * Instance (for example, 9800.0). </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the
+     * example, one year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
+     * <li> <p><code>instance-type</code> - The instance type on which the
      * Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      * - Set to <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
@@ -532,10 +546,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      *         Availability Zone where the Reserved Instance can be used. </li> <li>
      *         <p><code>duration</code> - The duration of the Reserved Instance (for
-     *         example, one year or three years), in seconds. </li> <li>
-     *         <p><code>fixed-price</code> - The purchase price of the Reserved
-     *         Instance (for example, 9800.0). </li> <li>
-     *         <p><code>instance-type</code> - The instance type on which the
+     *         example, one year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
+     *         <li> <p><code>instance-type</code> - The instance type on which the
      *         Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      *         - Set to <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
@@ -563,10 +577,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used. </li> <li>
      * <p><code>duration</code> - The duration of the Reserved Instance (for
-     * example, one year or three years), in seconds. </li> <li>
-     * <p><code>fixed-price</code> - The purchase price of the Reserved
-     * Instance (for example, 9800.0). </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the
+     * example, one year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
+     * <li> <p><code>instance-type</code> - The instance type on which the
      * Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      * - Set to <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
@@ -585,10 +599,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      *         Availability Zone where the Reserved Instance can be used. </li> <li>
      *         <p><code>duration</code> - The duration of the Reserved Instance (for
-     *         example, one year or three years), in seconds. </li> <li>
-     *         <p><code>fixed-price</code> - The purchase price of the Reserved
-     *         Instance (for example, 9800.0). </li> <li>
-     *         <p><code>instance-type</code> - The instance type on which the
+     *         example, one year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
+     *         <li> <p><code>instance-type</code> - The instance type on which the
      *         Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      *         - Set to <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
@@ -617,10 +631,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used. </li> <li>
      * <p><code>duration</code> - The duration of the Reserved Instance (for
-     * example, one year or three years), in seconds. </li> <li>
-     * <p><code>fixed-price</code> - The purchase price of the Reserved
-     * Instance (for example, 9800.0). </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the
+     * example, one year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0). </li>
+     * <li> <p><code>instance-type</code> - The instance type on which the
      * Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      * - Set to <code>true</code> to show only Reserved Instance Marketplace
      * offerings. When this filter is not used, which is the default
@@ -639,10 +653,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param filters One or more filters. <ul> <li> <p><code>availability-zone</code> - The
      *         Availability Zone where the Reserved Instance can be used. </li> <li>
      *         <p><code>duration</code> - The duration of the Reserved Instance (for
-     *         example, one year or three years), in seconds. </li> <li>
-     *         <p><code>fixed-price</code> - The purchase price of the Reserved
-     *         Instance (for example, 9800.0). </li> <li>
-     *         <p><code>instance-type</code> - The instance type on which the
+     *         example, one year or three years), in seconds (<code>31536000</code> |
+     *         <code>94608000</code>). </li> <li> <p><code>fixed-price</code> - The
+     *         purchase price of the Reserved Instance (for example, 9800.0). </li>
+     *         <li> <p><code>instance-type</code> - The instance type on which the
      *         Reserved Instance can be used. </li> <li> <p><code>marketplace</code>
      *         - Set to <code>true</code> to show only Reserved Instance Marketplace
      *         offerings. When this filter is not used, which is the default
@@ -774,12 +788,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The Reserved Instance offering type.
+     * The Reserved Instance offering type. If you are using tools that
+     * predate the 2011-11-01 API version, you only have access to the
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
-     * @return The Reserved Instance offering type.
+     * @return The Reserved Instance offering type. If you are using tools that
+     *         predate the 2011-11-01 API version, you only have access to the
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @see OfferingTypeValues
      */
@@ -788,12 +806,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved Instance offering type.
+     * The Reserved Instance offering type. If you are using tools that
+     * predate the 2011-11-01 API version, you only have access to the
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
-     * @param offeringType The Reserved Instance offering type.
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
+     *         predate the 2011-11-01 API version, you only have access to the
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @see OfferingTypeValues
      */
@@ -802,14 +824,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved Instance offering type.
+     * The Reserved Instance offering type. If you are using tools that
+     * predate the 2011-11-01 API version, you only have access to the
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
-     * @param offeringType The Reserved Instance offering type.
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
+     *         predate the 2011-11-01 API version, you only have access to the
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -822,12 +848,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The Reserved Instance offering type.
+     * The Reserved Instance offering type. If you are using tools that
+     * predate the 2011-11-01 API version, you only have access to the
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
-     * @param offeringType The Reserved Instance offering type.
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
+     *         predate the 2011-11-01 API version, you only have access to the
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @see OfferingTypeValues
      */
@@ -836,14 +866,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * The Reserved Instance offering type.
+     * The Reserved Instance offering type. If you are using tools that
+     * predate the 2011-11-01 API version, you only have access to the
+     * <code>Medium Utilization</code> Reserved Instance offering type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
-     * @param offeringType The Reserved Instance offering type.
+     * @param offeringType The Reserved Instance offering type. If you are using tools that
+     *         predate the 2011-11-01 API version, you only have access to the
+     *         <code>Medium Utilization</code> Reserved Instance offering type.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -889,29 +923,35 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
-     * The maximum number of offerings to return.
+     * The maximum number of offerings to return. The maximum is 100.
+     * <p>Default: 100
      *
-     * @return The maximum number of offerings to return.
+     * @return The maximum number of offerings to return. The maximum is 100.
+     *         <p>Default: 100
      */
     public Integer getMaxResults() {
         return maxResults;
     }
     
     /**
-     * The maximum number of offerings to return.
+     * The maximum number of offerings to return. The maximum is 100.
+     * <p>Default: 100
      *
-     * @param maxResults The maximum number of offerings to return.
+     * @param maxResults The maximum number of offerings to return. The maximum is 100.
+     *         <p>Default: 100
      */
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
     
     /**
-     * The maximum number of offerings to return.
+     * The maximum number of offerings to return. The maximum is 100.
+     * <p>Default: 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxResults The maximum number of offerings to return.
+     * @param maxResults The maximum number of offerings to return. The maximum is 100.
+     *         <p>Default: 100
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -965,10 +1005,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * The minimum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 2592000 (1 month)
      *
      * @return The minimum duration (in seconds) to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 2592000 (1 month)
      */
     public Long getMinDuration() {
         return minDuration;
@@ -976,10 +1016,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The minimum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 2592000 (1 month)
      *
      * @param minDuration The minimum duration (in seconds) to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 2592000 (1 month)
      */
     public void setMinDuration(Long minDuration) {
         this.minDuration = minDuration;
@@ -987,12 +1027,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The minimum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 2592000 (1 month)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minDuration The minimum duration (in seconds) to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 2592000 (1 month)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1004,10 +1044,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * The maximum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 94608000 (3 years)
      *
      * @return The maximum duration (in seconds) to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 94608000 (3 years)
      */
     public Long getMaxDuration() {
         return maxDuration;
@@ -1015,10 +1055,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The maximum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 94608000 (3 years)
      *
      * @param maxDuration The maximum duration (in seconds) to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 94608000 (3 years)
      */
     public void setMaxDuration(Long maxDuration) {
         this.maxDuration = maxDuration;
@@ -1026,12 +1066,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The maximum duration (in seconds) to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 94608000 (3 years)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxDuration The maximum duration (in seconds) to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 94608000 (3 years)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1043,10 +1083,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
     /**
      * The maximum number of instances to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 20
      *
      * @return The maximum number of instances to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 20
      */
     public Integer getMaxInstanceCount() {
         return maxInstanceCount;
@@ -1054,10 +1094,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The maximum number of instances to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 20
      *
      * @param maxInstanceCount The maximum number of instances to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 20
      */
     public void setMaxInstanceCount(Integer maxInstanceCount) {
         this.maxInstanceCount = maxInstanceCount;
@@ -1065,12 +1105,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     /**
      * The maximum number of instances to filter when searching for
-     * offerings.
+     * offerings. <p>Default: 20
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxInstanceCount The maximum number of instances to filter when searching for
-     *         offerings.
+     *         offerings. <p>Default: 20
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

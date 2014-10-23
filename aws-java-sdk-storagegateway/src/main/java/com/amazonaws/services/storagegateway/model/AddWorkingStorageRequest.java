@@ -23,7 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * This operation configures one or more gateway local disks as working
  * storage for a gateway. This operation is supported only for the
- * gateway-stored volume architecture.
+ * gateway-stored volume architecture. This operation is deprecated
+ * method in cached-volumes API version (20120630). Use AddUploadBuffer
+ * instead.
  * </p>
  * <p>
  * <b>NOTE:</b> Working storage is also referred to as upload buffer. You

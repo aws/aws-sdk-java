@@ -51,6 +51,7 @@ public class LookupDeveloperIdentityResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      */
     private String nextToken;
 
@@ -190,6 +191,7 @@ public class LookupDeveloperIdentityResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      *
      * @return A pagination token. The first call you make will have
      *         <code>NextToken</code> set to null. After that the service will return
@@ -214,6 +216,7 @@ public class LookupDeveloperIdentityResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      *
      * @param nextToken A pagination token. The first call you make will have
      *         <code>NextToken</code> set to null. After that the service will return
@@ -240,6 +243,7 @@ public class LookupDeveloperIdentityResult implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
+     * <b>Pattern: </b>[\S]+<br/>
      *
      * @param nextToken A pagination token. The first call you make will have
      *         <code>NextToken</code> set to null. After that the service will return

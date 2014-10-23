@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.dynamodbv2.document.internal;
 
+import static com.amazonaws.util.BinaryUtils.copyAllBytesFrom;
+
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -364,7 +366,7 @@ public enum InternalUtils {
             return t;
         } else if (value.getB() != null) {
             @SuppressWarnings("unchecked")
-            T t = (T) toByteArray(value.getB());
+            T t = (T) copyAllBytesFrom(value.getB());
             return t;
         } else if (value.getSS() != null) {
             @SuppressWarnings("unchecked")
@@ -381,7 +383,7 @@ public enum InternalUtils {
         } else if (value.getBS() != null) {
             Set<byte[]> set = new LinkedHashSet<byte[]>(value.getBS().size());
             for (ByteBuffer bb : value.getBS()) {
-                set.add(toByteArray(bb));
+                set.add(copyAllBytesFrom(bb));
             }
             @SuppressWarnings("unchecked")
             T t = (T) set;
@@ -398,19 +400,6 @@ public enum InternalUtils {
             throw new IllegalArgumentException(
                     "Attribute value must not be empty: " + value);
         }
-    }
-
-    /**
-     * Returns the byte array representation of the given
-     * <code>ByteBuffer</code>.
-     */
-    static byte[] toByteArray(ByteBuffer bb) {
-        if (bb.hasArray())
-            return bb.array().clone();
-        bb.rewind();
-        byte[] buf = new byte[bb.remaining()];
-        bb.get(buf);
-        return buf;
     }
 
     /**

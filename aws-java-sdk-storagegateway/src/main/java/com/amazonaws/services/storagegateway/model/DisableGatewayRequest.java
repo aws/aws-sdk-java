@@ -22,12 +22,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#disableGateway(DisableGatewayRequest) DisableGateway operation}.
  * <p>
  * Disables a gateway when the gateway is no longer functioning. For
- * examples, if your gateway VM is damaged, you can disable the gateway
- * so you can recover virtual tapes.
+ * example, if your gateway VM is damaged, you can disable the gateway so
+ * you can recover virtual tapes.
  * </p>
  * <p>
- * Use this operation for a Gateway-Virtual Tape Library that is not
- * reachable or not functioning.
+ * Use this operation for a gateway-VTL that is not reachable or not
+ * functioning.
  * </p>
  * <p>
  * <b>IMPORTANT:</b>Once a gateway is disabled it cannot be enabled.

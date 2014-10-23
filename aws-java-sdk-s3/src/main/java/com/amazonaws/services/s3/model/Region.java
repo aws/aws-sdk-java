@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.Constants;
 
 
@@ -50,7 +51,7 @@ public enum Region {
      * provides eventual consistency for all requests.
      * </p>
      */
-	US_Standard((String[])null),
+    US_Standard((String[])null),
 
     /**
      * The US-West (Northern California) Amazon S3 Region. This region uses Amazon S3
@@ -80,10 +81,10 @@ public enum Region {
      * </p>
      */
     US_West_2("us-west-2"),
-    
+
     /**
-     * The US GovCloud Region. This region uses Amazon S3 servers located in the Northwestern 
-     * region of the United States. 
+     * The US GovCloud Region. This region uses Amazon S3 servers located in the Northwestern
+     * region of the United States.
      */
     US_GovCloud("s3-us-gov-west-1"),
 
@@ -97,7 +98,33 @@ public enum Region {
      * </p>
      */
     EU_Ireland("eu-west-1","EU"),
-    
+
+    /**
+     * The EU (Frankfurt) Amazon S3 Region. This region uses Amazon S3 servers
+     * located in Frankfurt.
+     * <p>
+     * In Amazon S3, the EU (Frankfurt) Region provides read-after-write
+     * consistency for PUTS of new objects in Amazon S3 buckets and eventual
+     * consistency for overwrite PUTS and DELETES.
+     * </p>
+     * <p>
+     * The EU (Frankfurt) Region requires AWS V4 authentication, therefore when
+     * accessing buckets inside this region, you need to explicitly configure
+     * the "eu-central-1" endpoint for the AmazonS3Client in order to enable V4
+     * signing:
+     *
+     * <pre>
+     * AmazonS3Client s3 = new AmazonS3Client();
+     * s3.setRegion(RegionUtils.getRegion("eu-central-1");
+     * </pre>
+     *
+     * </p>
+     *
+     * @see AmazonS3Client#setEndpoint(String)
+     * @see AmazonS3Client#setRegion(com.amazonaws.regions.Region)
+     */
+    EU_Frankfurt("eu-central-1"),
+
     /**
      * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
      * in Singapore.
@@ -123,15 +150,15 @@ public enum Region {
     AP_Sydney("ap-southeast-2"),
 
     /**
-	 * The Asia Pacific (Tokyo) Region. This region uses Amazon S3 servers
-	 * located in Tokyo.
-	 * <p>
-	 * When using buckets in this region, set the client endpoint to
-	 * <code>s3-ap-northeast-1.amazonaws.com</code> on all requests to these
-	 * buckets to reduce any latency experienced after the first hour of
-	 * creating a bucket in this region.
-	 * </p>
-	 */
+     * The Asia Pacific (Tokyo) Region. This region uses Amazon S3 servers
+     * located in Tokyo.
+     * <p>
+     * When using buckets in this region, set the client endpoint to
+     * <code>s3-ap-northeast-1.amazonaws.com</code> on all requests to these
+     * buckets to reduce any latency experienced after the first hour of
+     * creating a bucket in this region.
+     * </p>
+     */
     AP_Tokyo("ap-northeast-1"),
 
     /**
@@ -170,13 +197,13 @@ public enum Region {
      * @param regionIds
      *            The list of ID's representing the S3 region.
      */
-	private Region(String... regionIds) {
-		this.regionIds = regionIds != null ? Arrays.asList(regionIds) : null;
-	}
+    private Region(String... regionIds) {
+        this.regionIds = regionIds != null ? Arrays.asList(regionIds) : null;
+    }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Enum#toString()
      */
     @Override
@@ -192,7 +219,7 @@ public enum Region {
     }
 
     private String getFirstRegionId0() {
-        return this.regionIds == null || regionIds.size() == 0 
+        return this.regionIds == null || regionIds.size() == 0
              ? null : this.regionIds.get(0);
     }
 
@@ -211,7 +238,7 @@ public enum Region {
      *             If the specified value does not map to one of the known
      *             Amazon S3 regions.
      */
-    public static Region fromValue(final String s3RegionId) throws IllegalArgumentException 
+    public static Region fromValue(final String s3RegionId) throws IllegalArgumentException
     {
         if (s3RegionId == null || s3RegionId.equals("US"))
             return Region.US_Standard;

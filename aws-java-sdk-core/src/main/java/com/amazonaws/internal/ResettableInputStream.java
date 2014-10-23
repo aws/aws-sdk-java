@@ -74,11 +74,6 @@ public class ResettableInputStream extends ReleasableInputStream {
      *            closing via {@link ResettableInputStream#disableClose()}, so
      *            that the release method becomes the only way to truly close
      *            the opened file.
-     * 
-     * @param file
-     *            must not be null and must be an existing file that can be
-     *            read. Upon successful construction the input stream will be
-     *            automatically marked at the beginning position of the file.
      */
     public ResettableInputStream(File file) throws IOException {
         this(new FileInputStream(file), file);

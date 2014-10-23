@@ -65,6 +65,10 @@ public class DescribeIdentityPoolResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeIdentityPoolResult.setDeveloperProviderName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OpenIdConnectProviderARNs", targetDepth)) {
+                    context.nextToken();
+                    describeIdentityPoolResult.setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

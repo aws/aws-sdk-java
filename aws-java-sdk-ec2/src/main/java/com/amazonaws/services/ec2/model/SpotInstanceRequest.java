@@ -48,7 +48,7 @@ public class SpotInstanceRequest implements Serializable {
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * Compute Cloud User Guide for Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -290,7 +290,7 @@ public class SpotInstanceRequest implements Serializable {
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * Compute Cloud User Guide for Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -300,7 +300,7 @@ public class SpotInstanceRequest implements Serializable {
      *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>.
+     *         Compute Cloud User Guide for Linux</i>.
      *
      * @see SpotInstanceState
      */
@@ -314,7 +314,7 @@ public class SpotInstanceRequest implements Serializable {
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * Compute Cloud User Guide for Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -324,7 +324,7 @@ public class SpotInstanceRequest implements Serializable {
      *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>.
+     *         Compute Cloud User Guide for Linux</i>.
      *
      * @see SpotInstanceState
      */
@@ -338,7 +338,7 @@ public class SpotInstanceRequest implements Serializable {
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * Compute Cloud User Guide for Linux</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -350,7 +350,7 @@ public class SpotInstanceRequest implements Serializable {
      *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>.
+     *         Compute Cloud User Guide for Linux</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -368,7 +368,7 @@ public class SpotInstanceRequest implements Serializable {
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * Compute Cloud User Guide for Linux</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>open, active, closed, cancelled, failed
@@ -378,7 +378,7 @@ public class SpotInstanceRequest implements Serializable {
      *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>.
+     *         Compute Cloud User Guide for Linux</i>.
      *
      * @see SpotInstanceState
      */
@@ -392,7 +392,7 @@ public class SpotInstanceRequest implements Serializable {
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      * Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * Compute Cloud User Guide for Linux</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -404,7 +404,7 @@ public class SpotInstanceRequest implements Serializable {
      *         <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking
      *         Spot Requests with Bid Status Codes</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>.
+     *         Compute Cloud User Guide for Linux</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

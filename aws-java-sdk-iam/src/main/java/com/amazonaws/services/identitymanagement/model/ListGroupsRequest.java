@@ -33,12 +33,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all
-     * groups whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all groups.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path
+     * starts with <code>/division_abc/subdivision_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all groups.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -77,58 +76,53 @@ public class ListGroupsRequest extends AmazonWebServiceRequest implements Serial
     public ListGroupsRequest() {}
     
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all
-     * groups whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all groups.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path
+     * starts with <code>/division_abc/subdivision_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all groups.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
-     * @return The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all
-     *         groups whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all groups.
+     * @return The path prefix for filtering the results. For example, the prefix
+     *         <code>/division_abc/subdivision_xyz/</code> gets all groups whose path
+     *         starts with <code>/division_abc/subdivision_xyz/</code>. <p> This
+     *         parameter is optional. If it is not included, it defaults to a slash
+     *         (/), listing all groups.
      */
     public String getPathPrefix() {
         return pathPrefix;
     }
     
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all
-     * groups whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all groups.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path
+     * starts with <code>/division_abc/subdivision_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all groups.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
-     * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all
-     *         groups whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all groups.
+     * @param pathPrefix The path prefix for filtering the results. For example, the prefix
+     *         <code>/division_abc/subdivision_xyz/</code> gets all groups whose path
+     *         starts with <code>/division_abc/subdivision_xyz/</code>. <p> This
+     *         parameter is optional. If it is not included, it defaults to a slash
+     *         (/), listing all groups.
      */
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
     
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all
-     * groups whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all groups.
+     * The path prefix for filtering the results. For example, the prefix
+     * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path
+     * starts with <code>/division_abc/subdivision_xyz/</code>. <p> This
+     * parameter is optional. If it is not included, it defaults to a slash
+     * (/), listing all groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -136,12 +130,11 @@ public class ListGroupsRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>&#92;u002F[&#92;u0021-&#92;u007F]*<br/>
      *
-     * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all
-     *         groups whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all groups.
+     * @param pathPrefix The path prefix for filtering the results. For example, the prefix
+     *         <code>/division_abc/subdivision_xyz/</code> gets all groups whose path
+     *         starts with <code>/division_abc/subdivision_xyz/</code>. <p> This
+     *         parameter is optional. If it is not included, it defaults to a slash
+     *         (/), listing all groups.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

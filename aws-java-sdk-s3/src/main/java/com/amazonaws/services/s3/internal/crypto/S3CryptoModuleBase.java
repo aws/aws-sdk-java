@@ -28,6 +28,7 @@ import static com.amazonaws.util.Throwables.failure;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.InputStream;
+import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.security.Provider;
 import java.util.Collections;
@@ -432,7 +433,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     private ContentCryptoMaterial buildContentCryptoMaterial(
             EncryptionMaterials kekMaterials, Provider provider) {
         // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
-        SecretKey cek = generateCEK();
+        SecretKey cek = generateCEK(kekMaterials, provider);
         // Randomly generate the IV
         byte[] iv = new byte[contentCryptoScheme.getIVLengthInBytes()];
         cryptoScheme.getSecureRandom().nextBytes(iv);
@@ -440,14 +441,40 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             cek, iv, kekMaterials, cryptoScheme, provider);
     }
 
-    protected final SecretKey generateCEK() {
+    protected final SecretKey generateCEK(
+            final EncryptionMaterials kekMaterials,
+            final Provider providerIn) {
+        final String keygenAlgo = contentCryptoScheme.getKeyGeneratorAlgorithm();
         KeyGenerator generator;
         try {
-            generator = KeyGenerator.getInstance(contentCryptoScheme
-                    .getKeyGeneratorAlgorithm());
+            generator = providerIn == null 
+                ? KeyGenerator.getInstance(keygenAlgo) 
+                : KeyGenerator.getInstance(keygenAlgo, providerIn);
             generator.init(contentCryptoScheme.getKeyLengthInBits(),
                     cryptoScheme.getSecureRandom());
-            return generator.generateKey();
+            // Set to true iff the key encryption involves the use of BC's public key 
+            boolean involvesBCPublicKey = false;
+            KeyPair keypair = kekMaterials.getKeyPair();
+            if (keypair != null) {
+                String keyWrapAlgo = cryptoScheme.getKeyWrapScheme().getKeyWrapAlgorithm(keypair.getPublic());
+                if (keyWrapAlgo == null) {
+                    Provider provider = generator.getProvider();
+                    String providerName = provider == null ? null : provider.getName();
+                    involvesBCPublicKey = CryptoRuntime.BOUNCY_CASTLE_PROVIDER.equals(providerName);
+                }
+            }
+            SecretKey secretKey = generator.generateKey();
+            if (!involvesBCPublicKey || secretKey.getEncoded()[0] != 0)
+                return secretKey;
+            for (int retry = 0; retry < 9; retry++) {
+                // Regenerate the random key due to a bug/feature in BC:
+                // https://github.com/aws/aws-sdk-android/issues/15
+                secretKey = generator.generateKey();
+                if (secretKey.getEncoded()[0] != 0)
+                    return secretKey;
+            }
+            // The probability of getting here is 2^80, which is impossible in practice.
+            throw new AmazonClientException("Failed to generate secret key");
         } catch (NoSuchAlgorithmException e) {
             throw new AmazonClientException(
                     "Unable to generate envelope symmetric key:"

@@ -97,6 +97,8 @@ import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.retry.RetryUtils;
+import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
+import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.CountingInputStream;
@@ -432,8 +434,19 @@ public class AmazonHttpClient {
         final ExecOneRequestParams p = new ExecOneRequestParams();
         while (true) {
             p.initPerRetry();
+            if (p.redirectedURI != null) {
+                String fullUri = p.redirectedURI.toString();
+                String path = p.redirectedURI.getRawPath();
+                int pathLen = path == null ? 0 : path.length();
+                String leftPart = fullUri.substring(0, fullUri.length() - pathLen);
+                request.setEndpoint(URI.create(leftPart));
+                request.setResourcePath(path);
+            }
+            if (p.authRetryParam != null) {
+                request.setEndpoint(p.authRetryParam.getEndpointForRetry());
+            }
             awsRequestMetrics.setCounter(RequestCount, p.requestCount);
-            if (p.requestCount > 1) { // retry
+            if (p.isRetry()) {
                 request.setParameters(originalParameters);
                 request.setHeaders(originalHeaders);
             }
@@ -498,7 +511,7 @@ public class AmazonHttpClient {
      * mark-supported); this is so that, for backward compatibility reason, any
      * "blind" retry (ie without calling reset) by user of this library with the
      * same input stream (such as ByteArrayInputStream) could still succeed.
-     * 
+     *
      * @param t
      *            the failure
      * @param apacheRequest
@@ -533,6 +546,8 @@ public class AmazonHttpClient {
         HttpRequestBase apacheRequest;
         org.apache.http.HttpResponse apacheResponse;
         URI redirectedURI;
+
+        AuthRetryParameters authRetryParam;
         /*
          * Depending on which response handler we end up choosing to handle the
          * HTTP response, it might require us to leave the underlying HTTP
@@ -541,6 +556,12 @@ public class AmazonHttpClient {
          * any of the content until after a response is returned to the caller.
          */
         boolean leaveHttpConnectionOpen;
+
+        boolean isRetry() {
+            return requestCount > 1 ||
+                   redirectedURI != null ||
+                   authRetryParam != null;
+        }
 
         void initPerRetry() {
             requestCount++;
@@ -551,8 +572,13 @@ public class AmazonHttpClient {
 
         Signer newSigner(final Request<?> request,
                 final ExecutionContext execContext) {
-            if (redirectedURI != null
-            && !redirectedURI.equals(signerURI)) {
+            if (authRetryParam != null) {
+                signerURI = authRetryParam.getEndpointForRetry();
+                signer = authRetryParam.getSignerForRetry();
+                // Push the local signer override back to the execution context
+                execContext.setSigner(signer);
+            } else if (redirectedURI != null
+                    && !redirectedURI.equals(signerURI)) {
                 signerURI = redirectedURI;
                 signer = execContext.getSignerByURI(signerURI);
             } else if (signer == null) {
@@ -575,6 +601,12 @@ public class AmazonHttpClient {
                 apacheRequest.setURI(redirectedURI);
             return apacheRequest;
         }
+
+        void resetBeforeHttpRequest() {
+            retriedException = null;
+            authRetryParam = null;
+            redirectedURI = null;
+        }
     }
 
     /**
@@ -588,7 +620,7 @@ public class AmazonHttpClient {
             ExecOneRequestParams p)
             throws IOException {
         // Reset the request input stream
-        if (p.requestCount > 1) { // a retry
+        if (p.isRetry()) {
             InputStream requestInputStream = request.getContent();
             if (requestInputStream != null) {
                 if (requestInputStream.markSupported()) {
@@ -619,7 +651,7 @@ public class AmazonHttpClient {
         p.newApacheRequest(httpRequestFactory, request, config, execContext);
         final ProgressListener listener = awsreq.getGeneralProgressListener();
 
-        if (p.requestCount > 1) {   // retry
+        if (p.isRetry()) {
             publishProgress(listener, ProgressEventType.CLIENT_REQUEST_RETRY_EVENT);
             // Notify the progress listener of the retry
             awsRequestMetrics.startEvent(RetryPauseTime);
@@ -640,7 +672,7 @@ public class AmazonHttpClient {
         httpContext.setAttribute(
             AWSRequestMetrics.class.getSimpleName(),
             awsRequestMetrics);
-        p.retriedException = null;
+        p.resetBeforeHttpRequest();
         publishProgress(listener, ProgressEventType.HTTP_REQUEST_STARTED_EVENT);
         awsRequestMetrics.startEvent(HttpRequestTime);
         try {
@@ -690,11 +722,18 @@ public class AmazonHttpClient {
             .addPropertyWith(AWSRequestID, ase.getRequestId())
             .addPropertyWith(AWSErrorCode, ase.getErrorCode())
             .addPropertyWith(StatusCode, ase.getStatusCode());
-        if (!shouldRetry(request.getOriginalRequest(),
-                         p.apacheRequest,
-                         ase,
-                         p.requestCount,
-                         config.getRetryPolicy())) {
+        // Check whether we should internally retry the auth error
+        p.authRetryParam = null;
+        AuthErrorRetryStrategy authRetry = execContext.getAuthErrorRetryStrategy();
+        if ( authRetry != null ) {
+            p.authRetryParam = authRetry.shouldRetryWithAuthParam(request, ase);
+        }
+        if (p.authRetryParam == null &&
+            !shouldRetry(request.getOriginalRequest(),
+                p.apacheRequest,
+                ase,
+                p.requestCount,
+                config.getRetryPolicy())) {
             throw ase;
         }
         // Comment out for now. Ref: CR2662349
@@ -1181,14 +1220,14 @@ public class AmazonHttpClient {
     }
 
     /**
-     * Used for testing via failure injection. 
+     * Used for testing via failure injection.
      */
     private static UnreliableTestConfig unreliableTestConfig;
 
     /**
      * Used to configure the test conditions for injecting intermittent failures
      * to the content input stream.
-     * 
+     *
      * @param config
      *            unreliable test configuration for failure injection; or null
      *            to disable such test.

@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteUserRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user to delete.
+     * The name of the user to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -49,40 +49,40 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements Serial
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user to delete.
+     * @param userName The name of the user to delete.
      */
     public DeleteUserRequest(String userName) {
         setUserName(userName);
     }
 
     /**
-     * Name of the user to delete.
+     * The name of the user to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to delete.
+     * @return The name of the user to delete.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to delete.
+     * The name of the user to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to delete.
+     * @param userName The name of the user to delete.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to delete.
+     * The name of the user to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -90,7 +90,7 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to delete.
+     * @param userName The name of the user to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

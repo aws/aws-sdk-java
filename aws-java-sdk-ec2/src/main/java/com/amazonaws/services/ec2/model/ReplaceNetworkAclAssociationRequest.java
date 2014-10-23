@@ -41,7 +41,7 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
     private String associationId;
 
     /**
-     * The ID of the new ACL to associate with the subnet.
+     * The ID of the new network ACL to associate with the subnet.
      */
     private String networkAclId;
 
@@ -85,29 +85,29 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The ID of the new ACL to associate with the subnet.
+     * The ID of the new network ACL to associate with the subnet.
      *
-     * @return The ID of the new ACL to associate with the subnet.
+     * @return The ID of the new network ACL to associate with the subnet.
      */
     public String getNetworkAclId() {
         return networkAclId;
     }
     
     /**
-     * The ID of the new ACL to associate with the subnet.
+     * The ID of the new network ACL to associate with the subnet.
      *
-     * @param networkAclId The ID of the new ACL to associate with the subnet.
+     * @param networkAclId The ID of the new network ACL to associate with the subnet.
      */
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
     
     /**
-     * The ID of the new ACL to associate with the subnet.
+     * The ID of the new network ACL to associate with the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkAclId The ID of the new ACL to associate with the subnet.
+     * @param networkAclId The ID of the new network ACL to associate with the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

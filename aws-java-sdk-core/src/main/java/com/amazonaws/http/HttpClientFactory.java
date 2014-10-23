@@ -45,7 +45,9 @@ import org.apache.http.auth.ChallengeState;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.AuthCache;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.RedirectStrategy;
 import org.apache.http.client.entity.GzipDecompressingEntity;
+import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.params.ConnRoutePNames;
@@ -103,7 +105,7 @@ class HttpClientFactory {
                 .createPoolingClientConnManager(config, httpClientParams);
         SdkHttpClient httpClient = new SdkHttpClient(connectionManager, httpClientParams);
         httpClient.setHttpRequestRetryHandler(HttpRequestNoRetryHandler.Singleton);
-        httpClient.setRedirectStrategy(new LocationHeaderNotRequiredRedirectStrategy());
+        httpClient.setRedirectStrategy(new NeverFollowRedirectStrategy());
 
         if (config.getLocalAddress() != null) {
             ConnRouteParams.setLocalAddress(httpClientParams, config.getLocalAddress());
@@ -200,27 +202,25 @@ class HttpClientFactory {
         return httpClient;
     }
 
+
     /**
-     * Customization of the default redirect strategy provided by HttpClient to be a little
-     * less strict about the Location header to account for S3 not sending the Location
-     * header with 301 responses.
+     * Disable http redirect inside Apache HttpClient.
      */
-    private static final class LocationHeaderNotRequiredRedirectStrategy
-            extends DefaultRedirectStrategy {
+    private static final class NeverFollowRedirectStrategy implements RedirectStrategy {
 
         @Override
-        public boolean isRedirected(HttpRequest request,
-                HttpResponse response, HttpContext context) throws ProtocolException {
-            int statusCode = response.getStatusLine().getStatusCode();
-            Header locationHeader = response.getFirstHeader("location");
-
-            // Instead of throwing a ProtocolException in this case, just
-            // return false to indicate that this is not redirected
-            if (locationHeader == null &&
-                statusCode == HttpStatus.SC_MOVED_PERMANENTLY) return false;
-
-            return super.isRedirected(request, response, context);
+        public boolean isRedirected(HttpRequest request, HttpResponse response,
+                HttpContext context) throws ProtocolException {
+            return false;
         }
+
+        @Override
+        public HttpUriRequest getRedirect(HttpRequest request,
+                HttpResponse response, HttpContext context)
+                throws ProtocolException {
+            return null;
+        }
+
     }
 
     /**

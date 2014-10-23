@@ -24,34 +24,34 @@ import java.io.Serializable;
 public class AccountAttributeValue implements Serializable {
 
     /**
-     * The value.
+     * The value of the attribute.
      */
     private String attributeValue;
 
     /**
-     * The value.
+     * The value of the attribute.
      *
-     * @return The value.
+     * @return The value of the attribute.
      */
     public String getAttributeValue() {
         return attributeValue;
     }
     
     /**
-     * The value.
+     * The value of the attribute.
      *
-     * @param attributeValue The value.
+     * @param attributeValue The value of the attribute.
      */
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
     
     /**
-     * The value.
+     * The value of the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValue The value.
+     * @param attributeValue The value of the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

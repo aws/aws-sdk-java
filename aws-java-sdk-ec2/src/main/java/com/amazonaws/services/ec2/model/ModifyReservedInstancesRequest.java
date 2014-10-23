@@ -26,6 +26,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The Reserved Instances to be modified must be identical, except for
  * Availability Zone, network platform, and instance type.
  * </p>
+ * <p>
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html"> Modifying Reserved Instances </a>
+ * in the Amazon Elastic Compute Cloud User Guide for Linux.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyReservedInstances(ModifyReservedInstancesRequest)
  */

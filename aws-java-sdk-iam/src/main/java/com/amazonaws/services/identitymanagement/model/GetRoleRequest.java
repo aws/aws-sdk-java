@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetRoleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the role to get information about.
+     * The name of the role to get information about.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -48,33 +48,33 @@ public class GetRoleRequest extends AmazonWebServiceRequest implements Serializa
     private String roleName;
 
     /**
-     * Name of the role to get information about.
+     * The name of the role to get information about.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the role to get information about.
+     * @return The name of the role to get information about.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * Name of the role to get information about.
+     * The name of the role to get information about.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to get information about.
+     * @param roleName The name of the role to get information about.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * Name of the role to get information about.
+     * The name of the role to get information about.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -82,7 +82,7 @@ public class GetRoleRequest extends AmazonWebServiceRequest implements Serializa
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to get information about.
+     * @param roleName The name of the role to get information about.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

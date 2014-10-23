@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a virtual tape that is archived in the Virtual Tape Shelf
+ * Represents a virtual tape that is archived in the virtual tape shelf
  * (VTS).
  * </p>
  */
@@ -57,9 +57,9 @@ public class TapeArchive implements Serializable {
     private java.util.Date completionTime;
 
     /**
-     * The Amazon Resource Name (ARN) of the Gateway-Virtual Tape Library
-     * that the virtual tape is being retrieved to. <p>The virtual tape is
-     * retrieved from the Virtual Tape Shelf (VTS).
+     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
+     * tape is being retrieved to. <p>The virtual tape is retrieved from the
+     * virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -246,50 +246,50 @@ public class TapeArchive implements Serializable {
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Gateway-Virtual Tape Library
-     * that the virtual tape is being retrieved to. <p>The virtual tape is
-     * retrieved from the Virtual Tape Shelf (VTS).
+     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
+     * tape is being retrieved to. <p>The virtual tape is retrieved from the
+     * virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the Gateway-Virtual Tape Library
-     *         that the virtual tape is being retrieved to. <p>The virtual tape is
-     *         retrieved from the Virtual Tape Shelf (VTS).
+     * @return The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
+     *         tape is being retrieved to. <p>The virtual tape is retrieved from the
+     *         virtual tape shelf (VTS).
      */
     public String getRetrievedTo() {
         return retrievedTo;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Gateway-Virtual Tape Library
-     * that the virtual tape is being retrieved to. <p>The virtual tape is
-     * retrieved from the Virtual Tape Shelf (VTS).
+     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
+     * tape is being retrieved to. <p>The virtual tape is retrieved from the
+     * virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param retrievedTo The Amazon Resource Name (ARN) of the Gateway-Virtual Tape Library
-     *         that the virtual tape is being retrieved to. <p>The virtual tape is
-     *         retrieved from the Virtual Tape Shelf (VTS).
+     * @param retrievedTo The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
+     *         tape is being retrieved to. <p>The virtual tape is retrieved from the
+     *         virtual tape shelf (VTS).
      */
     public void setRetrievedTo(String retrievedTo) {
         this.retrievedTo = retrievedTo;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the Gateway-Virtual Tape Library
-     * that the virtual tape is being retrieved to. <p>The virtual tape is
-     * retrieved from the Virtual Tape Shelf (VTS).
+     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
+     * tape is being retrieved to. <p>The virtual tape is retrieved from the
+     * virtual tape shelf (VTS).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param retrievedTo The Amazon Resource Name (ARN) of the Gateway-Virtual Tape Library
-     *         that the virtual tape is being retrieved to. <p>The virtual tape is
-     *         retrieved from the Virtual Tape Shelf (VTS).
+     * @param retrievedTo The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
+     *         tape is being retrieved to. <p>The virtual tape is retrieved from the
+     *         virtual tape shelf (VTS).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

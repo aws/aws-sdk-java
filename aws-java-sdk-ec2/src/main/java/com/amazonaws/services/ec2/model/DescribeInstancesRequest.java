@@ -52,10 +52,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance.
-     * </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     * - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     * instance termination. </li> <li>
+     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     * that indicates whether the Amazon EBS volume is deleted on instance
+     * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
      * the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      * <p><code>block-device-mapping.status</code> - The status for the
@@ -321,10 +322,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance.
-     * </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     * - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     * instance termination. </li> <li>
+     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     * that indicates whether the Amazon EBS volume is deleted on instance
+     * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
      * the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      * <p><code>block-device-mapping.status</code> - The status for the
@@ -505,10 +507,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance.
-     *         </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     *         - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     *         instance termination. </li> <li>
+     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
      *         the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      *         <p><code>block-device-mapping.status</code> - The status for the
@@ -698,10 +701,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance.
-     * </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     * - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     * instance termination. </li> <li>
+     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     * that indicates whether the Amazon EBS volume is deleted on instance
+     * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
      * the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      * <p><code>block-device-mapping.status</code> - The status for the
@@ -882,10 +886,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance.
-     *         </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     *         - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     *         instance termination. </li> <li>
+     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
      *         the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      *         <p><code>block-device-mapping.status</code> - The status for the
@@ -1077,10 +1082,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance.
-     * </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     * - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     * instance termination. </li> <li>
+     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     * that indicates whether the Amazon EBS volume is deleted on instance
+     * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
      * the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      * <p><code>block-device-mapping.status</code> - The status for the
@@ -1263,10 +1269,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance.
-     *         </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     *         - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     *         instance termination. </li> <li>
+     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
      *         the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      *         <p><code>block-device-mapping.status</code> - The status for the
@@ -1459,10 +1466,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      * <li> <p><code>availability-zone</code> - The Availability Zone of the
      * instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     * - The attach time for an Amazon EBS volume mapped to the instance.
-     * </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     * - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     * instance termination. </li> <li>
+     * - The attach time for an Amazon EBS volume mapped to the instance, for
+     * example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     * <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     * that indicates whether the Amazon EBS volume is deleted on instance
+     * termination. </li> <li>
      * <p><code>block-device-mapping.device-name</code> - The device name for
      * the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      * <p><code>block-device-mapping.status</code> - The status for the
@@ -1645,10 +1653,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instance architecture (<code>i386</code> | <code>x86_64</code>). </li>
      *         <li> <p><code>availability-zone</code> - The Availability Zone of the
      *         instance. </li> <li> <p><code>block-device-mapping.attach-time</code>
-     *         - The attach time for an Amazon EBS volume mapped to the instance.
-     *         </li> <li> <p><code>block-device-mapping.delete-on-termination</code>
-     *         - A Boolean that indicates whether the Amazon EBS volume is deleted on
-     *         instance termination. </li> <li>
+     *         - The attach time for an Amazon EBS volume mapped to the instance, for
+     *         example, <code>2010-09-15T17:15:20.000Z</code>. </li> <li>
+     *         <p><code>block-device-mapping.delete-on-termination</code> - A Boolean
+     *         that indicates whether the Amazon EBS volume is deleted on instance
+     *         termination. </li> <li>
      *         <p><code>block-device-mapping.device-name</code> - The device name for
      *         the Amazon EBS volume (for example, <code>/dev/sdh</code>). </li> <li>
      *         <p><code>block-device-mapping.status</code> - The status for the

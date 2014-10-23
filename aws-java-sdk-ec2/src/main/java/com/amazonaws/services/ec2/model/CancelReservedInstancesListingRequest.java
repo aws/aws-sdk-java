@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest)

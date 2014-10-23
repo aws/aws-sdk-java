@@ -27,9 +27,12 @@ import com.amazonaws.services.ec2.model.transform.GetPasswordDataRequestMarshall
  * Windows.
  * </p>
  * <p>
- * The Windows password is only generated the first time an AMI is
- * launched. It is not generated for rebundled AMIs or after the password
- * is changed on an instance.
+ * The Windows password is generated at boot if the
+ * <code>EC2Config</code> service plugin, <code>Ec2SetPassword</code> ,
+ * is enabled. This usually only happens the first time an AMI is
+ * launched, and then <code>Ec2SetPassword</code> is automatically
+ * disabled. The password is not generated for rebundled AMIs unless
+ * <code>Ec2SetPassword</code> is enabled before bundling.
  * </p>
  * <p>
  * The password is encrypted using the key pair that you specified when

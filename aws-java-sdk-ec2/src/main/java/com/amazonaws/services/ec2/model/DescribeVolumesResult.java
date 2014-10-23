@@ -27,6 +27,15 @@ public class DescribeVolumesResult implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumes;
 
     /**
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+     * this value can be used to retrieve the next page of results. This
+     * value is <code>null</code> when there are no more results to return.
+     */
+    private String nextToken;
+
+    /**
      * 
      *
      * @return 
@@ -95,6 +104,63 @@ public class DescribeVolumesResult implements Serializable {
     }
 
     /**
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+     * this value can be used to retrieve the next page of results. This
+     * value is <code>null</code> when there are no more results to return.
+     *
+     * @return The <code>NextToken</code> value to include in a future
+     *         <code>DescribeVolumes</code> request. When the results of a
+     *         <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+     *         this value can be used to retrieve the next page of results. This
+     *         value is <code>null</code> when there are no more results to return.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+     * this value can be used to retrieve the next page of results. This
+     * value is <code>null</code> when there are no more results to return.
+     *
+     * @param nextToken The <code>NextToken</code> value to include in a future
+     *         <code>DescribeVolumes</code> request. When the results of a
+     *         <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+     *         this value can be used to retrieve the next page of results. This
+     *         value is <code>null</code> when there are no more results to return.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+     * this value can be used to retrieve the next page of results. This
+     * value is <code>null</code> when there are no more results to return.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The <code>NextToken</code> value to include in a future
+     *         <code>DescribeVolumes</code> request. When the results of a
+     *         <code>DescribeVolumes</code> request exceed <code>MaxResults</code>,
+     *         this value can be used to retrieve the next page of results. This
+     *         value is <code>null</code> when there are no more results to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeVolumesResult withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -106,7 +172,8 @@ public class DescribeVolumesResult implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() );
+        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }
@@ -117,6 +184,7 @@ public class DescribeVolumesResult implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         return hashCode;
     }
     
@@ -130,6 +198,8 @@ public class DescribeVolumesResult implements Serializable {
         
         if (other.getVolumes() == null ^ this.getVolumes() == null) return false;
         if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         return true;
     }
     

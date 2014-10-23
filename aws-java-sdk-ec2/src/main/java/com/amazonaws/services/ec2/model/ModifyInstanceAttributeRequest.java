@@ -81,8 +81,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     private Boolean sourceDestCheck;
 
     /**
-     * Specifies whether to disable the ability to terminate the instance
-     * using the Amazon EC2 console, CLI, and API.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     private Boolean disableApiTermination;
 
@@ -96,12 +96,18 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     private String instanceType;
 
     /**
-     * Changes the instance's kernel to the specified value.
+     * Changes the instance's kernel to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
     private String kernel;
 
     /**
-     * Changes the instance's RAM disk to the specified value.
+     * Changes the instance's RAM disk to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
     private String ramdisk;
 
@@ -550,35 +556,35 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Specifies whether to disable the ability to terminate the instance
-     * using the Amazon EC2 console, CLI, and API.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
-     * @return Specifies whether to disable the ability to terminate the instance
-     *         using the Amazon EC2 console, CLI, and API.
+     * @return If the value is <code>true</code>, you can't terminate the instance
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     public Boolean isDisableApiTermination() {
         return disableApiTermination;
     }
     
     /**
-     * Specifies whether to disable the ability to terminate the instance
-     * using the Amazon EC2 console, CLI, and API.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
-     * @param disableApiTermination Specifies whether to disable the ability to terminate the instance
-     *         using the Amazon EC2 console, CLI, and API.
+     * @param disableApiTermination If the value is <code>true</code>, you can't terminate the instance
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     public void setDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
     }
     
     /**
-     * Specifies whether to disable the ability to terminate the instance
-     * using the Amazon EC2 console, CLI, and API.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param disableApiTermination Specifies whether to disable the ability to terminate the instance
-     *         using the Amazon EC2 console, CLI, and API.
+     * @param disableApiTermination If the value is <code>true</code>, you can't terminate the instance
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -589,11 +595,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Specifies whether to disable the ability to terminate the instance
-     * using the Amazon EC2 console, CLI, and API.
+     * If the value is <code>true</code>, you can't terminate the instance
+     * using the Amazon EC2 console, CLI, or API; otherwise, you can.
      *
-     * @return Specifies whether to disable the ability to terminate the instance
-     *         using the Amazon EC2 console, CLI, and API.
+     * @return If the value is <code>true</code>, you can't terminate the instance
+     *         using the Amazon EC2 console, CLI, or API; otherwise, you can.
      */
     public Boolean getDisableApiTermination() {
         return disableApiTermination;
@@ -657,29 +663,47 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Changes the instance's kernel to the specified value.
+     * Changes the instance's kernel to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      *
-     * @return Changes the instance's kernel to the specified value.
+     * @return Changes the instance's kernel to the specified value. We recommend
+     *         that you use PV-GRUB instead of kernels and RAM disks. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
     public String getKernel() {
         return kernel;
     }
     
     /**
-     * Changes the instance's kernel to the specified value.
+     * Changes the instance's kernel to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      *
-     * @param kernel Changes the instance's kernel to the specified value.
+     * @param kernel Changes the instance's kernel to the specified value. We recommend
+     *         that you use PV-GRUB instead of kernels and RAM disks. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
     public void setKernel(String kernel) {
         this.kernel = kernel;
     }
     
     /**
-     * Changes the instance's kernel to the specified value.
+     * Changes the instance's kernel to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param kernel Changes the instance's kernel to the specified value.
+     * @param kernel Changes the instance's kernel to the specified value. We recommend
+     *         that you use PV-GRUB instead of kernels and RAM disks. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -690,29 +714,47 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Changes the instance's RAM disk to the specified value.
+     * Changes the instance's RAM disk to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      *
-     * @return Changes the instance's RAM disk to the specified value.
+     * @return Changes the instance's RAM disk to the specified value. We recommend
+     *         that you use PV-GRUB instead of kernels and RAM disks. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
     public String getRamdisk() {
         return ramdisk;
     }
     
     /**
-     * Changes the instance's RAM disk to the specified value.
+     * Changes the instance's RAM disk to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      *
-     * @param ramdisk Changes the instance's RAM disk to the specified value.
+     * @param ramdisk Changes the instance's RAM disk to the specified value. We recommend
+     *         that you use PV-GRUB instead of kernels and RAM disks. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
     public void setRamdisk(String ramdisk) {
         this.ramdisk = ramdisk;
     }
     
     /**
-     * Changes the instance's RAM disk to the specified value.
+     * Changes the instance's RAM disk to the specified value. We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ramdisk Changes the instance's RAM disk to the specified value.
+     * @param ramdisk Changes the instance's RAM disk to the specified value. We recommend
+     *         that you use PV-GRUB instead of kernels and RAM disks. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.util.Map;
+
 import com.amazonaws.AmazonServiceException;
 
 /**
@@ -32,6 +34,16 @@ public class AmazonS3Exception extends AmazonServiceException {
      */
     private String extendedRequestId;
 
+    /**
+     * Additional information on the exception.
+     */
+    private Map<String,String> additionalDetails;
+
+    /**
+     * Returns the error XML received in the HTTP Response or null if the
+     * exception is constructed from the headers.
+     */
+    private final String errorResponseXml;
 
     /**
      * Constructs a new {@link AmazonS3Exception} with the specified message.
@@ -43,6 +55,7 @@ public class AmazonS3Exception extends AmazonServiceException {
      */
     public AmazonS3Exception(String message) {
         super(message);
+        this.errorResponseXml = null;
     }
 
     /**
@@ -58,6 +71,26 @@ public class AmazonS3Exception extends AmazonServiceException {
      */
     public AmazonS3Exception(String message, Exception cause) {
         super(message, cause);
+        this.errorResponseXml = null;
+    }
+
+    /**
+     * Constructs a new {@link AmazonS3Exception} with the specified message and
+     * error response xml from Amazon S3.
+     *
+     * @param message
+     *            The error message describing why this exception was thrown.
+     * @param errorResponseXml
+     *            The original error response XML received from Amazon S3
+     *
+     * @see AmazonS3Exception#AmazonS3Exception(String)
+     */
+    public AmazonS3Exception(String message, String errorResponseXml) {
+        super(message);
+        if(errorResponseXml == null){
+            throw new IllegalArgumentException("Error Response XML cannot be null");
+        }
+        this.errorResponseXml = errorResponseXml;
     }
 
     /**
@@ -86,6 +119,20 @@ public class AmazonS3Exception extends AmazonServiceException {
     }
 
     /**
+     * Returns any additional information retrieved in the error response.
+     */
+    public Map<String, String> getAdditionalDetails() {
+        return additionalDetails;
+    }
+
+    /**
+     * Sets additional information about the error response.
+     */
+    public void setAdditionalDetails(Map<String, String> additionalDetails) {
+        this.additionalDetails = additionalDetails;
+    }
+
+    /**
      * Extends the implementation from AmazonServiceException to include
      * additional information on S3's extended request ID.
      */
@@ -95,4 +142,11 @@ public class AmazonS3Exception extends AmazonServiceException {
             + "S3 Extended Request ID: " + getExtendedRequestId();
     }
 
+    /**
+     * Returns the error XML received in the HTTP Response or null if the
+     * exception is constructed from the headers.
+     */
+    public String getErrorResponseXml() {
+        return errorResponseXml;
+    }
 }

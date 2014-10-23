@@ -45,15 +45,17 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * One or more IP addresses to be assigned as a secondary private IP
-     * address to the network interface. <p>If you don't specify an IP
-     * address, Amazon EC2 automatically selects an IP address within the
-     * subnet range.
+     * address to the network interface. You can't specify this parameter
+     * when also specifying a number of secondary IP addresses. <p>If you
+     * don't specify an IP address, Amazon EC2 automatically selects an IP
+     * address within the subnet range.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddresses;
 
     /**
      * The number of secondary IP addresses to assign to the network
-     * interface.
+     * interface. You can't specify this parameter when also specifying
+     * private IP addresses.
      */
     private Integer secondaryPrivateIpAddressCount;
 
@@ -99,14 +101,16 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * One or more IP addresses to be assigned as a secondary private IP
-     * address to the network interface. <p>If you don't specify an IP
-     * address, Amazon EC2 automatically selects an IP address within the
-     * subnet range.
+     * address to the network interface. You can't specify this parameter
+     * when also specifying a number of secondary IP addresses. <p>If you
+     * don't specify an IP address, Amazon EC2 automatically selects an IP
+     * address within the subnet range.
      *
      * @return One or more IP addresses to be assigned as a secondary private IP
-     *         address to the network interface. <p>If you don't specify an IP
-     *         address, Amazon EC2 automatically selects an IP address within the
-     *         subnet range.
+     *         address to the network interface. You can't specify this parameter
+     *         when also specifying a number of secondary IP addresses. <p>If you
+     *         don't specify an IP address, Amazon EC2 automatically selects an IP
+     *         address within the subnet range.
      */
     public java.util.List<String> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
@@ -118,14 +122,16 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     
     /**
      * One or more IP addresses to be assigned as a secondary private IP
-     * address to the network interface. <p>If you don't specify an IP
-     * address, Amazon EC2 automatically selects an IP address within the
-     * subnet range.
+     * address to the network interface. You can't specify this parameter
+     * when also specifying a number of secondary IP addresses. <p>If you
+     * don't specify an IP address, Amazon EC2 automatically selects an IP
+     * address within the subnet range.
      *
      * @param privateIpAddresses One or more IP addresses to be assigned as a secondary private IP
-     *         address to the network interface. <p>If you don't specify an IP
-     *         address, Amazon EC2 automatically selects an IP address within the
-     *         subnet range.
+     *         address to the network interface. You can't specify this parameter
+     *         when also specifying a number of secondary IP addresses. <p>If you
+     *         don't specify an IP address, Amazon EC2 automatically selects an IP
+     *         address within the subnet range.
      */
     public void setPrivateIpAddresses(java.util.Collection<String> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -139,16 +145,18 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     
     /**
      * One or more IP addresses to be assigned as a secondary private IP
-     * address to the network interface. <p>If you don't specify an IP
-     * address, Amazon EC2 automatically selects an IP address within the
-     * subnet range.
+     * address to the network interface. You can't specify this parameter
+     * when also specifying a number of secondary IP addresses. <p>If you
+     * don't specify an IP address, Amazon EC2 automatically selects an IP
+     * address within the subnet range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses One or more IP addresses to be assigned as a secondary private IP
-     *         address to the network interface. <p>If you don't specify an IP
-     *         address, Amazon EC2 automatically selects an IP address within the
-     *         subnet range.
+     *         address to the network interface. You can't specify this parameter
+     *         when also specifying a number of secondary IP addresses. <p>If you
+     *         don't specify an IP address, Amazon EC2 automatically selects an IP
+     *         address within the subnet range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -163,16 +171,18 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     
     /**
      * One or more IP addresses to be assigned as a secondary private IP
-     * address to the network interface. <p>If you don't specify an IP
-     * address, Amazon EC2 automatically selects an IP address within the
-     * subnet range.
+     * address to the network interface. You can't specify this parameter
+     * when also specifying a number of secondary IP addresses. <p>If you
+     * don't specify an IP address, Amazon EC2 automatically selects an IP
+     * address within the subnet range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses One or more IP addresses to be assigned as a secondary private IP
-     *         address to the network interface. <p>If you don't specify an IP
-     *         address, Amazon EC2 automatically selects an IP address within the
-     *         subnet range.
+     *         address to the network interface. You can't specify this parameter
+     *         when also specifying a number of secondary IP addresses. <p>If you
+     *         don't specify an IP address, Amazon EC2 automatically selects an IP
+     *         address within the subnet range.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -191,10 +201,12 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * The number of secondary IP addresses to assign to the network
-     * interface.
+     * interface. You can't specify this parameter when also specifying
+     * private IP addresses.
      *
      * @return The number of secondary IP addresses to assign to the network
-     *         interface.
+     *         interface. You can't specify this parameter when also specifying
+     *         private IP addresses.
      */
     public Integer getSecondaryPrivateIpAddressCount() {
         return secondaryPrivateIpAddressCount;
@@ -202,10 +214,12 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     
     /**
      * The number of secondary IP addresses to assign to the network
-     * interface.
+     * interface. You can't specify this parameter when also specifying
+     * private IP addresses.
      *
      * @param secondaryPrivateIpAddressCount The number of secondary IP addresses to assign to the network
-     *         interface.
+     *         interface. You can't specify this parameter when also specifying
+     *         private IP addresses.
      */
     public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
@@ -213,12 +227,14 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     
     /**
      * The number of secondary IP addresses to assign to the network
-     * interface.
+     * interface. You can't specify this parameter when also specifying
+     * private IP addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param secondaryPrivateIpAddressCount The number of secondary IP addresses to assign to the network
-     *         interface.
+     *         interface. You can't specify this parameter when also specifying
+     *         private IP addresses.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

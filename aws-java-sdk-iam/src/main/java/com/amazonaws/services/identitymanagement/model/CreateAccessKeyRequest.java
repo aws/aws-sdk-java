@@ -29,16 +29,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If you do not specify a user name, IAM determines the user name
  * implicitly based on the AWS access key ID signing the request. Because
  * this action works for access keys under the AWS account, you can use
- * this API to manage root credentials even if the AWS account has no
+ * this action to manage root credentials even if the AWS account has no
  * associated users.
  * </p>
  * <p>
- * For information about limits on the number of keys you can create, see
+ * For information about limits on the number of keys you can create,
+ * see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>To ensure the security of your AWS account, the
+ * <b>IMPORTANT:</b> To ensure the security of your AWS account, the
  * secret access key is accessible only during key and user creation. You
  * must save the key (for example, in a text file) if you want to be able
  * to access it again. If a secret key is lost, you can delete the access

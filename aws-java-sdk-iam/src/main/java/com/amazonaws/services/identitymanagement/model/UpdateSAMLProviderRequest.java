@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates the metadata document for an existing SAML provider.
  * </p>
  * <p>
- * <b>NOTE:</b>This operation requires Signature Version 4.
+ * <b>NOTE:</b> This operation requires Signature Version 4.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateSAMLProvider(UpdateSAMLProviderRequest)

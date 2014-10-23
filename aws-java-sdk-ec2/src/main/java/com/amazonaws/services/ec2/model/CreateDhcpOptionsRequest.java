@@ -59,7 +59,12 @@ import com.amazonaws.services.ec2.model.transform.CreateDhcpOptionsRequestMarsha
  * 
  * </ul>
  * <p>
- * For more information about DHCP options, see
+ * Your VPC automatically starts out with a set of DHCP options that
+ * includes only a DNS server that we provide (AmazonProvidedDNS). If you
+ * create a set of options, and if your VPC has an Internet gateway, make
+ * sure to set the <code>domain-name-servers</code> option either to
+ * <code>AmazonProvidedDNS</code> or to a domain name server of your
+ * choice. For more information about DHCP options, see
  * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
  * in the <i>Amazon Virtual Private Cloud User Guide</i> .
  * </p>

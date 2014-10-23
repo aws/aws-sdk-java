@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the group to delete.
+     * The name of the group to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -49,40 +49,40 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName Name of the group to delete.
+     * @param groupName The name of the group to delete.
      */
     public DeleteGroupRequest(String groupName) {
         setGroupName(groupName);
     }
 
     /**
-     * Name of the group to delete.
+     * The name of the group to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the group to delete.
+     * @return The name of the group to delete.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the group to delete.
+     * The name of the group to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group to delete.
+     * @param groupName The name of the group to delete.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the group to delete.
+     * The name of the group to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -90,7 +90,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group to delete.
+     * @param groupName The name of the group to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

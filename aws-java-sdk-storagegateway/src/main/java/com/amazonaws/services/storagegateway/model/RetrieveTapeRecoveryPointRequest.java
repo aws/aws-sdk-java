@@ -32,8 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * <b>NOTE:</b>The virtual tape can be retrieved to only one gateway. The
  * retrieved tape is read-only. The virtual tape can be retrieved to only
- * a Gateway-Virtual Tape Library. There is no charge for retrieving
- * recovery points.
+ * a gateway-VTL. There is no charge for retrieving recovery points.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest)

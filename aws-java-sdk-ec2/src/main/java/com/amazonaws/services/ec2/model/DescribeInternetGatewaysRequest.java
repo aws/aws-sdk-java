@@ -38,12 +38,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC.
-     * Present only if a VPC is attached. </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     * <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     * gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. </li> <li>
+     * current state of the attachment between the gateway and the VPC
+     * (<code>available</code>). Present only if a VPC is attached. </li>
+     * <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     * </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     * Internet gateway. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -136,12 +137,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC.
-     * Present only if a VPC is attached. </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     * <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     * gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. </li> <li>
+     * current state of the attachment between the gateway and the VPC
+     * (<code>available</code>). Present only if a VPC is attached. </li>
+     * <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     * </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     * Internet gateway. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -155,12 +157,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * filter. </li> </ul>
      *
      * @return One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     *         current state of the attachment between the gateway and the VPC.
-     *         Present only if a VPC is attached. </li> <li>
-     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     *         <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     *         gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     *         key/value combination of a tag assigned to the resource. </li> <li>
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>available</code>). Present only if a VPC is attached. </li>
+     *         <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     *         </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     *         Internet gateway. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter
@@ -183,12 +186,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     
     /**
      * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC.
-     * Present only if a VPC is attached. </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     * <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     * gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. </li> <li>
+     * current state of the attachment between the gateway and the VPC
+     * (<code>available</code>). Present only if a VPC is attached. </li>
+     * <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     * </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     * Internet gateway. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -202,12 +206,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * filter. </li> </ul>
      *
      * @param filters One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     *         current state of the attachment between the gateway and the VPC.
-     *         Present only if a VPC is attached. </li> <li>
-     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     *         <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     *         gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     *         key/value combination of a tag assigned to the resource. </li> <li>
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>available</code>). Present only if a VPC is attached. </li>
+     *         <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     *         </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     *         Internet gateway. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter
@@ -232,12 +237,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     
     /**
      * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC.
-     * Present only if a VPC is attached. </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     * <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     * gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. </li> <li>
+     * current state of the attachment between the gateway and the VPC
+     * (<code>available</code>). Present only if a VPC is attached. </li>
+     * <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     * </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     * Internet gateway. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -253,12 +259,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     *         current state of the attachment between the gateway and the VPC.
-     *         Present only if a VPC is attached. </li> <li>
-     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     *         <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     *         gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     *         key/value combination of a tag assigned to the resource. </li> <li>
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>available</code>). Present only if a VPC is attached. </li>
+     *         <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     *         </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     *         Internet gateway. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter
@@ -284,12 +291,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     
     /**
      * One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC.
-     * Present only if a VPC is attached. </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     * <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     * gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. </li> <li>
+     * current state of the attachment between the gateway and the VPC
+     * (<code>available</code>). Present only if a VPC is attached. </li>
+     * <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     * </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     * Internet gateway. </li> <li>
+     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
      * This filter is independent of the <code>tag-value</code> filter. For
      * example, if you use both the filter "tag-key=Purpose" and the filter
@@ -305,12 +313,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters One or more filters. <ul> <li> <p><code>attachment.state</code> - The
-     *         current state of the attachment between the gateway and the VPC.
-     *         Present only if a VPC is attached. </li> <li>
-     *         <p><code>attachment.vpc-id</code> - The ID of an attached VPC. </li>
-     *         <li> <p><code>internet-gateway-id</code> - The ID of the Internet
-     *         gateway. </li> <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The
-     *         key/value combination of a tag assigned to the resource. </li> <li>
+     *         current state of the attachment between the gateway and the VPC
+     *         (<code>available</code>). Present only if a VPC is attached. </li>
+     *         <li> <p><code>attachment.vpc-id</code> - The ID of an attached VPC.
+     *         </li> <li> <p><code>internet-gateway-id</code> - The ID of the
+     *         Internet gateway. </li> <li>
+     *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
+     *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
      *         This filter is independent of the <code>tag-value</code> filter. For
      *         example, if you use both the filter "tag-key=Purpose" and the filter

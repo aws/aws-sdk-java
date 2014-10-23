@@ -16,6 +16,8 @@ package com.amazonaws.services.dynamodbv2.document;
 
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.api.QueryApi;
 import com.amazonaws.services.dynamodbv2.document.internal.IndexQueryImpl;
@@ -26,6 +28,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
  * both GSI (Global Secondary Index) and LSI (Local Secondary Index). Instance
  * of this class can be obtained via {@link Table#getIndex(String)}.
  */
+@ThreadSafe
 public class Index implements QueryApi {
     private final Table table;
     private final String indexName;

@@ -48,7 +48,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The primary private IP address of the network interface. If you don't
      * specify an IP address, Amazon EC2 selects one for you from the subnet
-     * range.
+     * range. If you specify an IP address, you cannot indicate any IP
+     * addresses specified in <code>privateIpAddresses</code> as primary
+     * (only one IP address can be designated as primary).
      */
     private String privateIpAddress;
 
@@ -65,9 +67,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The number of secondary private IP addresses to assign to a network
      * interface. When you specify a number of secondary IP addresses, Amazon
-     * EC2 selects these IP addresses within the subnet range. <p>The number
-     * of IP addresses you can assign to a network interface varies by
-     * instance type. For more information, see <a
+     * EC2 selects these IP addresses within the subnet range. You can't
+     * specify this option and specify more than one private IP address using
+     * <code>privateIpAddresses</code>. <p>The number of IP addresses you can
+     * assign to a network interface varies by instance type. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
      * IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
@@ -143,11 +147,15 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The primary private IP address of the network interface. If you don't
      * specify an IP address, Amazon EC2 selects one for you from the subnet
-     * range.
+     * range. If you specify an IP address, you cannot indicate any IP
+     * addresses specified in <code>privateIpAddresses</code> as primary
+     * (only one IP address can be designated as primary).
      *
      * @return The primary private IP address of the network interface. If you don't
      *         specify an IP address, Amazon EC2 selects one for you from the subnet
-     *         range.
+     *         range. If you specify an IP address, you cannot indicate any IP
+     *         addresses specified in <code>privateIpAddresses</code> as primary
+     *         (only one IP address can be designated as primary).
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
@@ -156,11 +164,15 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The primary private IP address of the network interface. If you don't
      * specify an IP address, Amazon EC2 selects one for you from the subnet
-     * range.
+     * range. If you specify an IP address, you cannot indicate any IP
+     * addresses specified in <code>privateIpAddresses</code> as primary
+     * (only one IP address can be designated as primary).
      *
      * @param privateIpAddress The primary private IP address of the network interface. If you don't
      *         specify an IP address, Amazon EC2 selects one for you from the subnet
-     *         range.
+     *         range. If you specify an IP address, you cannot indicate any IP
+     *         addresses specified in <code>privateIpAddresses</code> as primary
+     *         (only one IP address can be designated as primary).
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -169,13 +181,17 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The primary private IP address of the network interface. If you don't
      * specify an IP address, Amazon EC2 selects one for you from the subnet
-     * range.
+     * range. If you specify an IP address, you cannot indicate any IP
+     * addresses specified in <code>privateIpAddresses</code> as primary
+     * (only one IP address can be designated as primary).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The primary private IP address of the network interface. If you don't
      *         specify an IP address, Amazon EC2 selects one for you from the subnet
-     *         range.
+     *         range. If you specify an IP address, you cannot indicate any IP
+     *         addresses specified in <code>privateIpAddresses</code> as primary
+     *         (only one IP address can be designated as primary).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -324,18 +340,22 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The number of secondary private IP addresses to assign to a network
      * interface. When you specify a number of secondary IP addresses, Amazon
-     * EC2 selects these IP addresses within the subnet range. <p>The number
-     * of IP addresses you can assign to a network interface varies by
-     * instance type. For more information, see <a
+     * EC2 selects these IP addresses within the subnet range. You can't
+     * specify this option and specify more than one private IP address using
+     * <code>privateIpAddresses</code>. <p>The number of IP addresses you can
+     * assign to a network interface varies by instance type. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
      * IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
      *
      * @return The number of secondary private IP addresses to assign to a network
      *         interface. When you specify a number of secondary IP addresses, Amazon
-     *         EC2 selects these IP addresses within the subnet range. <p>The number
-     *         of IP addresses you can assign to a network interface varies by
-     *         instance type. For more information, see <a
+     *         EC2 selects these IP addresses within the subnet range. You can't
+     *         specify this option and specify more than one private IP address using
+     *         <code>privateIpAddresses</code>. <p>The number of IP addresses you can
+     *         assign to a network interface varies by instance type. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
      *         IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      *         Compute Cloud User Guide</i>.
@@ -347,18 +367,22 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The number of secondary private IP addresses to assign to a network
      * interface. When you specify a number of secondary IP addresses, Amazon
-     * EC2 selects these IP addresses within the subnet range. <p>The number
-     * of IP addresses you can assign to a network interface varies by
-     * instance type. For more information, see <a
+     * EC2 selects these IP addresses within the subnet range. You can't
+     * specify this option and specify more than one private IP address using
+     * <code>privateIpAddresses</code>. <p>The number of IP addresses you can
+     * assign to a network interface varies by instance type. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
      * IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
      *
      * @param secondaryPrivateIpAddressCount The number of secondary private IP addresses to assign to a network
      *         interface. When you specify a number of secondary IP addresses, Amazon
-     *         EC2 selects these IP addresses within the subnet range. <p>The number
-     *         of IP addresses you can assign to a network interface varies by
-     *         instance type. For more information, see <a
+     *         EC2 selects these IP addresses within the subnet range. You can't
+     *         specify this option and specify more than one private IP address using
+     *         <code>privateIpAddresses</code>. <p>The number of IP addresses you can
+     *         assign to a network interface varies by instance type. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
      *         IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      *         Compute Cloud User Guide</i>.
@@ -370,9 +394,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     /**
      * The number of secondary private IP addresses to assign to a network
      * interface. When you specify a number of secondary IP addresses, Amazon
-     * EC2 selects these IP addresses within the subnet range. <p>The number
-     * of IP addresses you can assign to a network interface varies by
-     * instance type. For more information, see <a
+     * EC2 selects these IP addresses within the subnet range. You can't
+     * specify this option and specify more than one private IP address using
+     * <code>privateIpAddresses</code>. <p>The number of IP addresses you can
+     * assign to a network interface varies by instance type. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
      * IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.
@@ -381,9 +407,11 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *
      * @param secondaryPrivateIpAddressCount The number of secondary private IP addresses to assign to a network
      *         interface. When you specify a number of secondary IP addresses, Amazon
-     *         EC2 selects these IP addresses within the subnet range. <p>The number
-     *         of IP addresses you can assign to a network interface varies by
-     *         instance type. For more information, see <a
+     *         EC2 selects these IP addresses within the subnet range. You can't
+     *         specify this option and specify more than one private IP address using
+     *         <code>privateIpAddresses</code>. <p>The number of IP addresses you can
+     *         assign to a network interface varies by instance type. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
      *         IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic
      *         Compute Cloud User Guide</i>.

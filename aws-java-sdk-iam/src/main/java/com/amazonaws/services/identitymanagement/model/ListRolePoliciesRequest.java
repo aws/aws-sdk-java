@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listRolePolicies(ListRolePoliciesRequest) ListRolePolicies operation}.
  * <p>
- * Lists the names of the policies associated with the specified role. If
- * there are none, the action returns an empty list.
+ * Lists the names of the policies associated with the specified role.
+ * If there are none, the action returns an empty list.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and
@@ -56,8 +56,8 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of role policies you want in the response. If there are
+     * additional role policies beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -176,8 +176,8 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of role policies you want in the response. If there are
+     * additional role policies beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -185,8 +185,8 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of role policies you want in the response. If there are
+     *         additional role policies beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -196,8 +196,8 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of role policies you want in the response. If there are
+     * additional role policies beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -205,8 +205,8 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of role policies you want in the response. If there are
+     *         additional role policies beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -216,8 +216,8 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of role policies you want in the response. If there are
+     * additional role policies beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -227,8 +227,8 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest implements 
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of role policies you want in the response. If there are
+     *         additional role policies beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *

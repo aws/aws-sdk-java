@@ -33,12 +33,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * <b>NOTE:</b>Because policy documents can be large, you should use POST
- * rather than GET when calling PutGroupPolicy. For information about
- * setting up signatures and authorization through the API, go to Signing
- * AWS API Requests in the AWS General Reference. For general information
- * about using the Query API with IAM, go to Making Query Requests in the
- * Using IAM guide.
+ * <b>NOTE:</b> Because policy documents can be large, you should use
+ * POST rather than GET when calling PutGroupPolicy. For information
+ * about setting up signatures and authorization through the API, go to
+ * Signing AWS API Requests in the AWS General Reference. For general
+ * information about using the Query API with IAM, go to Making Query
+ * Requests in the Using IAM guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putGroupPolicy(PutGroupPolicyRequest)
@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the group to associate the policy with.
+     * The name of the group to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -55,7 +55,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
     private String groupName;
 
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -83,8 +83,8 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName Name of the group to associate the policy with.
-     * @param policyName Name of the policy document.
+     * @param groupName The name of the group to associate the policy with.
+     * @param policyName The name of the policy document.
      * @param policyDocument The policy document.
      */
     public PutGroupPolicyRequest(String groupName, String policyName, String policyDocument) {
@@ -94,33 +94,33 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Name of the group to associate the policy with.
+     * The name of the group to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the group to associate the policy with.
+     * @return The name of the group to associate the policy with.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the group to associate the policy with.
+     * The name of the group to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group to associate the policy with.
+     * @param groupName The name of the group to associate the policy with.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the group to associate the policy with.
+     * The name of the group to associate the policy with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -128,7 +128,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group to associate the policy with.
+     * @param groupName The name of the group to associate the policy with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -139,33 +139,33 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the policy document.
+     * @return The name of the policy document.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document.
+     * @param policyName The name of the policy document.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -173,7 +173,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document.
+     * @param policyName The name of the policy document.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -39,7 +39,7 @@ public class DetachVolumeRequestMarshaller implements Marshaller<Request<DetachV
 
         Request<DetachVolumeRequest> request = new DefaultRequest<DetachVolumeRequest>(detachVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "DetachVolume");
-        request.addParameter("Version", "2014-06-15");
+        request.addParameter("Version", "2014-09-01");
 
         if (detachVolumeRequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(detachVolumeRequest.getVolumeId()));

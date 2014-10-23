@@ -29,13 +29,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If the <code>UserName</code> field is not specified, the UserName is
  * determined implicitly based on the AWS access key ID used to sign the
  * request. Because this action works for access keys under the AWS
- * account, this API can be used to manage root credentials even if the
- * AWS account has no associated users.
+ * account, you can use this action to manage root credentials even if
+ * the AWS account has no associated users.
  * </p>
  * <p>
  * For information about rotating keys, see
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
- * in the <i>Using IAM </i> guide.
+ * in the <i>Using IAM</i> guide.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccessKey(UpdateAccessKeyRequest)
@@ -43,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user whose key you want to update.
+     * The name of the user whose key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -113,7 +113,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user whose key you want to update.
+     * @param userName The name of the user whose key you want to update.
      * @param accessKeyId The access key ID of the secret access key you want
      * to update.
      * @param status The status you want to assign to the secret access key.
@@ -131,7 +131,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user whose key you want to update.
+     * @param userName The name of the user whose key you want to update.
      * @param accessKeyId The access key ID of the secret access key you want
      * to update.
      * @param status The status you want to assign to the secret access key.
@@ -145,33 +145,33 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Name of the user whose key you want to update.
+     * The name of the user whose key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose key you want to update.
+     * @return The name of the user whose key you want to update.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose key you want to update.
+     * The name of the user whose key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose key you want to update.
+     * @param userName The name of the user whose key you want to update.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose key you want to update.
+     * The name of the user whose key you want to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -179,7 +179,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose key you want to update.
+     * @param userName The name of the user whose key you want to update.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

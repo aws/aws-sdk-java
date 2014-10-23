@@ -24,9 +24,9 @@ import com.amazonaws.services.ec2.model.transform.ResetInstanceAttributeRequestM
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest) ResetInstanceAttribute operation}.
  * <p>
  * Resets an attribute of an instance to its default value. To reset the
- * kernel or RAM disk, the instance must be in a stopped state. To reset
- * the <code>SourceDestCheck</code> , the instance can be either running
- * or stopped.
+ * <code>kernel</code> or <code>ramdisk</code> , the instance must be in
+ * a stopped state. To reset the <code>SourceDestCheck</code> , the
+ * instance can be either running or stopped.
  * </p>
  * <p>
  * The <code>SourceDestCheck</code> attribute controls whether

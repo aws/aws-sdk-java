@@ -27,6 +27,12 @@ import com.amazonaws.services.ec2.model.transform.DisassociateAddressRequestMars
  * interface it's associated with.
  * </p>
  * <p>
+ * An Elastic IP address is for use in either the EC2-Classic platform or
+ * in a VPC. For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+ * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * </p>
+ * <p>
  * This is an idempotent operation. If you perform the operation more
  * than once, Amazon EC2 doesn't return an error.
  * </p>
@@ -36,12 +42,12 @@ import com.amazonaws.services.ec2.model.transform.DisassociateAddressRequestMars
 public class DisassociateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DisassociateAddressRequest> {
 
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
     private String publicIp;
 
     /**
-     * [EC2-VPC] The association ID.
+     * [EC2-VPC] The association ID. Required for EC2-VPC.
      */
     private String associationId;
 
@@ -56,36 +62,37 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param publicIp [EC2-Classic] The Elastic IP address.
+     * @param publicIp [EC2-Classic] The Elastic IP address. Required for
+     * EC2-Classic.
      */
     public DisassociateAddressRequest(String publicIp) {
         setPublicIp(publicIp);
     }
 
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      *
-     * @return [EC2-Classic] The Elastic IP address.
+     * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      *
-     * @param publicIp [EC2-Classic] The Elastic IP address.
+     * @param publicIp [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp [EC2-Classic] The Elastic IP address.
+     * @param publicIp [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -96,29 +103,29 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * [EC2-VPC] The association ID.
+     * [EC2-VPC] The association ID. Required for EC2-VPC.
      *
-     * @return [EC2-VPC] The association ID.
+     * @return [EC2-VPC] The association ID. Required for EC2-VPC.
      */
     public String getAssociationId() {
         return associationId;
     }
     
     /**
-     * [EC2-VPC] The association ID.
+     * [EC2-VPC] The association ID. Required for EC2-VPC.
      *
-     * @param associationId [EC2-VPC] The association ID.
+     * @param associationId [EC2-VPC] The association ID. Required for EC2-VPC.
      */
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
     
     /**
-     * [EC2-VPC] The association ID.
+     * [EC2-VPC] The association ID. Required for EC2-VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param associationId [EC2-VPC] The association ID.
+     * @param associationId [EC2-VPC] The association ID. Required for EC2-VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

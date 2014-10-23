@@ -30,27 +30,32 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
 
     /**
      * The index of the device on the instance for the network interface
-     * attachment.
+     * attachment. If you are specifying a network interface in a
+     * <a>RunInstances</a> request, you must provide the device index.
      */
     private Integer deviceIndex;
 
     /**
-     * The ID of the subnet associated with the network string.
+     * The ID of the subnet associated with the network string. Applies only
+     * if creating a network interface when launching an instance.
      */
     private String subnetId;
 
     /**
-     * The description of the network interface.
+     * The description of the network interface. Applies only if creating a
+     * network interface when launching an instance.
      */
     private String description;
 
     /**
-     * The private IP address of the network interface.
+     * The private IP address of the network interface. Applies only if
+     * creating a network interface when launching an instance.
      */
     private String privateIpAddress;
 
     /**
-     * The IDs of the security groups for the network interface.
+     * The IDs of the security groups for the network interface. Applies only
+     * if creating a network interface when launching an instance.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groups;
 
@@ -63,11 +68,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
 
     /**
      * One or more private IP addresses to assign to the network interface.
+     * Only one private IP address can be designated as primary.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification> privateIpAddresses;
 
     /**
-     * The number of secondary private IP addresses.
+     * The number of secondary private IP addresses. You can't specify this
+     * option and specify more than one private IP address using the private
+     * IP addresses option.
      */
     private Integer secondaryPrivateIpAddressCount;
 
@@ -76,7 +84,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request.
+     * network interface in the request. If luanching into a default subnet,
+     * the default value is <code>true</code>.
      */
     private Boolean associatePublicIpAddress;
 
@@ -115,10 +124,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
 
     /**
      * The index of the device on the instance for the network interface
-     * attachment.
+     * attachment. If you are specifying a network interface in a
+     * <a>RunInstances</a> request, you must provide the device index.
      *
      * @return The index of the device on the instance for the network interface
-     *         attachment.
+     *         attachment. If you are specifying a network interface in a
+     *         <a>RunInstances</a> request, you must provide the device index.
      */
     public Integer getDeviceIndex() {
         return deviceIndex;
@@ -126,10 +137,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     
     /**
      * The index of the device on the instance for the network interface
-     * attachment.
+     * attachment. If you are specifying a network interface in a
+     * <a>RunInstances</a> request, you must provide the device index.
      *
      * @param deviceIndex The index of the device on the instance for the network interface
-     *         attachment.
+     *         attachment. If you are specifying a network interface in a
+     *         <a>RunInstances</a> request, you must provide the device index.
      */
     public void setDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
@@ -137,12 +150,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     
     /**
      * The index of the device on the instance for the network interface
-     * attachment.
+     * attachment. If you are specifying a network interface in a
+     * <a>RunInstances</a> request, you must provide the device index.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deviceIndex The index of the device on the instance for the network interface
-     *         attachment.
+     *         attachment. If you are specifying a network interface in a
+     *         <a>RunInstances</a> request, you must provide the device index.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -153,29 +168,35 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
 
     /**
-     * The ID of the subnet associated with the network string.
+     * The ID of the subnet associated with the network string. Applies only
+     * if creating a network interface when launching an instance.
      *
-     * @return The ID of the subnet associated with the network string.
+     * @return The ID of the subnet associated with the network string. Applies only
+     *         if creating a network interface when launching an instance.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * The ID of the subnet associated with the network string.
+     * The ID of the subnet associated with the network string. Applies only
+     * if creating a network interface when launching an instance.
      *
-     * @param subnetId The ID of the subnet associated with the network string.
+     * @param subnetId The ID of the subnet associated with the network string. Applies only
+     *         if creating a network interface when launching an instance.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * The ID of the subnet associated with the network string.
+     * The ID of the subnet associated with the network string. Applies only
+     * if creating a network interface when launching an instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The ID of the subnet associated with the network string.
+     * @param subnetId The ID of the subnet associated with the network string. Applies only
+     *         if creating a network interface when launching an instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -186,29 +207,35 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
 
     /**
-     * The description of the network interface.
+     * The description of the network interface. Applies only if creating a
+     * network interface when launching an instance.
      *
-     * @return The description of the network interface.
+     * @return The description of the network interface. Applies only if creating a
+     *         network interface when launching an instance.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * The description of the network interface.
+     * The description of the network interface. Applies only if creating a
+     * network interface when launching an instance.
      *
-     * @param description The description of the network interface.
+     * @param description The description of the network interface. Applies only if creating a
+     *         network interface when launching an instance.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * The description of the network interface.
+     * The description of the network interface. Applies only if creating a
+     * network interface when launching an instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The description of the network interface.
+     * @param description The description of the network interface. Applies only if creating a
+     *         network interface when launching an instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -219,29 +246,35 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
 
     /**
-     * The private IP address of the network interface.
+     * The private IP address of the network interface. Applies only if
+     * creating a network interface when launching an instance.
      *
-     * @return The private IP address of the network interface.
+     * @return The private IP address of the network interface. Applies only if
+     *         creating a network interface when launching an instance.
      */
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
     
     /**
-     * The private IP address of the network interface.
+     * The private IP address of the network interface. Applies only if
+     * creating a network interface when launching an instance.
      *
-     * @param privateIpAddress The private IP address of the network interface.
+     * @param privateIpAddress The private IP address of the network interface. Applies only if
+     *         creating a network interface when launching an instance.
      */
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
     
     /**
-     * The private IP address of the network interface.
+     * The private IP address of the network interface. Applies only if
+     * creating a network interface when launching an instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param privateIpAddress The private IP address of the network interface.
+     * @param privateIpAddress The private IP address of the network interface. Applies only if
+     *         creating a network interface when launching an instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -252,9 +285,11 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
 
     /**
-     * The IDs of the security groups for the network interface.
+     * The IDs of the security groups for the network interface. Applies only
+     * if creating a network interface when launching an instance.
      *
-     * @return The IDs of the security groups for the network interface.
+     * @return The IDs of the security groups for the network interface. Applies only
+     *         if creating a network interface when launching an instance.
      */
     public java.util.List<String> getGroups() {
         if (groups == null) {
@@ -265,9 +300,11 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
     
     /**
-     * The IDs of the security groups for the network interface.
+     * The IDs of the security groups for the network interface. Applies only
+     * if creating a network interface when launching an instance.
      *
-     * @param groups The IDs of the security groups for the network interface.
+     * @param groups The IDs of the security groups for the network interface. Applies only
+     *         if creating a network interface when launching an instance.
      */
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
@@ -280,11 +317,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
     
     /**
-     * The IDs of the security groups for the network interface.
+     * The IDs of the security groups for the network interface. Applies only
+     * if creating a network interface when launching an instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groups The IDs of the security groups for the network interface.
+     * @param groups The IDs of the security groups for the network interface. Applies only
+     *         if creating a network interface when launching an instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -298,11 +337,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
     
     /**
-     * The IDs of the security groups for the network interface.
+     * The IDs of the security groups for the network interface. Applies only
+     * if creating a network interface when launching an instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groups The IDs of the security groups for the network interface.
+     * @param groups The IDs of the security groups for the network interface. Applies only
+     *         if creating a network interface when launching an instance.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -379,8 +420,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
 
     /**
      * One or more private IP addresses to assign to the network interface.
+     * Only one private IP address can be designated as primary.
      *
      * @return One or more private IP addresses to assign to the network interface.
+     *         Only one private IP address can be designated as primary.
      */
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
@@ -392,8 +435,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     
     /**
      * One or more private IP addresses to assign to the network interface.
+     * Only one private IP address can be designated as primary.
      *
      * @param privateIpAddresses One or more private IP addresses to assign to the network interface.
+     *         Only one private IP address can be designated as primary.
      */
     public void setPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -407,10 +452,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     
     /**
      * One or more private IP addresses to assign to the network interface.
+     * Only one private IP address can be designated as primary.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses One or more private IP addresses to assign to the network interface.
+     *         Only one private IP address can be designated as primary.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -425,10 +472,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     
     /**
      * One or more private IP addresses to assign to the network interface.
+     * Only one private IP address can be designated as primary.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses One or more private IP addresses to assign to the network interface.
+     *         Only one private IP address can be designated as primary.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -446,29 +495,41 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     }
 
     /**
-     * The number of secondary private IP addresses.
+     * The number of secondary private IP addresses. You can't specify this
+     * option and specify more than one private IP address using the private
+     * IP addresses option.
      *
-     * @return The number of secondary private IP addresses.
+     * @return The number of secondary private IP addresses. You can't specify this
+     *         option and specify more than one private IP address using the private
+     *         IP addresses option.
      */
     public Integer getSecondaryPrivateIpAddressCount() {
         return secondaryPrivateIpAddressCount;
     }
     
     /**
-     * The number of secondary private IP addresses.
+     * The number of secondary private IP addresses. You can't specify this
+     * option and specify more than one private IP address using the private
+     * IP addresses option.
      *
-     * @param secondaryPrivateIpAddressCount The number of secondary private IP addresses.
+     * @param secondaryPrivateIpAddressCount The number of secondary private IP addresses. You can't specify this
+     *         option and specify more than one private IP address using the private
+     *         IP addresses option.
      */
     public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
     }
     
     /**
-     * The number of secondary private IP addresses.
+     * The number of secondary private IP addresses. You can't specify this
+     * option and specify more than one private IP address using the private
+     * IP addresses option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param secondaryPrivateIpAddressCount The number of secondary private IP addresses.
+     * @param secondaryPrivateIpAddressCount The number of secondary private IP addresses. You can't specify this
+     *         option and specify more than one private IP address using the private
+     *         IP addresses option.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -483,13 +544,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request.
+     * network interface in the request. If luanching into a default subnet,
+     * the default value is <code>true</code>.
      *
      * @return Indicates whether to assign a public IP address to an instance you
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request.
+     *         network interface in the request. If luanching into a default subnet,
+     *         the default value is <code>true</code>.
      */
     public Boolean isAssociatePublicIpAddress() {
         return associatePublicIpAddress;
@@ -500,13 +563,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request.
+     * network interface in the request. If luanching into a default subnet,
+     * the default value is <code>true</code>.
      *
      * @param associatePublicIpAddress Indicates whether to assign a public IP address to an instance you
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request.
+     *         network interface in the request. If luanching into a default subnet,
+     *         the default value is <code>true</code>.
      */
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
         this.associatePublicIpAddress = associatePublicIpAddress;
@@ -517,7 +582,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request.
+     * network interface in the request. If luanching into a default subnet,
+     * the default value is <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -525,7 +591,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request.
+     *         network interface in the request. If luanching into a default subnet,
+     *         the default value is <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -540,13 +607,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
      * launch in a VPC. The public IP address can only be assigned to a
      * network interface for eth0, and can only be assigned to a new network
      * interface, not an existing one. You cannot specify more than one
-     * network interface in the request.
+     * network interface in the request. If luanching into a default subnet,
+     * the default value is <code>true</code>.
      *
      * @return Indicates whether to assign a public IP address to an instance you
      *         launch in a VPC. The public IP address can only be assigned to a
      *         network interface for eth0, and can only be assigned to a new network
      *         interface, not an existing one. You cannot specify more than one
-     *         network interface in the request.
+     *         network interface in the request. If luanching into a default subnet,
+     *         the default value is <code>true</code>.
      */
     public Boolean getAssociatePublicIpAddress() {
         return associatePublicIpAddress;

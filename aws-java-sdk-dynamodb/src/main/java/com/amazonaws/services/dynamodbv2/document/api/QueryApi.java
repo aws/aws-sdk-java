@@ -16,6 +16,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.ItemCollection;
 import com.amazonaws.services.dynamodbv2.document.KeyAttribute;
 import com.amazonaws.services.dynamodbv2.document.QueryFilter;
@@ -26,6 +28,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
 /**
  * A Table-centric Query API.
  */
+@ThreadSafe
 public interface QueryApi {
     /**
      * Retrieves items by the specified hash key.
@@ -59,9 +62,6 @@ public interface QueryApi {
     /**
      * Retrieves items by the specified hash key, a range key condition, and
      * a filter expression string.
-     *
-     * A new API (post version 2012-08-10) per
-     * https://w.amazon.com/index.php/BigBird/Development/JSON/V1#Conditions_.28Filter_and_Conditional_Writes.29
      *
      * @param filterExpression filter expression
      * example: "(#a > :a) AND (#c > :c OR #e < :e)"

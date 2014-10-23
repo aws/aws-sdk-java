@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user for whom you want to enable the MFA device.
+     * The name of the user for whom you want to enable the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -78,8 +78,8 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user for whom you want to enable the MFA
-     * device.
+     * @param userName The name of the user for whom you want to enable the
+     * MFA device.
      * @param serialNumber The serial number that uniquely identifies the MFA
      * device. For virtual MFA devices, the serial number is the device ARN.
      * @param authenticationCode1 An authentication code emitted by the
@@ -95,33 +95,33 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Name of the user for whom you want to enable the MFA device.
+     * The name of the user for whom you want to enable the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user for whom you want to enable the MFA device.
+     * @return The name of the user for whom you want to enable the MFA device.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user for whom you want to enable the MFA device.
+     * The name of the user for whom you want to enable the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user for whom you want to enable the MFA device.
+     * @param userName The name of the user for whom you want to enable the MFA device.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user for whom you want to enable the MFA device.
+     * The name of the user for whom you want to enable the MFA device.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -129,7 +129,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user for whom you want to enable the MFA device.
+     * @param userName The name of the user for whom you want to enable the MFA device.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -44,6 +44,14 @@ import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
  * topology with a logical router in the middle.
  * </p>
  * <p>
+ * If you launch an instance in a VPC using an Amazon EBS-backed AMI, the
+ * IP address doesn't change if you stop and restart the instance (unlike
+ * a similar instance launched outside a VPC, which gets a new IP address
+ * when restarted). It's therefore possible to have a subnet with no
+ * running instances (they're all stopped), but no remaining IP addresses
+ * available.
+ * </p>
+ * <p>
  * For more information about subnets, see
  * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
  * in the <i>Amazon Virtual Private Cloud User Guide</i> .

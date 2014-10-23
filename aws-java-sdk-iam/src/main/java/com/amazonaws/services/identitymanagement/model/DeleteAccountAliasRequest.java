@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the account alias to delete.
+     * The name of the account alias to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
@@ -51,40 +51,40 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param accountAlias Name of the account alias to delete.
+     * @param accountAlias The name of the account alias to delete.
      */
     public DeleteAccountAliasRequest(String accountAlias) {
         setAccountAlias(accountAlias);
     }
 
     /**
-     * Name of the account alias to delete.
+     * The name of the account alias to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @return Name of the account alias to delete.
+     * @return The name of the account alias to delete.
      */
     public String getAccountAlias() {
         return accountAlias;
     }
     
     /**
-     * Name of the account alias to delete.
+     * The name of the account alias to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @param accountAlias Name of the account alias to delete.
+     * @param accountAlias The name of the account alias to delete.
      */
     public void setAccountAlias(String accountAlias) {
         this.accountAlias = accountAlias;
     }
     
     /**
-     * Name of the account alias to delete.
+     * The name of the account alias to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -92,7 +92,7 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @param accountAlias Name of the account alias to delete.
+     * @param accountAlias The name of the account alias to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

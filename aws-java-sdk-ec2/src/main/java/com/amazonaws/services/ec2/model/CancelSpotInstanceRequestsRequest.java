@@ -30,7 +30,7 @@ import com.amazonaws.services.ec2.model.transform.CancelSpotInstanceRequestsRequ
  * capacity and current Spot Instance requests. For more information
  * about Spot Instances, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  * <p>
  * <b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate

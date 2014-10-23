@@ -69,12 +69,14 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     private String cidrBlock;
 
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP)
+     * for the protocol.
      */
     private IcmpTypeCode icmpTypeCode;
 
     /**
-     * TCP or UDP protocols: The range of ports the rule applies to.
+     * TCP or UDP protocols: The range of ports the rule applies to. Required
+     * if specifying 6 (TCP) or 17 (UDP) for the protocol.
      */
     private PortRange portRange;
 
@@ -349,29 +351,35 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP)
+     * for the protocol.
      *
-     * @return ICMP protocol: The ICMP type and code.
+     * @return ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP)
+     *         for the protocol.
      */
     public IcmpTypeCode getIcmpTypeCode() {
         return icmpTypeCode;
     }
     
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP)
+     * for the protocol.
      *
-     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP)
+     *         for the protocol.
      */
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
     
     /**
-     * ICMP protocol: The ICMP type and code.
+     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP)
+     * for the protocol.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param icmpTypeCode ICMP protocol: The ICMP type and code.
+     * @param icmpTypeCode ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP)
+     *         for the protocol.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -382,29 +390,35 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * TCP or UDP protocols: The range of ports the rule applies to.
+     * TCP or UDP protocols: The range of ports the rule applies to. Required
+     * if specifying 6 (TCP) or 17 (UDP) for the protocol.
      *
-     * @return TCP or UDP protocols: The range of ports the rule applies to.
+     * @return TCP or UDP protocols: The range of ports the rule applies to. Required
+     *         if specifying 6 (TCP) or 17 (UDP) for the protocol.
      */
     public PortRange getPortRange() {
         return portRange;
     }
     
     /**
-     * TCP or UDP protocols: The range of ports the rule applies to.
+     * TCP or UDP protocols: The range of ports the rule applies to. Required
+     * if specifying 6 (TCP) or 17 (UDP) for the protocol.
      *
-     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to. Required
+     *         if specifying 6 (TCP) or 17 (UDP) for the protocol.
      */
     public void setPortRange(PortRange portRange) {
         this.portRange = portRange;
     }
     
     /**
-     * TCP or UDP protocols: The range of ports the rule applies to.
+     * TCP or UDP protocols: The range of ports the rule applies to. Required
+     * if specifying 6 (TCP) or 17 (UDP) for the protocol.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param portRange TCP or UDP protocols: The range of ports the rule applies to.
+     * @param portRange TCP or UDP protocols: The range of ports the rule applies to. Required
+     *         if specifying 6 (TCP) or 17 (UDP) for the protocol.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -26,6 +26,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * modification requests is returned. If a modification ID is specified,
  * only information about the specific modification is returned.
  * </p>
+ * <p>
+ * For more information, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html"> Modifying Reserved Instances </a>
+ * in the Amazon Elastic Compute Cloud User Guide for Linux.
+ * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest)
  */

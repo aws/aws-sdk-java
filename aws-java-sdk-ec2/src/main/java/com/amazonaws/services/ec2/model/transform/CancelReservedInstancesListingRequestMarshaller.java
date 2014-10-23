@@ -39,7 +39,7 @@ public class CancelReservedInstancesListingRequestMarshaller implements Marshall
 
         Request<CancelReservedInstancesListingRequest> request = new DefaultRequest<CancelReservedInstancesListingRequest>(cancelReservedInstancesListingRequest, "AmazonEC2");
         request.addParameter("Action", "CancelReservedInstancesListing");
-        request.addParameter("Version", "2014-06-15");
+        request.addParameter("Version", "2014-09-01");
 
         if (cancelReservedInstancesListingRequest.getReservedInstancesListingId() != null) {
             request.addParameter("ReservedInstancesListingId", StringUtils.fromString(cancelReservedInstancesListingRequest.getReservedInstancesListingId()));

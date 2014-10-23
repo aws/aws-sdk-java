@@ -40,9 +40,10 @@ import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshalle
  * DisassociateAddress.
  * </p>
  * <p>
- * [Nondefault VPC] You must use the DisassociateAddress to disassociate
- * the Elastic IP address before you try to release it. Otherwise, Amazon
- * EC2 returns an error ( <code>InvalidIPAddress.InUse</code> ).
+ * [Nondefault VPC] You must use DisassociateAddress to disassociate the
+ * Elastic IP address before you try to release it. Otherwise, Amazon EC2
+ * returns an error (
+ * <code>InvalidIPAddress.InUse</code> ).
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest)
@@ -50,12 +51,12 @@ import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshalle
 public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReleaseAddressRequest> {
 
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
     private String publicIp;
 
     /**
-     * [EC2-VPC] The allocation ID.
+     * [EC2-VPC] The allocation ID. Required for EC2-VPC.
      */
     private String allocationId;
 
@@ -70,36 +71,37 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param publicIp [EC2-Classic] The Elastic IP address.
+     * @param publicIp [EC2-Classic] The Elastic IP address. Required for
+     * EC2-Classic.
      */
     public ReleaseAddressRequest(String publicIp) {
         setPublicIp(publicIp);
     }
 
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      *
-     * @return [EC2-Classic] The Elastic IP address.
+     * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      *
-     * @param publicIp [EC2-Classic] The Elastic IP address.
+     * @param publicIp [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * [EC2-Classic] The Elastic IP address.
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp [EC2-Classic] The Elastic IP address.
+     * @param publicIp [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -110,29 +112,29 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * [EC2-VPC] The allocation ID.
+     * [EC2-VPC] The allocation ID. Required for EC2-VPC.
      *
-     * @return [EC2-VPC] The allocation ID.
+     * @return [EC2-VPC] The allocation ID. Required for EC2-VPC.
      */
     public String getAllocationId() {
         return allocationId;
     }
     
     /**
-     * [EC2-VPC] The allocation ID.
+     * [EC2-VPC] The allocation ID. Required for EC2-VPC.
      *
-     * @param allocationId [EC2-VPC] The allocation ID.
+     * @param allocationId [EC2-VPC] The allocation ID. Required for EC2-VPC.
      */
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
     
     /**
-     * [EC2-VPC] The allocation ID.
+     * [EC2-VPC] The allocation ID. Required for EC2-VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocationId [EC2-VPC] The allocation ID.
+     * @param allocationId [EC2-VPC] The allocation ID. Required for EC2-VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

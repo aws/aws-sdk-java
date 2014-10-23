@@ -23,6 +23,7 @@ import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler2;
+import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetricsFullSupport;
 
@@ -35,6 +36,12 @@ public class ExecutionContext {
 
     /** Optional credentials to enable the runtime layer to handle signing requests (and resigning on retries). */
     private AWSCredentials credentials;
+
+    /**
+     * An internal retry strategy for auth errors. This is currently only used
+     * by the S3 client for auto-resolving V4-required regions.
+     */
+    private AuthErrorRetryStrategy authErrorRetryStrategy;
 
     /** For testing purposes. */
     public ExecutionContext(boolean isMetricEnabled) {
@@ -67,6 +74,10 @@ public class ExecutionContext {
 
     public AWSRequestMetrics getAwsRequestMetrics() {
         return awsRequestMetrics;
+    }
+
+    protected AmazonWebServiceClient getAwsClient() {
+        return awsClient;
     }
 
     /**
@@ -108,5 +119,27 @@ public class ExecutionContext {
      */
     public void setCredentials(AWSCredentials credentials) {
         this.credentials = credentials;
+    }
+
+    /**
+     * Returns the retry strategy for auth errors. This is currently only used
+     * by the S3 client for auto-resolving sigv4-required regions.
+     * <p>
+     * Note that this will be checked BEFORE the HTTP client consults the
+     * user-specified RetryPolicy. i.e. if the configured AuthErrorRetryStrategy
+     * says the request should be retried, the retry will be performed
+     * internally and the effect is transparent to the user's RetryPolicy.
+     */
+    public AuthErrorRetryStrategy getAuthErrorRetryStrategy() {
+        return authErrorRetryStrategy;
+    }
+
+    /**
+     * Sets the optional auth error retry strategy for this request execution.
+     * @see #getAuthErrorRetryStrategy()
+     */
+    public void setAuthErrorRetryStrategy(
+            AuthErrorRetryStrategy authErrorRetryStrategy) {
+        this.authErrorRetryStrategy = authErrorRetryStrategy;
     }
 }

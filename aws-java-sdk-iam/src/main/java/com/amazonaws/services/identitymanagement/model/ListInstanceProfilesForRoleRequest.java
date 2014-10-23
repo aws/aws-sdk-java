@@ -59,8 +59,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of instance profiles you want in the response. If there
+     * are additional instance profiles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -179,8 +179,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
 
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of instance profiles you want in the response. If there
+     * are additional instance profiles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -188,8 +188,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of instance profiles you want in the response. If there
+     *         are additional instance profiles beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -199,8 +199,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of instance profiles you want in the response. If there
+     * are additional instance profiles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -208,8 +208,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of instance profiles you want in the response. If there
+     *         are additional instance profiles beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      */
@@ -219,8 +219,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
     
     /**
      * Use this parameter only when paginating results to indicate the
-     * maximum number of user names you want in the response. If there are
-     * additional user names beyond the maximum you specify, the
+     * maximum number of instance profiles you want in the response. If there
+     * are additional instance profiles beyond the maximum you specify, the
      * <code>IsTruncated</code> response element is <code>true</code>. This
      * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
@@ -230,8 +230,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this parameter only when paginating results to indicate the
-     *         maximum number of user names you want in the response. If there are
-     *         additional user names beyond the maximum you specify, the
+     *         maximum number of instance profiles you want in the response. If there
+     *         are additional instance profiles beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>. This
      *         parameter is optional. If you do not include it, it defaults to 100.
      *

@@ -43,13 +43,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> publicIps;
 
     /**
-     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     * [EC2-VPC] The allocation ID for the address. </li> <li>
-     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     * address. </li> <li> <p><code>domain</code> - Indicates whether the
-     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     * the instance the address is associated with, if any. </li> <li>
+     * One or more filters. Filter names and values are case-sensitive. <ul>
+     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     * the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     * association ID for the address. </li> <li> <p><code>domain</code> -
+     * Indicates whether the address is for use in EC2-Classic
+     * (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     * <p><code>instance-id</code> - The ID of the instance the address is
+     * associated with, if any. </li> <li>
      * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      * interface that the address is associated with, if any. </li> <li>
      * <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -142,13 +143,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     * [EC2-VPC] The allocation ID for the address. </li> <li>
-     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     * address. </li> <li> <p><code>domain</code> - Indicates whether the
-     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     * the instance the address is associated with, if any. </li> <li>
+     * One or more filters. Filter names and values are case-sensitive. <ul>
+     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     * the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     * association ID for the address. </li> <li> <p><code>domain</code> -
+     * Indicates whether the address is for use in EC2-Classic
+     * (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     * <p><code>instance-id</code> - The ID of the instance the address is
+     * associated with, if any. </li> <li>
      * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      * interface that the address is associated with, if any. </li> <li>
      * <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -156,13 +158,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * private IP address associated with the Elastic IP address. </li> <li>
      * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
-     * @return One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     *         [EC2-VPC] The allocation ID for the address. </li> <li>
-     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
-     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     *         the instance the address is associated with, if any. </li> <li>
+     * @return One or more filters. Filter names and values are case-sensitive. <ul>
+     *         <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     *         the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     *         association ID for the address. </li> <li> <p><code>domain</code> -
+     *         Indicates whether the address is for use in EC2-Classic
+     *         (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     *         <p><code>instance-id</code> - The ID of the instance the address is
+     *         associated with, if any. </li> <li>
      *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      *         interface that the address is associated with, if any. </li> <li>
      *         <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -179,13 +182,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     * [EC2-VPC] The allocation ID for the address. </li> <li>
-     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     * address. </li> <li> <p><code>domain</code> - Indicates whether the
-     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     * the instance the address is associated with, if any. </li> <li>
+     * One or more filters. Filter names and values are case-sensitive. <ul>
+     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     * the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     * association ID for the address. </li> <li> <p><code>domain</code> -
+     * Indicates whether the address is for use in EC2-Classic
+     * (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     * <p><code>instance-id</code> - The ID of the instance the address is
+     * associated with, if any. </li> <li>
      * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      * interface that the address is associated with, if any. </li> <li>
      * <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -193,13 +197,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * private IP address associated with the Elastic IP address. </li> <li>
      * <p><code>public-ip</code> - The Elastic IP address. </li> </ul>
      *
-     * @param filters One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     *         [EC2-VPC] The allocation ID for the address. </li> <li>
-     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
-     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     *         the instance the address is associated with, if any. </li> <li>
+     * @param filters One or more filters. Filter names and values are case-sensitive. <ul>
+     *         <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     *         the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     *         association ID for the address. </li> <li> <p><code>domain</code> -
+     *         Indicates whether the address is for use in EC2-Classic
+     *         (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     *         <p><code>instance-id</code> - The ID of the instance the address is
+     *         associated with, if any. </li> <li>
      *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      *         interface that the address is associated with, if any. </li> <li>
      *         <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -218,13 +223,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     * [EC2-VPC] The allocation ID for the address. </li> <li>
-     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     * address. </li> <li> <p><code>domain</code> - Indicates whether the
-     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     * the instance the address is associated with, if any. </li> <li>
+     * One or more filters. Filter names and values are case-sensitive. <ul>
+     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     * the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     * association ID for the address. </li> <li> <p><code>domain</code> -
+     * Indicates whether the address is for use in EC2-Classic
+     * (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     * <p><code>instance-id</code> - The ID of the instance the address is
+     * associated with, if any. </li> <li>
      * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      * interface that the address is associated with, if any. </li> <li>
      * <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -234,13 +240,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     *         [EC2-VPC] The allocation ID for the address. </li> <li>
-     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
-     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     *         the instance the address is associated with, if any. </li> <li>
+     * @param filters One or more filters. Filter names and values are case-sensitive. <ul>
+     *         <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     *         the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     *         association ID for the address. </li> <li> <p><code>domain</code> -
+     *         Indicates whether the address is for use in EC2-Classic
+     *         (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     *         <p><code>instance-id</code> - The ID of the instance the address is
+     *         associated with, if any. </li> <li>
      *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      *         interface that the address is associated with, if any. </li> <li>
      *         <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -260,13 +267,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     }
     
     /**
-     * One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     * [EC2-VPC] The allocation ID for the address. </li> <li>
-     * <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     * address. </li> <li> <p><code>domain</code> - Indicates whether the
-     * address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     * (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     * the instance the address is associated with, if any. </li> <li>
+     * One or more filters. Filter names and values are case-sensitive. <ul>
+     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     * the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     * association ID for the address. </li> <li> <p><code>domain</code> -
+     * Indicates whether the address is for use in EC2-Classic
+     * (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     * <p><code>instance-id</code> - The ID of the instance the address is
+     * associated with, if any. </li> <li>
      * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      * interface that the address is associated with, if any. </li> <li>
      * <p><code>network-interface-owner-id</code> - The AWS account ID of the
@@ -276,13 +284,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters One or more filters. <ul> <li> <p><code>allocation-id</code> -
-     *         [EC2-VPC] The allocation ID for the address. </li> <li>
-     *         <p><code>association-id</code> - [EC2-VPC] The association ID for the
-     *         address. </li> <li> <p><code>domain</code> - Indicates whether the
-     *         address is for use in EC2-Classic (<code>standard</code>) or in a VPC
-     *         (<code>vpc</code>). </li> <li> <p><code>instance-id</code> - The ID of
-     *         the instance the address is associated with, if any. </li> <li>
+     * @param filters One or more filters. Filter names and values are case-sensitive. <ul>
+     *         <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for
+     *         the address. </li> <li> <p><code>association-id</code> - [EC2-VPC] The
+     *         association ID for the address. </li> <li> <p><code>domain</code> -
+     *         Indicates whether the address is for use in EC2-Classic
+     *         (<code>standard</code>) or in a VPC (<code>vpc</code>). </li> <li>
+     *         <p><code>instance-id</code> - The ID of the instance the address is
+     *         associated with, if any. </li> <li>
      *         <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network
      *         interface that the address is associated with, if any. </li> <li>
      *         <p><code>network-interface-owner-id</code> - The AWS account ID of the

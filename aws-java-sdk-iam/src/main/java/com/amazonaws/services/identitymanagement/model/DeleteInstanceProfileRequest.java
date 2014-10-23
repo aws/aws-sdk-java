@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * have an associated role.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+ * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
  * running with the instance profile you are about to delete. Deleting a
  * role or instance profile that is associated with a running instance
  * will break any applications running on the instance.
@@ -41,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the instance profile to delete.
+     * The name of the instance profile to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -50,33 +50,33 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implem
     private String instanceProfileName;
 
     /**
-     * Name of the instance profile to delete.
+     * The name of the instance profile to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the instance profile to delete.
+     * @return The name of the instance profile to delete.
      */
     public String getInstanceProfileName() {
         return instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to delete.
+     * The name of the instance profile to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to delete.
+     * @param instanceProfileName The name of the instance profile to delete.
      */
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to delete.
+     * The name of the instance profile to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -84,7 +84,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to delete.
+     * @param instanceProfileName The name of the instance profile to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

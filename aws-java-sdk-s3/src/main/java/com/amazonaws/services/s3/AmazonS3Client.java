@@ -100,6 +100,7 @@ import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
 import com.amazonaws.services.s3.internal.S3Signer;
 import com.amazonaws.services.s3.internal.S3StringResponseHandler;
+import com.amazonaws.services.s3.internal.S3V4AuthErrorRetryStrategy;
 import com.amazonaws.services.s3.internal.S3VersionHeaderHandler;
 import com.amazonaws.services.s3.internal.S3XmlResponseHandler;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionHeaderHandler;
@@ -267,7 +268,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private S3ClientOptions clientOptions = new S3ClientOptions();
 
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     /** Whether or not this client has an explicit region configured. */
     private boolean hasExplicitRegion;
@@ -1353,21 +1354,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             } else if ( putObjectRequest.getCannedAcl() != null ) {
                 request.addHeader(Headers.S3_CANNED_ACL, putObjectRequest.getCannedAcl().toString());
             }
-    
+
             if (putObjectRequest.getStorageClass() != null) {
                 request.addHeader(Headers.STORAGE_CLASS, putObjectRequest.getStorageClass());
             }
-    
+
             if (putObjectRequest.getRedirectLocation() != null) {
                 request.addHeader(Headers.REDIRECT_LOCATION, putObjectRequest.getRedirectLocation());
                 if (input == null) {
                     input = new ByteArrayInputStream(new byte[0]);
                 }
             }
-    
+
             // Populate the SSE-CPK parameters to the request header
             populateSseCpkRequestParameters(request, putObjectRequest.getSSECustomerKey());
-    
+
             // Use internal interface to differentiate 0 from unset.
             final Long contentLength = (Long)metadata.getRawMetadataValue(Headers.CONTENT_LENGTH);
             if (contentLength == null) {
@@ -1407,7 +1408,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                  */
                 input = md5DigestStream = new MD5DigestCalculatingInputStream(input);
             }
-    
+
             if (metadata.getContentType() == null) {
                 /*
                  * Default to the "application/octet-stream" if the user hasn't
@@ -1415,7 +1416,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                  */
                 metadata.setContentType(Mimetypes.MIMETYPE_OCTET_STREAM);
             }
-    
+
             populateRequestMetadata(request, metadata);
             request.setContent(input);
             listener = putObjectRequest.getGeneralProgressListener();
@@ -2769,12 +2770,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.setContent(inputStream);
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
             final String etag = metadata.getETag();
-   
+
             if (md5DigestStream != null) {
                 byte[] clientSideHash = md5DigestStream.getMd5Digest();
                 byte[] serverSideHash = BinaryUtils.fromHex(etag);
-   
-   
+
+
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {
                     final String info = "bucketName: " + bucketName + ", key: "
                             + key + ", uploadId: " + uploadId
@@ -3619,6 +3620,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         checkHttps(originalRequest);
         ExecutionContext executionContext = createExecutionContext(originalRequest);
+        // Retry V4 auth errors
+        executionContext.setAuthErrorRetryStrategy(new S3V4AuthErrorRetryStrategy(bucket));
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
         request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3794,5 +3797,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throw new IllegalArgumentException(
                     "HTTPS must be used when sending customer encryption keys (SSE-C) to S3, in order to protect your encryption keys.");
         }
+    }
+
+    /**
+     * For testing
+     */
+    URI getEndpoint() {
+        return endpoint;
     }
 }

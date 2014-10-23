@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the role to update.
+     * The name of the role to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -50,33 +50,33 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest imple
     private String policyDocument;
 
     /**
-     * Name of the role to update.
+     * The name of the role to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the role to update.
+     * @return The name of the role to update.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * Name of the role to update.
+     * The name of the role to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to update.
+     * @param roleName The name of the role to update.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * Name of the role to update.
+     * The name of the role to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -84,7 +84,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest imple
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to update.
+     * @param roleName The name of the role to update.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -149,14 +149,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The ID of the kernel. <important> <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-     * PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>. </important>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      */
     private String kernelId;
 
     /**
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. <important> <p>We recommend that you use
+     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      */
     private String ramdiskId;
 
@@ -884,15 +888,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The ID of the kernel. <important> <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-     * PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>. </important>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      *
      * @return The ID of the kernel. <important> <p>We recommend that you use PV-GRUB
      *         instead of kernels and RAM disks. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-     *         PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>. </important>
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     *         PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </important>
      */
     public String getKernelId() {
         return kernelId;
@@ -901,15 +905,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The ID of the kernel. <important> <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-     * PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>. </important>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      *
      * @param kernelId The ID of the kernel. <important> <p>We recommend that you use PV-GRUB
      *         instead of kernels and RAM disks. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-     *         PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>. </important>
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     *         PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </important>
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -918,17 +922,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * The ID of the kernel. <important> <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-     * PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>. </important>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param kernelId The ID of the kernel. <important> <p>We recommend that you use PV-GRUB
      *         instead of kernels and RAM disks. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image">
-     *         PV-GRUB: A New Amazon Kernel Image</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>. </important>
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     *         PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -939,29 +943,53 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. <important> <p>We recommend that you use
+     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      *
-     * @return The ID of the RAM disk.
+     * @return The ID of the RAM disk. <important> <p>We recommend that you use
+     *         PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     *         PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </important>
      */
     public String getRamdiskId() {
         return ramdiskId;
     }
     
     /**
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. <important> <p>We recommend that you use
+     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      *
-     * @param ramdiskId The ID of the RAM disk.
+     * @param ramdiskId The ID of the RAM disk. <important> <p>We recommend that you use
+     *         PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     *         PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </important>
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
     
     /**
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. <important> <p>We recommend that you use
+     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </important>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ramdiskId The ID of the RAM disk.
+     * @param ramdiskId The ID of the RAM disk. <important> <p>We recommend that you use
+     *         PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     *         PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </important>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

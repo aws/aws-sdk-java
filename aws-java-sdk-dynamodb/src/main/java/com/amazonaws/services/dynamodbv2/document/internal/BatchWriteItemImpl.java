@@ -83,19 +83,25 @@ public class BatchWriteItemImpl implements BatchWriteItemApi {
             final List<PrimaryKey> pksToDelete =
                     tableWriteItems.getPrimaryKeysToDelete();
             // Merge them into a list of write requests to a single table
+            final int numPut = itemsToPut == null ? 0 : itemsToPut.size();
+            final int numDel = pksToDelete == null ? 0 : pksToDelete.size();
             final List<WriteRequest> writeRequests =
-                new ArrayList<WriteRequest>(itemsToPut.size()+pksToDelete.size());
+                new ArrayList<WriteRequest>(numPut + numDel);
             // Put requests for a single table
-            for (Item item: itemsToPut) {
-                writeRequests.add(new WriteRequest()
-                    .withPutRequest(new PutRequest()
-                        .withItem(toAttributeValues(item))));
+            if (itemsToPut != null) {
+                for (Item item: itemsToPut) {
+                    writeRequests.add(new WriteRequest()
+                        .withPutRequest(new PutRequest()
+                            .withItem(toAttributeValues(item))));
+                }
             }
             // Delete requests for a single table
-            for (PrimaryKey pkToDelete: pksToDelete) {
-                writeRequests.add(new WriteRequest()
-                    .withDeleteRequest(new DeleteRequest()
-                        .withKey(toAttributeValueMap(pkToDelete))));
+            if (pksToDelete != null) {
+                for (PrimaryKey pkToDelete: pksToDelete) {
+                    writeRequests.add(new WriteRequest()
+                        .withDeleteRequest(new DeleteRequest()
+                            .withKey(toAttributeValueMap(pkToDelete))));
+                }
             }
             requestItems.put(tableWriteItems.getTableName(), writeRequests);
         }

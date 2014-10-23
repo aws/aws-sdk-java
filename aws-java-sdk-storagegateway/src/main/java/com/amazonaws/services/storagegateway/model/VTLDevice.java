@@ -18,15 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a device object associated with a Gateway-Virtual Tape
- * Library.
+ * Represents a device object associated with a gateway-VTL.
  * </p>
  */
 public class VTLDevice implements Serializable {
 
     /**
-     * Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
-     * Library device (tape drive or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape
+     * drive or media changer).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -45,44 +44,44 @@ public class VTLDevice implements Serializable {
     private DeviceiSCSIAttributes deviceiSCSIAttributes;
 
     /**
-     * Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
-     * Library device (tape drive or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape
+     * drive or media changer).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
-     *         Library device (tape drive or media changer).
+     * @return Specifies the unique Amazon Resource Name (ARN) of the device (tape
+     *         drive or media changer).
      */
     public String getVTLDeviceARN() {
         return vTLDeviceARN;
     }
     
     /**
-     * Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
-     * Library device (tape drive or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape
+     * drive or media changer).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param vTLDeviceARN Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
-     *         Library device (tape drive or media changer).
+     * @param vTLDeviceARN Specifies the unique Amazon Resource Name (ARN) of the device (tape
+     *         drive or media changer).
      */
     public void setVTLDeviceARN(String vTLDeviceARN) {
         this.vTLDeviceARN = vTLDeviceARN;
     }
     
     /**
-     * Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
-     * Library device (tape drive or media changer).
+     * Specifies the unique Amazon Resource Name (ARN) of the device (tape
+     * drive or media changer).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param vTLDeviceARN Specifies the unique Amazon Resource Name (ARN) of the Virtual Tape
-     *         Library device (tape drive or media changer).
+     * @param vTLDeviceARN Specifies the unique Amazon Resource Name (ARN) of the device (tape
+     *         drive or media changer).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

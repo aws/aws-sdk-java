@@ -38,11 +38,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      * of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. </li> <li>
-     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     * the default VPC. </li> <li> <p><code>state</code> - The state of the
-     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * CIDR block for information to be returned for the VPC. Must contain
+     * the slash followed by one or two digits (for example,
+     * <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     * of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     * Indicates whether the VPC is the default VPC. </li> <li>
+     * <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     * <code>available</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -131,11 +133,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      * of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. </li> <li>
-     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     * the default VPC. </li> <li> <p><code>state</code> - The state of the
-     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * CIDR block for information to be returned for the VPC. Must contain
+     * the slash followed by one or two digits (for example,
+     * <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     * of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     * Indicates whether the VPC is the default VPC. </li> <li>
+     * <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     * <code>available</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -153,11 +157,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @return One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      *         of the VPC. The CIDR block you specify must exactly match the VPC's
-     *         CIDR block for information to be returned for the VPC. </li> <li>
-     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
-     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         CIDR block for information to be returned for the VPC. Must contain
+     *         the slash followed by one or two digits (for example,
+     *         <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     *         of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     *         Indicates whether the VPC is the default VPC. </li> <li>
+     *         <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     *         <code>available</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -184,11 +190,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      * of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. </li> <li>
-     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     * the default VPC. </li> <li> <p><code>state</code> - The state of the
-     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * CIDR block for information to be returned for the VPC. Must contain
+     * the slash followed by one or two digits (for example,
+     * <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     * of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     * Indicates whether the VPC is the default VPC. </li> <li>
+     * <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     * <code>available</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -206,11 +214,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param filters One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      *         of the VPC. The CIDR block you specify must exactly match the VPC's
-     *         CIDR block for information to be returned for the VPC. </li> <li>
-     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
-     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         CIDR block for information to be returned for the VPC. Must contain
+     *         the slash followed by one or two digits (for example,
+     *         <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     *         of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     *         Indicates whether the VPC is the default VPC. </li> <li>
+     *         <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     *         <code>available</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -239,11 +249,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      * of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. </li> <li>
-     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     * the default VPC. </li> <li> <p><code>state</code> - The state of the
-     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * CIDR block for information to be returned for the VPC. Must contain
+     * the slash followed by one or two digits (for example,
+     * <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     * of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     * Indicates whether the VPC is the default VPC. </li> <li>
+     * <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     * <code>available</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -263,11 +275,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param filters One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      *         of the VPC. The CIDR block you specify must exactly match the VPC's
-     *         CIDR block for information to be returned for the VPC. </li> <li>
-     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
-     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         CIDR block for information to be returned for the VPC. Must contain
+     *         the slash followed by one or two digits (for example,
+     *         <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     *         of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     *         Indicates whether the VPC is the default VPC. </li> <li>
+     *         <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     *         <code>available</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -297,11 +311,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
     /**
      * One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      * of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. </li> <li>
-     * <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     * </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     * the default VPC. </li> <li> <p><code>state</code> - The state of the
-     * VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     * CIDR block for information to be returned for the VPC. Must contain
+     * the slash followed by one or two digits (for example,
+     * <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     * of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     * Indicates whether the VPC is the default VPC. </li> <li>
+     * <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     * <code>available</code>). </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      * combination of a tag assigned to the resource. </li> <li>
      * <p><code>tag-key</code> - The key of a tag assigned to the resource.
@@ -321,11 +337,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param filters One or more filters. <ul> <li> <p><code>cidr</code> - The CIDR block
      *         of the VPC. The CIDR block you specify must exactly match the VPC's
-     *         CIDR block for information to be returned for the VPC. </li> <li>
-     *         <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.
-     *         </li> <li> <p><code>isDefault</code> - Indicates whether the VPC is
-     *         the default VPC. </li> <li> <p><code>state</code> - The state of the
-     *         VPC (<code>pending</code> | <code>available</code>). </li> <li>
+     *         CIDR block for information to be returned for the VPC. Must contain
+     *         the slash followed by one or two digits (for example,
+     *         <code>/28</code>). </li> <li> <p><code>dhcp-options-id</code> - The ID
+     *         of a set of DHCP options. </li> <li> <p><code>isDefault</code> -
+     *         Indicates whether the VPC is the default VPC. </li> <li>
+     *         <p><code>state</code> - The state of the VPC (<code>pending</code> |
+     *         <code>available</code>). </li> <li>
      *         <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value
      *         combination of a tag assigned to the resource. </li> <li>
      *         <p><code>tag-key</code> - The key of a tag assigned to the resource.

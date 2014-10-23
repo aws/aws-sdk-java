@@ -50,8 +50,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * A name for the new image. <p>Constraints: 3-128 alphanumeric
-     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
-     * underscores(_)
+     * characters, parentheses (()), square brackets ([]), spaces ( ),
+     * periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+     * or underscores(_)
      */
     private String name;
 
@@ -88,8 +89,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param instanceId The ID of the instance.
      * @param name A name for the new image. <p>Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), periods (.), slashes (/),
-     * dashes (-), or underscores(_)
+     * alphanumeric characters, parentheses (()), square brackets ([]),
+     * spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('),
+     * at-signs (@), or underscores(_)
      */
     public CreateImageRequest(String instanceId, String name) {
         setInstanceId(instanceId);
@@ -131,12 +133,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * A name for the new image. <p>Constraints: 3-128 alphanumeric
-     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
-     * underscores(_)
+     * characters, parentheses (()), square brackets ([]), spaces ( ),
+     * periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+     * or underscores(_)
      *
      * @return A name for the new image. <p>Constraints: 3-128 alphanumeric
-     *         characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
-     *         underscores(_)
+     *         characters, parentheses (()), square brackets ([]), spaces ( ),
+     *         periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+     *         or underscores(_)
      */
     public String getName() {
         return name;
@@ -144,12 +148,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * A name for the new image. <p>Constraints: 3-128 alphanumeric
-     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
-     * underscores(_)
+     * characters, parentheses (()), square brackets ([]), spaces ( ),
+     * periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+     * or underscores(_)
      *
      * @param name A name for the new image. <p>Constraints: 3-128 alphanumeric
-     *         characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
-     *         underscores(_)
+     *         characters, parentheses (()), square brackets ([]), spaces ( ),
+     *         periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+     *         or underscores(_)
      */
     public void setName(String name) {
         this.name = name;
@@ -157,14 +163,16 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     
     /**
      * A name for the new image. <p>Constraints: 3-128 alphanumeric
-     * characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
-     * underscores(_)
+     * characters, parentheses (()), square brackets ([]), spaces ( ),
+     * periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+     * or underscores(_)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name A name for the new image. <p>Constraints: 3-128 alphanumeric
-     *         characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
-     *         underscores(_)
+     *         characters, parentheses (()), square brackets ([]), spaces ( ),
+     *         periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@),
+     *         or underscores(_)
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

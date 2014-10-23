@@ -29,12 +29,14 @@ public class CustomerGateway implements Serializable {
     private String customerGatewayId;
 
     /**
-     * The current state of the customer gateway.
+     * The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).
      */
     private String state;
 
     /**
-     * The type of VPN connection the customer gateway supports.
+     * The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).
      */
     private String type;
 
@@ -89,29 +91,35 @@ public class CustomerGateway implements Serializable {
     }
 
     /**
-     * The current state of the customer gateway.
+     * The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).
      *
-     * @return The current state of the customer gateway.
+     * @return The current state of the customer gateway (<code>pending | available |
+     *         deleting | deleted</code>).
      */
     public String getState() {
         return state;
     }
     
     /**
-     * The current state of the customer gateway.
+     * The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).
      *
-     * @param state The current state of the customer gateway.
+     * @param state The current state of the customer gateway (<code>pending | available |
+     *         deleting | deleted</code>).
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * The current state of the customer gateway.
+     * The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The current state of the customer gateway.
+     * @param state The current state of the customer gateway (<code>pending | available |
+     *         deleting | deleted</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -122,29 +130,35 @@ public class CustomerGateway implements Serializable {
     }
 
     /**
-     * The type of VPN connection the customer gateway supports.
+     * The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).
      *
-     * @return The type of VPN connection the customer gateway supports.
+     * @return The type of VPN connection the customer gateway supports
+     *         (<code>ipsec.1</code>).
      */
     public String getType() {
         return type;
     }
     
     /**
-     * The type of VPN connection the customer gateway supports.
+     * The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).
      *
-     * @param type The type of VPN connection the customer gateway supports.
+     * @param type The type of VPN connection the customer gateway supports
+     *         (<code>ipsec.1</code>).
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * The type of VPN connection the customer gateway supports.
+     * The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The type of VPN connection the customer gateway supports.
+     * @param type The type of VPN connection the customer gateway supports
+     *         (<code>ipsec.1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

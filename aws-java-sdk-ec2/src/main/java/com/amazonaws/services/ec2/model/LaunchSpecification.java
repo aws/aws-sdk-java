@@ -34,12 +34,18 @@ public class LaunchSpecification implements Serializable {
     private String keyName;
 
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> allSecurityGroups;
 
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
@@ -49,12 +55,12 @@ public class LaunchSpecification implements Serializable {
     private String userData;
 
     /**
-     * <p/>
+     * Deprecated.
      */
     private String addressingType;
 
     /**
-     * The instance type.
+     * The instance type. <p>Default: <code>m1.small</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
@@ -178,9 +184,15 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      *
-     * @return One or more security groups.
+     * @return One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      */
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
         if (allSecurityGroups == null) {
@@ -191,9 +203,15 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      *
-     * @param allSecurityGroups One or more security groups.
+     * @param allSecurityGroups One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      */
     public void setAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
         if (allSecurityGroups == null) {
@@ -206,11 +224,17 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allSecurityGroups One or more security groups.
+     * @param allSecurityGroups One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -224,11 +248,17 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allSecurityGroups One or more security groups.
+     * @param allSecurityGroups One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -246,9 +276,15 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      *
-     * @return One or more security groups.
+     * @return One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -259,9 +295,15 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      *
-     * @param securityGroups One or more security groups.
+     * @param securityGroups One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -274,11 +316,17 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups One or more security groups.
+     * @param securityGroups One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -292,11 +340,17 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * One or more security groups.
+     * One or more security groups. If requesting a Spot Instance in a
+     * nondefault VPC, you must specify the security group ID. If requesting
+     * a Spot Instance in EC2-Classic or a default VPC, you can specify
+     * either the security group name or ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups One or more security groups.
+     * @param securityGroups One or more security groups. If requesting a Spot Instance in a
+     *         nondefault VPC, you must specify the security group ID. If requesting
+     *         a Spot Instance in EC2-Classic or a default VPC, you can specify
+     *         either the security group name or ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -347,29 +401,29 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * <p/>
+     * Deprecated.
      *
-     * @return <p/>
+     * @return Deprecated.
      */
     public String getAddressingType() {
         return addressingType;
     }
     
     /**
-     * <p/>
+     * Deprecated.
      *
-     * @param addressingType <p/>
+     * @param addressingType Deprecated.
      */
     public void setAddressingType(String addressingType) {
         this.addressingType = addressingType;
     }
     
     /**
-     * <p/>
+     * Deprecated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param addressingType <p/>
+     * @param addressingType Deprecated.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -380,12 +434,12 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * The instance type.
+     * The instance type. <p>Default: <code>m1.small</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @return The instance type.
+     * @return The instance type. <p>Default: <code>m1.small</code>
      *
      * @see InstanceType
      */
@@ -394,12 +448,12 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * The instance type.
+     * The instance type. <p>Default: <code>m1.small</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type.
+     * @param instanceType The instance type. <p>Default: <code>m1.small</code>
      *
      * @see InstanceType
      */
@@ -408,14 +462,14 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * The instance type.
+     * The instance type. <p>Default: <code>m1.small</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type.
+     * @param instanceType The instance type. <p>Default: <code>m1.small</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -428,12 +482,12 @@ public class LaunchSpecification implements Serializable {
     }
 
     /**
-     * The instance type.
+     * The instance type. <p>Default: <code>m1.small</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type.
+     * @param instanceType The instance type. <p>Default: <code>m1.small</code>
      *
      * @see InstanceType
      */
@@ -442,14 +496,14 @@ public class LaunchSpecification implements Serializable {
     }
     
     /**
-     * The instance type.
+     * The instance type. <p>Default: <code>m1.small</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, t2.micro, t2.small, t2.medium, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge
      *
-     * @param instanceType The instance type.
+     * @param instanceType The instance type. <p>Default: <code>m1.small</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

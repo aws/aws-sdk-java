@@ -18,12 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The ServerCertificate data type contains information about a server
- * certificate.
+ * Contains information about a server certificate.
  * </p>
  * <p>
- * This data type is used as a response element in the action
- * GetServerCertificate.
+ * This data type is used as a response element in the
+ * GetServerCertificate action.
  * </p>
  */
 public class ServerCertificate implements Serializable {

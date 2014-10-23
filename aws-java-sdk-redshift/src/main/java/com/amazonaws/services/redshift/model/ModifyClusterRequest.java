@@ -29,14 +29,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * parameters to take effect. For more information about managing
  * clusters, go to
  * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
- * in the <i>Amazon Redshift Management Guide</i>
+ * in the <i>Amazon Redshift Management Guide</i> .
+ * 
  * </p>
  * <p>
  * You can also change node type and the number of nodes to scale up or
  * down the cluster. When resizing a cluster, you must specify both the
  * number of nodes and the node type even if one of the parameters does
- * not change. If you specify the same number of nodes and node type that
- * are already configured for the cluster, an error is returned.
+ * not change.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyCluster(ModifyClusterRequest)
@@ -62,15 +62,15 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The new node type of the cluster. If you specify a new node type, you
-     * must also specify the number of nodes parameter also. <p> When you
-     * submit your request to resize a cluster, Amazon Redshift sets access
+     * must also specify the number of nodes parameter. <p> When you submit
+     * your request to resize a cluster, Amazon Redshift sets access
      * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
-     * restored. You can use the <a>DescribeResize</a> to track the progress
-     * of the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
+     * restored. You can use <a>DescribeResize</a> to track the progress of
+     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
      */
@@ -78,9 +78,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The new number of nodes of the cluster. If you specify a new number of
-     * nodes, you must also specify the node type parameter also. <p> When
-     * you submit your request to resize a cluster, Amazon Redshift sets
-     * access permissions for the cluster to read-only. After Amazon Redshift
+     * nodes, you must also specify the node type parameter. <p> When you
+     * submit your request to resize a cluster, Amazon Redshift sets access
+     * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
@@ -176,8 +176,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     private String clusterVersion;
 
     /**
-     * If <code>true</code>, upgrades will be applied automatically to the
-     * cluster during the maintenance window. <p>Default: <code>false</code>
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
+     * <p>Default: <code>false</code>
      */
     private Boolean allowVersionUpgrade;
 
@@ -314,28 +315,28 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The new node type of the cluster. If you specify a new node type, you
-     * must also specify the number of nodes parameter also. <p> When you
-     * submit your request to resize a cluster, Amazon Redshift sets access
+     * must also specify the number of nodes parameter. <p> When you submit
+     * your request to resize a cluster, Amazon Redshift sets access
      * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
-     * restored. You can use the <a>DescribeResize</a> to track the progress
-     * of the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
+     * restored. You can use <a>DescribeResize</a> to track the progress of
+     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
      *
      * @return The new node type of the cluster. If you specify a new node type, you
-     *         must also specify the number of nodes parameter also. <p> When you
-     *         submit your request to resize a cluster, Amazon Redshift sets access
+     *         must also specify the number of nodes parameter. <p> When you submit
+     *         your request to resize a cluster, Amazon Redshift sets access
      *         permissions for the cluster to read-only. After Amazon Redshift
      *         provisions a new cluster according to your resize requirements, there
      *         will be a temporary outage while the old cluster is deleted and your
      *         connection is switched to the new cluster. When the new connection is
      *         complete, the original access permissions for the cluster are
-     *         restored. You can use the <a>DescribeResize</a> to track the progress
-     *         of the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
+     *         restored. You can use <a>DescribeResize</a> to track the progress of
+     *         the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
      *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      *         <code>dw2.8xlarge</code>.
      */
@@ -345,28 +346,28 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The new node type of the cluster. If you specify a new node type, you
-     * must also specify the number of nodes parameter also. <p> When you
-     * submit your request to resize a cluster, Amazon Redshift sets access
+     * must also specify the number of nodes parameter. <p> When you submit
+     * your request to resize a cluster, Amazon Redshift sets access
      * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
-     * restored. You can use the <a>DescribeResize</a> to track the progress
-     * of the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
+     * restored. You can use <a>DescribeResize</a> to track the progress of
+     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
      *
      * @param nodeType The new node type of the cluster. If you specify a new node type, you
-     *         must also specify the number of nodes parameter also. <p> When you
-     *         submit your request to resize a cluster, Amazon Redshift sets access
+     *         must also specify the number of nodes parameter. <p> When you submit
+     *         your request to resize a cluster, Amazon Redshift sets access
      *         permissions for the cluster to read-only. After Amazon Redshift
      *         provisions a new cluster according to your resize requirements, there
      *         will be a temporary outage while the old cluster is deleted and your
      *         connection is switched to the new cluster. When the new connection is
      *         complete, the original access permissions for the cluster are
-     *         restored. You can use the <a>DescribeResize</a> to track the progress
-     *         of the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
+     *         restored. You can use <a>DescribeResize</a> to track the progress of
+     *         the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
      *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      *         <code>dw2.8xlarge</code>.
      */
@@ -376,30 +377,30 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The new node type of the cluster. If you specify a new node type, you
-     * must also specify the number of nodes parameter also. <p> When you
-     * submit your request to resize a cluster, Amazon Redshift sets access
+     * must also specify the number of nodes parameter. <p> When you submit
+     * your request to resize a cluster, Amazon Redshift sets access
      * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
      * complete, the original access permissions for the cluster are
-     * restored. You can use the <a>DescribeResize</a> to track the progress
-     * of the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
+     * restored. You can use <a>DescribeResize</a> to track the progress of
+     * the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
      * <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      * <code>dw2.8xlarge</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nodeType The new node type of the cluster. If you specify a new node type, you
-     *         must also specify the number of nodes parameter also. <p> When you
-     *         submit your request to resize a cluster, Amazon Redshift sets access
+     *         must also specify the number of nodes parameter. <p> When you submit
+     *         your request to resize a cluster, Amazon Redshift sets access
      *         permissions for the cluster to read-only. After Amazon Redshift
      *         provisions a new cluster according to your resize requirements, there
      *         will be a temporary outage while the old cluster is deleted and your
      *         connection is switched to the new cluster. When the new connection is
      *         complete, the original access permissions for the cluster are
-     *         restored. You can use the <a>DescribeResize</a> to track the progress
-     *         of the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
+     *         restored. You can use <a>DescribeResize</a> to track the progress of
+     *         the resize request. <p>Valid Values: <code> dw1.xlarge</code> |
      *         <code>dw1.8xlarge</code> | <code>dw2.large</code> |
      *         <code>dw2.8xlarge</code>.
      *
@@ -413,9 +414,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * The new number of nodes of the cluster. If you specify a new number of
-     * nodes, you must also specify the node type parameter also. <p> When
-     * you submit your request to resize a cluster, Amazon Redshift sets
-     * access permissions for the cluster to read-only. After Amazon Redshift
+     * nodes, you must also specify the node type parameter. <p> When you
+     * submit your request to resize a cluster, Amazon Redshift sets access
+     * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
@@ -425,9 +426,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * <code>0</code>.
      *
      * @return The new number of nodes of the cluster. If you specify a new number of
-     *         nodes, you must also specify the node type parameter also. <p> When
-     *         you submit your request to resize a cluster, Amazon Redshift sets
-     *         access permissions for the cluster to read-only. After Amazon Redshift
+     *         nodes, you must also specify the node type parameter. <p> When you
+     *         submit your request to resize a cluster, Amazon Redshift sets access
+     *         permissions for the cluster to read-only. After Amazon Redshift
      *         provisions a new cluster according to your resize requirements, there
      *         will be a temporary outage while the old cluster is deleted and your
      *         connection is switched to the new cluster. When the new connection is
@@ -442,9 +443,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The new number of nodes of the cluster. If you specify a new number of
-     * nodes, you must also specify the node type parameter also. <p> When
-     * you submit your request to resize a cluster, Amazon Redshift sets
-     * access permissions for the cluster to read-only. After Amazon Redshift
+     * nodes, you must also specify the node type parameter. <p> When you
+     * submit your request to resize a cluster, Amazon Redshift sets access
+     * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
@@ -454,9 +455,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * <code>0</code>.
      *
      * @param numberOfNodes The new number of nodes of the cluster. If you specify a new number of
-     *         nodes, you must also specify the node type parameter also. <p> When
-     *         you submit your request to resize a cluster, Amazon Redshift sets
-     *         access permissions for the cluster to read-only. After Amazon Redshift
+     *         nodes, you must also specify the node type parameter. <p> When you
+     *         submit your request to resize a cluster, Amazon Redshift sets access
+     *         permissions for the cluster to read-only. After Amazon Redshift
      *         provisions a new cluster according to your resize requirements, there
      *         will be a temporary outage while the old cluster is deleted and your
      *         connection is switched to the new cluster. When the new connection is
@@ -471,9 +472,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     
     /**
      * The new number of nodes of the cluster. If you specify a new number of
-     * nodes, you must also specify the node type parameter also. <p> When
-     * you submit your request to resize a cluster, Amazon Redshift sets
-     * access permissions for the cluster to read-only. After Amazon Redshift
+     * nodes, you must also specify the node type parameter. <p> When you
+     * submit your request to resize a cluster, Amazon Redshift sets access
+     * permissions for the cluster to read-only. After Amazon Redshift
      * provisions a new cluster according to your resize requirements, there
      * will be a temporary outage while the old cluster is deleted and your
      * connection is switched to the new cluster. When the new connection is
@@ -485,9 +486,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numberOfNodes The new number of nodes of the cluster. If you specify a new number of
-     *         nodes, you must also specify the node type parameter also. <p> When
-     *         you submit your request to resize a cluster, Amazon Redshift sets
-     *         access permissions for the cluster to read-only. After Amazon Redshift
+     *         nodes, you must also specify the node type parameter. <p> When you
+     *         submit your request to resize a cluster, Amazon Redshift sets access
+     *         permissions for the cluster to read-only. After Amazon Redshift
      *         provisions a new cluster according to your resize requirements, there
      *         will be a temporary outage while the old cluster is deleted and your
      *         connection is switched to the new cluster. When the new connection is
@@ -1114,35 +1115,41 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * If <code>true</code>, upgrades will be applied automatically to the
-     * cluster during the maintenance window. <p>Default: <code>false</code>
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
+     * <p>Default: <code>false</code>
      *
-     * @return If <code>true</code>, upgrades will be applied automatically to the
-     *         cluster during the maintenance window. <p>Default: <code>false</code>
+     * @return If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
+     *         <p>Default: <code>false</code>
      */
     public Boolean isAllowVersionUpgrade() {
         return allowVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, upgrades will be applied automatically to the
-     * cluster during the maintenance window. <p>Default: <code>false</code>
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
+     * <p>Default: <code>false</code>
      *
-     * @param allowVersionUpgrade If <code>true</code>, upgrades will be applied automatically to the
-     *         cluster during the maintenance window. <p>Default: <code>false</code>
+     * @param allowVersionUpgrade If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
+     *         <p>Default: <code>false</code>
      */
     public void setAllowVersionUpgrade(Boolean allowVersionUpgrade) {
         this.allowVersionUpgrade = allowVersionUpgrade;
     }
     
     /**
-     * If <code>true</code>, upgrades will be applied automatically to the
-     * cluster during the maintenance window. <p>Default: <code>false</code>
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
+     * <p>Default: <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allowVersionUpgrade If <code>true</code>, upgrades will be applied automatically to the
-     *         cluster during the maintenance window. <p>Default: <code>false</code>
+     * @param allowVersionUpgrade If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
+     *         <p>Default: <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1153,11 +1160,13 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * If <code>true</code>, upgrades will be applied automatically to the
-     * cluster during the maintenance window. <p>Default: <code>false</code>
+     * If <code>true</code>, major version upgrades will be applied
+     * automatically to the cluster during the maintenance window.
+     * <p>Default: <code>false</code>
      *
-     * @return If <code>true</code>, upgrades will be applied automatically to the
-     *         cluster during the maintenance window. <p>Default: <code>false</code>
+     * @return If <code>true</code>, major version upgrades will be applied
+     *         automatically to the cluster during the maintenance window.
+     *         <p>Default: <code>false</code>
      */
     public Boolean getAllowVersionUpgrade() {
         return allowVersionUpgrade;

@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -39,7 +39,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
     private String groupName;
 
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -58,8 +58,8 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName Name of the group the policy is associated with.
-     * @param policyName Name of the policy document to delete.
+     * @param groupName The name of the group the policy is associated with.
+     * @param policyName The name of the policy document to delete.
      */
     public DeleteGroupPolicyRequest(String groupName, String policyName) {
         setGroupName(groupName);
@@ -67,33 +67,33 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the group the policy is associated with.
+     * @return The name of the group the policy is associated with.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group the policy is associated with.
+     * @param groupName The name of the group the policy is associated with.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * Name of the group the policy is associated with.
+     * The name of the group the policy is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -101,7 +101,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param groupName Name of the group the policy is associated with.
+     * @param groupName The name of the group the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -112,33 +112,33 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the policy document to delete.
+     * @return The name of the policy document to delete.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to delete.
+     * @param policyName The name of the policy document to delete.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -146,7 +146,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to delete.
+     * @param policyName The name of the policy document to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

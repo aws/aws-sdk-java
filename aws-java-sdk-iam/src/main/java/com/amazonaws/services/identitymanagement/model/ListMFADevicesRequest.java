@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the user whose MFA devices you want to list.
+     * The name of the user whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -79,40 +79,41 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user whose MFA devices you want to list.
+     * @param userName The name of the user whose MFA devices you want to
+     * list.
      */
     public ListMFADevicesRequest(String userName) {
         setUserName(userName);
     }
 
     /**
-     * Name of the user whose MFA devices you want to list.
+     * The name of the user whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose MFA devices you want to list.
+     * @return The name of the user whose MFA devices you want to list.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose MFA devices you want to list.
+     * The name of the user whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose MFA devices you want to list.
+     * @param userName The name of the user whose MFA devices you want to list.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose MFA devices you want to list.
+     * The name of the user whose MFA devices you want to list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -120,7 +121,7 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose MFA devices you want to list.
+     * @param userName The name of the user whose MFA devices you want to list.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

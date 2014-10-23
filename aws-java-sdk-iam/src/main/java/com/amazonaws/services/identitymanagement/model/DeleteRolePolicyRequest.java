@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the role the associated with the policy.
+     * The name of the role the associated with the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -38,7 +38,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
     private String roleName;
 
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -47,33 +47,33 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
     private String policyName;
 
     /**
-     * Name of the role the associated with the policy.
+     * The name of the role the associated with the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the role the associated with the policy.
+     * @return The name of the role the associated with the policy.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * Name of the role the associated with the policy.
+     * The name of the role the associated with the policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role the associated with the policy.
+     * @param roleName The name of the role the associated with the policy.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * Name of the role the associated with the policy.
+     * The name of the role the associated with the policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -81,7 +81,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role the associated with the policy.
+     * @param roleName The name of the role the associated with the policy.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -92,33 +92,33 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the policy document to delete.
+     * @return The name of the policy document to delete.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to delete.
+     * @param policyName The name of the policy document to delete.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Name of the policy document to delete.
+     * The name of the policy document to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -126,7 +126,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document to delete.
+     * @param policyName The name of the policy document to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.util;
 
+import static com.amazonaws.util.BinaryUtils.copyBytesFrom;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -118,20 +120,18 @@ public class StringUtils {
     }
 
     /**
-     * Base64 encodes the data in the specified byte buffer and returns it as a
-     * base64 encoded string.
+     * Base64 encodes the data in the specified byte buffer (from the current
+     * position to the buffer's limit) and returns it as a base64 encoded
+     * string.
      *
      * @param byteBuffer
-     *            The data to base64 encode and return as a string.
+     *            The data to base64 encode and return as a string; must not be
+     *            null.
      *
      * @return The base64 encoded contents of the specified byte buffer.
      */
     public static String fromByteBuffer(ByteBuffer byteBuffer) {
-        if (byteBuffer.hasArray())
-            return Base64.encodeAsString(byteBuffer.array());
-        byte[] binaryData = new byte[byteBuffer.limit()];
-        byteBuffer.get(binaryData);
-        return Base64.encodeAsString(binaryData);
+        return Base64.encodeAsString(copyBytesFrom(byteBuffer));
     }
 
     public static String replace( String originalString, String partToMatch, String replacement ) {

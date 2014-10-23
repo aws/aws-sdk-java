@@ -83,6 +83,20 @@ public class CreateIdentityPoolRequestMarshaller implements Marshaller<Request<C
                 jsonWriter.key("DeveloperProviderName").value(createIdentityPoolRequest.getDeveloperProviderName());
             }
 
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> openIdConnectProviderARNsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createIdentityPoolRequest.getOpenIdConnectProviderARNs());
+            if (openIdConnectProviderARNsList != null && !(openIdConnectProviderARNsList.isAutoConstruct() && openIdConnectProviderARNsList.isEmpty())) {
+
+                jsonWriter.key("OpenIdConnectProviderARNs");
+                jsonWriter.array();
+
+                for (String openIdConnectProviderARNsListValue : openIdConnectProviderARNsList) {
+                    if (openIdConnectProviderARNsListValue != null) {
+                        jsonWriter.value(openIdConnectProviderARNsListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
           jsonWriter.endObject();
 
           String snippet = stringWriter.toString();

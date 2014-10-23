@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.dynamodbv2.document.api;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.TableCollection;
 import com.amazonaws.services.dynamodbv2.document.spec.ListTablesSpec;
 import com.amazonaws.services.dynamodbv2.model.ListTablesResult;
@@ -21,6 +23,7 @@ import com.amazonaws.services.dynamodbv2.model.ListTablesResult;
 /**
  * DynamoDB ListTables API.
  */
+@ThreadSafe
 public interface ListTablesApi {
     /**
      * Returns a collection of all the tables (initialized with the respective

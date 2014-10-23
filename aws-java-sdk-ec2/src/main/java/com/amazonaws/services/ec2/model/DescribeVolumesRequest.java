@@ -26,6 +26,16 @@ import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshall
  * Describes the specified Amazon EBS volumes.
  * </p>
  * <p>
+ * If you are describing a long list of volumes, you can paginate the
+ * output to make the list more manageable. The <code>MaxResults</code>
+ * parameter sets the maximum number of results returned in a single
+ * page. If the list of results exceeds your <code>MaxResults</code>
+ * value, then that number of results is returned along with a
+ * <code>NextToken</code> value that can be passed to a subsequent
+ * <code>DescribeVolumes</code> request to retrieve the remaining
+ * results.
+ * </p>
+ * <p>
  * For more information about Amazon EBS volumes, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
  * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -79,6 +89,31 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <code>standard</code> for Magnetic volumes. </li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
+
+    /**
+     * The <code>NextToken</code> value returned from a previous paginated
+     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the
+     * <code>NextToken</code> value. This value is <code>null</code> when
+     * there are no more results to return.
+     */
+    private String nextToken;
+
+    /**
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumes</code> in paginated output. When this parameter
+     * is used, <code>DescribeVolumes</code> only returns
+     * <code>MaxResults</code> results in a single page along with a
+     * <code>NextToken</code> response element. The remaining results of the
+     * initial request can be seen by sending another
+     * <code>DescribeVolumes</code> request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumes</code> returns all results.
+     */
+    private Integer maxResults;
 
     /**
      * Default constructor for a new DescribeVolumesRequest object.  Callers should use the
@@ -514,6 +549,162 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * The <code>NextToken</code> value returned from a previous paginated
+     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the
+     * <code>NextToken</code> value. This value is <code>null</code> when
+     * there are no more results to return.
+     *
+     * @return The <code>NextToken</code> value returned from a previous paginated
+     *         <code>DescribeVolumes</code> request where <code>MaxResults</code> was
+     *         used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the
+     *         <code>NextToken</code> value. This value is <code>null</code> when
+     *         there are no more results to return.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * The <code>NextToken</code> value returned from a previous paginated
+     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the
+     * <code>NextToken</code> value. This value is <code>null</code> when
+     * there are no more results to return.
+     *
+     * @param nextToken The <code>NextToken</code> value returned from a previous paginated
+     *         <code>DescribeVolumes</code> request where <code>MaxResults</code> was
+     *         used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the
+     *         <code>NextToken</code> value. This value is <code>null</code> when
+     *         there are no more results to return.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * The <code>NextToken</code> value returned from a previous paginated
+     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination
+     * continues from the end of the previous results that returned the
+     * <code>NextToken</code> value. This value is <code>null</code> when
+     * there are no more results to return.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The <code>NextToken</code> value returned from a previous paginated
+     *         <code>DescribeVolumes</code> request where <code>MaxResults</code> was
+     *         used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the
+     *         <code>NextToken</code> value. This value is <code>null</code> when
+     *         there are no more results to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeVolumesRequest withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+
+    /**
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumes</code> in paginated output. When this parameter
+     * is used, <code>DescribeVolumes</code> only returns
+     * <code>MaxResults</code> results in a single page along with a
+     * <code>NextToken</code> response element. The remaining results of the
+     * initial request can be seen by sending another
+     * <code>DescribeVolumes</code> request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumes</code> returns all results.
+     *
+     * @return The maximum number of volume results returned by
+     *         <code>DescribeVolumes</code> in paginated output. When this parameter
+     *         is used, <code>DescribeVolumes</code> only returns
+     *         <code>MaxResults</code> results in a single page along with a
+     *         <code>NextToken</code> response element. The remaining results of the
+     *         initial request can be seen by sending another
+     *         <code>DescribeVolumes</code> request with the returned
+     *         <code>NextToken</code> value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. If this parameter is not used, then
+     *         <code>DescribeVolumes</code> returns all results.
+     */
+    public Integer getMaxResults() {
+        return maxResults;
+    }
+    
+    /**
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumes</code> in paginated output. When this parameter
+     * is used, <code>DescribeVolumes</code> only returns
+     * <code>MaxResults</code> results in a single page along with a
+     * <code>NextToken</code> response element. The remaining results of the
+     * initial request can be seen by sending another
+     * <code>DescribeVolumes</code> request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumes</code> returns all results.
+     *
+     * @param maxResults The maximum number of volume results returned by
+     *         <code>DescribeVolumes</code> in paginated output. When this parameter
+     *         is used, <code>DescribeVolumes</code> only returns
+     *         <code>MaxResults</code> results in a single page along with a
+     *         <code>NextToken</code> response element. The remaining results of the
+     *         initial request can be seen by sending another
+     *         <code>DescribeVolumes</code> request with the returned
+     *         <code>NextToken</code> value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. If this parameter is not used, then
+     *         <code>DescribeVolumes</code> returns all results.
+     */
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+    
+    /**
+     * The maximum number of volume results returned by
+     * <code>DescribeVolumes</code> in paginated output. When this parameter
+     * is used, <code>DescribeVolumes</code> only returns
+     * <code>MaxResults</code> results in a single page along with a
+     * <code>NextToken</code> response element. The remaining results of the
+     * initial request can be seen by sending another
+     * <code>DescribeVolumes</code> request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * results are returned. If this parameter is not used, then
+     * <code>DescribeVolumes</code> returns all results.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param maxResults The maximum number of volume results returned by
+     *         <code>DescribeVolumes</code> in paginated output. When this parameter
+     *         is used, <code>DescribeVolumes</code> only returns
+     *         <code>MaxResults</code> results in a single page along with a
+     *         <code>NextToken</code> response element. The remaining results of the
+     *         initial request can be seen by sending another
+     *         <code>DescribeVolumes</code> request with the returned
+     *         <code>NextToken</code> value. This value can be between 5 and 1000; if
+     *         <code>MaxResults</code> is given a value larger than 1000, only 1000
+     *         results are returned. If this parameter is not used, then
+     *         <code>DescribeVolumes</code> returns all results.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DescribeVolumesRequest withMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to
      * enable operation dry-run.
@@ -538,7 +729,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ",");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() );
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() );
         sb.append("}");
         return sb.toString();
     }
@@ -550,6 +743,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         
         hashCode = prime * hashCode + ((getVolumeIds() == null) ? 0 : getVolumeIds().hashCode()); 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
         return hashCode;
     }
     
@@ -565,6 +760,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         if (other.getVolumeIds() != null && other.getVolumeIds().equals(this.getVolumeIds()) == false) return false; 
         if (other.getFilters() == null ^ this.getFilters() == null) return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null) return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
         return true;
     }
     

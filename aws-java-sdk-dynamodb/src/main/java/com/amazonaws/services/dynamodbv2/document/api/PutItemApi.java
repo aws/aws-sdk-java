@@ -16,6 +16,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.Expected;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
@@ -24,6 +26,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.PutItemSpec;
 /**
  * A Table-centric PutItem API.
  */
+@ThreadSafe
 public interface PutItemApi {
     /**
      * Unconditional put.

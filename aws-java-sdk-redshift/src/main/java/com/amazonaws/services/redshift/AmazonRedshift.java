@@ -303,14 +303,13 @@ public interface AmazonRedshift {
      * parameters to take effect. For more information about managing
      * clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
-     * in the <i>Amazon Redshift Management Guide</i>
+     * in the <i>Amazon Redshift Management Guide</i> .
      * </p>
      * <p>
      * You can also change node type and the number of nodes to scale up or
      * down the cluster. When resizing a cluster, you must specify both the
      * number of nodes and the node type even if one of the parameters does
-     * not change. If you specify the same number of nodes and node type that
-     * are already configured for the cluster, an error is returned.
+     * not change.
      * </p>
      *
      * @param modifyClusterRequest Container for the necessary parameters to
@@ -568,13 +567,24 @@ public interface AmazonRedshift {
     /**
      * <p>
      * Deletes a previously provisioned cluster. A successful response from
-     * the web service indicates that the request was received correctly. If
-     * a final cluster snapshot is requested the status of the cluster will
-     * be "final-snapshot" while the snapshot is being taken, then it's
-     * "deleting" once Amazon Redshift begins deleting the cluster. Use
+     * the web service indicates that the request was received correctly. Use
      * DescribeClusters to monitor the status of the deletion. The delete
      * operation cannot be canceled or reverted once submitted. For more
      * information about managing clusters, go to
+     * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
+     * in the <i>Amazon Redshift Management Guide</i> .
+     * </p>
+     * <p>
+     * If you want to shut down the cluster and retain it for future use,
+     * set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify
+     * a name for <i>FinalClusterSnapshotIdentifier</i> . You can later
+     * restore this snapshot to resume using the cluster. If a final cluster
+     * snapshot is requested, the status of the cluster will be
+     * "final-snapshot" while the snapshot is being taken, then it's
+     * "deleting" once Amazon Redshift begins deleting the cluster.
+     * </p>
+     * <p>
+     * For more information about managing clusters, go to
      * <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html"> Amazon Redshift Clusters </a>
      * in the <i>Amazon Redshift Management Guide</i> .
      * </p>

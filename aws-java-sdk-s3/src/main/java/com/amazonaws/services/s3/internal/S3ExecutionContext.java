@@ -17,12 +17,21 @@ package com.amazonaws.services.s3.internal;
 import java.net.URI;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3URI;
 
 public class S3ExecutionContext extends ExecutionContext {
+
+    private static final Log log = LogFactory.getLog(AmazonS3Client.class);
+
     private Signer signer;
 
     public S3ExecutionContext(List<RequestHandler2> requestHandler2s,
@@ -37,8 +46,25 @@ public class S3ExecutionContext extends ExecutionContext {
 
     @Override
     public Signer getSignerByURI(URI uri) {
-        // We don't support the mutation of the request URI by the request
-        // handlers in S3.  Hence the signer will remain the same.
+        // Don't modify the signer region, if the client is configured with region override
+        AmazonWebServiceClient awsClient = getAwsClient();
+        if (awsClient != null &&
+            awsClient.getSignerRegionOverride() != null) {
+            return signer;
+        }
+
+        // Otherwise, re-adjust the signer region in order to
+        // account for endpoint change after a 307 redirect
+        try {
+            if (signer instanceof RegionAwareSigner) {
+                ((RegionAwareSigner) signer).setRegionName(
+                        new AmazonS3URI(uri).getRegion());
+            }
+        } catch (RuntimeException e) {
+            log.warn("Failed to parse the endpoint " + uri +
+                    ", and skip re-signing the signer region", e);
+        }
+
         return signer;
     }
 }

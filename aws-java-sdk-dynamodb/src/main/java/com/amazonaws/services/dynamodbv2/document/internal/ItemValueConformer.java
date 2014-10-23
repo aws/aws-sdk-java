@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.dynamodbv2.document.internal;
 
+import static com.amazonaws.util.BinaryUtils.copyBytesFrom;
+
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -28,6 +30,10 @@ import java.util.Set;
  * internal representation (for purposes such as equality comparison.)
  */
 public class ItemValueConformer extends ValueTransformer {
+    /**
+     * This method is assumed to be called for the purpose of a setter method
+     * invocation, but NOT a getter method invocation.
+     */
     @Override public Object transform(Object value) {
         if (value == null) {
             return value;
@@ -40,7 +46,7 @@ public class ItemValueConformer extends ValueTransformer {
         } else if (value instanceof byte[]) {
             return value;
         } else if (value instanceof ByteBuffer) {
-            return InternalUtils.toByteArray((ByteBuffer)value);
+            return copyBytesFrom((ByteBuffer)value);
         } else if (value instanceof Set) {
             @SuppressWarnings("unchecked")
             Set<Object> set = (Set<Object>) value;
@@ -65,7 +71,7 @@ public class ItemValueConformer extends ValueTransformer {
                 Set<ByteBuffer> bs = (Set<ByteBuffer>) value;
                 Set<byte[]> out = new LinkedHashSet<byte[]>(bs.size());
                 for (ByteBuffer bb: bs)
-                    out.add(InternalUtils.toByteArray(bb));
+                    out.add(copyBytesFrom(bb));
                 return out;
             } else {
                 throw new UnsupportedOperationException("element type: "

@@ -126,7 +126,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about Reserved Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeReservedInstancesRequest Container for the necessary
@@ -397,9 +397,12 @@ public interface AmazonEC2 {
      * running Windows.
      * </p>
      * <p>
-     * The Windows password is only generated the first time an AMI is
-     * launched. It is not generated for rebundled AMIs or after the password
-     * is changed on an instance.
+     * The Windows password is generated at boot if the
+     * <code>EC2Config</code> service plugin, <code>Ec2SetPassword</code> ,
+     * is enabled. This usually only happens the first time an AMI is
+     * launched, and then <code>Ec2SetPassword</code> is automatically
+     * disabled. The password is not generated for rebundled AMIs unless
+     * <code>Ec2SetPassword</code> is enabled before bundling.
      * </p>
      * <p>
      * The password is encrypted using the key pair that you specified when
@@ -470,8 +473,8 @@ public interface AmazonEC2 {
      * <p>
      * Adds one or more egress rules to a security group for use with a VPC.
      * Specifically, this action permits instances to send traffic to one or
-     * more CIDR IP address ranges, or to one or more security groups for the
-     * same VPC.
+     * more destination CIDR IP address ranges, or to one or more destination
+     * security groups for the same VPC.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You can have up to 50 rules per security group
@@ -587,7 +590,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about key pairs, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param importKeyPairRequest Container for the necessary parameters to
@@ -660,7 +663,7 @@ public interface AmazonEC2 {
      * <p>
      * A security group is for use with instances either in the EC2-Classic
      * platform or in a specific VPC. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * <p>
@@ -715,7 +718,7 @@ public interface AmazonEC2 {
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * When you specify an Availability Zone, this operation describes the
@@ -726,6 +729,13 @@ public interface AmazonEC2 {
      * 2011-05-15, you get the lowest price across the region for the
      * specified time period. The prices returned are listed in chronological
      * order, from the oldest to the most recent.
+     * </p>
+     * <p>
+     * When you specify the start and end time options, this operation
+     * returns two pieces of data: the prices of the instance types within
+     * the time range that you specified and the time when the price changed.
+     * The price is valid within the time period that you specified; the
+     * response merely indicates the last time that the price changed.
      * </p>
      *
      * @param describeSpotPriceHistoryRequest Container for the necessary
@@ -803,12 +813,30 @@ public interface AmazonEC2 {
      * <p>
      * Creates a listing for Amazon EC2 Reserved Instances to be sold in the
      * Reserved Instance Marketplace. You can submit one Reserved Instance
-     * listing at a time.
+     * listing at a time. To get a list of your Reserved Instances, you can
+     * use the DescribeReservedInstances operation.
+     * </p>
+     * <p>
+     * The Reserved Instance Marketplace matches sellers who want to resell
+     * Reserved Instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved Instances bought and
+     * sold through the Reserved Instance Marketplace work like any other
+     * Reserved Instances.
+     * </p>
+     * <p>
+     * To sell your Reserved Instances, you must first register as a Seller
+     * in the Reserved Instance Marketplace. After completing the
+     * registration process, you can create a Reserved Instance Marketplace
+     * listing of some or all of your Reserved Instances, and specify the
+     * upfront price to receive for them. Your Reserved Instance listings
+     * then become available for purchase. To view the details of your
+     * Reserved Instance listing, you can use the
+     * DescribeReservedInstancesListings operation.
      * </p>
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createReservedInstancesListingRequest Container for the
@@ -867,7 +895,12 @@ public interface AmazonEC2 {
      * 
      * </ul>
      * <p>
-     * For more information about DHCP options, see
+     * Your VPC automatically starts out with a set of DHCP options that
+     * includes only a DNS server that we provide (AmazonProvidedDNS). If you
+     * create a set of options, and if your VPC has an Internet gateway, make
+     * sure to set the <code>domain-name-servers</code> option either to
+     * <code>AmazonProvidedDNS</code> or to a domain name server of your
+     * choice. For more information about DHCP options, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"> DHCP Options Sets </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
@@ -997,7 +1030,7 @@ public interface AmazonEC2 {
      * <p>
      * A security group is for use with instances either in the EC2-Classic
      * platform or in a specific VPC. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      *
@@ -1024,8 +1057,10 @@ public interface AmazonEC2 {
      * <p>
      * Rejects a VPC peering connection request. The VPC peering connection
      * must be in the <code>pending-acceptance</code> state. Use the
-     * <code>DescribeVpcPeeringConnections</code> request to view your
-     * outstanding VPC peering connection requests.
+     * DescribeVpcPeeringConnections request to view your outstanding VPC
+     * peering connection requests. To delete an active VPC peering
+     * connection, or to delete a VPC peering connection request that you
+     * initiated, use DeleteVpcPeeringConnection.
      * </p>
      *
      * @param rejectVpcPeeringConnectionRequest Container for the necessary
@@ -1106,7 +1141,7 @@ public interface AmazonEC2 {
      * <p>
      * Describes the datafeed for Spot Instances. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeSpotDatafeedSubscriptionRequest Container for the
@@ -1466,7 +1501,7 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Enables a virtual private gateway (VGW) to propagate routes to the
-     * routing tables of a VPC.
+     * specified route table of a VPC.
      * </p>
      *
      * @param enableVgwRoutePropagationRequest Container for the necessary
@@ -1610,6 +1645,11 @@ public interface AmazonEC2 {
      * The Reserved Instances to be modified must be identical, except for
      * Availability Zone, network platform, and instance type.
      * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html"> Modifying Reserved Instances </a>
+     * in the Amazon Elastic Compute Cloud User Guide for Linux.
+     * </p>
      *
      * @param modifyReservedInstancesRequest Container for the necessary
      *           parameters to execute the ModifyReservedInstances service method on
@@ -1719,15 +1759,17 @@ public interface AmazonEC2 {
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
-     * [EC2-Classic, default VPC] If the Elastic IP address is already
-     * associated with a different instance, it is disassociated from that
-     * instance and associated with the specified instance.
+     * [EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP
+     * address is already associated with a different instance, it is
+     * disassociated from that instance and associated with the specified
+     * instance.
      * </p>
      * <p>
-     * [EC2-VPC] If you don't specify a private IP address, the Elastic IP
-     * address is associated with the primary IP address. If the Elastic IP
-     * address is already associated with a different instance or a network
-     * interface, you get an error unless you allow reassociation.
+     * [VPC in an EC2-Classic account] If you don't specify a private IP
+     * address, the Elastic IP address is associated with the primary IP
+     * address. If the Elastic IP address is already associated with a
+     * different instance or a network interface, you get an error unless you
+     * allow reassociation.
      * </p>
      * <p>
      * This is an idempotent operation. If you perform the operation more
@@ -1965,6 +2007,16 @@ public interface AmazonEC2 {
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
+     * If you are describing a long list of volumes, you can paginate the
+     * output to make the list more manageable. The <code>MaxResults</code>
+     * parameter sets the maximum number of results returned in a single
+     * page. If the list of results exceeds your <code>MaxResults</code>
+     * value, then that number of results is returned along with a
+     * <code>NextToken</code> value that can be passed to a subsequent
+     * <code>DescribeVolumes</code> request to retrieve the remaining
+     * results.
+     * </p>
+     * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -1994,9 +2046,30 @@ public interface AmazonEC2 {
      * Instance Marketplace.
      * </p>
      * <p>
+     * The Reserved Instance Marketplace matches sellers who want to resell
+     * Reserved Instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved Instances bought and
+     * sold through the Reserved Instance Marketplace work like any other
+     * Reserved Instances.
+     * </p>
+     * <p>
+     * As a seller, you choose to list some or all of your Reserved
+     * Instances, and you specify the upfront price to receive for them. Your
+     * Reserved Instances are then listed in the Reserved Instance
+     * Marketplace and are available for purchase.
+     * </p>
+     * <p>
+     * As a buyer, you specify the configuration of the Reserved Instance to
+     * purchase, and the Marketplace matches what you're searching for with
+     * what's available. The Marketplace first sells the lowest priced
+     * Reserved Instances to you, and continues to sell available Reserved
+     * Instance listings to you until your demand is met. You are charged
+     * based on the total price of all of the listings that you purchase.
+     * </p>
+     * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeReservedInstancesListingsRequest Container for the
@@ -2026,6 +2099,10 @@ public interface AmazonEC2 {
      * DescribeInstanceStatus, use ReportInstanceStatus to report your
      * experience with the instance. Amazon EC2 collects this information to
      * improve the accuracy of status checks.
+     * </p>
+     * <p>
+     * Use of this action does not change the value returned by
+     * DescribeInstanceStatus.
      * </p>
      *
      * @param reportInstanceStatusRequest Container for the necessary
@@ -2479,7 +2556,7 @@ public interface AmazonEC2 {
      * Instance usage logs. You can create one data feed per AWS account. For
      * more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createSpotDatafeedSubscriptionRequest Container for the
@@ -2534,7 +2611,13 @@ public interface AmazonEC2 {
      * <p>
      * If you're deleting the VPC and its associated components, we
      * recommend that you detach the virtual private gateway from the VPC and
-     * delete the VPC before deleting the VPN connection.
+     * delete the VPC before deleting the VPN connection. If you believe that
+     * the tunnel credentials for your VPN connection have been compromised,
+     * you can delete the VPN connection and create a new one that has new
+     * keys, without needing to delete the VPC or virtual private gateway. If
+     * you create a new VPN connection, you must reconfigure the customer
+     * gateway using the new configuration information returned with the new
+     * VPN connection ID.
      * </p>
      *
      * @param deleteVpnConnectionRequest Container for the necessary
@@ -2629,7 +2712,14 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Describes the specified attribute of the specified instance. You can
-     * specify only one attribute at a time.
+     * specify only one attribute at a time. Valid attribute values are:
+     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code>
+     * | <code>userData</code> | <code>disableApiTermination</code> |
+     * <code>instanceInitiatedShutdownBehavior</code> |
+     * <code>rootDeviceName</code> | <code>blockDeviceMapping</code> |
+     * <code>productCodes</code> | <code>sourceDestCheck</code> |
+     * <code>groupSet</code> | <code>ebsOptimized</code> |
+     * <code>sriovNetSupport</code>
      * </p>
      *
      * @param describeInstanceAttributeRequest Container for the necessary
@@ -3005,7 +3095,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param cancelReservedInstancesListingRequest Container for the
@@ -3134,7 +3224,7 @@ public interface AmazonEC2 {
      * Spot Instance capacity and current Spot Instance requests. For more
      * information about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
@@ -3259,8 +3349,9 @@ public interface AmazonEC2 {
      * Creates a route in a route table within a VPC.
      * </p>
      * <p>
-     * You must specify one of the following targets: Internet gateway, NAT
-     * instance, VPC peering connection, or network interface.
+     * You must specify one of the following targets: Internet gateway or
+     * virtual private gateway, NAT instance, VPC peering connection, or
+     * network interface.
      * </p>
      * <p>
      * When determining how to route traffic, we use the route with the most
@@ -3418,7 +3509,11 @@ public interface AmazonEC2 {
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
+     * </p>
+     * <p>
+     * Users must be subscribed to the required product to run an instance
+     * with AWS Marketplace product codes.
      * </p>
      *
      * @param requestSpotInstancesRequest Container for the necessary
@@ -3526,8 +3621,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. You must
-     * provide only one of the following: Internet gateway, NAT instance, VPC
-     * peering connection, or network interface.
+     * provide only one of the following: Internet gateway or virtual private
+     * gateway, NAT instance, VPC peering connection, or network interface.
      * </p>
      * <p>
      * For more information about route tables, see
@@ -3605,8 +3700,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Disables a virtual private gateway (VGW) from propagating routes to
-     * the routing tables of a VPC.
+     * Disables a virtual private gateway (VGW) from propagating routes to a
+     * specified route table of a VPC.
      * </p>
      *
      * @param disableVgwRoutePropagationRequest Container for the necessary
@@ -3635,7 +3730,7 @@ public interface AmazonEC2 {
      * capacity and current Spot Instance requests. For more information
      * about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * <b>IMPORTANT:</b> Canceling a Spot Instance request does not
@@ -3670,9 +3765,15 @@ public interface AmazonEC2 {
      * you actually use the capacity reservation.
      * </p>
      * <p>
+     * Use DescribeReservedInstancesOfferings to get a list of Reserved
+     * Instance offerings that match your specifications. After you've
+     * purchased a Reserved Instance, you can check for your new Reserved
+     * Instance with DescribeReservedInstances.
+     * </p>
+     * <p>
      * For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param purchaseReservedInstancesOfferingRequest Container for the
@@ -3735,6 +3836,11 @@ public interface AmazonEC2 {
      * parameter is specified, information about all your Reserved Instances
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
+     * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html"> Modifying Reserved Instances </a>
+     * in the Amazon Elastic Compute Cloud User Guide for Linux.
      * </p>
      *
      * @param describeReservedInstancesModificationsRequest Container for the
@@ -3811,7 +3917,7 @@ public interface AmazonEC2 {
      * <p>
      * Deletes the datafeed for Spot Instances. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param deleteSpotDatafeedSubscriptionRequest Container for the
@@ -3980,7 +4086,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about key pairs, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeKeyPairsRequest Container for the necessary parameters
@@ -4346,6 +4452,14 @@ public interface AmazonEC2 {
      * topology with a logical router in the middle.
      * </p>
      * <p>
+     * If you launch an instance in a VPC using an Amazon EBS-backed AMI,
+     * the IP address doesn't change if you stop and restart the instance
+     * (unlike a similar instance launched outside a VPC, which gets a new IP
+     * address when restarted). It's therefore possible to have a subnet with
+     * no running instances (they're all stopped), but no remaining IP
+     * addresses available.
+     * </p>
+     * <p>
      * For more information about subnets, see
      * <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html"> Your VPC and Subnets </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
@@ -4381,7 +4495,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param describeReservedInstancesOfferingsRequest Container for the
@@ -4507,6 +4621,12 @@ public interface AmazonEC2 {
      * <p>
      * Disassociates an Elastic IP address from the instance or network
      * interface it's associated with.
+     * </p>
+     * <p>
+     * An Elastic IP address is for use in either the EC2-Classic platform
+     * or in a VPC. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP Addresses </a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
      * </p>
      * <p>
      * This is an idempotent operation. If you perform the operation more
@@ -4755,9 +4875,9 @@ public interface AmazonEC2 {
      * DisassociateAddress.
      * </p>
      * <p>
-     * [Nondefault VPC] You must use the DisassociateAddress to disassociate
-     * the Elastic IP address before you try to release it. Otherwise, Amazon
-     * EC2 returns an error ( <code>InvalidIPAddress.InUse</code> ).
+     * [Nondefault VPC] You must use DisassociateAddress to disassociate the
+     * Elastic IP address before you try to release it. Otherwise, Amazon EC2
+     * returns an error ( <code>InvalidIPAddress.InUse</code> ).
      * </p>
      *
      * @param releaseAddressRequest Container for the necessary parameters to
@@ -4779,9 +4899,9 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Resets an attribute of an instance to its default value. To reset the
-     * kernel or RAM disk, the instance must be in a stopped state. To reset
-     * the <code>SourceDestCheck</code> , the instance can be either running
-     * or stopped.
+     * <code>kernel</code> or <code>ramdisk</code> , the instance must be in
+     * a stopped state. To reset the <code>SourceDestCheck</code> , the
+     * instance can be either running or stopped.
      * </p>
      * <p>
      * The <code>SourceDestCheck</code> attribute controls whether
@@ -4822,9 +4942,14 @@ public interface AmazonEC2 {
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
+     * The key pair returned to you is available only in the region in which
+     * you create it. To create a key pair that is available in all regions,
+     * use ImportKeyPair.
+     * </p>
+     * <p>
      * For more information about key pairs, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      *
      * @param createKeyPairRequest Container for the necessary parameters to
@@ -5081,7 +5206,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about Reserved Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html"> Reserved Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * 
      * @return The response from the DescribeReservedInstances service
@@ -5134,7 +5259,7 @@ public interface AmazonEC2 {
      * the Spot Price based on available Spot Instance capacity and current
      * Spot Instance requests. For more information about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * When you specify an Availability Zone, this operation describes the
@@ -5145,6 +5270,13 @@ public interface AmazonEC2 {
      * 2011-05-15, you get the lowest price across the region for the
      * specified time period. The prices returned are listed in chronological
      * order, from the oldest to the most recent.
+     * </p>
+     * <p>
+     * When you specify the start and end time options, this operation
+     * returns two pieces of data: the prices of the instance types within
+     * the time range that you specified and the time when the price changed.
+     * The price is valid within the time period that you specified; the
+     * response merely indicates the last time that the price changed.
      * </p>
      * 
      * @return The response from the DescribeSpotPriceHistory service method,
@@ -5230,7 +5362,7 @@ public interface AmazonEC2 {
      * <p>
      * A security group is for use with instances either in the EC2-Classic
      * platform or in a specific VPC. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html"> Amazon EC2 Security Groups </a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"> Security Groups for Your VPC </a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i> .
      * </p>
      * 
@@ -5252,7 +5384,7 @@ public interface AmazonEC2 {
      * <p>
      * Describes the datafeed for Spot Instances. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * 
      * @return The response from the DescribeSpotDatafeedSubscription service
@@ -5476,6 +5608,16 @@ public interface AmazonEC2 {
      * Describes the specified Amazon EBS volumes.
      * </p>
      * <p>
+     * If you are describing a long list of volumes, you can paginate the
+     * output to make the list more manageable. The <code>MaxResults</code>
+     * parameter sets the maximum number of results returned in a single
+     * page. If the list of results exceeds your <code>MaxResults</code>
+     * value, then that number of results is returned along with a
+     * <code>NextToken</code> value that can be passed to a subsequent
+     * <code>DescribeVolumes</code> request to retrieve the remaining
+     * results.
+     * </p>
+     * <p>
      * For more information about Amazon EBS volumes, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html"> Amazon EBS Volumes </a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
@@ -5501,9 +5643,30 @@ public interface AmazonEC2 {
      * Instance Marketplace.
      * </p>
      * <p>
+     * The Reserved Instance Marketplace matches sellers who want to resell
+     * Reserved Instance capacity that they no longer need with buyers who
+     * want to purchase additional capacity. Reserved Instances bought and
+     * sold through the Reserved Instance Marketplace work like any other
+     * Reserved Instances.
+     * </p>
+     * <p>
+     * As a seller, you choose to list some or all of your Reserved
+     * Instances, and you specify the upfront price to receive for them. Your
+     * Reserved Instances are then listed in the Reserved Instance
+     * Marketplace and are available for purchase.
+     * </p>
+     * <p>
+     * As a buyer, you specify the configuration of the Reserved Instance to
+     * purchase, and the Marketplace matches what you're searching for with
+     * what's available. The Marketplace first sells the lowest priced
+     * Reserved Instances to you, and continues to sell available Reserved
+     * Instance listings to you until your demand is met. You are charged
+     * based on the total price of all of the listings that you purchase.
+     * </p>
+     * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * 
      * @return The response from the DescribeReservedInstancesListings
@@ -5824,7 +5987,7 @@ public interface AmazonEC2 {
      * Spot Instance capacity and current Spot Instance requests. For more
      * information about Spot Instances, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a
@@ -5904,6 +6067,11 @@ public interface AmazonEC2 {
      * modification requests is returned. If a modification ID is specified,
      * only information about the specific modification is returned.
      * </p>
+     * <p>
+     * For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html"> Modifying Reserved Instances </a>
+     * in the Amazon Elastic Compute Cloud User Guide for Linux.
+     * </p>
      * 
      * @return The response from the DescribeReservedInstancesModifications
      *         service method, as returned by AmazonEC2.
@@ -5923,7 +6091,7 @@ public interface AmazonEC2 {
      * <p>
      * Deletes the datafeed for Spot Instances. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * 
      * 
@@ -5970,7 +6138,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about key pairs, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html"> Key Pairs </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * 
      * @return The response from the DescribeKeyPairs service method, as
@@ -6130,7 +6298,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html"> Reserved Instance Marketplace </a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+     * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
      * </p>
      * 
      * @return The response from the DescribeReservedInstancesOfferings

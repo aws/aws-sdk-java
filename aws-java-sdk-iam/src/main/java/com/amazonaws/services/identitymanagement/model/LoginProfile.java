@@ -18,12 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The LoginProfile data type contains the user name and password create
- * date for a user.
+ * Contains the user name and password create date for a user.
  * </p>
  * <p>
- * This data type is used as a response element in the actions
- * CreateLoginProfile and GetLoginProfile.
+ * This data type is used as a response element in the
+ * CreateLoginProfile and GetLoginProfile actions.
  * </p>
  */
 public class LoginProfile implements Serializable {

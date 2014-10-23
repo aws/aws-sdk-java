@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(ListUserPoliciesRequest) ListUserPolicies operation}.
  * <p>
- * Lists the names of the policies associated with the specified user. If
- * there are none, the action returns an empty list.
+ * Lists the names of the policies associated with the specified user.
+ * If there are none, the action returns an empty list.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and

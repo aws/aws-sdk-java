@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest) CreateStorediSCSIVolume operation}.
  * <p>
  * This operation creates a volume on a specified gateway. This operation
- * is supported only for the gateway-cached volume architecture.
+ * is supported only for the gateway-stored volume architecture.
  * </p>
  * <p>
  * The size of the volume to create is inferred from the disk size. You

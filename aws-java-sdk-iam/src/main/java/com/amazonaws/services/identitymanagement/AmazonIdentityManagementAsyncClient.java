@@ -35,15 +35,15 @@ import com.amazonaws.services.identitymanagement.model.*;
  * process the result and handle the exceptions in the worker thread by providing a callback handler
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * AWS Identity and Access Management <p>
- * AWS Identity and Access Management (IAM) is a web service that you can
- * use to manage users and user permissions under your AWS account. This
- * guide provides descriptions of the IAM API. For general information
- * about IAM, see
+ * AWS Identity and Access Management (IAM) is a web service that you
+ * can use to manage users and user permissions under your AWS account.
+ * This guide provides descriptions of IAM actions that you can call
+ * programmatically. For general information about IAM, see
  * <a href="http://aws.amazon.com/iam/"> AWS Identity and Access Management (IAM) </a> . For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/"> Using IAM </a>
  * .
  * </p>
  * <p>
- * <b>NOTE:</b>AWS provides SDKs that consist of libraries and sample
+ * <b>NOTE:</b> AWS provides SDKs that consist of libraries and sample
  * code for various programming languages and platforms (Java, Ruby,
  * .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
  * programmatic access to IAM and AWS. For example, the SDKs take care of
@@ -107,19 +107,19 @@ import com.amazonaws.services.identitymanagement.model.*;
  * <li>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"> AWS Security Credentials </a>
  * . This topic provides general information about the types of
- * credentials used for accessing AWS.</li>
+ * credentials used for accessing AWS. </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html"> IAM Best Practices </a>
  * . This topic presents a list of suggestions for using the IAM service
- * to help secure your AWS resources.</li>
+ * to help secure your AWS resources. </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/"> AWS Security Token Service </a>
  * . This guide describes how to create and use temporary security
- * credentials.</li>
+ * credentials. </li>
  * <li>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Signing AWS API Requests </a>
  * . This set of topics walk you through the process of signing a
- * request using an access key ID and secret access key.</li>
+ * request using an access key ID and secret access key. </li>
  * 
  * </ul>
  */
@@ -525,7 +525,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request. Because
      * this action works for access keys under the AWS account, you can use
-     * this API to manage root credentials even if the AWS account has no
+     * this action to manage root credentials even if the AWS account has no
      * associated users.
      * </p>
      *
@@ -563,7 +563,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request. Because
      * this action works for access keys under the AWS account, you can use
-     * this API to manage root credentials even if the AWS account has no
+     * this action to manage root credentials even if the AWS account has no
      * associated users.
      * </p>
      *
@@ -610,7 +610,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Deletes a virtual MFA device.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must deactivate a user's virtual MFA device before
+     * <b>NOTE:</b> You must deactivate a user's virtual MFA device before
      * you can delete it. For information about deactivating MFA devices, see
      * DeactivateMFADevice.
      * </p>
@@ -647,7 +647,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Deletes a virtual MFA device.
      * </p>
      * <p>
-     * <b>NOTE:</b>You must deactivate a user's virtual MFA device before
+     * <b>NOTE:</b> You must deactivate a user's virtual MFA device before
      * you can delete it. For information about deactivating MFA devices, see
      * DeactivateMFADevice.
      * </p>
@@ -779,7 +779,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * <b>NOTE:</b> Because policy documents can be large, you should use
      * POST rather than GET when calling PutUserPolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
@@ -826,7 +826,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * <b>NOTE:</b> Because policy documents can be large, you should use
      * POST rather than GET when calling PutUserPolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
@@ -962,7 +962,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Lists the SAML providers in the account.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param listSAMLProvidersRequest Container for the necessary parameters
@@ -996,7 +996,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Lists the SAML providers in the account.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param listSAMLProvidersRequest Container for the necessary parameters
@@ -1129,7 +1129,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Managing Server Certificates in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a server certificate name the requester must
+     * <b>NOTE:</b> To change a server certificate name the requester must
      * have appropriate permissions on both the source object and the target
      * object. For example, to change the name from ProductionCert to
      * ProdCert, the entity making the request must have permission on
@@ -1174,7 +1174,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Managing Server Certificates in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a server certificate name the requester must
+     * <b>NOTE:</b> To change a server certificate name the requester must
      * have appropriate permissions on both the source object and the target
      * object. For example, to change the name from ProductionCert to
      * ProdCert, the entity making the request must have permission on
@@ -1231,11 +1231,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Groups in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a user name the requester must have appropriate
-     * permissions on both the source object and the target object. For
-     * example, to change Bob to Robert, the entity making the request must
-     * have permission on Bob and Robert, or must have permission on all (*).
-     * For more information about permissions, see Permissions and Policies.
+     * <b>NOTE:</b> To change a user name the requester must have
+     * appropriate permissions on both the source object and the target
+     * object. For example, to change Bob to Robert, the entity making the
+     * request must have permission on Bob and Robert, or must have
+     * permission on all (*). For more information about permissions, see
+     * Permissions and Policies.
      * </p>
      *
      * @param updateUserRequest Container for the necessary parameters to
@@ -1273,11 +1274,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Groups in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a user name the requester must have appropriate
-     * permissions on both the source object and the target object. For
-     * example, to change Bob to Robert, the entity making the request must
-     * have permission on Bob and Robert, or must have permission on all (*).
-     * For more information about permissions, see Permissions and Policies.
+     * <b>NOTE:</b> To change a user name the requester must have
+     * appropriate permissions on both the source object and the target
+     * object. For example, to change Bob to Robert, the entity making the
+     * request must have permission on Bob and Robert, or must have
+     * permission on all (*). For more information about permissions, see
+     * Permissions and Policies.
      * </p>
      *
      * @param updateUserRequest Container for the necessary parameters to
@@ -1319,6 +1321,102 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Deletes an IAM OpenID Connect identity provider.
+     * </p>
+     * <p>
+     * Deleting an OIDC provider does not update any roles that reference
+     * the provider as a principal in their trust policies. Any attempt to
+     * assume a role that references a provider that has been deleted will
+     * fail.
+     * </p>
+     * <p>
+     * This action is idempotent; it does not fail or return an error if you
+     * call the action for a provider that was already deleted.
+     * </p>
+     *
+     * @param deleteOpenIDConnectProviderRequest Container for the necessary
+     *           parameters to execute the DeleteOpenIDConnectProvider operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteOpenIDConnectProviderAsync(final DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteOpenIDConnectProvider(deleteOpenIDConnectProviderRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Deletes an IAM OpenID Connect identity provider.
+     * </p>
+     * <p>
+     * Deleting an OIDC provider does not update any roles that reference
+     * the provider as a principal in their trust policies. Any attempt to
+     * assume a role that references a provider that has been deleted will
+     * fail.
+     * </p>
+     * <p>
+     * This action is idempotent; it does not fail or return an error if you
+     * call the action for a provider that was already deleted.
+     * </p>
+     *
+     * @param deleteOpenIDConnectProviderRequest Container for the necessary
+     *           parameters to execute the DeleteOpenIDConnectProvider operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteOpenIDConnectProviderAsync(
+            final DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest,
+            final AsyncHandler<DeleteOpenIDConnectProviderRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                deleteOpenIDConnectProvider(deleteOpenIDConnectProviderRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(deleteOpenIDConnectProviderRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Adds (or updates) a policy document associated with the specified
      * role. For information about policies, go to
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"> Overview of Policies </a>
@@ -1331,7 +1429,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * <b>NOTE:</b> Because policy documents can be large, you should use
      * POST rather than GET when calling PutRolePolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
@@ -1378,7 +1476,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * <b>NOTE:</b> Because policy documents can be large, you should use
      * POST rather than GET when calling PutRolePolicy. For information about
      * setting up signatures and authorization through the API, go to Signing
      * AWS API Requests in the AWS General Reference. For general information
@@ -1434,8 +1532,8 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
      * For information about rotating certificates, see
@@ -1481,8 +1579,8 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
      * For information about rotating certificates, see
@@ -1609,8 +1707,9 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Lists the users that have the specified path prefix. If there are
-     * none, the action returns an empty list.
+     * Lists the IAM users that have the specified path prefix. If no path
+     * prefix is specified, the action returns all users in the AWS account.
+     * If there are none, the action returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -1643,8 +1742,9 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
     /**
      * <p>
-     * Lists the users that have the specified path prefix. If there are
-     * none, the action returns an empty list.
+     * Lists the IAM users that have the specified path prefix. If no path
+     * prefix is specified, the action returns all users in the AWS account.
+     * If there are none, the action returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -1699,7 +1799,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Groups in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a group name the requester must have
+     * <b>NOTE:</b> To change a group name the requester must have
      * appropriate permissions on both the source object and the target
      * object. For example, to change Managers to MGRs, the entity making the
      * request must have permission on Managers and MGRs, or must have
@@ -1742,7 +1842,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Groups in the Using IAM guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>To change a group name the requester must have
+     * <b>NOTE:</b> To change a group name the requester must have
      * appropriate permissions on both the source object and the target
      * object. For example, to change Managers to MGRs, the entity making the
      * request must have permission on Managers and MGRs, or must have
@@ -1882,7 +1982,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * will fail.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param deleteSAMLProviderRequest Container for the necessary
@@ -1923,7 +2023,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * will fail.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param deleteSAMLProviderRequest Container for the necessary
@@ -1960,6 +2060,92 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             throw ex;
               }
               asyncHandler.onSuccess(deleteSAMLProviderRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Adds a new client ID (also known as audience) to the list of client
+     * IDs already registered for the specified IAM OpenID Connect provider.
+     * </p>
+     * <p>
+     * This action is idempotent; it does not fail or return an error if you
+     * add an existing client ID to the provider.
+     * </p>
+     *
+     * @param addClientIDToOpenIDConnectProviderRequest Container for the
+     *           necessary parameters to execute the AddClientIDToOpenIDConnectProvider
+     *           operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddClientIDToOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> addClientIDToOpenIDConnectProviderAsync(final AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                addClientIDToOpenIDConnectProvider(addClientIDToOpenIDConnectProviderRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Adds a new client ID (also known as audience) to the list of client
+     * IDs already registered for the specified IAM OpenID Connect provider.
+     * </p>
+     * <p>
+     * This action is idempotent; it does not fail or return an error if you
+     * add an existing client ID to the provider.
+     * </p>
+     *
+     * @param addClientIDToOpenIDConnectProviderRequest Container for the
+     *           necessary parameters to execute the AddClientIDToOpenIDConnectProvider
+     *           operation on AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddClientIDToOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> addClientIDToOpenIDConnectProviderAsync(
+            final AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest,
+            final AsyncHandler<AddClientIDToOpenIDConnectProviderRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                addClientIDToOpenIDConnectProvider(addClientIDToOpenIDConnectProviderRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(addClientIDToOpenIDConnectProviderRequest, null);
                  return null;
         }
     });
@@ -2284,7 +2470,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Updates the metadata document for an existing SAML provider.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param updateSAMLProviderRequest Container for the necessary
@@ -2318,7 +2504,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Updates the metadata document for an existing SAML provider.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param updateSAMLProviderRequest Container for the necessary
@@ -2363,32 +2549,22 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Uploads a server certificate entity for the AWS account. The server
-     * certificate entity includes a public key certificate, a private key,
-     * and an optional certificate chain, which should all be PEM-encoded.
+     * Removes the specified client ID (also known as audience) from the
+     * list of client IDs registered for the specified IAM OpenID Connect
+     * provider.
      * </p>
      * <p>
-     * For information about the number of server certificates you can
-     * upload, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Because the body of the public key certificate, private
-     * key, and the certificate chain can be large, you should use POST
-     * rather than GET when calling UploadServerCertificate. For information
-     * about setting up signatures and authorization through the API, go to
-     * Signing AWS API Requests in the AWS General Reference. For general
-     * information about using the Query API with IAM, go to Making Query
-     * Requests in the Using IAM guide.
+     * This action is idempotent; it does not fail or return an error if you
+     * try to remove a client ID that was removed previously.
      * </p>
      *
-     * @param uploadServerCertificateRequest Container for the necessary
-     *           parameters to execute the UploadServerCertificate operation on
+     * @param removeClientIDFromOpenIDConnectProviderRequest Container for
+     *           the necessary parameters to execute the
+     *           RemoveClientIDFromOpenIDConnectProvider operation on
      *           AmazonIdentityManagement.
      * 
      * @return A Java Future object containing the response from the
-     *         UploadServerCertificate service method, as returned by
+     *         RemoveClientIDFromOpenIDConnectProvider service method, as returned by
      *         AmazonIdentityManagement.
      * 
      *
@@ -2400,39 +2576,30 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<UploadServerCertificateResult> uploadServerCertificateAsync(final UploadServerCertificateRequest uploadServerCertificateRequest) 
+    public Future<Void> removeClientIDFromOpenIDConnectProviderAsync(final RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UploadServerCertificateResult>() {
-            public UploadServerCertificateResult call() throws Exception {
-                return uploadServerCertificate(uploadServerCertificateRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                removeClientIDFromOpenIDConnectProvider(removeClientIDFromOpenIDConnectProviderRequest);
+                return null;
         }
     });
     }
 
     /**
      * <p>
-     * Uploads a server certificate entity for the AWS account. The server
-     * certificate entity includes a public key certificate, a private key,
-     * and an optional certificate chain, which should all be PEM-encoded.
+     * Removes the specified client ID (also known as audience) from the
+     * list of client IDs registered for the specified IAM OpenID Connect
+     * provider.
      * </p>
      * <p>
-     * For information about the number of server certificates you can
-     * upload, see
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
-     * in the <i>Using IAM</i> guide.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>Because the body of the public key certificate, private
-     * key, and the certificate chain can be large, you should use POST
-     * rather than GET when calling UploadServerCertificate. For information
-     * about setting up signatures and authorization through the API, go to
-     * Signing AWS API Requests in the AWS General Reference. For general
-     * information about using the Query API with IAM, go to Making Query
-     * Requests in the Using IAM guide.
+     * This action is idempotent; it does not fail or return an error if you
+     * try to remove a client ID that was removed previously.
      * </p>
      *
-     * @param uploadServerCertificateRequest Container for the necessary
-     *           parameters to execute the UploadServerCertificate operation on
+     * @param removeClientIDFromOpenIDConnectProviderRequest Container for
+     *           the necessary parameters to execute the
+     *           RemoveClientIDFromOpenIDConnectProvider operation on
      *           AmazonIdentityManagement.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -2440,7 +2607,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         UploadServerCertificate service method, as returned by
+     *         RemoveClientIDFromOpenIDConnectProvider service method, as returned by
      *         AmazonIdentityManagement.
      * 
      *
@@ -2452,21 +2619,20 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<UploadServerCertificateResult> uploadServerCertificateAsync(
-            final UploadServerCertificateRequest uploadServerCertificateRequest,
-            final AsyncHandler<UploadServerCertificateRequest, UploadServerCertificateResult> asyncHandler)
+    public Future<Void> removeClientIDFromOpenIDConnectProviderAsync(
+            final RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest,
+            final AsyncHandler<RemoveClientIDFromOpenIDConnectProviderRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<UploadServerCertificateResult>() {
-            public UploadServerCertificateResult call() throws Exception {
-              UploadServerCertificateResult result;
-                try {
-                result = uploadServerCertificate(uploadServerCertificateRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                removeClientIDFromOpenIDConnectProvider(removeClientIDFromOpenIDConnectProviderRequest);
               } catch (Exception ex) {
                   asyncHandler.onError(ex);
             throw ex;
               }
-              asyncHandler.onSuccess(uploadServerCertificateRequest, result);
-                 return result;
+              asyncHandler.onSuccess(removeClientIDFromOpenIDConnectProviderRequest, null);
+                 return null;
         }
     });
     }
@@ -2555,8 +2721,118 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * This action creates an alias for your AWS account. For information
-     * about using an AWS account alias, see
+     * Uploads a server certificate entity for the AWS account. The server
+     * certificate entity includes a public key certificate, a private key,
+     * and an optional certificate chain, which should all be PEM-encoded.
+     * </p>
+     * <p>
+     * For information about the number of server certificates you can
+     * upload, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Because the body of the public key certificate, private
+     * key, and the certificate chain can be large, you should use POST
+     * rather than GET when calling UploadServerCertificate. For information
+     * about setting up signatures and authorization through the API, go to
+     * Signing AWS API Requests in the AWS General Reference. For general
+     * information about using the Query API with IAM, go to Making Query
+     * Requests in the Using IAM guide.
+     * </p>
+     *
+     * @param uploadServerCertificateRequest Container for the necessary
+     *           parameters to execute the UploadServerCertificate operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UploadServerCertificate service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UploadServerCertificateResult> uploadServerCertificateAsync(final UploadServerCertificateRequest uploadServerCertificateRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UploadServerCertificateResult>() {
+            public UploadServerCertificateResult call() throws Exception {
+                return uploadServerCertificate(uploadServerCertificateRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Uploads a server certificate entity for the AWS account. The server
+     * certificate entity includes a public key certificate, a private key,
+     * and an optional certificate chain, which should all be PEM-encoded.
+     * </p>
+     * <p>
+     * For information about the number of server certificates you can
+     * upload, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"> Limitations on IAM Entities </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Because the body of the public key certificate, private
+     * key, and the certificate chain can be large, you should use POST
+     * rather than GET when calling UploadServerCertificate. For information
+     * about setting up signatures and authorization through the API, go to
+     * Signing AWS API Requests in the AWS General Reference. For general
+     * information about using the Query API with IAM, go to Making Query
+     * Requests in the Using IAM guide.
+     * </p>
+     *
+     * @param uploadServerCertificateRequest Container for the necessary
+     *           parameters to execute the UploadServerCertificate operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UploadServerCertificate service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UploadServerCertificateResult> uploadServerCertificateAsync(
+            final UploadServerCertificateRequest uploadServerCertificateRequest,
+            final AsyncHandler<UploadServerCertificateRequest, UploadServerCertificateResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UploadServerCertificateResult>() {
+            public UploadServerCertificateResult call() throws Exception {
+              UploadServerCertificateResult result;
+                try {
+                result = uploadServerCertificate(uploadServerCertificateRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(uploadServerCertificateRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates an alias for your AWS account. For information about using an
+     * AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
      * in the <i>Using IAM</i> guide.
      * </p>
@@ -2590,8 +2866,8 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
     /**
      * <p>
-     * This action creates an alias for your AWS account. For information
-     * about using an AWS account alias, see
+     * Creates an alias for your AWS account. For information about using an
+     * AWS account alias, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a>
      * in the <i>Using IAM</i> guide.
      * </p>
@@ -2714,6 +2990,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Deactivates the specified MFA device and removes it from association
      * with the user name for which it was originally enabled.
      * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
      *
      * @param deactivateMFADeviceRequest Container for the necessary
      *           parameters to execute the DeactivateMFADevice operation on
@@ -2746,6 +3028,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * Deactivates the specified MFA device and removes it from association
      * with the user name for which it was originally enabled.
+     * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param deactivateMFADeviceRequest Container for the necessary
@@ -2953,7 +3241,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
      * running with the role you are about to delete. Deleting a role or
      * instance profile that is associated with a running instance will break
      * any applications running on the instance.
@@ -2992,7 +3280,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
      * running with the role you are about to delete. Deleting a role or
      * instance profile that is associated with a running instance will break
      * any applications running on the instance.
@@ -3040,7 +3328,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Deletes the specified server certificate.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>If you are using a server certificate with Elastic
+     * <b>IMPORTANT:</b> If you are using a server certificate with Elastic
      * Load Balancing, deleting the certificate could have implications for
      * your application. If Elastic Load Balancing doesn't detect the
      * deletion of bound certificates, it may continue to use the
@@ -3084,7 +3372,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Deletes the specified server certificate.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>If you are using a server certificate with Elastic
+     * <b>IMPORTANT:</b> If you are using a server certificate with Elastic
      * Load Balancing, deleting the certificate could have implications for
      * your application. If Elastic Load Balancing doesn't detect the
      * deletion of bound certificates, it may continue to use the
@@ -3145,7 +3433,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request. Because
      * this action works for access keys under the AWS account, you can use
-     * this API to manage root credentials even if the AWS account has no
+     * this action to manage root credentials even if the AWS account has no
      * associated users.
      * </p>
      * <p>
@@ -3155,7 +3443,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>To ensure the security of your AWS account, the
+     * <b>IMPORTANT:</b> To ensure the security of your AWS account, the
      * secret access key is accessible only during key and user creation. You
      * must save the key (for example, in a text file) if you want to be able
      * to access it again. If a secret key is lost, you can delete the access
@@ -3197,7 +3485,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request. Because
      * this action works for access keys under the AWS account, you can use
-     * this API to manage root credentials even if the AWS account has no
+     * this action to manage root credentials even if the AWS account has no
      * associated users.
      * </p>
      * <p>
@@ -3207,7 +3495,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>To ensure the security of your AWS account, the
+     * <b>IMPORTANT:</b> To ensure the security of your AWS account, the
      * secret access key is accessible only during key and user creation. You
      * must save the key (for example, in a text file) if you want to be able
      * to access it again. If a secret key is lost, you can delete the access
@@ -3256,11 +3544,11 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     /**
      * <p>
      * Retrieves information about the specified user, including the user's
-     * path, unique ID, and ARN.
+     * creation date, path, unique ID, and ARN.
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name
-     * implicitly based on the AWS access key ID signing the request.
+     * implicitly based on the AWS access key ID used to sign the request.
      * </p>
      *
      * @param getUserRequest Container for the necessary parameters to
@@ -3290,11 +3578,11 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     /**
      * <p>
      * Retrieves information about the specified user, including the user's
-     * path, unique ID, and ARN.
+     * creation date, path, unique ID, and ARN.
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name
-     * implicitly based on the AWS access key ID signing the request.
+     * implicitly based on the AWS access key ID used to sign the request.
      * </p>
      *
      * @param getUserRequest Container for the necessary parameters to
@@ -3339,6 +3627,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * Synchronizes the specified MFA device with AWS servers.
      * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
      *
      * @param resyncMFADeviceRequest Container for the necessary parameters
      *           to execute the ResyncMFADevice operation on AmazonIdentityManagement.
@@ -3369,6 +3663,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     /**
      * <p>
      * Synchronizes the specified MFA device with AWS servers.
+     * </p>
+     * <p>
+     * For more information about creating and working with virtual MFA
+     * devices, go to
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"> Using a Virtual MFA Device </a>
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param resyncMFADeviceRequest Container for the necessary parameters
@@ -3511,7 +3811,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>The seed information contained in the QR code and
+     * <b>IMPORTANT:</b> The seed information contained in the QR code and
      * the Base32 string should be treated like any other secret access
      * information, such as your AWS access keys or your passwords. After you
      * provision your virtual device, you should ensure that the information
@@ -3558,7 +3858,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>The seed information contained in the QR code and
+     * <b>IMPORTANT:</b> The seed information contained in the QR code and
      * the Base32 string should be treated like any other secret access
      * information, such as your AWS access keys or your passwords. After you
      * provision your virtual device, you should ensure that the information
@@ -3707,13 +4007,13 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
      * For information about rotating keys, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in the <i>Using IAM </i> guide.
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateAccessKeyRequest Container for the necessary parameters
@@ -3752,13 +4052,13 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
      * For information about rotating keys, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"> Managing Keys and Certificates </a>
-     * in the <i>Using IAM </i> guide.
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateAccessKeyRequest Container for the necessary parameters
@@ -3795,6 +4095,82 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
               }
               asyncHandler.onSuccess(updateAccessKeyRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Returns information about the specified OpenID Connect provider.
+     * </p>
+     *
+     * @param getOpenIDConnectProviderRequest Container for the necessary
+     *           parameters to execute the GetOpenIDConnectProvider operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(final GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetOpenIDConnectProviderResult>() {
+            public GetOpenIDConnectProviderResult call() throws Exception {
+                return getOpenIDConnectProvider(getOpenIDConnectProviderRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns information about the specified OpenID Connect provider.
+     * </p>
+     *
+     * @param getOpenIDConnectProviderRequest Container for the necessary
+     *           parameters to execute the GetOpenIDConnectProvider operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(
+            final GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest,
+            final AsyncHandler<GetOpenIDConnectProviderRequest, GetOpenIDConnectProviderResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetOpenIDConnectProviderResult>() {
+            public GetOpenIDConnectProviderResult call() throws Exception {
+              GetOpenIDConnectProviderResult result;
+                try {
+                result = getOpenIDConnectProvider(getOpenIDConnectProviderRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(getOpenIDConnectProviderRequest, result);
+                 return result;
         }
     });
     }
@@ -3869,6 +4245,128 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
               }
               asyncHandler.onSuccess(addUserToGroupRequest, null);
                  return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Creates an IAM entity to describe an identity provider (IdP) that
+     * supports
+     * <a href="http://openid.net/connect/"> OpenID Connect (OIDC) </a>
+     * .
+     * </p>
+     * <p>
+     * The OIDC provider that you create with this operation can be used as
+     * a principal in a role's trust policy to establish a trust relationship
+     * between AWS and the OIDC provider.
+     * </p>
+     * <p>
+     * When you create the IAM OIDC provider, you specify the URL of the
+     * OIDC identity provider (IdP) to trust, a list of client IDs (also
+     * known as audiences) that identify the application or applications that
+     * are allowed to authenticate using the OIDC provider, and a list of
+     * thumbprints of the server certificate(s) that the IdP uses. You get
+     * all of this information from the OIDC IdP that you want to use for
+     * access to AWS.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Because trust for the OIDC provider is ultimately derived
+     * from the IAM provider that this action creates, it is a best practice
+     * to limit access to the CreateOpenIDConnectProvider action to
+     * highly-privileged users.
+     * </p>
+     *
+     * @param createOpenIDConnectProviderRequest Container for the necessary
+     *           parameters to execute the CreateOpenIDConnectProvider operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateOpenIDConnectProviderResult> createOpenIDConnectProviderAsync(final CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateOpenIDConnectProviderResult>() {
+            public CreateOpenIDConnectProviderResult call() throws Exception {
+                return createOpenIDConnectProvider(createOpenIDConnectProviderRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Creates an IAM entity to describe an identity provider (IdP) that
+     * supports
+     * <a href="http://openid.net/connect/"> OpenID Connect (OIDC) </a>
+     * .
+     * </p>
+     * <p>
+     * The OIDC provider that you create with this operation can be used as
+     * a principal in a role's trust policy to establish a trust relationship
+     * between AWS and the OIDC provider.
+     * </p>
+     * <p>
+     * When you create the IAM OIDC provider, you specify the URL of the
+     * OIDC identity provider (IdP) to trust, a list of client IDs (also
+     * known as audiences) that identify the application or applications that
+     * are allowed to authenticate using the OIDC provider, and a list of
+     * thumbprints of the server certificate(s) that the IdP uses. You get
+     * all of this information from the OIDC IdP that you want to use for
+     * access to AWS.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Because trust for the OIDC provider is ultimately derived
+     * from the IAM provider that this action creates, it is a best practice
+     * to limit access to the CreateOpenIDConnectProvider action to
+     * highly-privileged users.
+     * </p>
+     *
+     * @param createOpenIDConnectProviderRequest Container for the necessary
+     *           parameters to execute the CreateOpenIDConnectProvider operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateOpenIDConnectProvider service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateOpenIDConnectProviderResult> createOpenIDConnectProviderAsync(
+            final CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest,
+            final AsyncHandler<CreateOpenIDConnectProviderRequest, CreateOpenIDConnectProviderResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateOpenIDConnectProviderResult>() {
+            public CreateOpenIDConnectProviderResult call() throws Exception {
+              CreateOpenIDConnectProviderResult result;
+                try {
+                result = createOpenIDConnectProvider(createOpenIDConnectProviderRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(createOpenIDConnectProviderRequest, result);
+                 return result;
         }
     });
     }
@@ -4207,6 +4705,110 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
+     * Returns information about the signing certificates associated with
+     * the specified user. If there are none, the action returns an empty
+     * list.
+     * </p>
+     * <p>
+     * Although each user is limited to a small number of signing
+     * certificates, you can still paginate the results using the
+     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * If the <code>UserName</code> field is not specified, the user name is
+     * determined implicitly based on the AWS access key ID used to sign the
+     * request. Because this action works for access keys under the AWS
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
+     * </p>
+     *
+     * @param listSigningCertificatesRequest Container for the necessary
+     *           parameters to execute the ListSigningCertificates operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListSigningCertificates service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListSigningCertificatesResult> listSigningCertificatesAsync(final ListSigningCertificatesRequest listSigningCertificatesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListSigningCertificatesResult>() {
+            public ListSigningCertificatesResult call() throws Exception {
+                return listSigningCertificates(listSigningCertificatesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Returns information about the signing certificates associated with
+     * the specified user. If there are none, the action returns an empty
+     * list.
+     * </p>
+     * <p>
+     * Although each user is limited to a small number of signing
+     * certificates, you can still paginate the results using the
+     * <code>MaxItems</code> and <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * If the <code>UserName</code> field is not specified, the user name is
+     * determined implicitly based on the AWS access key ID used to sign the
+     * request. Because this action works for access keys under the AWS
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
+     * </p>
+     *
+     * @param listSigningCertificatesRequest Container for the necessary
+     *           parameters to execute the ListSigningCertificates operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListSigningCertificates service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListSigningCertificatesResult> listSigningCertificatesAsync(
+            final ListSigningCertificatesRequest listSigningCertificatesRequest,
+            final AsyncHandler<ListSigningCertificatesRequest, ListSigningCertificatesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListSigningCertificatesResult>() {
+            public ListSigningCertificatesResult call() throws Exception {
+              ListSigningCertificatesResult result;
+                try {
+                result = listSigningCertificates(listSigningCertificatesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listSigningCertificatesRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * Lists the names of the policies associated with the specified role.
      * If there are none, the action returns an empty list.
      * </p>
@@ -4291,110 +4893,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Returns information about the signing certificates associated with
-     * the specified user. If there are none, the action returns an empty
-     * list.
-     * </p>
-     * <p>
-     * Although each user is limited to a small number of signing
-     * certificates, you can still paginate the results using the
-     * <code>MaxItems</code> and <code>Marker</code> parameters.
-     * </p>
-     * <p>
-     * If the <code>UserName</code> field is not specified, the user name is
-     * determined implicitly based on the AWS access key ID used to sign the
-     * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
-     * </p>
-     *
-     * @param listSigningCertificatesRequest Container for the necessary
-     *           parameters to execute the ListSigningCertificates operation on
-     *           AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListSigningCertificates service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListSigningCertificatesResult> listSigningCertificatesAsync(final ListSigningCertificatesRequest listSigningCertificatesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListSigningCertificatesResult>() {
-            public ListSigningCertificatesResult call() throws Exception {
-                return listSigningCertificates(listSigningCertificatesRequest);
-        }
-    });
-    }
-
-    /**
-     * <p>
-     * Returns information about the signing certificates associated with
-     * the specified user. If there are none, the action returns an empty
-     * list.
-     * </p>
-     * <p>
-     * Although each user is limited to a small number of signing
-     * certificates, you can still paginate the results using the
-     * <code>MaxItems</code> and <code>Marker</code> parameters.
-     * </p>
-     * <p>
-     * If the <code>UserName</code> field is not specified, the user name is
-     * determined implicitly based on the AWS access key ID used to sign the
-     * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
-     * </p>
-     *
-     * @param listSigningCertificatesRequest Container for the necessary
-     *           parameters to execute the ListSigningCertificates operation on
-     *           AmazonIdentityManagement.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListSigningCertificates service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListSigningCertificatesResult> listSigningCertificatesAsync(
-            final ListSigningCertificatesRequest listSigningCertificatesRequest,
-            final AsyncHandler<ListSigningCertificatesRequest, ListSigningCertificatesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListSigningCertificatesResult>() {
-            public ListSigningCertificatesResult call() throws Exception {
-              ListSigningCertificatesResult result;
-                try {
-                result = listSigningCertificates(listSigningCertificatesRequest);
-              } catch (Exception ex) {
-                  asyncHandler.onError(ex);
-            throw ex;
-              }
-              asyncHandler.onSuccess(listSigningCertificatesRequest, result);
-                 return result;
-        }
-    });
-    }
-    
-    /**
-     * <p>
      * Uploads an X.509 signing certificate and associates it with the
      * specified user. Some AWS services use X.509 signing certificates to
      * validate requests that are signed with a corresponding private key.
@@ -4405,16 +4903,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the user name is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
-     * should use POST rather than GET when calling UploadSigningCertificate.
-     * For information about setting up signatures and authorization through
-     * the API, go to Signing AWS API Requests in the AWS General Reference.
-     * For general information about using the Query API with IAM, go to
-     * Making Query Requests in the Using IAMguide.
+     * <b>NOTE:</b> Because the body of a X.509 certificate can be large,
+     * you should use POST rather than GET when calling
+     * UploadSigningCertificate. For information about setting up signatures
+     * and authorization through the API, go to Signing AWS API Requests in
+     * the AWS General Reference. For general information about using the
+     * Query API with IAM, go to Making Query Requests in the Using IAMguide.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -4455,16 +4953,16 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the user name is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
-     * should use POST rather than GET when calling UploadSigningCertificate.
-     * For information about setting up signatures and authorization through
-     * the API, go to Signing AWS API Requests in the AWS General Reference.
-     * For general information about using the Query API with IAM, go to
-     * Making Query Requests in the Using IAMguide.
+     * <b>NOTE:</b> Because the body of a X.509 certificate can be large,
+     * you should use POST rather than GET when calling
+     * UploadSigningCertificate. For information about setting up signatures
+     * and authorization through the API, go to Signing AWS API Requests in
+     * the AWS General Reference. For general information about using the
+     * Query API with IAM, go to Making Query Requests in the Using IAMguide.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -4513,7 +5011,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * have an associated role.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
      * running with the instance profile you are about to delete. Deleting a
      * role or instance profile that is associated with a running instance
      * will break any applications running on the instance.
@@ -4557,7 +5055,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * have an associated role.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
      * running with the instance profile you are about to delete. Deleting a
      * role or instance profile that is associated with a running instance
      * will break any applications running on the instance.
@@ -4705,7 +5203,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * provider was created or updated.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param getSAMLProviderRequest Container for the necessary parameters
@@ -4739,7 +5237,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * provider was created or updated.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      *
      * @param getSAMLProviderRequest Container for the necessary parameters
@@ -4785,6 +5283,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * <p>
      * Changes the password for the specified user.
      * </p>
+     * <p>
+     * Users can change their own passwords by calling ChangePassword. For
+     * more information about modifying passwords, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
+     * in the <i>Using IAM</i> guide.
+     * </p>
      *
      * @param updateLoginProfileRequest Container for the necessary
      *           parameters to execute the UpdateLoginProfile operation on
@@ -4816,6 +5320,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     /**
      * <p>
      * Changes the password for the specified user.
+     * </p>
+     * <p>
+     * Users can change their own passwords by calling ChangePassword. For
+     * more information about modifying passwords, see
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
+     * in the <i>Using IAM</i> guide.
      * </p>
      *
      * @param updateLoginProfileRequest Container for the necessary
@@ -4864,7 +5374,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Console.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user
+     * <b>IMPORTANT:</b> Deleting a user's password does not prevent a user
      * from accessing IAM through the command line interface or the API. To
      * prevent all user access you must also either make the access key
      * inactive or delete it. For more information about making keys inactive
@@ -4905,7 +5415,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Console.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user
+     * <b>IMPORTANT:</b> Deleting a user's password does not prevent a user
      * from accessing IAM through the command line interface or the API. To
      * prevent all user access you must also either make the access key
      * inactive or delete it. For more information about making keys inactive
@@ -4953,10 +5463,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Changes the password of the IAM user calling
-     * <code>ChangePassword</code> . The root account password is not
-     * affected by this action. For information about modifying passwords,
-     * see
+     * Changes the password of the IAM user who is calling this action. The
+     * root account password is not affected by this action.
+     * </p>
+     * <p>
+     * To change the password for a different user, see UpdateLoginProfile.
+     * For more information about modifying passwords, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
      * in the <i>Using IAM</i> guide.
      * </p>
@@ -4989,10 +5501,12 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
     /**
      * <p>
-     * Changes the password of the IAM user calling
-     * <code>ChangePassword</code> . The root account password is not
-     * affected by this action. For information about modifying passwords,
-     * see
+     * Changes the password of the IAM user who is calling this action. The
+     * root account password is not affected by this action.
+     * </p>
+     * <p>
+     * To change the password for a different user, see UpdateLoginProfile.
+     * For more information about modifying passwords, see
      * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"> Managing Passwords </a>
      * in the <i>Using IAM</i> guide.
      * </p>
@@ -5125,7 +5639,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * <b>NOTE:</b> Because policy documents can be large, you should use
      * POST rather than GET when calling PutGroupPolicy. For information
      * about setting up signatures and authorization through the API, go to
      * Signing AWS API Requests in the AWS General Reference. For general
@@ -5173,7 +5687,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * in the <i>Using IAM</i> guide.
      * </p>
      * <p>
-     * <b>NOTE:</b>Because policy documents can be large, you should use
+     * <b>NOTE:</b> Because policy documents can be large, you should use
      * POST rather than GET when calling PutGroupPolicy. For information
      * about setting up signatures and authorization through the API, go to
      * Signing AWS API Requests in the AWS General Reference. For general
@@ -5228,7 +5742,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request. Because
      * this action works for access keys under the AWS account, you can use
-     * this API to manage root credentials even if the AWS account has no
+     * this action to manage root credentials even if the AWS account has no
      * associated users.
      * </p>
      *
@@ -5268,7 +5782,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request. Because
      * this action works for access keys under the AWS account, you can use
-     * this API to manage root credentials even if the AWS account has no
+     * this action to manage root credentials even if the AWS account has no
      * associated users.
      * </p>
      *
@@ -5409,11 +5923,11 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b>To ensure the security of your AWS account, the secret
+     * <b>NOTE:</b> To ensure the security of your AWS account, the secret
      * access key is accessible only during key and user creation.
      * </p>
      *
@@ -5456,11 +5970,11 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS access key ID used to sign the
      * request. Because this action works for access keys under the AWS
-     * account, this API can be used to manage root credentials even if the
-     * AWS account has no associated users.
+     * account, you can use this action to manage root credentials even if
+     * the AWS account has no associated users.
      * </p>
      * <p>
-     * <b>NOTE:</b>To ensure the security of your AWS account, the secret
+     * <b>NOTE:</b> To ensure the security of your AWS account, the secret
      * access key is accessible only during key and user creation.
      * </p>
      *
@@ -5498,6 +6012,84 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             throw ex;
               }
               asyncHandler.onSuccess(listAccessKeysRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Lists information about the OpenID Connect providers in the AWS
+     * account.
+     * </p>
+     *
+     * @param listOpenIDConnectProvidersRequest Container for the necessary
+     *           parameters to execute the ListOpenIDConnectProviders operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListOpenIDConnectProviders service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListOpenIDConnectProvidersResult> listOpenIDConnectProvidersAsync(final ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListOpenIDConnectProvidersResult>() {
+            public ListOpenIDConnectProvidersResult call() throws Exception {
+                return listOpenIDConnectProviders(listOpenIDConnectProvidersRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Lists information about the OpenID Connect providers in the AWS
+     * account.
+     * </p>
+     *
+     * @param listOpenIDConnectProvidersRequest Container for the necessary
+     *           parameters to execute the ListOpenIDConnectProviders operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListOpenIDConnectProviders service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListOpenIDConnectProvidersResult> listOpenIDConnectProvidersAsync(
+            final ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest,
+            final AsyncHandler<ListOpenIDConnectProvidersRequest, ListOpenIDConnectProvidersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListOpenIDConnectProvidersResult>() {
+            public ListOpenIDConnectProvidersResult call() throws Exception {
+              ListOpenIDConnectProvidersResult result;
+                try {
+                result = listOpenIDConnectProviders(listOpenIDConnectProvidersRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listOpenIDConnectProvidersRequest, result);
                  return result;
         }
     });
@@ -5664,6 +6256,122 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             throw ex;
               }
               asyncHandler.onSuccess(addRoleToInstanceProfileRequest, null);
+                 return null;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Replaces the existing list of server certificate thumbprints with a
+     * new list.
+     * </p>
+     * <p>
+     * The list that you pass with this action completely replaces the
+     * existing list of thumbprints. (The lists are not merged.)
+     * </p>
+     * <p>
+     * Typically, you need to update a thumbprint only when the identity
+     * provider's certificate changes, which occurs rarely. However, if the
+     * provider's certificate <i>does</i> change, any attempt to assume an
+     * IAM role that specifies the IAM provider as a principal will fail
+     * until the certificate thumbprint is updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Because trust for the OpenID Connect provider is
+     * ultimately derived from the provider's certificate and is validated by
+     * the thumbprint, it is a best practice to limit access to the
+     * UpdateOpenIDConnectProviderThumbprint action to highly-privileged
+     * users.
+     * </p>
+     *
+     * @param updateOpenIDConnectProviderThumbprintRequest Container for the
+     *           necessary parameters to execute the
+     *           UpdateOpenIDConnectProviderThumbprint operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateOpenIDConnectProviderThumbprint service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateOpenIDConnectProviderThumbprintAsync(final UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateOpenIDConnectProviderThumbprint(updateOpenIDConnectProviderThumbprintRequest);
+                return null;
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Replaces the existing list of server certificate thumbprints with a
+     * new list.
+     * </p>
+     * <p>
+     * The list that you pass with this action completely replaces the
+     * existing list of thumbprints. (The lists are not merged.)
+     * </p>
+     * <p>
+     * Typically, you need to update a thumbprint only when the identity
+     * provider's certificate changes, which occurs rarely. However, if the
+     * provider's certificate <i>does</i> change, any attempt to assume an
+     * IAM role that specifies the IAM provider as a principal will fail
+     * until the certificate thumbprint is updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Because trust for the OpenID Connect provider is
+     * ultimately derived from the provider's certificate and is validated by
+     * the thumbprint, it is a best practice to limit access to the
+     * UpdateOpenIDConnectProviderThumbprint action to highly-privileged
+     * users.
+     * </p>
+     *
+     * @param updateOpenIDConnectProviderThumbprintRequest Container for the
+     *           necessary parameters to execute the
+     *           UpdateOpenIDConnectProviderThumbprint operation on
+     *           AmazonIdentityManagement.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateOpenIDConnectProviderThumbprint service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateOpenIDConnectProviderThumbprintAsync(
+            final UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest,
+            final AsyncHandler<UpdateOpenIDConnectProviderThumbprintRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+              try {
+                updateOpenIDConnectProviderThumbprint(updateOpenIDConnectProviderThumbprintRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(updateOpenIDConnectProviderThumbprintRequest, null);
                  return null;
         }
     });
@@ -6368,7 +7076,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Removes the specified role from the specified instance profile.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
      * running with the role you are about to remove from the instance
      * profile. Removing a role from an instance profile that is associated
      * with a running instance will break any applications running on the
@@ -6412,7 +7120,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Removes the specified role from the specified instance profile.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * <b>IMPORTANT:</b> Make sure you do not have any Amazon EC2 instances
      * running with the role you are about to remove from the instance
      * profile. Removing a role from an instance profile that is associated
      * with a running instance will break any applications running on the
@@ -6468,10 +7176,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Updates the password policy settings for the AWS account.
      * </p>
      * <p>
-     * <b>NOTE:</b> This API does not support partial updates. No parameters
-     * are required, but if you do not specify a parameter, that parameter's
-     * value reverts to its default value. See the Request Parameters section
-     * for each parameter's default value.
+     * <b>NOTE:</b> This action does not support partial updates. No
+     * parameters are required, but if you do not specify a parameter, that
+     * parameter's value reverts to its default value. See the Request
+     * Parameters section for each parameter's default value.
      * </p>
      * <p>
      * For more information about using a password policy, see
@@ -6511,10 +7219,10 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * Updates the password policy settings for the AWS account.
      * </p>
      * <p>
-     * <b>NOTE:</b> This API does not support partial updates. No parameters
-     * are required, but if you do not specify a parameter, that parameter's
-     * value reverts to its default value. See the Request Parameters section
-     * for each parameter's default value.
+     * <b>NOTE:</b> This action does not support partial updates. No
+     * parameters are required, but if you do not specify a parameter, that
+     * parameter's value reverts to its default value. See the Request
+     * Parameters section for each parameter's default value.
      * </p>
      * <p>
      * For more information about using a password policy, see
@@ -6936,7 +7644,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * management software that is used as your organization's IdP.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      * <p>
      * For more information, see
@@ -6991,7 +7699,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * management software that is used as your organization's IdP.
      * </p>
      * <p>
-     * <b>NOTE:</b>This operation requires Signature Version 4.
+     * <b>NOTE:</b> This operation requires Signature Version 4.
      * </p>
      * <p>
      * For more information, see

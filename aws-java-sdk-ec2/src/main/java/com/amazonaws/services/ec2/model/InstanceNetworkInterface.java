@@ -57,6 +57,11 @@ public class InstanceNetworkInterface implements Serializable {
     private String status;
 
     /**
+     * The MAC address.
+     */
+    private String macAddress;
+
+    /**
      * The IP address of the network interface within the subnet.
      */
     private String privateIpAddress;
@@ -337,6 +342,39 @@ public class InstanceNetworkInterface implements Serializable {
      */
     public InstanceNetworkInterface withStatus(NetworkInterfaceStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * The MAC address.
+     *
+     * @return The MAC address.
+     */
+    public String getMacAddress() {
+        return macAddress;
+    }
+    
+    /**
+     * The MAC address.
+     *
+     * @param macAddress The MAC address.
+     */
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
+    
+    /**
+     * The MAC address.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param macAddress The MAC address.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public InstanceNetworkInterface withMacAddress(String macAddress) {
+        this.macAddress = macAddress;
         return this;
     }
 
@@ -682,6 +720,7 @@ public class InstanceNetworkInterface implements Serializable {
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getMacAddress() != null) sb.append("MacAddress: " + getMacAddress() + ",");
         if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
         if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
         if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");
@@ -704,6 +743,7 @@ public class InstanceNetworkInterface implements Serializable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getMacAddress() == null) ? 0 : getMacAddress().hashCode()); 
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode()); 
         hashCode = prime * hashCode + ((isSourceDestCheck() == null) ? 0 : isSourceDestCheck().hashCode()); 
@@ -734,6 +774,8 @@ public class InstanceNetworkInterface implements Serializable {
         if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getMacAddress() == null ^ this.getMacAddress() == null) return false;
+        if (other.getMacAddress() != null && other.getMacAddress().equals(this.getMacAddress()) == false) return false; 
         if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null) return false;
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false) return false; 
         if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null) return false;

@@ -27,7 +27,7 @@ import com.amazonaws.services.ec2.model.transform.CreateSpotDatafeedSubscription
  * Instance usage logs. You can create one data feed per AWS account. For
  * more information, see
  * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"> Spot Instances </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * in the <i>Amazon Elastic Compute Cloud User Guide for Linux</i> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest)

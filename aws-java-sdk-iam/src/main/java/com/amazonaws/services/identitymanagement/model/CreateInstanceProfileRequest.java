@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the instance profile to create.
+     * The name of the instance profile to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -49,9 +49,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -60,33 +60,33 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     private String path;
 
     /**
-     * Name of the instance profile to create.
+     * The name of the instance profile to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the instance profile to create.
+     * @return The name of the instance profile to create.
      */
     public String getInstanceProfileName() {
         return instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to create.
+     * The name of the instance profile to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to create.
+     * @param instanceProfileName The name of the instance profile to create.
      */
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
     
     /**
-     * Name of the instance profile to create.
+     * The name of the instance profile to create.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -94,7 +94,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param instanceProfileName Name of the instance profile to create.
+     * @param instanceProfileName The name of the instance profile to create.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -107,9 +107,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -117,9 +117,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @return The path to the instance profile. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     *         is optional. If it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/).
      */
     public String getPath() {
         return path;
@@ -128,9 +128,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -138,9 +138,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @param path The path to the instance profile. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     *         is optional. If it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
@@ -149,9 +149,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     * for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     * is optional. If it is not included, it defaults to a slash (/).
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -161,9 +161,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
      *
      * @param path The path to the instance profile. For more information about paths,
      *         see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
-     *         for IAM Entities</a> in the <i>Using IAM</i> guide. <p>This parameter
-     *         is optional. If it is not included, it defaults to a slash (/).
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     *         Identifiers</a> in the <i>Using IAM</i> guide. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -21,11 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#retrieveTapeArchive(RetrieveTapeArchiveRequest) RetrieveTapeArchive operation}.
  * <p>
- * Retrieves an archived virtual tape from the Virtual Tape Shelf (VTS)
- * to a Gateway-Virtual Tape Library. Virtual tapes archived in the
- * Virtual Tape Shelf (VTS) are not associated with any gateway. However
- * after a tape is retrieved, it is associated with a gateway though it
- * also listed in VTS.
+ * Retrieves an archived virtual tape from the virtual tape shelf (VTS)
+ * to a gateway-VTL. Virtual tapes archived in the VTS are not associated
+ * with any gateway. However after a tape is retrieved, it is associated
+ * with a gateway, even though it is also listed in the VTS.
  * </p>
  * <p>
  * Once a tape is successfully retrieved to a gateway, it cannot be
@@ -39,7 +38,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape you want to
-     * retrieve from the Virtual Tape Shelf (VTS).
+     * retrieve from the virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -51,7 +50,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      * virtual tape to. Use the <a>ListGateways</a> operation to return a
      * list of gateways for your account and region. <p>You retrieve archived
      * virtual tapes to only one gateway and the gateway must be a
-     * Gateway-Virtual Tape Library.
+     * gateway-VTL.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -60,13 +59,13 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
 
     /**
      * The Amazon Resource Name (ARN) of the virtual tape you want to
-     * retrieve from the Virtual Tape Shelf (VTS).
+     * retrieve from the virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
      * @return The Amazon Resource Name (ARN) of the virtual tape you want to
-     *         retrieve from the Virtual Tape Shelf (VTS).
+     *         retrieve from the virtual tape shelf (VTS).
      */
     public String getTapeARN() {
         return tapeARN;
@@ -74,13 +73,13 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
     
     /**
      * The Amazon Resource Name (ARN) of the virtual tape you want to
-     * retrieve from the Virtual Tape Shelf (VTS).
+     * retrieve from the virtual tape shelf (VTS).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape you want to
-     *         retrieve from the Virtual Tape Shelf (VTS).
+     *         retrieve from the virtual tape shelf (VTS).
      */
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
@@ -88,7 +87,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
     
     /**
      * The Amazon Resource Name (ARN) of the virtual tape you want to
-     * retrieve from the Virtual Tape Shelf (VTS).
+     * retrieve from the virtual tape shelf (VTS).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -96,7 +95,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      * <b>Length: </b>50 - 500<br/>
      *
      * @param tapeARN The Amazon Resource Name (ARN) of the virtual tape you want to
-     *         retrieve from the Virtual Tape Shelf (VTS).
+     *         retrieve from the virtual tape shelf (VTS).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -111,7 +110,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      * virtual tape to. Use the <a>ListGateways</a> operation to return a
      * list of gateways for your account and region. <p>You retrieve archived
      * virtual tapes to only one gateway and the gateway must be a
-     * Gateway-Virtual Tape Library.
+     * gateway-VTL.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -120,7 +119,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      *         virtual tape to. Use the <a>ListGateways</a> operation to return a
      *         list of gateways for your account and region. <p>You retrieve archived
      *         virtual tapes to only one gateway and the gateway must be a
-     *         Gateway-Virtual Tape Library.
+     *         gateway-VTL.
      */
     public String getGatewayARN() {
         return gatewayARN;
@@ -131,7 +130,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      * virtual tape to. Use the <a>ListGateways</a> operation to return a
      * list of gateways for your account and region. <p>You retrieve archived
      * virtual tapes to only one gateway and the gateway must be a
-     * Gateway-Virtual Tape Library.
+     * gateway-VTL.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -140,7 +139,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      *         virtual tape to. Use the <a>ListGateways</a> operation to return a
      *         list of gateways for your account and region. <p>You retrieve archived
      *         virtual tapes to only one gateway and the gateway must be a
-     *         Gateway-Virtual Tape Library.
+     *         gateway-VTL.
      */
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -151,7 +150,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      * virtual tape to. Use the <a>ListGateways</a> operation to return a
      * list of gateways for your account and region. <p>You retrieve archived
      * virtual tapes to only one gateway and the gateway must be a
-     * Gateway-Virtual Tape Library.
+     * gateway-VTL.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -162,7 +161,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest implemen
      *         virtual tape to. Use the <a>ListGateways</a> operation to return a
      *         list of gateways for your account and region. <p>You retrieve archived
      *         virtual tapes to only one gateway and the gateway must be a
-     *         Gateway-Virtual Tape Library.
+     *         gateway-VTL.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

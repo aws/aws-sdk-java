@@ -67,6 +67,10 @@ public class InstanceNetworkInterfaceStaxUnmarshaller implements Unmarshaller<In
                     instanceNetworkInterface.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("macAddress", targetDepth)) {
+                    instanceNetworkInterface.setMacAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("privateIpAddress", targetDepth)) {
                     instanceNetworkInterface.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

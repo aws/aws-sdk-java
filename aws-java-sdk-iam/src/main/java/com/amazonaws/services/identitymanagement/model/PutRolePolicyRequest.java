@@ -33,8 +33,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * in the <i>Using IAM</i> guide.
  * </p>
  * <p>
- * <b>NOTE:</b>Because policy documents can be large, you should use POST
- * rather than GET when calling PutRolePolicy. For information about
+ * <b>NOTE:</b> Because policy documents can be large, you should use
+ * POST rather than GET when calling PutRolePolicy. For information about
  * setting up signatures and authorization through the API, go to Signing
  * AWS API Requests in the AWS General Reference. For general information
  * about using the Query API with IAM, go to Making Query Requests in the
@@ -46,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * Name of the role to associate the policy with.
+     * The name of the role to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -55,7 +55,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
     private String roleName;
 
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -73,33 +73,33 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
     private String policyDocument;
 
     /**
-     * Name of the role to associate the policy with.
+     * The name of the role to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the role to associate the policy with.
+     * @return The name of the role to associate the policy with.
      */
     public String getRoleName() {
         return roleName;
     }
     
     /**
-     * Name of the role to associate the policy with.
+     * The name of the role to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to associate the policy with.
+     * @param roleName The name of the role to associate the policy with.
      */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
     
     /**
-     * Name of the role to associate the policy with.
+     * The name of the role to associate the policy with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -107,7 +107,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param roleName Name of the role to associate the policy with.
+     * @param roleName The name of the role to associate the policy with.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -118,33 +118,33 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the policy document.
+     * @return The name of the policy document.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document.
+     * @param policyName The name of the policy document.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Name of the policy document.
+     * The name of the policy document.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -152,7 +152,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param policyName Name of the policy document.
+     * @param policyName The name of the policy document.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

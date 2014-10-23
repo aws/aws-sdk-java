@@ -37,12 +37,13 @@ import com.amazonaws.services.ec2.model.transform.DeleteSecurityGroupRequestMars
 public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteSecurityGroupRequest> {
 
     /**
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You can
+     * specify either the security group name or the security group ID.
      */
     private String groupName;
 
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      */
     private String groupId;
 
@@ -58,36 +59,43 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * initialize any additional object members.
      * 
      * @param groupName [EC2-Classic, default VPC] The name of the security
-     * group.
+     * group. You can specify either the security group name or the security
+     * group ID.
      */
     public DeleteSecurityGroupRequest(String groupName) {
         setGroupName(groupName);
     }
 
     /**
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You can
+     * specify either the security group name or the security group ID.
      *
-     * @return [EC2-Classic, default VPC] The name of the security group.
+     * @return [EC2-Classic, default VPC] The name of the security group. You can
+     *         specify either the security group name or the security group ID.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You can
+     * specify either the security group name or the security group ID.
      *
-     * @param groupName [EC2-Classic, default VPC] The name of the security group.
+     * @param groupName [EC2-Classic, default VPC] The name of the security group. You can
+     *         specify either the security group name or the security group ID.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You can
+     * specify either the security group name or the security group ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName [EC2-Classic, default VPC] The name of the security group.
+     * @param groupName [EC2-Classic, default VPC] The name of the security group. You can
+     *         specify either the security group name or the security group ID.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -98,29 +106,29 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      *
-     * @return The ID of the security group.
+     * @return The ID of the security group. Required for a nondefault VPC.
      */
     public String getGroupId() {
         return groupId;
     }
     
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      *
-     * @param groupId The ID of the security group.
+     * @param groupId The ID of the security group. Required for a nondefault VPC.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
     
     /**
-     * The ID of the security group.
+     * The ID of the security group. Required for a nondefault VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupId The ID of the security group.
+     * @param groupId The ID of the security group. Required for a nondefault VPC.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

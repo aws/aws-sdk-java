@@ -130,7 +130,8 @@ public class AmazonS3URI {
             // Remove the trailing '.' from the prefix to get the bucket.
             this.bucket = prefix.substring(0, prefix.length() - 1);
 
-            if ("/".equals(uri.getPath())) {
+            String path = uri.getPath();
+            if (path == null || path.isEmpty() || "/".equals(uri.getPath())) {
                 this.key = null;
             } else {
                 // Remove the leading '/'.

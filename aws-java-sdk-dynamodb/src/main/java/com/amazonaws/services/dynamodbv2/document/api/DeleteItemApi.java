@@ -16,6 +16,8 @@ package com.amazonaws.services.dynamodbv2.document.api;
 
 import java.util.Map;
 
+import org.apache.http.annotation.ThreadSafe;
+
 import com.amazonaws.services.dynamodbv2.document.DeleteItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Expected;
 import com.amazonaws.services.dynamodbv2.document.KeyAttribute;
@@ -25,6 +27,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.DeleteItemSpec;
 /**
  * A Table-centric DeleteItem API.
  */
+@ThreadSafe
 public interface DeleteItemApi {
     /** Deletes an item by primary key. */
     public DeleteItemOutcome deleteItem(KeyAttribute ... primaryKeyComponents);

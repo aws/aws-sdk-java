@@ -24,7 +24,25 @@ import com.amazonaws.services.ec2.model.transform.DescribeInstanceAttributeReque
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInstanceAttribute(DescribeInstanceAttributeRequest) DescribeInstanceAttribute operation}.
  * <p>
  * Describes the specified attribute of the specified instance. You can
- * specify only one attribute at a time.
+ * specify only one attribute at a time. Valid attribute values are:
+ * <code>instanceType</code> |
+ * 
+ * <code>kernel</code> |
+ * <code>ramdisk</code> |
+ * <code>userData</code> |
+ * 
+ * <code>disableApiTermination</code> |
+ * <code>instanceInitiatedShutdownBehavior</code> |
+ * 
+ * <code>rootDeviceName</code> |
+ * <code>blockDeviceMapping</code> |
+ * <code>productCodes</code> |
+ * 
+ * <code>sourceDestCheck</code> |
+ * <code>groupSet</code> |
+ * <code>ebsOptimized</code> |
+ * 
+ * <code>sriovNetSupport</code>
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstanceAttribute(DescribeInstanceAttributeRequest)

@@ -226,6 +226,18 @@ public class TableKeysAndAttributes {
         return this;
     }
 
+    /** @deprecated by {@link #withAttributeNames(String...)}. */
+    @Deprecated
+    public TableKeysAndAttributes withAttrbuteNames(String ... attributeNames) {
+        return withAttributeNames(attributeNames);
+    }
+
+    /** @deprecated by {@link #withAttributeNames(List)}. */
+    @Deprecated
+    public TableKeysAndAttributes withAttrbuteNames(List<String> attributeNames) {
+        return withAttributeNames(attributeNames);
+    }
+
     /**
      * Used to specify the attributes to be retrieved in each item returned
      * from the batch get-item operation.
@@ -234,7 +246,7 @@ public class TableKeysAndAttributes {
      * item returned from the batch get-item operation.
      * @return the current instance for method chaining purposes
      */
-    public TableKeysAndAttributes withAttrbuteNames(String ... attributeNames) {
+    public TableKeysAndAttributes withAttributeNames(String ... attributeNames) {
         if (attributeNames == null)
             this.attributeNames = null;
         else
@@ -243,7 +255,7 @@ public class TableKeysAndAttributes {
         return this;
     }
 
-    public TableKeysAndAttributes withAttrbuteNames(List<String> attributeNames) {
+    public TableKeysAndAttributes withAttributeNames(List<String> attributeNames) {
         if (attributeNames == null)
             this.attributeNames = null;
         else
