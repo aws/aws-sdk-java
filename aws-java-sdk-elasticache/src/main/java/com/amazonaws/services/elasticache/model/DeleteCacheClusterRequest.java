@@ -28,6 +28,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ElastiCache immediately begins deleting the cache cluster; you cannot
  * cancel or revert this operation.
  * </p>
+ * <p>
+ * This API cannot be used to delete a cache cluster that is the last
+ * read replica of a replication group that has automatic failover mode
+ * enabled.
+ * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest)
  */
@@ -40,7 +45,8 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     private String cacheClusterId;
 
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * The user-supplied name of a final cache cluster snapshot. This is the
+     * unique name that identifies the snapshot. ElastiCache creates the
      * snapshot, and then deletes the cache cluster immediately afterward.
      */
     private String finalSnapshotIdentifier;
@@ -103,10 +109,12 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * The user-supplied name of a final cache cluster snapshot. This is the
+     * unique name that identifies the snapshot. ElastiCache creates the
      * snapshot, and then deletes the cache cluster immediately afterward.
      *
-     * @return The name of a final cache cluster snapshot. ElastiCache creates the
+     * @return The user-supplied name of a final cache cluster snapshot. This is the
+     *         unique name that identifies the snapshot. ElastiCache creates the
      *         snapshot, and then deletes the cache cluster immediately afterward.
      */
     public String getFinalSnapshotIdentifier() {
@@ -114,10 +122,12 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * The user-supplied name of a final cache cluster snapshot. This is the
+     * unique name that identifies the snapshot. ElastiCache creates the
      * snapshot, and then deletes the cache cluster immediately afterward.
      *
-     * @param finalSnapshotIdentifier The name of a final cache cluster snapshot. ElastiCache creates the
+     * @param finalSnapshotIdentifier The user-supplied name of a final cache cluster snapshot. This is the
+     *         unique name that identifies the snapshot. ElastiCache creates the
      *         snapshot, and then deletes the cache cluster immediately afterward.
      */
     public void setFinalSnapshotIdentifier(String finalSnapshotIdentifier) {
@@ -125,12 +135,14 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
+     * The user-supplied name of a final cache cluster snapshot. This is the
+     * unique name that identifies the snapshot. ElastiCache creates the
      * snapshot, and then deletes the cache cluster immediately afterward.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param finalSnapshotIdentifier The name of a final cache cluster snapshot. ElastiCache creates the
+     * @param finalSnapshotIdentifier The user-supplied name of a final cache cluster snapshot. This is the
+     *         unique name that identifies the snapshot. ElastiCache creates the
      *         snapshot, and then deletes the cache cluster immediately afterward.
      *
      * @return A reference to this updated object so that method calls can be chained

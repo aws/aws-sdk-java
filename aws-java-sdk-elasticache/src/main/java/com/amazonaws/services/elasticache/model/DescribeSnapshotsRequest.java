@@ -64,7 +64,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
+     * be retrieved. <p>Default: 50 <p>Constraints: minimum 20; maximum 50.
      */
     private Integer maxRecords;
 
@@ -258,12 +258,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
+     * be retrieved. <p>Default: 50 <p>Constraints: minimum 20; maximum 50.
      *
      * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
+     *         be retrieved. <p>Default: 50 <p>Constraints: minimum 20; maximum 50.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -273,12 +273,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
+     * be retrieved. <p>Default: 50 <p>Constraints: minimum 20; maximum 50.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
+     *         be retrieved. <p>Default: 50 <p>Constraints: minimum 20; maximum 50.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -288,14 +288,14 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
+     * be retrieved. <p>Default: 50 <p>Constraints: minimum 20; maximum 50.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 50<p>Constraints: minimum 20; maximum 50.
+     *         be retrieved. <p>Default: 50 <p>Constraints: minimum 20; maximum 50.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

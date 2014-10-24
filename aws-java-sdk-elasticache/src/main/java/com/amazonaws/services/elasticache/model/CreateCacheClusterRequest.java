@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createCacheCluster(CreateCacheClusterRequest) CreateCacheCluster operation}.
  * <p>
- * The <i>CreateCacheCluster</i> operation creates a new cache cluster.
- * All nodes in the cache cluster run the same protocol-compliant cache
- * engine software - either Memcached or Redis.
+ * The <i>CreateCacheCluster</i> operation creates a cache cluster. All
+ * nodes in the cache cluster run the same protocol-compliant cache
+ * engine software, either Memcached or Redis.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheCluster(CreateCacheClusterRequest)
@@ -31,54 +31,109 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The cache cluster identifier. This parameter is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 20
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * The node group identifier. This parameter is stored as a lowercase
+     * string. <p>Constraints: <ul> <li>A name must contain from 1 to 20
+     * alphanumeric characters or hyphens.</li> <li>The first character must
+     * be a letter.</li> <li>A name cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> </ul>
      */
     private String cacheClusterId;
 
     /**
-     * The replication group to which this cache cluster should belong. If
-     * this parameter is specified, the cache cluster will be added to the
-     * specified replication group as a read replica; otherwise, the cache
-     * cluster will be a standalone primary that is not part of any
-     * replication group.
+     * The ID of the replication group to which this cache cluster should
+     * belong. If this parameter is specified, the cache cluster will be
+     * added to the specified replication group as a read replica; otherwise,
+     * the cache cluster will be a standalone primary that is not part of any
+     * replication group. <p>If the specified replication group is Automatic
+     * Failover enabled and the availability zone is not specified, the cache
+     * cluster will be created in availability zones that provide the best
+     * spread of read replicas across availability zones. <p><b>Note:</b>
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      */
     private String replicationGroupId;
 
     /**
+     * Specifies whether the nodes in this Memcached node group are created
+     * in a single Availability Zone or created across multiple Availability
+     * Zones in the cluster's region. <p>This parameter is only supported for
+     * Memcached cache clusters. <p>If the <code>AZMode</code> and
+     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     * assumes <code>single-az</code> mode.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     */
+    private String aZMode;
+
+    /**
+     * The EC2 Availability Zone in which the cache cluster will be created.
+     * <p>All nodes belonging to this Memcached cache cluster are placed in
+     * the preferred Availability Zone. If you want to create your nodes
+     * across multiple Availability Zones, use
+     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
+     * Availability Zone.
+     */
+    private String preferredAvailabilityZone;
+
+    /**
+     * A list of the Availability Zones in which cache nodes will be created.
+     * The order of the zones in the list is not important. <p>This option is
+     * only supported on Memcached. <note> <p>If you are creating your cache
+     * cluster in an Amazon VPC (recommended) you can only locate nodes in
+     * Availability Zones that are associated with the subnets in the
+     * selected subnet group. <p>The number of Availability Zones listed must
+     * equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     * all the nodes in the same Availability Zone, use
+     * <code>PreferredAvailabilityZone</code> instead, or repeat the
+     * Availability Zone multiple times in the list. <p>Default: System
+     * chosen Availability Zones. <p>Example: One Memcached node in each of
+     * three different Availability Zones:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     * <p>Example: All three Memcached nodes in one Availability Zone:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> preferredAvailabilityZones;
+
+    /**
      * The initial number of cache nodes that the cache cluster will have.
-     * <p>For a Memcached cluster, valid values are between 1 and 20. If you
-     * need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     * . <p>For Redis, only single-node cache clusters are supported at this
+     * <p>For Memcached, valid values are between 1 and 20. If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * <p>For Redis, only single-node cache cluster are supported at this
      * time, so the value for this parameter must be 1.
      */
     private Integer numCacheNodes;
 
     /**
-     * The compute and memory capacity of the nodes in the cache cluster.
-     * <p><b>Valid cache types</b> <ul> <li>Micro<p><code>cache.t1.micro |
-     * cache.m1.small</code></li> <li>General Purpose <ul> <li>Current
-     * Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     * | cache.m3.2xlarge</code></li> <li>Previous
-     * Generation<p><code>cache.m1.medium | cache.m1.large |
-     * cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     * Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     * <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     * cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     * <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     * cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     * listing of cache node types and specifications, see <a
+     * The compute and memory capacity of the nodes in the node group.
+     * <p>Valid node types are as follows: <ul> <li>General purpose: <ul>
+     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a> and <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a>.
+     * Node Type-Specific Parameters for Redis</a>.
      */
     private String cacheNodeType;
 
@@ -90,36 +145,36 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     private String engine;
 
     /**
-     * The version number of the cache engine to be used for this cluster. To
-     * view the supported cache engine versions, use the
+     * The version number of the cache engine to be used for this cache
+     * cluster. To view the supported cache engine versions, use the
      * <i>DescribeCacheEngineVersions</i> operation.
      */
     private String engineVersion;
 
     /**
-     * The name of the cache parameter group to associate with this cache
-     * cluster. If this argument is omitted, the default cache parameter
-     * group for the specified engine will be used.
+     * The name of the parameter group to associate with this cache cluster.
+     * If this argument is omitted, the default parameter group for the
+     * specified engine is used.
      */
     private String cacheParameterGroupName;
 
     /**
-     * The name of the cache subnet group to be used for the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
-     * Amazon Virtual Private Cloud (VPC).
+     * The name of the subnet group to be used for the cache cluster. <p>Use
+     * this parameter only when you are creating a cache cluster in an Amazon
+     * Virtual Private Cloud (VPC).
      */
     private String cacheSubnetGroupName;
 
     /**
-     * A list of cache security group names to associate with this cache
-     * cluster. <p>Use this parameter only when you are creating a cluster
+     * A list of security group names to associate with this cache cluster.
+     * <p>Use this parameter only when you are creating a cache cluster
      * outside of an Amazon Virtual Private Cloud (VPC).
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNames;
 
     /**
      * One or more VPC security groups associated with the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
+     * <p>Use this parameter only when you are creating a cache cluster in an
      * Amazon Virtual Private Cloud (VPC).
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
@@ -127,61 +182,21 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A single-element string list containing an Amazon Resource Name (ARN)
      * that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     * S3. The snapshot file will be used to populate the Redis cache in the
-     * new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     * any commas. <p>Here is an example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.
+     * S3. The snapshot file will be used to populate the node group. The
+     * Amazon S3 object name in the ARN cannot contain any commas.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     * Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> snapshotArns;
 
     /**
-     * The name of a snapshot from which to restore data into the new cache
-     * cluster. The snapshot's status changes to <code>restoring</code> while
-     * the new cache cluster is being created.
+     * The name of a snapshot from which to restore data into the new node
+     * group. The snapshot status changes to <code>restoring</code> while the
+     * new node group is being created. <p><b>Note:</b> This parameter is
+     * only valid if the <code>Engine</code> parameter is <code>redis</code>.
      */
     private String snapshotName;
-
-    /**
-     * Specifies whether the nodes in this Memcached cache cluster are
-     * created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>This option is only supported for Memcached
-     * cache clusters. <note>If the <code>AZMode</code> and
-     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
-     * assumes <code>single-az</code> mode.</note> <p>Valid values:
-     * <code>single-az</code> | <code>cross-az</code>.
-     */
-    private String aZMode;
-
-    /**
-     * The EC2 Availability Zone in which the cache cluster will be created.
-     * <p>All cache nodes belonging to this Memcached cache cluster are
-     * placed in the preferred Availability Zone. If you want to create your
-     * cache nodes across multiple Availability Zones, use
-     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
-     * Availability Zone.
-     */
-    private String preferredAvailabilityZone;
-
-    /**
-     * A list of the Availability Zones in which nodes will be created. The
-     * order of the zones in the list is not important. <p>This option is
-     * only supported on Memcached clusters. <note> <p>If you are creating
-     * your cache cluster in an Amazon VPC (recommended) you can only locate
-     * nodes in Availability Zones that are associated with the subnets in
-     * the selected subnet group. <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     * want all your cache nodes in the same Availability Zone, use
-     * <code>PreferredAvailabilityZone</code> instead or repeat the
-     * Availability Zone multiple times in the list. <p>Default: System
-     * chosen Availability Zones. <p>Example: One Memcached node in each of
-     * three Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> preferredAvailabilityZones;
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
@@ -198,35 +213,37 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
      * Service (SNS) topic to which notifications will be sent. <note>The
-     * Amazon SNS topic owner must be the same as the cache cluster owner.
-     * </note>
+     * Amazon SNS topic owner must be the same as the cache cluster
+     * owner.</note>
      */
     private String notificationTopicArn;
 
     /**
      * Determines whether minor engine upgrades will be applied automatically
-     * to the cache cluster during the maintenance window. A value of
+     * to the node group during the maintenance window. A value of
      * <code>true</code> allows these upgrades to occur; <code>false</code>
      * disables automatic upgrades. <p>Default: <code>true</code>
      */
     private Boolean autoMinorVersionUpgrade;
 
     /**
-     * The number of days for which ElastiCache will retain automatic cache
-     * cluster snapshots before deleting them. For example, if you set
+     * The number of days for which ElastiCache will retain automatic
+     * snapshots before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
-     * taken today will be retained for 5 days before being deleted. <p>If
-     * you do not specify this parameter, then
-     * <code>SnapshotRetentionLimit</code> will be set to 0 (i.e., automatic
-     * backups will be disabled for this cache cluster).
+     * taken today will be retained for 5 days before being deleted.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Default: 0
+     * (i.e., automatic backups are disabled for this cache cluster).
      */
     private Integer snapshotRetentionLimit;
 
     /**
      * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of your cache cluster. <p>Example:
+     * taking a daily snapshot of your node group. <p>Example:
      * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      * ElastiCache will automatically choose an appropriate time range.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.
      */
     private String snapshotWindow;
 
@@ -241,45 +258,52 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheClusterId The cache cluster identifier. This parameter is
-     * stored as a lowercase string. <p>Constraints: <ul> <li>Must contain
-     * from 1 to 20 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</li> </ul>
+     * @param cacheClusterId The node group identifier. This parameter is
+     * stored as a lowercase string. <p>Constraints: <ul> <li>A name must
+     * contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The
+     * first character must be a letter.</li> <li>A name cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
      * @param numCacheNodes The initial number of cache nodes that the cache
-     * cluster will have. <p>For a Memcached cluster, valid values are
-     * between 1 and 20. If you need to exceed this limit, please fill out
-     * the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     * . <p>For Redis, only single-node cache clusters are supported at this
+     * cluster will have. <p>For Memcached, valid values are between 1 and
+     * 20. If you need to exceed this limit, please fill out the ElastiCache
+     * Limit Increase Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * <p>For Redis, only single-node cache cluster are supported at this
      * time, so the value for this parameter must be 1.
      * @param cacheNodeType The compute and memory capacity of the nodes in
-     * the cache cluster. <p><b>Valid cache types</b> <ul>
-     * <li>Micro<p><code>cache.t1.micro | cache.m1.small</code></li>
-     * <li>General Purpose <ul> <li>Current
-     * Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     * | cache.m3.2xlarge</code></li> <li>Previous
-     * Generation<p><code>cache.m1.medium | cache.m1.large |
-     * cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     * Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     * <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     * cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     * <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     * cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     * listing of cache node types and specifications, see <a
+     * the node group. <p>Valid node types are as follows: <ul> <li>General
+     * purpose: <ul> <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a> and <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a>.
+     * Node Type-Specific Parameters for Redis</a>.
      * @param engine The name of the cache engine to be used for this cache
      * cluster. <p>Valid values for this parameter are:
      * <p><code>memcached</code> | <code>redis</code>
-     * @param cacheSecurityGroupNames A list of cache security group names to
+     * @param cacheSecurityGroupNames A list of security group names to
      * associate with this cache cluster. <p>Use this parameter only when you
-     * are creating a cluster outside of an Amazon Virtual Private Cloud
-     * (VPC).
+     * are creating a cache cluster outside of an Amazon Virtual Private
+     * Cloud (VPC).
      */
     public CreateCacheClusterRequest(String cacheClusterId, Integer numCacheNodes, String cacheNodeType, String engine, java.util.List<String> cacheSecurityGroupNames) {
         setCacheClusterId(cacheClusterId);
@@ -290,53 +314,53 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The cache cluster identifier. This parameter is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 20
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * The node group identifier. This parameter is stored as a lowercase
+     * string. <p>Constraints: <ul> <li>A name must contain from 1 to 20
+     * alphanumeric characters or hyphens.</li> <li>The first character must
+     * be a letter.</li> <li>A name cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> </ul>
      *
-     * @return The cache cluster identifier. This parameter is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 20
-     *         alphanumeric characters or hyphens.</li> <li>First character must be a
-     *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li> </ul>
+     * @return The node group identifier. This parameter is stored as a lowercase
+     *         string. <p>Constraints: <ul> <li>A name must contain from 1 to 20
+     *         alphanumeric characters or hyphens.</li> <li>The first character must
+     *         be a letter.</li> <li>A name cannot end with a hyphen or contain two
+     *         consecutive hyphens.</li> </ul>
      */
     public String getCacheClusterId() {
         return cacheClusterId;
     }
     
     /**
-     * The cache cluster identifier. This parameter is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 20
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * The node group identifier. This parameter is stored as a lowercase
+     * string. <p>Constraints: <ul> <li>A name must contain from 1 to 20
+     * alphanumeric characters or hyphens.</li> <li>The first character must
+     * be a letter.</li> <li>A name cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> </ul>
      *
-     * @param cacheClusterId The cache cluster identifier. This parameter is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 20
-     *         alphanumeric characters or hyphens.</li> <li>First character must be a
-     *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li> </ul>
+     * @param cacheClusterId The node group identifier. This parameter is stored as a lowercase
+     *         string. <p>Constraints: <ul> <li>A name must contain from 1 to 20
+     *         alphanumeric characters or hyphens.</li> <li>The first character must
+     *         be a letter.</li> <li>A name cannot end with a hyphen or contain two
+     *         consecutive hyphens.</li> </ul>
      */
     public void setCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
     }
     
     /**
-     * The cache cluster identifier. This parameter is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 20
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * The node group identifier. This parameter is stored as a lowercase
+     * string. <p>Constraints: <ul> <li>A name must contain from 1 to 20
+     * alphanumeric characters or hyphens.</li> <li>The first character must
+     * be a letter.</li> <li>A name cannot end with a hyphen or contain two
+     * consecutive hyphens.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterId The cache cluster identifier. This parameter is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 20
-     *         alphanumeric characters or hyphens.</li> <li>First character must be a
-     *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li> </ul>
+     * @param cacheClusterId The node group identifier. This parameter is stored as a lowercase
+     *         string. <p>Constraints: <ul> <li>A name must contain from 1 to 20
+     *         alphanumeric characters or hyphens.</li> <li>The first character must
+     *         be a letter.</li> <li>A name cannot end with a hyphen or contain two
+     *         consecutive hyphens.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -347,53 +371,83 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The replication group to which this cache cluster should belong. If
-     * this parameter is specified, the cache cluster will be added to the
-     * specified replication group as a read replica; otherwise, the cache
-     * cluster will be a standalone primary that is not part of any
-     * replication group.
+     * The ID of the replication group to which this cache cluster should
+     * belong. If this parameter is specified, the cache cluster will be
+     * added to the specified replication group as a read replica; otherwise,
+     * the cache cluster will be a standalone primary that is not part of any
+     * replication group. <p>If the specified replication group is Automatic
+     * Failover enabled and the availability zone is not specified, the cache
+     * cluster will be created in availability zones that provide the best
+     * spread of read replicas across availability zones. <p><b>Note:</b>
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      *
-     * @return The replication group to which this cache cluster should belong. If
-     *         this parameter is specified, the cache cluster will be added to the
-     *         specified replication group as a read replica; otherwise, the cache
-     *         cluster will be a standalone primary that is not part of any
-     *         replication group.
+     * @return The ID of the replication group to which this cache cluster should
+     *         belong. If this parameter is specified, the cache cluster will be
+     *         added to the specified replication group as a read replica; otherwise,
+     *         the cache cluster will be a standalone primary that is not part of any
+     *         replication group. <p>If the specified replication group is Automatic
+     *         Failover enabled and the availability zone is not specified, the cache
+     *         cluster will be created in availability zones that provide the best
+     *         spread of read replicas across availability zones. <p><b>Note:</b>
+     *         This parameter is only valid if the <code>Engine</code> parameter is
+     *         <code>redis</code>.
      */
     public String getReplicationGroupId() {
         return replicationGroupId;
     }
     
     /**
-     * The replication group to which this cache cluster should belong. If
-     * this parameter is specified, the cache cluster will be added to the
-     * specified replication group as a read replica; otherwise, the cache
-     * cluster will be a standalone primary that is not part of any
-     * replication group.
+     * The ID of the replication group to which this cache cluster should
+     * belong. If this parameter is specified, the cache cluster will be
+     * added to the specified replication group as a read replica; otherwise,
+     * the cache cluster will be a standalone primary that is not part of any
+     * replication group. <p>If the specified replication group is Automatic
+     * Failover enabled and the availability zone is not specified, the cache
+     * cluster will be created in availability zones that provide the best
+     * spread of read replicas across availability zones. <p><b>Note:</b>
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      *
-     * @param replicationGroupId The replication group to which this cache cluster should belong. If
-     *         this parameter is specified, the cache cluster will be added to the
-     *         specified replication group as a read replica; otherwise, the cache
-     *         cluster will be a standalone primary that is not part of any
-     *         replication group.
+     * @param replicationGroupId The ID of the replication group to which this cache cluster should
+     *         belong. If this parameter is specified, the cache cluster will be
+     *         added to the specified replication group as a read replica; otherwise,
+     *         the cache cluster will be a standalone primary that is not part of any
+     *         replication group. <p>If the specified replication group is Automatic
+     *         Failover enabled and the availability zone is not specified, the cache
+     *         cluster will be created in availability zones that provide the best
+     *         spread of read replicas across availability zones. <p><b>Note:</b>
+     *         This parameter is only valid if the <code>Engine</code> parameter is
+     *         <code>redis</code>.
      */
     public void setReplicationGroupId(String replicationGroupId) {
         this.replicationGroupId = replicationGroupId;
     }
     
     /**
-     * The replication group to which this cache cluster should belong. If
-     * this parameter is specified, the cache cluster will be added to the
-     * specified replication group as a read replica; otherwise, the cache
-     * cluster will be a standalone primary that is not part of any
-     * replication group.
+     * The ID of the replication group to which this cache cluster should
+     * belong. If this parameter is specified, the cache cluster will be
+     * added to the specified replication group as a read replica; otherwise,
+     * the cache cluster will be a standalone primary that is not part of any
+     * replication group. <p>If the specified replication group is Automatic
+     * Failover enabled and the availability zone is not specified, the cache
+     * cluster will be created in availability zones that provide the best
+     * spread of read replicas across availability zones. <p><b>Note:</b>
+     * This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param replicationGroupId The replication group to which this cache cluster should belong. If
-     *         this parameter is specified, the cache cluster will be added to the
-     *         specified replication group as a read replica; otherwise, the cache
-     *         cluster will be a standalone primary that is not part of any
-     *         replication group.
+     * @param replicationGroupId The ID of the replication group to which this cache cluster should
+     *         belong. If this parameter is specified, the cache cluster will be
+     *         added to the specified replication group as a read replica; otherwise,
+     *         the cache cluster will be a standalone primary that is not part of any
+     *         replication group. <p>If the specified replication group is Automatic
+     *         Failover enabled and the availability zone is not specified, the cache
+     *         cluster will be created in availability zones that provide the best
+     *         spread of read replicas across availability zones. <p><b>Note:</b>
+     *         This parameter is only valid if the <code>Engine</code> parameter is
+     *         <code>redis</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -404,20 +458,395 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * Specifies whether the nodes in this Memcached node group are created
+     * in a single Availability Zone or created across multiple Availability
+     * Zones in the cluster's region. <p>This parameter is only supported for
+     * Memcached cache clusters. <p>If the <code>AZMode</code> and
+     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     * assumes <code>single-az</code> mode.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @return Specifies whether the nodes in this Memcached node group are created
+     *         in a single Availability Zone or created across multiple Availability
+     *         Zones in the cluster's region. <p>This parameter is only supported for
+     *         Memcached cache clusters. <p>If the <code>AZMode</code> and
+     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     *         assumes <code>single-az</code> mode.
+     *
+     * @see AZMode
+     */
+    public String getAZMode() {
+        return aZMode;
+    }
+    
+    /**
+     * Specifies whether the nodes in this Memcached node group are created
+     * in a single Availability Zone or created across multiple Availability
+     * Zones in the cluster's region. <p>This parameter is only supported for
+     * Memcached cache clusters. <p>If the <code>AZMode</code> and
+     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     * assumes <code>single-az</code> mode.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the nodes in this Memcached node group are created
+     *         in a single Availability Zone or created across multiple Availability
+     *         Zones in the cluster's region. <p>This parameter is only supported for
+     *         Memcached cache clusters. <p>If the <code>AZMode</code> and
+     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     *         assumes <code>single-az</code> mode.
+     *
+     * @see AZMode
+     */
+    public void setAZMode(String aZMode) {
+        this.aZMode = aZMode;
+    }
+    
+    /**
+     * Specifies whether the nodes in this Memcached node group are created
+     * in a single Availability Zone or created across multiple Availability
+     * Zones in the cluster's region. <p>This parameter is only supported for
+     * Memcached cache clusters. <p>If the <code>AZMode</code> and
+     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     * assumes <code>single-az</code> mode.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the nodes in this Memcached node group are created
+     *         in a single Availability Zone or created across multiple Availability
+     *         Zones in the cluster's region. <p>This parameter is only supported for
+     *         Memcached cache clusters. <p>If the <code>AZMode</code> and
+     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     *         assumes <code>single-az</code> mode.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AZMode
+     */
+    public CreateCacheClusterRequest withAZMode(String aZMode) {
+        this.aZMode = aZMode;
+        return this;
+    }
+
+    /**
+     * Specifies whether the nodes in this Memcached node group are created
+     * in a single Availability Zone or created across multiple Availability
+     * Zones in the cluster's region. <p>This parameter is only supported for
+     * Memcached cache clusters. <p>If the <code>AZMode</code> and
+     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     * assumes <code>single-az</code> mode.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the nodes in this Memcached node group are created
+     *         in a single Availability Zone or created across multiple Availability
+     *         Zones in the cluster's region. <p>This parameter is only supported for
+     *         Memcached cache clusters. <p>If the <code>AZMode</code> and
+     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     *         assumes <code>single-az</code> mode.
+     *
+     * @see AZMode
+     */
+    public void setAZMode(AZMode aZMode) {
+        this.aZMode = aZMode.toString();
+    }
+    
+    /**
+     * Specifies whether the nodes in this Memcached node group are created
+     * in a single Availability Zone or created across multiple Availability
+     * Zones in the cluster's region. <p>This parameter is only supported for
+     * Memcached cache clusters. <p>If the <code>AZMode</code> and
+     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     * assumes <code>single-az</code> mode.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the nodes in this Memcached node group are created
+     *         in a single Availability Zone or created across multiple Availability
+     *         Zones in the cluster's region. <p>This parameter is only supported for
+     *         Memcached cache clusters. <p>If the <code>AZMode</code> and
+     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
+     *         assumes <code>single-az</code> mode.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AZMode
+     */
+    public CreateCacheClusterRequest withAZMode(AZMode aZMode) {
+        this.aZMode = aZMode.toString();
+        return this;
+    }
+
+    /**
+     * The EC2 Availability Zone in which the cache cluster will be created.
+     * <p>All nodes belonging to this Memcached cache cluster are placed in
+     * the preferred Availability Zone. If you want to create your nodes
+     * across multiple Availability Zones, use
+     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
+     * Availability Zone.
+     *
+     * @return The EC2 Availability Zone in which the cache cluster will be created.
+     *         <p>All nodes belonging to this Memcached cache cluster are placed in
+     *         the preferred Availability Zone. If you want to create your nodes
+     *         across multiple Availability Zones, use
+     *         <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
+     *         Availability Zone.
+     */
+    public String getPreferredAvailabilityZone() {
+        return preferredAvailabilityZone;
+    }
+    
+    /**
+     * The EC2 Availability Zone in which the cache cluster will be created.
+     * <p>All nodes belonging to this Memcached cache cluster are placed in
+     * the preferred Availability Zone. If you want to create your nodes
+     * across multiple Availability Zones, use
+     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
+     * Availability Zone.
+     *
+     * @param preferredAvailabilityZone The EC2 Availability Zone in which the cache cluster will be created.
+     *         <p>All nodes belonging to this Memcached cache cluster are placed in
+     *         the preferred Availability Zone. If you want to create your nodes
+     *         across multiple Availability Zones, use
+     *         <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
+     *         Availability Zone.
+     */
+    public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
+        this.preferredAvailabilityZone = preferredAvailabilityZone;
+    }
+    
+    /**
+     * The EC2 Availability Zone in which the cache cluster will be created.
+     * <p>All nodes belonging to this Memcached cache cluster are placed in
+     * the preferred Availability Zone. If you want to create your nodes
+     * across multiple Availability Zones, use
+     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
+     * Availability Zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param preferredAvailabilityZone The EC2 Availability Zone in which the cache cluster will be created.
+     *         <p>All nodes belonging to this Memcached cache cluster are placed in
+     *         the preferred Availability Zone. If you want to create your nodes
+     *         across multiple Availability Zones, use
+     *         <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
+     *         Availability Zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateCacheClusterRequest withPreferredAvailabilityZone(String preferredAvailabilityZone) {
+        this.preferredAvailabilityZone = preferredAvailabilityZone;
+        return this;
+    }
+
+    /**
+     * A list of the Availability Zones in which cache nodes will be created.
+     * The order of the zones in the list is not important. <p>This option is
+     * only supported on Memcached. <note> <p>If you are creating your cache
+     * cluster in an Amazon VPC (recommended) you can only locate nodes in
+     * Availability Zones that are associated with the subnets in the
+     * selected subnet group. <p>The number of Availability Zones listed must
+     * equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     * all the nodes in the same Availability Zone, use
+     * <code>PreferredAvailabilityZone</code> instead, or repeat the
+     * Availability Zone multiple times in the list. <p>Default: System
+     * chosen Availability Zones. <p>Example: One Memcached node in each of
+     * three different Availability Zones:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     * <p>Example: All three Memcached nodes in one Availability Zone:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     *
+     * @return A list of the Availability Zones in which cache nodes will be created.
+     *         The order of the zones in the list is not important. <p>This option is
+     *         only supported on Memcached. <note> <p>If you are creating your cache
+     *         cluster in an Amazon VPC (recommended) you can only locate nodes in
+     *         Availability Zones that are associated with the subnets in the
+     *         selected subnet group. <p>The number of Availability Zones listed must
+     *         equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     *         all the nodes in the same Availability Zone, use
+     *         <code>PreferredAvailabilityZone</code> instead, or repeat the
+     *         Availability Zone multiple times in the list. <p>Default: System
+     *         chosen Availability Zones. <p>Example: One Memcached node in each of
+     *         three different Availability Zones:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     *         <p>Example: All three Memcached nodes in one Availability Zone:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     */
+    public java.util.List<String> getPreferredAvailabilityZones() {
+        if (preferredAvailabilityZones == null) {
+              preferredAvailabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              preferredAvailabilityZones.setAutoConstruct(true);
+        }
+        return preferredAvailabilityZones;
+    }
+    
+    /**
+     * A list of the Availability Zones in which cache nodes will be created.
+     * The order of the zones in the list is not important. <p>This option is
+     * only supported on Memcached. <note> <p>If you are creating your cache
+     * cluster in an Amazon VPC (recommended) you can only locate nodes in
+     * Availability Zones that are associated with the subnets in the
+     * selected subnet group. <p>The number of Availability Zones listed must
+     * equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     * all the nodes in the same Availability Zone, use
+     * <code>PreferredAvailabilityZone</code> instead, or repeat the
+     * Availability Zone multiple times in the list. <p>Default: System
+     * chosen Availability Zones. <p>Example: One Memcached node in each of
+     * three different Availability Zones:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     * <p>Example: All three Memcached nodes in one Availability Zone:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     *
+     * @param preferredAvailabilityZones A list of the Availability Zones in which cache nodes will be created.
+     *         The order of the zones in the list is not important. <p>This option is
+     *         only supported on Memcached. <note> <p>If you are creating your cache
+     *         cluster in an Amazon VPC (recommended) you can only locate nodes in
+     *         Availability Zones that are associated with the subnets in the
+     *         selected subnet group. <p>The number of Availability Zones listed must
+     *         equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     *         all the nodes in the same Availability Zone, use
+     *         <code>PreferredAvailabilityZone</code> instead, or repeat the
+     *         Availability Zone multiple times in the list. <p>Default: System
+     *         chosen Availability Zones. <p>Example: One Memcached node in each of
+     *         three different Availability Zones:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     *         <p>Example: All three Memcached nodes in one Availability Zone:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     */
+    public void setPreferredAvailabilityZones(java.util.Collection<String> preferredAvailabilityZones) {
+        if (preferredAvailabilityZones == null) {
+            this.preferredAvailabilityZones = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> preferredAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(preferredAvailabilityZones.size());
+        preferredAvailabilityZonesCopy.addAll(preferredAvailabilityZones);
+        this.preferredAvailabilityZones = preferredAvailabilityZonesCopy;
+    }
+    
+    /**
+     * A list of the Availability Zones in which cache nodes will be created.
+     * The order of the zones in the list is not important. <p>This option is
+     * only supported on Memcached. <note> <p>If you are creating your cache
+     * cluster in an Amazon VPC (recommended) you can only locate nodes in
+     * Availability Zones that are associated with the subnets in the
+     * selected subnet group. <p>The number of Availability Zones listed must
+     * equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     * all the nodes in the same Availability Zone, use
+     * <code>PreferredAvailabilityZone</code> instead, or repeat the
+     * Availability Zone multiple times in the list. <p>Default: System
+     * chosen Availability Zones. <p>Example: One Memcached node in each of
+     * three different Availability Zones:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     * <p>Example: All three Memcached nodes in one Availability Zone:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param preferredAvailabilityZones A list of the Availability Zones in which cache nodes will be created.
+     *         The order of the zones in the list is not important. <p>This option is
+     *         only supported on Memcached. <note> <p>If you are creating your cache
+     *         cluster in an Amazon VPC (recommended) you can only locate nodes in
+     *         Availability Zones that are associated with the subnets in the
+     *         selected subnet group. <p>The number of Availability Zones listed must
+     *         equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     *         all the nodes in the same Availability Zone, use
+     *         <code>PreferredAvailabilityZone</code> instead, or repeat the
+     *         Availability Zone multiple times in the list. <p>Default: System
+     *         chosen Availability Zones. <p>Example: One Memcached node in each of
+     *         three different Availability Zones:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     *         <p>Example: All three Memcached nodes in one Availability Zone:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateCacheClusterRequest withPreferredAvailabilityZones(String... preferredAvailabilityZones) {
+        if (getPreferredAvailabilityZones() == null) setPreferredAvailabilityZones(new java.util.ArrayList<String>(preferredAvailabilityZones.length));
+        for (String value : preferredAvailabilityZones) {
+            getPreferredAvailabilityZones().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of the Availability Zones in which cache nodes will be created.
+     * The order of the zones in the list is not important. <p>This option is
+     * only supported on Memcached. <note> <p>If you are creating your cache
+     * cluster in an Amazon VPC (recommended) you can only locate nodes in
+     * Availability Zones that are associated with the subnets in the
+     * selected subnet group. <p>The number of Availability Zones listed must
+     * equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     * all the nodes in the same Availability Zone, use
+     * <code>PreferredAvailabilityZone</code> instead, or repeat the
+     * Availability Zone multiple times in the list. <p>Default: System
+     * chosen Availability Zones. <p>Example: One Memcached node in each of
+     * three different Availability Zones:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     * <p>Example: All three Memcached nodes in one Availability Zone:
+     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param preferredAvailabilityZones A list of the Availability Zones in which cache nodes will be created.
+     *         The order of the zones in the list is not important. <p>This option is
+     *         only supported on Memcached. <note> <p>If you are creating your cache
+     *         cluster in an Amazon VPC (recommended) you can only locate nodes in
+     *         Availability Zones that are associated with the subnets in the
+     *         selected subnet group. <p>The number of Availability Zones listed must
+     *         equal the value of <code>NumCacheNodes</code>. </note> <p>If you want
+     *         all the nodes in the same Availability Zone, use
+     *         <code>PreferredAvailabilityZone</code> instead, or repeat the
+     *         Availability Zone multiple times in the list. <p>Default: System
+     *         chosen Availability Zones. <p>Example: One Memcached node in each of
+     *         three different Availability Zones:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
+     *         <p>Example: All three Memcached nodes in one Availability Zone:
+     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateCacheClusterRequest withPreferredAvailabilityZones(java.util.Collection<String> preferredAvailabilityZones) {
+        if (preferredAvailabilityZones == null) {
+            this.preferredAvailabilityZones = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> preferredAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(preferredAvailabilityZones.size());
+            preferredAvailabilityZonesCopy.addAll(preferredAvailabilityZones);
+            this.preferredAvailabilityZones = preferredAvailabilityZonesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * The initial number of cache nodes that the cache cluster will have.
-     * <p>For a Memcached cluster, valid values are between 1 and 20. If you
-     * need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     * . <p>For Redis, only single-node cache clusters are supported at this
+     * <p>For Memcached, valid values are between 1 and 20. If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * <p>For Redis, only single-node cache cluster are supported at this
      * time, so the value for this parameter must be 1.
      *
      * @return The initial number of cache nodes that the cache cluster will have.
-     *         <p>For a Memcached cluster, valid values are between 1 and 20. If you
-     *         need to exceed this limit, please fill out the ElastiCache Limit
-     *         Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     *         . <p>For Redis, only single-node cache clusters are supported at this
+     *         <p>For Memcached, valid values are between 1 and 20. If you need to
+     *         exceed this limit, please fill out the ElastiCache Limit Increase
+     *         Request form at <a
+     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     *         <p>For Redis, only single-node cache cluster are supported at this
      *         time, so the value for this parameter must be 1.
      */
     public Integer getNumCacheNodes() {
@@ -426,19 +855,19 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The initial number of cache nodes that the cache cluster will have.
-     * <p>For a Memcached cluster, valid values are between 1 and 20. If you
-     * need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     * . <p>For Redis, only single-node cache clusters are supported at this
+     * <p>For Memcached, valid values are between 1 and 20. If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * <p>For Redis, only single-node cache cluster are supported at this
      * time, so the value for this parameter must be 1.
      *
      * @param numCacheNodes The initial number of cache nodes that the cache cluster will have.
-     *         <p>For a Memcached cluster, valid values are between 1 and 20. If you
-     *         need to exceed this limit, please fill out the ElastiCache Limit
-     *         Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     *         . <p>For Redis, only single-node cache clusters are supported at this
+     *         <p>For Memcached, valid values are between 1 and 20. If you need to
+     *         exceed this limit, please fill out the ElastiCache Limit Increase
+     *         Request form at <a
+     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     *         <p>For Redis, only single-node cache cluster are supported at this
      *         time, so the value for this parameter must be 1.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
@@ -447,21 +876,21 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The initial number of cache nodes that the cache cluster will have.
-     * <p>For a Memcached cluster, valid values are between 1 and 20. If you
-     * need to exceed this limit, please fill out the ElastiCache Limit
-     * Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     * . <p>For Redis, only single-node cache clusters are supported at this
+     * <p>For Memcached, valid values are between 1 and 20. If you need to
+     * exceed this limit, please fill out the ElastiCache Limit Increase
+     * Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * <p>For Redis, only single-node cache cluster are supported at this
      * time, so the value for this parameter must be 1.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numCacheNodes The initial number of cache nodes that the cache cluster will have.
-     *         <p>For a Memcached cluster, valid values are between 1 and 20. If you
-     *         need to exceed this limit, please fill out the ElastiCache Limit
-     *         Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/>
-     *         . <p>For Redis, only single-node cache clusters are supported at this
+     *         <p>For Memcached, valid values are between 1 and 20. If you need to
+     *         exceed this limit, please fill out the ElastiCache Limit Increase
+     *         Request form at <a
+     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     *         <p>For Redis, only single-node cache cluster are supported at this
      *         time, so the value for this parameter must be 1.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -473,137 +902,185 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The compute and memory capacity of the nodes in the cache cluster.
-     * <p><b>Valid cache types</b> <ul> <li>Micro<p><code>cache.t1.micro |
-     * cache.m1.small</code></li> <li>General Purpose <ul> <li>Current
-     * Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     * | cache.m3.2xlarge</code></li> <li>Previous
-     * Generation<p><code>cache.m1.medium | cache.m1.large |
-     * cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     * Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     * <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     * cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     * <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     * cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     * listing of cache node types and specifications, see <a
+     * The compute and memory capacity of the nodes in the node group.
+     * <p>Valid node types are as follows: <ul> <li>General purpose: <ul>
+     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a> and <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a>.
+     * Node Type-Specific Parameters for Redis</a>.
      *
-     * @return The compute and memory capacity of the nodes in the cache cluster.
-     *         <p><b>Valid cache types</b> <ul> <li>Micro<p><code>cache.t1.micro |
-     *         cache.m1.small</code></li> <li>General Purpose <ul> <li>Current
-     *         Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     *         | cache.m3.2xlarge</code></li> <li>Previous
-     *         Generation<p><code>cache.m1.medium | cache.m1.large |
-     *         cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     *         Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     *         <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     *         cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     *         <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     *         cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     *         listing of cache node types and specifications, see <a
+     * @return The compute and memory capacity of the nodes in the node group.
+     *         <p>Valid node types are as follows: <ul> <li>General purpose: <ul>
+     *         <li>Current generation: <code>cache.t2.micro</code>,
+     *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     *         <li>Memory optimized <ul> <li>Current generation:
+     *         <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     *         <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     *         <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     *         <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     *         Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     *         instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     *         supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     *         of cache node types and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      *         Node Type-Specific Parameters for Memcached</a> or <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     *         Node Type-Specific Parameters for Redis</a> and <a
-     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     *         Product Features and Details</a>.
+     *         Node Type-Specific Parameters for Redis</a>.
      */
     public String getCacheNodeType() {
         return cacheNodeType;
     }
     
     /**
-     * The compute and memory capacity of the nodes in the cache cluster.
-     * <p><b>Valid cache types</b> <ul> <li>Micro<p><code>cache.t1.micro |
-     * cache.m1.small</code></li> <li>General Purpose <ul> <li>Current
-     * Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     * | cache.m3.2xlarge</code></li> <li>Previous
-     * Generation<p><code>cache.m1.medium | cache.m1.large |
-     * cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     * Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     * <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     * cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     * <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     * cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     * listing of cache node types and specifications, see <a
+     * The compute and memory capacity of the nodes in the node group.
+     * <p>Valid node types are as follows: <ul> <li>General purpose: <ul>
+     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a> and <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a>.
+     * Node Type-Specific Parameters for Redis</a>.
      *
-     * @param cacheNodeType The compute and memory capacity of the nodes in the cache cluster.
-     *         <p><b>Valid cache types</b> <ul> <li>Micro<p><code>cache.t1.micro |
-     *         cache.m1.small</code></li> <li>General Purpose <ul> <li>Current
-     *         Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     *         | cache.m3.2xlarge</code></li> <li>Previous
-     *         Generation<p><code>cache.m1.medium | cache.m1.large |
-     *         cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     *         Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     *         <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     *         cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     *         <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     *         cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     *         listing of cache node types and specifications, see <a
+     * @param cacheNodeType The compute and memory capacity of the nodes in the node group.
+     *         <p>Valid node types are as follows: <ul> <li>General purpose: <ul>
+     *         <li>Current generation: <code>cache.t2.micro</code>,
+     *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     *         <li>Memory optimized <ul> <li>Current generation:
+     *         <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     *         <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     *         <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     *         <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     *         Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     *         instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     *         supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     *         of cache node types and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      *         Node Type-Specific Parameters for Memcached</a> or <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     *         Node Type-Specific Parameters for Redis</a> and <a
-     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     *         Product Features and Details</a>.
+     *         Node Type-Specific Parameters for Redis</a>.
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
     }
     
     /**
-     * The compute and memory capacity of the nodes in the cache cluster.
-     * <p><b>Valid cache types</b> <ul> <li>Micro<p><code>cache.t1.micro |
-     * cache.m1.small</code></li> <li>General Purpose <ul> <li>Current
-     * Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     * | cache.m3.2xlarge</code></li> <li>Previous
-     * Generation<p><code>cache.m1.medium | cache.m1.large |
-     * cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     * Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     * <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     * cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     * <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     * cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     * listing of cache node types and specifications, see <a
+     * The compute and memory capacity of the nodes in the node group.
+     * <p>Valid node types are as follows: <ul> <li>General purpose: <ul>
+     * <li>Current generation: <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     * <li>Previous generation: <code>cache.t1.micro</code>,
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     * </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     * <li>Memory optimized <ul> <li>Current generation:
+     * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     * <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     * <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     * Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     * instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     * supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     * of cache node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     * Product Features and Details</a> and <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      * Node Type-Specific Parameters for Memcached</a> or <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a> and <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     * Product Features and Details</a>.
+     * Node Type-Specific Parameters for Redis</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeType The compute and memory capacity of the nodes in the cache cluster.
-     *         <p><b>Valid cache types</b> <ul> <li>Micro<p><code>cache.t1.micro |
-     *         cache.m1.small</code></li> <li>General Purpose <ul> <li>Current
-     *         Generation<p><code>cache.m3.medium | cache.m3.large | cache.m3.xlarge
-     *         | cache.m3.2xlarge</code></li> <li>Previous
-     *         Generation<p><code>cache.m1.medium | cache.m1.large |
-     *         cache.m1.xlarge</code></li> </ul></li> <li>Compute
-     *         Optimized<p><code>cache.c1.xlarge</code></li> <li>Memory Optimized
-     *         <ul> <li>Current Generation<p><code>cache.r3.large | cache.r3.xlarge |
-     *         cache.r3.2xlarge | cache.r3.4xlarge | cache.r3.8xlarge</code></li>
-     *         <li>Previous Generation<p><code>cache.m2.xlarge | cache.m2.2xlarge |
-     *         cache.m2.4xlarge</code></li> </ul></li> </ul> <p>For a complete
-     *         listing of cache node types and specifications, see <a
+     * @param cacheNodeType The compute and memory capacity of the nodes in the node group.
+     *         <p>Valid node types are as follows: <ul> <li>General purpose: <ul>
+     *         <li>Current generation: <code>cache.t2.micro</code>,
+     *         <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+     *         <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
+     *         <li>Previous generation: <code>cache.t1.micro</code>,
+     *         <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
+     *         </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li>
+     *         <li>Memory optimized <ul> <li>Current generation:
+     *         <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+     *         <code>cache.r3.8xlarge</code></li> <li>Previous generation:
+     *         <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <p><b>Notes:</b>
+     *         <ul> <li>All t2 instances are created in an Amazon Virtual Private
+     *         Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2
+     *         instances.</li> <li>Redis Append-only files (AOF) functionality is not
+     *         supported for t1 or t2 instances.</li> </ul> <p>For a complete listing
+     *         of cache node types and specifications, see <a
+     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
+     *         Product Features and Details</a> and <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
      *         Node Type-Specific Parameters for Memcached</a> or <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-     *         Node Type-Specific Parameters for Redis</a> and <a
-     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache
-     *         Product Features and Details</a>.
+     *         Node Type-Specific Parameters for Redis</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -659,12 +1136,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The version number of the cache engine to be used for this cluster. To
-     * view the supported cache engine versions, use the
+     * The version number of the cache engine to be used for this cache
+     * cluster. To view the supported cache engine versions, use the
      * <i>DescribeCacheEngineVersions</i> operation.
      *
-     * @return The version number of the cache engine to be used for this cluster. To
-     *         view the supported cache engine versions, use the
+     * @return The version number of the cache engine to be used for this cache
+     *         cluster. To view the supported cache engine versions, use the
      *         <i>DescribeCacheEngineVersions</i> operation.
      */
     public String getEngineVersion() {
@@ -672,12 +1149,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The version number of the cache engine to be used for this cluster. To
-     * view the supported cache engine versions, use the
+     * The version number of the cache engine to be used for this cache
+     * cluster. To view the supported cache engine versions, use the
      * <i>DescribeCacheEngineVersions</i> operation.
      *
-     * @param engineVersion The version number of the cache engine to be used for this cluster. To
-     *         view the supported cache engine versions, use the
+     * @param engineVersion The version number of the cache engine to be used for this cache
+     *         cluster. To view the supported cache engine versions, use the
      *         <i>DescribeCacheEngineVersions</i> operation.
      */
     public void setEngineVersion(String engineVersion) {
@@ -685,14 +1162,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The version number of the cache engine to be used for this cluster. To
-     * view the supported cache engine versions, use the
+     * The version number of the cache engine to be used for this cache
+     * cluster. To view the supported cache engine versions, use the
      * <i>DescribeCacheEngineVersions</i> operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The version number of the cache engine to be used for this cluster. To
-     *         view the supported cache engine versions, use the
+     * @param engineVersion The version number of the cache engine to be used for this cache
+     *         cluster. To view the supported cache engine versions, use the
      *         <i>DescribeCacheEngineVersions</i> operation.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -704,41 +1181,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name of the cache parameter group to associate with this cache
-     * cluster. If this argument is omitted, the default cache parameter
-     * group for the specified engine will be used.
+     * The name of the parameter group to associate with this cache cluster.
+     * If this argument is omitted, the default parameter group for the
+     * specified engine is used.
      *
-     * @return The name of the cache parameter group to associate with this cache
-     *         cluster. If this argument is omitted, the default cache parameter
-     *         group for the specified engine will be used.
+     * @return The name of the parameter group to associate with this cache cluster.
+     *         If this argument is omitted, the default parameter group for the
+     *         specified engine is used.
      */
     public String getCacheParameterGroupName() {
         return cacheParameterGroupName;
     }
     
     /**
-     * The name of the cache parameter group to associate with this cache
-     * cluster. If this argument is omitted, the default cache parameter
-     * group for the specified engine will be used.
+     * The name of the parameter group to associate with this cache cluster.
+     * If this argument is omitted, the default parameter group for the
+     * specified engine is used.
      *
-     * @param cacheParameterGroupName The name of the cache parameter group to associate with this cache
-     *         cluster. If this argument is omitted, the default cache parameter
-     *         group for the specified engine will be used.
+     * @param cacheParameterGroupName The name of the parameter group to associate with this cache cluster.
+     *         If this argument is omitted, the default parameter group for the
+     *         specified engine is used.
      */
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
     }
     
     /**
-     * The name of the cache parameter group to associate with this cache
-     * cluster. If this argument is omitted, the default cache parameter
-     * group for the specified engine will be used.
+     * The name of the parameter group to associate with this cache cluster.
+     * If this argument is omitted, the default parameter group for the
+     * specified engine is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroupName The name of the cache parameter group to associate with this cache
-     *         cluster. If this argument is omitted, the default cache parameter
-     *         group for the specified engine will be used.
+     * @param cacheParameterGroupName The name of the parameter group to associate with this cache cluster.
+     *         If this argument is omitted, the default parameter group for the
+     *         specified engine is used.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -749,41 +1226,41 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name of the cache subnet group to be used for the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
-     * Amazon Virtual Private Cloud (VPC).
+     * The name of the subnet group to be used for the cache cluster. <p>Use
+     * this parameter only when you are creating a cache cluster in an Amazon
+     * Virtual Private Cloud (VPC).
      *
-     * @return The name of the cache subnet group to be used for the cache cluster.
-     *         <p>Use this parameter only when you are creating a cluster in an
-     *         Amazon Virtual Private Cloud (VPC).
+     * @return The name of the subnet group to be used for the cache cluster. <p>Use
+     *         this parameter only when you are creating a cache cluster in an Amazon
+     *         Virtual Private Cloud (VPC).
      */
     public String getCacheSubnetGroupName() {
         return cacheSubnetGroupName;
     }
     
     /**
-     * The name of the cache subnet group to be used for the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
-     * Amazon Virtual Private Cloud (VPC).
+     * The name of the subnet group to be used for the cache cluster. <p>Use
+     * this parameter only when you are creating a cache cluster in an Amazon
+     * Virtual Private Cloud (VPC).
      *
-     * @param cacheSubnetGroupName The name of the cache subnet group to be used for the cache cluster.
-     *         <p>Use this parameter only when you are creating a cluster in an
-     *         Amazon Virtual Private Cloud (VPC).
+     * @param cacheSubnetGroupName The name of the subnet group to be used for the cache cluster. <p>Use
+     *         this parameter only when you are creating a cache cluster in an Amazon
+     *         Virtual Private Cloud (VPC).
      */
     public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
     }
     
     /**
-     * The name of the cache subnet group to be used for the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
-     * Amazon Virtual Private Cloud (VPC).
+     * The name of the subnet group to be used for the cache cluster. <p>Use
+     * this parameter only when you are creating a cache cluster in an Amazon
+     * Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroupName The name of the cache subnet group to be used for the cache cluster.
-     *         <p>Use this parameter only when you are creating a cluster in an
-     *         Amazon Virtual Private Cloud (VPC).
+     * @param cacheSubnetGroupName The name of the subnet group to be used for the cache cluster. <p>Use
+     *         this parameter only when you are creating a cache cluster in an Amazon
+     *         Virtual Private Cloud (VPC).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -794,12 +1271,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * A list of cache security group names to associate with this cache
-     * cluster. <p>Use this parameter only when you are creating a cluster
+     * A list of security group names to associate with this cache cluster.
+     * <p>Use this parameter only when you are creating a cache cluster
      * outside of an Amazon Virtual Private Cloud (VPC).
      *
-     * @return A list of cache security group names to associate with this cache
-     *         cluster. <p>Use this parameter only when you are creating a cluster
+     * @return A list of security group names to associate with this cache cluster.
+     *         <p>Use this parameter only when you are creating a cache cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
      */
     public java.util.List<String> getCacheSecurityGroupNames() {
@@ -811,12 +1288,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of cache security group names to associate with this cache
-     * cluster. <p>Use this parameter only when you are creating a cluster
+     * A list of security group names to associate with this cache cluster.
+     * <p>Use this parameter only when you are creating a cache cluster
      * outside of an Amazon Virtual Private Cloud (VPC).
      *
-     * @param cacheSecurityGroupNames A list of cache security group names to associate with this cache
-     *         cluster. <p>Use this parameter only when you are creating a cluster
+     * @param cacheSecurityGroupNames A list of security group names to associate with this cache cluster.
+     *         <p>Use this parameter only when you are creating a cache cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
      */
     public void setCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
@@ -830,14 +1307,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of cache security group names to associate with this cache
-     * cluster. <p>Use this parameter only when you are creating a cluster
+     * A list of security group names to associate with this cache cluster.
+     * <p>Use this parameter only when you are creating a cache cluster
      * outside of an Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroupNames A list of cache security group names to associate with this cache
-     *         cluster. <p>Use this parameter only when you are creating a cluster
+     * @param cacheSecurityGroupNames A list of security group names to associate with this cache cluster.
+     *         <p>Use this parameter only when you are creating a cache cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -852,14 +1329,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of cache security group names to associate with this cache
-     * cluster. <p>Use this parameter only when you are creating a cluster
+     * A list of security group names to associate with this cache cluster.
+     * <p>Use this parameter only when you are creating a cache cluster
      * outside of an Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroupNames A list of cache security group names to associate with this cache
-     *         cluster. <p>Use this parameter only when you are creating a cluster
+     * @param cacheSecurityGroupNames A list of security group names to associate with this cache cluster.
+     *         <p>Use this parameter only when you are creating a cache cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -879,11 +1356,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
 
     /**
      * One or more VPC security groups associated with the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
+     * <p>Use this parameter only when you are creating a cache cluster in an
      * Amazon Virtual Private Cloud (VPC).
      *
      * @return One or more VPC security groups associated with the cache cluster.
-     *         <p>Use this parameter only when you are creating a cluster in an
+     *         <p>Use this parameter only when you are creating a cache cluster in an
      *         Amazon Virtual Private Cloud (VPC).
      */
     public java.util.List<String> getSecurityGroupIds() {
@@ -896,11 +1373,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * One or more VPC security groups associated with the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
+     * <p>Use this parameter only when you are creating a cache cluster in an
      * Amazon Virtual Private Cloud (VPC).
      *
      * @param securityGroupIds One or more VPC security groups associated with the cache cluster.
-     *         <p>Use this parameter only when you are creating a cluster in an
+     *         <p>Use this parameter only when you are creating a cache cluster in an
      *         Amazon Virtual Private Cloud (VPC).
      */
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -915,13 +1392,13 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * One or more VPC security groups associated with the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
+     * <p>Use this parameter only when you are creating a cache cluster in an
      * Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds One or more VPC security groups associated with the cache cluster.
-     *         <p>Use this parameter only when you are creating a cluster in an
+     *         <p>Use this parameter only when you are creating a cache cluster in an
      *         Amazon Virtual Private Cloud (VPC).
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -937,13 +1414,13 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * One or more VPC security groups associated with the cache cluster.
-     * <p>Use this parameter only when you are creating a cluster in an
+     * <p>Use this parameter only when you are creating a cache cluster in an
      * Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds One or more VPC security groups associated with the cache cluster.
-     *         <p>Use this parameter only when you are creating a cluster in an
+     *         <p>Use this parameter only when you are creating a cache cluster in an
      *         Amazon Virtual Private Cloud (VPC).
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -964,21 +1441,19 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A single-element string list containing an Amazon Resource Name (ARN)
      * that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     * S3. The snapshot file will be used to populate the Redis cache in the
-     * new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     * any commas. <p>Here is an example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.
+     * S3. The snapshot file will be used to populate the node group. The
+     * Amazon S3 object name in the ARN cannot contain any commas.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     * Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      *
      * @return A single-element string list containing an Amazon Resource Name (ARN)
      *         that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     *         S3. The snapshot file will be used to populate the Redis cache in the
-     *         new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     *         any commas. <p>Here is an example of an Amazon S3 ARN:
-     *         <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     *         parameter is only valid if the <code>Engine</code> parameter is
-     *         <code>redis</code>.
+     *         S3. The snapshot file will be used to populate the node group. The
+     *         Amazon S3 object name in the ARN cannot contain any commas.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     *         Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      */
     public java.util.List<String> getSnapshotArns() {
         if (snapshotArns == null) {
@@ -991,21 +1466,19 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A single-element string list containing an Amazon Resource Name (ARN)
      * that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     * S3. The snapshot file will be used to populate the Redis cache in the
-     * new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     * any commas. <p>Here is an example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.
+     * S3. The snapshot file will be used to populate the node group. The
+     * Amazon S3 object name in the ARN cannot contain any commas.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     * Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      *
      * @param snapshotArns A single-element string list containing an Amazon Resource Name (ARN)
      *         that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     *         S3. The snapshot file will be used to populate the Redis cache in the
-     *         new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     *         any commas. <p>Here is an example of an Amazon S3 ARN:
-     *         <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     *         parameter is only valid if the <code>Engine</code> parameter is
-     *         <code>redis</code>.
+     *         S3. The snapshot file will be used to populate the node group. The
+     *         Amazon S3 object name in the ARN cannot contain any commas.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     *         Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      */
     public void setSnapshotArns(java.util.Collection<String> snapshotArns) {
         if (snapshotArns == null) {
@@ -1020,23 +1493,21 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A single-element string list containing an Amazon Resource Name (ARN)
      * that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     * S3. The snapshot file will be used to populate the Redis cache in the
-     * new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     * any commas. <p>Here is an example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.
+     * S3. The snapshot file will be used to populate the node group. The
+     * Amazon S3 object name in the ARN cannot contain any commas.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     * Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotArns A single-element string list containing an Amazon Resource Name (ARN)
      *         that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     *         S3. The snapshot file will be used to populate the Redis cache in the
-     *         new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     *         any commas. <p>Here is an example of an Amazon S3 ARN:
-     *         <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     *         parameter is only valid if the <code>Engine</code> parameter is
-     *         <code>redis</code>.
+     *         S3. The snapshot file will be used to populate the node group. The
+     *         Amazon S3 object name in the ARN cannot contain any commas.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     *         Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1052,23 +1523,21 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * A single-element string list containing an Amazon Resource Name (ARN)
      * that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     * S3. The snapshot file will be used to populate the Redis cache in the
-     * new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     * any commas. <p>Here is an example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.
+     * S3. The snapshot file will be used to populate the node group. The
+     * Amazon S3 object name in the ARN cannot contain any commas.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     * Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotArns A single-element string list containing an Amazon Resource Name (ARN)
      *         that uniquely identifies a Redis RDB snapshot file stored in Amazon
-     *         S3. The snapshot file will be used to populate the Redis cache in the
-     *         new cache cluster. The Amazon S3 object name in the ARN cannot contain
-     *         any commas. <p>Here is an example of an Amazon S3 ARN:
-     *         <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> <p><b>Note:</b> This
-     *         parameter is only valid if the <code>Engine</code> parameter is
-     *         <code>redis</code>.
+     *         S3. The snapshot file will be used to populate the node group. The
+     *         Amazon S3 object name in the ARN cannot contain any commas.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>. <p>Example of an
+     *         Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1086,359 +1555,53 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name of a snapshot from which to restore data into the new cache
-     * cluster. The snapshot's status changes to <code>restoring</code> while
-     * the new cache cluster is being created.
+     * The name of a snapshot from which to restore data into the new node
+     * group. The snapshot status changes to <code>restoring</code> while the
+     * new node group is being created. <p><b>Note:</b> This parameter is
+     * only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *
-     * @return The name of a snapshot from which to restore data into the new cache
-     *         cluster. The snapshot's status changes to <code>restoring</code> while
-     *         the new cache cluster is being created.
+     * @return The name of a snapshot from which to restore data into the new node
+     *         group. The snapshot status changes to <code>restoring</code> while the
+     *         new node group is being created. <p><b>Note:</b> This parameter is
+     *         only valid if the <code>Engine</code> parameter is <code>redis</code>.
      */
     public String getSnapshotName() {
         return snapshotName;
     }
     
     /**
-     * The name of a snapshot from which to restore data into the new cache
-     * cluster. The snapshot's status changes to <code>restoring</code> while
-     * the new cache cluster is being created.
+     * The name of a snapshot from which to restore data into the new node
+     * group. The snapshot status changes to <code>restoring</code> while the
+     * new node group is being created. <p><b>Note:</b> This parameter is
+     * only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *
-     * @param snapshotName The name of a snapshot from which to restore data into the new cache
-     *         cluster. The snapshot's status changes to <code>restoring</code> while
-     *         the new cache cluster is being created.
+     * @param snapshotName The name of a snapshot from which to restore data into the new node
+     *         group. The snapshot status changes to <code>restoring</code> while the
+     *         new node group is being created. <p><b>Note:</b> This parameter is
+     *         only valid if the <code>Engine</code> parameter is <code>redis</code>.
      */
     public void setSnapshotName(String snapshotName) {
         this.snapshotName = snapshotName;
     }
     
     /**
-     * The name of a snapshot from which to restore data into the new cache
-     * cluster. The snapshot's status changes to <code>restoring</code> while
-     * the new cache cluster is being created.
+     * The name of a snapshot from which to restore data into the new node
+     * group. The snapshot status changes to <code>restoring</code> while the
+     * new node group is being created. <p><b>Note:</b> This parameter is
+     * only valid if the <code>Engine</code> parameter is <code>redis</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotName The name of a snapshot from which to restore data into the new cache
-     *         cluster. The snapshot's status changes to <code>restoring</code> while
-     *         the new cache cluster is being created.
+     * @param snapshotName The name of a snapshot from which to restore data into the new node
+     *         group. The snapshot status changes to <code>restoring</code> while the
+     *         new node group is being created. <p><b>Note:</b> This parameter is
+     *         only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
     public CreateCacheClusterRequest withSnapshotName(String snapshotName) {
         this.snapshotName = snapshotName;
-        return this;
-    }
-
-    /**
-     * Specifies whether the nodes in this Memcached cache cluster are
-     * created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>This option is only supported for Memcached
-     * cache clusters. <note>If the <code>AZMode</code> and
-     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
-     * assumes <code>single-az</code> mode.</note> <p>Valid values:
-     * <code>single-az</code> | <code>cross-az</code>.
-     *
-     * @return Specifies whether the nodes in this Memcached cache cluster are
-     *         created in a single Availability Zone or created across multiple
-     *         Availability Zones. <p>This option is only supported for Memcached
-     *         cache clusters. <note>If the <code>AZMode</code> and
-     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
-     *         assumes <code>single-az</code> mode.</note> <p>Valid values:
-     *         <code>single-az</code> | <code>cross-az</code>.
-     */
-    public String getAZMode() {
-        return aZMode;
-    }
-    
-    /**
-     * Specifies whether the nodes in this Memcached cache cluster are
-     * created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>This option is only supported for Memcached
-     * cache clusters. <note>If the <code>AZMode</code> and
-     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
-     * assumes <code>single-az</code> mode.</note> <p>Valid values:
-     * <code>single-az</code> | <code>cross-az</code>.
-     *
-     * @param aZMode Specifies whether the nodes in this Memcached cache cluster are
-     *         created in a single Availability Zone or created across multiple
-     *         Availability Zones. <p>This option is only supported for Memcached
-     *         cache clusters. <note>If the <code>AZMode</code> and
-     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
-     *         assumes <code>single-az</code> mode.</note> <p>Valid values:
-     *         <code>single-az</code> | <code>cross-az</code>.
-     */
-    public void setAZMode(String aZMode) {
-        this.aZMode = aZMode;
-    }
-    
-    /**
-     * Specifies whether the nodes in this Memcached cache cluster are
-     * created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>This option is only supported for Memcached
-     * cache clusters. <note>If the <code>AZMode</code> and
-     * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
-     * assumes <code>single-az</code> mode.</note> <p>Valid values:
-     * <code>single-az</code> | <code>cross-az</code>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param aZMode Specifies whether the nodes in this Memcached cache cluster are
-     *         created in a single Availability Zone or created across multiple
-     *         Availability Zones. <p>This option is only supported for Memcached
-     *         cache clusters. <note>If the <code>AZMode</code> and
-     *         <code>PreferredAvailabilityZones</code> are not specified, ElastiCache
-     *         assumes <code>single-az</code> mode.</note> <p>Valid values:
-     *         <code>single-az</code> | <code>cross-az</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateCacheClusterRequest withAZMode(String aZMode) {
-        this.aZMode = aZMode;
-        return this;
-    }
-
-    /**
-     * The EC2 Availability Zone in which the cache cluster will be created.
-     * <p>All cache nodes belonging to this Memcached cache cluster are
-     * placed in the preferred Availability Zone. If you want to create your
-     * cache nodes across multiple Availability Zones, use
-     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
-     * Availability Zone.
-     *
-     * @return The EC2 Availability Zone in which the cache cluster will be created.
-     *         <p>All cache nodes belonging to this Memcached cache cluster are
-     *         placed in the preferred Availability Zone. If you want to create your
-     *         cache nodes across multiple Availability Zones, use
-     *         <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
-     *         Availability Zone.
-     */
-    public String getPreferredAvailabilityZone() {
-        return preferredAvailabilityZone;
-    }
-    
-    /**
-     * The EC2 Availability Zone in which the cache cluster will be created.
-     * <p>All cache nodes belonging to this Memcached cache cluster are
-     * placed in the preferred Availability Zone. If you want to create your
-     * cache nodes across multiple Availability Zones, use
-     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
-     * Availability Zone.
-     *
-     * @param preferredAvailabilityZone The EC2 Availability Zone in which the cache cluster will be created.
-     *         <p>All cache nodes belonging to this Memcached cache cluster are
-     *         placed in the preferred Availability Zone. If you want to create your
-     *         cache nodes across multiple Availability Zones, use
-     *         <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
-     *         Availability Zone.
-     */
-    public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
-        this.preferredAvailabilityZone = preferredAvailabilityZone;
-    }
-    
-    /**
-     * The EC2 Availability Zone in which the cache cluster will be created.
-     * <p>All cache nodes belonging to this Memcached cache cluster are
-     * placed in the preferred Availability Zone. If you want to create your
-     * cache nodes across multiple Availability Zones, use
-     * <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
-     * Availability Zone.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param preferredAvailabilityZone The EC2 Availability Zone in which the cache cluster will be created.
-     *         <p>All cache nodes belonging to this Memcached cache cluster are
-     *         placed in the preferred Availability Zone. If you want to create your
-     *         cache nodes across multiple Availability Zones, use
-     *         <code>PreferredAvailabilityZones</code>. <p>Default: System chosen
-     *         Availability Zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateCacheClusterRequest withPreferredAvailabilityZone(String preferredAvailabilityZone) {
-        this.preferredAvailabilityZone = preferredAvailabilityZone;
-        return this;
-    }
-
-    /**
-     * A list of the Availability Zones in which nodes will be created. The
-     * order of the zones in the list is not important. <p>This option is
-     * only supported on Memcached clusters. <note> <p>If you are creating
-     * your cache cluster in an Amazon VPC (recommended) you can only locate
-     * nodes in Availability Zones that are associated with the subnets in
-     * the selected subnet group. <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     * want all your cache nodes in the same Availability Zone, use
-     * <code>PreferredAvailabilityZone</code> instead or repeat the
-     * Availability Zone multiple times in the list. <p>Default: System
-     * chosen Availability Zones. <p>Example: One Memcached node in each of
-     * three Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     *
-     * @return A list of the Availability Zones in which nodes will be created. The
-     *         order of the zones in the list is not important. <p>This option is
-     *         only supported on Memcached clusters. <note> <p>If you are creating
-     *         your cache cluster in an Amazon VPC (recommended) you can only locate
-     *         nodes in Availability Zones that are associated with the subnets in
-     *         the selected subnet group. <p>The number of Availability Zones listed
-     *         must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     *         want all your cache nodes in the same Availability Zone, use
-     *         <code>PreferredAvailabilityZone</code> instead or repeat the
-     *         Availability Zone multiple times in the list. <p>Default: System
-     *         chosen Availability Zones. <p>Example: One Memcached node in each of
-     *         three Availability Zones:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     *         <p>Example: All three Memcached nodes in one Availability Zone:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     */
-    public java.util.List<String> getPreferredAvailabilityZones() {
-        if (preferredAvailabilityZones == null) {
-              preferredAvailabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              preferredAvailabilityZones.setAutoConstruct(true);
-        }
-        return preferredAvailabilityZones;
-    }
-    
-    /**
-     * A list of the Availability Zones in which nodes will be created. The
-     * order of the zones in the list is not important. <p>This option is
-     * only supported on Memcached clusters. <note> <p>If you are creating
-     * your cache cluster in an Amazon VPC (recommended) you can only locate
-     * nodes in Availability Zones that are associated with the subnets in
-     * the selected subnet group. <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     * want all your cache nodes in the same Availability Zone, use
-     * <code>PreferredAvailabilityZone</code> instead or repeat the
-     * Availability Zone multiple times in the list. <p>Default: System
-     * chosen Availability Zones. <p>Example: One Memcached node in each of
-     * three Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     *
-     * @param preferredAvailabilityZones A list of the Availability Zones in which nodes will be created. The
-     *         order of the zones in the list is not important. <p>This option is
-     *         only supported on Memcached clusters. <note> <p>If you are creating
-     *         your cache cluster in an Amazon VPC (recommended) you can only locate
-     *         nodes in Availability Zones that are associated with the subnets in
-     *         the selected subnet group. <p>The number of Availability Zones listed
-     *         must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     *         want all your cache nodes in the same Availability Zone, use
-     *         <code>PreferredAvailabilityZone</code> instead or repeat the
-     *         Availability Zone multiple times in the list. <p>Default: System
-     *         chosen Availability Zones. <p>Example: One Memcached node in each of
-     *         three Availability Zones:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     *         <p>Example: All three Memcached nodes in one Availability Zone:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     */
-    public void setPreferredAvailabilityZones(java.util.Collection<String> preferredAvailabilityZones) {
-        if (preferredAvailabilityZones == null) {
-            this.preferredAvailabilityZones = null;
-            return;
-        }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> preferredAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(preferredAvailabilityZones.size());
-        preferredAvailabilityZonesCopy.addAll(preferredAvailabilityZones);
-        this.preferredAvailabilityZones = preferredAvailabilityZonesCopy;
-    }
-    
-    /**
-     * A list of the Availability Zones in which nodes will be created. The
-     * order of the zones in the list is not important. <p>This option is
-     * only supported on Memcached clusters. <note> <p>If you are creating
-     * your cache cluster in an Amazon VPC (recommended) you can only locate
-     * nodes in Availability Zones that are associated with the subnets in
-     * the selected subnet group. <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     * want all your cache nodes in the same Availability Zone, use
-     * <code>PreferredAvailabilityZone</code> instead or repeat the
-     * Availability Zone multiple times in the list. <p>Default: System
-     * chosen Availability Zones. <p>Example: One Memcached node in each of
-     * three Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param preferredAvailabilityZones A list of the Availability Zones in which nodes will be created. The
-     *         order of the zones in the list is not important. <p>This option is
-     *         only supported on Memcached clusters. <note> <p>If you are creating
-     *         your cache cluster in an Amazon VPC (recommended) you can only locate
-     *         nodes in Availability Zones that are associated with the subnets in
-     *         the selected subnet group. <p>The number of Availability Zones listed
-     *         must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     *         want all your cache nodes in the same Availability Zone, use
-     *         <code>PreferredAvailabilityZone</code> instead or repeat the
-     *         Availability Zone multiple times in the list. <p>Default: System
-     *         chosen Availability Zones. <p>Example: One Memcached node in each of
-     *         three Availability Zones:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     *         <p>Example: All three Memcached nodes in one Availability Zone:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateCacheClusterRequest withPreferredAvailabilityZones(String... preferredAvailabilityZones) {
-        if (getPreferredAvailabilityZones() == null) setPreferredAvailabilityZones(new java.util.ArrayList<String>(preferredAvailabilityZones.length));
-        for (String value : preferredAvailabilityZones) {
-            getPreferredAvailabilityZones().add(value);
-        }
-        return this;
-    }
-    
-    /**
-     * A list of the Availability Zones in which nodes will be created. The
-     * order of the zones in the list is not important. <p>This option is
-     * only supported on Memcached clusters. <note> <p>If you are creating
-     * your cache cluster in an Amazon VPC (recommended) you can only locate
-     * nodes in Availability Zones that are associated with the subnets in
-     * the selected subnet group. <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     * want all your cache nodes in the same Availability Zone, use
-     * <code>PreferredAvailabilityZone</code> instead or repeat the
-     * Availability Zone multiple times in the list. <p>Default: System
-     * chosen Availability Zones. <p>Example: One Memcached node in each of
-     * three Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param preferredAvailabilityZones A list of the Availability Zones in which nodes will be created. The
-     *         order of the zones in the list is not important. <p>This option is
-     *         only supported on Memcached clusters. <note> <p>If you are creating
-     *         your cache cluster in an Amazon VPC (recommended) you can only locate
-     *         nodes in Availability Zones that are associated with the subnets in
-     *         the selected subnet group. <p>The number of Availability Zones listed
-     *         must equal the value of <code>NumCacheNodes</code>. </note> <p>If you
-     *         want all your cache nodes in the same Availability Zone, use
-     *         <code>PreferredAvailabilityZone</code> instead or repeat the
-     *         Availability Zone multiple times in the list. <p>Default: System
-     *         chosen Availability Zones. <p>Example: One Memcached node in each of
-     *         three Availability Zones:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1b&PreferredAvailabilityZones.member.3=us-east-1d</code>
-     *         <p>Example: All three Memcached nodes in one Availability Zone:
-     *         <code>PreferredAvailabilityZones.member.1=us-east-1a&PreferredAvailabilityZones.member.2=us-east-1a&PreferredAvailabilityZones.member.3=us-east-1a</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateCacheClusterRequest withPreferredAvailabilityZones(java.util.Collection<String> preferredAvailabilityZones) {
-        if (preferredAvailabilityZones == null) {
-            this.preferredAvailabilityZones = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> preferredAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(preferredAvailabilityZones.size());
-            preferredAvailabilityZonesCopy.addAll(preferredAvailabilityZones);
-            this.preferredAvailabilityZones = preferredAvailabilityZonesCopy;
-        }
-
         return this;
     }
 
@@ -1523,13 +1686,13 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
      * Service (SNS) topic to which notifications will be sent. <note>The
-     * Amazon SNS topic owner must be the same as the cache cluster owner.
-     * </note>
+     * Amazon SNS topic owner must be the same as the cache cluster
+     * owner.</note>
      *
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic to which notifications will be sent. <note>The
-     *         Amazon SNS topic owner must be the same as the cache cluster owner.
-     *         </note>
+     *         Amazon SNS topic owner must be the same as the cache cluster
+     *         owner.</note>
      */
     public String getNotificationTopicArn() {
         return notificationTopicArn;
@@ -1538,13 +1701,13 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
      * Service (SNS) topic to which notifications will be sent. <note>The
-     * Amazon SNS topic owner must be the same as the cache cluster owner.
-     * </note>
+     * Amazon SNS topic owner must be the same as the cache cluster
+     * owner.</note>
      *
      * @param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic to which notifications will be sent. <note>The
-     *         Amazon SNS topic owner must be the same as the cache cluster owner.
-     *         </note>
+     *         Amazon SNS topic owner must be the same as the cache cluster
+     *         owner.</note>
      */
     public void setNotificationTopicArn(String notificationTopicArn) {
         this.notificationTopicArn = notificationTopicArn;
@@ -1553,15 +1716,15 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
      * Service (SNS) topic to which notifications will be sent. <note>The
-     * Amazon SNS topic owner must be the same as the cache cluster owner.
-     * </note>
+     * Amazon SNS topic owner must be the same as the cache cluster
+     * owner.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationTopicArn The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic to which notifications will be sent. <note>The
-     *         Amazon SNS topic owner must be the same as the cache cluster owner.
-     *         </note>
+     *         Amazon SNS topic owner must be the same as the cache cluster
+     *         owner.</note>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1573,12 +1736,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
 
     /**
      * Determines whether minor engine upgrades will be applied automatically
-     * to the cache cluster during the maintenance window. A value of
+     * to the node group during the maintenance window. A value of
      * <code>true</code> allows these upgrades to occur; <code>false</code>
      * disables automatic upgrades. <p>Default: <code>true</code>
      *
      * @return Determines whether minor engine upgrades will be applied automatically
-     *         to the cache cluster during the maintenance window. A value of
+     *         to the node group during the maintenance window. A value of
      *         <code>true</code> allows these upgrades to occur; <code>false</code>
      *         disables automatic upgrades. <p>Default: <code>true</code>
      */
@@ -1588,12 +1751,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * Determines whether minor engine upgrades will be applied automatically
-     * to the cache cluster during the maintenance window. A value of
+     * to the node group during the maintenance window. A value of
      * <code>true</code> allows these upgrades to occur; <code>false</code>
      * disables automatic upgrades. <p>Default: <code>true</code>
      *
      * @param autoMinorVersionUpgrade Determines whether minor engine upgrades will be applied automatically
-     *         to the cache cluster during the maintenance window. A value of
+     *         to the node group during the maintenance window. A value of
      *         <code>true</code> allows these upgrades to occur; <code>false</code>
      *         disables automatic upgrades. <p>Default: <code>true</code>
      */
@@ -1603,14 +1766,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * Determines whether minor engine upgrades will be applied automatically
-     * to the cache cluster during the maintenance window. A value of
+     * to the node group during the maintenance window. A value of
      * <code>true</code> allows these upgrades to occur; <code>false</code>
      * disables automatic upgrades. <p>Default: <code>true</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoMinorVersionUpgrade Determines whether minor engine upgrades will be applied automatically
-     *         to the cache cluster during the maintenance window. A value of
+     *         to the node group during the maintenance window. A value of
      *         <code>true</code> allows these upgrades to occur; <code>false</code>
      *         disables automatic upgrades. <p>Default: <code>true</code>
      *
@@ -1624,12 +1787,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
 
     /**
      * Determines whether minor engine upgrades will be applied automatically
-     * to the cache cluster during the maintenance window. A value of
+     * to the node group during the maintenance window. A value of
      * <code>true</code> allows these upgrades to occur; <code>false</code>
      * disables automatic upgrades. <p>Default: <code>true</code>
      *
      * @return Determines whether minor engine upgrades will be applied automatically
-     *         to the cache cluster during the maintenance window. A value of
+     *         to the node group during the maintenance window. A value of
      *         <code>true</code> allows these upgrades to occur; <code>false</code>
      *         disables automatic upgrades. <p>Default: <code>true</code>
      */
@@ -1638,65 +1801,65 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The number of days for which ElastiCache will retain automatic cache
-     * cluster snapshots before deleting them. For example, if you set
+     * The number of days for which ElastiCache will retain automatic
+     * snapshots before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
-     * taken today will be retained for 5 days before being deleted. <p>If
-     * you do not specify this parameter, then
-     * <code>SnapshotRetentionLimit</code> will be set to 0 (i.e., automatic
-     * backups will be disabled for this cache cluster).
+     * taken today will be retained for 5 days before being deleted.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Default: 0
+     * (i.e., automatic backups are disabled for this cache cluster).
      *
-     * @return The number of days for which ElastiCache will retain automatic cache
-     *         cluster snapshots before deleting them. For example, if you set
+     * @return The number of days for which ElastiCache will retain automatic
+     *         snapshots before deleting them. For example, if you set
      *         <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
-     *         taken today will be retained for 5 days before being deleted. <p>If
-     *         you do not specify this parameter, then
-     *         <code>SnapshotRetentionLimit</code> will be set to 0 (i.e., automatic
-     *         backups will be disabled for this cache cluster).
+     *         taken today will be retained for 5 days before being deleted.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>. <p>Default: 0
+     *         (i.e., automatic backups are disabled for this cache cluster).
      */
     public Integer getSnapshotRetentionLimit() {
         return snapshotRetentionLimit;
     }
     
     /**
-     * The number of days for which ElastiCache will retain automatic cache
-     * cluster snapshots before deleting them. For example, if you set
+     * The number of days for which ElastiCache will retain automatic
+     * snapshots before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
-     * taken today will be retained for 5 days before being deleted. <p>If
-     * you do not specify this parameter, then
-     * <code>SnapshotRetentionLimit</code> will be set to 0 (i.e., automatic
-     * backups will be disabled for this cache cluster).
+     * taken today will be retained for 5 days before being deleted.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Default: 0
+     * (i.e., automatic backups are disabled for this cache cluster).
      *
-     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
-     *         cluster snapshots before deleting them. For example, if you set
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic
+     *         snapshots before deleting them. For example, if you set
      *         <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
-     *         taken today will be retained for 5 days before being deleted. <p>If
-     *         you do not specify this parameter, then
-     *         <code>SnapshotRetentionLimit</code> will be set to 0 (i.e., automatic
-     *         backups will be disabled for this cache cluster).
+     *         taken today will be retained for 5 days before being deleted.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>. <p>Default: 0
+     *         (i.e., automatic backups are disabled for this cache cluster).
      */
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
         this.snapshotRetentionLimit = snapshotRetentionLimit;
     }
     
     /**
-     * The number of days for which ElastiCache will retain automatic cache
-     * cluster snapshots before deleting them. For example, if you set
+     * The number of days for which ElastiCache will retain automatic
+     * snapshots before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
-     * taken today will be retained for 5 days before being deleted. <p>If
-     * you do not specify this parameter, then
-     * <code>SnapshotRetentionLimit</code> will be set to 0 (i.e., automatic
-     * backups will be disabled for this cache cluster).
+     * taken today will be retained for 5 days before being deleted.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>. <p>Default: 0
+     * (i.e., automatic backups are disabled for this cache cluster).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic cache
-     *         cluster snapshots before deleting them. For example, if you set
+     * @param snapshotRetentionLimit The number of days for which ElastiCache will retain automatic
+     *         snapshots before deleting them. For example, if you set
      *         <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was
-     *         taken today will be retained for 5 days before being deleted. <p>If
-     *         you do not specify this parameter, then
-     *         <code>SnapshotRetentionLimit</code> will be set to 0 (i.e., automatic
-     *         backups will be disabled for this cache cluster).
+     *         taken today will be retained for 5 days before being deleted.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>. <p>Default: 0
+     *         (i.e., automatic backups are disabled for this cache cluster).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1708,14 +1871,18 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
 
     /**
      * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of your cache cluster. <p>Example:
+     * taking a daily snapshot of your node group. <p>Example:
      * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      * ElastiCache will automatically choose an appropriate time range.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.
      *
      * @return The daily time range (in UTC) during which ElastiCache will begin
-     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         taking a daily snapshot of your node group. <p>Example:
      *         <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      *         ElastiCache will automatically choose an appropriate time range.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>.
      */
     public String getSnapshotWindow() {
         return snapshotWindow;
@@ -1723,14 +1890,18 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of your cache cluster. <p>Example:
+     * taking a daily snapshot of your node group. <p>Example:
      * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      * ElastiCache will automatically choose an appropriate time range.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.
      *
      * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
-     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         taking a daily snapshot of your node group. <p>Example:
      *         <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      *         ElastiCache will automatically choose an appropriate time range.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>.
      */
     public void setSnapshotWindow(String snapshotWindow) {
         this.snapshotWindow = snapshotWindow;
@@ -1738,16 +1909,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The daily time range (in UTC) during which ElastiCache will begin
-     * taking a daily snapshot of your cache cluster. <p>Example:
+     * taking a daily snapshot of your node group. <p>Example:
      * <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      * ElastiCache will automatically choose an appropriate time range.
+     * <p><b>Note:</b> This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotWindow The daily time range (in UTC) during which ElastiCache will begin
-     *         taking a daily snapshot of your cache cluster. <p>Example:
+     *         taking a daily snapshot of your node group. <p>Example:
      *         <code>05:00-09:00</code> <p>If you do not specify this parameter, then
      *         ElastiCache will automatically choose an appropriate time range.
+     *         <p><b>Note:</b> This parameter is only valid if the
+     *         <code>Engine</code> parameter is <code>redis</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1771,6 +1946,9 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         sb.append("{");
         if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
         if (getReplicationGroupId() != null) sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+        if (getAZMode() != null) sb.append("AZMode: " + getAZMode() + ",");
+        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
+        if (getPreferredAvailabilityZones() != null) sb.append("PreferredAvailabilityZones: " + getPreferredAvailabilityZones() + ",");
         if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
         if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");
         if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
@@ -1781,9 +1959,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
         if (getSnapshotArns() != null) sb.append("SnapshotArns: " + getSnapshotArns() + ",");
         if (getSnapshotName() != null) sb.append("SnapshotName: " + getSnapshotName() + ",");
-        if (getAZMode() != null) sb.append("AZMode: " + getAZMode() + ",");
-        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
-        if (getPreferredAvailabilityZones() != null) sb.append("PreferredAvailabilityZones: " + getPreferredAvailabilityZones() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getPort() != null) sb.append("Port: " + getPort() + ",");
         if (getNotificationTopicArn() != null) sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ",");
@@ -1801,6 +1976,9 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         
         hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode()); 
         hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode()); 
+        hashCode = prime * hashCode + ((getAZMode() == null) ? 0 : getAZMode().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredAvailabilityZones() == null) ? 0 : getPreferredAvailabilityZones().hashCode()); 
         hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode()); 
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
@@ -1811,9 +1989,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotArns() == null) ? 0 : getSnapshotArns().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotName() == null) ? 0 : getSnapshotName().hashCode()); 
-        hashCode = prime * hashCode + ((getAZMode() == null) ? 0 : getAZMode().hashCode()); 
-        hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode()); 
-        hashCode = prime * hashCode + ((getPreferredAvailabilityZones() == null) ? 0 : getPreferredAvailabilityZones().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getNotificationTopicArn() == null) ? 0 : getNotificationTopicArn().hashCode()); 
@@ -1835,6 +2010,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false) return false; 
         if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null) return false;
         if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false) return false; 
+        if (other.getAZMode() == null ^ this.getAZMode() == null) return false;
+        if (other.getAZMode() != null && other.getAZMode().equals(this.getAZMode()) == false) return false; 
+        if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null) return false;
+        if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false) return false; 
+        if (other.getPreferredAvailabilityZones() == null ^ this.getPreferredAvailabilityZones() == null) return false;
+        if (other.getPreferredAvailabilityZones() != null && other.getPreferredAvailabilityZones().equals(this.getPreferredAvailabilityZones()) == false) return false; 
         if (other.getNumCacheNodes() == null ^ this.getNumCacheNodes() == null) return false;
         if (other.getNumCacheNodes() != null && other.getNumCacheNodes().equals(this.getNumCacheNodes()) == false) return false; 
         if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
@@ -1855,12 +2036,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getSnapshotArns() != null && other.getSnapshotArns().equals(this.getSnapshotArns()) == false) return false; 
         if (other.getSnapshotName() == null ^ this.getSnapshotName() == null) return false;
         if (other.getSnapshotName() != null && other.getSnapshotName().equals(this.getSnapshotName()) == false) return false; 
-        if (other.getAZMode() == null ^ this.getAZMode() == null) return false;
-        if (other.getAZMode() != null && other.getAZMode().equals(this.getAZMode()) == false) return false; 
-        if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null) return false;
-        if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false) return false; 
-        if (other.getPreferredAvailabilityZones() == null ^ this.getPreferredAvailabilityZones() == null) return false;
-        if (other.getPreferredAvailabilityZones() != null && other.getPreferredAvailabilityZones().equals(this.getPreferredAvailabilityZones()) == false) return false; 
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
         if (other.getPort() == null ^ this.getPort() == null) return false;

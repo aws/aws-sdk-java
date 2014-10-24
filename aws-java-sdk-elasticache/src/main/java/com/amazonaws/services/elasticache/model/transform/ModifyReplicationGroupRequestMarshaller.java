@@ -39,13 +39,22 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         Request<ModifyReplicationGroupRequest> request = new DefaultRequest<ModifyReplicationGroupRequest>(modifyReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyReplicationGroup");
-        request.addParameter("Version", "2014-07-15");
+        request.addParameter("Version", "2014-09-30");
 
         if (modifyReplicationGroupRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(modifyReplicationGroupRequest.getReplicationGroupId()));
         }
         if (modifyReplicationGroupRequest.getReplicationGroupDescription() != null) {
             request.addParameter("ReplicationGroupDescription", StringUtils.fromString(modifyReplicationGroupRequest.getReplicationGroupDescription()));
+        }
+        if (modifyReplicationGroupRequest.getPrimaryClusterId() != null) {
+            request.addParameter("PrimaryClusterId", StringUtils.fromString(modifyReplicationGroupRequest.getPrimaryClusterId()));
+        }
+        if (modifyReplicationGroupRequest.getSnapshottingClusterId() != null) {
+            request.addParameter("SnapshottingClusterId", StringUtils.fromString(modifyReplicationGroupRequest.getSnapshottingClusterId()));
+        }
+        if (modifyReplicationGroupRequest.isAutomaticFailoverEnabled() != null) {
+            request.addParameter("AutomaticFailoverEnabled", StringUtils.fromBoolean(modifyReplicationGroupRequest.isAutomaticFailoverEnabled()));
         }
 
         java.util.List<String> cacheSecurityGroupNamesList = modifyReplicationGroupRequest.getCacheSecurityGroupNames();
@@ -90,17 +99,11 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
         if (modifyReplicationGroupRequest.isAutoMinorVersionUpgrade() != null) {
             request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(modifyReplicationGroupRequest.isAutoMinorVersionUpgrade()));
         }
-        if (modifyReplicationGroupRequest.getPrimaryClusterId() != null) {
-            request.addParameter("PrimaryClusterId", StringUtils.fromString(modifyReplicationGroupRequest.getPrimaryClusterId()));
-        }
         if (modifyReplicationGroupRequest.getSnapshotRetentionLimit() != null) {
             request.addParameter("SnapshotRetentionLimit", StringUtils.fromInteger(modifyReplicationGroupRequest.getSnapshotRetentionLimit()));
         }
         if (modifyReplicationGroupRequest.getSnapshotWindow() != null) {
             request.addParameter("SnapshotWindow", StringUtils.fromString(modifyReplicationGroupRequest.getSnapshotWindow()));
-        }
-        if (modifyReplicationGroupRequest.getSnapshottingClusterId() != null) {
-            request.addParameter("SnapshottingClusterId", StringUtils.fromString(modifyReplicationGroupRequest.getSnapshottingClusterId()));
         }
 
         return request;

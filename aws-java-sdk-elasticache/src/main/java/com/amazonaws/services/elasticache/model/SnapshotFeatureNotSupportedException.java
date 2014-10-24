@@ -23,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * 
  * <ul>
  * <li> <p>
- * Creating a snapshot of a Redis cache cluster running on a a
+ * Creating a snapshot of a Redis cache cluster running on a
  * <i>t1.micro</i> cache node.
  * </p>
  * </li>

@@ -39,7 +39,7 @@ public class DeleteCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
 
         Request<DeleteCacheSubnetGroupRequest> request = new DefaultRequest<DeleteCacheSubnetGroupRequest>(deleteCacheSubnetGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteCacheSubnetGroup");
-        request.addParameter("Version", "2014-07-15");
+        request.addParameter("Version", "2014-09-30");
 
         if (deleteCacheSubnetGroupRequest.getCacheSubnetGroupName() != null) {
             request.addParameter("CacheSubnetGroupName", StringUtils.fromString(deleteCacheSubnetGroupRequest.getCacheSubnetGroupName()));

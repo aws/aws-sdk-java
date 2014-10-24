@@ -30,7 +30,7 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
 
     /**
      * A list of cache engine version details. Each element in the list
-     * contains detailed information about once cache engine version.
+     * contains detailed information about one cache engine version.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheEngineVersion> cacheEngineVersions;
 
@@ -69,10 +69,10 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
 
     /**
      * A list of cache engine version details. Each element in the list
-     * contains detailed information about once cache engine version.
+     * contains detailed information about one cache engine version.
      *
      * @return A list of cache engine version details. Each element in the list
-     *         contains detailed information about once cache engine version.
+     *         contains detailed information about one cache engine version.
      */
     public java.util.List<CacheEngineVersion> getCacheEngineVersions() {
         if (cacheEngineVersions == null) {
@@ -84,10 +84,10 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
     
     /**
      * A list of cache engine version details. Each element in the list
-     * contains detailed information about once cache engine version.
+     * contains detailed information about one cache engine version.
      *
      * @param cacheEngineVersions A list of cache engine version details. Each element in the list
-     *         contains detailed information about once cache engine version.
+     *         contains detailed information about one cache engine version.
      */
     public void setCacheEngineVersions(java.util.Collection<CacheEngineVersion> cacheEngineVersions) {
         if (cacheEngineVersions == null) {
@@ -101,12 +101,12 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
     
     /**
      * A list of cache engine version details. Each element in the list
-     * contains detailed information about once cache engine version.
+     * contains detailed information about one cache engine version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheEngineVersions A list of cache engine version details. Each element in the list
-     *         contains detailed information about once cache engine version.
+     *         contains detailed information about one cache engine version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -121,12 +121,12 @@ public class DescribeCacheEngineVersionsResult implements Serializable {
     
     /**
      * A list of cache engine version details. Each element in the list
-     * contains detailed information about once cache engine version.
+     * contains detailed information about one cache engine version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheEngineVersions A list of cache engine version details. Each element in the list
-     *         contains detailed information about once cache engine version.
+     *         contains detailed information about one cache engine version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

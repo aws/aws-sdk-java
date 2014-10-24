@@ -26,10 +26,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * more cache clusters.
  * </p>
  * <p>
- * Cache security groups are only used when you are creating a cluster
- * outside of an Amazon Virtual Private Cloud (VPC). If you are creating
- * a cluster inside of a VPC, use a cache subnet group instead. For more
- * information, see <i>CreateCacheSubnetGroup</i> .
+ * Cache security groups are only used when you are creating a cache
+ * cluster outside of an Amazon Virtual Private Cloud (VPC). If you are
+ * creating a cache cluster inside of a VPC, use a cache subnet group
+ * instead. For more information, see
+ * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html"> CreateCacheSubnetGroup </a>
+ * .
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheSecurityGroup(CreateCacheSecurityGroupRequest)
@@ -39,7 +41,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
     /**
      * A name for the cache security group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be the word "Default". <p>Example:
+     * alphanumeric characters. Cannot be the word "Default". <p>Example:
      * <code>mysecuritygroup</code>
      */
     private String cacheSecurityGroupName;
@@ -62,7 +64,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
      * 
      * @param cacheSecurityGroupName A name for the cache security group.
      * This value is stored as a lowercase string. <p>Constraints: Must
-     * contain no more than 255 alphanumeric characters. Must not be the word
+     * contain no more than 255 alphanumeric characters. Cannot be the word
      * "Default". <p>Example: <code>mysecuritygroup</code>
      * @param description A description for the cache security group.
      */
@@ -74,12 +76,12 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
     /**
      * A name for the cache security group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be the word "Default". <p>Example:
+     * alphanumeric characters. Cannot be the word "Default". <p>Example:
      * <code>mysecuritygroup</code>
      *
      * @return A name for the cache security group. This value is stored as a
      *         lowercase string. <p>Constraints: Must contain no more than 255
-     *         alphanumeric characters. Must not be the word "Default". <p>Example:
+     *         alphanumeric characters. Cannot be the word "Default". <p>Example:
      *         <code>mysecuritygroup</code>
      */
     public String getCacheSecurityGroupName() {
@@ -89,12 +91,12 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
     /**
      * A name for the cache security group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be the word "Default". <p>Example:
+     * alphanumeric characters. Cannot be the word "Default". <p>Example:
      * <code>mysecuritygroup</code>
      *
      * @param cacheSecurityGroupName A name for the cache security group. This value is stored as a
      *         lowercase string. <p>Constraints: Must contain no more than 255
-     *         alphanumeric characters. Must not be the word "Default". <p>Example:
+     *         alphanumeric characters. Cannot be the word "Default". <p>Example:
      *         <code>mysecuritygroup</code>
      */
     public void setCacheSecurityGroupName(String cacheSecurityGroupName) {
@@ -104,14 +106,14 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
     /**
      * A name for the cache security group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
-     * alphanumeric characters. Must not be the word "Default". <p>Example:
+     * alphanumeric characters. Cannot be the word "Default". <p>Example:
      * <code>mysecuritygroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupName A name for the cache security group. This value is stored as a
      *         lowercase string. <p>Constraints: Must contain no more than 255
-     *         alphanumeric characters. Must not be the word "Default". <p>Example:
+     *         alphanumeric characters. Cannot be the word "Default". <p>Example:
      *         <code>mysecuritygroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained

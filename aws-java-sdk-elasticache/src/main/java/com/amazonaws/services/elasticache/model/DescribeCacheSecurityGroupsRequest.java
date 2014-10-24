@@ -39,7 +39,7 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      */
     private Integer maxRecords;
 
@@ -106,12 +106,12 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      *
      * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -121,12 +121,12 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -136,14 +136,14 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
