@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class CacheCluster implements Serializable {
 
     /**
-     * The user-supplied identifier of the cache cluster. This is a unique
-     * key that identifies a cache cluster.
+     * The user-supplied identifier of the cache cluster. This identifier is
+     * a unique key that identifies a cache cluster.
      */
     private String cacheClusterId;
 
@@ -60,8 +60,10 @@ public class CacheCluster implements Serializable {
     private String engineVersion;
 
     /**
-     * The current state of this cache cluster - <i>creating</i>,
-     * <i>available</i>, etc.
+     * The current state of this cache cluster, one of the following values:
+     * <i>available</i>, <i>creating</i>, <i>deleted</i>, <i>deleting</i>,
+     * <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
+     * cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
      */
     private String cacheClusterStatus;
 
@@ -159,35 +161,35 @@ public class CacheCluster implements Serializable {
     private String snapshotWindow;
 
     /**
-     * The user-supplied identifier of the cache cluster. This is a unique
-     * key that identifies a cache cluster.
+     * The user-supplied identifier of the cache cluster. This identifier is
+     * a unique key that identifies a cache cluster.
      *
-     * @return The user-supplied identifier of the cache cluster. This is a unique
-     *         key that identifies a cache cluster.
+     * @return The user-supplied identifier of the cache cluster. This identifier is
+     *         a unique key that identifies a cache cluster.
      */
     public String getCacheClusterId() {
         return cacheClusterId;
     }
     
     /**
-     * The user-supplied identifier of the cache cluster. This is a unique
-     * key that identifies a cache cluster.
+     * The user-supplied identifier of the cache cluster. This identifier is
+     * a unique key that identifies a cache cluster.
      *
-     * @param cacheClusterId The user-supplied identifier of the cache cluster. This is a unique
-     *         key that identifies a cache cluster.
+     * @param cacheClusterId The user-supplied identifier of the cache cluster. This identifier is
+     *         a unique key that identifies a cache cluster.
      */
     public void setCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
     }
     
     /**
-     * The user-supplied identifier of the cache cluster. This is a unique
-     * key that identifies a cache cluster.
+     * The user-supplied identifier of the cache cluster. This identifier is
+     * a unique key that identifies a cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterId The user-supplied identifier of the cache cluster. This is a unique
-     *         key that identifies a cache cluster.
+     * @param cacheClusterId The user-supplied identifier of the cache cluster. This identifier is
+     *         a unique key that identifies a cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -393,35 +395,47 @@ public class CacheCluster implements Serializable {
     }
 
     /**
-     * The current state of this cache cluster - <i>creating</i>,
-     * <i>available</i>, etc.
+     * The current state of this cache cluster, one of the following values:
+     * <i>available</i>, <i>creating</i>, <i>deleted</i>, <i>deleting</i>,
+     * <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
+     * cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
      *
-     * @return The current state of this cache cluster - <i>creating</i>,
-     *         <i>available</i>, etc.
+     * @return The current state of this cache cluster, one of the following values:
+     *         <i>available</i>, <i>creating</i>, <i>deleted</i>, <i>deleting</i>,
+     *         <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
+     *         cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
      */
     public String getCacheClusterStatus() {
         return cacheClusterStatus;
     }
     
     /**
-     * The current state of this cache cluster - <i>creating</i>,
-     * <i>available</i>, etc.
+     * The current state of this cache cluster, one of the following values:
+     * <i>available</i>, <i>creating</i>, <i>deleted</i>, <i>deleting</i>,
+     * <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
+     * cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
      *
-     * @param cacheClusterStatus The current state of this cache cluster - <i>creating</i>,
-     *         <i>available</i>, etc.
+     * @param cacheClusterStatus The current state of this cache cluster, one of the following values:
+     *         <i>available</i>, <i>creating</i>, <i>deleted</i>, <i>deleting</i>,
+     *         <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
+     *         cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
      */
     public void setCacheClusterStatus(String cacheClusterStatus) {
         this.cacheClusterStatus = cacheClusterStatus;
     }
     
     /**
-     * The current state of this cache cluster - <i>creating</i>,
-     * <i>available</i>, etc.
+     * The current state of this cache cluster, one of the following values:
+     * <i>available</i>, <i>creating</i>, <i>deleted</i>, <i>deleting</i>,
+     * <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
+     * cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterStatus The current state of this cache cluster - <i>creating</i>,
-     *         <i>available</i>, etc.
+     * @param cacheClusterStatus The current state of this cache cluster, one of the following values:
+     *         <i>available</i>, <i>creating</i>, <i>deleted</i>, <i>deleting</i>,
+     *         <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
+     *         cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

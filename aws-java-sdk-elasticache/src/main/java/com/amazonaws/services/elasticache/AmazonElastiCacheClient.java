@@ -47,7 +47,7 @@ import com.amazonaws.services.elasticache.model.transform.*;
  * With ElastiCache, customers gain all of the benefits of a
  * high-performance, in-memory cache with far less of the administrative
  * burden of launching and managing a distributed cache. The service
- * makes set-up, scaling, and cluster failure handling much simpler than
+ * makes setup, scaling, and cluster failure handling much simpler than
  * in a self-managed cache deployment.
  * </p>
  * <p>
@@ -230,8 +230,8 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedCacheNodeAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedCacheNodesOfferingNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ReservedCacheNodeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidReplicationGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ReservedCacheNodeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedCacheNodeQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NodeQuotaForCustomerExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheParameterGroupAlreadyExistsExceptionUnmarshaller());
@@ -262,6 +262,58 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 "/com/amazonaws/services/elasticache/request.handler2s"));
     }
 
+    /**
+     * <p>
+     * The <i>ModifyCacheParameterGroup</i> operation modifies the
+     * parameters of a cache parameter group. You can modify up to 20
+     * parameters in a single request by submitting a list parameter name and
+     * value pairs.
+     * </p>
+     *
+     * @param modifyCacheParameterGroupRequest Container for the necessary
+     *           parameters to execute the ModifyCacheParameterGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the ModifyCacheParameterGroup service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
+     * @throws InvalidCacheParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyCacheParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyCacheParameterGroupRequest> request = null;
+        Response<ModifyCacheParameterGroupResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyCacheParameterGroupRequestMarshaller().marshall(modifyCacheParameterGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ModifyCacheParameterGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
     /**
      * <p>
      * The <i>DescribeReservedCacheNodes</i> operation returns information
@@ -314,121 +366,25 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DescribeReplicationGroups</i> operation returns information
-     * about a particular replication group. If no identifier is specified,
-     * <i>DescribeReplicationGroups</i> returns information about all
-     * replication groups.
-     * </p>
-     *
-     * @param describeReplicationGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeReplicationGroups service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the DescribeReplicationGroups service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ReplicationGroupNotFoundException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeReplicationGroupsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeReplicationGroupsRequest> request = null;
-        Response<DescribeReplicationGroupsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeReplicationGroupsRequestMarshaller().marshall(describeReplicationGroupsRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new DescribeReplicationGroupsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeCacheSecurityGroups</i> operation returns a list of
-     * cache security group descriptions. If a cache security group name is
-     * specified, the list will contain only the description of that group.
-     * </p>
-     *
-     * @param describeCacheSecurityGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeCacheSecurityGroups service method
-     *           on AmazonElastiCache.
-     * 
-     * @return The response from the DescribeCacheSecurityGroups service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheSecurityGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeCacheSecurityGroupsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeCacheSecurityGroupsRequest> request = null;
-        Response<DescribeCacheSecurityGroupsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeCacheSecurityGroupsRequestMarshaller().marshall(describeCacheSecurityGroupsRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new DescribeCacheSecurityGroupsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DeleteCacheSecurityGroup</i> operation deletes a cache
-     * security group.
+     * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows
+     * network ingress to a cache security group. Applications using
+     * ElastiCache must be running on Amazon EC2, and Amazon EC2 security
+     * groups are used as the authorization mechanism.
      * </p>
      * <p>
-     * <b>NOTE:</b>You cannot delete a cache security group if it is
-     * associated with any cache clusters.
+     * <b>NOTE:</b>You cannot authorize ingress from an Amazon EC2 security
+     * group in one region to an ElastiCache cluster in another region.
      * </p>
      *
-     * @param deleteCacheSecurityGroupRequest Container for the necessary
-     *           parameters to execute the DeleteCacheSecurityGroup service method on
-     *           AmazonElastiCache.
+     * @param authorizeCacheSecurityGroupIngressRequest Container for the
+     *           necessary parameters to execute the AuthorizeCacheSecurityGroupIngress
+     *           service method on AmazonElastiCache.
      * 
+     * @return The response from the AuthorizeCacheSecurityGroupIngress
+     *         service method, as returned by AmazonElastiCache.
      * 
      * @throws InvalidParameterValueException
+     * @throws AuthorizationAlreadyExistsException
      * @throws InvalidCacheSecurityGroupStateException
      * @throws InvalidParameterCombinationException
      * @throws CacheSecurityGroupNotFoundException
@@ -441,65 +397,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteCacheSecurityGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteCacheSecurityGroupRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteCacheSecurityGroupRequestMarshaller().marshall(deleteCacheSecurityGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>CopySnapshot</i> operation makes a copy of an existing
-     * snapshot.
-     * </p>
-     *
-     * @param copySnapshotRequest Container for the necessary parameters to
-     *           execute the CopySnapshot service method on AmazonElastiCache.
-     * 
-     * @return The response from the CopySnapshot service method, as returned
-     *         by AmazonElastiCache.
-     * 
-     * @throws InvalidSnapshotStateException
-     * @throws InvalidParameterValueException
-     * @throws SnapshotNotFoundException
-     * @throws InvalidParameterCombinationException
-     * @throws SnapshotAlreadyExistsException
-     * @throws SnapshotQuotaExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Snapshot copySnapshot(CopySnapshotRequest copySnapshotRequest) {
-        ExecutionContext executionContext = createExecutionContext(copySnapshotRequest);
+    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) {
+        ExecutionContext executionContext = createExecutionContext(authorizeCacheSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CopySnapshotRequest> request = null;
-        Response<Snapshot> response = null;
+        Request<AuthorizeCacheSecurityGroupIngressRequest> request = null;
+        Response<CacheSecurityGroup> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CopySnapshotRequestMarshaller().marshall(copySnapshotRequest);
+                request = new AuthorizeCacheSecurityGroupIngressRequestMarshaller().marshall(authorizeCacheSecurityGroupIngressRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CacheSecurityGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -509,19 +423,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DeleteCacheParameterGroup</i> operation deletes the specified
-     * cache parameter group. You cannot delete a cache parameter group if it
-     * is associated with any cache clusters.
+     * The <i>DescribeCacheParameterGroups</i> operation returns a list of
+     * cache parameter group descriptions. If a cache parameter group name is
+     * specified, the list will contain only the descriptions for that group.
      * </p>
      *
-     * @param deleteCacheParameterGroupRequest Container for the necessary
-     *           parameters to execute the DeleteCacheParameterGroup service method on
-     *           AmazonElastiCache.
+     * @param describeCacheParameterGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheParameterGroups service method
+     *           on AmazonElastiCache.
      * 
+     * @return The response from the DescribeCacheParameterGroups service
+     *         method, as returned by AmazonElastiCache.
      * 
      * @throws InvalidParameterValueException
      * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheParameterGroupStateException
      * @throws CacheParameterGroupNotFoundException
      *
      * @throws AmazonClientException
@@ -532,68 +447,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteCacheParameterGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteCacheParameterGroupRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteCacheParameterGroupRequestMarshaller().marshall(deleteCacheParameterGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>ResetCacheParameterGroup</i> operation modifies the parameters
-     * of a cache parameter group to the engine or system default value. You
-     * can reset specific parameters by submitting a list of parameter names.
-     * To reset the entire cache parameter group, specify the
-     * <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i>
-     * parameters.
-     * </p>
-     *
-     * @param resetCacheParameterGroupRequest Container for the necessary
-     *           parameters to execute the ResetCacheParameterGroup service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the ResetCacheParameterGroup service method,
-     *         as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheParameterGroupStateException
-     * @throws CacheParameterGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(resetCacheParameterGroupRequest);
+    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheParameterGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ResetCacheParameterGroupRequest> request = null;
-        Response<ResetCacheParameterGroupResult> response = null;
+        Request<DescribeCacheParameterGroupsRequest> request = null;
+        Response<DescribeCacheParameterGroupsResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResetCacheParameterGroupRequestMarshaller().marshall(resetCacheParameterGroupRequest);
+                request = new DescribeCacheParameterGroupsRequestMarshaller().marshall(describeCacheParameterGroupsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new ResetCacheParameterGroupResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeCacheParameterGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -608,10 +478,12 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * more cache clusters.
      * </p>
      * <p>
-     * Cache security groups are only used when you are creating a cluster
-     * outside of an Amazon Virtual Private Cloud (VPC). If you are creating
-     * a cluster inside of a VPC, use a cache subnet group instead. For more
-     * information, see <i>CreateCacheSubnetGroup</i> .
+     * Cache security groups are only used when you are creating a cache
+     * cluster outside of an Amazon Virtual Private Cloud (VPC). If you are
+     * creating a cache cluster inside of a VPC, use a cache subnet group
+     * instead. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html"> CreateCacheSubnetGroup </a>
+     * .
      * </p>
      *
      * @param createCacheSecurityGroupRequest Container for the necessary
@@ -660,74 +532,30 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of
-     * cache subnet group descriptions. If a subnet group name is specified,
-     * the list will contain only the description of that group.
+     * The <i>DeleteReplicationGroup</i> operation deletes an existing
+     * cluster. By default, this operation deletes the entire cluster,
+     * including the primary node group and all of the read replicas. You can
+     * optionally delete only the read replicas, while retaining the primary
+     * node group.
      * </p>
-     *
-     * @param describeCacheSubnetGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeCacheSubnetGroups service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the DescribeCacheSubnetGroups service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws CacheSubnetGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeCacheSubnetGroupsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeCacheSubnetGroupsRequest> request = null;
-        Response<DescribeCacheSubnetGroupsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeCacheSubnetGroupsRequestMarshaller().marshall(describeCacheSubnetGroupsRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new DescribeCacheSubnetGroupsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
      * <p>
-     * The <i>DeleteCacheCluster</i> operation deletes a previously
-     * provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all
-     * associated cache nodes, node endpoints and the cache cluster itself.
      * When you receive a successful response from this operation, Amazon
-     * ElastiCache immediately begins deleting the cache cluster; you cannot
-     * cancel or revert this operation.
+     * ElastiCache immediately begins deleting the selected resources; you
+     * cannot cancel or revert this operation.
      * </p>
      *
-     * @param deleteCacheClusterRequest Container for the necessary
-     *           parameters to execute the DeleteCacheCluster service method on
+     * @param deleteReplicationGroupRequest Container for the necessary
+     *           parameters to execute the DeleteReplicationGroup service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the DeleteCacheCluster service method, as
-     *         returned by AmazonElastiCache.
+     * @return The response from the DeleteReplicationGroup service method,
+     *         as returned by AmazonElastiCache.
      * 
+     * @throws InvalidReplicationGroupStateException
      * @throws InvalidParameterValueException
      * @throws SnapshotFeatureNotSupportedException
-     * @throws CacheClusterNotFoundException
+     * @throws ReplicationGroupNotFoundException
      * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheClusterStateException
      * @throws SnapshotAlreadyExistsException
      * @throws SnapshotQuotaExceededException
      *
@@ -739,241 +567,17 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteCacheClusterRequest);
+    public ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteReplicationGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteCacheClusterRequest> request = null;
-        Response<CacheCluster> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteCacheClusterRequestMarshaller().marshall(deleteCacheClusterRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>CreateCacheCluster</i> operation creates a new cache cluster.
-     * All nodes in the cache cluster run the same protocol-compliant cache
-     * engine software - either Memcached or Redis.
-     * </p>
-     *
-     * @param createCacheClusterRequest Container for the necessary
-     *           parameters to execute the CreateCacheCluster service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the CreateCacheCluster service method, as
-     *         returned by AmazonElastiCache.
-     * 
-     * @throws NodeQuotaForCustomerExceededException
-     * @throws ClusterQuotaForCustomerExceededException
-     * @throws CacheClusterAlreadyExistsException
-     * @throws InsufficientCacheClusterCapacityException
-     * @throws ReplicationGroupNotFoundException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
-     * @throws CacheSecurityGroupNotFoundException
-     * @throws NodeQuotaForClusterExceededException
-     * @throws CacheSubnetGroupNotFoundException
-     * @throws InvalidReplicationGroupStateException
-     * @throws InvalidParameterValueException
-     * @throws InvalidVPCNetworkStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) {
-        ExecutionContext executionContext = createExecutionContext(createCacheClusterRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateCacheClusterRequest> request = null;
-        Response<CacheCluster> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateCacheClusterRequestMarshaller().marshall(createCacheClusterRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeCacheParameters</i> operation returns the detailed
-     * parameter list for a particular cache parameter group.
-     * </p>
-     *
-     * @param describeCacheParametersRequest Container for the necessary
-     *           parameters to execute the DescribeCacheParameters service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the DescribeCacheParameters service method,
-     *         as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeCacheParametersRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeCacheParametersRequest> request = null;
-        Response<DescribeCacheParametersResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeCacheParametersRequestMarshaller().marshall(describeCacheParametersRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new DescribeCacheParametersResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>RebootCacheCluster</i> operation reboots some, or all, of the
-     * cache nodes within a provisioned cache cluster. This API will apply
-     * any modified cache parameter groups to the cache cluster. The reboot
-     * action takes place as soon as possible, and results in a momentary
-     * outage to the cache cluster. During the reboot, the cache cluster
-     * status is set to REBOOTING.
-     * </p>
-     * <p>
-     * The reboot causes the contents of the cache (for each cache node
-     * being rebooted) to be lost.
-     * </p>
-     * <p>
-     * When the reboot is complete, a cache cluster event is created.
-     * </p>
-     *
-     * @param rebootCacheClusterRequest Container for the necessary
-     *           parameters to execute the RebootCacheCluster service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the RebootCacheCluster service method, as
-     *         returned by AmazonElastiCache.
-     * 
-     * @throws CacheClusterNotFoundException
-     * @throws InvalidCacheClusterStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CacheCluster rebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest) {
-        ExecutionContext executionContext = createExecutionContext(rebootCacheClusterRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RebootCacheClusterRequest> request = null;
-        Response<CacheCluster> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RebootCacheClusterRequestMarshaller().marshall(rebootCacheClusterRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>ModifyReplicationGroup</i> operation modifies the settings for
-     * a replication group.
-     * </p>
-     *
-     * @param modifyReplicationGroupRequest Container for the necessary
-     *           parameters to execute the ModifyReplicationGroup service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the ModifyReplicationGroup service method,
-     *         as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidReplicationGroupStateException
-     * @throws InvalidParameterValueException
-     * @throws InvalidCacheSecurityGroupStateException
-     * @throws InvalidVPCNetworkStateException
-     * @throws ReplicationGroupNotFoundException
-     * @throws CacheClusterNotFoundException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
-     * @throws InvalidCacheClusterStateException
-     * @throws CacheSecurityGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(modifyReplicationGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ModifyReplicationGroupRequest> request = null;
+        Request<DeleteReplicationGroupRequest> request = null;
         Response<ReplicationGroup> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyReplicationGroupRequestMarshaller().marshall(modifyReplicationGroupRequest);
+                request = new DeleteReplicationGroupRequestMarshaller().marshall(deleteReplicationGroupRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -989,22 +593,22 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>ModifyCacheParameterGroup</i> operation modifies the
-     * parameters of a cache parameter group. You can modify up to 20
-     * parameters in a single request by submitting a list parameter name and
-     * value pairs.
+     * The <i>CreateCacheParameterGroup</i> operation creates a new cache
+     * parameter group. A cache parameter group is a collection of parameters
+     * that you apply to all of the nodes in a cache cluster.
      * </p>
      *
-     * @param modifyCacheParameterGroupRequest Container for the necessary
-     *           parameters to execute the ModifyCacheParameterGroup service method on
+     * @param createCacheParameterGroupRequest Container for the necessary
+     *           parameters to execute the CreateCacheParameterGroup service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the ModifyCacheParameterGroup service
+     * @return The response from the CreateCacheParameterGroup service
      *         method, as returned by AmazonElastiCache.
      * 
      * @throws InvalidParameterValueException
+     * @throws CacheParameterGroupQuotaExceededException
+     * @throws CacheParameterGroupAlreadyExistsException
      * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
      * @throws InvalidCacheParameterGroupStateException
      *
      * @throws AmazonClientException
@@ -1015,23 +619,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(modifyCacheParameterGroupRequest);
+    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createCacheParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ModifyCacheParameterGroupRequest> request = null;
-        Response<ModifyCacheParameterGroupResult> response = null;
+        Request<CreateCacheParameterGroupRequest> request = null;
+        Response<CacheParameterGroup> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyCacheParameterGroupRequestMarshaller().marshall(modifyCacheParameterGroupRequest);
+                request = new CreateCacheParameterGroupRequestMarshaller().marshall(createCacheParameterGroupRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new ModifyCacheParameterGroupResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CacheParameterGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1100,6 +704,257 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
+     * The <i>DeleteCacheCluster</i> operation deletes a previously
+     * provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all
+     * associated cache nodes, node endpoints and the cache cluster itself.
+     * When you receive a successful response from this operation, Amazon
+     * ElastiCache immediately begins deleting the cache cluster; you cannot
+     * cancel or revert this operation.
+     * </p>
+     * <p>
+     * This API cannot be used to delete a cache cluster that is the last
+     * read replica of a replication group that has automatic failover mode
+     * enabled.
+     * </p>
+     *
+     * @param deleteCacheClusterRequest Container for the necessary
+     *           parameters to execute the DeleteCacheCluster service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the DeleteCacheCluster service method, as
+     *         returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws SnapshotFeatureNotSupportedException
+     * @throws CacheClusterNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws InvalidCacheClusterStateException
+     * @throws SnapshotAlreadyExistsException
+     * @throws SnapshotQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCacheClusterRequest> request = null;
+        Response<CacheCluster> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCacheClusterRequestMarshaller().marshall(deleteCacheClusterRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DeleteCacheSecurityGroup</i> operation deletes a cache
+     * security group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You cannot delete a cache security group if it is
+     * associated with any cache clusters.
+     * </p>
+     *
+     * @param deleteCacheSecurityGroupRequest Container for the necessary
+     *           parameters to execute the DeleteCacheSecurityGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidCacheSecurityGroupStateException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheSecurityGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheSecurityGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCacheSecurityGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteCacheSecurityGroupRequestMarshaller().marshall(deleteCacheSecurityGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DeleteCacheParameterGroup</i> operation deletes the specified
+     * cache parameter group. You cannot delete a cache parameter group if it
+     * is associated with any cache clusters.
+     * </p>
+     *
+     * @param deleteCacheParameterGroupRequest Container for the necessary
+     *           parameters to execute the DeleteCacheParameterGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws InvalidCacheParameterGroupStateException
+     * @throws CacheParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCacheParameterGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteCacheParameterGroupRequestMarshaller().marshall(deleteCacheParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>CreateSnapshot</i> operation creates a copy of an entire cache
+     * cluster at a specific moment in time.
+     * </p>
+     *
+     * @param createSnapshotRequest Container for the necessary parameters to
+     *           execute the CreateSnapshot service method on AmazonElastiCache.
+     * 
+     * @return The response from the CreateSnapshot service method, as
+     *         returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws SnapshotFeatureNotSupportedException
+     * @throws CacheClusterNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws SnapshotAlreadyExistsException
+     * @throws InvalidCacheClusterStateException
+     * @throws SnapshotQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Snapshot createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSnapshotRequest> request = null;
+        Response<Snapshot> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSnapshotRequestMarshaller().marshall(createSnapshotRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>ResetCacheParameterGroup</i> operation modifies the parameters
+     * of a cache parameter group to the engine or system default value. You
+     * can reset specific parameters by submitting a list of parameter names.
+     * To reset the entire cache parameter group, specify the
+     * <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i>
+     * parameters.
+     * </p>
+     *
+     * @param resetCacheParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetCacheParameterGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the ResetCacheParameterGroup service method,
+     *         as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws InvalidCacheParameterGroupStateException
+     * @throws CacheParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(resetCacheParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetCacheParameterGroupRequest> request = null;
+        Response<ResetCacheParameterGroupResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetCacheParameterGroupRequestMarshaller().marshall(resetCacheParameterGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ResetCacheParameterGroupResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * The <i>CreateCacheSubnetGroup</i> operation creates a new cache
      * subnet group.
      * </p>
@@ -1154,17 +1009,122 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DescribeCacheParameterGroups</i> operation returns a list of
-     * cache parameter group descriptions. If a cache parameter group name is
-     * specified, the list will contain only the descriptions for that group.
+     * The <i>CreateCacheCluster</i> operation creates a cache cluster. All
+     * nodes in the cache cluster run the same protocol-compliant cache
+     * engine software, either Memcached or Redis.
      * </p>
      *
-     * @param describeCacheParameterGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeCacheParameterGroups service method
+     * @param createCacheClusterRequest Container for the necessary
+     *           parameters to execute the CreateCacheCluster service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the CreateCacheCluster service method, as
+     *         returned by AmazonElastiCache.
+     * 
+     * @throws NodeQuotaForCustomerExceededException
+     * @throws ClusterQuotaForCustomerExceededException
+     * @throws CacheClusterAlreadyExistsException
+     * @throws InsufficientCacheClusterCapacityException
+     * @throws ReplicationGroupNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
+     * @throws CacheSecurityGroupNotFoundException
+     * @throws NodeQuotaForClusterExceededException
+     * @throws CacheSubnetGroupNotFoundException
+     * @throws InvalidReplicationGroupStateException
+     * @throws InvalidParameterValueException
+     * @throws InvalidVPCNetworkStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(createCacheClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCacheClusterRequest> request = null;
+        Response<CacheCluster> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCacheClusterRequestMarshaller().marshall(createCacheClusterRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeCacheEngineVersions</i> operation returns a list of
+     * the available cache engines and their versions.
+     * </p>
+     *
+     * @param describeCacheEngineVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheEngineVersions service method
      *           on AmazonElastiCache.
      * 
-     * @return The response from the DescribeCacheParameterGroups service
+     * @return The response from the DescribeCacheEngineVersions service
      *         method, as returned by AmazonElastiCache.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheEngineVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCacheEngineVersionsRequest> request = null;
+        Response<DescribeCacheEngineVersionsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCacheEngineVersionsRequestMarshaller().marshall(describeCacheEngineVersionsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new DescribeCacheEngineVersionsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeCacheParameters</i> operation returns the detailed
+     * parameter list for a particular cache parameter group.
+     * </p>
+     *
+     * @param describeCacheParametersRequest Container for the necessary
+     *           parameters to execute the DescribeCacheParameters service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the DescribeCacheParameters service method,
+     *         as returned by AmazonElastiCache.
      * 
      * @throws InvalidParameterValueException
      * @throws InvalidParameterCombinationException
@@ -1178,23 +1138,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeCacheParameterGroupsRequest);
+    public DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeCacheParameterGroupsRequest> request = null;
-        Response<DescribeCacheParameterGroupsResult> response = null;
+        Request<DescribeCacheParametersRequest> request = null;
+        Response<DescribeCacheParametersResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCacheParameterGroupsRequestMarshaller().marshall(describeCacheParameterGroupsRequest);
+                request = new DescribeCacheParametersRequestMarshaller().marshall(describeCacheParametersRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new DescribeCacheParameterGroupsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeCacheParametersResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1204,31 +1164,21 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>CreateReplicationGroup</i> operation creates a replication
-     * group. A replication group is a collection of cache clusters, where
-     * one of the clusters is a read/write primary and the other clusters are
-     * read-only replicas. Writes to the primary are automatically propagated
-     * to the replicas.
-     * </p>
-     * <p>
-     * When you create a replication group, you must specify an existing
-     * cache cluster that is in the primary role. When the replication group
-     * has been successfully created, you can add one or more read replica
-     * replicas to it, up to a total of five read replicas.
+     * The <i>DescribeReservedCacheNodesOfferings</i> operation lists
+     * available reserved cache node offerings.
      * </p>
      *
-     * @param createReplicationGroupRequest Container for the necessary
-     *           parameters to execute the CreateReplicationGroup service method on
+     * @param describeReservedCacheNodesOfferingsRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeReservedCacheNodesOfferings service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the CreateReplicationGroup service method,
-     *         as returned by AmazonElastiCache.
+     * @return The response from the DescribeReservedCacheNodesOfferings
+     *         service method, as returned by AmazonElastiCache.
      * 
-     * @throws ReplicationGroupAlreadyExistsException
      * @throws InvalidParameterValueException
-     * @throws CacheClusterNotFoundException
+     * @throws ReservedCacheNodesOfferingNotFoundException
      * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheClusterStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1238,23 +1188,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(createReplicationGroupRequest);
+    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesOfferingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateReplicationGroupRequest> request = null;
-        Response<ReplicationGroup> response = null;
+        Request<DescribeReservedCacheNodesOfferingsRequest> request = null;
+        Response<DescribeReservedCacheNodesOfferingsResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateReplicationGroupRequestMarshaller().marshall(createReplicationGroupRequest);
+                request = new DescribeReservedCacheNodesOfferingsRequestMarshaller().marshall(describeReservedCacheNodesOfferingsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new ReplicationGroupStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeReservedCacheNodesOfferingsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1305,6 +1255,317 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new CacheSubnetGroupStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>ModifyReplicationGroup</i> operation modifies the settings for
+     * a replication group.
+     * </p>
+     *
+     * @param modifyReplicationGroupRequest Container for the necessary
+     *           parameters to execute the ModifyReplicationGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the ModifyReplicationGroup service method,
+     *         as returned by AmazonElastiCache.
+     * 
+     * @throws NodeQuotaForCustomerExceededException
+     * @throws InsufficientCacheClusterCapacityException
+     * @throws ReplicationGroupNotFoundException
+     * @throws CacheClusterNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
+     * @throws InvalidCacheClusterStateException
+     * @throws CacheSecurityGroupNotFoundException
+     * @throws NodeQuotaForClusterExceededException
+     * @throws InvalidReplicationGroupStateException
+     * @throws InvalidParameterValueException
+     * @throws InvalidCacheSecurityGroupStateException
+     * @throws InvalidVPCNetworkStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyReplicationGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyReplicationGroupRequest> request = null;
+        Response<ReplicationGroup> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyReplicationGroupRequestMarshaller().marshall(modifyReplicationGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ReplicationGroupStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>CopySnapshot</i> operation makes a copy of an existing
+     * snapshot.
+     * </p>
+     *
+     * @param copySnapshotRequest Container for the necessary parameters to
+     *           execute the CopySnapshot service method on AmazonElastiCache.
+     * 
+     * @return The response from the CopySnapshot service method, as returned
+     *         by AmazonElastiCache.
+     * 
+     * @throws InvalidSnapshotStateException
+     * @throws InvalidParameterValueException
+     * @throws SnapshotNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws SnapshotAlreadyExistsException
+     * @throws SnapshotQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Snapshot copySnapshot(CopySnapshotRequest copySnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(copySnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopySnapshotRequest> request = null;
+        Response<Snapshot> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopySnapshotRequestMarshaller().marshall(copySnapshotRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeReplicationGroups</i> operation returns information
+     * about a particular replication group. If no identifier is specified,
+     * <i>DescribeReplicationGroups</i> returns information about all
+     * replication groups.
+     * </p>
+     *
+     * @param describeReplicationGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeReplicationGroups service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the DescribeReplicationGroups service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws ReplicationGroupNotFoundException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReplicationGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplicationGroupsRequest> request = null;
+        Response<DescribeReplicationGroupsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplicationGroupsRequestMarshaller().marshall(describeReplicationGroupsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new DescribeReplicationGroupsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeEngineDefaultParameters</i> operation returns the
+     * default engine and system parameter information for the specified
+     * cache engine.
+     * </p>
+     *
+     * @param describeEngineDefaultParametersRequest Container for the
+     *           necessary parameters to execute the DescribeEngineDefaultParameters
+     *           service method on AmazonElastiCache.
+     * 
+     * @return The response from the DescribeEngineDefaultParameters service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEngineDefaultParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEngineDefaultParametersRequest> request = null;
+        Response<EngineDefaults> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new EngineDefaultsStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeCacheSecurityGroups</i> operation returns a list of
+     * cache security group descriptions. If a cache security group name is
+     * specified, the list will contain only the description of that group.
+     * </p>
+     *
+     * @param describeCacheSecurityGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheSecurityGroups service method
+     *           on AmazonElastiCache.
+     * 
+     * @return The response from the DescribeCacheSecurityGroups service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheSecurityGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheSecurityGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCacheSecurityGroupsRequest> request = null;
+        Response<DescribeCacheSecurityGroupsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCacheSecurityGroupsRequestMarshaller().marshall(describeCacheSecurityGroupsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new DescribeCacheSecurityGroupsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to
+     * purchase a reserved cache node offering.
+     * </p>
+     *
+     * @param purchaseReservedCacheNodesOfferingRequest Container for the
+     *           necessary parameters to execute the PurchaseReservedCacheNodesOffering
+     *           service method on AmazonElastiCache.
+     * 
+     * @return The response from the PurchaseReservedCacheNodesOffering
+     *         service method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws ReservedCacheNodeQuotaExceededException
+     * @throws ReservedCacheNodeAlreadyExistsException
+     * @throws ReservedCacheNodesOfferingNotFoundException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) {
+        ExecutionContext executionContext = createExecutionContext(purchaseReservedCacheNodesOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PurchaseReservedCacheNodesOfferingRequest> request = null;
+        Response<ReservedCacheNode> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PurchaseReservedCacheNodesOfferingRequestMarshaller().marshall(purchaseReservedCacheNodesOfferingRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ReservedCacheNodeStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1391,23 +1652,42 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>CreateSnapshot</i> operation creates a copy of an entire cache
-     * cluster at a specific moment in time.
+     * The <i>CreateReplicationGroup</i> operation creates a replication
+     * group. A replication group is a collection of cache clusters, where
+     * one of the cache clusters is a read/write primary and the others are
+     * read-only replicas. Writes to the primary are automatically propagated
+     * to the replicas.
+     * </p>
+     * <p>
+     * When you create a replication group, you must specify an existing
+     * cache cluster that is in the primary role. When the replication group
+     * has been successfully created, you can add one or more read replica
+     * replicas to it, up to a total of five read replicas.
+     * </p>
+     * <p>
+     * <b>Note:</b> This action is valid only for Redis.
      * </p>
      *
-     * @param createSnapshotRequest Container for the necessary parameters to
-     *           execute the CreateSnapshot service method on AmazonElastiCache.
+     * @param createReplicationGroupRequest Container for the necessary
+     *           parameters to execute the CreateReplicationGroup service method on
+     *           AmazonElastiCache.
      * 
-     * @return The response from the CreateSnapshot service method, as
-     *         returned by AmazonElastiCache.
+     * @return The response from the CreateReplicationGroup service method,
+     *         as returned by AmazonElastiCache.
      * 
-     * @throws InvalidParameterValueException
-     * @throws SnapshotFeatureNotSupportedException
+     * @throws NodeQuotaForCustomerExceededException
+     * @throws ClusterQuotaForCustomerExceededException
+     * @throws InsufficientCacheClusterCapacityException
      * @throws CacheClusterNotFoundException
      * @throws InvalidParameterCombinationException
-     * @throws SnapshotAlreadyExistsException
+     * @throws CacheParameterGroupNotFoundException
      * @throws InvalidCacheClusterStateException
-     * @throws SnapshotQuotaExceededException
+     * @throws CacheSecurityGroupNotFoundException
+     * @throws ReplicationGroupAlreadyExistsException
+     * @throws NodeQuotaForClusterExceededException
+     * @throws CacheSubnetGroupNotFoundException
+     * @throws InvalidParameterValueException
+     * @throws InvalidVPCNetworkStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1417,23 +1697,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Snapshot createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
-        ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
+    public ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createReplicationGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateSnapshotRequest> request = null;
-        Response<Snapshot> response = null;
+        Request<CreateReplicationGroupRequest> request = null;
+        Response<ReplicationGroup> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotRequestMarshaller().marshall(createSnapshotRequest);
+                request = new CreateReplicationGroupRequestMarshaller().marshall(createReplicationGroupRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ReplicationGroupStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1443,21 +1723,73 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DeleteSnapshot</i> operation deletes an existing snapshot.
-     * When you receive a successful response from this operation,
-     * ElastiCache immediately begins deleting the snapshot; you cannot
-     * cancel or revert this operation.
+     * The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress
+     * from a cache security group. Use this operation to disallow access
+     * from an Amazon EC2 security group that had been previously authorized.
      * </p>
      *
-     * @param deleteSnapshotRequest Container for the necessary parameters to
-     *           execute the DeleteSnapshot service method on AmazonElastiCache.
+     * @param revokeCacheSecurityGroupIngressRequest Container for the
+     *           necessary parameters to execute the RevokeCacheSecurityGroupIngress
+     *           service method on AmazonElastiCache.
      * 
-     * @return The response from the DeleteSnapshot service method, as
+     * @return The response from the RevokeCacheSecurityGroupIngress service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidCacheSecurityGroupStateException
+     * @throws AuthorizationNotFoundException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheSecurityGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest) {
+        ExecutionContext executionContext = createExecutionContext(revokeCacheSecurityGroupIngressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RevokeCacheSecurityGroupIngressRequest> request = null;
+        Response<CacheSecurityGroup> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RevokeCacheSecurityGroupIngressRequestMarshaller().marshall(revokeCacheSecurityGroupIngressRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CacheSecurityGroupStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeSnapshots</i> operation returns information about
+     * cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
+     * all of your snapshots; it can optionally describe a single snapshot,
+     * or just the snapshots associated with a particular cache cluster.
+     * </p>
+     *
+     * @param describeSnapshotsRequest Container for the necessary parameters
+     *           to execute the DescribeSnapshots service method on AmazonElastiCache.
+     * 
+     * @return The response from the DescribeSnapshots service method, as
      *         returned by AmazonElastiCache.
      * 
-     * @throws InvalidSnapshotStateException
      * @throws InvalidParameterValueException
      * @throws SnapshotNotFoundException
+     * @throws CacheClusterNotFoundException
      * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
@@ -1468,23 +1800,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Snapshot deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteSnapshotRequest);
+    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteSnapshotRequest> request = null;
-        Response<Snapshot> response = null;
+        Request<DescribeSnapshotsRequest> request = null;
+        Response<DescribeSnapshotsResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSnapshotRequestMarshaller().marshall(deleteSnapshotRequest);
+                request = new DescribeSnapshotsRequestMarshaller().marshall(describeSnapshotsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeSnapshotsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1548,234 +1880,80 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DescribeEngineDefaultParameters</i> operation returns the
-     * default engine and system parameter information for the specified
-     * cache engine.
-     * </p>
-     *
-     * @param describeEngineDefaultParametersRequest Container for the
-     *           necessary parameters to execute the DescribeEngineDefaultParameters
-     *           service method on AmazonElastiCache.
-     * 
-     * @return The response from the DescribeEngineDefaultParameters service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeEngineDefaultParametersRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeEngineDefaultParametersRequest> request = null;
-        Response<EngineDefaults> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new EngineDefaultsStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows
-     * network ingress to a cache security group. Applications using
-     * ElastiCache must be running on Amazon EC2, and Amazon EC2 security
-     * groups are used as the authorization mechanism.
+     * The <i>RebootCacheCluster</i> operation reboots some, or all, of the
+     * cache nodes within a provisioned cache cluster. This API will apply
+     * any modified cache parameter groups to the cache cluster. The reboot
+     * action takes place as soon as possible, and results in a momentary
+     * outage to the cache cluster. During the reboot, the cache cluster
+     * status is set to REBOOTING.
      * </p>
      * <p>
-     * <b>NOTE:</b>You cannot authorize ingress from an Amazon EC2 security
-     * group in one region to an ElastiCache cluster in another region.
-     * </p>
-     *
-     * @param authorizeCacheSecurityGroupIngressRequest Container for the
-     *           necessary parameters to execute the AuthorizeCacheSecurityGroupIngress
-     *           service method on AmazonElastiCache.
-     * 
-     * @return The response from the AuthorizeCacheSecurityGroupIngress
-     *         service method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws AuthorizationAlreadyExistsException
-     * @throws InvalidCacheSecurityGroupStateException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheSecurityGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) {
-        ExecutionContext executionContext = createExecutionContext(authorizeCacheSecurityGroupIngressRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AuthorizeCacheSecurityGroupIngressRequest> request = null;
-        Response<CacheSecurityGroup> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AuthorizeCacheSecurityGroupIngressRequestMarshaller().marshall(authorizeCacheSecurityGroupIngressRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CacheSecurityGroupStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeCacheEngineVersions</i> operation returns a list of
-     * the available cache engines and their versions.
-     * </p>
-     *
-     * @param describeCacheEngineVersionsRequest Container for the necessary
-     *           parameters to execute the DescribeCacheEngineVersions service method
-     *           on AmazonElastiCache.
-     * 
-     * @return The response from the DescribeCacheEngineVersions service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeCacheEngineVersionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeCacheEngineVersionsRequest> request = null;
-        Response<DescribeCacheEngineVersionsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeCacheEngineVersionsRequestMarshaller().marshall(describeCacheEngineVersionsRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new DescribeCacheEngineVersionsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DeleteReplicationGroup</i> operation deletes an existing
-     * replication group. By default, this operation deletes the entire
-     * replication group, including the primary cache cluster and all of the
-     * read replicas. You can optionally delete only the read replicas, while
-     * retaining the primary cache cluster.
+     * The reboot causes the contents of the cache (for each cache node
+     * being rebooted) to be lost.
      * </p>
      * <p>
-     * When you receive a successful response from this operation, Amazon
-     * ElastiCache immediately begins deleting the selected resources; you
-     * cannot cancel or revert this operation.
+     * When the reboot is complete, a cache cluster event is created.
      * </p>
      *
-     * @param deleteReplicationGroupRequest Container for the necessary
-     *           parameters to execute the DeleteReplicationGroup service method on
+     * @param rebootCacheClusterRequest Container for the necessary
+     *           parameters to execute the RebootCacheCluster service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the DeleteReplicationGroup service method,
-     *         as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidReplicationGroupStateException
-     * @throws InvalidParameterValueException
-     * @throws SnapshotFeatureNotSupportedException
-     * @throws ReplicationGroupNotFoundException
-     * @throws InvalidParameterCombinationException
-     * @throws SnapshotAlreadyExistsException
-     * @throws SnapshotQuotaExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteReplicationGroupRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteReplicationGroupRequest> request = null;
-        Response<ReplicationGroup> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteReplicationGroupRequestMarshaller().marshall(deleteReplicationGroupRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ReplicationGroupStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeSnapshots</i> operation returns information about
-     * cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
-     * all of your snapshots; it can optionally describe a single snapshot,
-     * or just the snapshots associated with a particular cache cluster.
-     * </p>
-     *
-     * @param describeSnapshotsRequest Container for the necessary parameters
-     *           to execute the DescribeSnapshots service method on AmazonElastiCache.
-     * 
-     * @return The response from the DescribeSnapshots service method, as
+     * @return The response from the RebootCacheCluster service method, as
      *         returned by AmazonElastiCache.
      * 
+     * @throws CacheClusterNotFoundException
+     * @throws InvalidCacheClusterStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheCluster rebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(rebootCacheClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RebootCacheClusterRequest> request = null;
+        Response<CacheCluster> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RebootCacheClusterRequestMarshaller().marshall(rebootCacheClusterRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * The <i>DeleteSnapshot</i> operation deletes an existing snapshot.
+     * When you receive a successful response from this operation,
+     * ElastiCache immediately begins deleting the snapshot; you cannot
+     * cancel or revert this operation.
+     * </p>
+     *
+     * @param deleteSnapshotRequest Container for the necessary parameters to
+     *           execute the DeleteSnapshot service method on AmazonElastiCache.
+     * 
+     * @return The response from the DeleteSnapshot service method, as
+     *         returned by AmazonElastiCache.
+     * 
+     * @throws InvalidSnapshotStateException
      * @throws InvalidParameterValueException
      * @throws SnapshotNotFoundException
-     * @throws CacheClusterNotFoundException
      * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
@@ -1786,125 +1964,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeSnapshotsRequest);
+    public Snapshot deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeSnapshotsRequest> request = null;
-        Response<DescribeSnapshotsResult> response = null;
+        Request<DeleteSnapshotRequest> request = null;
+        Response<Snapshot> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSnapshotsRequestMarshaller().marshall(describeSnapshotsRequest);
+                request = new DeleteSnapshotRequestMarshaller().marshall(deleteSnapshotRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new DescribeSnapshotsResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress
-     * from a cache security group. Use this operation to disallow access
-     * from an Amazon EC2 security group that had been previously authorized.
-     * </p>
-     *
-     * @param revokeCacheSecurityGroupIngressRequest Container for the
-     *           necessary parameters to execute the RevokeCacheSecurityGroupIngress
-     *           service method on AmazonElastiCache.
-     * 
-     * @return The response from the RevokeCacheSecurityGroupIngress service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidCacheSecurityGroupStateException
-     * @throws AuthorizationNotFoundException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheSecurityGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest) {
-        ExecutionContext executionContext = createExecutionContext(revokeCacheSecurityGroupIngressRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RevokeCacheSecurityGroupIngressRequest> request = null;
-        Response<CacheSecurityGroup> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RevokeCacheSecurityGroupIngressRequestMarshaller().marshall(revokeCacheSecurityGroupIngressRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new CacheSecurityGroupStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeReservedCacheNodesOfferings</i> operation lists
-     * available reserved cache node offerings.
-     * </p>
-     *
-     * @param describeReservedCacheNodesOfferingsRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeReservedCacheNodesOfferings service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the DescribeReservedCacheNodesOfferings
-     *         service method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ReservedCacheNodesOfferingNotFoundException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesOfferingsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeReservedCacheNodesOfferingsRequest> request = null;
-        Response<DescribeReservedCacheNodesOfferingsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeReservedCacheNodesOfferingsRequestMarshaller().marshall(describeReservedCacheNodesOfferingsRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new DescribeReservedCacheNodesOfferingsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new SnapshotStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1955,23 +2031,19 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>CreateCacheParameterGroup</i> operation creates a new cache
-     * parameter group. A cache parameter group is a collection of parameters
-     * that you apply to all of the nodes in a cache cluster.
+     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of
+     * cache subnet group descriptions. If a subnet group name is specified,
+     * the list will contain only the description of that group.
      * </p>
      *
-     * @param createCacheParameterGroupRequest Container for the necessary
-     *           parameters to execute the CreateCacheParameterGroup service method on
+     * @param describeCacheSubnetGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheSubnetGroups service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the CreateCacheParameterGroup service
+     * @return The response from the DescribeCacheSubnetGroups service
      *         method, as returned by AmazonElastiCache.
      * 
-     * @throws InvalidParameterValueException
-     * @throws CacheParameterGroupQuotaExceededException
-     * @throws CacheParameterGroupAlreadyExistsException
-     * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheParameterGroupStateException
+     * @throws CacheSubnetGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1981,74 +2053,23 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(createCacheParameterGroupRequest);
+    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheSubnetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateCacheParameterGroupRequest> request = null;
-        Response<CacheParameterGroup> response = null;
+        Request<DescribeCacheSubnetGroupsRequest> request = null;
+        Response<DescribeCacheSubnetGroupsResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCacheParameterGroupRequestMarshaller().marshall(createCacheParameterGroupRequest);
+                request = new DescribeCacheSubnetGroupsRequestMarshaller().marshall(describeCacheSubnetGroupsRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new CacheParameterGroupStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to
-     * purchase a reserved cache node offering.
-     * </p>
-     *
-     * @param purchaseReservedCacheNodesOfferingRequest Container for the
-     *           necessary parameters to execute the PurchaseReservedCacheNodesOffering
-     *           service method on AmazonElastiCache.
-     * 
-     * @return The response from the PurchaseReservedCacheNodesOffering
-     *         service method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ReservedCacheNodeQuotaExceededException
-     * @throws ReservedCacheNodeAlreadyExistsException
-     * @throws ReservedCacheNodesOfferingNotFoundException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) {
-        ExecutionContext executionContext = createExecutionContext(purchaseReservedCacheNodesOfferingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<PurchaseReservedCacheNodesOfferingRequest> request = null;
-        Response<ReservedCacheNode> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new PurchaseReservedCacheNodesOfferingRequestMarshaller().marshall(purchaseReservedCacheNodesOfferingRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ReservedCacheNodeStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DescribeCacheSubnetGroupsResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -2080,6 +2101,79 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      */
     public DescribeReservedCacheNodesResult describeReservedCacheNodes() throws AmazonServiceException, AmazonClientException {
         return describeReservedCacheNodes(new DescribeReservedCacheNodesRequest());
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeCacheParameterGroups</i> operation returns a list of
+     * cache parameter group descriptions. If a cache parameter group name is
+     * specified, the list will contain only the descriptions for that group.
+     * </p>
+     * 
+     * @return The response from the DescribeCacheParameterGroups service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCacheParameterGroupsResult describeCacheParameterGroups() throws AmazonServiceException, AmazonClientException {
+        return describeCacheParameterGroups(new DescribeCacheParameterGroupsRequest());
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeCacheEngineVersions</i> operation returns a list of
+     * the available cache engines and their versions.
+     * </p>
+     * 
+     * @return The response from the DescribeCacheEngineVersions service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCacheEngineVersionsResult describeCacheEngineVersions() throws AmazonServiceException, AmazonClientException {
+        return describeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
+    }
+    
+    /**
+     * <p>
+     * The <i>DescribeReservedCacheNodesOfferings</i> operation lists
+     * available reserved cache node offerings.
+     * </p>
+     * 
+     * @return The response from the DescribeReservedCacheNodesOfferings
+     *         service method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws ReservedCacheNodesOfferingNotFoundException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings() throws AmazonServiceException, AmazonClientException {
+        return describeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest());
     }
     
     /**
@@ -2137,56 +2231,6 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of
-     * cache subnet group descriptions. If a subnet group name is specified,
-     * the list will contain only the description of that group.
-     * </p>
-     * 
-     * @return The response from the DescribeCacheSubnetGroups service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws CacheSubnetGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups() throws AmazonServiceException, AmazonClientException {
-        return describeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest());
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeCacheParameterGroups</i> operation returns a list of
-     * cache parameter group descriptions. If a cache parameter group name is
-     * specified, the list will contain only the descriptions for that group.
-     * </p>
-     * 
-     * @return The response from the DescribeCacheParameterGroups service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeCacheParameterGroupsResult describeCacheParameterGroups() throws AmazonServiceException, AmazonClientException {
-        return describeCacheParameterGroups(new DescribeCacheParameterGroupsRequest());
-    }
-    
-    /**
-     * <p>
      * The <i>DescribeCacheClusters</i> operation returns information about
      * all provisioned cache clusters if no cache cluster identifier is
      * specified, or about a specific cache cluster if a cache cluster
@@ -2240,6 +2284,34 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
+     * The <i>DescribeSnapshots</i> operation returns information about
+     * cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
+     * all of your snapshots; it can optionally describe a single snapshot,
+     * or just the snapshots associated with a particular cache cluster.
+     * </p>
+     * 
+     * @return The response from the DescribeSnapshots service method, as
+     *         returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws SnapshotNotFoundException
+     * @throws CacheClusterNotFoundException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeSnapshotsResult describeSnapshots() throws AmazonServiceException, AmazonClientException {
+        return describeSnapshots(new DescribeSnapshotsRequest());
+    }
+    
+    /**
+     * <p>
      * The <i>DescribeEvents</i> operation returns events related to cache
      * clusters, cache security groups, and cache parameter groups. You can
      * obtain events specific to a particular cache cluster, cache security
@@ -2271,13 +2343,15 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
-     * The <i>DescribeCacheEngineVersions</i> operation returns a list of
-     * the available cache engines and their versions.
+     * The <i>DescribeCacheSubnetGroups</i> operation returns a list of
+     * cache subnet group descriptions. If a subnet group name is specified,
+     * the list will contain only the description of that group.
      * </p>
      * 
-     * @return The response from the DescribeCacheEngineVersions service
+     * @return The response from the DescribeCacheSubnetGroups service
      *         method, as returned by AmazonElastiCache.
      * 
+     * @throws CacheSubnetGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2287,61 +2361,8 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheEngineVersionsResult describeCacheEngineVersions() throws AmazonServiceException, AmazonClientException {
-        return describeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeSnapshots</i> operation returns information about
-     * cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
-     * all of your snapshots; it can optionally describe a single snapshot,
-     * or just the snapshots associated with a particular cache cluster.
-     * </p>
-     * 
-     * @return The response from the DescribeSnapshots service method, as
-     *         returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws SnapshotNotFoundException
-     * @throws CacheClusterNotFoundException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeSnapshotsResult describeSnapshots() throws AmazonServiceException, AmazonClientException {
-        return describeSnapshots(new DescribeSnapshotsRequest());
-    }
-    
-    /**
-     * <p>
-     * The <i>DescribeReservedCacheNodesOfferings</i> operation lists
-     * available reserved cache node offerings.
-     * </p>
-     * 
-     * @return The response from the DescribeReservedCacheNodesOfferings
-     *         service method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ReservedCacheNodesOfferingNotFoundException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings() throws AmazonServiceException, AmazonClientException {
-        return describeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest());
+    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups() throws AmazonServiceException, AmazonClientException {
+        return describeCacheSubnetGroups(new DescribeCacheSubnetGroupsRequest());
     }
 
     /**

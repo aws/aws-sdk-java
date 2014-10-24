@@ -87,6 +87,73 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRemove;
 
     /**
+     * Specifies whether the new nodes in this Memcached cache cluster are
+     * all created in a single Availability Zone or created across multiple
+     * Availability Zones. <p>Valid values: <code>single-az</code> |
+     * <code>cross-az</code>. <p>This option is only supported for Memcached
+     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     * the Memcached cache cluster already has cache nodes in different
+     * Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone. <p>Only
+     * newly created nodes will be located in different Availability Zones.
+     * For instructions on how to move existing Memcached nodes to different
+     * Availability Zones, see the <b>Availability Zone Considerations</b>
+     * section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     */
+    private String aZMode;
+
+    /**
+     * The list of Availability Zones where the new Memcached cache nodes
+     * will be created. <p>This parameter is only valid when
+     * <code>NumCacheNodes</code> in the request is greater than the sum of
+     * the number of active cache nodes and the number of cache nodes pending
+     * creation (which may be zero). The number of Availability Zones
+     * supplied in this list must match the cache nodes being added in this
+     * request. <p>This option is only supported on Memcached clusters.
+     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     * and optionally specify two Availability Zones for the two new
+     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     * pending creation (from the scenario 1 call) and want to add 1 more
+     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     * optionally specify an Availability Zone for the new node.
+     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     * Specify <code>NumCacheNodes=3</code> to cancel all pending
+     * actions.</li> </ul> <p>The Availability Zone placement of nodes
+     * pending creation cannot be modified. If you wish to cancel any nodes
+     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes. <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone.
+     * Only newly created nodes can be located in different Availability
+     * Zones. For guidance on how to move existing Memcached nodes to
+     * different Availability Zones, see the <b>Availability Zone
+     * Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     * create, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending create.</td> </tr>
+     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     * create is added to the pending create.<br/> <b>Important:</b><br/>If
+     * the new create request is <b>Apply Immediately - Yes</b>, all creates
+     * are performed immediately. If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * <p>Example:
+     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> newAvailabilityZones;
+
+    /**
      * A list of cache security group names to authorize on this cache
      * cluster. This change is asynchronously applied as soon as possible.
      * <p>This parameter can be used only with clusters that are created
@@ -177,59 +244,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * taking a daily snapshot of your cache cluster.
      */
     private String snapshotWindow;
-
-    /**
-     * Specifies whether the new nodes in this Memcached cache cluster are
-     * all created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>Valid values: <code>single-az</code> |
-     * <code>cross-az</code>. <p>This option is only supported for Memcached
-     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
-     * the Memcached cache cluster already has cache nodes in different
-     * Availability Zones. If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. <p>Only
-     * newly created nodes will be located in different Availability Zones.
-     * For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b>
-     * section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. </note>
-     */
-    private String aZMode;
-
-    /**
-     * The list of Availability Zones where the new Memcached cache nodes
-     * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
-     * creation (which may be zero). The number of Availability Zones
-     * supplied in this list must match the cache nodes being added in this
-     * request. <p> This option is only supported on Memcached clusters.
-     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     * and opitonally specify two Availability Zones for the two new
-     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     * pending creation (from the scenario 1 call) and want to add 1 more
-     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     * optionally specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * You want to cancel all pending actions. Specify
-     * <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     * cannot cancel just some pending operations. If you want to cancel a
-     * subset of the pending operations, cancel all of them, then re-request
-     * those you want.</note></li> </ul> <p> The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel
-     * any nodes pending creation, add 0 nodes by setting
-     * <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     * <code>cross-az</code> is specified, existing Memcached nodes remain in
-     * their current Availability Zone. Only newly created nodes can be
-     * located in different Availability Zones. For guidance on how to move
-     * existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> newAvailabilityZones;
 
     /**
      * Default constructor for a new ModifyCacheClusterRequest object.  Callers should use the
@@ -636,6 +650,614 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
             com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheNodeIdsToRemove.size());
             cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
             this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * Specifies whether the new nodes in this Memcached cache cluster are
+     * all created in a single Availability Zone or created across multiple
+     * Availability Zones. <p>Valid values: <code>single-az</code> |
+     * <code>cross-az</code>. <p>This option is only supported for Memcached
+     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     * the Memcached cache cluster already has cache nodes in different
+     * Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone. <p>Only
+     * newly created nodes will be located in different Availability Zones.
+     * For instructions on how to move existing Memcached nodes to different
+     * Availability Zones, see the <b>Availability Zone Considerations</b>
+     * section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @return Specifies whether the new nodes in this Memcached cache cluster are
+     *         all created in a single Availability Zone or created across multiple
+     *         Availability Zones. <p>Valid values: <code>single-az</code> |
+     *         <code>cross-az</code>. <p>This option is only supported for Memcached
+     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     *         the Memcached cache cluster already has cache nodes in different
+     *         Availability Zones. If <code>cross-az</code> is specified, existing
+     *         Memcached nodes remain in their current Availability Zone. <p>Only
+     *         newly created nodes will be located in different Availability Zones.
+     *         For instructions on how to move existing Memcached nodes to different
+     *         Availability Zones, see the <b>Availability Zone Considerations</b>
+     *         section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. </note>
+     *
+     * @see AZMode
+     */
+    public String getAZMode() {
+        return aZMode;
+    }
+    
+    /**
+     * Specifies whether the new nodes in this Memcached cache cluster are
+     * all created in a single Availability Zone or created across multiple
+     * Availability Zones. <p>Valid values: <code>single-az</code> |
+     * <code>cross-az</code>. <p>This option is only supported for Memcached
+     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     * the Memcached cache cluster already has cache nodes in different
+     * Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone. <p>Only
+     * newly created nodes will be located in different Availability Zones.
+     * For instructions on how to move existing Memcached nodes to different
+     * Availability Zones, see the <b>Availability Zone Considerations</b>
+     * section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the new nodes in this Memcached cache cluster are
+     *         all created in a single Availability Zone or created across multiple
+     *         Availability Zones. <p>Valid values: <code>single-az</code> |
+     *         <code>cross-az</code>. <p>This option is only supported for Memcached
+     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     *         the Memcached cache cluster already has cache nodes in different
+     *         Availability Zones. If <code>cross-az</code> is specified, existing
+     *         Memcached nodes remain in their current Availability Zone. <p>Only
+     *         newly created nodes will be located in different Availability Zones.
+     *         For instructions on how to move existing Memcached nodes to different
+     *         Availability Zones, see the <b>Availability Zone Considerations</b>
+     *         section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. </note>
+     *
+     * @see AZMode
+     */
+    public void setAZMode(String aZMode) {
+        this.aZMode = aZMode;
+    }
+    
+    /**
+     * Specifies whether the new nodes in this Memcached cache cluster are
+     * all created in a single Availability Zone or created across multiple
+     * Availability Zones. <p>Valid values: <code>single-az</code> |
+     * <code>cross-az</code>. <p>This option is only supported for Memcached
+     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     * the Memcached cache cluster already has cache nodes in different
+     * Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone. <p>Only
+     * newly created nodes will be located in different Availability Zones.
+     * For instructions on how to move existing Memcached nodes to different
+     * Availability Zones, see the <b>Availability Zone Considerations</b>
+     * section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the new nodes in this Memcached cache cluster are
+     *         all created in a single Availability Zone or created across multiple
+     *         Availability Zones. <p>Valid values: <code>single-az</code> |
+     *         <code>cross-az</code>. <p>This option is only supported for Memcached
+     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     *         the Memcached cache cluster already has cache nodes in different
+     *         Availability Zones. If <code>cross-az</code> is specified, existing
+     *         Memcached nodes remain in their current Availability Zone. <p>Only
+     *         newly created nodes will be located in different Availability Zones.
+     *         For instructions on how to move existing Memcached nodes to different
+     *         Availability Zones, see the <b>Availability Zone Considerations</b>
+     *         section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AZMode
+     */
+    public ModifyCacheClusterRequest withAZMode(String aZMode) {
+        this.aZMode = aZMode;
+        return this;
+    }
+
+    /**
+     * Specifies whether the new nodes in this Memcached cache cluster are
+     * all created in a single Availability Zone or created across multiple
+     * Availability Zones. <p>Valid values: <code>single-az</code> |
+     * <code>cross-az</code>. <p>This option is only supported for Memcached
+     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     * the Memcached cache cluster already has cache nodes in different
+     * Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone. <p>Only
+     * newly created nodes will be located in different Availability Zones.
+     * For instructions on how to move existing Memcached nodes to different
+     * Availability Zones, see the <b>Availability Zone Considerations</b>
+     * section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the new nodes in this Memcached cache cluster are
+     *         all created in a single Availability Zone or created across multiple
+     *         Availability Zones. <p>Valid values: <code>single-az</code> |
+     *         <code>cross-az</code>. <p>This option is only supported for Memcached
+     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     *         the Memcached cache cluster already has cache nodes in different
+     *         Availability Zones. If <code>cross-az</code> is specified, existing
+     *         Memcached nodes remain in their current Availability Zone. <p>Only
+     *         newly created nodes will be located in different Availability Zones.
+     *         For instructions on how to move existing Memcached nodes to different
+     *         Availability Zones, see the <b>Availability Zone Considerations</b>
+     *         section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. </note>
+     *
+     * @see AZMode
+     */
+    public void setAZMode(AZMode aZMode) {
+        this.aZMode = aZMode.toString();
+    }
+    
+    /**
+     * Specifies whether the new nodes in this Memcached cache cluster are
+     * all created in a single Availability Zone or created across multiple
+     * Availability Zones. <p>Valid values: <code>single-az</code> |
+     * <code>cross-az</code>. <p>This option is only supported for Memcached
+     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     * the Memcached cache cluster already has cache nodes in different
+     * Availability Zones. If <code>cross-az</code> is specified, existing
+     * Memcached nodes remain in their current Availability Zone. <p>Only
+     * newly created nodes will be located in different Availability Zones.
+     * For instructions on how to move existing Memcached nodes to different
+     * Availability Zones, see the <b>Availability Zone Considerations</b>
+     * section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>single-az, cross-az
+     *
+     * @param aZMode Specifies whether the new nodes in this Memcached cache cluster are
+     *         all created in a single Availability Zone or created across multiple
+     *         Availability Zones. <p>Valid values: <code>single-az</code> |
+     *         <code>cross-az</code>. <p>This option is only supported for Memcached
+     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
+     *         the Memcached cache cluster already has cache nodes in different
+     *         Availability Zones. If <code>cross-az</code> is specified, existing
+     *         Memcached nodes remain in their current Availability Zone. <p>Only
+     *         newly created nodes will be located in different Availability Zones.
+     *         For instructions on how to move existing Memcached nodes to different
+     *         Availability Zones, see the <b>Availability Zone Considerations</b>
+     *         section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see AZMode
+     */
+    public ModifyCacheClusterRequest withAZMode(AZMode aZMode) {
+        this.aZMode = aZMode.toString();
+        return this;
+    }
+
+    /**
+     * The list of Availability Zones where the new Memcached cache nodes
+     * will be created. <p>This parameter is only valid when
+     * <code>NumCacheNodes</code> in the request is greater than the sum of
+     * the number of active cache nodes and the number of cache nodes pending
+     * creation (which may be zero). The number of Availability Zones
+     * supplied in this list must match the cache nodes being added in this
+     * request. <p>This option is only supported on Memcached clusters.
+     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     * and optionally specify two Availability Zones for the two new
+     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     * pending creation (from the scenario 1 call) and want to add 1 more
+     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     * optionally specify an Availability Zone for the new node.
+     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     * Specify <code>NumCacheNodes=3</code> to cancel all pending
+     * actions.</li> </ul> <p>The Availability Zone placement of nodes
+     * pending creation cannot be modified. If you wish to cancel any nodes
+     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes. <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone.
+     * Only newly created nodes can be located in different Availability
+     * Zones. For guidance on how to move existing Memcached nodes to
+     * different Availability Zones, see the <b>Availability Zone
+     * Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     * create, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending create.</td> </tr>
+     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     * create is added to the pending create.<br/> <b>Important:</b><br/>If
+     * the new create request is <b>Apply Immediately - Yes</b>, all creates
+     * are performed immediately. If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * <p>Example:
+     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *
+     * @return The list of Availability Zones where the new Memcached cache nodes
+     *         will be created. <p>This parameter is only valid when
+     *         <code>NumCacheNodes</code> in the request is greater than the sum of
+     *         the number of active cache nodes and the number of cache nodes pending
+     *         creation (which may be zero). The number of Availability Zones
+     *         supplied in this list must match the cache nodes being added in this
+     *         request. <p>This option is only supported on Memcached clusters.
+     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     *         and optionally specify two Availability Zones for the two new
+     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     *         pending creation (from the scenario 1 call) and want to add 1 more
+     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     *         optionally specify an Availability Zone for the new node.
+     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     *         Specify <code>NumCacheNodes=3</code> to cancel all pending
+     *         actions.</li> </ul> <p>The Availability Zone placement of nodes
+     *         pending creation cannot be modified. If you wish to cancel any nodes
+     *         pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     *         the number of current nodes. <p>If <code>cross-az</code> is specified,
+     *         existing Memcached nodes remain in their current Availability Zone.
+     *         Only newly created nodes can be located in different Availability
+     *         Zones. For guidance on how to move existing Memcached nodes to
+     *         different Availability Zones, see the <b>Availability Zone
+     *         Considerations</b> section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     *         create, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending create.</td> </tr>
+     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
+     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
+     *         are performed immediately. If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         <p>Example:
+     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     */
+    public java.util.List<String> getNewAvailabilityZones() {
+        if (newAvailabilityZones == null) {
+              newAvailabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              newAvailabilityZones.setAutoConstruct(true);
+        }
+        return newAvailabilityZones;
+    }
+    
+    /**
+     * The list of Availability Zones where the new Memcached cache nodes
+     * will be created. <p>This parameter is only valid when
+     * <code>NumCacheNodes</code> in the request is greater than the sum of
+     * the number of active cache nodes and the number of cache nodes pending
+     * creation (which may be zero). The number of Availability Zones
+     * supplied in this list must match the cache nodes being added in this
+     * request. <p>This option is only supported on Memcached clusters.
+     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     * and optionally specify two Availability Zones for the two new
+     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     * pending creation (from the scenario 1 call) and want to add 1 more
+     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     * optionally specify an Availability Zone for the new node.
+     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     * Specify <code>NumCacheNodes=3</code> to cancel all pending
+     * actions.</li> </ul> <p>The Availability Zone placement of nodes
+     * pending creation cannot be modified. If you wish to cancel any nodes
+     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes. <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone.
+     * Only newly created nodes can be located in different Availability
+     * Zones. For guidance on how to move existing Memcached nodes to
+     * different Availability Zones, see the <b>Availability Zone
+     * Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     * create, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending create.</td> </tr>
+     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     * create is added to the pending create.<br/> <b>Important:</b><br/>If
+     * the new create request is <b>Apply Immediately - Yes</b>, all creates
+     * are performed immediately. If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * <p>Example:
+     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *
+     * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
+     *         will be created. <p>This parameter is only valid when
+     *         <code>NumCacheNodes</code> in the request is greater than the sum of
+     *         the number of active cache nodes and the number of cache nodes pending
+     *         creation (which may be zero). The number of Availability Zones
+     *         supplied in this list must match the cache nodes being added in this
+     *         request. <p>This option is only supported on Memcached clusters.
+     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     *         and optionally specify two Availability Zones for the two new
+     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     *         pending creation (from the scenario 1 call) and want to add 1 more
+     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     *         optionally specify an Availability Zone for the new node.
+     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     *         Specify <code>NumCacheNodes=3</code> to cancel all pending
+     *         actions.</li> </ul> <p>The Availability Zone placement of nodes
+     *         pending creation cannot be modified. If you wish to cancel any nodes
+     *         pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     *         the number of current nodes. <p>If <code>cross-az</code> is specified,
+     *         existing Memcached nodes remain in their current Availability Zone.
+     *         Only newly created nodes can be located in different Availability
+     *         Zones. For guidance on how to move existing Memcached nodes to
+     *         different Availability Zones, see the <b>Availability Zone
+     *         Considerations</b> section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     *         create, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending create.</td> </tr>
+     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
+     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
+     *         are performed immediately. If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         <p>Example:
+     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     */
+    public void setNewAvailabilityZones(java.util.Collection<String> newAvailabilityZones) {
+        if (newAvailabilityZones == null) {
+            this.newAvailabilityZones = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> newAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(newAvailabilityZones.size());
+        newAvailabilityZonesCopy.addAll(newAvailabilityZones);
+        this.newAvailabilityZones = newAvailabilityZonesCopy;
+    }
+    
+    /**
+     * The list of Availability Zones where the new Memcached cache nodes
+     * will be created. <p>This parameter is only valid when
+     * <code>NumCacheNodes</code> in the request is greater than the sum of
+     * the number of active cache nodes and the number of cache nodes pending
+     * creation (which may be zero). The number of Availability Zones
+     * supplied in this list must match the cache nodes being added in this
+     * request. <p>This option is only supported on Memcached clusters.
+     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     * and optionally specify two Availability Zones for the two new
+     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     * pending creation (from the scenario 1 call) and want to add 1 more
+     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     * optionally specify an Availability Zone for the new node.
+     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     * Specify <code>NumCacheNodes=3</code> to cancel all pending
+     * actions.</li> </ul> <p>The Availability Zone placement of nodes
+     * pending creation cannot be modified. If you wish to cancel any nodes
+     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes. <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone.
+     * Only newly created nodes can be located in different Availability
+     * Zones. For guidance on how to move existing Memcached nodes to
+     * different Availability Zones, see the <b>Availability Zone
+     * Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     * create, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending create.</td> </tr>
+     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     * create is added to the pending create.<br/> <b>Important:</b><br/>If
+     * the new create request is <b>Apply Immediately - Yes</b>, all creates
+     * are performed immediately. If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * <p>Example:
+     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
+     *         will be created. <p>This parameter is only valid when
+     *         <code>NumCacheNodes</code> in the request is greater than the sum of
+     *         the number of active cache nodes and the number of cache nodes pending
+     *         creation (which may be zero). The number of Availability Zones
+     *         supplied in this list must match the cache nodes being added in this
+     *         request. <p>This option is only supported on Memcached clusters.
+     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     *         and optionally specify two Availability Zones for the two new
+     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     *         pending creation (from the scenario 1 call) and want to add 1 more
+     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     *         optionally specify an Availability Zone for the new node.
+     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     *         Specify <code>NumCacheNodes=3</code> to cancel all pending
+     *         actions.</li> </ul> <p>The Availability Zone placement of nodes
+     *         pending creation cannot be modified. If you wish to cancel any nodes
+     *         pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     *         the number of current nodes. <p>If <code>cross-az</code> is specified,
+     *         existing Memcached nodes remain in their current Availability Zone.
+     *         Only newly created nodes can be located in different Availability
+     *         Zones. For guidance on how to move existing Memcached nodes to
+     *         different Availability Zones, see the <b>Availability Zone
+     *         Considerations</b> section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     *         create, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending create.</td> </tr>
+     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
+     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
+     *         are performed immediately. If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         <p>Example:
+     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyCacheClusterRequest withNewAvailabilityZones(String... newAvailabilityZones) {
+        if (getNewAvailabilityZones() == null) setNewAvailabilityZones(new java.util.ArrayList<String>(newAvailabilityZones.length));
+        for (String value : newAvailabilityZones) {
+            getNewAvailabilityZones().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of Availability Zones where the new Memcached cache nodes
+     * will be created. <p>This parameter is only valid when
+     * <code>NumCacheNodes</code> in the request is greater than the sum of
+     * the number of active cache nodes and the number of cache nodes pending
+     * creation (which may be zero). The number of Availability Zones
+     * supplied in this list must match the cache nodes being added in this
+     * request. <p>This option is only supported on Memcached clusters.
+     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     * and optionally specify two Availability Zones for the two new
+     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     * pending creation (from the scenario 1 call) and want to add 1 more
+     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     * optionally specify an Availability Zone for the new node.
+     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     * Specify <code>NumCacheNodes=3</code> to cancel all pending
+     * actions.</li> </ul> <p>The Availability Zone placement of nodes
+     * pending creation cannot be modified. If you wish to cancel any nodes
+     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes. <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone.
+     * Only newly created nodes can be located in different Availability
+     * Zones. For guidance on how to move existing Memcached nodes to
+     * different Availability Zones, see the <b>Availability Zone
+     * Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     * <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     * create, pending or immediate, replaces the pending delete.</td> </tr>
+     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     * delete, pending or immediate, replaces the pending create.</td> </tr>
+     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     * create is added to the pending create.<br/> <b>Important:</b><br/>If
+     * the new create request is <b>Apply Immediately - Yes</b>, all creates
+     * are performed immediately. If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * <p>Example:
+     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
+     *         will be created. <p>This parameter is only valid when
+     *         <code>NumCacheNodes</code> in the request is greater than the sum of
+     *         the number of active cache nodes and the number of cache nodes pending
+     *         creation (which may be zero). The number of Availability Zones
+     *         supplied in this list must match the cache nodes being added in this
+     *         request. <p>This option is only supported on Memcached clusters.
+     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
+     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
+     *         and optionally specify two Availability Zones for the two new
+     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
+     *         pending creation (from the scenario 1 call) and want to add 1 more
+     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
+     *         optionally specify an Availability Zone for the new node.
+     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
+     *         Specify <code>NumCacheNodes=3</code> to cancel all pending
+     *         actions.</li> </ul> <p>The Availability Zone placement of nodes
+     *         pending creation cannot be modified. If you wish to cancel any nodes
+     *         pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     *         the number of current nodes. <p>If <code>cross-az</code> is specified,
+     *         existing Memcached nodes remain in their current Availability Zone.
+     *         Only newly created nodes can be located in different Availability
+     *         Zones. For guidance on how to move existing Memcached nodes to
+     *         different Availability Zones, see the <b>Availability Zone
+     *         Considerations</b> section of <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
+     *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
+     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
+     *         <th>Pending Operation</th> <th>New Request</th> <th>Results</th> </tr>
+     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
+     *         create, pending or immediate, replaces the pending delete.</td> </tr>
+     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
+     *         delete, pending or immediate, replaces the pending create.</td> </tr>
+     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
+     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
+     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
+     *         are performed immediately. If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         <p>Example:
+     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyCacheClusterRequest withNewAvailabilityZones(java.util.Collection<String> newAvailabilityZones) {
+        if (newAvailabilityZones == null) {
+            this.newAvailabilityZones = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> newAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(newAvailabilityZones.size());
+            newAvailabilityZonesCopy.addAll(newAvailabilityZones);
+            this.newAvailabilityZones = newAvailabilityZonesCopy;
         }
 
         return this;
@@ -1355,425 +1977,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * Specifies whether the new nodes in this Memcached cache cluster are
-     * all created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>Valid values: <code>single-az</code> |
-     * <code>cross-az</code>. <p>This option is only supported for Memcached
-     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
-     * the Memcached cache cluster already has cache nodes in different
-     * Availability Zones. If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. <p>Only
-     * newly created nodes will be located in different Availability Zones.
-     * For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b>
-     * section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. </note>
-     *
-     * @return Specifies whether the new nodes in this Memcached cache cluster are
-     *         all created in a single Availability Zone or created across multiple
-     *         Availability Zones. <p>Valid values: <code>single-az</code> |
-     *         <code>cross-az</code>. <p>This option is only supported for Memcached
-     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
-     *         the Memcached cache cluster already has cache nodes in different
-     *         Availability Zones. If <code>cross-az</code> is specified, existing
-     *         Memcached nodes remain in their current Availability Zone. <p>Only
-     *         newly created nodes will be located in different Availability Zones.
-     *         For instructions on how to move existing Memcached nodes to different
-     *         Availability Zones, see the <b>Availability Zone Considerations</b>
-     *         section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     *         Node Considerations for Memcached</a>. </note>
-     */
-    public String getAZMode() {
-        return aZMode;
-    }
-    
-    /**
-     * Specifies whether the new nodes in this Memcached cache cluster are
-     * all created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>Valid values: <code>single-az</code> |
-     * <code>cross-az</code>. <p>This option is only supported for Memcached
-     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
-     * the Memcached cache cluster already has cache nodes in different
-     * Availability Zones. If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. <p>Only
-     * newly created nodes will be located in different Availability Zones.
-     * For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b>
-     * section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. </note>
-     *
-     * @param aZMode Specifies whether the new nodes in this Memcached cache cluster are
-     *         all created in a single Availability Zone or created across multiple
-     *         Availability Zones. <p>Valid values: <code>single-az</code> |
-     *         <code>cross-az</code>. <p>This option is only supported for Memcached
-     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
-     *         the Memcached cache cluster already has cache nodes in different
-     *         Availability Zones. If <code>cross-az</code> is specified, existing
-     *         Memcached nodes remain in their current Availability Zone. <p>Only
-     *         newly created nodes will be located in different Availability Zones.
-     *         For instructions on how to move existing Memcached nodes to different
-     *         Availability Zones, see the <b>Availability Zone Considerations</b>
-     *         section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     *         Node Considerations for Memcached</a>. </note>
-     */
-    public void setAZMode(String aZMode) {
-        this.aZMode = aZMode;
-    }
-    
-    /**
-     * Specifies whether the new nodes in this Memcached cache cluster are
-     * all created in a single Availability Zone or created across multiple
-     * Availability Zones. <p>Valid values: <code>single-az</code> |
-     * <code>cross-az</code>. <p>This option is only supported for Memcached
-     * cache clusters. <note><p>You cannot specify <code>single-az</code> if
-     * the Memcached cache cluster already has cache nodes in different
-     * Availability Zones. If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. <p>Only
-     * newly created nodes will be located in different Availability Zones.
-     * For instructions on how to move existing Memcached nodes to different
-     * Availability Zones, see the <b>Availability Zone Considerations</b>
-     * section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. </note>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param aZMode Specifies whether the new nodes in this Memcached cache cluster are
-     *         all created in a single Availability Zone or created across multiple
-     *         Availability Zones. <p>Valid values: <code>single-az</code> |
-     *         <code>cross-az</code>. <p>This option is only supported for Memcached
-     *         cache clusters. <note><p>You cannot specify <code>single-az</code> if
-     *         the Memcached cache cluster already has cache nodes in different
-     *         Availability Zones. If <code>cross-az</code> is specified, existing
-     *         Memcached nodes remain in their current Availability Zone. <p>Only
-     *         newly created nodes will be located in different Availability Zones.
-     *         For instructions on how to move existing Memcached nodes to different
-     *         Availability Zones, see the <b>Availability Zone Considerations</b>
-     *         section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     *         Node Considerations for Memcached</a>. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ModifyCacheClusterRequest withAZMode(String aZMode) {
-        this.aZMode = aZMode;
-        return this;
-    }
-
-    /**
-     * The list of Availability Zones where the new Memcached cache nodes
-     * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
-     * creation (which may be zero). The number of Availability Zones
-     * supplied in this list must match the cache nodes being added in this
-     * request. <p> This option is only supported on Memcached clusters.
-     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     * and opitonally specify two Availability Zones for the two new
-     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     * pending creation (from the scenario 1 call) and want to add 1 more
-     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     * optionally specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * You want to cancel all pending actions. Specify
-     * <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     * cannot cancel just some pending operations. If you want to cancel a
-     * subset of the pending operations, cancel all of them, then re-request
-     * those you want.</note></li> </ul> <p> The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel
-     * any nodes pending creation, add 0 nodes by setting
-     * <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     * <code>cross-az</code> is specified, existing Memcached nodes remain in
-     * their current Availability Zone. Only newly created nodes can be
-     * located in different Availability Zones. For guidance on how to move
-     * existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     *
-     * @return The list of Availability Zones where the new Memcached cache nodes
-     *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
-     *         creation (which may be zero). The number of Availability Zones
-     *         supplied in this list must match the cache nodes being added in this
-     *         request. <p> This option is only supported on Memcached clusters.
-     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     *         and opitonally specify two Availability Zones for the two new
-     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     *         pending creation (from the scenario 1 call) and want to add 1 more
-     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *         optionally specify an Availability Zone for the new node.
-     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *         You want to cancel all pending actions. Specify
-     *         <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     *         cannot cancel just some pending operations. If you want to cancel a
-     *         subset of the pending operations, cancel all of them, then re-request
-     *         those you want.</note></li> </ul> <p> The Availability Zone placement
-     *         of nodes pending creation cannot be modified. If you wish to cancel
-     *         any nodes pending creation, add 0 nodes by setting
-     *         <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     *         <code>cross-az</code> is specified, existing Memcached nodes remain in
-     *         their current Availability Zone. Only newly created nodes can be
-     *         located in different Availability Zones. For guidance on how to move
-     *         existing Memcached nodes to different Availability Zones, see the
-     *         <b>Availability Zone Considerations</b> section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     *         Node Considerations for Memcached</a>. <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     */
-    public java.util.List<String> getNewAvailabilityZones() {
-        if (newAvailabilityZones == null) {
-              newAvailabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              newAvailabilityZones.setAutoConstruct(true);
-        }
-        return newAvailabilityZones;
-    }
-    
-    /**
-     * The list of Availability Zones where the new Memcached cache nodes
-     * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
-     * creation (which may be zero). The number of Availability Zones
-     * supplied in this list must match the cache nodes being added in this
-     * request. <p> This option is only supported on Memcached clusters.
-     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     * and opitonally specify two Availability Zones for the two new
-     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     * pending creation (from the scenario 1 call) and want to add 1 more
-     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     * optionally specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * You want to cancel all pending actions. Specify
-     * <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     * cannot cancel just some pending operations. If you want to cancel a
-     * subset of the pending operations, cancel all of them, then re-request
-     * those you want.</note></li> </ul> <p> The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel
-     * any nodes pending creation, add 0 nodes by setting
-     * <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     * <code>cross-az</code> is specified, existing Memcached nodes remain in
-     * their current Availability Zone. Only newly created nodes can be
-     * located in different Availability Zones. For guidance on how to move
-     * existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     *
-     * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
-     *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
-     *         creation (which may be zero). The number of Availability Zones
-     *         supplied in this list must match the cache nodes being added in this
-     *         request. <p> This option is only supported on Memcached clusters.
-     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     *         and opitonally specify two Availability Zones for the two new
-     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     *         pending creation (from the scenario 1 call) and want to add 1 more
-     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *         optionally specify an Availability Zone for the new node.
-     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *         You want to cancel all pending actions. Specify
-     *         <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     *         cannot cancel just some pending operations. If you want to cancel a
-     *         subset of the pending operations, cancel all of them, then re-request
-     *         those you want.</note></li> </ul> <p> The Availability Zone placement
-     *         of nodes pending creation cannot be modified. If you wish to cancel
-     *         any nodes pending creation, add 0 nodes by setting
-     *         <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     *         <code>cross-az</code> is specified, existing Memcached nodes remain in
-     *         their current Availability Zone. Only newly created nodes can be
-     *         located in different Availability Zones. For guidance on how to move
-     *         existing Memcached nodes to different Availability Zones, see the
-     *         <b>Availability Zone Considerations</b> section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     *         Node Considerations for Memcached</a>. <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     */
-    public void setNewAvailabilityZones(java.util.Collection<String> newAvailabilityZones) {
-        if (newAvailabilityZones == null) {
-            this.newAvailabilityZones = null;
-            return;
-        }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> newAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(newAvailabilityZones.size());
-        newAvailabilityZonesCopy.addAll(newAvailabilityZones);
-        this.newAvailabilityZones = newAvailabilityZonesCopy;
-    }
-    
-    /**
-     * The list of Availability Zones where the new Memcached cache nodes
-     * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
-     * creation (which may be zero). The number of Availability Zones
-     * supplied in this list must match the cache nodes being added in this
-     * request. <p> This option is only supported on Memcached clusters.
-     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     * and opitonally specify two Availability Zones for the two new
-     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     * pending creation (from the scenario 1 call) and want to add 1 more
-     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     * optionally specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * You want to cancel all pending actions. Specify
-     * <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     * cannot cancel just some pending operations. If you want to cancel a
-     * subset of the pending operations, cancel all of them, then re-request
-     * those you want.</note></li> </ul> <p> The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel
-     * any nodes pending creation, add 0 nodes by setting
-     * <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     * <code>cross-az</code> is specified, existing Memcached nodes remain in
-     * their current Availability Zone. Only newly created nodes can be
-     * located in different Availability Zones. For guidance on how to move
-     * existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
-     *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
-     *         creation (which may be zero). The number of Availability Zones
-     *         supplied in this list must match the cache nodes being added in this
-     *         request. <p> This option is only supported on Memcached clusters.
-     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     *         and opitonally specify two Availability Zones for the two new
-     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     *         pending creation (from the scenario 1 call) and want to add 1 more
-     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *         optionally specify an Availability Zone for the new node.
-     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *         You want to cancel all pending actions. Specify
-     *         <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     *         cannot cancel just some pending operations. If you want to cancel a
-     *         subset of the pending operations, cancel all of them, then re-request
-     *         those you want.</note></li> </ul> <p> The Availability Zone placement
-     *         of nodes pending creation cannot be modified. If you wish to cancel
-     *         any nodes pending creation, add 0 nodes by setting
-     *         <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     *         <code>cross-az</code> is specified, existing Memcached nodes remain in
-     *         their current Availability Zone. Only newly created nodes can be
-     *         located in different Availability Zones. For guidance on how to move
-     *         existing Memcached nodes to different Availability Zones, see the
-     *         <b>Availability Zone Considerations</b> section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     *         Node Considerations for Memcached</a>. <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ModifyCacheClusterRequest withNewAvailabilityZones(String... newAvailabilityZones) {
-        if (getNewAvailabilityZones() == null) setNewAvailabilityZones(new java.util.ArrayList<String>(newAvailabilityZones.length));
-        for (String value : newAvailabilityZones) {
-            getNewAvailabilityZones().add(value);
-        }
-        return this;
-    }
-    
-    /**
-     * The list of Availability Zones where the new Memcached cache nodes
-     * will be created. <p>This parameter is only valid when
-     * <code>NumCacheNodes</code> in the request is greater than the sum of
-     * the number of active cache nodes and the number of cache nodes pending
-     * creation (which may be zero). The number of Availability Zones
-     * supplied in this list must match the cache nodes being added in this
-     * request. <p> This option is only supported on Memcached clusters.
-     * <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     * wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     * and opitonally specify two Availability Zones for the two new
-     * nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     * pending creation (from the scenario 1 call) and want to add 1 more
-     * node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     * optionally specify an Availability Zone for the new node.
-     * <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     * You want to cancel all pending actions. Specify
-     * <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     * cannot cancel just some pending operations. If you want to cancel a
-     * subset of the pending operations, cancel all of them, then re-request
-     * those you want.</note></li> </ul> <p> The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel
-     * any nodes pending creation, add 0 nodes by setting
-     * <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     * <code>cross-az</code> is specified, existing Memcached nodes remain in
-     * their current Availability Zone. Only newly created nodes can be
-     * located in different Availability Zones. For guidance on how to move
-     * existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     * Node Considerations for Memcached</a>. <p>Example:
-     * <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param newAvailabilityZones The list of Availability Zones where the new Memcached cache nodes
-     *         will be created. <p>This parameter is only valid when
-     *         <code>NumCacheNodes</code> in the request is greater than the sum of
-     *         the number of active cache nodes and the number of cache nodes pending
-     *         creation (which may be zero). The number of Availability Zones
-     *         supplied in this list must match the cache nodes being added in this
-     *         request. <p> This option is only supported on Memcached clusters.
-     *         <p>Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and
-     *         wish to add 2 nodes.<br/> Specify <code>NumCacheNodes=5</code> (3 + 2)
-     *         and opitonally specify two Availability Zones for the two new
-     *         nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and 2 nodes
-     *         pending creation (from the scenario 1 call) and want to add 1 more
-     *         node.<br/> Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and
-     *         optionally specify an Availability Zone for the new node.
-     *         <li><b>Scenario 3:</b> You want to cancel all pending actions.<br/>
-     *         You want to cancel all pending actions. Specify
-     *         <code>NumCacheNodes=3</code> (the original number of nodes). <note>You
-     *         cannot cancel just some pending operations. If you want to cancel a
-     *         subset of the pending operations, cancel all of them, then re-request
-     *         those you want.</note></li> </ul> <p> The Availability Zone placement
-     *         of nodes pending creation cannot be modified. If you wish to cancel
-     *         any nodes pending creation, add 0 nodes by setting
-     *         <code>NumCacheNodes</code> to the number of current nodes. <p> If
-     *         <code>cross-az</code> is specified, existing Memcached nodes remain in
-     *         their current Availability Zone. Only newly created nodes can be
-     *         located in different Availability Zones. For guidance on how to move
-     *         existing Memcached nodes to different Availability Zones, see the
-     *         <b>Availability Zone Considerations</b> section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
-     *         Node Considerations for Memcached</a>. <p>Example:
-     *         <code>NewAvailabilityZones.member.1=us-east-1a&NewAvailabilityZones.member.2=us-east-1b&NewAvailabilityZones.member.3=us-east-1d</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public ModifyCacheClusterRequest withNewAvailabilityZones(java.util.Collection<String> newAvailabilityZones) {
-        if (newAvailabilityZones == null) {
-            this.newAvailabilityZones = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> newAvailabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(newAvailabilityZones.size());
-            newAvailabilityZonesCopy.addAll(newAvailabilityZones);
-            this.newAvailabilityZones = newAvailabilityZonesCopy;
-        }
-
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1788,6 +1991,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
         if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
         if (getCacheNodeIdsToRemove() != null) sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ",");
+        if (getAZMode() != null) sb.append("AZMode: " + getAZMode() + ",");
+        if (getNewAvailabilityZones() != null) sb.append("NewAvailabilityZones: " + getNewAvailabilityZones() + ",");
         if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");
         if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
@@ -1798,9 +2003,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
         if (getSnapshotRetentionLimit() != null) sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
-        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
-        if (getAZMode() != null) sb.append("AZMode: " + getAZMode() + ",");
-        if (getNewAvailabilityZones() != null) sb.append("NewAvailabilityZones: " + getNewAvailabilityZones() );
+        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() );
         sb.append("}");
         return sb.toString();
     }
@@ -1813,6 +2016,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode()); 
         hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode()); 
         hashCode = prime * hashCode + ((getCacheNodeIdsToRemove() == null) ? 0 : getCacheNodeIdsToRemove().hashCode()); 
+        hashCode = prime * hashCode + ((getAZMode() == null) ? 0 : getAZMode().hashCode()); 
+        hashCode = prime * hashCode + ((getNewAvailabilityZones() == null) ? 0 : getNewAvailabilityZones().hashCode()); 
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
@@ -1824,8 +2029,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode()); 
-        hashCode = prime * hashCode + ((getAZMode() == null) ? 0 : getAZMode().hashCode()); 
-        hashCode = prime * hashCode + ((getNewAvailabilityZones() == null) ? 0 : getNewAvailabilityZones().hashCode()); 
         return hashCode;
     }
     
@@ -1843,6 +2046,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getNumCacheNodes() != null && other.getNumCacheNodes().equals(this.getNumCacheNodes()) == false) return false; 
         if (other.getCacheNodeIdsToRemove() == null ^ this.getCacheNodeIdsToRemove() == null) return false;
         if (other.getCacheNodeIdsToRemove() != null && other.getCacheNodeIdsToRemove().equals(this.getCacheNodeIdsToRemove()) == false) return false; 
+        if (other.getAZMode() == null ^ this.getAZMode() == null) return false;
+        if (other.getAZMode() != null && other.getAZMode().equals(this.getAZMode()) == false) return false; 
+        if (other.getNewAvailabilityZones() == null ^ this.getNewAvailabilityZones() == null) return false;
+        if (other.getNewAvailabilityZones() != null && other.getNewAvailabilityZones().equals(this.getNewAvailabilityZones()) == false) return false; 
         if (other.getCacheSecurityGroupNames() == null ^ this.getCacheSecurityGroupNames() == null) return false;
         if (other.getCacheSecurityGroupNames() != null && other.getCacheSecurityGroupNames().equals(this.getCacheSecurityGroupNames()) == false) return false; 
         if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null) return false;
@@ -1865,10 +2072,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false) return false; 
         if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null) return false;
         if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false) return false; 
-        if (other.getAZMode() == null ^ this.getAZMode() == null) return false;
-        if (other.getAZMode() != null && other.getAZMode().equals(this.getAZMode()) == false) return false; 
-        if (other.getNewAvailabilityZones() == null ^ this.getNewAvailabilityZones() == null) return false;
-        if (other.getNewAvailabilityZones() != null && other.getNewAvailabilityZones().equals(this.getNewAvailabilityZones()) == false) return false; 
         return true;
     }
     

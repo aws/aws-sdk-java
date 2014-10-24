@@ -22,10 +22,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteReplicationGroup(DeleteReplicationGroupRequest) DeleteReplicationGroup operation}.
  * <p>
  * The <i>DeleteReplicationGroup</i> operation deletes an existing
- * replication group. By default, this operation deletes the entire
- * replication group, including the primary cache cluster and all of the
- * read replicas. You can optionally delete only the read replicas, while
- * retaining the primary cache cluster.
+ * cluster. By default, this operation deletes the entire cluster,
+ * including the primary node group and all of the read replicas. You can
+ * optionally delete only the read replicas, while retaining the primary
+ * node group.
  * </p>
  * <p>
  * When you receive a successful response from this operation, Amazon
@@ -38,56 +38,55 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The identifier for the replication group to be deleted. This parameter
-     * is not case sensitive.
+     * The identifier for the cluster to be deleted. This parameter is not
+     * case sensitive.
      */
     private String replicationGroupId;
 
     /**
      * If set to <i>true</i>, all of the read replicas will be deleted, but
-     * the primary cache cluster will be retained.
+     * the primary node will be retained.
      */
     private Boolean retainPrimaryCluster;
 
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
-     * snapshot from the primary cluster in the replication group, rather
-     * than one of the replicas; this is to ensure that it captures the
-     * freshest data. After the final snapshot is taken, the replication
-     * group is deleted immediately afterward.
+     * The name of a final node group snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the
+     * replicas; this is to ensure that it captures the freshest data. After
+     * the final snapshot is taken, the cluster is immediately deleted.
      */
     private String finalSnapshotIdentifier;
 
     /**
-     * The identifier for the replication group to be deleted. This parameter
-     * is not case sensitive.
+     * The identifier for the cluster to be deleted. This parameter is not
+     * case sensitive.
      *
-     * @return The identifier for the replication group to be deleted. This parameter
-     *         is not case sensitive.
+     * @return The identifier for the cluster to be deleted. This parameter is not
+     *         case sensitive.
      */
     public String getReplicationGroupId() {
         return replicationGroupId;
     }
     
     /**
-     * The identifier for the replication group to be deleted. This parameter
-     * is not case sensitive.
+     * The identifier for the cluster to be deleted. This parameter is not
+     * case sensitive.
      *
-     * @param replicationGroupId The identifier for the replication group to be deleted. This parameter
-     *         is not case sensitive.
+     * @param replicationGroupId The identifier for the cluster to be deleted. This parameter is not
+     *         case sensitive.
      */
     public void setReplicationGroupId(String replicationGroupId) {
         this.replicationGroupId = replicationGroupId;
     }
     
     /**
-     * The identifier for the replication group to be deleted. This parameter
-     * is not case sensitive.
+     * The identifier for the cluster to be deleted. This parameter is not
+     * case sensitive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param replicationGroupId The identifier for the replication group to be deleted. This parameter
-     *         is not case sensitive.
+     * @param replicationGroupId The identifier for the cluster to be deleted. This parameter is not
+     *         case sensitive.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -99,10 +98,10 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * If set to <i>true</i>, all of the read replicas will be deleted, but
-     * the primary cache cluster will be retained.
+     * the primary node will be retained.
      *
      * @return If set to <i>true</i>, all of the read replicas will be deleted, but
-     *         the primary cache cluster will be retained.
+     *         the primary node will be retained.
      */
     public Boolean isRetainPrimaryCluster() {
         return retainPrimaryCluster;
@@ -110,10 +109,10 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * If set to <i>true</i>, all of the read replicas will be deleted, but
-     * the primary cache cluster will be retained.
+     * the primary node will be retained.
      *
      * @param retainPrimaryCluster If set to <i>true</i>, all of the read replicas will be deleted, but
-     *         the primary cache cluster will be retained.
+     *         the primary node will be retained.
      */
     public void setRetainPrimaryCluster(Boolean retainPrimaryCluster) {
         this.retainPrimaryCluster = retainPrimaryCluster;
@@ -121,12 +120,12 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * If set to <i>true</i>, all of the read replicas will be deleted, but
-     * the primary cache cluster will be retained.
+     * the primary node will be retained.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param retainPrimaryCluster If set to <i>true</i>, all of the read replicas will be deleted, but
-     *         the primary cache cluster will be retained.
+     *         the primary node will be retained.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -138,63 +137,57 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * If set to <i>true</i>, all of the read replicas will be deleted, but
-     * the primary cache cluster will be retained.
+     * the primary node will be retained.
      *
      * @return If set to <i>true</i>, all of the read replicas will be deleted, but
-     *         the primary cache cluster will be retained.
+     *         the primary node will be retained.
      */
     public Boolean getRetainPrimaryCluster() {
         return retainPrimaryCluster;
     }
 
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
-     * snapshot from the primary cluster in the replication group, rather
-     * than one of the replicas; this is to ensure that it captures the
-     * freshest data. After the final snapshot is taken, the replication
-     * group is deleted immediately afterward.
+     * The name of a final node group snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the
+     * replicas; this is to ensure that it captures the freshest data. After
+     * the final snapshot is taken, the cluster is immediately deleted.
      *
-     * @return The name of a final cache cluster snapshot. ElastiCache creates the
-     *         snapshot from the primary cluster in the replication group, rather
-     *         than one of the replicas; this is to ensure that it captures the
-     *         freshest data. After the final snapshot is taken, the replication
-     *         group is deleted immediately afterward.
+     * @return The name of a final node group snapshot. ElastiCache creates the
+     *         snapshot from the primary node in the cluster, rather than one of the
+     *         replicas; this is to ensure that it captures the freshest data. After
+     *         the final snapshot is taken, the cluster is immediately deleted.
      */
     public String getFinalSnapshotIdentifier() {
         return finalSnapshotIdentifier;
     }
     
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
-     * snapshot from the primary cluster in the replication group, rather
-     * than one of the replicas; this is to ensure that it captures the
-     * freshest data. After the final snapshot is taken, the replication
-     * group is deleted immediately afterward.
+     * The name of a final node group snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the
+     * replicas; this is to ensure that it captures the freshest data. After
+     * the final snapshot is taken, the cluster is immediately deleted.
      *
-     * @param finalSnapshotIdentifier The name of a final cache cluster snapshot. ElastiCache creates the
-     *         snapshot from the primary cluster in the replication group, rather
-     *         than one of the replicas; this is to ensure that it captures the
-     *         freshest data. After the final snapshot is taken, the replication
-     *         group is deleted immediately afterward.
+     * @param finalSnapshotIdentifier The name of a final node group snapshot. ElastiCache creates the
+     *         snapshot from the primary node in the cluster, rather than one of the
+     *         replicas; this is to ensure that it captures the freshest data. After
+     *         the final snapshot is taken, the cluster is immediately deleted.
      */
     public void setFinalSnapshotIdentifier(String finalSnapshotIdentifier) {
         this.finalSnapshotIdentifier = finalSnapshotIdentifier;
     }
     
     /**
-     * The name of a final cache cluster snapshot. ElastiCache creates the
-     * snapshot from the primary cluster in the replication group, rather
-     * than one of the replicas; this is to ensure that it captures the
-     * freshest data. After the final snapshot is taken, the replication
-     * group is deleted immediately afterward.
+     * The name of a final node group snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the
+     * replicas; this is to ensure that it captures the freshest data. After
+     * the final snapshot is taken, the cluster is immediately deleted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param finalSnapshotIdentifier The name of a final cache cluster snapshot. ElastiCache creates the
-     *         snapshot from the primary cluster in the replication group, rather
-     *         than one of the replicas; this is to ensure that it captures the
-     *         freshest data. After the final snapshot is taken, the replication
-     *         group is deleted immediately afterward.
+     * @param finalSnapshotIdentifier The name of a final node group snapshot. ElastiCache creates the
+     *         snapshot from the primary node in the cluster, rather than one of the
+     *         replicas; this is to ensure that it captures the freshest data. After
+     *         the final snapshot is taken, the cluster is immediately deleted.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -10,7 +10,7 @@
  * With ElastiCache, customers gain all of the benefits of a
  * high-performance, in-memory cache with far less of the administrative
  * burden of launching and managing a distributed cache. The service
- * makes set-up, scaling, and cluster failure handling much simpler than
+ * makes setup, scaling, and cluster failure handling much simpler than
  * in a self-managed cache deployment.
  * </p>
  * <p>

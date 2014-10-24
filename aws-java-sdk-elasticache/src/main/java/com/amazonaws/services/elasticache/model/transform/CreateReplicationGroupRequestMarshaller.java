@@ -39,16 +39,102 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         Request<CreateReplicationGroupRequest> request = new DefaultRequest<CreateReplicationGroupRequest>(createReplicationGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateReplicationGroup");
-        request.addParameter("Version", "2014-07-15");
+        request.addParameter("Version", "2014-09-30");
 
         if (createReplicationGroupRequest.getReplicationGroupId() != null) {
             request.addParameter("ReplicationGroupId", StringUtils.fromString(createReplicationGroupRequest.getReplicationGroupId()));
         }
+        if (createReplicationGroupRequest.getReplicationGroupDescription() != null) {
+            request.addParameter("ReplicationGroupDescription", StringUtils.fromString(createReplicationGroupRequest.getReplicationGroupDescription()));
+        }
         if (createReplicationGroupRequest.getPrimaryClusterId() != null) {
             request.addParameter("PrimaryClusterId", StringUtils.fromString(createReplicationGroupRequest.getPrimaryClusterId()));
         }
-        if (createReplicationGroupRequest.getReplicationGroupDescription() != null) {
-            request.addParameter("ReplicationGroupDescription", StringUtils.fromString(createReplicationGroupRequest.getReplicationGroupDescription()));
+        if (createReplicationGroupRequest.isAutomaticFailoverEnabled() != null) {
+            request.addParameter("AutomaticFailoverEnabled", StringUtils.fromBoolean(createReplicationGroupRequest.isAutomaticFailoverEnabled()));
+        }
+        if (createReplicationGroupRequest.getNumCacheClusters() != null) {
+            request.addParameter("NumCacheClusters", StringUtils.fromInteger(createReplicationGroupRequest.getNumCacheClusters()));
+        }
+
+        java.util.List<String> preferredCacheClusterAZsList = createReplicationGroupRequest.getPreferredCacheClusterAZs();
+        int preferredCacheClusterAZsListIndex = 1;
+
+        for (String preferredCacheClusterAZsListValue : preferredCacheClusterAZsList) {
+            if (preferredCacheClusterAZsListValue != null) {
+                request.addParameter("PreferredCacheClusterAZs.AvailabilityZone." + preferredCacheClusterAZsListIndex, StringUtils.fromString(preferredCacheClusterAZsListValue));
+            }
+
+            preferredCacheClusterAZsListIndex++;
+        }
+        if (createReplicationGroupRequest.getCacheNodeType() != null) {
+            request.addParameter("CacheNodeType", StringUtils.fromString(createReplicationGroupRequest.getCacheNodeType()));
+        }
+        if (createReplicationGroupRequest.getEngine() != null) {
+            request.addParameter("Engine", StringUtils.fromString(createReplicationGroupRequest.getEngine()));
+        }
+        if (createReplicationGroupRequest.getEngineVersion() != null) {
+            request.addParameter("EngineVersion", StringUtils.fromString(createReplicationGroupRequest.getEngineVersion()));
+        }
+        if (createReplicationGroupRequest.getCacheParameterGroupName() != null) {
+            request.addParameter("CacheParameterGroupName", StringUtils.fromString(createReplicationGroupRequest.getCacheParameterGroupName()));
+        }
+        if (createReplicationGroupRequest.getCacheSubnetGroupName() != null) {
+            request.addParameter("CacheSubnetGroupName", StringUtils.fromString(createReplicationGroupRequest.getCacheSubnetGroupName()));
+        }
+
+        java.util.List<String> cacheSecurityGroupNamesList = createReplicationGroupRequest.getCacheSecurityGroupNames();
+        int cacheSecurityGroupNamesListIndex = 1;
+
+        for (String cacheSecurityGroupNamesListValue : cacheSecurityGroupNamesList) {
+            if (cacheSecurityGroupNamesListValue != null) {
+                request.addParameter("CacheSecurityGroupNames.CacheSecurityGroupName." + cacheSecurityGroupNamesListIndex, StringUtils.fromString(cacheSecurityGroupNamesListValue));
+            }
+
+            cacheSecurityGroupNamesListIndex++;
+        }
+
+        java.util.List<String> securityGroupIdsList = createReplicationGroupRequest.getSecurityGroupIds();
+        int securityGroupIdsListIndex = 1;
+
+        for (String securityGroupIdsListValue : securityGroupIdsList) {
+            if (securityGroupIdsListValue != null) {
+                request.addParameter("SecurityGroupIds.SecurityGroupId." + securityGroupIdsListIndex, StringUtils.fromString(securityGroupIdsListValue));
+            }
+
+            securityGroupIdsListIndex++;
+        }
+
+        java.util.List<String> snapshotArnsList = createReplicationGroupRequest.getSnapshotArns();
+        int snapshotArnsListIndex = 1;
+
+        for (String snapshotArnsListValue : snapshotArnsList) {
+            if (snapshotArnsListValue != null) {
+                request.addParameter("SnapshotArns.SnapshotArn." + snapshotArnsListIndex, StringUtils.fromString(snapshotArnsListValue));
+            }
+
+            snapshotArnsListIndex++;
+        }
+        if (createReplicationGroupRequest.getSnapshotName() != null) {
+            request.addParameter("SnapshotName", StringUtils.fromString(createReplicationGroupRequest.getSnapshotName()));
+        }
+        if (createReplicationGroupRequest.getPreferredMaintenanceWindow() != null) {
+            request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(createReplicationGroupRequest.getPreferredMaintenanceWindow()));
+        }
+        if (createReplicationGroupRequest.getPort() != null) {
+            request.addParameter("Port", StringUtils.fromInteger(createReplicationGroupRequest.getPort()));
+        }
+        if (createReplicationGroupRequest.getNotificationTopicArn() != null) {
+            request.addParameter("NotificationTopicArn", StringUtils.fromString(createReplicationGroupRequest.getNotificationTopicArn()));
+        }
+        if (createReplicationGroupRequest.isAutoMinorVersionUpgrade() != null) {
+            request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(createReplicationGroupRequest.isAutoMinorVersionUpgrade()));
+        }
+        if (createReplicationGroupRequest.getSnapshotRetentionLimit() != null) {
+            request.addParameter("SnapshotRetentionLimit", StringUtils.fromInteger(createReplicationGroupRequest.getSnapshotRetentionLimit()));
+        }
+        if (createReplicationGroupRequest.getSnapshotWindow() != null) {
+            request.addParameter("SnapshotWindow", StringUtils.fromString(createReplicationGroupRequest.getSnapshotWindow()));
         }
 
         return request;

@@ -39,7 +39,7 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
 
         Request<ModifyCacheClusterRequest> request = new DefaultRequest<ModifyCacheClusterRequest>(modifyCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheCluster");
-        request.addParameter("Version", "2014-07-15");
+        request.addParameter("Version", "2014-09-30");
 
         if (modifyCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(modifyCacheClusterRequest.getCacheClusterId()));
@@ -57,6 +57,20 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
             }
 
             cacheNodeIdsToRemoveListIndex++;
+        }
+        if (modifyCacheClusterRequest.getAZMode() != null) {
+            request.addParameter("AZMode", StringUtils.fromString(modifyCacheClusterRequest.getAZMode()));
+        }
+
+        java.util.List<String> newAvailabilityZonesList = modifyCacheClusterRequest.getNewAvailabilityZones();
+        int newAvailabilityZonesListIndex = 1;
+
+        for (String newAvailabilityZonesListValue : newAvailabilityZonesList) {
+            if (newAvailabilityZonesListValue != null) {
+                request.addParameter("NewAvailabilityZones.PreferredAvailabilityZone." + newAvailabilityZonesListIndex, StringUtils.fromString(newAvailabilityZonesListValue));
+            }
+
+            newAvailabilityZonesListIndex++;
         }
 
         java.util.List<String> cacheSecurityGroupNamesList = modifyCacheClusterRequest.getCacheSecurityGroupNames();
@@ -106,20 +120,6 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
         }
         if (modifyCacheClusterRequest.getSnapshotWindow() != null) {
             request.addParameter("SnapshotWindow", StringUtils.fromString(modifyCacheClusterRequest.getSnapshotWindow()));
-        }
-        if (modifyCacheClusterRequest.getAZMode() != null) {
-            request.addParameter("AZMode", StringUtils.fromString(modifyCacheClusterRequest.getAZMode()));
-        }
-
-        java.util.List<String> newAvailabilityZonesList = modifyCacheClusterRequest.getNewAvailabilityZones();
-        int newAvailabilityZonesListIndex = 1;
-
-        for (String newAvailabilityZonesListValue : newAvailabilityZonesList) {
-            if (newAvailabilityZonesListValue != null) {
-                request.addParameter("NewAvailabilityZones.PreferredAvailabilityZone." + newAvailabilityZonesListIndex, StringUtils.fromString(newAvailabilityZonesListValue));
-            }
-
-            newAvailabilityZonesListIndex++;
         }
 
         return request;

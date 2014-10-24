@@ -39,7 +39,7 @@ public class DescribeCacheEngineVersionsRequestMarshaller implements Marshaller<
 
         Request<DescribeCacheEngineVersionsRequest> request = new DefaultRequest<DescribeCacheEngineVersionsRequest>(describeCacheEngineVersionsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheEngineVersions");
-        request.addParameter("Version", "2014-07-15");
+        request.addParameter("Version", "2014-09-30");
 
         if (describeCacheEngineVersionsRequest.getEngine() != null) {
             request.addParameter("Engine", StringUtils.fromString(describeCacheEngineVersionsRequest.getEngine()));

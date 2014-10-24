@@ -32,6 +32,17 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     private String primaryClusterId;
 
     /**
+     * Indicates the status of automatic failover for this replication group.
+     * <note><p>ElastiCache AutoFailover replication groups are not supported
+     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     * types.</li> </ul> </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enabled, disabled
+     */
+    private String automaticFailoverStatus;
+
+    /**
      * The primary cluster ID which will be applied immediately (if
      * <code>--apply-immediately</code> was specified), or during the next
      * maintenance window.
@@ -77,6 +88,118 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     }
 
     /**
+     * Indicates the status of automatic failover for this replication group.
+     * <note><p>ElastiCache AutoFailover replication groups are not supported
+     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     * types.</li> </ul> </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enabled, disabled
+     *
+     * @return Indicates the status of automatic failover for this replication group.
+     *         <note><p>ElastiCache AutoFailover replication groups are not supported
+     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     *         types.</li> </ul> </note>
+     *
+     * @see PendingAutomaticFailoverStatus
+     */
+    public String getAutomaticFailoverStatus() {
+        return automaticFailoverStatus;
+    }
+    
+    /**
+     * Indicates the status of automatic failover for this replication group.
+     * <note><p>ElastiCache AutoFailover replication groups are not supported
+     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     * types.</li> </ul> </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enabled, disabled
+     *
+     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
+     *         <note><p>ElastiCache AutoFailover replication groups are not supported
+     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     *         types.</li> </ul> </note>
+     *
+     * @see PendingAutomaticFailoverStatus
+     */
+    public void setAutomaticFailoverStatus(String automaticFailoverStatus) {
+        this.automaticFailoverStatus = automaticFailoverStatus;
+    }
+    
+    /**
+     * Indicates the status of automatic failover for this replication group.
+     * <note><p>ElastiCache AutoFailover replication groups are not supported
+     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     * types.</li> </ul> </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enabled, disabled
+     *
+     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
+     *         <note><p>ElastiCache AutoFailover replication groups are not supported
+     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     *         types.</li> </ul> </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see PendingAutomaticFailoverStatus
+     */
+    public ReplicationGroupPendingModifiedValues withAutomaticFailoverStatus(String automaticFailoverStatus) {
+        this.automaticFailoverStatus = automaticFailoverStatus;
+        return this;
+    }
+
+    /**
+     * Indicates the status of automatic failover for this replication group.
+     * <note><p>ElastiCache AutoFailover replication groups are not supported
+     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     * types.</li> </ul> </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enabled, disabled
+     *
+     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
+     *         <note><p>ElastiCache AutoFailover replication groups are not supported
+     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     *         types.</li> </ul> </note>
+     *
+     * @see PendingAutomaticFailoverStatus
+     */
+    public void setAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
+        this.automaticFailoverStatus = automaticFailoverStatus.toString();
+    }
+    
+    /**
+     * Indicates the status of automatic failover for this replication group.
+     * <note><p>ElastiCache AutoFailover replication groups are not supported
+     * on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     * types.</li> </ul> </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enabled, disabled
+     *
+     * @param automaticFailoverStatus Indicates the status of automatic failover for this replication group.
+     *         <note><p>ElastiCache AutoFailover replication groups are not supported
+     *         on: <ul> <li>Redis version 2.6.</li> <li>T1 and T2 cache node
+     *         types.</li> </ul> </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see PendingAutomaticFailoverStatus
+     */
+    public ReplicationGroupPendingModifiedValues withAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
+        this.automaticFailoverStatus = automaticFailoverStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -88,7 +211,8 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrimaryClusterId() != null) sb.append("PrimaryClusterId: " + getPrimaryClusterId() );
+        if (getPrimaryClusterId() != null) sb.append("PrimaryClusterId: " + getPrimaryClusterId() + ",");
+        if (getAutomaticFailoverStatus() != null) sb.append("AutomaticFailoverStatus: " + getAutomaticFailoverStatus() );
         sb.append("}");
         return sb.toString();
     }
@@ -99,6 +223,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode()); 
+        hashCode = prime * hashCode + ((getAutomaticFailoverStatus() == null) ? 0 : getAutomaticFailoverStatus().hashCode()); 
         return hashCode;
     }
     
@@ -112,6 +237,8 @@ public class ReplicationGroupPendingModifiedValues implements Serializable {
         
         if (other.getPrimaryClusterId() == null ^ this.getPrimaryClusterId() == null) return false;
         if (other.getPrimaryClusterId() != null && other.getPrimaryClusterId().equals(this.getPrimaryClusterId()) == false) return false; 
+        if (other.getAutomaticFailoverStatus() == null ^ this.getAutomaticFailoverStatus() == null) return false;
+        if (other.getAutomaticFailoverStatus() != null && other.getAutomaticFailoverStatus().equals(this.getAutomaticFailoverStatus()) == false) return false; 
         return true;
     }
     
