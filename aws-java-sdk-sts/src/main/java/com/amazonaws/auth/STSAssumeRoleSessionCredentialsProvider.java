@@ -52,6 +52,28 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
     /** An identifier for the assumed role session. */
     private String roleSessionName;
 
+    /** The External ID of the role to be assumed. */
+    private String externalId;
+
+    /**
+     *
+     * @param securityTokenService
+     *            The security token service to be used for assuming the role.
+     * @param roleArn
+     *            The ARN of the Role to be assumed.
+     * @param roleSessionName
+     *            An identifier for the assumed role session.
+     * @param externalId
+     *            The External ID of the role to be assumed.
+     */
+    private STSAssumeRoleSessionCredentialsProvider(AWSSecurityTokenServiceClient securityTokenService, String roleArn,
+        String roleSessionName, String externalId) {
+        this.securityTokenService = securityTokenService;
+        this.roleArn = roleArn;
+        this.roleSessionName = roleSessionName;
+        this.externalId = externalId;
+    }
+
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which makes a
      * request to the AWS Security Token Service (STS), uses the provided
@@ -65,9 +87,25 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
      *            An identifier for the assumed role session.
      */
     public STSAssumeRoleSessionCredentialsProvider(String roleArn, String roleSessionName) {
-        this.roleArn = roleArn;
-        this.roleSessionName = roleSessionName;
-        securityTokenService = new AWSSecurityTokenServiceClient();
+        this(roleArn, roleSessionName, null);
+    }
+
+    /**
+     * Constructs a new STSAssumeRoleSessionCredentialsProvider, which makes a
+     * request to the AWS Security Token Service (STS), uses the provided
+     * {@link #roleArn} to assume a role and then request short lived session
+     * credentials, which will then be returned by this class's
+     * {@link #getCredentials()} method.
+     *
+     * @param roleArn
+     *            The ARN of the Role to be assumed.
+     * @param roleSessionName
+     *            An identifier for the assumed role session.
+     * @param externalId
+     *            The External ID of the role to be assumed.
+     */
+    public STSAssumeRoleSessionCredentialsProvider(String roleArn, String roleSessionName, String externalId) {
+        this(new AWSSecurityTokenServiceClient(), roleArn, roleSessionName, externalId);
     }
 
     /**
@@ -86,7 +124,28 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
      */
     public STSAssumeRoleSessionCredentialsProvider(AWSCredentials longLivedCredentials, String roleArn,
             String roleSessionName) {
-        this(longLivedCredentials, roleArn, roleSessionName, new ClientConfiguration());
+        this(longLivedCredentials, roleArn, roleSessionName, (String)null);
+    }
+
+    /**
+     * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
+     * the specified long lived AWS credentials to make a request to the AWS
+     * Security Token Service (STS), uses the provided {@link #roleArn} to
+     * assume a role and then request short lived session credentials, which
+     * will then be returned by this class's {@link #getCredentials()} method.
+     *
+     * @param longLivedCredentials
+     *            The main AWS credentials for a user's account.
+     * @param roleArn
+     *            The ARN of the Role to be assumed.
+     * @param roleSessionName
+     *            An identifier for the assumed role session.
+     * @param externalId
+     *            The External ID of the role to be assumed.
+     */
+    public STSAssumeRoleSessionCredentialsProvider(AWSCredentials longLivedCredentials, String roleArn,
+        String roleSessionName, String externalId) {
+        this(new AWSSecurityTokenServiceClient(longLivedCredentials), roleArn, roleSessionName, externalId);
     }
 
     /**
@@ -107,9 +166,31 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
      */
     public STSAssumeRoleSessionCredentialsProvider(AWSCredentials longLivedCredentials, String roleArn,
             String roleSessionName, ClientConfiguration clientConfiguration) {
-        this.roleArn = roleArn;
-        this.roleSessionName = roleSessionName;
-        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentials, clientConfiguration);
+        this(longLivedCredentials, roleArn, roleSessionName, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
+     * the specified long lived AWS credentials to make a request to the AWS
+     * Security Token Service (STS), uses the provided {@link #roleArn} to
+     * assume a role and then request short lived session credentials, which
+     * will then be returned by this class's {@link #getCredentials()} method.
+     *
+     * @param longLivedCredentials
+     *            The main AWS credentials for a user's account.
+     * @param roleArn
+     *            The ARN of the Role to be assumed.
+     * @param roleSessionName
+     *            An identifier for the assumed role session.
+     * @param clientConfiguration
+     *            Client configuration connection parameters.
+     * @param externalId
+     *            The External ID of the role to be assumed.
+     */
+    public STSAssumeRoleSessionCredentialsProvider(AWSCredentials longLivedCredentials, String roleArn,
+        String roleSessionName, ClientConfiguration clientConfiguration, String externalId) {
+        this(new AWSSecurityTokenServiceClient(longLivedCredentials, clientConfiguration), roleArn, roleSessionName,
+            externalId);
     }
 
     /**
@@ -130,9 +211,30 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
      */
     public STSAssumeRoleSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
             String roleSessionName) {
-        this.roleArn = roleArn;
-        this.roleSessionName = roleSessionName;
-        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider);
+        this(longLivedCredentialsProvider, roleArn, roleSessionName, (String)null);
+    }
+
+    /**
+     * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
+     * the specified credentials provider (which vends long lived AWS
+     * credentials) to make a request to the AWS Security Token Service (STS),
+     * usess the provided {@link #roleArn} to assume a role and then request
+     * short lived session credentials, which will then be returned by this
+     * class's {@link #getCredentials()} method.
+     *
+     * @param longLivedCredentialsProvider
+     *            Credentials provider for the main AWS credentials for a user's
+     *            account.
+     * @param roleArn
+     *            The ARN of the Role to be assumed.
+     * @param roleSessionName
+     *            An identifier for the assumed role session.
+     * @param externalId
+     *            The External ID of the role to be assumed.
+     */
+    public STSAssumeRoleSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
+        String roleSessionName, String externalId) {
+        this(new AWSSecurityTokenServiceClient(longLivedCredentialsProvider), roleArn, roleSessionName, externalId);
     }
 
     /**
@@ -155,9 +257,33 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
      */
     public STSAssumeRoleSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
             String roleSessionName, ClientConfiguration clientConfiguration) {
-        this.roleArn = roleArn;
-        this.roleSessionName = roleSessionName;
-        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, clientConfiguration);
+        this(longLivedCredentialsProvider, roleArn, roleSessionName, clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
+     * the specified credentials provider (which vends long lived AWS
+     * credentials) to make a request to the AWS Security Token Service (STS),
+     * uses the provided {@link #roleArn} to assume a role and then request
+     * short lived session credentials, which will then be returned by this
+     * class's {@link #getCredentials()} method.
+     *
+     * @param longLivedCredentialsProvider
+     *            Credentials provider for the main AWS credentials for a user's
+     *            account.
+     * @param roleArn
+     *            The ARN of the Role to be assumed.
+     * @param roleSessionName
+     *            An identifier for the assumed role session.
+     * @param clientConfiguration
+     *            Client configuration connection parameters.
+     * @param externalId
+     *            The External ID of the role to be assumed.
+     */
+    public STSAssumeRoleSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
+        String roleSessionName, ClientConfiguration clientConfiguration, String externalId) {
+        this(new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, clientConfiguration), roleArn,
+            roleSessionName, externalId);
     }
 
     /**
@@ -199,7 +325,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
     private void startSession() {
         AssumeRoleResult assumeRoleResult = securityTokenService.assumeRole(new AssumeRoleRequest()
                 .withRoleArn(roleArn).withDurationSeconds(DEFAULT_DURATION_SECONDS)
-                .withRoleSessionName(roleSessionName));
+                .withRoleSessionName(roleSessionName)
+                .withExternalId(externalId));
         Credentials stsCredentials = assumeRoleResult.getCredentials();
 
         sessionCredentials = new BasicSessionCredentials(stsCredentials.getAccessKeyId(),
