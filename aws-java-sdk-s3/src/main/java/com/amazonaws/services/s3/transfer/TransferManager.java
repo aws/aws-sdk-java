@@ -680,6 +680,9 @@ public class TransferManager {
         if (getObjectRequest.getSSECustomerKey() != null) {
             getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
         }
+        if (getObjectRequest.getVersionId() != null) {
+            getObjectMetadataRequest.setVersionId(getObjectRequest.getVersionId());
+        }
         final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
 
         // We still pass the unfiltered listener chain into DownloadImpl
