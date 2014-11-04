@@ -57,6 +57,12 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
 
     /**
      *
+     * Constructs a new STSAssumeRoleSessionCredentialsProvider, which makes a
+     * request to the AWS Security Token Service (STS), uses the provided
+     * {@link #roleArn} and {@link #externalId} to assume a role and then request short lived session
+     * credentials, which will then be returned by this class's
+     * {@link #getCredentials()} method.
+     *
      * @param securityTokenService
      *            The security token service to be used for assuming the role.
      * @param roleArn
@@ -93,7 +99,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which makes a
      * request to the AWS Security Token Service (STS), uses the provided
-     * {@link #roleArn} to assume a role and then request short lived session
+     * {@link #roleArn} and {@link #externalId} to assume a role and then request short lived session
      * credentials, which will then be returned by this class's
      * {@link #getCredentials()} method.
      *
@@ -130,7 +136,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
      * the specified long lived AWS credentials to make a request to the AWS
-     * Security Token Service (STS), uses the provided {@link #roleArn} to
+     * Security Token Service (STS), uses the provided {@link #roleArn} and {@link #externalId} to
      * assume a role and then request short lived session credentials, which
      * will then be returned by this class's {@link #getCredentials()} method.
      *
@@ -172,7 +178,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
      * the specified long lived AWS credentials to make a request to the AWS
-     * Security Token Service (STS), uses the provided {@link #roleArn} to
+     * Security Token Service (STS), uses the provided {@link #roleArn} and {@link #externalId} to
      * assume a role and then request short lived session credentials, which
      * will then be returned by this class's {@link #getCredentials()} method.
      *
@@ -218,7 +224,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
      * the specified credentials provider (which vends long lived AWS
      * credentials) to make a request to the AWS Security Token Service (STS),
-     * usess the provided {@link #roleArn} to assume a role and then request
+     * usess the provided {@link #roleArn} and {@link #externalId} to assume a role and then request
      * short lived session credentials, which will then be returned by this
      * class's {@link #getCredentials()} method.
      *
@@ -264,7 +270,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSCredentialsPr
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
      * the specified credentials provider (which vends long lived AWS
      * credentials) to make a request to the AWS Security Token Service (STS),
-     * uses the provided {@link #roleArn} to assume a role and then request
+     * uses the provided {@link #roleArn} and {@link #externalId} to assume a role and then request
      * short lived session credentials, which will then be returned by this
      * class's {@link #getCredentials()} method.
      *
