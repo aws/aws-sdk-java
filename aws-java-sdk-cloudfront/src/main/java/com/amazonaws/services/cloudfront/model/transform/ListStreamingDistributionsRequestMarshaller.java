@@ -45,7 +45,7 @@ public class ListStreamingDistributionsRequestMarshaller implements Marshaller<R
         Request<ListStreamingDistributionsRequest> request = new DefaultRequest<ListStreamingDistributionsRequest>(listStreamingDistributionsRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2014-05-31/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2014-10-21/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listStreamingDistributionsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listStreamingDistributionsRequest.getMaxItems())); 
 

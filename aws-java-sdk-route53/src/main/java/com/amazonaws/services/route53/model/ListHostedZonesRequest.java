@@ -57,6 +57,8 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
      */
     private String maxItems;
 
+    private String delegationSetId;
+
     /**
      * Default constructor for a new ListHostedZonesRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -163,6 +165,48 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * Returns the value of the DelegationSetId property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @return The value of the DelegationSetId property for this object.
+     */
+    public String getDelegationSetId() {
+        return delegationSetId;
+    }
+    
+    /**
+     * Sets the value of the DelegationSetId property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @param delegationSetId The new value for the DelegationSetId property for this object.
+     */
+    public void setDelegationSetId(String delegationSetId) {
+        this.delegationSetId = delegationSetId;
+    }
+    
+    /**
+     * Sets the value of the DelegationSetId property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @param delegationSetId The new value for the DelegationSetId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ListHostedZonesRequest withDelegationSetId(String delegationSetId) {
+        this.delegationSetId = delegationSetId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -175,7 +219,8 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");
+        if (getDelegationSetId() != null) sb.append("DelegationSetId: " + getDelegationSetId() );
         sb.append("}");
         return sb.toString();
     }
@@ -187,6 +232,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
         
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+        hashCode = prime * hashCode + ((getDelegationSetId() == null) ? 0 : getDelegationSetId().hashCode()); 
         return hashCode;
     }
     
@@ -202,6 +248,8 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements S
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
         if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
         if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        if (other.getDelegationSetId() == null ^ this.getDelegationSetId() == null) return false;
+        if (other.getDelegationSetId() != null && other.getDelegationSetId().equals(this.getDelegationSetId()) == false) return false; 
         return true;
     }
     

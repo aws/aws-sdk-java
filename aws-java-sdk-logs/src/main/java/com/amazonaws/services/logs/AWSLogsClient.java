@@ -332,17 +332,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void putRetentionPolicy(PutRetentionPolicyRequest putRetentionPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putRetentionPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<PutRetentionPolicyRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRetentionPolicyRequest> request = null;
+        
         try {
-            request = new PutRetentionPolicyRequestMarshaller().marshall(putRetentionPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRetentionPolicyRequestMarshaller().marshall(putRetentionPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -497,17 +504,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void deleteLogGroup(DeleteLogGroupRequest deleteLogGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLogGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteLogGroupRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLogGroupRequest> request = null;
+        
         try {
-            request = new DeleteLogGroupRequestMarshaller().marshall(deleteLogGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLogGroupRequestMarshaller().marshall(deleteLogGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -548,17 +562,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void createLogGroup(CreateLogGroupRequest createLogGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(createLogGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateLogGroupRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLogGroupRequest> request = null;
+        
         try {
-            request = new CreateLogGroupRequestMarshaller().marshall(createLogGroupRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLogGroupRequestMarshaller().marshall(createLogGroupRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -590,17 +611,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void putMetricFilter(PutMetricFilterRequest putMetricFilterRequest) {
         ExecutionContext executionContext = createExecutionContext(putMetricFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<PutMetricFilterRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutMetricFilterRequest> request = null;
+        
         try {
-            request = new PutMetricFilterRequestMarshaller().marshall(putMetricFilterRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutMetricFilterRequestMarshaller().marshall(putMetricFilterRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -629,17 +657,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void deleteMetricFilter(DeleteMetricFilterRequest deleteMetricFilterRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteMetricFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteMetricFilterRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMetricFilterRequest> request = null;
+        
         try {
-            request = new DeleteMetricFilterRequestMarshaller().marshall(deleteMetricFilterRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMetricFilterRequestMarshaller().marshall(deleteMetricFilterRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -803,17 +838,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void deleteRetentionPolicy(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRetentionPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteRetentionPolicyRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRetentionPolicyRequest> request = null;
+        
         try {
-            request = new DeleteRetentionPolicyRequestMarshaller().marshall(deleteRetentionPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRetentionPolicyRequestMarshaller().marshall(deleteRetentionPolicyRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -917,17 +959,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void createLogStream(CreateLogStreamRequest createLogStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(createLogStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateLogStreamRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLogStreamRequest> request = null;
+        
         try {
-            request = new CreateLogStreamRequestMarshaller().marshall(createLogStreamRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLogStreamRequestMarshaller().marshall(createLogStreamRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -956,17 +1005,24 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     public void deleteLogStream(DeleteLogStreamRequest deleteLogStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLogStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteLogStreamRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLogStreamRequest> request = null;
+        
         try {
-            request = new DeleteLogStreamRequestMarshaller().marshall(deleteLogStreamRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLogStreamRequestMarshaller().marshall(deleteLogStreamRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**

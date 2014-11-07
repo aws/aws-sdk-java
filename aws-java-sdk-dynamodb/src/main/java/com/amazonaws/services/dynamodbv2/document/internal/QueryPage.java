@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodbv2.document.internal;
 import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.toItemList;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
@@ -49,9 +50,11 @@ class QueryPage extends Page<Item, QueryOutcome> {
         this.request = request;
         this.index = index;
 
-        Integer max = spec.getMaxResultSize();
+        final Integer max = spec.getMaxResultSize();
         final QueryResult result = outcome.getQueryResult();
-        if (max != null && (index + result.getItems().size()) > max) {
+        final List<?> ilist = result.getItems();
+        final int size = ilist == null ? 0 : ilist.size();
+        if (max != null && (index + size) > max) {
             this.lastEvaluatedKey = null;
         } else {
             this.lastEvaluatedKey = result.getLastEvaluatedKey();

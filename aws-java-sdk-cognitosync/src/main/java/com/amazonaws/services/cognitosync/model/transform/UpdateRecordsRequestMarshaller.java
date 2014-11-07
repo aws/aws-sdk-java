@@ -135,6 +135,10 @@ public class UpdateRecordsRequestMarshaller implements Marshaller<Request<Update
           JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
           jsonWriter.object();
+          
+            if (updateRecordsRequest.getDeviceId() != null) {
+                jsonWriter.key("DeviceId").value(updateRecordsRequest.getDeviceId());
+            }
 
             com.amazonaws.internal.ListWithAutoConstructFlag<RecordPatch> recordPatchesList = (com.amazonaws.internal.ListWithAutoConstructFlag<RecordPatch>)(updateRecordsRequest.getRecordPatches());
             if (recordPatchesList != null && !(recordPatchesList.isAutoConstruct() && recordPatchesList.isEmpty())) {

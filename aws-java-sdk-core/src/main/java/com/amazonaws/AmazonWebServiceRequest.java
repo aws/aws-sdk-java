@@ -208,4 +208,22 @@ public abstract class AmazonWebServiceRequest {
     public final int getReadLimit() {
         return requestClientOptions.getReadLimit();
     }
+
+    /**
+     * Copies the internal state of this base class to that of the target
+     * request.
+     * 
+     * @return the target request
+     */
+    protected final <T extends AmazonWebServiceRequest> T copyBaseTo(T target) {
+        if (customRequestHeaders != null) {
+            for (Map.Entry<String, String> e: customRequestHeaders.entrySet())
+                target.putCustomRequestHeader(e.getKey(), e.getValue());
+        }
+        target.setRequestCredentials(credentials);
+        target.setGeneralProgressListener(progressListener);
+        target.setRequestMetricCollector(requestMetricCollector);
+        requestClientOptions.copyTo(target.getRequestClientOptions());
+        return target;
+    }
 }

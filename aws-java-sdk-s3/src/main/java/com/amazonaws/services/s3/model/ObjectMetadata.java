@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import static com.amazonaws.util.DateUtils.cloneDate;
+
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -43,13 +45,13 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * Custom user metadata, represented in responses with the x-amz-meta-
      * header prefix
      */
-    private Map<String, String> userMetadata;
+    private Map<String, String> userMetadata = new HashMap<String, String>();
 
     /**
      * All other (non user custom) headers such as Content-Length, Content-Type,
      * etc.
      */
-    private Map<String, Object> metadata;
+    private Map<String, Object> metadata = new HashMap<String, Object>();
 
     public static final String AES_256_SERVER_SIDE_ENCRYPTION = "AES256";
 
@@ -84,6 +86,23 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * accessed. Null if this object has not been restored from Glacier.
      */
     private Date restoreExpirationTime;
+
+    public ObjectMetadata() {}
+
+    private ObjectMetadata(ObjectMetadata from) {
+        this.userMetadata = from.userMetadata == null
+            ? null 
+            : new HashMap<String,String>(from.userMetadata);
+        // shallow clone the meata data 
+        this.metadata = from.metadata == null 
+            ? null 
+            : new HashMap<String, Object>(from.metadata);
+        this.expirationTime = cloneDate(from.expirationTime);
+        this.expirationTimeRuleId = from.expirationTimeRuleId;
+        this.httpExpiresDate = cloneDate(from.httpExpiresDate);
+        this.ongoingRestore = from.ongoingRestore;
+        this.restoreExpirationTime = cloneDate(from.restoreExpirationTime);
+    }
 
     /**
      * <p>
@@ -228,7 +247,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      *         the Last-Modified header hasn't been set.
      */
     public Date getLastModified() {
-        return (Date)metadata.get(Headers.LAST_MODIFIED);
+        return cloneDate((Date)metadata.get(Headers.LAST_MODIFIED));
     }
 
     /**
@@ -695,7 +714,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * S3. Returns null if this object will never expire.
      */
     public Date getExpirationTime() {
-        return expirationTime;
+        return cloneDate(expirationTime);
     }
 
     /**
@@ -737,7 +756,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      * object restored from Glacier.
      */
     public Date getRestoreExpirationTime() {
-        return restoreExpirationTime;
+        return cloneDate(restoreExpirationTime);
     }
 
     /**
@@ -780,7 +799,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      *  Returns the date when the object is no longer cacheable.
      */
     public Date getHttpExpiresDate() {
-        return httpExpiresDate;
+        return cloneDate(httpExpiresDate);
     }
 
     /**
@@ -790,22 +809,12 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
         return userMetadata == null ? null : userMetadata.get(key);
     }
 
-    public ObjectMetadata() {
-        userMetadata = new HashMap<String, String>();
-        metadata = new HashMap<String, Object>();
-    }
-
-    private ObjectMetadata(ObjectMetadata from) {
-        // shallow clone the internal hash maps
-        userMetadata = from.userMetadata == null ? null : new HashMap<String,String>(from.userMetadata);
-        metadata = from.metadata == null ? null : new HashMap<String, Object>(from.metadata);
-        this.expirationTime = from.expirationTime;
-        this.expirationTimeRuleId = from.expirationTimeRuleId;
-        this.httpExpiresDate = from.httpExpiresDate;
-        this.ongoingRestore = from.ongoingRestore;
-        this.restoreExpirationTime = from.restoreExpirationTime;
-    }
-
+    /**
+     * Returns a clone of this <code>ObjectMetadata</code>. Note the clone of
+     * the internal {@link #metadata} is limited to a shallow copy due to the
+     * unlimited type of value in the map. Other fields can be regarded as deep
+     * clone.
+     */
     public ObjectMetadata clone() {
         return new ObjectMetadata(this);
     }

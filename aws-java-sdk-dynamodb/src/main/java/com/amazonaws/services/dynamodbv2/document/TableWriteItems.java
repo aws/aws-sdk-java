@@ -260,7 +260,9 @@ public class TableWriteItems {
      * a batch write operation.
      */
     public Collection<Item> getItemsToPut() {
-        return Collections.unmodifiableCollection(itemsToPut);
+        return itemsToPut == null
+             ? null
+             : Collections.unmodifiableCollection(itemsToPut);
     }
 
     public String getTableName() {

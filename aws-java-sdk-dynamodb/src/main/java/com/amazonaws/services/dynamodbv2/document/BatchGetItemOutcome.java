@@ -31,6 +31,9 @@ import com.amazonaws.services.dynamodbv2.model.KeysAndAttributes;
 public class BatchGetItemOutcome {
     private final BatchGetItemResult result;
 
+    /**
+     * @param result the low-level result; must not be null
+     */
     public BatchGetItemOutcome(BatchGetItemResult result) {
         if (result == null)
             throw new IllegalArgumentException();
@@ -66,7 +69,7 @@ public class BatchGetItemOutcome {
     }
 
     /**
-     * Returns all the low-level details returned from the server side.
+     * Returns a non-null low-level result returned from the server side.
      */
     public BatchGetItemResult getBatchGetItemResult() {
         return result;

@@ -60,6 +60,26 @@ public class ViewerCertificate implements Serializable {
     private String sSLSupportMethod;
 
     /**
+     * Specify the minimum version of the SSL protocol that you want
+     * CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     * will serve your objects only to browsers or devices that support at
+     * least the SSL version that you specify. The TLSv1 protocol is more
+     * secure, so we recommend that you specify SSLv3 only if your users are
+     * using browsers or devices that don't support TLSv1. If you're using a
+     * custom certificate (if you specify a value for IAMCertificateId) and
+     * if you're using dedicated IP (if you specify vip for
+     * SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SSLv3, TLSv1
+     */
+    private String minimumProtocolVersion;
+
+    /**
      * If you want viewers to use HTTPS to request your objects and you're
      * using an alternate domain name in your object URLs (for example,
      * https://example.com/logo.jpg), specify the IAM certificate identifier
@@ -365,6 +385,208 @@ public class ViewerCertificate implements Serializable {
     }
 
     /**
+     * Specify the minimum version of the SSL protocol that you want
+     * CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     * will serve your objects only to browsers or devices that support at
+     * least the SSL version that you specify. The TLSv1 protocol is more
+     * secure, so we recommend that you specify SSLv3 only if your users are
+     * using browsers or devices that don't support TLSv1. If you're using a
+     * custom certificate (if you specify a value for IAMCertificateId) and
+     * if you're using dedicated IP (if you specify vip for
+     * SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SSLv3, TLSv1
+     *
+     * @return Specify the minimum version of the SSL protocol that you want
+     *         CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     *         will serve your objects only to browsers or devices that support at
+     *         least the SSL version that you specify. The TLSv1 protocol is more
+     *         secure, so we recommend that you specify SSLv3 only if your users are
+     *         using browsers or devices that don't support TLSv1. If you're using a
+     *         custom certificate (if you specify a value for IAMCertificateId) and
+     *         if you're using dedicated IP (if you specify vip for
+     *         SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     *         MinimumProtocolVersion. If you're using a custom certificate (if you
+     *         specify a value for IAMCertificateId) and if you're using SNI (if you
+     *         specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     *         MinimumProtocolVersion.
+     *
+     * @see MinimumProtocolVersion
+     */
+    public String getMinimumProtocolVersion() {
+        return minimumProtocolVersion;
+    }
+    
+    /**
+     * Specify the minimum version of the SSL protocol that you want
+     * CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     * will serve your objects only to browsers or devices that support at
+     * least the SSL version that you specify. The TLSv1 protocol is more
+     * secure, so we recommend that you specify SSLv3 only if your users are
+     * using browsers or devices that don't support TLSv1. If you're using a
+     * custom certificate (if you specify a value for IAMCertificateId) and
+     * if you're using dedicated IP (if you specify vip for
+     * SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SSLv3, TLSv1
+     *
+     * @param minimumProtocolVersion Specify the minimum version of the SSL protocol that you want
+     *         CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     *         will serve your objects only to browsers or devices that support at
+     *         least the SSL version that you specify. The TLSv1 protocol is more
+     *         secure, so we recommend that you specify SSLv3 only if your users are
+     *         using browsers or devices that don't support TLSv1. If you're using a
+     *         custom certificate (if you specify a value for IAMCertificateId) and
+     *         if you're using dedicated IP (if you specify vip for
+     *         SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     *         MinimumProtocolVersion. If you're using a custom certificate (if you
+     *         specify a value for IAMCertificateId) and if you're using SNI (if you
+     *         specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     *         MinimumProtocolVersion.
+     *
+     * @see MinimumProtocolVersion
+     */
+    public void setMinimumProtocolVersion(String minimumProtocolVersion) {
+        this.minimumProtocolVersion = minimumProtocolVersion;
+    }
+    
+    /**
+     * Specify the minimum version of the SSL protocol that you want
+     * CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     * will serve your objects only to browsers or devices that support at
+     * least the SSL version that you specify. The TLSv1 protocol is more
+     * secure, so we recommend that you specify SSLv3 only if your users are
+     * using browsers or devices that don't support TLSv1. If you're using a
+     * custom certificate (if you specify a value for IAMCertificateId) and
+     * if you're using dedicated IP (if you specify vip for
+     * SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SSLv3, TLSv1
+     *
+     * @param minimumProtocolVersion Specify the minimum version of the SSL protocol that you want
+     *         CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     *         will serve your objects only to browsers or devices that support at
+     *         least the SSL version that you specify. The TLSv1 protocol is more
+     *         secure, so we recommend that you specify SSLv3 only if your users are
+     *         using browsers or devices that don't support TLSv1. If you're using a
+     *         custom certificate (if you specify a value for IAMCertificateId) and
+     *         if you're using dedicated IP (if you specify vip for
+     *         SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     *         MinimumProtocolVersion. If you're using a custom certificate (if you
+     *         specify a value for IAMCertificateId) and if you're using SNI (if you
+     *         specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     *         MinimumProtocolVersion.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see MinimumProtocolVersion
+     */
+    public ViewerCertificate withMinimumProtocolVersion(String minimumProtocolVersion) {
+        this.minimumProtocolVersion = minimumProtocolVersion;
+        return this;
+    }
+
+    /**
+     * Specify the minimum version of the SSL protocol that you want
+     * CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     * will serve your objects only to browsers or devices that support at
+     * least the SSL version that you specify. The TLSv1 protocol is more
+     * secure, so we recommend that you specify SSLv3 only if your users are
+     * using browsers or devices that don't support TLSv1. If you're using a
+     * custom certificate (if you specify a value for IAMCertificateId) and
+     * if you're using dedicated IP (if you specify vip for
+     * SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SSLv3, TLSv1
+     *
+     * @param minimumProtocolVersion Specify the minimum version of the SSL protocol that you want
+     *         CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     *         will serve your objects only to browsers or devices that support at
+     *         least the SSL version that you specify. The TLSv1 protocol is more
+     *         secure, so we recommend that you specify SSLv3 only if your users are
+     *         using browsers or devices that don't support TLSv1. If you're using a
+     *         custom certificate (if you specify a value for IAMCertificateId) and
+     *         if you're using dedicated IP (if you specify vip for
+     *         SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     *         MinimumProtocolVersion. If you're using a custom certificate (if you
+     *         specify a value for IAMCertificateId) and if you're using SNI (if you
+     *         specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     *         MinimumProtocolVersion.
+     *
+     * @see MinimumProtocolVersion
+     */
+    public void setMinimumProtocolVersion(MinimumProtocolVersion minimumProtocolVersion) {
+        this.minimumProtocolVersion = minimumProtocolVersion.toString();
+    }
+    
+    /**
+     * Specify the minimum version of the SSL protocol that you want
+     * CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     * will serve your objects only to browsers or devices that support at
+     * least the SSL version that you specify. The TLSv1 protocol is more
+     * secure, so we recommend that you specify SSLv3 only if your users are
+     * using browsers or devices that don't support TLSv1. If you're using a
+     * custom certificate (if you specify a value for IAMCertificateId) and
+     * if you're using dedicated IP (if you specify vip for
+     * SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     * MinimumProtocolVersion. If you're using a custom certificate (if you
+     * specify a value for IAMCertificateId) and if you're using SNI (if you
+     * specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     * MinimumProtocolVersion.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SSLv3, TLSv1
+     *
+     * @param minimumProtocolVersion Specify the minimum version of the SSL protocol that you want
+     *         CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront
+     *         will serve your objects only to browsers or devices that support at
+     *         least the SSL version that you specify. The TLSv1 protocol is more
+     *         secure, so we recommend that you specify SSLv3 only if your users are
+     *         using browsers or devices that don't support TLSv1. If you're using a
+     *         custom certificate (if you specify a value for IAMCertificateId) and
+     *         if you're using dedicated IP (if you specify vip for
+     *         SSLSupportMethod), you can choose SSLv3 or TLSv1 as the
+     *         MinimumProtocolVersion. If you're using a custom certificate (if you
+     *         specify a value for IAMCertificateId) and if you're using SNI (if you
+     *         specify sni-only for SSLSupportMethod), you must specify TLSv1 for
+     *         MinimumProtocolVersion.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see MinimumProtocolVersion
+     */
+    public ViewerCertificate withMinimumProtocolVersion(MinimumProtocolVersion minimumProtocolVersion) {
+        this.minimumProtocolVersion = minimumProtocolVersion.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -378,7 +600,8 @@ public class ViewerCertificate implements Serializable {
         sb.append("{");
         if (getIAMCertificateId() != null) sb.append("IAMCertificateId: " + getIAMCertificateId() + ",");
         if (isCloudFrontDefaultCertificate() != null) sb.append("CloudFrontDefaultCertificate: " + isCloudFrontDefaultCertificate() + ",");
-        if (getSSLSupportMethod() != null) sb.append("SSLSupportMethod: " + getSSLSupportMethod() );
+        if (getSSLSupportMethod() != null) sb.append("SSLSupportMethod: " + getSSLSupportMethod() + ",");
+        if (getMinimumProtocolVersion() != null) sb.append("MinimumProtocolVersion: " + getMinimumProtocolVersion() );
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +614,7 @@ public class ViewerCertificate implements Serializable {
         hashCode = prime * hashCode + ((getIAMCertificateId() == null) ? 0 : getIAMCertificateId().hashCode()); 
         hashCode = prime * hashCode + ((isCloudFrontDefaultCertificate() == null) ? 0 : isCloudFrontDefaultCertificate().hashCode()); 
         hashCode = prime * hashCode + ((getSSLSupportMethod() == null) ? 0 : getSSLSupportMethod().hashCode()); 
+        hashCode = prime * hashCode + ((getMinimumProtocolVersion() == null) ? 0 : getMinimumProtocolVersion().hashCode()); 
         return hashCode;
     }
     
@@ -408,6 +632,8 @@ public class ViewerCertificate implements Serializable {
         if (other.isCloudFrontDefaultCertificate() != null && other.isCloudFrontDefaultCertificate().equals(this.isCloudFrontDefaultCertificate()) == false) return false; 
         if (other.getSSLSupportMethod() == null ^ this.getSSLSupportMethod() == null) return false;
         if (other.getSSLSupportMethod() != null && other.getSSLSupportMethod().equals(this.getSSLSupportMethod()) == false) return false; 
+        if (other.getMinimumProtocolVersion() == null ^ this.getMinimumProtocolVersion() == null) return false;
+        if (other.getMinimumProtocolVersion() != null && other.getMinimumProtocolVersion().equals(this.getMinimumProtocolVersion()) == false) return false; 
         return true;
     }
     

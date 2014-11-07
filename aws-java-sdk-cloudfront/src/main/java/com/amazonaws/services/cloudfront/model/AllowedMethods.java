@@ -20,21 +20,22 @@ import java.io.Serializable;
  * <p>
  * A complex type that controls which HTTP methods CloudFront processes
  * and forwards to your Amazon S3 bucket or your custom origin. There are
- * two options: - CloudFront forwards only GET and HEAD requests. -
- * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
- * requests. If you choose the second option, you may need to restrict
- * access to your Amazon S3 bucket or to your custom origin so users
- * can't perform operations that you don't want them to. For example, you
- * may not want users to have permission to delete objects from your
- * origin.
+ * three choices: - CloudFront forwards only GET and HEAD requests. -
+ * CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+ * forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+ * you pick the third choice, you may need to restrict access to your
+ * Amazon S3 bucket or to your custom origin so users can't perform
+ * operations that you don't want them to. For example, you may not want
+ * users to have permission to delete objects from your origin.
  * </p>
  */
 public class AllowedMethods implements Serializable {
 
     /**
      * The number of HTTP methods that you want CloudFront to forward to your
-     * origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-     * DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET,
+     * HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
+     * POST, and DELETE requests).
      */
     private Integer quantity;
 
@@ -45,13 +46,26 @@ public class AllowedMethods implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> items;
 
     /**
+     * A complex type that controls whether CloudFront caches the response to
+     * requests using the specified HTTP methods. There are two choices: -
+     * CloudFront caches responses to GET and HEAD requests. - CloudFront
+     * caches responses to GET, HEAD, and OPTIONS requests. If you pick the
+     * second choice for your S3 Origin, you may need to forward
+     * Access-Control-Request-Method, Access-Control-Request-Headers and
+     * Origin headers for the responses to be cached correctly.
+     */
+    private CachedMethods cachedMethods;
+
+    /**
      * The number of HTTP methods that you want CloudFront to forward to your
-     * origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-     * DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET,
+     * HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
+     * POST, and DELETE requests).
      *
      * @return The number of HTTP methods that you want CloudFront to forward to your
-     *         origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-     *         DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+     *         origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET,
+     *         HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
+     *         POST, and DELETE requests).
      */
     public Integer getQuantity() {
         return quantity;
@@ -59,12 +73,14 @@ public class AllowedMethods implements Serializable {
     
     /**
      * The number of HTTP methods that you want CloudFront to forward to your
-     * origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-     * DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET,
+     * HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
+     * POST, and DELETE requests).
      *
      * @param quantity The number of HTTP methods that you want CloudFront to forward to your
-     *         origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-     *         DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+     *         origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET,
+     *         HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
+     *         POST, and DELETE requests).
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -72,14 +88,16 @@ public class AllowedMethods implements Serializable {
     
     /**
      * The number of HTTP methods that you want CloudFront to forward to your
-     * origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-     * DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+     * origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET,
+     * HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
+     * POST, and DELETE requests).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param quantity The number of HTTP methods that you want CloudFront to forward to your
-     *         origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
-     *         DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).
+     *         origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET,
+     *         HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
+     *         POST, and DELETE requests).
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -191,6 +209,75 @@ public class AllowedMethods implements Serializable {
     }
 
     /**
+     * A complex type that controls whether CloudFront caches the response to
+     * requests using the specified HTTP methods. There are two choices: -
+     * CloudFront caches responses to GET and HEAD requests. - CloudFront
+     * caches responses to GET, HEAD, and OPTIONS requests. If you pick the
+     * second choice for your S3 Origin, you may need to forward
+     * Access-Control-Request-Method, Access-Control-Request-Headers and
+     * Origin headers for the responses to be cached correctly.
+     *
+     * @return A complex type that controls whether CloudFront caches the response to
+     *         requests using the specified HTTP methods. There are two choices: -
+     *         CloudFront caches responses to GET and HEAD requests. - CloudFront
+     *         caches responses to GET, HEAD, and OPTIONS requests. If you pick the
+     *         second choice for your S3 Origin, you may need to forward
+     *         Access-Control-Request-Method, Access-Control-Request-Headers and
+     *         Origin headers for the responses to be cached correctly.
+     */
+    public CachedMethods getCachedMethods() {
+        return cachedMethods;
+    }
+    
+    /**
+     * A complex type that controls whether CloudFront caches the response to
+     * requests using the specified HTTP methods. There are two choices: -
+     * CloudFront caches responses to GET and HEAD requests. - CloudFront
+     * caches responses to GET, HEAD, and OPTIONS requests. If you pick the
+     * second choice for your S3 Origin, you may need to forward
+     * Access-Control-Request-Method, Access-Control-Request-Headers and
+     * Origin headers for the responses to be cached correctly.
+     *
+     * @param cachedMethods A complex type that controls whether CloudFront caches the response to
+     *         requests using the specified HTTP methods. There are two choices: -
+     *         CloudFront caches responses to GET and HEAD requests. - CloudFront
+     *         caches responses to GET, HEAD, and OPTIONS requests. If you pick the
+     *         second choice for your S3 Origin, you may need to forward
+     *         Access-Control-Request-Method, Access-Control-Request-Headers and
+     *         Origin headers for the responses to be cached correctly.
+     */
+    public void setCachedMethods(CachedMethods cachedMethods) {
+        this.cachedMethods = cachedMethods;
+    }
+    
+    /**
+     * A complex type that controls whether CloudFront caches the response to
+     * requests using the specified HTTP methods. There are two choices: -
+     * CloudFront caches responses to GET and HEAD requests. - CloudFront
+     * caches responses to GET, HEAD, and OPTIONS requests. If you pick the
+     * second choice for your S3 Origin, you may need to forward
+     * Access-Control-Request-Method, Access-Control-Request-Headers and
+     * Origin headers for the responses to be cached correctly.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cachedMethods A complex type that controls whether CloudFront caches the response to
+     *         requests using the specified HTTP methods. There are two choices: -
+     *         CloudFront caches responses to GET and HEAD requests. - CloudFront
+     *         caches responses to GET, HEAD, and OPTIONS requests. If you pick the
+     *         second choice for your S3 Origin, you may need to forward
+     *         Access-Control-Request-Method, Access-Control-Request-Headers and
+     *         Origin headers for the responses to be cached correctly.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AllowedMethods withCachedMethods(CachedMethods cachedMethods) {
+        this.cachedMethods = cachedMethods;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -203,7 +290,8 @@ public class AllowedMethods implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
-        if (getItems() != null) sb.append("Items: " + getItems() );
+        if (getItems() != null) sb.append("Items: " + getItems() + ",");
+        if (getCachedMethods() != null) sb.append("CachedMethods: " + getCachedMethods() );
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +303,7 @@ public class AllowedMethods implements Serializable {
         
         hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode()); 
         hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode()); 
+        hashCode = prime * hashCode + ((getCachedMethods() == null) ? 0 : getCachedMethods().hashCode()); 
         return hashCode;
     }
     
@@ -230,6 +319,8 @@ public class AllowedMethods implements Serializable {
         if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false) return false; 
         if (other.getItems() == null ^ this.getItems() == null) return false;
         if (other.getItems() != null && other.getItems().equals(this.getItems()) == false) return false; 
+        if (other.getCachedMethods() == null ^ this.getCachedMethods() == null) return false;
+        if (other.getCachedMethods() != null && other.getCachedMethods().equals(this.getCachedMethods()) == false) return false; 
         return true;
     }
     

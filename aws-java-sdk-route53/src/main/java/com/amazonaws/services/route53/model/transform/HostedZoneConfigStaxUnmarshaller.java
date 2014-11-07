@@ -46,6 +46,10 @@ public class HostedZoneConfigStaxUnmarshaller implements Unmarshaller<HostedZone
                     hostedZoneConfig.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PrivateZone", targetDepth)) {
+                    hostedZoneConfig.setPrivateZone(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return hostedZoneConfig;

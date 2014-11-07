@@ -25,6 +25,9 @@ import com.amazonaws.services.dynamodbv2.model.ScanResult;
 public class ScanOutcome {
     private final ScanResult result;
 
+    /**
+     * @param result the low-level result; must not be null
+     */
     public ScanOutcome(ScanResult result) {
         if (result == null)
             throw new IllegalArgumentException();
@@ -32,14 +35,14 @@ public class ScanOutcome {
     }
 
     /**
-     * Returns all the returned items as <code>Items</code>.
+     * Returns a non-null list of the returned items; can be empty.
      */
     public List<Item> getItems() {
         return InternalUtils.toItemList(result.getItems());
     }
 
     /**
-     * Returns all the low-level details returned from the server side.
+     * Returns a non-null low-level result returned from the server side.
      */
     public ScanResult getScanResult() {
         return result;

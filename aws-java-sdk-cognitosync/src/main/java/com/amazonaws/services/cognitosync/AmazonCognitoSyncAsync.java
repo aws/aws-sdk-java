@@ -36,12 +36,23 @@ import com.amazonaws.services.cognitosync.model.*;
  * User data is persisted in a dataset that can store up to 1 MB of
  * key-value pairs, and you can have up to 20 datasets per user identity.
  * </p>
+ * <p>
+ * With Amazon Cognito Sync, the data stored for each identity is
+ * accessible only to credentials assigned to that identity. In order to
+ * use the Cognito Sync service, you need to make API calls using
+ * credentials retrieved with
+ * <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html"> Amazon Cognito Identity service </a>
+ * .
+ * </p>
  */
 public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
     /**
      * <p>
      * Posts updates to records and add and delete records for a dataset and
-     * user.
+     * user. The credentials used to make this API call need to have access
+     * to the identity data. With Amazon Cognito Sync, each identity has
+     * access only to its own data. You should use Amazon Cognito Identity
+     * service to retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param updateRecordsRequest Container for the necessary parameters to
@@ -65,7 +76,10 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
     /**
      * <p>
      * Posts updates to records and add and delete records for a dataset and
-     * user.
+     * user. The credentials used to make this API call need to have access
+     * to the identity data. With Amazon Cognito Sync, each identity has
+     * access only to its own data. You should use Amazon Cognito Identity
+     * service to retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param updateRecordsRequest Container for the necessary parameters to
@@ -89,6 +103,285 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      */
     public Future<UpdateRecordsResult> updateRecordsAsync(UpdateRecordsRequest updateRecordsRequest,
             AsyncHandler<UpdateRecordsRequest, UpdateRecordsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets usage information for an identity, including number of datasets
+     * and data usage.
+     * </p>
+     *
+     * @param describeIdentityUsageRequest Container for the necessary
+     *           parameters to execute the DescribeIdentityUsage operation on
+     *           AmazonCognitoSync.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeIdentityUsage service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeIdentityUsageResult> describeIdentityUsageAsync(DescribeIdentityUsageRequest describeIdentityUsageRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets usage information for an identity, including number of datasets
+     * and data usage.
+     * </p>
+     *
+     * @param describeIdentityUsageRequest Container for the necessary
+     *           parameters to execute the DescribeIdentityUsage operation on
+     *           AmazonCognitoSync.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeIdentityUsage service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeIdentityUsageResult> describeIdentityUsageAsync(DescribeIdentityUsageRequest describeIdentityUsageRequest,
+            AsyncHandler<DescribeIdentityUsageRequest, DescribeIdentityUsageResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Unsubscribe from receiving notifications when a dataset is modified
+     * by another device.
+     * </p>
+     *
+     * @param unsubscribeFromDatasetRequest Container for the necessary
+     *           parameters to execute the UnsubscribeFromDataset operation on
+     *           AmazonCognitoSync.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnsubscribeFromDataset service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UnsubscribeFromDatasetResult> unsubscribeFromDatasetAsync(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Unsubscribe from receiving notifications when a dataset is modified
+     * by another device.
+     * </p>
+     *
+     * @param unsubscribeFromDatasetRequest Container for the necessary
+     *           parameters to execute the UnsubscribeFromDataset operation on
+     *           AmazonCognitoSync.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnsubscribeFromDataset service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UnsubscribeFromDatasetResult> unsubscribeFromDatasetAsync(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest,
+            AsyncHandler<UnsubscribeFromDatasetRequest, UnsubscribeFromDatasetResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Sets the necessary configuration for push sync.
+     * </p>
+     *
+     * @param setIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the SetIdentityPoolConfiguration operation on
+     *           AmazonCognitoSync.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetIdentityPoolConfiguration service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SetIdentityPoolConfigurationResult> setIdentityPoolConfigurationAsync(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Sets the necessary configuration for push sync.
+     * </p>
+     *
+     * @param setIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the SetIdentityPoolConfiguration operation on
+     *           AmazonCognitoSync.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetIdentityPoolConfiguration service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SetIdentityPoolConfigurationResult> setIdentityPoolConfigurationAsync(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest,
+            AsyncHandler<SetIdentityPoolConfigurationRequest, SetIdentityPoolConfigurationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets the configuration settings of an identity pool.
+     * </p>
+     *
+     * @param getIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the GetIdentityPoolConfiguration operation on
+     *           AmazonCognitoSync.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetIdentityPoolConfiguration service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetIdentityPoolConfigurationResult> getIdentityPoolConfigurationAsync(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets the configuration settings of an identity pool.
+     * </p>
+     *
+     * @param getIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the GetIdentityPoolConfiguration operation on
+     *           AmazonCognitoSync.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetIdentityPoolConfiguration service method, as returned by
+     *         AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetIdentityPoolConfigurationResult> getIdentityPoolConfigurationAsync(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest,
+            AsyncHandler<GetIdentityPoolConfigurationRequest, GetIdentityPoolConfigurationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Subscribes to receive notifications when a dataset is modified by
+     * another device.
+     * </p>
+     *
+     * @param subscribeToDatasetRequest Container for the necessary
+     *           parameters to execute the SubscribeToDataset operation on
+     *           AmazonCognitoSync.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SubscribeToDataset service method, as returned by AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SubscribeToDatasetResult> subscribeToDatasetAsync(SubscribeToDatasetRequest subscribeToDatasetRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Subscribes to receive notifications when a dataset is modified by
+     * another device.
+     * </p>
+     *
+     * @param subscribeToDatasetRequest Container for the necessary
+     *           parameters to execute the SubscribeToDataset operation on
+     *           AmazonCognitoSync.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SubscribeToDataset service method, as returned by AmazonCognitoSync.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SubscribeToDatasetResult> subscribeToDatasetAsync(SubscribeToDatasetRequest subscribeToDatasetRequest,
+            AsyncHandler<SubscribeToDatasetRequest, SubscribeToDatasetResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -150,7 +443,11 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
 
     /**
      * <p>
-     * Lists datasets for an identity.
+     * Lists datasets for an identity. The credentials used to make this API
+     * call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listDatasetsRequest Container for the necessary parameters to
@@ -173,7 +470,11 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
 
     /**
      * <p>
-     * Lists datasets for an identity.
+     * Lists datasets for an identity. The credentials used to make this API
+     * call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listDatasetsRequest Container for the necessary parameters to
@@ -257,7 +558,11 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
     /**
      * <p>
      * Gets paginated records, optionally changed after a particular sync
-     * count for a dataset and identity.
+     * count for a dataset and identity. The credentials used to make this
+     * API call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listRecordsRequest Container for the necessary parameters to
@@ -281,7 +586,11 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
     /**
      * <p>
      * Gets paginated records, optionally changed after a particular sync
-     * count for a dataset and identity.
+     * count for a dataset and identity. The credentials used to make this
+     * API call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listRecordsRequest Container for the necessary parameters to
@@ -309,7 +618,11 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
 
     /**
      * <p>
-     * Gets metadata about a dataset by identity and dataset name.
+     * Gets metadata about a dataset by identity and dataset name. The
+     * credentials used to make this API call need to have access to the
+     * identity data. With Amazon Cognito Sync, each identity has access only
+     * to its own data. You should use Amazon Cognito Identity service to
+     * retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param describeDatasetRequest Container for the necessary parameters
@@ -332,7 +645,11 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
 
     /**
      * <p>
-     * Gets metadata about a dataset by identity and dataset name.
+     * Gets metadata about a dataset by identity and dataset name. The
+     * credentials used to make this API call need to have access to the
+     * identity data. With Amazon Cognito Sync, each identity has access only
+     * to its own data. You should use Amazon Cognito Identity service to
+     * retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param describeDatasetRequest Container for the necessary parameters
@@ -419,17 +736,14 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
 
     /**
      * <p>
-     * Gets usage information for an identity, including number of datasets
-     * and data usage.
+     * Registers a device to receive push sync notifications.
      * </p>
      *
-     * @param describeIdentityUsageRequest Container for the necessary
-     *           parameters to execute the DescribeIdentityUsage operation on
-     *           AmazonCognitoSync.
+     * @param registerDeviceRequest Container for the necessary parameters to
+     *           execute the RegisterDevice operation on AmazonCognitoSync.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeIdentityUsage service method, as returned by
-     *         AmazonCognitoSync.
+     *         RegisterDevice service method, as returned by AmazonCognitoSync.
      * 
      *
      * @throws AmazonClientException
@@ -440,26 +754,23 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *             If an error response is returned by AmazonCognitoSync indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeIdentityUsageResult> describeIdentityUsageAsync(DescribeIdentityUsageRequest describeIdentityUsageRequest) 
+    public Future<RegisterDeviceResult> registerDeviceAsync(RegisterDeviceRequest registerDeviceRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * Gets usage information for an identity, including number of datasets
-     * and data usage.
+     * Registers a device to receive push sync notifications.
      * </p>
      *
-     * @param describeIdentityUsageRequest Container for the necessary
-     *           parameters to execute the DescribeIdentityUsage operation on
-     *           AmazonCognitoSync.
+     * @param registerDeviceRequest Container for the necessary parameters to
+     *           execute the RegisterDevice operation on AmazonCognitoSync.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeIdentityUsage service method, as returned by
-     *         AmazonCognitoSync.
+     *         RegisterDevice service method, as returned by AmazonCognitoSync.
      * 
      *
      * @throws AmazonClientException
@@ -470,8 +781,8 @@ public interface AmazonCognitoSyncAsync extends AmazonCognitoSync {
      *             If an error response is returned by AmazonCognitoSync indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeIdentityUsageResult> describeIdentityUsageAsync(DescribeIdentityUsageRequest describeIdentityUsageRequest,
-            AsyncHandler<DescribeIdentityUsageRequest, DescribeIdentityUsageResult> asyncHandler)
+    public Future<RegisterDeviceResult> registerDeviceAsync(RegisterDeviceRequest registerDeviceRequest,
+            AsyncHandler<RegisterDeviceRequest, RegisterDeviceResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 }
         

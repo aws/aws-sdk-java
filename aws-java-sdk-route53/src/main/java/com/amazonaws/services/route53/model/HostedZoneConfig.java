@@ -36,6 +36,8 @@ public class HostedZoneConfig implements Serializable {
      */
     private String comment;
 
+    private Boolean privateZone;
+
     /**
      * Default constructor for a new HostedZoneConfig object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -97,6 +99,48 @@ public class HostedZoneConfig implements Serializable {
     }
 
     /**
+     * Returns the value of the PrivateZone property for this object.
+     *
+     * @return The value of the PrivateZone property for this object.
+     */
+    public Boolean isPrivateZone() {
+        return privateZone;
+    }
+    
+    /**
+     * Sets the value of the PrivateZone property for this object.
+     *
+     * @param privateZone The new value for the PrivateZone property for this object.
+     */
+    public void setPrivateZone(Boolean privateZone) {
+        this.privateZone = privateZone;
+    }
+    
+    /**
+     * Sets the value of the PrivateZone property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateZone The new value for the PrivateZone property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public HostedZoneConfig withPrivateZone(Boolean privateZone) {
+        this.privateZone = privateZone;
+        return this;
+    }
+
+    /**
+     * Returns the value of the PrivateZone property for this object.
+     *
+     * @return The value of the PrivateZone property for this object.
+     */
+    public Boolean getPrivateZone() {
+        return privateZone;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -108,7 +152,8 @@ public class HostedZoneConfig implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComment() != null) sb.append("Comment: " + getComment() );
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");
+        if (isPrivateZone() != null) sb.append("PrivateZone: " + isPrivateZone() );
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +164,7 @@ public class HostedZoneConfig implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
+        hashCode = prime * hashCode + ((isPrivateZone() == null) ? 0 : isPrivateZone().hashCode()); 
         return hashCode;
     }
     
@@ -132,6 +178,8 @@ public class HostedZoneConfig implements Serializable {
         
         if (other.getComment() == null ^ this.getComment() == null) return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
+        if (other.isPrivateZone() == null ^ this.isPrivateZone() == null) return false;
+        if (other.isPrivateZone() != null && other.isPrivateZone().equals(this.isPrivateZone()) == false) return false; 
         return true;
     }
     

@@ -47,10 +47,14 @@ import com.amazonaws.util.VersionInfoUtils;
  */
 public enum InternalUtils {
     ;
+
+    /**
+     * Returns a non-null list of <code>Item</code>'s given the low level
+     * list of item information.
+     */
     public static List<Item> toItemList(List<Map<String, AttributeValue>> items) {
         if (items == null)
-            return null;
-
+            return Collections.emptyList();
         List<Item> result = new ArrayList<Item>(items.size());
         for (Map<String, AttributeValue> item : items)
             result.add(Item.fromMap(toSimpleMapValue(item)));

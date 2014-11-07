@@ -25,6 +25,9 @@ import com.amazonaws.services.dynamodbv2.model.UpdateItemResult;
 public class UpdateItemOutcome {
     private final UpdateItemResult result;
 
+    /**
+     * @param result the low-level result; must not be null
+     */
     public UpdateItemOutcome(UpdateItemResult result) {
         if (result == null)
             throw new IllegalArgumentException();
@@ -42,7 +45,7 @@ public class UpdateItemOutcome {
     }
 
     /**
-     * Returns all the low-level details returned from the server side.
+     * Returns a non-null low-level result returned from the server side.
      */
     public UpdateItemResult getUpdateItemResult() {
         return result;

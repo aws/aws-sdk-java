@@ -25,6 +25,9 @@ import com.amazonaws.services.dynamodbv2.model.GetItemResult;
 public class GetItemOutcome {
     private final GetItemResult result;
 
+    /**
+     * @param result the low-level result; must not be null
+     */
     public GetItemOutcome(GetItemResult result) {
         if (result == null)
             throw new IllegalArgumentException();
@@ -43,7 +46,7 @@ public class GetItemOutcome {
     }
 
     /**
-     * Returns all the low-level details returned from the server side.
+     * Returns a non-null low-level result returned from the server side.
      */
     public GetItemResult getGetItemResult() {
         return result;

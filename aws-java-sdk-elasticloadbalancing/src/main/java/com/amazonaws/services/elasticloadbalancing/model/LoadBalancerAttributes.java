@@ -66,6 +66,11 @@ public class LoadBalancerAttributes implements Serializable {
     private ConnectionSettings connectionSettings;
 
     /**
+     * This parameter is reserved for future use.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AdditionalAttribute> additionalAttributes;
+
+    /**
      * The name of the load balancer attribute. If enabled, the load balancer
      * routes the request traffic evenly across all back-end instances
      * regardless of the Availability Zones. <p>For more information, see <a
@@ -330,6 +335,74 @@ public class LoadBalancerAttributes implements Serializable {
     }
 
     /**
+     * This parameter is reserved for future use.
+     *
+     * @return This parameter is reserved for future use.
+     */
+    public java.util.List<AdditionalAttribute> getAdditionalAttributes() {
+        if (additionalAttributes == null) {
+              additionalAttributes = new com.amazonaws.internal.ListWithAutoConstructFlag<AdditionalAttribute>();
+              additionalAttributes.setAutoConstruct(true);
+        }
+        return additionalAttributes;
+    }
+    
+    /**
+     * This parameter is reserved for future use.
+     *
+     * @param additionalAttributes This parameter is reserved for future use.
+     */
+    public void setAdditionalAttributes(java.util.Collection<AdditionalAttribute> additionalAttributes) {
+        if (additionalAttributes == null) {
+            this.additionalAttributes = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<AdditionalAttribute> additionalAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AdditionalAttribute>(additionalAttributes.size());
+        additionalAttributesCopy.addAll(additionalAttributes);
+        this.additionalAttributes = additionalAttributesCopy;
+    }
+    
+    /**
+     * This parameter is reserved for future use.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalAttributes This parameter is reserved for future use.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public LoadBalancerAttributes withAdditionalAttributes(AdditionalAttribute... additionalAttributes) {
+        if (getAdditionalAttributes() == null) setAdditionalAttributes(new java.util.ArrayList<AdditionalAttribute>(additionalAttributes.length));
+        for (AdditionalAttribute value : additionalAttributes) {
+            getAdditionalAttributes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * This parameter is reserved for future use.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalAttributes This parameter is reserved for future use.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public LoadBalancerAttributes withAdditionalAttributes(java.util.Collection<AdditionalAttribute> additionalAttributes) {
+        if (additionalAttributes == null) {
+            this.additionalAttributes = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<AdditionalAttribute> additionalAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AdditionalAttribute>(additionalAttributes.size());
+            additionalAttributesCopy.addAll(additionalAttributes);
+            this.additionalAttributes = additionalAttributesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -344,7 +417,8 @@ public class LoadBalancerAttributes implements Serializable {
         if (getCrossZoneLoadBalancing() != null) sb.append("CrossZoneLoadBalancing: " + getCrossZoneLoadBalancing() + ",");
         if (getAccessLog() != null) sb.append("AccessLog: " + getAccessLog() + ",");
         if (getConnectionDraining() != null) sb.append("ConnectionDraining: " + getConnectionDraining() + ",");
-        if (getConnectionSettings() != null) sb.append("ConnectionSettings: " + getConnectionSettings() );
+        if (getConnectionSettings() != null) sb.append("ConnectionSettings: " + getConnectionSettings() + ",");
+        if (getAdditionalAttributes() != null) sb.append("AdditionalAttributes: " + getAdditionalAttributes() );
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +432,7 @@ public class LoadBalancerAttributes implements Serializable {
         hashCode = prime * hashCode + ((getAccessLog() == null) ? 0 : getAccessLog().hashCode()); 
         hashCode = prime * hashCode + ((getConnectionDraining() == null) ? 0 : getConnectionDraining().hashCode()); 
         hashCode = prime * hashCode + ((getConnectionSettings() == null) ? 0 : getConnectionSettings().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalAttributes() == null) ? 0 : getAdditionalAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -377,6 +452,8 @@ public class LoadBalancerAttributes implements Serializable {
         if (other.getConnectionDraining() != null && other.getConnectionDraining().equals(this.getConnectionDraining()) == false) return false; 
         if (other.getConnectionSettings() == null ^ this.getConnectionSettings() == null) return false;
         if (other.getConnectionSettings() != null && other.getConnectionSettings().equals(this.getConnectionSettings()) == false) return false; 
+        if (other.getAdditionalAttributes() == null ^ this.getAdditionalAttributes() == null) return false;
+        if (other.getAdditionalAttributes() != null && other.getAdditionalAttributes().equals(this.getAdditionalAttributes()) == false) return false; 
         return true;
     }
     

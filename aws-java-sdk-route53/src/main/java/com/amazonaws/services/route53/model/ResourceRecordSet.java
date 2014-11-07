@@ -68,7 +68,7 @@ public class ResourceRecordSet implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      */
     private String region;
 
@@ -412,7 +412,7 @@ public class ResourceRecordSet implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
      * @return <i>Latency-based resource record sets only:</i> Among resource record
      *         sets that have the same combination of DNS name and type, a value that
@@ -431,7 +431,7 @@ public class ResourceRecordSet implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
      * @param region <i>Latency-based resource record sets only:</i> Among resource record
      *         sets that have the same combination of DNS name and type, a value that
@@ -452,7 +452,7 @@ public class ResourceRecordSet implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
      * @param region <i>Latency-based resource record sets only:</i> Among resource record
      *         sets that have the same combination of DNS name and type, a value that
@@ -475,7 +475,7 @@ public class ResourceRecordSet implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
      * @param region <i>Latency-based resource record sets only:</i> Among resource record
      *         sets that have the same combination of DNS name and type, a value that
@@ -496,7 +496,7 @@ public class ResourceRecordSet implements Serializable {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1, cn-north-1
      *
      * @param region <i>Latency-based resource record sets only:</i> Among resource record
      *         sets that have the same combination of DNS name and type, a value that

@@ -31,6 +31,14 @@ import com.amazonaws.services.cognitosync.model.*;
  * User data is persisted in a dataset that can store up to 1 MB of
  * key-value pairs, and you can have up to 20 datasets per user identity.
  * </p>
+ * <p>
+ * With Amazon Cognito Sync, the data stored for each identity is
+ * accessible only to credentials assigned to that identity. In order to
+ * use the Cognito Sync service, you need to make API calls using
+ * credentials retrieved with
+ * <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html"> Amazon Cognito Identity service </a>
+ * .
+ * </p>
  */
 public interface AmazonCognitoSync {
 
@@ -94,7 +102,10 @@ public interface AmazonCognitoSync {
     /**
      * <p>
      * Posts updates to records and add and delete records for a dataset and
-     * user.
+     * user. The credentials used to make this API call need to have access
+     * to the identity data. With Amazon Cognito Sync, each identity has
+     * access only to its own data. You should use Amazon Cognito Identity
+     * service to retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param updateRecordsRequest Container for the necessary parameters to
@@ -120,6 +131,151 @@ public interface AmazonCognitoSync {
      *             either a problem with the data in the request, or a server side issue.
      */
     public UpdateRecordsResult updateRecords(UpdateRecordsRequest updateRecordsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets usage information for an identity, including number of datasets
+     * and data usage.
+     * </p>
+     *
+     * @param describeIdentityUsageRequest Container for the necessary
+     *           parameters to execute the DescribeIdentityUsage service method on
+     *           AmazonCognitoSync.
+     * 
+     * @return The response from the DescribeIdentityUsage service method, as
+     *         returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Unsubscribe from receiving notifications when a dataset is modified
+     * by another device.
+     * </p>
+     *
+     * @param unsubscribeFromDatasetRequest Container for the necessary
+     *           parameters to execute the UnsubscribeFromDataset service method on
+     *           AmazonCognitoSync.
+     * 
+     * @return The response from the UnsubscribeFromDataset service method,
+     *         as returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidConfigurationException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Sets the necessary configuration for push sync.
+     * </p>
+     *
+     * @param setIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the SetIdentityPoolConfiguration service method
+     *           on AmazonCognitoSync.
+     * 
+     * @return The response from the SetIdentityPoolConfiguration service
+     *         method, as returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets the configuration settings of an identity pool.
+     * </p>
+     *
+     * @param getIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the GetIdentityPoolConfiguration service method
+     *           on AmazonCognitoSync.
+     * 
+     * @return The response from the GetIdentityPoolConfiguration service
+     *         method, as returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Subscribes to receive notifications when a dataset is modified by
+     * another device.
+     * </p>
+     *
+     * @param subscribeToDatasetRequest Container for the necessary
+     *           parameters to execute the SubscribeToDataset service method on
+     *           AmazonCognitoSync.
+     * 
+     * @return The response from the SubscribeToDataset service method, as
+     *         returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidConfigurationException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -153,7 +309,11 @@ public interface AmazonCognitoSync {
 
     /**
      * <p>
-     * Lists datasets for an identity.
+     * Lists datasets for an identity. The credentials used to make this API
+     * call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listDatasetsRequest Container for the necessary parameters to
@@ -207,7 +367,11 @@ public interface AmazonCognitoSync {
     /**
      * <p>
      * Gets paginated records, optionally changed after a particular sync
-     * count for a dataset and identity.
+     * count for a dataset and identity. The credentials used to make this
+     * API call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listRecordsRequest Container for the necessary parameters to
@@ -234,7 +398,11 @@ public interface AmazonCognitoSync {
 
     /**
      * <p>
-     * Gets metadata about a dataset by identity and dataset name.
+     * Gets metadata about a dataset by identity and dataset name. The
+     * credentials used to make this API call need to have access to the
+     * identity data. With Amazon Cognito Sync, each identity has access only
+     * to its own data. You should use Amazon Cognito Identity service to
+     * retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param describeDatasetRequest Container for the necessary parameters
@@ -292,17 +460,16 @@ public interface AmazonCognitoSync {
 
     /**
      * <p>
-     * Gets usage information for an identity, including number of datasets
-     * and data usage.
+     * Registers a device to receive push sync notifications.
      * </p>
      *
-     * @param describeIdentityUsageRequest Container for the necessary
-     *           parameters to execute the DescribeIdentityUsage service method on
-     *           AmazonCognitoSync.
+     * @param registerDeviceRequest Container for the necessary parameters to
+     *           execute the RegisterDevice service method on AmazonCognitoSync.
      * 
-     * @return The response from the DescribeIdentityUsage service method, as
+     * @return The response from the RegisterDevice service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws InvalidConfigurationException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -316,7 +483,7 @@ public interface AmazonCognitoSync {
      *             If an error response is returned by AmazonCognitoSync indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) 
+    public RegisterDeviceResult registerDevice(RegisterDeviceRequest registerDeviceRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

@@ -60,4 +60,11 @@ class QueryCollection extends ItemCollection<QueryOutcome>
     public Integer getMaxResultSize() {
         return spec.getMaxResultSize();
     }
+
+    protected void setLastLowLevelResult(QueryOutcome lowLevelResult) {
+        super.setLastLowLevelResult(lowLevelResult);
+        QueryResult result = lowLevelResult.getQueryResult();
+        accumulateStats(result.getConsumedCapacity(), result.getCount(),
+                result.getScannedCount());
+    }
 }

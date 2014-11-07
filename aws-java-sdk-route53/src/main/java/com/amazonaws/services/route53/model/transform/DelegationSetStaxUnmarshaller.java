@@ -42,6 +42,14 @@ public class DelegationSetStaxUnmarshaller implements Unmarshaller<DelegationSet
             if (xmlEvent.isEndDocument()) return delegationSet;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+                if (context.testExpression("Id", targetDepth)) {
+                    delegationSet.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("CallerReference", targetDepth)) {
+                    delegationSet.setCallerReference(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("NameServers/NameServer", targetDepth)) {
                     delegationSet.getNameServers().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -419,7 +419,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      */
     @Override
     public PutObjectResult putObject(PutObjectRequest req) {
-        return crypto.putObjectSecurely(req);
+        return crypto.putObjectSecurely(req.clone());
     }
 
     @Override

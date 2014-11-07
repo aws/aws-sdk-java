@@ -45,7 +45,7 @@ public class GetInvalidationRequestMarshaller implements Marshaller<Request<GetI
         Request<GetInvalidationRequest> request = new DefaultRequest<GetInvalidationRequest>(getInvalidationRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2014-05-31/distribution/{DistributionId}/invalidation/{Id}"; 
+        String uriResourcePath = "2014-10-21/distribution/{DistributionId}/invalidation/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{DistributionId}", getString(getInvalidationRequest.getDistributionId())); 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getInvalidationRequest.getId())); 
 

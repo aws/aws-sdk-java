@@ -24,7 +24,10 @@ import java.io.Serializable;
 public class ListenerDescription implements Serializable {
 
     /**
-     * The Listener data type.
+     * The Listener data type. <p>For information about the protocols and the
+     * ports supported by Elastic Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      */
     private Listener listener;
 
@@ -41,29 +44,47 @@ public class ListenerDescription implements Serializable {
     public ListenerDescription() {}
     
     /**
-     * The Listener data type.
+     * The Listener data type. <p>For information about the protocols and the
+     * ports supported by Elastic Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      *
-     * @return The Listener data type.
+     * @return The Listener data type. <p>For information about the protocols and the
+     *         ports supported by Elastic Load Balancing, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     *         Configurations for Elastic Load Balancing</a>.
      */
     public Listener getListener() {
         return listener;
     }
     
     /**
-     * The Listener data type.
+     * The Listener data type. <p>For information about the protocols and the
+     * ports supported by Elastic Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      *
-     * @param listener The Listener data type.
+     * @param listener The Listener data type. <p>For information about the protocols and the
+     *         ports supported by Elastic Load Balancing, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     *         Configurations for Elastic Load Balancing</a>.
      */
     public void setListener(Listener listener) {
         this.listener = listener;
     }
     
     /**
-     * The Listener data type.
+     * The Listener data type. <p>For information about the protocols and the
+     * ports supported by Elastic Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listener The Listener data type.
+     * @param listener The Listener data type. <p>For information about the protocols and the
+     *         ports supported by Elastic Load Balancing, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     *         Configurations for Elastic Load Balancing</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

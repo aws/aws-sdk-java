@@ -51,6 +51,14 @@ import com.amazonaws.services.cognitosync.model.transform.*;
  * User data is persisted in a dataset that can store up to 1 MB of
  * key-value pairs, and you can have up to 20 datasets per user identity.
  * </p>
+ * <p>
+ * With Amazon Cognito Sync, the data stored for each identity is
+ * accessible only to credentials assigned to that identity. In order to
+ * use the Cognito Sync service, you need to make API calls using
+ * credentials retrieved with
+ * <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html"> Amazon Cognito Identity service </a>
+ * .
+ * </p>
  */
 public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements AmazonCognitoSync {
 
@@ -212,10 +220,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     private void init() {
         jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
         jsonErrorUnmarshallers.add(new ResourceConflictExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new NotAuthorizedExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
+        jsonErrorUnmarshallers.add(new InvalidConfigurationExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new InvalidParameterExceptionUnmarshaller());
         jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         
@@ -240,7 +249,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Posts updates to records and add and delete records for a dataset and
-     * user.
+     * user. The credentials used to make this API call need to have access
+     * to the identity data. With Amazon Cognito Sync, each identity has
+     * access only to its own data. You should use Amazon Cognito Identity
+     * service to retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param updateRecordsRequest Container for the necessary parameters to
@@ -285,6 +297,286 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 new UpdateRecordsResultJsonUnmarshaller();
             JsonResponseHandler<UpdateRecordsResult> responseHandler =
                 new JsonResponseHandler<UpdateRecordsResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets usage information for an identity, including number of datasets
+     * and data usage.
+     * </p>
+     *
+     * @param describeIdentityUsageRequest Container for the necessary
+     *           parameters to execute the DescribeIdentityUsage service method on
+     *           AmazonCognitoSync.
+     * 
+     * @return The response from the DescribeIdentityUsage service method, as
+     *         returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeIdentityUsageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIdentityUsageRequest> request = null;
+        Response<DescribeIdentityUsageResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIdentityUsageRequestMarshaller().marshall(describeIdentityUsageRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeIdentityUsageResult, JsonUnmarshallerContext> unmarshaller =
+                new DescribeIdentityUsageResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeIdentityUsageResult> responseHandler =
+                new JsonResponseHandler<DescribeIdentityUsageResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Unsubscribe from receiving notifications when a dataset is modified
+     * by another device.
+     * </p>
+     *
+     * @param unsubscribeFromDatasetRequest Container for the necessary
+     *           parameters to execute the UnsubscribeFromDataset service method on
+     *           AmazonCognitoSync.
+     * 
+     * @return The response from the UnsubscribeFromDataset service method,
+     *         as returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidConfigurationException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
+        ExecutionContext executionContext = createExecutionContext(unsubscribeFromDatasetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnsubscribeFromDatasetRequest> request = null;
+        Response<UnsubscribeFromDatasetResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnsubscribeFromDatasetRequestMarshaller().marshall(unsubscribeFromDatasetRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UnsubscribeFromDatasetResult, JsonUnmarshallerContext> unmarshaller =
+                new UnsubscribeFromDatasetResultJsonUnmarshaller();
+            JsonResponseHandler<UnsubscribeFromDatasetResult> responseHandler =
+                new JsonResponseHandler<UnsubscribeFromDatasetResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the necessary configuration for push sync.
+     * </p>
+     *
+     * @param setIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the SetIdentityPoolConfiguration service method
+     *           on AmazonCognitoSync.
+     * 
+     * @return The response from the SetIdentityPoolConfiguration service
+     *         method, as returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(setIdentityPoolConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetIdentityPoolConfigurationRequest> request = null;
+        Response<SetIdentityPoolConfigurationResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetIdentityPoolConfigurationRequestMarshaller().marshall(setIdentityPoolConfigurationRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<SetIdentityPoolConfigurationResult, JsonUnmarshallerContext> unmarshaller =
+                new SetIdentityPoolConfigurationResultJsonUnmarshaller();
+            JsonResponseHandler<SetIdentityPoolConfigurationResult> responseHandler =
+                new JsonResponseHandler<SetIdentityPoolConfigurationResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the configuration settings of an identity pool.
+     * </p>
+     *
+     * @param getIdentityPoolConfigurationRequest Container for the necessary
+     *           parameters to execute the GetIdentityPoolConfiguration service method
+     *           on AmazonCognitoSync.
+     * 
+     * @return The response from the GetIdentityPoolConfiguration service
+     *         method, as returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(getIdentityPoolConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetIdentityPoolConfigurationRequest> request = null;
+        Response<GetIdentityPoolConfigurationResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetIdentityPoolConfigurationRequestMarshaller().marshall(getIdentityPoolConfigurationRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<GetIdentityPoolConfigurationResult, JsonUnmarshallerContext> unmarshaller =
+                new GetIdentityPoolConfigurationResultJsonUnmarshaller();
+            JsonResponseHandler<GetIdentityPoolConfigurationResult> responseHandler =
+                new JsonResponseHandler<GetIdentityPoolConfigurationResult>(unmarshaller);
+            
+            response = invoke(request, responseHandler, executionContext);
+            
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+        }
+    }
+
+    /**
+     * <p>
+     * Subscribes to receive notifications when a dataset is modified by
+     * another device.
+     * </p>
+     *
+     * @param subscribeToDatasetRequest Container for the necessary
+     *           parameters to execute the SubscribeToDataset service method on
+     *           AmazonCognitoSync.
+     * 
+     * @return The response from the SubscribeToDataset service method, as
+     *         returned by AmazonCognitoSync.
+     * 
+     * @throws InvalidConfigurationException
+     * @throws InvalidParameterException
+     * @throws ResourceNotFoundException
+     * @throws NotAuthorizedException
+     * @throws InternalErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCognitoSync indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest) {
+        ExecutionContext executionContext = createExecutionContext(subscribeToDatasetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SubscribeToDatasetRequest> request = null;
+        Response<SubscribeToDatasetResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SubscribeToDatasetRequestMarshaller().marshall(subscribeToDatasetRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<SubscribeToDatasetResult, JsonUnmarshallerContext> unmarshaller =
+                new SubscribeToDatasetResultJsonUnmarshaller();
+            JsonResponseHandler<SubscribeToDatasetResult> responseHandler =
+                new JsonResponseHandler<SubscribeToDatasetResult>(unmarshaller);
             
             response = invoke(request, responseHandler, executionContext);
             
@@ -353,7 +645,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Lists datasets for an identity.
+     * Lists datasets for an identity. The credentials used to make this API
+     * call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listDatasetsRequest Container for the necessary parameters to
@@ -461,7 +757,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets paginated records, optionally changed after a particular sync
-     * count for a dataset and identity.
+     * count for a dataset and identity. The credentials used to make this
+     * API call need to have access to the identity data. With Amazon Cognito
+     * Sync, each identity has access only to its own data. You should use
+     * Amazon Cognito Identity service to retrieve the credentials necessary
+     * to make this API call.
      * </p>
      *
      * @param listRecordsRequest Container for the necessary parameters to
@@ -515,7 +815,11 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets metadata about a dataset by identity and dataset name.
+     * Gets metadata about a dataset by identity and dataset name. The
+     * credentials used to make this API call need to have access to the
+     * identity data. With Amazon Cognito Sync, each identity has access only
+     * to its own data. You should use Amazon Cognito Identity service to
+     * retrieve the credentials necessary to make this API call.
      * </p>
      *
      * @param describeDatasetRequest Container for the necessary parameters
@@ -627,17 +931,16 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets usage information for an identity, including number of datasets
-     * and data usage.
+     * Registers a device to receive push sync notifications.
      * </p>
      *
-     * @param describeIdentityUsageRequest Container for the necessary
-     *           parameters to execute the DescribeIdentityUsage service method on
-     *           AmazonCognitoSync.
+     * @param registerDeviceRequest Container for the necessary parameters to
+     *           execute the RegisterDevice service method on AmazonCognitoSync.
      * 
-     * @return The response from the DescribeIdentityUsage service method, as
+     * @return The response from the RegisterDevice service method, as
      *         returned by AmazonCognitoSync.
      * 
+     * @throws InvalidConfigurationException
      * @throws InvalidParameterException
      * @throws ResourceNotFoundException
      * @throws NotAuthorizedException
@@ -651,26 +954,26 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCognitoSync indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeIdentityUsageRequest);
+    public RegisterDeviceResult registerDevice(RegisterDeviceRequest registerDeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeIdentityUsageRequest> request = null;
-        Response<DescribeIdentityUsageResult> response = null;
+        Request<RegisterDeviceRequest> request = null;
+        Response<RegisterDeviceResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityUsageRequestMarshaller().marshall(describeIdentityUsageRequest);
+                request = new RegisterDeviceRequestMarshaller().marshall(registerDeviceRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            Unmarshaller<DescribeIdentityUsageResult, JsonUnmarshallerContext> unmarshaller =
-                new DescribeIdentityUsageResultJsonUnmarshaller();
-            JsonResponseHandler<DescribeIdentityUsageResult> responseHandler =
-                new JsonResponseHandler<DescribeIdentityUsageResult>(unmarshaller);
+            Unmarshaller<RegisterDeviceResult, JsonUnmarshallerContext> unmarshaller =
+                new RegisterDeviceResultJsonUnmarshaller();
+            JsonResponseHandler<RegisterDeviceResult> responseHandler =
+                new JsonResponseHandler<RegisterDeviceResult>(unmarshaller);
             
             response = invoke(request, responseHandler, executionContext);
             

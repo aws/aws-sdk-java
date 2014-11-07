@@ -89,6 +89,7 @@ import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.CredentialsRequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
+import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
@@ -241,7 +242,7 @@ public class AmazonHttpClient {
         try {
             SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
 
-            SSLSocketFactory sf = new SSLSocketFactory(
+            SdkTLSSocketFactory sf = new SdkTLSSocketFactory(
                     SSLContext.getDefault(),
                     SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
             Scheme https = new Scheme("https", 443, sf);
@@ -425,11 +426,11 @@ public class AmazonHttpClient {
         final Map<String, String> originalHeaders =
             new HashMap<String, String>(request.getHeaders());
         // Always mark the input stream before execution.
-        final InputStream requestInputStream = request.getContent();
-        if (requestInputStream != null && requestInputStream.markSupported()) {
+        final InputStream originalContent = request.getContent();
+        if (originalContent != null && originalContent.markSupported()) {
             AmazonWebServiceRequest awsreq = request.getOriginalRequest();
             final int readLimit = awsreq.getRequestClientOptions().getReadLimit();
-            requestInputStream.mark(readLimit);
+            originalContent.mark(readLimit);
         }
         final ExecOneRequestParams p = new ExecOneRequestParams();
         while (true) {
@@ -449,6 +450,7 @@ public class AmazonHttpClient {
             if (p.isRetry()) {
                 request.setParameters(originalParameters);
                 request.setHeaders(originalHeaders);
+                request.setContent(originalContent);
             }
             try {
                 Response<T> response = executeOneRequest(request, responseHandler,

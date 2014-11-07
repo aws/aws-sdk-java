@@ -36,6 +36,15 @@ public class GetHostedZoneResult implements Serializable {
     private DelegationSet delegationSet;
 
     /**
+     * A complex type that contains information about VPCs associated with
+     * the specified hosted zone.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VPC> vPCs;
+
+    /**
      * A complex type that contains the information about the specified
      * hosted zone.
      *
@@ -114,6 +123,94 @@ public class GetHostedZoneResult implements Serializable {
     }
 
     /**
+     * A complex type that contains information about VPCs associated with
+     * the specified hosted zone.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @return A complex type that contains information about VPCs associated with
+     *         the specified hosted zone.
+     */
+    public java.util.List<VPC> getVPCs() {
+        if (vPCs == null) {
+              vPCs = new com.amazonaws.internal.ListWithAutoConstructFlag<VPC>();
+              vPCs.setAutoConstruct(true);
+        }
+        return vPCs;
+    }
+    
+    /**
+     * A complex type that contains information about VPCs associated with
+     * the specified hosted zone.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param vPCs A complex type that contains information about VPCs associated with
+     *         the specified hosted zone.
+     */
+    public void setVPCs(java.util.Collection<VPC> vPCs) {
+        if (vPCs == null) {
+            this.vPCs = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<VPC> vPCsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VPC>(vPCs.size());
+        vPCsCopy.addAll(vPCs);
+        this.vPCs = vPCsCopy;
+    }
+    
+    /**
+     * A complex type that contains information about VPCs associated with
+     * the specified hosted zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param vPCs A complex type that contains information about VPCs associated with
+     *         the specified hosted zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetHostedZoneResult withVPCs(VPC... vPCs) {
+        if (getVPCs() == null) setVPCs(new java.util.ArrayList<VPC>(vPCs.length));
+        for (VPC value : vPCs) {
+            getVPCs().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A complex type that contains information about VPCs associated with
+     * the specified hosted zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param vPCs A complex type that contains information about VPCs associated with
+     *         the specified hosted zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public GetHostedZoneResult withVPCs(java.util.Collection<VPC> vPCs) {
+        if (vPCs == null) {
+            this.vPCs = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<VPC> vPCsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VPC>(vPCs.size());
+            vPCsCopy.addAll(vPCs);
+            this.vPCs = vPCsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -126,7 +223,8 @@ public class GetHostedZoneResult implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZone() != null) sb.append("HostedZone: " + getHostedZone() + ",");
-        if (getDelegationSet() != null) sb.append("DelegationSet: " + getDelegationSet() );
+        if (getDelegationSet() != null) sb.append("DelegationSet: " + getDelegationSet() + ",");
+        if (getVPCs() != null) sb.append("VPCs: " + getVPCs() );
         sb.append("}");
         return sb.toString();
     }
@@ -138,6 +236,7 @@ public class GetHostedZoneResult implements Serializable {
         
         hashCode = prime * hashCode + ((getHostedZone() == null) ? 0 : getHostedZone().hashCode()); 
         hashCode = prime * hashCode + ((getDelegationSet() == null) ? 0 : getDelegationSet().hashCode()); 
+        hashCode = prime * hashCode + ((getVPCs() == null) ? 0 : getVPCs().hashCode()); 
         return hashCode;
     }
     
@@ -153,6 +252,8 @@ public class GetHostedZoneResult implements Serializable {
         if (other.getHostedZone() != null && other.getHostedZone().equals(this.getHostedZone()) == false) return false; 
         if (other.getDelegationSet() == null ^ this.getDelegationSet() == null) return false;
         if (other.getDelegationSet() != null && other.getDelegationSet().equals(this.getDelegationSet()) == false) return false; 
+        if (other.getVPCs() == null ^ this.getVPCs() == null) return false;
+        if (other.getVPCs() != null && other.getVPCs().equals(this.getVPCs()) == false) return false; 
         return true;
     }
     

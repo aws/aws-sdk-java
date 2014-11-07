@@ -43,6 +43,9 @@ public class ListRecordsResult implements Serializable {
      */
     private Long datasetSyncCount;
 
+    /**
+     * The user/device that made the last change to this record.
+     */
     private String lastModifiedBy;
 
     /**
@@ -233,29 +236,29 @@ public class ListRecordsResult implements Serializable {
     }
 
     /**
-     * Returns the value of the LastModifiedBy property for this object.
+     * The user/device that made the last change to this record.
      *
-     * @return The value of the LastModifiedBy property for this object.
+     * @return The user/device that made the last change to this record.
      */
     public String getLastModifiedBy() {
         return lastModifiedBy;
     }
     
     /**
-     * Sets the value of the LastModifiedBy property for this object.
+     * The user/device that made the last change to this record.
      *
-     * @param lastModifiedBy The new value for the LastModifiedBy property for this object.
+     * @param lastModifiedBy The user/device that made the last change to this record.
      */
     public void setLastModifiedBy(String lastModifiedBy) {
         this.lastModifiedBy = lastModifiedBy;
     }
     
     /**
-     * Sets the value of the LastModifiedBy property for this object.
+     * The user/device that made the last change to this record.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastModifiedBy The new value for the LastModifiedBy property for this object.
+     * @param lastModifiedBy The user/device that made the last change to this record.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

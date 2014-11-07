@@ -23,6 +23,10 @@ import java.io.Serializable;
  */
 public class DelegationSet implements Serializable {
 
+    private String id;
+
+    private String callerReference;
+
     /**
      * A complex type that contains the authoritative name servers for the
      * hosted zone. Use the method provided by your domain registrar to add
@@ -52,6 +56,90 @@ public class DelegationSet implements Serializable {
      */
     public DelegationSet(java.util.List<String> nameServers) {
         setNameServers(nameServers);
+    }
+
+    /**
+     * Returns the value of the Id property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @return The value of the Id property for this object.
+     */
+    public String getId() {
+        return id;
+    }
+    
+    /**
+     * Sets the value of the Id property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @param id The new value for the Id property for this object.
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    /**
+     * Sets the value of the Id property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @param id The new value for the Id property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DelegationSet withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * Returns the value of the CallerReference property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     *
+     * @return The value of the CallerReference property for this object.
+     */
+    public String getCallerReference() {
+        return callerReference;
+    }
+    
+    /**
+     * Sets the value of the CallerReference property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     *
+     * @param callerReference The new value for the CallerReference property for this object.
+     */
+    public void setCallerReference(String callerReference) {
+        this.callerReference = callerReference;
+    }
+    
+    /**
+     * Sets the value of the CallerReference property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     *
+     * @param callerReference The new value for the CallerReference property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DelegationSet withCallerReference(String callerReference) {
+        this.callerReference = callerReference;
+        return this;
     }
 
     /**
@@ -170,6 +258,8 @@ public class DelegationSet implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
         if (getNameServers() != null) sb.append("NameServers: " + getNameServers() );
         sb.append("}");
         return sb.toString();
@@ -180,6 +270,8 @@ public class DelegationSet implements Serializable {
         final int prime = 31;
         int hashCode = 1;
         
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode()); 
         hashCode = prime * hashCode + ((getNameServers() == null) ? 0 : getNameServers().hashCode()); 
         return hashCode;
     }
@@ -192,6 +284,10 @@ public class DelegationSet implements Serializable {
         if (obj instanceof DelegationSet == false) return false;
         DelegationSet other = (DelegationSet)obj;
         
+        if (other.getId() == null ^ this.getId() == null) return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getCallerReference() == null ^ this.getCallerReference() == null) return false;
+        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false) return false; 
         if (other.getNameServers() == null ^ this.getNameServers() == null) return false;
         if (other.getNameServers() != null && other.getNameServers().equals(this.getNameServers()) == false) return false; 
         return true;

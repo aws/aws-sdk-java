@@ -54,14 +54,22 @@ import com.amazonaws.util.DateUtils;
  * <p>
  * The first method called must be <code>array</code> or <code>object</code>.
  * There are no methods for adding commas or colons. JSONWriter adds them for
- * you. Objects and arrays can be nested up to 20 levels deep.
+ * you. Objects and arrays can be nested up to 70 levels deep.
  * <p>
  * This can sometimes be easier than using a JSONObject to build a string.
  *
  * @version 2010-03-11
  */
 public class JSONWriter {
-    private static final int maxdepth = 20;
+
+    /**
+     * DynamoDB supports nested attributes up to 32 levels deep.
+     * http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html
+     *
+     * and the serialized JSON form of the map-depth attribute will be 32*2 levels deep:
+     * {"level-0" : {"M" : {"level-1" : {"M" : ...
+     */
+    private static final int maxdepth = 70;
 
     /**
      * The comma flag determines if a comma should be output before the next

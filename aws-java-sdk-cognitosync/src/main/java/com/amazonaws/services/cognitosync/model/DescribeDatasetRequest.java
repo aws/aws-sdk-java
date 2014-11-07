@@ -21,7 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#describeDataset(DescribeDatasetRequest) DescribeDataset operation}.
  * <p>
- * Gets metadata about a dataset by identity and dataset name.
+ * Gets metadata about a dataset by identity and dataset name. The
+ * credentials used to make this API call need to have access to the
+ * identity data. With Amazon Cognito Sync, each identity has access only
+ * to its own data. You should use Amazon Cognito Identity service to
+ * retrieve the credentials necessary to make this API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#describeDataset(DescribeDatasetRequest)

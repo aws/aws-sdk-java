@@ -58,6 +58,10 @@ public class CreateHostedZoneResultStaxUnmarshaller implements Unmarshaller<Crea
                     createHostedZoneResult.setDelegationSet(DelegationSetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("VPC", targetDepth)) {
+                    createHostedZoneResult.setVPC(VPCStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createHostedZoneResult;

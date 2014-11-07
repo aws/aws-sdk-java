@@ -759,4 +759,34 @@ public abstract class AmazonWebServiceClient {
             this.signerRegionOverride = signerRegionOverride;
         }
     }
+
+    /**
+     * Fluent method for {@link #setRegion(Region)}.
+     *<pre>
+     * Example:
+     * 
+     *   AmazonDynamoDBClient client = new AmazonDynamoDBClient(...).<AmazonDynamoDBClient>withRegion(...);
+     *</pre>
+     * @see #setRegion(Region)
+     */
+    public <T extends AmazonWebServiceClient> T withRegion(Region region) {
+        setRegion(region);
+        @SuppressWarnings("unchecked") T t= (T)this;
+        return t;
+    }
+
+    /**
+     * Fluent method for {@link #setEndpoint(String)}.
+     *<pre>
+     * Example:
+     * 
+     *   AmazonDynamoDBClient client = new AmazonDynamoDBClient(...).<AmazonDynamoDBClient>withEndPoint(...);
+     *</pre>
+     * @see #setEndpoint(String)
+     */
+    public <T extends AmazonWebServiceClient> T withEndpoint(String endpoint) {
+        setEndpoint(endpoint);
+        @SuppressWarnings("unchecked") T t= (T)this;
+        return t;
+    }
 }

@@ -25,6 +25,9 @@ import com.amazonaws.services.dynamodbv2.model.DeleteItemResult;
 public class DeleteItemOutcome {
     private final DeleteItemResult result;
     
+    /**
+     * @param result the low-level result; must not be null
+     */
     public DeleteItemOutcome(DeleteItemResult result) {
         if (result == null)
             throw new IllegalArgumentException();
@@ -42,7 +45,7 @@ public class DeleteItemOutcome {
     }
 
     /**
-     * Returns all the low-level details returned from the server side.
+     * Returns a non-null low-level result returned from the server side.
      */
     public DeleteItemResult getDeleteItemResult() {
         return result;

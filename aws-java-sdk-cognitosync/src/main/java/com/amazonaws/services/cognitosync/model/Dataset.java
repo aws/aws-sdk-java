@@ -50,7 +50,7 @@ public class Dataset implements Serializable {
     private String datasetName;
 
     /**
-     * Date.
+     * Date on which the dataset was created.
      */
     private java.util.Date creationDate;
 
@@ -183,29 +183,29 @@ public class Dataset implements Serializable {
     }
 
     /**
-     * Date.
+     * Date on which the dataset was created.
      *
-     * @return Date.
+     * @return Date on which the dataset was created.
      */
     public java.util.Date getCreationDate() {
         return creationDate;
     }
     
     /**
-     * Date.
+     * Date on which the dataset was created.
      *
-     * @param creationDate Date.
+     * @param creationDate Date on which the dataset was created.
      */
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
     
     /**
-     * Date.
+     * Date on which the dataset was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param creationDate Date.
+     * @param creationDate Date on which the dataset was created.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
