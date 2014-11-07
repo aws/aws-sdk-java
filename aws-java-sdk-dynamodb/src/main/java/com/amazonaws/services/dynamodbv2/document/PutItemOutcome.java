@@ -25,6 +25,9 @@ import com.amazonaws.services.dynamodbv2.model.PutItemResult;
 public class PutItemOutcome {
     private final PutItemResult result;
 
+    /**
+     * @param result the low-level result; must not be null
+     */
     public PutItemOutcome(PutItemResult result) {
         if (result == null)
             throw new IllegalArgumentException();
@@ -42,7 +45,7 @@ public class PutItemOutcome {
     }
 
     /**
-     * Returns all the low-level details returned from the server side.
+     * Returns a non-null low-level result returned from the server side.
      */
     public PutItemResult getPutItemResult() {
         return result;

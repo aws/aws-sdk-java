@@ -74,6 +74,11 @@ public class ClientConfiguration {
      */
     public static final long DEFAULT_CONNECTION_TTL = -1;
 
+    /**
+     * The default on whether to use TCP KeepAlive.
+     */
+    public static final boolean DEFAULT_TCP_KEEP_ALIVE = false;
+
     /** The HTTP user agent header passed with all HTTP requests. */
     private String userAgent = DEFAULT_USER_AGENT;
 
@@ -180,6 +185,16 @@ public class ClientConfiguration {
      * checked to see if the connection can be reused.
      */
     private long connectionTTL = DEFAULT_CONNECTION_TTL;
+
+    /**
+     * Optional override to enable support for TCP KeepAlive (not to be confused
+     * with HTTP KeepAlive). TCP KeepAlive can be used to detect misbehaving routers
+     * or down servers through the use of special, empty-data keep alive packets.
+     * <p>
+     * Actual TCP KeepAlive values (timeout, number of packets, etc) are configured via
+     * the operating system (sysctl on Linux, and Registry values on Windows).
+     */
+    private boolean tcpKeepAlive = DEFAULT_TCP_KEEP_ALIVE;
 
     public ClientConfiguration() {}
 
@@ -1090,6 +1105,29 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withConnectionTTL(long connectionTTL) {
         setConnectionTTL(connectionTTL);
+        return this;
+    }
+
+    /**
+     * Returns whether or not TCP KeepAlive support is enabled.
+     */
+    public boolean useTcpKeepAlive() {
+        return tcpKeepAlive;
+    }
+
+    /**
+     * Sets whether or not to enable TCP KeepAlive support at the socket level.
+     */
+    public void setUseTcpKeepAlive(final boolean use) {
+        this.tcpKeepAlive = use;
+    }
+
+    /**
+     * Sets whether or not to enable TCP KeepAlive support at the socket level.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withTcpKeepAlive(final boolean use) {
+        setUseTcpKeepAlive(use);
         return this;
     }
 }

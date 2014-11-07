@@ -79,4 +79,24 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
         return this;
     }
     
+    /**
+     * Returns a clone (as deep as possible) of this request object.
+     */
+    @Override
+    public EncryptedPutObjectRequest clone() {
+        EncryptedPutObjectRequest cloned = 
+            new EncryptedPutObjectRequest(
+                getBucketName(), getKey(), getRedirectLocation());
+        cloned.setAccessControlList(getAccessControlList());
+        cloned.setCannedAcl(getCannedAcl());
+        cloned.setFile(getFile());
+        cloned.setInputStream(getInputStream());
+        final ObjectMetadata metadata = getMetadata();
+        cloned.setMetadata(metadata == null ? null : metadata.clone());
+        cloned.setStorageClass(getStorageClass());
+        cloned.setSSECustomerKey(getSSECustomerKey());
+        cloned.materialsDescription = materialsDescription == null
+            ? null : new HashMap<String, String>(materialsDescription);
+        return copyBaseTo(cloned);
+    }
 }

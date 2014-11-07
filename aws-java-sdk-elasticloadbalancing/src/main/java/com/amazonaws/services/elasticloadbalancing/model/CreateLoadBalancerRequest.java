@@ -75,15 +75,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers, must have a maximum of 32
+     * The name associated with the load balancer. <p> The name must be
+     * unique within your set of load balancers, must have a maximum of 32
      * characters, and must only contain alphanumeric characters or hyphens.
      */
     private String loadBalancerName;
 
     /**
      * A list of the following tuples: Protocol, LoadBalancerPort,
-     * InstanceProtocol, InstancePort, and SSLCertificateId.
+     * InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     * information about the protocols and the ports supported by Elastic
+     * Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Listener> listeners;
 
@@ -144,8 +148,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name associated with the load balancer.
-     * The name must be unique within your set of load balancers, must have a
-     * maximum of 32 characters, and must only contain alphanumeric
+     * <p> The name must be unique within your set of load balancers, must
+     * have a maximum of 32 characters, and must only contain alphanumeric
      * characters or hyphens.
      */
     public CreateLoadBalancerRequest(String loadBalancerName) {
@@ -158,12 +162,15 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name associated with the load balancer.
-     * The name must be unique within your set of load balancers, must have a
-     * maximum of 32 characters, and must only contain alphanumeric
+     * <p> The name must be unique within your set of load balancers, must
+     * have a maximum of 32 characters, and must only contain alphanumeric
      * characters or hyphens.
      * @param listeners A list of the following tuples: Protocol,
      * LoadBalancerPort, InstanceProtocol, InstancePort, and
-     * SSLCertificateId.
+     * SSLCertificateId. <p>For information about the protocols and the ports
+     * supported by Elastic Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      * @param availabilityZones A list of Availability Zones. <p> At least
      * one Availability Zone must be specified. Specified Availability Zones
      * must be in the same EC2 Region as the load balancer. Traffic will be
@@ -178,12 +185,12 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers, must have a maximum of 32
+     * The name associated with the load balancer. <p> The name must be
+     * unique within your set of load balancers, must have a maximum of 32
      * characters, and must only contain alphanumeric characters or hyphens.
      *
-     * @return The name associated with the load balancer. The name must be unique
-     *         within your set of load balancers, must have a maximum of 32
+     * @return The name associated with the load balancer. <p> The name must be
+     *         unique within your set of load balancers, must have a maximum of 32
      *         characters, and must only contain alphanumeric characters or hyphens.
      */
     public String getLoadBalancerName() {
@@ -191,12 +198,12 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers, must have a maximum of 32
+     * The name associated with the load balancer. <p> The name must be
+     * unique within your set of load balancers, must have a maximum of 32
      * characters, and must only contain alphanumeric characters or hyphens.
      *
-     * @param loadBalancerName The name associated with the load balancer. The name must be unique
-     *         within your set of load balancers, must have a maximum of 32
+     * @param loadBalancerName The name associated with the load balancer. <p> The name must be
+     *         unique within your set of load balancers, must have a maximum of 32
      *         characters, and must only contain alphanumeric characters or hyphens.
      */
     public void setLoadBalancerName(String loadBalancerName) {
@@ -204,14 +211,14 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name associated with the load balancer. The name must be unique
-     * within your set of load balancers, must have a maximum of 32
+     * The name associated with the load balancer. <p> The name must be
+     * unique within your set of load balancers, must have a maximum of 32
      * characters, and must only contain alphanumeric characters or hyphens.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the load balancer. The name must be unique
-     *         within your set of load balancers, must have a maximum of 32
+     * @param loadBalancerName The name associated with the load balancer. <p> The name must be
+     *         unique within your set of load balancers, must have a maximum of 32
      *         characters, and must only contain alphanumeric characters or hyphens.
      *
      * @return A reference to this updated object so that method calls can be chained
@@ -224,10 +231,18 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
     /**
      * A list of the following tuples: Protocol, LoadBalancerPort,
-     * InstanceProtocol, InstancePort, and SSLCertificateId.
+     * InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     * information about the protocols and the ports supported by Elastic
+     * Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      *
      * @return A list of the following tuples: Protocol, LoadBalancerPort,
-     *         InstanceProtocol, InstancePort, and SSLCertificateId.
+     *         InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     *         information about the protocols and the ports supported by Elastic
+     *         Load Balancing, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     *         Configurations for Elastic Load Balancing</a>.
      */
     public java.util.List<Listener> getListeners() {
         if (listeners == null) {
@@ -239,10 +254,18 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * A list of the following tuples: Protocol, LoadBalancerPort,
-     * InstanceProtocol, InstancePort, and SSLCertificateId.
+     * InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     * information about the protocols and the ports supported by Elastic
+     * Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      *
      * @param listeners A list of the following tuples: Protocol, LoadBalancerPort,
-     *         InstanceProtocol, InstancePort, and SSLCertificateId.
+     *         InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     *         information about the protocols and the ports supported by Elastic
+     *         Load Balancing, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     *         Configurations for Elastic Load Balancing</a>.
      */
     public void setListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {
@@ -256,12 +279,20 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * A list of the following tuples: Protocol, LoadBalancerPort,
-     * InstanceProtocol, InstancePort, and SSLCertificateId.
+     * InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     * information about the protocols and the ports supported by Elastic
+     * Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners A list of the following tuples: Protocol, LoadBalancerPort,
-     *         InstanceProtocol, InstancePort, and SSLCertificateId.
+     *         InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     *         information about the protocols and the ports supported by Elastic
+     *         Load Balancing, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     *         Configurations for Elastic Load Balancing</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -276,12 +307,20 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     
     /**
      * A list of the following tuples: Protocol, LoadBalancerPort,
-     * InstanceProtocol, InstancePort, and SSLCertificateId.
+     * InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     * information about the protocols and the ports supported by Elastic
+     * Load Balancing, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     * Configurations for Elastic Load Balancing</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners A list of the following tuples: Protocol, LoadBalancerPort,
-     *         InstanceProtocol, InstancePort, and SSLCertificateId.
+     *         InstanceProtocol, InstancePort, and SSLCertificateId. <p>For
+     *         information about the protocols and the ports supported by Elastic
+     *         Load Balancing, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
+     *         Configurations for Elastic Load Balancing</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

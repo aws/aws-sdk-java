@@ -22,7 +22,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cognitosync.AmazonCognitoSync#updateRecords(UpdateRecordsRequest) UpdateRecords operation}.
  * <p>
  * Posts updates to records and add and delete records for a dataset and
- * user.
+ * user. The credentials used to make this API call need to have access
+ * to the identity data. With Amazon Cognito Sync, each identity has
+ * access only to its own data. You should use Amazon Cognito Identity
+ * service to retrieve the credentials necessary to make this API call.
  * </p>
  *
  * @see com.amazonaws.services.cognitosync.AmazonCognitoSync#updateRecords(UpdateRecordsRequest)
@@ -62,7 +65,15 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
     private String datasetName;
 
     /**
-     * 
+     * The unique ID generated for this device by Cognito.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     */
+    private String deviceId;
+
+    /**
+     * A list of patch operations.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<RecordPatch> recordPatches;
 
@@ -72,6 +83,11 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
      */
     private String syncSessionToken;
 
+    /**
+     * Intended to supply a device ID that will populate the
+     * <code>lastModifiedBy</code> field referenced in other methods. The
+     * <code>ClientContext</code> field is not yet implemented.
+     */
     private String clientContext;
 
     /**
@@ -240,9 +256,51 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * 
+     * The unique ID generated for this device by Cognito.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
      *
-     * @return 
+     * @return The unique ID generated for this device by Cognito.
+     */
+    public String getDeviceId() {
+        return deviceId;
+    }
+    
+    /**
+     * The unique ID generated for this device by Cognito.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @param deviceId The unique ID generated for this device by Cognito.
+     */
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+    
+    /**
+     * The unique ID generated for this device by Cognito.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     *
+     * @param deviceId The unique ID generated for this device by Cognito.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public UpdateRecordsRequest withDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    /**
+     * A list of patch operations.
+     *
+     * @return A list of patch operations.
      */
     public java.util.List<RecordPatch> getRecordPatches() {
         if (recordPatches == null) {
@@ -253,9 +311,9 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * 
+     * A list of patch operations.
      *
-     * @param recordPatches 
+     * @param recordPatches A list of patch operations.
      */
     public void setRecordPatches(java.util.Collection<RecordPatch> recordPatches) {
         if (recordPatches == null) {
@@ -268,11 +326,11 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * 
+     * A list of patch operations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param recordPatches 
+     * @param recordPatches A list of patch operations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -286,11 +344,11 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
     }
     
     /**
-     * 
+     * A list of patch operations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param recordPatches 
+     * @param recordPatches A list of patch operations.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -347,29 +405,41 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Returns the value of the ClientContext property for this object.
+     * Intended to supply a device ID that will populate the
+     * <code>lastModifiedBy</code> field referenced in other methods. The
+     * <code>ClientContext</code> field is not yet implemented.
      *
-     * @return The value of the ClientContext property for this object.
+     * @return Intended to supply a device ID that will populate the
+     *         <code>lastModifiedBy</code> field referenced in other methods. The
+     *         <code>ClientContext</code> field is not yet implemented.
      */
     public String getClientContext() {
         return clientContext;
     }
     
     /**
-     * Sets the value of the ClientContext property for this object.
+     * Intended to supply a device ID that will populate the
+     * <code>lastModifiedBy</code> field referenced in other methods. The
+     * <code>ClientContext</code> field is not yet implemented.
      *
-     * @param clientContext The new value for the ClientContext property for this object.
+     * @param clientContext Intended to supply a device ID that will populate the
+     *         <code>lastModifiedBy</code> field referenced in other methods. The
+     *         <code>ClientContext</code> field is not yet implemented.
      */
     public void setClientContext(String clientContext) {
         this.clientContext = clientContext;
     }
     
     /**
-     * Sets the value of the ClientContext property for this object.
+     * Intended to supply a device ID that will populate the
+     * <code>lastModifiedBy</code> field referenced in other methods. The
+     * <code>ClientContext</code> field is not yet implemented.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientContext The new value for the ClientContext property for this object.
+     * @param clientContext Intended to supply a device ID that will populate the
+     *         <code>lastModifiedBy</code> field referenced in other methods. The
+     *         <code>ClientContext</code> field is not yet implemented.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -394,6 +464,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
         if (getIdentityPoolId() != null) sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
         if (getIdentityId() != null) sb.append("IdentityId: " + getIdentityId() + ",");
         if (getDatasetName() != null) sb.append("DatasetName: " + getDatasetName() + ",");
+        if (getDeviceId() != null) sb.append("DeviceId: " + getDeviceId() + ",");
         if (getRecordPatches() != null) sb.append("RecordPatches: " + getRecordPatches() + ",");
         if (getSyncSessionToken() != null) sb.append("SyncSessionToken: " + getSyncSessionToken() + ",");
         if (getClientContext() != null) sb.append("ClientContext: " + getClientContext() );
@@ -409,6 +480,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode()); 
         hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode()); 
         hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode()); 
+        hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode()); 
         hashCode = prime * hashCode + ((getRecordPatches() == null) ? 0 : getRecordPatches().hashCode()); 
         hashCode = prime * hashCode + ((getSyncSessionToken() == null) ? 0 : getSyncSessionToken().hashCode()); 
         hashCode = prime * hashCode + ((getClientContext() == null) ? 0 : getClientContext().hashCode()); 
@@ -429,6 +501,8 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements Ser
         if (other.getIdentityId() != null && other.getIdentityId().equals(this.getIdentityId()) == false) return false; 
         if (other.getDatasetName() == null ^ this.getDatasetName() == null) return false;
         if (other.getDatasetName() != null && other.getDatasetName().equals(this.getDatasetName()) == false) return false; 
+        if (other.getDeviceId() == null ^ this.getDeviceId() == null) return false;
+        if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false) return false; 
         if (other.getRecordPatches() == null ^ this.getRecordPatches() == null) return false;
         if (other.getRecordPatches() != null && other.getRecordPatches().equals(this.getRecordPatches()) == false) return false; 
         if (other.getSyncSessionToken() == null ^ this.getSyncSessionToken() == null) return false;

@@ -271,4 +271,8 @@ public class DateUtils {
         return dateValue.scaleByPowerOfTen(0 - AWS_DATE_MILLI_SECOND_PRECISION)
                 .toPlainString();
     }
+
+    public static Date cloneDate(Date date) {
+        return date == null ? null : new Date(date.getTime());
+    }
 }

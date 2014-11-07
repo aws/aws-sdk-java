@@ -45,7 +45,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2014-05-31/distribution"; 
+        String uriResourcePath = "2014-10-21/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         request.setResourcePath(uriResourcePath);
 
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2014-10-21/");
 
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
@@ -302,6 +302,33 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                         xmlWriter.endElement();
                                     }
                                 }
+                                if (allowedMethodsAllowedMethods != null) {
+                                    CachedMethods cachedMethodsCachedMethods = allowedMethodsAllowedMethods.getCachedMethods();
+                                    if (cachedMethodsCachedMethods != null) {
+                                        xmlWriter.startElement("CachedMethods");
+                                        if (cachedMethodsCachedMethods.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(cachedMethodsCachedMethods.getQuantity()).endElement();
+                                        }
+
+                                        if (cachedMethodsCachedMethods != null) {
+                                            java.util.List<String> cachedMethodsCachedMethodsitemsList = cachedMethodsCachedMethods.getItems();
+                                            if (cachedMethodsCachedMethodsitemsList != null && cachedMethodsCachedMethodsitemsList.size() > 0) {
+                                                int cachedMethodsCachedMethodsitemsListIndex = 1;
+                                                xmlWriter.startElement("Items");
+                                                for (String cachedMethodsCachedMethodsitemsListValue : cachedMethodsCachedMethodsitemsList) {
+
+                                                xmlWriter.startElement("Method");
+                                                    xmlWriter.value(cachedMethodsCachedMethodsitemsListValue);
+                                                xmlWriter.endElement();
+
+                                                    cachedMethodsCachedMethodsitemsListIndex++;
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
                                 xmlWriter.endElement();
                             }
                         }
@@ -467,6 +494,33 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                                     xmlWriter.endElement();
                                                 }
                                             }
+                                            if (allowedMethodsAllowedMethods != null) {
+                                                CachedMethods cachedMethodsCachedMethods = allowedMethodsAllowedMethods.getCachedMethods();
+                                                if (cachedMethodsCachedMethods != null) {
+                                                    xmlWriter.startElement("CachedMethods");
+                                                    if (cachedMethodsCachedMethods.getQuantity() != null) {
+                                                        xmlWriter.startElement("Quantity").value(cachedMethodsCachedMethods.getQuantity()).endElement();
+                                                    }
+
+                                                    if (cachedMethodsCachedMethods != null) {
+                                                        java.util.List<String> cachedMethodsCachedMethodsitemsList = cachedMethodsCachedMethods.getItems();
+                                                        if (cachedMethodsCachedMethodsitemsList != null && cachedMethodsCachedMethodsitemsList.size() > 0) {
+                                                            int cachedMethodsCachedMethodsitemsListIndex = 1;
+                                                            xmlWriter.startElement("Items");
+                                                            for (String cachedMethodsCachedMethodsitemsListValue : cachedMethodsCachedMethodsitemsList) {
+
+                                                            xmlWriter.startElement("Method");
+                                                                xmlWriter.value(cachedMethodsCachedMethodsitemsListValue);
+                                                            xmlWriter.endElement();
+
+                                                                cachedMethodsCachedMethodsitemsListIndex++;
+                                                            }
+                                                            xmlWriter.endElement();
+                                                        }
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                            }
                                             xmlWriter.endElement();
                                         }
                                     }
@@ -561,6 +615,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         }
                         if (viewerCertificateViewerCertificate.getSSLSupportMethod() != null) {
                             xmlWriter.startElement("SSLSupportMethod").value(viewerCertificateViewerCertificate.getSSLSupportMethod()).endElement();
+                        }
+                        if (viewerCertificateViewerCertificate.getMinimumProtocolVersion() != null) {
+                            xmlWriter.startElement("MinimumProtocolVersion").value(viewerCertificateViewerCertificate.getMinimumProtocolVersion()).endElement();
                         }
                         xmlWriter.endElement();
                     }

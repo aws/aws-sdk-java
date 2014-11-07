@@ -32,14 +32,15 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * </p>
  * <p>
  * You can create, access, and manage Elastic Load Balancing using the
- * AWS Management Console or the Elastic Load Balancing API. For more
- * information about Elastic Load Balancing interfaces, see
+ * AWS Management Console, the AWS Command Line Interface (AWS CLI), the
+ * Query API, or the AWS SDKs. For more information about Elastic Load
+ * Balancing interfaces, see
  * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html"> Accessing Elastic Load Balancing </a>
  * .
  * </p>
  * <p>
  * This reference guide contains documentation for the Query API and the
- * AWS command line interface commands, to manage Elastic Load Balancing.
+ * AWS CLI commands, to manage Elastic Load Balancing.
  * </p>
  * <p>
  * For detailed information about Elastic Load Balancing features and
@@ -67,6 +68,16 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * Balancing, see
  * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a>
  * in the Amazon Web Services General Reference.
+ * </p>
+ * <p>
+ * <b>Idempotency</b>
+ * </p>
+ * <p>
+ * All Elastic Load Balancing Query API actions and AWS CLI commands are
+ * designed to be idempotent. An <i>idempotent</i> action or command
+ * completes no more than one time. If you repeat a request or a command
+ * using the same values the action will succeed with a 200 OK response
+ * code.
  * </p>
  */
 public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalancing {

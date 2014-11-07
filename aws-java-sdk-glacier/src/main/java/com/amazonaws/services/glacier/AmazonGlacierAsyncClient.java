@@ -1581,10 +1581,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * </p>
      * </li>
      * <li> <p>
-     * Along with the data, the response includes a checksum of the payload.
-     * You compute the checksum of the payload on the client and compare it
-     * with the checksum you received in the response to ensure you received
-     * all the expected data.
+     * Along with the data, the response includes a SHA256 tree hash of the
+     * payload. You compute the checksum of the payload on the client and
+     * compare it with the checksum you received in the response to ensure
+     * you received all the expected data.
      * </p>
      * </li>
      * <li> <p>
@@ -1667,10 +1667,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * </p>
      * </li>
      * <li> <p>
-     * Along with the data, the response includes a checksum of the payload.
-     * You compute the checksum of the payload on the client and compare it
-     * with the checksum you received in the response to ensure you received
-     * all the expected data.
+     * Along with the data, the response includes a SHA256 tree hash of the
+     * payload. You compute the checksum of the payload on the client and
+     * compare it with the checksum you received in the response to ensure
+     * you received all the expected data.
      * </p>
      * </li>
      * <li> <p>

@@ -20,12 +20,16 @@ import com.amazonaws.services.route53.model.AliasTarget;
 import com.amazonaws.services.route53.model.ChangeInfo;
 import com.amazonaws.services.route53.model.ChangeResourceRecordSetsResult;
 import com.amazonaws.services.route53.model.CreateHostedZoneResult;
+import com.amazonaws.services.route53.model.CreateReusableDelegationSetResult;
+import com.amazonaws.services.route53.model.DelegationSet;
 import com.amazonaws.services.route53.model.DeleteHostedZoneResult;
 import com.amazonaws.services.route53.model.GetChangeResult;
 import com.amazonaws.services.route53.model.GetHostedZoneResult;
+import com.amazonaws.services.route53.model.GetReusableDelegationSetResult;
 import com.amazonaws.services.route53.model.HostedZone;
 import com.amazonaws.services.route53.model.ListHostedZonesResult;
 import com.amazonaws.services.route53.model.ListResourceRecordSetsResult;
+import com.amazonaws.services.route53.model.ListReusableDelegationSetsResult;
 import com.amazonaws.services.route53.model.ResourceRecordSet;
 import com.amazonaws.services.route53.model.CreateHealthCheckResult;
 import com.amazonaws.services.route53.model.GetHealthCheckResult;
@@ -50,6 +54,7 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
             CreateHostedZoneResult result = (CreateHostedZoneResult)obj;
             removePrefix(result.getChangeInfo());
             removePrefix(result.getHostedZone());
+            removePrefix(result.getDelegationSet());
         } else if (obj instanceof DeleteHostedZoneResult) {
             DeleteHostedZoneResult result = (DeleteHostedZoneResult)obj;
             removePrefix(result.getChangeInfo());
@@ -74,6 +79,19 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
         } else if (obj instanceof ListHealthChecksResult) {
             ListHealthChecksResult result = (ListHealthChecksResult)obj;
             for (HealthCheck check : result.getHealthChecks()) removePrefix(check);
+        } else if (obj instanceof CreateReusableDelegationSetResult) {
+            CreateReusableDelegationSetResult result = (CreateReusableDelegationSetResult) obj;
+            removePrefix(result.getDelegationSet());
+        } else if (obj instanceof GetHostedZoneResult) {
+            GetHostedZoneResult result = (GetHostedZoneResult) obj;
+            removePrefix(result.getDelegationSet());
+        } else if (obj instanceof GetReusableDelegationSetResult) {
+            GetReusableDelegationSetResult result = (GetReusableDelegationSetResult) obj;
+            removePrefix(result.getDelegationSet());
+        } else if (obj instanceof ListReusableDelegationSetsResult) {
+            ListReusableDelegationSetsResult result = (ListReusableDelegationSetsResult) obj;
+            for (DelegationSet delegationSet : result.getDelegationSets())
+                removePrefix(delegationSet);
         }
     }
 
@@ -109,9 +127,17 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
 
     private void removePrefix(HealthCheck healthCheck) {
         if (healthCheck == null) return;
-        
+
         if (healthCheck.getId() != null) {
             healthCheck.setId(removePrefix(healthCheck.getId()));
+        }
+    }
+
+    private void removePrefix(DelegationSet delegationSet) {
+        if (delegationSet == null) return;
+
+        if (delegationSet.getId() != null) {
+            delegationSet.setId(removePrefix(delegationSet.getId()));
         }
     }
 

@@ -97,7 +97,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     private String archiveDescription;
 
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 tree hash of the data being uploaded.
      */
     private String checksum;
 
@@ -123,7 +123,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      * @param vaultName The name of the vault.
      * @param archiveDescription The optional description of the archive you
      * are uploading.
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param checksum The SHA256 tree hash of the data being uploaded.
      * @param body The data to upload.
      */
     public UploadArchiveRequest(String vaultName, String archiveDescription, String checksum, java.io.InputStream body) {
@@ -146,7 +146,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      * do not include hyphens in it.
      * @param archiveDescription The optional description of the archive you
      * are uploading.
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param checksum The SHA256 tree hash of the data being uploaded.
      * @param body The data to upload.
      */
     public UploadArchiveRequest(String vaultName, String accountId, String archiveDescription, String checksum, java.io.InputStream body) {
@@ -314,29 +314,29 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 tree hash of the data being uploaded.
      *
-     * @return The SHA256 checksum (a linear hash) of the payload.
+     * @return The SHA256 tree hash of the data being uploaded.
      */
     public String getChecksum() {
         return checksum;
     }
     
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 tree hash of the data being uploaded.
      *
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param checksum The SHA256 tree hash of the data being uploaded.
      */
     public void setChecksum(String checksum) {
         this.checksum = checksum;
     }
     
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 tree hash of the data being uploaded.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param checksum The SHA256 tree hash of the data being uploaded.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

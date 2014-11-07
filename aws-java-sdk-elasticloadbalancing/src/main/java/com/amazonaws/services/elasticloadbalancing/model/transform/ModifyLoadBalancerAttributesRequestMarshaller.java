@@ -82,6 +82,23 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements Marshaller
                     request.addParameter("LoadBalancerAttributes.ConnectionSettings.IdleTimeout", StringUtils.fromInteger(connectionSettingsConnectionSettings.getIdleTimeout()));
                 }
             }
+
+            java.util.List<AdditionalAttribute> additionalAttributesList = loadBalancerAttributesLoadBalancerAttributes.getAdditionalAttributes();
+            int additionalAttributesListIndex = 1;
+
+            for (AdditionalAttribute additionalAttributesListValue : additionalAttributesList) {
+                AdditionalAttribute additionalAttributeMember = additionalAttributesListValue;
+                if (additionalAttributeMember != null) {
+                    if (additionalAttributeMember.getKey() != null) {
+                        request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Key", StringUtils.fromString(additionalAttributeMember.getKey()));
+                    }
+                    if (additionalAttributeMember.getValue() != null) {
+                        request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Value", StringUtils.fromString(additionalAttributeMember.getValue()));
+                    }
+                }
+
+                additionalAttributesListIndex++;
+            }
         }
 
         return request;

@@ -70,6 +70,19 @@ public class CreateHostedZoneRequestMarshaller implements Marshaller<Request<Cre
                     if (createHostedZoneRequest.getName() != null) {
             xmlWriter.startElement("Name").value(createHostedZoneRequest.getName()).endElement();
         }
+        if (createHostedZoneRequest != null) {
+            VPC vPCVPC = createHostedZoneRequest.getVPC();
+            if (vPCVPC != null) {
+                xmlWriter.startElement("VPC");
+                if (vPCVPC.getVPCRegion() != null) {
+                    xmlWriter.startElement("VPCRegion").value(vPCVPC.getVPCRegion()).endElement();
+                }
+                if (vPCVPC.getVPCId() != null) {
+                    xmlWriter.startElement("VPCId").value(vPCVPC.getVPCId()).endElement();
+                }
+                xmlWriter.endElement();
+            }
+        }
         if (createHostedZoneRequest.getCallerReference() != null) {
             xmlWriter.startElement("CallerReference").value(createHostedZoneRequest.getCallerReference()).endElement();
         }
@@ -80,8 +93,14 @@ public class CreateHostedZoneRequestMarshaller implements Marshaller<Request<Cre
                 if (hostedZoneConfigHostedZoneConfig.getComment() != null) {
                     xmlWriter.startElement("Comment").value(hostedZoneConfigHostedZoneConfig.getComment()).endElement();
                 }
+                if (hostedZoneConfigHostedZoneConfig.isPrivateZone() != null) {
+                    xmlWriter.startElement("PrivateZone").value(hostedZoneConfigHostedZoneConfig.isPrivateZone()).endElement();
+                }
                 xmlWriter.endElement();
             }
+        }
+        if (createHostedZoneRequest.getDelegationSetId() != null) {
+            xmlWriter.startElement("DelegationSetId").value(createHostedZoneRequest.getDelegationSetId()).endElement();
         }
 
             xmlWriter.endElement();

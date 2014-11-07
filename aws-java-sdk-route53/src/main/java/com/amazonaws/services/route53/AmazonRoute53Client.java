@@ -194,23 +194,36 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new LimitsExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchChangeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHealthChecksExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchDelegationSetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ThrottlingExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new VPCAssociationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PriorRequestNotCompleteExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DelegationSetAlreadyCreatedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidChangeBatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DelegationSetInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchGeoLocationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HealthCheckVersionMismatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HostedZoneAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHostedZonesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HostedZoneNotEmptyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConflictingDomainExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DelegationSetAlreadyReusableExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchHealthCheckExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidVPCIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LastVPCAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DelegationSetNotAvailableExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new HostedZoneNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DelegationSetNotReusableExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PublicZoneVPCAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDomainNameExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
@@ -323,118 +336,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
             response = invoke(request, new GetChangeResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of your hosted zones, send a <code>GET</code>
-     * request to the <code>2013-04-01/hostedzone</code> resource. The
-     * response to this request includes a <code>HostedZones</code> element
-     * with zero, one, or multiple <code>HostedZone</code> child elements. By
-     * default, the list of hosted zones is displayed on a single page. You
-     * can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-     * parameter to control the hosted zone that the list begins with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
-     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
-     * the first 100.
-     * </p>
-     *
-     * @param listHostedZonesRequest Container for the necessary parameters
-     *           to execute the ListHostedZones service method on AmazonRoute53.
-     * 
-     * @return The response from the ListHostedZones service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listHostedZonesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListHostedZonesRequest> request = null;
-        Response<ListHostedZonesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListHostedZonesRequestMarshaller().marshall(listHostedZonesRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListHostedZonesResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * This action updates an existing health check.
-     * </p>
-     * <p>
-     * To update a health check, send a <code>POST</code> request to the
-     * <code>2013-05-27/healthcheck/health check ID </code> resource. The
-     * request body must include an XML document with an
-     * <code>UpdateHealthCheckRequest</code> element. The response returns an
-     * <code>UpdateHealthCheckResponse</code> element, which contains
-     * metadata about the health check.
-     * </p>
-     *
-     * @param updateHealthCheckRequest Container for the necessary parameters
-     *           to execute the UpdateHealthCheck service method on AmazonRoute53.
-     * 
-     * @return The response from the UpdateHealthCheck service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws HealthCheckVersionMismatchException
-     * @throws NoSuchHealthCheckException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateHealthCheckRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateHealthCheckRequest> request = null;
-        Response<UpdateHealthCheckResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateHealthCheckRequestMarshaller().marshall(updateHealthCheckRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new UpdateHealthCheckResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -695,6 +596,65 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * This action deletes a reusable delegation set. To delete a reusable
+     * delegation set, send a <code>DELETE</code> request to the
+     * <code>2013-04-01/delegationset/delegation set ID </code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You can delete a reusable delegation set only if
+     * there are no associated hosted zones. If your reusable delegation set
+     * contains associated hosted zones, you must delete them before you can
+     * delete your reusable delegation set. If you try to delete a reusable
+     * delegation set that contains associated hosted zones, Route 53 will
+     * deny your request with a DelegationSetInUse error.
+     * </p>
+     *
+     * @param deleteReusableDelegationSetRequest Container for the necessary
+     *           parameters to execute the DeleteReusableDelegationSet service method
+     *           on AmazonRoute53.
+     * 
+     * @return The response from the DeleteReusableDelegationSet service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchDelegationSetException
+     * @throws DelegationSetInUseException
+     * @throws DelegationSetNotReusableException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteReusableDelegationSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteReusableDelegationSetRequest> request = null;
+        Response<DeleteReusableDelegationSetResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteReusableDelegationSetRequestMarshaller().marshall(deleteReusableDelegationSetRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new DeleteReusableDelegationSetResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * To retrieve the health check, send a <code>GET</code> request to the
      * <code>2013-04-01/healthcheck/health check ID </code> resource.
      * </p>
@@ -743,36 +703,35 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This action deletes a hosted zone. To delete a hosted zone, send a
-     * <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted
-     * zone ID </code> resource.
+     * This action creates a reusable delegationSet.
      * </p>
      * <p>
-     * For more information about deleting a hosted zone, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html"> Deleting a Hosted Zone </a>
-     * in the <i>Amazon Route 53 Developer Guide</i> .
+     * To create a new reusable delegationSet, send a <code>POST</code>
+     * request to the <code>2013-04-01/delegationset</code> resource. The
+     * request body must include an XML document with a
+     * <code>CreateReusableDelegationSetRequest</code> element. The response
+     * returns the <code>CreateReusableDelegationSetResponse</code> element
+     * that contains metadata about the delegationSet.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no
-     * resource record sets other than the default SOA record and NS resource
-     * record sets. If your hosted zone contains other resource record sets,
-     * you must delete them before you can delete your hosted zone. If you
-     * try to delete a hosted zone that contains other resource record sets,
-     * Route 53 will deny your request with a HostedZoneNotEmpty error. For
-     * information about deleting records from your hosted zone, see
-     * ChangeResourceRecordSets.
+     * If the optional parameter HostedZoneId is specified, it marks the
+     * delegationSet associated with that particular hosted zone as reusable.
      * </p>
      *
-     * @param deleteHostedZoneRequest Container for the necessary parameters
-     *           to execute the DeleteHostedZone service method on AmazonRoute53.
+     * @param createReusableDelegationSetRequest Container for the necessary
+     *           parameters to execute the CreateReusableDelegationSet service method
+     *           on AmazonRoute53.
      * 
-     * @return The response from the DeleteHostedZone service method, as
-     *         returned by AmazonRoute53.
+     * @return The response from the CreateReusableDelegationSet service
+     *         method, as returned by AmazonRoute53.
      * 
-     * @throws PriorRequestNotCompleteException
-     * @throws HostedZoneNotEmptyException
-     * @throws NoSuchHostedZoneException
+     * @throws DelegationSetAlreadyCreatedException
+     * @throws HostedZoneNotFoundException
+     * @throws DelegationSetNotAvailableException
      * @throws InvalidInputException
+     * @throws InvalidArgumentException
+     * @throws LimitsExceededException
+     * @throws DelegationSetAlreadyReusableException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -782,23 +741,23 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteHostedZoneRequest);
+    public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(createReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteHostedZoneRequest> request = null;
-        Response<DeleteHostedZoneResult> response = null;
+        Request<CreateReusableDelegationSetRequest> request = null;
+        Response<CreateReusableDelegationSetResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteHostedZoneRequestMarshaller().marshall(deleteHostedZoneRequest);
+                request = new CreateReusableDelegationSetRequestMarshaller().marshall(createReusableDelegationSetRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new DeleteHostedZoneResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new CreateReusableDelegationSetResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -858,42 +817,33 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * This action creates a new hosted zone.
+     * This action disassociates a VPC from an hosted zone.
      * </p>
      * <p>
-     * To create a new hosted zone, send a <code>POST</code> request to the
-     * <code>2013-04-01/hostedzone</code> resource. The request body must
-     * include an XML document with a <code>CreateHostedZoneRequest</code>
+     * To disassociate a VPC to a hosted zone, send a <code>POST</code>
+     * request to the <code>2013-04-01/hostedzone/hosted zone
+     * ID/disassociatevpc</code> resource. The request body must include an
+     * XML document with a <code>DisassociateVPCFromHostedZoneRequest</code>
      * element. The response returns the
-     * <code>CreateHostedZoneResponse</code> element that contains metadata
-     * about the hosted zone.
-     * </p>
-     * <p>
-     * Route 53 automatically creates a default SOA record and four NS
-     * records for the zone. The NS records in the hosted zone are the name
-     * servers you give your registrar to delegate your domain to. For more
-     * information about SOA and NS records, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
-     * in the <i>Amazon Route 53 Developer Guide</i> .
-     * </p>
-     * <p>
-     * When you create a zone, its initial status is <code>PENDING</code> .
-     * This means that it is not yet available on all DNS servers. The status
-     * of the zone changes to <code>INSYNC</code> when the NS and SOA records
-     * are available on all Route 53 DNS servers.
+     * <code>DisassociateVPCFromHostedZoneResponse</code> element that
+     * contains <code>ChangeInfo</code> for you to track the progress of the
+     * <code>DisassociateVPCFromHostedZoneRequest</code> you made. See
+     * <code>GetChange</code> operation for how to track the progress of your
+     * change.
      * </p>
      *
-     * @param createHostedZoneRequest Container for the necessary parameters
-     *           to execute the CreateHostedZone service method on AmazonRoute53.
+     * @param disassociateVPCFromHostedZoneRequest Container for the
+     *           necessary parameters to execute the DisassociateVPCFromHostedZone
+     *           service method on AmazonRoute53.
      * 
-     * @return The response from the CreateHostedZone service method, as
-     *         returned by AmazonRoute53.
+     * @return The response from the DisassociateVPCFromHostedZone service
+     *         method, as returned by AmazonRoute53.
      * 
-     * @throws TooManyHostedZonesException
-     * @throws DelegationSetNotAvailableException
-     * @throws InvalidDomainNameException
+     * @throws InvalidVPCIdException
+     * @throws NoSuchHostedZoneException
+     * @throws LastVPCAssociationException
      * @throws InvalidInputException
-     * @throws HostedZoneAlreadyExistsException
+     * @throws VPCAssociationNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -903,23 +853,23 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
-        ExecutionContext executionContext = createExecutionContext(createHostedZoneRequest);
+    public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(disassociateVPCFromHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateHostedZoneRequest> request = null;
-        Response<CreateHostedZoneResult> response = null;
+        Request<DisassociateVPCFromHostedZoneRequest> request = null;
+        Response<DisassociateVPCFromHostedZoneResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHostedZoneRequestMarshaller().marshall(createHostedZoneRequest);
+                request = new DisassociateVPCFromHostedZoneRequestMarshaller().marshall(disassociateVPCFromHostedZoneRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new CreateHostedZoneResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new DisassociateVPCFromHostedZoneResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -928,18 +878,22 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
     
     /**
+     * <p>
+     * If you want to learn why a health check is currently failing or why
+     * it failed most recently (if at all), you can get the failure reason
+     * for the most recent failure. Send a <code>GET</code> request to the
+     * <code>2013-04-01/healthcheck/health check ID/lastfailurereason</code>
+     * resource.
+     * </p>
      *
-     * @param listTagsForResourceRequest Container for the necessary
-     *           parameters to execute the ListTagsForResource service method on
-     *           AmazonRoute53.
+     * @param getHealthCheckLastFailureReasonRequest Container for the
+     *           necessary parameters to execute the GetHealthCheckLastFailureReason
+     *           service method on AmazonRoute53.
      * 
-     * @return The response from the ListTagsForResource service method, as
-     *         returned by AmazonRoute53.
+     * @return The response from the GetHealthCheckLastFailureReason service
+     *         method, as returned by AmazonRoute53.
      * 
-     * @throws PriorRequestNotCompleteException
      * @throws NoSuchHealthCheckException
-     * @throws ThrottlingException
-     * @throws InvalidInputException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -949,81 +903,23 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
-        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+    public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest) {
+        ExecutionContext executionContext = createExecutionContext(getHealthCheckLastFailureReasonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListTagsForResourceRequest> request = null;
-        Response<ListTagsForResourceResult> response = null;
+        Request<GetHealthCheckLastFailureReasonRequest> request = null;
+        Response<GetHealthCheckLastFailureReasonResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller().marshall(listTagsForResourceRequest);
+                request = new GetHealthCheckLastFailureReasonRequestMarshaller().marshall(getHealthCheckLastFailureReasonRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new ListTagsForResourceResultStaxUnmarshaller(), executionContext);
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * To retrieve a list of your health checks, send a <code>GET</code>
-     * request to the <code>2013-04-01/healthcheck</code> resource. The
-     * response to this request includes a <code>HealthChecks</code> element
-     * with zero, one, or multiple <code>HealthCheck</code> child elements.
-     * By default, the list of health checks is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-     * parameter to control the health check that the list begins with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
-     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
-     * the first 100.
-     * </p>
-     *
-     * @param listHealthChecksRequest Container for the necessary parameters
-     *           to execute the ListHealthChecks service method on AmazonRoute53.
-     * 
-     * @return The response from the ListHealthChecks service method, as
-     *         returned by AmazonRoute53.
-     * 
-     * @throws IncompatibleVersionException
-     * @throws InvalidInputException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRoute53 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
-        ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListHealthChecksRequest> request = null;
-        Response<ListHealthChecksResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListHealthChecksRequestMarshaller().marshall(listHealthChecksRequest);
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-            response = invoke(request, new ListHealthChecksResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new GetHealthCheckLastFailureReasonResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1088,61 +984,29 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
-     * Use this action to create or change your authoritative DNS
-     * information. To use this action, send a <code>POST</code> request to
-     * the <code>2013-04-01/hostedzone/hosted Zone ID/rrset</code> resource.
-     * The request body must include an XML document with a
-     * <code>ChangeResourceRecordSetsRequest</code> element.
+     * To retrieve a list of your health checks, send a <code>GET</code>
+     * request to the <code>2013-04-01/healthcheck</code> resource. The
+     * response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements.
+     * By default, the list of health checks is displayed on a single page.
+     * You can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
      * </p>
      * <p>
-     * Changes are a list of change items and are considered transactional.
-     * For more information on transactional changes, also known as change
-     * batches, see
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
-     * in the <i>Amazon Route 53 Developer Guide</i> .
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
-     * cannot delete the same resource record set more than once in a single
-     * change batch. If you attempt to delete the same change batch more than
-     * once, Route 53 returns an InvalidChangeBatch error.
-     * </p>
-     * <p>
-     * In response to a <code>ChangeResourceRecordSets</code> request, your
-     * DNS data is changed on all Route 53 DNS servers. Initially, the status
-     * of a change is <code>PENDING</code> . This means the change has not
-     * yet propagated to all the authoritative Route 53 DNS servers. When the
-     * change is propagated to all hosts, the change returns a status of
-     * <code>INSYNC</code> .
-     * </p>
-     * <p>
-     * Note the following limitations on a
-     * <code>ChangeResourceRecordSets</code> request:
-     * </p>
-     * <p>
-     * - A request cannot contain more than 100 Change elements.
-     * </p>
-     * <p>
-     * - A request cannot contain more than 1000 ResourceRecord elements.
-     * </p>
-     * <p>
-     * The sum of the number of characters (including spaces) in all
-     * <code>Value</code> elements in a request cannot exceed 32,000
-     * characters.
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
      * </p>
      *
-     * @param changeResourceRecordSetsRequest Container for the necessary
-     *           parameters to execute the ChangeResourceRecordSets service method on
-     *           AmazonRoute53.
+     * @param listHealthChecksRequest Container for the necessary parameters
+     *           to execute the ListHealthChecks service method on AmazonRoute53.
      * 
-     * @return The response from the ChangeResourceRecordSets service method,
-     *         as returned by AmazonRoute53.
+     * @return The response from the ListHealthChecks service method, as
+     *         returned by AmazonRoute53.
      * 
-     * @throws PriorRequestNotCompleteException
-     * @throws NoSuchHealthCheckException
-     * @throws NoSuchHostedZoneException
+     * @throws IncompatibleVersionException
      * @throws InvalidInputException
-     * @throws InvalidChangeBatchException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1152,23 +1016,23 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
-        ExecutionContext executionContext = createExecutionContext(changeResourceRecordSetsRequest);
+    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
+        ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ChangeResourceRecordSetsRequest> request = null;
-        Response<ChangeResourceRecordSetsResult> response = null;
+        Request<ListHealthChecksRequest> request = null;
+        Response<ListHealthChecksResult> response = null;
         
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ChangeResourceRecordSetsRequestMarshaller().marshall(changeResourceRecordSetsRequest);
+                request = new ListHealthChecksRequestMarshaller().marshall(listHealthChecksRequest);
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
-            response = invoke(request, new ChangeResourceRecordSetsResultStaxUnmarshaller(), executionContext);
+            response = invoke(request, new ListHealthChecksResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
         } finally {
             
@@ -1333,6 +1197,55 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     
     /**
      * <p>
+     * To retrieve the health check status, send a <code>GET</code> request
+     * to the <code>2013-04-01/healthcheck/health check ID/status</code>
+     * resource. You can use this call to get a health check's current
+     * status.
+     * </p>
+     *
+     * @param getHealthCheckStatusRequest Container for the necessary
+     *           parameters to execute the GetHealthCheckStatus service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the GetHealthCheckStatus service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchHealthCheckException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(getHealthCheckStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHealthCheckStatusRequest> request = null;
+        Response<GetHealthCheckStatusResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHealthCheckStatusRequestMarshaller().marshall(getHealthCheckStatusRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetHealthCheckStatusResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * To retrieve a list of your hosted zones, send a <code>GET</code>
      * request to the <code>2013-04-01/hostedzone</code> resource. The
      * response to this request includes a <code>HostedZones</code> element
@@ -1347,9 +1260,385 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * set MaxItems to a value greater than 100, Amazon Route 53 returns only
      * the first 100.
      * </p>
+     *
+     * @param listHostedZonesRequest Container for the necessary parameters
+     *           to execute the ListHostedZones service method on AmazonRoute53.
      * 
      * @return The response from the ListHostedZones service method, as
      *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchDelegationSetException
+     * @throws DelegationSetNotReusableException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listHostedZonesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHostedZonesRequest> request = null;
+        Response<ListHostedZonesResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHostedZonesRequestMarshaller().marshall(listHostedZonesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListHostedZonesResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * To retrieve the reusable delegation set, send a <code>GET</code>
+     * request to the <code>2013-04-01/delegationset/delegation set ID
+     * </code> resource.
+     * </p>
+     *
+     * @param getReusableDelegationSetRequest Container for the necessary
+     *           parameters to execute the GetReusableDelegationSet service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the GetReusableDelegationSet service method,
+     *         as returned by AmazonRoute53.
+     * 
+     * @throws NoSuchDelegationSetException
+     * @throws DelegationSetNotReusableException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(getReusableDelegationSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReusableDelegationSetRequest> request = null;
+        Response<GetReusableDelegationSetResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReusableDelegationSetRequestMarshaller().marshall(getReusableDelegationSetRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetReusableDelegationSetResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * This action updates an existing health check.
+     * </p>
+     * <p>
+     * To update a health check, send a <code>POST</code> request to the
+     * <code>2013-04-01/healthcheck/health check ID </code> resource. The
+     * request body must include an XML document with an
+     * <code>UpdateHealthCheckRequest</code> element. The response returns an
+     * <code>UpdateHealthCheckResponse</code> element, which contains
+     * metadata about the health check.
+     * </p>
+     *
+     * @param updateHealthCheckRequest Container for the necessary parameters
+     *           to execute the UpdateHealthCheck service method on AmazonRoute53.
+     * 
+     * @return The response from the UpdateHealthCheck service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws HealthCheckVersionMismatchException
+     * @throws NoSuchHealthCheckException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateHealthCheckRequest> request = null;
+        Response<UpdateHealthCheckResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateHealthCheckRequestMarshaller().marshall(updateHealthCheckRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new UpdateHealthCheckResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * This action deletes a hosted zone. To delete a hosted zone, send a
+     * <code>DELETE</code> request to the <code>2013-04-01/hostedzone/hosted
+     * zone ID </code> resource.
+     * </p>
+     * <p>
+     * For more information about deleting a hosted zone, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html"> Deleting a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no
+     * resource record sets other than the default SOA record and NS resource
+     * record sets. If your hosted zone contains other resource record sets,
+     * you must delete them before you can delete your hosted zone. If you
+     * try to delete a hosted zone that contains other resource record sets,
+     * Route 53 will deny your request with a HostedZoneNotEmpty error. For
+     * information about deleting records from your hosted zone, see
+     * ChangeResourceRecordSets.
+     * </p>
+     *
+     * @param deleteHostedZoneRequest Container for the necessary parameters
+     *           to execute the DeleteHostedZone service method on AmazonRoute53.
+     * 
+     * @return The response from the DeleteHostedZone service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws PriorRequestNotCompleteException
+     * @throws HostedZoneNotEmptyException
+     * @throws NoSuchHostedZoneException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteHostedZoneRequest> request = null;
+        Response<DeleteHostedZoneResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHostedZoneRequestMarshaller().marshall(deleteHostedZoneRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new DeleteHostedZoneResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * This action associates a VPC with an hosted zone.
+     * </p>
+     * <p>
+     * To associate a VPC with an hosted zone, send a <code>POST</code>
+     * request to the <code>2013-04-01/hostedzone/hosted zone
+     * ID/associatevpc</code> resource. The request body must include an XML
+     * document with a <code>AssociateVPCWithHostedZoneRequest</code>
+     * element. The response returns the
+     * <code>AssociateVPCWithHostedZoneResponse</code> element that contains
+     * <code>ChangeInfo</code> for you to track the progress of the
+     * <code>AssociateVPCWithHostedZoneRequest</code> you made. See
+     * <code>GetChange</code> operation for how to track the progress of your
+     * change.
+     * </p>
+     *
+     * @param associateVPCWithHostedZoneRequest Container for the necessary
+     *           parameters to execute the AssociateVPCWithHostedZone service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the AssociateVPCWithHostedZone service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws ConflictingDomainExistsException
+     * @throws InvalidVPCIdException
+     * @throws NoSuchHostedZoneException
+     * @throws PublicZoneVPCAssociationException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(associateVPCWithHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateVPCWithHostedZoneRequest> request = null;
+        Response<AssociateVPCWithHostedZoneResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateVPCWithHostedZoneRequestMarshaller().marshall(associateVPCWithHostedZoneRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new AssociateVPCWithHostedZoneResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * This action creates a new hosted zone.
+     * </p>
+     * <p>
+     * To create a new hosted zone, send a <code>POST</code> request to the
+     * <code>2013-04-01/hostedzone</code> resource. The request body must
+     * include an XML document with a <code>CreateHostedZoneRequest</code>
+     * element. The response returns the
+     * <code>CreateHostedZoneResponse</code> element that contains metadata
+     * about the hosted zone.
+     * </p>
+     * <p>
+     * Route 53 automatically creates a default SOA record and four NS
+     * records for the zone. The NS records in the hosted zone are the name
+     * servers you give your registrar to delegate your domain to. For more
+     * information about SOA and NS records, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html"> NS and SOA Records that Route 53 Creates for a Hosted Zone </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
+     * </p>
+     * <p>
+     * When you create a zone, its initial status is <code>PENDING</code> .
+     * This means that it is not yet available on all DNS servers. The status
+     * of the zone changes to <code>INSYNC</code> when the NS and SOA records
+     * are available on all Route 53 DNS servers.
+     * </p>
+     * <p>
+     * When trying to create a hosted zone using a reusable delegation set,
+     * you could specify an optional DelegationSetId, and Route53 would
+     * assign those 4 NS records for the zone, instead of alloting a new one.
+     * </p>
+     *
+     * @param createHostedZoneRequest Container for the necessary parameters
+     *           to execute the CreateHostedZone service method on AmazonRoute53.
+     * 
+     * @return The response from the CreateHostedZone service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws ConflictingDomainExistsException
+     * @throws TooManyHostedZonesException
+     * @throws NoSuchDelegationSetException
+     * @throws InvalidVPCIdException
+     * @throws DelegationSetNotAvailableException
+     * @throws DelegationSetNotReusableException
+     * @throws InvalidDomainNameException
+     * @throws InvalidInputException
+     * @throws HostedZoneAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(createHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateHostedZoneRequest> request = null;
+        Response<CreateHostedZoneResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateHostedZoneRequestMarshaller().marshall(createHostedZoneRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new CreateHostedZoneResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of your reusable delegation sets, send a
+     * <code>GET</code> request to the <code>2013-04-01/delegationset</code>
+     * resource. The response to this request includes a
+     * <code>DelegationSets</code> element with zero, one, or multiple
+     * <code>DelegationSet</code> child elements. By default, the list of
+     * delegation sets is displayed on a single page. You can control the
+     * length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the delegation set that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     *
+     * @param listReusableDelegationSetsRequest Container for the necessary
+     *           parameters to execute the ListReusableDelegationSets service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListReusableDelegationSets service
+     *         method, as returned by AmazonRoute53.
      * 
      * @throws InvalidInputException
      *
@@ -1361,8 +1650,164 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListHostedZonesResult listHostedZones() throws AmazonServiceException, AmazonClientException {
-        return listHostedZones(new ListHostedZonesRequest());
+    public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listReusableDelegationSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReusableDelegationSetsRequest> request = null;
+        Response<ListReusableDelegationSetsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReusableDelegationSetsRequestMarshaller().marshall(listReusableDelegationSetsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListReusableDelegationSetsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     *
+     * @param listTagsForResourceRequest Container for the necessary
+     *           parameters to execute the ListTagsForResource service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ListTagsForResource service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws PriorRequestNotCompleteException
+     * @throws NoSuchHealthCheckException
+     * @throws ThrottlingException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller().marshall(listTagsForResourceRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ListTagsForResourceResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Use this action to create or change your authoritative DNS
+     * information. To use this action, send a <code>POST</code> request to
+     * the <code>2013-04-01/hostedzone/hosted Zone ID/rrset</code> resource.
+     * The request body must include an XML document with a
+     * <code>ChangeResourceRecordSetsRequest</code> element.
+     * </p>
+     * <p>
+     * Changes are a list of change items and are considered transactional.
+     * For more information on transactional changes, also known as change
+     * batches, see
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record Sets Using the Route 53 API </a>
+     * in the <i>Amazon Route 53 Developer Guide</i> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Due to the nature of transactional changes, you
+     * cannot delete the same resource record set more than once in a single
+     * change batch. If you attempt to delete the same change batch more than
+     * once, Route 53 returns an InvalidChangeBatch error.
+     * </p>
+     * <p>
+     * In response to a <code>ChangeResourceRecordSets</code> request, your
+     * DNS data is changed on all Route 53 DNS servers. Initially, the status
+     * of a change is <code>PENDING</code> . This means the change has not
+     * yet propagated to all the authoritative Route 53 DNS servers. When the
+     * change is propagated to all hosts, the change returns a status of
+     * <code>INSYNC</code> .
+     * </p>
+     * <p>
+     * Note the following limitations on a
+     * <code>ChangeResourceRecordSets</code> request:
+     * </p>
+     * <p>
+     * - A request cannot contain more than 100 Change elements.
+     * </p>
+     * <p>
+     * - A request cannot contain more than 1000 ResourceRecord elements.
+     * </p>
+     * <p>
+     * The sum of the number of characters (including spaces) in all
+     * <code>Value</code> elements in a request cannot exceed 32,000
+     * characters.
+     * </p>
+     *
+     * @param changeResourceRecordSetsRequest Container for the necessary
+     *           parameters to execute the ChangeResourceRecordSets service method on
+     *           AmazonRoute53.
+     * 
+     * @return The response from the ChangeResourceRecordSets service method,
+     *         as returned by AmazonRoute53.
+     * 
+     * @throws PriorRequestNotCompleteException
+     * @throws NoSuchHealthCheckException
+     * @throws NoSuchHostedZoneException
+     * @throws InvalidInputException
+     * @throws InvalidChangeBatchException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(changeResourceRecordSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ChangeResourceRecordSetsRequest> request = null;
+        Response<ChangeResourceRecordSetsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ChangeResourceRecordSetsRequestMarshaller().marshall(changeResourceRecordSetsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new ChangeResourceRecordSetsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1512,6 +1957,77 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     public GetHealthCheckCountResult getHealthCheckCount() throws AmazonServiceException, AmazonClientException {
         return getHealthCheckCount(new GetHealthCheckCountRequest());
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of your hosted zones, send a <code>GET</code>
+     * request to the <code>2013-04-01/hostedzone</code> resource. The
+     * response to this request includes a <code>HostedZones</code> element
+     * with zero, one, or multiple <code>HostedZone</code> child elements. By
+     * default, the list of hosted zones is displayed on a single page. You
+     * can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the hosted zone that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     * 
+     * @return The response from the ListHostedZones service method, as
+     *         returned by AmazonRoute53.
+     * 
+     * @throws NoSuchDelegationSetException
+     * @throws DelegationSetNotReusableException
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListHostedZonesResult listHostedZones() throws AmazonServiceException, AmazonClientException {
+        return listHostedZones(new ListHostedZonesRequest());
+    }
+    
+    /**
+     * <p>
+     * To retrieve a list of your reusable delegation sets, send a
+     * <code>GET</code> request to the <code>2013-04-01/delegationset</code>
+     * resource. The response to this request includes a
+     * <code>DelegationSets</code> element with zero, one, or multiple
+     * <code>DelegationSet</code> child elements. By default, the list of
+     * delegation sets is displayed on a single page. You can control the
+     * length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the delegation set that the list begins with.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon Route 53 returns a maximum of 100 items. If you
+     * set MaxItems to a value greater than 100, Amazon Route 53 returns only
+     * the first 100.
+     * </p>
+     * 
+     * @return The response from the ListReusableDelegationSets service
+     *         method, as returned by AmazonRoute53.
+     * 
+     * @throws InvalidInputException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRoute53 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListReusableDelegationSetsResult listReusableDelegationSets() throws AmazonServiceException, AmazonClientException {
+        return listReusableDelegationSets(new ListReusableDelegationSetsRequest());
     }
 
     /**

@@ -795,7 +795,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 s3objectId.instructionFileId(instFileSuffix));
     }
 
-    final long[] getAdjustedCryptoRange(long[] range) {
+    static long[] getAdjustedCryptoRange(long[] range) {
         // If range is invalid, then return null.
         if (range == null || range[0] > range[1]) {
             return null;
@@ -805,24 +805,24 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         adjustedCryptoRange[1] = getCipherBlockUpperBound(range[1]);
         return adjustedCryptoRange;
     }
+
     private static long getCipherBlockLowerBound(long leftmostBytePosition) {
         long cipherBlockSize = JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE;
         long offset = leftmostBytePosition % cipherBlockSize;
         long lowerBound = leftmostBytePosition - offset - cipherBlockSize;
-        if (lowerBound < 0) {
-            return 0;
-        } else {
-            return lowerBound;
-        }
+        return lowerBound < 0 ? 0 : lowerBound;
     }
 
     /**
-     * Takes the position of the rightmost desired byte of a user specified range and returns the
-     * position of the end of the following cipher block.
+     * Takes the position of the rightmost desired byte of a user specified
+     * range and returns the position of the end of the following cipher block;
+     * or {@value Long#MAX_VALUE} if the resultant position has a value that
+     * exceeds {@value Long#MAX_VALUE}.
      */
-    private static long getCipherBlockUpperBound(long rightmostBytePosition) {
+    private static long getCipherBlockUpperBound(final long rightmostBytePosition) {
         long cipherBlockSize = JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE;
         long offset = cipherBlockSize - (rightmostBytePosition % cipherBlockSize);
-        return rightmostBytePosition + offset + cipherBlockSize;
+        long upperBound = rightmostBytePosition + offset + cipherBlockSize;
+        return upperBound < 0 ? Long.MAX_VALUE : upperBound;
     }
 }

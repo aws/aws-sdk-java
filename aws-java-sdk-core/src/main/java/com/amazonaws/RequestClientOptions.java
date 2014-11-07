@@ -16,7 +16,6 @@ package com.amazonaws;
 
 import java.io.InputStream;
 import java.util.EnumMap;
-import java.util.Map;
 
 import org.apache.http.annotation.NotThreadSafe;
 
@@ -42,12 +41,12 @@ public final class RequestClientOptions {
         ;
     }
 
-    private final Map<Marker,String> markers = new EnumMap<Marker,String>(Marker.class);
+    private final EnumMap<Marker,String> markers = new EnumMap<Marker,String>(Marker.class);
     /**
      * Used for mark-and-reset purposes during retry.
      */
     private int readLimit = DEFAULT_STREAM_BUFFER_SIZE;
-
+    
     /**
      * @deprecated by {@link #getClientMarker(Marker)}.
      * This method is intended only for internal use by the AWS SDK. 
@@ -124,5 +123,15 @@ public final class RequestClientOptions {
      */
     public final void setReadLimit(int readLimit) {
         this.readLimit = readLimit;
+    }
+
+    /**
+     * Copy the internal states of this <code>RequestClientOptions</code> to the
+     * target <code>RequestClientOptions</code>.
+     */
+    void copyTo(RequestClientOptions target) {
+        target.setReadLimit(getReadLimit());
+        for (Marker marker: Marker.values())
+            target.putClientMarker(marker, getClientMarker(marker));
     }
 }

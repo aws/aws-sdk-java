@@ -46,8 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The ID of the request. Include this ID in a call to <a>GetChange</a>
-     * to track when the change has propagated to all Route 53 DNS servers.
+     * The ID of the hosted zone you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32<br/>
@@ -65,53 +64,45 @@ public class DeleteHostedZoneRequest extends AmazonWebServiceRequest implements 
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param id The ID of the request. Include this ID in a call to
-     * <a>GetChange</a> to track when the change has propagated to all Route
-     * 53 DNS servers.
+     * @param id The ID of the hosted zone you want to delete.
      */
     public DeleteHostedZoneRequest(String id) {
         setId(id);
     }
 
     /**
-     * The ID of the request. Include this ID in a call to <a>GetChange</a>
-     * to track when the change has propagated to all Route 53 DNS servers.
+     * The ID of the hosted zone you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32<br/>
      *
-     * @return The ID of the request. Include this ID in a call to <a>GetChange</a>
-     *         to track when the change has propagated to all Route 53 DNS servers.
+     * @return The ID of the hosted zone you want to delete.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * The ID of the request. Include this ID in a call to <a>GetChange</a>
-     * to track when the change has propagated to all Route 53 DNS servers.
+     * The ID of the hosted zone you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32<br/>
      *
-     * @param id The ID of the request. Include this ID in a call to <a>GetChange</a>
-     *         to track when the change has propagated to all Route 53 DNS servers.
+     * @param id The ID of the hosted zone you want to delete.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * The ID of the request. Include this ID in a call to <a>GetChange</a>
-     * to track when the change has propagated to all Route 53 DNS servers.
+     * The ID of the hosted zone you want to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32<br/>
      *
-     * @param id The ID of the request. Include this ID in a call to <a>GetChange</a>
-     *         to track when the change has propagated to all Route 53 DNS servers.
+     * @param id The ID of the hosted zone you want to delete.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

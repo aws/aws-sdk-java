@@ -45,6 +45,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * of the zone changes to <code>INSYNC</code> when the NS and SOA records
  * are available on all Route 53 DNS servers.
  * </p>
+ * <p>
+ * When trying to create a hosted zone using a reusable delegation set,
+ * you could specify an optional DelegationSetId, and Route53 would
+ * assign those 4 NS records for the zone, instead of alloting a new one.
+ * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createHostedZone(CreateHostedZoneRequest)
  */
@@ -67,6 +72,13 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     private String name;
 
     /**
+     * The VPC that you want your hosted zone to be associated with. By
+     * providing this parameter, your newly created hosted cannot be resolved
+     * anywhere other than the given VPC.
+     */
+    private VPC vPC;
+
+    /**
      * A unique string that identifies the request and that allows failed
      * <code>CreateHostedZone</code> requests to be retried without the risk
      * of executing the operation twice. You must use a unique
@@ -87,6 +99,15 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      * zone.
      */
     private HostedZoneConfig hostedZoneConfig;
+
+    /**
+     * The delegation set id of the reusable delgation set whose NS records
+     * you want to assign to the new hosted zone.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     */
+    private String delegationSetId;
 
     /**
      * Default constructor for a new CreateHostedZoneRequest object.  Callers should use the
@@ -210,6 +231,51 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
      */
     public CreateHostedZoneRequest withName(String name) {
         this.name = name;
+        return this;
+    }
+
+    /**
+     * The VPC that you want your hosted zone to be associated with. By
+     * providing this parameter, your newly created hosted cannot be resolved
+     * anywhere other than the given VPC.
+     *
+     * @return The VPC that you want your hosted zone to be associated with. By
+     *         providing this parameter, your newly created hosted cannot be resolved
+     *         anywhere other than the given VPC.
+     */
+    public VPC getVPC() {
+        return vPC;
+    }
+    
+    /**
+     * The VPC that you want your hosted zone to be associated with. By
+     * providing this parameter, your newly created hosted cannot be resolved
+     * anywhere other than the given VPC.
+     *
+     * @param vPC The VPC that you want your hosted zone to be associated with. By
+     *         providing this parameter, your newly created hosted cannot be resolved
+     *         anywhere other than the given VPC.
+     */
+    public void setVPC(VPC vPC) {
+        this.vPC = vPC;
+    }
+    
+    /**
+     * The VPC that you want your hosted zone to be associated with. By
+     * providing this parameter, your newly created hosted cannot be resolved
+     * anywhere other than the given VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vPC The VPC that you want your hosted zone to be associated with. By
+     *         providing this parameter, your newly created hosted cannot be resolved
+     *         anywhere other than the given VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateHostedZoneRequest withVPC(VPC vPC) {
+        this.vPC = vPC;
         return this;
     }
 
@@ -343,6 +409,54 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * The delegation set id of the reusable delgation set whose NS records
+     * you want to assign to the new hosted zone.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @return The delegation set id of the reusable delgation set whose NS records
+     *         you want to assign to the new hosted zone.
+     */
+    public String getDelegationSetId() {
+        return delegationSetId;
+    }
+    
+    /**
+     * The delegation set id of the reusable delgation set whose NS records
+     * you want to assign to the new hosted zone.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @param delegationSetId The delegation set id of the reusable delgation set whose NS records
+     *         you want to assign to the new hosted zone.
+     */
+    public void setDelegationSetId(String delegationSetId) {
+        this.delegationSetId = delegationSetId;
+    }
+    
+    /**
+     * The delegation set id of the reusable delgation set whose NS records
+     * you want to assign to the new hosted zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 32<br/>
+     *
+     * @param delegationSetId The delegation set id of the reusable delgation set whose NS records
+     *         you want to assign to the new hosted zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateHostedZoneRequest withDelegationSetId(String delegationSetId) {
+        this.delegationSetId = delegationSetId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -355,8 +469,10 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getVPC() != null) sb.append("VPC: " + getVPC() + ",");
         if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
-        if (getHostedZoneConfig() != null) sb.append("HostedZoneConfig: " + getHostedZoneConfig() );
+        if (getHostedZoneConfig() != null) sb.append("HostedZoneConfig: " + getHostedZoneConfig() + ",");
+        if (getDelegationSetId() != null) sb.append("DelegationSetId: " + getDelegationSetId() );
         sb.append("}");
         return sb.toString();
     }
@@ -367,8 +483,10 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getVPC() == null) ? 0 : getVPC().hashCode()); 
         hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode()); 
         hashCode = prime * hashCode + ((getHostedZoneConfig() == null) ? 0 : getHostedZoneConfig().hashCode()); 
+        hashCode = prime * hashCode + ((getDelegationSetId() == null) ? 0 : getDelegationSetId().hashCode()); 
         return hashCode;
     }
     
@@ -382,10 +500,14 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements 
         
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getVPC() == null ^ this.getVPC() == null) return false;
+        if (other.getVPC() != null && other.getVPC().equals(this.getVPC()) == false) return false; 
         if (other.getCallerReference() == null ^ this.getCallerReference() == null) return false;
         if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false) return false; 
         if (other.getHostedZoneConfig() == null ^ this.getHostedZoneConfig() == null) return false;
         if (other.getHostedZoneConfig() != null && other.getHostedZoneConfig().equals(this.getHostedZoneConfig()) == false) return false; 
+        if (other.getDelegationSetId() == null ^ this.getDelegationSetId() == null) return false;
+        if (other.getDelegationSetId() != null && other.getDelegationSetId().equals(this.getDelegationSetId()) == false) return false; 
         return true;
     }
     

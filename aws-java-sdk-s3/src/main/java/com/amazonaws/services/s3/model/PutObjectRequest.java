@@ -844,19 +844,20 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Returns a clone of this object so that the metadata can be further
-     * modified without affecting the original.
+     * Returns a clone (as deep as possible) of this request object.
      */
+    @Override
     public PutObjectRequest clone() {
-        return new PutObjectRequest(bucketName, key, redirectLocation).
-             withAccessControlList(accessControlList)
+        PutObjectRequest cloned = 
+            new PutObjectRequest(bucketName, key, redirectLocation)
+            .withAccessControlList(accessControlList)
             .withCannedAcl(cannedAcl)
             .withFile(file)
             .withInputStream(inputStream)
             .withMetadata(metadata == null ? null : metadata.clone())
             .withStorageClass(storageClass)
-            .withGeneralProgressListener(getGeneralProgressListener())
-            .withRequestMetricCollector(getRequestMetricCollector())
+            .withSSECustomerKey(sseCustomerKey)
             ;
+        return copyBaseTo(cloned);
     }
 }

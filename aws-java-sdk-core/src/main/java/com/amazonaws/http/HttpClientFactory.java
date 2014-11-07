@@ -38,7 +38,6 @@ import org.apache.http.HttpRequest;
 import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpResponseInterceptor;
-import org.apache.http.HttpStatus;
 import org.apache.http.ProtocolException;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.ChallengeState;
@@ -60,7 +59,6 @@ import org.apache.http.conn.scheme.SchemeSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.auth.BasicScheme;
 import org.apache.http.impl.client.BasicAuthCache;
-import org.apache.http.impl.client.DefaultRedirectStrategy;
 import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
@@ -69,6 +67,7 @@ import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
 import com.amazonaws.http.impl.client.HttpRequestNoRetryHandler;
 import com.amazonaws.http.impl.client.SdkHttpClient;
 
@@ -93,6 +92,7 @@ class HttpClientFactory {
         HttpConnectionParams.setSoTimeout(httpClientParams, config.getSocketTimeout());
         HttpConnectionParams.setStaleCheckingEnabled(httpClientParams, true);
         HttpConnectionParams.setTcpNoDelay(httpClientParams, true);
+        HttpConnectionParams.setSoKeepalive(httpClientParams, config.useTcpKeepAlive());
 
         int socketSendBufferSizeHint = config.getSocketBufferSizeHints()[0];
         int socketReceiveBufferSizeHint = config.getSocketBufferSizeHints()[1];
@@ -113,7 +113,7 @@ class HttpClientFactory {
 
         try {
             Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());
-            SSLSocketFactory sf = new SSLSocketFactory(
+            SdkTLSSocketFactory sf = new SdkTLSSocketFactory(
                     SSLContext.getDefault(),
                     SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
             Scheme https = new Scheme("https", 443, sf);

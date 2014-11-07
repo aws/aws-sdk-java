@@ -43,6 +43,8 @@ public class CreateHostedZoneResult implements Serializable {
      */
     private DelegationSet delegationSet;
 
+    private VPC vPC;
+
     /**
      * The unique URL representing the new hosted zone.
      * <p>
@@ -175,6 +177,39 @@ public class CreateHostedZoneResult implements Serializable {
     }
 
     /**
+     * Returns the value of the VPC property for this object.
+     *
+     * @return The value of the VPC property for this object.
+     */
+    public VPC getVPC() {
+        return vPC;
+    }
+    
+    /**
+     * Sets the value of the VPC property for this object.
+     *
+     * @param vPC The new value for the VPC property for this object.
+     */
+    public void setVPC(VPC vPC) {
+        this.vPC = vPC;
+    }
+    
+    /**
+     * Sets the value of the VPC property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vPC The new value for the VPC property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateHostedZoneResult withVPC(VPC vPC) {
+        this.vPC = vPC;
+        return this;
+    }
+
+    /**
      * The unique URL representing the new hosted zone.
      * <p>
      * <b>Constraints:</b><br/>
@@ -231,6 +266,7 @@ public class CreateHostedZoneResult implements Serializable {
         if (getHostedZone() != null) sb.append("HostedZone: " + getHostedZone() + ",");
         if (getChangeInfo() != null) sb.append("ChangeInfo: " + getChangeInfo() + ",");
         if (getDelegationSet() != null) sb.append("DelegationSet: " + getDelegationSet() + ",");
+        if (getVPC() != null) sb.append("VPC: " + getVPC() + ",");
         if (getLocation() != null) sb.append("Location: " + getLocation() );
         sb.append("}");
         return sb.toString();
@@ -244,6 +280,7 @@ public class CreateHostedZoneResult implements Serializable {
         hashCode = prime * hashCode + ((getHostedZone() == null) ? 0 : getHostedZone().hashCode()); 
         hashCode = prime * hashCode + ((getChangeInfo() == null) ? 0 : getChangeInfo().hashCode()); 
         hashCode = prime * hashCode + ((getDelegationSet() == null) ? 0 : getDelegationSet().hashCode()); 
+        hashCode = prime * hashCode + ((getVPC() == null) ? 0 : getVPC().hashCode()); 
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode()); 
         return hashCode;
     }
@@ -262,6 +299,8 @@ public class CreateHostedZoneResult implements Serializable {
         if (other.getChangeInfo() != null && other.getChangeInfo().equals(this.getChangeInfo()) == false) return false; 
         if (other.getDelegationSet() == null ^ this.getDelegationSet() == null) return false;
         if (other.getDelegationSet() != null && other.getDelegationSet().equals(this.getDelegationSet()) == false) return false; 
+        if (other.getVPC() == null ^ this.getVPC() == null) return false;
+        if (other.getVPC() != null && other.getVPC().equals(this.getVPC()) == false) return false; 
         if (other.getLocation() == null ^ this.getLocation() == null) return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false) return false; 
         return true;

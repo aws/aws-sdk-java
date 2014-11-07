@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * To update a health check, send a <code>POST</code> request to the
- * <code>2013-05-27/healthcheck/health check ID </code> resource. The
+ * <code>2013-04-01/healthcheck/health check ID </code> resource. The
  * request body must include an XML document with an
  * <code>UpdateHealthCheckRequest</code> element. The response returns an
  * <code>UpdateHealthCheckResponse</code> element, which contains

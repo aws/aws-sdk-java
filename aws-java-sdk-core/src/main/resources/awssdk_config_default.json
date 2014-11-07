@@ -68,6 +68,11 @@
       "signerType" : "S3SignerType"
     }
   }, {
+    "key" : "s3/fips-us-gov-west-1",
+    "config" : {
+      "signerType" : "S3SignerType"
+    }
+  }, {
     "key" : "sdb/us-east-1",
     "config" : {
       "signerType" : "QueryStringSignerType"

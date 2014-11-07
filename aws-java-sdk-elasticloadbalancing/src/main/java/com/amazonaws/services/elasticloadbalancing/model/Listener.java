@@ -20,6 +20,12 @@ import java.io.Serializable;
  * <p>
  * The Listener data type.
  * </p>
+ * <p>
+ * For information about the protocols and the ports supported by Elastic
+ * Load Balancing, see
+ * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"> Listener Configurations for Elastic Load Balancing </a>
+ * .
+ * </p>
  */
 public class Listener implements Serializable {
 
@@ -31,8 +37,9 @@ public class Listener implements Serializable {
     private String protocol;
 
     /**
-     * Specifies the external load balancer port number. This property cannot
-     * be modified for the life of the load balancer.
+     * Specifies the port on which the load balancer is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      */
     private Integer loadBalancerPort;
 
@@ -54,8 +61,9 @@ public class Listener implements Serializable {
     private String instanceProtocol;
 
     /**
-     * Specifies the TCP port on which the instance server is listening. This
-     * property cannot be modified for the life of the load balancer.
+     * Specifies the port on which the instance server is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
@@ -84,12 +92,12 @@ public class Listener implements Serializable {
      * @param protocol Specifies the load balancer transport protocol to use
      * for routing - HTTP, HTTPS, TCP or SSL. This property cannot be
      * modified for the life of the load balancer.
-     * @param loadBalancerPort Specifies the external load balancer port
-     * number. This property cannot be modified for the life of the load
-     * balancer.
-     * @param instancePort Specifies the TCP port on which the instance
-     * server is listening. This property cannot be modified for the life of
-     * the load balancer.
+     * @param loadBalancerPort Specifies the port on which the load balancer
+     * is listening - 25, 80, 443, 465, 587, or 1024-65535. This property
+     * cannot be modified for the life of the load balancer.
+     * @param instancePort Specifies the port on which the instance server is
+     * listening - 25, 80, 443, 465, 587, or 1024-65535. This property cannot
+     * be modified for the life of the load balancer.
      */
     public Listener(String protocol, Integer loadBalancerPort, Integer instancePort) {
         setProtocol(protocol);
@@ -143,35 +151,41 @@ public class Listener implements Serializable {
     }
 
     /**
-     * Specifies the external load balancer port number. This property cannot
-     * be modified for the life of the load balancer.
+     * Specifies the port on which the load balancer is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      *
-     * @return Specifies the external load balancer port number. This property cannot
-     *         be modified for the life of the load balancer.
+     * @return Specifies the port on which the load balancer is listening - 25, 80,
+     *         443, 465, 587, or 1024-65535. This property cannot be modified for the
+     *         life of the load balancer.
      */
     public Integer getLoadBalancerPort() {
         return loadBalancerPort;
     }
     
     /**
-     * Specifies the external load balancer port number. This property cannot
-     * be modified for the life of the load balancer.
+     * Specifies the port on which the load balancer is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      *
-     * @param loadBalancerPort Specifies the external load balancer port number. This property cannot
-     *         be modified for the life of the load balancer.
+     * @param loadBalancerPort Specifies the port on which the load balancer is listening - 25, 80,
+     *         443, 465, 587, or 1024-65535. This property cannot be modified for the
+     *         life of the load balancer.
      */
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
     
     /**
-     * Specifies the external load balancer port number. This property cannot
-     * be modified for the life of the load balancer.
+     * Specifies the port on which the load balancer is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerPort Specifies the external load balancer port number. This property cannot
-     *         be modified for the life of the load balancer.
+     * @param loadBalancerPort Specifies the port on which the load balancer is listening - 25, 80,
+     *         443, 465, 587, or 1024-65535. This property cannot be modified for the
+     *         life of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -287,44 +301,50 @@ public class Listener implements Serializable {
     }
 
     /**
-     * Specifies the TCP port on which the instance server is listening. This
-     * property cannot be modified for the life of the load balancer.
+     * Specifies the port on which the instance server is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @return Specifies the TCP port on which the instance server is listening. This
-     *         property cannot be modified for the life of the load balancer.
+     * @return Specifies the port on which the instance server is listening - 25, 80,
+     *         443, 465, 587, or 1024-65535. This property cannot be modified for the
+     *         life of the load balancer.
      */
     public Integer getInstancePort() {
         return instancePort;
     }
     
     /**
-     * Specifies the TCP port on which the instance server is listening. This
-     * property cannot be modified for the life of the load balancer.
+     * Specifies the port on which the instance server is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort Specifies the TCP port on which the instance server is listening. This
-     *         property cannot be modified for the life of the load balancer.
+     * @param instancePort Specifies the port on which the instance server is listening - 25, 80,
+     *         443, 465, 587, or 1024-65535. This property cannot be modified for the
+     *         life of the load balancer.
      */
     public void setInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
     }
     
     /**
-     * Specifies the TCP port on which the instance server is listening. This
-     * property cannot be modified for the life of the load balancer.
+     * Specifies the port on which the instance server is listening - 25, 80,
+     * 443, 465, 587, or 1024-65535. This property cannot be modified for the
+     * life of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort Specifies the TCP port on which the instance server is listening. This
-     *         property cannot be modified for the life of the load balancer.
+     * @param instancePort Specifies the port on which the instance server is listening - 25, 80,
+     *         443, 465, 587, or 1024-65535. This property cannot be modified for the
+     *         life of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -82,13 +82,13 @@ public class DefaultCacheBehavior implements Serializable {
     /**
      * A complex type that controls which HTTP methods CloudFront processes
      * and forwards to your Amazon S3 bucket or your custom origin. There are
-     * two options: - CloudFront forwards only GET and HEAD requests. -
-     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
-     * requests. If you choose the second option, you may need to restrict
-     * access to your Amazon S3 bucket or to your custom origin so users
-     * can't perform operations that you don't want them to. For example, you
-     * may not want users to have permission to delete objects from your
-     * origin.
+     * three choices: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+     * forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+     * you pick the third choice, you may need to restrict access to your
+     * Amazon S3 bucket or to your custom origin so users can't perform
+     * operations that you don't want them to. For example, you may not want
+     * users to have permission to delete objects from your origin.
      */
     private AllowedMethods allowedMethods;
 
@@ -494,23 +494,23 @@ public class DefaultCacheBehavior implements Serializable {
     /**
      * A complex type that controls which HTTP methods CloudFront processes
      * and forwards to your Amazon S3 bucket or your custom origin. There are
-     * two options: - CloudFront forwards only GET and HEAD requests. -
-     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
-     * requests. If you choose the second option, you may need to restrict
-     * access to your Amazon S3 bucket or to your custom origin so users
-     * can't perform operations that you don't want them to. For example, you
-     * may not want users to have permission to delete objects from your
-     * origin.
+     * three choices: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+     * forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+     * you pick the third choice, you may need to restrict access to your
+     * Amazon S3 bucket or to your custom origin so users can't perform
+     * operations that you don't want them to. For example, you may not want
+     * users to have permission to delete objects from your origin.
      *
      * @return A complex type that controls which HTTP methods CloudFront processes
      *         and forwards to your Amazon S3 bucket or your custom origin. There are
-     *         two options: - CloudFront forwards only GET and HEAD requests. -
-     *         CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
-     *         requests. If you choose the second option, you may need to restrict
-     *         access to your Amazon S3 bucket or to your custom origin so users
-     *         can't perform operations that you don't want them to. For example, you
-     *         may not want users to have permission to delete objects from your
-     *         origin.
+     *         three choices: - CloudFront forwards only GET and HEAD requests. -
+     *         CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+     *         forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+     *         you pick the third choice, you may need to restrict access to your
+     *         Amazon S3 bucket or to your custom origin so users can't perform
+     *         operations that you don't want them to. For example, you may not want
+     *         users to have permission to delete objects from your origin.
      */
     public AllowedMethods getAllowedMethods() {
         return allowedMethods;
@@ -519,23 +519,23 @@ public class DefaultCacheBehavior implements Serializable {
     /**
      * A complex type that controls which HTTP methods CloudFront processes
      * and forwards to your Amazon S3 bucket or your custom origin. There are
-     * two options: - CloudFront forwards only GET and HEAD requests. -
-     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
-     * requests. If you choose the second option, you may need to restrict
-     * access to your Amazon S3 bucket or to your custom origin so users
-     * can't perform operations that you don't want them to. For example, you
-     * may not want users to have permission to delete objects from your
-     * origin.
+     * three choices: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+     * forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+     * you pick the third choice, you may need to restrict access to your
+     * Amazon S3 bucket or to your custom origin so users can't perform
+     * operations that you don't want them to. For example, you may not want
+     * users to have permission to delete objects from your origin.
      *
      * @param allowedMethods A complex type that controls which HTTP methods CloudFront processes
      *         and forwards to your Amazon S3 bucket or your custom origin. There are
-     *         two options: - CloudFront forwards only GET and HEAD requests. -
-     *         CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
-     *         requests. If you choose the second option, you may need to restrict
-     *         access to your Amazon S3 bucket or to your custom origin so users
-     *         can't perform operations that you don't want them to. For example, you
-     *         may not want users to have permission to delete objects from your
-     *         origin.
+     *         three choices: - CloudFront forwards only GET and HEAD requests. -
+     *         CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+     *         forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+     *         you pick the third choice, you may need to restrict access to your
+     *         Amazon S3 bucket or to your custom origin so users can't perform
+     *         operations that you don't want them to. For example, you may not want
+     *         users to have permission to delete objects from your origin.
      */
     public void setAllowedMethods(AllowedMethods allowedMethods) {
         this.allowedMethods = allowedMethods;
@@ -544,25 +544,25 @@ public class DefaultCacheBehavior implements Serializable {
     /**
      * A complex type that controls which HTTP methods CloudFront processes
      * and forwards to your Amazon S3 bucket or your custom origin. There are
-     * two options: - CloudFront forwards only GET and HEAD requests. -
-     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
-     * requests. If you choose the second option, you may need to restrict
-     * access to your Amazon S3 bucket or to your custom origin so users
-     * can't perform operations that you don't want them to. For example, you
-     * may not want users to have permission to delete objects from your
-     * origin.
+     * three choices: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+     * forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+     * you pick the third choice, you may need to restrict access to your
+     * Amazon S3 bucket or to your custom origin so users can't perform
+     * operations that you don't want them to. For example, you may not want
+     * users to have permission to delete objects from your origin.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowedMethods A complex type that controls which HTTP methods CloudFront processes
      *         and forwards to your Amazon S3 bucket or your custom origin. There are
-     *         two options: - CloudFront forwards only GET and HEAD requests. -
-     *         CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
-     *         requests. If you choose the second option, you may need to restrict
-     *         access to your Amazon S3 bucket or to your custom origin so users
-     *         can't perform operations that you don't want them to. For example, you
-     *         may not want users to have permission to delete objects from your
-     *         origin.
+     *         three choices: - CloudFront forwards only GET and HEAD requests. -
+     *         CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront
+     *         forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
+     *         you pick the third choice, you may need to restrict access to your
+     *         Amazon S3 bucket or to your custom origin so users can't perform
+     *         operations that you don't want them to. For example, you may not want
+     *         users to have permission to delete objects from your origin.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -54,6 +54,10 @@ public class ViewerCertificateStaxUnmarshaller implements Unmarshaller<ViewerCer
                     viewerCertificate.setSSLSupportMethod(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("MinimumProtocolVersion", targetDepth)) {
+                    viewerCertificate.setMinimumProtocolVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return viewerCertificate;

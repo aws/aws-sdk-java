@@ -60,4 +60,11 @@ class ScanCollection extends ItemCollection<ScanOutcome> {
     public Integer getMaxResultSize() {
         return spec.getMaxResultSize();
     }
+
+    protected void setLastLowLevelResult(ScanOutcome lowLevelResult) {
+        super.setLastLowLevelResult(lowLevelResult);
+        ScanResult result = lowLevelResult.getScanResult();
+        accumulateStats(result.getConsumedCapacity(), result.getCount(),
+                result.getScannedCount());
+    }
 }

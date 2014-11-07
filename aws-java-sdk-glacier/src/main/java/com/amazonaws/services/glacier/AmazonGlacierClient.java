@@ -945,17 +945,24 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     public void abortMultipartUpload(AbortMultipartUploadRequest abortMultipartUploadRequest) {
         ExecutionContext executionContext = createExecutionContext(abortMultipartUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<AbortMultipartUploadRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AbortMultipartUploadRequest> request = null;
+        
         try {
-            request = new AbortMultipartUploadRequestMarshaller().marshall(abortMultipartUploadRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AbortMultipartUploadRequestMarshaller().marshall(abortMultipartUploadRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -1013,17 +1020,24 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     public void deleteArchive(DeleteArchiveRequest deleteArchiveRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteArchiveRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteArchiveRequest> request = null;
+        
         try {
-            request = new DeleteArchiveRequestMarshaller().marshall(deleteArchiveRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteArchiveRequestMarshaller().marshall(deleteArchiveRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -1053,10 +1067,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * </li>
      * <li> <p>
-     * Along with the data, the response includes a checksum of the payload.
-     * You compute the checksum of the payload on the client and compare it
-     * with the checksum you received in the response to ensure you received
-     * all the expected data.
+     * Along with the data, the response includes a SHA256 tree hash of the
+     * payload. You compute the checksum of the payload on the client and
+     * compare it with the checksum you received in the response to ensure
+     * you received all the expected data.
      * </p>
      * </li>
      * <li> <p>
@@ -1525,17 +1539,24 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     public void setVaultNotifications(SetVaultNotificationsRequest setVaultNotificationsRequest) {
         ExecutionContext executionContext = createExecutionContext(setVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SetVaultNotificationsRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetVaultNotificationsRequest> request = null;
+        
         try {
-            request = new SetVaultNotificationsRequestMarshaller().marshall(setVaultNotificationsRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetVaultNotificationsRequestMarshaller().marshall(setVaultNotificationsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -1887,17 +1908,24 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     public void deleteVaultNotifications(DeleteVaultNotificationsRequest deleteVaultNotificationsRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteVaultNotificationsRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVaultNotificationsRequest> request = null;
+        
         try {
-            request = new DeleteVaultNotificationsRequestMarshaller().marshall(deleteVaultNotificationsRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVaultNotificationsRequestMarshaller().marshall(deleteVaultNotificationsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -2040,17 +2068,24 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     public void deleteVault(DeleteVaultRequest deleteVaultRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteVaultRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVaultRequest> request = null;
+        
         try {
-            request = new DeleteVaultRequestMarshaller().marshall(deleteVaultRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVaultRequestMarshaller().marshall(deleteVaultRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+            invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            
+            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
         }
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
 
     @Override
