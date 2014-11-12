@@ -28,7 +28,7 @@ import javax.crypto.SecretKey;
 public class EncryptionMaterials {
     private final KeyPair keyPair;
     private final SecretKey symmetricKey;
-    private Map<String, String> desc = new HashMap<String,String>();
+    private final Map<String, String> desc = new HashMap<String,String>();
 
     /**
      * Constructs a new EncryptionMaterials object, storing an asymmetric key pair.
@@ -110,5 +110,25 @@ public class EncryptionMaterials {
     public EncryptionMaterials addDescriptions(Map<String,String> descriptions) {
         desc.putAll(descriptions);
         return this;
+    }
+
+    /**
+     * Returns true if this is a KMS material description; false otherwise.
+     * 
+     * @return false by default
+     */
+    public boolean isKMSEnabled() {
+        return false;
+    }
+
+    /**
+     * @throws UnsupportedOperationException by default
+     */
+    public String getCustomerMasterKeyId() {
+        throw new UnsupportedOperationException();
+    }
+    
+    protected String getDescription(String name) {
+        return desc.get(name);
     }
 }

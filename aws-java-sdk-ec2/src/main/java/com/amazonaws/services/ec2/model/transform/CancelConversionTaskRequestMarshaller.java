@@ -39,7 +39,7 @@ public class CancelConversionTaskRequestMarshaller implements Marshaller<Request
 
         Request<CancelConversionTaskRequest> request = new DefaultRequest<CancelConversionTaskRequest>(cancelConversionTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelConversionTask");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (cancelConversionTaskRequest.getConversionTaskId() != null) {
             request.addParameter("ConversionTaskId", StringUtils.fromString(cancelConversionTaskRequest.getConversionTaskId()));

@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#describeTrails(DescribeTrailsRequest) DescribeTrails operation}.
  * <p>
- * Retrieves the settings for some or all trails associated with an
- * account. Returns a list of Trail structures in JSON format.
+ * Retrieves settings for the trail associated with the current region
+ * for your account.
  * </p>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#describeTrails(DescribeTrailsRequest)
@@ -30,14 +30,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The list of <a>Trail</a> object names.
+     * The trail returned.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> trailNameList;
 
     /**
-     * The list of <a>Trail</a> object names.
+     * The trail returned.
      *
-     * @return The list of <a>Trail</a> object names.
+     * @return The trail returned.
      */
     public java.util.List<String> getTrailNameList() {
         if (trailNameList == null) {
@@ -48,9 +48,9 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The list of <a>Trail</a> object names.
+     * The trail returned.
      *
-     * @param trailNameList The list of <a>Trail</a> object names.
+     * @param trailNameList The trail returned.
      */
     public void setTrailNameList(java.util.Collection<String> trailNameList) {
         if (trailNameList == null) {
@@ -63,11 +63,11 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The list of <a>Trail</a> object names.
+     * The trail returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailNameList The list of <a>Trail</a> object names.
+     * @param trailNameList The trail returned.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -81,11 +81,11 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements Se
     }
     
     /**
-     * The list of <a>Trail</a> object names.
+     * The trail returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trailNameList The list of <a>Trail</a> object names.
+     * @param trailNameList The trail returned.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

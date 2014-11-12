@@ -17,17 +17,21 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A filter name and value pair that is used to return a more specific
+ * list of results. Filters can be used to match a set of resources by
+ * various criteria, such as tags, attributes, or IDs.
+ * </p>
  */
 public class Filter implements Serializable {
 
     /**
-     * The name of the filter.
+     * The name of the filter. Filter names are case-sensitive.
      */
     private String name;
 
     /**
-     * One or more filter values.
+     * One or more filter values. Filter values are case-sensitive.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> values;
 
@@ -42,8 +46,9 @@ public class Filter implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param name The name of the filter.
-     * @param values One or more filter values.
+     * @param name The name of the filter. Filter names are case-sensitive.
+     * @param values One or more filter values. Filter values are
+     * case-sensitive.
      */
     public Filter(String name, java.util.List<String> values) {
         setName(name);
@@ -55,36 +60,36 @@ public class Filter implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param name The name of the filter.
+     * @param name The name of the filter. Filter names are case-sensitive.
      */
     public Filter(String name) {
         setName(name);
     }
 
     /**
-     * The name of the filter.
+     * The name of the filter. Filter names are case-sensitive.
      *
-     * @return The name of the filter.
+     * @return The name of the filter. Filter names are case-sensitive.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of the filter.
+     * The name of the filter. Filter names are case-sensitive.
      *
-     * @param name The name of the filter.
+     * @param name The name of the filter. Filter names are case-sensitive.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of the filter.
+     * The name of the filter. Filter names are case-sensitive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name of the filter.
+     * @param name The name of the filter. Filter names are case-sensitive.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -95,9 +100,9 @@ public class Filter implements Serializable {
     }
 
     /**
-     * One or more filter values.
+     * One or more filter values. Filter values are case-sensitive.
      *
-     * @return One or more filter values.
+     * @return One or more filter values. Filter values are case-sensitive.
      */
     public java.util.List<String> getValues() {
         if (values == null) {
@@ -108,9 +113,9 @@ public class Filter implements Serializable {
     }
     
     /**
-     * One or more filter values.
+     * One or more filter values. Filter values are case-sensitive.
      *
-     * @param values One or more filter values.
+     * @param values One or more filter values. Filter values are case-sensitive.
      */
     public void setValues(java.util.Collection<String> values) {
         if (values == null) {
@@ -123,11 +128,11 @@ public class Filter implements Serializable {
     }
     
     /**
-     * One or more filter values.
+     * One or more filter values. Filter values are case-sensitive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values One or more filter values.
+     * @param values One or more filter values. Filter values are case-sensitive.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -141,11 +146,11 @@ public class Filter implements Serializable {
     }
     
     /**
-     * One or more filter values.
+     * One or more filter values. Filter values are case-sensitive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values One or more filter values.
+     * @param values One or more filter values. Filter values are case-sensitive.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

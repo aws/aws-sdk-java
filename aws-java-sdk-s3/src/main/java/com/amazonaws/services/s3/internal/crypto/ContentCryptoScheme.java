@@ -87,6 +87,7 @@ abstract class ContentCryptoScheme {
     abstract int getKeyLengthInBits();
     abstract int getBlockSizeInBytes();
     abstract int getIVLengthInBytes();
+
     int getTagLengthInBits() { return 0; } // default to zero ie no tag
     
     byte[] adjustIV(byte[] iv, long startingBytePos) {
@@ -235,4 +236,11 @@ abstract class ContentCryptoScheme {
      * no limit.
      */
     abstract long getMaxPlaintextSize();
+
+    /**
+     * A convenient method motivated by KMS.
+     */
+    final String getKeySpec() {
+        return getKeyGeneratorAlgorithm() + "_" + getKeyLengthInBits();
+    }
 }

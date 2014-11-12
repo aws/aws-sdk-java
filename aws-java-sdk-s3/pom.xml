@@ -15,7 +15,7 @@
   <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.9.4</version>
+        <version>1.9.5</version>
   </parent>
 
   <licenses>
@@ -29,10 +29,10 @@
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
     <dependency>
-        <artifactId>aws-java-sdk-core</artifactId>
+        <artifactId>aws-java-sdk-kms</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.9.4</version>
+        <version>1.9.5</version>
     </dependency>
 </dependencies>
 

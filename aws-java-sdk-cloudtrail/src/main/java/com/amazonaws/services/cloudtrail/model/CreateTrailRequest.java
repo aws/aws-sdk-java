@@ -21,72 +21,74 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudtrail.AWSCloudTrail#createTrail(CreateTrailRequest) CreateTrail operation}.
  * <p>
- * From the command line, use create-subscription.
+ * From the command line, use <code>create-subscription</code> .
  * </p>
  * <p>
  * Creates a trail that specifies the settings for delivery of log data
- * to an Amazon S3 bucket. The request includes a Trail structure that
- * specifies the following:
+ * to an Amazon S3 bucket.
  * </p>
- * 
- * <ul>
- * <li>Trail name.</li>
- * <li>The name of an existing Amazon S3 bucket to which CloudTrail
- * delivers your log files.</li>
- * <li>The name of the Amazon S3 key prefix that precedes each log
- * file.</li>
- * <li>The name of an existing Amazon SNS topic that notifies you that a
- * new file is available in your bucket.</li>
- * <li>Whether the log file should include AWS API calls from global
- * services. Currently, the only global AWS API calls included in
- * CloudTrail log files are from IAM and AWS STS.</li>
- * 
- * </ul>
  *
  * @see com.amazonaws.services.cloudtrail.AWSCloudTrail#createTrail(CreateTrailRequest)
  */
 public class CreateTrailRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * Specifies the name of the trail.
+     */
     private String name;
 
+    /**
+     * Specifies the name of the Amazon S3 bucket designated for publishing
+     * log files.
+     */
     private String s3BucketName;
 
+    /**
+     * Specifies the Amazon S3 key prefix that precedes the name of the
+     * bucket you have designated for log file delivery.
+     */
     private String s3KeyPrefix;
 
+    /**
+     * Specifies the name of the Amazon SNS topic defined for notification of
+     * log file delivery.
+     */
     private String snsTopicName;
 
+    /**
+     * Specifies whether the trail is publishing events from global services
+     * such as IAM to the log files.
+     */
     private Boolean includeGlobalServiceEvents;
 
-    /**
-     * Contains the <a>Trail</a> structure that specifies the settings for
-     * each trail.
-     */
-    private Trail trail;
+    private String cloudWatchLogsLogGroupArn;
+
+    private String cloudWatchLogsRoleArn;
 
     /**
-     * Returns the value of the Name property for this object.
+     * Specifies the name of the trail.
      *
-     * @return The value of the Name property for this object.
+     * @return Specifies the name of the trail.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * Specifies the name of the trail.
      *
-     * @param name The new value for the Name property for this object.
+     * @param name Specifies the name of the trail.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * Specifies the name of the trail.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The new value for the Name property for this object.
+     * @param name Specifies the name of the trail.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -97,29 +99,35 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns the value of the S3BucketName property for this object.
+     * Specifies the name of the Amazon S3 bucket designated for publishing
+     * log files.
      *
-     * @return The value of the S3BucketName property for this object.
+     * @return Specifies the name of the Amazon S3 bucket designated for publishing
+     *         log files.
      */
     public String getS3BucketName() {
         return s3BucketName;
     }
     
     /**
-     * Sets the value of the S3BucketName property for this object.
+     * Specifies the name of the Amazon S3 bucket designated for publishing
+     * log files.
      *
-     * @param s3BucketName The new value for the S3BucketName property for this object.
+     * @param s3BucketName Specifies the name of the Amazon S3 bucket designated for publishing
+     *         log files.
      */
     public void setS3BucketName(String s3BucketName) {
         this.s3BucketName = s3BucketName;
     }
     
     /**
-     * Sets the value of the S3BucketName property for this object.
+     * Specifies the name of the Amazon S3 bucket designated for publishing
+     * log files.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3BucketName The new value for the S3BucketName property for this object.
+     * @param s3BucketName Specifies the name of the Amazon S3 bucket designated for publishing
+     *         log files.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -130,29 +138,35 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns the value of the S3KeyPrefix property for this object.
+     * Specifies the Amazon S3 key prefix that precedes the name of the
+     * bucket you have designated for log file delivery.
      *
-     * @return The value of the S3KeyPrefix property for this object.
+     * @return Specifies the Amazon S3 key prefix that precedes the name of the
+     *         bucket you have designated for log file delivery.
      */
     public String getS3KeyPrefix() {
         return s3KeyPrefix;
     }
     
     /**
-     * Sets the value of the S3KeyPrefix property for this object.
+     * Specifies the Amazon S3 key prefix that precedes the name of the
+     * bucket you have designated for log file delivery.
      *
-     * @param s3KeyPrefix The new value for the S3KeyPrefix property for this object.
+     * @param s3KeyPrefix Specifies the Amazon S3 key prefix that precedes the name of the
+     *         bucket you have designated for log file delivery.
      */
     public void setS3KeyPrefix(String s3KeyPrefix) {
         this.s3KeyPrefix = s3KeyPrefix;
     }
     
     /**
-     * Sets the value of the S3KeyPrefix property for this object.
+     * Specifies the Amazon S3 key prefix that precedes the name of the
+     * bucket you have designated for log file delivery.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3KeyPrefix The new value for the S3KeyPrefix property for this object.
+     * @param s3KeyPrefix Specifies the Amazon S3 key prefix that precedes the name of the
+     *         bucket you have designated for log file delivery.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -163,29 +177,35 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns the value of the SnsTopicName property for this object.
+     * Specifies the name of the Amazon SNS topic defined for notification of
+     * log file delivery.
      *
-     * @return The value of the SnsTopicName property for this object.
+     * @return Specifies the name of the Amazon SNS topic defined for notification of
+     *         log file delivery.
      */
     public String getSnsTopicName() {
         return snsTopicName;
     }
     
     /**
-     * Sets the value of the SnsTopicName property for this object.
+     * Specifies the name of the Amazon SNS topic defined for notification of
+     * log file delivery.
      *
-     * @param snsTopicName The new value for the SnsTopicName property for this object.
+     * @param snsTopicName Specifies the name of the Amazon SNS topic defined for notification of
+     *         log file delivery.
      */
     public void setSnsTopicName(String snsTopicName) {
         this.snsTopicName = snsTopicName;
     }
     
     /**
-     * Sets the value of the SnsTopicName property for this object.
+     * Specifies the name of the Amazon SNS topic defined for notification of
+     * log file delivery.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snsTopicName The new value for the SnsTopicName property for this object.
+     * @param snsTopicName Specifies the name of the Amazon SNS topic defined for notification of
+     *         log file delivery.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -196,34 +216,35 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns the value of the IncludeGlobalServiceEvents property for this
-     * object.
+     * Specifies whether the trail is publishing events from global services
+     * such as IAM to the log files.
      *
-     * @return The value of the IncludeGlobalServiceEvents property for this object.
+     * @return Specifies whether the trail is publishing events from global services
+     *         such as IAM to the log files.
      */
     public Boolean isIncludeGlobalServiceEvents() {
         return includeGlobalServiceEvents;
     }
     
     /**
-     * Sets the value of the IncludeGlobalServiceEvents property for this
-     * object.
+     * Specifies whether the trail is publishing events from global services
+     * such as IAM to the log files.
      *
-     * @param includeGlobalServiceEvents The new value for the IncludeGlobalServiceEvents property for this
-     *         object.
+     * @param includeGlobalServiceEvents Specifies whether the trail is publishing events from global services
+     *         such as IAM to the log files.
      */
     public void setIncludeGlobalServiceEvents(Boolean includeGlobalServiceEvents) {
         this.includeGlobalServiceEvents = includeGlobalServiceEvents;
     }
     
     /**
-     * Sets the value of the IncludeGlobalServiceEvents property for this
-     * object.
+     * Specifies whether the trail is publishing events from global services
+     * such as IAM to the log files.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param includeGlobalServiceEvents The new value for the IncludeGlobalServiceEvents property for this
-     *         object.
+     * @param includeGlobalServiceEvents Specifies whether the trail is publishing events from global services
+     *         such as IAM to the log files.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -234,51 +255,85 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns the value of the IncludeGlobalServiceEvents property for this
-     * object.
+     * Specifies whether the trail is publishing events from global services
+     * such as IAM to the log files.
      *
-     * @return The value of the IncludeGlobalServiceEvents property for this object.
+     * @return Specifies whether the trail is publishing events from global services
+     *         such as IAM to the log files.
      */
     public Boolean getIncludeGlobalServiceEvents() {
         return includeGlobalServiceEvents;
     }
 
     /**
-     * Contains the <a>Trail</a> structure that specifies the settings for
-     * each trail.
+     * Returns the value of the CloudWatchLogsLogGroupArn property for this
+     * object.
      *
-     * @return Contains the <a>Trail</a> structure that specifies the settings for
-     *         each trail.
+     * @return The value of the CloudWatchLogsLogGroupArn property for this object.
      */
-    public Trail getTrail() {
-        return trail;
+    public String getCloudWatchLogsLogGroupArn() {
+        return cloudWatchLogsLogGroupArn;
     }
     
     /**
-     * Contains the <a>Trail</a> structure that specifies the settings for
-     * each trail.
+     * Sets the value of the CloudWatchLogsLogGroupArn property for this
+     * object.
      *
-     * @param trail Contains the <a>Trail</a> structure that specifies the settings for
-     *         each trail.
+     * @param cloudWatchLogsLogGroupArn The new value for the CloudWatchLogsLogGroupArn property for this
+     *         object.
      */
-    public void setTrail(Trail trail) {
-        this.trail = trail;
+    public void setCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
+        this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
     }
     
     /**
-     * Contains the <a>Trail</a> structure that specifies the settings for
-     * each trail.
+     * Sets the value of the CloudWatchLogsLogGroupArn property for this
+     * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param trail Contains the <a>Trail</a> structure that specifies the settings for
-     *         each trail.
+     * @param cloudWatchLogsLogGroupArn The new value for the CloudWatchLogsLogGroupArn property for this
+     *         object.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public CreateTrailRequest withTrail(Trail trail) {
-        this.trail = trail;
+    public CreateTrailRequest withCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
+        this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
+        return this;
+    }
+
+    /**
+     * Returns the value of the CloudWatchLogsRoleArn property for this
+     * object.
+     *
+     * @return The value of the CloudWatchLogsRoleArn property for this object.
+     */
+    public String getCloudWatchLogsRoleArn() {
+        return cloudWatchLogsRoleArn;
+    }
+    
+    /**
+     * Sets the value of the CloudWatchLogsRoleArn property for this object.
+     *
+     * @param cloudWatchLogsRoleArn The new value for the CloudWatchLogsRoleArn property for this object.
+     */
+    public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
+        this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
+    }
+    
+    /**
+     * Sets the value of the CloudWatchLogsRoleArn property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cloudWatchLogsRoleArn The new value for the CloudWatchLogsRoleArn property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateTrailRequest withCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
+        this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
         return this;
     }
 
@@ -299,7 +354,8 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
         if (getS3KeyPrefix() != null) sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
         if (getSnsTopicName() != null) sb.append("SnsTopicName: " + getSnsTopicName() + ",");
         if (isIncludeGlobalServiceEvents() != null) sb.append("IncludeGlobalServiceEvents: " + isIncludeGlobalServiceEvents() + ",");
-        if (getTrail() != null) sb.append("Trail: " + getTrail() );
+        if (getCloudWatchLogsLogGroupArn() != null) sb.append("CloudWatchLogsLogGroupArn: " + getCloudWatchLogsLogGroupArn() + ",");
+        if (getCloudWatchLogsRoleArn() != null) sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn() );
         sb.append("}");
         return sb.toString();
     }
@@ -314,7 +370,8 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getS3KeyPrefix() == null) ? 0 : getS3KeyPrefix().hashCode()); 
         hashCode = prime * hashCode + ((getSnsTopicName() == null) ? 0 : getSnsTopicName().hashCode()); 
         hashCode = prime * hashCode + ((isIncludeGlobalServiceEvents() == null) ? 0 : isIncludeGlobalServiceEvents().hashCode()); 
-        hashCode = prime * hashCode + ((getTrail() == null) ? 0 : getTrail().hashCode()); 
+        hashCode = prime * hashCode + ((getCloudWatchLogsLogGroupArn() == null) ? 0 : getCloudWatchLogsLogGroupArn().hashCode()); 
+        hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode()); 
         return hashCode;
     }
     
@@ -336,8 +393,10 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements Seria
         if (other.getSnsTopicName() != null && other.getSnsTopicName().equals(this.getSnsTopicName()) == false) return false; 
         if (other.isIncludeGlobalServiceEvents() == null ^ this.isIncludeGlobalServiceEvents() == null) return false;
         if (other.isIncludeGlobalServiceEvents() != null && other.isIncludeGlobalServiceEvents().equals(this.isIncludeGlobalServiceEvents()) == false) return false; 
-        if (other.getTrail() == null ^ this.getTrail() == null) return false;
-        if (other.getTrail() != null && other.getTrail().equals(this.getTrail()) == false) return false; 
+        if (other.getCloudWatchLogsLogGroupArn() == null ^ this.getCloudWatchLogsLogGroupArn() == null) return false;
+        if (other.getCloudWatchLogsLogGroupArn() != null && other.getCloudWatchLogsLogGroupArn().equals(this.getCloudWatchLogsLogGroupArn()) == false) return false; 
+        if (other.getCloudWatchLogsRoleArn() == null ^ this.getCloudWatchLogsRoleArn() == null) return false;
+        if (other.getCloudWatchLogsRoleArn() != null && other.getCloudWatchLogsRoleArn().equals(this.getCloudWatchLogsRoleArn()) == false) return false; 
         return true;
     }
     

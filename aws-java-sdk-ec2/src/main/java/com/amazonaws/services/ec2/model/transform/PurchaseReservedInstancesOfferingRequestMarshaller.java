@@ -39,7 +39,7 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements Marsh
 
         Request<PurchaseReservedInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedInstancesOfferingRequest>(purchaseReservedInstancesOfferingRequest, "AmazonEC2");
         request.addParameter("Action", "PurchaseReservedInstancesOffering");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (purchaseReservedInstancesOfferingRequest.getReservedInstancesOfferingId() != null) {
             request.addParameter("ReservedInstancesOfferingId", StringUtils.fromString(purchaseReservedInstancesOfferingRequest.getReservedInstancesOfferingId()));

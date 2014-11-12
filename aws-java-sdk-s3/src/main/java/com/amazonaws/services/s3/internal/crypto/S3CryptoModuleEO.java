@@ -21,6 +21,7 @@ import java.io.File;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.internal.SdkFilterInputStream;
+import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
@@ -37,11 +38,11 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
     /**
      * @param cryptoConfig a read-only copy of the crypto configuration
      */
-    S3CryptoModuleEO(S3Direct s3,
+    S3CryptoModuleEO(AWSKMSClient kms, S3Direct s3,
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
-        super(s3, credentialsProvider, encryptionMaterialsProvider,
+        super(kms, s3, credentialsProvider, encryptionMaterialsProvider,
                 cryptoConfig);
         if (cryptoConfig.getCryptoMode() != EncryptionOnly)
             throw new IllegalArgumentException();
@@ -53,7 +54,17 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
     S3CryptoModuleEO(S3Direct s3,
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
-        this(s3, new DefaultAWSCredentialsProviderChain(),
+        this(null, s3, new DefaultAWSCredentialsProviderChain(),
+                encryptionMaterialsProvider, cryptoConfig);
+    }
+
+    /**
+     * Used for testing purposes only.
+     */
+    S3CryptoModuleEO(AWSKMSClient kms, S3Direct s3,
+            EncryptionMaterialsProvider encryptionMaterialsProvider,
+            CryptoConfiguration cryptoConfig) {
+        this(kms, s3, new DefaultAWSCredentialsProviderChain(),
                 encryptionMaterialsProvider, cryptoConfig);
     }
 

@@ -39,7 +39,7 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
 
         Request<CreateVolumeRequest> request = new DefaultRequest<CreateVolumeRequest>(createVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVolume");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (createVolumeRequest.getSize() != null) {
             request.addParameter("Size", StringUtils.fromInteger(createVolumeRequest.getSize()));
@@ -58,6 +58,9 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
         }
         if (createVolumeRequest.isEncrypted() != null) {
             request.addParameter("Encrypted", StringUtils.fromBoolean(createVolumeRequest.isEncrypted()));
+        }
+        if (createVolumeRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(createVolumeRequest.getKmsKeyId()));
         }
 
         return request;

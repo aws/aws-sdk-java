@@ -15,7 +15,7 @@
   <parent>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
-        <version>1.9.4</version>
+        <version>1.9.5</version>
   </parent>
 
   <properties>
@@ -34,7 +34,7 @@
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-simpleworkflow</artifactId>
-        <version>1.9.4</version>
+        <version>1.9.5</version>
       </dependency>
       <dependency>
         <groupId>org.freemarker</groupId>

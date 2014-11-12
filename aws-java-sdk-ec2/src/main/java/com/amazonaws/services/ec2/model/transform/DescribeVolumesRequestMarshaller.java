@@ -39,7 +39,7 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
 
         Request<DescribeVolumesRequest> request = new DefaultRequest<DescribeVolumesRequest>(describeVolumesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVolumes");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         java.util.List<String> volumeIdsList = describeVolumesRequest.getVolumeIds();
         int volumeIdsListIndex = 1;

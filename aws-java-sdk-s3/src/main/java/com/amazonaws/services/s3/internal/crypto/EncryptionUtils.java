@@ -60,9 +60,12 @@ import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
 
 /**
+ * This internal class is no longer used, and will be removed in the future.
+ * 
  * The EncryptionUtils class encrypts and decrypts data stored in S3.  It can be used to prepare
  * requests for encryption before they are stored in S3 and to decrypt objects that are retrieved from S3.
  */
+@Deprecated
 public class EncryptionUtils {
     /** Suffix appended to the end of instruction file names */
     @Deprecated

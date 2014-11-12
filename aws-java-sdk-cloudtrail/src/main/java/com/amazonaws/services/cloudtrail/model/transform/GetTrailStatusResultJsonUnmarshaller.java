@@ -73,29 +73,13 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
                     context.nextToken();
                     getTrailStatusResult.setStopLoggingTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("LatestDeliveryAttemptTime", targetDepth)) {
+                if (context.testExpression("LatestCloudWatchLogsDeliveryError", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setLatestDeliveryAttemptTime(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestCloudWatchLogsDeliveryError(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("LatestNotificationAttemptTime", targetDepth)) {
+                if (context.testExpression("LatestCloudWatchLogsDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setLatestNotificationAttemptTime(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("LatestNotificationAttemptSucceeded", targetDepth)) {
-                    context.nextToken();
-                    getTrailStatusResult.setLatestNotificationAttemptSucceeded(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("LatestDeliveryAttemptSucceeded", targetDepth)) {
-                    context.nextToken();
-                    getTrailStatusResult.setLatestDeliveryAttemptSucceeded(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("TimeLoggingStarted", targetDepth)) {
-                    context.nextToken();
-                    getTrailStatusResult.setTimeLoggingStarted(StringJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("TimeLoggingStopped", targetDepth)) {
-                    context.nextToken();
-                    getTrailStatusResult.setTimeLoggingStopped(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestCloudWatchLogsDeliveryTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

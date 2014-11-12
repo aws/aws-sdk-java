@@ -20,6 +20,7 @@ import static com.amazonaws.services.s3.model.CryptoStorageMode.ObjectMetadata;
 import static com.amazonaws.services.s3.model.InstructionFileId.DEFAULT_INSTRUCTION_FILE_SUFFIX;
 import static com.amazonaws.services.s3.model.InstructionFileId.DOT;
 import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSource;
+import static com.amazonaws.util.BinaryUtils.copyAllBytesFrom;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -37,6 +38,7 @@ import java.util.Map;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -47,6 +49,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.SdkFilterInputStream;
+import com.amazonaws.services.kms.AWSKMSClient;
+import com.amazonaws.services.kms.model.GenerateDataKeyRequest;
+import com.amazonaws.services.kms.model.GenerateDataKeyResult;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.Mimetypes;
@@ -95,11 +100,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     protected final  Map<String, T> multipartUploadContexts =
         Collections.synchronizedMap(new HashMap<String,T>());
     protected final S3Direct s3;
+    protected final AWSKMSClient kms;
 
     /**
      * @param cryptoConfig a read-only copy of the crypto configuration.
      */
-    protected S3CryptoModuleBase(S3Direct s3,
+    protected S3CryptoModuleBase(AWSKMSClient kms, S3Direct s3,
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider kekMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
@@ -110,6 +116,22 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         this.cryptoConfig = cryptoConfig;
         this.cryptoScheme = S3CryptoScheme.from(cryptoConfig.getCryptoMode());
         this.contentCryptoScheme = cryptoScheme.getContentCryptoScheme();
+        this.kms = kms;
+    }
+
+    /**
+     * For testing purposes only.
+     */
+    protected S3CryptoModuleBase(S3Direct s3,
+            AWSCredentialsProvider credentialsProvider,
+            EncryptionMaterialsProvider kekMaterialsProvider,
+            CryptoConfiguration cryptoConfig) {
+        this.kekMaterialsProvider = kekMaterialsProvider;
+        this.s3 = s3;
+        this.cryptoConfig = cryptoConfig;
+        this.cryptoScheme = S3CryptoScheme.from(cryptoConfig.getCryptoMode());
+        this.contentCryptoScheme = cryptoScheme.getContentCryptoScheme();
+        this.kms = null;
     }
 
     /**
@@ -390,7 +412,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             final EncryptionMaterials materials = f.getEncryptionMaterials();
             if (materials != null) {
                 return buildContentCryptoMaterial(materials,
-                        cryptoConfig.getCryptoProvider());
+                        cryptoConfig.getCryptoProvider(), req);
             }
         }
         if (req instanceof MaterialsDescriptionProvider) {
@@ -398,11 +420,11 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             MaterialsDescriptionProvider mdp = (MaterialsDescriptionProvider) req;
             return newContentCryptoMaterial(this.kekMaterialsProvider,
                     mdp.getMaterialsDescription(),
-                    cryptoConfig.getCryptoProvider());
+                    cryptoConfig.getCryptoProvider(), req);
         }
         // per s3 client level encryption materails 
         return newContentCryptoMaterial(this.kekMaterialsProvider,
-                cryptoConfig.getCryptoProvider());
+                cryptoConfig.getCryptoProvider(), req);
     }
 
     /**
@@ -411,10 +433,11 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
      */
     private ContentCryptoMaterial newContentCryptoMaterial(
             EncryptionMaterialsProvider kekMaterialProvider,
-            Map<String, String> materialsDescription, Provider provider) {
+            Map<String, String> materialsDescription, Provider provider,
+            AmazonWebServiceRequest req) {
         EncryptionMaterials kekMaterials = 
             kekMaterialProvider.getEncryptionMaterials(materialsDescription);
-        return buildContentCryptoMaterial(kekMaterials, provider);
+        return buildContentCryptoMaterial(kekMaterials, provider, req);
     }
 
     /**
@@ -423,22 +446,43 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
      */
     private ContentCryptoMaterial newContentCryptoMaterial(
             EncryptionMaterialsProvider kekMaterialProvider,
-            Provider provider) {
+            Provider provider, AmazonWebServiceRequest req) {
         EncryptionMaterials kekMaterials = kekMaterialProvider.getEncryptionMaterials();
         if (kekMaterials == null)
             throw new AmazonClientException("No material available from the encryption material provider");
-        return buildContentCryptoMaterial(kekMaterials, provider);
+        return buildContentCryptoMaterial(kekMaterials, provider, req);
     }
     
     private ContentCryptoMaterial buildContentCryptoMaterial(
-            EncryptionMaterials kekMaterials, Provider provider) {
-        // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
-        SecretKey cek = generateCEK(kekMaterials, provider);
+            EncryptionMaterials kekMaterials, Provider provider,
+            AmazonWebServiceRequest req) {
         // Randomly generate the IV
-        byte[] iv = new byte[contentCryptoScheme.getIVLengthInBytes()];
+        final byte[] iv = new byte[contentCryptoScheme.getIVLengthInBytes()];
         cryptoScheme.getSecureRandom().nextBytes(iv);
-        return ContentCryptoMaterial.create(
-            cek, iv, kekMaterials, cryptoScheme, provider);
+
+        if (kekMaterials.isKMSEnabled()) {
+            GenerateDataKeyRequest keyGenReq = new GenerateDataKeyRequest()
+                .withEncryptionContext(kekMaterials.getMaterialsDescription())
+                .withKeyId(kekMaterials.getCustomerMasterKeyId())
+                .withKeySpec(contentCryptoScheme.getKeySpec());
+            keyGenReq
+                .withGeneralProgressListener(req.getGeneralProgressListener())
+                .withRequestMetricCollector(req.getRequestMetricCollector())
+                ;
+            GenerateDataKeyResult keyGenRes = kms.generateDataKey(keyGenReq);
+            final SecretKey cek = 
+                new SecretKeySpec(copyAllBytesFrom(keyGenRes.getPlaintext()),
+                        contentCryptoScheme.getKeyGeneratorAlgorithm());
+            byte[] keyBlob = copyAllBytesFrom(keyGenRes.getCiphertextBlob());
+            return ContentCryptoMaterial.wrap(cek, iv,
+                    kekMaterials, contentCryptoScheme, provider,
+                    new KMSSecuredCEK(keyBlob));
+        } else {
+            // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
+            return ContentCryptoMaterial.create(
+                    generateCEK(kekMaterials, provider), 
+                    iv, kekMaterials, cryptoScheme, provider, kms, req);
+        }
     }
 
     protected final SecretKey generateCEK(
@@ -704,12 +748,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 newCCM = origCCM.recreate(req.getMaterialsDescription(),
                         this.kekMaterialsProvider,
                         cryptoScheme,
-                        cryptoConfig.getCryptoProvider());
+                        cryptoConfig.getCryptoProvider(), kms, req);
             } else {
                 newCCM = origCCM.recreate(newKEK,
                         this.kekMaterialsProvider,
                         cryptoScheme,
-                        cryptoConfig.getCryptoProvider());
+                        cryptoConfig.getCryptoProvider(), kms, req);
             }
             PutObjectRequest putInstFileRequest = req.createPutObjectRequest(retrieved);
             // Put the new instruction file into S3
@@ -742,7 +786,8 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 .fromObjectMetadata(s3w.getObjectMetadata(),
                     kekMaterialsProvider,
                     cryptoConfig.getCryptoProvider(),
-                    false   // existing CEK not necessarily key-wrapped
+                    false,   // existing CEK not necessarily key-wrapped
+                    kms
                 );
         }
         S3ObjectWrapper orig_ifile = 
@@ -763,7 +808,8 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             instruction,
             kekMaterialsProvider,
             cryptoConfig.getCryptoProvider(),
-            false   // existing CEK not necessarily key-wrapped
+            false,   // existing CEK not necessarily key-wrapped
+            kms
         );
     }
 

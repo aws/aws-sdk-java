@@ -436,11 +436,15 @@ public class AmazonHttpClient {
         while (true) {
             p.initPerRetry();
             if (p.redirectedURI != null) {
-                String fullUri = p.redirectedURI.toString();
-                String path = p.redirectedURI.getRawPath();
-                int pathLen = path == null ? 0 : path.length();
-                String leftPart = fullUri.substring(0, fullUri.length() - pathLen);
-                request.setEndpoint(URI.create(leftPart));
+                /*
+                 * [scheme:][//authority][path][?query][#fragment]
+                 */
+                String scheme = p.redirectedURI.getScheme();
+                String beforeAuthority = scheme == null ? "" : scheme + "://";
+                String authority = p.redirectedURI.getAuthority();
+                String path = p.redirectedURI.getPath();
+
+                request.setEndpoint(URI.create(beforeAuthority + authority));
                 request.setResourcePath(path);
             }
             if (p.authRetryParam != null) {

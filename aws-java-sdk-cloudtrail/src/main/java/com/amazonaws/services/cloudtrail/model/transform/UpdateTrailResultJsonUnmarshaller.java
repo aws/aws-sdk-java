@@ -65,9 +65,13 @@ public class UpdateTrailResultJsonUnmarshaller implements Unmarshaller<UpdateTra
                     context.nextToken();
                     updateTrailResult.setIncludeGlobalServiceEvents(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("trail", targetDepth)) {
+                if (context.testExpression("CloudWatchLogsLogGroupArn", targetDepth)) {
                     context.nextToken();
-                    updateTrailResult.setTrail(TrailJsonUnmarshaller.getInstance().unmarshall(context));
+                    updateTrailResult.setCloudWatchLogsLogGroupArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchLogsRoleArn", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult.setCloudWatchLogsRoleArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

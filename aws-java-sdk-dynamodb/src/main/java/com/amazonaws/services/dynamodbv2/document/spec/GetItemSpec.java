@@ -119,10 +119,12 @@ public class GetItemSpec extends AbstractSpecWithPrimaryKey<GetItemRequest> {
      * name, or a JSON path expression.
      */
     public GetItemSpec withNameMap(Map<String,String> nameMap) {
-        if (nameMap == null)
+        if (nameMap == null) {
             this.nameMap = null;
-        else
-            this.nameMap = Collections.unmodifiableMap(new LinkedHashMap<String, String>(nameMap));
+        } else {
+            this.nameMap = Collections.unmodifiableMap(
+                new LinkedHashMap<String, String>(nameMap));
+        }
         return this;
     }
 

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -161,8 +162,12 @@ public class UpdateItemSpec extends AbstractSpecWithPrimaryKey<UpdateItemRequest
      * name, or a JSON path expression.
      */
     public UpdateItemSpec withNameMap(Map<String, String> nameMap) {
-        if (nameMap != null)
-            this.nameMap = Collections.unmodifiableMap(nameMap);
+        if (nameMap == null) {
+            this.nameMap = null;
+        } else {
+            this.nameMap = Collections.unmodifiableMap(
+                new LinkedHashMap<String, String>(nameMap));
+        }
         return this;
     }
 
@@ -175,7 +180,12 @@ public class UpdateItemSpec extends AbstractSpecWithPrimaryKey<UpdateItemRequest
      * specify the actual values for the attribute-value placeholders.
      */
     public UpdateItemSpec withValueMap(Map<String, Object> valueMap) {
-        this.valueMap = Collections.unmodifiableMap(valueMap);
+        if (valueMap == null) {
+            this.valueMap = null;
+        } else {
+            this.valueMap = Collections.unmodifiableMap(
+                new LinkedHashMap<String, Object>(valueMap));
+        }
         return this;
     }
 

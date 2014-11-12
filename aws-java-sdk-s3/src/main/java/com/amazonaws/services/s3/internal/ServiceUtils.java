@@ -41,6 +41,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
@@ -277,8 +278,14 @@ public class ServiceUtils {
         byte[] clientSideHash = null;
         byte[] serverSideHash = null;
         try {
-            // Multipart Uploads don't have an MD5 calculated on the service side
-            if (ServiceUtils.isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
+            // Multipart Uploads don't have an MD5 calculated on the service
+            // side
+            // Server Side encryption with AWS KMS enabled objects has MD5 of
+            // cipher text. So the MD5 validation needs to be skipped.
+            if (!(ServiceUtils.isMultipartUploadETag(s3Object
+                    .getObjectMetadata().getETag()))
+                    && !skipContentMd5IntegrityCheck(s3Object
+                            .getObjectMetadata())) {
                 clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(destinationFile));
                 serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
             }
@@ -369,5 +376,18 @@ public class ServiceUtils {
             }
         } while ( needRetry );
         return s3Object;
+    }
+
+    /**
+     * Returns whether the specified request should skip MD5 check on the
+     * requested object content. Currently for Amazon S3 objects that have
+     * Server Side Encryption enabled with keys maintained in AWS Key Management
+     * System, the MD5 returned in the response will be the MD5 of the cipher
+     * text. Hence the MD5 check needs to be skipped for such Amazon S3 objects.
+     */
+    public static boolean skipContentMd5IntegrityCheck(ObjectMetadata metadata) {
+        return metadata == null ? false
+                : (metadata.getSSEAlgorithm() != null && metadata
+                        .getSSEAwsKmsKeyId() != null);
     }
 }

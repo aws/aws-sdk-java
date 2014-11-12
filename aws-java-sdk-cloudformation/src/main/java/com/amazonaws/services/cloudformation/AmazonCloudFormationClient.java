@@ -238,6 +238,65 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Returns information about a new or existing template. The
+     * <code>GetTemplateSummary</code> action is useful for viewing parameter
+     * information, such as default parameter values and parameter types,
+     * before you create or update a stack.
+     * </p>
+     * <p>
+     * You can use the <code>GetTemplateSummary</code> action when you
+     * submit a template, or you can get template information for a running
+     * or deleted stack.
+     * </p>
+     * <p>
+     * For deleted stacks, <code>GetTemplateSummary</code> returns the
+     * template information for up to 90 days after the stack has been
+     * deleted. If the template does not exist, a
+     * <code>ValidationError</code> is returned.
+     * </p>
+     *
+     * @param getTemplateSummaryRequest Container for the necessary
+     *           parameters to execute the GetTemplateSummary service method on
+     *           AmazonCloudFormation.
+     * 
+     * @return The response from the GetTemplateSummary service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetTemplateSummaryResult getTemplateSummary(GetTemplateSummaryRequest getTemplateSummaryRequest) {
+        ExecutionContext executionContext = createExecutionContext(getTemplateSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTemplateSummaryRequest> request = null;
+        Response<GetTemplateSummaryResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTemplateSummaryRequestMarshaller().marshall(getTemplateSummaryRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                  awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            response = invoke(request, new GetTemplateSummaryResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Validates a specified template.
      * </p>
      *
@@ -475,6 +534,39 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
+     * Sets a stack policy for a specified stack.
+     * </p>
+     *
+     * @param setStackPolicyRequest Container for the necessary parameters to
+     *           execute the SetStackPolicy service method on AmazonCloudFormation.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(setStackPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetStackPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetStackPolicyRequestMarshaller().marshall(setStackPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
      * Creates a stack as specified in the template. After the call
      * completes successfully, the stack creation starts. You can check the
      * status of the stack via the DescribeStacks API.
@@ -519,39 +611,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-    
-    /**
-     * <p>
-     * Sets a stack policy for a specified stack.
-     * </p>
-     *
-     * @param setStackPolicyRequest Container for the necessary parameters to
-     *           execute the SetStackPolicy service method on AmazonCloudFormation.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(setStackPolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SetStackPolicyRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new SetStackPolicyRequestMarshaller().marshall(setStackPolicyRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
@@ -702,6 +761,45 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         } finally {
             
             endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Sends a signal to the specified resource with a success or failure
+     * status. You can use the SignalResource API in conjunction with a
+     * creation policy or update policy. AWS CloudFormation doesn't proceed
+     * with a stack creation or update until resources receive the required
+     * number of signals or the timeout period is exceeded. The
+     * SignalResource API is useful in cases where you want to send signals
+     * from anywhere other than an Amazon EC2 instance.
+     * </p>
+     *
+     * @param signalResourceRequest Container for the necessary parameters to
+     *           execute the SignalResource service method on AmazonCloudFormation.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void signalResource(SignalResourceRequest signalResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(signalResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SignalResourceRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SignalResourceRequestMarshaller().marshall(signalResourceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
         }
     }
     
@@ -882,41 +980,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Deletes a specified stack. Once the call completes successfully,
-     * stack deletion starts. Deleted stacks do not show up in the
-     * DescribeStacks API if the deletion has been completed successfully.
-     * </p>
-     *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack service method on AmazonCloudFormation.
-     * 
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteStack(DeleteStackRequest deleteStackRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteStackRequest> request = null;
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        try {
-            request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
-            // Binds the request metrics to the current request.
-            request.setAWSRequestMetrics(awsRequestMetrics);
-            invoke(request, null, executionContext);
-        } finally {
-            endClientExecution(awsRequestMetrics, request, null);
-        }
-    }
-    
-    /**
-     * <p>
      * Returns descriptions of all resources of the specified stack.
      * </p>
      * <p>
@@ -962,6 +1025,76 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             
             endClientExecution(awsRequestMetrics, request, response);
         }
+    }
+    
+    /**
+     * <p>
+     * Deletes a specified stack. Once the call completes successfully,
+     * stack deletion starts. Deleted stacks do not show up in the
+     * DescribeStacks API if the deletion has been completed successfully.
+     * </p>
+     *
+     * @param deleteStackRequest Container for the necessary parameters to
+     *           execute the DeleteStack service method on AmazonCloudFormation.
+     * 
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteStack(DeleteStackRequest deleteStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteStackRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
+    }
+    
+    /**
+     * <p>
+     * Returns information about a new or existing template. The
+     * <code>GetTemplateSummary</code> action is useful for viewing parameter
+     * information, such as default parameter values and parameter types,
+     * before you create or update a stack.
+     * </p>
+     * <p>
+     * You can use the <code>GetTemplateSummary</code> action when you
+     * submit a template, or you can get template information for a running
+     * or deleted stack.
+     * </p>
+     * <p>
+     * For deleted stacks, <code>GetTemplateSummary</code> returns the
+     * template information for up to 90 days after the stack has been
+     * deleted. If the template does not exist, a
+     * <code>ValidationError</code> is returned.
+     * </p>
+     * 
+     * @return The response from the GetTemplateSummary service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetTemplateSummaryResult getTemplateSummary() throws AmazonServiceException, AmazonClientException {
+        return getTemplateSummary(new GetTemplateSummaryRequest());
     }
     
     /**

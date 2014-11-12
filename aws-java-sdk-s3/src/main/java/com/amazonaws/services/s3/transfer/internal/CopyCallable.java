@@ -245,6 +245,12 @@ public class CopyCallable implements Callable<CopyResult> {
                     copyObjectRequest.getDestinationSSECustomerKey());
         }
 
+        if (copyObjectRequest.getSSEAwsKeyManagementParams() != null) {
+            initiateMultipartUploadRequest
+                    .setSSEAwsKeyManagementParams(copyObjectRequest
+                            .getSSEAwsKeyManagementParams());
+        }
+
         ObjectMetadata newObjectMetadata = copyObjectRequest.getNewObjectMetadata();
         if(newObjectMetadata == null){
             newObjectMetadata = new ObjectMetadata();

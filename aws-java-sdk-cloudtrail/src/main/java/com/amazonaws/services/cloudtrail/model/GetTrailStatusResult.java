@@ -30,60 +30,51 @@ public class GetTrailStatusResult implements Serializable {
     private Boolean isLogging;
 
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to deliver log files to the account's Amazon S3 bucket.
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver log files to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference.
      */
     private String latestDeliveryError;
 
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to send an Amazon SNS notification.
+     * Displays any Amazon SNS error that CloudTrail encountered when
+     * attempting to send a notification. For more information about Amazon
+     * SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+     * SNS Developer Guide</a>.
      */
     private String latestNotificationError;
 
+    /**
+     * Specifies the date and time that CloudTrail last delivered log files
+     * to an account's Amazon S3 bucket.
+     */
     private java.util.Date latestDeliveryTime;
 
+    /**
+     * Specifies the date and time of the most recent Amazon SNS notification
+     * that CloudTrail has written a new log file to an account's Amazon S3
+     * bucket.
+     */
     private java.util.Date latestNotificationTime;
 
+    /**
+     * Specifies the most recent date and time when CloudTrail started
+     * recording API calls for an AWS account.
+     */
     private java.util.Date startLoggingTime;
 
+    /**
+     * Specifies the most recent date and time when CloudTrail stopped
+     * recording API calls for an AWS account.
+     */
     private java.util.Date stopLoggingTime;
 
-    /**
-     * The last time CloudTrail attempted to deliver a file to an account's
-     * Amazon S3 bucket.
-     */
-    private String latestDeliveryAttemptTime;
+    private String latestCloudWatchLogsDeliveryError;
 
-    /**
-     * The last time CloudTrail attempted to notify an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
-     */
-    private String latestNotificationAttemptTime;
-
-    /**
-     * The last time CloudTrail successfully notified an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
-     */
-    private String latestNotificationAttemptSucceeded;
-
-    /**
-     * The last time CloudTrail successfully delivered a log file to an
-     * account's Amazon S3 bucket.
-     */
-    private String latestDeliveryAttemptSucceeded;
-
-    /**
-     * The time at which CloudTrail started logging AWS API calls for an
-     * account.
-     */
-    private String timeLoggingStarted;
-
-    /**
-     * The time at which CloudTrail stopped logging AWS API calls for an
-     * account.
-     */
-    private String timeLoggingStopped;
+    private java.util.Date latestCloudWatchLogsDeliveryTime;
 
     /**
      * Whether the CloudTrail is currently logging AWS API calls.
@@ -128,35 +119,53 @@ public class GetTrailStatusResult implements Serializable {
     }
 
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to deliver log files to the account's Amazon S3 bucket.
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver log files to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference.
      *
-     * @return Information about the most recent error CloudTrail encountered when
-     *         attempting to deliver log files to the account's Amazon S3 bucket.
+     * @return Displays any Amazon S3 error that CloudTrail encountered when
+     *         attempting to deliver log files to the designated bucket. For more
+     *         information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     *         Responses</a> in the Amazon S3 API Reference.
      */
     public String getLatestDeliveryError() {
         return latestDeliveryError;
     }
     
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to deliver log files to the account's Amazon S3 bucket.
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver log files to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference.
      *
-     * @param latestDeliveryError Information about the most recent error CloudTrail encountered when
-     *         attempting to deliver log files to the account's Amazon S3 bucket.
+     * @param latestDeliveryError Displays any Amazon S3 error that CloudTrail encountered when
+     *         attempting to deliver log files to the designated bucket. For more
+     *         information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     *         Responses</a> in the Amazon S3 API Reference.
      */
     public void setLatestDeliveryError(String latestDeliveryError) {
         this.latestDeliveryError = latestDeliveryError;
     }
     
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to deliver log files to the account's Amazon S3 bucket.
+     * Displays any Amazon S3 error that CloudTrail encountered when
+     * attempting to deliver log files to the designated bucket. For more
+     * information see the topic <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * Responses</a> in the Amazon S3 API Reference.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestDeliveryError Information about the most recent error CloudTrail encountered when
-     *         attempting to deliver log files to the account's Amazon S3 bucket.
+     * @param latestDeliveryError Displays any Amazon S3 error that CloudTrail encountered when
+     *         attempting to deliver log files to the designated bucket. For more
+     *         information see the topic <a
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     *         Responses</a> in the Amazon S3 API Reference.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -167,35 +176,53 @@ public class GetTrailStatusResult implements Serializable {
     }
 
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to send an Amazon SNS notification.
+     * Displays any Amazon SNS error that CloudTrail encountered when
+     * attempting to send a notification. For more information about Amazon
+     * SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+     * SNS Developer Guide</a>.
      *
-     * @return Information about the most recent error CloudTrail encountered when
-     *         attempting to send an Amazon SNS notification.
+     * @return Displays any Amazon SNS error that CloudTrail encountered when
+     *         attempting to send a notification. For more information about Amazon
+     *         SNS errors, see the <a
+     *         href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+     *         SNS Developer Guide</a>.
      */
     public String getLatestNotificationError() {
         return latestNotificationError;
     }
     
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to send an Amazon SNS notification.
+     * Displays any Amazon SNS error that CloudTrail encountered when
+     * attempting to send a notification. For more information about Amazon
+     * SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+     * SNS Developer Guide</a>.
      *
-     * @param latestNotificationError Information about the most recent error CloudTrail encountered when
-     *         attempting to send an Amazon SNS notification.
+     * @param latestNotificationError Displays any Amazon SNS error that CloudTrail encountered when
+     *         attempting to send a notification. For more information about Amazon
+     *         SNS errors, see the <a
+     *         href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+     *         SNS Developer Guide</a>.
      */
     public void setLatestNotificationError(String latestNotificationError) {
         this.latestNotificationError = latestNotificationError;
     }
     
     /**
-     * Information about the most recent error CloudTrail encountered when
-     * attempting to send an Amazon SNS notification.
+     * Displays any Amazon SNS error that CloudTrail encountered when
+     * attempting to send a notification. For more information about Amazon
+     * SNS errors, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+     * SNS Developer Guide</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestNotificationError Information about the most recent error CloudTrail encountered when
-     *         attempting to send an Amazon SNS notification.
+     * @param latestNotificationError Displays any Amazon SNS error that CloudTrail encountered when
+     *         attempting to send a notification. For more information about Amazon
+     *         SNS errors, see the <a
+     *         href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
+     *         SNS Developer Guide</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -206,29 +233,35 @@ public class GetTrailStatusResult implements Serializable {
     }
 
     /**
-     * Returns the value of the LatestDeliveryTime property for this object.
+     * Specifies the date and time that CloudTrail last delivered log files
+     * to an account's Amazon S3 bucket.
      *
-     * @return The value of the LatestDeliveryTime property for this object.
+     * @return Specifies the date and time that CloudTrail last delivered log files
+     *         to an account's Amazon S3 bucket.
      */
     public java.util.Date getLatestDeliveryTime() {
         return latestDeliveryTime;
     }
     
     /**
-     * Sets the value of the LatestDeliveryTime property for this object.
+     * Specifies the date and time that CloudTrail last delivered log files
+     * to an account's Amazon S3 bucket.
      *
-     * @param latestDeliveryTime The new value for the LatestDeliveryTime property for this object.
+     * @param latestDeliveryTime Specifies the date and time that CloudTrail last delivered log files
+     *         to an account's Amazon S3 bucket.
      */
     public void setLatestDeliveryTime(java.util.Date latestDeliveryTime) {
         this.latestDeliveryTime = latestDeliveryTime;
     }
     
     /**
-     * Sets the value of the LatestDeliveryTime property for this object.
+     * Specifies the date and time that CloudTrail last delivered log files
+     * to an account's Amazon S3 bucket.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestDeliveryTime The new value for the LatestDeliveryTime property for this object.
+     * @param latestDeliveryTime Specifies the date and time that CloudTrail last delivered log files
+     *         to an account's Amazon S3 bucket.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -239,30 +272,41 @@ public class GetTrailStatusResult implements Serializable {
     }
 
     /**
-     * Returns the value of the LatestNotificationTime property for this
-     * object.
+     * Specifies the date and time of the most recent Amazon SNS notification
+     * that CloudTrail has written a new log file to an account's Amazon S3
+     * bucket.
      *
-     * @return The value of the LatestNotificationTime property for this object.
+     * @return Specifies the date and time of the most recent Amazon SNS notification
+     *         that CloudTrail has written a new log file to an account's Amazon S3
+     *         bucket.
      */
     public java.util.Date getLatestNotificationTime() {
         return latestNotificationTime;
     }
     
     /**
-     * Sets the value of the LatestNotificationTime property for this object.
+     * Specifies the date and time of the most recent Amazon SNS notification
+     * that CloudTrail has written a new log file to an account's Amazon S3
+     * bucket.
      *
-     * @param latestNotificationTime The new value for the LatestNotificationTime property for this object.
+     * @param latestNotificationTime Specifies the date and time of the most recent Amazon SNS notification
+     *         that CloudTrail has written a new log file to an account's Amazon S3
+     *         bucket.
      */
     public void setLatestNotificationTime(java.util.Date latestNotificationTime) {
         this.latestNotificationTime = latestNotificationTime;
     }
     
     /**
-     * Sets the value of the LatestNotificationTime property for this object.
+     * Specifies the date and time of the most recent Amazon SNS notification
+     * that CloudTrail has written a new log file to an account's Amazon S3
+     * bucket.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestNotificationTime The new value for the LatestNotificationTime property for this object.
+     * @param latestNotificationTime Specifies the date and time of the most recent Amazon SNS notification
+     *         that CloudTrail has written a new log file to an account's Amazon S3
+     *         bucket.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -273,29 +317,35 @@ public class GetTrailStatusResult implements Serializable {
     }
 
     /**
-     * Returns the value of the StartLoggingTime property for this object.
+     * Specifies the most recent date and time when CloudTrail started
+     * recording API calls for an AWS account.
      *
-     * @return The value of the StartLoggingTime property for this object.
+     * @return Specifies the most recent date and time when CloudTrail started
+     *         recording API calls for an AWS account.
      */
     public java.util.Date getStartLoggingTime() {
         return startLoggingTime;
     }
     
     /**
-     * Sets the value of the StartLoggingTime property for this object.
+     * Specifies the most recent date and time when CloudTrail started
+     * recording API calls for an AWS account.
      *
-     * @param startLoggingTime The new value for the StartLoggingTime property for this object.
+     * @param startLoggingTime Specifies the most recent date and time when CloudTrail started
+     *         recording API calls for an AWS account.
      */
     public void setStartLoggingTime(java.util.Date startLoggingTime) {
         this.startLoggingTime = startLoggingTime;
     }
     
     /**
-     * Sets the value of the StartLoggingTime property for this object.
+     * Specifies the most recent date and time when CloudTrail started
+     * recording API calls for an AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startLoggingTime The new value for the StartLoggingTime property for this object.
+     * @param startLoggingTime Specifies the most recent date and time when CloudTrail started
+     *         recording API calls for an AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -306,29 +356,35 @@ public class GetTrailStatusResult implements Serializable {
     }
 
     /**
-     * Returns the value of the StopLoggingTime property for this object.
+     * Specifies the most recent date and time when CloudTrail stopped
+     * recording API calls for an AWS account.
      *
-     * @return The value of the StopLoggingTime property for this object.
+     * @return Specifies the most recent date and time when CloudTrail stopped
+     *         recording API calls for an AWS account.
      */
     public java.util.Date getStopLoggingTime() {
         return stopLoggingTime;
     }
     
     /**
-     * Sets the value of the StopLoggingTime property for this object.
+     * Specifies the most recent date and time when CloudTrail stopped
+     * recording API calls for an AWS account.
      *
-     * @param stopLoggingTime The new value for the StopLoggingTime property for this object.
+     * @param stopLoggingTime Specifies the most recent date and time when CloudTrail stopped
+     *         recording API calls for an AWS account.
      */
     public void setStopLoggingTime(java.util.Date stopLoggingTime) {
         this.stopLoggingTime = stopLoggingTime;
     }
     
     /**
-     * Sets the value of the StopLoggingTime property for this object.
+     * Specifies the most recent date and time when CloudTrail stopped
+     * recording API calls for an AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stopLoggingTime The new value for the StopLoggingTime property for this object.
+     * @param stopLoggingTime Specifies the most recent date and time when CloudTrail stopped
+     *         recording API calls for an AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -339,236 +395,80 @@ public class GetTrailStatusResult implements Serializable {
     }
 
     /**
-     * The last time CloudTrail attempted to deliver a file to an account's
-     * Amazon S3 bucket.
+     * Returns the value of the LatestCloudWatchLogsDeliveryError property
+     * for this object.
      *
-     * @return The last time CloudTrail attempted to deliver a file to an account's
-     *         Amazon S3 bucket.
+     * @return The value of the LatestCloudWatchLogsDeliveryError property for this
+     *         object.
      */
-    public String getLatestDeliveryAttemptTime() {
-        return latestDeliveryAttemptTime;
+    public String getLatestCloudWatchLogsDeliveryError() {
+        return latestCloudWatchLogsDeliveryError;
     }
     
     /**
-     * The last time CloudTrail attempted to deliver a file to an account's
-     * Amazon S3 bucket.
+     * Sets the value of the LatestCloudWatchLogsDeliveryError property for
+     * this object.
      *
-     * @param latestDeliveryAttemptTime The last time CloudTrail attempted to deliver a file to an account's
-     *         Amazon S3 bucket.
+     * @param latestCloudWatchLogsDeliveryError The new value for the LatestCloudWatchLogsDeliveryError property for
+     *         this object.
      */
-    public void setLatestDeliveryAttemptTime(String latestDeliveryAttemptTime) {
-        this.latestDeliveryAttemptTime = latestDeliveryAttemptTime;
+    public void setLatestCloudWatchLogsDeliveryError(String latestCloudWatchLogsDeliveryError) {
+        this.latestCloudWatchLogsDeliveryError = latestCloudWatchLogsDeliveryError;
     }
     
     /**
-     * The last time CloudTrail attempted to deliver a file to an account's
-     * Amazon S3 bucket.
+     * Sets the value of the LatestCloudWatchLogsDeliveryError property for
+     * this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestDeliveryAttemptTime The last time CloudTrail attempted to deliver a file to an account's
-     *         Amazon S3 bucket.
+     * @param latestCloudWatchLogsDeliveryError The new value for the LatestCloudWatchLogsDeliveryError property for
+     *         this object.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public GetTrailStatusResult withLatestDeliveryAttemptTime(String latestDeliveryAttemptTime) {
-        this.latestDeliveryAttemptTime = latestDeliveryAttemptTime;
+    public GetTrailStatusResult withLatestCloudWatchLogsDeliveryError(String latestCloudWatchLogsDeliveryError) {
+        this.latestCloudWatchLogsDeliveryError = latestCloudWatchLogsDeliveryError;
         return this;
     }
 
     /**
-     * The last time CloudTrail attempted to notify an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
+     * Returns the value of the LatestCloudWatchLogsDeliveryTime property for
+     * this object.
      *
-     * @return The last time CloudTrail attempted to notify an account's owner of a
-     *         log delivery to the account's Amazon S3 bucket.
+     * @return The value of the LatestCloudWatchLogsDeliveryTime property for this
+     *         object.
      */
-    public String getLatestNotificationAttemptTime() {
-        return latestNotificationAttemptTime;
+    public java.util.Date getLatestCloudWatchLogsDeliveryTime() {
+        return latestCloudWatchLogsDeliveryTime;
     }
     
     /**
-     * The last time CloudTrail attempted to notify an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
+     * Sets the value of the LatestCloudWatchLogsDeliveryTime property for
+     * this object.
      *
-     * @param latestNotificationAttemptTime The last time CloudTrail attempted to notify an account's owner of a
-     *         log delivery to the account's Amazon S3 bucket.
+     * @param latestCloudWatchLogsDeliveryTime The new value for the LatestCloudWatchLogsDeliveryTime property for
+     *         this object.
      */
-    public void setLatestNotificationAttemptTime(String latestNotificationAttemptTime) {
-        this.latestNotificationAttemptTime = latestNotificationAttemptTime;
+    public void setLatestCloudWatchLogsDeliveryTime(java.util.Date latestCloudWatchLogsDeliveryTime) {
+        this.latestCloudWatchLogsDeliveryTime = latestCloudWatchLogsDeliveryTime;
     }
     
     /**
-     * The last time CloudTrail attempted to notify an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
+     * Sets the value of the LatestCloudWatchLogsDeliveryTime property for
+     * this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param latestNotificationAttemptTime The last time CloudTrail attempted to notify an account's owner of a
-     *         log delivery to the account's Amazon S3 bucket.
+     * @param latestCloudWatchLogsDeliveryTime The new value for the LatestCloudWatchLogsDeliveryTime property for
+     *         this object.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
      */
-    public GetTrailStatusResult withLatestNotificationAttemptTime(String latestNotificationAttemptTime) {
-        this.latestNotificationAttemptTime = latestNotificationAttemptTime;
-        return this;
-    }
-
-    /**
-     * The last time CloudTrail successfully notified an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
-     *
-     * @return The last time CloudTrail successfully notified an account's owner of a
-     *         log delivery to the account's Amazon S3 bucket.
-     */
-    public String getLatestNotificationAttemptSucceeded() {
-        return latestNotificationAttemptSucceeded;
-    }
-    
-    /**
-     * The last time CloudTrail successfully notified an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
-     *
-     * @param latestNotificationAttemptSucceeded The last time CloudTrail successfully notified an account's owner of a
-     *         log delivery to the account's Amazon S3 bucket.
-     */
-    public void setLatestNotificationAttemptSucceeded(String latestNotificationAttemptSucceeded) {
-        this.latestNotificationAttemptSucceeded = latestNotificationAttemptSucceeded;
-    }
-    
-    /**
-     * The last time CloudTrail successfully notified an account's owner of a
-     * log delivery to the account's Amazon S3 bucket.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param latestNotificationAttemptSucceeded The last time CloudTrail successfully notified an account's owner of a
-     *         log delivery to the account's Amazon S3 bucket.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetTrailStatusResult withLatestNotificationAttemptSucceeded(String latestNotificationAttemptSucceeded) {
-        this.latestNotificationAttemptSucceeded = latestNotificationAttemptSucceeded;
-        return this;
-    }
-
-    /**
-     * The last time CloudTrail successfully delivered a log file to an
-     * account's Amazon S3 bucket.
-     *
-     * @return The last time CloudTrail successfully delivered a log file to an
-     *         account's Amazon S3 bucket.
-     */
-    public String getLatestDeliveryAttemptSucceeded() {
-        return latestDeliveryAttemptSucceeded;
-    }
-    
-    /**
-     * The last time CloudTrail successfully delivered a log file to an
-     * account's Amazon S3 bucket.
-     *
-     * @param latestDeliveryAttemptSucceeded The last time CloudTrail successfully delivered a log file to an
-     *         account's Amazon S3 bucket.
-     */
-    public void setLatestDeliveryAttemptSucceeded(String latestDeliveryAttemptSucceeded) {
-        this.latestDeliveryAttemptSucceeded = latestDeliveryAttemptSucceeded;
-    }
-    
-    /**
-     * The last time CloudTrail successfully delivered a log file to an
-     * account's Amazon S3 bucket.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param latestDeliveryAttemptSucceeded The last time CloudTrail successfully delivered a log file to an
-     *         account's Amazon S3 bucket.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetTrailStatusResult withLatestDeliveryAttemptSucceeded(String latestDeliveryAttemptSucceeded) {
-        this.latestDeliveryAttemptSucceeded = latestDeliveryAttemptSucceeded;
-        return this;
-    }
-
-    /**
-     * The time at which CloudTrail started logging AWS API calls for an
-     * account.
-     *
-     * @return The time at which CloudTrail started logging AWS API calls for an
-     *         account.
-     */
-    public String getTimeLoggingStarted() {
-        return timeLoggingStarted;
-    }
-    
-    /**
-     * The time at which CloudTrail started logging AWS API calls for an
-     * account.
-     *
-     * @param timeLoggingStarted The time at which CloudTrail started logging AWS API calls for an
-     *         account.
-     */
-    public void setTimeLoggingStarted(String timeLoggingStarted) {
-        this.timeLoggingStarted = timeLoggingStarted;
-    }
-    
-    /**
-     * The time at which CloudTrail started logging AWS API calls for an
-     * account.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param timeLoggingStarted The time at which CloudTrail started logging AWS API calls for an
-     *         account.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetTrailStatusResult withTimeLoggingStarted(String timeLoggingStarted) {
-        this.timeLoggingStarted = timeLoggingStarted;
-        return this;
-    }
-
-    /**
-     * The time at which CloudTrail stopped logging AWS API calls for an
-     * account.
-     *
-     * @return The time at which CloudTrail stopped logging AWS API calls for an
-     *         account.
-     */
-    public String getTimeLoggingStopped() {
-        return timeLoggingStopped;
-    }
-    
-    /**
-     * The time at which CloudTrail stopped logging AWS API calls for an
-     * account.
-     *
-     * @param timeLoggingStopped The time at which CloudTrail stopped logging AWS API calls for an
-     *         account.
-     */
-    public void setTimeLoggingStopped(String timeLoggingStopped) {
-        this.timeLoggingStopped = timeLoggingStopped;
-    }
-    
-    /**
-     * The time at which CloudTrail stopped logging AWS API calls for an
-     * account.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param timeLoggingStopped The time at which CloudTrail stopped logging AWS API calls for an
-     *         account.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public GetTrailStatusResult withTimeLoggingStopped(String timeLoggingStopped) {
-        this.timeLoggingStopped = timeLoggingStopped;
+    public GetTrailStatusResult withLatestCloudWatchLogsDeliveryTime(java.util.Date latestCloudWatchLogsDeliveryTime) {
+        this.latestCloudWatchLogsDeliveryTime = latestCloudWatchLogsDeliveryTime;
         return this;
     }
 
@@ -591,12 +491,8 @@ public class GetTrailStatusResult implements Serializable {
         if (getLatestNotificationTime() != null) sb.append("LatestNotificationTime: " + getLatestNotificationTime() + ",");
         if (getStartLoggingTime() != null) sb.append("StartLoggingTime: " + getStartLoggingTime() + ",");
         if (getStopLoggingTime() != null) sb.append("StopLoggingTime: " + getStopLoggingTime() + ",");
-        if (getLatestDeliveryAttemptTime() != null) sb.append("LatestDeliveryAttemptTime: " + getLatestDeliveryAttemptTime() + ",");
-        if (getLatestNotificationAttemptTime() != null) sb.append("LatestNotificationAttemptTime: " + getLatestNotificationAttemptTime() + ",");
-        if (getLatestNotificationAttemptSucceeded() != null) sb.append("LatestNotificationAttemptSucceeded: " + getLatestNotificationAttemptSucceeded() + ",");
-        if (getLatestDeliveryAttemptSucceeded() != null) sb.append("LatestDeliveryAttemptSucceeded: " + getLatestDeliveryAttemptSucceeded() + ",");
-        if (getTimeLoggingStarted() != null) sb.append("TimeLoggingStarted: " + getTimeLoggingStarted() + ",");
-        if (getTimeLoggingStopped() != null) sb.append("TimeLoggingStopped: " + getTimeLoggingStopped() );
+        if (getLatestCloudWatchLogsDeliveryError() != null) sb.append("LatestCloudWatchLogsDeliveryError: " + getLatestCloudWatchLogsDeliveryError() + ",");
+        if (getLatestCloudWatchLogsDeliveryTime() != null) sb.append("LatestCloudWatchLogsDeliveryTime: " + getLatestCloudWatchLogsDeliveryTime() );
         sb.append("}");
         return sb.toString();
     }
@@ -613,12 +509,8 @@ public class GetTrailStatusResult implements Serializable {
         hashCode = prime * hashCode + ((getLatestNotificationTime() == null) ? 0 : getLatestNotificationTime().hashCode()); 
         hashCode = prime * hashCode + ((getStartLoggingTime() == null) ? 0 : getStartLoggingTime().hashCode()); 
         hashCode = prime * hashCode + ((getStopLoggingTime() == null) ? 0 : getStopLoggingTime().hashCode()); 
-        hashCode = prime * hashCode + ((getLatestDeliveryAttemptTime() == null) ? 0 : getLatestDeliveryAttemptTime().hashCode()); 
-        hashCode = prime * hashCode + ((getLatestNotificationAttemptTime() == null) ? 0 : getLatestNotificationAttemptTime().hashCode()); 
-        hashCode = prime * hashCode + ((getLatestNotificationAttemptSucceeded() == null) ? 0 : getLatestNotificationAttemptSucceeded().hashCode()); 
-        hashCode = prime * hashCode + ((getLatestDeliveryAttemptSucceeded() == null) ? 0 : getLatestDeliveryAttemptSucceeded().hashCode()); 
-        hashCode = prime * hashCode + ((getTimeLoggingStarted() == null) ? 0 : getTimeLoggingStarted().hashCode()); 
-        hashCode = prime * hashCode + ((getTimeLoggingStopped() == null) ? 0 : getTimeLoggingStopped().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestCloudWatchLogsDeliveryError() == null) ? 0 : getLatestCloudWatchLogsDeliveryError().hashCode()); 
+        hashCode = prime * hashCode + ((getLatestCloudWatchLogsDeliveryTime() == null) ? 0 : getLatestCloudWatchLogsDeliveryTime().hashCode()); 
         return hashCode;
     }
     
@@ -644,18 +536,10 @@ public class GetTrailStatusResult implements Serializable {
         if (other.getStartLoggingTime() != null && other.getStartLoggingTime().equals(this.getStartLoggingTime()) == false) return false; 
         if (other.getStopLoggingTime() == null ^ this.getStopLoggingTime() == null) return false;
         if (other.getStopLoggingTime() != null && other.getStopLoggingTime().equals(this.getStopLoggingTime()) == false) return false; 
-        if (other.getLatestDeliveryAttemptTime() == null ^ this.getLatestDeliveryAttemptTime() == null) return false;
-        if (other.getLatestDeliveryAttemptTime() != null && other.getLatestDeliveryAttemptTime().equals(this.getLatestDeliveryAttemptTime()) == false) return false; 
-        if (other.getLatestNotificationAttemptTime() == null ^ this.getLatestNotificationAttemptTime() == null) return false;
-        if (other.getLatestNotificationAttemptTime() != null && other.getLatestNotificationAttemptTime().equals(this.getLatestNotificationAttemptTime()) == false) return false; 
-        if (other.getLatestNotificationAttemptSucceeded() == null ^ this.getLatestNotificationAttemptSucceeded() == null) return false;
-        if (other.getLatestNotificationAttemptSucceeded() != null && other.getLatestNotificationAttemptSucceeded().equals(this.getLatestNotificationAttemptSucceeded()) == false) return false; 
-        if (other.getLatestDeliveryAttemptSucceeded() == null ^ this.getLatestDeliveryAttemptSucceeded() == null) return false;
-        if (other.getLatestDeliveryAttemptSucceeded() != null && other.getLatestDeliveryAttemptSucceeded().equals(this.getLatestDeliveryAttemptSucceeded()) == false) return false; 
-        if (other.getTimeLoggingStarted() == null ^ this.getTimeLoggingStarted() == null) return false;
-        if (other.getTimeLoggingStarted() != null && other.getTimeLoggingStarted().equals(this.getTimeLoggingStarted()) == false) return false; 
-        if (other.getTimeLoggingStopped() == null ^ this.getTimeLoggingStopped() == null) return false;
-        if (other.getTimeLoggingStopped() != null && other.getTimeLoggingStopped().equals(this.getTimeLoggingStopped()) == false) return false; 
+        if (other.getLatestCloudWatchLogsDeliveryError() == null ^ this.getLatestCloudWatchLogsDeliveryError() == null) return false;
+        if (other.getLatestCloudWatchLogsDeliveryError() != null && other.getLatestCloudWatchLogsDeliveryError().equals(this.getLatestCloudWatchLogsDeliveryError()) == false) return false; 
+        if (other.getLatestCloudWatchLogsDeliveryTime() == null ^ this.getLatestCloudWatchLogsDeliveryTime() == null) return false;
+        if (other.getLatestCloudWatchLogsDeliveryTime() != null && other.getLatestCloudWatchLogsDeliveryTime().equals(this.getLatestCloudWatchLogsDeliveryTime()) == false) return false; 
         return true;
     }
     

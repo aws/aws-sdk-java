@@ -34,12 +34,12 @@ public class ValidateTemplateResult implements Serializable {
     private String description;
 
     /**
-     * The capabilities found within the template. Currently, CAPABILITY_IAM
-     * is the only capability detected. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this
-     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     * actions with your template; otherwise, those actions return an
-     * InsufficientCapabilities error.
+     * The capabilities found within the template. Currently, AWS
+     * CloudFormation supports only the CAPABILITY_IAM capability. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter when you use the <a>CreateStack</a> or
+     * <a>UpdateStack</a> actions with your template; otherwise, those
+     * actions return an InsufficientCapabilities error.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
 
@@ -150,19 +150,19 @@ public class ValidateTemplateResult implements Serializable {
     }
 
     /**
-     * The capabilities found within the template. Currently, CAPABILITY_IAM
-     * is the only capability detected. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this
-     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     * actions with your template; otherwise, those actions return an
-     * InsufficientCapabilities error.
+     * The capabilities found within the template. Currently, AWS
+     * CloudFormation supports only the CAPABILITY_IAM capability. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter when you use the <a>CreateStack</a> or
+     * <a>UpdateStack</a> actions with your template; otherwise, those
+     * actions return an InsufficientCapabilities error.
      *
-     * @return The capabilities found within the template. Currently, CAPABILITY_IAM
-     *         is the only capability detected. If your template contains IAM
-     *         resources, you must specify the CAPABILITY_IAM value for this
-     *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     *         actions with your template; otherwise, those actions return an
-     *         InsufficientCapabilities error.
+     * @return The capabilities found within the template. Currently, AWS
+     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter when you use the <a>CreateStack</a> or
+     *         <a>UpdateStack</a> actions with your template; otherwise, those
+     *         actions return an InsufficientCapabilities error.
      */
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
@@ -173,19 +173,19 @@ public class ValidateTemplateResult implements Serializable {
     }
     
     /**
-     * The capabilities found within the template. Currently, CAPABILITY_IAM
-     * is the only capability detected. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this
-     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     * actions with your template; otherwise, those actions return an
-     * InsufficientCapabilities error.
+     * The capabilities found within the template. Currently, AWS
+     * CloudFormation supports only the CAPABILITY_IAM capability. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter when you use the <a>CreateStack</a> or
+     * <a>UpdateStack</a> actions with your template; otherwise, those
+     * actions return an InsufficientCapabilities error.
      *
-     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
-     *         is the only capability detected. If your template contains IAM
-     *         resources, you must specify the CAPABILITY_IAM value for this
-     *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     *         actions with your template; otherwise, those actions return an
-     *         InsufficientCapabilities error.
+     * @param capabilities The capabilities found within the template. Currently, AWS
+     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter when you use the <a>CreateStack</a> or
+     *         <a>UpdateStack</a> actions with your template; otherwise, those
+     *         actions return an InsufficientCapabilities error.
      */
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
@@ -198,21 +198,21 @@ public class ValidateTemplateResult implements Serializable {
     }
     
     /**
-     * The capabilities found within the template. Currently, CAPABILITY_IAM
-     * is the only capability detected. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this
-     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     * actions with your template; otherwise, those actions return an
-     * InsufficientCapabilities error.
+     * The capabilities found within the template. Currently, AWS
+     * CloudFormation supports only the CAPABILITY_IAM capability. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter when you use the <a>CreateStack</a> or
+     * <a>UpdateStack</a> actions with your template; otherwise, those
+     * actions return an InsufficientCapabilities error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
-     *         is the only capability detected. If your template contains IAM
-     *         resources, you must specify the CAPABILITY_IAM value for this
-     *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     *         actions with your template; otherwise, those actions return an
-     *         InsufficientCapabilities error.
+     * @param capabilities The capabilities found within the template. Currently, AWS
+     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter when you use the <a>CreateStack</a> or
+     *         <a>UpdateStack</a> actions with your template; otherwise, those
+     *         actions return an InsufficientCapabilities error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -226,21 +226,21 @@ public class ValidateTemplateResult implements Serializable {
     }
     
     /**
-     * The capabilities found within the template. Currently, CAPABILITY_IAM
-     * is the only capability detected. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this
-     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     * actions with your template; otherwise, those actions return an
-     * InsufficientCapabilities error.
+     * The capabilities found within the template. Currently, AWS
+     * CloudFormation supports only the CAPABILITY_IAM capability. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter when you use the <a>CreateStack</a> or
+     * <a>UpdateStack</a> actions with your template; otherwise, those
+     * actions return an InsufficientCapabilities error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
-     *         is the only capability detected. If your template contains IAM
-     *         resources, you must specify the CAPABILITY_IAM value for this
-     *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     *         actions with your template; otherwise, those actions return an
-     *         InsufficientCapabilities error.
+     * @param capabilities The capabilities found within the template. Currently, AWS
+     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter when you use the <a>CreateStack</a> or
+     *         <a>UpdateStack</a> actions with your template; otherwise, those
+     *         actions return an InsufficientCapabilities error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -258,21 +258,21 @@ public class ValidateTemplateResult implements Serializable {
     }
 
     /**
-     * The capabilities found within the template. Currently, CAPABILITY_IAM
-     * is the only capability detected. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this
-     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     * actions with your template; otherwise, those actions return an
-     * InsufficientCapabilities error.
+     * The capabilities found within the template. Currently, AWS
+     * CloudFormation supports only the CAPABILITY_IAM capability. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter when you use the <a>CreateStack</a> or
+     * <a>UpdateStack</a> actions with your template; otherwise, those
+     * actions return an InsufficientCapabilities error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
-     *         is the only capability detected. If your template contains IAM
-     *         resources, you must specify the CAPABILITY_IAM value for this
-     *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-     *         actions with your template; otherwise, those actions return an
-     *         InsufficientCapabilities error.
+     * @param capabilities The capabilities found within the template. Currently, AWS
+     *         CloudFormation supports only the CAPABILITY_IAM capability. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter when you use the <a>CreateStack</a> or
+     *         <a>UpdateStack</a> actions with your template; otherwise, those
+     *         actions return an InsufficientCapabilities error.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

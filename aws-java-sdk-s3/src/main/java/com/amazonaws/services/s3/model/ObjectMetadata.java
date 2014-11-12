@@ -818,4 +818,13 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     public ObjectMetadata clone() {
         return new ObjectMetadata(this);
     }
+
+    /**
+     * Returns the AWS Key Management System key id used for Server Side
+     * Encryption of the Amazon S3 object.
+     */
+    public String getSSEAwsKmsKeyId() {
+        return (String) metadata
+                .get(Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID);
+    }
 }

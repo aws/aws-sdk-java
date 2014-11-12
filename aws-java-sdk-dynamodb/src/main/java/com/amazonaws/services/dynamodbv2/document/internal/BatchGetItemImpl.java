@@ -71,24 +71,26 @@ public class BatchGetItemImpl implements BatchGetItemApi {
         Map<String, KeysAndAttributes> requestItems = spec.getUnprocessedKeys();
         if (requestItems == null || requestItems.size() == 0) {
             // handle new requests only if there is no unprocessed keys
-            requestItems = new LinkedHashMap<String, KeysAndAttributes>(tableKeysAndAttributesCol.size());
+            requestItems = new LinkedHashMap<String, KeysAndAttributes>();
         }
-        for (TableKeysAndAttributes tableKeysAndAttributes: tableKeysAndAttributesCol) {
-            // attributes against one table
-            final Set<String> attrNames = tableKeysAndAttributes.getAttributeNames();
-            // primary keys against one table
-            final List<PrimaryKey> pks = tableKeysAndAttributes.getPrimaryKeys();
-            final List<Map<String,AttributeValue>> keys = new ArrayList<Map<String,AttributeValue>>(pks.size());
-            for (PrimaryKey pk: pks)
-                keys.add(InternalUtils.toAttributeValueMap(pk));
-            final KeysAndAttributes keysAndAttrs = new KeysAndAttributes()
-                .withAttributesToGet(attrNames)
-                .withConsistentRead(tableKeysAndAttributes.isConsistentRead())
-                .withKeys(keys)
-                .withProjectionExpression(tableKeysAndAttributes.getProjectionExpression())
-                .withExpressionAttributeNames(tableKeysAndAttributes.getNameMap())
-                ;
-            requestItems.put(tableKeysAndAttributes.getTableName(), keysAndAttrs);
+        if (tableKeysAndAttributesCol != null) {
+            for (TableKeysAndAttributes tableKeysAndAttributes: tableKeysAndAttributesCol) {
+                // attributes against one table
+                final Set<String> attrNames = tableKeysAndAttributes.getAttributeNames();
+                // primary keys against one table
+                final List<PrimaryKey> pks = tableKeysAndAttributes.getPrimaryKeys();
+                final List<Map<String,AttributeValue>> keys = new ArrayList<Map<String,AttributeValue>>(pks.size());
+                for (PrimaryKey pk: pks)
+                    keys.add(InternalUtils.toAttributeValueMap(pk));
+                final KeysAndAttributes keysAndAttrs = new KeysAndAttributes()
+                    .withAttributesToGet(attrNames)
+                    .withConsistentRead(tableKeysAndAttributes.isConsistentRead())
+                    .withKeys(keys)
+                    .withProjectionExpression(tableKeysAndAttributes.getProjectionExpression())
+                    .withExpressionAttributeNames(tableKeysAndAttributes.getNameMap())
+                    ;
+                requestItems.put(tableKeysAndAttributes.getTableName(), keysAndAttrs);
+            }
         }
         BatchGetItemRequest req = spec.getRequest()
                 .withRequestItems(requestItems)

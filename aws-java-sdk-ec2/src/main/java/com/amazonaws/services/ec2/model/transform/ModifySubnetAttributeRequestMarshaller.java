@@ -39,7 +39,7 @@ public class ModifySubnetAttributeRequestMarshaller implements Marshaller<Reques
 
         Request<ModifySubnetAttributeRequest> request = new DefaultRequest<ModifySubnetAttributeRequest>(modifySubnetAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySubnetAttribute");
-        request.addParameter("Version", "2014-09-01");
+        request.addParameter("Version", "2014-10-01");
 
         if (modifySubnetAttributeRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(modifySubnetAttributeRequest.getSubnetId()));

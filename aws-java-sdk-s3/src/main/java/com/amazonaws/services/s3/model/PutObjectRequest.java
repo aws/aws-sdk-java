@@ -81,7 +81,7 @@ import com.amazonaws.event.ProgressListener;
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
  */
 public class PutObjectRequest extends AmazonWebServiceRequest implements
-        Cloneable, SSECustomerKeyProvider, S3DataSource {
+        Cloneable, SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, S3DataSource {
     /**
      * The name of an existing bucket, to which this request will upload a new
      * object. You must have {@link Permission#Write} permission granted to you
@@ -147,6 +147,12 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      * encrypt the uploaded object.
      */
     private SSECustomerKey sseCustomerKey;
+
+    /**
+     * The optional AWS Key Management system parameters to be used to encrypt
+     * the the object on the server side.
+     */
+    private SSEAwsKeyManagementParams sseAwsKeyManagementParams;
 
     /**
      * Constructs a new
@@ -772,6 +778,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      *            use to encrypt the uploaded object.
      */
     public void setSSECustomerKey(SSECustomerKey sseKey) {
+        if (this.sseAwsKeyManagementParams != null)
+            throw new IllegalArgumentException(
+                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
         this.sseCustomerKey = sseKey;
     }
 
@@ -848,7 +857,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
      */
     @Override
     public PutObjectRequest clone() {
-        PutObjectRequest cloned = 
+        PutObjectRequest cloned =
             new PutObjectRequest(bucketName, key, redirectLocation)
             .withAccessControlList(accessControlList)
             .withCannedAcl(cannedAcl)
@@ -859,5 +868,38 @@ public class PutObjectRequest extends AmazonWebServiceRequest implements
             .withSSECustomerKey(sseCustomerKey)
             ;
         return copyBaseTo(cloned);
+    }
+
+    /**
+     * Returns the AWS Key Management System parameters used to encrypt the
+     * object on server side.
+     */
+    @Override
+    public SSEAwsKeyManagementParams getSSEAwsKeyManagementParams() {
+        return sseAwsKeyManagementParams;
+    }
+
+    /**
+     * Sets the AWS Key Management System parameters used to encrypt the object
+     * on server side.
+     */
+    public void setSSEAwsKeyManagementParams(
+            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
+        if (this.sseCustomerKey != null)
+            throw new IllegalArgumentException(
+                    "Either SSECustomerKey or SSEAwsKeyManagementParams must not be set at the same time.");
+        this.sseAwsKeyManagementParams = sseAwsKeyManagementParams;
+    }
+
+    /**
+     * Sets the AWS Key Management System parameters used to encrypt the object
+     * on server side.
+     *
+     * @return returns the update PutObjectRequest
+     */
+    public PutObjectRequest withSSEAwsKeyManagementParams(
+            SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
+        setSSEAwsKeyManagementParams(sseAwsKeyManagementParams);
+        return this;
     }
 }
